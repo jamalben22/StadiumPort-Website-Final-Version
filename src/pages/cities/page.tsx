@@ -506,7 +506,7 @@ export default function CitiesPage() {
                     onClick={() => openCityModal(city)}
                   >
                     <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
+                    Explore {city.name}
                   </Button>
                 </div>
               </Card>

@@ -101,7 +101,7 @@ export default function CityCard({ city }: CityCardProps) {
           className="w-full inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 whitespace-nowrap cursor-pointer px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
         >
           <i className="ri-book-open-line mr-3 text-lg"></i>
-          See Full Guide
+          Explore {city.name}
           <i className="ri-arrow-right-line ml-3 text-lg group-hover:translate-x-1 transition-transform duration-300"></i>
         </Link>
       </div>

@@ -646,10 +646,11 @@ Local hotels offer special packages including:
 • Tailgating culture extends to soccer matches
 
 **Getting Around:**
-• Downtown is very walkable
-• Free streetcar connects major downtown attractions
-• Parking is generally affordable and available
-• Most attractions are within 20 minutes of each other`,
+• Kansas is spread out - plan transportation
+• Traffic can be heavy during rush hours
+• METRORail is efficient for major destinations
+• Uber/Lyft widely available and affordable
+• Downtown tunnel system useful during hot weather`,
 
       }
     },
@@ -1416,7 +1417,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
               className="inline-flex items-center justify-center font-bold rounded-3xl transition-all duration-300 whitespace-nowrap cursor-pointer px-12 py-6 text-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-2xl hover:shadow-3xl transform hover:scale-105"
             >
               <i className="ri-arrow-left-line mr-4 text-2xl"></i>
-              Back to Host Cities
+              Explore {city.name}
               <i className="ri-map-pin-line ml-4 text-2xl"></i>
             </Link>
           </div>
