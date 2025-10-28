@@ -1,17 +1,34 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { useEffect, useState } from 'react';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
-import { MetLifeStadiumGuide } from '../../components/feature/MetLifeStadiumGuide';
-import { EstadioAztecaGuide } from '../../components/feature/EstadioAztecaGuide';
 
 export default function VenuesPage() {
-  const [selectedVenue, setSelectedVenue] = useState<any>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('All Stadiums');
+  const [selectedRegion, setSelectedRegion] = useState('All Regions');
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  // Stadium slug mapping for navigation
+  const getStadiumSlug = (venue: any) => {
+    const slugMap: { [key: number]: string } = {
+      1: 'estadio-azteca',
+      2: 'metlife-stadium', 
+      4: 'arrowhead-stadium'
+    };
+    return slugMap[venue.id];
+  };
+
+  const handleReadFullGuide = (venue: any) => {
+    const slug = getStadiumSlug(venue);
+    if (slug) {
+      navigate(`/venues/${slug}`);
+    }
+  };
 
   useEffect(() => {
     // Set page title and meta description
@@ -28,29 +45,6 @@ export default function VenuesPage() {
       canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/venues`);
     }
   }, []);
-
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isModalOpen]);
-
-  const openVenueModal = (venue: any) => {
-    setSelectedVenue(venue);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedVenue(null);
-  };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
@@ -704,7 +698,7 @@ export default function VenuesPage() {
                     size="sm" 
                     fullWidth 
                     className="whitespace-nowrap cursor-pointer font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
-                    onClick={() => openVenueModal(venue)}
+                    onClick={() => handleReadFullGuide(venue)}
                   >
                     <i className="ri-book-open-line mr-3 text-lg"></i>
                     Read Full Guide
@@ -716,111 +710,6 @@ export default function VenuesPage() {
           </div>
         </div>
       </section>
-
-      {/* Stadium Modal - Matching Cities Page Style */}
-      {isModalOpen && selectedVenue && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onClick={closeModal}></div>
-            
-            {/* MetLife Stadium - Show Premium Guide */}
-            {selectedVenue.id === 2 ? (
-              <div className="inline-block w-full max-w-6xl my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl relative">
-                <button
-                  onClick={closeModal}
-                  className="absolute top-6 right-6 z-10 w-12 h-12 bg-black/70 backdrop-blur-sm text-white rounded-full flex items-center justify-center hover:bg-black/80 transition-all cursor-pointer shadow-lg"
-                >
-                  <i className="ri-close-line text-2xl"></i>
-                </button>
-                <MetLifeStadiumGuide onClose={closeModal} />
-              </div>
-            ) : selectedVenue.id === 1 ? (
-              /* Estadio Azteca - Show Premium Guide */
-              <div className="inline-block w-full max-w-6xl my-8 overflow-hidden text-left align-middle transition-all transform shadow-xl rounded-2xl relative">
-                <button
-                  onClick={closeModal}
-                  className="absolute top-6 right-6 z-10 w-12 h-12 bg-black/70 backdrop-blur-sm text-white rounded-full flex items-center justify-center hover:bg-black/80 transition-all cursor-pointer shadow-lg"
-                >
-                  <i className="ri-close-line text-2xl"></i>
-                </button>
-                <EstadioAztecaGuide onClose={closeModal} />
-              </div>
-            ) : (
-              /* Other Stadiums - Default Modal */
-              <div className="inline-block w-full max-w-4xl my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-navy-800 shadow-xl rounded-2xl">
-                <div className="relative">
-                  <img 
-                    src={selectedVenue.image} 
-                    alt={selectedVenue.name}
-                    className="w-full h-64 object-cover"
-                  />
-                  <button
-                    onClick={closeModal}
-                    className="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all cursor-pointer"
-                  >
-                    <i className="ri-close-line text-xl"></i>
-                  </button>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-bold flex items-center space-x-2">
-                      <span>{selectedVenue.flag}</span>
-                      <span>{selectedVenue.country}</span>
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-emerald-500 text-sm font-medium">Stadium Guide</span>
-                    <div className="flex items-center space-x-4 text-sm text-slate-500">
-                      <span>{selectedVenue.capacity.toLocaleString()} capacity</span>
-                      <span>•</span>
-                      <span>{selectedVenue.matches} matches</span>
-                    </div>
-                  </div>
-                  
-                  <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">
-                    {selectedVenue.name}
-                  </h2>
-                  
-                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-                    {selectedVenue.description}
-                  </p>
-                  
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-3">
-                        Content Coming Soon
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Detailed stadium information, travel tips, and comprehensive guides will be available soon. Stay tuned for complete venue details including transportation, accommodations, and visitor information.
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-8 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                    <div className="flex items-start space-x-3">
-                      <i className="ri-information-line text-emerald-600 text-lg mt-0.5"></i>
-                      <div>
-                        <h4 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">Coming Soon</h4>
-                        <p className="text-emerald-700 dark:text-emerald-400 text-sm">
-                          Comprehensive stadium guides with detailed information about facilities, transportation, nearby hotels, and visitor tips will be available soon.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex justify-end mt-8">
-                    <Button variant="primary" onClick={closeModal} className="cursor-pointer">
-                      <i className="ri-check-line mr-2"></i>
-                      Got It
-                    </Button>
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>

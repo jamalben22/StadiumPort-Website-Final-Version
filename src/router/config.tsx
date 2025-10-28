@@ -20,6 +20,7 @@ const PackingListsPage = lazy(() => import('../pages/packing-lists/page'));
 const SafetyGuidePage = lazy(() => import('../pages/safety-guide/page'));
 const LuxuryTravelPage = lazy(() => import('../pages/luxury-travel/page'));
 const VenuesPage = lazy(() => import('../pages/venues/page'));
+const StadiumDetailPage = lazy(() => import('../pages/venues/[stadiumId]/page'));
 const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'));
 // Direct imports for legal pages to ensure they load properly
 import PrivacyPage from '../pages/legal/privacy/page';
@@ -96,6 +97,10 @@ const routes: RouteObject[] = [
   {
     path: '/venues',
     element: <VenuesPage />
+  },
+  {
+    path: '/venues/:stadiumId',
+    element: <StadiumDetailPage />
   },
   {
     path: '/city-comparisons',
