@@ -1,6 +1,4 @@
 import { useParams, Link } from 'react-router-dom';
-import { Header } from '../../../components/feature/Header';
-import { Footer } from '../../../components/feature/Footer';
 import { MetLifeStadiumGuide } from '../../../components/feature/MetLifeStadiumGuide';
 import { EstadioAztecaGuide } from '../../../components/feature/EstadioAztecaGuide';
 import { ArrowheadStadiumGuide } from '../../../components/feature/ArrowheadStadiumGuide';
@@ -47,26 +45,22 @@ export default function StadiumDetailPage() {
   
   if (!stadium) {
     return (
-      <div className="min-h-screen bg-white dark:bg-navy-900">
-        <Header />
-        <div className="pt-20 pb-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl font-bold text-navy-900 dark:text-white mb-4">
-              Stadium Not Found
-            </h1>
-            <p className="text-slate-600 dark:text-slate-400 mb-8">
-              The stadium you're looking for doesn't exist or has been moved.
-            </p>
-            <Link 
-              to="/venues" 
-              className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
-            >
-              <i className="ri-arrow-left-line mr-2"></i>
-              Back to Venues
-            </Link>
-          </div>
+      <div className="min-h-screen bg-white dark:bg-navy-900 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-navy-900 dark:text-white mb-4">
+            Stadium Not Found
+          </h1>
+          <p className="text-slate-600 dark:text-slate-400 mb-8">
+            The stadium you're looking for doesn't exist or has been moved.
+          </p>
+          <Link 
+            to="/venues" 
+            className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
+          >
+            <i className="ri-arrow-left-line mr-2"></i>
+            Back to Venues
+          </Link>
         </div>
-        <Footer />
       </div>
     );
   }
@@ -74,7 +68,7 @@ export default function StadiumDetailPage() {
   const StadiumComponent = stadium.component;
 
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900">
+    <div className="min-h-screen w-full">
       <SchemaOrg 
         schema={[
           generateStadiumSchema({
@@ -92,39 +86,7 @@ export default function StadiumDetailPage() {
         ]}
       />
       
-      <Header />
-      
-      {/* Breadcrumb Navigation */}
-      <div className="pt-20 pb-4 bg-slate-50 dark:bg-navy-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <nav className="flex items-center space-x-2 text-sm">
-            <Link 
-              to="/" 
-              className="text-slate-500 hover:text-emerald-600 transition-colors"
-            >
-              Home
-            </Link>
-            <i className="ri-arrow-right-s-line text-slate-400"></i>
-            <Link 
-              to="/venues" 
-              className="text-slate-500 hover:text-emerald-600 transition-colors"
-            >
-              Venues
-            </Link>
-            <i className="ri-arrow-right-s-line text-slate-400"></i>
-            <span className="text-slate-900 dark:text-white font-medium">
-              {stadium.name}
-            </span>
-          </nav>
-        </div>
-      </div>
-
-      {/* Stadium Guide Content */}
-      <div className="bg-white dark:bg-navy-900">
-        <StadiumComponent />
-      </div>
-
-      <Footer />
+      <StadiumComponent />
     </div>
   );
 }
