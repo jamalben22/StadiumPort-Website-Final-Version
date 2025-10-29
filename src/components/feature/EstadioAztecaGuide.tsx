@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Header } from './Header';
 
 interface EstadioAztecaGuideProps {
   onClose?: () => void;
 }
 
 export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
+  const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleExpanded = () => {
@@ -13,15 +15,12 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
   };
 
   const handleGotItClick = () => {
-    if (onClose) {
-      onClose();
-    } else {
-      toggleExpanded();
-    }
+    navigate('/venues');
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-700/50">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+      <Header />
       {/* Preview Card - Collapsed State */}
       {!isExpanded && (
         <div className="relative">
@@ -73,29 +72,29 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in">
+        <div className="animate-fade-in pt-20">
           {/* Header Section */}
-          <div className="bg-gradient-to-r from-slate-900 to-slate-800 p-8 md:p-12 border-b border-slate-700/50">
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-gold-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+              <span className="text-emerald-400 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
               Estadio Azteca
             </h1>
             
             <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-300">
-                <i className="ri-group-line text-xl text-emerald-400"></i>
+              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <i className="ri-group-line text-xl text-emerald-400 dark:text-emerald-300"></i>
                 <span className="font-semibold">87,523 capacity</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <i className="ri-map-pin-line text-xl text-gold-400"></i>
+              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <i className="ri-map-pin-line text-xl text-gold-400 dark:text-gold-300"></i>
                 <span>Mexico City</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <i className="ri-trophy-line text-xl text-emerald-400"></i>
+              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
+                <i className="ri-trophy-line text-xl text-emerald-400 dark:text-emerald-300"></i>
                 <span className="font-semibold">Opening Match Venue</span>
               </div>
             </div>
@@ -104,675 +103,624 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">
             {/* Introduction Section */}
-            <div className="prose prose-invert prose-lg max-w-none">
-              <div className="bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-2xl p-8 mb-8">
-                <h2 className="text-3xl font-bold text-white mb-6 flex items-center gap-3">
-                  <i className="ri-trophy-line text-gold-400 text-4xl"></i>
+            <div className="prose prose-lg max-w-none">
+              <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 mb-8">
+                <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
+                  <i className="ri-trophy-line text-gold-400 dark:text-gold-300 text-4xl"></i>
                   The Cathedral Where World Cup History Repeats
                 </h2>
-                <p className="text-slate-300 text-lg leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                   Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
                 </p>
               </div>
             </div>
 
-          {/* Stadium Overview */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-building-line text-emerald-400 text-4xl"></i>
-              Stadium Overview & Fast Facts
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-building-2-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Official Name</span>
-                    <p className="text-white font-semibold">Estadio Azteca (commercially known as Estadio Banorte; FIFA designation: Estadio Ciudad de México for World Cup 2026)</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-map-pin-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Location</span>
-                    <p className="text-white font-semibold">Coyoacán borough, southern Mexico City (Santa Úrsula Coapa neighborhood)</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-road-map-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Address</span>
-                    <p className="text-white font-semibold">Calzada de Tlalpan 3465, Col. Santa Úrsula Coapa</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-calendar-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Opened</span>
-                    <p className="text-white font-semibold">May 29, 1966</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-group-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Capacity</span>
-                    <p className="text-white font-semibold">87,523 (standard); 83,264 (FIFA World Cup 2026 configuration)</p>
-                  </div>
-                </div>
-              </div>
+            {/* Stadium Overview */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-building-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Stadium Overview & Fast Facts
+              </h2>
               
-              <div className="space-y-4">
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-team-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Primary Tenants</span>
-                    <p className="text-white font-semibold">Club América (Liga MX), Mexico National Football Team, Cruz Azul (Liga MX)</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-pencil-ruler-2-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Architect</span>
-                    <p className="text-white font-semibold">Pedro Ramírez Vázquez and Rafael Mijares Alcérreca</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-grass-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Surface Type</span>
-                    <p className="text-white font-semibold">Hybrid grass (newly installed for 2026)</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-building-4-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Roof Type</span>
-                    <p className="text-white font-semibold">Open-air with partial cantilevered canopy over lateral sections</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3 p-4 bg-slate-800/50 rounded-xl">
-                  <i className="ri-mountain-line text-gold-400 text-xl"></i>
-                  <div>
-                    <span className="text-slate-400 text-sm">Altitude</span>
-                    <p className="text-white font-semibold">2,200 meters (7,200 feet) above sea level</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-gold-400"></i>
-                Notable Features
-              </h3>
-              <div className="grid md:grid-cols-2 gap-4 text-slate-300">
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>Only stadium to host two World Cup finals (1970, 1986)</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>Largest stadium in Mexico and Latin America</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>Six-tier seating bowl</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>856 executive suites</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>State-of-the-art LED screens installed throughout</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                  <span>Built on volcanic rock from Xitle volcano</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* History & Legacy */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-time-line text-gold-400 text-4xl"></i>
-              History & Legacy
-            </h2>
-            
-            <div className="prose prose-invert prose-lg max-w-none">
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Conceived during President Adolfo López Mateos's tenure to prepare Mexico City for the 1968 Summer Olympics, Estadio Azteca broke ground in 1961 after architects Pedro Ramírez Vázquez and Rafael Mijares Alcérreca studied Europe's greatest stadiums. Construction proved monumental—crews removed 180,000 cubic meters of volcanic rock from the Xitle volcano site before the stadium opened with a 2-2 friendly between Club América and Italy's Torino on May 29, 1966.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed mb-6">
-                The Azteca's legend solidified just four years later. The 1970 World Cup final saw Pelé's Brazil dismantle Italy 4-1 in what many consider the greatest team performance in football history. The stadium also hosted the "Game of the Century"—Italy's 4-3 extra-time thriller against West Germany in the semifinals. Sixteen years later, in 1986, Diego Maradona delivered two of the sport's most famous goals minutes apart: the infamous "Hand of God" and the breathtaking "Goal of the Century" against England in the quarterfinals. Argentina went on to win the final 3-2 over West Germany—once again at Azteca.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed">
-                Beyond football, the stadium has witnessed Julio César Chávez's legendary boxing nights (including a 132,247-attendance record in 1993), NFL games since 2005 as part of the International Series, and concerts by Michael Jackson, U2, and Paul McCartney. The stadium underwent major renovations in 2016 that reduced capacity from over 100,000 to 87,000 while adding modern amenities. A comprehensive renovation project costing approximately 2 billion Mexican pesos (€110 million) has been underway since late 2024, with the stadium scheduled to reopen March 28, 2026—just 75 days before the World Cup opener.
-              </p>
-            </div>
-          </div>
-
-          {/* Architecture & Experience */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-building-4-line text-emerald-400 text-4xl"></i>
-              Stadium Architecture & Experience
-            </h2>
-            
-            <div className="prose prose-invert prose-lg max-w-none">
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Estadio Azteca's circular design creates a steep, imposing bowl that places fans remarkably close to the action despite its massive scale. The original architects prioritized sightlines—the lower tier rests against natural slopes, ensuring virtually every seat offers unobstructed views of the 105m × 68m pitch, which sits 9.5 meters below ground level.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed mb-6">
-                The six-tier seating configuration (sections 100-600) wraps around the playing surface, with two main tiers separated by a ring of 856 luxury boxes. The partial cantilevered roof covers lateral sections, providing shade while maintaining an open-air atmosphere. Modern renovations have introduced high-resolution LED panels at both ends, replacing the phosphorous boards installed in 1998, while new LED exterior screens create a striking visual identity.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed mb-6">
-                At altitude, Azteca's acoustics are exceptional—sound builds in waves, with chants originating behind goals rolling through upper tiers and settling over midfield like thunder. The stadium's sheer volume (capacity has exceeded 119,000 for football and 132,000 for boxing) creates an intimidating fortress atmosphere. Accessibility features include wheelchair ramps, elevators, dedicated accessible seating zones, and assistance services—though early arrival is recommended for optimal positioning.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed">
-                The ongoing 2026 renovation includes new changing rooms beneath the boxes, an extended players' tunnel, completely replaced seating, enhanced hospitality zones with restaurants and bars, restored facade with LED lighting, and the critical hybrid pitch designed for FIFA standards. The result blends historic character with world-class modern infrastructure.
-              </p>
-            </div>
-          </div>
-
-          {/* What Matches to Expect */}
-          <div className="bg-gradient-to-br from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-football-line text-emerald-400 text-4xl"></i>
-              What Matches to Expect
-            </h2>
-            
-            <div className="prose prose-invert prose-lg max-w-none">
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Estadio Azteca will host <strong>five matches during the 2026 World Cup</strong>, including the tournament's <strong>opening ceremony and match on June 11, 2026</strong>—marking the stadium's record third opening match (after 1970 and 1986). The confirmed schedule includes three group stage matches (June 11, 17, and 24), a Round of 32 fixture on June 30, and a Round of 16 knockout match on July 5.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed mb-6">
-                The opening match atmosphere promises to be explosive, with Mexico expected to play before a capacity crowd. Two of the group stage matches will feature El Tri, virtually guaranteeing sold-out attendance and the passionate, thunderous support Mexican fans are famous for. Expect kickoff times at 12:00, 15:00, 18:00, and 21:00 local Central Time, accommodating global television audiences.
-              </p>
-              
-              <p className="text-slate-300 leading-relaxed">
-                This historic venue's third World Cup appearance follows its legendary status from hosting finals in 1970 and 1986, plus memorable matches from the 1968 Olympics and 1999 FIFA Confederations Cup. The 2026 tournament adds another chapter to Azteca's unmatched World Cup legacy.
-              </p>
-            </div>
-          </div>
-
-          {/* Getting to the Stadium */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-map-2-line text-emerald-400 text-4xl"></i>
-              Getting to the Stadium
-            </h2>
-            
-            {/* By Metro + Light Rail */}
-            <div className="mb-8 p-6 bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-xl">
-              <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-400"></i>
-                By Metro + Light Rail (Recommended)
-              </h3>
-              <div className="prose prose-invert max-w-none">
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  The most reliable transport option combines Mexico City's Metro with the Xochimilco Light Rail (Tren Ligero). Take Metro Line 2 (dark blue) to its southern terminus at <strong>Tasqueña station</strong>—easily accessible from the historic center (Zócalo station) or via transfers from most central locations. At Tasqueña (a major transportation hub), transfer to the <strong>Tren Ligero</strong> southbound.
-                </p>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  Purchase a separate ticket for the light rail (approximately 5-7 pesos). The journey from Tasqueña to <strong>Estadio Azteca station</strong> takes 15 minutes, with trains departing every 10 minutes. The light rail station sits directly in front of the stadium—you'll exit and see the imposing structure immediately.
-                </p>
-                <div className="bg-slate-800/50 p-4 rounded-lg">
-                  <p className="text-emerald-400 font-semibold mb-2">Journey Time & Tips:</p>
-                  <p className="text-slate-300 text-sm">
-                    <strong>From city center:</strong> 40-60 minutes total, though allow 90-120 minutes on matchdays due to crowds at Tasqueña. The platform has been recently expanded with Barcelona-style configuration for 2026 to handle World Cup crowds.
-                  </p>
-                  <p className="text-slate-300 text-sm mt-2">
-                    <strong>Pro tip:</strong> Metro Line 2 crosses the historic center, making it convenient from popular tourist areas. Download the CDMX Metro app for real-time updates.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* By Bus */}
-            <div className="mb-8 p-6 bg-slate-800/30 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <i className="ri-bus-line text-gold-400"></i>
-                By Bus
-              </h3>
-              <p className="text-slate-300 leading-relaxed">
-                RTP (Red de Transporte de Pasajeros) operates bus routes along Calzada de Tlalpan serving the stadium. Route 2A departs from Base CETRAM Taxqueña and reaches Tlalpan y Estadio Azteca stop in approximately 22 minutes, with buses every 5 minutes. Fare ranges from 4-20 pesos depending on distance.
-              </p>
-            </div>
-
-            {/* By Car */}
-            <div className="mb-8 p-6 bg-slate-800/30 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <i className="ri-car-line text-gold-400"></i>
-                By Car
-              </h3>
-              <div className="prose prose-invert max-w-none">
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  From downtown Mexico City, follow Avenida Tlalpan south (approximately 15 kilometers). Stay on the right side of the metro/light rail tracks—the stadium appears on your right. Alternatively, use the Anillo Periférico ring road, taking the "Estadio Azteca" exit.
-                </p>
-                <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-lg">
-                  <p className="text-red-400 font-semibold mb-2">Parking & Traffic Warning:</p>
-                  <p className="text-slate-300 text-sm">
-                    On-site parking opens 4 hours before events. Published rates are MXN $120 for cars/motorcycles, MXN $360 for minibuses, MXN $480 for buses. However, expect severe traffic congestion on matchdays—departures from city center should allow 60-90 minutes minimum, potentially 2+ hours during peak times.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* By Rideshare/Taxi */}
-            <div className="mb-8 p-6 bg-slate-800/30 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-gold-400"></i>
-                By Rideshare/Taxi
-              </h3>
-              <div className="prose prose-invert max-w-none">
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  Uber and DiDi are widely used and safe in Mexico City. Drop-off zones are designated around the stadium perimeter near entry gates. From popular neighborhoods (Roma Norte, Condesa, Polanco), expect 25-40 minutes normal traffic, 45-60+ minutes matchday traffic. Surge pricing is guaranteed for major matches—fares from central areas could reach $300-500 pesos (US$15-25).
-                </p>
-                <div className="bg-blue-500/10 border border-blue-500/20 p-4 rounded-lg">
-                  <p className="text-blue-400 font-semibold mb-2">Airport Transfers:</p>
-                  <p className="text-slate-300 text-sm">
-                    From Mexico City International Airport (MEX), the journey is 12-13 miles (20 kilometers), taking 18-25 minutes by car in light traffic, 45-90 minutes in typical traffic. Rideshare costs $400-600 pesos (US$20-30). Pre-booking through hotel concierge or booking platforms provides fixed rates and peace of mind.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Where to Stay */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-hotel-line text-emerald-400 text-4xl"></i>
-              Where to Stay
-            </h2>
-            
-            <div className="prose prose-invert prose-lg max-w-none mb-8">
-              <p className="text-slate-300 leading-relaxed">
-                Estadio Azteca sits far south of Mexico City's tourist heartland, making accommodation location crucial for balancing stadium access with exploring the capital's vibrant culture.
-              </p>
-            </div>
-
-            {/* Best Neighborhoods */}
-            <div className="space-y-8">
-              {/* Roma Norte & La Condesa */}
-              <div className="p-6 bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-xl">
-                <h3 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-400"></i>
-                  Roma Norte & La Condesa (30-40 minutes to stadium)
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  These adjacent "sister neighborhoods" are hands-down the best base for World Cup visitors. Tree-lined streets, world-class restaurants, third-wave coffee shops, craft cocktail bars, Parque México, and Art Deco architecture create an irresistible atmosphere. Roma Norte offers edgier, more artistic vibes with street art and galleries, while Condesa provides leafy parks and a more laid-back European feel. Both connect easily via Metro Line 2 (transfer at various stations) to reach Tasqueña/Azteca.
-                </p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-emerald-400 font-semibold mb-2">Budget</h4>
-                    <p className="text-slate-300 text-sm">Hostel Home (Roma), Gael Condesa, Casa Pancha</p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Mid-range</h4>
-                    <p className="text-slate-300 text-sm">Hotel Villa Condesa, Stanza Hotel (Roma), Red Tree House (Condesa—book months ahead!), Casa Mali by Dominion</p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-blue-400 font-semibold mb-2">Luxury</h4>
-                    <p className="text-slate-300 text-sm">Condesa DF (boutique icon with rooftop bar), Casa Decu, The Ignacia Guest House (Roma Norte)</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Polanco */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-building-3-line text-gold-400"></i>
-                  Polanco (30-40 minutes to stadium)
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  Mexico City's upscale answer to Beverly Hills, Polanco offers luxury shopping, Michelin-starred restaurants (including Pujol), proximity to Chapultepec Park and museums, and five-star service. Less walkable and charming than Roma/Condesa but impeccable for those seeking refinement.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Mid-range</h4>
-                    <p className="text-slate-300 text-sm">Green Park Hotel (Art Deco gem), Hotel Polanco</p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-blue-400 font-semibold mb-2">Luxury</h4>
-                    <p className="text-slate-300 text-sm">Camino Real Polanco, Sofitel Mexico City Reforma (rooftop pool with Angel of Independence views), Pug Seal (quirky boutique with artist-designed rooms)</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Centro Histórico */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-ancient-gate-line text-gold-400"></i>
-                  Centro Histórico (45-60 minutes to stadium)
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  The historic heart surrounds the Zócalo main square with colonial architecture, museums, and cultural landmarks. Convenient for sightseeing but farther from the stadium. Vibrant during day, quieter at night.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Mid-range</h4>
-                    <p className="text-slate-300 text-sm">Gran Hotel Ciudad de México (stunning lobby), Downtown Mexico</p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-blue-400 font-semibold mb-2">Luxury</h4>
-                    <p className="text-slate-300 text-sm">Downtown Mexico, Hotel Histórico Central</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Coyoacán */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-palette-line text-gold-400"></i>
-                  Coyoacán (15-25 minutes to stadium)
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  The bohemian neighborhood surrounding the Frida Kahlo Museum offers colonial charm, cobblestone streets, and local culture. Closest area to Estadio Azteca with character, though accommodation options are limited and you're farther from central nightlife.
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-emerald-400 font-semibold mb-2">Budget</h4>
-                    <p className="text-slate-300 text-sm">Casa Ayvar, Hostal Cuija Coyoacán, La Casita de Coyoacán</p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Mid-range</h4>
-                    <p className="text-slate-300 text-sm">Hotels near Viveros de Coyoacán</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Strategy Box */}
-            <div className="mt-8 p-6 bg-gradient-to-r from-blue-500/10 to-emerald-500/10 border border-blue-500/20 rounded-xl">
-              <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                <i className="ri-lightbulb-line text-blue-400"></i>
-                Accommodation Strategy
-              </h3>
-              <p className="text-slate-300">
-                Most visitors should stay in Roma Norte/Condesa for the ideal blend of city experience and reasonable stadium access. Use Metro on matchdays, Uber for nightlife. Early World Cup accommodation booking is critical—prices surge 200-400% closer to tournament dates.
-              </p>
-            </div>
-          </div>
-
-          {/* Matchday Tips */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-football-line text-emerald-400 text-4xl"></i>
-              Matchday Tips & Insider Advice
-            </h2>
-            
-            <div className="space-y-8">
-              {/* Arrive Early */}
-              <div className="p-6 bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-time-line text-emerald-400"></i>
-                  Arrive Early
-                </h3>
-                <p className="text-slate-300 leading-relaxed">
-                  Security lines and crowd management at 80,000+ capacity events require patience. Gates open 3-4 hours before kickoff—arriving 90 minutes pre-match minimum allows time to clear security, find seats, soak in atmosphere, and purchase food/drinks before kickoff. For the opening match, consider arriving 2+ hours early.
-                </p>
-              </div>
-
-              {/* Food & Drink */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-restaurant-line text-gold-400"></i>
-                  Food & Drink Inside
-                </h3>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-slate-300 leading-relaxed mb-4">
-                    Forget traditional concession stands—Azteca operates on a brilliant vendor system. Throughout the match, vendors navigate aisles and seats selling cervezas (beers, approximately 100-150 pesos/$5-7 USD), pizza (60 pesos/$3), tacos, candy, and snacks (20-100 pesos/$1-5). Money and drinks pass efficiently fan-to-fan. Many locals run informal tabs with vendors who count cups at match end. It's remarkably efficient, though be aware vendors moving through rows can briefly obstruct views.
-                  </p>
-                  <p className="text-slate-300 leading-relaxed">
-                    Outside the stadium perimeter, food stalls sell quesadillas, tacos, and traditional Mexican snacks at lower prices (20-50 pesos). Water bottles cost approximately 20-40 pesos inside.
-                  </p>
-                </div>
-              </div>
-
-              {/* What to Bring */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-suitcase-line text-gold-400"></i>
-                  What to Bring
-                </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Valid photo ID (passport for international visitors)</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Tickets (digital on phone or printed confirmation)</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Small amount of cash (vendors prefer cash)</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Weather-appropriate clothing (light jacket for altitude)</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Fully charged phone</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-checkbox-circle-line text-emerald-400"></i>
-                      <span>Small clear bag (recommended)</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Altitude Adjustment */}
-              <div className="p-6 bg-gradient-to-r from-red-500/10 to-orange-500/10 border border-red-500/20 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-mountain-line text-red-400"></i>
-                  Altitude Adjustment
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  At 7,200 feet, Mexico City's thin air affects everyone. If you're arriving from lower elevations:
-                </p>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-drop-line text-blue-400"></i>
-                      <span>Stay hydrated (drink water constantly)</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-forbid-line text-red-400"></i>
-                      <span>Avoid heavy alcohol consumption day before/day of match</span>
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-walk-line text-emerald-400"></i>
-                      <span>Take stairs slowly—the six-tier stadium means significant climbing</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-300">
-                      <i className="ri-calendar-check-line text-gold-400"></i>
-                      <span>Consider arriving 1-2 days early to acclimate</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Atmosphere */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-volume-up-line text-gold-400"></i>
-                  Atmosphere Expectations
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  Mexican football culture is passionate but family-friendly. The altitude amplifies sound—when chants begin behind goals, the roar physically washes over you. Expect constant chants (call-and-response between supporter groups), cell phone light displays (fans tape yellow/blue film over lights), loud, continuous noise (40,000+ in supporter sections behind goals), plenty of families, kids, and older fans, significant police presence (riot gear visible but crowds are civil), and colorful language in chants but generally playful atmosphere.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Things to Do Nearby */}
-          <div className="bg-gradient-to-br from-slate-800/50 to-slate-700/30 rounded-2xl p-8 border border-slate-600/30">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-compass-3-line text-emerald-400 text-4xl"></i>
-              Things to Do Nearby
-            </h2>
-            
-            <div className="space-y-8">
-              {/* Pre-Match Atmosphere */}
-              <div className="p-6 bg-gradient-to-r from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-team-line text-emerald-400"></i>
-                  Pre-Match Atmosphere & Fan Zones
-                </h3>
-                <div className="prose prose-invert max-w-none">
-                  <p className="text-slate-300 leading-relaxed mb-4">
-                    <strong>Parking lot tailgates</strong> (3-4 hours before kickoff) are legendary. Local supporters and tour groups gather for tacos, beer, music, and pre-match celebrations. If you're connecting with tour operators like Homefans, they arrange tailgate access with other fans.
-                  </p>
-                  <p className="text-slate-300 leading-relaxed mb-4">
-                    <strong>Street vendors</strong> surround the stadium selling team merchandise, scarves, hats (100-200 pesos), and food. Arrive early to browse and haggle gently.
-                  </p>
-                  <p className="text-slate-300 leading-relaxed">
-                    <strong>FIFA Fan Fest</strong> for 2026 will be hosted at Zócalo square in Mexico City's historic center, offering big-screen viewing, entertainment, and cultural experiences throughout the tournament.
-                  </p>
-                </div>
-              </div>
-
-              {/* Coyoacán */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-palette-line text-gold-400"></i>
-                  Coyoacán (15-20 minutes by Metro/taxi)
-                </h3>
-                <p className="text-slate-300 leading-relaxed mb-4">
-                  The charming bohemian neighborhood offers colonial streets, plazas, and cultural treasures:
-                </p>
+              <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-emerald-400 font-semibold mb-2">Frida Kahlo Museum (Casa Azul)</h4>
-                    <p className="text-slate-300 text-sm">
-                      The cobalt-blue house where Mexico's most famous artist was born, lived, and died. Original artworks, personal belongings, and Diego Rivera's collections fill the intimate space. <strong>Critical:</strong> Tickets must be purchased online weeks in advance—they sell out instantly. Entry: 230-270 pesos ($12-14 USD) depending on day. Open Tuesday-Sunday 10:00-18:00, closed Mondays. Address: Londres 247, Col. Del Carmen.
-                    </p>
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-building-2-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Official Name</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">Estadio Azteca (commercially known as Estadio Banorte; FIFA designation: Estadio Ciudad de México for World Cup 2026)</p>
+                    </div>
                   </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Jardín Centenario & Jardín Hidalgo</h4>
-                    <p className="text-slate-300 text-sm">
-                      Coyoacán's twin central plazas burst with cafes, restaurants, street performers, and weekend artisan markets. Perfect for post-match decompression with mezcal or churros.
-                    </p>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-map-pin-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Location</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">Coyoacán borough, southern Mexico City (Santa Úrsula Coapa neighborhood)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-group-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Capacity</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">87,523 (reduced from original 114,600 for safety and comfort)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-calendar-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Opened</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">May 29, 1966 (renovated 2016-2018 for 2026 World Cup)</p>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-home-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Home Teams</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">Club América, Mexico National Team</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-mountain-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Altitude</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">2,240 meters (7,349 feet) above sea level</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-grass-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">Playing Surface</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">Natural grass (Bermuda hybrid)</p>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-center gap-3 p-4 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <i className="ri-trophy-line text-gold-400 dark:text-gold-300 text-xl"></i>
+                    <div>
+                      <span className="text-slate-500 dark:text-slate-400 text-sm">World Cup Legacy</span>
+                      <p className="text-slate-900 dark:text-slate-50 font-semibold">Only stadium to host 3 World Cups (1970, 1986, 2026)</p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Nearby Dining */}
-              <div className="p-6 bg-slate-800/30 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-4 flex items-center gap-2">
-                  <i className="ri-restaurant-2-line text-gold-400"></i>
-                  Nearby Dining & Cantinas
+            {/* 2026 World Cup Matches */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                2026 World Cup Matches at Azteca
+              </h2>
+              
+              <div className="prose prose-invert prose-lg max-w-none">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                  Estadio Azteca will host <strong>five matches during the 2026 World Cup</strong>, including the tournament's <strong>opening ceremony and match on June 11, 2026</strong>—marking the stadium's record third opening match (after 1970 and 1986). The confirmed schedule includes three group stage matches, one Round of 16 match, and potentially a quarterfinal, depending on final FIFA allocations.
+                </p>
+                
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                  The opening match atmosphere promises to be explosive, with Mexico expected to play before a capacity crowd. Two of the group stage matches will feature El Tri, virtually guaranteeing sold-out attendance and the passionate, thunderous support Mexican fans are famous for. Expect kickoff times between 12:00 PM and 6:00 PM local time to accommodate global television audiences.
+                </p>
+                
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  This historic venue's third World Cup appearance follows its legendary status from hosting finals in 1970 and 1986, plus memorable matches from the 1968 Olympics and 1999 FIFA Confederations Cup. The 2026 tournament adds another chapter to Azteca's unmatched World Cup legacy.
+                </p>
+              </div>
+            </div>
+
+            {/* Getting to the Stadium */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-map-2-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Getting to the Stadium
+              </h2>
+              
+              {/* By Metro + Light Rail */}
+              <div className="mb-8 p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-train-line text-emerald-400 dark:text-emerald-300"></i>
+                  By Metro + Light Rail (Recommended)
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-emerald-400 font-semibold mb-2">Pre-match tacos</h4>
-                    <p className="text-slate-300 text-sm">
-                      Local tour operators and fans recommend authentic taco spots within walking distance. Street-level taquerías around the stadium serve al pastor, carnitas, and barbacoa (30-80 pesos per order).
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                    The most reliable transport option combines Mexico City's Metro with the Xochimilco Light Rail (Tren Ligero). Take Metro Line 2 (dark blue) to its southern terminus at <strong>Tasqueña station</strong>—easily accessible from the historic center (Zócalo station) or via transfers from other lines.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                    Purchase a separate ticket for the light rail (approximately 5-7 pesos). The journey from Tasqueña to <strong>Estadio Azteca station</strong> takes 15 minutes, with trains departing every 10 minutes. The light rail station sits directly in front of the stadium—you'll exit and see the massive structure immediately.
+                  </p>
+                  <div className="bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <p className="text-emerald-600 dark:text-emerald-300 font-semibold mb-2">Journey Time & Tips:</p>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      <strong>From city center:</strong> 40-60 minutes total, though allow 90-120 minutes on matchdays due to crowds at Tasqueña. The platform has been recently expanded with Barcelona-style configuration for 2026 to handle World Cup crowds.
                     </p>
-                  </div>
-                  <div className="bg-slate-800/50 p-4 rounded-lg">
-                    <h4 className="text-gold-400 font-semibold mb-2">Post-match cantinas</h4>
-                    <p className="text-slate-300 text-sm">
-                      Traditional bars in Coyoacán center (Cantina La Coyoacana, others along Jardín Centenario) offer cold Coronas, micheladas, and local atmosphere for celebrating or commiserating.
+                    <p className="text-slate-700 dark:text-slate-200 text-sm mt-2">
+                      <strong>Pro tip:</strong> Metro Line 2 crosses the historic center, making it convenient from popular tourist areas. Download the CDMX Metro app for real-time updates.
                     </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Final Verdict */}
-          <div className="bg-gradient-to-br from-emerald-500/10 to-gold-500/10 border border-emerald-500/20 rounded-2xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-8 flex items-center gap-3">
-              <i className="ri-trophy-line text-gold-400 text-4xl"></i>
-              Final Verdict & Key Takeaway
-            </h2>
-            
-            <div className="prose prose-invert prose-lg max-w-none mb-8">
-              <p className="text-slate-300 leading-relaxed mb-6">
-                Estadio Azteca transcends sport—it's a pilgrimage site where football's greatest moments crystallized into legend. Standing in the bowl where Pelé danced, where Maradona's genius and controversy collided, where 130,000+ voices have shaken volcanic rock, you're not just watching a match—you're stepping into history. The 2026 World Cup opening match will etch another immortal chapter as this cathedral welcomes the tournament for an unprecedented third time.
-              </p>
+              {/* By Bus */}
+              <div className="mb-8 p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-bus-line text-gold-400 dark:text-gold-300"></i>
+                  By Bus
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  RTP (Red de Transporte de Pasajeros) operates bus routes along Calzada de Tlalpan serving the stadium. Route 2A departs from Base CETRAM Taxqueña and reaches Tlalpan y Estadio Azteca stop in approximately 22 minutes, with buses every 5 minutes. Fare ranges from 4-20 pesos depending on distance. Metrobús Line 2 also serves the area via Universidad station, though requires a transfer to local transport.
+                </p>
+              </div>
+
+              {/* By Car */}
+              <div className="mb-8 p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-car-line text-gold-400 dark:text-gold-300"></i>
+                  By Car
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                    From downtown Mexico City, follow Avenida Tlalpan south (approximately 15 kilometers). Stay on the right side of the metro/light rail tracks—the stadium appears on your right. Alternatively, use the Anillo Periférico ring road, taking the "Estadio Azteca" exit.
+                  </p>
+                  <div className="bg-white dark:bg-slate-900/60 border border-red-300 dark:border-red-500/40 p-4 rounded-lg">
+                    <p className="text-red-600 dark:text-red-300 font-semibold mb-2">Parking & Traffic Warning:</p>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      On-site parking opens 4 hours before events. Published rates are MXN $120 for cars/motorcycles, MXN $360 for minibuses, MXN $480 for buses. However, expect severe traffic congestion on matchdays—departures from city center should allow 60-90 minutes minimum, potentially 2+ hours for World Cup matches.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* By Rideshare/Taxi */}
+              <div className="mb-8 p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-taxi-line text-gold-400 dark:text-gold-300"></i>
+                  By Rideshare/Taxi
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Uber, Didi, and traditional taxis serve the stadium, though expect surge pricing and longer wait times on matchdays. From Roma Norte/Condesa neighborhoods, typical fares range MXN $150-300 (USD $8-16) in normal traffic, potentially doubling during events. Request pickup from designated rideshare zones post-match to avoid walking long distances.
+                </p>
+              </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="space-y-6">
-                <div className="bg-emerald-500/10 border border-emerald-500/20 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <i className="ri-heart-line text-emerald-400"></i>
-                    Who will love it most:
+            {/* Seating Guide */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-layout-grid-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Seating Guide & Stadium Layout
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="space-y-6">
+                  {/* Premium Seating */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-vip-crown-line text-gold-400 dark:text-gold-300"></i>
+                      Premium Seating (Palcos & Suites)
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                      Located in the middle tiers on both sides, premium boxes offer climate control, exclusive dining, and the best sightlines. Palco Azteca (east side) and Palco Dorado (west side) provide luxury amenities with dedicated entrances and parking.
+                    </p>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Price range:</strong> $800-2,500 USD for World Cup matches
+                    </div>
+                  </div>
+                  
+                  {/* Mid-Tier Seating */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-eye-line text-emerald-400 dark:text-emerald-300"></i>
+                      Mid-Tier Seating (Preferente)
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                      The sweet spot for most fans—elevated enough for excellent views, close enough to feel the atmosphere. Sections 200-300 level offer covered seating with good amenities access. East and west sides provide optimal viewing angles.
+                    </p>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Price range:</strong> $200-600 USD for World Cup matches
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  {/* General Admission */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-group-line text-emerald-400 dark:text-emerald-300"></i>
+                      General Admission (General)
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                      Upper tiers and corners offer authentic Mexican football atmosphere at accessible prices. Sections 400-500 level can be steep but provide unique stadium perspectives. Expect passionate, vocal crowds in these areas.
+                    </p>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Price range:</strong> $75-250 USD for World Cup matches
+                    </div>
+                  </div>
+                  
+                  {/* Behind Goals */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-football-line text-emerald-400 dark:text-emerald-300"></i>
+                      Behind Goals (Cabeceras)
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
+                      The heart of Azteca's atmosphere. North and south ends house the most passionate supporters, with organized chants, flags, and non-stop energy. Perfect for experiencing authentic Mexican football culture, though views can be distant from midfield action.
+                    </p>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Price range:</strong> $50-200 USD for World Cup matches
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Stadium Tips */}
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                    <i className="ri-sun-line text-gold-400 dark:text-gold-300"></i>
+                    Sun & Weather
                   </h3>
-                  <p className="text-slate-300">
-                    Football romantics, history enthusiasts, and anyone seeking raw, passionate atmosphere at altitude. Families will find it accessible and welcoming despite the size. First-time World Cup attendees couldn't ask for a more legendary venue.
+                  <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
+                    East side gets afternoon sun, west side offers shade during day matches. Mexico City's high altitude means intense UV exposure—bring sunscreen and hat. Afternoon thunderstorms possible June-September.
                   </p>
                 </div>
                 
-                <div className="bg-gold-500/10 border border-gold-500/20 p-6 rounded-xl">
-                  <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                    <i className="ri-star-line text-gold-400"></i>
-                    Don't miss:
+                <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                    <i className="ri-volume-up-line text-gold-400 dark:text-gold-300"></i>
+                    Atmosphere Zones
                   </h3>
-                  <p className="text-slate-300">
-                    Arriving early to absorb the pre-match energy building in waves. The moment the Mexican national anthem echoes through 80,000+ voices at altitude, with the opening match spotlight focused on this storied ground, will be unforgettable.
+                  <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
+                    Sections behind goals (north/south) offer the most vocal support. East side (Palco Azteca) tends to be more family-friendly. West side gets rowdier during Club América matches.
+                  </p>
+                </div>
+                
+                <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                    <i className="ri-wheelchair-line text-gold-400 dark:text-gold-300"></i>
+                    Accessibility
+                  </h3>
+                  <p className="text-slate-700 dark:text-slate-200 text-sm leading-relaxed">
+                    Wheelchair-accessible seating available in multiple sections with dedicated parking and entrances. Elevators serve all levels. Contact stadium services in advance for specific accommodations.
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Food, Drinks & Amenities */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-restaurant-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Food, Drinks & Stadium Amenities
+              </h2>
               
-              <div className="bg-gradient-to-r from-blue-500/10 to-emerald-500/10 border border-blue-500/20 p-6 rounded-xl">
-                <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                  <i className="ri-lightbulb-line text-blue-400"></i>
-                  Final advice:
+              <div className="grid md:grid-cols-2 gap-8 mb-8">
+                <div className="space-y-6">
+                  {/* Food Options */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-restaurant-2-line text-emerald-400 dark:text-emerald-300"></i>
+                      Food & Dining
+                    </h3>
+                    <div className="space-y-3">
+                      <div className="flex items-start gap-3">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300 mt-1"></i>
+                        <div>
+                          <p className="text-slate-900 dark:text-slate-50 font-semibold">Traditional Mexican</p>
+                          <p className="text-slate-700 dark:text-slate-200 text-sm">Tacos, quesadillas, tortas, elote (street corn), and regional specialties throughout concourses</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300 mt-1"></i>
+                        <div>
+                          <p className="text-slate-900 dark:text-slate-50 font-semibold">Premium Dining</p>
+                          <p className="text-slate-700 dark:text-slate-200 text-sm">Full-service restaurants in VIP areas, including Palco Azteca Restaurant with panoramic views</p>
+                        </div>
+                      </div>
+                      <div className="flex items-start gap-3">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300 mt-1"></i>
+                        <div>
+                          <p className="text-slate-900 dark:text-slate-50 font-semibold">International Options</p>
+                          <p className="text-slate-700 dark:text-slate-200 text-sm">Pizza, burgers, hot dogs, and Asian fusion available in main concourses</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Beverages */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-cup-line text-gold-400 dark:text-gold-300"></i>
+                      Beverages
+                    </h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-beer-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Local beers: Corona, Dos Equis, Tecate, Modelo</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-glass-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Soft drinks, fresh juices, agua frescas</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-drop-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Bottled water (essential at altitude)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  {/* Stadium Amenities */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-store-line text-emerald-400 dark:text-emerald-300"></i>
+                      Stadium Amenities
+                    </h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-shirt-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span>Official merchandise stores (multiple locations)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-bank-card-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span>ATMs and currency exchange</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-first-aid-kit-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span>Medical stations and first aid</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-wifi-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span>Free WiFi throughout stadium</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* What to Bring */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-suitcase-line text-gold-400 dark:text-gold-300"></i>
+                      What to Bring
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Valid photo ID (passport for international visitors)</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Tickets (digital on phone or printed confirmation)</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Small amount of cash (vendors prefer cash)</span>
+                        </div>
+                      </div>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Sunscreen and hat (high altitude UV)</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Light jacket (evenings can be cool)</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                          <span>Portable phone charger</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Pricing Guide */}
+              <div className="bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-money-dollar-circle-line text-blue-400 dark:text-blue-300"></i>
+                  Typical Stadium Pricing (World Cup 2026)
                 </h3>
-                <p className="text-slate-300 mb-4">
-                  Book accommodation in Roma Norte or Condesa 4-6 months ahead—these neighborhoods offer the perfect blend of Mexico City's cultural heartbeat and reasonable stadium access. Secure your World Cup tickets early through official FIFA channels or verified hospitality packages. Master the Metro Line 2 to Tasqueña/Tren Ligero route. Embrace the altitude with hydration.
+                <div className="grid md:grid-cols-4 gap-4 text-sm">
+                  <div className="text-center">
+                    <p className="text-slate-600 dark:text-slate-300">Beer</p>
+                    <p className="text-slate-900 dark:text-slate-50 font-semibold">$8-12 USD</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-slate-600 dark:text-slate-300">Tacos (3)</p>
+                    <p className="text-slate-900 dark:text-slate-50 font-semibold">$6-10 USD</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-slate-600 dark:text-slate-300">Soft Drink</p>
+                    <p className="text-slate-900 dark:text-slate-50 font-semibold">$4-6 USD</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-slate-600 dark:text-slate-300">Jersey</p>
+                    <p className="text-slate-900 dark:text-slate-50 font-semibold">$80-120 USD</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Pre & Post-Match Experience */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-time-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Pre & Post-Match Experience
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  {/* Pre-Match */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-play-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                      Pre-Match (Arrive 2-3 Hours Early)
+                    </h3>
+                    <div className="space-y-3">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                        The area around Azteca transforms into a massive street party 3-4 hours before kickoff. Vendors sell everything from team scarves to traditional Mexican food, while mariachi bands and drum groups create an electric atmosphere.
+                      </p>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-music-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Live mariachi performances near main entrances</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-restaurant-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Street food vendors throughout the plaza</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-camera-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Photo opportunities with stadium backdrop</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Stadium Museum */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-museum-line text-gold-400 dark:text-gold-300"></i>
+                      Estadio Azteca Museum
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-3">
+                      Open on non-match days, the museum showcases World Cup history, including Pelé's 1,000th goal ball and Diego Maradona memorabilia. Stadium tours available with field access and locker room visits.
+                    </p>
+                    <div className="text-sm text-slate-600 dark:text-slate-300">
+                      <strong>Hours:</strong> Tuesday-Sunday 10 AM - 5 PM<br/>
+                      <strong>Price:</strong> $15-25 USD (tours $30-45 USD)
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="space-y-6">
+                  {/* Post-Match */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-stop-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                      Post-Match (Allow Extra Time)
+                    </h3>
+                    <div className="space-y-3">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                        Expect 30-60 minutes to exit the stadium area due to crowd flow. The light rail and metro stations can become extremely congested, so consider waiting 20-30 minutes before heading to transport.
+                      </p>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-time-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Stay hydrated while waiting in exit queues</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-group-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Stick with your group in crowded areas</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                          <i className="ri-phone-line text-gold-400 dark:text-gold-300"></i>
+                          <span>Download offline maps in case of poor signal</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Nearby Attractions */}
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                      <i className="ri-map-pin-line text-gold-400 dark:text-gold-300"></i>
+                      Nearby Attractions
+                    </h3>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-building-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Xochimilco floating gardens (15 minutes)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-ancient-gate-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Coyoacán historic center (20 minutes)</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
+                        <i className="ri-shopping-bag-line text-gold-400 dark:text-gold-300"></i>
+                        <span>Plaza Cuicuilco shopping center (10 minutes)</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Final Verdict */}
+            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+                <i className="ri-trophy-line text-gold-400 dark:text-gold-300 text-4xl"></i>
+                Final Verdict & Key Takeaway
+              </h2>
+              
+              <div className="prose prose-lg max-w-none mb-8">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                  Estadio Azteca transcends sport—it's a pilgrimage site where football's greatest moments crystallized into legend. Standing in the bowl where Pelé danced, where Maradona's genius and controversy collided, where 130,000+ voices have shaken volcanic rock, you're not just watching a match—you're participating in football's most sacred ritual.
                 </p>
-                <p className="text-slate-300 italic">
-                  And when those first chants erupt from behind the goals, let the sound wash over you—you're experiencing football at its most primal, passionate peak.
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="space-y-6">
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                      <i className="ri-heart-line text-emerald-400 dark:text-emerald-300"></i>
+                      Who will love it most:
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Football romantics, history enthusiasts, and anyone seeking raw, passionate atmosphere at altitude. Families will find it accessible and welcoming despite the size. First-time World Cup attendees couldn't ask for a more legendary venue.
+                    </p>
+                  </div>
+                  
+                  <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                      <i className="ri-star-line text-gold-400 dark:text-gold-300"></i>
+                      Don't miss:
+                    </h3>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Arriving early to absorb the pre-match energy building in waves. The moment the Mexican national anthem echoes through 80,000+ voices at altitude, with the opening match spotlight focused on this storied ground, will be unforgettable.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="p-6 bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 rounded-xl">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                    <i className="ri-lightbulb-line text-blue-400 dark:text-blue-300"></i>
+                    Final advice:
+                  </h3>
+                  <p className="text-slate-700 dark:text-slate-200 mb-4">
+                    Book accommodation in Roma Norte or Condesa 4-6 months ahead—these neighborhoods offer the perfect blend of Mexico City's cultural heartbeat and reasonable stadium access. Secure your World Cup tickets early through official FIFA channels or verified hospitality packages. Master the Metro + Light Rail combination for stress-free transport.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 italic">
+                    And when those first chants erupt from behind the goals, let the sound wash over you—you're experiencing football at its most primal, passionate peak.
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-400 to-gold-400 bg-clip-text mb-4">
+                  Viva Azteca. Viva México. Viva el Mundial.
                 </p>
               </div>
             </div>
 
-            <div className="text-center">
-              <p className="text-2xl font-bold text-transparent bg-gradient-to-r from-emerald-400 to-gold-400 bg-clip-text mb-4">
-                Viva Azteca. Viva México. Viva el Mundial.
-              </p>
+            {/* Got It Button */}
+            <div className="flex justify-end mt-8">
+              <button
+                onClick={handleGotItClick}
+                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
+              >
+                <i className="ri-check-line mr-2"></i>
+                Got It
+              </button>
             </div>
-          </div>
-
-          {/* Got It Button */}
-          <div className="flex justify-end mt-8">
-            <button
-              onClick={handleGotItClick}
-              className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-            >
-              <i className="ri-check-line mr-2"></i>
-              Got It
-            </button>
-          </div>
           </div>
         </div>
       )}
