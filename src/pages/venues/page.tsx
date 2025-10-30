@@ -27,8 +27,10 @@ export default function VenuesPage() {
       9: 'lumen-field',
       10: 'levis-stadium',
       11: 'lincoln-financial-field',
+      13: 'hard-rock-stadium',
       12: 'gillette-stadium',
-      14: 'bmo-field'
+      14: 'bmo-field',
+      16: 'estadio-akron'
     };
     return slugMap[venue.id];
   };
