@@ -15,6 +15,7 @@ import { LincolnFinancialFieldGuide } from '../../../components/feature/LincolnF
 import { BMOFieldGuide } from '../../../components/feature/BMOFieldGuide';
 import { HardRockStadiumGuide } from '../../../components/feature/HardRockStadiumGuide';
 import { EstadioAkronGuide } from '../../../components/feature/EstadioAkronGuide';
+import { BCPlaceStadiumGuide } from '../../../components/feature/BCPlaceStadiumGuide';
 
 // Stadium data mapping
 const stadiumData = {
@@ -166,6 +167,17 @@ const stadiumData = {
     capacity: 45736,
     matches: 6,
     component: BMOFieldGuide
+  }
+  ,
+  'bc-place-stadium': {
+    id: 15,
+    name: 'BC Place Stadium',
+    city: 'Vancouver',
+    country: 'Canada',
+    flag: '🇨🇦',
+    capacity: 54000,
+    matches: 7,
+    component: BCPlaceStadiumGuide
   }
   ,
   'estadio-akron': {
