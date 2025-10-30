@@ -2,7 +2,10 @@ import { useParams, Link } from 'react-router-dom';
 import { MetLifeStadiumGuide } from '../../../components/feature/MetLifeStadiumGuide';
 import { EstadioAztecaGuide } from '../../../components/feature/EstadioAztecaGuide';
 import { ArrowheadStadiumGuide } from '../../../components/feature/ArrowheadStadiumGuide';
+import { ATTStadiumGuide } from '../../../components/feature/ATTStadiumGuide';
+import { NRGStadiumGuide } from '../../../components/feature/NRGStadiumGuide';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { EstadioBBVAGuide } from '../../../components/feature/EstadioBBVAGuide';
 
 // Stadium data mapping
 const stadiumData = {
@@ -35,6 +38,37 @@ const stadiumData = {
     capacity: 76416,
     matches: 6,
     component: ArrowheadStadiumGuide
+  },
+  'att-stadium': {
+    id: 3,
+    name: 'AT&T Stadium',
+    city: 'Arlington (Dallas–Fort Worth)',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 80000,
+    matches: 9,
+    component: ATTStadiumGuide
+  },
+  'nrg-stadium': {
+    id: 6,
+    name: 'NRG Stadium',
+    city: 'Houston',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 72220,
+    matches: 4,
+    component: NRGStadiumGuide
+  }
+  ,
+  'estadio-bbva': {
+    id: 5,
+    name: 'Estadio BBVA',
+    city: 'Monterrey',
+    country: 'Mexico',
+    flag: '🇲🇽',
+    capacity: 53500,
+    matches: 4,
+    component: EstadioBBVAGuide
   }
 };
 
