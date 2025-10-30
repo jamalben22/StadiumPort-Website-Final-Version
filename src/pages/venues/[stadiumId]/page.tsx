@@ -12,6 +12,7 @@ import { LevisStadiumGuide } from '../../../components/feature/LevisStadiumGuide
 import { LumenFieldGuide } from '../../../components/feature/LumenFieldGuide';
 import { GilletteStadiumGuide } from '../../../components/feature/GilletteStadiumGuide';
 import { LincolnFinancialFieldGuide } from '../../../components/feature/LincolnFinancialFieldGuide';
+import { BMOFieldGuide } from '../../../components/feature/BMOFieldGuide';
 
 // Stadium data mapping
 const stadiumData = {
@@ -141,6 +142,17 @@ const stadiumData = {
     capacity: 67594,
     matches: 6,
     component: LincolnFinancialFieldGuide
+  }
+  ,
+  'bmo-field': {
+    id: 14,
+    name: 'BMO Field',
+    city: 'Toronto',
+    country: 'Canada',
+    flag: '🇨🇦',
+    capacity: 45736,
+    matches: 6,
+    component: BMOFieldGuide
   }
 };
 
