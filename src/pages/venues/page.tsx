@@ -30,6 +30,7 @@ export default function VenuesPage() {
       13: 'hard-rock-stadium',
       12: 'gillette-stadium',
       14: 'bmo-field',
+      15: 'bc-place-stadium',
       16: 'estadio-akron'
     };
     return slugMap[venue.id];
@@ -67,8 +68,7 @@ export default function VenuesPage() {
     {
       id: 1,
       name: 'Estadio Azteca',
-      city: 'Mexico City',
-      region: 'Mexico',
+      city: 'Mexico City, Mexico',
       country: 'Mexico',
       flag: '🇲🇽',
       capacity: 87523,
@@ -84,7 +84,7 @@ export default function VenuesPage() {
       nearestAirport: 'MEX',
       airportDistance: 25,
       parkingSpaces: 12000,
-      description: 'The legendary Estadio Azteca, home to two previous tournament finals, offers an unmatched atmosphere with its towering stands and historic significance.',
+      description: 'Football\'s most sacred ground. The only venue to host TWO World Cup finals returns for 2026. Stand where Pelé and Maradona became legends—discover transport tips, nearby hotels, and how to conquer the 7,200-foot altitude.',
       priceFrom: '$89',
       hotels: '127+ hotels',
       amenities: ['Retractable roof sections', 'VIP suites', 'Stadium museum', 'Multiple restaurants', 'Premium clubs'],
@@ -103,8 +103,7 @@ export default function VenuesPage() {
     {
       id: 2,
       name: 'MetLife Stadium',
-      city: 'New York',
-      region: 'East',
+      city: 'East Rutherford, NJ',
       country: 'USA',
       flag: '🇺🇸',
       capacity: 82500,
@@ -120,7 +119,7 @@ export default function VenuesPage() {
       nearestAirport: 'EWR',
       airportDistance: 8,
       parkingSpaces: 28000,
-      description: 'State-of-the-art venue in the heart of the NY metropolitan area with premium amenities and unparalleled access to the city.',
+      description: 'History happens here July 19, 2026. The largest stadium in the tournament hosts football\'s biggest match, 30 minutes from Manhattan\'s bright lights. Navigate NJ Transit, find hotels in NYC or New Jersey, and plan your final-worthy journey.',
       priceFrom: '$299',
       hotels: '89+ hotels',
       amenities: ['Climate control', 'LED ribbon boards', 'Premium clubs', 'Luxury suites', 'Multiple concourse levels'],
@@ -139,7 +138,7 @@ export default function VenuesPage() {
     {
       id: 3,
       name: 'AT&T Stadium',
-      city: 'Dallas',
+      city: 'Arlington, TX',
       region: 'South',
       country: 'USA',
       flag: '🇺🇸',
@@ -156,7 +155,7 @@ export default function VenuesPage() {
       nearestAirport: 'DFW',
       airportDistance: 12,
       parkingSpaces: 24000,
-      description: 'The spectacular "Jerry World" featuring the worlds largest HD video board and retractable roof for ultimate comfort.',
+      description: 'Texas does football different. This $1.3 billion architectural marvel hosts a 2026 Semifinal under a retractable roof with the world\'s largest HD screen suspended overhead. Between Dallas and Fort Worth, "Jerry World" delivers air-conditioned luxury, Texas hospitality, and matches that matter most.',
       priceFrom: '$199',
       hotels: '156+ hotels',
       amenities: ['Retractable roof', 'Massive video board', 'Art collection', 'Premium dining', 'Climate control'],
@@ -175,7 +174,7 @@ export default function VenuesPage() {
     {
       id: 4,
       name: 'Arrowhead Stadium',
-      city: 'Kansas City',
+      city: 'Kansas City, MO',
       region: 'Central',
       country: 'USA',
       flag: '🇺🇸',
@@ -192,7 +191,7 @@ export default function VenuesPage() {
       nearestAirport: 'MCI',
       airportDistance: 35,
       parkingSpaces: 22000,
-      description: 'Home to the loudest crowd in professional football, Arrowhead offers an electric atmosphere like no other venue.',
+      description: 'The world\'s loudest stadium meets the world\'s game. Guinness-certified 142.2 decibels make Arrowhead an open-air thunder dome where 76,000 Chiefs Kingdom faithful create an acoustic nightmare for opponents. Discover America\'s best tailgate scene, BBQ pit-stops, and why the Sea of Red intimidates even in summer.',
       priceFrom: '$159',
       hotels: '67+ hotels',
       amenities: ['Natural grass field', 'Premium clubs', 'Hall of Fame', 'Tailgating areas', 'Historic atmosphere'],
@@ -211,7 +210,7 @@ export default function VenuesPage() {
     {
       id: 5,
       name: 'Estadio BBVA',
-      city: 'Monterrey',
+      city: 'Monterrey, NL',
       region: 'Nuevo León',
       country: 'Mexico',
       flag: '🇲🇽',
@@ -228,7 +227,7 @@ export default function VenuesPage() {
       nearestAirport: 'MTY',
       airportDistance: 30,
       parkingSpaces: 13000,
-      description: 'Monterrey’s modern cathedral of football with intimate sightlines and iconic mountain views—home of C.F. Monterrey (Rayados).',
+      description: `Mexico's newest World Cup stage against its oldest mountain. Opened in 2015, Estadio BBVA's striking steel-and-glass bowl rises beneath the iconic Cerro de la Silla backdrop. Steep stands create intimate intensity for 53,500 fans. Explore Monterrey's industrial heartland, norteño food culture, and why Rayados' "Volcán" atmosphere rivals anywhere in Mexico.`,
       amenities: ['Cerro de la Silla views', 'Natural grass', 'Premium seating', 'Modern concourses', 'Vibrant atmosphere'],
       hotelDeals: 22,
       avgRating: 4.6,
@@ -246,7 +245,7 @@ export default function VenuesPage() {
     {
       id: 6,
       name: 'NRG Stadium',
-      city: 'Houston',
+      city: 'Houston, TX',
       region: 'South',
       country: 'USA',
       flag: '🇺🇸',
@@ -263,7 +262,7 @@ export default function VenuesPage() {
       nearestAirport: 'IAH',
       airportDistance: 45,
       parkingSpaces: 24000,
-      description: 'First NFL stadium with a retractable roof, offering climate-controlled comfort in the Texas heat with natural grass.',
+      description: `Space City sophistication meets Texas hospitality. NRG's engineering marvel features natural grass that rolls outside on tracks and a retractable roof that defeats Houston's brutal summer heat. The most diverse city in America guarantees every nation finds their tribe. Explore METRORail connections, downtown Houston's food scene, and why this two-time Super Bowl host delivers comfort without compromise.`,
       amenities: ['Retractable roof', 'Natural grass', 'Premium clubs', 'Rodeo facilities', 'Climate control'],
       hotelDeals: 18,
       avgRating: 4.3,
@@ -280,7 +279,7 @@ export default function VenuesPage() {
     {
       id: 7,
       name: 'Mercedes-Benz Stadium',
-      city: 'Atlanta',
+      city: 'Atlanta, GA',
       region: 'South',
       country: 'USA',
       flag: '🇺🇸',
@@ -290,7 +289,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Mercedes-Benz%20Stadium%20Atlanta%20aerial%20view%2C%20futuristic%20NFL%20stadium%20with%20distinctive%20halo%20design%2C%20modern%20architectural%20marvel%2C%20dramatic%20lighting%2C%20innovative%20sports%20venue%20design%20excellence&width=600&height=400&seq=mb1&orientation=landscape',
       opened: 2017,
       surface: 'FieldTurf',
-      description: 'Architectural marvel with the worlds largest halo video board and retractable roof, representing the pinnacle of stadium design.',
+      description: `A roof that opens like a camera lens. Food that costs $5. A city that moves culture. Mercedes-Benz Stadium (2017) revolutionized stadiums with its 8-petal retractable roof, 360° halo video board, LEED Platinum design, and game-changing concession prices. Super Bowl 53 hosted. Six World Cup matches via MARTA. Explore downtown Atlanta's civil rights history, hip-hop heartbeat, and why "The Benz" represents the future of football venues.`,
       amenities: ['Retractable roof', 'Halo video board', 'LEED Platinum', 'Premium dining', 'Sustainable design'],
       hotelDeals: 25,
       avgRating: 4.6,
@@ -307,7 +306,7 @@ export default function VenuesPage() {
     {
       id: 8,
       name: 'SoFi Stadium',
-      city: 'Los Angeles',
+      city: 'Inglewood, CA',
       region: 'West',
       country: 'USA',
       flag: '🇺🇸',
@@ -317,7 +316,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=SoFi%20Stadium%20Los%20Angeles%20aerial%20view%2C%20ultra-modern%20NFL%20stadium%20architecture%20with%20translucent%20canopy%2C%20futuristic%20design%20with%20Hollywood%20glamour%2C%20dramatic%20lighting%2C%20cutting-edge%20sports%20venue&width=600&height=400&seq=sofi1&orientation=landscape',
       opened: 2020,
       surface: 'Natural Grass (World Cup install)',
-      description: "One of the world's most technologically advanced sporting cathedrals with a translucent roof and record‑breaking Infinity Screen.",
+      description: "The $5.5 billion stadium that redefined possible. Built 40 feet underground beneath a hovering translucent canopy, SoFi's 120-yard Infinity Screen (double-sided, 2.2 million pounds of LED) creates an experience unlike anywhere on Earth. Super Bowl 56 hosted. 2028 Olympics confirmed. Eight World Cup matches in LA's entertainment capital—discover Metro connections, parking realities, the surrounding 298-acre complex, and why this architectural icon demands your attention.",
       amenities: ['Translucent canopy', 'Infinity Screen (dual-sided 4K)', 'Premium clubs', 'Indoor–outdoor design', 'AI security screening'],
       hotelDeals: 29,
       avgRating: 4.7,
@@ -334,7 +333,7 @@ export default function VenuesPage() {
     {
       id: 9,
       name: 'Lumen Field',
-      city: 'Seattle',
+      city: 'Seattle, WA',
       region: 'West',
       country: 'USA',
       flag: '🇺🇸',
@@ -344,7 +343,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Lumen%20Field%20Seattle%20aerial%20view%20with%20Puget%20Sound%20and%20mountains%2C%20NFL%20stadium%20with%20Pacific%20Northwest%20backdrop%2C%20dramatic%20natural%20scenery%2C%20urban%20stadium%20with%20water%20views&width=600&height=400&seq=lumen1&orientation=landscape',
       opened: 2002,
       surface: 'FieldTurf',
-      description: 'Pacific Northwest gem with stunning water and mountain views, known for its passionate fanbase and unique atmosphere.',
+      description: 'The loudest fans. The most beautiful views. The only stadium to cause earthquakes. Lumen Field\'s "12th Man" tradition created seismic readings in 2011 and 2013—noise so intense it registered on monitors. Engineered with a partial roof that traps sound, this waterfront fortress opens north to Puget Sound and Olympic Mountain vistas. Sounders MLS champions. Link Light Rail connected. Explore Seattle\'s Pioneer Square, Pike Place Market, and why this coffee-powered, tech-savvy city brings Pacific Northwest intensity.',
       amenities: ['Water views', 'Mountain backdrop', 'Premium seating', 'Loud crowd', 'Natural beauty'],
       hotelDeals: 19,
       avgRating: 4.4,
@@ -361,7 +360,7 @@ export default function VenuesPage() {
     {
       id: 10,
       name: "Levi's Stadium",
-      city: 'Santa Clara',
+      city: 'Santa Clara, CA',
       region: 'West',
       country: 'USA',
       flag: '🇺🇸',
@@ -371,7 +370,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Levis%20Stadium%20Santa%20Clara%20aerial%20view%2C%20modern%20NFL%20stadium%20architecture%20with%20Bay%20Area%20backdrop%2C%20California%20sports%20venue%20with%20tech%20innovation%2C%20dramatic%20lighting%2C%20Silicon%20Valley%20atmosphere&width=600&height=400&seq=levis1&orientation=landscape',
       opened: 2014,
       surface: 'Natural Grass',
-      description: 'Silicon Valley sophistication meets football tradition in this tech-forward venue with premium amenities and innovation.',
+      description: 'Silicon Valley built a stadium and loaded it with tech. World\'s first comprehensive stadium app (order food, watch replays, track stats from your seat). Fastest Wi-Fi in sports. LEED Gold design with solar panels. Super Bowl 50 and College Football Playoff Championship hosted. Six World Cup matches between San Francisco and San Jose—navigate Caltrain/VTA Light Rail, understand the west-facing sun challenge, and discover why the Bay Area\'s tech capital does football its own innovative way.',
       amenities: ['Tech integration', 'Natural grass', 'Premium clubs', 'Innovation features', 'Bay Area access'],
       hotelDeals: 21,
       avgRating: 4.2,
@@ -388,7 +387,7 @@ export default function VenuesPage() {
     {
       id: 11,
       name: 'Lincoln Financial Field',
-      city: 'Philadelphia',
+      city: 'Philadelphia, PA',
       region: 'East',
       country: 'USA',
       flag: '🇺🇸',
@@ -396,18 +395,11 @@ export default function VenuesPage() {
       capacityCategory: 'medium',
       matches: 5,
       image: 'https://readdy.ai/api/search-image?query=Lincoln%20Financial%20Field%20Philadelphia%20aerial%20view%2C%20NFL%20stadium%20with%20historic%20city%20backdrop%2C%20passionate%20Eagles%20fan%20atmosphere%2C%20dramatic%20lighting%2C%20East%20Coast%20sports%20venue%20excellence&width=600&height=400&seq=linc1&orientation=landscape',
-      opened: 2003,
-      surface: 'Natural Grass',
-      description: 'Historic Philadelphia venue known for passionate fans and authentic football atmosphere in the birthplace of America.',
-      amenities: ['Natural grass', 'Historic atmosphere', 'Premium clubs', 'Fan experience', 'City access'],
-      hotelDeals: 16,
-      avgRating: 4.1,
-      weatherAdvantage: 'Outdoor experience',
-      keyFeatures: ['Historic city', 'Passionate fans', 'Authentic atmosphere'],
+      description: 'They booed Santa. They won a Super Bowl. They\'ll make World Cup unforgettable. Lincoln Financial Field brings South Philly\'s legendary intensity to five matches—where Eagles fans\' notorious passion (they literally had a jail in the old stadium) meets 1776 American history. Super Bowl 52 champions. Direct SEPTA Broad Street Line access. Explore Independence Hall, Rocky Steps, authentic cheesesteak culture, and discover why this blue-collar city\'s no-nonsense attitude creates the most authentic football atmosphere in America.',
       address: '1 Lincoln Financial Field Way, Philadelphia, PA 19148, United States',
       homeTeams: ['Philadelphia Eagles'],
       notableEvents: ['NFC Championship games', 'Army-Navy Game', 'International soccer matches'],
-      seatingInfo: 'Traditional design with upper and lower bowls, premium seating, and general areas',
+      seatingInfo: 'Traditional design with upper and lower decks, premium seating, and general areas',
       transportation: 'SEPTA Broad Street Line to NRG Station, bus routes, parking available',
       foodAmenities: 'Philadelphia cheesesteaks, local favorites, craft beer, traditional stadium food',
       visitorTips: 'Experience passionate fan culture, try local food, explore historic Philadelphia'
@@ -532,7 +524,7 @@ export default function VenuesPage() {
     {
       id: 16,
       name: 'Estadio Akron',
-      city: 'Guadalajara',
+      city: 'Guadalajara, Jalisco',
       region: 'Mexico',
       country: 'Mexico',
       flag: '🇲🇽',
@@ -542,7 +534,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Estadio%20Akron%20Guadalajara%20aerial%20view%2C%20modern%20Mexican%20stadium%20architecture%2C%20cultural%20heritage%20venue%20with%20traditional%20atmosphere%2C%20dramatic%20lighting%2C%20mariachi%20country%20setting&width=600&height=400&seq=akron1&orientation=landscape',
       opened: 2010,
       surface: 'Natural Grass',
-      description: 'Modern Mexican venue in the heart of mariachi country, blending traditional culture with contemporary stadium design.',
+      description: `Mexico's newest World Cup stage against its oldest mountain. Opened in 2015, Estadio BBVA's striking steel-and-glass bowl rises beneath the iconic Cerro de la Silla backdrop. Steep stands create intimate intensity for 53,500 fans. Explore Monterrey's industrial heartland, norteño food culture, and why Rayados' "Volcán" atmosphere rivals anywhere in Mexico.`,
       amenities: ['Modern design', 'Natural grass', 'Cultural setting', 'Traditional atmosphere', 'Mexican hospitality'],
       hotelDeals: 9,
       avgRating: 4.1,
@@ -578,37 +570,39 @@ export default function VenuesPage() {
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-gold-400/20 backdrop-blur-sm border border-gold-400/30 rounded-full px-6 py-3 mb-6">
               <i className="ri-building-line text-gold-400"></i>
-              <span className="text-gold-300 font-medium">All 16 World Cup 2026 Stadiums</span>
+              <span className="text-gold-300 font-medium">2026 FIFA World Cup Stadiums: Complete Guide to All 16 Venues</span>
             </div>
             
             <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">
-              Every Stadium,
-              <br />
-              <span className="text-emerald-400">Every Detail</span>
-            </h1>
+                Expert Travel, Transport & Matchday Guides for Every Venue
+              </h1>
             
             <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              From iconic giants to intimate arenas—explore every stadium hosting the world's biggest tournament. Find out where to stay nearby, how to get there, and what makes each venue special.
-            </p>
+                Explore every stadium hosting the 2026 World Cup across the United States, Canada, and Mexico. Our detailed venue guides cover transport routes, accommodation near each stadium, public transit options, parking, best neighborhoods, and insider matchday tips—everything you need for an unforgettable tournament experience.
+              </p>
           </div>
 
           {/* Live Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Stadiums</div>
+              <div className="text-3xl font-bold text-gold-400 mb-2">3</div>
+              <div className="text-slate-300 font-inter text-sm">Countries</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">1.2M+</div>
+              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
+              <div className="text-slate-300 font-inter text-sm">Host Venues</div>
+            </div>
+            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+              <div className="text-3xl font-bold text-purple-400 mb-2">104</div>
+              <div className="text-slate-300 font-inter text-sm">Total Matches</div>
+            </div>
+            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
+              <div className="text-3xl font-bold text-white mb-2">1.2M+</div>
               <div className="text-slate-300 font-inter text-sm">Total Capacity</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">1,347</div>
+              <div className="text-3xl font-bold text-emerald-400 mb-2">1,347</div>
               <div className="text-slate-300 font-inter text-sm">Hotels Nearby</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">1.8km</div>
-              <div className="text-slate-300 font-inter text-sm">Average Distance</div>
             </div>
           </div>
         </div>
@@ -619,11 +613,11 @@ export default function VenuesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              World Cup 2026 Stadiums
+              Select Your Venue
             </h2>
             <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              Explore comprehensive guides for each stadium hosting the world's greatest football tournament.
-            </p>
+                Click any stadium for complete guides covering transport, where to stay, what to do nearby, and insider matchday advice from fans who've been there.
+              </p>
           </div>
 
           {/* 2-Column Grid Layout - Matching Cities Page */}
@@ -651,14 +645,49 @@ export default function VenuesPage() {
                     </div>
                     <div className="flex items-center text-white/95 text-sm font-medium">
                       <i className="ri-map-pin-line mr-2 text-lg"></i>
-                      <span>{venue.city}, {venue.region} • {venue.capacity.toLocaleString()}</span>
+                      <span>{venue.city} • {venue.capacity.toLocaleString()} capacity</span>
                     </div>
                   </div>
                   
+                  {/* Final Badge (MetLife only) */}
+                  {venue.id === 2 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-trophy-fill text-base"></i>
+                      <span className="tracking-wide">2026 WORLD CUP FINAL</span>
+                    </div>
+                  )}
+
+                  {/* Semifinal Badge (AT&T Stadium only) */}
+                  {venue.id === 3 && (
+                    <div
+                      className="absolute top-4 left-4 bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2"
+                      aria-label="Semifinal venue"
+                    >
+                      <i className="ri-medal-2-fill text-base"></i>
+                      <span className="tracking-wide">SEMIFINAL VENUE</span>
+                    </div>
+                  )}
+
                   {/* Matches Badge */}
                   <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
                     {venue.matches} Matches
                   </div>
+
+                  {/* Proximity Badge (SoFi Stadium only) */}
+                  {venue.id === 8 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-plane-line text-base"></i>
+                      <span className="tracking-wide">Near LAX</span>
+                    </div>
+                  )}
+
+                  {/* Proximity Badge (Levi's Stadium only) */}
+                  {venue.id === 10 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-route-line text-base"></i>
+                      <span className="tracking-wide">45 min from San Francisco</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Content */}
