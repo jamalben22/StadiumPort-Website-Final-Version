@@ -6,6 +6,12 @@ import { ATTStadiumGuide } from '../../../components/feature/ATTStadiumGuide';
 import { NRGStadiumGuide } from '../../../components/feature/NRGStadiumGuide';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
 import { EstadioBBVAGuide } from '../../../components/feature/EstadioBBVAGuide';
+import { SoFiStadiumGuide } from '../../../components/feature/SoFiStadiumGuide';
+import { MercedesBenzStadiumGuide } from '../../../components/feature/MercedesBenzStadiumGuide';
+import { LevisStadiumGuide } from '../../../components/feature/LevisStadiumGuide';
+import { LumenFieldGuide } from '../../../components/feature/LumenFieldGuide';
+import { GilletteStadiumGuide } from '../../../components/feature/GilletteStadiumGuide';
+import { LincolnFinancialFieldGuide } from '../../../components/feature/LincolnFinancialFieldGuide';
 
 // Stadium data mapping
 const stadiumData = {
@@ -69,6 +75,72 @@ const stadiumData = {
     capacity: 53500,
     matches: 4,
     component: EstadioBBVAGuide
+  }
+  ,
+  'sofi-stadium': {
+    id: 8,
+    name: 'SoFi Stadium',
+    city: 'Los Angeles',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 70240,
+    matches: 8,
+    component: SoFiStadiumGuide
+  }
+  ,
+  'mercedes-benz-stadium': {
+    id: 7,
+    name: 'Mercedes-Benz Stadium',
+    city: 'Atlanta',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 75000,
+    matches: 8,
+    component: MercedesBenzStadiumGuide
+  }
+  ,
+  'levis-stadium': {
+    id: 10,
+    name: "Levi's Stadium",
+    city: 'Santa Clara (San Francisco Bay Area)',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 68500,
+    matches: 6,
+    component: LevisStadiumGuide
+  }
+  ,
+  'lumen-field': {
+    id: 11,
+    name: 'Lumen Field',
+    city: 'Seattle',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 69000,
+    matches: 6,
+    component: LumenFieldGuide
+  }
+  ,
+  'gillette-stadium': {
+    id: 12,
+    name: 'Gillette Stadium',
+    city: 'Foxborough (Boston metro)',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 64628,
+    matches: 7,
+    component: GilletteStadiumGuide
+  }
+  ,
+  'lincoln-financial-field': {
+    id: 11,
+    name: 'Lincoln Financial Field',
+    city: 'Philadelphia',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 67594,
+    matches: 6,
+    component: LincolnFinancialFieldGuide
   }
 };
 
