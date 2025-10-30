@@ -13,6 +13,8 @@ import { LumenFieldGuide } from '../../../components/feature/LumenFieldGuide';
 import { GilletteStadiumGuide } from '../../../components/feature/GilletteStadiumGuide';
 import { LincolnFinancialFieldGuide } from '../../../components/feature/LincolnFinancialFieldGuide';
 import { BMOFieldGuide } from '../../../components/feature/BMOFieldGuide';
+import { HardRockStadiumGuide } from '../../../components/feature/HardRockStadiumGuide';
+import { EstadioAkronGuide } from '../../../components/feature/EstadioAkronGuide';
 
 // Stadium data mapping
 const stadiumData = {
@@ -133,6 +135,17 @@ const stadiumData = {
     component: GilletteStadiumGuide
   }
   ,
+  'hard-rock-stadium': {
+    id: 13,
+    name: 'Hard Rock Stadium',
+    city: 'Miami',
+    country: 'USA',
+    flag: '🇺🇸',
+    capacity: 67518,
+    matches: 7,
+    component: HardRockStadiumGuide
+  }
+  ,
   'lincoln-financial-field': {
     id: 11,
     name: 'Lincoln Financial Field',
@@ -153,6 +166,17 @@ const stadiumData = {
     capacity: 45736,
     matches: 6,
     component: BMOFieldGuide
+  }
+  ,
+  'estadio-akron': {
+    id: 16,
+    name: 'Estadio Akron',
+    city: 'Guadalajara',
+    country: 'Mexico',
+    flag: '🇲🇽',
+    capacity: 49850,
+    matches: 4,
+    component: EstadioAkronGuide
   }
 };
 
