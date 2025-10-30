@@ -27,7 +27,8 @@ export default function VenuesPage() {
       9: 'lumen-field',
       10: 'levis-stadium',
       11: 'lincoln-financial-field',
-      12: 'gillette-stadium'
+      12: 'gillette-stadium',
+      14: 'bmo-field'
     };
     return slugMap[venue.id];
   };
@@ -239,6 +240,7 @@ export default function VenuesPage() {
       foodAmenities: 'Northern Mexican cuisine, tacos, tortas, local craft beer, family-friendly options',
       visitorTips: 'Arrive early to enjoy mountain views, use public transit or rideshare, bring sun protection for day matches'
     },
+    
     {
       id: 6,
       name: 'NRG Stadium',
@@ -466,28 +468,37 @@ export default function VenuesPage() {
       id: 14,
       name: 'BMO Field',
       city: 'Toronto',
-      region: 'East',
+      region: 'Canada',
       country: 'Canada',
       flag: '🇨🇦',
-      capacity: 30000,
-      capacityCategory: 'compact',
+      capacity: 45736,
+      capacityCategory: 'large',
       matches: 6,
-      image: 'https://readdy.ai/api/search-image?query=BMO%20Field%20Toronto%20aerial%20view%2C%20soccer-specific%20stadium%20with%20CN%20Tower%20backdrop%2C%20intimate%20venue%20with%20Canadian%20atmosphere%2C%20dramatic%20lighting%2C%20lakefront%20city%20setting&width=600&height=400&seq=bmo1&orientation=landscape',
+      image: 'https://readdy.ai/api/search-image?query=BMO%20Field%20Toronto%20waterfront%20stadium%20aerial%20view%20at%20sunset%2C%20soccer-specific%20stadium%2C%20Exhibition%20Place%2C%20Lake%20Ontario%20backdrop%2C%20dramatic%20lighting%20Toronto%20skyline&width=600&height=400&seq=bmo2&orientation=landscape',
       opened: 2007,
-      surface: 'Natural Grass',
-      description: "Intimate soccer-specific venue with CN Tower views, offering authentic football atmosphere in Canada's largest city.",
-      amenities: ['Soccer-specific', 'CN Tower views', 'Intimate setting', 'Natural grass', 'City access'],
-      hotelDeals: 18,
-      avgRating: 4.4,
-      weatherAdvantage: 'Lakefront climate',
-      keyFeatures: ['Soccer-specific', 'CN Tower views', 'Intimate atmosphere'],
-      address: "170 Princes' Blvd, Toronto, ON M6K 3C3, Canada",
-      homeTeams: ['Toronto FC'],
-      notableEvents: ['MLS Cup matches', 'International soccer friendlies', 'CONCACAF matches'],
-      seatingInfo: 'Soccer-specific design with close-to-action seating and premium areas',
-      transportation: 'TTC streetcar to Exhibition Station, GO Transit, parking available',
-      foodAmenities: 'Canadian specialties, craft beer, international cuisine, local favorites',
-      visitorTips: 'Use public transportation, explore CN Tower and waterfront, dress for weather'
+      surface: 'Natural Grass (Kentucky Bluegrass)',
+      nearestMetro: 'Exhibition GO Station',
+      metroDistance: 0.5,
+      hotelCount: 120,
+      avgHotelPrice: 219,
+      nearestAirport: 'YYZ',
+      airportDistance: 22,
+      parkingSpaces: 8000,
+      description: "Canada's original soccer-specific stadium on Toronto's waterfront, temporarily expanding to 45,736 seats for World Cup 2026.",
+      priceFrom: '$219',
+      hotels: '120+ hotels',
+      amenities: ['Partial canopy roof', 'Rooftop hospitality patio', 'Heated pitch system', 'Corner LED boards'],
+      hotelDeals: 19,
+      avgRating: 4.6,
+      weatherAdvantage: 'Canopy-covered stands',
+      keyFeatures: ['Intimate design', 'Lakefront setting', 'Temporary expansion'],
+      address: '170 Princes’ Blvd, Toronto, ON M6K 3J1, Canada',
+      homeTeams: ['Toronto FC', 'Toronto Argonauts'],
+      notableEvents: ['2017 MLS Cup Final', '104th Grey Cup', 'NHL Centennial Classic'],
+      seatingInfo: 'Three-sided bowl with upper tier, partial roof coverage, temporary end stands for 2026',
+      transportation: 'GO Transit to Exhibition Station, TTC streetcar routes, rideshare and taxi, limited on-site parking',
+      foodAmenities: 'Canadian classics, international concessions, craft beer, premium hospitality areas',
+      visitorTips: 'Arrive early, use public transit, dress for waterfront weather, allow extra time on matchdays'
     },
     {
       id: 15,
@@ -656,50 +667,7 @@ export default function VenuesPage() {
                     {venue.description}
                   </p>
 
-                  {/* Price Range Section - Only show for venues after the first 4 */}
-                  {index >= 4 && venue.priceFrom && venue.hotels && (
-                    <>
-                      <div className="mb-6">
-                        <h4 className="font-bold text-navy-900 dark:text-white text-sm mb-4 uppercase tracking-wide">Hotel Price Ranges</h4>
-                        <div className="grid grid-cols-3 gap-3">
-                          <div className="text-center p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-xl border border-emerald-200 dark:border-emerald-700">
-                            <div className="text-lg font-bold text-emerald-700 dark:text-emerald-400">{venue.priceFrom}</div>
-                            <div className="text-xs text-emerald-600 dark:text-emerald-500 font-semibold">Budget</div>
-                          </div>
-                          <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-700">
-                            <div className="text-lg font-bold text-blue-700 dark:text-blue-400">
-                              ${Math.round(parseInt(venue.priceFrom.replace('$', '')) * 1.8)}
-                            </div>
-                            <div className="text-xs text-blue-600 dark:text-blue-500 font-semibold">Mid-Tier</div>
-                          </div>
-                          <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-700">
-                            <div className="text-lg font-bold text-purple-700 dark:text-purple-400">
-                              ${Math.round(parseInt(venue.priceFrom.replace('$', '')) * 3.2)}
-                            </div>
-                            <div className="text-xs text-purple-600 dark:text-purple-500 font-semibold">Luxury</div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Hotels Available */}
-                      <div className="mb-7">
-                        <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700">
-                          <div className="flex items-center space-x-3">
-                            <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                              <i className="ri-hotel-line text-white text-lg"></i>
-                            </div>
-                            <div>
-                              <div className="font-bold text-navy-900 dark:text-white">{venue.hotels}</div>
-                              <div className="text-sm text-slate-500 dark:text-slate-400">Hotels Available</div>
-                            </div>
-                          </div>
-                          <div className="text-blue-500">
-                            <i className="ri-arrow-right-line text-xl"></i>
-                          </div>
-                        </div>
-                      </div>
-                    </>
-                  )}
+                  {/* Removed hotel price ranges and availability sections for consistency */}
 
                   {/* Action Button */}
                   <Button 
