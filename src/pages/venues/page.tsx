@@ -227,7 +227,7 @@ export default function VenuesPage() {
       nearestAirport: 'MTY',
       airportDistance: 30,
       parkingSpaces: 13000,
-      description: `Mexico's newest World Cup stage against its oldest mountain. Opened in 2015, Estadio BBVA's striking steel-and-glass bowl rises beneath the iconic Cerro de la Silla backdrop. Steep stands create intimate intensity for 53,500 fans. Explore Monterrey's industrial heartland, norteño food culture, and why Rayados' "Volcán" atmosphere rivals anywhere in Mexico.`,
+      description: "Where Mexico's soul lives. Estadio Akron (2010)—home to Chivas, the only club fielding exclusively Mexican players—brings four World Cup matches to Guadalajara, birthplace of mariachi and tequila. This intimate 49,850-seat bowl amplifies \"El Rebaño Sagrado\" (The Sacred Herd) passion beneath Sierra Madre mountain backdrops. Opened as Estadio Omnilife, rebranded Akron, always pure Tapatío pride. Explore Mexico's second-largest city, historic centro, nearby Tequila town distilleries, and why Jalisco's cultural traditions and football devotion run deeper than anywhere else in Mexico.",
       amenities: ['Cerro de la Silla views', 'Natural grass', 'Premium seating', 'Modern concourses', 'Vibrant atmosphere'],
       hotelDeals: 22,
       avgRating: 4.6,
@@ -407,7 +407,7 @@ export default function VenuesPage() {
     {
       id: 12,
       name: 'Gillette Stadium',
-      city: 'Boston',
+      city: 'Foxborough, MA',
       region: 'East',
       country: 'USA',
       flag: '🇺🇸',
@@ -415,14 +415,7 @@ export default function VenuesPage() {
       capacityCategory: 'medium',
       matches: 5,
       image: 'https://readdy.ai/api/search-image?query=Gillette%20Stadium%20Boston%20aerial%20view%2C%20NFL%20stadium%20with%20New%20England%20architecture%2C%20Patriots%20venue%20with%20traditional%20design%2C%20dramatic%20lighting%2C%20historic%20regional%20atmosphere&width=600&height=400&seq=gillette1&orientation=landscape',
-      opened: 2002,
-      surface: 'FieldTurf',
-      description: 'New England tradition meets modern amenities in this venue known for championship atmosphere and regional pride.',
-      amenities: ['Championship history', 'Premium seating', 'Traditional design', 'Regional character', 'Fan loyalty'],
-      hotelDeals: 12,
-      avgRating: 4.3,
-      weatherAdvantage: 'New England weather',
-      keyFeatures: ['Championship venue', 'New England tradition', 'Historic region'],
+      description: 'The house that Brady built. Six Super Bowl championships in 20 years transformed Gillette Stadium into the NFL\'s dynasty headquarters—where "Do Your Job" became New England\'s mantra. A lighthouse guards the entrance. Patriot Place wraps the venue. Five World Cup matches in Foxborough, 30 miles south of Boston via MBTA Commuter Rail (limited service) or car. Explore Revolutionary War history, New England Revolution (MLS) culture, Patriots Hall of Fame, and why six states consider this hallowed ground.',
       address: '1 Patriot Pl, Foxborough, MA 02035, United States',
       homeTeams: ['New England Patriots'],
       notableEvents: ['Super Bowl victories', 'AFC Championship games', 'International soccer matches'],
@@ -434,7 +427,7 @@ export default function VenuesPage() {
     {
       id: 13,
       name: 'Hard Rock Stadium',
-      city: 'Miami',
+      city: 'Miami Gardens, FL',
       region: 'South',
       country: 'USA',
       flag: '🇺🇸',
@@ -444,7 +437,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Hard%20Rock%20Stadium%20Miami%20aerial%20view%2C%20NFL%20stadium%20with%20tropical%20Florida%20backdrop%2C%20modern%20venue%20with%20canopy%20design%2C%20dramatic%20lighting%2C%20South%20Beach%20atmosphere&width=600&height=400&seq=hardrock1&orientation=landscape',
       opened: 1987,
       surface: 'Natural Grass',
-      description: 'Tropical paradise venue with modern canopy design, offering South Beach glamour and year-round perfect weather.',
+      description: 'Where innovation beats the heat. Hard Rock\'s $550 million transformation (2016) created a revolutionary canopy that covers every fan while leaving the field exposed—you stay cool, players sweat. Six Super Bowls hosted. Formula 1 Miami Grand Prix circles the venue. Six World Cup matches in Miami Gardens, requiring car/rideshare from South Beach or downtown. Navigate Miami\'s Latin neighborhoods, Art Deco architecture, world-famous nightlife, and prepare for 90°F June heat with afternoon thunderstorms. This is subtropical football—glamorous, yes, but bring sunscreen.',
       amenities: ['Canopy design', 'Natural grass', 'Tropical setting', 'Modern renovation', 'Beach access'],
       hotelDeals: 24,
       avgRating: 4.2,
@@ -478,7 +471,7 @@ export default function VenuesPage() {
       nearestAirport: 'YYZ',
       airportDistance: 22,
       parkingSpaces: 8000,
-      description: "Canada's original soccer-specific stadium on Toronto's waterfront, temporarily expanding to 45,736 seats for World Cup 2026.",
+      description: "Canada's soccer story starts here. BMO Field—the nation's first purpose-built football stadium (2007)—hosts six World Cup matches including Canada's historic home fixtures after 36 years away from the tournament. Temporarily expanded from 28,500 to 45,736 seats along Toronto's Lake Ontario waterfront. Where Toronto FC won the 2017 MLS Cup treble. Where the \"Reds\" roar. Where 200+ ethnic communities guarantee every team finds supporters. TTC streetcar, GO Transit, CN Tower views, Liberty Village nearby. Explore the world's most multicultural city at its proudest moment.",
       priceFrom: '$219',
       hotels: '120+ hotels',
       amenities: ['Partial canopy roof', 'Rooftop hospitality patio', 'Heated pitch system', 'Corner LED boards'],
@@ -507,7 +500,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=BC%20Place%20Vancouver%20aerial%20view%2C%20domed%20stadium%20with%20mountains%20and%20ocean%20backdrop%2C%20Pacific%20Northwest%20venue%20with%20natural%20beauty%2C%20dramatic%20lighting%2C%20coastal%20city%20atmosphere&width=600&height=400&seq=bcplace1&orientation=landscape',
       opened: 1983,
       surface: 'FieldTurf',
-      description: 'Iconic domed venue with spectacular mountain and ocean views, representing Pacific Northwest beauty and Canadian hospitality.',
+      description: 'Where mountains meet the pitch. BC Place\'s retractable roof—the world\'s largest cable-supported system—opens in 20 minutes to reveal snow-capped peaks and Pacific skies. Hosted the 2015 FIFA Women\'s World Cup Final and 2010 Olympics ceremonies. Five matches in downtown Vancouver, steps from Stadium-Chinatown SkyTrain. Rebuilt in 2011 with cutting-edge technology. Explore Yaletown\'s waterfront, Gastown\'s cobblestones, and why this multicultural city between mountains and ocean delivers Canada\'s most spectacular World Cup setting.',
       amenities: ['Retractable roof', 'Mountain views', 'Ocean proximity', 'Dome design', 'Natural beauty'],
       hotelDeals: 15,
       avgRating: 4.3,
@@ -534,7 +527,7 @@ export default function VenuesPage() {
       image: 'https://readdy.ai/api/search-image?query=Estadio%20Akron%20Guadalajara%20aerial%20view%2C%20modern%20Mexican%20stadium%20architecture%2C%20cultural%20heritage%20venue%20with%20traditional%20atmosphere%2C%20dramatic%20lighting%2C%20mariachi%20country%20setting&width=600&height=400&seq=akron1&orientation=landscape',
       opened: 2010,
       surface: 'Natural Grass',
-      description: `Mexico's newest World Cup stage against its oldest mountain. Opened in 2015, Estadio BBVA's striking steel-and-glass bowl rises beneath the iconic Cerro de la Silla backdrop. Steep stands create intimate intensity for 53,500 fans. Explore Monterrey's industrial heartland, norteño food culture, and why Rayados' "Volcán" atmosphere rivals anywhere in Mexico.`,
+      description: "Where Mexico's soul lives. Estadio Akron (2010)—home to Chivas, the only club fielding exclusively Mexican players—brings four World Cup matches to Guadalajara, birthplace of mariachi and tequila. This intimate 49,850-seat bowl amplifies \"El Rebaño Sagrado\" (The Sacred Herd) passion beneath Sierra Madre mountain backdrops. Opened as Estadio Omnilife, rebranded Akron, always pure Tapatío pride. Explore Mexico's second-largest city, historic centro, nearby Tequila town distilleries, and why Jalisco's cultural traditions and football devotion run deeper than anywhere else in Mexico.",
       amenities: ['Modern design', 'Natural grass', 'Cultural setting', 'Traditional atmosphere', 'Mexican hospitality'],
       hotelDeals: 9,
       avgRating: 4.1,
@@ -623,7 +616,7 @@ export default function VenuesPage() {
           {/* 2-Column Grid Layout - Matching Cities Page */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {venues.map((venue, index) => (
-              <div key={venue.id} className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm">
+              <div key={venue.id} className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
                 
                 {/* Hero Image */}
                 <div className="relative h-56 overflow-hidden">
@@ -645,7 +638,7 @@ export default function VenuesPage() {
                     </div>
                     <div className="flex items-center text-white/95 text-sm font-medium">
                       <i className="ri-map-pin-line mr-2 text-lg"></i>
-                      <span>{venue.city} • {venue.capacity.toLocaleString()} capacity</span>
+                      <span>{venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city} • {venue.capacity.toLocaleString()} capacity</span>
                     </div>
                   </div>
                   
@@ -654,6 +647,14 @@ export default function VenuesPage() {
                     <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-trophy-fill text-base"></i>
                       <span className="tracking-wide">2026 WORLD CUP FINAL</span>
+                    </div>
+                  )}
+
+                  {/* Canada Home Matches Badge (BMO Field only) */}
+                  {venue.id === 14 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-red-800 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-flag-fill text-base"></i>
+                      <span className="tracking-wide">CANADA HOME MATCHES</span>
                     </div>
                   )}
 
@@ -688,10 +689,26 @@ export default function VenuesPage() {
                       <span className="tracking-wide">45 min from San Francisco</span>
                     </div>
                   )}
+
+                  {/* Proximity Badge (Gillette Stadium only) */}
+                  {venue.id === 12 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-car-line text-base"></i>
+                      <span className="tracking-wide">30 miles from Boston</span>
+                    </div>
+                  )}
+
+                  {/* Proximity Badge (Hard Rock Stadium only) */}
+                  {venue.id === 13 && (
+                    <div className="absolute top-4 left-4 bg-gradient-to-r from-teal-400 via-sky-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-car-line text-base"></i>
+                      <span className="tracking-wide">20 miles from Miami Beach</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Card Content */}
-                <div className="p-7">
+                <div className="p-7 flex flex-col flex-1">
                   
                   {/* Description */}
                   <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6 font-medium">
@@ -705,11 +722,11 @@ export default function VenuesPage() {
                     variant="primary" 
                     size="sm" 
                     fullWidth 
-                    className="whitespace-nowrap cursor-pointer font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
+                    className="mt-auto whitespace-nowrap cursor-pointer font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
                     onClick={() => handleReadFullGuide(venue)}
                   >
                     <i className="ri-book-open-line mr-3 text-lg"></i>
-                    Read Full Guide
+                    View Complete Guide
                     <i className="ri-arrow-right-line ml-3 text-lg group-hover:translate-x-1 transition-transform duration-300"></i>
                   </Button>
                 </div>

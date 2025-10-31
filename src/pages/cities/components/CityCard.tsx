@@ -17,7 +17,28 @@ interface CityCardProps {
   city: City;
 }
 
+// Function to convert city name to route slug
+const getCityRoute = (cityName: string) => {
+  switch (cityName) {
+    case 'New York City':
+      return '/travel-guides/new-york-city';
+    case 'Los Angeles':
+      return '/cities/los-angeles';
+    case 'Miami':
+      return '/cities/miami';
+    case 'Kansas City':
+      return '/cities/kansas-city';
+    case 'Houston':
+      return '/cities/houston';
+    case 'Dallas':
+      return '/cities/dallas';
+    default:
+      return '/cities';
+  }
+};
+
 export default function CityCard({ city }: CityCardProps) {
+
   return (
     <div className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm">
       
@@ -97,8 +118,8 @@ export default function CityCard({ city }: CityCardProps) {
 
         {/* Action Button */}
         <Link
-          to={`/cities/${city.id}`}
-          className="w-full inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 whitespace-nowrap cursor-pointer px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
+          to={getCityRoute(city.name)}
+          className="w-full inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 whitespace-nowrap cursor-pointer px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
         >
           <i className="ri-book-open-line mr-3 text-lg"></i>
           Explore {city.name}

@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
@@ -31,6 +32,7 @@ interface HostCity {
 export default function CitiesPage() {
   const [selectedCity, setSelectedCity] = useState<HostCity | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -71,6 +73,21 @@ export default function CitiesPage() {
     `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities`
   );
 
+  // Function to convert city name to route slug
+  const getCityRoute = (cityName: string): string => {
+    const routeMap: { [key: string]: string } = {
+      'New York City': '/travel-guides/new-york-city',
+      'Los Angeles': '/cities/los-angeles',
+      'Miami': '/cities/miami',
+      'Kansas City': '/cities/kansas-city',
+      'Houston': '/cities/houston',
+      'Dallas': '/cities/dallas',
+      // Add more cities as they become available
+    };
+    
+    return routeMap[cityName] || `/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`;
+  };
+
   const openCityModal = (city: HostCity) => {
     setSelectedCity(city);
     setIsModalOpen(true);
@@ -92,11 +109,76 @@ export default function CitiesPage() {
       description: 'The city that never sleeps welcomes the world with iconic skylines, world-class dining, and unmatched energy.',
       image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%2C%20iconic%20skyscrapers%2C%20urban%20landscape%2C%20modern%20metropolitan%20cityscape%2C%20vibrant%20city%20lights%2C%20architectural%20beauty&width=600&height=400&seq=nyc-skyline&orientation=landscape',
       fullContent: {
-        introduction: 'New York City, the ultimate urban destination, offers an unparalleled World Cup 2026 experience with its iconic venues, diverse neighborhoods, and world-class amenities.',
+        introduction: `The World's Biggest Game Comes to the World's Biggest Stage`,
         sections: [
           {
-            title: 'Coming Soon',
-            content: 'Detailed guide content will be available soon. Stay tuned for comprehensive information about New York City\'s World Cup 2026 experience.'
+            title: 'New York City: Your Ultimate 2026 FIFA World Cup Travel Guide',
+            content: `When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`
+          },
+          {
+            title: 'Why New York/New Jersey Won the World Cup Final',
+            content: `MetLife Stadium in East Rutherford, New Jersey, beat out Los Angeles and Dallas to host the ultimate match on July 19, 2026. The region will host eight total matches throughout the tournament, with projections of over $2 billion in economic impact and more than 1 million visitors expected.
+
+This isn't just about a stadium—it's about the entire New York experience. The region has five airports servicing 181 countries, more hotels under construction than exist in other candidate cities combined, and MetLife Stadium's proven track record of hosting two million guests annually. FIFA knew what every traveler knows: there's no place on Earth quite like New York City.`
+          },
+          {
+            title: 'The Stadium: MetLife Stadium (New York New Jersey Stadium)',
+            content: `The Venue That Broke Records
+
+MetLife Stadium opened in 2010 with a construction cost of $1.6 billion, making it the most expensive stadium in U.S. history at completion. With a capacity of 82,500 seats for World Cup matches (including 10,005 club seats and approximately 218 luxury suites), it's the largest NFL stadium and the biggest World Cup venue in the United States.
+
+During the tournament, FIFA will refer to the venue as "New York New Jersey Stadium" due to sponsorship policies. The stadium underwent significant renovations specifically for the World Cup. In January 2024, officials announced plans to remove 1,740 permanent seats to widen the field to meet FIFA regulations, replacing them with modular seating after the tournament.`
+          },
+          {
+            title: 'Match Schedule at MetLife Stadium',
+            content: `Eight matches will be played here, beginning June 13 and culminating with the Final on July 19, 2026. The schedule includes:
+
+- Group Stage Matches: June 13, 16, 22, 26, 29
+- Round of 32: July 3
+- Round of 16: July 8
+- The Final: July 19, 2026
+
+FIFA has confirmed the final will feature an elaborate halftime show modeled after the Super Bowl, with Times Square serving as a central hub for celebrations during the final weekend.`
+          },
+          {
+            title: 'What Makes This Stadium Special',
+            content: `MetLife Stadium has hosted six Super Bowls, major soccer friendlies, and concerts featuring Taylor Swift, Beyoncé, and the Rolling Stones. The stadium hosted nine matches during the 2025 FIFA Club World Cup, including the final, and previously hosted the Copa América Centenario final in 2016—proving it can handle the world's biggest football moments.
+
+The stadium sits just 10 miles from Midtown Manhattan, making it genuinely accessible. Located in East Rutherford, New Jersey, MetLife Stadium is situated 10 miles west of New York City, connected by direct public transit that runs specifically for major events.`
+          },
+          {
+            title: 'Getting There: Transportation Made Easy',
+            content: `From International Airports
+
+New York's three major airports make this one of the most accessible World Cup destinations globally:
+
+- John F. Kennedy International (JFK): The primary international gateway, about 26 miles from MetLife Stadium 
+- Newark Liberty International (EWR): The closest major airport, approximately 15-20 miles from the stadium 
+- LaGuardia (LGA): Mainly domestic flights, about 18 miles from the stadium 
+
+All three airports connect to Manhattan via various options, where you can then catch direct transit to MetLife Stadium.
+
+Direct Stadium Access: The Smart Way
+
+The Best Option: NJ Transit Train
+
+The fastest and most cost-effective route is taking an NJ Transit train from Penn Station New York (located at 32nd Street between 7th and 8th Avenues) to Secaucus Junction, then transferring to a shuttle train directly to Meadowlands Rail Station. For large events, NJ Transit offers special train service from Secaucus Junction directly to Meadowlands Rail Station, just steps away from MetLife Stadium. 
+
+The entire journey takes roughly 30 minutes from Midtown Manhattan, and trains run frequently on match days. NJ Transit operates the Meadowlands Rail Service for events with anticipated attendance above 50,000, delivering guests directly to the front door of MetLife Stadium. 
+
+Budget-Friendly Bus Option 
+
+The Coach USA 351 Meadowlands Express provides door-to-door round-trip transportation from the Port Authority Bus Terminal in New York City to MetLife Sports Complex. Bus service begins three hours prior to event start time, making it perfect for pre-match atmosphere-building. 
+
+Pro Traveler Tip: Book your NJ Transit tickets through their mobile app ahead of time. On match days, expect crowds but efficient service—New Yorkers know how to move people.`
+          },
+          {
+            title: 'Where to Stay: Neighborhood Guide for World Cup Visitors',
+            content: `The beauty of New York is choice. You can stay in the heart of Manhattan's buzz or opt for quieter Brooklyn brownstone neighborhoods—both offer excellent transit connections to MetLife Stadium. 
+
+Midtown Manhattan: Maximum Convenience 
+
+Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickoff. You're also in the center of everything NYC offers—Broadway, restaurants, Central Park, and more.`
           }
         ]
       }
@@ -503,7 +585,10 @@ export default function CitiesPage() {
                     size="sm" 
                     fullWidth 
                     className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openCityModal(city)}
+                    onClick={() => {
+                      // Navigate to the appropriate city guide page
+                      navigate(getCityRoute(city.name));
+                    }}
                   >
                     <i className="ri-eye-line mr-2"></i>
                     Explore {city.name}
@@ -556,7 +641,7 @@ export default function CitiesPage() {
                   {selectedCity.name}, {selectedCity.country}
                 </h2>
                 
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line mb-8">
                   {selectedCity.fullContent?.introduction}
                 </p>
                 
@@ -566,23 +651,11 @@ export default function CitiesPage() {
                       <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-3">
                         {section.title}
                       </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed whitespace-pre-line">
                         {section.content}
                       </p>
                     </div>
                   ))}
-                </div>
-                
-                <div className="mt-8 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                  <div className="flex items-start space-x-3">
-                    <i className="ri-information-line text-emerald-600 text-lg mt-0.5"></i>
-                    <div>
-                      <h4 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">Coming Soon</h4>
-                      <p className="text-emerald-700 dark:text-emerald-400 text-sm">
-                        Comprehensive city guides with detailed information about accommodations, transportation, attractions, and local tips will be available soon.
-                      </p>
-                    </div>
-                  </div>
                 </div>
                 
                 <div className="flex justify-end mt-8">
