@@ -71,8 +71,17 @@ export default defineConfig({
     sourcemap: true,
     outDir: 'dist',
     rollupOptions: {
-      external: ['url']
-    }
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          router: ['react-router-dom'],
+          ui: ['@stripe/react-stripe-js', 'recharts'],
+          supabase: ['@supabase/supabase-js'],
+          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   },
   resolve: {
     alias: {

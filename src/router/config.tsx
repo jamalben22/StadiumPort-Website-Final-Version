@@ -1,6 +1,6 @@
 
-import { RouteObject } from 'react-router-dom';
 import { lazy } from 'react';
+import type { RouteObject } from 'react-router-dom';
 
 // Lazy load components for better performance
 const HomePage = lazy(() => import('../pages/home/page'));
