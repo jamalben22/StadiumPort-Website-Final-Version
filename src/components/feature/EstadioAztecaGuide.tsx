@@ -15,7 +15,7 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
   };
 
   const handleGotItClick = () => {
-    navigate('/venues');
+    navigate('/world-cup-2026-stadiums');
   };
 
   return (

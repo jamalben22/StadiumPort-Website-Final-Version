@@ -62,11 +62,9 @@ export function Footer() {
             <i className="ri-mail-line text-white text-3xl"></i>
           </div>
           <h3 className="font-space font-bold text-3xl md:text-4xl mb-4 gradient-text">
-            Stay Ahead of the Game
+            Don't Miss Your Shot at 2026
           </h3>
-          <p className="font-inter text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-            Get exclusive World Cup 2026 deals, insider tips, and early access to the best travel opportunities.
-          </p>
+          <p className="font-inter text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Get stadium guides, city travel tips, safety alerts, hotel deals, and insider planning advice everything you need in one weekly email.</p>
           
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubscribe} data-readdy-form className="flex flex-col sm:flex-row gap-3">
@@ -77,7 +75,7 @@ export function Footer() {
                   name="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
+                  placeholder="Your email address"
                   className="input-premium pl-12"
                   required
                   disabled={isSubmitting}
@@ -96,11 +94,19 @@ export function Footer() {
                 ) : (
                   <>
                     <i className="ri-send-plane-line mr-2"></i>
-                    Subscribe
+                    Get Free Updates
                   </>
                 )}
               </button>
             </form>
+            
+            <div className="flex justify-center items-center space-x-4 text-slate-400 text-sm mt-4">
+              <span>✓ Free stadium guide included</span>
+              <span>•</span>
+              <span>✓ Unsubscribe anytime</span>
+              <span>•</span>
+              <span>✓ No spam</span>
+            </div>
             
             {/* Status Messages */}
             {submitStatus === 'success' && (
@@ -170,7 +176,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               {[
                 { to: '/cities', label: 'All Host Cities', icon: 'ri-map-pin-line' },
-                { to: '/venues', label: 'All Stadiums', icon: 'ri-building-line' },
+                { to: '/world-cup-2026-stadiums', label: 'All Stadiums', icon: 'ri-building-line' },
                 { to: '/travel-routes', label: 'Multi-City Routes', icon: 'ri-route-line' },
                 { to: '/city-comparisons', label: 'City Comparisons', icon: 'ri-scales-line' }
               ].map((item, index) => (

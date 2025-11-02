@@ -15,7 +15,7 @@ export const NRGStadiumGuide = ({ onClose }: NRGStadiumGuideProps) => {
   };
 
   const handleGotItClick = () => {
-    navigate('/venues');
+    navigate('/world-cup-2026-stadiums');
   };
 
   return (

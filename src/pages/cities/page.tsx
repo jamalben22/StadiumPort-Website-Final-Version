@@ -82,6 +82,8 @@ export default function CitiesPage() {
       'Kansas City': '/cities/kansas-city',
       'Houston': '/cities/houston',
       'Dallas': '/cities/dallas',
+      'Atlanta': '/cities/atlanta',
+      'Seattle': '/cities/seattle',
       // Add more cities as they become available
     };
     

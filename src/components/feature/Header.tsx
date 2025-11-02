@@ -37,12 +37,12 @@ export function Header() {
     { type: 'city', title: 'Monterrey', path: '/cities/monterrey', description: 'Sultan of the North - Estadio BBVA' },
     
     // Stadiums
-    { type: 'stadium', title: 'MetLife Stadium', path: '/venues', description: 'New York - Home of Giants & Jets' },
-    { type: 'stadium', title: 'SoFi Stadium', path: '/venues', description: 'Los Angeles - Ultra-modern venue' },
-    { type: 'stadium', title: 'Hard Rock Stadium', path: '/venues', description: 'Miami - Iconic football venue' },
-    { type: 'stadium', title: 'Mercedes-Benz Stadium', path: '/venues', description: 'Atlanta - Architectural marvel' },
-    { type: 'stadium', title: 'AT&T Stadium', path: '/venues', description: 'Dallas - The Star' },
-    { type: 'stadium', title: 'Arrowhead Stadium', path: '/venues', description: 'Kansas City - Loudest stadium' },
+    { type: 'stadium', title: 'MetLife Stadium', path: '/world-cup-2026-stadiums', description: 'New York - Home of Giants & Jets' },
+    { type: 'stadium', title: 'SoFi Stadium', path: '/world-cup-2026-stadiums', description: 'Los Angeles - Ultra-modern venue' },
+    { type: 'stadium', title: 'Hard Rock Stadium', path: '/world-cup-2026-stadiums', description: 'Miami - Iconic football venue' },
+    { type: 'stadium', title: 'Mercedes-Benz Stadium', path: '/world-cup-2026-stadiums', description: 'Atlanta - Architectural marvel' },
+    { type: 'stadium', title: 'AT&T Stadium', path: '/world-cup-2026-stadiums', description: 'Dallas - The Star' },
+    { type: 'stadium', title: 'Arrowhead Stadium', path: '/world-cup-2026-stadiums', description: 'Kansas City - Loudest stadium' },
     
     // Travel Guides
     { type: 'guide', title: 'Travel Tips', path: '/travel-tips', description: 'Essential travel advice for World Cup 2026' },
@@ -154,7 +154,7 @@ export function Header() {
             <nav className="hidden lg:flex items-center space-x-1">
               {[
                 { path: '/cities', label: 'Host Cities', icon: 'ri-map-pin-line' },
-                { path: '/venues', label: 'Stadiums', icon: 'ri-building-line' },
+                { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line' },
                 { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line' },
                 { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line' }
               ].map((item, index) => (
@@ -221,7 +221,7 @@ export function Header() {
               <nav className="space-y-2">
                 {[
                   { path: '/cities', label: 'Host Cities', icon: 'ri-map-pin-line', desc: 'Explore all 16 cities' },
-                  { path: '/venues', label: 'Stadiums', icon: 'ri-building-line', desc: 'Discover every venue' },
+                  { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line', desc: 'Discover every venue' },
                   { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line', desc: 'Expert travel tips' },
                   { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line', desc: 'Best prices & offers' }
                 ].map((item, index) => (

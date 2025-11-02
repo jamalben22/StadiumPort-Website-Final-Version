@@ -11,7 +11,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = () => {
   const navigate = useNavigate();
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
-  const handleGotItClick = () => navigate('/venues');
+  const handleGotItClick = () => navigate('/world-cup-2026-stadiums');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
