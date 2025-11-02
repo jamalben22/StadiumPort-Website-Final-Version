@@ -4,9 +4,21 @@ import { useState, useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { KansasCityCityGuide } from '../components/KansasCityCityGuide';
+import { AtlantaCityGuide } from '../components/AtlantaCityGuide';
+import { PhiladelphiaCityGuide } from '../components/PhiladelphiaCityGuide';
+import { SeattleCityGuide } from '../components/SeattleCityGuide';
+import { SanFranciscoCityGuide } from '../components/SanFranciscoCityGuide';
+import { BostonCityGuide } from '../components/BostonCityGuide';
+import { TorontoCityGuide } from '../components/TorontoCityGuide';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
+  // Normalize route param to ensure robust matching
+  const normalizedId = (cityId || '')
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, '-');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   useEffect(() => {
@@ -16,6 +28,1150 @@ export default function CityDetailPage() {
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);
   };
+
+  // Kansas City City Guide - Part 1/5 Implementation
+  if (normalizedId === 'kansas-city') {
+    return <KansasCityCityGuide />;
+  }
+
+  // Atlanta City Guide - Part 1/5 Implementation
+  if (normalizedId === 'atlanta') {
+    return <AtlantaCityGuide />;
+  }
+
+  // Philadelphia City Guide - Part 1/5 Implementation
+  if (normalizedId === 'philadelphia') {
+    return <PhiladelphiaCityGuide />;
+  }
+
+  // Seattle City Guide - Part 1/5 Implementation
+  if (normalizedId === 'seattle') {
+    return <SeattleCityGuide />;
+  }
+
+  // San Francisco City Guide - Part 1/5 Implementation
+  if (normalizedId === 'san-francisco') {
+    return <SanFranciscoCityGuide />;
+  }
+
+  // Boston City Guide - Part 1/5 Implementation
+  if (normalizedId === 'boston') {
+    return <BostonCityGuide />;
+  }
+
+  // Toronto City Guide - Part 1/5 Implementation
+  if (normalizedId === 'toronto') {
+    return <TorontoCityGuide />;
+  }
+
+  // Houston City Guide - Part 1/5 Implementation
+  if (normalizedId === 'houston') {
+    return (
+      <div className="min-h-screen bg-white dark:bg-navy-900">
+        <Header />
+        
+        {/* Hero Section */}
+        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
+          
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+              <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+              Houston: Your Ultimate 2026 FIFA World Cup Travel Guide
+            </h1>
+            
+            <div className="flex items-center gap-6 mb-8">
+              <div className="flex items-center gap-2 text-slate-300">
+                <i className="ri-group-line text-xl text-blue-400"></i>
+                <span className="font-semibold">72,220 capacity</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-300">
+                <i className="ri-map-pin-line text-xl text-emerald-400"></i>
+                <span>Houston, Texas</span>
+              </div>
+            </div>
+            
+            
+          </div>
+        </div>
+
+        {/* Main Content */}
+        <main className="p-8 md:p-12 space-y-12">
+          
+          {/* Introduction Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-star-line text-gold-400 dark:text-amber-300 text-4xl"></i>
+              Space City Takes Center Stage on Football's Biggest Stage
+            </h2>
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, NRG Stadium will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas.
+              </p>
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                If you've never been to Houston, prepare to have your assumptions shattered. This is America's most diverse city, where you'll hear more languages spoken than anywhere else in the U.S., where authentic food from every continent sits on every street corner, and where the term "Southern hospitality" gets supercharged by Texan pride and international flair. Match that energy with NRG Stadium's retractable roof that can open or close in just seven minutes, air conditioning that makes 100-degree days irrelevant, and you've got the perfect recipe for an unforgettable World Cup experience.
+              </p>
+            </div>
+          </div>
+
+          {/* Stadium Overview */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-building-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+              The Stadium: NRG Stadium (Houston Stadium for FIFA 2026)
+            </h2>
+            
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-star-line text-gold-400 dark:text-amber-300"></i>
+                  Texas-Sized Venue, World-Class Experience
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                    NRG Stadium opened in 2002 at a cost of $352 million and has a seating capacity of 72,220, making it one of the largest and most versatile venues in the United States. It was the first NFL facility to have a retractable roof—a game-changer for Houston's unpredictable summer weather and blazing heat.
+                  </p>
+                  
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    During the World Cup, FIFA will refer to the venue as "Houston Stadium" due to sponsorship guidelines. The stadium has undergone specific upgrades for the tournament, including new chillers, LED lights, upgrades to parking lots and adding in a grass field, which is expected to be installed after the 2026 Rodeo season.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300"></i>
+                  Match Schedule at NRG Stadium
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                    Houston will host five group stage matches and two knockout round games, beginning June 14 and running through Independence Day—yes, the city will be celebrating July 4th with a Round of 16 knockout match, adding American fireworks to global football fever.
+                  </p>
+                  
+                  <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl mb-6">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-4">Match Dates:</h4>
+                    <div className="space-y-2 text-slate-700 dark:text-slate-200">
+                      <div className="flex items-center gap-2">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span><strong>Group Stage</strong>: June 14, 17, 20, 23, 26</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span><strong>Round of 32</strong>: June 29</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i className="ri-checkbox-circle-line text-emerald-400 dark:text-emerald-300"></i>
+                        <span><strong>Round of 16</strong>: July 4, 2026</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    That Independence Day game will be the last one to take place in Houston for the tournament. Imagine experiencing World Cup knockout football while the entire country celebrates its birthday—that's the kind of collision of cultures and celebrations only Houston can deliver.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-star-line text-gold-400 dark:text-amber-300"></i>
+                  What Makes This Stadium Special
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                    NRG Stadium isn't just about football. The stadium has hosted six Super Bowls, major soccer friendlies, and concerts featuring Taylor Swift, Beyoncé, and the Rolling Stones. It's also the permanent home of the Houston Livestock Show and Rodeo, the world's largest livestock exhibition, which draws over two million visitors annually.
+                  </p>
+                  
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                    But here's what matters for World Cup fans: the stadium's retractable, fabric roof provides a very flexible rigging configuration for major audio and visual presentations, and the climate control means you'll be comfortable even when it's 95°F outside. The stadium boasts a retractable roof, essential air-conditioning (a Texas necessity!), and seating for over 70,000 spectators.
+                  </p>
+                  
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    The venue sits in NRG Park, conveniently served by Houston's METRORail (Stadium Park/Astrodome station), making it genuinely accessible from downtown and surrounding neighborhoods.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Transportation Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-plane-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+              Getting There: Transportation Made Easy
+            </h2>
+            
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-plane-line text-blue-400 dark:text-sky-300"></i>
+                  From the Airports
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                    Houston is served by two major airports, both with excellent international connections:
+                  </p>
+                  
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                        <i className="ri-plane-line text-emerald-400 dark:text-emerald-300"></i>
+                        George Bush Intercontinental Airport (IAH)
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200">
+                        Located approximately 22 miles north of downtown Houston, this is the primary international gateway with flights connecting to over 180 countries
+                      </p>
+                    </div>
+                    
+                    <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                        <i className="ri-plane-line text-blue-400 dark:text-sky-300"></i>
+                        William P. Hobby Airport (HOU)
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200">
+                        Located 11 miles southeast of downtown Houston, mainly serving domestic and some Latin American destinations
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-subway-line text-emerald-400 dark:text-emerald-300"></i>
+                  Getting to NRG Stadium from Downtown
+                </h3>
+                <div className="prose prose-lg max-w-none dark:prose-invert">
+                  <div className="bg-emerald-50 dark:bg-slate-800/70 border border-emerald-200 dark:border-slate-700 p-6 rounded-xl mb-6">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                      <i className="ri-train-line text-emerald-400 dark:text-emerald-300"></i>
+                      METRORail (The Best Budget Option)
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 mb-4">
+                      NRG Stadium is conveniently served by Houston's METRORail (Stadium Park/Astrodome station). The Red Line runs from downtown Houston through the Museum District and Medical Center directly to the stadium. On match days, expect trains running frequently with additional service.
+                    </p>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Below are fares to ride. Discounted fares apply to students, seniors 65-69, or people with disabilities. A single ride costs $1.25, making it one of the most affordable World Cup stadium transportation options in North America. Consider purchasing a day pass for unlimited rides.
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <i className="ri-plane-line text-emerald-400 dark:text-emerald-300 text-xl mt-1"></i>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">From IAH Airport to NRG Stadium</h4>
+                        <p className="text-slate-700 dark:text-slate-200">
+                          METRO's 102 Bush IAH Express provides service to and from George Bush Intercontinental Airport approximately every 30 minutes, taking you to downtown where you can transfer to the Red Line toward NRG Stadium. Total journey time: approximately 90 minutes.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <i className="ri-plane-line text-blue-400 dark:text-sky-300 text-xl mt-1"></i>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">From Hobby Airport to NRG Stadium</h4>
+                        <p className="text-slate-700 dark:text-slate-200">
+                          METRO Bus 40 provides local service and continues to downtown Houston. From downtown, catch the METRORail Red Line to Stadium Park/Astrodome station. Transit time to downtown can run one hour, plus another 30 minutes on the rail.
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                      <i className="ri-taxi-line text-gold-400 dark:text-amber-300 text-xl mt-1"></i>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Rideshares and Taxis</h4>
+                        <p className="text-slate-700 dark:text-slate-200">
+                          Uber and Lyft operate throughout Houston with reliable service. Expect surge pricing on match days, particularly in the hours before kickoff and immediately after the final whistle. Budget $25-40 from downtown hotels to NRG Stadium.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="bg-blue-50 dark:bg-slate-800/70 border border-blue-200 dark:border-slate-700 p-6 rounded-xl mt-6">
+                    <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
+                      <i className="ri-lightbulb-line text-blue-400 dark:text-sky-300"></i>
+                      Pro Traveler Tip
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Download the METRO app before you arrive. Houston's public transit is straightforward, affordable, and air-conditioned—essential when dealing with summer heat. Plan to arrive at least 90 minutes before kickoff to undergo security checks and explore the vibrant fan zones.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Accommodation Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+              Where to Stay: Neighborhood Guide for World Cup Visitors
+            </h2>
+            
+            <div className="prose prose-lg max-w-none dark:prose-invert mb-8">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                Houston is massive—849 square miles—but most visitors gravitate toward a handful of walkable, well-connected neighborhoods. Here's where to base yourself.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* Downtown Houston */}
+              <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-building-2-line text-blue-400 dark:text-sky-300"></i>
+                  Downtown Houston: Maximum Convenience
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Why Stay Here</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Direct METRORail access to NRG Stadium, walking distance to theater district and dining, and the energy of the city's core. Downtown transforms on match days with fan zones and spontaneous celebrations.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Hotel Options</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      The JW Marriott Houston Downtown and Four Seasons Hotel Houston offer luxury with prime locations. For mid-range comfort, the Cambria Hotel Houston Downtown Convention Center puts you near George R. Brown Convention Center and Discovery Green park.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Perfect For</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Business travelers, visitors who want to be in the thick of the action, and anyone who values transit convenience over neighborhood charm.
+                    </p>
+                  </div>
+                  <div className="bg-blue-50 dark:bg-slate-700/70 border border-blue-200 dark:border-slate-600 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-bookmark-line text-blue-400 dark:text-sky-300"></i>
+                      Book Smart
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 mb-2">
+                      Expect premium pricing during World Cup weeks. Reservations should be made 6-12 months in advance. Use <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://www.hotels.com</a> to compare rates and find package deals.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Midtown */}
+              <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-community-line text-emerald-400 dark:text-emerald-300"></i>
+                  Midtown: Trendy and Transit-Connected
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Why Stay Here</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Just south of downtown, Midtown offers a younger vibe with craft breweries, indie restaurants, and a thriving arts scene. The METRORail Red Line runs straight through Midtown to NRG Stadium.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">What You'll Find</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Midtown brims with trendy bars, craft breweries, and diverse eateries offering everything from Texas BBQ to international cuisine. The neighborhood is home to the Ensemble Theatre and the Midtown Arts & Theater Center Houston (MATCH).
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Perfect For</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Travelers in their 20s-40s, groups wanting nightlife options, and anyone seeking a more local, less corporate hotel experience.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* The Galleria/Uptown */}
+              <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-shopping-bag-line text-gold-400 dark:text-amber-300"></i>
+                  The Galleria/Uptown: Shop, Dine, Luxuriate
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Why Stay Here</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      If you're combining World Cup matches with luxury shopping and high-end dining, this is your neighborhood. The Galleria is America's fourth-largest mall, and the surrounding area offers some of Houston's best restaurants.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Hotel Options</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      The Post Oak Hotel at Uptown is Houston's only Forbes Five-Star hotel. For value near luxury, the Hilton Houston Post Oak by the Galleria sits half a mile from The Galleria with easy highway access.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Perfect For</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Families wanting more space, shoppers, and travelers seeking upscale accommodations outside downtown's density.
+                    </p>
+                  </div>
+                  <div className="bg-amber-50 dark:bg-slate-700/70 border border-amber-200 dark:border-slate-600 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-car-line text-gold-400 dark:text-amber-300"></i>
+                      Getting to Matches
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      You'll need a rideshare or rental car from this area, as it's about 15 minutes from NRG Stadium by car. Budget extra time on match days.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Heights/Montrose */}
+              <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300"></i>
+                  Heights/Montrose: Local Flavor, Character-Filled
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Why Stay Here</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      These adjacent neighborhoods northwest of downtown offer tree-lined streets, Victorian homes converted to boutiques and cafés, and Houston's best independent restaurant scene. Think Brooklyn or Portland vibes in the heart of Texas.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Food Scene</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      This is where locals eat. From brunch spots to craft cocktail bars, you'll find Houston's most creative dining in these neighborhoods.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Perfect For</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      Foodies, couples, and travelers who prioritize neighborhood exploration over proximity to tourist attractions.
+                    </p>
+                  </div>
+                  <div className="bg-emerald-50 dark:bg-slate-700/70 border border-emerald-200 dark:border-slate-600 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-subway-line text-emerald-400 dark:text-emerald-300"></i>
+                      Transit Note
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      You'll need rideshares to reach NRG Stadium from Heights/Montrose, but both neighborhoods connect to downtown via bus or bike.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Near NRG Stadium */}
+              <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-hospital-line text-blue-400 dark:text-sky-300"></i>
+                  Near NRG Stadium: Medical Center Area
+                </h3>
+                <div className="space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Why Stay Here</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      If attending multiple matches or prioritizing proximity to the stadium, consider hotels near the Texas Medical Center. Several mid-range chains offer good value and you're literally minutes from kickoff.
+                    </p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Trade-Off</h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      You'll sacrifice walkable dining and nightlife for convenience to the stadium. Great for families, groups attending multiple matches, or anyone on a tighter budget.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Attractions Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-compass-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+              Beyond the Match: What to Do in Houston
+            </h2>
+            
+            <div className="prose prose-lg max-w-none dark:prose-invert mb-8">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                Let's be real—Houston doesn't have the Eiffel Tower or Big Ben. But what it does have is authenticity, diversity, and experiences you won't find anywhere else.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* Space Center Houston */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-blue-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-rocket-line text-blue-500 dark:text-sky-400"></i>
+                  Space Center Houston: NASA's Crown Jewel
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Space Center Houston is a science museum that serves as the official visitor center of NASA Johnson Space Center, displaying over 400 space artifacts, including the Mercury 9, Gemini 5, and Apollo 17 flown space capsules.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    The NASA Tram Tour is included in general admission and takes guests to see the enormous Saturn V rocket at Rocket Park as well as across the 650-hectare campus, including the historic Mission Control room (the "Houston" in "Houston, we have a problem").
+                  </p>
+                  
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300"></i>
+                        Logistics
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                        Located about 30 minutes southeast of downtown. Tickets to Space Center Houston start at $29.95 for adults (12 and older), $27.95 for seniors and $24.95 for children ages 4 to 11. Budget 4-5 hours for the full experience, including tram tours.
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-lightbulb-line text-gold-400 dark:text-amber-300"></i>
+                        Pro Tip
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                        Get in line as soon as you arrive at the center for tram tours as they fill up quickly.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Museum District */}
+              <div className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-purple-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-gallery-line text-purple-500 dark:text-purple-400"></i>
+                  The Museum District: World-Class Culture
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Houston's expansive Museum District features 19 museums in four walkable zones, which include popular spots like the Houston Museum of Natural Science, the Contemporary Arts Museum Houston, The Menil Collection and The Museum of Fine Arts, Houston.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Consider visiting on a Thursday, when many of the museums offer free admission in the afternoon and evening. The district is directly served by the METRORail Red Line, making it easy to hop between venues.
+                  </p>
+                  
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-time-line text-emerald-400 dark:text-emerald-300"></i>
+                      Budget Time
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200">
+                      You could spend an entire day (or three) exploring world-class art, natural history exhibits, and cutting-edge contemporary galleries. The Menil Collection, housed in a Renzo Piano-designed building, is always free.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Buffalo Bayou Park */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-green-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-tree-line text-green-500 dark:text-green-400"></i>
+                  Buffalo Bayou Park: Houston's Green Heart
+                </h3>
+                <div className="space-y-4">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Houston's green heart—160 acres of trails, kayaking, and outdoor art installations with stunning views of the downtown skyline.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-run-line text-green-400 dark:text-green-300"></i>
+                        Activities
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                        Kayak rentals, hiking/biking trails, outdoor fitness equipment
+                      </p>
+                    </div>
+                    
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-camera-line text-gold-400 dark:text-amber-300"></i>
+                        Best Views
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                        Police Officers Memorial and Rosemont Bridge
+                      </p>
+                    </div>
+                  </div>
+                  <div className="bg-yellow-50 dark:bg-slate-800/70 border border-yellow-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-time-line text-yellow-500 dark:text-yellow-400"></i>
+                      When to Go
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      Early morning or late afternoon to avoid peak heat. Sunset views of the downtown skyline are spectacular.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Day Trip to Galveston */}
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-blue-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-ship-line text-blue-500 dark:text-sky-400"></i>
+                  Day Trip to Galveston
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  If you have a rest day between matches, drive an hour southeast to Galveston Island for Gulf Coast beaches, historic architecture, and seafood straight off the boat. It's the perfect counterpoint to big-city Houston.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Food Scene Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-restaurant-line text-red-400 dark:text-red-300 text-4xl"></i>
+              Food: From Food Trucks to Michelin-Level Excellence
+            </h2>
+            
+            <div className="prose prose-lg max-w-none dark:prose-invert mb-8">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                Houston's food scene rivals any city in America for diversity and quality. This is a place where you can eat your way around the world without leaving a five-mile radius.
+              </p>
+            </div>
+
+            <div className="space-y-8">
+              {/* BBQ Section */}
+              <div className="bg-gradient-to-br from-red-50 to-orange-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-red-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                  <i className="ri-fire-line text-red-500 dark:text-red-400"></i>
+                  BBQ: The Texas Way
+                </h3>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-6">
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Pappas Bar-B-Q</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Multiple locations serving mesquite-smoked brisket, ribs, and sausage. It's accessible, affordable, and genuinely good.</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Goode Company Barbeque</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Celebrating deep intermingling of cultures and cuisines, Goode Company has been serving mesquite-smoked BBQ since 1977 with multiple locations and a relaxed, Texas-casual atmosphere.</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">The Pit Room</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Located in Montrose, this spot brings Central Texas-style BBQ (post oak-smoked brisket, pork ribs) with modern twists and craft beer.</p>
+                  </div>
+                </div>
+
+                <div className="bg-red-50 dark:bg-slate-800/70 border border-red-200 dark:border-slate-700 p-4 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                    <i className="ri-restaurant-2-line text-red-400 dark:text-red-300"></i>
+                    What to Order
+                  </h4>
+                  <p className="text-slate-700 dark:text-slate-200 text-sm">Start with brisket—it's the benchmark of Texas BBQ. Add jalapeño-cheese sausage, pork ribs, and sides like mac and cheese or jalapeño creamed corn.</p>
+                </div>
+              </div>
+
+              {/* Tex-Mex Section */}
+              <div className="bg-gradient-to-br from-green-50 to-lime-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-green-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-heart-line text-green-500 dark:text-green-400"></i>
+                  Tex-Mex: Houston's Soul Food
+                </h3>
+                
+                <div className="mb-6">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Tex-Mex isn't Mexican food—it's its own glorious category, born in Texas with influences from both sides of the border. Houston does it better than anywhere.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-6">
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">The Original Ninfa's on Navigation</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Celebrated for its authentic Tex-Mex cuisine that has set the standard for over 50 years, this iconic establishment is revered for its legendary fajitas, tacos al carbon, and mouthwatering enchiladas.</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Candente</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Houston's only Tex-Mex restaurant in the Michelin Guide serves wood-grilled meats, classic Tex-Mex enchiladas, and signature birria tacos in Montrose with a modern, elevated approach.</p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">El Tiempo Cantina</h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">Multiple locations serving sizzling fajitas, tableside guacamole, and margaritas that pack a punch. This is where locals celebrate.</p>
+                  </div>
+                </div>
+
+                <div className="bg-green-50 dark:bg-slate-800/70 border border-green-200 dark:border-slate-700 p-4 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                    <i className="ri-restaurant-2-line text-green-400 dark:text-green-300"></i>
+                    What to Order
+                  </h4>
+                  <p className="text-slate-700 dark:text-slate-200 text-sm">Beef fajitas (cooked over mesquite), cheese enchiladas with chili con carne, tableside guacamole, and a frozen margarita. Queso (melted cheese dip) is mandatory.</p>
+                </div>
+              </div>
+
+              {/* Beyond BBQ and Tex-Mex */}
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-purple-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-global-line text-purple-500 dark:text-purple-400"></i>
+                  Beyond BBQ and Tex-Mex
+                </h3>
+                
+                <div className="mb-6">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Houston's food scene extends far beyond its two most famous categories:
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mb-6">
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Vietnamese</h4>
+                        <p className="text-slate-700 dark:text-slate-200 text-sm">Houston has one of the largest Vietnamese populations outside Vietnam. Head to Midtown or the Bellaire Chinatown area for phenomenal phở and bánh mì.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Indian</h4>
+                        <p className="text-slate-700 dark:text-slate-200 text-sm">The Hillcroft area southwest of downtown is Houston's Little India, packed with authentic restaurants and grocery stores.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Soul Food/Southern</h4>
+                        <p className="text-slate-700 dark:text-slate-200 text-sm">This Sassy Soul Café and Lucille's offer fried chicken, shrimp and grits, and collard greens that'll make you understand Southern comfort food.</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <div>
+                        <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">International Food Trucks</h4>
+                        <p className="text-slate-700 dark:text-slate-200 text-sm">From Nigerian to Peruvian to Korean, Houston's food truck scene brings the world to street corners across the city.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-yellow-50 dark:bg-slate-800/70 border border-yellow-200 dark:border-slate-700 p-4 rounded-lg">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                    <i className="ri-lightbulb-line text-yellow-500 dark:text-yellow-400"></i>
+                    Foodie Strategy
+                  </h4>
+                  <p className="text-slate-700 dark:text-slate-200 text-sm">Eat breakfast tacos from a neighborhood truck, lunch at a BBQ joint, and dinner at a Tex-Mex institution. Repeat for seven days and you'll barely scratch the surface.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Weather & Packing Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-sun-line text-orange-400 dark:text-orange-300 text-4xl"></i>
+              Weather & What to Pack
+            </h2>
+
+            <div className="space-y-8">
+              {/* June and July Weather */}
+              <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-orange-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-temp-hot-line text-orange-500 dark:text-orange-400"></i>
+                  June and July in Houston: Embrace the Heat
+                </h3>
+                
+                <div className="space-y-4">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Let's not sugarcoat it: Houston in summer is hot and humid. But the stadium has air conditioning, hotels are climate-controlled, and locals have perfected the art of staying comfortable.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Houston summers, from June through August, are characterized as hot and humid, with temperatures that can exceed 100 degrees at times. High temperatures are in the 90s, and the lows are in the low to mid-70s.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                      <i className="ri-calendar-line text-blue-400 dark:text-sky-300"></i>
+                      June Weather
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      Houston averages 82°F in June with high temperatures reaching 90°F and lows around 73°F. Humidity can reach up to 90% in the mornings. June is the wettest month of the year in Houston, with an average rainfall of 5.93 inches, meaning afternoon thunderstorms are common.
+                    </p>
+                  </div>
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 flex items-center gap-2">
+                      <i className="ri-calendar-line text-red-400 dark:text-red-300"></i>
+                      July Weather
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      In July, average temperatures record a high of 93.4°F (34.1°C) and a low of 77.2°F (25.1°C). July offers the year's sunniest weather for Houston, with intense sunshine and high humidity creating a heat index that makes it feel even hotter.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* What This Means for You */}
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-blue-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                  <i className="ri-suitcase-line text-blue-500 dark:text-sky-400"></i>
+                  What This Means for You
+                </h3>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-shirt-line text-green-400 dark:text-green-300"></i>
+                        Clothing
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Shorts and t-shirts are standard. Dress codes are relaxed in Houston—even nice restaurants rarely require more than "smart casual."</p>
+                    </div>
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-sun-cloudy-line text-yellow-400 dark:text-yellow-300"></i>
+                        Sun Protection
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">Sunglasses, sunscreen (SPF 30+), and a hat are essential for any outdoor time. The sun is intense.</p>
+                    </div>
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-umbrella-line text-blue-400 dark:text-sky-300"></i>
+                        Rain Gear
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">Pack a compact umbrella or light rain jacket for afternoon thunderstorms, especially in June.</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-t-shirt-air-line text-purple-400 dark:text-purple-300"></i>
+                        Layers
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">Bring one light jacket or long-sleeve shirt. Indoor air conditioning can be aggressive, and the contrast from 95°F outside to 68°F inside is jarring.</p>
+                    </div>
+                    <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                      <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                        <i className="ri-drop-line text-blue-400 dark:text-sky-300"></i>
+                        Hydration
+                      </h4>
+                      <p className="text-slate-700 dark:text-slate-200 text-sm">Drink water constantly. Houston humidity causes you to sweat more than you realize. Carry a refillable water bottle.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 dark:bg-slate-800/70 border border-blue-200 dark:border-slate-700 p-4 rounded-lg mt-6">
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                    <i className="ri-shield-check-line text-blue-400 dark:text-sky-300"></i>
+                    Stadium Policies
+                  </h4>
+                  <p className="text-slate-700 dark:text-slate-200 text-sm">Check NRG Stadium's official bag policy before you go—clear bags are typically required for security. Plan accordingly and travel light on match days.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Practical Tips Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-compass-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+              Practical Tips for International Visitors
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-green-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                  <i className="ri-money-dollar-circle-line text-green-500 dark:text-green-400"></i>
+                  Money Matters
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Currency:</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">US Dollar (USD)</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Cards:</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">Credit cards accepted everywhere; contactless payment widely available</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Tipping:</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">18-20% at restaurants, $1-2 per drink at bars, 15-20% for taxis and rideshares</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">ATMs:</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">Widely available; use bank-affiliated machines to avoid excessive fees</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-blue-200 dark:border-slate-600 p-6 rounded-xl">
+                 <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                   <i className="ri-shield-check-line text-blue-500 dark:text-sky-400"></i>
+                   Safety & Getting Around
+                 </h3>
+                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
+                   Houston is generally safe for visitors, especially in tourist areas and well-traveled neighborhoods. Basic street smarts apply: be aware of your surroundings, keep valuables secure, and stick to well-lit areas at night.
+                 </p>
+
+                 <div className="space-y-4">
+                   <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                       <i className="ri-car-line text-blue-400 dark:text-sky-300"></i>
+                       Driving in Houston
+                     </h4>
+                     <p className="text-slate-700 dark:text-slate-200 text-sm">
+                       If you rent a car, know that Houston is sprawling and car-centric. Highways (I-10, I-45, I-610, Beltway 8) connect everything, but traffic can be heavy during rush hours (7-9 AM, 4-7 PM).
+                     </p>
+                   </div>
+
+                   <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                       <i className="ri-bus-line text-green-400 dark:text-green-300"></i>
+                       Public Transit
+                     </h4>
+                     <p className="text-slate-700 dark:text-slate-200 text-sm">
+                       METRORail and bus service covers major corridors. All METRO buses are ADA accessible, offer free Wi-Fi, and are equipped with video surveillance security cameras. Each ride is just $1.25.
+                     </p>
+                   </div>
+
+                   <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                       <i className="ri-walk-line text-purple-400 dark:text-purple-300"></i>
+                       Walking
+                     </h4>
+                     <p className="text-slate-700 dark:text-slate-200 text-sm">
+                       Downtown, Midtown, Museum District, and Heights/Montrose are walkable. Everywhere else, you'll need wheels.
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+
+          {/* Language & Connectivity Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-global-line text-indigo-400 dark:text-indigo-300 text-4xl"></i>
+              Language & Connectivity
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="bg-gradient-to-br from-indigo-50 to-purple-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-indigo-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-translate-2 text-indigo-500 dark:text-indigo-400"></i>
+                  Language Diversity
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  English is primary, but you'll hear Spanish extensively. Houston is America's most linguistically diverse city—over 145 languages are spoken here. You'll feel right at home no matter where you're from.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-blue-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-wifi-line text-blue-500 dark:text-sky-400"></i>
+                  Connectivity
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Free Wi-Fi is available in many cafés, hotels, and public spaces. Consider a US SIM card or international data plan for navigation and communication.
+                </p>
+              </div>
+            </div>
+
+            {/* Heat Management */}
+            <div className="mt-8 bg-gradient-to-br from-orange-50 to-red-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-orange-200 dark:border-slate-600 p-6 rounded-xl">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                <i className="ri-temp-cold-line text-orange-500 dark:text-orange-400"></i>
+                Heat Management
+              </h3>
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                Houstonians live in air conditioning from May through September. Plan your outdoor activities for early morning or evening. Take advantage of indoor attractions (museums, shopping) during peak afternoon heat.
+              </p>
+            </div>
+          </div>
+
+          {/* Ticket Information Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-ticket-line text-gold-400 dark:text-amber-300 text-4xl"></i>
+              Ticket Information & Booking Strategy
+            </h2>
+
+            <div className="space-y-8">
+              {/* How to Get Tickets */}
+              <div className="bg-gradient-to-br from-gold-50 to-yellow-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-gold-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                  <i className="ri-shopping-cart-line text-gold-500 dark:text-amber-400"></i>
+                  How to Get World Cup Tickets
+                </h3>
+                
+                <div className="space-y-4 mb-6">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    Tickets for the 2026 World Cup are sold in four phases. The first application to purchase general tickets went live Sept. 10 and closed Sept. 19. Subsequent phases will be announced on <span className="font-mono text-blue-600 dark:text-sky-400">https://www.fifa.com/tickets</span>.
+                  </p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                    FIFA World Cup tickets at NRG Stadium in Houston will start at $60, with prices increasing for premium seating and knockout rounds.
+                  </p>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-vip-crown-line text-gold-400 dark:text-amber-300"></i>
+                      Hospitality Packages
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      If you miss the general ticket lottery, hospitality packages start at $1,450 per match with venue series packages for Houston starting at $10,350. These include premium seating, access to exclusive lounges, and food and beverage service.
+                    </p>
+                  </div>
+                  
+                  <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-4 rounded-lg">
+                    <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
+                      <i className="ri-gift-line text-red-400 dark:text-red-300"></i>
+                      Verizon Promotion
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      Verizon is giving away free tickets to the World Cup to U.S. customers, with the first round opening Oct. 2 including the first match being played in Houston.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Alternative Premium Experiences */}
+              <div className="bg-gradient-to-br from-purple-50 to-indigo-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-purple-200 dark:border-slate-600 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <i className="ri-vip-diamond-line text-purple-500 dark:text-purple-400"></i>
+                  Alternative: Hospitality & Premium Experiences
+                </h3>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  For those wanting guaranteed access and VIP treatment, official hospitality packages through FIFA's partner On Location offer bundled tickets with hotels, transportation, and exclusive experiences. These cost significantly more but eliminate lottery uncertainty.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Why Houston Section */}
+          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-heart-line text-red-400 dark:text-red-300 text-4xl"></i>
+              Why Houston Will Make Your World Cup Unforgettable
+            </h2>
+
+            <div className="space-y-6">
+              <div className="prose prose-lg max-w-none dark:prose-invert">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed text-lg">
+                  This is the most popular and prestigious sporting event in the world, and these matches will put our community on the global stage.
+                </p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Houston doesn't try to be like other cities—it's confidently, unapologetically itself. You'll experience Tex-Mex breakfast tacos made by a vendor who speaks Vietnamese, attend a match in a climate-controlled dome while it's 98°F outside, and celebrate with supporters from six continents in a city where diversity isn't a buzzword—it's the daily reality.
+                </p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  The matches themselves? They'll be electric. Over five million fans and hospitality guests will have the opportunity to experience the world's game in stadiums across North America, and Houston's portion of that celebration will showcase Texas hospitality on steroids.
+                </p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  From the moment you step off the plane (into air conditioning, naturally) to your last breakfast taco before heading home, Houston offers something no guidebook can capture: the feeling of being welcomed into a city that's genuinely excited to show you what it's got. No pretense. No attitude. Just "Welcome to Houston—y'all ready for some football?"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Start Planning Section */}
+          <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-slate-800/70 dark:to-slate-700/70 border border-green-200 dark:border-slate-600 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
+              <i className="ri-calendar-check-line text-green-500 dark:text-green-400 text-4xl"></i>
+              Start Planning Your 2026 World Cup Trip to Houston
+            </h2>
+
+            <div className="space-y-6">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed text-lg">
+                The countdown is on. Hotels are booking up. Flights are being reserved. And Houston is preparing to host the world.
+              </p>
+
+              <div className="bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-2">
+                  <i className="ri-task-line text-green-500 dark:text-green-400"></i>
+                  Your Action Plan
+                </h3>
+                
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Register for FIFA tickets</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">at <span className="font-mono text-blue-600 dark:text-sky-400">https://www.fifa.com/tickets</span> for future phases</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">2</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Book accommodations early</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">via <span className="font-mono text-blue-600 dark:text-sky-400">https://www.booking.com</span> or <span className="font-mono text-blue-600 dark:text-sky-400">https://www.hotels.com</span>—6-12 months in advance recommended</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Research flights</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">to Houston (IAH or HOU) through <span className="font-mono text-blue-600 dark:text-sky-400">https://www.skyscanner.com</span> or <span className="font-mono text-blue-600 dark:text-sky-400">https://www.google.com/flights</span></span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">4</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Download the METRO app</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">for public transit and plan your stadium transportation</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">5</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Make restaurant reservations</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">for Houston's top spots—places like The Original Ninfa's and Goode Company fill up during big events</span>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start gap-3">
+                    <div className="w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">6</div>
+                    <div>
+                      <span className="font-semibold text-slate-900 dark:text-slate-100">Plan rest-day activities</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">Space Center Houston, Museum District, Buffalo Bayou Park</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 dark:bg-slate-800/70 border border-blue-200 dark:border-slate-700 p-6 rounded-xl">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Houston will host seven matches during the 2026 FIFA World Cup at NRG Stadium, including five group-stage matches and a pair of matches in the knockout round, with the final Houston match falling on Independence Day—July 4, 2026. There's no more American way to celebrate the Fourth of July than watching the world's game in Texas.
+                </p>
+              </div>
+
+              <div className="bg-gradient-to-r from-red-500 to-blue-500 text-white p-6 rounded-xl">
+                <p className="text-lg font-semibold leading-relaxed">
+                  <strong>See you in Space City. Bring your appetite, your team colors, and your sense of adventure. Houston's ready to show the world what Texas hospitality looks like.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 
   // City data with full content
   const cityData: { [key: string]: any } = {
@@ -483,350 +1639,9 @@ Special offerings include:
       }
     },
 
-    'kansas-city': {
-      name: 'Kansas City',
-      country: '🇺🇸',
-      stadium: 'GEHA Field at Arrowhead',
-      capacity: '76,640',
-      matches: '6 Matches Including Semifinal',
-      finalDate: 'July 9, 2026 Semifinal',
-      description: 'Welcome to the Heart of America. Where genuine Midwestern hospitality meets world-class BBQ and electric soccer culture.',
-      image: 'https://readdy.ai/api/search-image?query=Kansas%20City%20skyline%20at%20golden%20hour%20with%20modern%20downtown%20skyscrapers%2C%20Missouri%20River%2C%20urban%20architecture%2C%20Midwest%20metropolitan%20cityscape%2C%20dramatic%20lighting%2C%20American%20heartland%20atmosphere&width=1920&height=800&seq=kc-hero&orientation=landscape',
-      content: {
-        overview: `Kansas City will host 6 World Cup matches including a semifinal on July 9, 2026, at the legendary GEHA Field at Arrowhead Stadium. Known as the Heart of America, Kansas City offers authentic Midwestern hospitality, world-famous BBQ, and a passionate soccer culture that rivals any city in the world.
 
-The city straddles the Missouri-Kansas border and is renowned for its jazz heritage, fountains, and boulevards. With Sporting Kansas City's dedicated fanbase and the city's growing soccer infrastructure, Kansas City provides an intimate and electric World Cup atmosphere.
 
-From the historic Jazz District to the trendy Crossroads Arts District, from legendary BBQ joints to craft breweries, Kansas City delivers an authentic American experience with genuine warmth and hospitality.`,
-
-        stadium: `GEHA Field at Arrowhead Stadium, home of the Kansas City Chiefs, will host 6 World Cup matches including a semifinal. Known for having the loudest crowd noise in the NFL, Arrowhead features:
-
-• Capacity: 76,640 with excellent sightlines
-• Historic venue opened in 1972, renovated in 2010
-• Natural grass playing surface
-• Premium club seating and luxury suites
-• Extensive tailgating areas and fan amenities
-
-The stadium is famous for its incredible atmosphere and passionate fanbase. Special features include:
-• Ring of Honor celebrating Chiefs legends
-• Multiple concourse levels with local food vendors
-• State-of-the-art video boards and sound system
-• Accessible seating and facilities throughout
-
-Located in the Truman Sports Complex, the stadium offers ample parking and is easily accessible from downtown Kansas City via Interstate 70. Special World Cup shuttles will operate from major hotels and the downtown area.`,
-
-        transportation: `Getting around Kansas City during the World Cup:
-
-**To/From Arrowhead Stadium:**
-• Interstate 70 East from downtown (20 minutes)
-• Dedicated World Cup shuttle services
-• RideKC bus routes with special match day service
-• Ample parking available at the stadium complex
-
-**Within Kansas City:**
-• RideKC bus system throughout metro area
-• Kansas City Streetcar (free downtown service)
-• Ride-sharing and taxi services
-• B-Cycle bike sharing program
-• Most attractions within walking distance downtown
-
-**Regional Transportation:**
-• Amtrak service to Chicago, St. Louis, and Los Angeles
-• Greyhound and Megabus connections
-• Easy driving access to other Midwest cities
-
-**Airport:**
-• Kansas City International Airport (MCI) - 30 minutes to downtown
-• New single terminal opened in 2023
-• Rental cars, shuttles, and ride-sharing available
-• Direct flights to major US and international cities`,
-
-        accommodation: `Kansas City accommodations with Midwestern charm:
-
-**Luxury Hotels ($200-400/night):**
-• The Fontaine, Hotel Kansas City
-• InterContinental Kansas City at the Plaza
-• The Raphael Hotel, Autograph Collection
-• 21c Museum Hotel Kansas City
-
-**Historic Properties ($150-300/night):**
-• The Westin Kansas City at Crown Center
-• Hilton President Kansas City
-• Hotel Phillips, Curio Collection
-• Marriott Kansas City Downtown
-
-**Mid-Range Options ($100-200/night):**
-• Hampton Inn & Suites, Holiday Inn Express
-• Courtyard by Marriott locations
-• Drury Hotels (multiple locations)
-• Best Western Plus properties
-
-**Budget-Friendly ($60-120/night):**
-• Extended Stay America locations
-• Comfort Inn and Quality Inn properties
-• Airbnb in residential neighborhoods
-• Hostels and budget motels
-
-**World Cup Packages:**
-Local hotels offer special packages including:
-• Match tickets and stadium transportation
-• BBQ restaurant tours and tastings
-• Jazz District and cultural experiences
-• Group rates for international visitors`,
-
-        attractions: `Must-experience Kansas City attractions:
-
-**BBQ & Food Scene:**
-• Joe's Kansas City Bar-B-Que (original gas station location)
-• LC's Bar-B-Q, Gates Bar-B-Q, Arthur Bryant's
-• Burnt end tours and BBQ competitions
-• Local craft breweries and distilleries
-
-**Jazz & Music Heritage:**
-• American Jazz Museum and Negro Leagues Baseball Museum
-• Historic 18th & Vine Jazz District
-• Blue Room jazz club and live music venues
-• Charlie Parker Memorial and jazz walking tours
-
-**Arts & Culture:**
-• Nelson-Atkins Museum of Art (free admission)
-• Kauffman Center for the Performing Arts
-• Crossroads Arts District galleries and studios
-• Union Station and Science City
-
-**Sports & Recreation:**
-• Sporting Kansas City at Children's Mercy Park
-• Kansas City Royals at Kauffman Stadium
-• Country Club Plaza shopping and dining
-• Crown Center and entertainment district
-
-**Unique Kansas City:**
-• City of Fountains (more than Rome)
-• Boulevard Brewing Company tours
-• Kansas City Zoo and Aquarium
-• Legoland Discovery Center
-
-**Day Trips:**
-• Independence and Harry S. Truman sites
-• Lawrence, Kansas (University of Kansas)
-• St. Joseph, Pony Express history
-• Weston, Missouri wine country`,
-
-        localTips: `Essential Kansas City tips for World Cup visitors:
-
-**Weather & Preparation:**
-• July temperatures: 70-90°F (21-32°C)
-• Afternoon thunderstorms possible
-• Humidity can be high in summer
-• Comfortable walking shoes for downtown
-
-**Local Culture & Etiquette:**
-• Genuine Midwestern friendliness and hospitality
-• Tipping 18-20% at restaurants
-• BBQ is serious business - try multiple places
-• Jazz heritage is deeply respected
-
-**Money-Saving Tips:**
-• Many museums offer free or discounted admission
-• Happy hour specials at local bars and restaurants
-• Free events at Crown Center and Union Station
-• Public transportation is affordable
-
-**Food & Dining:**
-• Burnt ends are a Kansas City invention
-• Try local favorites: Z-Man sandwich, LC's burnt ends
-• Craft beer scene is thriving
-• Food trucks offer great value
-
-**Soccer Culture:**
-• Sporting Kansas City has incredibly passionate fans
-• Children's Mercy Park is considered one of MLS's best venues
-• Soccer bars: Johnny's Tavern, Char Bar, The Cauldron
-• Youth soccer is huge throughout the metro area
-• Tailgating culture extends to soccer matches
-
-**Getting Around:**
-• Kansas is spread out - plan transportation
-• Traffic can be heavy during rush hours
-• METRORail is efficient for major destinations
-• Uber/Lyft widely available and affordable
-• Downtown tunnel system useful during hot weather`,
-
-      }
-    },
-
-    'houston': {
-      name: 'Houston',
-      country: '🇺🇸',
-      stadium: 'NRG Stadium',
-      capacity: '72,220',
-      matches: '7 Matches Including Round of 16',
-      finalDate: 'Round of 16 Matches',
-      description: 'Space City welcomes the world with Texas-sized hospitality, incredible BBQ, and a passionate soccer culture.',
-      image: 'https://readdy.ai/api/search-image?query=Houston%20Texas%20skyline%20at%20golden%20hour%20with%20modern%20downtown%20skyscrapers%2C%20urban%20architecture%2C%20dramatic%20lighting%2C%20Space%20City%20metropolitan%20landscape%2C%20vibrant%20sunset%20colors%20over%20the%20city&width=1920&height=800&seq=houston-hero&orientation=landscape',
-      content: {
-        overview: `Houston will host 7 World Cup matches including Round of 16 matches at NRG Stadium. As the fourth-largest city in the United States and home to NASA's Johnson Space Center, Houston offers a unique blend of space-age innovation, Texas culture, and international diversity.
-
-Space City is known for its world-class medical center, energy industry leadership, and incredible culinary scene that reflects its multicultural population. With the Houston Dynamo's passionate fanbase and the city's growing soccer infrastructure, Houston provides an authentic Texas World Cup experience.
-
-From the historic Heights to the trendy Montrose district, from NASA's Space Center to the bustling downtown theater district, Houston delivers Texas-sized hospitality with a cosmopolitan flair.`,
-
-        stadium: `NRG Stadium, home of the Houston Texans, will host 7 World Cup matches including Round of 16 matches. The first NFL stadium with a retractable roof, NRG Stadium features:
-
-• Capacity: 72,220 with excellent sightlines
-• Retractable roof for climate control
-• Natural grass playing surface
-• Premium club seating and luxury suites
-• Extensive parking and tailgating areas
-
-Opened in 2002, the stadium is part of the NRG Park complex. Special features include:
-• Climate-controlled environment with retractable roof
-• State-of-the-art video boards and sound system
-• Multiple concourse levels with local food vendors
-• Accessible seating and facilities throughout
-• Adjacent to the Astrodome (historic landmark)
-
-Located in the NRG Park complex, the stadium is easily accessible from downtown Houston via major highways. The METRORail Red Line provides direct service to the stadium, and special World Cup shuttles will operate from major hotels.`,
-
-        transportation: `Getting around Houston during the World Cup:
-
-**To/From NRG Stadium:**
-• METRORail Red Line direct to NRG Stadium/Astrodome
-• Interstate 610 and Highway 288 access
-• Dedicated World Cup shuttle services
-• Ample parking available at NRG Park complex
-
-**Within Houston:**
-• METRO bus system throughout Harris County
-• METRORail Red, Purple, and Green lines
-• Ride-sharing and taxi services widely available
-• BCycle bike sharing program
-• Downtown tunnel system for pedestrians
-
-**Regional Transportation:**
-• Amtrak service to New Orleans, Los Angeles, and Chicago
-• Greyhound and Megabus connections
-• Easy driving access to Dallas, Austin, and San Antonio
-
-**Airports:**
-• George Bush Intercontinental Airport (IAH) - 45 minutes to downtown
-• William P. Hobby Airport (HOU) - 20 minutes to downtown
-• Both airports connected by METRO bus and rail services
-• Rental cars, shuttles, and ride-sharing available`,
-
-        accommodation: `Houston accommodations with Texas hospitality:
-
-**Luxury Hotels ($250-500/night):**
-• The Post Oak Hotel at Uptown Houston
-• Four Seasons Hotel Houston, The St. Regis Houston
-• Hotel Granduca Houston, JW Marriott Houston Downtown
-• Marriott Marquis Houston, Hilton Americas-Houston
-
-**Historic Properties ($150-300/night):**
-• Hotel ZaZa Houston Museum District
-• The Lancaster Hotel, Sam Houston Hotel
-• Magnolia Hotel Houston, Hotel ICON Autograph Collection
-• Westin Houston Medical Center
-
-**Mid-Range Options ($100-200/night):**
-• Hampton Inn & Suites locations, Holiday Inn Express
-• Courtyard by Marriott properties
-• Drury Inn & Suites, Embassy Suites
-• Homewood Suites and Residence Inn
-
-**Budget-Friendly ($60-120/night):**
-• Extended Stay America locations
-• Comfort Inn and Quality Inn properties
-• Airbnb in residential neighborhoods like The Heights
-• Budget motels near major highways
-
-**World Cup Packages:**
-Houston hotels offer special packages including:
-• Match tickets and stadium transportation
-• Space Center Houston tours
-• BBQ and Tex-Mex restaurant experiences
-• Group rates for international visitors`,
-
-        attractions: `Must-experience Houston attractions:
-
-**Space & Science:**
-• Space Center Houston (NASA's official visitor center)
-• Johnson Space Center tours and astronaut training
-• Moon rocks, space shuttles, and Mission Control
-• Interactive space exploration exhibits
-
-**Museums & Culture:**
-• Museum of Fine Arts Houston
-• Houston Museum of Natural Science
-• Contemporary Arts Museum Houston
-• Buffalo Soldiers National Museum
-
-**Food Scene:**
-• Tex-Mex cuisine and authentic Mexican food
-• BBQ joints: Killen's Barbecue, Truth BBQ, The Pit Room
-• Vietnamese cuisine in Chinatown
-• Food truck parks and farmers markets
-
-**Neighborhoods to Explore:**
-• The Heights (historic homes and trendy shops)
-• Montrose (arts district and nightlife)
-• Rice Village (shopping and dining)
-• Downtown Theater District
-
-**Outdoor Activities:**
-• Buffalo Bayou Park and kayaking
-• Hermann Park and Houston Zoo
-• Galveston beaches (45 minutes away)
-• Discovery Green downtown park
-
-**Sports & Entertainment:**
-• Houston Dynamo FC at PNC Stadium
-• Houston Astros at Minute Maid Park
-• Houston Rockets at Toyota Center
-• Rodeo Houston (world's largest livestock show)`,
-
-        localTips: `Essential Houston tips for World Cup visitors:
-
-**Weather & Preparation:**
-• June/July temperatures: 75-95°F (24-35°C)
-• High humidity and afternoon thunderstorms
-• Air conditioning everywhere - bring light layers
-• Sunscreen and hydration essential
-
-**Local Culture & Etiquette:**
-• Texas-sized hospitality and friendliness
-• Tipping 18-20% at restaurants
-• "Y'all" is commonly used and welcomed
-• Respect for Texas pride and independence
-
-**Money-Saving Tips:**
-• Many museums offer free admission days
-• Happy hour specials at local bars and restaurants
-• Free events at Discovery Green and Miller Outdoor Theatre
-• Public transportation day passes available
-
-**Food & Dining:**
-• Tex-Mex is different from Mexican food
-• Try local favorites: breakfast tacos, kolaches, crawfish
-• Food truck culture is huge
-• BYOB restaurants are common
-
-**Soccer Culture:**
-• Houston Dynamo FC has passionate supporters (Texian Army)
-• PNC Stadium atmosphere is electric
-• Soccer bars: Pitch 25, The Phoenix on Westheimer, Truck Yard Houston
-• Youth soccer leagues throughout Greater Houston area
-• International soccer community due to diverse population
-
-**Getting Around:**
-• Houston is spread out - plan transportation
-• Traffic can be heavy during rush hours
-• METRORail is efficient for major destinations
-• Uber/Lyft widely available and affordable
-• Downtown tunnel system useful during hot weather`,
-
-      }
-    },
+    // Houston content intentionally removed to fully clear the page's rendered content.
 
     'dallas': {
       name: 'Dallas',
@@ -988,7 +1803,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
 
   };
 
-  const city = cityData[cityId || ''];
+  const city = cityData[normalizedId || ''];
 
   if (!city) {
     return (
@@ -1020,13 +1835,13 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
     { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities` },
-    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${cityId}` }
+    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${normalizedId}` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     `${city.name} World Cup 2026 Guide`,
     city.description,
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${cityId}`
+    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${normalizedId}`
   );
 
   return (
@@ -1097,7 +1912,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
           
           {/* Overview */}
           <div className="mb-20">
-            <h2 className="font-space font-bold text-5xl text-navy-900 dark:text-white mb-12 text-center">
+            <h2 className="font-space font-bold text-5xl text-navy-900 dark:text-white mb-12">
               Complete City Guide
             </h2>
             <div className="bg-white dark:bg-navy-900 rounded-3xl shadow-xl border border-slate-200 dark:border-navy-700 p-12">

@@ -32,6 +32,8 @@ const getCityRoute = (cityName: string) => {
       return '/cities/houston';
     case 'Dallas':
       return '/cities/dallas';
+    case 'Seattle':
+      return '/cities/seattle';
     default:
       return '/cities';
   }

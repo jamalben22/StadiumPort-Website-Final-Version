@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /cities
-Allow: /venues
+Allow: /world-cup-2026-stadiums
 Allow: /travel-guides
 Allow: /deals
 Allow: /accommodation

@@ -15,7 +15,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = () =>
   };
 
   const handleGotItClick = () => {
-    navigate('/venues');
+    navigate('/world-cup-2026-stadiums');
   };
 
   return (

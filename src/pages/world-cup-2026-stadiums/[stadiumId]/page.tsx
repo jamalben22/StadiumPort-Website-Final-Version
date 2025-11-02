@@ -208,7 +208,7 @@ export default function StadiumDetailPage() {
             The stadium you're looking for doesn't exist or has been moved.
           </p>
           <Link 
-            to="/venues" 
+            to="/world-cup-2026-stadiums" 
             className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
           >
             <i className="ri-arrow-left-line mr-2"></i>
@@ -234,8 +234,8 @@ export default function StadiumDetailPage() {
           }),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Venues', url: '/venues' },
-            { name: stadium.name, url: `/venues/${stadiumId}` }
+            { name: 'Venues', url: '/world-cup-2026-stadiums' },
+      { name: stadium.name, url: `/world-cup-2026-stadiums/${stadiumId}` }
           ])
         ]}
       />

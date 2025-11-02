@@ -15,7 +15,7 @@ export const ATTStadiumGuide = ({ onClose }: ATTStadiumGuideProps) => {
   };
 
   const handleGotItClick = () => {
-    navigate('/venues');
+    navigate('/world-cup-2026-stadiums');
   };
 
   return (

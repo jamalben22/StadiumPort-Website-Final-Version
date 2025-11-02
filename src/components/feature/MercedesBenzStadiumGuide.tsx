@@ -13,7 +13,7 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
   const [isExpanded, setIsExpanded] = useState(true);
 
   const toggleExpanded = () => setIsExpanded(!isExpanded);
-  const handleGotItClick = () => navigate('/venues');
+  const handleGotItClick = () => navigate('/world-cup-2026-stadiums');
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">

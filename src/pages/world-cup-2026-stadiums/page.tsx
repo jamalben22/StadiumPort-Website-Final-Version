@@ -39,7 +39,7 @@ export default function VenuesPage() {
   const handleReadFullGuide = (venue: any) => {
     const slug = getStadiumSlug(venue);
     if (slug) {
-      navigate(`/venues/${slug}`);
+      navigate(`/world-cup-2026-stadiums/${slug}`);
     }
   };
 
@@ -55,13 +55,13 @@ export default function VenuesPage() {
     // Add canonical URL
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/venues`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums`);
     }
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Stadiums', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/venues` }
+    { name: 'Stadiums', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums` }
   ]);
 
   const venues = [
@@ -566,13 +566,9 @@ export default function VenuesPage() {
               <span className="text-gold-300 font-medium">2026 FIFA World Cup Stadiums: Complete Guide to All 16 Venues</span>
             </div>
             
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">
-                Expert Travel, Transport & Matchday Guides for Every Venue
-              </h1>
+            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">Complete Travel Guides for All 16 USA, Canada & Mexico Venues</h1>
             
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-                Explore every stadium hosting the 2026 World Cup across the United States, Canada, and Mexico. Our detailed venue guides cover transport routes, accommodation near each stadium, public transit options, parking, best neighborhoods, and insider matchday tips—everything you need for an unforgettable tournament experience.
-              </p>
+            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">Complete guide to all 16 FIFA World Cup 2026 stadiums. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue across USA, Canada & Mexico.</p>
           </div>
 
           {/* Live Stats Bar */}

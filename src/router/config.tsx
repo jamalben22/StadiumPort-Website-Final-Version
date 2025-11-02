@@ -23,8 +23,8 @@ const BudgetGuidesPage = lazy(() => import('../pages/budget-guides/page'));
 const PackingListsPage = lazy(() => import('../pages/packing-lists/page'));
 const SafetyGuidePage = lazy(() => import('../pages/safety-guide/page'));
 const LuxuryTravelPage = lazy(() => import('../pages/luxury-travel/page'));
-const VenuesPage = lazy(() => import('../pages/venues/page'));
-const StadiumDetailPage = lazy(() => import('../pages/venues/[stadiumId]/page'));
+const VenuesPage = lazy(() => import('../pages/world-cup-2026-stadiums/page'));
+const StadiumDetailPage = lazy(() => import('../pages/world-cup-2026-stadiums/[stadiumId]/page'));
 const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'));
 // Direct imports for legal pages to ensure they load properly
 import PrivacyPage from '../pages/legal/privacy/page';
@@ -115,11 +115,11 @@ const routes: RouteObject[] = [
     element: <LuxuryTravelPage />
   },
   {
-    path: '/venues',
+    path: '/world-cup-2026-stadiums',
     element: <VenuesPage />
   },
   {
-    path: '/venues/:stadiumId',
+    path: '/world-cup-2026-stadiums/:stadiumId',
     element: <StadiumDetailPage />
   },
   {
