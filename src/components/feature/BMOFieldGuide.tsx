@@ -23,13 +23,13 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = () => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img
-              src="https://readdy.ai/api/search-image?query=BMO%20Field%20Toronto%20lakefront%20stadium%20aerial%20view%2C%20MLS%20Toronto%20FC%2C%20Exhibition%20Place%20Ontario%2C%20evening%20lights&width=1600&height=900&seq=bmo1&orientation=landscape"
-              alt="BMO Field aerial view"
+              src="/images/bmo-field-toronto-world-cup-2026.webp"
+              alt="Exterior view of BMO Field in Toronto, Canada, one of the official FIFA World Cup 2026 stadiums."
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Preview Content removed to match established stadium page patterns */}
           </div>
@@ -38,18 +38,37 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = () => {
 
       {/* Full Guide - Expanded State (PART 1/4 content only, verbatim) */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="animate-fade-in">
+          {/* Hero Header — Miami-style */}
+          <div className="relative">
+            <div className="relative h-[520px] overflow-hidden">
+              <img
+                src="/images/bmo-field-toronto-world-cup-2026.webp"
+                alt="Exterior view of BMO Field in Toronto, Canada, one of the official FIFA World Cup 2026 stadiums."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">BMO Field</h1>
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-group-line text-xl text-emerald-400"></i>
+                    <span className="font-semibold">~45,736 capacity</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-map-pin-line text-xl text-sky-400"></i>
+                    <span>Toronto, Ontario</span>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-lg leading-relaxed max-w-2xl">
+                  Your complete 2026 FIFA World Cup stadium guide for Toronto's lakefront soccer cathedral.
+                </p>
+              </div>
             </div>
-
-            {/* Exact heading from PART 1/4 */}
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              BMO Field: Your Complete 2026 FIFA World Cup Stadium Guide
-            </h1>
           </div>
 
           {/* Content Sections from PART 1/4 - verbatim integration */}

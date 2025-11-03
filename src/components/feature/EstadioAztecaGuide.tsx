@@ -25,13 +25,13 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img 
-              src="https://readdy.ai/api/search-image?query=Estadio%20Azteca%20Mexico%20City%20aerial%20view%20at%20sunset%2C%20massive%20football%20stadium%20architecture%20with%20dramatic%20lighting%2C%20largest%20stadium%20Latin%20America%20volcanic%20rock%20foundation%2C%20iconic%20World%20Cup%20venue&width=800&height=400&seq=azteca1&orientation=landscape"
-              alt="Estadio Azteca aerial view"
+              src="/images/estadio-azteca-mexico-city-world-cup-2026.webp"
+              alt="Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             
             {/* Stadium Badge */}
             <div className="absolute top-6 left-6">
@@ -72,33 +72,44 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-gold-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="animate-fade-in">
+          {/* Hero Section - Miami Style */}
+          <section className="relative pt-32 pb-20 overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src="/images/estadio-azteca-mexico-city-world-cup-2026.webp"
+                alt="Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-              Estadio Azteca
-            </h1>
-            
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-group-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span className="font-semibold">87,523 capacity</span>
+
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <span className="text-2xl">🇲🇽</span>
+                <span className="text-white font-inter font-medium">Estadio Azteca • 87,523 Capacity</span>
+                <span className="text-gold-400">•</span>
+                <span className="text-emerald-300 font-semibold">Opening Match Venue</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-map-pin-line text-xl text-gold-400 dark:text-gold-300"></i>
-                <span>Mexico City</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-trophy-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span className="font-semibold">Opening Match Venue</span>
+              
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                Estadio Azteca
+                <br />
+                <span className="text-gold-400">FIFA World Cup 2026</span>
+              </h1>
+              
+              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                The Cathedral of Football - Where Legends Are Born
+              </p>
+
+              {/* Stadium Info Badge */}
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
+                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <span className="text-emerald-200 font-inter font-medium">Mexico City • Altitude: 2,240m</span>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

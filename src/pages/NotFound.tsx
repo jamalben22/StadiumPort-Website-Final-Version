@@ -40,7 +40,7 @@ export default function NotFound() {
                 Back to Home
               </Button>
             </Link>
-            <Link to="/cities">
+            <Link to="/world-cup-2026-host-cities">
               <Button variant="outline" size="lg">
                 <i className="ri-map-pin-line mr-2"></i>
                 Explore Cities

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 export default function DallasArticlePage() {
   const navigate = useNavigate();
-  const pageUrl = '/cities/dallas';
+  const pageUrl = '/world-cup-2026-host-cities/dallas';
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -18,7 +18,7 @@ export default function DallasArticlePage() {
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Cities', url: '/cities' },
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
             { name: 'Dallas', url: pageUrl }
           ])
         ]}
@@ -892,7 +892,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         {/* Got It Button */}
         <div className="flex justify-end mt-8">
           <button
-            onClick={() => navigate('/cities')}
+            onClick={() => navigate('/world-cup-2026-host-cities')}
             className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
           >
             <i className="ri-check-line mr-2"></i>

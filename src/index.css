@@ -168,11 +168,11 @@ body.dark {
     animation: stellar 7s ease-in-out infinite;
   }
 
-  .nav-premium {
-    @apply bg-white/80 dark:bg-navy-900/80 border-b border-white/20 dark:border-navy-700/20;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-  }
+.nav-premium {
+  @apply bg-transparent dark:bg-transparent border-b border-white/20 dark:border-navy-700/20;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
 
   .filter-premium {
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1)) brightness(1.05) contrast(1.05);

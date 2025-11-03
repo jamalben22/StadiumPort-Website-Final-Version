@@ -11,6 +11,10 @@ import { SeattleCityGuide } from '../components/SeattleCityGuide';
 import { SanFranciscoCityGuide } from '../components/SanFranciscoCityGuide';
 import { BostonCityGuide } from '../components/BostonCityGuide';
 import { TorontoCityGuide } from '../components/TorontoCityGuide';
+import { VancouverCityGuide } from '../components/VancouverCityGuide';
+import { MexicoCityGuide } from '../components/MexicoCityGuide';
+import { GuadalajaraCityGuide } from '../components/GuadalajaraCityGuide';
+import { MonterreyCityGuide } from '../components/MonterreyCityGuide';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
@@ -62,6 +66,26 @@ export default function CityDetailPage() {
   // Toronto City Guide - Part 1/5 Implementation
   if (normalizedId === 'toronto') {
     return <TorontoCityGuide />;
+  }
+
+  // Vancouver City Guide - Part 1/5 Implementation
+  if (normalizedId === 'vancouver') {
+    return <VancouverCityGuide />;
+  }
+
+  // Mexico City City Guide - Part 1/5 Implementation
+  if (normalizedId === 'mexico-city') {
+    return <MexicoCityGuide />;
+  }
+
+  // Guadalajara City Guide - Part 1/5 Implementation
+  if (normalizedId === 'guadalajara') {
+    return <GuadalajaraCityGuide />;
+  }
+
+  // Monterrey City Guide - Part 1/5 Implementation
+  if (normalizedId === 'monterrey') {
+    return <MonterreyCityGuide />;
   }
 
   // Houston City Guide - Part 1/5 Implementation
@@ -1176,13 +1200,13 @@ export default function CityDetailPage() {
   // City data with full content
   const cityData: { [key: string]: any } = {
     'new-york': {
-      name: 'New York City',
+      name: 'New York / New Jersey',
       country: '🇺🇸',
-      stadium: 'MetLife Stadium',
+      stadium: 'MetLife Stadium, East Rutherford, NJ',
       capacity: '82,500',
       matches: '8 Matches Including Final',
       finalDate: 'July 19, 2026 Final',
-      description: 'The ultimate World Cup 2026 destination hosting the Final on July 19, 2026. Where football history meets the city that never sleeps.',
+      description: "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
       image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%20with%20iconic%20skyscrapers%2C%20modern%20urban%20architecture%2C%20dramatic%20lighting%2C%20metropolitan%20cityscape%2C%20Empire%20State%20Building%20and%20One%20World%20Trade%20Center%20visible&width=1920&height=800&seq=nyc-hero&orientation=landscape',
       content: {
         overview: `New York City will host the FIFA World Cup 2026 Final at MetLife Stadium on July 19, 2026. As the most populous city in the United States and a global hub for finance, arts, fashion, and culture, NYC offers an unparalleled World Cup experience.
@@ -1812,7 +1836,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
           <h1 className="text-4xl font-bold text-navy-900 dark:text-white mb-4">City Not Found</h1>
           <p className="text-slate-600 dark:text-slate-400 mb-8">The city you're looking for doesn't exist or is coming soon.</p>
           <Link
-            to="/cities"
+            to="/world-cup-2026-host-cities"
             className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white"
           >
             <i className="ri-arrow-left-line mr-2"></i>
@@ -1834,14 +1858,14 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities` },
-    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${normalizedId}` }
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` },
+    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/${normalizedId}` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     `${city.name} World Cup 2026 Guide`,
     city.description,
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/${normalizedId}`
+    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/${normalizedId}`
   );
 
   return (
@@ -1865,7 +1889,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
             {/* Breadcrumb */}
             <div className="mb-8">
               <Link
-                to="/cities"
+                to="/world-cup-2026-host-cities"
                 className="inline-flex items-center text-white/80 hover:text-white transition-colors duration-200 text-lg"
               >
                 <i className="ri-arrow-left-line mr-3 text-xl"></i>
@@ -2228,7 +2252,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
           {/* Back to Cities Button */}
           <div className="text-center mt-20">
             <Link
-              to="/cities"
+              to="/world-cup-2026-host-cities"
               className="inline-flex items-center justify-center font-bold rounded-3xl transition-all duration-300 whitespace-nowrap cursor-pointer px-12 py-6 text-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-2xl hover:shadow-3xl transform hover:scale-105"
             >
               <i className="ri-arrow-left-line mr-4 text-2xl"></i>

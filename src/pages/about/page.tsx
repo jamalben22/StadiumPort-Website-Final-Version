@@ -314,7 +314,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
-              to="/cities"
+              to="/world-cup-2026-host-cities"
               className="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-emerald-500/50 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-map-pin-line mr-2"></i>

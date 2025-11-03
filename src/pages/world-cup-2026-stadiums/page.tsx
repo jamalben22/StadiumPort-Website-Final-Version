@@ -6,6 +6,7 @@ import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { useEffect, useState } from 'react';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../components/base/OptimizedImage';
 
 export default function VenuesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Stadiums');
@@ -74,7 +75,7 @@ export default function VenuesPage() {
       capacity: 87523,
       capacityCategory: 'mega',
       matches: 5,
-      image: 'https://readdy.ai/api/search-image?query=Estadio%20Azteca%20Mexico%20City%20aerial%20view%20at%20sunset%2C%20massive%20football%20stadium%20architecture%2C%20iconic%20legendary%20venue%20with%20surrounding%20urban%20landscape%2C%20dramatic%20golden%20lighting%2C%20historic%20sports%20arena%20atmosphere&width=600&height=400&seq=azteca1&orientation=landscape',
+      image: '/images/estadio-azteca-mexico-city-world-cup-2026.webp',
       opened: 1966,
       surface: 'Natural Grass',
       nearestMetro: 'Azteca Station',
@@ -109,7 +110,7 @@ export default function VenuesPage() {
       capacity: 82500,
       capacityCategory: 'mega',
       matches: 8,
-      image: 'https://readdy.ai/api/search-image?query=MetLife%20Stadium%20New%20Jersey%20aerial%20view%20at%20night%2C%20modern%20NFL%20stadium%20architecture%20with%20dramatic%20lighting%2C%20massive%20sports%20venue%20with%20New%20York%20City%20skyline%20backdrop%2C%20contemporary%20design%20excellence&width=600&height=400&seq=metlife1&orientation=landscape',
+      image: '/images/metlife-stadium-east-rutherford-world-cup-2026.webp',
       opened: 2010,
       surface: 'FieldTurf',
       nearestMetro: 'Secaucus Junction',
@@ -145,7 +146,7 @@ export default function VenuesPage() {
       capacity: 80000,
       capacityCategory: 'mega',
       matches: 9,
-      image: 'https://readdy.ai/api/search-image?query=AT&T%20Stadium%20Dallas%20aerial%20view%20with%20distinctive%20architecture%2C%20futuristic%20NFL%20stadium%20design%20with%20massive%20video%20board%2C%20dramatic%20lighting%2C%20modern%20engineering%20marvel%20sports%20venue&width=600&height=400&seq=att1&orientation=landscape',
+      image: '/images/att-stadium-arlington-texas-world-cup-2026.webp',
       opened: 2009,
       surface: 'Matrix Turf',
       nearestMetro: 'Trinity Metro TEXRail',
@@ -181,7 +182,7 @@ export default function VenuesPage() {
       capacity: 76416,
       capacityCategory: 'large',
       matches: 4,
-      image: 'https://readdy.ai/api/search-image?query=Arrowhead%20Stadium%20Kansas%20City%20aerial%20view%2C%20iconic%20NFL%20stadium%20architecture%20with%20distinctive%20design%2C%20passionate%20fan%20atmosphere%2C%20dramatic%20lighting%2C%20legendary%20loud%20sports%20venue&width=600&height=400&seq=arrowhead1&orientation=landscape',
+      image: '/images/arrowhead-stadium-kansas-city-world-cup-2026.webp',
       opened: 1972,
       surface: 'Natural Grass',
       nearestMetro: 'Bus service only',
@@ -217,7 +218,7 @@ export default function VenuesPage() {
       capacity: 53500,
       capacityCategory: 'large',
       matches: 4,
-      image: 'https://readdy.ai/api/search-image?query=Estadio%20BBVA%20Monterrey%20aerial%20view%20with%20Cerro%20de%20la%20Silla%20mountain%20backdrop%2C%20modern%20soccer%20stadium%20with%20unique%20roof%20design%2C%20dramatic%20natural%20landscape%2C%20vibrant%20city%20lights&width=600&height=400&seq=estadiobbva1&orientation=landscape',
+      image: '/images/estadio-bbva-monterrey-world-cup-2026.webp',
       opened: 2015,
       surface: 'Natural Grass',
       nearestMetro: 'Exposición (Metrorrey Line 1)',
@@ -252,7 +253,7 @@ export default function VenuesPage() {
       capacity: 72220,
       capacityCategory: 'large',
       matches: 4,
-      image: 'https://readdy.ai/api/search-image?query=NRG%20Stadium%20Houston%20aerial%20view%2C%20modern%20NFL%20stadium%20with%20retractable%20roof%2C%20Texas%20sports%20venue%20architecture%20with%20urban%20backdrop%2C%20dramatic%20lighting%2C%20contemporary%20design%20excellence&width=600&height=400&seq=nrg1&orientation=landscape',
+      image: '/images/nrg-stadium-houston-texas-world-cup-2026.webp',
       opened: 2002,
       surface: 'Natural Grass',
       nearestMetro: 'NRG Park/Stadium Station',
@@ -286,7 +287,7 @@ export default function VenuesPage() {
       capacity: 71000,
       capacityCategory: 'large',
       matches: 6,
-      image: 'https://readdy.ai/api/search-image?query=Mercedes-Benz%20Stadium%20Atlanta%20aerial%20view%2C%20futuristic%20NFL%20stadium%20with%20distinctive%20halo%20design%2C%20modern%20architectural%20marvel%2C%20dramatic%20lighting%2C%20innovative%20sports%20venue%20design%20excellence&width=600&height=400&seq=mb1&orientation=landscape',
+      image: '/images/mercedes-benz-stadium-atlanta-world-cup-2026.webp',
       opened: 2017,
       surface: 'FieldTurf',
       description: `A roof that opens like a camera lens. Food that costs $5. A city that moves culture. Mercedes-Benz Stadium (2017) revolutionized stadiums with its 8-petal retractable roof, 360° halo video board, LEED Platinum design, and game-changing concession prices. Super Bowl 53 hosted. Six World Cup matches via MARTA. Explore downtown Atlanta's civil rights history, hip-hop heartbeat, and why "The Benz" represents the future of football venues.`,
@@ -313,7 +314,7 @@ export default function VenuesPage() {
       capacity: 70240,
       capacityCategory: 'large',
       matches: 8,
-      image: 'https://readdy.ai/api/search-image?query=SoFi%20Stadium%20Los%20Angeles%20aerial%20view%2C%20ultra-modern%20NFL%20stadium%20architecture%20with%20translucent%20canopy%2C%20futuristic%20design%20with%20Hollywood%20glamour%2C%20dramatic%20lighting%2C%20cutting-edge%20sports%20venue&width=600&height=400&seq=sofi1&orientation=landscape',
+      image: '/images/sofi-stadium-los-angeles-world-cup-2026.webp',
       opened: 2020,
       surface: 'Natural Grass (World Cup install)',
       description: "The $5.5 billion stadium that redefined possible. Built 40 feet underground beneath a hovering translucent canopy, SoFi's 120-yard Infinity Screen (double-sided, 2.2 million pounds of LED) creates an experience unlike anywhere on Earth. Super Bowl 56 hosted. 2028 Olympics confirmed. Eight World Cup matches in LA's entertainment capital—discover Metro connections, parking realities, the surrounding 298-acre complex, and why this architectural icon demands your attention.",
@@ -340,7 +341,7 @@ export default function VenuesPage() {
       capacity: 69000,
       capacityCategory: 'medium',
       matches: 5,
-      image: 'https://readdy.ai/api/search-image?query=Lumen%20Field%20Seattle%20aerial%20view%20with%20Puget%20Sound%20and%20mountains%2C%20NFL%20stadium%20with%20Pacific%20Northwest%20backdrop%2C%20dramatic%20natural%20scenery%2C%20urban%20stadium%20with%20water%20views&width=600&height=400&seq=lumen1&orientation=landscape',
+      image: '/images/lumen-field-seattle-world-cup-2026.webp',
       opened: 2002,
       surface: 'FieldTurf',
       description: 'The loudest fans. The most beautiful views. The only stadium to cause earthquakes. Lumen Field\'s "12th Man" tradition created seismic readings in 2011 and 2013—noise so intense it registered on monitors. Engineered with a partial roof that traps sound, this waterfront fortress opens north to Puget Sound and Olympic Mountain vistas. Sounders MLS champions. Link Light Rail connected. Explore Seattle\'s Pioneer Square, Pike Place Market, and why this coffee-powered, tech-savvy city brings Pacific Northwest intensity.',
@@ -367,7 +368,7 @@ export default function VenuesPage() {
       capacity: 68500,
       capacityCategory: 'medium',
       matches: 6,
-      image: 'https://readdy.ai/api/search-image?query=Levis%20Stadium%20Santa%20Clara%20aerial%20view%2C%20modern%20NFL%20stadium%20architecture%20with%20Bay%20Area%20backdrop%2C%20California%20sports%20venue%20with%20tech%20innovation%2C%20dramatic%20lighting%2C%20Silicon%20Valley%20atmosphere&width=600&height=400&seq=levis1&orientation=landscape',
+      image: '/images/levis-stadium-santa-clara-world-cup-2026.webp',
       opened: 2014,
       surface: 'Natural Grass',
       description: 'Silicon Valley built a stadium and loaded it with tech. World\'s first comprehensive stadium app (order food, watch replays, track stats from your seat). Fastest Wi-Fi in sports. LEED Gold design with solar panels. Super Bowl 50 and College Football Playoff Championship hosted. Six World Cup matches between San Francisco and San Jose—navigate Caltrain/VTA Light Rail, understand the west-facing sun challenge, and discover why the Bay Area\'s tech capital does football its own innovative way.',
@@ -394,7 +395,7 @@ export default function VenuesPage() {
       capacity: 69596,
       capacityCategory: 'medium',
       matches: 5,
-      image: 'https://readdy.ai/api/search-image?query=Lincoln%20Financial%20Field%20Philadelphia%20aerial%20view%2C%20NFL%20stadium%20with%20historic%20city%20backdrop%2C%20passionate%20Eagles%20fan%20atmosphere%2C%20dramatic%20lighting%2C%20East%20Coast%20sports%20venue%20excellence&width=600&height=400&seq=linc1&orientation=landscape',
+      image: '/images/lincoln-financial-field-philadelphia-world-cup-2026.webp',
       description: 'They booed Santa. They won a Super Bowl. They\'ll make World Cup unforgettable. Lincoln Financial Field brings South Philly\'s legendary intensity to five matches—where Eagles fans\' notorious passion (they literally had a jail in the old stadium) meets 1776 American history. Super Bowl 52 champions. Direct SEPTA Broad Street Line access. Explore Independence Hall, Rocky Steps, authentic cheesesteak culture, and discover why this blue-collar city\'s no-nonsense attitude creates the most authentic football atmosphere in America.',
       address: '1 Lincoln Financial Field Way, Philadelphia, PA 19148, United States',
       homeTeams: ['Philadelphia Eagles'],
@@ -414,7 +415,7 @@ export default function VenuesPage() {
       capacity: 65878,
       capacityCategory: 'medium',
       matches: 5,
-      image: 'https://readdy.ai/api/search-image?query=Gillette%20Stadium%20Boston%20aerial%20view%2C%20NFL%20stadium%20with%20New%20England%20architecture%2C%20Patriots%20venue%20with%20traditional%20design%2C%20dramatic%20lighting%2C%20historic%20regional%20atmosphere&width=600&height=400&seq=gillette1&orientation=landscape',
+      image: '/images/gillette-stadium-foxborough-world-cup-2026.webp',
       description: 'The house that Brady built. Six Super Bowl championships in 20 years transformed Gillette Stadium into the NFL\'s dynasty headquarters—where "Do Your Job" became New England\'s mantra. A lighthouse guards the entrance. Patriot Place wraps the venue. Five World Cup matches in Foxborough, 30 miles south of Boston via MBTA Commuter Rail (limited service) or car. Explore Revolutionary War history, New England Revolution (MLS) culture, Patriots Hall of Fame, and why six states consider this hallowed ground.',
       address: '1 Patriot Pl, Foxborough, MA 02035, United States',
       homeTeams: ['New England Patriots'],
@@ -434,7 +435,7 @@ export default function VenuesPage() {
       capacity: 65326,
       capacityCategory: 'medium',
       matches: 6,
-      image: 'https://readdy.ai/api/search-image?query=Hard%20Rock%20Stadium%20Miami%20aerial%20view%2C%20NFL%20stadium%20with%20tropical%20Florida%20backdrop%2C%20modern%20venue%20with%20canopy%20design%2C%20dramatic%20lighting%2C%20South%20Beach%20atmosphere&width=600&height=400&seq=hardrock1&orientation=landscape',
+      image: '/images/hard-rock-stadium-miami-world-cup-2026.webp',
       opened: 1987,
       surface: 'Natural Grass',
       description: 'Where innovation beats the heat. Hard Rock\'s $550 million transformation (2016) created a revolutionary canopy that covers every fan while leaving the field exposed—you stay cool, players sweat. Six Super Bowls hosted. Formula 1 Miami Grand Prix circles the venue. Six World Cup matches in Miami Gardens, requiring car/rideshare from South Beach or downtown. Navigate Miami\'s Latin neighborhoods, Art Deco architecture, world-famous nightlife, and prepare for 90°F June heat with afternoon thunderstorms. This is subtropical football—glamorous, yes, but bring sunscreen.',
@@ -461,7 +462,7 @@ export default function VenuesPage() {
       capacity: 45736,
       capacityCategory: 'large',
       matches: 6,
-      image: 'https://readdy.ai/api/search-image?query=BMO%20Field%20Toronto%20waterfront%20stadium%20aerial%20view%20at%20sunset%2C%20soccer-specific%20stadium%2C%20Exhibition%20Place%2C%20Lake%20Ontario%20backdrop%2C%20dramatic%20lighting%20Toronto%20skyline&width=600&height=400&seq=bmo2&orientation=landscape',
+      image: '/images/bmo-field-toronto-world-cup-2026.webp',
       opened: 2007,
       surface: 'Natural Grass (Kentucky Bluegrass)',
       nearestMetro: 'Exhibition GO Station',
@@ -497,7 +498,7 @@ export default function VenuesPage() {
       capacity: 54500,
       capacityCategory: 'medium',
       matches: 5,
-      image: 'https://readdy.ai/api/search-image?query=BC%20Place%20Vancouver%20aerial%20view%2C%20domed%20stadium%20with%20mountains%20and%20ocean%20backdrop%2C%20Pacific%20Northwest%20venue%20with%20natural%20beauty%2C%20dramatic%20lighting%2C%20coastal%20city%20atmosphere&width=600&height=400&seq=bcplace1&orientation=landscape',
+      image: '/images/bc-place-vancouver-world-cup-2026.webp',
       opened: 1983,
       surface: 'FieldTurf',
       description: 'Where mountains meet the pitch. BC Place\'s retractable roof—the world\'s largest cable-supported system—opens in 20 minutes to reveal snow-capped peaks and Pacific skies. Hosted the 2015 FIFA Women\'s World Cup Final and 2010 Olympics ceremonies. Five matches in downtown Vancouver, steps from Stadium-Chinatown SkyTrain. Rebuilt in 2011 with cutting-edge technology. Explore Yaletown\'s waterfront, Gastown\'s cobblestones, and why this multicultural city between mountains and ocean delivers Canada\'s most spectacular World Cup setting.',
@@ -524,7 +525,8 @@ export default function VenuesPage() {
       capacity: 49850,
       capacityCategory: 'medium',
       matches: 4,
-      image: 'https://readdy.ai/api/search-image?query=Estadio%20Akron%20Guadalajara%20aerial%20view%2C%20modern%20Mexican%20stadium%20architecture%2C%20cultural%20heritage%20venue%20with%20traditional%20atmosphere%2C%20dramatic%20lighting%2C%20mariachi%20country%20setting&width=600&height=400&seq=akron1&orientation=landscape',
+      image: '/images/estadio-akron-guadalajara-world-cup-2026.webp',
+      alt: "Inside view of Estadio Akron in Guadalajara, Mexico, a key venue for FIFA World Cup 2026 games.",
       opened: 2010,
       surface: 'Natural Grass',
       description: "Where Mexico's soul lives. Estadio Akron (2010)—home to Chivas, the only club fielding exclusively Mexican players—brings four World Cup matches to Guadalajara, birthplace of mariachi and tequila. This intimate 49,850-seat bowl amplifies \"El Rebaño Sagrado\" (The Sacred Herd) passion beneath Sierra Madre mountain backdrops. Opened as Estadio Omnilife, rebranded Akron, always pure Tapatío pride. Explore Mexico's second-largest city, historic centro, nearby Tequila town distilleries, and why Jalisco's cultural traditions and football devotion run deeper than anywhere else in Mexico.",
@@ -616,11 +618,20 @@ export default function VenuesPage() {
                 
                 {/* Hero Image */}
                 <div className="relative h-56 overflow-hidden">
-                  <img
+                  <OptimizedImage
                     src={venue.image}
-                    alt={`${venue.name} stadium`}
-                    className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                    loading="lazy"
+                    alt={venue.alt ?? (venue.id === 1 ? "Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches" : 
+                         venue.id === 2 ? "Exterior view of MetLife Stadium in East Rutherford, New Jersey — one of the key venues for FIFA World Cup 2026 in the USA" :
+                         venue.id === 3 ? "Exterior view of AT&T Stadium in Arlington, Texas — modern NFL venue set to host FIFA World Cup 2026 matches in the United States." :
+                         venue.id === 4 ? "Interior view of Arrowhead Stadium in Kansas City, Missouri — vibrant atmosphere ahead of FIFA World Cup 2026 matches." :
+                         venue.id === 5 ? "Interior of Estadio BBVA in Monterrey, Mexico — state-of-the-art venue hosting FIFA World Cup 2026 matches." :
+                         venue.id === 6 ? "Exterior view of NRG Stadium in Houston, Texas — one of the major FIFA World Cup 2026 venues in the USA." :
+                         `${venue.name} stadium`)}
+                    className="w-full h-full"
+                    imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                    placeholder="blur"
+                    priority={index < 2}
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   

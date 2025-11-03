@@ -20,21 +20,21 @@ export function Header() {
   // Search data
   const searchData = [
     // Cities
-    { type: 'city', title: 'New York', path: '/cities/new-york', description: 'The Big Apple - MetLife Stadium' },
-    { type: 'city', title: 'Los Angeles', path: '/cities/los-angeles', description: 'City of Angels - SoFi Stadium & Rose Bowl' },
-    { type: 'city', title: 'Miami', path: '/cities/miami', description: 'Magic City - Hard Rock Stadium' },
-    { type: 'city', title: 'Atlanta', path: '/cities/atlanta', description: 'Hotlanta - Mercedes-Benz Stadium' },
-    { type: 'city', title: 'Dallas', path: '/cities/dallas', description: 'Big D - AT&T Stadium' },
-    { type: 'city', title: 'Kansas City', path: '/cities/kansas-city', description: 'Heart of America - Arrowhead Stadium' },
-    { type: 'city', title: 'Philadelphia', path: '/cities/philadelphia', description: 'City of Brotherly Love - Lincoln Financial Field' },
-    { type: 'city', title: 'Seattle', path: '/cities/seattle', description: 'Emerald City - Lumen Field' },
-    { type: 'city', title: 'San Francisco', path: '/cities/san-francisco', description: 'Golden Gate City - Levi\'s Stadium' },
-    { type: 'city', title: 'Boston', path: '/cities/boston', description: 'Beantown - Gillette Stadium' },
-    { type: 'city', title: 'Toronto', path: '/cities/toronto', description: 'The 6ix - BMO Field' },
-    { type: 'city', title: 'Vancouver', path: '/cities/vancouver', description: 'Beautiful British Columbia - BC Place' },
-    { type: 'city', title: 'Mexico City', path: '/cities/mexico-city', description: 'Capital of Mexico - Estadio Azteca' },
-    { type: 'city', title: 'Guadalajara', path: '/cities/guadalajara', description: 'Pearl of the West - Estadio Akron' },
-    { type: 'city', title: 'Monterrey', path: '/cities/monterrey', description: 'Sultan of the North - Estadio BBVA' },
+    { type: 'city', title: 'New York', path: '/world-cup-2026-host-cities/new-york', description: 'The Big Apple - MetLife Stadium' },
+    { type: 'city', title: 'Los Angeles', path: '/world-cup-2026-host-cities/los-angeles', description: 'City of Angels - SoFi Stadium & Rose Bowl' },
+    { type: 'city', title: 'Miami', path: '/world-cup-2026-host-cities/miami', description: 'Magic City - Hard Rock Stadium' },
+    { type: 'city', title: 'Atlanta', path: '/world-cup-2026-host-cities/atlanta', description: 'Hotlanta - Mercedes-Benz Stadium' },
+    { type: 'city', title: 'Dallas', path: '/world-cup-2026-host-cities/dallas', description: 'Big D - AT&T Stadium' },
+    { type: 'city', title: 'Kansas City', path: '/world-cup-2026-host-cities/kansas-city', description: 'Heart of America - Arrowhead Stadium' },
+    { type: 'city', title: 'Philadelphia', path: '/world-cup-2026-host-cities/philadelphia', description: 'City of Brotherly Love - Lincoln Financial Field' },
+    { type: 'city', title: 'Seattle', path: '/world-cup-2026-host-cities/seattle', description: 'Emerald City - Lumen Field' },
+    { type: 'city', title: 'San Francisco', path: '/world-cup-2026-host-cities/san-francisco', description: 'Golden Gate City - Levi\'s Stadium' },
+    { type: 'city', title: 'Boston', path: '/world-cup-2026-host-cities/boston', description: 'Beantown - Gillette Stadium' },
+    { type: 'city', title: 'Toronto', path: '/world-cup-2026-host-cities/toronto', description: 'The 6ix - BMO Field' },
+    { type: 'city', title: 'Vancouver', path: '/world-cup-2026-host-cities/vancouver', description: 'Beautiful British Columbia - BC Place' },
+    { type: 'city', title: 'Mexico City', path: '/world-cup-2026-host-cities/mexico-city', description: 'Capital of Mexico - Estadio Azteca' },
+    { type: 'city', title: 'Guadalajara', path: '/world-cup-2026-host-cities/guadalajara', description: 'Pearl of the West - Estadio Akron' },
+    { type: 'city', title: 'Monterrey', path: '/world-cup-2026-host-cities/monterrey', description: 'Sultan of the North - Estadio BBVA' },
     
     // Stadiums
     { type: 'stadium', title: 'MetLife Stadium', path: '/world-cup-2026-stadiums', description: 'New York - Home of Giants & Jets' },
@@ -153,7 +153,7 @@ export function Header() {
             {/* Ultra Premium Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
               {[
-                { path: '/cities', label: 'Host Cities', icon: 'ri-map-pin-line' },
+                { path: '/world-cup-2026-host-cities', label: 'Host Cities', icon: 'ri-map-pin-line' },
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line' },
                 { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line' },
                 { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line' }
@@ -220,7 +220,7 @@ export function Header() {
             <div className="mt-4 p-6 rounded-3xl bg-white/80 dark:bg-navy-800/80 backdrop-blur-2xl border border-white/20 dark:border-navy-700/20 shadow-premium">
               <nav className="space-y-2">
                 {[
-                  { path: '/cities', label: 'Host Cities', icon: 'ri-map-pin-line', desc: 'Explore all 16 cities' },
+                  { path: '/world-cup-2026-host-cities', label: 'Host Cities', icon: 'ri-map-pin-line', desc: 'Explore all 16 cities' },
                   { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line', desc: 'Discover every venue' },
                   { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line', desc: 'Expert travel tips' },
                   { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line', desc: 'Best prices & offers' }

@@ -6,7 +6,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '..
 
 export default function MiamiCityGuide() {
   const navigate = useNavigate();
-  const pageUrl = '/cities/miami';
+  const pageUrl = '/world-cup-2026-host-cities/miami';
   useEffect(() => {
     window.scrollTo(0, 0);
     
@@ -20,20 +20,20 @@ export default function MiamiCityGuide() {
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/miami`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami`);
     }
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities` },
-    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/miami` }
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` },
+    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities/miami`
+    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami`
   );
 
   return (
@@ -796,7 +796,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
           {/* Got It Button */}
           <div className="flex justify-end mt-8">
             <button
-              onClick={() => navigate('/cities')}
+              onClick={() => navigate('/world-cup-2026-host-cities')}
               className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
             >
               <i className="ri-check-line mr-2"></i>

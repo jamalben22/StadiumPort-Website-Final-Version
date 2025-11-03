@@ -23,13 +23,13 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img
               src="https://readdy.ai/api/search-image?query=Lincoln%20Financial%20Field%20Philadelphia%20aerial%20view%2C%20NFL%20stadium%20with%20historic%20city%20backdrop%2C%20passionate%20Eagles%20fan%20atmosphere%2C%20dramatic%20lighting%2C%20East%20Coast%20sports%20venue%20excellence&width=800&height=400&seq=linc1&orientation=landscape"
               alt="Lincoln Financial Field aerial view in Philadelphia"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -82,21 +82,37 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
+        <div className="animate-fade-in">
+          {/* Hero Header — Miami-style */}
+          <div className="relative">
+            <div className="relative h-[520px] overflow-hidden">
+              <img
+                src="/images/lincoln-financial-field-philadelphia-world-cup-2026.webp"
+                alt="Interior view of Lincoln Financial Field in Philadelphia, Pennsylvania, one of the U.S. venues for FIFA World Cup 2026 matches."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Lincoln Financial Field</h1>
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-group-line text-xl text-emerald-400"></i>
+                    <span className="font-semibold">67,594 capacity</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-map-pin-line text-xl text-sky-400"></i>
+                    <span>Philadelphia, Pennsylvania</span>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-lg leading-relaxed max-w-2xl">
+                  Where America’s birthday meets football’s greatest stage.
+                </p>
+              </div>
             </div>
-
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              Lincoln Financial Field: Your Complete 2026 FIFA World Cup Guide
-            </h1>
-
-            <h2 className="text-xl md:text-2xl font-semibold text-slate-700 dark:text-slate-200">
-              Where America's Birthday Meets Football's Greatest Stage
-            </h2>
           </div>
 
           {/* Content Sections */}
