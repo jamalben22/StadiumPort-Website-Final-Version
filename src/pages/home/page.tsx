@@ -133,8 +133,7 @@ export default function HomePage() {
       flag: '🇺🇸',
       stadium: 'SoFi Stadium',
       capacity: '70,240',
-      description:
-        'The entertainment capital combines Hollywood glamour with perfect weather and stunning Pacific coastlines.',
+      description: 'Where $5.5 billion meets global football. LA\'s architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world\'s entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA\'s sprawling diversity means every team has a neighborhood. This is spectacle, California-style.',
       image:
         'https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20with%20palm%20trees%2C%20Hollywood%20hills%20in%20background%2C%20sunny%20California%20weather%2C%20modern%20urban%20landscape%2C%20entertainment%20district&width=600&height=400&seq=la-skyline&orientation=landscape',
       fullContent: {
@@ -465,7 +464,7 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/cities">
+            <Link to="/world-cup-2026-host-cities">
               <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
@@ -635,7 +634,7 @@ export default function HomePage() {
               </Button>
             </Link>
 
-            <Link to="/cities" className="group">
+            <Link to="/world-cup-2026-host-cities" className="group">
               <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl">
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 

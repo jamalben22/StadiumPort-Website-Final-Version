@@ -23,13 +23,13 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img
               src="https://readdy.ai/api/search-image?query=SoFi%20Stadium%20Los%20Angeles%20aerial%20view%20with%20translucent%20roof%2C%20Inglewood%20California%2C%20modern%20sports%20venue%20architecture%20at%20sunset%2C%20dramatic%20lighting&width=800&height=400&seq=sofi1&orientation=landscape"
               alt="SoFi Stadium aerial view with translucent roof"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -82,27 +82,56 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
-            </div>
+        <div className="animate-fade-in">
+          {/* Miami-style Hero Header */}
+          <div className="relative h-[520px] overflow-hidden">
+            <img
+              src="/images/sofi-stadium-los-angeles-world-cup-2026.webp"
+              alt="Interior view of SoFi Stadium in Los Angeles, California, a host venue for FIFA World Cup 2026 matches."
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
-            {/* Header Title (trimmed per request) */}
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              SoFi Stadium
-            </h1>
-
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">70,000+ capacity</span>
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span>Inglewood, California (Hollywood Park district), 3 miles from LAX Airport</span>
+
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                SoFi Stadium
+              </h1>
+
+              <div className="flex flex-wrap items-center gap-6 mb-6 text-white/90">
+                <div className="flex items-center gap-2">
+                  <i className="ri-group-line text-xl text-blue-300"></i>
+                  <span className="font-semibold">70,000+ capacity</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-xl text-emerald-300"></i>
+                  <span>Inglewood, California (Hollywood Park district), 3 miles from LAX Airport</span>
+                </div>
+              </div>
+
+              <p className="text-slate-200 text-lg leading-relaxed mb-8 max-w-3xl">
+                When the United States Men's National Team walks onto the pitch at SoFi Stadium on June 12, 2026, they'll be christening one of the world's most technologically advanced sporting cathedrals under the eyes of 70,000 roaring fans. This isn't just another World Cup venue—it's a $5 billion architectural marvel that has redefined what a stadium can be.
+              </p>
+
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={toggleExpanded}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-sm transition-colors"
+                >
+                  <i className="ri-arrow-up-line"></i>
+                  Collapse preview
+                </button>
+                <button
+                  onClick={handleGotItClick}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
+                >
+                  <i className="ri-check-line"></i>
+                  Got it
+                </button>
               </div>
             </div>
           </div>

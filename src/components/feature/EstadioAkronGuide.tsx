@@ -64,30 +64,34 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = () => {
 
       {/* Expanded Premium Guide (MetLife-style header) */}
       {expanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section — match MetLife/Azteca style */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              Estadio Akron
-            </h1>
-
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span className="font-semibold">49,850 capacity</span>
+        <div className="animate-fade-in">
+          {/* Hero Header — Miami-style */}
+          <div className="relative">
+            <div className="relative h-[520px] overflow-hidden">
+              <img
+                src="/images/estadio-akron-guadalajara-world-cup-2026.webp"
+                alt="Inside view of Estadio Akron in Guadalajara, Mexico, a key venue for FIFA World Cup 2026 games."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Estadio Akron</h1>
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-group-line text-xl text-emerald-400"></i>
+                    <span className="font-semibold">~49,850 capacity</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-map-pin-line text-xl text-sky-400"></i>
+                    <span>Guadalajara, Mexico</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-sky-400 dark:text-sky-300"></i>
-                <span>Guadalajara, Mexico</span>
-              </div>
             </div>
-
-            {/* Intro paragraph moved below header to match other stadium pages */}
           </div>
 
           {/* Content Sections */}

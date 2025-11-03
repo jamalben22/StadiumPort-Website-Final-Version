@@ -23,9 +23,9 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
       {!isExpanded && (
         <div className="relative">
           {/* Hero (placeholder gradient for now; replace with image when provided) */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-tr from-slate-900 via-slate-800 to-slate-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -77,30 +77,44 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
+        <div className="animate-fade-in">
+          {/* Hero Section - Miami Style */}
+          <section className="relative pt-32 pb-20 overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src="/images/mercedes-benz-stadium-atlanta-world-cup-2026.webp"
+                alt="Exterior view of Mercedes-Benz Stadium in Atlanta, Georgia, one of the premier venues for the FIFA World Cup 2026."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
 
-            {/* Use exact heading text from content */}
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              Mercedes-Benz Stadium: Your Complete Guide to Atlanta's 2026 FIFA World Cup Venue
-            </h1>
-
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">Capacity: 75,000 (expandable to 83,000)</span>
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <span className="text-2xl">🇺🇸</span>
+                <span className="text-white font-inter font-medium">Mercedes-Benz Stadium • 75,000 Capacity</span>
+                <span className="text-gold-400">•</span>
+                <span className="text-emerald-300 font-semibold">Semifinal Host Venue</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span>Location: Downtown Atlanta, Georgia (1 AMB Drive NW)</span>
+              
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                Mercedes-Benz Stadium
+                <br />
+                <span className="text-gold-400">FIFA World Cup 2026</span>
+              </h1>
+              
+              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                Where innovation meets World Cup spectacle in Atlanta.
+              </p>
+
+              {/* Stadium Info Badge */}
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
+                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <span className="text-emerald-200 font-inter font-medium">Downtown Atlanta, Georgia</span>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

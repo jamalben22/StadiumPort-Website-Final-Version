@@ -26,13 +26,13 @@ export const ATTStadiumGuide = ({ onClose }: ATTStadiumGuideProps) => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img 
-              src="https://readdy.ai/api/search-image?query=AT%26T%20Stadium%20Dallas%20aerial%20view%20with%20distinctive%20architecture%2C%20futuristic%20NFL%20stadium%20design%20with%20massive%20video%20board%2C%20dramatic%20lighting%2C%20modern%20engineering%20marvel%20sports%20venue&width=800&height=400&seq=att1&orientation=landscape"
-              alt="AT&T Stadium aerial view"
+              src="/images/att-stadium-arlington-texas-world-cup-2026.webp"
+              alt="Exterior view of AT&T Stadium in Arlington, Texas — modern NFL venue set to host FIFA World Cup 2026 matches in the United States."
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Stadium Badge */}
             <div className="absolute top-6 left-6">
@@ -88,30 +88,56 @@ export const ATTStadiumGuide = ({ onClose }: ATTStadiumGuideProps) => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 dark:from-emerald-300 dark:to-sky-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              AT&T Stadium
-            </h1>
-            
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">80,000 capacity (expandable to 100,000)</span>
+        <div className="animate-fade-in">
+          {/* Miami-style Hero Header */}
+          <div className="relative h-[520px] overflow-hidden">
+            <img 
+              src="/images/att-stadium-arlington-texas-world-cup-2026.webp"
+              alt="Exterior view of AT&T Stadium in Arlington, Texas — modern NFL venue set to host FIFA World Cup 2026 matches in the United States."
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+
+            <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span>Arlington (Dallas–Fort Worth)</span>
+              
+              <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
+                AT&T Stadium
+              </h1>
+              
+              <div className="flex flex-wrap items-center gap-6 mb-6 text-white/90">
+                <div className="flex items-center gap-2">
+                  <i className="ri-group-line text-xl text-blue-300"></i>
+                  <span className="font-semibold">80,000 capacity (expandable to 100,000)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-xl text-emerald-300"></i>
+                  <span>Arlington (Dallas–Fort Worth)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-calendar-event-line text-xl text-blue-300"></i>
+                  <span className="font-semibold">Most Matches Host (9)</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-calendar-event-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">Most Matches Host (9)</span>
+
+              <div className="flex gap-3">
+                <button 
+                  onClick={toggleExpanded}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-white/10 hover:bg-white/20 text-white rounded-lg backdrop-blur-sm transition-colors"
+                >
+                  <i className="ri-arrow-up-line"></i>
+                  Collapse preview
+                </button>
+                <button 
+                  onClick={handleGotItClick}
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
+                >
+                  <i className="ri-check-line"></i>
+                  Got it
+                </button>
               </div>
             </div>
           </div>

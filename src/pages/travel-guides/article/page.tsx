@@ -453,7 +453,7 @@ export default function TravelGuideArticlePage() {
                     Quick Links
                   </h3>
                   <div className="space-y-3">
-                    <Link to="/cities" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">
+                    <Link to="/world-cup-2026-host-cities" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">
                       Host Cities Guide
                     </Link>
                     <Link to="/deals" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">

@@ -389,19 +389,19 @@ NYC has soccer bars for every nation. Bar 43, known as the "home of soccer in Qu
             <i className="ri-shield-check-line text-emerald-500"></i>
             Safety & Getting Around
           </h3>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line mb-4">
+          <p className="text-slate-700 dark:text-white leading-relaxed whitespace-pre-line mb-4">
             {`New York is one of the safest large cities in America. Basic street smarts apply: be aware of your surroundings, especially late at night, and keep valuables secure in crowded areas.`}
           </p>
           <h4 className="text-lg font-semibold text-navy-900 dark:text-white mb-2">Subway Strategy</h4>
-          <p className="text-slate-700 dark:text-slate-2 00 leading-relaxed whitespace-pre-line mb-4">
+          <p className="text-slate-700 dark:text-white leading-relaxed whitespace-pre-line mb-4">
             {`The NYC subway runs 24/7 and is the fastest way to navigate Manhattan and Brooklyn. Buy a 7-day unlimited MetroCard ($34) if you're staying a week—it pays for itself after 12 rides. Google Maps provides excellent real-time subway directions.`}
           </p>
           <h4 className="text-lg font-semibold text-navy-900 dark:text-white mb-2">Walking City</h4>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line mb-4">
+          <p className="text-slate-700 dark:text-white leading-relaxed whitespace-pre-line mb-4">
             {`Manhattan is incredibly walkable. Many attractions are just 20-30 minutes apart on foot, and you'll discover the city's personality between destinations.`}
           </p>
           <h4 className="text-lg font-semibold text-navy-900 dark:text-white mb-2">Rideshares & Taxis</h4>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+          <p className="text-slate-700 dark:text-white leading-relaxed whitespace-pre-line">
             {`Uber and Lyft operate city-wide. Traditional yellow taxis are also plentiful in Manhattan. Expect surge pricing on match days and weekend evenings.`}
           </p>
         </div>
@@ -491,7 +491,7 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
 
         {/* Back CTA */}
         <div className="flex justify-end">
-          <Link to="/cities" className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3">
+          <Link to="/world-cup-2026-host-cities" className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3">
             <i className="ri-check-line mr-2"></i>
               Got It
           </Link>

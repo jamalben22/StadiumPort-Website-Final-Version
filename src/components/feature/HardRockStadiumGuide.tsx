@@ -23,9 +23,9 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero (gradient as placeholder to avoid external fetch issues) */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <div className="w-full h-full bg-gradient-to-br from-sky-500/60 via-emerald-500/50 to-indigo-600/60 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Overlay content for collapsed preview */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -61,21 +61,46 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
 
       {/* Full Guide - Expanded State (PART 1/5 content only, verbatim) */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 dark:from-emerald-300 dark:to-sky-300 rounded-full animate-pulse"></div>
-              <span className="text-emerald-500 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="animate-fade-in">
+          {/* Hero Section - Miami Style */}
+          <section className="relative pt-32 pb-20 overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+              <img
+                src="/images/hard-rock-stadium-miami-world-cup-2026.webp"
+                alt="Exterior view of Hard Rock Stadium in Miami, Florida, a major FIFA World Cup 2026 host venue."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
 
-            {/* Exact heading from PART 1/5 */}
-            <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              Hard Rock Stadium: Your Complete 2026 FIFA World Cup Guide
-            </h1>
-          </div>
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <span className="text-2xl">🌴</span>
+                <span className="text-white font-inter font-medium">Hard Rock Stadium • 67,518 Capacity</span>
+                <span className="text-gold-400">•</span>
+                <span className="text-emerald-300 font-semibold">World Cup Venue</span>
+              </div>
+              
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                Hard Rock Stadium
+                <br />
+                <span className="text-gold-400">FIFA World Cup 2026</span>
+              </h1>
+              
+              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                Where Miami's Sunshine Meets Football's Biggest Stage
+              </p>
 
-          {/* Content Sections from PART 1/5 - verbatim integration */}
+              {/* Stadium Info Badge */}
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
+                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <span className="text-emerald-200 font-inter font-medium">Miami Gardens, Florida • USA</span>
+              </div>
+            </div>
+          </section>
+
+          {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">
             {/* Where Miami's Sunshine Meets Football's Biggest Stage */}
             <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">

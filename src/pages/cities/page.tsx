@@ -58,36 +58,38 @@ export default function CitiesPage() {
 
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities`);
     }
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities` }
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     'World Cup 2026 Host Cities',
     'Complete guide to all 16 World Cup 2026 host cities across USA, Canada, and Mexico with travel information, hotels, and attractions.',
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/cities`
+    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities`
   );
 
   // Function to convert city name to route slug
   const getCityRoute = (cityName: string): string => {
     const routeMap: { [key: string]: string } = {
+      // Route NYC/NJ card to the original New York City travel guide page
+      'New York / New Jersey': '/travel-guides/new-york-city',
       'New York City': '/travel-guides/new-york-city',
-      'Los Angeles': '/cities/los-angeles',
-      'Miami': '/cities/miami',
-      'Kansas City': '/cities/kansas-city',
-      'Houston': '/cities/houston',
-      'Dallas': '/cities/dallas',
-      'Atlanta': '/cities/atlanta',
-      'Seattle': '/cities/seattle',
+      'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
+      'Miami': '/world-cup-2026-host-cities/miami',
+      'Kansas City': '/world-cup-2026-host-cities/kansas-city',
+      'Houston': '/world-cup-2026-host-cities/houston',
+      'Dallas': '/world-cup-2026-host-cities/dallas',
+      'Atlanta': '/world-cup-2026-host-cities/atlanta',
+      'Seattle': '/world-cup-2026-host-cities/seattle',
       // Add more cities as they become available
     };
     
-    return routeMap[cityName] || `/cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`;
+    return routeMap[cityName] || `/world-cup-2026-host-cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`;
   };
 
   const openCityModal = (city: HostCity) => {
@@ -103,12 +105,12 @@ export default function CitiesPage() {
   const hostCities: HostCity[] = [
     {
       id: 1,
-      name: 'New York City',
+      name: 'New York / New Jersey',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'MetLife Stadium',
-      capacity: '87,157',
-      description: 'The city that never sleeps welcomes the world with iconic skylines, world-class dining, and unmatched energy.',
+      stadium: 'MetLife Stadium, East Rutherford, NJ',
+      capacity: '82,500',
+      description: "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
       image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%2C%20iconic%20skyscrapers%2C%20urban%20landscape%2C%20modern%20metropolitan%20cityscape%2C%20vibrant%20city%20lights%2C%20architectural%20beauty&width=600&height=400&seq=nyc-skyline&orientation=landscape',
       fullContent: {
         introduction: `The World's Biggest Game Comes to the World's Biggest Stage`,
@@ -190,9 +192,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Los Angeles',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'SoFi Stadium',
+      stadium: 'SoFi Stadium, Inglewood, CA',
       capacity: '70,240',
-      description: 'The entertainment capital combines Hollywood glamour with perfect weather and stunning Pacific coastlines.',
+      description: 'Where $5.5 billion meets global football. LA\'s architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world\'s entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA\'s sprawling diversity means every team has a neighborhood. This is spectacle, California-style.',
       image: 'https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20with%20palm%20trees%2C%20Hollywood%20hills%20in%20background%2C%20sunny%20California%20weather%2C%20modern%20urban%20landscape%2C%20entertainment%20district&width=600&height=400&seq=la-skyline&orientation=landscape',
       fullContent: {
         introduction: 'Los Angeles brings together the best of entertainment, culture, and natural beauty for an unforgettable World Cup 2026 experience.',
@@ -209,9 +211,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Miami',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Hard Rock Stadium',
-      capacity: '67,518',
-      description: 'Tropical paradise meets international flair with pristine beaches, vibrant nightlife, and Latin American culture.',
+      stadium: 'Hard Rock Stadium, Miami Gardens, FL',
+      capacity: '65,326',
+      description: 'Where innovation beats the heat. Hard Rock\'s $550 million canopy covers every fan while leaving the field exposed—you stay cool in 95°F, players sweat. Six World Cup matches in Miami Gardens (20 miles from South Beach, car required). Formula 1 races here. Six Super Bowls hosted. Explore Little Havana\'s Cuban soul, Art Deco architecture, world-class nightlife, and why Miami\'s Latin passion makes every match feel like a home game. Bring sunscreen. Expect afternoon thunderstorms. Worth it.',
       image: 'https://readdy.ai/api/search-image?query=Miami%20Beach%20skyline%20with%20art%20deco%20buildings%2C%20turquoise%20ocean%20waters%2C%20palm%20trees%2C%20tropical%20paradise%2C%20colorful%20architecture%2C%20sunny%20beach%20destination&width=600&height=400&seq=miami-beach&orientation=landscape',
       fullContent: {
         introduction: 'Miami offers a unique blend of tropical beauty, international culture, and world-class hospitality for World Cup 2026 visitors.',
@@ -228,9 +230,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Dallas',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'AT&T Stadium',
+      stadium: 'AT&T Stadium, Arlington, TX',
       capacity: '80,000',
-      description: 'Modern metropolis showcasing Texas hospitality, innovative architecture, and rich cultural heritage.',
+      description: 'Texas does football different. Jerry Jones\' $1.3 billion palace hosts NINE World Cup matches including a Semifinal—more than any other venue. That 60-yard video board hanging overhead? Larger than a basketball court. Retractable roof? Opens to Texas skies or closes for air-conditioned luxury in 100°F heat. Located in Arlington between Dallas and Fort Worth, "Jerry World" delivers Texas hospitality, world-class BBQ, and stakes that matter. Everything\'s bigger here. Including the ambition.',
       image: 'https://readdy.ai/api/search-image?query=Dallas%20Texas%20downtown%20skyline%20with%20modern%20skyscrapers%2C%20urban%20architecture%2C%20clear%20blue%20sky%2C%20metropolitan%20cityscape%2C%20business%20district&width=600&height=400&seq=dallas-skyline&orientation=landscape',
       fullContent: {
         introduction: 'Dallas combines modern sophistication with authentic Texas charm, creating an ideal destination for World Cup 2026 experiences.',
@@ -247,9 +249,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Kansas City',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Arrowhead Stadium',
+      stadium: 'Arrowhead Stadium, Kansas City, MO',
       capacity: '76,416',
-      description: 'Heartland hospitality meets passionate sports culture in America\'s barbecue capital.',
+      description: 'The loudest stadium on Earth. Literally. Arrowhead holds the Guinness World Record at 142.2 decibels—louder than jet engines, measured on seismographs during "Beast Quake" games. Chiefs Kingdom\'s "12th Man" tradition creates an open-air thunder dome where 76,000 fans weaponize noise. Four World Cup matches in the heartland. Legendary tailgates (arrive 6 hours early). World-class BBQ (burnt ends, ribs). No Metro—drive and embrace parking lot culture. This is real America football at its most visceral.',
       image: 'https://readdy.ai/api/search-image?query=Kansas%20City%20Missouri%20downtown%20skyline%2C%20midwestern%20architecture%2C%20urban%20landscape%2C%20heartland%20America%20cityscape%2C%20modern%20buildings&width=600&height=400&seq=kc-skyline&orientation=landscape',
       fullContent: {
         introduction: 'Kansas City offers authentic American hospitality and passionate sports culture in the heart of the United States.',
@@ -266,9 +268,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Houston',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'NRG Stadium',
+      stadium: 'NRG Stadium, Houston, TX',
       capacity: '72,220',
-      description: 'Space City blends international diversity, culinary excellence, and Southern charm.',
+      description: 'America\'s most diverse city hosts the world\'s game. Houston\'s 145+ languages mean every World Cup team already has a neighborhood, a restaurant, and passionate supporters. NRG Stadium\'s engineering marvel: natural grass that rolls outside on tracks to grow, plus a retractable roof defeating Texas summer heat. Two Super Bowls hosted. METRORail Red Line accessible. Explore Space City innovation, Tex-Mex meets global cuisines, and why Houston\'s unpretentious diversity guarantees every match feels like a home game.',
       image: 'https://readdy.ai/api/search-image?query=Houston%20Texas%20downtown%20skyline%2C%20modern%20skyscrapers%2C%20urban%20architecture%2C%20space%20city%20landscape%2C%20metropolitan%20area&width=600&height=400&seq=houston-skyline&orientation=landscape',
       fullContent: {
         introduction: 'Houston\'s diverse culture, world-class dining, and warm hospitality create an exceptional World Cup 2026 destination.',
@@ -495,19 +497,14 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
               <i className="ri-map-pin-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">World Cup 2026 Host Cities</span>
+              <span className="text-emerald-300 font-medium">World Cup 2026 Host Cities: Complete Travel Guide to All 16 Destinations</span>
             </div>
             
             <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              Every City,
-              <br />
-              <span className="text-gold-400">Every Experience</span>
+              From New York's Skyline to Mexico City's Culture: Your City-by-City Guide
             </h1>
             
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Discover the 16 incredible destinations hosting World Cup 2026. From New York's energy to Mexico City's culture, 
-              each city offers a unique football experience across North America.
-            </p>
+            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">Discover all 16 World Cup 2026 host cities across the United States, Canada, and Mexico. From MetLife Stadium in New York/New Jersey to Estadio Azteca in Mexico City, each destination offers unique culture, neighborhoods, attractions, and matchday experiences. Our city guides cover where to stay, what to do, how to get around, safety tips, and the best neighborhoods for football fans—everything you need to plan your perfect World Cup journey.</p>
           </div>
 
           {/* Quick Stats */}
@@ -537,10 +534,10 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              World Cup 2026 Host Cities
+              Select Your Destination
             </h2>
             <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              Explore comprehensive guides for each destination hosting the world's greatest football tournament.
+              Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
             </p>
           </div>
 
@@ -558,6 +555,46 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     <span>{city.flag}</span>
                     <span>{city.country}</span>
                   </div>
+                  {city.name === 'New York / New Jersey' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      8 Matches
+                    </div>
+                  )}
+                  {city.name === 'New York / New Jersey' && (
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
+                    </div>
+                  )}
+                  {city.name === 'Los Angeles' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      8 Matches
+                    </div>
+                  )}
+                  {city.name === 'Miami' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      6 Matches
+                    </div>
+                  )}
+                  {city.name === 'Dallas' && (
+                    <div className="absolute top-16 right-4 bg-purple-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-medal-fill text-base"></i><span className="tracking-wide">SEMIFINAL VENUE</span>
+                    </div>
+                  )}
+                  {city.name === 'Dallas' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      9 Matches
+                    </div>
+                  )}
+                  {city.name === 'Kansas City' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      4 Matches
+                    </div>
+                  )}
+                  {city.name === 'Houston' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      4 Matches
+                    </div>
+                  )}
                 </div>
                 
                 <div className="p-6">
@@ -593,7 +630,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     }}
                   >
                     <i className="ri-eye-line mr-2"></i>
-                    Explore {city.name}
+                    {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
                   </Button>
                 </div>
               </Card>

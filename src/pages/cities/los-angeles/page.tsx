@@ -4,7 +4,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '..
 import { Link } from 'react-router-dom';
 
 export default function LosAngelesArticlePage() {
-  const pageUrl = '/cities/los-angeles';
+  const pageUrl = '/world-cup-2026-host-cities/los-angeles';
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -17,7 +17,7 @@ export default function LosAngelesArticlePage() {
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Cities', url: '/cities' },
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
             { name: 'Los Angeles', url: pageUrl }
           ])
         ]}
@@ -569,7 +569,7 @@ Check trusted booking partners that specialize in major sporting events—they o
         {/* Back to Cities Button */}
         <div className="flex justify-center pt-6">
           <Link
-            to="/cities"
+            to="/world-cup-2026-host-cities"
             className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-out overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Allow: /cities
+Allow: /world-cup-2026-host-cities
 Allow: /world-cup-2026-stadiums
 Allow: /travel-guides
 Allow: /deals

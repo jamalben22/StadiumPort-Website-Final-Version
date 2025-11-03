@@ -25,13 +25,13 @@ export const MetLifeStadiumGuide = ({ onClose }: MetLifeStadiumGuideProps) => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img 
-              src="https://readdy.ai/api/search-image?query=MetLife%20Stadium%20New%20Jersey%20aerial%20view%20at%20night%2C%20modern%20NFL%20stadium%20architecture%20with%20dramatic%20lighting%2C%20massive%20sports%20venue%20with%20New%20York%20City%20skyline%20backdrop%2C%20contemporary%20design%20excellence&width=800&height=400&seq=metlife1&orientation=landscape"
-              alt="MetLife Stadium aerial view"
+              src="/images/metlife-stadium-east-rutherford-world-cup-2026.webp"
+              alt="Exterior view of MetLife Stadium in East Rutherford, New Jersey — one of the key venues for FIFA World Cup 2026 in the USA"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             
             {/* Stadium Badge */}
             <div className="absolute top-6 left-6">
@@ -72,33 +72,44 @@ export const MetLifeStadiumGuide = ({ onClose }: MetLifeStadiumGuideProps) => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 dark:from-emerald-300 dark:to-sky-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="animate-fade-in">
+          {/* Hero Section - Miami Style */}
+          <section className="relative pt-32 pb-20 overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src="/images/metlife-stadium-east-rutherford-world-cup-2026.webp"
+                alt="Exterior view of MetLife Stadium in East Rutherford, New Jersey — one of the key venues for FIFA World Cup 2026 in the USA"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              MetLife Stadium
-            </h1>
-            
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">82,500 capacity</span>
+
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <span className="text-2xl">🇺🇸</span>
+                <span className="text-white font-inter font-medium">MetLife Stadium • 82,500 Capacity</span>
+                <span className="text-gold-400">•</span>
+                <span className="text-emerald-300 font-semibold">World Cup Final Venue</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span>New York/New Jersey</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-trophy-line text-xl text-gold-400 dark:text-amber-300"></i>
-                <span className="font-semibold">World Cup Final Venue</span>
+              
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                MetLife Stadium
+                <br />
+                <span className="text-gold-400">FIFA World Cup 2026</span>
+              </h1>
+              
+              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                The Stage for Football's Greatest Moment
+              </p>
+
+              {/* Stadium Info Badge */}
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
+                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <span className="text-emerald-200 font-inter font-medium">New York/New Jersey • East Rutherford, NJ</span>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

@@ -175,7 +175,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-3 text-sm">
               {[
-                { to: '/cities', label: 'All Host Cities', icon: 'ri-map-pin-line' },
+                { to: '/world-cup-2026-host-cities', label: 'All Host Cities', icon: 'ri-map-pin-line' },
                 { to: '/world-cup-2026-stadiums', label: 'All Stadiums', icon: 'ri-building-line' },
                 { to: '/travel-routes', label: 'Multi-City Routes', icon: 'ri-route-line' },
                 { to: '/city-comparisons', label: 'City Comparisons', icon: 'ri-scales-line' }

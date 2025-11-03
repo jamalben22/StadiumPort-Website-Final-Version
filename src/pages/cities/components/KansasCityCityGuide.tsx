@@ -36,7 +36,7 @@ export function KansasCityCityGuide() {
         <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
           <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
             <i className="ri-building-line text-red-500 dark:text-red-300 text-4xl"></i>
-            The Stadium: Arrowhead Stadium (Kansas City Stadium for FIFA 2026)
+            The Stadium: Arrowhead Stadium, Kansas City, MO (Kansas City Stadium for FIFA 2026)
           </h2>
 
           <div className="space-y-8">
@@ -60,7 +60,7 @@ export function KansasCityCityGuide() {
             {/* Match Schedule */}
             <div className="dark:text-white">
               <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300"></i>Match Schedule at Arrowhead Stadium
+                <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300"></i>Match Schedule at Arrowhead Stadium, Kansas City, MO
               </h3>
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p>
@@ -162,7 +162,7 @@ export function KansasCityCityGuide() {
             {/* Getting to Arrowhead Stadium on Match Days */}
             <div className="dark:text-white">
               <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-roadster-line text-red-500 dark:text-red-300"></i>Getting to Arrowhead Stadium on Match Days
+                <i className="ri-roadster-line text-red-500 dark:text-red-300"></i>Getting to Arrowhead Stadium, Kansas City, MO on Match Days
               </h3>
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p>
@@ -283,7 +283,7 @@ export function KansasCityCityGuide() {
 
             {/* Near Arrowhead Stadium */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Near Arrowhead Stadium: Proximity Over Neighborhood Charm</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Near Arrowhead Stadium, Kansas City, MO: Proximity Over Neighborhood Charm</h3>
               <p>
                 <strong>Why Stay Here</strong>: If you're attending multiple matches or prioritizing stadium proximity, consider hotels near Arrowhead. Several mid-range chains offer good value and put you minutes from kickoff.
               </p>

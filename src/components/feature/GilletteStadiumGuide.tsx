@@ -23,13 +23,13 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = () => {
       {!isExpanded && (
         <div className="relative">
           {/* Hero Image */}
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative h-[520px] overflow-hidden">
             <img
               src="https://readdy.ai/api/search-image?query=Gillette%20Stadium%20Foxborough%20Massachusetts%20aerial%20view%20at%20sunset%2C%20modern%20NFL%20stadium%20architecture%20with%20lighthouse%20feature%2C%20New%20England%20scenery%20background%2C%20dramatic%20lighting&width=1600&height=900&seq=gillettestadium1&orientation=landscape"
               alt="Gillette Stadium aerial view"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -79,30 +79,35 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = () => {
 
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 p-8 md:p-12 border-b border-slate-200 dark:border-slate-700">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 dark:from-emerald-300 dark:to-sky-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 dark:text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
-            </div>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-slate-50 mb-6 leading-tight">
-              Gillette Stadium: Where New England's Football Legacy Meets World Cup Glory
-            </h1>
-
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-group-line text-xl text-blue-400 dark:text-sky-300"></i>
-                <span className="font-semibold">64,628 capacity (up to ~70,000 for World Cup)</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-map-pin-line text-xl text-emerald-400 dark:text-emerald-300"></i>
-                <span>Foxborough, Massachusetts</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-200">
-                <i className="ri-trophy-line text-xl text-gold-400 dark:text-amber-300"></i>
-                <span className="font-semibold">Hosts 7 World Cup matches (incl. Quarterfinal)</span>
+        <div className="animate-fade-in">
+          {/* Hero Header — Miami-style */}
+          <div className="relative">
+            <div className="relative h-[520px] overflow-hidden">
+              <img
+                src="/images/gillette-stadium-foxborough-world-cup-2026.webp"
+                alt="Inside view of Gillette Stadium in Foxborough, Massachusetts, hosting FIFA World Cup 2026 games in the United States."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">Gillette Stadium</h1>
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-group-line text-xl text-emerald-400"></i>
+                    <span className="font-semibold">64,628 capacity (~70,000 WC config)</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-slate-300">
+                    <i className="ri-map-pin-line text-xl text-sky-400"></i>
+                    <span>Foxborough, Massachusetts</span>
+                  </div>
+                </div>
+                <p className="text-slate-300 text-lg leading-relaxed max-w-2xl">
+                  Where New England’s football legacy meets World Cup glory.
+                </p>
               </div>
             </div>
           </div>

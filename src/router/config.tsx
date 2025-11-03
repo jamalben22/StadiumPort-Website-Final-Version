@@ -43,11 +43,11 @@ const routes: RouteObject[] = [
     element: <AboutPage />
   },
   {
-    path: '/cities',
+    path: '/world-cup-2026-host-cities',
     element: <CitiesPage />
   },
   {
-    path: '/cities/:cityId',
+    path: '/world-cup-2026-host-cities/:cityId',
     element: <CityDetailPage />
   },
   {
@@ -75,15 +75,15 @@ const routes: RouteObject[] = [
     element: <NewYorkCityArticlePage />
   },
   {
-    path: '/cities/los-angeles',
+    path: '/world-cup-2026-host-cities/los-angeles',
     element: <LosAngelesArticlePage />
   },
   {
-    path: '/cities/miami',
+    path: '/world-cup-2026-host-cities/miami',
     element: <MiamiArticlePage />
   },
   {
-    path: '/cities/dallas',
+    path: '/world-cup-2026-host-cities/dallas',
     element: <DallasArticlePage />
   },
   {

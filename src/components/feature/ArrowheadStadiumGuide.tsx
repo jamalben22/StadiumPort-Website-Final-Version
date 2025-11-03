@@ -23,33 +23,44 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = () =>
       <Header />
       {/* Full Guide - Expanded State */}
       {isExpanded && (
-        <div className="animate-fade-in pt-20">
-          {/* Header Section */}
-          <div className="bg-white border-b border-slate-200 dark:bg-gradient-to-r dark:from-slate-950 dark:to-slate-900 dark:border-slate-700 p-8 md:p-12">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-red-400 to-gold-400 dark:from-red-300 dark:to-gold-300 rounded-full animate-pulse"></div>
-              <span className="text-red-400 dark:text-red-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="animate-fade-in">
+          {/* Hero Section - Miami Style */}
+          <section className="relative pt-32 pb-20 overflow-hidden">
+            {/* Background Image with Overlay */}
+            <div className="absolute inset-0">
+              <img 
+                src="/images/arrowhead-stadium-kansas-city-world-cup-2026.webp"
+                alt="Interior view of Arrowhead Stadium in Kansas City, Missouri — vibrant atmosphere ahead of FIFA World Cup 2026 matches."
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-              Arrowhead Stadium
-            </h1>
-            
-            <div className="flex items-center gap-6 mb-6">
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-group-line text-xl text-red-400 dark:text-red-300"></i>
-                <span className="font-semibold">76,416 capacity</span>
+
+            <div className="relative max-w-7xl mx-auto px-6 text-center">
+              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
+                <span className="text-2xl">🇺🇸</span>
+                <span className="text-white font-inter font-medium">Arrowhead Stadium • 76,416 Capacity</span>
+                <span className="text-gold-400">•</span>
+                <span className="text-emerald-300 font-semibold">World's Loudest Stadium</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-map-pin-line text-xl text-gold-400 dark:text-gold-300"></i>
-                <span>Kansas City, Missouri</span>
-              </div>
-              <div className="flex items-center gap-2 text-slate-700 dark:text-slate-300">
-                <i className="ri-volume-up-line text-xl text-red-400 dark:text-red-300"></i>
-                <span className="font-semibold">World's Loudest Stadium</span>
+              
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+                Arrowhead Stadium
+                <br />
+                <span className="text-gold-400">FIFA World Cup 2026</span>
+              </h1>
+              
+              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
+                The World's Loudest Stadium Welcomes the World's Game
+              </p>
+
+              {/* Stadium Info Badge */}
+              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
+                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <span className="text-emerald-200 font-inter font-medium">Kansas City, Missouri</span>
               </div>
             </div>
-          </div>
+          </section>
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

@@ -20,22 +20,25 @@ interface CityCardProps {
 // Function to convert city name to route slug
 const getCityRoute = (cityName: string) => {
   switch (cityName) {
+    // Ensure NYC/NJ card links to the original New York City guide
+    case 'New York / New Jersey':
+      return '/travel-guides/new-york-city';
     case 'New York City':
       return '/travel-guides/new-york-city';
     case 'Los Angeles':
-      return '/cities/los-angeles';
+      return '/world-cup-2026-host-cities/los-angeles';
     case 'Miami':
-      return '/cities/miami';
+      return '/world-cup-2026-host-cities/miami';
     case 'Kansas City':
-      return '/cities/kansas-city';
+      return '/world-cup-2026-host-cities/kansas-city';
     case 'Houston':
-      return '/cities/houston';
+      return '/world-cup-2026-host-cities/houston';
     case 'Dallas':
-      return '/cities/dallas';
+      return '/world-cup-2026-host-cities/dallas';
     case 'Seattle':
-      return '/cities/seattle';
+      return '/world-cup-2026-host-cities/seattle';
     default:
-      return '/cities';
+      return '/world-cup-2026-host-cities';
   }
 };
 
@@ -64,7 +67,7 @@ export default function CityCard({ city }: CityCardProps) {
           </div>
           <div className="flex items-center text-white/95 text-sm font-medium">
             <i className="ri-map-pin-line mr-2 text-lg"></i>
-            <span>{city.stadium} • {city.capacity}</span>
+            <span>{city.name === 'Los Angeles' ? 'SoFi Stadium, Inglewood, CA' : city.stadium} • {city.capacity}</span>
           </div>
         </div>
       </div>
