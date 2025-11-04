@@ -6,6 +6,7 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../components/base/OptimizedImage';
 
 interface CitySection {
   title: string;
@@ -26,6 +27,7 @@ interface HostCity {
   capacity: string;
   description: string;
   image: string;
+  alt?: string;
   fullContent: FullContent;
 }
 
@@ -56,10 +58,25 @@ export default function CitiesPage() {
       metaDescription.setAttribute('content', 'Complete guide to all 16 World Cup 2026 host cities. Explore New York, Los Angeles, Miami, Mexico City, Toronto, Vancouver and more. Find hotels, attractions, and travel tips.');
     }
 
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities`);
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (canonical) {
+    canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities`);
+  }
+
+  // Set OG/Twitter image for social previews
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+  const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
+  const setMeta = (property: string, content: string) => {
+    let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+    if (!el) {
+      el = document.createElement('meta');
+      el.setAttribute('property', property);
+      document.head.appendChild(el);
     }
+    el.setAttribute('content', content);
+  };
+  setMeta('og:image', ogImageUrl);
+  setMeta('twitter:image', ogImageUrl);
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -111,7 +128,7 @@ export default function CitiesPage() {
       stadium: 'MetLife Stadium, East Rutherford, NJ',
       capacity: '82,500',
       description: "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
-      image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%2C%20iconic%20skyscrapers%2C%20urban%20landscape%2C%20modern%20metropolitan%20cityscape%2C%20vibrant%20city%20lights%2C%20architectural%20beauty&width=600&height=400&seq=nyc-skyline&orientation=landscape',
+      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
       fullContent: {
         introduction: `The World's Biggest Game Comes to the World's Biggest Stage`,
         sections: [
@@ -195,7 +212,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       stadium: 'SoFi Stadium, Inglewood, CA',
       capacity: '70,240',
       description: 'Where $5.5 billion meets global football. LA\'s architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world\'s entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA\'s sprawling diversity means every team has a neighborhood. This is spectacle, California-style.',
-      image: 'https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20with%20palm%20trees%2C%20Hollywood%20hills%20in%20background%2C%20sunny%20California%20weather%2C%20modern%20urban%20landscape%2C%20entertainment%20district&width=600&height=400&seq=la-skyline&orientation=landscape',
+      image: '/images/cities/los-angeles-world-cup-2026.webp',
       fullContent: {
         introduction: 'Los Angeles brings together the best of entertainment, culture, and natural beauty for an unforgettable World Cup 2026 experience.',
         sections: [
@@ -214,7 +231,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       stadium: 'Hard Rock Stadium, Miami Gardens, FL',
       capacity: '65,326',
       description: 'Where innovation beats the heat. Hard Rock\'s $550 million canopy covers every fan while leaving the field exposed—you stay cool in 95°F, players sweat. Six World Cup matches in Miami Gardens (20 miles from South Beach, car required). Formula 1 races here. Six Super Bowls hosted. Explore Little Havana\'s Cuban soul, Art Deco architecture, world-class nightlife, and why Miami\'s Latin passion makes every match feel like a home game. Bring sunscreen. Expect afternoon thunderstorms. Worth it.',
-      image: 'https://readdy.ai/api/search-image?query=Miami%20Beach%20skyline%20with%20art%20deco%20buildings%2C%20turquoise%20ocean%20waters%2C%20palm%20trees%2C%20tropical%20paradise%2C%20colorful%20architecture%2C%20sunny%20beach%20destination&width=600&height=400&seq=miami-beach&orientation=landscape',
+      image: '/images/cities/miami-world-cup-2026.webp',
       fullContent: {
         introduction: 'Miami offers a unique blend of tropical beauty, international culture, and world-class hospitality for World Cup 2026 visitors.',
         sections: [
@@ -233,7 +250,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       stadium: 'AT&T Stadium, Arlington, TX',
       capacity: '80,000',
       description: 'Texas does football different. Jerry Jones\' $1.3 billion palace hosts NINE World Cup matches including a Semifinal—more than any other venue. That 60-yard video board hanging overhead? Larger than a basketball court. Retractable roof? Opens to Texas skies or closes for air-conditioned luxury in 100°F heat. Located in Arlington between Dallas and Fort Worth, "Jerry World" delivers Texas hospitality, world-class BBQ, and stakes that matter. Everything\'s bigger here. Including the ambition.',
-      image: 'https://readdy.ai/api/search-image?query=Dallas%20Texas%20downtown%20skyline%20with%20modern%20skyscrapers%2C%20urban%20architecture%2C%20clear%20blue%20sky%2C%20metropolitan%20cityscape%2C%20business%20district&width=600&height=400&seq=dallas-skyline&orientation=landscape',
+      image: '/images/cities/dallas-world-cup-2026.webp',
       fullContent: {
         introduction: 'Dallas combines modern sophistication with authentic Texas charm, creating an ideal destination for World Cup 2026 experiences.',
         sections: [
@@ -252,7 +269,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       stadium: 'Arrowhead Stadium, Kansas City, MO',
       capacity: '76,416',
       description: 'The loudest stadium on Earth. Literally. Arrowhead holds the Guinness World Record at 142.2 decibels—louder than jet engines, measured on seismographs during "Beast Quake" games. Chiefs Kingdom\'s "12th Man" tradition creates an open-air thunder dome where 76,000 fans weaponize noise. Four World Cup matches in the heartland. Legendary tailgates (arrive 6 hours early). World-class BBQ (burnt ends, ribs). No Metro—drive and embrace parking lot culture. This is real America football at its most visceral.',
-      image: 'https://readdy.ai/api/search-image?query=Kansas%20City%20Missouri%20downtown%20skyline%2C%20midwestern%20architecture%2C%20urban%20landscape%2C%20heartland%20America%20cityscape%2C%20modern%20buildings&width=600&height=400&seq=kc-skyline&orientation=landscape',
+      image: '/images/cities/kansas-city-world-cup-2026.webp',
       fullContent: {
         introduction: 'Kansas City offers authentic American hospitality and passionate sports culture in the heart of the United States.',
         sections: [
@@ -271,7 +288,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       stadium: 'NRG Stadium, Houston, TX',
       capacity: '72,220',
       description: 'America\'s most diverse city hosts the world\'s game. Houston\'s 145+ languages mean every World Cup team already has a neighborhood, a restaurant, and passionate supporters. NRG Stadium\'s engineering marvel: natural grass that rolls outside on tracks to grow, plus a retractable roof defeating Texas summer heat. Two Super Bowls hosted. METRORail Red Line accessible. Explore Space City innovation, Tex-Mex meets global cuisines, and why Houston\'s unpretentious diversity guarantees every match feels like a home game.',
-      image: 'https://readdy.ai/api/search-image?query=Houston%20Texas%20downtown%20skyline%2C%20modern%20skyscrapers%2C%20urban%20architecture%2C%20space%20city%20landscape%2C%20metropolitan%20area&width=600&height=400&seq=houston-skyline&orientation=landscape',
+      image: '/images/cities/houston-world-cup-2026.webp',
       fullContent: {
         introduction: 'Houston\'s diverse culture, world-class dining, and warm hospitality create an exceptional World Cup 2026 destination.',
         sections: [
@@ -287,10 +304,10 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Atlanta',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Mercedes-Benz Stadium',
+      stadium: 'Mercedes-Benz Stadium, Atlanta, GA',
       capacity: '71,000',
-      description: 'The South\'s cultural capital combines historic charm with modern innovation and world-class attractions.',
-      image: 'https://readdy.ai/api/search-image?query=Atlanta%20Georgia%20downtown%20skyline%2C%20southern%20architecture%2C%20modern%20urban%20landscape%2C%20cultural%20city%2C%20metropolitan%20skyline&width=600&height=400&seq=atlanta-skyline&orientation=landscape',
+      description: 'A roof that opens like a camera lens. Food that costs $5. A city that moves culture. Mercedes-Benz Stadium (2017) revolutionized stadiums with its 8-petal blooming roof, game-changing concession prices ($5 food, $2 drinks), and LEED Platinum sustainability. Six World Cup matches via MARTA. Super Bowl 53 hosted. Explore downtown Atlanta\'s civil rights history, hip-hop heartbeat, and why "The Benz" represents the future of football venues. Innovation you can see. Affordability you can feel.',
+      image: '/images/cities/atlanta-world-cup-2026.webp',
       fullContent: {
         introduction: 'Atlanta seamlessly blends Southern hospitality with cosmopolitan sophistication for an unforgettable World Cup 2026 experience.',
         sections: [
@@ -306,10 +323,9 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Philadelphia',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Lincoln Financial Field',
-      capacity: '69,176',
-      description: 'The birthplace of America offers rich history, passionate sports fans, and authentic East Coast culture.',
-      image: 'https://readdy.ai/api/search-image?query=Philadelphia%20Pennsylvania%20downtown%20skyline%2C%20historic%20architecture%2C%20Liberty%20Bell%20area%2C%20American%20history%2C%20east%20coast%20cityscape&width=600&height=400&seq=philly-skyline&orientation=landscape',
+      stadium: 'Lincoln Financial Field, Philadelphia, PA',
+      capacity: '69,596',
+      description: 'They booed Santa. They won a Super Bowl. They\'ll make World Cup unforgettable. Lincoln Financial Field brings South Philly\'s legendary intensity to five matches—where Eagles fans\' notorious passion (they literally had a jail in the old stadium) meets 1776 American history. Super Bowl 52 champions. Direct SEPTA Broad Street Line access. Explore Independence Hall, Rocky Steps, authentic cheesesteak culture, and discover why this blue-collar city\'s no-nonsense attitude creates the most authentic football atmosphere in America.',      image: '/images/cities/philadelphia-world-cup-2026.webp',
       fullContent: {
         introduction: 'Philadelphia\'s rich American history and passionate sports culture provide a unique backdrop for World Cup 2026.',
         sections: [
@@ -325,10 +341,10 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Seattle',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Lumen Field',
+      stadium: 'Lumen Field, Seattle, WA',
       capacity: '69,000',
-      description: 'Pacific Northwest beauty meets innovative culture with stunning mountain views and vibrant neighborhoods.',
-      image: 'https://readdy.ai/api/search-image?query=Seattle%20Washington%20skyline%20with%20Mount%20Rainier%2C%20Space%20Needle%2C%20Pacific%20Northwest%20landscape%2C%20modern%20architecture%2C%20waterfront%20city&width=600&height=400&seq=seattle-skyline&orientation=landscape',
+      description: 'The loudest fans. The most beautiful views. The only stadium to cause earthquakes. Lumen Field\'s "12th Man" tradition created seismic readings in 2011 and 2013—noise so intense it registered on monitors. Engineered with a partial roof that traps sound, this waterfront fortress opens north to Puget Sound and Olympic Mountain vistas. Sounders MLS champions. Link Light Rail connected. Explore Seattle\'s Pioneer Square, Pike Place Market, and why this coffee-powered, tech-savvy city brings Pacific Northwest intensity.',
+      image: '/images/cities/seattle-world-cup-2026.webp',
       fullContent: {
         introduction: 'Seattle\'s natural beauty, innovative spirit, and passionate soccer culture create an ideal World Cup 2026 destination.',
         sections: [
@@ -344,10 +360,10 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'San Francisco',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Levi\'s Stadium',
+      stadium: 'Levi\'s Stadium, Santa Clara, CA',
       capacity: '68,500',
-      description: 'Tech innovation hub surrounded by natural beauty, from Golden Gate Bridge to wine country.',
-      image: 'https://readdy.ai/api/search-image?query=San%20Francisco%20California%20skyline%20with%20Golden%20Gate%20Bridge%2C%20bay%20area%20landscape%2C%20tech%20city%2C%20hills%20and%20ocean%2C%20iconic%20architecture&width=600&height=400&seq=sf-skyline&orientation=landscape',
+      description: 'Silicon Valley built a stadium and loaded it with tech. World\'s first comprehensive stadium app (order food, watch replays, track stats from your seat). Fastest Wi-Fi in sports. LEED Gold design with solar panels. Super Bowl 50 and College Football Playoff Championship hosted. Six World Cup matches between San Francisco and San Jose—navigate Caltrain/VTA Light Rail, understand the west-facing sun challenge, and discover why the Bay Area\'s tech capital does football its own innovative way.',
+      image: '/images/cities/san-francisco-world-cup-2026.webp',
       fullContent: {
         introduction: 'San Francisco combines technological innovation with natural beauty for a unique World Cup 2026 experience.',
         sections: [
@@ -363,10 +379,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Boston',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'Gillette Stadium',
+      stadium: 'Gillette Stadium, Foxborough, MA',
       capacity: '65,878',
-      description: 'Historic New England charm meets academic excellence with cobblestone streets and world-class universities.',
-      image: 'https://readdy.ai/api/search-image?query=Boston%20Massachusetts%20downtown%20skyline%2C%20historic%20architecture%2C%20New%20England%20cityscape%2C%20academic%20city%2C%20harbor%20area&width=600&height=400&seq=boston-skyline&orientation=landscape',
+      description: 'The house that Brady built. Six Super Bowl championships in 20 years transformed Gillette Stadium into the NFL\'s dynasty headquarters—where "Do Your Job" became New England\'s mantra. A lighthouse guards the entrance. Patriot Place wraps the venue. Five World Cup matches in Foxborough, 30 miles south of Boston via MBTA Commuter Rail (limited service) or car. Explore Revolutionary War history, New England Revolution (MLS) culture, Patriots Hall of Fame, and why six states consider this hallowed ground.',
+      image: '/images/cities/boston-world-cup-2026.webp',
+      alt: 'Boston skyline – World Cup 2026 host city',
       fullContent: {
         introduction: 'Boston\'s rich history, academic prestige, and New England charm provide a distinctive World Cup 2026 setting.',
         sections: [
@@ -382,10 +399,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Toronto',
       country: 'Canada',
       flag: '🇨🇦',
-      stadium: 'BMO Field',
-      capacity: '45,500',
-      description: 'Canada\'s largest city offers multicultural diversity, stunning lakefront views, and world-class hospitality.',
-      image: 'https://readdy.ai/api/search-image?query=Toronto%20Canada%20downtown%20skyline%20with%20CN%20Tower%2C%20Lake%20Ontario%20waterfront%2C%20multicultural%20city%2C%20modern%20architecture%2C%20Canadian%20metropolis&width=600&height=400&seq=toronto-skyline&orientation=landscape',
+      stadium: 'BMO Field, Toronto, ON',
+      capacity: '45,736',
+      description: 'Canada\'s soccer story starts here. BMO Field—the nation\'s first purpose-built football stadium (2007)—hosts six World Cup matches including Canada\'s historic home fixtures after 36 years away from the tournament. Temporarily expanded from 28,500 to 45,736 seats along Toronto\'s Lake Ontario waterfront. Where Toronto FC won the 2017 MLS Cup treble. Where the "Reds" roar. Where 200+ ethnic communities guarantee every team finds supporters. TTC streetcar, GO Transit, CN Tower views, Liberty Village nearby. Explore the world\'s most multicultural city at its proudest moment.',
+      image: '/images/cities/toronto-world-cup-2026.webp',
+      alt: 'Toronto skyline with CN Tower – World Cup 2026 host city',
       fullContent: {
         introduction: 'Toronto\'s multicultural vibrancy and lakefront beauty create an exceptional World Cup 2026 destination.',
         sections: [
@@ -401,10 +419,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Vancouver',
       country: 'Canada',
       flag: '🇨🇦',
-      stadium: 'BC Place',
+      stadium: 'BC Place, Vancouver, BC',
       capacity: '54,500',
-      description: 'Pacific coast paradise surrounded by mountains, ocean, and lush forests with mild climate year-round.',
-      image: 'https://readdy.ai/api/search-image?query=Vancouver%20Canada%20skyline%20with%20mountains%2C%20Pacific%20Ocean%2C%20modern%20architecture%2C%20natural%20beauty%2C%20coastal%20city%2C%20British%20Columbia&width=600&height=400&seq=vancouver-skyline&orientation=landscape',
+      description: `Where mountains meet the pitch. BC Place's retractable roof—the world's largest cable-supported system—opens in 20 minutes to reveal snow-capped peaks and Pacific skies. Hosted the 2015 FIFA Women's World Cup Final and 2010 Olympics ceremonies. Five matches in downtown Vancouver, steps from Stadium-Chinatown SkyTrain. Rebuilt in 2011 with cutting-edge technology. Explore Yaletown's waterfront, Gastown's cobblestones, and why this multicultural city between mountains and ocean delivers Canada's most spectacular World Cup setting.`,
+      image: '/images/cities/vancouver-world-cup-2026.webp',
+      alt: 'Vancouver skyline with mountains – World Cup 2026 host city',
       fullContent: {
         introduction: 'Vancouver\'s stunning natural setting and cosmopolitan culture offer an unforgettable World Cup 2026 experience.',
         sections: [
@@ -420,10 +439,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Mexico City',
       country: 'Mexico',
       flag: '🇲🇽',
-      stadium: 'Estadio Azteca',
+      stadium: 'Estadio Azteca, Mexico City',
       capacity: '87,523',
-      description: 'Historic capital blends ancient Aztec heritage with modern metropolitan energy and incredible cuisine.',
-      image: 'https://readdy.ai/api/search-image?query=Mexico%20City%20downtown%20skyline%2C%20historic%20architecture%2C%20Latin%20American%20metropolis%2C%20cultural%20capital%2C%20urban%20landscape%2C%20Mexican%20heritage&width=600&height=400&seq=mexico-city-skyline&orientation=landscape',
+      description: `Football's most sacred ground. The only stadium to host TWO World Cup finals (1970, 1986) returns for 2026. Stand where Pelé lifted the Jules Rimet Trophy and Maradona danced through England with his "Hand of God" and "Goal of the Century." Five matches at 7,200 feet altitude in history's most legendary arena. Mexico City Metro accessible. Explore ancient Aztec ruins, world-class museums, tacos al pastor at 2 AM, and why this 22-million-person megalopolis brings unmatched passion, history, and thin-air football.`,
+      image: '/images/cities/mexico-city-world-cup-2026.webp',
+      alt: 'Mexico City skyline – World Cup 2026 host city',
       fullContent: {
         introduction: 'Mexico City\'s rich cultural heritage and vibrant energy create an extraordinary World Cup 2026 destination.',
         sections: [
@@ -439,10 +459,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Guadalajara',
       country: 'Mexico',
       flag: '🇲🇽',
-      stadium: 'Estadio Akron',
+      stadium: 'Estadio Akron, Guadalajara, Jalisco',
       capacity: '49,850',
-      description: 'Cultural heart of Mexico showcases traditional mariachi music, tequila heritage, and colonial architecture.',
-      image: 'https://readdy.ai/api/search-image?query=Guadalajara%20Mexico%20downtown%2C%20colonial%20architecture%2C%20traditional%20Mexican%20city%2C%20cultural%20heritage%2C%20historic%20buildings%2C%20mariachi%20culture&width=600&height=400&seq=guadalajara-skyline&orientation=landscape',
+      description: `Where Mexico's soul lives. Estadio Akron (2010)—home to Chivas, the only club fielding exclusively Mexican players—brings four World Cup matches to Guadalajara, birthplace of mariachi and tequila. This intimate 49,850-seat bowl amplifies "El Rebaño Sagrado" (The Sacred Herd) passion beneath Sierra Madre mountain backdrops. Opened as Estadio Omnilife, rebranded Akron, always pure Tapatío pride. Explore Mexico's second-largest city, historic centro, nearby Tequila town distilleries, and why Jalisco's cultural traditions and football devotion run deeper than anywhere else in Mexico.`,
+      image: '/images/cities/guadalajara-world-cup-2026.webp',
+      alt: 'Guadalajara skyline – World Cup 2026 host city',
       fullContent: {
         introduction: 'Guadalajara embodies authentic Mexican culture and traditions, offering a genuine World Cup 2026 experience.',
         sections: [
@@ -458,10 +479,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       name: 'Monterrey',
       country: 'Mexico',
       flag: '🇲🇽',
-      stadium: 'Estadio BBVA',
+      stadium: 'Estadio BBVA, Monterrey, NL',
       capacity: '53,500',
-      description: 'Industrial powerhouse surrounded by dramatic mountain landscapes with modern amenities and business culture.',
-      image: 'https://readdy.ai/api/search-image?query=Monterrey%20Mexico%20skyline%20with%20Cerro%20de%20la%20Silla%20mountain%2C%20modern%20architecture%2C%20industrial%20city%2C%20mountain%20backdrop%2C%20northeastern%20Mexico&width=600&height=400&seq=monterrey-skyline&orientation=landscape',
+      description: `Mexico's newest World Cup stage against its oldest mountain. Opened in 2015, Estadio BBVA's striking steel-and-glass bowl rises beneath the iconic Cerro de la Silla backdrop. Steep stands create intimate intensity for 53,500 fans. Explore Monterrey's industrial heartland, norteño food culture (cabrito, carne asada), and why Rayados' passionate following creates atmosphere that rivals anywhere in Mexico. Modern design meets northern Mexican grit in the country's most photogenic stadium setting.`,
+      image: '/images/cities/monterrey-world-cup-2026.webp',
+      alt: 'Monterrey skyline – World Cup 2026',
       fullContent: {
         introduction: 'Monterrey combines modern business culture with stunning mountain scenery for a unique World Cup 2026 experience.',
         sections: [
@@ -481,14 +503,19 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       
       <Header />
       
-      {/* Hero Section - Matching Stadiums Page */}
+      {/* Hero Section - Optimized Responsive Image */}
       <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=World%20Cup%202026%20host%20cities%20montage%2C%20North%20American%20skylines%2C%20diverse%20metropolitan%20areas%2C%20international%20football%20destinations%2C%20urban%20landscapes%20across%20USA%20Canada%20Mexico&width=1920&height=800&seq=host-cities-hero&orientation=landscape')`,
-            }}
+        <div className="absolute inset-0">
+          <OptimizedImage
+            src="/images/cities/new-york-new-jersey-world-cup-2026.webp"
+            alt="World Cup 2026 host cities montage"
+            className="absolute inset-0 opacity-20"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
         </div>
@@ -541,15 +568,21 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
             </p>
           </div>
 
-          {/* 2-Column Grid Layout */}
+          {/* 2-Column Grid Layout with responsive, lazy images */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {hostCities.map((city) => (
+            {hostCities.map((city, index) => (
               <Card key={city.id} hover className="overflow-hidden group">
-                <div className="relative">
-                  <img
+                <div className="relative h-64 overflow-hidden">
+                  <OptimizedImage
                     src={city.image}
-                    alt={`${city.name} skyline`}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    alt={city.alt || `${city.name} skyline`}
+                    className="absolute inset-0"
+                    imgClassName="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    width={1600}
+                    height={900}
+                    priority={index < 2}
+                    placeholder="blur"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
                     <span>{city.flag}</span>
@@ -593,6 +626,61 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                   {city.name === 'Houston' && (
                     <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
                       4 Matches
+                    </div>
+                  )}
+                  {city.name === 'Atlanta' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      6 Matches
+                    </div>
+                  )}
+                  {city.name === 'Philadelphia' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      5 Matches
+                    </div>
+                  )}
+                  {city.name === 'Seattle' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      5 Matches
+                    </div>
+                  )}
+                  {city.name === 'San Francisco' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      6 Matches
+                    </div>
+                  )}
+                  {city.name === 'Boston' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      5 Matches
+                    </div>
+                  )}
+                  {city.name === 'Vancouver' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      5 Matches
+                    </div>
+                  )}
+                  {city.name === 'Mexico City' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      5 Matches
+                    </div>
+                  )}
+                  {city.name === 'Guadalajara' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      4 Matches
+                    </div>
+                  )}
+                  {city.name === 'Monterrey' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      4 Matches
+                    </div>
+                  )}
+                  {city.name === 'Toronto' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      6 Matches
+                    </div>
+                  )}
+                  {city.name === 'Toronto' && (
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-flag-fill text-base"></i><span className="tracking-wide">CANADA HOME MATCHES</span>
                     </div>
                   )}
                 </div>
@@ -646,11 +734,16 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
             <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onClick={closeModal}></div>
             
             <div className="inline-block w-full max-w-4xl my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-navy-800 shadow-xl rounded-2xl">
-              <div className="relative">
-                <img 
+              <div className="relative h-64 overflow-hidden">
+                <OptimizedImage 
                   src={selectedCity.image} 
-                  alt={selectedCity.name}
-                  className="w-full h-64 object-cover"
+                  alt={selectedCity.alt || `${selectedCity.name} skyline`}
+                  className="absolute inset-0"
+                  imgClassName="object-cover"
+                  width={1600}
+                  height={900}
+                  placeholder="blur"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
                 />
                 <button
                   onClick={closeModal}

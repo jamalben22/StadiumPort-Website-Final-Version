@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface HardRockStadiumGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
 // Hard Rock Stadium — PART 1/5
 // Premium design system aligned with MetLife/Estadio Azteca/Arrowhead guides
-export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
+export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -17,10 +20,10 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero (gradient as placeholder to avoid external fetch issues) */}
           <div className="relative h-[520px] overflow-hidden">
@@ -63,13 +66,20 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Hero Section - Miami Style */}
+          {!hideHero && (
           <section className="relative pt-32 pb-20 overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
-              <img
-                src="/images/hard-rock-stadium-miami-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026.webp"
                 alt="Exterior view of Hard Rock Stadium in Miami, Florida, a major FIFA World Cup 2026 host venue."
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
@@ -99,6 +109,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = () => {
               </div>
             </div>
           </section>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

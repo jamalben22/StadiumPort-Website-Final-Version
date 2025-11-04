@@ -1,5 +1,6 @@
 
 import { Link } from 'react-router-dom';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 interface City {
   id: string;
@@ -49,11 +50,15 @@ export default function CityCard({ city }: CityCardProps) {
       
       {/* Hero Image */}
       <div className="relative h-56 overflow-hidden">
-        <img
+        <OptimizedImage
           src={city.image}
-          alt={`${city.name} World Cup 2026`}
-          className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
-          loading="lazy"
+          alt={`${city.name} skyline – World Cup 2026`}
+          className="absolute inset-0"
+          imgClassName="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+          width={1600}
+          height={900}
+          placeholder="blur"
+          sizes="(max-width: 768px) 100vw, 33vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
         

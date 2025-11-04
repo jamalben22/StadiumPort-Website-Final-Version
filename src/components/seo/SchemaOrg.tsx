@@ -128,3 +128,18 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: 
     "item": item.url
   }))
 });
+
+// Image metadata generator for JSON-LD
+export const generateImageObjectSchema = (
+  url: string,
+  options?: { width?: number; height?: number; caption?: string; description?: string }
+) => ({
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "url": (import.meta.env.VITE_SITE_URL || "https://example.com") + url,
+  "contentUrl": (import.meta.env.VITE_SITE_URL || "https://example.com") + url,
+  ...(options?.width ? { width: options.width } : {}),
+  ...(options?.height ? { height: options.height } : {}),
+  ...(options?.caption ? { caption: options.caption } : {}),
+  ...(options?.description ? { description: options.description } : {}),
+});

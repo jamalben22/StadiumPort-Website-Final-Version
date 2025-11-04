@@ -1,27 +1,104 @@
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema, generateStadiumSchema } from '../../../components/seo/SchemaOrg';
+import { Link } from 'react-router-dom';
 
 export function MonterreyCityGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
 
-      {/* Hero */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20"></div>
-        </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+      {/* SEO Schema & Meta */}
+      <SchemaOrg
+        schema={[
+          generateCityGuideSchema(
+            'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide',
+            "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.",
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/monterrey`
+          ),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Host Cities', url: '/world-cup-2026-cities' },
+            { name: 'Monterrey', url: '/world-cup-2026-cities/monterrey' }
+          ]),
+          generateImageObjectSchema('/images/cities/monterrey-world-cup-2026.webp', {
+            width: 1600,
+            height: 900,
+            caption: 'Monterrey skyline – World Cup 2026'
+          }),
+          generateStadiumSchema(
+            'Estadio BBVA',
+            'Monterrey',
+            53500,
+            'State-of-the-art steel-and-glass arena with mountain backdrop hosting FIFA World Cup 2026 matches.'
+          ),
+        ]}
+      />
+
+      {(() => {
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities/monterrey`;
+        const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/monterrey-world-cup-2026.webp`;
+        const title = 'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide';
+        const description = "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.";
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+          document.title = title;
+          const setMeta = (selector: string, attr: string, value: string) => {
+            const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+            if (el) el.setAttribute(attr, value);
+          };
+          setMeta('meta[name="description"]', 'content', description);
+          setMeta('link[rel="canonical"]', 'href', pageUrl);
+          setMeta('meta[property="og:title"]', 'content', title);
+          setMeta('meta[property="og:description"]', 'content', description);
+          setMeta('meta[property="og:url"]', 'content', pageUrl);
+          setMeta('meta[property="og:image"]', 'content', ogImage);
+          setMeta('meta[property="twitter:title"]', 'content', title);
+          setMeta('meta[property="twitter:description"]', 'content', description);
+          setMeta('meta[property="twitter:url"]', 'content', pageUrl);
+          setMeta('meta[property="twitter:image"]', 'content', ogImage);
+        }, []);
+        return null;
+      })()}
+
+      {/* Hero Section with Optimized Image */}
+      <section className="relative">
+        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+          <OptimizedImage
+            src="/images/cities/monterrey-world-cup-2026.webp"
+            alt="Monterrey skyline – World Cup 2026"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+          <div className="absolute bottom-8 left-8 right-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Monterrey</h1>
+              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-emerald-300"></i>
+                  <span>Mexico</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-building-line text-emerald-300"></i>
+                  <span>Estadio BBVA</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Monterrey 2026 FIFA World Cup: Your Complete Travel Guide to Mexico's Steel Giant
-          </h1>
         </div>
-      </div>
+      </section>
 
       <main className="p-8 md:p-12 space-y-12">
         {/* Intro paragraphs */}
@@ -63,6 +140,12 @@ export function MonterreyCityGuide() {
             </p>
             <p>
               For the 2026 World Cup, the stadium will feature upgraded pitch technology including an underground ventilation system to maintain grass quality despite Monterrey's summer heat. FIFA has confirmed four matches here: three Group Stage encounters and one Round of 32 match scheduled across June 14, 20, 24, and 29, 2026.
+            </p>
+            <p>
+              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
+                <i className="ri-external-link-line mr-2"></i>
+                Explore the detailed Estadio BBVA stadium guide
+              </Link>
             </p>
           </div>
         </div>

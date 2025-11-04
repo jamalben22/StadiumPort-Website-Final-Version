@@ -3,7 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { KansasCityCityGuide } from '../components/KansasCityCityGuide';
 import { AtlantaCityGuide } from '../components/AtlantaCityGuide';
 import { PhiladelphiaCityGuide } from '../components/PhiladelphiaCityGuide';
@@ -93,41 +94,66 @@ export default function CityDetailPage() {
     return (
       <div className="min-h-screen bg-white dark:bg-navy-900">
         <Header />
+        <SchemaOrg
+          schema={[
+            generateCityGuideSchema(
+              'Houston – World Cup 2026 Guide',
+              'Comprehensive Houston travel guide for FIFA World Cup 2026: NRG Stadium details, match schedule, transportation, and where to stay.',
+              `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/houston`
+            ),
+            generateBreadcrumbSchema([
+              { name: 'Home', url: '/' },
+              { name: 'Host Cities', url: '/world-cup-2026-cities' },
+              { name: 'Houston', url: '/world-cup-2026-cities/houston' }
+            ]),
+            generateImageObjectSchema('/images/cities/houston-world-cup-2026.webp', {
+              width: 1600,
+              height: 900,
+              caption: 'Houston skyline – World Cup 2026'
+            })
+          ]}
+        />
         
-        {/* Hero Section */}
-        <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-          
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 to-blue-500/20"></div>
-          </div>
-
-          {/* Content */}
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
-            </div>
-            
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Houston: Your Ultimate 2026 FIFA World Cup Travel Guide
-            </h1>
-            
-            <div className="flex items-center gap-6 mb-8">
-              <div className="flex items-center gap-2 text-slate-300">
-                <i className="ri-group-line text-xl text-blue-400"></i>
-                <span className="font-semibold">72,220 capacity</span>
+        {/* Hero Section with Optimized Image */}
+        <section className="relative">
+          <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+            <OptimizedImage
+              src="/images/cities/houston-world-cup-2026.webp"
+              alt="Houston skyline – World Cup 2026"
+              className="absolute inset-0"
+              imgClassName="object-cover object-center"
+              width={1600}
+              height={900}
+              priority={true}
+              placeholder="blur"
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                  <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Houston</h1>
+                <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
+                  <div className="flex items-center gap-2">
+                    <i className="ri-map-pin-line text-emerald-300"></i>
+                    <span>Houston, Texas</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i className="ri-building-line text-blue-300"></i>
+                    <span>NRG Stadium</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i className="ri-group-line text-sky-300"></i>
+                    <span>72,220 capacity</span>
+                  </div>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-slate-300">
-                <i className="ri-map-pin-line text-xl text-emerald-400"></i>
-                <span>Houston, Texas</span>
-              </div>
             </div>
-            
-            
           </div>
-        </div>
+        </section>
 
         {/* Main Content */}
         <main className="p-8 md:p-12 space-y-12">
@@ -1207,7 +1233,7 @@ export default function CityDetailPage() {
       matches: '8 Matches Including Final',
       finalDate: 'July 19, 2026 Final',
       description: "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
-      image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%20with%20iconic%20skyscrapers%2C%20modern%20urban%20architecture%2C%20dramatic%20lighting%2C%20metropolitan%20cityscape%2C%20Empire%20State%20Building%20and%20One%20World%20Trade%20Center%20visible&width=1920&height=800&seq=nyc-hero&orientation=landscape',
+      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
       content: {
         overview: `New York City will host the FIFA World Cup 2026 Final at MetLife Stadium on July 19, 2026. As the most populous city in the United States and a global hub for finance, arts, fashion, and culture, NYC offers an unparalleled World Cup experience.
 
@@ -1876,10 +1902,16 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
 
       {/* Hero Section */}
       <section className="relative h-[80vh] overflow-hidden">
-        <img
+        <OptimizedImage
           src={city.image}
           alt={`${city.name} World Cup 2026`}
-          className="w-full h-full object-cover object-center"
+          className="absolute inset-0"
+          imgClassName="object-cover object-center"
+          width={1600}
+          height={900}
+          priority={true}
+          placeholder="blur"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20"></div>
         

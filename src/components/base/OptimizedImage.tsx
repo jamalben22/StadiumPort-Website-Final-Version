@@ -10,8 +10,10 @@ type OptimizedImageProps = {
   width?: number; // intrinsic width to prevent CLS
   height?: number; // intrinsic height to prevent CLS
   priority?: boolean; // eager load for above-the-fold
+  fetchpriority?: 'high' | 'low' | 'auto'; // browser hint for loading priority
   placeholder?: 'blur' | 'empty';
   blurDataURL?: string; // optional explicit blur data url
+  disableSrcSet?: boolean; // optionally disable srcset generation when variants are unavailable
 };
 
 // Generate a deterministic blur placeholder based on the src string.
@@ -59,14 +61,19 @@ export function OptimizedImage({
   width = 1600,
   height = 900,
   priority = false,
+  fetchpriority = 'auto',
   placeholder = 'blur',
   blurDataURL: blurDataURLProp,
+  disableSrcSet = false,
 }: OptimizedImageProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [isInView, setIsInView] = useState(priority);
   const [loaded, setLoaded] = useState(false);
+  const isExternal = /^https?:\/\//.test(src) || src.startsWith('data:');
   const [blurDataURL] = useState(() => {
     if (blurDataURLProp) return blurDataURLProp;
+    // Avoid generating blur for external URLs or non-local images
+    if (isExternal) return '';
     const fromManifest = lqipManifest[src];
     return fromManifest || generateBlurDataURL(src);
   });
@@ -91,12 +98,12 @@ export function OptimizedImage({
     return () => observer.disconnect();
   }, [priority]);
 
-  const srcSet = buildSrcSet(src);
+  const srcSet = (disableSrcSet || isExternal) ? undefined : buildSrcSet(src);
 
   return (
     <div ref={wrapperRef} className={className}>
       {/* Blur placeholder layer */}
-      {placeholder === 'blur' && (
+      {placeholder === 'blur' && blurDataURL && (
         <div
           aria-hidden="true"
           style={{
@@ -119,6 +126,7 @@ export function OptimizedImage({
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
+          fetchPriority={priority ? 'high' : fetchpriority}
           decoding="async"
           width={width}
           height={height}

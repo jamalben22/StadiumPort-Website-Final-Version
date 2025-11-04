@@ -1,12 +1,15 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface NRGStadiumGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
-export const NRGStadiumGuide = ({ onClose }: NRGStadiumGuideProps) => {
+export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false }: NRGStadiumGuideProps) => {
   const [isExpanded, setIsExpanded] = useState(true);
   const navigate = useNavigate();
 
@@ -20,17 +23,22 @@ export const NRGStadiumGuide = ({ onClose }: NRGStadiumGuideProps) => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero Image */}
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="/images/nrg-stadium-houston-texas-world-cup-2026.webp"
+            <OptimizedImage
+              src="/images/stadiums/nrg-stadium-houston-texas-world-cup-2026.webp"
               alt="Exterior view of NRG Stadium in Houston, Texas — one of the major FIFA World Cup 2026 venues in the USA."
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -74,11 +82,18 @@ export const NRGStadiumGuide = ({ onClose }: NRGStadiumGuideProps) => {
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Miami-style Hero Header */}
+          {!hideHero && (
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="/images/nrg-stadium-houston-texas-world-cup-2026.webp"
+            <OptimizedImage
+              src="/images/stadiums/nrg-stadium-houston-texas-world-cup-2026.webp"
               alt="Exterior view of NRG Stadium in Houston, Texas — one of the major FIFA World Cup 2026 venues in the USA."
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
+              priority={true}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -123,6 +138,7 @@ export const NRGStadiumGuide = ({ onClose }: NRGStadiumGuideProps) => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

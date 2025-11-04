@@ -1,10 +1,28 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export default function NewYorkCityArticlePage() {
   const pageUrl = '/travel-guides/new-york-city';
+
+  useEffect(() => {
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+    const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
+    const setMeta = (property: string, content: string) => {
+      let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    setMeta('og:image', ogImageUrl);
+    setMeta('twitter:image', ogImageUrl);
+  }, []);
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -19,7 +37,12 @@ export default function NewYorkCityArticlePage() {
             { name: 'Home', url: '/' },
             { name: 'Travel Guides', url: '/travel-guides' },
             { name: 'New York City', url: pageUrl }
-          ])
+          ]),
+          generateImageObjectSchema('/images/cities/new-york-new-jersey-world-cup-2026.webp', {
+            width: 1600,
+            height: 900,
+            caption: 'New York / New Jersey – World Cup 2026'
+          })
         ]}
       />
 
@@ -28,10 +51,16 @@ export default function NewYorkCityArticlePage() {
       {/* Hero Section (MetLife-style visual language) */}
       <section className="relative">
         <div className="relative h-[360px] md:h-[440px] overflow-hidden">
-          <img
-            src="https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%2C%20iconic%20skyscrapers%2C%20urban%20landscape%2C%20modern%20metropolitan%20cityscape%2C%20vibrant%20city%20lights%2C%20architectural%20beauty&width=1200&height=600&seq=nyc-guide-hero&orientation=landscape"
+          <OptimizedImage
+            src="/images/cities/new-york-new-jersey-world-cup-2026.webp"
             alt="New York City skyline"
-            className="w-full h-full object-cover object-center"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="empty"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
 

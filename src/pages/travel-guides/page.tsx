@@ -84,7 +84,7 @@ export default function TravelGuidesPage() {
       author: 'Sarah Mitchell',
       readTime: '25 min read',
       publishDate: '2024-01-15',
-      image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20with%20MetLife%20Stadium%20visible%2C%20World%20Cup%202026%20atmosphere%2C%20urban%20travel%20destination%2C%20iconic%20NYC%20landmarks%2C%20modern%20metropolitan%20landscape&width=600&height=400&seq=nyc-guide&orientation=landscape',
+      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
       excerpt: 'Your ultimate guide to experiencing World Cup 2026 in New York. From MetLife Stadium to Manhattan attractions, discover the best of the Big Apple during the tournament.',
       featured: true,
       fullContent: {

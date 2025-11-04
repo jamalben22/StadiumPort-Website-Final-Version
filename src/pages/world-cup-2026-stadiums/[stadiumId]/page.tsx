@@ -1,10 +1,11 @@
 import { useParams, Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { MetLifeStadiumGuide } from '../../../components/feature/MetLifeStadiumGuide';
 import { EstadioAztecaGuide } from '../../../components/feature/EstadioAztecaGuide';
 import { ArrowheadStadiumGuide } from '../../../components/feature/ArrowheadStadiumGuide';
 import { ATTStadiumGuide } from '../../../components/feature/ATTStadiumGuide';
 import { NRGStadiumGuide } from '../../../components/feature/NRGStadiumGuide';
-import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { EstadioBBVAGuide } from '../../../components/feature/EstadioBBVAGuide';
 import { SoFiStadiumGuide } from '../../../components/feature/SoFiStadiumGuide';
 import { MercedesBenzStadiumGuide } from '../../../components/feature/MercedesBenzStadiumGuide';
@@ -16,6 +17,8 @@ import { BMOFieldGuide } from '../../../components/feature/BMOFieldGuide';
 import { HardRockStadiumGuide } from '../../../components/feature/HardRockStadiumGuide';
 import { EstadioAkronGuide } from '../../../components/feature/EstadioAkronGuide';
 import { BCPlaceStadiumGuide } from '../../../components/feature/BCPlaceStadiumGuide';
+import { Header } from '../../../components/feature/Header';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 // Stadium data mapping
 const stadiumData = {
@@ -196,6 +199,50 @@ export default function StadiumDetailPage() {
   const { stadiumId } = useParams<{ stadiumId: string }>();
   
   const stadium = stadiumId ? stadiumData[stadiumId as keyof typeof stadiumData] : null;
+
+  // Stadium slug -> image mapping for social previews
+  const stadiumImages: Record<string, string> = {
+    'estadio-azteca': '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp',
+    'metlife-stadium': '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp',
+    'att-stadium': '/images/stadiums/att-stadium-arlington-texas-world-cup-2026.webp',
+    'arrowhead-stadium': '/images/stadiums/arrowhead-stadium-kansas-city-world-cup-2026.webp',
+    'estadio-bbva': '/images/stadiums/estadio-bbva-monterrey-world-cup-2026.webp',
+    'nrg-stadium': '/images/stadiums/nrg-stadium-houston-texas-world-cup-2026.webp',
+    'mercedes-benz-stadium': '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026.webp',
+    'sofi-stadium': '/images/stadiums/sofi-stadium-los-angeles-world-cup-2026.webp',
+    'lumen-field': '/images/stadiums/lumen-field-seattle-world-cup-2026.webp',
+    'levis-stadium': '/images/stadiums/levis-stadium-santa-clara-world-cup-2026.webp',
+    'lincoln-financial-field': '/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026.webp',
+    'gillette-stadium': '/images/stadiums/gillette-stadium-foxborough-world-cup-2026.webp',
+    'hard-rock-stadium': '/images/stadiums/hard-rock-stadium-miami-world-cup-2026.webp',
+    'bmo-field': '/images/stadiums/bmo-field-toronto-world-cup-2026.webp',
+    'bc-place-stadium': '/images/stadiums/bc-place-vancouver-world-cup-2026.webp',
+    'estadio-akron': '/images/stadiums/estadio-akron-guadalajara-world-cup-2026.webp'
+  };
+
+  // Set OG/Twitter meta images based on stadium
+  useEffect(() => {
+    const img = stadiumId ? stadiumImages[stadiumId] : '/images/metlife-stadium-east-rutherford-world-cup-2026.webp';
+    if (!img) return;
+
+    // og:image
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute('content', img);
+
+    // twitter:image
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement('meta');
+      twitterImage.setAttribute('name', 'twitter:image');
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute('content', img);
+  }, [stadiumId]);
   
   if (!stadium) {
     return (
@@ -220,9 +267,12 @@ export default function StadiumDetailPage() {
   }
 
   const StadiumComponent = stadium.component;
+  const heroImage = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
+  const altText = `Inside view of ${stadium?.name} – World Cup 2026`;
 
   return (
-    <div className="min-h-screen w-full">
+    <div className="min-h-screen w-full bg-white dark:bg-navy-900">
+      <Header />
       <SchemaOrg 
         schema={[
           generateStadiumSchema({
@@ -235,12 +285,60 @@ export default function StadiumDetailPage() {
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Venues', url: '/world-cup-2026-stadiums' },
-      { name: stadium.name, url: `/world-cup-2026-stadiums/${stadiumId}` }
-          ])
+            { name: stadium.name, url: `/world-cup-2026-stadiums/${stadiumId}` }
+          ]),
+          generateImageObjectSchema(heroImage, {
+            width: 1600,
+            height: 900,
+            caption: `${stadium.name} – World Cup 2026`,
+            description: altText
+          })
         ]}
       />
-      
-      <StadiumComponent />
+
+      {/* Hero Section — matched to Cities layout */}
+      <section className="relative">
+        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+          <OptimizedImage
+            src={heroImage}
+            alt={altText}
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+          <div className="absolute bottom-8 left-8 right-8">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">{stadium.name}</h1>
+              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-emerald-300"></i>
+                  <span>{stadium.city}, {stadium.country}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-group-line text-sky-300"></i>
+                  <span>{stadium.capacity.toLocaleString()} capacity</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-calendar-event-line text-blue-300"></i>
+                  <span>{stadium.matches} matches</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Stadium Guide Content */}
+      <StadiumComponent showHeader={false} hideHero={true} />
     </div>
   );
 }
