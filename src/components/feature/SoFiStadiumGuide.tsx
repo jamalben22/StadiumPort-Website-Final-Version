@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface SoFiStadiumGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
 // SoFi Stadium Guide – PART 1/4 content only
 // Design language mirrors MetLife/Estadio Azteca/Arrowhead guides: same spacing, icons, gradients, and responsiveness.
-export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
+export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -17,17 +20,22 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero Image */}
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="https://readdy.ai/api/search-image?query=SoFi%20Stadium%20Los%20Angeles%20aerial%20view%20with%20translucent%20roof%2C%20Inglewood%20California%2C%20modern%20sports%20venue%20architecture%20at%20sunset%2C%20dramatic%20lighting&width=800&height=400&seq=sofi1&orientation=landscape"
+            <OptimizedImage
+              src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026.webp"
               alt="SoFi Stadium aerial view with translucent roof"
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -84,11 +92,18 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Miami-style Hero Header */}
+          {!hideHero && (
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="/images/sofi-stadium-los-angeles-world-cup-2026.webp"
+            <OptimizedImage
+              src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026.webp"
               alt="Interior view of SoFi Stadium in Los Angeles, California, a host venue for FIFA World Cup 2026 matches."
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
+              priority={true}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -135,6 +150,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

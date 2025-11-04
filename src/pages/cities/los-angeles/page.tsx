@@ -1,6 +1,7 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 
 export default function LosAngelesArticlePage() {
@@ -19,7 +20,11 @@ export default function LosAngelesArticlePage() {
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
             { name: 'Los Angeles', url: pageUrl }
-          ])
+          ]),
+          generateImageObjectSchema(
+            '/images/cities/los-angeles-world-cup-2026.webp',
+            { width: 1600, height: 900, caption: 'Los Angeles skyline – World Cup 2026' }
+          )
         ]}
       />
 
@@ -28,10 +33,16 @@ export default function LosAngelesArticlePage() {
       {/* Hero Section (MetLife-style visual language) */}
       <section className="relative">
         <div className="relative h-[360px] md:h-[440px] overflow-hidden">
-          <img
-            src="https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20at%20sunset%2C%20palm%20trees%2C%20Hollywood%20sign%2C%20modern%20skyscrapers%2C%20golden%20hour%20lighting%2C%20California%20cityscape&width=1200&height=600&seq=la-guide-hero&orientation=landscape"
+          <OptimizedImage
+            src="/images/cities/los-angeles-world-cup-2026.webp"
             alt="Los Angeles skyline"
-            className="w-full h-full object-cover object-center"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
 

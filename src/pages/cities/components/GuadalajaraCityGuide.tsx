@@ -1,20 +1,98 @@
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 
 export function GuadalajaraCityGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
 
-      {/* Hero Section - MetLife-style visual, verbatim title */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Guadalajara: Where Mariachi, Tequila, and Football Create Magic
-          </h1>
+      {/* SEO Schema & Meta */}
+      <SchemaOrg
+        schema={[
+          generateCityGuideSchema(
+            'Guadalajara World Cup 2026 – Estadio Akron & City Experience',
+            'Highlight Guadalajara’s cultural identity, artistic charm, and World Cup spirit around Estadio Akron in Mexico’s heartland.',
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/guadalajara`
+          ),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Host Cities', url: '/world-cup-2026-cities' },
+            { name: 'Guadalajara', url: '/world-cup-2026-cities/guadalajara' }
+          ]),
+          generateImageObjectSchema('/images/cities/guadalajara-world-cup-2026.webp', {
+            width: 1600,
+            height: 900,
+            caption: 'Guadalajara skyline – World Cup 2026 host city'
+          })
+        ]}
+      />
+
+      {(() => {
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities/guadalajara`;
+        const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/guadalajara-world-cup-2026.webp`;
+        const title = 'Guadalajara World Cup 2026 – Estadio Akron & City Experience';
+        const description = 'Highlight Guadalajara’s cultural identity, artistic charm, and World Cup spirit around Estadio Akron in Mexico’s heartland.';
+
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+          document.title = title;
+          const setMeta = (selector: string, attr: string, value: string) => {
+            const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+            if (el) el.setAttribute(attr, value);
+          };
+          setMeta('meta[name="description"]', 'content', description);
+          setMeta('link[rel="canonical"]', 'href', pageUrl);
+          setMeta('meta[property="og:title"]', 'content', title);
+          setMeta('meta[property="og:description"]', 'content', description);
+          setMeta('meta[property="og:url"]', 'content', pageUrl);
+          setMeta('meta[property="og:image"]', 'content', ogImage);
+          setMeta('meta[property="twitter:title"]', 'content', title);
+          setMeta('meta[property="twitter:description"]', 'content', description);
+          setMeta('meta[property="twitter:url"]', 'content', pageUrl);
+          setMeta('meta[property="twitter:image"]', 'content', ogImage);
+        }, []);
+        return null;
+      })()}
+
+      {/* Hero Section with Optimized Image */}
+      <section className="relative">
+        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+          <OptimizedImage
+            src="/images/cities/guadalajara-world-cup-2026.webp"
+            alt="Guadalajara skyline – World Cup 2026 host city"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+          <div className="absolute bottom-8 left-8 right-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Guadalajara</h1>
+              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-emerald-300"></i>
+                  <span>Mexico</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-building-line text-emerald-300"></i>
+                  <span>Estadio Akron</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Main Content - Part 1/5 verbatim */}
       <main className="p-8 md:p-12 space-y-12">

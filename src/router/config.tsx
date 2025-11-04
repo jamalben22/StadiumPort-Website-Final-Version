@@ -47,7 +47,15 @@ const routes: RouteObject[] = [
     element: <CitiesPage />
   },
   {
+    path: '/world-cup-2026-cities',
+    element: <CitiesPage />
+  },
+  {
     path: '/world-cup-2026-host-cities/:cityId',
+    element: <CityDetailPage />
+  },
+  {
+    path: '/world-cup-2026-cities/:cityId',
     element: <CityDetailPage />
   },
   {

@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface LincolnFinancialFieldGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
 // Lincoln Financial Field Guide — PART 1/4 content only
 // Design language mirrors MetLife/Estadio Azteca/Arrowhead/Levi's guides: same spacing, icons, gradients, and responsiveness.
-export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProps> = () => {
+export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -17,17 +20,22 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero Image */}
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="https://readdy.ai/api/search-image?query=Lincoln%20Financial%20Field%20Philadelphia%20aerial%20view%2C%20NFL%20stadium%20with%20historic%20city%20backdrop%2C%20passionate%20Eagles%20fan%20atmosphere%2C%20dramatic%20lighting%2C%20East%20Coast%20sports%20venue%20excellence&width=800&height=400&seq=linc1&orientation=landscape"
+            <OptimizedImage
+              src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026.webp"
               alt="Lincoln Financial Field aerial view in Philadelphia"
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -84,12 +92,19 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Hero Header — Miami-style */}
+          {!hideHero && (
           <div className="relative">
             <div className="relative h-[520px] overflow-hidden">
-              <img
-                src="/images/lincoln-financial-field-philadelphia-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026.webp"
                 alt="Interior view of Lincoln Financial Field in Philadelphia, Pennsylvania, one of the U.S. venues for FIFA World Cup 2026 matches."
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -114,6 +129,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

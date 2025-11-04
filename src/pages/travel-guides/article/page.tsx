@@ -19,7 +19,7 @@ export default function TravelGuideArticlePage() {
       author: 'Sarah Mitchell',
       readTime: '25 min read',
       publishDate: '2024-01-15',
-      image: 'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20with%20MetLife%20Stadium%20visible%2C%20World%20Cup%202026%20atmosphere%2C%20urban%20travel%20destination%2C%20iconic%20NYC%20landmarks%2C%20modern%20metropolitan%20landscape&width=800&height=500&seq=nyc-guide&orientation=landscape',
+      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
       excerpt: 'Your ultimate guide to experiencing World Cup 2026 in New York. From MetLife Stadium to Manhattan attractions, discover the best of the Big Apple during the tournament.',
       content: [
         {
@@ -71,7 +71,7 @@ export default function TravelGuideArticlePage() {
       author: 'Mike Rodriguez',
       readTime: '22 min read',
       publishDate: '2024-01-12',
-      image: 'https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20with%20SoFi%20Stadium%2C%20Hollywood%20sign%20visible%2C%20California%20sunshine%2C%20World%20Cup%202026%20destination%2C%20entertainment%20capital%20atmosphere&width=800&height=500&seq=la-guide&orientation=landscape',
+      image: '/images/cities/los-angeles-world-cup-2026.webp',
       excerpt: 'Experience World Cup 2026 in the entertainment capital. From SoFi Stadium to Hollywood attractions, your complete LA travel guide.',
       content: [
         {
@@ -103,7 +103,7 @@ export default function TravelGuideArticlePage() {
       author: 'Elena Vasquez',
       readTime: '20 min read',
       publishDate: '2024-01-10',
-      image: 'https://readdy.ai/api/search-image?query=Miami%20Beach%20Art%20Deco%20district%20with%20Hard%20Rock%20Stadium%2C%20tropical%20paradise%2C%20World%20Cup%202026%20atmosphere%2C%20vibrant%20Florida%20coastal%20city%2C%20palm%20trees%20and%20ocean&width=800&height=500&seq=miami-guide&orientation=landscape',
+      image: '/images/cities/miami-world-cup-2026.webp',
       excerpt: 'Combine World Cup excitement with Miami\'s tropical paradise. Your guide to beaches, nightlife, and Hard Rock Stadium.',
       content: [
         {
@@ -135,7 +135,7 @@ export default function TravelGuideArticlePage() {
       author: 'Robert Kim',
       readTime: '18 min read',
       publishDate: '2024-01-08',
-      image: 'https://readdy.ai/api/search-image?query=Dallas Texas skyline with AT&T Stadium, cowboy culture meets World Cup, modern metropolitan landscape, Big D urban atmosphere, dramatic lighting&width=800&height=500&seq=dallas-guide&orientation=landscape',
+      image: '/images/cities/dallas-world-cup-2026.webp',
       excerpt: 'Experience World Cup 2026 in Big D. From AT&T Stadium to authentic Texas culture, your complete Dallas travel guide.',
       content: [
         {
@@ -167,7 +167,7 @@ export default function TravelGuideArticlePage() {
       author: 'Jennifer Park',
       readTime: '15 min read',
       publishDate: '2024-01-05',
-      image: 'https://readdy.ai/api/search-image?query=Budget%20travel%20planning%20with%20calculator%2C%20maps%2C%20and%20travel%20documents%2C%20affordable%20World%20Cup%202026%20planning%2C%20money-saving%20travel%20strategies%2C%20budget%20accommodation%20options&width=800&height=500&seq=budget-guide&orientation=landscape',
+      image: '/images/metlife-stadium-east-rutherford-world-cup-2026.webp',
       excerpt: 'Experience World Cup 2026 without breaking the bank. Proven strategies for affordable accommodation, transport, and match tickets.',
       content: [
         {
@@ -199,7 +199,7 @@ export default function TravelGuideArticlePage() {
       author: 'David Thompson',
       readTime: '20 min read',
       publishDate: '2024-01-03',
-      image: 'https://readdy.ai/api/search-image?query=Luxury%20travel%20experience%20with%20premium%20hotel%20suite%2C%20fine%20dining%2C%20VIP%20stadium%20access%2C%20World%20Cup%202026%20luxury%20packages%2C%20high-end%20hospitality%20services&width=800&height=500&seq=luxury-guide&orientation=landscape',
+      image: '/images/metlife-stadium-east-rutherford-world-cup-2026.webp',
       excerpt: 'Experience World Cup 2026 in ultimate luxury. Premium accommodations, VIP stadium access, and exclusive experiences.',
       content: [
         {

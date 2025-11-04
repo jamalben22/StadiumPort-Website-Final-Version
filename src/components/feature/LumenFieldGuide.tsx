@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface LumenFieldGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
 // Lumen Field Guide — PART 1/4
 // Design language mirrors MetLife/Estadio Azteca/Arrowhead guides: same spacing, icons, gradients, and responsiveness.
-export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = () => {
+export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -17,17 +20,22 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = () => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero Image */}
           <div className="relative h-[520px] overflow-hidden">
-            <img
-              src="https://readdy.ai/api/search-image?query=Lumen%20Field%20Seattle%20aerial%20view%20at%20night%2C%20modern%20NFL%20stadium%20architecture%20with%20partial%20roof%2C%20Seattle%20skyline%20backdrop%2C%20dramatic%20lighting%20open-air%20venue&width=1600&height=900&seq=lumen1&orientation=landscape"
+            <OptimizedImage
+              src="/images/stadiums/lumen-field-seattle-world-cup-2026.webp"
               alt="Lumen Field aerial view"
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
@@ -81,12 +89,19 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = () => {
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Hero Header — Miami-style */}
+          {!hideHero && (
           <div className="relative">
             <div className="relative h-[520px] overflow-hidden">
-              <img
-                src="/images/lumen-field-seattle-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/lumen-field-seattle-world-cup-2026.webp"
                 alt="Inside view of Lumen Field in Seattle, Washington, showcasing the atmosphere for the FIFA World Cup 2026."
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -111,6 +126,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

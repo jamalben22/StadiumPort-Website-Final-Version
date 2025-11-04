@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface EstadioAztecaGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
-export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
+export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = false }: EstadioAztecaGuideProps) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -20,16 +23,22 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
       {/* Preview Card - Collapsed State */}
-      {!isExpanded && (
+      {!isExpanded && !hideHero && (
         <div className="relative">
           {/* Hero Image */}
           <div className="relative h-[520px] overflow-hidden">
-            <img 
-              src="/images/estadio-azteca-mexico-city-world-cup-2026.webp"
+            <OptimizedImage
+              src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp"
               alt="Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches"
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              placeholder="blur"
+              sizes="100vw"
+              priority={true}
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             
@@ -74,13 +83,20 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Hero Section - Miami Style */}
+          {!hideHero && (
           <section className="relative pt-32 pb-20 overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
-              <img 
-                src="/images/estadio-azteca-mexico-city-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp"
                 alt="Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches"
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
@@ -110,6 +126,7 @@ export const EstadioAztecaGuide = ({ onClose }: EstadioAztecaGuideProps) => {
               </div>
             </div>
           </section>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

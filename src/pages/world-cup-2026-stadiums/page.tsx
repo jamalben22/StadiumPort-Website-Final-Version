@@ -58,6 +58,24 @@ export default function VenuesPage() {
     if (canonical) {
       canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums`);
     }
+
+    // Set social preview images
+    const img = '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement('meta');
+      ogImage.setAttribute('property', 'og:image');
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute('content', img);
+
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement('meta');
+      twitterImage.setAttribute('name', 'twitter:image');
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute('content', img);
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -75,7 +93,7 @@ export default function VenuesPage() {
       capacity: 87523,
       capacityCategory: 'mega',
       matches: 5,
-      image: '/images/estadio-azteca-mexico-city-world-cup-2026.webp',
+      image: '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp',
       opened: 1966,
       surface: 'Natural Grass',
       nearestMetro: 'Azteca Station',
@@ -110,7 +128,7 @@ export default function VenuesPage() {
       capacity: 82500,
       capacityCategory: 'mega',
       matches: 8,
-      image: '/images/metlife-stadium-east-rutherford-world-cup-2026.webp',
+      image: '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp',
       opened: 2010,
       surface: 'FieldTurf',
       nearestMetro: 'Secaucus Junction',
@@ -146,7 +164,7 @@ export default function VenuesPage() {
       capacity: 80000,
       capacityCategory: 'mega',
       matches: 9,
-      image: '/images/att-stadium-arlington-texas-world-cup-2026.webp',
+      image: '/images/stadiums/att-stadium-arlington-texas-world-cup-2026.webp',
       opened: 2009,
       surface: 'Matrix Turf',
       nearestMetro: 'Trinity Metro TEXRail',
@@ -182,7 +200,7 @@ export default function VenuesPage() {
       capacity: 76416,
       capacityCategory: 'large',
       matches: 4,
-      image: '/images/arrowhead-stadium-kansas-city-world-cup-2026.webp',
+      image: '/images/stadiums/arrowhead-stadium-kansas-city-world-cup-2026.webp',
       opened: 1972,
       surface: 'Natural Grass',
       nearestMetro: 'Bus service only',
@@ -218,7 +236,7 @@ export default function VenuesPage() {
       capacity: 53500,
       capacityCategory: 'large',
       matches: 4,
-      image: '/images/estadio-bbva-monterrey-world-cup-2026.webp',
+      image: '/images/stadiums/estadio-bbva-monterrey-world-cup-2026.webp',
       opened: 2015,
       surface: 'Natural Grass',
       nearestMetro: 'Exposición (Metrorrey Line 1)',
@@ -253,7 +271,7 @@ export default function VenuesPage() {
       capacity: 72220,
       capacityCategory: 'large',
       matches: 4,
-      image: '/images/nrg-stadium-houston-texas-world-cup-2026.webp',
+      image: '/images/stadiums/nrg-stadium-houston-texas-world-cup-2026.webp',
       opened: 2002,
       surface: 'Natural Grass',
       nearestMetro: 'NRG Park/Stadium Station',
@@ -287,7 +305,7 @@ export default function VenuesPage() {
       capacity: 71000,
       capacityCategory: 'large',
       matches: 6,
-      image: '/images/mercedes-benz-stadium-atlanta-world-cup-2026.webp',
+      image: '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026.webp',
       opened: 2017,
       surface: 'FieldTurf',
       description: `A roof that opens like a camera lens. Food that costs $5. A city that moves culture. Mercedes-Benz Stadium (2017) revolutionized stadiums with its 8-petal retractable roof, 360° halo video board, LEED Platinum design, and game-changing concession prices. Super Bowl 53 hosted. Six World Cup matches via MARTA. Explore downtown Atlanta's civil rights history, hip-hop heartbeat, and why "The Benz" represents the future of football venues.`,
@@ -314,7 +332,7 @@ export default function VenuesPage() {
       capacity: 70240,
       capacityCategory: 'large',
       matches: 8,
-      image: '/images/sofi-stadium-los-angeles-world-cup-2026.webp',
+      image: '/images/stadiums/sofi-stadium-los-angeles-world-cup-2026.webp',
       opened: 2020,
       surface: 'Natural Grass (World Cup install)',
       description: "The $5.5 billion stadium that redefined possible. Built 40 feet underground beneath a hovering translucent canopy, SoFi's 120-yard Infinity Screen (double-sided, 2.2 million pounds of LED) creates an experience unlike anywhere on Earth. Super Bowl 56 hosted. 2028 Olympics confirmed. Eight World Cup matches in LA's entertainment capital—discover Metro connections, parking realities, the surrounding 298-acre complex, and why this architectural icon demands your attention.",
@@ -341,7 +359,7 @@ export default function VenuesPage() {
       capacity: 69000,
       capacityCategory: 'medium',
       matches: 5,
-      image: '/images/lumen-field-seattle-world-cup-2026.webp',
+      image: '/images/stadiums/lumen-field-seattle-world-cup-2026.webp',
       opened: 2002,
       surface: 'FieldTurf',
       description: 'The loudest fans. The most beautiful views. The only stadium to cause earthquakes. Lumen Field\'s "12th Man" tradition created seismic readings in 2011 and 2013—noise so intense it registered on monitors. Engineered with a partial roof that traps sound, this waterfront fortress opens north to Puget Sound and Olympic Mountain vistas. Sounders MLS champions. Link Light Rail connected. Explore Seattle\'s Pioneer Square, Pike Place Market, and why this coffee-powered, tech-savvy city brings Pacific Northwest intensity.',
@@ -368,7 +386,7 @@ export default function VenuesPage() {
       capacity: 68500,
       capacityCategory: 'medium',
       matches: 6,
-      image: '/images/levis-stadium-santa-clara-world-cup-2026.webp',
+      image: '/images/stadiums/levis-stadium-santa-clara-world-cup-2026.webp',
       opened: 2014,
       surface: 'Natural Grass',
       description: 'Silicon Valley built a stadium and loaded it with tech. World\'s first comprehensive stadium app (order food, watch replays, track stats from your seat). Fastest Wi-Fi in sports. LEED Gold design with solar panels. Super Bowl 50 and College Football Playoff Championship hosted. Six World Cup matches between San Francisco and San Jose—navigate Caltrain/VTA Light Rail, understand the west-facing sun challenge, and discover why the Bay Area\'s tech capital does football its own innovative way.',
@@ -395,7 +413,7 @@ export default function VenuesPage() {
       capacity: 69596,
       capacityCategory: 'medium',
       matches: 5,
-      image: '/images/lincoln-financial-field-philadelphia-world-cup-2026.webp',
+      image: '/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026.webp',
       description: 'They booed Santa. They won a Super Bowl. They\'ll make World Cup unforgettable. Lincoln Financial Field brings South Philly\'s legendary intensity to five matches—where Eagles fans\' notorious passion (they literally had a jail in the old stadium) meets 1776 American history. Super Bowl 52 champions. Direct SEPTA Broad Street Line access. Explore Independence Hall, Rocky Steps, authentic cheesesteak culture, and discover why this blue-collar city\'s no-nonsense attitude creates the most authentic football atmosphere in America.',
       address: '1 Lincoln Financial Field Way, Philadelphia, PA 19148, United States',
       homeTeams: ['Philadelphia Eagles'],
@@ -415,7 +433,7 @@ export default function VenuesPage() {
       capacity: 65878,
       capacityCategory: 'medium',
       matches: 5,
-      image: '/images/gillette-stadium-foxborough-world-cup-2026.webp',
+      image: '/images/stadiums/gillette-stadium-foxborough-world-cup-2026.webp',
       description: 'The house that Brady built. Six Super Bowl championships in 20 years transformed Gillette Stadium into the NFL\'s dynasty headquarters—where "Do Your Job" became New England\'s mantra. A lighthouse guards the entrance. Patriot Place wraps the venue. Five World Cup matches in Foxborough, 30 miles south of Boston via MBTA Commuter Rail (limited service) or car. Explore Revolutionary War history, New England Revolution (MLS) culture, Patriots Hall of Fame, and why six states consider this hallowed ground.',
       address: '1 Patriot Pl, Foxborough, MA 02035, United States',
       homeTeams: ['New England Patriots'],
@@ -435,7 +453,7 @@ export default function VenuesPage() {
       capacity: 65326,
       capacityCategory: 'medium',
       matches: 6,
-      image: '/images/hard-rock-stadium-miami-world-cup-2026.webp',
+      image: '/images/stadiums/hard-rock-stadium-miami-world-cup-2026.webp',
       opened: 1987,
       surface: 'Natural Grass',
       description: 'Where innovation beats the heat. Hard Rock\'s $550 million transformation (2016) created a revolutionary canopy that covers every fan while leaving the field exposed—you stay cool, players sweat. Six Super Bowls hosted. Formula 1 Miami Grand Prix circles the venue. Six World Cup matches in Miami Gardens, requiring car/rideshare from South Beach or downtown. Navigate Miami\'s Latin neighborhoods, Art Deco architecture, world-famous nightlife, and prepare for 90°F June heat with afternoon thunderstorms. This is subtropical football—glamorous, yes, but bring sunscreen.',
@@ -462,7 +480,7 @@ export default function VenuesPage() {
       capacity: 45736,
       capacityCategory: 'large',
       matches: 6,
-      image: '/images/bmo-field-toronto-world-cup-2026.webp',
+      image: '/images/stadiums/bmo-field-toronto-world-cup-2026.webp',
       opened: 2007,
       surface: 'Natural Grass (Kentucky Bluegrass)',
       nearestMetro: 'Exhibition GO Station',
@@ -498,7 +516,7 @@ export default function VenuesPage() {
       capacity: 54500,
       capacityCategory: 'medium',
       matches: 5,
-      image: '/images/bc-place-vancouver-world-cup-2026.webp',
+      image: '/images/stadiums/bc-place-vancouver-world-cup-2026.webp',
       opened: 1983,
       surface: 'FieldTurf',
       description: 'Where mountains meet the pitch. BC Place\'s retractable roof—the world\'s largest cable-supported system—opens in 20 minutes to reveal snow-capped peaks and Pacific skies. Hosted the 2015 FIFA Women\'s World Cup Final and 2010 Olympics ceremonies. Five matches in downtown Vancouver, steps from Stadium-Chinatown SkyTrain. Rebuilt in 2011 with cutting-edge technology. Explore Yaletown\'s waterfront, Gastown\'s cobblestones, and why this multicultural city between mountains and ocean delivers Canada\'s most spectacular World Cup setting.',
@@ -525,7 +543,7 @@ export default function VenuesPage() {
       capacity: 49850,
       capacityCategory: 'medium',
       matches: 4,
-      image: '/images/estadio-akron-guadalajara-world-cup-2026.webp',
+      image: '/images/stadiums/estadio-akron-guadalajara-world-cup-2026.webp',
       alt: "Inside view of Estadio Akron in Guadalajara, Mexico, a key venue for FIFA World Cup 2026 games.",
       opened: 2010,
       surface: 'Natural Grass',
@@ -631,7 +649,7 @@ export default function VenuesPage() {
                     imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
                     placeholder="blur"
                     priority={index < 2}
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   

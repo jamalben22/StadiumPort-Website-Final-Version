@@ -1,13 +1,25 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 export function KansasCityCityGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
 
-      {/* Hero Section - MetLife-style visual, no extra text beyond provided content */}
+      {/* Hero Section - MetLife-style visual with local image */}
       <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
+        <OptimizedImage
+          src="/images/cities/kansas-city-world-cup-2026.webp"
+          alt="Kansas City skyline"
+          className="absolute inset-0"
+          imgClassName="object-cover object-center"
+          width={1600}
+          height={900}
+          priority={true}
+          placeholder="blur"
+          sizes="100vw"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">

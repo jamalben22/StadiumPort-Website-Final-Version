@@ -1,13 +1,14 @@
 
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
+import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
 import { AccomFinderWidget } from '../../components/widgets/AccomFinderWidget';
-import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema } from '../../components/seo/SchemaOrg';
+import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
 
 interface CitySection {
   title: string;
@@ -35,49 +36,32 @@ export default function HomePage() {
   const [travelerCount, setTravelerCount] = useState(500000);
   const [dealCount, setDealCount] = useState(1247);
   const [isCompareModalOpen, setIsCompareModalOpen] = useState(false);
-  const [expandedCity, setExpandedCity] = useState<number | null>(null);
-  const [selectedCity, setSelectedCity] = useState<HostCity | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  // Lock body scroll when modal is open
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-
-    return () => {
-      document.body.style.overflow = 'unset';
+  // Route mapping identical to Cities page behavior
+  const getCityRoute = (cityName: string): string => {
+    const routeMap: { [key: string]: string } = {
+      'New York / New Jersey': '/travel-guides/new-york-city',
+      'New York City': '/travel-guides/new-york-city',
+      'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
     };
-  }, [isModalOpen]);
 
-  const openCityModal = (city: HostCity) => {
-    setSelectedCity(city);
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedCity(null);
+    return routeMap[cityName] || `/world-cup-2026-host-cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`;
   };
 
   useEffect(() => {
-    // Set page title and meta description
-    document.title = 'StadiumPort - Your Premier Gateway to the 2026 North American Football Journey';
+    // Set page title and meta description (hero-focused for SEO)
+    document.title = 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort';
 
     const metaDescription = document.querySelector('meta[name="description"]');
+    const descriptionText = 'Experience the epic energy of World Cup 2026 with three massive flags of USA, Mexico, and Canada prominently displayed in the middle of a cinematic stadium at night.';
     if (metaDescription) {
-      metaDescription.setAttribute(
-        'content',
-        'The definitive authority for 2026 tournament travel intelligence. Compare flights, hotels, and experiences across all 16 host cities. From budget to luxury travel guides.'
-      );
+      metaDescription.setAttribute('content', descriptionText);
     } else {
       // Graceful fallback: create meta tag if missing
       const meta = document.createElement('meta');
       meta.name = 'description';
-      meta.content =
-        'The definitive authority for 2026 tournament travel intelligence. Compare flights, hotels, and experiences across all 16 host cities. From budget to luxury travel guides.';
+      meta.content = descriptionText;
       document.head.appendChild(meta);
     }
 
@@ -86,6 +70,30 @@ export default function HomePage() {
     if (canonical) {
       canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/`);
     }
+
+    // Set OG/Twitter image to new cinematic hero asset
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+    const ogImageUrl = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`;
+    const setMeta = (property: string, content: string) => {
+      let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    setMeta('og:image', ogImageUrl);
+    setMeta('og:image:width', '1920');
+    setMeta('og:image:height', '1080');
+    setMeta('og:title', 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort');
+    setMeta('og:description', descriptionText);
+    setMeta('twitter:image', ogImageUrl);
+    setMeta('twitter:card', 'summary_large_image');
+    setMeta(
+      'twitter:image:alt',
+      'Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch.'
+    );
 
     // Animate counters
     const travelerInterval = setInterval(() => {
@@ -102,26 +110,29 @@ export default function HomePage() {
     };
   }, []);
 
-  const hostCities = [
+  // Two featured cities cloned from Cities page
+  const featuredCities: HostCity[] = [
     {
       id: 1,
-      name: 'New York City',
+      name: 'New York / New Jersey',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'MetLife Stadium',
-      capacity: '87,157',
+      stadium: 'MetLife Stadium, East Rutherford, NJ',
+      capacity: '82,500',
       description:
-        'The city that never sleeps welcomes the world with iconic skylines, world-class dining, and unmatched energy.',
-      image:
-        'https://readdy.ai/api/search-image?query=New%20York%20City%20Manhattan%20skyline%20at%20golden%20hour%2C%20iconic%20skyscrapers%2C%20urban%20landscape%2C%20modern%20metropolitan%20cityscape%2C%20vibrant%20city%20lights%2C%20architectural%20beauty&width=600&height=400&seq=nyc-skyline&orientation=landscape',
+        "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
+      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
       fullContent: {
-        introduction:
-          'New York City, the ultimate urban destination, offers an unparalleled World Cup 2026 experience with its iconic venues, diverse neighborhoods, and world-class amenities.',
+        introduction: `The World's Biggest Game Comes to the World's Biggest Stage`,
         sections: [
           {
-            title: 'Coming Soon',
+            title: 'New York City: Your Ultimate 2026 FIFA World Cup Travel Guide',
             content:
-              "Detailed guide content will be available soon. Stay tuned for comprehensive information about New York City's World Cup 2026 experience."
+              `When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`
+          },
+          {
+            title: 'Why New York/New Jersey Won the World Cup Final',
+            content: 'Coming Soon'
           }
         ]
       }
@@ -133,41 +144,13 @@ export default function HomePage() {
       flag: '🇺🇸',
       stadium: 'SoFi Stadium',
       capacity: '70,240',
-      description: 'Where $5.5 billion meets global football. LA\'s architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world\'s entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA\'s sprawling diversity means every team has a neighborhood. This is spectacle, California-style.',
-      image:
-        'https://readdy.ai/api/search-image?query=Los%20Angeles%20downtown%20skyline%20with%20palm%20trees%2C%20Hollywood%20hills%20in%20background%2C%20sunny%20California%20weather%2C%20modern%20urban%20landscape%2C%20entertainment%20district&width=600&height=400&seq=la-skyline&orientation=landscape',
-      fullContent: {
-        introduction:
-          'Los Angeles brings together the best of entertainment, culture, and natural beauty for an unforgettable World Cup 2026 experience.',
-        sections: [
-          {
-            title: 'Coming Soon',
-            content:
-              "Detailed guide content will be available soon. Stay tuned for comprehensive information about Los Angeles's World Cup 2026 experience."
-          }
-        ]
-      }
-    },
-    {
-      id: 3,
-      name: 'Miami',
-      country: 'USA',
-      flag: '🇺🇸',
-      stadium: 'Hard Rock Stadium',
-      capacity: '67,518',
       description:
-        'Tropical paradise meets international flair with pristine beaches, vibrant nightlife, and Latin American culture.',
-      image:
-        'https://readdy.ai/api/search-image?query=Miami%20Beach%20skyline%20with%20art%20deco%20buildings%2C%20turquoise%20ocean%20waters%2C%20palm%20trees%2C%20tropical%20paradise%2C%20colorful%20architecture%2C%20sunny%20beach%20destination&width=600&height=400&seq=miami-beach&orientation=landscape',
+        "Where $5.5 billion meets global football. LA's architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world's entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA's sprawling diversity means every team has a neighborhood. This is spectacle, California-style.",
+      image: '/images/cities/los-angeles-world-cup-2026.webp',
       fullContent: {
-        introduction:
-          'Miami offers a unique blend of tropical beauty, international culture, and world-class hospitality for World Cup 2026 visitors.',
+        introduction: 'Los Angeles brings together the best of entertainment, culture, and natural beauty for an unforgettable World Cup 2026 experience.',
         sections: [
-          {
-            title: 'Coming Soon',
-            content:
-              "Detailed guide content will be available soon. Stay tuned for comprehensive information about Miami's World Cup 2026 experience."
-          }
+          { title: 'Coming Soon', content: 'Detailed guide content will be available soon.' }
         ]
       }
     }
@@ -204,20 +187,34 @@ export default function HomePage() {
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <SchemaOrg schema={generateWebsiteSchema()} />
       <SchemaOrg schema={generateOrganizationSchema()} />
+      {/* Structured data for homepage hero image */}
+      <SchemaOrg
+        schema={generateImageObjectSchema('/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp', {
+          width: 1920,
+          height: 1080,
+          caption: 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort',
+          description:
+            'Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch.'
+        })}
+      />
       
       <Header />
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background Image with Parallax */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{
-            backgroundImage: `url('https://readdy.ai/api/search-image?query=Epic%20football%20stadium%20at%20night%20with%20dramatic%20lighting%2C%20massive%20crowd%20cheering%2C%20cinematic%20sports%20atmosphere%2C%20professional%20stadium%20architecture%2C%20vibrant%20green%20field%2C%20powerful%20floodlights%20creating%20dramatic%20shadows%20and%20highlights&width=1920&height=1080&seq=hero1&orientation=landscape')`
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
-        </div>
+        {/* Optimized hero image (edge-to-edge, SEO-friendly) */}
+        <OptimizedImage
+          src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+          alt="Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch."
+          className="absolute inset-0"
+          imgClassName="object-cover object-center w-full h-full"
+          width={1920}
+          height={1080}
+          priority={true}
+          placeholder="blur"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
@@ -401,40 +398,64 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Host Cities */}
-      <section className="py-20 bg-white dark:bg-navy-900">
+      {/* Featured Host Cities - cloned styling from Cities page */}
+      <section className="py-16 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
+          <div className="text-center mb-12">
+            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
               Explore Every Host City
             </h2>
-            <p className="font-inter text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              Sixteen incredible cities across three countries are ready to welcome the world. From the beaches of Miami to the culture of Mexico City and the energy of Toronto—discover where to stay,
-              what to see, and how to make the most of every match day.
+            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
+              Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
             </p>
           </div>
 
-          {/* Featured Cities Grid - 3 Cards */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            {hostCities.map(city => (
+          {/* 2-Column Grid Layout with responsive, lazy images */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {featuredCities.map((city, index) => (
               <Card key={city.id} hover className="overflow-hidden group">
-                <div className="relative">
-                  <img
+                <div className="relative h-64 overflow-hidden">
+                  <OptimizedImage
                     src={city.image}
-                    alt={`${city.name} skyline`}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    alt={city.alt || `${city.name} skyline`}
+                    className="absolute inset-0"
+                    imgClassName="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    width={1600}
+                    height={900}
+                    priority={index < 2}
+                    placeholder="blur"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
                     <span>{city.flag}</span>
                     <span>{city.country}</span>
                   </div>
+                  {city.name === 'New York / New Jersey' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      8 Matches
+                    </div>
+                  )}
+                  {city.name === 'New York / New Jersey' && (
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                      <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
+                    </div>
+                  )}
+                  {city.name === 'Los Angeles' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      8 Matches
+                    </div>
+                  )}
                 </div>
-
+                
                 <div className="p-6">
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">{city.name}</h3>
-
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">{city.description}</p>
-
+                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+                    {city.name}
+                  </h3>
+                  
+                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                    {city.description}
+                  </p>
+                  
                   <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6">
                     <div className="flex items-center justify-between">
                       <div>
@@ -447,31 +468,35 @@ export default function HomePage() {
                       </div>
                     </div>
                   </div>
-
-                  <Button
-                    variant="primary"
-                    size="sm"
-                    fullWidth
+                  
+                  <Button 
+                    variant="primary" 
+                    size="sm" 
+                    fullWidth 
                     className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openCityModal(city)}
+                    onClick={() => {
+                      navigate(getCityRoute(city.name));
+                    }}
                   >
                     <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
+                    {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
                   </Button>
                 </div>
               </Card>
             ))}
           </div>
 
+          {/* CTA: Discover All 16 Host Cities */}
           <div className="text-center mt-12">
-            <Link to="/world-cup-2026-host-cities">
-              <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl">
+            <Link to="/world-cup-2026-cities" className="group" aria-label="Discover all 16 host cities">
+              <button
+                aria-label="Discover all 16 host cities"
+                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl"
+              >
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
                 <div className="absolute inset-0 rounded-3xl overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
                 </div>
-
                 <div className="relative z-10 flex items-center justify-center space-x-2">
                   <span className="ultra-premium-text font-semibold text-white">Discover All 16 Host Cities</span>
                 </div>
@@ -481,78 +506,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* City Modal - Travel Tips Style */}
-      {isModalOpen && selectedCity && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onClick={closeModal}></div>
-
-            <div className="inline-block w-full max-w-4xl my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-navy-800 shadow-xl rounded-2xl">
-              <div className="relative">
-                <img src={selectedCity.image} alt={selectedCity.name} className="w-full h-64 object-cover" />
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all cursor-pointer"
-                >
-                  <i className="ri-close-line text-xl"></i>
-                </button>
-                <div className="absolute bottom-4 left-4">
-                  <span className="bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-bold flex items-center space-x-2">
-                    <span>{selectedCity.flag}</span>
-                    <span>{selectedCity.country}</span>
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-emerald-500 text-sm font-medium">Host City Guide</span>
-                  <div className="flex items-center space-x-4 text-sm text-slate-500">
-                    <span>{selectedCity.stadium}</span>
-                    <span>•</span>
-                    <span>{selectedCity.capacity} capacity</span>
-                  </div>
-                </div>
-
-                <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">
-                  {selectedCity.name}, {selectedCity.country}
-                </h2>
-
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">{selectedCity.fullContent?.introduction}</p>
-
-                <div className="space-y-6">
-                  {selectedCity.fullContent?.sections.map((section, index) => (
-                    <div key={index}>
-                      <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-3">{section.title}</h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{section.content}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                  <div className="flex items-start space-x-3">
-                    <i className="ri-information-line text-emerald-600 text-lg mt-0.5"></i>
-                    <div>
-                      <h4 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">Coming Soon</h4>
-                      <p className="text-emerald-700 dark:text-emerald-400 text-sm">
-                        Comprehensive city guides with detailed information about accommodations, transportation, attractions, and local tips will be
-                        available soon.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="flex justify-end mt-8">
-                  <Button variant="primary" onClick={closeModal} className="cursor-pointer">
-                    <i className="ri-check-line mr-2"></i>
-                    Got It
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
 
       {/* Widgets Section */}
       <section className="py-20 bg-slate-50 dark:bg-navy-800">

@@ -1,24 +1,72 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 
 export function AtlantaCityGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
+      <SchemaOrg
+        schema={[
+          generateCityGuideSchema(
+            'Atlanta – World Cup 2026 Guide',
+            'Comprehensive Atlanta travel guide for FIFA World Cup 2026: Mercedes-Benz Stadium details, match schedule, transportation, and where to stay.',
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/atlanta`
+          ),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Host Cities', url: '/world-cup-2026-cities' },
+            { name: 'Atlanta', url: '/world-cup-2026-cities/atlanta' }
+          ]),
+          generateImageObjectSchema('/images/cities/atlanta-world-cup-2026.webp', {
+            width: 1600,
+            height: 900,
+            caption: 'Atlanta skyline – World Cup 2026'
+          })
+        ]}
+      />
 
-      {/* Hero Section - MetLife-style visual */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
-            <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+      {/* Hero Section with Optimized Image */}
+      <section className="relative">
+        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+          <OptimizedImage
+            src="/images/cities/atlanta-world-cup-2026.webp"
+            alt="Atlanta skyline – World Cup 2026"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+          <div className="absolute bottom-8 left-8 right-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
+                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Atlanta</h1>
+              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
+                <div className="flex items-center gap-2">
+                  <i className="ri-map-pin-line text-emerald-300"></i>
+                  <span>USA</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-building-line text-blue-300"></i>
+                  <span>Mercedes-Benz Stadium</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-group-line text-sky-300"></i>
+                  <span>71,000 capacity</span>
+                </div>
+              </div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Atlanta: Your Ultimate 2026 FIFA World Cup Travel Guide
-          </h1>
         </div>
-      </div>
+      </section>
 
       {/* Main Content - Part 1/5 only, verbatim text in exact sequence */}
       <main className="p-8 md:p-12 space-y-12">

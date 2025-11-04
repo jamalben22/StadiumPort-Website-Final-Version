@@ -4,9 +4,11 @@ import { Header } from './Header';
 
 interface EstadioAkronGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
-export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = () => {
+export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const [expanded, setExpanded] = useState(true);
   const navigate = useNavigate();
 
@@ -15,10 +17,10 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Collapsed Preview Card (MetLife-style) */}
-      {!expanded && (
+      {!expanded && !hideHero && (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
             <div className="relative h-56 sm:h-72 md:h-80">
@@ -66,6 +68,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = () => {
       {expanded && (
         <div className="animate-fade-in">
           {/* Hero Header — Miami-style */}
+          {!hideHero && (
           <div className="relative">
             <div className="relative h-[520px] overflow-hidden">
               <img
@@ -93,6 +96,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">

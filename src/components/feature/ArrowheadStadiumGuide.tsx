@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Button } from '../base/Button';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface ArrowheadStadiumGuideProps {
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
-export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = () => {
+export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(true);
 
@@ -20,18 +23,25 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = () =>
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-      <Header />
+      {showHeader && <Header />}
       {/* Full Guide - Expanded State */}
       {isExpanded && (
         <div className="animate-fade-in">
           {/* Hero Section - Miami Style */}
+          {!hideHero && (
           <section className="relative pt-32 pb-20 overflow-hidden">
             {/* Background Image with Overlay */}
             <div className="absolute inset-0">
-              <img 
-                src="/images/arrowhead-stadium-kansas-city-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/arrowhead-stadium-kansas-city-world-cup-2026.webp"
                 alt="Interior view of Arrowhead Stadium in Kansas City, Missouri — vibrant atmosphere ahead of FIFA World Cup 2026 matches."
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
             </div>
@@ -61,6 +71,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = () =>
               </div>
             </div>
           </section>
+          )}
 
           {/* Content Sections */}
           <div className="p-8 md:p-12 space-y-12">

@@ -1,6 +1,7 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function DallasArticlePage() {
@@ -20,7 +21,11 @@ export default function DallasArticlePage() {
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
             { name: 'Dallas', url: pageUrl }
-          ])
+          ]),
+          generateImageObjectSchema(
+            '/images/cities/dallas-world-cup-2026.webp',
+            { width: 1600, height: 900, caption: 'Dallas skyline – World Cup 2026' }
+          )
         ]}
       />
 
@@ -29,10 +34,16 @@ export default function DallasArticlePage() {
       {/* Hero Section (MetLife/SoFi-style visual language) */}
       <section className="relative">
         <div className="relative h-[360px] md:h-[440px] overflow-hidden">
-          <img
-            src="https://readdy.ai/api/search-image?query=Dallas%20Texas%20skyline%20at%20golden%20hour%20with%20modern%20downtown%20skyscrapers%2C%20AT%26T%20Stadium%20vibes%2C%20World%20Cup%20atmosphere%2C%20Texas%20sunset%20lighting%2C%20metropolitan%20cityscape&width=1200&height=600&seq=dallas-guide-hero&orientation=landscape"
+          <OptimizedImage
+            src="/images/cities/dallas-world-cup-2026.webp"
             alt="Dallas skyline"
-            className="w-full h-full object-cover object-center"
+            className="absolute inset-0"
+            imgClassName="object-cover object-center"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="blur"
+            sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
 

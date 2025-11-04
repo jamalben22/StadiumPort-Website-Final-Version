@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from './Header';
+import { OptimizedImage } from '../base/OptimizedImage';
 
 interface BCPlaceStadiumGuideProps {
   onClose?: () => void;
+  showHeader?: boolean;
+  hideHero?: boolean;
 }
 
-export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = () => {
+export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHeader = false, hideHero = false }) => {
   const [expanded, setExpanded] = useState(true);
   const navigate = useNavigate();
 
@@ -15,10 +18,10 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-slate-950 dark:to-slate-900">
-      <Header />
+      {showHeader && <Header />}
 
       {/* Collapsed Preview Card (MetLife/Azteca-style) */}
-      {!expanded && (
+      {!expanded && !hideHero && (
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-xl">
             <div className="relative h-56 sm:h-72 md:h-80">
@@ -66,12 +69,19 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = () => {
       {expanded && (
         <div className="animate-fade-in">
           {/* Hero Header — Miami-style */}
+          {!hideHero && (
           <div className="relative">
             <div className="relative h-[520px] overflow-hidden">
-              <img
-                src="/images/bc-place-vancouver-world-cup-2026.webp"
+              <OptimizedImage
+                src="/images/stadiums/bc-place-vancouver-world-cup-2026.webp"
                 alt="Interior view of BC Place Stadium in Vancouver, Canada, showcasing the venue for FIFA World Cup 2026 matches."
-                className="w-full h-full object-cover"
+                className="absolute inset-0"
+                imgClassName="object-cover"
+                width={1600}
+                height={900}
+                placeholder="blur"
+                sizes="100vw"
+                priority={true}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
               <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -97,6 +107,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = () => {
               </div>
             </div>
           </div>
+          )}
 
           {/* Content Sections */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">

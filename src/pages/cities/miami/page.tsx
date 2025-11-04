@@ -2,7 +2,8 @@ import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 export default function MiamiCityGuide() {
   const navigate = useNavigate();
@@ -38,7 +39,7 @@ export default function MiamiCityGuide() {
 
   return (
     <>
-      <SchemaOrg schema={[breadcrumbSchema, cityGuideSchema]} />
+      <SchemaOrg schema={[breadcrumbSchema, cityGuideSchema, generateImageObjectSchema('/images/cities/miami-world-cup-2026.webp', { width: 1600, height: 900, caption: 'Miami skyline – World Cup 2026' })]} />
       <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-emerald-50 dark:from-navy-950 dark:via-navy-900 dark:to-navy-800">
         <Header />
         
@@ -46,10 +47,16 @@ export default function MiamiCityGuide() {
         <section className="relative pt-32 pb-20 overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0">
-            <img 
-              src="https://readdy.ai/api/search-image?query=Miami%20skyline%20at%20golden%20hour%20with%20modern%20skyscrapers%20reflecting%20in%20Biscayne%20Bay%2C%20tropical%20palm%20trees%2C%20vibrant%20sunset%20colors%2C%20luxury%20waterfront%20cityscape%2C%20Art%20Deco%20architecture%20visible%20in%20distance&width=1920&height=800&seq=miami-hero&orientation=landscape"
+            <OptimizedImage 
+              src="/images/cities/miami-world-cup-2026.webp"
               alt="Miami skyline at golden hour"
-              className="w-full h-full object-cover"
+              className="absolute inset-0"
+              imgClassName="object-cover"
+              width={1600}
+              height={900}
+              priority={true}
+              placeholder="blur"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
           </div>

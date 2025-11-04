@@ -20,22 +20,36 @@ async function ensureVariant(srcPath, destPath, width, quality) {
   return true;
 }
 
-async function processImage(file) {
-  const ext = path.extname(file).toLowerCase();
+async function processImage(srcPath) {
+  const ext = path.extname(srcPath).toLowerCase();
   if (!['.webp', '.jpg', '.jpeg', '.png'].includes(ext)) return { created: 0 };
 
-  const baseName = path.basename(file, ext);
-  const srcPath = path.join(imagesDir, file);
+  const baseName = path.basename(srcPath, ext);
+  const dirName = path.dirname(srcPath);
   let created = 0;
 
   for (const t of TARGETS) {
     const destName = `${baseName}${t.suffix}`;
-    const destPath = path.join(imagesDir, destName);
+    const destPath = path.join(dirName, destName);
     const made = await ensureVariant(srcPath, destPath, t.width, t.quality);
     if (made) created += 1;
   }
 
   return { created };
+}
+
+function walkDir(dir) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      files.push(...walkDir(full));
+    } else if (e.isFile()) {
+      files.push(full);
+    }
+  }
+  return files;
 }
 
 async function main() {
@@ -44,12 +58,10 @@ async function main() {
     process.exit(1);
   }
 
-  const entries = fs.readdirSync(imagesDir, { withFileTypes: true });
-  const files = entries.filter(e => e.isFile()).map(e => e.name);
-
+  const files = walkDir(imagesDir);
   let totalCreated = 0;
-  for (const file of files) {
-    const { created } = await processImage(file);
+  for (const srcPath of files) {
+    const { created } = await processImage(srcPath);
     totalCreated += created;
   }
 
