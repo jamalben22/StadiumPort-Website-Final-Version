@@ -4,60 +4,65 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 export function KansasCityCityGuide() {
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900">
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
 
-      {/* Hero Section - MetLife-style visual with local image */}
-      <div className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 overflow-hidden">
-        <OptimizedImage
-          src="/images/cities/kansas-city-world-cup-2026.webp"
-          alt="Kansas City skyline"
-          className="absolute inset-0"
-          imgClassName="object-cover object-center"
-          width={1600}
-          height={900}
-          priority={true}
-          placeholder="blur"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Kansas City: Your Ultimate 2026 FIFA World Cup Travel Guide
-          </h1>
-          <p className="text-slate-300 text-lg max-w-3xl">
-            The Heart of America Hosts the Heart of the Game
-          </p>
+      {/* Editorial Hero — cohesive with NYC guide styling */}
+      <section className="editorial-hero">
+        <div className="editorial-hero-media">
+          <OptimizedImage
+            src="/images/cities/kansas-city-world-cup-2026.webp"
+            alt="Kansas City skyline"
+            className="editorial-hero-image-wrapper"
+            imgClassName="editorial-hero-image"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="empty"
+            sizes="100vw"
+          />
+          <div className="editorial-hero-overlay"></div>
         </div>
-      </div>
-
-      {/* Main Content - Part 1/5 only, verbatim text */}
-      <main className="p-8 md:p-12 space-y-12">
-        {/* Introduction */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white">
-            <p className="text-3xl font-bold text-slate-900 dark:text-slate-50">The Heart of America Hosts the Heart of the Game</p>
-            <p>Kansas City might be the smallest host city for the 2026 FIFA World Cup, but don't let that fool you—this is where American football passion meets Midwest hospitality in the most electric way possible. From June 16 through July 11, Arrowhead Stadium (known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.</p>
-            <p>
-              This isn't a flashy coastal city trying to impress you. This is the real America—BBQ joints that have been perfecting brisket since the 1940s, fountains on every corner (seriously, KC has more fountains than any city except Rome), and locals who'll give you directions then invite you to their tailgate. The 2026 World Cup gives Kansas City its moment to show the world what Midwestern culture is all about: unpretentious, welcoming, and unexpectedly unforgettable.
-            </p>
+        <div className="editorial-hero-content">
+          <div className="editorial-hero-inner">
+            <div className="editorial-hero-eyebrow">
+              <span className="editorial-hero-pulse"></span>
+              <span>The Heart of America Hosts the Heart of the Game</span>
+            </div>
+            <h1 className="editorial-hero-title">Kansas City: Your Ultimate 2026 FIFA World Cup Travel Guide</h1>
           </div>
         </div>
+      </section>
+
+      {/* Content Sections — Editorial presentation aligned with NYC */}
+      <main className="editorial-article py-12">
+        {/* Introduction */}
+        <article className="editorial-body editorial-dropcap">
+          <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-trophy-line text-emerald-500"></i>
+            The Heart of America Hosts the Heart of the Game
+          </h2>
+          <p>Kansas City might be the smallest host city for the 2026 FIFA World Cup, but don't let that fool you—this is where American football passion meets Midwest hospitality in the most electric way possible. From June 16 through July 11, Arrowhead Stadium (known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.</p>
+          <p>
+            This isn't a flashy coastal city trying to impress you. This is the real America—BBQ joints that have been perfecting brisket since the 1940s, fountains on every corner (seriously, KC has more fountains than any city except Rome), and locals who'll give you directions then invite you to their tailgate. The 2026 World Cup gives Kansas City its moment to show the world what Midwestern culture is all about: unpretentious, welcoming, and unexpectedly unforgettable.
+          </p>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Stadium Section */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-red-500 dark:text-red-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-building-line text-emerald-500"></i>
             The Stadium: Arrowhead Stadium, Kansas City, MO (Kansas City Stadium for FIFA 2026)
-          </h2>
-
+          </h3>
           <div className="space-y-8">
             {/* Loudest Venue */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-volume-up-line text-red-500 dark:text-red-300"></i>One of the World's Loudest Venues
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-volume-up-line text-emerald-500"></i>
+                One of the World's Loudest Venues
+              </h4>
+              <div className="space-y-4">
                 <p>
                   Arrowhead Stadium opened in 1972 and has a capacity of 76,416 seats, making it one of the larger World Cup venues in the United States. What truly sets this stadium apart isn't just size—it's sound. In a 2014 NFL match between the Kansas City Chiefs and New England Patriots, the decibel count hit 142.2, a record that still stands today as the loudest stadium in the USA.
                 </p>
@@ -70,15 +75,16 @@ export function KansasCityCityGuide() {
               </div>
             </div>
             {/* Match Schedule */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300"></i>Match Schedule at Arrowhead Stadium, Kansas City, MO
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-calendar-event-line text-emerald-500"></i>
+                Match Schedule at Arrowhead Stadium, Kansas City, MO
+              </h4>
+              <div className="space-y-3">
                 <p>
                   Kansas City will host six World Cup matches spanning nearly a month of tournament action:
                 </p>
-                <div className="space-y-2 text-slate-700 dark:text-slate-200">
+                <div className="space-y-2">
                   <p><strong>Group Stage Matches</strong>: June 16, 20, 25, 27</p>
                   <p><strong>Round of 32</strong>: July 3</p>
                   <p><strong>Quarterfinal</strong>: July 11, 2026</p>
@@ -90,11 +96,12 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* What Makes This Stadium Special */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-gold-400 dark:text-amber-300"></i>What Makes This Stadium Special
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-star-line text-emerald-500"></i>
+                What Makes This Stadium Special
+              </h4>
+              <div className="space-y-4">
                 <p>
                   Arrowhead Stadium is currently home to the Kansas City Chiefs, who have risen to NFL prominence behind quarterback Patrick Mahomes and won two Super Bowls in recent years. The stadium's football pedigree is impeccable, but soccer has history here too.
                 </p>
@@ -110,22 +117,23 @@ export function KansasCityCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
-      {/* Transportation Section */}
-      <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-        <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-          <i className="ri-roadster-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
-          Getting There: Transportation Made Easy
-        </h2>
-
+        {/* Transportation Section */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-roadster-line text-emerald-500"></i>
+            Getting There: Transportation Made Easy
+          </h3>
           <div className="space-y-8">
             {/* From the Airport */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-blue-400 dark:text-sky-300"></i>From the Airport
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-plane-line text-emerald-500"></i>
+                From the Airport
+              </h4>
+              <div className="space-y-4">
                 <p>
                   Kansas City International Airport (MCI) is the main airport serving the region, located approximately 15 miles northwest of downtown Kansas City. In 2026, visitors will be greeted by a brand new single terminal that opened to replace the previous outdated facility—Kansas City invested in this infrastructure specifically with the World Cup in mind.
                 </p>
@@ -135,36 +143,37 @@ export function KansasCityCityGuide() {
               </div>
             </div>
             {/* Airport to Downtown Transportation */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300"></i>Airport to Downtown Transportation
-              </h3>
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-map-pin-line text-emerald-500"></i>
+                Airport to Downtown Transportation
+              </h4>
               <div className="space-y-6">
-                <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
-                    <i className="ri-bus-line text-emerald-400 dark:text-emerald-300"></i>
+                <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/70 dark:border-slate-700">
+                  <h4 className="editorial-h4 mb-3 flex items-center gap-2">
+                    <i className="ri-bus-line text-emerald-500"></i>
                     RideKC Bus Line 229 (Free!)
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200">
+                  <p>
                     The most budget-friendly option is RideKC Bus Line 229, which operates fare-free service directly from MCI Airport to downtown Kansas City. The journey takes approximately 60 minutes in light traffic, with buses departing hourly throughout the day.
                   </p>
-                  <p className="text-slate-700 dark:text-slate-200">
+                  <p>
                     The bus stops at both airport terminals and makes multiple stops throughout downtown, dropping passengers near major hotels and the Power & Light entertainment district. This is an excellent option for solo travelers or anyone comfortable with public transit.
                   </p>
                 </div>
 
-                <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                  <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-2">
-                    <i className="ri-taxi-line text-blue-400 dark:text-sky-300"></i>
+                <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/70 dark:border-slate-700">
+                  <h4 className="editorial-h4 mb-3 flex items-center gap-2">
+                    <i className="ri-taxi-line text-emerald-500"></i>
                     Taxi and Rideshare
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200">
+                  <p>
                     Taxis are available 24/7 at designated locations outside the terminal, with flat rates to downtown averaging around $50 for up to four passengers. Uber and Lyft operate throughout Kansas City with reliable service. Expect the trip to downtown to take 20-25 minutes depending on traffic.
                   </p>
                 </div>
 
-                <div className="bg-slate-50 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                  <p className="text-slate-700 dark:text-slate-200">
+                <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/70 dark:border-slate-700">
+                  <p>
                     <strong>Pro Tip</strong>: Download the RideKC Transit app before arrival to track bus times and plan your route. For groups of three or more, rideshares often cost less per person than taxis and offer more convenience.
                   </p>
                 </div>
@@ -172,82 +181,79 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Getting to Arrowhead Stadium on Match Days */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-roadster-line text-red-500 dark:text-red-300"></i>Getting to Arrowhead Stadium, Kansas City, MO on Match Days
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-roadster-line text-emerald-500"></i>
+                Getting to Arrowhead Stadium, Kansas City, MO on Match Days
+              </h4>
+              <div className="space-y-4">
                 <p>
                   The stadium is located about 10-12 miles east of downtown Kansas City, making it easily accessible via car or rideshare. Unfortunately, there is no direct public transit from downtown to Arrowhead Stadium, so plan accordingly.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Matchday Logistics */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-calendar-event-line text-emerald-500"></i>
             Matchday Logistics: Rideshare, Parking, Streetcar
-          </h2>
-
+          </h3>
           <div className="space-y-8">
-              {/* Rideshare Strategy */}
-              <div className="dark:text-white">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                  <i className="ri-taxi-line text-blue-500 dark:text-sky-300"></i>Rideshare Strategy
-                </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
-                <p>
-                  Budget $20-35 for an Uber or Lyft from downtown hotels to Arrowhead. On match days, expect surge pricing, especially in the hours before kickoff and immediately after the final whistle. Book your return ride immediately after the match ends to avoid the highest surges.
-                </p>
-              </div>
-              </div>
-              {/* Parking */}
-              <div className="dark:text-white">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                  <i className="ri-parking-box-line text-emerald-500 dark:text-emerald-300"></i>Parking
-                </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
-                <p>
-                  If you're renting a car, Arrowhead offers extensive parking lots. Arrive early on match days—parking fills up quickly for major events, and you'll want time to soak in the tailgate atmosphere.
-                </p>
-              </div>
+            {/* Rideshare Strategy */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-taxi-line text-emerald-500"></i>
+                Rideshare Strategy
+              </h4>
+              <p>
+                Budget $20-35 for an Uber or Lyft from downtown hotels to Arrowhead. On match days, expect surge pricing, especially in the hours before kickoff and immediately after the final whistle. Book your return ride immediately after the match ends to avoid the highest surges.
+              </p>
             </div>
-
+            {/* Parking */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-parking-box-line text-emerald-500"></i>
+                Parking
+              </h4>
+              <p>
+                If you're renting a car, Arrowhead offers extensive parking lots. Arrive early on match days—parking fills up quickly for major events, and you'll want time to soak in the tailgate atmosphere.
+              </p>
+            </div>
             {/* KC Streetcar */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-purple-500 dark:text-purple-300"></i>
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <i className="ri-train-line text-emerald-500"></i>
                 Kansas City Streetcar (Bonus)
-              </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
-                <p>
-                  While it doesn't reach Arrowhead, the KC Streetcar offers free transportation between River Market, downtown, Union Station, and the Crossroads Arts District—perfect for exploring the city between matches.
-                </p>
-              </div>
+              </h4>
+              <p>
+                While it doesn't reach Arrowhead, the KC Streetcar offers free transportation between River Market, downtown, Union Station, and the Crossroads Arts District—perfect for exploring the city between matches.
+              </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Where to Stay */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-hotel-line text-emerald-500"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
-          </h2>
+          </h3>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          <div className="space-y-6">
             <p>
               Kansas City offers diverse accommodation options, from downtown hotels with skyline views to neighborhood gems with local character. Here's where to base yourself.
             </p>
 
             {/* Downtown / Power & Light */}
-            <div className="space-y-4 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">
+            <div className="space-y-4">
+              <h4 className="editorial-h4">
                 Downtown/Power &amp; Light District: Maximum Convenience
-              </h3>
+              </h4>
               <p>
                 <strong>Why Stay Here</strong>: Downtown puts you in the center of Kansas City's energy, walkable to restaurants, bars, and entertainment. The Power &amp; Light District is Kansas City's heartbeat—eight blocks of great food, live music, and nightlife where locals and tourists converge.
               </p>
@@ -266,8 +272,8 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Crossroads Arts District */}
-            <div className="space-y-4 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Crossroads Arts District: Creative Energy</h3>
+            <div className="space-y-4">
+              <h4 className="editorial-h4">Crossroads Arts District: Creative Energy</h4>
               <p>
                 <strong>Why Stay Here</strong>: Just south of downtown, the Crossroads is Kansas City's creative hub—galleries, street art, independent coffee shops, and restaurants that define Kansas City's evolving cultural scene. Every First Friday, the neighborhood hosts an art walk that draws thousands.
               </p>
@@ -280,8 +286,8 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Country Club Plaza */}
-            <div className="space-y-4 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Country Club Plaza: Shopping and Spanish Architecture</h3>
+            <div className="space-y-4">
+              <h4 className="editorial-h4">Country Club Plaza: Shopping and Spanish Architecture</h4>
               <p>
                 <strong>Why Stay Here</strong>: Built in the 1920s, the Country Club Plaza is America's first suburban shopping district, featuring sumptuous Spanish architecture, fountains on every corner, and upscale shopping. The area offers tree-lined streets, outdoor dining, and a more relaxed vibe than downtown.
               </p>
@@ -295,7 +301,7 @@ export function KansasCityCityGuide() {
 
             {/* Near Arrowhead Stadium */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Near Arrowhead Stadium, Kansas City, MO: Proximity Over Neighborhood Charm</h3>
+              <h4 className="editorial-h4">Near Arrowhead Stadium, Kansas City, MO: Proximity Over Neighborhood Charm</h4>
               <p>
                 <strong>Why Stay Here</strong>: If you're attending multiple matches or prioritizing stadium proximity, consider hotels near Arrowhead. Several mid-range chains offer good value and put you minutes from kickoff.
               </p>
@@ -307,26 +313,27 @@ export function KansasCityCityGuide() {
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Beyond the Match */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-compass-3-line text-emerald-500"></i>
             Beyond the Match: What to Do in Kansas City
-          </h2>
+          </h3>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          <div className="space-y-6">
             <p>
               Kansas City surprises visitors who arrive expecting Midwest stereotypes. This is a city with world-class museums, James Beard Award-winning restaurants, and a cultural scene that rivals cities twice its size.
             </p>
 
             {/* WWI Museum */}
-            <div className="space-y-3 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-                <i className="ri-museum-line text-blue-500 dark:text-sky-300"></i>
+            <div className="space-y-3">
+              <h4 className="editorial-h4 flex items-center gap-2">
+                <i className="ri-museum-line text-emerald-500"></i>
                 National WWI Museum and Memorial
-              </h3>
+              </h4>
               <p>
                 Kansas City is home to America's official World War I Museum and Memorial, and it's spectacular. The museum features extensive exhibits covering the Great War from all sides, with artifacts, interactive displays, and personal stories that bring history to life.
               </p>
@@ -339,11 +346,11 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Nelson-Atkins Museum */}
-            <div className="space-y-3 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-                <i className="ri-landscape-line text-purple-500 dark:text-purple-300"></i>
+            <div className="space-y-3">
+              <h4 className="editorial-h4 flex items-center gap-2">
+                <i className="ri-landscape-line text-emerald-500"></i>
                 The Nelson-Atkins Museum of Art
-              </h3>
+              </h4>
               <p>
                 The Nelson-Atkins Museum ranks among America's finest art museums, housing 42,000 works spanning 5,000 years of human creativity. The collection includes one of the top three Asian art collections worldwide, exceptional Impressionist and Post-Impressionist works, and commissioned contemporary installations.
               </p>
@@ -359,11 +366,11 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Union Station */}
-            <div className="space-y-3 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-                <i className="ri-building-2-line text-emerald-500 dark:text-emerald-300"></i>
+            <div className="space-y-3">
+              <h4 className="editorial-h4 flex items-center gap-2">
+                <i className="ri-building-2-line text-emerald-500"></i>
                 Union Station: Living History
-              </h3>
+              </h4>
               <p>
                 Opened in 1914, Union Station is a sublime example of the magnificent architecture that once defined American train stations. Today, it's Kansas City's living history museum with rotating world-class exhibits, Science City (interactive science museum), a planetarium, and model train displays.
               </p>
@@ -376,11 +383,11 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* 18th & Vine Historic Jazz District */}
-            <div className="space-y-3 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-                <i className="ri-music-2-line text-red-500 dark:text-red-300"></i>
+            <div className="space-y-3">
+              <h4 className="editorial-h4 flex items-center gap-2">
+                <i className="ri-music-2-line text-emerald-500"></i>
                 18th &amp; Vine Historic Jazz District
-              </h3>
+              </h4>
               <p>
                 Kansas City is a jazz city—Charlie Parker, Count Basie, and the sound that defined an era all came from here. The 18th &amp; Vine district is where it happened, and today it houses the American Jazz Museum and Negro Leagues Baseball Museum.
               </p>
@@ -393,11 +400,11 @@ export function KansasCityCityGuide() {
             </div>
 
             {/* Kansas City Fountains */}
-            <div className="space-y-3 dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 flex items-center gap-2">
-                <i className="ri-water-flash-line text-blue-500 dark:text-sky-300"></i>
+            <div className="space-y-3">
+              <h4 className="editorial-h4 flex items-center gap-2">
+                <i className="ri-water-flash-line text-emerald-500"></i>
                 Kansas City Fountains
-              </h3>
+              </h4>
               <p>
                 Kansas City has more fountains than any city in the world except Rome—over 200, earning it the nickname "City of Fountains." The J.C. Nichols Memorial Fountain at Country Club Plaza is the most photographed, but you'll discover fountains throughout downtown and residential neighborhoods.
               </p>
@@ -406,22 +413,24 @@ export function KansasCityCityGuide() {
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Food */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>Food: Welcome to BBQ Paradise
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            Food: Welcome to BBQ Paradise
+          </h3>
+          <div className="space-y-6">
             <p>
               Let's address this upfront: Kansas City BBQ is a religion, not just a meal. This city takes smoked meat more seriously than anywhere else in America, and you're about to understand why.
             </p>
 
             {/* BBQ Holy Trinity */}
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">The BBQ Holy Trinity</h3>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Joe's Kansas City Bar-B-Que (formerly Oklahoma Joe's)</h4>
+              <h4 className="editorial-h4">The BBQ Holy Trinity</h4>
+              <h4 className="editorial-h4">Joe's Kansas City Bar-B-Que (formerly Oklahoma Joe's)</h4>
               <p>
                 The most famous address in Kansas City BBQ is a gas station in Kansas City, Kansas. Yes, you read that right. Joe's original location operates out of a working gas station—and it's been called one of "13 Places You Must Eat Before You Die" by Anthony Bourdain.
               </p>
@@ -432,7 +441,7 @@ export function KansasCityCityGuide() {
               <p><strong>Budget</strong>: $15-25 per person</p>
               <p><strong>Expect Lines</strong>: The gas station location always has a queue, but it moves fast</p>
 
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Gates Bar-B-Q</h4>
+              <h4 className="editorial-h4">Gates Bar-B-Q</h4>
               <p>
                 When you walk into any Gates location, staff will belt out "Hi, may I help you?" in a sassy, ear-piercing greeting that's been a Kansas City tradition since the 1940s. It's friendly, welcoming, and unforgettable—just like their BBQ.
               </p>
@@ -443,7 +452,7 @@ export function KansasCityCityGuide() {
               <p><strong>Locations</strong>: Multiple across Kansas City (Main Street, Brooklyn Avenue, State Line)</p>
               <p><strong>Pro Tip</strong>: The sauce stays at the top of the game—so good it's sold in grocery stores nationwide</p>
 
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Arthur Bryant's</h4>
+              <h4 className="editorial-h4">Arthur Bryant's</h4>
               <p>
                 In 1972, Kansas City native Calvin Trillin wrote in Playboy that Arthur Bryant's was "the best restaurant on the planet." Presidents Truman, Carter, and Reagan visited this no-frills spot with fluorescent lighting, Formica tables, and five-gallon jars of sauce in the windows.
               </p>
@@ -457,7 +466,7 @@ export function KansasCityCityGuide() {
 
             {/* KC BBQ Style */}
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Understanding Kansas City BBQ Style</h3>
+              <h4 className="editorial-h4">Understanding Kansas City BBQ Style</h4>
               <p>Kansas City BBQ differs from Texas, Memphis, and Carolina styles in two key ways:</p>
               <ol className="list-decimal pl-6 space-y-2">
                 <li><strong>Any meat goes</strong>: While Texas focuses on brisket and Carolina on pork, Kansas City smokes everything—pork, beef, chicken, turkey, lamb, sausage, and sometimes fish.</li>
@@ -468,31 +477,31 @@ export function KansasCityCityGuide() {
 
             {/* Beyond BBQ: KC's Evolving Food Scene */}
             <div className="space-y-4">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Beyond BBQ: KC's Evolving Food Scene</h3>
+              <h4 className="editorial-h4">Beyond BBQ: KC's Evolving Food Scene</h4>
 
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">The Rieger</h4>
+                <h4 className="editorial-h4">The Rieger</h4>
                 <p>
                   A Crossroads Arts District cornerstone serving farm-to-table American cuisine with a Midwest accent. James Beard Award-nominated chef Howard Hanna creates seasonal dishes using local ingredients. The burger is legendary.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Port Fonda</h4>
+                <h4 className="editorial-h4">Port Fonda</h4>
                 <p>
                   Modern Mexican cuisine in Westport with fresh takes on tacos, enchiladas, and creative cocktails. The fish tacos and margaritas draw crowds nightly.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">The Antler Room</h4>
+                <h4 className="editorial-h4">The Antler Room</h4>
                 <p>
                   This Crossroads restaurant earned national acclaim for innovative small plates that change with the seasons. Think creative tasting menus that showcase Midwest ingredients with global techniques.
                 </p>
               </div>
 
               <div className="space-y-2">
-                <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Local Breweries</h4>
+                <h4 className="editorial-h4">Local Breweries</h4>
                 <p>
                   Boulevard Brewing Company is Kansas City's largest craft brewery with free tours and a tasting room. Crane Brewing in the Crossroads and KC Bier Co in the West Bottoms offer local flavor in neighborhood settings.
                 </p>
@@ -501,7 +510,7 @@ export function KansasCityCityGuide() {
 
             {/* Match Day Food Strategy */}
             <div className="space-y-3">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Match Day Food Strategy</h3>
+              <h4 className="editorial-h4">Match Day Food Strategy</h4>
               <p>
                 Tailgating is a religion at Arrowhead Stadium. Arrive early on match days and you'll find parking lots transformed into outdoor parties with grills, games, and Kansas City hospitality on full display. Locals may invite you to join—say yes. Bring drinks or snacks to share, and you'll make friends for life.
               </p>
@@ -510,19 +519,21 @@ export function KansasCityCityGuide() {
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Weather & What to Pack */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-sun-line text-amber-400 dark:text-amber-300 text-4xl"></i>Weather &amp; What to Pack
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">June and July in Kansas City: Warm and Potentially Humid</h3>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-sun-line text-emerald-500"></i>
+            Weather &amp; What to Pack
+          </h3>
+          <div className="space-y-6">
+            <h4 className="editorial-h4">June and July in Kansas City: Warm and Potentially Humid</h4>
             <p>Kansas City summers are warm, with occasional heat waves and afternoon thunderstorms. Here's what to expect:</p>
 
             <div className="space-y-2">
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">June Weather</h4>
+              <h4 className="editorial-h4">June Weather</h4>
               <ul className="list-disc pl-6 space-y-1">
                 <li><strong>Average high</strong>: 86°F (30°C)</li>
                 <li><strong>Average low</strong>: 66°F (19°C)</li>
@@ -535,7 +546,7 @@ export function KansasCityCityGuide() {
             </div>
 
             <div className="space-y-2">
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">July Weather</h4>
+              <h4 className="editorial-h4">July Weather</h4>
               <ul className="list-disc pl-6 space-y-1">
                 <li><strong>Average high</strong>: 91°F (33°C)</li>
                 <li><strong>Average low</strong>: 70°F (21°C)</li>
@@ -549,7 +560,7 @@ export function KansasCityCityGuide() {
             </div>
 
             <div className="space-y-2">
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">What to Pack</h4>
+              <h4 className="editorial-h4">What to Pack</h4>
               <ul className="list-disc pl-6 space-y-1">
                 <li><strong>Clothing</strong>: Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). T-shirts, shorts, and comfortable walking shoes are standard. Kansas City is casual—even nice restaurants rarely require more than smart casual attire.</li>
                 <li><strong>Sun Protection</strong>: Sunglasses, sunscreen (SPF 30+), and a hat for any daytime activities. The Midwest sun is stronger than many international visitors expect.</li>
@@ -560,23 +571,24 @@ export function KansasCityCityGuide() {
             </div>
 
             <div className="space-y-2">
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Stadium Policies</h4>
+              <h4 className="editorial-h4">Stadium Policies</h4>
               <p>
                 Check Arrowhead Stadium's official bag policy before your visit—clear bags are typically required for security. Plan to travel light on match days.
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Practical Tips for International Visitors */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-passport-line text-sky-500 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-passport-line text-emerald-500"></i>
             Practical Tips for International Visitors
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="space-y-6">
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Money Matters</h3>
+              <h4 className="editorial-h4">Money Matters</h4>
               <ul className="list-disc pl-6 space-y-1">
                 <li><strong>Currency</strong>: US Dollar (USD)</li>
                 <li><strong>Cards</strong>: Credit cards accepted everywhere; contactless payment widely available</li>
@@ -587,26 +599,26 @@ export function KansasCityCityGuide() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Safety &amp; Getting Around</h3>
+              <h4 className="editorial-h4">Safety &amp; Getting Around</h4>
               <p>
                 Kansas City is generally safe for visitors, especially in tourist areas and well-traveled neighborhoods. Basic street smarts apply: be aware of your surroundings, keep valuables secure, and stick to well-lit areas at night.
               </p>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Driving</h4>
+              <h4 className="editorial-h4">Driving</h4>
               <p>
                 Kansas City is a car-friendly city with easy-to-navigate roads. If you rent a car, parking is plentiful and affordable compared to larger U.S. cities. Highway I-70 and I-35 connect major areas.
               </p>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Walking</h4>
+              <h4 className="editorial-h4">Walking</h4>
               <p>
                 Downtown, Power &amp; Light District, Crossroads Arts District, and Country Club Plaza are walkable. Other areas require a car or rideshare.
               </p>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">KC Streetcar</h4>
+              <h4 className="editorial-h4">KC Streetcar</h4>
               <p>
                 Free streetcar service runs between River Market and Union Station, stopping at major downtown attractions. It's a convenient way to explore the urban core without a car.
               </p>
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Language &amp; Local Culture</h3>
+              <h4 className="editorial-h4">Language &amp; Local Culture</h4>
               <p>
                 English is the primary language. Kansas Citians are known for genuine Midwest friendliness—don't be surprised if strangers strike up conversations or offer help without being asked. It's not fake; it's just how people are here.
               </p>
@@ -616,21 +628,23 @@ export function KansasCityCityGuide() {
             </div>
 
             <div className="space-y-2">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Heat Management</h3>
+              <h4 className="editorial-h4">Heat Management</h4>
               <p>
                 Summer in Kansas City can be hot. Plan outdoor activities for early morning or evening when possible. Take advantage of air-conditioned museums, shopping, and restaurants during peak afternoon heat.
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Ticket Information & Booking Strategy */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-ticket-2-line text-rose-500 dark:text-rose-300 text-4xl"></i>Ticket Information &amp; Booking Strategy
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">How to Get World Cup Tickets</h3>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-ticket-2-line text-emerald-500"></i>
+            Ticket Information &amp; Booking Strategy
+          </h3>
+          <div className="space-y-6">
+            <h4 className="editorial-h4">How to Get World Cup Tickets</h4>
             <p>
               Tickets for the 2026 World Cup are sold in phases. The first presale draw began September 10, 2025, open to people 18 and older with FIFA accounts and Visa cardholders. Group stage tickets start at $60, with prices increasing for knockout rounds.
             </p>
@@ -638,24 +652,26 @@ export function KansasCityCityGuide() {
               Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer">https://www.fifa.com/tickets</a> for future ticket phases. The quarterfinal match on July 11 will be among the most sought-after tickets at Arrowhead Stadium.
             </p>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Hospitality Packages</h3>
+            <h4 className="editorial-h4">Hospitality Packages</h4>
             <p>
               Official hospitality packages for Kansas City matches start at $1,400 per match. These include premium seating, exclusive lounge access, and food and beverage service—worth considering if you want guaranteed access without lottery uncertainty.
             </p>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Alternative: Premium Experiences</h3>
+            <h4 className="editorial-h4">Alternative: Premium Experiences</h4>
             <p>
               If you miss the general ticket lottery, hospitality packages eliminate uncertainty. They cost significantly more but bundle tickets with VIP treatment, making them popular for once-in-a-lifetime matches like quarterfinals.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Why KC Will Make It Unforgettable */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-heart-2-line text-rose-500 dark:text-rose-300 text-4xl"></i>Why Kansas City Will Make Your World Cup Unforgettable
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-heart-2-line text-emerald-500"></i>
+            Why Kansas City Will Make Your World Cup Unforgettable
+          </h3>
+          <div className="space-y-6">
             <p>
               Over 1 million visitors are expected across all World Cup host cities, and Kansas City's portion of that celebration will showcase something unique: authentic American culture without pretense or flash.
             </p>
@@ -669,16 +685,18 @@ export function KansasCityCityGuide() {
               From the moment you taste your first burnt end to the final whistle of the quarterfinal under Arrowhead's deafening roar, Kansas City delivers experiences you'll remember forever. No pretense. No attitude. Just "Welcome to KC—y'all ready for some football?"
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Start Planning */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-road-map-line text-emerald-500 dark:text-emerald-300 text-4xl"></i>Start Planning Your 2026 World Cup Trip to Kansas City
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-500"></i>
+            Start Planning Your 2026 World Cup Trip to Kansas City
+          </h3>
+          <div className="space-y-6">
             <p>The countdown is on. Hotels are booking up. Flights are being reserved. And Kansas City is preparing to show the world what Midwest hospitality looks like.</p>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Your Action Plan</h3>
+            <h4 className="editorial-h4">Your Action Plan</h4>
             <ol className="list-decimal pl-6 space-y-2">
               <li>
                 <strong>Register for FIFA tickets</strong> at
@@ -710,7 +728,8 @@ export function KansasCityCityGuide() {
             </p>
             <p><strong>See you in the City of Fountains.</strong> Bring your appetite, your team colors, and your loudest voice. Kansas City's ready to show you why this place is special.</p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
       </main>
 
       <Footer />

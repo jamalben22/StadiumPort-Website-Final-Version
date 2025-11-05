@@ -17,6 +17,9 @@
   --plasma-glow: 0 0 30px rgba(255, 0, 110, 0.5), 0 0 60px rgba(131, 56, 236, 0.3);
   --ethereal-glow: 0 0 40px rgba(255, 255, 255, 0.1), 0 0 80px rgba(255, 255, 255, 0.05);
   --stellar-glow: 0 0 60px rgba(102, 126, 234, 0.4), 0 0 120px rgba(118, 75, 162, 0.2);
+  /* Brand Accent — unified hue for icons, accents, highlights */
+  --brand-accent: #10b981; /* emerald-500 */
+  --brand-accent-soft: #34d399; /* emerald-400 for lighter accents */
 }
 
 /* Ultra Premium Base Styles */
@@ -41,6 +44,9 @@ body {
 
 body.dark {
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  /* Dark mode brand accents (slightly cooler/lighter for glow over dark bg) */
+  --brand-accent: #10b981; /* keep consistent core accent */
+  --brand-accent-soft: #2dd4bf; /* emerald-300/teal blend for subtle UI elements */
 }
 
 /* Ultra Premium Scrollbar */
@@ -810,4 +816,267 @@ body.dark {
 ::-moz-selection {
   background: rgba(0, 184, 124, 0.2);
   color: inherit;
+}
+
+/* Editorial Article Styles — premium, distraction-free reading UX */
+@layer components {
+  /* Base article container: centered column, generous white space */
+  .editorial-article {
+    @apply mx-auto max-w-[780px] px-6 sm:px-8 md:px-0;
+  }
+
+  /* Typography system */
+  .editorial-article .editorial-body {
+    @apply font-luxury text-[#2c2c2c] dark:text-slate-200 text-[19px] md:text-[20px] leading-[1.75];
+  }
+
+  .editorial-article h2,
+  .editorial-article .editorial-h2 {
+    @apply font-inter font-bold text-slate-900 dark:text-slate-50 text-[32px] md:text-[40px] tracking-tight;
+  }
+
+  .editorial-article h3,
+  .editorial-article .editorial-h3 {
+    @apply font-inter font-semibold text-slate-900 dark:text-slate-50 text-[26px] md:text-[30px] tracking-tight;
+  }
+
+  .editorial-article h4,
+  .editorial-article .editorial-h4 {
+    @apply font-inter font-semibold text-slate-900 dark:text-slate-50 text-[20px] md:text-[22px];
+  }
+
+  /* Paragraph rhythm */
+  .editorial-article p {
+    @apply mt-0 mb-[1.75em];
+  }
+
+  /* Premium links */
+  .editorial-article a {
+    color: var(--brand-accent);
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--brand-accent-soft);
+    transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  }
+  .dark .editorial-article a {
+    color: var(--brand-accent-soft);
+    text-decoration-color: var(--brand-accent);
+  }
+
+  /* Beautiful blockquotes */
+  .editorial-article blockquote {
+    @apply relative my-8 pl-6 border-l-2 border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200;
+  }
+  .editorial-article blockquote::before {
+    content: '“';
+    position: absolute;
+    left: -0.1rem;
+    top: -0.3rem;
+    color: #94a3b8; /* slate-400 */
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    line-height: 1;
+  }
+
+  /* Subtle section dividers */
+  .editorial-divider {
+    /* Premium hairline divider — brand-tinted */
+    border: none;
+    height: 1px;
+    margin-top: 2rem; /* my-8 */
+    margin-bottom: 2rem;
+    background: linear-gradient(to right, transparent, rgba(16, 185, 129, 0.42), transparent); /* brand accent with subtle alpha */
+  }
+  .dark .editorial-divider {
+    background: linear-gradient(to right, transparent, rgba(45, 212, 191, 0.52), transparent); /* brand soft accent for dark */
+  }
+
+  /* Drop cap for the very first paragraph of the article */
+  .editorial-dropcap p:first-of-type::first-letter {
+    float: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.4rem;
+    line-height: 1;
+    padding-right: 0.18rem;
+    margin-top: 0.22rem;
+    color: #0b1426; /* navy-900 */
+  }
+
+  /* Micro-typography refinements for elite feel */
+  .editorial-article {
+    hyphens: auto;
+    hanging-punctuation: first last; /* supported in Safari; benign elsewhere */
+  }
+  .editorial-article p {
+    text-wrap: pretty; /* improve rag and line breaks for body copy */
+  }
+  .editorial-h2,
+  .editorial-h3,
+  .editorial-h4 {
+    text-wrap: balance; /* balanced headlines for premium rhythm */
+  }
+
+  /* Responsive padding for mobile */
+  @media (max-width: 640px) {
+    .editorial-article { padding-left: 1.5rem; padding-right: 1.5rem; } /* 24px */
+  }
+}
+
+/* Editorial Hero — full-bleed, cohesive with article typography */
+@layer components {
+  .editorial-hero {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: transparent;
+  }
+
+  .editorial-hero-media {
+    position: relative;
+    height: clamp(360px, 42vh, 560px);
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .editorial-hero-image-wrapper {
+    position: absolute;
+    inset: 0;
+  }
+
+  .editorial-hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: contrast(1.05) brightness(1.02) saturate(1.1);
+    transform: scale(1.02);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1), filter 0.6s ease;
+  }
+
+  .editorial-hero:hover .editorial-hero-image {
+    transform: scale(1.04);
+    filter: contrast(1.08) brightness(1.05) saturate(1.15);
+  }
+
+  /* Page-specific image focal tuning for Miami skyline */
+  .hero-focus-miami {
+    /* Center horizontally, slightly lower vertically to reveal skyline under overlay */
+    object-position: center 60%;
+  }
+  @media (max-width: 640px) {
+    .hero-focus-miami { object-position: center 50%; }
+  }
+  @media (min-width: 1024px) {
+    .hero-focus-miami { object-position: center 64%; }
+  }
+
+  .editorial-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 23, 0.72) 0%,
+      rgba(2, 6, 23, 0.38) 40%,
+      rgba(2, 6, 23, 0.0) 100%
+    );
+    pointer-events: none;
+  }
+
+  .dark .editorial-hero-overlay {
+    background: linear-gradient(
+      to top,
+      rgba(2, 6, 23, 0.80) 0%,
+      rgba(2, 6, 23, 0.45) 40%,
+      rgba(2, 6, 23, 0.0) 100%
+    );
+  }
+
+  .editorial-hero-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: clamp(1rem, 4vw, 2.5rem);
+    color: #fff;
+  }
+
+  .editorial-hero-content > .editorial-hero-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .editorial-hero-content > .editorial-hero-inner { padding: 0; }
+  }
+
+  .editorial-hero-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brand-accent-soft);
+  }
+
+  .editorial-hero-pulse {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--brand-accent), var(--brand-accent-soft));
+    /* Fallback */
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    /* Modern */
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--brand-accent) 70%, transparent);
+    animation: heroPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes heroPulse {
+    0% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(45, 212, 191, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+  }
+
+  .editorial-hero-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: clamp(2.25rem, 5vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    text-shadow: 0 8px 24px rgba(0,0,0,0.28);
+    margin-bottom: clamp(0.75rem, 2.2vw, 1.25rem);
+  }
+
+  .editorial-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+    font-size: clamp(0.9rem, 1.1vw, 1rem);
+  }
+
+  .editorial-hero-meta .meta-item i {
+    color: var(--brand-accent-soft);
+  }
+
+  .editorial-hero-meta .meta-item + .meta-item::before {
+    content: '•';
+    color: rgba(255,255,255,0.6);
+    margin-right: 0.75rem;
+    margin-left: 0.25rem;
+  }
+
+  /* Soft bottom fade to unify header and article */
+  .editorial-hero::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0; bottom: -1px; height: 24px;
+    background: linear-gradient(to bottom, rgba(2,6,23,0.0), rgba(2,6,23,0.04));
+    pointer-events: none;
+  }
 }

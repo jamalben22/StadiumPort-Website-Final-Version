@@ -30,81 +30,79 @@ export default function LosAngelesArticlePage() {
 
       <Header />
 
-      {/* Hero Section (MetLife-style visual language) */}
-      <section className="relative">
-        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+      {/* Editorial Hero — cohesive with article style */}
+      <section className="editorial-hero">
+        <div className="editorial-hero-media">
           <OptimizedImage
             src="/images/cities/los-angeles-world-cup-2026.webp"
             alt="Los Angeles skyline"
-            className="absolute inset-0"
-            imgClassName="object-cover object-center"
+            className="editorial-hero-image-wrapper"
+            imgClassName="editorial-hero-image"
             width={1600}
             height={900}
             priority={true}
-            placeholder="blur"
+            placeholder="empty"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+          <div className="editorial-hero-overlay"></div>
+        </div>
 
-          {/* Pulse and label */}
-          <div className="absolute bottom-8 left-8 right-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
-                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+        <div className="editorial-hero-content">
+          <div className="editorial-hero-inner">
+            <div className="editorial-hero-eyebrow">
+              <span className="editorial-hero-pulse"></span>
+              <span>FIFA World Cup 2026</span>
+            </div>
+            <h1 className="editorial-hero-title">Los Angeles</h1>
+            <div className="editorial-hero-meta">
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-map-pin-line"></i>
+                <span>USA</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Los Angeles
-              </h1>
-              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
-                <div className="flex items-center gap-2">
-                  <i className="ri-map-pin-line text-emerald-300"></i>
-                  <span>USA</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-building-line text-blue-300"></i>
-                  <span>SoFi Stadium</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-group-line text-sky-300"></i>
-                  <span>70,240 capacity</span>
-                </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-building-line"></i>
+                <span>SoFi Stadium</span>
+              </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-group-line"></i>
+                <span>70,240 capacity</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Content Sections (MetLife-style containers) */}
-      <section className="p-6 md:p-10 space-y-10">
+      {/* Content Sections — Editorial presentation */}
+      <section className="editorial-article py-12">
         {/* Introduction */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-amber-400"></i>
+        <article className="editorial-body editorial-dropcap">
+          <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-trophy-line text-emerald-500"></i>
             Where World Cup Dreams Meet Hollywood Magic
           </h2>
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed whitespace-pre-line">
+          <p className="whitespace-pre-line">
             {`Get ready for the opening kick: The U.S. Men's National Team launches their World Cup journey at SoFi Stadium on June 12, 2026
 
 Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties. When the U.S. opens their 2026 campaign on June 12 at the gleaming SoFi Stadium in Inglewood, the City of Angels will welcome the world with 39 consecutive days of football fever, eight must-see matches, and a soccer culture that pulses through every corner of this sprawling metropolis. This is where beach vibes collide with championship ambitions, where tacos fuel pregame rituals, and where 3.6 million Mexican-Americans help create the most electric football atmosphere in North America.
 
 Forget everything you think you know about LA. The traffic? Manageable with the right strategy. The sprawl? Part of the adventure. The stereotypes? Shattered the moment you step into a packed supporters' section at BMO Stadium or watch the sun set over the Pacific after a match day. Los Angeles has been preparing for this moment since 1994, when the Rose Bowl hosted the World Cup final. Three decades later, the city's newest architectural marvel is ready to prove why LA is the undisputed soccer capital of the United States.`}
           </p>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* SoFi Stadium */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-building-4-line text-sky-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-building-4-line text-emerald-500"></i>
             SoFi Stadium: The $5 Billion Cathedral of Sport
           </h3>
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-star-line text-emerald-500"></i>
                 The Venue That Redefined Spectacular
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Built in 2020 at a jaw-dropping cost that makes it the most expensive stadium ever constructed, SoFi Stadium in Inglewood isn't just a venue—it's a destination experience. The translucent ETFE canopy hovers like a spaceship over the field, open on the sides to let coastal breezes flow through while protecting 70,240 fans (expandable to 100,240 for major events) from the elements. The Infinity Screen, a double-sided 4K marvel weighing 1,000 tonnes, dangles overhead with 260 speakers delivering crystal-clear replays from every angle.
 
 For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict requirements mean the stadium's artificial turf gets replaced with natural grass, and clever engineering expands the pitch dimensions to regulation size by rolling back corner sections of the lower bowl. When match officials refer to it as "Los Angeles Stadium" (FIFA bans corporate naming during tournaments), you'll know you're witnessing something historic.`}
@@ -112,11 +110,11 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-calendar-event-line text-emerald-500"></i>
                 Eight Matches That Matter
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Los Angeles scores big in the match allocation lottery:
 
 - June 12: USA's opening match kicks off the American World Cup journey (and quite possibly sets attendance records)
@@ -130,11 +128,11 @@ The tournament schedule means you could theoretically attend multiple matches ac
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-information-line text-blue-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-information-line text-emerald-500"></i>
                 Match Day Intel: What You Need to Know
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Getting In: SoFi operates on mobile-only ticketing through FIFA's official app. Print-outs won't work, so charge that phone and have your QR code ready. Gates typically open 2-4 hours before kickoff—arrive early, because security screenings can stretch longer than you'd expect when 70,000 fans converge on Inglewood.
 
 What to Bring: Clear bags only (FIFA's security protocols are strict). Sunscreen is non-negotiable even under the canopy—LA's June sun is relentless. A light layer for evening matches makes sense; coastal air cools down after sunset, and you'll feel the temperature drop as the ocean breeze picks up.
@@ -145,25 +143,26 @@ Stadium Vibe: SoFi sits inside the Hollywood Park entertainment complex, meaning
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Transportation */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-train-line text-emerald-500"></i>
             Getting to SoFi: Transportation That Actually Works
           </h3>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line mb-6">
+          <p className="whitespace-pre-line mb-6">
             {`Here's the good news LA doesn't advertise enough: You absolutely don't need a car for World Cup matches. In fact, you probably shouldn't drive.`}
           </p>
           
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-subway-line text-emerald-500"></i>
                 Metro: Your Best Bet
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`LA Metro rolls out a dedicated SoFi Stadium Shuttle connecting from the LAX/Metro Transit Center station. Here's how it works:
 
 1. Take the C Line (Green) or K Line (Crenshaw) to LAX/Metro Transit Center
@@ -177,11 +176,11 @@ Pro Tip: Park-and-ride lots at various C Line stations offer free parking on wee
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-bus-line text-blue-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-bus-line text-emerald-500"></i>
                 Alternative Options for Strategic Travelers
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Municipal Transit: GTrans operates Line 7X Stadium Express from Harbor Gateway Transit Center for $4 roundtrip on event days. Torrance Transit also runs special service on select dates.
 
 Rideshare Reality: Uber and Lyft work, but expect surge pricing and pickup chaos post-match. Designated zones help organize the madness, though waiting 30-45 minutes isn't unusual after major events. Split the cost with friends or embrace the Metro—you'll save money and arrive happier.
@@ -190,25 +189,26 @@ Driving & Parking: If you must drive, pre-purchase parking through the stadium's
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Where to Stay */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-hotel-line text-emerald-500"></i>
             Where to Stay: Neighborhoods for Every Football Fan
           </h3>
-          <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line mb-6">
+          <p className="whitespace-pre-line mb-6">
             {`Los Angeles sprawls across 1,302 square kilometers, making neighborhood choice critical. Here's your insider breakdown based on budget, vibe, and what you actually want to experience.`}
           </p>
           
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-map-pin-user-line text-emerald-500"></i>
                 West Hollywood: The Central Command ($$-$$$)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Why Stay Here: Centrally located between Hollywood and Beverly Hills, WeHo puts you walking distance from incredible restaurants, bars, and LA's vibrant LGBTQ+ scene. It's the Goldilocks zone—close enough to everything without being stuck in one corner of the city.
 
 The Vibe: Trendy, walkable, energetic. Sunset Strip nightlife meets excellent coffee shops and the city's best boutique hotels. You'll spot celebrities at Chateau Marmont and find killer Korean BBQ in adjacent Koreatown.
@@ -220,11 +220,11 @@ Book Smart: The Charlie West Hollywood offers spacious suites with personality. 
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-sun-line text-amber-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-sun-line text-emerald-500"></i>
                 Santa Monica: Beach Town Bliss ($$$-$$$$)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Why Stay Here: If you're treating the World Cup as part of a larger California adventure, Santa Monica delivers quintessential SoCal vibes. The beach, the pier, the sunshine—it's what you pictured when you booked that flight.
 
 The Vibe: Laid-back beachside community with excellent restaurants, Third Street Promenade shopping, and sunset views that'll dominate your Instagram. Families love it; so do couples seeking romance with waves as soundtrack.
@@ -236,11 +236,11 @@ Book Smart: Shore Hotel sits across from the sand with eco-conscious amenities a
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-building-2-line text-blue-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-building-2-line text-emerald-500"></i>
                 Downtown LA: Arts, Culture & Connection ($$-$$$)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Why Stay Here: Downtown puts you at the Metro hub (Union Station), near arts attractions (The Broad, MOCA, Walt Disney Concert Hall), and in the middle of LA's best public transit connections. The Arts District specifically offers warehouse-chic dining and breweries.
 
 The Vibe: Urban, artistic, diverse. Less touristy than Hollywood, grittier than Westside, but culturally rich. Night Market brings Filipino street food, Grand Central Market serves world cuisine, and Little Tokyo neighbors the convention center.
@@ -252,11 +252,11 @@ Book Smart: Downtown LA Proper delivers boutique style in the historic district.
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-movie-line text-purple-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-movie-line text-emerald-500"></i>
                 Hollywood: Tourist Central with Purpose ($-$$)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Why Stay Here: You came to LA, you want Hollywood Boulevard, Chinese Theatre, Walk of Fame, Griffith Observatory access. First-timers often regret skipping the classics.
 
 The Vibe: Touristy, yes. But also energetic, affordable (compared to beaches), and better than its reputation suggests. Hollywood & Highland area cleans up well; Hills neighborhoods offer canyon views.
@@ -268,11 +268,11 @@ Book Smart: Magic Castle Hotel delivers character without breaking the bank. The
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-vip-crown-line text-amber-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-vip-crown-line text-emerald-500"></i>
                 Beverly Hills: Luxury with Star Power ($$$$)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Why Stay Here: You want to see where movie stars shop, dine at Michelin-starred restaurants, and possibly spot a Ferrari or three on Rodeo Drive. Beverly Hills sells a fantasy, and sometimes fantasies are worth funding.
 
 The Vibe: Polished, manicured, expensive. Palm tree-lined streets, luxury boutiques, old Hollywood elegance. Not walkable to much beyond its own borders, but Uber makes anywhere accessible.
@@ -283,21 +283,22 @@ Book Smart: Four Seasons Beverly Hills justifies the splurge with impeccable ser
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* LA Football Culture */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-football-line text-emerald-500"></i>
             Beyond the Pitch: What Makes LA Football Culture Special
           </h3>
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-trophy-line text-amber-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-trophy-line text-emerald-500"></i>
                 El Tráfico: The Rivalry That Defines LA Soccer
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                  {`Los Angeles isn't just hosting the World Cup—it's already living and breathing football culture year-round through one of MLS's fiercest rivalries: El Tráfico. When LA Galaxy (founded 1996, five-time MLS champions, based in suburban Carson at Dignity Health Sports Park) face Los Angeles FC (launched 2018, MLS Cup 2022 winners, downtown at Banc of California Stadium), the city splits down supporter lines.
 
 **The Galaxy Way**: Legacy, history, "Since '96" pride. They brought David Beckham to MLS, hosted Zlatan Ibrahimović, and represent suburban family-friendly football culture. Their supporters believe in earned respect through decades of championships.
@@ -309,11 +310,11 @@ Visit BMO Stadium (formerly Banc of California, LAFC's home) before or after Wor
              </div>
 
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                 <i className="ri-tv-line text-blue-500"></i>
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                 <i className="ri-tv-line text-emerald-500"></i>
                  Where to Watch With Locals
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`Los Angeles boasts nearly 40 **LAFC-affiliated pubs** plus countless Galaxy bars, giving you authentic matchday experiences even when you're not at SoFi:
 
 - **La Chuperia** (Lincoln Heights): LAFC stronghold with micheladas and carne asada
@@ -327,31 +328,32 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
              </div>
 
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                 <i className="ri-women-line text-pink-500"></i>
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                 <i className="ri-women-line text-emerald-500"></i>
                  Angel City FC: Women's Game Rising
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`Don't sleep on **Angel City FC** (NWSL), LA's women's professional team that proves the city's football passion extends beyond MLS. Founded in 2020 with ownership including actress Natalie Portman, tennis legend Serena Williams, and 13 former USWNT players, ACFC brings Banc of California Stadium alive with The Angel City Brigade supporters and matches that deserve your attention. With the USWNT scheduled to face Brazil at SoFi on April 5, 2026 (testing the World Cup grass installation), women's soccer momentum builds toward the tournament.`}
                </p>
              </div>
            </div>
-         </div>
+          <hr className="editorial-divider" />
+        </article>
 
          {/* What to Do When You're Not at Matches */}
-         <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-           <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-             <i className="ri-compass-3-line text-purple-400"></i>
+         <article className="editorial-body">
+           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+             <i className="ri-compass-3-line text-emerald-500"></i>
              What to Do When You're Not at Matches
            </h3>
            
-           <div className="space-y-6">
+           <div className="mt-6 space-y-6">
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                 <i className="ri-sun-line text-amber-500"></i>
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                 <i className="ri-sun-line text-emerald-500"></i>
                  Sun, Sand & Surf
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`**Santa Monica & Venice Beach**: Connected by a gorgeous bike/walk path, these beaches define California cool. Rent bikes ($10-15/day via Metro Bike Share), watch surfers at Venice Pier, people-watch on Venice Boardwalk's funky scene, and catch sunset from Santa Monica Pier's amusement park.
 
 **Manhattan & Hermosa Beach**: South Bay beaches offer mellower vibes, better for families. Small aquariums, pedestrian-friendly downtown areas, and beach volleyball culture that's pure SoCal.
@@ -361,11 +363,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
              </div>
 
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                 <i className="ri-building-4-line text-blue-500"></i>
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                 <i className="ri-building-4-line text-emerald-500"></i>
                  Cultural Heavy-Hitters
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`**Griffith Observatory**: Perched in Griffith Park, this 1935 art deco beauty offers free admission (parking $10), planetarium shows, and the best views of the Hollywood Sign and LA basin. Go at sunset, stay for city lights. Metro doesn't reach it directly; rideshare or DASH shuttle from Hollywood/Western Metro.
 
 **The Getty Center**: Free admission (parking $20) to this architectural masterpiece in Brentwood showcasing European art, stunning gardens, and panoramic valley views. Worth a half-day minimum.
@@ -377,11 +379,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
              </div>
 
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                  <i className="ri-road-map-line text-emerald-500"></i>
                  Neighborhood Explorations
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`**Los Feliz & Silver Lake**: Hipster havens northeast of Hollywood with vintage shops, excellent brunch spots (Pine & Crane for Taiwanese, All Day Baby for new American), and Barnsdall Art Park's Frank Lloyd Wright Hollyhock House.
 
 **Koreatown**: Dense, 24-hour energy with insane Korean BBQ (open late for post-match gorging), karaoke bars, spas, and The Line Hotel's rooftop for cocktails with views.
@@ -393,11 +395,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
              </div>
 
              <div>
-               <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                 <i className="ri-restaurant-line text-red-500"></i>
+               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                 <i className="ri-restaurant-line text-emerald-500"></i>
                  Food Scenes You Can't Miss
                </h4>
-               <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+               <p className="whitespace-pre-line">
                  {`Los Angeles is arguably America's best food city, rivaling New York with deeper Mexican, Korean, Japanese, and Thai options:
 
 **Tacos**: LA's taco trucks operate 24/7. Leo's Tacos (Hollywood), Tacos El Gordo (Chula Vista with LA outpost), and literally hundreds of neighborhood spots serve authenticity.
@@ -412,22 +414,23 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                </p>
              </div>
            </div>
-         </div>
+           <hr className="editorial-divider" />
+         </article>
 
         {/* Practical Travel Tips */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-lightbulb-line text-amber-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-lightbulb-line text-emerald-500"></i>
             Practical Travel Tips for World Cup Visitors
           </h3>
           
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-sun-cloudy-line text-orange-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-sun-cloudy-line text-emerald-500"></i>
                 Weather & What to Pack
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`**June in LA**: Near-perfect. Daytime highs average 26-27°C (79-81°F), dropping to 15-17°C (59-63°F) at night. Virtually zero rain (June averages just 3mm total precipitation). Ten hours of sunshine daily. Coastal areas might experience "June Gloom"—morning fog that burns off by noon.
 
 **July heats up** to 28-30°C (82-86°F) days, 18-20°C (64-68°F) nights. Still dry, still sunny, slightly warmer for later matches.
@@ -437,11 +440,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-shield-check-line text-green-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-shield-check-line text-emerald-500"></i>
                 Safety & Street Smarts
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`LA is generally safe for tourists in main areas, but street smarts apply:
 
 - **Avoid**: Skid Row (Downtown east of Alameda), walking alone late at night in deserted areas near stadiums post-match
@@ -454,11 +457,11 @@ Popular tourist neighborhoods (Santa Monica, West Hollywood, Beverly Hills, Holl
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-money-dollar-circle-line text-emerald-500"></i>
                 Money Matters
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Credit cards work everywhere; most places don't accept cash-only. ATMs abound. Tipping culture is strong: 18-20% restaurants, $1-2 per drink at bars, round up for rideshares.
 
 Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range dinners, $25-50 for Uber to SoFi from beach areas. Metro saves significant money—embrace public transit.`}
@@ -466,41 +469,42 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-passport-line text-blue-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-passport-line text-emerald-500"></i>
                 Visa Requirements
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`International visitors (except Canadian and some visa waiver countries): Apply for **B-2 tourist visa** well in advance. Processing can take weeks during World Cup surge. Visa waiver program (ESTA) applies to many European, Asian, and Latin American countries—check eligibility at travel.state.gov.`}
               </p>
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-smartphone-line text-purple-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-smartphone-line text-emerald-500"></i>
                 Phone & Connectivity
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Rent a US SIM at LAX airport convenience stores, or use providers like Airalo for e-SIMs. T-Mobile and AT&T dominate; Verizon works well too. Public WiFi exists at Metro stations, Starbucks, and most public spaces.`}
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* World Cup Booking Strategy */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-slate-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-blue-400"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-calendar-check-line text-emerald-500"></i>
             Your World Cup Booking Strategy
           </h3>
           
-          <div className="space-y-6">
+          <div className="mt-6 space-y-6">
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-time-line text-red-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-time-line text-emerald-500"></i>
                 When to Book
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`**Now**. Seriously. Los Angeles hotel inventory gets crushed during major events, and the World Cup dwarfs typical demand. June 2026 accommodation prices will soar as dates approach.
 
 **Flight Strategy**: LAX is America's third-busiest airport with direct international connections from everywhere. Book 6-9 months out for best fares. Consider flying into Burbank (BUR) for Hollywood-area stays or Long Beach (LGB) for South Bay access—both smaller airports with less chaos.
@@ -510,11 +514,11 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                 <i className="ri-search-line text-emerald-500"></i>
                 Where to Hunt Deals
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`**Comparison Sites**: Start with the usual suspects (Booking.com, Expedia, Hotels.com) but cross-reference prices directly on hotel websites—sometimes they beat third-party rates or include perks like breakfast or parking.
 
 **Alternative Accommodation**: Airbnb and VRBO offer apartments and homes, especially valuable for groups splitting costs. Filter by neighborhoods: West Hollywood, Culver City, and neighborhoods near Metro stations for convenience.
@@ -524,11 +528,11 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-navy-900 dark:text-white flex items-center gap-2 mb-3">
-                <i className="ri-medal-line text-amber-500"></i>
+              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                <i className="ri-medal-line text-emerald-500"></i>
                 The Affiliate Advantage
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed whitespace-pre-line">
+              <p className="whitespace-pre-line">
                 {`Smart travelers use price comparison tools that scan hundreds of booking sites simultaneously. You're already planning an expensive trip—why not save hundreds on accommodation by letting technology find the best rates? Many booking platforms offer:
 
 - **Price match guarantees**: Find it cheaper elsewhere? They'll match or refund the difference
@@ -540,52 +544,48 @@ Check trusted booking partners that specialize in major sporting events—they o
               </p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Your Los Angeles World Cup Story Starts Here */}
-        <div className="bg-gradient-to-br from-emerald-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 rounded-2xl p-6 md:p-8 border border-emerald-200 dark:border-slate-700">
-          <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-amber-500"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-trophy-line text-emerald-500"></i>
             Your Los Angeles World Cup Story Starts Here
           </h3>
           
           <div className="space-y-4">
-            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+            <p className="">
               Twenty years ago, the Rose Bowl hosted the last World Cup final on American soil. Now it's SoFi's turn to write history, starting with the U.S. opening match that'll send seismic hope through every American football fan. Eight matches. Thirty-nine days of festival atmosphere. A city that's hosted Olympics, Super Bowls, and Beyoncé residencies—finally getting its moment on soccer's biggest stage.
             </p>
             
-            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+            <p className="">
               Los Angeles doesn't do anything small. The beaches stretch forever, the food scene never sleeps, the culture mixes in ways you won't find anywhere else. This isn't just a World Cup host city; it's the city where dreams get chased under palm trees and championship runs begin with that first nervous kick on June 12.
             </p>
             
-            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+            <p className="">
               The Metro's running. The stadiums are ready. The tacos are waiting. And somewhere in West Hollywood, Silver Lake, or a beach parking lot in Santa Monica, fans from 48 nations are about to discover what locals already know: Los Angeles is the world's city, and in summer 2026, the world's game comes home.
             </p>
             
-            <div className="bg-white dark:bg-slate-800 rounded-xl p-4 border border-emerald-300 dark:border-slate-600">
-              <p className="text-slate-900 dark:text-slate-100 font-semibold text-center">
+            <blockquote>
+              <p className="font-semibold text-center">
                 <strong>Book smart. Travel Metro. Arrive early. And when that first whistle blows at SoFi Stadium, you'll know exactly why LA was built for this moment.</strong>
               </p>
-            </div>
+            </blockquote>
             
-            <div className="border-t border-slate-300 dark:border-slate-600 pt-4">
-              <p className="text-slate-600 dark:text-slate-300 text-sm italic flex items-start gap-2">
-                <i className="ri-lightbulb-line text-amber-500 mt-0.5"></i>
-                <span><strong>Pro Travel Tip:</strong> Download the LA Metro Trip Planner app, load your TAP card before arrival, and screenshot your FIFA mobile tickets—phone batteries die at the worst moments. See you at kickoff.</span>
-              </p>
-            </div>
+            <p className="italic flex items-start gap-2">
+              <i className="ri-lightbulb-line text-emerald-500 mt-0.5"></i>
+              <span><strong>Pro Travel Tip:</strong> Download the LA Metro Trip Planner app, load your TAP card before arrival, and screenshot your FIFA mobile tickets—phone batteries die at the worst moments. See you at kickoff.</span>
+            </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
-        {/* Back to Cities Button */}
-        <div className="flex justify-center pt-6">
-          <Link
-            to="/world-cup-2026-host-cities"
-            className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-emerald-500 via-blue-500 to-purple-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-out overflow-hidden"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-blue-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <i className="ri-check-line text-xl relative z-10"></i>
-            <span className="relative z-10">Got It</span>
+        {/* Back CTA */}
+        <div className="mt-8 flex justify-end">
+          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
+            <i className="ri-check-line mr-2"></i>
+            Got It
           </Link>
         </div>
       </section>

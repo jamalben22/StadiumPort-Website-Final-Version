@@ -68,11 +68,11 @@ export function SanFranciscoCityGuide() {
         </div>
       </section>
 
-      {/* Main Content - Part 1/5 verbatim */}
-      <main className="p-8 md:p-12 space-y-12">
+      {/* Main Content — Editorial layout mirroring NYC guide (design-only changes) */}
+      <section className="editorial-article py-12">
         {/* Introduction and Match Schedule */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white space-y-6">
+        <article className="editorial-body editorial-dropcap">
+          <div className="mt-6 space-y-6">
             <p>
               <strong>Match Schedule:</strong> June 13, 16, 19, 22, 25 (Group Stage) | July 1 (Round of 32)
             </p>
@@ -89,20 +89,21 @@ export function SanFranciscoCityGuide() {
               This guide delivers the real intel: stadium access from San Francisco, transportation hacks, neighborhood strategies, and what to do when you're not watching football in Silicon Valley's backyard.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* The Stadium: Levi's Stadium (San Francisco Bay Area Stadium) */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-building-line text-emerald-500"></i>
             The Stadium: Levi's Stadium (San Francisco Bay Area Stadium)
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               Let's address geography up front: <strong>Levi's Stadium</strong> sits in <strong>Santa Clara</strong>, not San Francisco—about <strong>40 miles south</strong> of the city. For FIFA branding purposes, it's "San Francisco Bay Area Stadium," but locals know it as the home of the <strong>San Francisco 49ers</strong>, located at <strong>4900 Marie P. DeBartolo Way, Santa Clara, CA 95054</strong> in the heart of Silicon Valley.
             </p>
             <div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">The Stadium Specs:</h3>
+              <h4 className="editorial-h4 animate-fade-up mb-2">The Stadium Specs:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>68,500 seats</strong> for football/soccer configuration (expandable to 75,000)</li>
                 <li><strong>Natural grass</strong> installed specifically for World Cup (replaces usual synthetic turf)</li>
@@ -121,20 +122,21 @@ export function SanFranciscoCityGuide() {
               <strong>Important context:</strong> Santa Clara sits in Silicon Valley—home to Apple, Google, Meta, Intel, and thousands of tech companies. The stadium is surrounded by corporate offices, not residential neighborhoods. It's a purpose-built event destination, meaning you'll need to plan transportation rather than stumbling into a match after exploring charming streets. But that infrastructure supports 70,000+ fans efficiently—something not every World Cup venue can claim.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* The Match Schedule: Six Games Including Knockout Drama */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-calendar-event-line text-emerald-500"></i>
             The Match Schedule: Six Games Including Knockout Drama
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               The Bay Area's six-match allocation spans three tournament weeks, culminating in a Round of 32 knockout match that delivers elimination football:
             </p>
             <div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Group Stage (Five Matches)</h3>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Group Stage (Five Matches)</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Friday, June 13, 2026</strong> – <strong>Canada's opening World Cup match</strong></li>
                 <li><strong>Tuesday, June 16, 2026</strong> – Group Stage</li>
@@ -144,7 +146,7 @@ export function SanFranciscoCityGuide() {
               </ul>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Knockout Stage (One Match)</h3>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Knockout Stage (One Match)</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Wednesday, July 1, 2026</strong> – <strong>Round of 32</strong></li>
               </ul>
@@ -159,22 +161,22 @@ export function SanFranciscoCityGuide() {
               <strong>Tournament timing advantage:</strong> The Bay Area's three-week window (June 13-July 1) creates sustained World Cup atmosphere without overstaying. FIFA Fan Festivals remain active, international supporters linger between matches exploring wine country or coastal towns, and the region buzzes with tournament energy that feels concentrated rather than diluted across six weeks.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Getting to Levi's Stadium: The Silicon Valley Commute */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-train-line text-emerald-500"></i>
             Getting to Levi's Stadium: The Silicon Valley Commute
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               Here's the honest Bay Area reality: <strong>Levi's Stadium is 40 miles from San Francisco</strong>. You're not walking from your downtown hotel. But the Bay Area offers multiple transit options if you plan ahead and set realistic expectations.
             </p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Your Best Options</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Your Best Options</h4>
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">1. BART + VTA Light Rail (Most Economical)</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">1. BART + VTA Light Rail (Most Economical)</h4>
               <p>
                 The Bay Area's transit backbone connects San Francisco to Silicon Valley via <strong>BART (Bay Area Rapid Transit)</strong> and <strong>VTA (Santa Clara Valley Transportation Authority) light rail</strong>.
               </p>
@@ -192,7 +194,7 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">2. Caltrain + VTA Light Rail (If Staying in Peninsula)</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">2. Caltrain + VTA Light Rail (If Staying in Peninsula)</h4>
               <p>If you're staying in <strong>Palo Alto</strong>, <strong>Mountain View</strong>, or anywhere along the Peninsula between San Francisco and San Jose:</p>
               <p><strong>Route:</strong> San Francisco Caltrain (4th &amp; King) → <strong>Mountain View Station</strong> → <strong>VTA light rail</strong> → <strong>Great America Station</strong></p>
               <p><strong>Cost:</strong> Caltrain $3.75-11.50 zone-based + VTA $2.50 = <strong>$6-14 total</strong></p>
@@ -201,7 +203,7 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">3. Rideshare/Taxi (Most Convenient, Most Expensive)</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">3. Rideshare/Taxi (Most Convenient, Most Expensive)</h4>
               <p>Uber and Lyft work from San Francisco to Santa Clara, but <strong>prepare for sticker shock and surge pricing</strong>:</p>
               <p><strong>Cost from SF:</strong> $60-90 each way normally; <strong>$120-180 with post-match surge</strong></p>
               <p><strong>Time:</strong> 45-70 minutes depending on traffic</p>
@@ -213,7 +215,7 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">4. Driving + Pre-Booked Parking</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">4. Driving + Pre-Booked Parking</h4>
               <p>If you rent a car to explore wine country, coastal highways, or redwood forests, driving to matches works—<strong>with advance parking reservations</strong>.</p>
               <p><strong>Stadium parking:</strong> $40-60 standard lots (pre-purchase weeks ahead online); $100+ VIP proximity</p>
               <p><strong>Reality:</strong> Post-match exodus takes 60-90 minutes. Highway 101 and nearby freeways become parking lots.</p>
@@ -221,29 +223,29 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">5. Game-Day Shuttles (If Staying Near San Jose Airport)</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">5. Game-Day Shuttles (If Staying Near San Jose Airport)</h4>
               <p>Hotels near <strong>San Jose Mineta International Airport</strong> (10 minutes from stadium) often coordinate shuttle services for major events. Ask when booking. Some properties include match-day shuttles as amenities for World Cup visitors.</p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Where to Stay: San Francisco vs. Silicon Valley Strategy */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-hotel-line text-emerald-500"></i>
             Where to Stay: San Francisco vs. Silicon Valley Strategy
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               The Bay Area geography creates a strategic choice: <strong>stay in San Francisco</strong> (where culture, attractions, and energy concentrate) and commute to matches, or <strong>stay near the stadium</strong> (convenience, shorter transit) and sacrifice San Francisco's charm.
             </p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">San Francisco (Best for Full Bay Area Experience)</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">San Francisco (Best for Full Bay Area Experience)</h4>
             <p><strong>Why stay here:</strong> You're in one of America's most beautiful cities—<strong>Golden Gate Bridge</strong>, <strong>Alcatraz</strong>, <strong>cable cars</strong>, <strong>diverse neighborhoods</strong>, world-class dining, and genuine urban energy. FIFA Fan Festivals will center in San Francisco, likely at <strong>Civic Center Plaza</strong> or <strong>Embarcadero waterfront</strong>. World Cup atmosphere concentrates where international visitors naturally gather.</p>
             <p><strong>Getting to stadium:</strong> BART to Milpitas → VTA light rail (90-120 minutes), or rideshare ($60-90 each way).</p>
             <p><strong>Accommodation vibe:</strong> Options range from <strong>historic hotels</strong> (Fairmont, Palace, Mark Hopkins) to <strong>boutique properties</strong> (Hotel Zephyr at Fisherman's Wharf) to <strong>modern high-rises</strong> (Hyatt Regency Embarcadero). Expect <strong>$275-500/night</strong> for mid-range during World Cup; premium waterfront properties reach <strong>$450-700/night</strong>.</p>
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Best neighborhoods:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Best neighborhoods:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Union Square/Downtown:</strong> Maximum transit connections, walkable attractions, central Fan Festival location</li>
                 <li><strong>Fisherman's Wharf:</strong> Touristy but fun; waterfront views, seafood, Pier 39 sea lions</li>
@@ -254,13 +256,12 @@ export function SanFranciscoCityGuide() {
             </div>
             <p><strong>Reality check:</strong> The 90-minute commute to matches is real. Budget 2+ hours each way factoring in transfers and crowds. But you'll experience San Francisco authentically rather than living in suburban Silicon Valley.</p>
             <p><strong>Book through comparison sites:</strong> Properties near BART stations (Powell, Montgomery, Embarcadero, Civic Center) offer best transit access to stadium. Check multiple booking platforms—identical rooms often show 15-25% price variance.</p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Santa Clara/San Jose (Best for Stadium Proximity)</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Santa Clara/San Jose (Best for Stadium Proximity)</h4>
             <p><strong>Why stay here:</strong> Eliminate commute stress entirely. You're <strong>10-20 minutes from Levi's Stadium</strong> by light rail or car.</p>
             <p><strong>Getting to stadium:</strong> VTA light rail from downtown San Jose (20 minutes, $2.50) or drive/rideshare (10-15 minutes, $15-25).</p>
             <p><strong>Accommodation vibe:</strong> <strong>San Jose</strong> offers downtown hotels near VTA light rail stations; <strong>Santa Clara</strong> has properties within walking distance of California's Great America theme park (adjacent to stadium). Expect <strong>$200-375/night</strong> for mid-range during World Cup.</p>
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Best options:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Best options:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Hyatt Regency Santa Clara</strong> (adjacent to convention center, 15-minute walk to stadium)</li>
                 <li><strong>Santa Clara Marriott</strong> (near stadium, business hotel)</li>
@@ -271,115 +272,104 @@ export function SanFranciscoCityGuide() {
             <p>
               <strong>Reality check:</strong> Santa Clara and San Jose are functional Silicon Valley cities, not tourist destinations. You'll find corporate office parks, tech campuses, strip malls, and efficient transit—but limited cultural attractions compared to San Francisco. Perfect for fans attending multiple matches who prioritize logistics over sightseeing.
             </p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Wine Country Alternative (Napa/Sonoma)</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Wine Country Alternative (Napa/Sonoma)</h4>
             <p><strong>Why stay here:</strong> Combine World Cup with California wine country—<strong>Napa Valley</strong> (60 miles north of San Francisco) and <strong>Sonoma County</strong> (50 miles north) offer world-class wineries, farm-to-table dining, and vineyard landscapes.</p>
             <p><strong>Getting to stadium:</strong> Drive to BART station in outer San Francisco suburbs (Millbrae, Colma), park free, take BART/VTA to stadium (adds 45-60 minutes versus staying in SF).</p>
             <p><strong>Best for:</strong> Fans attending 1-2 matches who build vacation around wine tasting, not attending every group stage game.</p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Beyond the Matches: What to Do in San Francisco */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-map-2-line text-emerald-500"></i>
             Beyond the Matches: What to Do in San Francisco
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               You didn't fly to California to only watch 90 minutes of football. San Francisco delivers iconic attractions between matches:
             </p>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Must-Do Attractions</h4>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Must-Do Attractions</h3>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Golden Gate Bridge</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Golden Gate Bridge</h4>
             <p>
               The 1.7-mile suspension bridge painted "International Orange" (not red) opened in 1937 and remains the most photographed bridge worldwide. <strong>Walk across</strong> from San Francisco side (45 minutes one-way, free), bike to <strong>Sausalito</strong> then ferry back (<strong>$40</strong> bike rental), or drive to <strong>Vista Point</strong> north side for postcard views.
             </p>
             <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
               <p className="m-0"><strong>Pro tip:</strong> Visit morning for clearest skies; fog typically rolls in afternoon. The bridge is <strong>5-10°F colder</strong> than downtown—bring layers even on sunny days.</p>
             </div>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Alcatraz Island</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Alcatraz Island</h4>
             <p>
               The infamous former federal prison (1934-1963) housed Al Capone, "Machine Gun" Kelly, and Robert Stroud (the "Birdman"). Now a <strong>National Park</strong>, Alcatraz offers award-winning audio tours narrated by former guards and inmates. <strong>Tickets: $45</strong> (book weeks ahead—sells out fast).
             </p>
             <p>
               Ferries depart from <strong>Pier 33 Alcatraz Landing</strong>; total visit takes 2.5-3 hours including boat rides. Combine with Fisherman's Wharf exploration.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Cable Cars</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Cable Cars</h4>
             <p>
               San Francisco's moving National Historic Landmarks (since 1964) climb the city's steepest hills on three routes. <strong>Powell-Hyde Line</strong> offers best views—<strong>Lombard Street</strong> (crooked street), <strong>Russian Hill</strong>, Alcatraz Island vistas, ending at <strong>Hyde Street Pier</strong> near Fisherman's Wharf.
             </p>
             <p>
               <strong>Fare: $8 single ride</strong>, <strong>$13 all-day pass</strong> (includes Muni buses/light rail). Board at <strong>Powell &amp; Market</strong> (expect lines) or walk uphill to mid-route stops for shorter waits.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Fisherman's Wharf &amp; Pier 39</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Fisherman's Wharf &amp; Pier 39</h4>
             <p>
               Tourist central, but genuinely entertaining: <strong>sea lions</strong> (hundreds bark on floating docks), <strong>clam chowder bread bowls</strong> at <strong>Boudin Bakery</strong>, street performers, <strong>Ghirardelli Square</strong> (chocolate factory), and ferry departures for Alcatraz. Draws <strong>12.5 million visitors yearly</strong>—embrace the tourist experience or visit early morning to avoid peak crowds.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Golden Gate Park</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Golden Gate Park</h4>
             <p>
               Urban oasis bigger than New York's Central Park (1,017 acres) houses <strong>California Academy of Sciences</strong> (aquarium, planetarium, rainforest dome; <strong>$40</strong>), <strong>de Young Museum</strong> (American art, tower with city views; <strong>$15</strong>), <strong>Japanese Tea Garden</strong> (<strong>$10</strong>), <strong>Conservatory of Flowers</strong> (Victorian greenhouse; <strong>$10</strong>), and endless meadows for picnics.
             </p>
             <p>
               Budget a full day if exploring thoroughly; rent bikes (<strong>$35-45/day</strong>) to cover the park's 3-mile length.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Painted Ladies (Alamo Square)</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Painted Ladies (Alamo Square)</h4>
             <p>
               The seven colorful Victorian houses facing downtown skyline (featured in <em>Full House</em> opening credits) offer San Francisco's most Instagrammed view. Located at <strong>Alamo Square Park</strong>; free, always accessible. Visit sunset for golden-hour photography.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Mission District Murals</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Mission District Murals</h4>
             <p>
               <strong>Balmy Alley</strong> and <strong>Clarion Alley</strong> showcase vibrant street art addressing social justice, immigration, and community identity. The Mission is San Francisco's sunniest, warmest neighborhood—perfect for afternoon exploring, followed by <strong>Mission-style burritos</strong> at <strong>La Taqueria</strong> or <strong>El Farolito</strong>.
             </p>
-
-            <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Coit Tower</h4>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Coit Tower</h4>
             <p>
               The 210-foot Art Deco tower atop <strong>Telegraph Hill</strong> offers 360° city views (<strong>$10</strong>). The surrounding <strong>Telegraph Hill neighborhood</strong> features <strong>Filbert Steps</strong>—wooden stairs through hidden gardens descending to the Embarcadero waterfront. Free, beautiful, locals' favorite.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* San Francisco Food Scene: Fuel for Match Days */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-rose-400 dark:text-rose-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-restaurant-2-line text-emerald-500"></i>
             San Francisco Food Scene: Fuel for Match Days
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               The Bay Area invented farm-to-table dining and still leads American food culture. Here's what you need:
             </p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Pre-Match Fueling</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Pre-Match Fueling</h4>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Tartine Bakery</strong> (Mission): Legendary sourdough bread, morning buns, pastries. Arrive early or face long lines.</li>
               <li><strong>Swan Oyster Depot</strong> (Nob Hill): Seafood counter serving Dungeness crab, oysters, clam chowder since 1912. Cash only, expect waits.</li>
               <li><strong>Boudin Bakery</strong> (Fisherman's Wharf): Clam chowder served in sourdough bread bowl—touristy but iconic.</li>
               <li><strong>Burma Superstar</strong> (Richmond District): Burmese cuisine, rainbow salad, tea leaf salad. Always crowded; worth it.</li>
             </ul>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Post-Match Celebrating</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Post-Match Celebrating</h4>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Gary Danko</strong> (Russian Hill): Michelin-starred fine dining, <strong>$90+</strong> prix fixe. Reserve weeks ahead.</li>
               <li><strong>Foreign Cinema</strong> (Mission): California-Mediterranean in outdoor courtyard with film screenings. Brunch legendary.</li>
               <li><strong>Zuni Café</strong> (Civic Center): Roast chicken for two (requires 1-hour advance order), oysters, California cuisine since 1979.</li>
             </ul>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Budget-Friendly</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Budget-Friendly</h4>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>La Taqueria</strong> (Mission): James Beard Award-winning burritos. Carne asada burrito <strong>$12</strong>. No rice (controversial but correct).</li>
               <li><strong>Golden Boy Pizza</strong> (North Beach): Square Sicilian-style pizza, clam and garlic specialty. <strong>$4-6/slice</strong>.</li>
               <li><strong>Ike's Place</strong> (multiple locations): Overstuffed sandwiches, creative combinations, massive portions. <strong>$12-15</strong>.</li>
             </ul>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Coffee Culture</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Coffee Culture</h4>
             <p>San Francisco takes coffee seriously. Skip Starbucks; hit:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Blue Bottle Coffee</strong> (multiple locations): Bay Area-born, now national, consistently excellent</li>
@@ -387,21 +377,21 @@ export function SanFranciscoCityGuide() {
               <li><strong>Ritual Coffee Roasters</strong> (Mission): Local favorite since 2005</li>
             </ul>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Practical Information: What You Need to Know */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-information-line text-indigo-400 dark:text-indigo-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-information-line text-emerald-500"></i>
             Practical Information: What You Need to Know
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Getting to the Bay Area</h3>
+          </h3>
+          <div className="mt-6 space-y-6">
+            <h4 className="editorial-h4 animate-fade-up mb-2">Getting to the Bay Area</h4>
             <p><strong>San Francisco International Airport (SFO)</strong> sits <strong>13 miles south of downtown</strong>—about <strong>30 minutes via BART</strong> (<strong>$10.30</strong>) or <strong>20-30 minutes by car</strong> (<strong>$45-65</strong> taxi/rideshare). The airport handles <strong>55+ million passengers annually</strong> with direct flights from every continent.</p>
             <p><strong>BART connection:</strong> Follow signs from baggage claim to International Terminal → take <strong>AirTrain</strong> (free, automated people-mover) to <strong>BART station</strong> → board Red or Yellow Line to downtown San Francisco (Embarcadero, Montgomery, Powell stations). Trains depart every 8-12 minutes.</p>
             <p><strong>San Jose Mineta International Airport (SJC)</strong>, 10 minutes from Levi's Stadium, offers alternative arrival point. From SJC, take <strong>VTA bus #60</strong> to <strong>Milpitas BART Station</strong> (<strong>$2.50</strong>, 25 minutes), then BART to San Francisco.</p>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Weather &amp; What to Pack</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Weather &amp; What to Pack</h4>
             <p>San Francisco in June/July delivers <strong>cool summer</strong> with famous microclimates:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Downtown/Financial District:</strong> 60-70°F (16-21°C)</li>
@@ -411,7 +401,7 @@ export function SanFranciscoCityGuide() {
             </ul>
             <p><strong>Mark Twain (allegedly) said:</strong> "The coldest winter I ever spent was a summer in San Francisco." <strong>It's true.</strong></p>
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Pack:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Pack:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Layers</strong> (critical—temperature swings 20°F throughout day)</li>
                 <li>Light jacket or fleece (you'll wear it daily)</li>
@@ -420,8 +410,7 @@ export function SanFranciscoCityGuide() {
                 <li>Sunglasses and sunscreen (sun strong when fog clears)</li>
               </ul>
             </div>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Money &amp; Costs</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Money &amp; Costs</h4>
             <ul className="list-disc pl-6 space-y-2">
               <li>Stadium parking: <strong>$40-60</strong> (pre-purchased)</li>
               <li>Mid-range hotel (SF): <strong>$275-500/night</strong></li>
@@ -430,15 +419,13 @@ export function SanFranciscoCityGuide() {
               <li>BART single ride: <strong>$2.15-10.30</strong> depending on distance</li>
               <li><strong>Clipper card:</strong> Works across all Bay Area transit (BART, Muni, VTA, Caltrain, AC Transit)</li>
             </ul>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Public Transit Passes</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Public Transit Passes</h4>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Clipper card:</strong> Load value, tap on/off all Bay Area transit (<strong>$3</strong> card fee + stored value)</li>
               <li><strong>Muni Passport:</strong> Unlimited San Francisco Muni (buses, light rail, cable cars) for 1-day (<strong>$13</strong>), 3-day (<strong>$31</strong>), 7-day (<strong>$41</strong>)</li>
               <li>Purchase Clipper cards at BART stations, airports, or via <strong>Clipper mobile app</strong></li>
             </ul>
-
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Safety &amp; Street Smarts</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Safety &amp; Street Smarts</h4>
             <p>San Francisco is generally safe in tourist areas (Fisherman's Wharf, Union Square, North Beach, Marina, Embarcadero). Exercise standard urban caution:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Tenderloin neighborhood</strong> (west of Union Square): High concentrations of homelessness, open drug use. Avoid walking through late at night.</li>
@@ -447,24 +434,25 @@ export function SanFranciscoCityGuide() {
             </ul>
             <p>Tourist neighborhoods (listed above) are well-policed and safe for walking day/night.</p>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Phone &amp; Connectivity</h3>
+            <h4 className="editorial-h4 animate-fade-up mb-2">Phone &amp; Connectivity</h4>
             <p>Free WiFi: BART stations, SFO Airport, most cafes/restaurants, public spaces. 5G coverage excellent throughout Bay Area. Consider US SIM or international roaming for extended stays.</p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* FIFA Fan Festival & Match Day Atmosphere */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-community-line text-emerald-500"></i>
             FIFA Fan Festival &amp; Match Day Atmosphere
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               While official locations await confirmation, San Francisco's <strong>FIFA Fan Festival</strong> will likely occupy <strong>Civic Center Plaza</strong> (central location, existing infrastructure, adjacent to City Hall) or <strong>Embarcadero waterfront</strong> (bay views, outdoor space). Expect <strong>30,000-50,000 daily visitors</strong> during matches, with giant screens, live music, food vendors, and international flags creating festival atmosphere.
             </p>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Neighborhood Watch Parties:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Neighborhood Watch Parties:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Mission District</strong>: Dolores Park outdoor screenings (if permitted); bars on Valencia Street</li>
                 <li><strong>Marina District</strong>: Sports bars with waterfront patios</li>
@@ -474,28 +462,29 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Bay Area Soccer Culture:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Bay Area Soccer Culture:</h4>
               <p>Don't underestimate Northern California's football knowledge. The <strong>San Jose Earthquakes</strong> (MLS) have played here since 1974, winning multiple championships. <strong>Stanford University</strong> has produced World Cup players. The region's diverse immigrant communities—Mexican, Salvadoran, Brazilian, Italian, Asian—bring authentic football passion.</p>
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Match Day at Levi's Stadium:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Match Day at Levi's Stadium:</h4>
               <p>Arrive <strong>2-3 hours early</strong> for smooth entry. Security screening for 68,500 people takes time. <strong>California's Great America</strong> theme park (adjacent) operates match days—families combine World Cup with roller coasters.</p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Booking Strategy: How to Plan Your Bay Area World Cup Trip */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-calendar-check-line text-emerald-500"></i>
             Booking Strategy: How to Plan Your Bay Area World Cup Trip
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
-            <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50">Timeline That Works:</h3>
+          </h3>
+          <div className="mt-6 space-y-6">
+            <h4 className="editorial-h4 animate-fade-up mb-2">Timeline That Works:</h4>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Now Through Late 2025:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Now Through Late 2025:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Monitor FIFA for ticket sale announcements (lottery opens late 2025)</li>
                 <li>Research accommodation but wait for ticket confirmation</li>
@@ -505,7 +494,7 @@ export function SanFranciscoCityGuide() {
             </div>
 
             <div>
-              <h4 className="text-lg font-bold text-slate-900 dark:text-slate-50">Immediately After Securing Tickets:</h4>
+              <h4 className="editorial-h4 animate-fade-up mb-2">Immediately After Securing Tickets:</h4>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>Book hotels within 24-48 hours</strong> (San Francisco properties near BART sell out fastest)</li>
                 <li>Finalize flights—SFO offers direct international connections</li>
@@ -514,15 +503,16 @@ export function SanFranciscoCityGuide() {
               </ul>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* 2–4 Weeks Before Travel */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-time-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-time-line text-emerald-500"></i>
             2–4 Weeks Before Travel
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <ul className="list-disc pl-6 space-y-2">
               <li>Book <strong>Alcatraz tickets</strong> (sells out months ahead)</li>
               <li>Purchase attraction tickets online for skip-the-line entry</li>
@@ -535,15 +525,16 @@ export function SanFranciscoCityGuide() {
               <p className="m-0"><strong>Affiliate booking moment:</strong> When comparing hotel prices, check <strong>Booking.com</strong>, <strong>Expedia</strong>, <strong>Hotels.com</strong>, and <strong>direct hotel websites</strong>—rates vary <strong>15–25%</strong> for identical rooms. Properties near <strong>Powell</strong> or <strong>Montgomery BART</strong> stations deliver best access to both San Francisco attractions and stadium transit. Membership programs (<strong>Hotels.com rewards</strong>, <strong>Expedia points</strong>) offer additional savings for multi-night stays.</p>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Why the Bay Area Wins the World Cup Experience */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-trophy-line text-emerald-500"></i>
             Why the Bay Area Wins the World Cup Experience
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <p>
               Let's address the elephant: <strong>The stadium is 40 miles from San Francisco.</strong> That's the biggest logistical compromise of any U.S. host city. But here's what the Bay Area offers that nowhere else can:
             </p>
@@ -569,15 +560,16 @@ export function SanFranciscoCityGuide() {
             </p>
             <p><strong>Book BART-accessible San Francisco accommodation, embrace layers, download the Clipper app, and prepare to discover why people leave their hearts in San Francisco—then travel to Silicon Valley to watch the world's best football.</strong></p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Final Checklist: Your Bay Area World Cup Essentials */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-checkbox-circle-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-checkbox-circle-line text-emerald-500"></i>
             Final Checklist: Your Bay Area World Cup Essentials
-          </h2>
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+          </h3>
+          <div className="mt-6 space-y-6">
             <ul className="list-disc pl-6 space-y-2">
               <li>✅ <strong>Match tickets secured through FIFA official channels</strong></li>
               <li>✅ <strong>Hotel booked near SF BART stations</strong> (Powell, Montgomery, Embarcadero)</li>
@@ -598,8 +590,9 @@ export function SanFranciscoCityGuide() {
             </p>
             <p><strong>Welcome to the City by the Bay. The fog is real, the sourdough is legendary, and the football awaits.</strong> ⚽🌁🌉</p>
           </div>
-        </div>
-      </main>
+          <hr className="editorial-divider" />
+        </article>
+      </section>
 
       <Footer />
     </div>
