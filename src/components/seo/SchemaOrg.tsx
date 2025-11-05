@@ -25,7 +25,7 @@ export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "StadiumPort",
-  "description": "The definitive authority for 2026 tournament travel intelligence across all 16 host cities.",
+  "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
   "url": import.meta.env.VITE_SITE_URL || "https://example.com",
   "potentialAction": {
     "@type": "SearchAction",
@@ -46,7 +46,7 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "StadiumPort",
-  "description": "Premier 2026 World Cup travel platform providing comprehensive guides and deals for all 16 host cities.",
+  "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
   "url": import.meta.env.VITE_SITE_URL || "https://example.com",
   "logo": `${import.meta.env.VITE_SITE_URL || "https://example.com"}/logo.png`,
   "sameAs": [
