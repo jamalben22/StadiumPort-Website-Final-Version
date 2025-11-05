@@ -68,11 +68,11 @@ export function AtlantaCityGuide() {
         </div>
       </section>
 
-      {/* Main Content - Part 1/5 only, verbatim text in exact sequence */}
-      <main className="p-8 md:p-12 space-y-12">
+      {/* Main Content — Editorial layout mirroring NYC guide (design-only changes) */}
+      <main className="editorial-article py-12">
         {/* Opening Section */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6 dark:text-white">
+        <article className="editorial-body editorial-dropcap">
+          <div>
             <p><strong>The Capital of the South Hosts a Semifinal</strong></p>
             <p>
               Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football. From June 15 through July 15, 2026, Mercedes-Benz Stadium will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
@@ -81,23 +81,24 @@ export function AtlantaCityGuide() {
               If you've never visited Atlanta, prepare to have your assumptions challenged. This isn't a sleepy Southern city—it's a booming metropolis of nearly 500,000 (6 million in the metro area) with world-class infrastructure, a food scene that rivals any American city, and a stadium that literally redefines modern architecture. Mercedes-Benz Stadium's retractable "pinwheel" roof opens in less than eight minutes, its halo board is the world's largest video screen, and it's built to handle crowds with efficiency that would make German engineers jealous. Add in Atlanta's role as a transportation hub (Hartsfield-Jackson is the world's busiest airport) and its status as America's civil rights capital, and you have a city ready to show the world why it's called "the capital of the South."
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* The Stadium */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-building-line text-emerald-500"></i>
             The Stadium: Mercedes-Benz Stadium (Atlanta Stadium for FIFA 2026)
           </h2>
 
           <div className="space-y-8">
             {/* Architectural Marvel */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-amber-400 dark:text-amber-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-star-line text-emerald-500"></i>
                 An Architectural Marvel Built for Football
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Mercedes-Benz Stadium opened in August 2017 at a cost of $1.6 billion and has a capacity of 71,000 seats for most events, expandable to over 75,000 for World Cup matches. This isn't just another American football stadium converted for soccer—Mercedes-Benz was designed from day one with soccer in mind, featuring retractable lower bowl seats to widen the field and mechanized curtains that can limit capacity to around 42,500 for more intimate matches.
                 </p>
@@ -108,12 +109,12 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Roof */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-sun-line text-amber-400 dark:text-amber-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-sun-line text-emerald-500"></i>
                 The Roof That Broke the Mold
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Mercedes-Benz Stadium's signature feature is its retractable roof consisting of eight translucent, triangular panels forming a unique "pinwheel" design inspired by the Roman Pantheon. When opened, the panels create the illusion of a bird's wings extended—a nod to the Atlanta Falcons. The roof can open or close in approximately eight to ten minutes, providing flexibility for weather conditions while allowing natural light and fresh air when conditions permit.
                 </p>
@@ -124,12 +125,12 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Match Schedule */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-calendar-event-line text-emerald-500"></i>
                 Match Schedule at Mercedes-Benz Stadium
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Atlanta will host eight matches spanning a full month of tournament action, from opening group stage games through one of the tournament's most critical moments:
                 </p>
@@ -144,12 +145,12 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* What Makes Special */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-award-line text-rose-500 dark:text-rose-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-award-line text-emerald-500"></i>
                 What Makes This Stadium Special
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Atlanta United FC, the city's MLS team, has set multiple MLS attendance records at Mercedes-Benz Stadium, including the largest crowd ever for a standalone MLS match (72,035) in 2018. The stadium hosted Super Bowl LIII (2019), the College Football Playoff National Championship (2018 and 2025), matches during the 2024 Copa América, and will host Super Bowl LXII in 2028.
                 </p>
@@ -162,23 +163,24 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Getting There */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-route-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-500"></i>
             Getting There: Transportation Made Easy
           </h2>
 
           <div className="space-y-8">
             {/* From Airport */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-blue-400 dark:text-sky-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-plane-line text-emerald-500"></i>
                 From Hartsfield-Jackson Atlanta International Airport
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Atlanta's airport isn't just big—it's the busiest airport in the world, serving over 100 million passengers annually with connections to 181 countries. For World Cup visitors, this means finding flights to Atlanta will be easier than almost any other host city.
                 </p>
@@ -186,12 +188,12 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* MARTA Rail */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-purple-500 dark:text-purple-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-train-line text-emerald-500"></i>
                 MARTA Rail (The Smart Choice)
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   The Metropolitan Atlanta Rapid Transit Authority (MARTA) offers the fastest and most cost-effective way to reach downtown and Mercedes-Benz Stadium. The airport station is located inside the Domestic Terminal, between the North and South baggage claim areas.
                 </p>
@@ -204,25 +206,23 @@ export function AtlantaCityGuide() {
               </div>
             </div>
 
-            {/* Pro Tip - International Terminal Transfer */}
-            <div className="p-6 rounded-xl bg-emerald-50 border border-emerald-200 dark:bg-emerald-900/20 dark:border-emerald-800">
-              <div className="flex items-start gap-3">
-                <i className="ri-lightbulb-line text-amber-500 text-2xl mt-1"></i>
-                <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white">
-                  <p>
-                    <strong>Pro Tip</strong>: If arriving at the International Terminal, you'll need to take the free shuttle to the Domestic Terminal to access MARTA. Allow an extra 45-60 minutes for this transfer.
-                  </p>
-                </div>
+            {/* Pro Tip - International Terminal Transfer (editorial inline) */}
+            <div className="flex items-start gap-3">
+              <i className="ri-lightbulb-line text-emerald-500 text-xl mt-1"></i>
+              <div>
+                <p>
+                  <strong>Pro Tip</strong>: If arriving at the International Terminal, you'll need to take the free shuttle to the Domestic Terminal to access MARTA. Allow an extra 45-60 minutes for this transfer.
+                </p>
               </div>
             </div>
 
             {/* Rideshares and Taxis */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-rose-500 dark:text-rose-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-taxi-line text-emerald-500"></i>
                 Rideshares and Taxis
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <div>
                 <p>
                   Uber and Lyft operate throughout Atlanta with reliable service. Expect the airport-to-downtown trip to cost $25-35 and take 20-25 minutes in light traffic. Taxis offer flat rates to downtown of around $40 for up to four passengers.
                 </p>
@@ -230,12 +230,12 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Match Day Access */}
-            <div className="dark:text-white">
-              <h3 className="text-xl font-bold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                <i className="ri-football-line text-emerald-500 dark:text-emerald-300"></i>
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-football-line text-emerald-500"></i>
                 Getting to Mercedes-Benz Stadium on Match Days
               </h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+              <div className="space-y-4">
                 <p>
                   The stadium sits in downtown Atlanta with excellent transit access. MARTA is the highly recommended way to reach the stadium, especially on match days when parking fills up and traffic congests.
                 </p>
@@ -258,20 +258,21 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Where to Stay */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-hotel-line text-emerald-500"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h2>
 
           <div className="space-y-10">
             {/* Downtown Atlanta */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4">Downtown Atlanta: Maximum Convenience</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4">Downtown Atlanta: Maximum Convenience</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Why Stay Here</strong>: Direct MARTA access to Mercedes-Benz Stadium, walking distance to major attractions (Georgia Aquarium, World of Coca-Cola, Centennial Olympic Park), and the energy of the city's core.
                 </p>
@@ -288,9 +289,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Midtown Atlanta */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4">Midtown Atlanta: Arts, Culture, and Transit Access</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4">Midtown Atlanta: Arts, Culture, and Transit Access</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Why Stay Here</strong>: Just north of downtown, Midtown is Atlanta's cultural heart—home to the Fox Theatre, High Museum of Art, Atlanta Botanical Garden, and Piedmont Park. The neighborhood offers a more walkable, neighborhood feel while maintaining excellent MARTA access on the Red and Gold lines.
                 </p>
@@ -310,9 +311,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Buckhead */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4">Buckhead: Atlanta's Luxury Neighborhood</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4">Buckhead: Atlanta's Luxury Neighborhood</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Why Stay Here</strong>: Eight miles north of downtown, Buckhead offers Atlanta's most upscale accommodations, shopping (Lenox Square, Phipps Plaza), and fine dining. This is where you'll find luxury hotels, tree-lined streets with historic mansions, and a more refined atmosphere.
                 </p>
@@ -329,9 +330,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* East Side */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-4">East Side: BeltLine, Breweries, and Local Flavor</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-4">East Side: BeltLine, Breweries, and Local Flavor</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Why Stay Here</strong>: Neighborhoods like Inman Park, Virginia-Highland, and Little Five Points offer Atlanta's most eclectic, bohemian vibe. You'll find craft breweries, vintage shops, street art, and the Atlanta BeltLine—a former railway corridor transformed into a 22-mile walking and cycling trail connecting neighborhoods.
                 </p>
@@ -347,26 +348,27 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Beyond the Match */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-map-2-line text-emerald-500"></i>
             Beyond the Match: What to Do in Atlanta
           </h2>
 
           <div className="space-y-8">
-            <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white">
+            <div>
               <p>
                 Atlanta's attractions span civil rights history, world-class museums, Olympic legacy sites, and entertainment that reflects the city's position as capital of the American South.
               </p>
             </div>
 
             {/* Georgia Aquarium */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Georgia Aquarium: The World's Largest</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Georgia Aquarium: The World's Largest</h3>
+              <div className="space-y-4">
                 <p>
                   Located at Pemberton Place next to World of Coca-Cola, the Georgia Aquarium holds more than 11 million gallons of water and houses tens of thousands of aquatic animals across seven major galleries. This is the largest aquarium in the United States and features whale sharks, manta rays, beluga whales, and immersive underwater tunnel viewing.
                 </p>
@@ -380,9 +382,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* World of Coca-Cola */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">World of Coca-Cola: Atlanta's Most Iconic Brand</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">World of Coca-Cola: Atlanta's Most Iconic Brand</h3>
+              <div className="space-y-4">
                 <p>
                   The 92,000-square-foot World of Coca-Cola museum showcases the history and cultural impact of Coca-Cola, invented in Atlanta in 1886 by Dr. John S. Pemberton. The museum features a 4D theater experience, exhibits about the "secret formula," and the ultimate highlight: a tasting room where you can sample over 100 different Coca-Cola beverages from around the world.
                 </p>
@@ -396,9 +398,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* MLK National Historical Park */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Martin Luther King Jr. National Historical Park</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Martin Luther King Jr. National Historical Park</h3>
+              <div className="space-y-4">
                 <p>
                   Atlanta is the birthplace and lifetime home of Dr. Martin Luther King Jr., and this National Historical Park preserves his birth home, Ebenezer Baptist Church where he preached, and the King Center where he and Coretta Scott King are entombed.
                 </p>
@@ -415,9 +417,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Centennial Olympic Park */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Centennial Olympic Park: Atlanta's Green Heart</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Centennial Olympic Park: Atlanta's Green Heart</h3>
+              <div className="space-y-4">
                 <p>
                   Built for the 1996 Summer Olympics, this 22-acre downtown park features the iconic Fountain of Rings (the world's largest interactive fountain incorporating the Olympic symbol), green space, playgrounds, and regular concerts and events.
                 </p>
@@ -431,9 +433,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Fox Theatre */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Fox Theatre: Atlanta's Most Beautiful Building</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Fox Theatre: Atlanta's Most Beautiful Building</h3>
+              <div className="space-y-4">
                 <p>
                   This 1929 movie palace is one of America's most stunning historic theaters, featuring Moorish-Egyptian architecture with gilded ceilings, onion domes, and Middle Eastern-inspired design. Catch a Broadway show, concert, or simply take a guided tour to experience the building's opulent interior.
                 </p>
@@ -444,9 +446,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* BeltLine */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">The BeltLine: Atlanta's Transformation Project</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">The BeltLine: Atlanta's Transformation Project</h3>
+              <div className="space-y-4">
                 <p>
                   The Atlanta BeltLine is a 22-mile loop of former railway corridors being transformed into parks, trails, transit, and affordable housing. The Eastside Trail is the most developed section, connecting Piedmont Park to Inman Park with public art, restaurants, breweries, and shopping along the way.
                 </p>
@@ -456,26 +458,27 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Food */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-line text-rose-500 dark:text-rose-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-restaurant-line text-emerald-500"></i>
             Food: From Soul Food to Southern Innovation
           </h2>
 
           <div className="space-y-8">
-            <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white">
+            <div>
               <p>
                 Atlanta's food scene reflects its status as capital of the South—traditional soul food and BBQ sit alongside innovative New American cuisine, international flavors from the city's growing immigrant communities, and chef-driven restaurants earning national attention.
               </p>
             </div>
 
             {/* Southern BBQ */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Southern BBQ: Atlanta Style</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Southern BBQ: Atlanta Style</h3>
+              <div className="space-y-4">
                 <p>
                   Atlanta doesn't adhere to one regional BBQ style—you'll find Texas brisket, Carolina pork, and Memphis ribs, often on the same menu.
                 </p>
@@ -495,9 +498,9 @@ export function AtlantaCityGuide() {
             </div>
 
             {/* Soul Food */}
-            <div className="dark:text-white">
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Soul Food: The Real Deal</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+            <div>
+              <h3 className="editorial-h3 animate-fade-up mb-2">Soul Food: The Real Deal</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Busy Bee Cafe</strong>: A West End institution since 1947, serving fried chicken, meatloaf, collard greens, mac and cheese, and other soul food classics that taste like Sunday dinner at your grandmother's house (if your grandmother was from Georgia).
                 </p>
@@ -510,16 +513,17 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Beyond Southern Food */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-store-2-line text-fuchsia-500 dark:text-fuchsia-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-store-2-line text-emerald-500"></i>
             Beyond Southern Food
           </h2>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white space-y-6">
+          <div className="space-y-6">
             <p>
               Atlanta's diversity shows up on its plates:
             </p>
@@ -533,19 +537,20 @@ export function AtlantaCityGuide() {
               <strong>Krog Street Market</strong>: Inman Park's food hall features high-quality vendors in a converted warehouse. Perfect for groups wanting variety.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Weather & Packing */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-sun-cloudy-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-sun-cloudy-line text-emerald-500"></i>
             Weather &amp; What to Pack
           </h2>
 
-          <div className="space-y-8 dark:text-white">
+          <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">June and July in Atlanta: Hot, Humid, and Thundery</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+              <h3 className="editorial-h3 animate-fade-up mb-2">June and July in Atlanta: Hot, Humid, and Thundery</h3>
+              <div className="space-y-4">
                 <p>
                   Atlanta's summers are defined by three words: hot, humid, and afternoon thunderstorms. But don't let that scare you—locals manage just fine, and the stadium's air conditioning makes matches comfortable.
                 </p>
@@ -554,8 +559,8 @@ export function AtlantaCityGuide() {
 
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">June Weather</h4>
-                <ul className="list-disc pl-6 prose prose-lg max-w-none dark:prose-invert">
+                <h4 className="editorial-h4 mb-2">June Weather</h4>
+                <ul className="list-disc pl-6">
                   <li>Average high: 88°F (31°C)</li>
                   <li>Average low: 67°F (20°C)</li>
                   <li>Humidity: 70% average</li>
@@ -564,8 +569,8 @@ export function AtlantaCityGuide() {
                 </ul>
               </div>
               <div>
-                <h4 className="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2">July Weather</h4>
-                <ul className="list-disc pl-6 prose prose-lg max-w-none dark:prose-invert">
+                <h4 className="editorial-h4 mb-2">July Weather</h4>
+                <ul className="list-disc pl-6">
                   <li>Average high: 91°F (33°C)</li>
                   <li>Average low: 72°F (22°C)</li>
                   <li>Humidity: 69-75% (it will feel muggy)</li>
@@ -576,8 +581,8 @@ export function AtlantaCityGuide() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">What This Means for You</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+              <h3 className="editorial-h3 animate-fade-up mb-2">What This Means for You</h3>
+              <div className="space-y-4">
                 <p>
                   <strong>Heat Management</strong>: Atlanta summers require constant hydration and smart planning. Outdoor activities are best in the morning (before 11 AM) or evening (after 6 PM). Midday heat with 75% humidity creates "feels like" temperatures over 100°F (38°C).
                 </p>
@@ -597,27 +602,28 @@ export function AtlantaCityGuide() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Stadium Policies</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              <h3 className="editorial-h3 animate-fade-up mb-2">Stadium Policies</h3>
+              <div>
                 <p>
                   Mercedes-Benz Stadium's bag policy typically requires clear bags (12" x 6" x 12" or smaller) or small clutches (4.5" x 6.5"). Check the official stadium website before your visit and plan accordingly.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Practical Tips for International Visitors */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-global-line text-cyan-500 dark:text-cyan-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-global-line text-emerald-500"></i>
             Practical Tips for International Visitors
           </h2>
 
-          <div className="space-y-8 dark:text-white">
+          <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Money Matters</h3>
-              <ul className="list-disc pl-6 prose prose-lg max-w-none dark:prose-invert">
+              <h3 className="editorial-h3 animate-fade-up mb-2">Money Matters</h3>
+              <ul className="list-disc pl-6">
                 <li><strong>Currency</strong>: US Dollar (USD)</li>
                 <li><strong>Cards</strong>: Credit cards accepted everywhere; contactless payment widely available</li>
                 <li><strong>Tipping</strong>: 18-20% at restaurants, $1-2 per drink at bars, 15-20% for taxis and rideshares</li>
@@ -626,8 +632,8 @@ export function AtlantaCityGuide() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Safety &amp; Getting Around</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+              <h3 className="editorial-h3 animate-fade-up mb-2">Safety &amp; Getting Around</h3>
+              <div className="space-y-4">
                 <p>
                   Atlanta is generally safe for visitors, especially in tourist areas and well-traveled neighborhoods. Basic street smarts apply: be aware of your surrounings, keep valuables secure, and stick to well-lit areas at night.
                 </p>
@@ -644,8 +650,8 @@ export function AtlantaCityGuide() {
             </div>
 
             <div>
-              <h3 className="text-2xl font-bold text-slate-900 dark:text-slate-50 mb-2">Language &amp; Connectivity</h3>
-              <div className="prose prose-lg max-w-none dark:prose-invert space-y-4">
+              <h3 className="editorial-h3 animate-fade-up mb-2">Language &amp; Connectivity</h3>
+              <div className="space-y-4">
                 <p>
                   English is the primary language, with Southern accents common (though less so in tourist areas due to transplants). Atlanta's diversity means you'll hear Spanish, Korean, Vietnamese, and dozens of other languages throughout the city.
                 </p>
@@ -655,16 +661,17 @@ export function AtlantaCityGuide() {
               </div>
             </div>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Ticket Information & Booking Strategy */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-ticket-line text-indigo-500 dark:text-indigo-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-ticket-line text-emerald-500"></i>
             Ticket Information &amp; Booking Strategy
           </h2>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white space-y-4">
+          <div className="space-y-4">
             <p>
               <strong>How to Get World Cup Tickets</strong>
             </p>
@@ -672,22 +679,23 @@ export function AtlantaCityGuide() {
               Tickets for the 2026 FIFA World Cup are sold in multiple phases. The first presale draw began September 10, 2025, for people 18 and older with FIFA accounts and Visa cardholders. Group stage tickets start at $60, with prices increasing significantly for knockout rounds and the semifinal.
             </p>
             <p>
-              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.fifa.com/tickets</a> for future ticket phases. The July 15 semifinal will be among the tournament's most sought-after tickets outside the Final itself.
+              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer">https://www.fifa.com/tickets</a> for future ticket phases. The July 15 semifinal will be among the tournament's most sought-after tickets outside the Final itself.
             </p>
             <p>
               <strong>Hospitality Packages</strong>: If you miss the general ticket lottery, official hospitality packages through FIFA's partner On Location start at $1,450 per match for group stage games, rising significantly for the semifinal. These include premium seating, exclusive lounge access, and food and beverage service—worth considering for guaranteed access to critical matches.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Why Atlanta */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-earth-line text-teal-500 dark:text-teal-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-earth-line text-emerald-500"></i>
             Why Atlanta Will Make Your World Cup Unforgettable
           </h2>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white">
+          <div>
             <p>
               Atlanta surprises first-time visitors who arrive expecting Southern stereotypes. This is a global city—the busiest airport in the world, Fortune 500 headquarters, and international communities from every continent create a cosmopolitan energy that rivals any American metro.
             </p>
@@ -701,16 +709,17 @@ export function AtlantaCityGuide() {
               Only two U.S. cities will have hosted both the Summer Olympics and the FIFA World Cup—Atlanta and Los Angeles. That's the kind of company Atlanta keeps. And on July 15, 2026, when one team punches its ticket to the Final, you'll understand why this city is special.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Start Planning */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-sky-500 dark:text-sky-300 text-4xl"></i>
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-calendar-check-line text-emerald-500"></i>
             Start Planning Your 2026 World Cup Trip to Atlanta
           </h2>
 
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white space-y-6">
+          <div className="space-y-6">
             <p>
               The countdown is on. Hotels are booking up. Flights are being reserved. And Atlanta is preparing to welcome the world—again.
             </p>
@@ -718,17 +727,17 @@ export function AtlantaCityGuide() {
             <ol className="list-decimal pl-6">
               <li>
                 <strong>Register for FIFA tickets</strong> at
-                {' '}<a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.fifa.com/tickets</a>{' '}for future phases
+                {' '}<a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer">https://www.fifa.com/tickets</a>{' '}for future phases
               </li>
               <li>
                 <strong>Book accommodations early</strong> via
-                {' '}<a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.booking.com</a>{' '}or{' '}
-                <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.hotels.com</a>{' '}—6-12 months in advance is essential for World Cup dates
+                {' '}<a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">https://www.booking.com</a>{' '}or{' '}
+                <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">https://www.hotels.com</a>{' '}—6-12 months in advance is essential for World Cup dates
               </li>
               <li>
                 <strong>Research flights</strong> to Atlanta (ATL) through
-                {' '}<a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.skyscanner.com</a>{' '}or{' '}
-                <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-indigo-600 dark:text-indigo-300 underline">https://www.google.com/flights</a>
+                {' '}<a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer">https://www.skyscanner.com</a>{' '}or{' '}
+                <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer">https://www.google.com/flights</a>
               </li>
               <li>
                 <strong>Download the MARTA Breeze app</strong> for seamless transit
@@ -744,16 +753,15 @@ export function AtlantaCityGuide() {
               Atlanta will host eight matches during the 2026 FIFA World Cup at Mercedes-Benz Stadium, including five group-stage contests, two knockout round games, and a semifinal on July 15 that will determine one of the two teams playing for the championship. The economic impact is projected at $5 billion for the region, and hundreds of thousands of visitors will descend on the city for the events.
             </p>
           </div>
-        </div>
+          <hr className="editorial-divider" />
+        </article>
 
         {/* Final Word */}
-        <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-          <div className="prose prose-lg max-w-none dark:prose-invert dark:text-white text-center">
-            <p className="font-bold text-xl">
-              See you in Atlanta. Y'all ready for some football?
-            </p>
-          </div>
-        </div>
+        <article className="editorial-body">
+          <p className="font-bold text-xl">
+            See you in Atlanta. Y'all ready for some football?
+          </p>
+        </article>
       </main>
 
       <Footer />
