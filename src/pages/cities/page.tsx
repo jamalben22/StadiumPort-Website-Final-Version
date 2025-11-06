@@ -571,23 +571,36 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
           {/* 2-Column Grid Layout with responsive, lazy images */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {hostCities.map((city, index) => (
-              <Card key={city.id} hover className="overflow-hidden group">
-                <div className="relative h-64 overflow-hidden">
+              <div
+                key={city.id}
+                className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full"
+              >
+                <div className="relative h-56 overflow-hidden">
                   <OptimizedImage
                     src={city.image}
                     alt={city.alt || `${city.name} skyline`}
-                    className="absolute inset-0"
-                    imgClassName="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    className="w-full h-full"
+                    imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
                     width={1600}
                     height={900}
                     priority={index < 2}
                     placeholder="blur"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="100vw"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
                     <span>{city.flag}</span>
                     <span>{city.country}</span>
                   </div>
+                  <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
+                    <i className="ri-map-pin-line mr-2 text-lg"></i>
+                    <span>{city.stadium} • {city.capacity} capacity</span>
+                  </div>
+                  {city.name === 'New York / New Jersey' && (
+                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                      8 Matches
+                    </div>
+                  )}
                   {city.name === 'New York / New Jersey' && (
                     <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
                       8 Matches
@@ -684,8 +697,8 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     </div>
                   )}
                 </div>
-                
-                <div className="p-6">
+
+                <div className="p-7 flex flex-col flex-1">
                   <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
                     {city.name}
                   </h3>
@@ -694,24 +707,12 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     {city.description}
                   </p>
                   
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Stadium</div>
-                        <div className="font-semibold text-navy-900 dark:text-white">{city.stadium}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Capacity</div>
-                        <div className="font-semibold text-emerald-600">{city.capacity}</div>
-                      </div>
-                    </div>
-                  </div>
                   
                   <Button 
                     variant="primary" 
                     size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
+                    fullWidth
+                    className="whitespace-nowrap cursor-pointer mt-auto"
                     onClick={() => {
                       // Navigate to the appropriate city guide page
                       navigate(getCityRoute(city.name));
@@ -721,7 +722,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
                   </Button>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>

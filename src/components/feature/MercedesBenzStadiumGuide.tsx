@@ -81,103 +81,99 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
       {/* Full Guide - Expanded State */}
       {isExpanded && (
         <div className="animate-fade-in">
-          {/* Hero Section - Miami Style */}
+          {/* Editorial Hero — NYC style */}
           {!hideHero && (
-          <section className="relative pt-32 pb-20 overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0">
+          <section className="editorial-hero">
+            <div className="editorial-hero-media">
               <OptimizedImage
                 src="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026.webp"
                 alt="Exterior view of Mercedes-Benz Stadium in Atlanta, Georgia, one of the premier venues for the FIFA World Cup 2026."
-                className="absolute inset-0"
-                imgClassName="object-cover"
+                className="editorial-hero-image-wrapper"
+                imgClassName="editorial-hero-image"
                 width={1600}
                 height={900}
-                placeholder="blur"
-                sizes="100vw"
                 priority={true}
+                placeholder="empty"
+                sizes="100vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="editorial-hero-overlay"></div>
             </div>
-
-            <div className="relative max-w-7xl mx-auto px-6 text-center">
-              <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-8 border border-white/20">
-                <span className="text-2xl">🇺🇸</span>
-                <span className="text-white font-inter font-medium">Mercedes-Benz Stadium • 75,000 Capacity</span>
-                <span className="text-gold-400">•</span>
-                <span className="text-emerald-300 font-semibold">Semifinal Host Venue</span>
-              </div>
-              
-              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-                Mercedes-Benz Stadium
-                <br />
-                <span className="text-gold-400">FIFA World Cup 2026</span>
-              </h1>
-              
-              <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed mb-8">
-                Where innovation meets World Cup spectacle in Atlanta.
-              </p>
-
-              {/* Stadium Info Badge */}
-              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
-                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
-                <span className="text-emerald-200 font-inter font-medium">Downtown Atlanta, Georgia</span>
+            <div className="editorial-hero-content">
+              <div className="editorial-hero-inner">
+                <div className="editorial-hero-eyebrow">
+                  <span className="editorial-hero-pulse"></span>
+                  <span>FIFA World Cup 2026</span>
+                </div>
+                <h1 className="editorial-hero-title">Mercedes-Benz Stadium</h1>
+                <div className="editorial-hero-meta">
+                  <div className="meta-item flex items-center gap-2">
+                    <i className="ri-map-pin-line"></i>
+                    <span>Downtown Atlanta, Georgia</span>
+                  </div>
+                  <div className="meta-item flex items-center gap-2">
+                    <i className="ri-group-line"></i>
+                    <span>75,000 capacity</span>
+                  </div>
+                  <div className="meta-item flex items-center gap-2">
+                    <i className="ri-award-line"></i>
+                    <span>Semifinal Host Venue</span>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
           )}
 
-          {/* Content Sections */}
-          <div className="p-8 md:p-12 space-y-12">
-            {/* Intro narrative paragraph block */}
-            <div className="prose prose-lg max-w-none dark:prose-invert">
-              <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8 mb-8">
-                <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-                  Stand beneath the world's first retractable petal roof as it opens like a camera aperture to the Georgia sky. Watch 75,000 voices reverberate off the circular halo board—the largest video screen in professional sports. Welcome to Mercedes-Benz Stadium, a venue that didn't just raise the bar for American stadium design when it opened in 2017; it obliterated it entirely. As one of 11 US host cities, Atlanta will welcome eight World Cup matches in 2026, including a semifinal—making this architectural marvel the stage where footballing dreams will either flourish or shatter. For the tournament, FIFA regulations require the stadium to be called "Atlanta Stadium", but locals will always know it by its revolutionary spirit.
-                </p>
-              </div>
-            </div>
+          {/* Content Sections — Editorial presentation */}
+          <section className="editorial-article py-12">
+            {/* Introduction */}
+            <article className="editorial-body editorial-dropcap">
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                Stand beneath the world's first retractable petal roof as it opens like a camera aperture to the Georgia sky. Watch 75,000 voices reverberate off the circular halo board—the largest video screen in professional sports. Welcome to Mercedes-Benz Stadium, a venue that didn't just raise the bar for American stadium design when it opened in 2017; it obliterated it entirely. As one of 11 US host cities, Atlanta will welcome eight World Cup matches in 2026, including a semifinal—making this architectural marvel the stage where footballing dreams will either flourish or shatter. For the tournament, FIFA regulations require the stadium to be called "Atlanta Stadium", but locals will always know it by its revolutionary spirit.
+              </p>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Stadium Overview & Fast Facts */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-building-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-building-line text-emerald-500"></i>
                 Stadium Overview & Fast Facts
-              </h2>
+              </h3>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-price-tag-3-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Official Name:</strong> Mercedes-Benz Stadium (Atlanta Stadium during World Cup)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-map-pin-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Location:</strong> Downtown Atlanta, Georgia (1 AMB Drive NW)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-calendar-2-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Opened:</strong> August 2017</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-group-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Capacity:</strong> 75,000 (expandable to 83,000)</p>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-shield-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Primary Tenants:</strong> Atlanta Falcons (NFL), Atlanta United FC (MLS)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-pencil-ruler-2-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Architect:</strong> HOK (with tvsdesign, Goode Van Slyke Architecture, Stanley Beaman & Sears)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-sun-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Surface:</strong> Natural grass will be installed for World Cup matches (replacing standard artificial turf)</p>
                   </div>
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-home-gear-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Roof Type:</strong> Retractable eight-panel "petal" roof (opens in 8 minutes, closes in 7)</p>
                   </div>
@@ -186,26 +182,28 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
 
               <div className="grid md:grid-cols-2 gap-8 mt-8">
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-tv-2-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Signature Feature:</strong> 360-degree "Halo Board" video screen—58 feet high, 1,075 feet around</p>
                   </div>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
+                  <div className="flex items-start gap-3">
                     <i className="ri-leaf-line text-emerald-500 text-xl"></i>
                     <p className="text-slate-700 dark:text-slate-200"><strong>Sustainability:</strong> First professional sports stadium in North America to achieve LEED Platinum certification with 88 points—the highest score ever for a sports venue</p>
                   </div>
                 </div>
               </div>
-            </div>
+
+              <hr className="editorial-divider" />
+            </article>
 
             {/* History & Legacy */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-history-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-history-line text-emerald-500"></i>
                 History & Legacy
-              </h2>
+              </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 <p>
                   When Atlanta's Georgia Dome was imploded in November 2017, it symbolized more than demolition—it marked a city's commitment to redefining what a modern stadium could be. Mercedes-Benz Stadium cost an estimated $1.6 billion and officially opened on August 26, 2017, with owner Arthur Blank's vision prioritizing fan experience and environmental responsibility over maximizing concession revenue.
@@ -217,14 +215,15 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   For the World Cup, approximately $200 million in upgrades will be completed by summer 2026, including the natural grass installation—a requirement for FIFA competitions. Having successfully hosted the 1996 Summer Olympics, Atlanta becomes one of only two US cities to host both the Olympics and a FIFA World Cup (alongside Los Angeles).
                 </p>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Stadium Architecture & Experience */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-brush-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-brush-line text-emerald-500"></i>
                 Stadium Architecture & Experience
-              </h2>
+              </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 <p>
                   Walk up to Mercedes-Benz Stadium and you'll immediately understand why architecture critics call it a game-changer. Eight massive triangular "petals" formed from ETFE plastic overlap to create a facade that resembles falcon wings—a nod to the home team. The transparent sections create what HOK architects call a "window to the city," flooding the interior with natural light and offering floor-to-ceiling views of Atlanta's downtown skyline.
@@ -239,14 +238,15 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   The stadium's sustainability credentials aren't window dressing. Over 4,000 solar panels generate enough renewable energy to power nine Falcons games or 13 Atlanta United matches. Water-efficient fixtures reduce consumption by 47% compared to baseline standards, while a 2.1 million-gallon stormwater management system includes bioswales and a 680,000-gallon cistern that harvests rainwater for irrigation.
                 </p>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* What Matches to Expect */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-calendar-event-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-calendar-event-line text-emerald-500"></i>
                 What Matches to Expect
-              </h2>
+              </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 <p>
                   Atlanta will host eight World Cup 2026 matches: five group stage games (June 15, 18, 21, 24, 27), one Round of 32 match (July 1), one Round of 16 match (July 7), and a semifinal (July 15). That's the second-most matches among all North American venues, trailing only Dallas.
@@ -258,28 +258,29 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   An economic impact study estimates the World Cup will generate $415 million in revenue for Atlanta—the equivalent of hosting eight Super Bowls in one summer.
                 </p>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Getting to the Stadium */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-route-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-route-line text-emerald-500"></i>
                 Getting to the Stadium
-              </h2>
+              </h3>
 
-              <div className="space-y-6">
-                <div className="p-6 rounded-xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-800/60 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+              <div className="space-y-8">
+                <div>
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-train-line text-emerald-500 text-3xl"></i>
                     By MARTA (Metro)
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     This is your best option, full stop. Take the Blue or Green Line to GWCC/CNN Center Station, which is right at the stadium's doorstep—the preferred arrival and departure point. Vine City Station is the alternative, featuring a pedestrian bridge to the stadium and typically experiencing fewer crowds.
                   </p>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mt-4">
                     If you're on the Red or Gold Line, transfer at Five Points Station to either westbound Blue or Green Line. MARTA fares are just $2.50 each way, and you can purchase roundtrip tickets through the Breeze Mobile 2.0 app to skip the ticket machine lines. Trains run frequently, especially during major events.
                   </p>
-                  <div className="mt-6 p-4 rounded-lg bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
+                  <div className="mt-6">
                     <p className="text-slate-900 dark:text-slate-50 font-semibold mb-3 flex items-center gap-2">
                       <i className="ri-time-line text-emerald-500"></i>
                       <span>Journey Times:</span>
@@ -297,11 +298,11 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   </div>
                 </div>
 
-                <div className="p-6 rounded-xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-800/60 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                <div>
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-car-line text-emerald-500 text-3xl"></i>
                     By Car & Parking
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Over 20,000 parking spots are available within a 20-minute walk, but pre-purchasing passes through the stadium website is essential—lots regularly sell out before World Cup-caliber events. Official lots include the Red Deck, Silver Deck, Blue Lot, and Yellow Lot, with prices typically ranging from $25-$60 depending on proximity.
                   </p>
@@ -310,51 +311,52 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-800/60 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                <div>
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-taxi-line text-emerald-500 text-3xl"></i>
                     By Rideshare/Taxi
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     The designated rideshare pickup zone is at GWCC Bus Lane C on Northside Drive, about a 10-minute walk from Gate 1 via the Home Depot Backyard Bridge. Post-match surge pricing can be brutal—expect 2-3x normal rates. If wait times become excessive, walk to Vine City MARTA Station instead.
                   </p>
                 </div>
 
-                <div className="p-6 rounded-xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-900/60 dark:to-slate-800/60 border border-slate-200 dark:border-slate-700">
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                <div>
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-walk-line text-emerald-500 text-3xl"></i>
                     Walking & Biking
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Downtown Atlanta hotels are 10-20 minutes on foot. The stadium offers free bike valet service starting two hours before events and continuing one hour after, with digital check-in via text message.
                   </p>
                 </div>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Where to Stay */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-hotel-bed-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-hotel-bed-line text-emerald-500"></i>
                 Where to Stay
-              </h2>
+              </h3>
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
                     Budget Options ($80-150/night)
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Look to neighborhoods slightly outside downtown. East Point and Hapeville (near the airport) offer affordable chains with easy MARTA access. Hostels are scarce in Atlanta, but budget hotels along the Red/Gold MARTA lines provide the best value. Book accommodations early—World Cup demand will spike prices dramatically.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-bank-card-line text-emerald-500 text-3xl"></i>
                     Mid-Range ($150-250/night)
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     <strong>Downtown:</strong> Hampton Inn Atlanta-Georgia Tech-Downtown, Hyatt Place Atlanta/Downtown, and Holiday Inn Express Atlanta Downtown sit within walking distance or one MARTA stop from the stadium. The Courtland Grand Hotel and Inn at the Peachtrees offer boutique charm at reasonable rates.
                   </p>
@@ -367,10 +369,10 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-vip-crown-line text-emerald-500 text-3xl"></i>
                     Luxury ($250-500+/night)
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     <strong>Adjacent to Stadium:</strong> Omni Hotel at Centennial Park (0.25 miles) and Embassy Suites by Hilton Atlanta at Centennial Olympic Park offer the closest upscale accommodations, with full-service spas, rooftop pools, and walkability to the stadium.
                   </p>
@@ -385,31 +387,32 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   </p>
                 </div>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Matchday Tips & Insider Advice */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-lightbulb-flash-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-lightbulb-flash-line text-emerald-500"></i>
                 Matchday Tips & Insider Advice
-              </h2>
+              </h3>
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-time-line text-emerald-500 text-3xl"></i>
                     Arrive Early
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Gates typically open 2 hours before kickoff for World Cup matches. Data shows over 6,000 Falcons fans per game now arrive an hour early to enjoy the food and atmosphere—expect World Cup crowds to follow suit. Security lines move efficiently but budget 20-30 minutes for entry during peak arrival times.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-briefcase-line text-emerald-500 text-3xl"></i>
                     Bag Policy
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Mercedes-Benz Stadium enforces a strict clear bag policy: clear bags must not exceed 12" x 6" x 12", or you can bring a small non-clear bag no larger than 4.5" x 6.5". Clear backpacks, fanny packs, and tote bags are permitted. You're allowed one factory-sealed 500mL bottle of water per person—no other outside beverages permitted.
                   </p>
@@ -419,10 +422,10 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-restaurant-line text-emerald-500 text-3xl"></i>
                     Food & Drink Inside
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     This is where Mercedes-Benz Stadium flips the script on stadium economics. Owner Arthur Blank's "fan-first" pricing means hot dogs cost $1.50, pretzels and popcorn $2, pizza and fries $3, and draft beer $5. Soft drinks cost $2 with free refills—prices comparable to street food, not typical stadium gouging.
                   </p>
@@ -435,10 +438,10 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-checkbox-circle-line text-emerald-500 text-3xl"></i>
                     What to Bring
-                  </h3>
+                  </h4>
                   <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 space-y-2 text-lg leading-relaxed">
                     <li>Mobile ticket on your phone (printed tickets may not be accepted)</li>
                     <li>Clear bag (if needed) meeting size requirements</li>
@@ -450,10 +453,10 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
-                    <i className="ri-close-circle-line text-rose-500 text-3xl"></i>
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
+                    <i className="ri-close-circle-line text-emerald-500 text-3xl"></i>
                     What NOT to Do
-                  </h3>
+                  </h4>
                   <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 space-y-2 text-lg leading-relaxed">
                     <li>Don't bring outside food (except baby formula/infant needs), cameras with lenses over 6", selfie sticks, or any professional recording equipment</li>
                     <li>Don't rely on post-match rideshares without expecting surge pricing</li>
@@ -462,30 +465,31 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-train-line text-emerald-500 text-3xl"></i>
                     Post-Match Transport
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     MARTA is your exit strategy. Trains run extended service for major events, though expect packed cars for 30-45 minutes post-match. If rideshare zones have excessive wait times, walk to Vine City MARTA Station for quicker departure. Parking lots clear slowly—budget 45-60 minutes to exit if you drove.
                   </p>
                 </div>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Things to Do Nearby */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-compass-3-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500"></i>
                 Things to Do Nearby
-              </h2>
+              </h3>
 
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
                     Pre-Match (Within 15 Minutes Walk)
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Centennial Olympic Park anchors the entertainment district, surrounded by the Georgia Aquarium (one of the world's largest), World of Coca-Cola, College Football Hall of Fame, and National Center for Civil and Human Rights. The SkyView Atlanta Ferris wheel offers 200-foot views of the cityscape.
                   </p>
@@ -495,20 +499,20 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-restaurant-2-line text-emerald-500 text-3xl"></i>
                     Fan Zones & Bars
-                  </h3>
+                  </h4>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                     Downtown Atlanta isn't known for concentrated sports bar districts, but nearby options include Stats Brewpub and CNN Center food court establishments. For authentic Atlanta nightlife, venture to Midtown (10 minutes via MARTA) for craft cocktail bars along Crescent Avenue, or explore the vibrant BeltLine's Ponce City Market area for rooftop bars with skyline views.
                   </p>
                 </div>
 
                 <div>
-                  <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-2">
+                  <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
                     <i className="ri-community-line text-emerald-500 text-3xl"></i>
                     Post-Match Exploration
-                  </h3>
+                  </h4>
                   <div className="space-y-4">
                     <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                       <strong>The BeltLine (20 minutes via rideshare/MARTA):</strong> Atlanta's converted rail trail connects neighborhoods like Old Fourth Ward and Inman Park, lined with breweries, restaurants, and public art. Krog Street Market and Ponce City Market are food halls showcasing Atlanta's culinary diversity.
@@ -525,25 +529,27 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   </div>
                 </div>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Day Trips */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-map-2-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-map-2-line text-emerald-500"></i>
                 Day Trips
-              </h2>
+              </h3>
               <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 Stone Mountain Park (30 minutes east), Georgia Aquarium, and the Atlanta BeltLine Eastside Trail justify extending your stay beyond matchday.
               </p>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Final Verdict & Key Takeaway */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-award-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-award-line text-emerald-500"></i>
                 Final Verdict & Key Takeaway
-              </h2>
+              </h3>
               <div className="space-y-6">
                 <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                   Mercedes-Benz Stadium isn't just hosting World Cup matches—it's showcasing what happens when visionary ownership meets cutting-edge architecture and genuine commitment to fan experience. The stadium's LEED Platinum certification, revolutionary retractable roof, and fan-first pricing model make it unlike any venue you've experienced. The surrounding downtown energy, MARTA accessibility, and Atlanta's rich civil rights history create a matchday experience that transcends 90 minutes of football.
@@ -558,7 +564,8 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   The world's football elite will descend on Atlanta in 2026. Make sure you're there to witness history beneath the most innovative roof in sports.
                 </p>
               </div>
-            </div>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Bottom Controls - MetLife premium style */}
             <div className="flex justify-end mt-8">
@@ -570,7 +577,7 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 Got It
               </button>
             </div>
-          </div>
+          </section>
         </div>
       )}
     </div>
