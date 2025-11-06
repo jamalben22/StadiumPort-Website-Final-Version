@@ -57,37 +57,41 @@ export function GuadalajaraCityGuide() {
         return null;
       })()}
 
-      {/* Hero Section with Optimized Image */}
-      <section className="relative">
-        <div className="relative h-[360px] md:h-[440px] overflow-hidden">
+      {/* Editorial Hero — matches NYC guide header styling */}
+      <section className="editorial-hero">
+        <div className="editorial-hero-media">
           <OptimizedImage
             src="/images/cities/guadalajara-world-cup-2026.webp"
             alt="Guadalajara skyline – World Cup 2026 host city"
-            className="absolute inset-0"
-            imgClassName="object-cover object-center"
+            className="editorial-hero-image-wrapper"
+            imgClassName="editorial-hero-image"
             width={1600}
             height={900}
             priority={true}
-            placeholder="blur"
+            placeholder="empty"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
-          <div className="absolute bottom-8 left-8 right-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
-                <span className="text-emerald-300 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+          <div className="editorial-hero-overlay"></div>
+        </div>
+        <div className="editorial-hero-content">
+          <div className="editorial-hero-inner">
+            <div className="editorial-hero-eyebrow">
+              <span className="editorial-hero-pulse"></span>
+              <span>FIFA World Cup 2026</span>
+            </div>
+            <h1 className="editorial-hero-title">Guadalajara</h1>
+            <div className="editorial-hero-meta">
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-map-pin-line"></i>
+                <span>Mexico</span>
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Guadalajara</h1>
-              <div className="flex flex-wrap items-center gap-6 text-white/90 text-sm md:text-base font-medium">
-                <div className="flex items-center gap-2">
-                  <i className="ri-map-pin-line text-emerald-300"></i>
-                  <span>Mexico</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <i className="ri-building-line text-emerald-300"></i>
-                  <span>Estadio Akron</span>
-                </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-building-line"></i>
+                <span>Estadio Akron</span>
+              </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-group-line"></i>
+                <span>48,071 capacity</span>
               </div>
             </div>
           </div>

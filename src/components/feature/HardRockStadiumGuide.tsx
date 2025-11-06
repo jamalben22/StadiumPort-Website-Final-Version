@@ -111,39 +111,34 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
           </section>
           )}
 
-          {/* Content Sections */}
-          <div className="p-8 md:p-12 space-y-12">
+          {/* Content Sections — Editorial presentation aligned with NYC */}
+          <main className="editorial-article py-12">
             {/* Where Miami's Sunshine Meets Football's Biggest Stage */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-sun-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body editorial-dropcap">
+              <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+                <i className="ri-sun-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 Where Miami's Sunshine Meets Football's Biggest Stage
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
-                  Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. Hard Rock Stadium will host seven World Cup 2026 matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
-                </p>
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
-                  This isn't just another football stadium. Since opening in 1987, this Miami Gardens landmark has hosted six Super Bowls, the 2024 Copa América final, WrestleMania, and Formula 1's Miami Grand Prix. But what makes it truly special for World Cup 2026 is how it blends cutting-edge design with Miami's irresistible culture — where you can watch elite football in world-class comfort, then dance salsa in Little Havana or soak up South Beach vibes within 30 minutes.
-                </p>
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  The stadium's signature feature? An elegant open-air canopy that provides shade and weather protection while amplifying crowd noise, creating atmosphere that rivals any enclosed arena. Combined with Miami's unmatched international vibe and year-round sunshine, Hard Rock Stadium promises one of World Cup 2026's most memorable experiences.
-                </p>
-              </div>
-            </div>
+              </h3>
+              <p className="leading-relaxed mb-6">
+                Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. Hard Rock Stadium will host seven World Cup 2026 matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
+              </p>
+              <p className="leading-relaxed mb-6">
+                This isn't just another football stadium. Since opening in 1987, this Miami Gardens landmark has hosted six Super Bowls, the 2024 Copa América final, WrestleMania, and Formula 1's Miami Grand Prix. But what makes it truly special for World Cup 2026 is how it blends cutting-edge design with Miami's irresistible culture — where you can watch elite football in world-class comfort, then dance salsa in Little Havana or soak up South Beach vibes within 30 minutes.
+              </p>
+              <p className="leading-relaxed">
+                The stadium's signature feature? An elegant open-air canopy that provides shade and weather protection while amplifying crowd noise, creating atmosphere that rivals any enclosed arena. Combined with Miami's unmatched international vibe and year-round sunshine, Hard Rock Stadium promises one of World Cup 2026's most memorable experiences.
+              </p>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Stadium Overview & Fast Facts */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-information-line text-sky-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-information-line text-sky-400 dark:text-sky-300 text-3xl"></i>
                 Stadium Overview & Fast Facts
-              </h2>
+              </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
                   <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
@@ -223,21 +218,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </ul>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* History & Legacy */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-time-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-time-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 History & Legacy
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Hard Rock Stadium began life in 1987 as Joe Robbie Stadium, named after the Miami Dolphins' founder. It was revolutionary at the time — America's first major multipurpose venue built entirely with private financing, designed to accommodate both American football and baseball seamlessly.
                 </p>
@@ -251,21 +243,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   For World Cup 2026, Miami's selection was strategic. The stadium's proven track record, substantial renovations completed in 2015-16, and Miami's status as an international gateway made it an obvious choice. The city's Cuban, Latin American, and Caribbean populations create a football-mad atmosphere unmatched in most US cities.
                 </p>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Stadium Architecture & Experience */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-building-4-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-building-4-line text-blue-400 dark:text-sky-300 text-3xl"></i>
                 Stadium Architecture & Experience
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Walking into Hard Rock Stadium feels like entering a spaceship that's crash-landed in the tropics. The defining architectural feature is its 14-acre canopy, supported by eight reinforced concrete super columns and 64 locked coil steel cables spanning up to 300 feet. It's engineering poetry — providing shelter from Miami's legendary afternoon downpours and scorching sun without enclosing the stadium, keeping that open-air football atmosphere alive.
                 </p>
@@ -282,38 +271,31 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   Crucially for international visitors, accessibility is strong. The stadium meets modern standards with ADA parking, elevators to all levels, and companion seating throughout. Hard Rock Stadium became the first NFL venue to create a special allergy-friendly kitchen limiting gluten, nuts, milk, and shellfish allergens, ensuring every fan can enjoy the matchday food safely.
                 </p>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* What Matches to Expect */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 border border-slate-200 dark:border-slate-700 rounded-2xl p-8">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-8 flex items-center gap-3">
-                <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 What Matches to Expect
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                   Hard Rock Stadium will host four group stage matches on June 15, 21, 24, and 27, kicking off World Cup action early in the tournament. You'll witness teams fighting for crucial points to advance, with the electric tension only group stage football can deliver.
                 </p>
               </div>
-            </div>
+            </article>
 
             {/* Knockout Stages & Final Phases */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center">
-                  <i className="ri-trophy-line text-emerald-500 dark:text-emerald-300 text-xl"></i>
-                </div>
-                <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50">
-                  The knockout stages bring higher stakes.
-                </h2>
-              </div>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                <i className="ri-trophy-line text-emerald-500 dark:text-emerald-300 text-2xl"></i>
+                The knockout stages bring higher stakes.
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Miami will host one Round of 32 match, one quarterfinal, and the third-place playoff — the bronze medal match that closes out the tournament on July 18. That means Miami gets the honor of hosting one of the final games before the grand finale.
                 </p>
@@ -324,21 +306,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   While specific match assignments remain unconfirmed, the quarterfinal and third-place playoff suggest top-tier teams will grace this pitch. You might witness a heavyweight knockout clash or watch two elite sides battle for bronze in what's often an underrated spectacle of attacking football.
                 </p>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Getting to the Stadium */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-route-line text-sky-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                <i className="ri-route-line text-sky-400 dark:text-sky-300 text-3xl"></i>
                 Getting to the Stadium
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Miami's public transit isn't London or Tokyo, but getting to Hard Rock Stadium for World Cup matches is absolutely manageable with planning. Here are your options:
                 </p>
@@ -452,21 +431,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Where to Stay */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 Where to Stay
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Miami offers accommodation for every budget, but with World Cup 2026 bringing unprecedented crowds, book early. Here's the strategic breakdown:
                 </p>
@@ -474,11 +450,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Near the Stadium (Convenience First) */}
               <div className="mt-6">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                  <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-2xl"></i>
                   Near the Stadium (Convenience First)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Hotels in Miami Gardens, Aventura, and nearby neighborhoods put you closest to matchday action. Properties like Miami Lakes Hotel offer shuttle service to Hard Rock Stadium and appeal to fans prioritizing quick stadium access. Stadium Hotel is literally one mile from Hard Rock Stadium with 217 balcony rooms — perfect if football is your only priority.
                   </p>
@@ -508,11 +484,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Downtown Miami & Brickell (Best Balance) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                  <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
                   Downtown Miami & Brickell (Best Balance)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Downtown/Brickell is as central as it gets, with great public transport, array of dining options, and the FIFA Fan Festival expected downtown so you could walk from your hotel to watch matches on giant screens. It's 25-30 minutes to the stadium but puts you in Miami's cosmopolitan heart.
                   </p>
@@ -542,11 +518,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Miami Beach & South Beach (Ultimate Experience) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-beach-line text-amber-400 dark:text-amber-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                  <i className="ri-beach-line text-amber-400 dark:text-amber-300 text-2xl"></i>
                   Miami Beach & South Beach (Ultimate Experience)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Miami Beach puts you on famous white sand beaches with trendy nightlife and world-class dining, though the big nightclubs are here, about 15 minutes from Downtown by taxi. It's 40-50 minutes to the stadium, but you're living the full Miami dream.
                   </p>
@@ -566,11 +542,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Hollywood & Fort Lauderdale (Value Alternative) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-4 flex items-center gap-3">
+                  <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
                   Hollywood & Fort Lauderdale (Value Alternative)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Dolce by Wyndham Hollywood offers matchday shuttle service to Hard Rock Stadium and sits across from Seminole Hard Rock Casino. Hollywood Beach provides quieter beach vibes than South Beach at better prices.
                   </p>
@@ -587,21 +563,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </div>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Booking Strategy */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-calendar-check-line text-sky-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-calendar-check-line text-sky-400 dark:text-sky-300 text-3xl"></i>
                 Booking Strategy
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <ol className="list-decimal pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
                   <li><strong>Book now.</strong> With nearly 1 million visitors expected, hotels will fill fast</li>
                   <li><strong>Use flexible rate options</strong> through `https://booking.com`  or Expedia to adjust if match schedules change</li>
@@ -609,28 +582,25 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <li><strong>Check hotel shuttle services</strong> — many properties add World Cup shuttles for major events</li>
                 </ol>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Matchday Tips & Insider Advice */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-lightbulb-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-lightbulb-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 Matchday Tips & Insider Advice
-              </h2>
+              </h3>
 
               {/* Arrive Early (Seriously) */}
               <div className="mt-2">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-time-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-time-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
                   Arrive Early (Seriously)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     Plan to arrive at least 1-2 hours before kickoff to find parking, go through security, and get settled. World Cup security will be more thorough than regular Dolphins games. Gates typically open 2-3 hours before kickoff — use that time to soak in the atmosphere, grab food, and explore.
                   </p>
@@ -639,11 +609,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* What to Bring (Bag Policy is Strict) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-shopping-bag-4-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-shopping-bag-4-line text-sky-400 dark:text-sky-300 text-2xl"></i>
                   What to Bring (Bag Policy is Strict)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Hard Rock Stadium enforces a clear bag policy: only clear plastic bags up to 12" x 6" x 12" are permitted, or small clutches no larger than 4.5" x 6.5". This is non-negotiable. Don't show up with a backpack.
                   </p>
@@ -672,11 +642,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Food & Drink Inside */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-restaurant-2-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-restaurant-2-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
                   Food & Drink Inside
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Hard Rock Stadium punches above its weight for stadium cuisine. The venue offers 38 branded food concepts, with 70% sourcing from South Florida vendors. This isn't your typical hotdog-and-nachos situation.
                   </p>
@@ -700,11 +670,11 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Beat the Heat */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-temp-hot-line text-amber-400 dark:text-amber-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-temp-hot-line text-amber-400 dark:text-amber-300 text-2xl"></i>
                   Beat the Heat
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     Miami in June-July is hot. Really hot. Miami's heat can be intense, so carry water and stay hydrated. The canopy provides shade, but it's still 85-95°F (29-35°C) with humidity.
                   </p>
@@ -717,21 +687,18 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </ul>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Post-Match Exit Strategy */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-walk-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-walk-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 Post-Match Exit Strategy
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                   This is where patience pays off. Parking lot and rideshare exits can be chaotic, with reports of "disaster" experiences. Options:
                 </p>
@@ -742,14 +709,14 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <li><strong>Pre-arrange pickup location</strong> away from main gates</li>
                 </ol>
               </div>
-            </div>
+            </article>
 
             {/* What NOT to Do */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-close-circle-line text-rose-400 dark:text-rose-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-close-circle-line text-rose-400 dark:text-rose-300 text-3xl"></i>
                 What NOT to Do
-              </h2>
+              </h3>
               <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
                 <li>Don't bring prohibited bags (you'll waste time going back to car)</li>
                 <li>Don't underestimate travel time — Miami traffic is unpredictable</li>
@@ -757,28 +724,25 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 <li>Don't bring strollers into seating sections (storage available)</li>
                 <li>Don't leave valuables in car — parking lots see heavy foot traffic</li>
               </ul>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Things to Do Nearby */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-3xl"></i>
                 Things to Do Nearby
-              </h2>
+              </h3>
 
               {/* Pre-Match: Fan Zones & Tailgating */}
               <div className="mt-2">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-flag-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-flag-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
                   Pre-Match: Fan Zones & Tailgating
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
                     While Hard Rock Stadium isn't surrounded by traditional sports bars (it's in suburban Miami Gardens), the stadium itself creates the atmosphere. Premium experiences include the Members Lounge in the MIA Event Center and the MIA Garage Tailgate adjacent to the North entrance.
                   </p>
@@ -790,38 +754,35 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Cultural Experiences (20-30 Minutes Away) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-brush-line text-amber-400 dark:text-amber-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-brush-line text-amber-400 dark:text-amber-300 text-2xl"></i>
                   Cultural Experiences (20-30 Minutes Away)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     <strong>Wynwood Walls (25 minutes):</strong><br/>
                     Miami's street art capital featuring famous murals by global artists, craft breweries, trendy cafes, and an outdoor museum atmosphere — admission is free. Perfect for colorful photos and pre-match energy.
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Neighborhood Highlights */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-community-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-community-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 Neighborhood Highlights
-              </h2>
+              </h3>
               {/* Little Havana (30 minutes) */}
               <div className="mt-2">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-community-line text-amber-400 dark:text-amber-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-community-line text-amber-400 dark:text-amber-300 text-2xl"></i>
                   Little Havana (30 minutes)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     Experience Cuban culture at its most vibrant on Calle Ocho (SW 8th Street) with art galleries, Cuban restaurants, the Latin Walk of Fame, and Ball & Chain for live Latin jazz. This is non-negotiable for World Cup visitors wanting authentic Miami culture.
                   </p>
@@ -829,30 +790,27 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               </div>
               {/* South Beach & Art Deco District (40 minutes) */}
               <div className="mt-8">
-                <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-3 flex items-center gap-3">
-                  <i className="ri-building-3-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <h3 className="editorial-h3 mb-3 flex items-center gap-3">
+                  <i className="ri-building-3-line text-sky-400 dark:text-sky-300 text-2xl"></i>
                   South Beach & Art Deco District (40 minutes)
                 </h3>
-                <div className="prose prose-lg max-w-none dark:prose-invert">
+                <div className="max-w-none">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     Famous white sand beaches, turquoise waters, pastel Art Deco buildings, and iconic Ocean Drive. Arrive early morning or late afternoon to avoid peak crowds.
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Nature Escapes */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 Nature Escapes
-              </h2>
+              </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -867,24 +825,21 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Nightlife & Celebration */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-night-clear-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-night-clear-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 Nightlife & Celebration
-              </h2>
+              </h3>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
-                    <i className="ri-beer-line text-emerald-400 dark:text-emerald-300"></i>
+                  <h3 className="editorial-h3 mb-2 flex items-center gap-2">
+                    <i className="ri-beer-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
                     Wynwood Breweries:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -892,8 +847,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
-                    <i className="ri-building-line text-sky-400 dark:text-sky-300"></i>
+                  <h3 className="editorial-h3 mb-2 flex items-center gap-2">
+                    <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl"></i>
                     Brickell Lounges:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -901,8 +856,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
-                    <i className="ri-music-2-line text-rose-400 dark:text-rose-300"></i>
+                  <h3 className="editorial-h3 mb-2 flex items-center gap-2">
+                    <i className="ri-music-2-line text-rose-400 dark:text-rose-300 text-xl"></i>
                     South Beach Clubs:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -910,40 +865,34 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Tours & Activities */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 Tours & Activities
-              </h2>
+              </h3>
               <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
                 <li><strong>Biscayne Bay boat tours</strong> — see celebrity mansions and Miami skyline from water</li>
                 <li><strong>Little Havana food walking tour</strong> — taste authentic Cuban cuisine with cultural context</li>
                 <li><strong>Vizcaya Museum & Gardens</strong> — stunning Italian Renaissance villa overlooking the bay</li>
               </ul>
-            </div>
+            </article>
 
-            {/* Divider '---' */}
-            <div className="relative">
-              <div aria-hidden="true" className="h-px w-full bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent"></div>
-              <span className="sr-only">---</span>
-            </div>
+            {/* Divider */}
+            <hr className="editorial-divider" />
 
             {/* Final Verdict & Key Takeaway */}
-            <div className="bg-white dark:bg-gradient-to-br dark:from-slate-950 dark:to-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-700">
-              <h2 className="text-3xl font-bold text-slate-900 dark:text-slate-50 mb-6 flex items-center gap-3">
-                <i className="ri-star-smile-line text-amber-400 dark:text-amber-300 text-4xl"></i>
+            <article className="editorial-body">
+              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                <i className="ri-star-smile-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                 Final Verdict & Key Takeaway
-              </h2>
-              <div className="prose prose-lg max-w-none dark:prose-invert">
+              </h3>
+              <div className="max-w-none">
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
                   Hard Rock Stadium delivers something rare in World Cup venues: world-class football infrastructure wrapped in genuine cultural excitement. This isn't a soulless suburban bowl — Miami's international DNA, diverse neighborhoods, and infectious energy make it feel like a true World Cup host city.
                 </p>
@@ -966,7 +915,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
               </div>
-            </div>
+            </article>
 
             {/* Bottom Controls — match MetLife premium single button */}
             <div className="flex justify-end mt-8">
@@ -978,7 +927,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Got It
               </button>
             </div>
-          </div>
+          </main>
         </div>
       )}
     </div>
