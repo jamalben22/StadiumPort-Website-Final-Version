@@ -1,274 +1,342 @@
 
-import { useEffect } from 'react';
+import { useEffect, Children } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { Card } from '../../../components/base/Card';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function TermsPage() {
   useEffect(() => {
-    document.title = 'Terms of Service - TravelSmart';
+    document.title = 'Terms of Service - StadiumPort';
   }, []);
+
+  const content = `## **Terms of Service** 
+
+ **Effective Date:** January 15, 2025  
+ **Last Updated:** January 15, 2025 
+
+ Welcome to **Stadiumport**! By accessing or using our website, you agree to these Terms of Service. Please read them carefully. 
+
+ --- 
+
+ ### **1. Acceptance of Terms** 
+
+ By using stadiumport.com (the "Website"), you agree to: 
+ - These Terms of Service 
+ - Our Privacy Policy 
+ - Our Affiliate Disclaimer 
+ - All applicable laws and regulations 
+
+ **If you disagree with any terms, please do not use our Website.** 
+
+ --- 
+
+ ### **2. About Stadiumport** 
+
+ **Stadiumport** provides: 
+ - ✅ Travel guides for 2026 FIFA World Cup stadiums and host cities 
+ - ✅ Information about transport, accommodation, and matchday experiences 
+ - ✅ Affiliate links to third-party booking services 
+ - ✅ Free newsletter with World Cup travel tips 
+
+ **We do NOT:** 
+ - ❌ Sell tickets to World Cup matches 
+ - ❌ Process payments or bookings directly 
+ - ❌ Operate as a travel agency or tour operator 
+ - ❌ Guarantee availability of hotels, flights, or experiences 
+
+ --- 
+
+ ### **3. User Responsibilities** 
+
+ **You Agree To:** 
+ - ✅ Provide accurate information when subscribing or contacting us 
+ - ✅ Use the Website for lawful purposes only 
+ - ✅ Not attempt to hack, disrupt, or damage our systems 
+ - ✅ Not copy, reproduce, or distribute our content without permission 
+ - ✅ Not use automated systems (bots, scrapers) to access our site 
+
+ **You Acknowledge:** 
+ - Travel planning is your responsibility 
+ - You must verify all information before booking 
+ - Stadiumport is not liable for your travel decisions 
+
+ --- 
+
+ ### **4. Intellectual Property** 
+
+ **Our Content:** 
+ All content on Stadiumport—including text, images, logos, graphics, and design—is owned by Stadiumport or licensed to us. This content is protected by copyright, trademark, and other intellectual property laws. 
+
+ **You May:** 
+ - ✅ View and print content for personal, non-commercial use 
+ - ✅ Share links to our pages on social media 
+
+ **You May NOT:** 
+ - ❌ Copy our stadium guides and republish them 
+ - ❌ Use our content for commercial purposes without permission 
+ - ❌ Remove copyright notices or attributions 
+ - ❌ Create derivative works from our content 
+
+ **To request permission for content use, contact us at:** legal@stadiumport.com 
+
+ --- 
+
+ ### **5. Accuracy of Information** 
+
+ We strive for accuracy but **cannot guarantee** that all information is: 
+ - Current and up-to-date 
+ - Complete and error-free 
+ - Suitable for your specific needs 
+
+ **Information May Change:** 
+ - Stadium capacities and configurations 
+ - Transport routes and schedules 
+ - Hotel availability and pricing 
+ - Match schedules and locations 
+ - Travel restrictions and visa requirements 
+
+ **You Must:** 
+ - ✅ Verify critical information with official sources (FIFA, stadium operators, governments) 
+ - ✅ Check travel advisories before booking 
+ - ✅ Confirm bookings directly with service providers 
+
+ --- 
+
+ ### **6. Third-Party Links and Services** 
+
+ **Affiliate Links:** 
+ Our Website contains links to third-party websites (hotels, airlines, tour operators). When you click these links: 
+ - You leave our Website and enter third-party sites 
+ - These companies have their own terms, policies, and practices 
+ - We earn commissions on qualifying purchases at **no extra cost to you** 
+ - We are **NOT responsible** for third-party content, services, or issues 
+
+ **Examples:** 
+ - Booking.com 
+ - Expedia 
+ - Airbnb 
+ - GetYourGuide 
+ - Car rental companies 
+ - Airlines 
+
+ **Issues with bookings must be resolved directly with these companies.** 
+
+ See our **Affiliate Disclaimer** for details. 
+
+ --- 
+
+ ### **7. Disclaimer of Warranties** 
+
+ **THE WEBSITE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.** 
+
+ We disclaim all warranties, express or implied, including: 
+ - ❌ Merchantability 
+ - ❌ Fitness for a particular purpose 
+ - ❌ Non-infringement 
+ - ❌ Accuracy or reliability of information 
+ - ❌ Uninterrupted or error-free operation 
+
+ **Translation:** We provide information to help you, but we can't promise it's perfect. Use at your own risk. 
+
+ --- 
+
+ ### **8. Limitation of Liability** 
+
+ **TO THE MAXIMUM EXTENT PERMITTED BY LAW:** 
+
+ Stadiumport and its owners, employees, and partners **SHALL NOT BE LIABLE** for any: 
+ - Lost profits, revenue, or business opportunities 
+ - Travel disruptions, cancellations, or delays 
+ - Personal injury or property damage 
+ - Incorrect information or outdated content 
+ - Third-party actions or omissions 
+ - Technical issues or data loss 
+
+ **This applies even if we've been advised of the possibility of such damages.** 
+
+ **Your Sole Remedy:** If you're dissatisfied with our Website, stop using it. 
+
+ --- 
+
+ ### **9. Indemnification** 
+
+ You agree to **indemnify and hold harmless** Stadiumport from any claims, damages, losses, or expenses (including legal fees) arising from: 
+ - Your use of the Website 
+ - Your violation of these Terms 
+ - Your violation of any third-party rights 
+ - Your travel decisions based on our content 
+
+ **Translation:** If you do something that gets us sued, you're responsible. 
+
+ --- 
+
+ ### **10. User-Generated Content** 
+
+ If we add features allowing user comments or reviews in the future: 
+ - You grant us a license to use your submissions 
+ - You're responsible for your own content 
+ - We may moderate or remove inappropriate content 
+ - You cannot post illegal, offensive, or infringing material 
+
+ --- 
+
+ ### **11. Email Communications** 
+
+ **Newsletter Subscription:** 
+ - By subscribing, you consent to receive emails from us 
+ - We'll send World Cup guides, travel tips, and affiliate offers 
+ - You can unsubscribe anytime using the link in every email 
+ - We comply with CAN-SPAM Act and anti-spam laws 
+
+ **We Will NOT:** 
+ - ❌ Spam you with excessive emails 
+ - ❌ Sell your email to third parties 
+ - ❌ Send you unrelated marketing 
+
+ --- 
+
+ ### **12. Governing Law** 
+
+ These Terms are governed by the laws of the **United States** and the State of **Delaware**, without regard to conflict of law principles. 
+
+ Any disputes shall be resolved in the courts located in **Delaware**.
+
+ --- 
+
+ ### **13. Changes to Terms** 
+
+ We may modify these Terms at any time. Changes will be posted on this page with a new "Last Updated" date. Continued use after changes constitutes acceptance. 
+
+ **We recommend reviewing these Terms periodically.** 
+
+ --- 
+
+ ### **14. Severability** 
+
+ If any provision of these Terms is found unenforceable, the remaining provisions remain in full effect. 
+
+ --- 
+
+ ### **15. Entire Agreement** 
+
+ These Terms, together with our Privacy Policy and Affiliate Disclaimer, constitute the entire agreement between you and Stadiumport. 
+
+ --- 
+
+ ### **16. Contact Us** 
+
+ Questions about these Terms? 
+
+ **Stadiumport**  
+ Email: legal@stadiumport.com  
+ Website: stadiumport.com 
+
+ --- 
+
+ *These Terms of Service are effective as of January 15, 2025.* 
+
+ --- 
+
+ ---`;
+
+  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
+  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
+  const withMonochromeEmoji = (children: React.ReactNode) => {
+    const arr = Children.toArray(children);
+    const out: React.ReactNode[] = [];
+    arr.forEach((child, i) => {
+      if (typeof child === 'string') {
+        // Only replace when the emoji is at the start of the string segment (start of line)
+        const match = child.match(/^\s*(✅|❌|✓|✕)\s*/);
+        if (match) {
+          const icon = match[1];
+          const symbol = icon === '❌' || icon === '✕' ? '✕' : '✓';
+          out.push(
+            <span key={`emoji-${i}`} className="emoji-black" aria-hidden="false">
+              {symbol}
+            </span>
+          );
+          const rest = child.slice(match[0].length);
+          if (rest) out.push(rest);
+        } else {
+          out.push(child);
+        }
+      } else {
+        out.push(child);
+      }
+    });
+    return out;
+  };
 
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Terms of Service
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Please read these terms carefully before using our services. By using TravelSmart, you agree to these terms.
-              </p>
-              <div className="mt-6 text-sm text-gray-500">
-                Last updated: January 2024
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Content Section */}
-        <section className="py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="prose prose-lg max-w-none">
-              
-              {/* Acceptance of Terms */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Acceptance of Terms</h2>
-                
-                <div className="bg-blue-50 border-l-4 border-blue-400 p-6 mb-6">
-                  <p className="text-blue-800">
-                    By accessing and using TravelSmart ("the Service"), you accept and agree to be bound by the terms and provision of this agreement. If you do not agree to abide by the above, please do not use this service.
-                  </p>
-                </div>
-
-                <div className="space-y-4 text-gray-700">
-                  <p>These Terms of Service ("Terms") govern your use of our website, mobile application, and related services. The Terms constitute a legally binding agreement between you and TravelSmart.</p>
-                  
-                  <p>We reserve the right to update these Terms at any time without prior notice. Your continued use of the Service after any such changes constitutes your acceptance of the new Terms.</p>
-                </div>
-              </div>
-
-              {/* Use of Service */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Use of Service</h2>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-green-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-green-900 mb-4">Permitted Uses</h3>
-                    <ul className="space-y-2 text-green-800">
-                      <li>• Search and book travel accommodations</li>
-                      <li>• Access travel guides and information</li>
-                      <li>• Create and manage your account</li>
-                      <li>• Communicate with customer support</li>
-                      <li>• Share reviews and experiences</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="bg-red-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-red-900 mb-4">Prohibited Uses</h3>
-                    <ul className="space-y-2 text-red-800">
-                      <li>• Violate any applicable laws or regulations</li>
-                      <li>• Impersonate others or provide false information</li>
-                      <li>• Interfere with service functionality</li>
-                      <li>• Upload malicious content or viruses</li>
-                      <li>• Engage in fraudulent activities</li>
-                    </ul>
+        <section className="relative py-28 bg-white">
+          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+            <Card
+              variant="default"
+              padding="xl"
+              border={false}
+              hover={false}
+              animate={false}
+              className="bg-white rounded-3xl"
+            >
+              <div className="relative z-10 p-6 md:p-10">
+                <div className="mx-auto max-w-2xl">
+                  <div
+                    className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter"
+                  >
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        h2: ({ node, ...props }) => (
+                          <h2
+                            className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
+                            {...props}
+                          />
+                        ),
+                        h3: ({ node, ...props }) => (
+                          <h3
+                            className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
+                            {...props}
+                          />
+                        ),
+                        p: ({ node, children, ...props }) => (
+                          <p className="text-slate-700 leading-8" {...props}>
+                            {withMonochromeEmoji(children)}
+                          </p>
+                        ),
+                        ul: ({ node, ...props }) => (
+                          <ul className="lux-ul space-y-2" {...props} />
+                        ),
+                        ol: ({ node, ...props }) => (
+                          <ol className="lux-ol space-y-2" {...props} />
+                        ),
+                        li: ({ node, children, ...props }) => (
+                          <li className="text-slate-700" {...props}>
+                            {withMonochromeEmoji(children)}
+                          </li>
+                        ),
+                        strong: ({ node, ...props }) => (
+                          <strong className="font-semibold text-slate-900" {...props} />
+                        ),
+                        hr: () => (
+                          <hr className="my-12 border-t border-slate-200" />
+                        ),
+                      }}
+                    >
+                      {content}
+                    </ReactMarkdown>
                   </div>
                 </div>
               </div>
-
-              {/* Account Responsibilities */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Account Responsibilities</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Account Security</h3>
-                    <ul className="space-y-2 text-gray-700">
-                      <li>• You are responsible for maintaining the confidentiality of your account credentials</li>
-                      <li>• You must notify us immediately of any unauthorized use of your account</li>
-                      <li>• You are liable for all activities that occur under your account</li>
-                      <li>• We recommend using strong, unique passwords and enabling two-factor authentication</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Accurate Information</h3>
-                    <p className="text-gray-700">
-                      You agree to provide accurate, current, and complete information during registration and to update such information to keep it accurate, current, and complete. Providing false information may result in account suspension or termination.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Booking and Payments */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Booking and Payments</h2>
-                
-                <div className="grid md:grid-cols-3 gap-6 mb-6">
-                  <div className="text-center p-6 bg-emerald-50 rounded-lg">
-                    <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="ri-calendar-check-line text-white text-xl"></i>
-                    </div>
-                    <h3 className="font-semibold text-emerald-900 mb-2">Booking Confirmation</h3>
-                    <p className="text-emerald-800 text-sm">All bookings are subject to availability and confirmation by service providers.</p>
-                  </div>
-                  
-                  <div className="text-center p-6 bg-blue-50 rounded-lg">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="ri-secure-payment-line text-white text-xl"></i>
-                    </div>
-                    <h3 className="font-semibold text-blue-900 mb-2">Secure Payments</h3>
-                    <p className="text-blue-800 text-sm">All payments are processed securely through encrypted payment gateways.</p>
-                  </div>
-                  
-                  <div className="text-center p-6 bg-purple-50 rounded-lg">
-                    <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <i className="ri-refund-line text-white text-xl"></i>
-                    </div>
-                    <h3 className="font-semibold text-purple-900 mb-2">Cancellation Policy</h3>
-                    <p className="text-purple-800 text-sm">Cancellation terms vary by provider and are clearly stated during booking.</p>
-                  </div>
-                </div>
-
-                <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6">
-                  <h3 className="text-xl font-semibold text-yellow-900 mb-3">Important Notice</h3>
-                  <p className="text-yellow-800">
-                    TravelSmart acts as an intermediary between you and travel service providers. We are not responsible for the quality, safety, or legality of services provided by third parties. All bookings are subject to the terms and conditions of the respective service providers.
-                  </p>
-                </div>
-              </div>
-
-              {/* Intellectual Property */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Intellectual Property</h2>
-                
-                <div className="space-y-6">
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Our Content</h3>
-                    <p className="text-gray-700 mb-4">
-                      All content on TravelSmart, including but not limited to text, graphics, logos, images, audio clips, digital downloads, and software, is the property of TravelSmart or its content suppliers and is protected by copyright laws.
-                    </p>
-                    <p className="text-gray-700">
-                      You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of our content without our prior written consent.
-                    </p>
-                  </div>
-
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">User Content</h3>
-                    <p className="text-gray-700">
-                      By submitting content to TravelSmart (reviews, photos, comments), you grant us a non-exclusive, royalty-free, perpetual, and worldwide license to use, modify, and display such content in connection with our services.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Limitation of Liability */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Limitation of Liability</h2>
-                
-                <div className="bg-red-50 border border-red-200 rounded-lg p-6">
-                  <div className="space-y-4 text-red-800">
-                    <p>
-                      <strong>TO THE MAXIMUM EXTENT PERMITTED BY LAW, TRAVELSMART SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING WITHOUT LIMITATION, LOSS OF PROFITS, DATA, USE, GOODWILL, OR OTHER INTANGIBLE LOSSES.</strong>
-                    </p>
-                    
-                    <p>
-                      Our total liability to you for all claims arising from or relating to the service shall not exceed the amount you paid to us in the twelve (12) months preceding the claim.
-                    </p>
-                    
-                    <p>
-                      We are not responsible for delays, cancellations, or other issues caused by third-party service providers, natural disasters, government actions, or other circumstances beyond our reasonable control.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Dispute Resolution */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Dispute Resolution</h2>
-                
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-blue-900 mb-4">Informal Resolution</h3>
-                    <p className="text-blue-800">
-                      Before filing a formal dispute, please contact our customer service team. We are committed to resolving issues quickly and fairly through direct communication.
-                    </p>
-                  </div>
-                  
-                  <div className="bg-green-50 rounded-lg p-6">
-                    <h3 className="text-xl font-semibold text-green-900 mb-4">Formal Arbitration</h3>
-                    <p className="text-green-800">
-                      Any disputes that cannot be resolved informally will be settled through binding arbitration in accordance with the rules of the American Arbitration Association.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Termination */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Termination</h2>
-                
-                <div className="space-y-4 text-gray-700">
-                  <p>
-                    We may terminate or suspend your account and access to the Service immediately, without prior notice or liability, for any reason, including if you breach these Terms.
-                  </p>
-                  
-                  <p>
-                    You may terminate your account at any time by contacting customer service or using the account deletion feature in your profile settings.
-                  </p>
-                  
-                  <p>
-                    Upon termination, your right to use the Service will cease immediately, but provisions that by their nature should survive termination will remain in effect.
-                  </p>
-                </div>
-              </div>
-
-              {/* Governing Law */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Governing Law</h2>
-                
-                <div className="bg-gray-50 rounded-lg p-6">
-                  <p className="text-gray-700">
-                    These Terms shall be governed by and construed in accordance with the laws of the State of New York, without regard to its conflict of law provisions. Any legal action or proceeding arising under these Terms will be brought exclusively in the federal or state courts located in New York, New York.
-                  </p>
-                </div>
-              </div>
-
-              {/* Contact Information */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Us</h2>
-                
-                <div className="bg-emerald-50 rounded-lg p-6">
-                  <p className="text-emerald-800 mb-4">
-                    If you have any questions about these Terms of Service, please contact us:
-                  </p>
-                  
-                  <div className="space-y-2 text-emerald-700">
-                    <p><strong>Email:</strong> legal@travelsmart.com</p>
-                    <p><strong>Address:</strong> 123 Travel Street, Suite 100, New York, NY 10001</p>
-                    <p><strong>Phone:</strong> +1 (555) 123-4567</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Severability */}
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">Severability</h3>
-                <p className="text-blue-800">
-                  If any provision of these Terms is held to be unenforceable or invalid, such provision will be changed and interpreted to accomplish the objectives of such provision to the greatest extent possible under applicable law, and the remaining provisions will continue in full force and effect.
-                </p>
-              </div>
-
-            </div>
+            </Card>
           </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );

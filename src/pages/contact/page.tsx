@@ -1,393 +1,295 @@
-
-import { useEffect, useState } from 'react';
+import { useEffect, Children } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
+import { Card } from '../../components/base/Card';
+import { Button } from '../../components/base/Button';
+import { Link } from 'react-router-dom';
+import { SchemaOrg, generateOrganizationSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
-export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    inquiry_type: 'general'
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
+export default function AboutPage() {
   useEffect(() => {
-    document.title = 'Contact Us - TravelSmart';
+    document.title = 'About Stadiumport - Your World Cup 2026 Travel Companion';
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.');
+    }
+
+    // Add canonical URL
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/about`);
+    }
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
+    { name: 'About', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/about` }
+  ]);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-      setSubmitStatus('error');
-      return;
-    }
+  const organizationSchema = generateOrganizationSchema();
 
-    if (formData.message.length > 500) {
-      setSubmitStatus('error');
-      return;
-    }
+  const content = ` ## **Contact Stadiumport** 
+ 
+ ### **We're Here to Help** 
+ 
+ Have a question about World Cup 2026? Spotted outdated information? Want to share your travel tips? 
+ 
+ **We'd love to hear from you.** 
+ 
+ --- 
+ 
+ ### **Email Us** 
+ 
+ **General Inquiries:**  
+ hello@stadiumport.com *(create this email)* 
+ 
+ **Legal/Privacy Matters:**  
+ legal@stadiumport.com *(create this email)* 
+ 
+ **Partnership Inquiries:**  
+ partnerships@stadiumport.com *(create this email)* 
+ 
+ **Press/Media:**  
+ press@stadiumport.com *(create this email)* 
+ 
+ --- 
+ 
+ ### **What We Can Help With** 
+ 
+ ✅ World Cup 2026 travel planning questions  
+ ✅ Stadium and city guide recommendations  
+ ✅ Corrections or updates to our content  
+ ✅ Partnership and collaboration opportunities  
+ ✅ Press and media inquiries  
+ ✅ Privacy and data requests  
+ ✅ Technical website issues  
+ 
+ --- 
+ 
+ ### **Response Time** 
+ 
+ We typically respond within **24-48 hours** on business days. During peak World Cup planning season (March-July 2026), response times may be slightly longer due to high volume. 
+ 
+ --- 
+ 
+ ### **Before You Email** 
+ 
+ **Check Our Resources First:** 
+ - 📍 [All 16 Stadiums Guide](#) - Stadium-specific questions 
+ - 🏙️ [Host Cities Guide](#) - City travel planning 
+ - ❓ [FAQ](#) - Common questions answered 
+ - 🛡️ [Privacy Policy](#) - Data and privacy concerns 
+ 
+ --- 
+ 
+ ### **Newsletter Subscription Issues** 
+ 
+ **Not receiving our emails?** 
+ - Check your spam/junk folder 
+ - Add hello@stadiumport.com to your contacts 
+ - Ensure you confirmed your subscription (check for confirmation email) 
+ 
+ **Want to unsubscribe?** 
+ - Click "Unsubscribe" at the bottom of any email 
+ - Or email us to be removed manually 
+ 
+ --- 
+ 
+ ### **Report an Issue** 
+ 
+ **Found incorrect information?** 
+ We strive for accuracy. If you spot an error: 
+ - Email us with the page URL 
+ - Describe the issue clearly 
+ - Provide the correct information (with source if possible) 
+ 
+ We'll investigate and update promptly. 
+ 
+ --- 
+ 
+ ### **Partnership Opportunities** 
+ 
+ **Travel Brands & Services:** 
+ Interested in partnering with Stadiumport? Email partnerships@stadiumport.com with: 
+ - Your company and services 
+ - How you serve World Cup travelers 
+ - Partnership proposal 
+ 
+ We're selective about partnerships and prioritize companies that genuinely benefit our audience. 
+ 
+ --- 
+ 
+ ### **Social Media** 
+ 
+ **Follow our World Cup journey:** 
+ - 🐦 **Twitter:** [@stadiumport](#) *(link when created)* 
+ - 📷 **Instagram:** [@stadiumport](#) *(link when created)* 
+ - 📘 **Facebook:** [Stadiumport](#) *(link when created)* 
+ 
+ *Social media is monitored less frequently than email. For urgent matters, please email us.* 
+ 
+ --- 
+ 
+ ### **Mailing Address** 
+ 
+ **Stadiumport**  
+ [Your business address - can use a PO Box or virtual office for privacy]  
+ [City, State, ZIP]  
+ United States 
+ 
+ *(Only needed for formal legal correspondence)* 
+ 
+ --- 
+ 
+ ### **Office Hours** 
+ 
+ We operate Monday-Friday, 9:00 AM - 5:00 PM EST. 
+ 
+ *Note: Stadiumport is a digital operation. We do not have a physical office for visitors.* 
+ 
+ --- 
+ 
+ ### **DMCA / Copyright Issues** 
+ 
+ If you believe content on Stadiumport infringes your copyright, email legal@stadiumport.com with: 
+ - Your contact information 
+ - Description of copyrighted work 
+ - Location of infringing material on our site 
+ - Good faith statement 
+ - Statement of accuracy under penalty of perjury 
+ - Physical or electronic signature 
+ 
+ We take intellectual property seriously and will respond promptly. 
+ 
+ --- 
+ 
+ ### **Legal Notices** 
+ 
+ For formal legal notices, correspondence, or GDPR/CCPA requests, email: 
+ 
+ **legal@stadiumport.com** 
+ 
+ Include "LEGAL NOTICE" in the subject line. 
+ 
+ --- 
+ 
+ ### **Thank You** 
+ 
+ We appreciate you taking the time to reach out. Stadiumport exists to serve World Cup fans, and your feedback helps us improve. 
+ 
+ **Safe travels, and see you in 2026!** ⚽ 
+ 
+ --- 
+ 
+ **Stadiumport**  
+ *Your World Cup 2026 Travel Companion* 
+ 
+ Email: hello@stadiumport.com  
+ Website: stadiumport.com 
+ 
+ --- 
+ 
+ ---`;
 
-    setIsSubmitting(true);
-    setSubmitStatus('idle');
-
-    try {
-      const response = await fetch('https://readdy.ai/api/form/d3v9bfhsbcb07rsl7pn0', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData).toString()
-      });
-
-      if (response.ok) {
-        setSubmitStatus('success');
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: '',
-          inquiry_type: 'general'
-        });
+  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
+  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
+  const withMonochromeEmoji = (children: React.ReactNode) => {
+    const arr = Children.toArray(children);
+    const out: React.ReactNode[] = [];
+    arr.forEach((child, i) => {
+      if (typeof child === 'string') {
+        // Only replace when the emoji is at the start of the string segment (start of line)
+        const match = child.match(/^\s*(✅|❌|✓|✕)\s*/);
+        if (match) {
+          const icon = match[1];
+          const symbol = icon === '❌' || icon === '✕' ? '✕' : '✓';
+          out.push(
+            <span key={`emoji-${i}`} className="emoji-black" aria-hidden="false">
+              {symbol}
+            </span>
+          );
+          const rest = child.slice(match[0].length);
+          if (rest) out.push(rest);
+        } else {
+          out.push(child);
+        }
       } else {
-        setSubmitStatus('error');
+        out.push(child);
       }
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
+    });
+    return out;
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
-      
       <main className="pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-teal-50 to-emerald-50 py-16">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Contact Us
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Have questions about your travel plans? Need help with bookings? We're here to help you every step of the way.
-              </p>
-            </div>
+        <section className="relative py-28 bg-white">
+          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+            <Card
+              variant="default"
+              padding="xl"
+              border={false}
+              hover={false}
+              animate={false}
+              className="bg-white rounded-3xl"
+            >
+              <div className="relative z-10 p-6 md:p-10">
+                <div className="mx-auto max-w-2xl">
+                  <div
+                    className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter"
+                  >
+                    <ReactMarkdown
+                      remarkPlugins={[remarkGfm]}
+                      components={{
+                        h2: ({ node, ...props }) => (
+                          <h2
+                            className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
+                            {...props}
+                          />
+                        ),
+                        h3: ({ node, ...props }) => (
+                          <h3
+                            className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
+                            {...props}
+                          />
+                        ),
+                        p: ({ node, children, ...props }) => (
+                          <p className="text-slate-700 leading-8" {...props}>
+                            {withMonochromeEmoji(children)}
+                          </p>
+                        ),
+                        ul: ({ node, ...props }) => (
+                          <ul className="lux-ul space-y-2" {...props} />
+                        ),
+                        ol: ({ node, ...props }) => (
+                          <ol className="lux-ol space-y-2" {...props} />
+                        ),
+                        li: ({ node, children, ...props }) => (
+                          <li className="text-slate-700" {...props}>
+                            {withMonochromeEmoji(children)}
+                          </li>
+                        ),
+                        strong: ({ node, ...props }) => (
+                          <strong className="font-semibold text-slate-900" {...props} />
+                        ),
+                        hr: () => (
+                          <hr className="my-12 border-t border-slate-200" />
+                        ),
+                      }}
+                    >
+                      {content}
+                    </ReactMarkdown>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </section>
-
-        {/* Contact Content */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-3 gap-12">
-              
-              {/* Contact Information */}
-              <div className="lg:col-span-1">
-                <div className="space-y-8">
-                  
-                  {/* Get in Touch */}
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-                    <p className="text-gray-600 mb-6">
-                      Our travel experts are ready to help you plan your perfect trip. Reach out to us through any of the channels below.
-                    </p>
-                  </div>
-
-                  {/* Contact Methods */}
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i className="ri-mail-line text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Email Us</h3>
-                        <p className="text-gray-600 text-sm mb-2">Get a response within 24 hours</p>
-                        <a href="mailto:support@travelsmart.com" className="text-emerald-600 hover:text-emerald-700 font-medium">
-                          support@travelsmart.com
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i className="ri-phone-line text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Call Us</h3>
-                        <p className="text-gray-600 text-sm mb-2">Mon-Fri, 9AM-6PM EST</p>
-                        <a href="tel:+15551234567" className="text-blue-600 hover:text-blue-700 font-medium">
-                          +1 (555) 123-4567
-                        </a>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i className="ri-map-pin-line text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Visit Us</h3>
-                        <p className="text-gray-600 text-sm mb-2">Our headquarters</p>
-                        <address className="text-purple-600 not-italic">
-                          123 Travel Street<br />
-                          Suite 100<br />
-                          New York, NY 10001
-                        </address>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-green-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <i className="ri-chat-3-line text-white text-xl"></i>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-1">Live Chat</h3>
-                        <p className="text-gray-600 text-sm mb-2">Available 24/7 for urgent inquiries</p>
-                        <button className="text-green-600 hover:text-green-700 font-medium">
-                          Start Chat
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Business Hours */}
-                  <div className="bg-gray-50 rounded-lg p-6">
-                    <h3 className="font-semibold text-gray-900 mb-4">Business Hours</h3>
-                    <div className="space-y-2 text-sm">
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Monday - Friday</span>
-                        <span className="text-gray-900">9:00 AM - 6:00 PM EST</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Saturday</span>
-                        <span className="text-gray-900">10:00 AM - 4:00 PM EST</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-gray-600">Sunday</span>
-                        <span className="text-gray-900">Closed</span>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              {/* Contact Form */}
-              <div className="lg:col-span-2">
-                <div className="bg-white border border-gray-200 rounded-2xl shadow-lg p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h2>
-                  
-                  <form id="contact-form" onSubmit={handleSubmit} data-readdy-form className="space-y-6">
-                    
-                    {/* Name and Email */}
-                    <div className="grid md:grid-cols-2 gap-6">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                          Full Name *
-                        </label>
-                        <input
-                          type="text"
-                          id="name"
-                          name="name"
-                          value={formData.name}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm"
-                          placeholder="Enter your full name"
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                          Email Address *
-                        </label>
-                        <input
-                          type="email"
-                          id="email"
-                          name="email"
-                          value={formData.email}
-                          onChange={handleInputChange}
-                          required
-                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm"
-                          placeholder="Enter your email address"
-                        />
-                      </div>
-                    </div>
-
-                    {/* Inquiry Type */}
-                    <div>
-                      <label htmlFor="inquiry_type" className="block text-sm font-medium text-gray-700 mb-2">
-                        Inquiry Type
-                      </label>
-                      <select
-                        id="inquiry_type"
-                        name="inquiry_type"
-                        value={formData.inquiry_type}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm pr-8"
-                      >
-                        <option value="general">General Inquiry</option>
-                        <option value="booking">Booking Assistance</option>
-                        <option value="technical">Technical Support</option>
-                        <option value="partnership">Partnerhip Opportunities</option>
-                        <option value="feedback">Feedback & Suggestions</option>
-                        <option value="press">Press & Media</option>
-                      </select>
-                    </div>
-
-                    {/* Subject */}
-                    <div>
-                      <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                        Subject *
-                      </label>
-                      <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        value={formData.subject}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm"
-                        placeholder="Brief description of your inquiry"
-                      />
-                    </div>
-
-                    {/* Message */}
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                        Message * <span className="text-gray-500 text-xs">(Max 500 characters)</span>
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        maxLength={500}
-                        rows={6}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors text-sm resize-none"
-                        placeholder="Please provide details about your inquiry..."
-                      />
-                      <div className="text-right text-xs text-gray-500 mt-1">
-                        {formData.message.length}/500 characters
-                      </div>
-                    </div>
-
-                    {/* Submit Button */}
-                    <div>
-                      <button
-                        type="submit"
-                        disabled={isSubmitting}
-                        className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-emerald-600 hover:to-teal-700 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
-                      >
-                        {isSubmitting ? (
-                          <span className="flex items-center justify-center">
-                            <i className="ri-loader-4-line animate-spin mr-2"></i>
-                            Sending Message...
-                          </span>
-                        ) : (
-                          <span className="flex items-center justify-center">
-                            <i className="ri-send-plane-line mr-2"></i>
-                            Send Message
-                          </span>
-                        )}
-                      </button>
-                    </div>
-
-                    {/* Status Messages */}
-                    {submitStatus === 'success' && (
-                      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                        <div className="flex items-center">
-                          <i className="ri-check-circle-line text-green-600 text-xl mr-3"></i>
-                          <div>
-                            <h4 className="font-medium text-green-900">Message Sent Successfully!</h4>
-                            <p className="text-green-700 text-sm">We'll get back to you within 24 hours.</p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                    {submitStatus === 'error' && (
-                      <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                        <div className="flex items-center">
-                          <i className="ri-error-warning-line text-red-600 text-xl mr-3"></i>
-                          <div>
-                            <h4 className="font-medium text-red-900">Error Sending Message</h4>
-                            <p className="text-red-700 text-sm">Please check all fields and try again, or contact us directly.</p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-
-                  </form>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-              <p className="text-gray-600">Quick answers to common questions</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">How quickly do you respond to inquiries?</h3>
-                  <p className="text-gray-600 text-sm">We typically respond to all inquiries within 24 hours during business days. Urgent matters are handled within 2-4 hours.</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">Can you help with last-minute bookings?</h3>
-                  <p className="text-gray-600 text-sm">Yes! Our team specializes in last-minute travel arrangements. Contact us by phone for the fastest assistance with urgent bookings.</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibent text-gray-900 mb-2">Do you charge fees for booking assistance?</h3>
-                  <p className="text-gray-600 text-sm">Our basic travel advice and booking assistance is completely free. We earn commissions from our travel partners when you book through our platform.</p>
-                </div>
-              </div>
-
-              <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">What if I need to cancel or modify my booking?</h3>
-                  <p className="text-gray-600 text-sm">Cancellation and modification policies vary by provider. Contact us immediately and we'll help you understand your options and process any changes.</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">Do you offer group travel planning?</h3>
-                  <p className="text-gray-600 text-sm">Absolutely! We specialize in group travel for families, corporate events, and special occasions. Contact us to discuss your group's specific needs.</p>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 shadow-sm">
-                  <h3 className="font-semibold text-gray-900 mb-2">Can you help with travel insurance?</h3>
-                  <p className="text-gray-600 text-sm">Yes, we can recommend and help you purchase travel insurance that fits your specific trip and coverage needs.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
       </main>
-
       <Footer />
     </div>
   );

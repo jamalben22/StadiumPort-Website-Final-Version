@@ -100,13 +100,7 @@ export function Footer() {
               </button>
             </form>
             
-            <div className="flex justify-center items-center space-x-4 text-slate-400 text-sm mt-4">
-              <span>✓ Free stadium guide included</span>
-              <span>•</span>
-              <span>✓ Unsubscribe anytime</span>
-              <span>•</span>
-              <span>✓ No spam</span>
-            </div>
+
             
             {/* Status Messages */}
             {submitStatus === 'success' && (
@@ -259,10 +253,10 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 mb-4 md:mb-0">
               {[
                 { to: '/about', label: 'About Us' },
+                { to: '/contact', label: 'Contact Us' },
                 { to: '/legal/privacy', label: 'Privacy Policy' },
                 { to: '/legal/terms', label: 'Terms of Service' },
-                { to: '/legal/affiliate-disclaimer', label: 'Affiliate Disclaimer' },
-                { to: '/contact', label: 'Contact Us' }
+                { to: '/legal/affiliate-disclaimer', label: 'Affiliate Disclaimer' }
               ].map((item, index) => (
                 <Link 
                   key={item.to}

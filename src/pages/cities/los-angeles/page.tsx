@@ -4,6 +4,17 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 
+// Helper: convert **...** emphasis to <strong> while preserving text and spacing
+const renderBoldText = (input: string) => {
+  const parts = input.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, index) => {
+    if (part.startsWith('**') && part.endsWith('**')) {
+      return <strong key={index}>{part.slice(2, -2)}</strong>;
+    }
+    return part;
+  });
+};
+
 export default function LosAngelesArticlePage() {
   const pageUrl = '/world-cup-2026-host-cities/los-angeles';
 
@@ -299,13 +310,13 @@ Book Smart: Four Seasons Beverly Hills justifies the splurge with impeccable ser
                 El Tráfico: The Rivalry That Defines LA Soccer
               </h4>
               <p className="whitespace-pre-line">
-                 {`Los Angeles isn't just hosting the World Cup—it's already living and breathing football culture year-round through one of MLS's fiercest rivalries: El Tráfico. When LA Galaxy (founded 1996, five-time MLS champions, based in suburban Carson at Dignity Health Sports Park) face Los Angeles FC (launched 2018, MLS Cup 2022 winners, downtown at Banc of California Stadium), the city splits down supporter lines.
+                 {renderBoldText(`Los Angeles isn't just hosting the World Cup—it's already living and breathing football culture year-round through one of MLS's fiercest rivalries: El Tráfico. When LA Galaxy (founded 1996, five-time MLS champions, based in suburban Carson at Dignity Health Sports Park) face Los Angeles FC (launched 2018, MLS Cup 2022 winners, downtown at Banc of California Stadium), the city splits down supporter lines.
 
 **The Galaxy Way**: Legacy, history, "Since '96" pride. They brought David Beckham to MLS, hosted Zlatan Ibrahimović, and represent suburban family-friendly football culture. Their supporters believe in earned respect through decades of championships.
 
 **The LAFC Difference**: Downtown energy, The 3252 supporters' section, Black Army ultras culture, and a stadium built specifically for soccer in the heart of the city. They're the scrappy upstart that won everything fast and made Galaxy fans nervous.
 
-Visit BMO Stadium (formerly Banc of California, LAFC's home) before or after World Cup matches to understand what American soccer can be when done right. The 22,000-seat venue sits adjacent to USC campus, accessible via Expo Line Metro, and hosts some of the most passionate supporters in North American sports.`}
+Visit BMO Stadium (formerly Banc of California, LAFC's home) before or after World Cup matches to understand what American soccer can be when done right. The 22,000-seat venue sits adjacent to USC campus, accessible via Expo Line Metro, and hosts some of the most passionate supporters in North American sports.`)}
                </p>
              </div>
 
@@ -315,7 +326,7 @@ Visit BMO Stadium (formerly Banc of California, LAFC's home) before or after Wor
                  Where to Watch With Locals
                </h4>
                <p className="whitespace-pre-line">
-                 {`Los Angeles boasts nearly 40 **LAFC-affiliated pubs** plus countless Galaxy bars, giving you authentic matchday experiences even when you're not at SoFi:
+                 {renderBoldText(`Los Angeles boasts nearly 40 **LAFC-affiliated pubs** plus countless Galaxy bars, giving you authentic matchday experiences even when you're not at SoFi:
 
 - **La Chuperia** (Lincoln Heights): LAFC stronghold with micheladas and carne asada
 - **The Sunset Room** (Hacienda Heights): East LA Galaxy faithful
@@ -323,7 +334,7 @@ Visit BMO Stadium (formerly Banc of California, LAFC's home) before or after Wor
 - **Britannia Pub** (Santa Monica): Leeds United supporters' west-side haven
 - **La Cita Bar** (Downtown): Mexican national team watch parties with full mariachi energy
 
-During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** (near Downtown, accessible via Expo Line) with big screens, food vendors, and cultural programming. Additional fan zones will dot Hollywood Park around SoFi and LA Live entertainment complex downtown.`}
+During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** (near Downtown, accessible via Expo Line) with big screens, food vendors, and cultural programming. Additional fan zones will dot Hollywood Park around SoFi and LA Live entertainment complex downtown.`)}
                </p>
              </div>
 
@@ -333,7 +344,7 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                  Angel City FC: Women's Game Rising
                </h4>
                <p className="whitespace-pre-line">
-                 {`Don't sleep on **Angel City FC** (NWSL), LA's women's professional team that proves the city's football passion extends beyond MLS. Founded in 2020 with ownership including actress Natalie Portman, tennis legend Serena Williams, and 13 former USWNT players, ACFC brings Banc of California Stadium alive with The Angel City Brigade supporters and matches that deserve your attention. With the USWNT scheduled to face Brazil at SoFi on April 5, 2026 (testing the World Cup grass installation), women's soccer momentum builds toward the tournament.`}
+                 {renderBoldText(`Don't sleep on **Angel City FC** (NWSL), LA's women's professional team that proves the city's football passion extends beyond MLS. Founded in 2020 with ownership including actress Natalie Portman, tennis legend Serena Williams, and 13 former USWNT players, ACFC brings Banc of California Stadium alive with The Angel City Brigade supporters and matches that deserve your attention. With the USWNT scheduled to face Brazil at SoFi on April 5, 2026 (testing the World Cup grass installation), women's soccer momentum builds toward the tournament.`)}
                </p>
              </div>
            </div>
@@ -354,11 +365,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                  Sun, Sand & Surf
                </h4>
                <p className="whitespace-pre-line">
-                 {`**Santa Monica & Venice Beach**: Connected by a gorgeous bike/walk path, these beaches define California cool. Rent bikes ($10-15/day via Metro Bike Share), watch surfers at Venice Pier, people-watch on Venice Boardwalk's funky scene, and catch sunset from Santa Monica Pier's amusement park.
+                 {renderBoldText(`**Santa Monica & Venice Beach**: Connected by a gorgeous bike/walk path, these beaches define California cool. Rent bikes ($10-15/day via Metro Bike Share), watch surfers at Venice Pier, people-watch on Venice Boardwalk's funky scene, and catch sunset from Santa Monica Pier's amusement park.
 
 **Manhattan & Hermosa Beach**: South Bay beaches offer mellower vibes, better for families. Small aquariums, pedestrian-friendly downtown areas, and beach volleyball culture that's pure SoCal.
 
-**Malibu**: Drive north on Pacific Coast Highway for dramatic coastline, celebrity homes (from a distance), and beaches that feel like undiscovered gems despite Malibu's reputation.`}
+**Malibu**: Drive north on Pacific Coast Highway for dramatic coastline, celebrity homes (from a distance), and beaches that feel like undiscovered gems despite Malibu's reputation.`)}
                </p>
              </div>
 
@@ -368,13 +379,13 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                  Cultural Heavy-Hitters
                </h4>
                <p className="whitespace-pre-line">
-                 {`**Griffith Observatory**: Perched in Griffith Park, this 1935 art deco beauty offers free admission (parking $10), planetarium shows, and the best views of the Hollywood Sign and LA basin. Go at sunset, stay for city lights. Metro doesn't reach it directly; rideshare or DASH shuttle from Hollywood/Western Metro.
+                 {renderBoldText(`**Griffith Observatory**: Perched in Griffith Park, this 1935 art deco beauty offers free admission (parking $10), planetarium shows, and the best views of the Hollywood Sign and LA basin. Go at sunset, stay for city lights. Metro doesn't reach it directly; rideshare or DASH shuttle from Hollywood/Western Metro.
 
 **The Getty Center**: Free admission (parking $20) to this architectural masterpiece in Brentwood showcasing European art, stunning gardens, and panoramic valley views. Worth a half-day minimum.
 
 **LACMA (Los Angeles County Museum of Art)**: Massive collection spanning ancient to contemporary art. The Urban Light installation (those iconic vintage streetlamps) anchors Miracle Mile's Museum Row. Walking distance from Fairfax District's Farmers Market.
 
-**The Broad** (Downtown): Free contemporary art museum (reservations recommended) featuring Kusama's Infinity Mirrors and works by Basquiat, Warhol, and Koons. Walkable from Grand Park and Disney Concert Hall.`}
+**The Broad** (Downtown): Free contemporary art museum (reservations recommended) featuring Kusama's Infinity Mirrors and works by Basquiat, Warhol, and Koons. Walkable from Grand Park and Disney Concert Hall.`)}
                </p>
              </div>
 
@@ -384,13 +395,13 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                  Neighborhood Explorations
                </h4>
                <p className="whitespace-pre-line">
-                 {`**Los Feliz & Silver Lake**: Hipster havens northeast of Hollywood with vintage shops, excellent brunch spots (Pine & Crane for Taiwanese, All Day Baby for new American), and Barnsdall Art Park's Frank Lloyd Wright Hollyhock House.
+                 {renderBoldText(`**Los Feliz & Silver Lake**: Hipster havens northeast of Hollywood with vintage shops, excellent brunch spots (Pine & Crane for Taiwanese, All Day Baby for new American), and Barnsdall Art Park's Frank Lloyd Wright Hollyhock House.
 
 **Koreatown**: Dense, 24-hour energy with insane Korean BBQ (open late for post-match gorging), karaoke bars, spas, and The Line Hotel's rooftop for cocktails with views.
 
 **Arts District** (Downtown): Warehouse-turned-gallery neighborhood with street art murals, Bestia (possibly LA's best Italian), Angel City Brewery, and Hauser & Wirth contemporary art gallery.
 
-**Hollywood Hills Hikes**: Runyon Canyon (crowded but convenient), Griffith Park trails (to the Observatory or beyond), and Bronson Canyon (where the Batcave was filmed) offer workout-with-views experiences.`}
+**Hollywood Hills Hikes**: Runyon Canyon (crowded but convenient), Griffith Park trails (to the Observatory or beyond), and Bronson Canyon (where the Batcave was filmed) offer workout-with-views experiences.`)}
                </p>
              </div>
 
@@ -400,7 +411,7 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                  Food Scenes You Can't Miss
                </h4>
                <p className="whitespace-pre-line">
-                 {`Los Angeles is arguably America's best food city, rivaling New York with deeper Mexican, Korean, Japanese, and Thai options:
+                 {renderBoldText(`Los Angeles is arguably America's best food city, rivaling New York with deeper Mexican, Korean, Japanese, and Thai options:
 
 **Tacos**: LA's taco trucks operate 24/7. Leo's Tacos (Hollywood), Tacos El Gordo (Chula Vista with LA outpost), and literally hundreds of neighborhood spots serve authenticity.
 
@@ -410,7 +421,7 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
 
 **High-End Splurge**: Providence (Michelin two-star seafood), Bestia (Arts District Italian), or République (French bistro in Hancock Park).
 
-**Grand Central Market** (Downtown): Historic food hall with everything from Eggslut breakfast sandwiches to Sarita's Pupuseria to G&B Coffee's minimalist espresso.`}
+**Grand Central Market** (Downtown): Historic food hall with everything from Eggslut breakfast sandwiches to Sarita's Pupuseria to G&B Coffee's minimalist espresso.`)}
                </p>
              </div>
            </div>
@@ -431,11 +442,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                 Weather & What to Pack
               </h4>
               <p className="whitespace-pre-line">
-                {`**June in LA**: Near-perfect. Daytime highs average 26-27°C (79-81°F), dropping to 15-17°C (59-63°F) at night. Virtually zero rain (June averages just 3mm total precipitation). Ten hours of sunshine daily. Coastal areas might experience "June Gloom"—morning fog that burns off by noon.
+                {renderBoldText(`**June in LA**: Near-perfect. Daytime highs average 26-27°C (79-81°F), dropping to 15-17°C (59-63°F) at night. Virtually zero rain (June averages just 3mm total precipitation). Ten hours of sunshine daily. Coastal areas might experience "June Gloom"—morning fog that burns off by noon.
 
 **July heats up** to 28-30°C (82-86°F) days, 18-20°C (64-68°F) nights. Still dry, still sunny, slightly warmer for later matches.
 
-**Pack**: Sunscreen (SPF 50+), sunglasses, hat, light layers for evening, comfortable walking shoes (you'll log serious steps), team jerseys, and that camera. Evening matches under SoFi's canopy with ocean breezes can feel surprisingly cool—throw a light jacket in your bag.`}
+**Pack**: Sunscreen (SPF 50+), sunglasses, hat, light layers for evening, comfortable walking shoes (you'll log serious steps), team jerseys, and that camera. Evening matches under SoFi's canopy with ocean breezes can feel surprisingly cool—throw a light jacket in your bag.`)}
               </p>
             </div>
 
@@ -445,14 +456,14 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
                 Safety & Street Smarts
               </h4>
               <p className="whitespace-pre-line">
-                {`LA is generally safe for tourists in main areas, but street smarts apply:
+                {renderBoldText(`LA is generally safe for tourists in main areas, but street smarts apply:
 
 - **Avoid**: Skid Row (Downtown east of Alameda), walking alone late at night in deserted areas near stadiums post-match
 - **Watch**: Belongings on Metro (pickpocketing happens); car break-ins if you drive (don't leave visible valuables)
 - **Stay aware**: In Hollywood, some blocks feel sketchy at night beyond the main tourist drag
 - **Use common sense**: Groups are safer; well-lit areas are better; Uber/Lyft after late matches beats walking unknown neighborhoods
 
-Popular tourist neighborhoods (Santa Monica, West Hollywood, Beverly Hills, Hollywood tourist zone) are well-patrolled and designed for visitors.`}
+Popular tourist neighborhoods (Santa Monica, West Hollywood, Beverly Hills, Hollywood tourist zone) are well-patrolled and designed for visitors.`)}
               </p>
             </div>
 
@@ -474,7 +485,7 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
                 Visa Requirements
               </h4>
               <p className="whitespace-pre-line">
-                {`International visitors (except Canadian and some visa waiver countries): Apply for **B-2 tourist visa** well in advance. Processing can take weeks during World Cup surge. Visa waiver program (ESTA) applies to many European, Asian, and Latin American countries—check eligibility at travel.state.gov.`}
+                {renderBoldText(`International visitors (except Canadian and some visa waiver countries): Apply for **B-2 tourist visa** well in advance. Processing can take weeks during World Cup surge. Visa waiver program (ESTA) applies to many European, Asian, and Latin American countries—check eligibility at travel.state.gov.`)}
               </p>
             </div>
 
@@ -505,11 +516,11 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
                 When to Book
               </h4>
               <p className="whitespace-pre-line">
-                {`**Now**. Seriously. Los Angeles hotel inventory gets crushed during major events, and the World Cup dwarfs typical demand. June 2026 accommodation prices will soar as dates approach.
+                {renderBoldText(`**Now**. Seriously. Los Angeles hotel inventory gets crushed during major events, and the World Cup dwarfs typical demand. June 2026 accommodation prices will soar as dates approach.
 
 **Flight Strategy**: LAX is America's third-busiest airport with direct international connections from everywhere. Book 6-9 months out for best fares. Consider flying into Burbank (BUR) for Hollywood-area stays or Long Beach (LGB) for South Bay access—both smaller airports with less chaos.
 
-**Hotel Bundles**: Many travel booking platforms offer flight+hotel packages that save 10-20% versus separate bookings. Look for deals that include Metro passes or airport transfers.`}
+**Hotel Bundles**: Many travel booking platforms offer flight+hotel packages that save 10-20% versus separate bookings. Look for deals that include Metro passes or airport transfers.`)}
               </p>
             </div>
 
@@ -519,11 +530,11 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
                 Where to Hunt Deals
               </h4>
               <p className="whitespace-pre-line">
-                {`**Comparison Sites**: Start with the usual suspects (Booking.com, Expedia, Hotels.com) but cross-reference prices directly on hotel websites—sometimes they beat third-party rates or include perks like breakfast or parking.
+                {renderBoldText(`**Comparison Sites**: Start with the usual suspects (Booking.com, Expedia, Hotels.com) but cross-reference prices directly on hotel websites—sometimes they beat third-party rates or include perks like breakfast or parking.
 
 **Alternative Accommodation**: Airbnb and VRBO offer apartments and homes, especially valuable for groups splitting costs. Filter by neighborhoods: West Hollywood, Culver City, and neighborhoods near Metro stations for convenience.
 
-**Loyalty Programs**: If you're already deep in hotel points ecosystems (Marriott, Hilton, IHG), LA has robust properties in every loyalty chain. Redeem those points for championship matches.`}
+**Loyalty Programs**: If you're already deep in hotel points ecosystems (Marriott, Hilton, IHG), LA has robust properties in every loyalty chain. Redeem those points for championship matches.`)}
               </p>
             </div>
 
@@ -533,14 +544,14 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
                 The Affiliate Advantage
               </h4>
               <p className="whitespace-pre-line">
-                {`Smart travelers use price comparison tools that scan hundreds of booking sites simultaneously. You're already planning an expensive trip—why not save hundreds on accommodation by letting technology find the best rates? Many booking platforms offer:
+                {renderBoldText(`Smart travelers use price comparison tools that scan hundreds of booking sites simultaneously. You're already planning an expensive trip—why not save hundreds on accommodation by letting technology find the best rates? Many booking platforms offer:
 
 - **Price match guarantees**: Find it cheaper elsewhere? They'll match or refund the difference
 - **Member-only discounts**: Sign up for booking sites' free loyalty programs for instant 10% off
 - **Bundled savings**: Flight+hotel packages, match ticket + accommodation deals (when FIFA releases official packages)
 - **Flexible cancellation**: World Cup plans change—book now with free cancellation options to lock rates
 
-Check trusted booking partners that specialize in major sporting events—they often negotiate group rates and exclusive access to sold-out properties.`}
+Check trusted booking partners that specialize in major sporting events—they often negotiate group rates and exclusive access to sold-out properties.`)}
               </p>
             </div>
           </div>

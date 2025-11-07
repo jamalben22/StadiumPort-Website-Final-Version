@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Removed external CSS import. Inline luxury list styles are defined below to avoid PostCSS import resolution issues. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -20,6 +21,60 @@
   /* Brand Accent — unified hue for icons, accents, highlights */
   --brand-accent: #10b981; /* emerald-500 */
   --brand-accent-soft: #34d399; /* emerald-400 for lighter accents */
+}
+
+/* Luxury list markers: premium, monochrome, emoji-free markers via styling */
+.lux-ul {
+  list-style: none; /* remove default bullets */
+}
+.lux-ul li {
+  position: relative;
+  padding-left: 1.25rem; /* space for custom marker */
+}
+.lux-ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em; /* vertically align to text line */
+  width: 0.35rem; /* ~6px */
+  height: 0.35rem;
+  border-radius: 9999px; /* perfect circle */
+  background-color: currentColor; /* inherit text color for true monochrome */
+}
+
+.lux-ol {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+.lux-ol li::marker {
+  color: currentColor; /* inherit text color for true monochrome */
+}
+
+/* Nested lists: consistent spacing and alignment */
+.lux-ul ul,
+.lux-ul ol,
+.lux-ol ul,
+.lux-ol ol {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Ensure prose plugin doesn't add extra left margin/padding to our custom lists */
+.prose .lux-ul,
+.prose .lux-ol {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Premium monochrome emoji styling for leading icons in paragraphs and list items */
+.emoji-black {
+  color: #0f172a; /* near-black for premium contrast */
+  font-weight: 700;
+  display: inline-block;
+  width: 1.1em; /* ensure consistent width/spacing */
+  text-align: center;
+  line-height: 1;
+  margin-right: 0.4rem; /* breathing room before text */
 }
 
 /* Ultra Premium Base Styles */
@@ -899,7 +954,7 @@ body.dark {
     line-height: 1;
     padding-right: 0.18rem;
     margin-top: 0.22rem;
-    color: #0b1426; /* navy-900 */
+    color: var(--tw-prose-lead);
   }
 
   /* Micro-typography refinements for elite feel */
