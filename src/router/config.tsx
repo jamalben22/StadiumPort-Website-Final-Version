@@ -5,6 +5,7 @@ import type { RouteObject } from 'react-router-dom';
 // Lazy load components for better performance
 const HomePage = lazy(() => import('../pages/home/page'));
 const AboutPage = lazy(() => import('../pages/about/page'));
+const ContactPage = lazy(() => import('../pages/contact/page'));
 const CitiesPage = lazy(() => import('../pages/cities/page'));
 import CityDetailPage from '../pages/cities/[cityId]/page';
 const DealsPage = lazy(() => import('../pages/deals/page'));
@@ -30,7 +31,6 @@ const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'))
 import PrivacyPage from '../pages/legal/privacy/page';
 import TermsPage from '../pages/legal/terms/page';
 import AffiliateDisclaimerPage from '../pages/legal/affiliate-disclaimer/page';
-const ContactPage = lazy(() => import('../pages/contact/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -41,6 +41,10 @@ const routes: RouteObject[] = [
   {
     path: '/about',
     element: <AboutPage />
+  },
+  {
+    path: '/contact',
+    element: <ContactPage />
   },
   {
     path: '/world-cup-2026-host-cities',
@@ -157,10 +161,6 @@ const routes: RouteObject[] = [
   {
     path: '/affiliate-disclaimer',
     element: <AffiliateDisclaimerPage />
-  },
-  {
-    path: '/contact',
-    element: <ContactPage />
   },
   {
     path: '*',

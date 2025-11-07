@@ -18,7 +18,7 @@ export function KansasCityCityGuide() {
             width={1600}
             height={900}
             priority={true}
-            placeholder="empty"
+            placeholder="blur"
             sizes="100vw"
           />
           <div className="editorial-hero-overlay"></div>
@@ -27,9 +27,23 @@ export function KansasCityCityGuide() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>The Heart of America Hosts the Heart of the Game</span>
+              <span>FIFA World Cup 2026</span>
             </div>
-            <h1 className="editorial-hero-title">Kansas City: Your Ultimate 2026 FIFA World Cup Travel Guide</h1>
+            <h1 className="editorial-hero-title">Kansas City</h1>
+            <div className="editorial-hero-meta">
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-map-pin-line"></i>
+                <span>Kansas City, Missouri</span>
+              </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-building-line"></i>
+                <span>Arrowhead Stadium</span>
+              </div>
+              <div className="meta-item flex items-center gap-2">
+                <i className="ri-group-line"></i>
+                <span>6 Matches</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -730,6 +744,15 @@ export function KansasCityCityGuide() {
           </div>
           <hr className="editorial-divider" />
         </article>
+
+        {/* Back CTA */}
+        <div className="mt-8 flex justify-end">
+          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
+            <i className="ri-check-line mr-2"></i>
+            Got It
+          </Link>
+        </div>
+
       </main>
 
       <Footer />

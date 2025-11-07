@@ -63,17 +63,15 @@ export default function MiamiCityGuide() {
             <div className="editorial-hero-inner">
               <div className="editorial-hero-eyebrow">
                 <span className="editorial-hero-pulse"></span>
-                <span>🇺🇸 Hard Rock Stadium • 65,326 Capacity • 7 Matches Including Bronze Final</span>
+                <span>FIFA World Cup 2026</span>
               </div>
               <h1 className="editorial-hero-title">
-                Miami 2026
-                <br />
-                <span>FIFA World Cup</span>
+                Miami
               </h1>
               <div className="editorial-hero-meta">
                 <div className="meta-item flex items-center gap-2">
-                  <i className="ri-information-line"></i>
-                  <span>Your Complete Travel Guide to South Florida's Soccer Spectacle</span>
+                  <i className="ri-map-pin-line"></i>
+                  <span>USA</span>
                 </div>
                 <div className="meta-item flex items-center gap-2">
                   <i className="ri-building-line"></i>
@@ -82,10 +80,6 @@ export default function MiamiCityGuide() {
                 <div className="meta-item flex items-center gap-2">
                   <i className="ri-group-line"></i>
                   <span>65,326 Capacity</span>
-                </div>
-                <div className="meta-item flex items-center gap-2">
-                  <i className="ri-calendar-line"></i>
-                  <span>June 15, 21, 24, 27 | July 3, 11, 18</span>
                 </div>
               </div>
             </div>
@@ -99,7 +93,7 @@ export default function MiamiCityGuide() {
           <article className="editorial-body editorial-dropcap">
             <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
               <i className="ri-trophy-line text-emerald-500"></i>
-              Miami 2026 FIFA World Cup: Your Complete Travel Guide to South Florida's Soccer Spectacle
+              Your Complete Travel Guide to South Florida's Soccer Spectacle
             </h2>
             <p className="whitespace-pre-line">
               {`When FIFA brings the beautiful game to Miami in summer 2026, nearly a million international fans will descend on South Florida for seven high-stakes matches—more than almost any other host city. This isn't just another tournament stop. Miami, with its electric cultural energy, world-class beaches, and deep soccer roots, promises to transform the World Cup experience into a month-long carnival where every neighborhood becomes a fan zone.
@@ -738,73 +732,64 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
             </h3>
 
             <div className="grid gap-3">
-              <div className="flex items-start gap-3 p-3 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
+                
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Match tickets secured through FIFA official channels</strong>
+                  <strong>✔ Match tickets secured through FIFA official channels</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-blue-50 dark:bg-blue-950/30 rounded-lg border border-blue-200 dark:border-blue-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Hotel booked in Downtown/Brickell for transit access (or Miami Gardens for stadium proximity)</strong>
+                    <strong>✔ Hotel booked in Downtown/Brickell for transit access (or Miami Gardens for stadium proximity)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-purple-50 dark:bg-purple-950/30 rounded-lg border border-purple-200 dark:border-purple-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Flights confirmed to MIA (or FLL with Brightline backup)</strong>
+                    <strong>✔ Flights confirmed to MIA (or FLL with Brightline backup)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-orange-50 dark:bg-orange-950/30 rounded-lg border border-orange-200 dark:border-orange-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Stadium parking pre-purchased OR transit plan mapped (Brightline + shuttle)</strong>
+                    <strong>✔ Stadium parking pre-purchased OR transit plan mapped (Brightline + shuttle)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-pink-50 dark:bg-pink-950/30 rounded-lg border border-pink-200 dark:border-pink-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Attraction tickets purchased online (Vizcaya, PAMM, etc.)</strong>
+                    <strong>✔ Attraction tickets purchased online (Vizcaya, PAMM, etc.)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-teal-50 dark:bg-teal-950/30 rounded-lg border border-teal-200 dark:border-teal-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Miami transit app downloaded (GO Miami-Dade)</strong>
+                    <strong>✔ Miami transit app downloaded (GO Miami-Dade)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-indigo-50 dark:bg-indigo-950/30 rounded-lg border border-indigo-200 dark:border-indigo-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Portable charger packed (your phone will die by halftime otherwise)</strong>
+                    <strong>✔ Portable charger packed (your phone will die by halftime otherwise)</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-yellow-50 dark:bg-yellow-950/30 rounded-lg border border-yellow-200 dark:border-yellow-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Sunscreen, hydration pack, comfortable shoes ready</strong>
+                    <strong>✔ Sunscreen, hydration pack, comfortable shoes ready</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-red-50 dark:bg-red-950/30 rounded-lg border border-red-200 dark:border-red-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Restaurant reservations made for splurge meals</strong>
+                    <strong>✔ Restaurant reservations made for splurge meals</strong>
                 </span>
               </div>
 
-              <div className="flex items-start gap-3 p-3 bg-slate-50 dark:bg-slate-950/30 rounded-lg border border-slate-200 dark:border-slate-800">
-                <i className="ri-checkbox-circle-fill text-emerald-500 text-xl mt-0.5"></i>
+              <div className="flex items-center gap-3">
                 <span className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                  <strong>Clear stadium-compliant bag purchased (12" x 6" x 12" max)</strong>
+                    <strong>✔ Clear stadium-compliant bag purchased (12" x 6" x 12" max)</strong>
                 </span>
               </div>
             </div>
@@ -813,9 +798,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
               <p className="leading-relaxed mb-4">
                 The 2026 FIFA World Cup in Miami isn't just another sporting event—it's a once-in-a-lifetime collision of the world's most popular sport with one of America's most dynamic cities. Whether you're there for football, culture, beaches, or all three, Miami delivers.
               </p>
-              <div className="text-2xl font-bold text-transparent bg-gradient-to-r from-red-500 via-orange-500 to-yellow-500 bg-clip-text">
-                ¡Vamos! ⚽🌴🌊
-              </div>
+              <div className="text-2xl text-slate-900 dark:text-slate-200">¡Vamos!</div>
             </div>
             <hr className="editorial-divider" />
           </article>

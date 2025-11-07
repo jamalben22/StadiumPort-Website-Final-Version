@@ -448,7 +448,7 @@ NYC has soccer bars for every nation. Bar 43, known as the "home of soccer in Qu
         {/* Language & Connectivity */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-wireless-line text-emerald-500"></i>
+            <i className="ri-global-line text-emerald-500"></i>
             Language & Connectivity
           </h3>
           <p className="whitespace-pre-line">

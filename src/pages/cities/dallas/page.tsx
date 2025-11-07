@@ -76,18 +76,9 @@ export default function DallasArticlePage() {
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
-            Dallas 2026 FIFA World Cup: Your Complete Travel Guide to America's Team Stadium
-          </h2>
-          <div className="mb-4">
-            <div className="flex items-center gap-2 font-medium">
-              <i className="ri-calendar-event-line text-emerald-500"></i>
-              <span>Match Schedule:</span>
-            </div>
-            <p className="mt-2">
-              June 14, 17, 22, 25, 27 (Group Stage) | June 30, July 3 (Round of 32) | July 6 (Round of 16) | July 14 (Semi-Final)
-            </p>
-          </div>
+                <i className="ri-trophy-line text-emerald-500"></i>Your Complete Travel Guide to America's Team Stadium
+              </h2>
+
           <p className="whitespace-pre-line">
             {`When FIFA unveils its 2026 World Cup match schedule, one number jumps off the page: nine matches. That's how many games Dallas will host—more than any other city in the entire tournament. From five group stage encounters through two knockout rounds and culminating in a semi-final on July 14, North Texas becomes the beating heart of the world's biggest sporting event for five intense weeks in summer 2026.
 
@@ -879,18 +870,18 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             <i className="ri-checkbox-circle-line text-emerald-500"></i>
             Final Checklist: Your Dallas World Cup Essentials
           </h3>
-          <ul className="leading-relaxed space-y-2 list-disc list-inside">
-            <li>✅ <strong>Match tickets</strong> secured through FIFA official channels</li>
-            <li>✅ <strong>Hotel booked</strong> (Downtown for culture, Arlington for stadium proximity)</li>
-            <li>✅ <strong>Flights confirmed</strong> to DFW (or DAL if available)</li>
-            <li>✅ <strong>Transportation plan finalized</strong> (DART+TRE combo, rideshare budget, or parking pre-purchased)</li>
-            <li>✅ <strong>GoPass app downloaded</strong> for DART/TRE mobile tickets</li>
-            <li>✅ <strong>Attraction tickets purchased online</strong> (Sixth Floor Museum, Reunion Tower, museums)</li>
-            <li>✅ <strong>Restaurant reservations made</strong> for upscale dining</li>
-            <li>✅ <strong>Stadium-compliant clear bag purchased</strong> (12" x 6" x 12" max)</li>
-            <li>✅ <strong>Sun protection packed</strong> (hat, sunglasses, SPF 50+ sunscreen)</li>
-            <li>✅ <strong>Portable phone charger</strong> (Texas heat drains batteries fast)</li>
-            <li>✅ <strong>Cowboy boots optional</strong> (but when in Rome...)</li>
+          <ul className="leading-relaxed space-y-2 list-none list-inside">
+            <li>✔ <strong>Match tickets</strong> secured through FIFA official channels</li>
+            <li>✔ <strong>Hotel booked</strong> (Downtown for culture, Arlington for stadium proximity)</li>
+            <li>✔ <strong>Flights confirmed</strong> to DFW (or DAL if available)</li>
+            <li>✔ <strong>Transportation plan finalized</strong> (DART+TRE combo, rideshare budget, or parking pre-purchased)</li>
+            <li>✔ <strong>GoPass app downloaded</strong> for DART/TRE mobile tickets</li>
+            <li>✔ <strong>Attraction tickets purchased online</strong> (Sixth Floor Museum, Reunion Tower, museums)</li>
+            <li>✔ <strong>Restaurant reservations made</strong> for upscale dining</li>
+            <li>✔ <strong>Stadium-compliant clear bag purchased</strong> (12" x 6" x 12" max)</li>
+            <li>✔ <strong>Sun protection packed</strong> (hat, sunglasses, SPF 50+ sunscreen)</li>
+            <li>✔ <strong>Portable phone charger</strong> (Texas heat drains batteries fast)</li>
+            <li>✔ <strong>Cowboy boots optional</strong> (but when in Rome...)</li>
           </ul>
           <p className="leading-relaxed mt-4">
             The 2026 FIFA World Cup in Dallas isn't just another tournament stop—it's the <strong>most</strong> of any city's World Cup experience. Nine matches mean you can build an entire summer vacation around knockout drama, explore Texas between games, and witness the semi-final that determines who reaches football's ultimate stage.
@@ -908,27 +899,19 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             Whether you're there for the Longhorn cattle drive and barbecue, the Arts District museums and culture, or simply 80,000 fans roaring inside Jerry World, Dallas delivers what it promises: <strong>everything bigger</strong>.
           </p>
           <p className="leading-relaxed mt-3">
-            <strong>Y'all ready for kickoff?</strong> ⚽🤠🏈
+            <strong>Y'all ready for kickoff?</strong>
           </p>
           <hr className="editorial-divider" />
         </article>
 
         {/* Editorial CTA — NYC-style back link */}
-        <div className="mt-8">
-          <h3 className="editorial-h3 animate-fade-up mb-2">Your Action Plan</h3>
-          <p className="editorial-body mb-4">Return to the full list of host cities to continue planning.</p>
-          <hr className="editorial-divider mb-6" />
-          <div className="flex justify-end">
-            <Link
-              to="/world-cup-2026-host-cities"
-              className="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-semibold group"
-            >
-              <i className="ri-arrow-left-line"></i>
-              <span>Got It</span>
-              <i className="ri-check-line opacity-0 group-hover:opacity-100 transition-opacity"></i>
-            </Link>
-          </div>
+        <div className="mt-8 flex justify-end">
+          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
+            <i className="ri-check-line mr-2"></i>
+            Got It
+          </Link>
         </div>
+
       </section>
 
       <Footer />

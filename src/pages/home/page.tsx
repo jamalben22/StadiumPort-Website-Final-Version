@@ -142,7 +142,7 @@ export default function HomePage() {
       name: 'Los Angeles',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'SoFi Stadium',
+      stadium: 'SoFi Stadium, Inglewood, CA',
       capacity: '70,240',
       description:
         "Where $5.5 billion meets global football. LA's architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world's entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA's sprawling diversity means every team has a neighborhood. This is spectacle, California-style.",
@@ -284,40 +284,39 @@ export default function HomePage() {
               </div>
 
               {/* Premium Service Widgets */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:gap-12 auto-rows-fr">
                 {/* Accommodation Widget */}
                 <a
                   href="https://hotel-affiliate-link.com"
                   target="_blank"
                   rel="nofollow sponsored"
                   data-affiliate-type="accommodation"
-                  className="affiliate-btn group relative overflow-hidden"
+                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-emerald-600/10 to-teal-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 hover:bg-white/20 transition-all duration-500 shadow-2xl group-hover:shadow-emerald-glow group-hover:scale-105 group-hover:-translate-y-2 transform-gpu will-change-transform">
-                    {/* Floating Icon Container */}
-                    <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl">
-                        <i className="ri-hotel-line text-white text-3xl group-hover:scale-110 transition-transform duration-300"></i>
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12 rounded-2xl"></div>
+                  {/* Subtle aura glow */}
+                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-emerald-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+                    {/* Centered content: icon + text */}
+                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
+                      <div className="relative">
+                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-emerald-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-emerald-400/50">
+                          <i className="ri-hotel-line text-2xl sm:text-3xl"></i>
+                        </div>
                       </div>
+                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
+                        Accommodation
+                      </h3>
+                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
+                        From luxury hotels and design-forward stays to premium serviced apartments, curated for comfort near venues and city highlights.
+                      </p>
                     </div>
 
-                    <h3 className="font-space font-bold text-2xl text-white mb-4 group-hover:text-emerald-300 transition-colors duration-300">
-                      Accommodation
-                    </h3>
-                    <p className="text-slate-200 font-inter text-lg leading-relaxed mb-6">
-                      From fan-friendly hostels... (content truncated for brevity)
-                    </p>
-
-                    <div className="flex items-center text-emerald-400 group-hover:text-emerald-300 transition-all duration-300">
-                      <span className="font-semibold text-lg group-hover:translate-x-2 transition-transform duration-300">Find Your Stay</span>
-                      <i className="ri-arrow-right-line ml-3 text-xl group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"></i>
-                    </div>
-
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12 rounded-3xl"></div>
+            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-emerald-500 hover:text-emerald-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
+              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Find Your Stay</span>
+              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
+            </div>
                   </div>
                 </a>
 
@@ -327,33 +326,32 @@ export default function HomePage() {
                   target="_blank"
                   rel="nofollow sponsored"
                   data-affiliate-type="flights"
-                  className="affiliate-btn group relative overflow-hidden"
+                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/40"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-blue-600/10 to-cyan-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 hover:bg-white/20 transition-all duration-500 shadow-2xl group-hover:shadow-blue-glow group-hover:scale-105 group-hover:-translate-y-2 transform-gpu will-change-transform">
-                    {/* Floating Icon Container */}
-                    <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl">
-                        <i className="ri-flight-takeoff-line text-white text-3xl group-hover:scale-110 transition-transform duration-300"></i>
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12 rounded-2xl"></div>
+                  {/* Subtle aura glow */}
+                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-blue-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+                    {/* Centered content: icon + text */}
+                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
+                      <div className="relative">
+                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-blue-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-blue-400/50">
+                          <i className="ri-flight-takeoff-line text-2xl sm:text-3xl"></i>
+                        </div>
                       </div>
+                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
+                        Flights
+                      </h3>
+                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
+                        Premium flight search with flexible dates, multi-city itineraries, and trusted carriers — optimized for match schedules and city hops.
+                      </p>
                     </div>
 
-                    <h3 className="font-space font-bold text-2xl text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">
-                      Flights
-                    </h3>
-                    <p className="text-slate-200 font-inter text-lg leading-relaxed mb-6">
-                      Find the best routes... (content truncated)
-                    </p>
-
-                    <div className="flex items-center text-emerald-400 group-hover:text-blue-300 transition-all duration-300">
-                      <span className="font-semibold text-lg group-hover:translate-x-2 transition-transform duration-300">Search Flights</span>
-                      <i className="ri-arrow-right-line ml-3 text-xl group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"></i>
-                    </div>
-
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12 rounded-3xl"></div>
+            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-blue-500 hover:text-blue-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
+              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Search Flights</span>
+              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
+            </div>
                   </div>
                 </a>
 
@@ -363,33 +361,32 @@ export default function HomePage() {
                   target="_blank"
                   rel="nofollow sponsored"
                   data-affiliate-type="experiences"
-                  className="affiliate-btn group relative overflow-hidden"
+                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/40"
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-gold-400/20 via-gold-500/10 to-amber-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative bg-white/10 backdrop-blur-2xl border border-white/30 rounded-3xl p-8 hover:bg-white/20 transition-all duration-500 shadow-2xl group-hover:shadow-gold-glow group-hover:scale-105 group-hover:-translate-y-2 transform-gpu will-change-transform">
-                    {/* Floating Icon Container */}
-                    <div className="relative mb-6">
-                      <div className="absolute inset-0 bg-gradient-to-br from-gold-400 to-gold-600 rounded-2xl blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      <div className="relative w-20 h-20 bg-gradient-to-br from-gold-400 to-gold-500 rounded-2xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl">
-                        <i className="ri-map-2-line text-white text-3xl group-hover:scale-110 transition-transform duration-300"></i>
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 skew-x-12 rounded-2xl"></div>
+                  {/* Subtle aura glow */}
+                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-amber-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+                    {/* Centered content: icon + text */}
+                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
+                      <div className="relative">
+                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-amber-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-amber-400/50">
+                          <i className="ri-map-2-line text-2xl sm:text-3xl"></i>
+                        </div>
                       </div>
+                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
+                        Experiences
+                      </h3>
+                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
+                        Curated tours, premium fan events, and immersive activities — discover the city beyond matchday with elevated experiences.
+                      </p>
                     </div>
 
-                    <h3 className="font-space font-bold text-2xl text-white mb-4 group-hover:text-gold-300 transition-colors duration-300">
-                      Experiences
-                    </h3>
-                    <p className="text-slate-200 font-inter text-lg leading-relaxed mb-6">
-                      Stadium tours, fan zones... (content truncated)
-                    </p>
-
-                    <div className="flex items-center text-emerald-400 group-hover:text-gold-300 transition-all duration-300">
-                      <span className="font-semibold text-lg group-hover:translate-x-2 transition-transform duration-300">Explore Activities</span>
-                      <i className="ri-arrow-right-line ml-3 text-xl group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300"></i>
-                    </div>
-
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12 rounded-3xl"></div>
+            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-amber-500 hover:text-amber-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
+              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Explore Activities</span>
+              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
+            </div>
                   </div>
                 </a>
               </div>
@@ -410,80 +407,108 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 2-Column Grid Layout with responsive, lazy images */}
+          {/* 2-Column Grid Layout with responsive, lazy images (exactly from Cities page) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {featuredCities.map((city, index) => (
-              <Card key={city.id} hover className="overflow-hidden group">
-                <div className="relative h-64 overflow-hidden">
-                  <OptimizedImage
-                    src={city.image}
-                    alt={city.alt || `${city.name} skyline`}
-                    className="absolute inset-0"
-                    imgClassName="object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    width={1600}
-                    height={900}
-                    priority={index < 2}
-                    placeholder="blur"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                    <span>{city.flag}</span>
-                    <span>{city.country}</span>
-                  </div>
-                  {city.name === 'New York / New Jersey' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      8 Matches
-                    </div>
-                  )}
-                  {city.name === 'New York / New Jersey' && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
-                    </div>
-                  )}
-                  {city.name === 'Los Angeles' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      8 Matches
-                    </div>
-                  )}
+            {/* New York / New Jersey Card */}
+            <div className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
+              <div className="relative h-56 overflow-hidden">
+                <OptimizedImage
+                  src={featuredCities[0].image}
+                  alt={featuredCities[0].alt || `${featuredCities[0].name} skyline`}
+                  className="w-full h-full"
+                  imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                  width={1600}
+                  height={900}
+                  priority={true}
+                  placeholder="blur"
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
+                  <span>{featuredCities[0].flag}</span>
+                  <span>{featuredCities[0].country}</span>
                 </div>
-                
-                <div className="p-6">
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
-                    {city.name}
-                  </h3>
-                  
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
-                    {city.description}
-                  </p>
-                  
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Stadium</div>
-                        <div className="font-semibold text-navy-900 dark:text-white">{city.stadium}</div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Capacity</div>
-                        <div className="font-semibold text-emerald-600">{city.capacity}</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => {
-                      navigate(getCityRoute(city.name));
-                    }}
-                  >
-                    <i className="ri-eye-line mr-2"></i>
-                    {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
-                  </Button>
+                <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
+                  <i className="ri-map-pin-line mr-2 text-lg"></i>
+                  <span>{featuredCities[0].stadium} • {featuredCities[0].capacity} capacity</span>
                 </div>
-              </Card>
-            ))}
+                <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  8 Matches
+                </div>
+                <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                  <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
+                </div>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+                  {featuredCities[0].name}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                  {featuredCities[0].description}
+                </p>
+                <Button 
+                  variant="primary" 
+                  size="sm" 
+                  fullWidth
+                  className="whitespace-nowrap cursor-pointer mt-auto"
+                  onClick={() => {
+                    navigate(getCityRoute(featuredCities[0].name));
+                  }}
+                >
+                  <i className="ri-eye-line mr-2"></i>
+                  Plan Your NYC Journey
+                </Button>
+              </div>
+            </div>
+
+            {/* Los Angeles Card */}
+            <div className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
+              <div className="relative h-56 overflow-hidden">
+                <OptimizedImage
+                  src={featuredCities[1].image}
+                  alt={featuredCities[1].alt || `${featuredCities[1].name} skyline`}
+                  className="w-full h-full"
+                  imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                  width={1600}
+                  height={900}
+                  priority={true}
+                  placeholder="blur"
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
+                  <span>{featuredCities[1].flag}</span>
+                  <span>{featuredCities[1].country}</span>
+                </div>
+                <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
+                  <i className="ri-map-pin-line mr-2 text-lg"></i>
+                  <span>{featuredCities[1].stadium} • {featuredCities[1].capacity} capacity</span>
+                </div>
+                <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  8 Matches
+                </div>
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+                  {featuredCities[1].name}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                  {featuredCities[1].description}
+                </p>
+                <Button 
+                  variant="primary" 
+                  size="sm" 
+                  fullWidth
+                  className="whitespace-nowrap cursor-pointer mt-auto"
+                  onClick={() => {
+                    navigate(getCityRoute(featuredCities[1].name));
+                  }}
+                >
+                  <i className="ri-eye-line mr-2"></i>
+                  Discover LA Guide
+                </Button>
+              </div>
+            </div>
           </div>
 
           {/* CTA: Discover All 16 Host Cities */}
@@ -540,11 +565,27 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {trustIndicators.map((indicator, index) => (
-              <Card key={index} className="text-center" padding="lg">
-                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <i className={`${indicator.icon} text-emerald-600 text-2xl`}></i>
+              <Card
+                key={index}
+                variant="premium"
+                padding="lg"
+                shadow="premium"
+                effect="shimmer"
+                glow
+                border={false}
+                className="text-center"
+              >
+                <div className="flex flex-col items-center">
+                  <div className="relative mb-4">
+                    <div className="absolute -top-2 -left-2 w-28 h-28 bg-emerald-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-50/80 dark:bg-emerald-900/30 ring-1 ring-emerald-400/30 flex items-center justify-center mx-auto shadow-premium-sm">
+                      <i className={`${indicator.icon} text-emerald-600 text-2xl sm:text-3xl`}></i>
+                    </div>
+                  </div>
+                  <h3 className="font-space font-semibold tracking-tight leading-tight text-navy-900 dark:text-white text-lg sm:text-xl md:text-2xl">
+                    {indicator.text}
+                  </h3>
                 </div>
-                <h3 className="font-space font-semibold text-lg text-navy-900 dark:text-white">{indicator.text}</h3>
               </Card>
             ))}
           </div>

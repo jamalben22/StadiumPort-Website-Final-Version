@@ -669,7 +669,7 @@ export default function VenuesPage() {
                   
                   {/* Final Badge (MetLife only) */}
                   {venue.id === 2 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-trophy-fill text-base"></i>
                       <span className="tracking-wide">2026 WORLD CUP FINAL</span>
                     </div>
@@ -677,7 +677,7 @@ export default function VenuesPage() {
 
                   {/* Canada Home Matches Badge (BMO Field only) */}
                   {venue.id === 14 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-red-600 to-red-800 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-red-600 to-red-800 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-flag-fill text-base"></i>
                       <span className="tracking-wide">CANADA HOME MATCHES</span>
                     </div>
@@ -686,7 +686,7 @@ export default function VenuesPage() {
                   {/* Semifinal Badge (AT&T Stadium only) */}
                   {venue.id === 3 && (
                     <div
-                      className="absolute top-4 left-4 bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2"
+                      className="absolute top-16 right-4 bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2"
                       aria-label="Semifinal venue"
                     >
                       <i className="ri-medal-2-fill text-base"></i>
@@ -701,7 +701,7 @@ export default function VenuesPage() {
 
                   {/* Proximity Badge (SoFi Stadium only) */}
                   {venue.id === 8 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-plane-line text-base"></i>
                       <span className="tracking-wide">Near LAX</span>
                     </div>
@@ -709,7 +709,7 @@ export default function VenuesPage() {
 
                   {/* Proximity Badge (Levi's Stadium only) */}
                   {venue.id === 10 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-route-line text-base"></i>
                       <span className="tracking-wide">45 min from San Francisco</span>
                     </div>
@@ -717,7 +717,7 @@ export default function VenuesPage() {
 
                   {/* Proximity Badge (Gillette Stadium only) */}
                   {venue.id === 12 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-car-line text-base"></i>
                       <span className="tracking-wide">30 miles from Boston</span>
                     </div>
@@ -725,7 +725,7 @@ export default function VenuesPage() {
 
                   {/* Proximity Badge (Hard Rock Stadium only) */}
                   {venue.id === 13 && (
-                    <div className="absolute top-4 left-4 bg-gradient-to-r from-teal-400 via-sky-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
+                    <div className="absolute top-16 right-4 bg-gradient-to-r from-teal-400 via-sky-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
                       <i className="ri-car-line text-base"></i>
                       <span className="tracking-wide">20 miles from Miami Beach</span>
                     </div>
