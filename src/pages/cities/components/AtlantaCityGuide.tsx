@@ -2,6 +2,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { Link } from 'react-router-dom';
 
 export function AtlantaCityGuide() {
   return (
@@ -50,6 +51,20 @@ export function AtlantaCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumb Navigation */}
+            <nav aria-label="Breadcrumb" className="mt-4">
+              <ol className="flex items-center text-sm text-slate-200 gap-2">
+                <li>
+                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+                </li>
+                <li>›</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                </li>
+                <li>›</li>
+                <li className="text-slate-300">Atlanta World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Atlanta</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -76,12 +91,50 @@ export function AtlantaCityGuide() {
           <div>
             <p><strong>The Capital of the South Hosts a Semifinal</strong></p>
             <p>
-              Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football. From June 15 through July 15, 2026, Mercedes-Benz Stadium will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
+              Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football.
+              {' '}Atlanta is one of the{' '}
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
+              {' '}for the 2026 World Cup.
+              {' '}From June 15 through July 15, 2026,{' '}
+              <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link>
+              {' '}will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
             </p>
             <p>
               If you've never visited Atlanta, prepare to have your assumptions challenged. This isn't a sleepy Southern city—it's a booming metropolis of nearly 500,000 (6 million in the metro area) with world-class infrastructure, a food scene that rivals any American city, and a stadium that literally redefines modern architecture. Mercedes-Benz Stadium's retractable "pinwheel" roof opens in less than eight minutes, its halo board is the world's largest video screen, and it's built to handle crowds with efficiency that would make German engineers jealous. Add in Atlanta's role as a transportation hub (Hartsfield-Jackson is the world's busiest airport) and its status as America's civil rights capital, and you have a city ready to show the world why it's called "the capital of the South."
             </p>
           </div>
+          {/* Essential Atlanta Links */}
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+            <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Atlanta Links</div>
+            <div className="space-y-1 text-slate-800 dark:text-slate-200">
+              <div>
+                🏟️ <strong>Stadium:</strong>{' '}
+                <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mercedes-Benz Stadium Guide</Link>
+              </div>
+              <div>
+                🗺️ <strong>All Host Cities:</strong>{' '}
+                <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </div>
+              <div>
+                ✈️ <strong>Nearby Cities:</strong>{' '}
+                <Link to="/world-cup-2026-host-cities/miami" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Miami</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link>
+              </div>
+            </div>
+          </div>
+          {/* Regional planning cross-links */}
+          <p className="leading-relaxed mt-4">
+            Atlanta connects easily with{' '}
+            <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+            {' '}for a complete Southern experience. Combine Atlanta with{' '}
+            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            {' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            {' '}for a Gulf to Atlantic journey. Atlanta also serves as the Southern gateway to East Coast cities like{' '}
+            <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+            .
+          </p>
           <hr className="editorial-divider" />
         </article>
 
@@ -160,6 +213,15 @@ export function AtlantaCityGuide() {
                 </p>
                 <p>
                   The stadium is located in downtown Atlanta, adjacent to Centennial Olympic Park and the Georgia World Congress Center, making it genuinely accessible from hotels, transit, and the city's major attractions.
+                </p>
+                <p className="leading-relaxed mt-4">
+                  Planning a regional trip? Pair Atlanta with{' '}
+                  <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  {' '}or{' '}
+                  <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  {' '}for a Gulf-to-Atlantic journey, and add{' '}
+                  <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+                  {' '}for tropical contrast.
                 </p>
               </div>
             </div>
@@ -756,6 +818,59 @@ export function AtlantaCityGuide() {
           </div>
           <hr className="editorial-divider" />
         </article>
+
+      {/* Related Destinations */}
+      <article className="editorial-body">
+        <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+          <i className="ri-road-map-line text-emerald-500"></i>
+          Plan Your Southern World Cup Adventure
+        </h3>
+        <p className="leading-relaxed mb-4">
+          Atlanta's position as the gateway to the South makes it perfect for exploring diverse Southern cultures and connecting to both coasts.
+        </p>
+        <div className="space-y-4">
+          <div>
+            <p className="font-inter font-semibold">Popular Combinations:</p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-inter font-semibold">Southern Sweep</p>
+            <p>
+              Experience the full spectrum of the American South: Atlanta (current) for urban Southern charm,{" "}
+              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              {" "}for Gulf Coast energy, and{" "}
+              <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              {" "}for tropical paradise.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-inter font-semibold">Coast to Coast Southern</p>
+            <p>
+              Create an Atlantic to Gulf journey: Start in{" "}
+              <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              , head to Atlanta (current), then continue to{" "}
+              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              {" "}or{" "}
+              <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+              {" "}for a complete Southern experience.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <p className="font-inter font-semibold">Southern to East Coast</p>
+            <p>
+              Connect Atlanta with Eastern cities like{" "}
+              <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+              ,{" "}
+              <Link to="/travel-guides/new-york-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+              , or{" "}
+              <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+              {" "}for a journey from Southern hospitality to historic Northeastern culture.
+            </p>
+          </div>
+        </div>
+        <p className="mt-6">
+          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+        </p>
+      </article>
 
         {/* Final Word */}
         <article className="editorial-body">

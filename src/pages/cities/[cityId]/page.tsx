@@ -136,6 +136,13 @@ export default function CityDetailPage() {
                 <span className="editorial-hero-pulse"></span>
                 <span>FIFA World Cup 2026</span>
               </div>
+              <nav className="editorial-breadcrumbs mb-3" aria-label="Breadcrumb">
+                <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+                <span className="mx-2 text-slate-400">›</span>
+                <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                <span className="mx-2 text-slate-400">›</span>
+                <span className="text-slate-500">Houston World Cup 2026 Guide</span>
+              </nav>
               <h1 className="editorial-hero-title">Houston</h1>
               <div className="editorial-hero-meta">
                 <div className="meta-item flex items-center gap-2">
@@ -166,12 +173,31 @@ export default function CityDetailPage() {
             </h2>
             <div>
               <p className="leading-relaxed mb-6">
-                Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, NRG Stadium will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas.
+                Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas. Houston is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026.
               </p>
               <p className="leading-relaxed mb-6">
                 If you've never been to Houston, prepare to have your assumptions shattered. This is America's most diverse city, where you'll hear more languages spoken than anywhere else in the U.S., where authentic food from every continent sits on every street corner, and where the term "Southern hospitality" gets supercharged by Texan pride and international flair. Match that energy with NRG Stadium's retractable roof that can open or close in just seven minutes, air conditioning that makes 100-degree days irrelevant, and you've got the perfect recipe for an unforgettable World Cup experience.
               </p>
             </div>
+            {/* Essential Links module */}
+            <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+              <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Houston Links</div>
+              <div className="space-y-1 text-slate-800 dark:text-slate-200">
+                <div>
+                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/nrg-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">NRG Stadium Guide</Link>
+                </div>
+                <div>
+                  🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+                </div>
+                <div>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> | <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                </div>
+              </div>
+            </div>
+            {/* Regional planning cross-links */}
+            <p className="leading-relaxed mt-4">
+              Houston pairs perfectly with <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas adventure. Connect Houston with <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> for a true Southern experience, and leverage the Gulf connection to <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> for an international flavor.
+            </p>
             <hr className="editorial-divider" />
           </article>
 
@@ -195,6 +221,9 @@ export default function CityDetailPage() {
                   
                   <p className="leading-relaxed">
                     During the World Cup, FIFA will refer to the venue as "Houston Stadium" due to sponsorship guidelines. The stadium has undergone specific upgrades for the tournament, including new chillers, LED lights, upgrades to parking lots and adding in a grass field, which is expected to be installed after the 2026 Rodeo season.
+                  </p>
+                  <p className="leading-relaxed mt-4">
+                    Planning a multi-city trip? Houston pairs well with <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas itinerary, and connects naturally to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for a broader Southern circuit.
                   </p>
                 </div>
               </div>
@@ -578,7 +607,7 @@ export default function CityDetailPage() {
                         <i className="ri-map-pin-line text-emerald-500"></i>
                         Logistics
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                         Located about 30 minutes southeast of downtown. Tickets to Space Center Houston start at $29.95 for adults (12 and older), $27.95 for seniors and $24.95 for children ages 4 to 11. Budget 4-5 hours for the full experience, including tram tours.
                       </p>
                     </div>
@@ -588,7 +617,7 @@ export default function CityDetailPage() {
                         <i className="ri-lightbulb-line text-emerald-500"></i>
                         Pro Tip
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                         Get in line as soon as you arrive at the center for tram tours as they fill up quickly.
                       </p>
                     </div>
@@ -638,7 +667,7 @@ export default function CityDetailPage() {
                         <i className="ri-run-line text-emerald-500"></i>
                         Activities
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                         Kayak rentals, hiking/biking trails, outdoor fitness equipment
                       </p>
                     </div>
@@ -648,7 +677,7 @@ export default function CityDetailPage() {
                         <i className="ri-camera-line text-emerald-500"></i>
                         Best Views
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                         Police Officers Memorial and Rosemont Bridge
                       </p>
                     </div>
@@ -658,7 +687,7 @@ export default function CityDetailPage() {
                       <i className="ri-time-line text-emerald-500"></i>
                       When to Go
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       Early morning or late afternoon to avoid peak heat. Sunset views of the downtown skyline are spectacular.
                     </p>
                   </div>
@@ -703,15 +732,15 @@ export default function CityDetailPage() {
                 <div className="grid md:grid-cols-3 gap-6 mb-6">
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Pappas Bar-B-Q</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Multiple locations serving mesquite-smoked brisket, ribs, and sausage. It's accessible, affordable, and genuinely good.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Multiple locations serving mesquite-smoked brisket, ribs, and sausage. It's accessible, affordable, and genuinely good.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Goode Company Barbeque</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Celebrating deep intermingling of cultures and cuisines, Goode Company has been serving mesquite-smoked BBQ since 1977 with multiple locations and a relaxed, Texas-casual atmosphere.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Celebrating deep intermingling of cultures and cuisines, Goode Company has been serving mesquite-smoked BBQ since 1977 with multiple locations and a relaxed, Texas-casual atmosphere.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">The Pit Room</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Located in Montrose, this spot brings Central Texas-style BBQ (post oak-smoked brisket, pork ribs) with modern twists and craft beer.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Located in Montrose, this spot brings Central Texas-style BBQ (post oak-smoked brisket, pork ribs) with modern twists and craft beer.</p>
                   </div>
                 </div>
 
@@ -720,7 +749,7 @@ export default function CityDetailPage() {
                     <i className="ri-restaurant-2-line text-emerald-500"></i>
                     What to Order
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Start with brisket—it's the benchmark of Texas BBQ. Add jalapeño-cheese sausage, pork ribs, and sides like mac and cheese or jalapeño creamed corn.</p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Start with brisket—it's the benchmark of Texas BBQ. Add jalapeño-cheese sausage, pork ribs, and sides like mac and cheese or jalapeño creamed corn.</p>
                 </div>
               </div>
 
@@ -740,15 +769,15 @@ export default function CityDetailPage() {
                 <div className="grid md:grid-cols-3 gap-6 mb-6">
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">The Original Ninfa's on Navigation</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Celebrated for its authentic Tex-Mex cuisine that has set the standard for over 50 years, this iconic establishment is revered for its legendary fajitas, tacos al carbon, and mouthwatering enchiladas.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Celebrated for its authentic Tex-Mex cuisine that has set the standard for over 50 years, this iconic establishment is revered for its legendary fajitas, tacos al carbon, and mouthwatering enchiladas.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Candente</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Houston's only Tex-Mex restaurant in the Michelin Guide serves wood-grilled meats, classic Tex-Mex enchiladas, and signature birria tacos in Montrose with a modern, elevated approach.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston's only Tex-Mex restaurant in the Michelin Guide serves wood-grilled meats, classic Tex-Mex enchiladas, and signature birria tacos in Montrose with a modern, elevated approach.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">El Tiempo Cantina</h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">Multiple locations serving sizzling fajitas, tableside guacamole, and margaritas that pack a punch. This is where locals celebrate.</p>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Multiple locations serving sizzling fajitas, tableside guacamole, and margaritas that pack a punch. This is where locals celebrate.</p>
                   </div>
                 </div>
 
@@ -757,7 +786,7 @@ export default function CityDetailPage() {
                     <i className="ri-restaurant-2-line text-emerald-500"></i>
                     What to Order
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Beef fajitas (cooked over mesquite), cheese enchiladas with chili con carne, tableside guacamole, and a frozen margarita. Queso (melted cheese dip) is mandatory.</p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Beef fajitas (cooked over mesquite), cheese enchiladas with chili con carne, tableside guacamole, and a frozen margarita. Queso (melted cheese dip) is mandatory.</p>
                 </div>
               </div>
 
@@ -780,14 +809,14 @@ export default function CityDetailPage() {
                     <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Vietnamese</h4>
-                        <p className="text-slate-700 dark:text-slate-200 text-sm">Houston has one of the largest Vietnamese populations outside Vietnam. Head to Midtown or the Bellaire Chinatown area for phenomenal phở and bánh mì.</p>
+                        <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston has one of the largest Vietnamese populations outside Vietnam. Head to Midtown or the Bellaire Chinatown area for phenomenal phở and bánh mì.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                     <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Indian</h4>
-                        <p className="text-slate-700 dark:text-slate-200 text-sm">The Hillcroft area southwest of downtown is Houston's Little India, packed with authentic restaurants and grocery stores.</p>
+                        <p className="text-slate-700 dark:text-slate-200 leading-relaxed">The Hillcroft area southwest of downtown is Houston's Little India, packed with authentic restaurants and grocery stores.</p>
                       </div>
                     </div>
                   </div>
@@ -796,14 +825,14 @@ export default function CityDetailPage() {
                     <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Soul Food/Southern</h4>
-                        <p className="text-slate-700 dark:text-slate-200 text-sm">This Sassy Soul Café and Lucille's offer fried chicken, shrimp and grits, and collard greens that'll make you understand Southern comfort food.</p>
+                        <p className="text-slate-700 dark:text-slate-200 leading-relaxed">This Sassy Soul Café and Lucille's offer fried chicken, shrimp and grits, and collard greens that'll make you understand Southern comfort food.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                     <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">International Food Trucks</h4>
-                        <p className="text-slate-700 dark:text-slate-200 text-sm">From Nigerian to Peruvian to Korean, Houston's food truck scene brings the world to street corners across the city.</p>
+                        <p className="text-slate-700 dark:text-slate-200 leading-relaxed">From Nigerian to Peruvian to Korean, Houston's food truck scene brings the world to street corners across the city.</p>
                       </div>
                     </div>
                   </div>
@@ -814,7 +843,7 @@ export default function CityDetailPage() {
                     <i className="ri-lightbulb-line text-emerald-500"></i>
                     Foodie Strategy
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Eat breakfast tacos from a neighborhood truck, lunch at a BBQ joint, and dinner at a Tex-Mex institution. Repeat for seven days and you'll barely scratch the surface.</p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Eat breakfast tacos from a neighborhood truck, lunch at a BBQ joint, and dinner at a Tex-Mex institution. Repeat for seven days and you'll barely scratch the surface.</p>
                 </div>
               </div>
             </div>
@@ -851,7 +880,7 @@ export default function CityDetailPage() {
                       <i className="ri-calendar-line text-emerald-500"></i>
                       June Weather
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       Houston averages 82°F in June with high temperatures reaching 90°F and lows around 73°F. Humidity can reach up to 90% in the mornings. June is the wettest month of the year in Houston, with an average rainfall of 5.93 inches, meaning afternoon thunderstorms are common.
                     </p>
                   </div>
@@ -860,7 +889,7 @@ export default function CityDetailPage() {
                       <i className="ri-calendar-line text-emerald-500"></i>
                       July Weather
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       In July, average temperatures record a high of 93.4°F (34.1°C) and a low of 77.2°F (25.1°C). July offers the year's sunniest weather for Houston, with intense sunshine and high humidity creating a heat index that makes it feel even hotter.
                     </p>
                   </div>
@@ -881,21 +910,21 @@ export default function CityDetailPage() {
                         <i className="ri-shirt-line text-emerald-500"></i>
                         Clothing
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Shorts and t-shirts are standard. Dress codes are relaxed in Houston—even nice restaurants rarely require more than "smart casual."</p>
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Shorts and t-shirts are standard. Dress codes are relaxed in Houston—even nice restaurants rarely require more than "smart casual."</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
                         <i className="ri-sun-cloudy-line text-emerald-500"></i>
                         Sun Protection
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">Sunglasses, sunscreen (SPF 30+), and a hat are essential for any outdoor time. The sun is intense.</p>
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Sunglasses, sunscreen (SPF 30+), and a hat are essential for any outdoor time. The sun is intense.</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
                         <i className="ri-umbrella-line text-emerald-500"></i>
                         Rain Gear
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">Pack a compact umbrella or light rain jacket for afternoon thunderstorms, especially in June.</p>
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Pack a compact umbrella or light rain jacket for afternoon thunderstorms, especially in June.</p>
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -904,14 +933,14 @@ export default function CityDetailPage() {
                         <i className="ri-t-shirt-air-line text-emerald-500"></i>
                         Layers
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">Bring one light jacket or long-sleeve shirt. Indoor air conditioning can be aggressive, and the contrast from 95°F outside to 68°F inside is jarring.</p>
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Bring one light jacket or long-sleeve shirt. Indoor air conditioning can be aggressive, and the contrast from 95°F outside to 68°F inside is jarring.</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
                         <i className="ri-drop-line text-emerald-500"></i>
                         Hydration
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 text-sm">Drink water constantly. Houston humidity causes you to sweat more than you realize. Carry a refillable water bottle.</p>
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Drink water constantly. Houston humidity causes you to sweat more than you realize. Carry a refillable water bottle.</p>
                     </div>
                   </div>
                 </div>
@@ -921,7 +950,7 @@ export default function CityDetailPage() {
                     <i className="ri-shield-check-line text-emerald-500"></i>
                     Stadium Policies
                   </h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Check NRG Stadium's official bag policy before you go—clear bags are typically required for security. Plan accordingly and travel light on match days.</p>
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Check NRG Stadium's official bag policy before you go—clear bags are typically required for security. Plan accordingly and travel light on match days.</p>
                 </div>
               </div>
             </div>
@@ -970,6 +999,15 @@ export default function CityDetailPage() {
                       <span className="text-slate-700 dark:text-slate-200 ml-1">Widely available; use bank-affiliated machines to avoid excessive fees</span>
                     </div>
                   </div>
+                  <div>
+                    <h4 className="editorial-h4 mb-2 flex items-center gap-2">
+                      <i className="ri-bus-line text-emerald-500"></i>
+                      Public Transit
+                    </h4>
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      METRORail and bus service covers major corridors. All METRO buses are ADA accessible, offer free Wi-Fi, and are equipped with video surveillance security cameras. Each ride is just $1.25.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -988,27 +1026,19 @@ export default function CityDetailPage() {
                        <i className="ri-car-line text-emerald-500"></i>
                        Driving in Houston
                      </h4>
-                     <p className="text-slate-700 dark:text-slate-200 text-sm">
+                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                        If you rent a car, know that Houston is sprawling and car-centric. Highways (I-10, I-45, I-610, Beltway 8) connect everything, but traffic can be heavy during rush hours (7-9 AM, 4-7 PM).
                      </p>
                    </div>
 
-                   <div>
-                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                       <i className="ri-bus-line text-emerald-500"></i>
-                       Public Transit
-                     </h4>
-                     <p className="text-slate-700 dark:text-slate-200 text-sm">
-                       METRORail and bus service covers major corridors. All METRO buses are ADA accessible, offer free Wi-Fi, and are equipped with video surveillance security cameras. Each ride is just $1.25.
-                     </p>
-                   </div>
+
 
                    <div>
                      <h4 className="editorial-h4 mb-2 flex items-center gap-2">
                        <i className="ri-walk-line text-emerald-500"></i>
                        Walking
                      </h4>
-                     <p className="text-slate-700 dark:text-slate-200 text-sm">
+                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                        Downtown, Midtown, Museum District, and Heights/Montrose are walkable. Everywhere else, you'll need wheels.
                      </p>
                    </div>
@@ -1077,7 +1107,7 @@ export default function CityDetailPage() {
                 
                 <div className="space-y-4 mb-6">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    Tickets for the 2026 World Cup are sold in four phases. The first application to purchase general tickets went live Sept. 10 and closed Sept. 19. Subsequent phases will be announced on <span className="font-mono text-blue-600 dark:text-sky-400">https://www.fifa.com/tickets</span>.
+                    Tickets for the 2026 World Cup are sold in four phases. The first application to purchase general tickets went live Sept. 10 and closed Sept. 19. Subsequent phases will be announced on <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a>.
                   </p>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     FIFA World Cup tickets at NRG Stadium in Houston will start at $60, with prices increasing for premium seating and knockout rounds.
@@ -1090,7 +1120,7 @@ export default function CityDetailPage() {
                       <i className="ri-vip-crown-line text-emerald-500"></i>
                       Hospitality Packages
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       If you miss the general ticket lottery, hospitality packages start at $1,450 per match with venue series packages for Houston starting at $10,350. These include premium seating, access to exclusive lounges, and food and beverage service.
                     </p>
                   </div>
@@ -1100,7 +1130,7 @@ export default function CityDetailPage() {
                       <i className="ri-gift-line text-emerald-500"></i>
                       Verizon Promotion
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-200 text-sm">
+                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       Verizon is giving away free tickets to the World Cup to U.S. customers, with the first round opening Oct. 2 including the first match being played in Houston.
                     </p>
                   </div>
@@ -1167,31 +1197,31 @@ export default function CityDetailPage() {
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">1</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Register for FIFA tickets</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">at <span className="font-mono text-blue-600 dark:text-sky-400">https://www.fifa.com/tickets</span> for future phases</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future phases</span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">2</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Book accommodations early</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">via <span className="font-mono text-blue-600 dark:text-sky-400">https://www.booking.com</span> or <span className="font-mono text-blue-600 dark:text-sky-400">https://www.hotels.com</span>—6-12 months in advance recommended</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.hotels.com</a>—6-12 months in advance recommended</span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">3</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Research flights</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">to Houston (IAH or HOU) through <span className="font-mono text-blue-600 dark:text-sky-400">https://www.skyscanner.com</span> or <span className="font-mono text-blue-600 dark:text-sky-400">https://www.google.com/flights</span></span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">to Houston (IAH or HOU) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.google.com/flights</a></span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">4</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Download the METRO app</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">for public transit and plan your stadium transportation</span>
@@ -1199,7 +1229,7 @@ export default function CityDetailPage() {
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">5</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Make restaurant reservations</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">for Houston's top spots—places like The Original Ninfa's and Goode Company fill up during big events</span>
@@ -1207,13 +1237,47 @@ export default function CityDetailPage() {
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">6</div>
+                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Plan rest-day activities</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">Space Center Houston, Museum District, Buffalo Bayou Park</span>
                     </div>
                   </div>
                 </div>
+              </div>
+
+              {/* Related Destinations */}
+              <div className="mt-8">
+                <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+                  <i className="ri-road-map-line text-emerald-500"></i>
+                  Plan Your Southern States World Cup Journey
+                </h3>
+                <p className="leading-relaxed mb-4">
+                  Houston's Gulf Coast location and diverse culture make it ideal for exploring the American South and connecting to international destinations.
+                </p>
+                <div className="space-y-4">
+                  <div className="space-y-2">
+                    <h4 className="editorial-h4">Texas Takeover</h4>
+                    <p>
+                      Experience both Texas host cities: Houston (current, no link) for international cuisine and space exploration, then <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for Cowboys culture and urban energy.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="editorial-h4">Southern Hospitality Tour</h4>
+                    <p>
+                      Create a Southern states circuit: Houston (current) to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, experiencing three distinct Southern personalities and climates.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="editorial-h4">Gulf & Beyond</h4>
+                    <p>
+                      Connect Houston's Gulf Coast location with <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for tropical vibes, or head to Mexican host cities like <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> and <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> for an international flavor.
+                    </p>
+                  </div>
+                </div>
+                <p className="mt-6">
+                  <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+                </p>
               </div>
 
               <div>

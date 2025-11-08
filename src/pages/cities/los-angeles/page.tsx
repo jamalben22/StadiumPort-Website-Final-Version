@@ -64,6 +64,20 @@ export default function LosAngelesArticlePage() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumbs */}
+            <nav aria-label="Breadcrumb" className="mb-3">
+              <ol className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
+                <li>
+                  <Link to="/" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+                </li>
+                <li><span aria-hidden>›</span></li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                </li>
+                <li><span aria-hidden>›</span></li>
+                <li className="text-slate-900 dark:text-white font-semibold">Los Angeles World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Los Angeles</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -91,13 +105,35 @@ export default function LosAngelesArticlePage() {
             <i className="ri-trophy-line text-emerald-500"></i>
             Where World Cup Dreams Meet Hollywood Magic
           </h2>
-          <p className="whitespace-pre-line">
-            {`Get ready for the opening kick: The U.S. Men's National Team launches their World Cup journey at SoFi Stadium on June 12, 2026
-
-Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties. When the U.S. opens their 2026 campaign on June 12 at the gleaming SoFi Stadium in Inglewood, the City of Angels will welcome the world with 39 consecutive days of football fever, eight must-see matches, and a soccer culture that pulses through every corner of this sprawling metropolis. This is where beach vibes collide with championship ambitions, where tacos fuel pregame rituals, and where 3.6 million Mexican-Americans help create the most electric football atmosphere in North America.
-
-Forget everything you think you know about LA. The traffic? Manageable with the right strategy. The sprawl? Part of the adventure. The stereotypes? Shattered the moment you step into a packed supporters' section at BMO Stadium or watch the sun set over the Pacific after a match day. Los Angeles has been preparing for this moment since 1994, when the Rose Bowl hosted the World Cup final. Three decades later, the city's newest architectural marvel is ready to prove why LA is the undisputed soccer capital of the United States.`}
+          <p>
+            As one of the <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">World Cup 2026 host cities</Link>, Los Angeles will welcome fans from around the globe with a mix of football energy and California sunshine.
           </p>
+          <p className="whitespace-pre-line">
+            {`Get ready for the opening kick: The U.S. Men's National Team launches their World Cup journey at `}
+            <Link to="/world-cup-2026-stadiums/sofi-stadium" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
+            {` on June 12, 2026`}
+          </p>
+          <p className="whitespace-pre-line">
+            {`Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties. When the U.S. opens their 2026 campaign on June 12 at the gleaming SoFi Stadium in Inglewood, the City of Angels will welcome the world with 39 consecutive days of football fever, eight must-see matches, and a soccer culture that pulses through every corner of this sprawling metropolis. This is where beach vibes collide with championship ambitions, where tacos fuel pregame rituals, and where 3.6 million Mexican-Americans help create the most electric football atmosphere in North America.`}
+          </p>
+          <p className="whitespace-pre-line">
+            {`Forget everything you think you know about LA. The traffic? Manageable with the right strategy. The sprawl? Part of the adventure. The stereotypes? Shattered the moment you step into a packed supporters' section at BMO Stadium or watch the sun set over the Pacific after a match day. Los Angeles has been preparing for this moment since 1994, when the Rose Bowl hosted the World Cup final. Three decades later, the city's newest architectural marvel is ready to prove why LA is the undisputed soccer capital of the United States.`}
+          </p>
+
+          {/* Essential Links Module */}
+          <hr className="editorial-divider" />
+          <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-navy-800/60 p-5">
+            <p className="font-inter text-slate-900 dark:text-white font-semibold mb-2">🔗 Essential Los Angeles Links</p>
+            <p className="font-inter text-slate-700 dark:text-slate-300">
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/sofi-stadium" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium Guide</Link>
+            </p>
+            <p className="font-inter text-slate-700 dark:text-slate-300">
+              🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+            </p>
+            <p className="font-inter text-slate-700 dark:text-slate-300">
+              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
+            </p>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
@@ -166,6 +202,13 @@ Stadium Vibe: SoFi sits inside the Hollywood Park entertainment complex, meaning
           <p className="whitespace-pre-line mb-6">
             {`Here's the good news LA doesn't advertise enough: You absolutely don't need a car for World Cup matches. In fact, you probably shouldn't drive.`}
           </p>
+          <p className="font-inter text-slate-700 dark:text-slate-300 mb-6">
+            Los Angeles is well-connected to other host cities like
+            {' '}<Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+            {' '}and{' '}
+            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
+            , making multi-city itineraries easy via air or rail.
+          </p>
           
           <div className="mt-6 space-y-6">
             <div>
@@ -199,6 +242,46 @@ Rideshare Reality: Uber and Lyft work, but expect surge pricing and pickup chaos
 Driving & Parking: If you must drive, pre-purchase parking through the stadium's official provider. Zones (color-coded: Orange, Green, Purple) open 2-4 hours pre-match and cost significantly more than Metro fare. ADA parking available with valid permits.`}
               </p>
             </div>
+          </div>
+          <hr className="editorial-divider" />
+        </article>
+
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-500"></i>
+            Plan Your West Coast World Cup Journey
+          </h3>
+          <div className="space-y-4">
+            <p>
+              Los Angeles is perfectly positioned for an epic West Coast World Cup adventure. Many fans combine multiple cities for the ultimate 2026 experience.
+            </p>
+            <p className="font-inter text-slate-900 dark:text-white font-semibold">Popular Combinations:</p>
+            <p>
+              <strong>Pacific Coast Circuit</strong>
+              {' '}Start in Los Angeles, head north to{' '}
+              <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+              {' '}for its tech culture and iconic landmarks, then continue to{' '}
+              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
+              {' '}for Pacific Northwest charm.
+            </p>
+            <p>
+              <strong>Southern California & Beyond</strong>
+              {' '}Combine LA's beaches and entertainment and, if time allows, venture to Las Vegas for world-class shows between matches.
+            </p>
+            <p>
+              <strong>Cross-Border Adventure</strong>
+              {' '}Connect Los Angeles with{' '}
+              <Link to="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+              ,{' '}
+              <Link to="/world-cup-2026-host-cities/guadalajara" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>
+              , or{' '}
+              <Link to="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>
+              {' '}for an incredible cultural contrast.
+            </p>
+            <p>
+              <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            </p>
           </div>
           <hr className="editorial-divider" />
         </article>

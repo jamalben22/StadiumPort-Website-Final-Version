@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -21,6 +21,19 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">Hard Rock Stadium</li>
+          </ol>
+        </nav>
+      )}
 
       {/* Preview Card - Collapsed State */}
       {!isExpanded && !hideHero && (
@@ -120,7 +133,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Where Miami's Sunshine Meets Football's Biggest Stage
               </h3>
               <p className="leading-relaxed mb-6">
-                Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. Hard Rock Stadium will host seven World Cup 2026 matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, Hard Rock Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. The stadium will host seven matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
               </p>
               <p className="leading-relaxed mb-6">
                 This isn't just another football stadium. Since opening in 1987, this Miami Gardens landmark has hosted six Super Bowls, the 2024 Copa América final, WrestleMania, and Formula 1's Miami Grand Prix. But what makes it truly special for World Cup 2026 is how it blends cutting-edge design with Miami's irresistible culture — where you can watch elite football in world-class comfort, then dance salsa in Little Havana or soak up South Beach vibes within 30 minutes.
@@ -140,82 +153,93 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Stadium Overview & Fast Facts
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Official Name:</strong> Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")
-                  </p>
+                    <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                    <p class="leading-relaxed">Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Location:</strong> Miami Gardens, Florida (northern Miami suburb)
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                    <p class="leading-relaxed">Miami Gardens, Florida (northern Miami suburb)</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Address:</strong> 347 Don Shula Drive, Miami Gardens, FL 33056
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Address</span>
+                    <p class="leading-relaxed">347 Don Shula Drive, Miami Gardens, FL 33056</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-calendar-2-line text-amber-400 dark:text-amber-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Opened:</strong> 1987
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-calendar-2-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                    <p class="leading-relaxed">1987</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>World Cup Capacity:</strong> 67,518
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">World Cup Capacity</span>
+                    <p class="leading-relaxed">67,518</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Standard Capacity:</strong> 64,767
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Standard Capacity</span>
+                    <p class="leading-relaxed">64,767</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-shield-star-line text-amber-400 dark:text-amber-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Primary Tenants:</strong> Miami Dolphins (NFL), Miami Hurricanes (NCAA)
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-shield-star-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
+                    <p class="leading-relaxed">Miami Dolphins (NFL), Miami Hurricanes (NCAA)</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Architect:</strong> HOK (original); HOK with Arquitectonica (2015-16 renovation)
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
+                    <p class="leading-relaxed">HOK (original); HOK with Arquitectonica (2015-16 renovation)</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Structural Engineer:</strong> Thornton Tomasetti
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-building-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Structural Engineer</span>
+                    <p class="leading-relaxed">Thornton Tomasetti</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Surface Type:</strong> Natural grass
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                    <p class="leading-relaxed">Natural grass</p>
+                  </div>
                 </div>
-                <div className="flex items-start gap-3 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <i className="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl"></i>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    <strong>Roof Type:</strong> Open-air canopy covering seating areas (field exposed)
-                  </p>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <i class="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                    <p class="leading-relaxed">Open-air canopy covering seating areas (field exposed)</p>
+                  </div>
                 </div>
-                <div className="md:col-span-2 p-4 bg-white dark:bg-slate-800/70 rounded-xl border border-slate-200 dark:border-slate-700">
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-semibold mb-3">
-                    Notable Features:
-                  </p>
-                  <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
-                    <li>Massive cable-supported canopy suspended by eight concrete mega-columns and 350-foot steel masts</li>
-                    <li>Four corner-mounted video boards</li>
-                    <li>Over 1,090 tap handles (one of highest in NFL)</li>
-                    <li>First privately-financed multipurpose stadium in US history</li>
-                  </ul>
+                <div class="flex items-center gap-3 py-2">
+                  <div>
+                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed font-semibold mb-3">Notable Features</span>
+                    <ul class="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
+                      <li>Massive cable-supported canopy suspended by eight concrete mega-columns and 350-foot steel masts</li>
+                      <li>Four corner-mounted video boards</li>
+                      <li>Over 1,090 tap handles (one of highest in NFL)</li>
+                      <li>First privately-financed multipurpose stadium in US history</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </article>
@@ -418,18 +442,12 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <i className="ri-flight-takeoff-line text-amber-400 dark:text-amber-300 text-3xl"></i>
                   From Airports
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Miami International Airport (MIA):</strong> 20 minutes by car, 45 minutes via Metrorail + bus. Closest major airport.
                     </p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Fort Lauderdale-Hollywood (FLL):</strong> 30 minutes by car, slightly longer by Tri-Rail + transfer. Often cheaper flights.
                     </p>
-                  </div>
-                </div>
               </div>
             </article>
 
@@ -468,18 +486,12 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     <strong>Upscale:</strong> JW Marriott Turnberry Resort & Spa ($350+/night)
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Pros:</strong> Short commute, quieter neighborhoods, often better value
                     </p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Cons:</strong> Limited nightlife, farther from Miami's cultural attractions
                     </p>
-                  </div>
-                </div>
               </div>
 
               {/* Downtown Miami & Brickell (Best Balance) */}
@@ -502,18 +514,12 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     <strong>Luxury:</strong> Kimpton Epic, InterContinental Miami ($400-700/night)
                   </p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Pros:</strong> Central location, public transit hub, business hotels with solid amenities
                     </p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                       <strong>Cons:</strong> Less "beachy" Miami vibe, matchday commute requires planning
                     </p>
-                  </div>
-                </div>
               </div>
 
               {/* Miami Beach & South Beach (Ultimate Experience) */}
@@ -530,14 +536,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Mid-Range:</strong> Local House Miami Beach (boutique, eco-friendly, $250-400/night)</p>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Luxury:</strong> The Ritz-Carlton Bal Harbour, Acqualina Resort, The St. Regis Bal Harbour ($500-1000+/night)</p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Pros:</strong> Iconic beach experience, incredible food scene, nightlife capital</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Cons:</strong> Longest stadium commute, most expensive area, crowded during World Cup</p>
-                  </div>
-                </div>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Pros:</strong> Iconic beach experience, incredible food scene, nightlife capital</p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Cons:</strong> Longest stadium commute, most expensive area, crowded during World Cup</p>
               </div>
 
               {/* Hollywood & Fort Lauderdale (Value Alternative) */}
@@ -554,14 +554,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Mid-Range:</strong> Margaritaville Hollywood Beach Resort, 9 miles from stadium with family-friendly beach access ($280-450/night)</p>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Luxury:</strong> DoubleTree Resort Hollywood Beach ($350-600/night)</p>
                 </div>
-                <div className="grid md:grid-cols-2 gap-4 mt-4">
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Pros:</strong> Good value, beach access, shorter stadium distance than South Beach</p>
-                  </div>
-                  <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                    <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Cons:</strong> Outside Miami proper, requires car or longer transit</p>
-                  </div>
-                </div>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Pros:</strong> Good value, beach access, shorter stadium distance than South Beach</p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed"><strong>Cons:</strong> Outside Miami proper, requires car or longer transit</p>
               </div>
             </article>
 
@@ -729,12 +723,12 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Divider */}
             <hr className="editorial-divider" />
 
-            {/* Things to Do Nearby */}
-            <article className="editorial-body">
-              <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-3xl"></i>
-                Things to Do Nearby
-              </h3>
+              {/* Things to Do Nearby */}
+              <article className="editorial-body">
+                <h3 className="editorial-h3 mb-6 flex items-center gap-3">
+                  <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                  Things to Do Nearby
+                </h3>
 
               {/* Pre-Match: Fan Zones & Tailgating */}
               <div className="mt-2">
@@ -765,10 +759,33 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
               </div>
-            </article>
+              <p className="leading-relaxed mt-4">Exploring other southern venues? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta, <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City.</p>
+              </article>
 
             {/* Divider */}
             <hr className="editorial-divider" />
+
+            {/* Beyond the Stadium: Explore Miami */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                Beyond the Stadium: Explore Miami
+              </h3>
+              <p className="leading-relaxed mb-4">Miami's tropical paradise atmosphere and vibrant culture create an electric World Cup 2026 experience.</p>
+              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
+                <p className="leading-relaxed"><strong>Discover Miami:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami World Cup 2026 Guide</Link> for essential travel information:</p>
+                <ul className="list-disc list-inside mt-3 space-y-1">
+                  <li>Hotels near Hard Rock Stadium</li>
+                  <li>Best beaches and neighborhoods</li>
+                  <li>Art Deco District and South Beach</li>
+                  <li>Cuban cuisine and nightlife</li>
+                  <li>Transportation and match day tips</li>
+                </ul>
+              </div>
+              <p className="leading-relaxed mb-4"><strong>Other Southern Stadiums:</strong> Visiting multiple cities in the South? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston.</p>
+              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+              <hr className="editorial-divider" />
+            </article>
 
             {/* Neighborhood Highlights */}
             <article className="editorial-body">
@@ -811,20 +828,14 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
                 Nature Escapes
               </h3>
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     <strong>Everglades National Park (45 minutes):</strong>
                     Unique subtropical wilderness — book an airboat tour to see alligators in their natural habitat. Half-day excursion ideal for rest days between matches.
                   </p>
-                </div>
-                <div className="p-4 rounded-xl bg-white dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700">
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     <strong>Key Biscayne & Bill Baggs Park (35 minutes):</strong>
                     Beautiful beaches with historic lighthouse, less crowded than South Beach, perfect for post-match recovery.
                   </p>
-                </div>
-              </div>
             </article>
 
             {/* Divider */}
@@ -911,7 +922,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 </p>
                 <div className="mt-4 p-5 rounded-2xl bg-gradient-to-r from-emerald-50 to-sky-50 dark:from-emerald-900/20 dark:to-sky-900/20 border border-emerald-200 dark:border-emerald-800">
                   <p className="text-slate-800 dark:text-slate-200 italic">
-                    Ready to secure your Miami World Cup experience? Book accommodations through `https://booking.com` , `https://expedia.com` , or `https://airbnb.com`  to lock in rates before the rush. Airport transfers and car rentals through major providers ensure smooth arrival — Miami rewards advance planning.
+                    Ready to secure your Miami World Cup experience? Book accommodations through <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>, <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a>, or <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a> to lock in rates before the rush. Airport transfers and car rentals through major providers ensure smooth arrival — Miami rewards advance planning.
                   </p>
                 </div>
               </div>

@@ -186,7 +186,7 @@ export default function AffiliateDisclaimerPage() {
 
  By using our affiliate links, you're supporting free, high-quality World Cup travel content. We genuinely appreciate it. 
 
- **Now go plan an amazing 2026 World Cup adventure!** ⚽ 
+ **Now go plan an amazing 2026 World Cup adventure!** 
 
  --- 
 
@@ -232,20 +232,20 @@ export default function AffiliateDisclaimerPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
       <main className="pt-20">
-        <section className="relative py-28 bg-white">
+        <section className="relative py-28 bg-white dark:bg-navy-900">
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <Card
-              variant="default"
-              padding="xl"
-              border={false}
-              hover={false}
-              animate={false}
-              className="bg-white rounded-3xl"
-            >
-              <div className="relative z-10 p-6 md:p-10">
+             <Card
+               variant="default"
+               padding="xl"
+               border={false}
+               hover={false}
+               animate={false}
+               className="bg-white rounded-3xl dark:bg-navy-900"
+             >
+               <div className="relative z-10 p-6 md:p-10">
                 <div className="mx-auto max-w-2xl">
                   <div
                     className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter"
@@ -266,7 +266,7 @@ export default function AffiliateDisclaimerPage() {
                           />
                         ),
                         p: ({ node, children, ...props }) => (
-                          <p className="text-slate-700 leading-8" {...props}>
+                          <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
                             {withMonochromeEmoji(children)}
                           </p>
                         ),
@@ -277,12 +277,12 @@ export default function AffiliateDisclaimerPage() {
                           <ol className="lux-ol space-y-2" {...props} />
                         ),
                         li: ({ node, children, ...props }) => (
-                          <li className="text-slate-700" {...props}>
+                          <li className="text-slate-700 dark:text-slate-300" {...props}>
                             {withMonochromeEmoji(children)}
                           </li>
                         ),
                         strong: ({ node, ...props }) => (
-                          <strong className="font-semibold text-slate-900" {...props} />
+                          <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                         ),
                         hr: () => (
                           <hr className="my-12 border-t border-slate-200" />

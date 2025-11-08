@@ -3,6 +3,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { Link } from 'react-router-dom';
 
 export function MexicoCityGuide() {
   return (
@@ -79,6 +80,14 @@ export function MexicoCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumbs */}
+            <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+              <Link to="/" className="hover:underline">Home</Link>
+              <span className="mx-2">›</span>
+              <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+              <span className="mx-2">›</span>
+              <span className="text-slate-500 dark:text-slate-400">Mexico City World Cup 2026 Guide</span>
+            </nav>
             <h1 className="editorial-hero-title">Mexico City</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -87,7 +96,7 @@ export function MexicoCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <span>Estadio Azteca</span>
+                <Link to="/world-cup-2026-stadiums/estadio-azteca" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Estadio Azteca</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -107,12 +116,27 @@ export function MexicoCityGuide() {
             The Only Stadium to Host Three World Cup Opening Matches
           </h3>
           <p>
-            On June 11, 2026, football history will repeat itself in the most spectacular way possible. Estadio Azteca—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
+            On June 11, 2026, football history will repeat itself in the most spectacular way possible. <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. Mexico City is one of the 16 host cities for World Cup 2026—{' '}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
           </p>
           <p>
             Mexico City will host five matches total during the tournament: three group stage games, one round of 32 match, and one round of 16 match. The stadium is undergoing its most extensive renovation in decades—a two-year, $180 million transformation that will increase capacity to 90,000 spectators while adding 2,000 square meters of LED screens, new hospitality areas covering over 7,000 square meters, and completely modernized facilities. The renovated Azteca reopens March 28, 2026, just 75 days before kickoff.
           </p>
         </article>
+        {/* Essential Links module */}
+        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+          <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Mexico City Links</div>
+          <div className="space-y-1 text-slate-800 dark:text-slate-200">
+            <div>
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-azteca" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Azteca Guide</Link>
+            </div>
+            <div>
+              🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+            </div>
+            <div>
+              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link> | <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+            </div>
+          </div>
+        </div>
         <hr className="editorial-divider" />
 
         {/* The Legend of El Azteca */}
@@ -150,6 +174,9 @@ export function MexicoCityGuide() {
           </p>
           <p>
             <strong>Pro tip</strong>: Download the "Mi Transporte" or "Moovit" app before arriving. Both show real-time Metro and light rail arrivals, helping you navigate the system like a local.
+          </p>
+          <p className="mt-4">
+            Planning a multi-city World Cup itinerary? Combine matches in <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link> and <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>. For a cross-border experience, add <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link> to your trip.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -373,6 +400,44 @@ export function MexicoCityGuide() {
         </article>
         <hr className="editorial-divider" />
 
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            Plan Your Mexico World Cup Adventure
+          </h3>
+          <p>
+            Mexico City is the perfect starting point for exploring Mexico's World Cup host cities and experiencing the country's rich football culture.
+          </p>
+          <div className="mt-6 space-y-6">
+            <div>
+              <h4 className="editorial-h4">Popular Combinations:</h4>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Mexico Circuit</h4>
+              <p>
+                Discover all three Mexican host cities: Start in Mexico City (current), travel west to <Link to="/world-cup-2026-host-cities/guadalajara" className="underline">Guadalajara</Link> for mariachi and tequila culture, then north to <Link to="/world-cup-2026-host-cities/monterrey" className="underline">Monterrey</Link> for mountain landscapes and modern energy.
+              </p>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Cross-Border Experience</h4>
+              <p>
+                Many international visitors combine Mexico City with US host cities like <Link to="/world-cup-2026-host-cities/los-angeles" className="underline">Los Angeles</Link>, <Link to="/world-cup-2026-host-cities/dallas" className="underline">Dallas</Link>, or <Link to="/world-cup-2026-host-cities/houston" className="underline">Houston</Link> for a diverse North American adventure.
+              </p>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Central America Gateway</h4>
+              <p>
+                Mexico City's location makes it easy to explore other Mexican destinations or connect to nearby Central American countries before or after the tournament.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6">
+            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          </p>
+          <hr className="editorial-divider" />
+        </article>
+
         {/* Part 5: Why Mexico City Deserves Extra Days */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -394,7 +459,7 @@ export function MexicoCityGuide() {
           <p>
             <strong>Book your Mexico City experience now</strong>. The opening match. The altitude. The passion. The history. This is where the 2026 World Cup begins—make sure you're there.
           </p>
-          <p>---</p>
+
         </article>
       </main>
 

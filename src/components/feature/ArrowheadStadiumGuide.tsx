@@ -89,33 +89,33 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-building-2-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Official Name</span>
+                      <i className="ri-building-2-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Official Name</span>
                       <p className="text-slate-900 dark:text-white font-semibold">GEHA Field at Arrowhead Stadium</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-map-pin-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Location</span>
+                      <i className="ri-map-pin-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Location</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Kansas City, Missouri (Truman Sports Complex)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-group-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Capacity</span>
+                      <i className="ri-group-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Capacity</span>
                       <p className="text-slate-900 dark:text-white font-semibold">76,416 (World Cup configuration)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-calendar-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Opened</span>
+                      <i className="ri-calendar-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Opened</span>
                       <p className="text-slate-900 dark:text-white font-semibold">August 12, 1972</p>
                     </div>
                   </div>
@@ -125,31 +125,31 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <div className="flex items-center gap-3 py-2">
                     <i className="ri-grass-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Playing Surface</span>
+                      <span className="font-semibold">Playing Surface</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Natural Grass</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-home-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Home Team</span>
+                      <i className="ri-home-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Home Team</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Kansas City Chiefs</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-volume-up-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Noise Record</span>
+                      <i className="ri-volume-up-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Noise Record</span>
                       <p className="text-slate-900 dark:text-white font-semibold">142.2 decibels (2014)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-car-line text-emerald-500 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">Parking</span>
+                      <i className="ri-car-line text-emerald-500 text-xl mr-2"></i>
+                      <span className="font-semibold">Parking</span>
                       <p className="text-slate-900 dark:text-white font-semibold">27,000+ spaces</p>
                     </div>
                   </div>
@@ -281,10 +281,10 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-bus-line text-emerald-500 text-2xl"></i>
                   By Public Transportation
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Kansas City Area Transportation Authority (KCATA)</strong> operates special event bus service to Arrowhead Stadium from downtown Kansas City and major hotels. The #129 Arrowhead Express runs from downtown's Grand Boulevard Transit Center directly to the stadium, with service beginning 3 hours before kickoff and continuing 2 hours post-match.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>KC Streetcar</strong> connects downtown Kansas City attractions to the bus terminal, making public transit a viable option for visitors staying in the city center. The streetcar is free and runs every 10-15 minutes, connecting Union Station, Power & Light District, and the River Market.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -298,10 +298,10 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-taxi-line text-emerald-500 text-2xl"></i>
                   By Rideshare/Taxi
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Uber and Lyft</strong> operate designated pickup/drop-off zones at Arrowhead Stadium, located in Lot M (north side of stadium). Expect surge pricing during major events—fares from downtown Kansas City typically range $25-45 each way, potentially doubling during peak demand.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Traditional taxis</strong> are available but less common in Kansas City. Pre-arrange return trips through hotel concierges or taxi companies, as post-match availability can be limited.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -315,7 +315,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-bike-line text-emerald-500 text-2xl"></i>
                   By Bike
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   Kansas City's <strong>BikeKC</strong> bike-share system doesn't extend to Arrowhead Stadium, but dedicated cyclists can use city bike lanes and trails. The <strong>Blue River Parkway Trail</strong> provides a scenic route from downtown, though the 12-mile journey requires good fitness and weather cooperation.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -329,13 +329,13 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-plane-line text-emerald-500 text-2xl"></i>
                   From Kansas City International Airport (MCI)
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Distance:</strong> 25 miles (40 km) northwest of Arrowhead Stadium. <strong>Travel time:</strong> 30-45 minutes by car, depending on traffic.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Rental cars:</strong> All major agencies operate from MCI's consolidated rental facility. Take I-29 South to I-435 East to I-70 East to reach the stadium area.
                 </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   <strong>Airport shuttles:</strong> SuperShuttle and GO Airport Shuttle provide shared-ride service to hotels and the stadium area. Advance reservations recommended, especially during World Cup matches.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -352,7 +352,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 Where to Stay
               </h2>
               
-              <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-8">
+              <p className="text-slate-700 dark:text-slate-300">
                 Kansas City offers diverse accommodation options, from downtown luxury hotels to suburban convenience near the stadium.
               </p>
 
@@ -362,7 +362,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-building-line text-emerald-500 text-2xl"></i>
                   Downtown Kansas City (Best Overall Experience)
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   Stay in the heart of Kansas City's cultural and entertainment district, with easy access to restaurants, nightlife, and attractions. The Power & Light District offers the city's best dining and entertainment options.
                 </p>
                 
@@ -372,7 +372,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-star-line text-emerald-500"></i>
                       The Fontaine (Luxury)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Autograph Collection hotel in the Power & Light District. Rooftop bar, upscale dining, walking distance to entertainment. $280-400/night during World Cup.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Autograph Collection hotel in the Power & Light District. Rooftop bar, upscale dining, walking distance to entertainment. $280-400/night during World Cup.</p>
                   </div>
                   
                   <div className="space-y-1">
@@ -380,7 +380,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-star-line text-emerald-500"></i>
                       Hotel Phillips (Historic Luxury)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">1931 Art Deco landmark with modern amenities. Downtown location, elegant rooms, historic character. $220-320/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">1931 Art Deco landmark with modern amenities. Downtown location, elegant rooms, historic character. $220-320/night.</p>
                   </div>
                   
                   <div className="space-y-1">
@@ -388,7 +388,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-building-2-line text-emerald-500"></i>
                       Marriott Downtown (Mid-Range)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Reliable chain hotel in the heart of downtown. Connected to convention center, multiple dining options. $180-280/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Reliable chain hotel in the heart of downtown. Connected to convention center, multiple dining options. $180-280/night.</p>
                   </div>
                 </div>
               </div>
@@ -399,19 +399,19 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-shopping-cart-line text-emerald-500 text-2xl"></i>
                   Crown Center (Family-Friendly)
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   Shopping and entertainment complex with hotels, restaurants, and family attractions. Connected to Union Station and its science museum, planetarium, and dining options.
                 </p>
                 
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Sheraton Crown Center</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Large hotel connected to shopping and dining. Indoor walkways to Union Station. $160-240/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Large hotel connected to shopping and dining. Indoor walkways to Union Station. $160-240/night.</p>
                   </div>
                   
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Westin Crown Center</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Upscale option with excellent amenities. Connected to Crown Center shops and restaurants. $200-300/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Upscale option with excellent amenities. Connected to Crown Center shops and restaurants. $200-300/night.</p>
                   </div>
                 </div>
               </div>
@@ -422,19 +422,19 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-store-line text-emerald-500 text-2xl"></i>
                   Country Club Plaza (Upscale Shopping District)
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   Spanish-inspired outdoor shopping district with upscale retail, fine dining, and beautiful architecture. More residential feel, 15 minutes from downtown.
                 </p>
                 
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">The Raphael Hotel</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Boutique European-style hotel on the Plaza. Elegant rooms, fine dining, walkable to shops. $190-290/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Boutique European-style hotel on the Plaza. Elegant rooms, fine dining, walkable to shops. $190-290/night.</p>
                   </div>
                   
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">InterContinental Kansas City</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Luxury hotel at the Plaza. Rooftop restaurant, spa services, premium amenities. $250-380/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Luxury hotel at the Plaza. Rooftop restaurant, spa services, premium amenities. $250-380/night.</p>
                   </div>
                 </div>
               </div>
@@ -445,19 +445,19 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   <i className="ri-map-pin-line text-emerald-500 text-2xl"></i>
                   Near Stadium (Convenience Over Atmosphere)
                 </h3>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                <p className="text-slate-700 dark:text-slate-300">
                   Limited options near Arrowhead Stadium, mostly chain hotels along I-70. Convenient for match days but lacking in dining and entertainment options.
                 </p>
                 
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Drury Inn & Suites Stadium</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">Closest hotel to Arrowhead Stadium. Free breakfast, evening snacks, indoor pool. $120-180/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">Closest hotel to Arrowhead Stadium. Free breakfast, evening snacks, indoor pool. $120-180/night.</p>
                   </div>
                   
                   <div className="space-y-1">
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-2">Holiday Inn Express Independence</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm">15 minutes from stadium. Basic amenities, free breakfast, reliable chain quality. $100-150/night.</p>
+                    <p className="text-slate-700 dark:text-slate-300">15 minutes from stadium. Basic amenities, free breakfast, reliable chain quality. $100-150/night.</p>
                   </div>
                 </div>
               </div>
@@ -571,7 +571,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 </h3>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-white mb-2">LC's Bar-B-Q (5800 Blue Parkway)</h4>
-                  <p className="text-slate-700 dark:text-slate-300 text-sm">Five minutes from the stadium, perfect for authentic KC BBQ before the match. Counter-service, no-frills, legendary ribs and burnt ends.</p>
+                  <p className="text-slate-700 dark:text-slate-300">Five minutes from the stadium, perfect for authentic KC BBQ before the match. Counter-service, no-frills, legendary ribs and burnt ends.</p>
                 </div>
               </div>
 
@@ -588,7 +588,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-building-3-line text-emerald-500"></i>
                       National WWI Museum and Memorial (Downtown)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       America's only museum dedicated to The Great War, with world-class exhibits and stunning Liberty Memorial Tower views of the Kansas City skyline. Allow 2-3 hours. ($18 adults, $10 youth)
                     </p>
                   </div>
@@ -598,7 +598,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-trophy-line text-emerald-500"></i>
                       Negro Leagues Baseball Museum (18th & Vine District)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Essential visit celebrating African American baseball history and Kansas City's pivotal role. Often combined with American Jazz Museum next door. ($15 adults)
                     </p>
                   </div>
@@ -608,7 +608,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-goblet-line text-emerald-500"></i>
                       Boulevard Brewing Company (Southwest Boulevard)
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Kansas City's largest craft brewery offers tours and tastings. Perfect post-match or rest-day activity. (Tours $10-15)
                     </p>
                   </div>
@@ -618,7 +618,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                       <i className="ri-shopping-bag-line text-emerald-500"></i>
                       Country Club Plaza
                     </h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Ten minutes from stadium, this Spanish-inspired shopping district features upscale retail, restaurants, and beautiful architecture. Great for non-match days.
                     </p>
                   </div>
@@ -659,28 +659,28 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Arthur Bryant's (1727 Brooklyn Ave)</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Legendary since the 1920s, proclaimed "single best restaurant in the world" by food critic Calvin Trillin. Try the burnt ends—Arthur Bryant invented them. Tangy, vinegar-forward sauce. ($12-18 per plate)
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Gates Bar-B-Q (Multiple locations)</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Known for enthusiastic "HI, MAY I HELP YOU?" greeting and thick, sweet-and-spicy sauce. The 12th & Brooklyn location is closest to 18th & Vine. ($10-16 per plate)
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Joe's Kansas City Bar-B-Que (47th & Mission Road, KS)</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Housed in a gas station, frequently ranked America's best BBQ. Arrive early—lines form quickly. Z-Man sandwich is legendary. ($12-20)
                     </p>
                   </div>
                   
                   <div>
                     <h4 className="font-semibold text-slate-900 dark:text-white mb-3">Q39 (Multiple locations)</h4>
-                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed">
+                    <p className="text-slate-700 dark:text-slate-300">
                       Modern approach to KC BBQ with upscale atmosphere. Excellent if you want craft cocktails with your ribs. ($18-28)
                     </p>
                   </div>

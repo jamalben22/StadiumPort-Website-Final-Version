@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
@@ -79,6 +80,19 @@ export function GuadalajaraCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav aria-label="Breadcrumb" className="mb-3">
+              <ol className="flex flex-wrap items-center gap-2 text-sm">
+                <li>
+                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Home</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Host Cities</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li className="text-slate-700 dark:text-slate-300">Guadalajara World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Guadalajara</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -101,22 +115,51 @@ export function GuadalajaraCityGuide() {
       {/* Main Content — Editorial presentation aligned with NYC guide */}
       <main className="editorial-article py-12">
         {/* Four Matches at the Volcano-Shaped Stadium */}
-        <article className="editorial-body editorial-dropcap">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Four Matches at the Volcano-Shaped Stadium
           </h3>
           <p>
-            On June 11, 2026—the same night Mexico City hosts the World Cup's opening match—Guadalajara kicks off its own World Cup journey at Estadio Akron, one of Mexico's most architecturally striking football venues. This city that gave the world mariachi music, tequila, and the iconic tortas ahogadas will host four group stage matches, including Mexico's second match on June 18. Get ready for what locals promise will be the most passionate atmosphere of the entire tournament.
+            Guadalajara is one of the{' '}
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}
+            for World Cup 2026. On June 11, 2026—the same night Mexico City hosts the World Cup's opening match—Guadalajara kicks off its own World Cup journey at{' '}
+            <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>, one of Mexico's most architecturally striking football venues. This city that gave the world mariachi music, tequila, and the iconic tortas ahogadas will host four group stage matches, including Mexico's second match on June 18. Get ready for what locals promise will be the most passionate atmosphere of the entire tournament.
           </p>
+          <div className="mt-6 rounded-lg border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-navy-800">
+            <p className="font-semibold mb-2">🔗 Essential Guadalajara Links</p>
+            <ul className="space-y-2">
+              <li>
+                🏟️ <span className="font-semibold">Stadium:</span>{' '}
+                <Link to="/world-cup-2026-stadiums/estadio-akron" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Akron Guide</Link>
+              </li>
+              <li>
+                🗺️ <span className="font-semibold">All Host Cities:</span>{' '}
+                <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </li>
+              <li>
+                ✈️ <span className="font-semibold">Nearby Cities:</span>{' '}
+                <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+              </li>
+            </ul>
+          </div>
           <p>
             Estadio Akron holds 48,071 seats within a design that literally resembles a volcano, with a grassy exterior that blends into the landscape. Since opening in 2010, it's become home to Club Deportivo Guadalajara—Las Chivas—one of Mexico's most beloved football clubs and the only team in Liga MX that fields exclusively Mexican players. For World Cup 2026, FIFA will temporarily rename it "Estadio Guadalajara" under their corporate sponsorship policies, but locals will always call it Akron.
+          </p>
+          <p className="leading-relaxed mt-4">
+            Guadalajara connects easily to{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}and{' '}
+            <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>{' '}for a complete Mexican World Cup experience. Many international visitors combine Guadalajara with US cities like{' '}
+            <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}to build a cross-border itinerary.
           </p>
         </article>
         <hr className="editorial-divider" />
 
         {/* The Pearl of the West Welcomes the World */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-community-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             The Pearl of the West Welcomes the World
@@ -134,7 +177,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Getting to Estadio Akron: Plan Your Route */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Getting to Estadio Akron: Plan Your Route
@@ -158,7 +201,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Where to Stay: Finding Your Guadalajara Base */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Where to Stay: Finding Your Guadalajara Base
@@ -182,7 +225,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Part 2: Additional Stay Options & Booking */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Zapopan (Closest to the Stadium)
@@ -310,7 +353,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Part 3: Eating Your Way Through Guadalajara */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-restaurant-2-line text-rose-400 dark:text-rose-300 text-3xl"></i>
             Eating Your Way Through Guadalajara
@@ -349,7 +392,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Part 3: Getting Around Like a Tapatío */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-routes-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Getting Around Like a Tapatío (Guadalajara Local)
@@ -373,7 +416,7 @@ export function GuadalajaraCityGuide() {
         <hr className="editorial-divider" />
 
         {/* Part 3: Practical Guadalajara Intelligence */}
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-information-line text-amber-400 dark:text-amber-300 text-3xl"></i>
             Practical Guadalajara Intelligence
@@ -387,7 +430,7 @@ export function GuadalajaraCityGuide() {
         </article>
         <hr className="editorial-divider" />
 
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-shield-check-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Safety
@@ -398,7 +441,7 @@ export function GuadalajaraCityGuide() {
         </article>
         <hr className="editorial-divider" />
 
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-water-flash-line text-sky-400 dark:text-sky-300 text-3xl"></i>
             Drinking Water
@@ -409,7 +452,7 @@ export function GuadalajaraCityGuide() {
         </article>
         <hr className="editorial-divider" />
 
-        <article className="editorial-article">
+        <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-night-clear-line text-fuchsia-400 dark:text-fuchsia-300 text-3xl"></i>
             Nightlife
@@ -430,6 +473,38 @@ export function GuadalajaraCityGuide() {
           </p>
           <p>
             FIFA ticket sales continue through FIFA.com/tickets, with additional release phases closer to the tournament. Register even if you missed early sales—returns and last-minute availability appear regularly.
+          </p>
+        </article>
+        <hr className="editorial-divider" />
+
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            Plan Your Mexico World Cup Adventure
+          </h3>
+          <p>
+            Guadalajara is the heart of traditional Mexican culture and the perfect base for exploring all three Mexican host cities and connecting to US destinations.
+          </p>
+          <p className="mt-4"><strong>Popular Combinations:</strong></p>
+          <p className="mt-2">
+            <strong>Complete Mexico Circuit</strong>{' '}Experience the full Mexican World Cup: Start in Guadalajara (current) for mariachi and tequila culture, head to{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for history and metropolitan energy, then continue to{' '}
+            <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>{' '}for mountain landscapes and modern Mexican innovation.
+          </p>
+          <p className="mt-2">
+            <strong>Pacific Connection</strong>{' '}Combine Guadalajara with West Coast US cities like{' '}
+            <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>{' '}for an easy Pacific-focused World Cup tour with cultural diversity.
+          </p>
+          <p className="mt-2">
+            <strong>Border to Capital</strong>{' '}Create a cross-border adventure: Start in US cities like{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, cross into Mexico at{' '}
+            <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>, then travel to Guadalajara (current) and{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for a complete North American experience.
+          </p>
+          <p className="mt-4">
+            <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
           </p>
         </article>
         <hr className="editorial-divider" />

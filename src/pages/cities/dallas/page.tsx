@@ -52,6 +52,13 @@ export default function DallasArticlePage() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav className="editorial-breadcrumbs mb-3" aria-label="Breadcrumb">
+              <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+              <span className="mx-2 text-slate-400">›</span>
+              <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+              <span className="mx-2 text-slate-400">›</span>
+              <span className="text-slate-500">Dallas World Cup 2026 Guide</span>
+            </nav>
             <h1 className="editorial-hero-title">Dallas</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -86,6 +93,24 @@ This isn't Dallas's first World Cup rodeo. In 1994, the Cotton Bowl hosted quart
 
 Whether you're a die-hard football fan plotting your summer 2026 pilgrimage or a casual supporter looking to experience World Cup magic, this guide delivers everything you need to know about watching matches in Dallas, navigating the sprawling Metroplex, and making the most of your North Texas adventure.`}
           </p>
+          <p className="leading-relaxed mt-3">
+            Dallas is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026, anchoring Texas hospitality and major-event infrastructure in the heart of the Metroplex.
+          </p>
+
+          {/* Essential Links Module */}
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 mt-4">
+            <div className="space-y-2">
+              <div>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/att-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium Guide</Link>
+              </div>
+              <div>
+                🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </div>
+              <div>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link> | <Link to="/world-cup-2026-host-cities/kansas-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Kansas City</Link> | <Link to="/world-cup-2026-host-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
@@ -93,7 +118,7 @@ Whether you're a die-hard football fan plotting your summer 2026 pilgrimage or a
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-4-line text-emerald-500"></i>
-            The Stadium: AT&T Stadium (Dallas Stadium)
+            The Stadium: <Link to="/world-cup-2026-stadiums/att-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium</Link> (Dallas Stadium)
           </h3>
           <div className="space-y-6">
             <div>
@@ -198,6 +223,9 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           </h3>
           <p className="leading-relaxed mb-6">
             Arlington is one of the largest U.S. cities without a comprehensive public rail system connecting directly to major metros. That doesn’t make stadium access impossible—it just requires planning and realistic expectations.
+          </p>
+          <p className="leading-relaxed mb-6">
+            Dallas connects easily to <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> for a Texas double-header, and many fans combine Dallas with <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link> for a Central US experience. It also serves as a gateway to Mexican host cities like <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
           </p>
 
           {/* Best Options */}
@@ -826,7 +854,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
           <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 dark:bg-emerald-900/20 dark:border-emerald-800 mb-6">
             <p className="leading-relaxed">
-              <strong>Pro strategy:</strong> Dallas's nine matches mean you could attend group stage and return for knockout rounds—split your trip with side adventures to Austin (3 hours), San Antonio (4 hours), or even Houston (4 hours) between match days. Texas is huge; use the downtime to explore.
+              <strong>Pro strategy:</strong> Dallas's nine matches mean you could attend group stage and return for knockout rounds—split your trip with side adventures to Austin (3 hours), San Antonio (4 hours), or even <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> (4 hours) between match days. Texas is huge; use the downtime to explore.
             </p>
           </div>
 
@@ -835,6 +863,44 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
               <strong>Affiliate booking moment:</strong> When comparing hotel prices, check multiple platforms—<strong>Booking.com</strong>, <strong>Hotels.com</strong>, <strong>Expedia</strong>, and direct hotel websites often show different rates for identical rooms. Membership programs (Hotels.com rewards, Expedia One Key) offer additional savings. For stadium-adjacent properties like <strong>Live! by Loews</strong>, booking directly sometimes yields perks (late checkout, parking included) unavailable through third parties.
             </p>
           </div>
+          <hr className="editorial-divider" />
+        </article>
+
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-500"></i>
+            Plan Your Texas & Central US World Cup Tour
+          </h3>
+          <p className="leading-relaxed mb-4">
+            Dallas's central location makes it the perfect hub for exploring Southern hospitality, Texas culture, and connecting to Mexican host cities.
+          </p>
+          <div className="space-y-4">
+            <div>
+              <h4 className="editorial-h4">Popular Combinations</h4>
+            </div>
+            <div className="space-y-2">
+              <h4 className="editorial-h4">Texas Two-Step</h4>
+              <p>
+                Experience the best of the Lone Star State: Combine Dallas (current) with <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> for a complete Texas World Cup experience, featuring two distinct Texas personalities and world-class stadiums.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="editorial-h4">Central Heartland</h4>
+              <p>
+                Connect Dallas with <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link> for an authentic American heartland experience, with BBQ rivalry and genuine Midwestern hospitality.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <h4 className="editorial-h4">Cross-Border Southern Circuit</h4>
+              <p>
+                Create an international adventure: Dallas (current) to <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico for <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> — experiencing three countries' cultures in one amazing trip.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6">
+            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          </p>
           <hr className="editorial-divider" />
         </article>
 

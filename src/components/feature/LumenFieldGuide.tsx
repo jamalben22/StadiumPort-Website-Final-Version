@@ -348,7 +348,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="space-y-4 text-slate-700 dark:text-slate-200">
                 <p><strong>Fairmont Olympic Hotel</strong> delivers grand-dame elegance in a 1924 building with 450 rooms, sumptuous Olympic Bar, spa, and refined service—for those wanting historic luxury alongside easy stadium access. Luxury pricing.</p>
                 <p><strong>Hyatt Regency Seattle</strong> combines business-friendly amenities with adventure access, featuring nearby cycling and climbing, plus quick light rail connections to the stadium. Mid-range, excellent for active travelers.</p>
-                <p>Consider booking through `http://booking.com`  or Expedia for competitive rates and flexible cancellation policies—essential given uncertain match schedules. Airbnb also offers condos in Belltown and Capitol Hill, both 20 minutes from the stadium via light rail.</p>
+                <p>Consider booking through <a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a> for competitive rates and flexible cancellation policies—essential given uncertain match schedules. Airbnb also offers condos in Belltown and Capitol Hill, both 20 minutes from the stadium via light rail.</p>
               </div>
             </div>
 

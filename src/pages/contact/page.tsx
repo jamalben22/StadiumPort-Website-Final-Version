@@ -78,10 +78,10 @@ export default function AboutPage() {
  ### **Before You Email** 
  
  **Check Our Resources First:** 
- - 📍 [All 16 Stadiums Guide](#) - Stadium-specific questions 
- - 🏙️ [Host Cities Guide](#) - City travel planning 
- - ❓ [FAQ](#) - Common questions answered 
- - 🛡️ [Privacy Policy](#) - Data and privacy concerns 
+ - [All 16 Stadiums Guide](#) - Stadium-specific questions 
+ - [Host Cities Guide](#) - City travel planning 
+ - [FAQ](#) - Common questions answered 
+ - [Privacy Policy](#) - Data and privacy concerns 
  
  --- 
  
@@ -125,9 +125,9 @@ export default function AboutPage() {
  ### **Social Media** 
  
  **Follow our World Cup journey:** 
- - 🐦 **Twitter:** [@stadiumport](#) *(link when created)* 
- - 📷 **Instagram:** [@stadiumport](#) *(link when created)* 
- - 📘 **Facebook:** [Stadiumport](#) *(link when created)* 
+ - **Twitter:** [@stadiumport](#) *(link when created)* 
+ - **Instagram:** [@stadiumport](#) *(link when created)* 
+ - **Facebook:** [Stadiumport](#) *(link when created)* 
  
  *Social media is monitored less frequently than email. For urgent matters, please email us.* 
  
@@ -180,22 +180,22 @@ export default function AboutPage() {
  
  We appreciate you taking the time to reach out. Stadiumport exists to serve World Cup fans, and your feedback helps us improve. 
  
- **Safe travels, and see you in 2026!** ⚽ 
+ **Safe travels, and see you in 2026!** 
  
  --- 
  
- **Stadiumport**  
+ **Stadiumport** 
  *Your World Cup 2026 Travel Companion* 
  
- Email: hello@stadiumport.com  
+ Email: hello@stadiumport.com 
  Website: stadiumport.com 
  
  --- 
  
- ---`;
-
-  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
-  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
+ ---`; 
+ 
+   // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span 
+   // This keeps content unchanged while ensuring premium black icons instead of colored emojis. 
   const withMonochromeEmoji = (children: React.ReactNode) => {
     const arr = Children.toArray(children);
     const out: React.ReactNode[] = [];
@@ -224,20 +224,20 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900">
-      <Header />
-      <main className="pt-20">
-        <section className="relative py-28 bg-white">
-          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <Card
-              variant="default"
-              padding="xl"
-              border={false}
-              hover={false}
-              animate={false}
-              className="bg-white rounded-3xl"
-            >
-              <div className="relative z-10 p-6 md:p-10">
+     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+       <Header />
+       <main className="pt-20">
+         <section className="relative py-28 bg-white dark:bg-navy-900">
+           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
+             <Card
+               variant="default"
+               padding="xl"
+               border={false}
+               hover={false}
+               animate={false}
+               className="bg-white rounded-3xl dark:bg-navy-900"
+             >
+               <div className="relative z-10 p-6 md:p-10">
                 <div className="mx-auto max-w-2xl">
                   <div
                     className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter"
@@ -258,7 +258,7 @@ export default function AboutPage() {
                           />
                         ),
                         p: ({ node, children, ...props }) => (
-                          <p className="text-slate-700 leading-8" {...props}>
+                          <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
                             {withMonochromeEmoji(children)}
                           </p>
                         ),
@@ -269,12 +269,12 @@ export default function AboutPage() {
                           <ol className="lux-ol space-y-2" {...props} />
                         ),
                         li: ({ node, children, ...props }) => (
-                          <li className="text-slate-700" {...props}>
+                          <li className="text-slate-700 dark:text-slate-300" {...props}>
                             {withMonochromeEmoji(children)}
                           </li>
                         ),
                         strong: ({ node, ...props }) => (
-                          <strong className="font-semibold text-slate-900" {...props} />
+                          <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                         ),
                         hr: () => (
                           <hr className="my-12 border-t border-slate-200" />

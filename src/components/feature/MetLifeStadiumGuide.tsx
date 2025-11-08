@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -101,6 +101,16 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
             </div>
 
             <div className="editorial-hero-content">
+              {/* Breadcrumbs */}
+              <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+                <ol className="flex items-center gap-2 text-sm text-white/90">
+                  <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li>MetLife Stadium</li>
+                </ol>
+              </nav>
               <div className="editorial-hero-inner">
                 <div className="editorial-hero-eyebrow">
                   <span className="editorial-hero-pulse"></span>
@@ -139,7 +149,7 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                 The Stage for Football's Greatest Moment
               </h2>
               <p className="leading-relaxed">
-                This isn't just another World Cup venue—it's <em>the</em> venue, hosting the tournament's climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you're crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
+                Located in <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>, MetLife Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, including the tournament&apos;s climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you&apos;re crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -153,60 +163,60 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-building-2-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Official Name</span>
+                    <i className="ri-building-2-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Official Name</span>
                     <p className="leading-relaxed">MetLife Stadium (FIFA designation: New York New Jersey Stadium)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Location</span>
+                    <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Location</span>
                     <p className="leading-relaxed">East Rutherford, New Jersey (8 miles/13 km west of Manhattan)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-calendar-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Opened</span>
+                    <i className="ri-calendar-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Opened</span>
                     <p className="leading-relaxed">April 2010</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-group-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Capacity</span>
+                    <i className="ri-group-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Capacity</span>
                     <p className="leading-relaxed">82,500 (World Cup configuration: approximately 82,500)</p>
                   </div>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-team-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Primary Tenants</span>
+                    <i className="ri-team-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Primary Tenants</span>
                     <p className="leading-relaxed">New York Giants and New York Jets (NFL)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Architects</span>
+                    <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Architects</span>
                     <p className="leading-relaxed">360 Architecture, EwingCole, Rockwell Group, Bruce Mau Design</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-grass-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Surface</span>
+                    <i className="ri-grass-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Surface</span>
                     <p className="leading-relaxed">FieldTurf (artificial); natural grass to be installed for World Cup 2026</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
-                  <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Construction Cost</span>
+                    <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
+                    <span className="text-slate-600 dark:text-slate-300 ml-2">Construction Cost</span>
                     <p className="leading-relaxed">$1.6 billion (2010)</p>
                   </div>
                 </div>
@@ -239,6 +249,47 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                   <span>Open-air (no roof)</span>
                 </div>
               </div>
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-6">
+                Planning an East Coast circuit? Pair MetLife with <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a West Coast contrast, compare it with <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.
+              </p>
+            </div>
+            <hr className="editorial-divider" />
+          </article>
+
+          {/* Beyond the Stadium: Explore New York/New Jersey */}
+          <article className="editorial-body">
+            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+              <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+              Beyond the Stadium: Explore New York/New Jersey
+            </h3>
+            <div className="space-y-6">
+              <p>The World Cup experience in the NY/NJ area offers endless possibilities beyond MetLife Stadium.</p>
+              <div>
+                <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
+                  <i className="ri-map-pin-line text-emerald-500"></i>
+                  Discover New York/New Jersey
+                </h4>
+                <p>
+                  Explore our complete <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey World Cup 2026 Guide</Link> for everything you need:
+                </p>
+                <ul className="list-disc pl-6 space-y-1">
+                  <li>Hotels near MetLife Stadium</li>
+                  <li>Getting to the stadium from Manhattan</li>
+                  <li>Best neighborhoods to stay</li>
+                  <li>Iconic attractions and experiences</li>
+                  <li>Match day transportation tips</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
+                  <i className="ri-building-4-line text-emerald-500"></i>
+                  Other Northeast Stadiums
+                </h4>
+                <p>
+                  Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.
+                </p>
+              </div>
+              <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
             </div>
             <hr className="editorial-divider" />
           </article>
@@ -387,18 +438,18 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
               <div className="grid md:grid-cols-3 gap-4">
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">Newark Liberty (EWR)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">15 miles, 25-35 minutes by car or rideshare ($40-60); NJ Transit train to Penn Station available</p>
+                  <p className="text-slate-700 dark:text-slate-200">15 miles, 25-35 minutes by car or rideshare ($40-60); NJ Transit train to Penn Station available</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">LaGuardia (LGA)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">18 miles, 35-50 minutes depending on traffic</p>
+                  <p className="text-slate-700 dark:text-slate-200">18 miles, 35-50 minutes depending on traffic</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">JFK</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">28 miles, 45-70 minutes in moderate traffic</p>
+                  <p className="text-slate-700 dark:text-slate-200">28 miles, 45-70 minutes in moderate traffic</p>
                 </div>
               </div>
-              <p className="text-slate-700 dark:text-slate-200 mt-4 text-sm">
+              <p className="text-slate-700 dark:text-slate-200 mt-4">
                 Consider booking airport transfers or car services in advance for guaranteed World Cup match day transport, as rideshare surge pricing can triple fares after matches.
               </p>
             </div>
@@ -510,8 +561,8 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                 Booking Tip:
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                Reserve accommodation 6-12 months ahead for World Cup dates. Use platforms like https://www.booking.com, https://www.expedia.com, or https://www.airbnb.com to compare rates and locations. Filter by "near public transport" to simplify match day logistics.
-              </p>
+              Reserve accommodation 6-12 months ahead for World Cup dates. Use platforms like <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a>, or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a> to compare rates and locations. Filter by "near public transport" to simplify match day logistics.
+            </p>
             </div>
             <hr className="editorial-divider" />
           </article>
@@ -543,16 +594,16 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
               </p>
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
-                  <h4 className="font-semibold mb-2">✅ Allowed:</h4>
-                  <ul className="text-slate-700 dark:text-slate-200 text-sm space-y-1">
+                  <h4 className="font-semibold mb-2">✔ Allowed:</h4>
+                  <ul className="text-slate-700 dark:text-slate-200 space-y-1">
                     <li>• Clear plastic/vinyl bags up to 12"×6"×12"</li>
                     <li>• Small clutch purses up to 4.5"×6.5" (non-clear OK)</li>
                     <li>• One-gallon clear Ziploc bags</li>
                   </ul>
                 </div>
                 <div>
-                  <h4 className="font-semibold mb-2">❌ Prohibited:</h4>
-                  <ul className="text-slate-700 dark:text-slate-200 text-sm space-y-1">
+                  <h4 className="font-semibold mb-2">✘ Prohibited:</h4>
+                  <ul className="text-slate-700 dark:text-slate-200 space-y-1">
                     <li>• Backpacks</li>
                     <li>• Large purses</li>
                     <li>• Coolers</li>
@@ -685,22 +736,22 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
               <div className="space-y-4">
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">Redds Restaurant & Biergarten (0.5 miles)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Classic pub grub, shuttle service to/from stadium ($50 including parking), outdoor seating</p>
+                  <p className="text-slate-700 dark:text-slate-200">Classic pub grub, shuttle service to/from stadium ($50 including parking), outdoor seating</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">Marcus Live! Bar & Grille (American Dream)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Sports bar atmosphere with 35+ TVs, extensive menu</p>
+                  <p className="text-slate-700 dark:text-slate-200">Sports bar atmosphere with 35+ TVs, extensive menu</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">Gianna's (Carlstadt, 2 miles)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Old-school Italian with massive portions—penne vodka, veal piccata</p>
+                  <p className="text-slate-700 dark:text-slate-200">Old-school Italian with massive portions—penne vodka, veal piccata</p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-slate-900 dark:text-slate-50 mb-2">Segovia Meson (nearby)</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-sm">Spanish tapas and authentic cuisine</p>
+                  <p className="text-slate-700 dark:text-slate-200">Spanish tapas and authentic cuisine</p>
                 </div>
               </div>
-              <p className="text-slate-700 dark:text-slate-200 mt-4 text-sm">
+              <p className="text-slate-700 dark:text-slate-200 mt-4">
                 For serious pre-match atmosphere, many supporters will gravitate to Manhattan bars and travel together by train—Penn Station area has countless sports pubs.
               </p>
             </div>

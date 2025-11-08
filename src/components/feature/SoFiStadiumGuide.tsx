@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -14,6 +15,19 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">SoFi Stadium</li>
+          </ol>
+        </nav>
+      )}
 
       {/* Editorial Hero (NYC style) */}
       {!hideHero && (
@@ -56,10 +70,9 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
       {/* Editorial Article */}
       <article className="p-8 md:p-12 space-y-12 editorial-article">
         {/* Intro */}
-        <section className="editorial-body">
-          <h3 className="editorial-h3">Your Complete Guide to the 2026 FIFA World Cup in Los Angeles</h3>
+        <section className="editorial-body editorial-dropcap">
           <p className="editorial-intro text-slate-700 dark:text-slate-200">
-            When the United States Men's National Team walks onto the pitch at SoFi Stadium on June 12, 2026, they'll be christening one of the world's most technologically advanced sporting cathedrals under the eyes of 70,000 roaring fans. This isn't just another World Cup venue—it's a $5 billion architectural marvel that has redefined what a stadium can be. With its translucent roof hovering like a spacecraft over Inglewood, its record-breaking Infinity Screen suspended above the field, and its unique indoor-outdoor design, SoFi represents the cutting edge of stadium innovation. For the eight World Cup matches set to unfold here, including America's tournament opener and a quarterfinal showdown, this venue promises an experience unlike any other in the competition.
+            Located in <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>, SoFi Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, bringing world-class matches to Southern California. When the United States Men's National Team walks onto the pitch here on June 12, 2026, they'll be christening one of the world's most technologically advanced sporting cathedrals under the eyes of 70,000 roaring fans. This isn't just another World Cup venue—it's a $5 billion architectural marvel that has redefined what a stadium can be. With its translucent roof hovering like a spacecraft over Inglewood, its record-breaking Infinity Screen suspended above the field, and its unique indoor-outdoor design, SoFi represents the cutting edge of stadium innovation. For the eight World Cup matches set to unfold here, including America's tournament opener and a quarterfinal showdown, this venue promises an experience unlike any other in the competition.
           </p>
         </section>
         <div className="editorial-divider"></div>
@@ -224,6 +237,9 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                   But the showstopper is the Infinity Screen—a 120-yard-long, double-sided 4K video board that hangs from the roof like a hovering spacecraft, displaying 80 million pixels from 260 built-in speakers. It's the first center-hung, dual-sided display in any stadium, allowing fans in every section to follow replays, stats, and atmosphere shots without craning their necks.
                 </p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-6">
+                  Along with <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link>, SoFi ranks among the largest venues in the tournament. Tech-forward fans also compare its experience to <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the Bay Area.
+                </p>
           </div>
         </section>
         <div className="editorial-divider"></div>
@@ -352,7 +368,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <div>
                   <h4 className="editorial-h4 mb-4">Walking Distance (&lt; 1 mile)</h4>
                   <p className="text-slate-700 dark:text-slate-200 mb-2"><strong>The Lum Hotel Los Angeles Stadium District</strong> – The only hotel within easy walking distance (0.6 miles). Modern rooms, rooftop bar at Cork &amp; Batter, outdoor pool. Connected to the Hollywood Park development. Expect premium pricing during World Cup.</p>
-                  <p className="text-slate-700 dark:text-slate-200">👉 <em>Book via Booking.com or Hotels.com for best rates</em></p>
+                  <p className="text-slate-700 dark:text-slate-200"><em>Book via Booking.com or Hotels.com for best rates</em></p>
                 </div>
 
                 <div>
@@ -387,7 +403,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <h4 className="editorial-h4 mb-4">Additional Areas &amp; Booking Advice</h4>
                   <p className="text-slate-700 dark:text-slate-200 mb-2"><strong>Downtown Los Angeles</strong> (9 miles northeast): Urban energy, nightlife, cultural attractions. Metro A Line connects to C Line for SoFi access.</p>
                   <p className="text-slate-700 dark:text-slate-200 mb-2"><strong>Airbnb/VRBO Options:</strong> Inglewood and surrounding areas offer entire homes and apartments. Look in Westchester, El Segundo, and Hawthorne for proximity.</p>
-                  <p className="text-slate-700 dark:text-slate-200">👉 <em>Book accommodation early—World Cup will cause unprecedented demand. Use Booking.com, Expedia, or Airbnb with flexible cancellation policies.</em></p>
+                  <p className="text-slate-700 dark:text-slate-200"><em>Book accommodation early—World Cup will cause unprecedented demand. Use Booking.com, Expedia, or Airbnb with flexible cancellation policies.</em></p>
                 </div>
           </div>
         </section>
@@ -538,8 +554,39 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <p className="text-slate-700 dark:text-slate-200"><strong>Santa Monica</strong> – Third Street Promenade and Main Street packed with bars, restaurants, live music.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Downtown LA</strong> (9 miles) – Full urban nightlife: rooftop bars, clubs, live music venues, late-night eats.</p>
                 <div className="mt-4 rounded-lg border border-amber-300/40 bg-amber-50 p-4 text-amber-900 dark:border-amber-600/40 dark:bg-amber-900/20 dark:text-amber-200">
-                  👉 <em>Book tours and activities via Viator or GetYourGuide for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
+                  <em>Book tours and activities via Viator or GetYourGuide for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
                 </div>
+                <p className="text-slate-700 dark:text-slate-200">
+                  Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>.
+                </p>
+          </div>
+        </section>
+        <div className="editorial-divider"></div>
+
+        {/* Beyond the Stadium: Explore Los Angeles */}
+        <section className="editorial-body">
+          <h3 className="editorial-h3 mb-8 flex items-center gap-3">
+            <i className="ri-compass-3-line text-emerald-400"></i>
+            Beyond the Stadium: Explore Los Angeles
+          </h3>
+          <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
+            <p>World Cup 2026 in Los Angeles extends far beyond match day at SoFi Stadium. The city offers incredible experiences for every visitor.</p>
+            <div>
+              <h4 className="editorial-h4 mb-2">Discover Los Angeles</h4>
+              <p>Explore our complete <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles World Cup 2026 Guide</Link> for comprehensive information on:</p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Where to stay near SoFi Stadium</li>
+                <li>Best restaurants and nightlife</li>
+                <li>Transportation options and getting around</li>
+                <li>Top attractions and things to do</li>
+                <li>Match day tips and local insights</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="editorial-h4 mb-2">Other California Stadium</h4>
+              <p>If you&apos;re catching multiple matches in California, check out <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the San Francisco Bay Area.</p>
+            </div>
+            <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
           </div>
         </section>
         <div className="editorial-divider"></div>
@@ -554,7 +601,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <p className="text-slate-700 dark:text-slate-200">SoFi Stadium isn't just a World Cup venue—it's a $5 billion statement about the future of live sports. From the moment you descend into the seating bowl 100 feet below ground, to the first time you gaze up at the hovering Infinity Screen, to the way California sunshine filters through the translucent roof, you'll understand why this is considered one of the world's most remarkable stadiums.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Who will love it most?</strong> Tech-forward fans who appreciate architectural innovation, NFL supporters experiencing World Cup atmosphere for the first time, and anyone seeking a quintessentially LA blend of sports, entertainment, and spectacle. If you crave intimacy over opulence, consider other venues—but for sheer "wow factor," SoFi delivers.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>The one unforgettable thing you shouldn't miss?</strong> Arrive early, walk through American Airlines Plaza as the sun sets, and watch the LED-embedded roof come alive with animations visible from aircraft overhead. It's the closest thing to attending a match inside a spacecraft.</p>
-                <p className="text-slate-700 dark:text-slate-200"><strong>World Cup 2026 will sell out fast.</strong> Book your accommodation through trusted platforms like `https://www.booking.com` , `https://www.expedia.com` , or `https://www.airbnb.com`  now—Inglewood and LAX-area hotels will reach capacity months in advance. Pre-arrange transport (whether Metro TAP cards or parking passes) to avoid matchday stress. This is a once-in-a-lifetime tournament on American soil.</p>
+                <p className="text-slate-700 dark:text-slate-200"><strong>World Cup 2026 will sell out fast.</strong> Book your accommodation through trusted platforms like <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a>, or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a> now—Inglewood and LAX-area hotels will reach capacity months in advance. Pre-arrange transport (whether Metro TAP cards or parking passes) to avoid matchday stress. This is a once-in-a-lifetime tournament on American soil.</p>
                 <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Stadium awaits. Book early. Arrive ready. Experience history.</p>
           </div>
         </section>

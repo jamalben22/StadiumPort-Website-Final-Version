@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
@@ -83,6 +84,21 @@ export function BostonCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav className="editorial-breadcrumbs mb-3">
+              <ol className="list-none flex flex-wrap items-center gap-2 text-sm md:text-base">
+                <li>
+                  <Link to="/" className="hover:underline">Home</Link>
+                </li>
+                <li className="text-slate-400">›</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+                </li>
+                <li className="text-slate-400">›</li>
+                <li>
+                  <span className="text-slate-600 dark:text-slate-300">Boston World Cup 2026 Guide</span>
+                </li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Boston</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -91,7 +107,7 @@ export function BostonCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <span>Gillette Stadium</span>
+                <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline"><span>Gillette Stadium</span></Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -106,22 +122,35 @@ export function BostonCityGuide() {
       <main className="editorial-article py-12">
         {/* Introduction and Match Schedule */}
         <article className="editorial-body editorial-dropcap">
+
           <p>
-            <strong>Match Schedule:</strong> June 13, 16, 19, 23, 26 (Group Stage) | June 29 (Round of 32) | July 9 (Quarter-Final)
-          </p>
-          <p>
-            When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for <strong>seven matches</strong> spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a <strong>quarter-final</strong> on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS.
+            When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for <strong>seven matches</strong> spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a <strong>quarter-final</strong> on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS. Boston is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> welcoming fans to World Cup 2026.
           </p>
           <p>
             But 2026 is different. Boston hosts more than just matches—the city becomes the epicenter of a once-in-a-lifetime sports trifecta. <strong>Sail Boston</strong> (July 11-16), the largest maritime celebration ever to visit the United States, arrives days after the quarter-final. <strong>America 250</strong> commemorations celebrating the nation's founding run throughout summer. Add seven World Cup matches to the mix, and Boston delivers the perfect storm of international football, nautical spectacle, and patriotic celebration.
           </p>
           <p>
-            Whether you're watching matches at Gillette Stadium 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
+            Whether you're watching matches at <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
           </p>
           <p>
             This guide delivers the real intel: stadium access via commuter rail, neighborhood strategies, revolutionary history tours, and what to do when you're not watching 65,000 fans roar inside the home of the six-time Super Bowl champion Patriots.
           </p>
         </article>
+        {/* Essential Links module */}
+        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+          <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Boston Links</div>
+          <div className="space-y-1 text-slate-800 dark:text-slate-200">
+            <div>
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/gillette-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Gillette Stadium Guide</Link>
+            </div>
+            <div>
+              🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+            </div>
+            <div>
+              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+            </div>
+          </div>
+        </div>
         <hr className="editorial-divider" />
 
         {/* The Stadium: Gillette Stadium (Boston Stadium) */}
@@ -223,6 +252,9 @@ export function BostonCityGuide() {
 
               <p>
                 The MBTA expects to transport up to 20,000 fans per match via expanded commuter rail service, with new permanent platforms completed by April 2026. Event trains typically arrive about an hour before events and depart 30 minutes after they end, with Boston trains stopping at South Station, Back Bay, and Dedham Corporate Center.
+              </p>
+              <p>
+                Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
               </p>
             </div>
 
@@ -414,6 +446,9 @@ export function BostonCityGuide() {
                 <li><strong>Taxi:</strong> $25-45 to downtown (10-15 minutes with light traffic)</li>
                 <li><strong>Rideshare:</strong> $20-35 to downtown from designated pickup zones</li>
               </ul>
+              <p>
+                Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
+              </p>
             </div>
 
             <div>
@@ -478,6 +513,43 @@ export function BostonCityGuide() {
                 <li><strong>College town energy</strong>: 35+ universities mean young, educated, transient population</li>
               </ul>
             </div>
+        </article>
+        <hr className="editorial-divider" />
+        {/* Related Destinations Section */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            Plan Your East Coast World Cup Tour
+          </h3>
+          <p>
+            Boston is perfectly positioned for an iconic East Coast World Cup journey, with multiple host cities easily accessible by train, car, or short flights.
+          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="font-inter font-semibold">Popular Combinations:</p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">Northeast Corridor Classic</p>
+              <p>
+                Experience the historic heart of America: Start in Boston (current), take the train south to <Link to="/world-cup-2026-host-cities/new-york" className="underline">New York/New Jersey</Link> for the ultimate city experience, then continue to <Link to="/world-cup-2026-host-cities/philadelphia" className="underline">Philadelphia</Link> for Revolutionary history and authentic cheesesteaks.
+              </p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">New England to Canada</p>
+              <p>
+                Combine Boston's colonial charm with <Link to="/world-cup-2026-host-cities/toronto" className="underline">Toronto</Link> for an international adventure, just a short flight away across the border.
+              </p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">Full East Coast Experience</p>
+              <p>
+                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami" className="underline">Miami</Link> for completely different climates and cultures while staying on the East Coast.
+              </p>
+            </div>
+            <div>
+              <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            </div>
+          </div>
         </article>
         <hr className="editorial-divider" />
 
@@ -619,17 +691,17 @@ export function BostonCityGuide() {
             Final Checklist: Your Boston World Cup Essentials
           </h3>
             <ul className="list-disc pl-6 space-y-2">
-              <li>✅ <strong>Match tickets secured through FIFA official channels</strong></li>
-              <li>✅ <strong>Hotel booked near South Station or Back Bay</strong> (commuter rail access)</li>
-              <li>✅ <strong>Flights confirmed to Logan (BOS)</strong></li>
-              <li>✅ <strong>MBTA mTicket app downloaded</strong> for commuter rail event trains</li>
-              <li>✅ <strong>Event train tickets purchased</strong> 2-4 weeks before match</li>
-              <li>✅ <strong>Freedom Trail walking plan</strong> (2.5 miles, 2-3 hours minimum)</li>
-              <li>✅ <strong>Fenway Park tour or Red Sox game tickets</strong> (if schedule permits)</li>
-              <li>✅ <strong>Stadium-compliant clear bag</strong> (12" x 12" x 6" max)</li>
-              <li>✅ <strong>Comfortable walking shoes</strong> (cobblestones = ankle hazard)</li>
-              <li>✅ <strong>Light rain jacket packed</strong> (June/July afternoon showers possible)</li>
-              <li>✅ <strong>Sail Boston dates noted</strong> (July 11-16 if extending trip)</li>
+              <li> <strong>Match tickets secured through FIFA official channels</strong></li>
+              <li> <strong>Hotel booked near South Station or Back Bay</strong> (commuter rail access)</li>
+              <li> <strong>Flights confirmed to Logan (BOS)</strong></li>
+              <li> <strong>MBTA mTicket app downloaded</strong> for commuter rail event trains</li>
+              <li> <strong>Event train tickets purchased</strong> 2-4 weeks before match</li>
+              <li> <strong>Freedom Trail walking plan</strong> (2.5 miles, 2-3 hours minimum)</li>
+              <li> <strong>Fenway Park tour or Red Sox game tickets</strong> (if schedule permits)</li>
+              <li> <strong>Stadium-compliant clear bag</strong> (12" x 12" x 6" max)</li>
+              <li> <strong>Comfortable walking shoes</strong> (cobblestones = ankle hazard)</li>
+              <li> <strong>Light rain jacket packed</strong> (June/July afternoon showers possible)</li>
+              <li> <strong>Sail Boston dates noted</strong> (July 11-16 if extending trip)</li>
             </ul>
             <p>
               The 2026 FIFA World Cup in Boston isn't just football at a stadium—it's the chance to witness elite knockout football (quarter-final July 9) in America's most historically significant city during its 250th birthday celebration, followed by the largest maritime gathering in U.S. history (Sail Boston July 11-16).
@@ -637,7 +709,7 @@ export function BostonCityGuide() {
             <p>
               Whether you're here for the quarter-final, Revolutionary War history, championship sports energy, or all three, Boston delivers what few cities can: <strong>world-class football wrapped in 400 years of American history, served with championship attitude and New England pride.</strong>
             </p>
-            <p><strong>Welcome to the City of Champions. The Revolution starts here—again.</strong> ⚽🇺🇸🚢</p>
+            <p><strong>Welcome to the City of Champions. The Revolution starts here—again.</strong></p>
         </article>
       </main>
 

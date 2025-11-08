@@ -1105,6 +1105,10 @@ body.dark {
     margin-bottom: clamp(0.75rem, 2.2vw, 1.25rem);
   }
 
+  .editorial-first-letter {
+    @apply float-left text-7xl font-extrabold text-black dark:text-white mr-2 leading-[0.7];
+  }
+
   .editorial-hero-meta {
     display: flex;
     flex-wrap: wrap;

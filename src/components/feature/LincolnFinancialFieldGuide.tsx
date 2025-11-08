@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -21,6 +21,19 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">Lincoln Financial Field</li>
+          </ol>
+        </nav>
+      )}
 
       {/* Preview Card - Collapsed State */}
       {!isExpanded && !hideHero && (
@@ -139,7 +152,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed mb-6">
-                When Lincoln Financial Field hosts six World Cup matches in summer 2026 — including a knockout round clash on July 4th, America's 250th birthday — Philadelphia will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>, Lincoln Financial Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. When it hosts six matches — including a knockout round clash on July 4th, America's 250th birthday — the city will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
               </p>
               <p className="leading-relaxed">
                 The stadium's design itself speaks to the city's character. Inspired by the diverse neighborhoods of Philadelphia, its asymmetrical seating provides unique viewing experiences throughout the stadium, while the aggressive canopy profile evokes an eagle's wing, instantly identifiable to global audiences. This is where architecture, sports culture, and American history collide — and where your World Cup 2026 journey could reach its crescendo.
@@ -157,37 +170,37 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-building-2-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Official Name</span>
+                      <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
                       <p className="leading-relaxed">Lincoln Financial Field (temporarily "Philadelphia Stadium" during World Cup)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-flag-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Nickname</span>
+                      <i className="ri-flag-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Nickname</span>
                       <p className="leading-relaxed">The Linc</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Location</span>
+                      <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
                       <p className="leading-relaxed">South Philadelphia, Sports Complex (1 Lincoln Financial Field Way)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-calendar-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Opened</span>
+                      <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
                       <p className="leading-relaxed">August 3, 2003</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-group-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Capacity</span>
+                      <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
                       <p className="leading-relaxed">67,594 (expandable to approximately 69,000 for major events)</p>
                     </div>
                   </div>
@@ -195,37 +208,37 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-user-star-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Primary Tenant</span>
+                      <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
                       <p className="leading-relaxed">Philadelphia Eagles (NFL), Temple Owls (NCAA Football)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Architect</span>
+                      <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
                       <p className="leading-relaxed">NBBJ (designed by Dan Meis, FAIA)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Construction Cost</span>
+                      <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Construction Cost</span>
                       <p className="leading-relaxed">$512 million</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-grass-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Surface Type</span>
+                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
                       <p className="leading-relaxed">Natural grass</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-sun-line text-emerald-500 text-3xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Roof Type</span>
+                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
                       <p className="leading-relaxed">Open-air with partial canopy coverage</p>
                     </div>
                   </div>
@@ -256,6 +269,28 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   </div>
                 </div>
               </div>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Beyond the Stadium: Explore Philadelphia */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                Beyond the Stadium: Explore Philadelphia
+              </h3>
+              <p className="leading-relaxed mb-4">Philadelphia's revolutionary history and vibrant culture make it a must-visit World Cup 2026 destination.</p>
+              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
+                <p className="leading-relaxed"><strong>Discover Philadelphia:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia World Cup 2026 Guide</Link> for comprehensive information:</p>
+                <ul className="list-disc list-inside mt-3 space-y-1">
+                  <li>Hotels near Lincoln Financial Field</li>
+                  <li>Transportation to the stadium</li>
+                  <li>Historic sites and Independence Hall</li>
+                  <li>Famous cheesesteaks and food scene</li>
+                  <li>Match day planning essentials</li>
+                </ul>
+              </div>
+              <p className="leading-relaxed mb-4"><strong>Other East Coast Stadiums:</strong> Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.</p>
+              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               <hr className="editorial-divider" />
             </article>
 
@@ -478,7 +513,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Extended Stay America locations (practical for longer visits)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  Consider booking through <code>https://www.booking.com</code>  or <code>https://www.hotels.com</code>  for deals on budget chains with free cancellation options.
+                  Consider booking through <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Hotels.com</a> for deals on budget chains with free cancellation options.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
@@ -738,6 +773,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   Since Rocky's first triumphant run in 1976, the 72 stone steps of the Philadelphia Museum of Art have become an international destination for travelers who jog up the stairs and pump their fists with spectacular views of Benjamin Franklin Parkway and the city skyline. The bronze Rocky statue at the bottom provides the perfect photo opportunity.
                 </p>
                 <p><strong>Distance:</strong> 20 minutes via SEPTA Broad Street Line to City Hall, then 10-minute walk or quick bus ride</p>
+                <p className="leading-relaxed mt-4">Planning an East Coast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a southeastern option, consider <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.</p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -762,7 +798,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <strong>The one unforgettable thing you shouldn't miss?</strong> Being in this stadium on July 4, 2026, as America celebrates its semiquincentennial and a World Cup knockout match simultaneously. If you can secure tickets to that fixture specifically, it will be the matchday experience of a lifetime.
                 </p>
                 <p className="leading-relaxed mb-6">
-                  <strong>Take action now:</strong> Book your accommodation immediately when match schedules are announced. Philadelphia hotels will sell out fast, and prices will skyrocket. Browse options on <code>https://www.booking.com</code> , <code>https://www.expedia.com</code> , or <code>https://www.airbnb.com</code>  now to bookmark properties in Center City or Rittenhouse Square. Research SEPTA routes, purchase a clear stadium bag, and start planning your historical Philadelphia itinerary around the match days.
+                  <strong>Take action now:</strong> Book your accommodation immediately when match schedules are announced. Philadelphia hotels will sell out fast, and prices will skyrocket. Browse options on <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> , <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a> , or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a>  now to bookmark properties in Center City or Rittenhouse Square. Research SEPTA routes, purchase a clear stadium bag, and start planning your historical Philadelphia itinerary around the match days.
                 </p>
                 <p className="leading-relaxed">
                   The 2026 World Cup comes to America only once. Make sure Philadelphia — and Lincoln Financial Field — are part of your journey.

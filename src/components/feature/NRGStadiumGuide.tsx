@@ -404,7 +404,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                   <i className="ri-calendar-check-line text-emerald-500"></i>
                   Book now:
                 </h4>
-                <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your `http://booking.com/`  or Expedia, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
+                <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
 
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston is ready to welcome the world. Are you ready to experience World Cup 2026 in Texas style?</p>
               </div>

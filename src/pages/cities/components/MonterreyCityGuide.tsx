@@ -85,6 +85,19 @@ export function MonterreyCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav aria-label="Breadcrumb" className="mb-3">
+              <ol className="flex flex-wrap items-center gap-2 text-sm">
+                <li>
+                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Home</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Host Cities</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li className="text-slate-700 dark:text-slate-300">Monterrey World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Monterrey</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -108,10 +121,31 @@ export function MonterreyCityGuide() {
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
           <p>
-              When the 2026 FIFA World Cup kicks off, Monterrey will welcome the world to one of Mexico's most dynamic cities—where modern ambition meets raw football passion against a backdrop of jagged mountains. This industrial powerhouse in northeastern Mexico isn't just hosting four World Cup matches; it's ready to show international fans why it claims the most loyal football crowds in the country.
+              When the 2026 FIFA World Cup kicks off, Monterrey will welcome the world to one of Mexico's most dynamic cities—where modern ambition meets raw football passion against a backdrop of jagged mountains. Monterrey is one of the{' '}
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. This industrial powerhouse in northeastern Mexico isn't just hosting four World Cup matches; it's ready to show international fans why it claims the most loyal football crowds in the country.
             </p>
+            {/* Essential Links module */}
+            <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+              <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Monterrey Links</div>
+              <div className="space-y-1 text-slate-800 dark:text-slate-200">
+                <div>
+                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-bbva" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA Guide</Link>
+                </div>
+                <div>
+                  🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+                </div>
+                <div>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link> | <Link to="/world-cup-2026-host-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>
+                </div>
+              </div>
+            </div>
             <p>
               Nestled in the Santa Catarina Valley and framed by the iconic Cerro de la Silla mountain, Monterrey is Mexico's third-largest city and its wealthiest metropolitan area. But strip away the glass skyscrapers and you'll find a city that bleeds blue and white for C.F. Monterrey Rayados—a club that's sold out stadiums for decades and turned match day into a cultural phenomenon.
+            </p>
+            <p className="mt-2">
+              Combine with{' '}
+              <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for a complete Mexican experience—culture in Guadalajara, the capital’s energy in Mexico City, and mountain-backed modernity in Monterrey.
             </p>
             <p>
               If you're planning to catch a World Cup match in Monterrey, you're in for something special. This isn't a tourist resort; it's a real Mexican city with serious football heritage, incredible carne asada, and a stadium that rivals anything in North America.
@@ -123,7 +157,7 @@ export function MonterreyCityGuide() {
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-line text-emerald-500 text-3xl"></i>
-            The Stadium: Estadio BBVA – Where Steel Meets Football
+            The Stadium: <Link to="/world-cup-2026-stadiums/estadio-bbva" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA</Link> – Where Steel Meets Football
           </h3>
             <p><strong>Official World Cup Name:</strong> Estadio Monterrey</p>
             <p><strong>Actual Name:</strong> Estadio BBVA (nicknamed "El Gigante de Acero" – The Steel Giant)</p>
@@ -175,6 +209,11 @@ export function MonterreyCityGuide() {
             </p>
             <p>
               <strong>Pro Tip:</strong> FIFA typically operates dedicated shuttle services from city center and official Fan Fest locations during major tournaments. Watch for official announcements closer to the matches.
+            </p>
+            <p>
+              Regional planning: Monterrey is closest to Texas cities like{' '}
+              <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, making cross-border itineraries straightforward.
             </p>
           <hr className="editorial-divider" />
         </article>
@@ -511,6 +550,40 @@ export function MonterreyCityGuide() {
           <hr className="editorial-divider" />
         </article>
 
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            Plan Your Cross-Border World Cup Journey
+          </h3>
+          <p>
+            Monterrey's proximity to the US border makes it the ideal gateway for international visitors exploring both countries during World Cup 2026.
+          </p>
+          <p className="mt-4 font-semibold">Popular Combinations:</p>
+          <p className="mt-2">
+            <strong>Texas to Mexico</strong>{' '}Create the perfect cross-border experience: Start in{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico at Monterrey (current, no link) — just a few hours' drive — before continuing to{' '}
+            <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}and{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
+          </p>
+          <p className="mt-2">
+            <strong>Complete Mexico Tour</strong>{' '}Experience all three Mexican host cities: Monterrey (current) for mountains and modernity,{' '}
+            <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for culture and tradition, then{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for the ultimate metropolitan experience.
+          </p>
+          <p className="mt-2">
+            <strong>Border Region Circuit</strong>{' '}Focus on the border region: Combine Monterrey (current) with nearby Texas cities{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, and{' '}
+            <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>{' '}for an efficient multi-city tour with minimal travel time.
+          </p>
+          <p className="mt-4">
+            <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          </p>
+          <hr className="editorial-divider" />
+        </article>
+
         {/* Book Your Monterrey World Cup Adventure */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -524,14 +597,14 @@ export function MonterreyCityGuide() {
               When you take your seat in Estadio BBVA with 53,000 other roaring fans, the Sierra Madre mountains rising behind the stands, you'll understand why FIFA chose Monterrey to represent Mexico's northeastern spirit on football's biggest stage.
             </p>
             <p><strong>Ready to plan your trip?</strong></p>
-            <p>🏨 <strong>Book Accommodation Early:</strong> Search "Monterrey Centro," "San Pedro Garza García," or "Fundidora Park hotels" on Booking.com, Expedia, or Hotels.com to lock in World Cup rates before they skyrocket</p>
-            <p>✈️ <strong>Find Flights:</strong> Use Google Flights, Kayak, or Going.com to track fares to General Mariano Escobedo International Airport (MTY). Direct flights available from major U.S. cities</p>
-            <p>🎫 <strong>Stay Updated:</strong> Check FIFA's official website and FWC26Monterrey.com for match schedules, ticket sales, and Fan Fest details as they're announced</p>
-            <p>🗺️ <strong>Plan Your Days:</strong> Balance match day with experiences—mix football fever with mountain hikes, museum visits, and carne asadas</p>
+            <p> <strong>Book Accommodation Early:</strong> Search "Monterrey Centro," "San Pedro Garza García," or "Fundidora Park hotels" on Booking.com, Expedia, or Hotels.com to lock in World Cup rates before they skyrocket</p>
+            <p> <strong>Find Flights:</strong> Use Google Flights, Kayak, or Going.com to track fares to General Mariano Escobedo International Airport (MTY). Direct flights available from major U.S. cities</p>
+            <p> <strong>Stay Updated:</strong> Check FIFA's official website and FWC26Monterrey.com for match schedules, ticket sales, and Fan Fest details as they're announced</p>
+            <p> <strong>Plan Your Days:</strong> Balance match day with experiences—mix football fever with mountain hikes, museum visits, and carne asadas</p>
             <p>
               Monterrey is ready to show the world what Mexican football passion looks like. Will you be there when the whistle blows?
             </p>
-            <p><strong>¡Vamos México! See you in Monterrey 2026!</strong> ⚽🇲🇽</p>
+            <p><strong>¡Vamos México! See you in Monterrey 2026!</strong> </p>
           <hr className="editorial-divider" />
         </article>
       </main>

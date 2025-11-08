@@ -20,6 +20,19 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
 
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">BMO Field</li>
+          </ol>
+        </nav>
+      )}
+
       {/* Preview Card - Collapsed State */}
       {!isExpanded && !hideHero && (
         <div className="relative">
@@ -97,9 +110,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 Canada's Soccer Cathedral Prepares for Its Biggest Moment
               </h3>
               <div>
-                <p className="leading-relaxed mb-6">
-                  On June 12, 2026, history will be made at BMO Field when Canada's men's national team takes the pitch for the country's first-ever men's FIFA World Cup match on home soil. This lakefront venue in Toronto—Canada's original soccer-specific stadium—has spent nearly two decades building toward this moment, evolving from a modest 20,000-seat arena into a crown jewel ready to welcome the world's greatest tournament.
-                </p>
+                <p className="leading-relaxed mb-6"><span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>, BMO Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. On June 12, 2026, history will be made when Canada's men's national team takes the pitch for the country's first-ever men's FIFA World Cup match on home soil. This lakefront venue—Canada's original soccer-specific stadium—has spent nearly two decades building toward this moment, evolving from a modest 20,000-seat arena into a crown jewel ready to welcome the world's greatest tournament.</p>
                 <p className="leading-relaxed">
                   BMO Field will host six World Cup matches total, including five group stage fixtures and one knockout round game, with a temporarily expanded capacity reaching 45,736 seats. The stadium sits on Exhibition Place, where Toronto's sporting heritage runs deep, offering international fans an intimate yet electric atmosphere that European visitors will recognize—this is no cavernous NFL bowl, but a purpose-built football stadium where every seat brings you close to the action. Toronto joins Vancouver as Canada's two host cities for the tournament, which will be jointly staged across 16 venues in the United States, Mexico, and Canada.
                 </p>
@@ -430,6 +441,9 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   Beyond Liberty Village bars, head to King West's Entertainment District for late-night clubs and international cuisine. For craft beer enthusiasts, Bellwoods Brewery (Trinity Bellwoods area) and Blood Brothers Brewing (near Exhibition) showcase Ontario's thriving beer scene.
                 </p>
               </div>
+              <p className="leading-relaxed mt-4">
+                Planning matches across North America? Consider <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver or <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey.
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -460,13 +474,39 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </p>
                 </div>
                 <div>
-                  <p className="leading-relaxed">
-                    BMO Field may be among the tournament's smaller venues, but for pure football atmosphere and authentic Canadian hospitality, it will punch well above its weight class. See you on the terraces. 🍁⚽
-                  </p>
+                  <p className="leading-relaxed">BMO Field may be among the tournament's smaller venues, but for pure football atmosphere and authentic Canadian hospitality, it will punch well above its weight class. See you on the terraces.</p>
                 </div>
               </div>
               <hr className="editorial-divider" />
             </article>
+
+            {/* Beyond the Stadium: Explore Toronto */}
+            <section className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Beyond the Stadium: Explore Toronto
+              </h3>
+              <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
+                <p>Toronto's world-class attractions and multicultural vibrancy make it a premier World Cup 2026 destination.</p>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Discover Toronto</h4>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto World Cup 2026 Guide</Link> for essential information:</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Hotels near BMO Field and downtown</li>
+                    <li>Toronto's efficient public transit system</li>
+                    <li>Top attractions and neighborhoods</li>
+                    <li>Diverse dining scene</li>
+                    <li>Match day planning tips</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Other Canadian Stadium</h4>
+                  <p>Visiting both Canadian host cities? Check out <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
+                </div>
+                <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+              </div>
+              <hr className="editorial-divider" />
+            </section>
 
             {/* Got It Button - match MetLife premium style */}
             <div className="mt-8 flex justify-end">

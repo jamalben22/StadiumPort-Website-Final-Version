@@ -1,6 +1,7 @@
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { Link } from 'react-router-dom';
 
 export function KansasCityCityGuide() {
   return (
@@ -29,6 +30,20 @@ export function KansasCityCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumb Navigation */}
+            <nav aria-label="Breadcrumb" className="mt-4">
+              <ol className="flex items-center text-sm text-slate-200 gap-2">
+                <li>
+                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+                </li>
+                <li>›</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                </li>
+                <li>›</li>
+                <li className="text-slate-300">Kansas City World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Kansas City</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -56,9 +71,49 @@ export function KansasCityCityGuide() {
             <i className="ri-trophy-line text-emerald-500"></i>
             The Heart of America Hosts the Heart of the Game
           </h2>
-          <p>Kansas City might be the smallest host city for the 2026 FIFA World Cup, but don't let that fool you—this is where American football passion meets Midwest hospitality in the most electric way possible. From June 16 through July 11, Arrowhead Stadium (known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.</p>
+          <p>
+            Kansas City might be the smallest host city for the 2026 FIFA World Cup, but don't let that fool you—this is where American football passion meets Midwest hospitality in the most electric way possible.
+            {' '}Kansas City is one of the{' '}
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
+            {' '}for World Cup 2026.
+            {' '}From June 16 through July 11,{' '}
+            <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link>
+            {' '}(known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.
+          </p>
           <p>
             This isn't a flashy coastal city trying to impress you. This is the real America—BBQ joints that have been perfecting brisket since the 1940s, fountains on every corner (seriously, KC has more fountains than any city except Rome), and locals who'll give you directions then invite you to their tailgate. The 2026 World Cup gives Kansas City its moment to show the world what Midwestern culture is all about: unpretentious, welcoming, and unexpectedly unforgettable.
+          </p>
+          {/* Essential Kansas City Links */}
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+            <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Kansas City Links</div>
+            <div className="space-y-1 text-slate-800 dark:text-slate-200">
+              <div>
+                🏟️ <strong>Stadium:</strong>{' '}
+                <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Arrowhead Stadium Guide</Link>
+              </div>
+              <div>
+                🗺️ <strong>All Host Cities:</strong>{' '}
+                <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </div>
+              <div>
+                ✈️ <strong>Nearby Cities:</strong>{' '}
+                <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
+              </div>
+            </div>
+          </div>
+          {/* Regional planning cross-links */}
+          <p className="leading-relaxed mt-4">
+            Pair Kansas City with{' '}
+            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            {' '}for a central states circuit. Connect the Midwest with the South by adding{' '}
+            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            {' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+            . For contrast and travel planning, combine Kansas City with a coastal city like{' '}
+            <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+            .
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -203,6 +258,15 @@ export function KansasCityCityGuide() {
               <div className="space-y-4">
                 <p>
                   The stadium is located about 10-12 miles east of downtown Kansas City, making it easily accessible via car or rideshare. Unfortunately, there is no direct public transit from downtown to Arrowhead Stadium, so plan accordingly.
+                </p>
+                <p className="leading-relaxed mt-4">
+                  Planning a broader trip? Build a heartland-to-south route: start in Kansas City, then head to{' '}
+                  <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  {' '}and{' '}
+                  <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  {', '}or pivot east to{' '}
+                  <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  {' '}for a diverse American experience.
                 </p>
               </div>
             </div>
@@ -743,6 +807,57 @@ export function KansasCityCityGuide() {
             <p><strong>See you in the City of Fountains.</strong> Bring your appetite, your team colors, and your loudest voice. Kansas City's ready to show you why this place is special.</p>
           </div>
           <hr className="editorial-divider" />
+        </article>
+
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-500"></i>
+            Plan Your Heartland World Cup Experience
+          </h3>
+          <p className="leading-relaxed mb-4">
+            Kansas City's central location makes it the perfect base for exploring America's heartland and connecting to cities across the country.
+          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="font-inter font-semibold">Popular Combinations:</p>
+            </div>
+            <div className="space-y-2">
+              <p className="font-inter font-semibold">Central States Circuit</p>
+              <p>
+                Experience authentic American heartland: Kansas City (current) for BBQ and Midwest charm, then head to{' '}
+                <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                {' '}for Texas energy and culture.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="font-inter font-semibold">Heartland to South</p>
+              <p>
+                Connect the Midwest with the South: Kansas City (current) to{' '}
+                <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                {' '}to{' '}
+                <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                {' '}or{' '}
+                <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                {' '}for a diverse American experience.
+              </p>
+            </div>
+            <div className="space-y-2">
+              <p className="font-inter font-semibold">Coast to Heartland</p>
+              <p>
+                Combine Kansas City with coastal cities like{' '}
+                <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+                ,{' '}
+                <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
+                , or{' '}
+                <Link to="/travel-guides/new-york-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+                {' '}to experience the full diversity of American culture from the heartland to the coasts.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6">
+            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          </p>
         </article>
 
         {/* Back CTA */}

@@ -83,6 +83,47 @@ export default function VenuesPage() {
     { name: 'Stadiums', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums` }
   ]);
 
+  // Helper: map each stadium to its host city route and display label
+  const getHostCityLinkForVenue = (venue: any): { url: string; label: string } => {
+    switch (venue.id) {
+      case 1:
+        return { url: '/world-cup-2026-host-cities/mexico-city', label: 'Mexico City' };
+      case 2:
+        // NYC/NJ links to the original NYC travel guide
+        return { url: '/travel-guides/new-york-city', label: 'New York / New Jersey' };
+      case 3:
+        return { url: '/world-cup-2026-host-cities/dallas', label: 'Dallas' };
+      case 4:
+        return { url: '/world-cup-2026-host-cities/kansas-city', label: 'Kansas City' };
+      case 5:
+        return { url: '/world-cup-2026-host-cities/monterrey', label: 'Monterrey' };
+      case 6:
+        return { url: '/world-cup-2026-host-cities/houston', label: 'Houston' };
+      case 7:
+        return { url: '/world-cup-2026-host-cities/atlanta', label: 'Atlanta' };
+      case 8:
+        return { url: '/world-cup-2026-host-cities/los-angeles', label: 'Los Angeles' };
+      case 9:
+        return { url: '/world-cup-2026-host-cities/seattle', label: 'Seattle' };
+      case 10:
+        return { url: '/world-cup-2026-host-cities/san-francisco', label: 'San Francisco Bay Area' };
+      case 11:
+        return { url: '/world-cup-2026-host-cities/philadelphia', label: 'Philadelphia' };
+      case 12:
+        return { url: '/world-cup-2026-host-cities/boston', label: 'Boston' };
+      case 13:
+        return { url: '/world-cup-2026-host-cities/miami', label: 'Miami' };
+      case 14:
+        return { url: '/world-cup-2026-host-cities/toronto', label: 'Toronto' };
+      case 15:
+        return { url: '/world-cup-2026-host-cities/vancouver', label: 'Vancouver' };
+      case 16:
+        return { url: '/world-cup-2026-host-cities/guadalajara', label: 'Guadalajara' };
+      default:
+        return { url: '/world-cup-2026-host-cities', label: 'Host Cities' };
+    }
+  };
+
   const venues = [
     {
       id: 1,
@@ -581,6 +622,12 @@ export default function VenuesPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            {/* Breadcrumb Navigation */}
+            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-white/80">
+              <a href="/" className="hover:text-white">Home</a>
+              <span className="mx-2">›</span>
+              <span className="text-white/80">Stadiums</span>
+            </nav>
             <div className="inline-flex items-center space-x-2 bg-gold-400/20 backdrop-blur-sm border border-gold-400/30 rounded-full px-6 py-3 mb-6">
               <i className="ri-building-line text-gold-400"></i>
               <span className="text-gold-300 font-medium">2026 FIFA World Cup Stadiums: Complete Guide to All 16 Venues</span>
@@ -588,7 +635,14 @@ export default function VenuesPage() {
             
             <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">Complete Travel Guides for All 16 USA, Canada & Mexico Venues</h1>
             
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">Complete guide to all 16 FIFA World Cup 2026 stadiums. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue across USA, Canada & Mexico.</p>
+            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              Complete guide to all 16 FIFA World Cup 2026 stadiums. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue across USA, Canada & Mexico.
+              {' '}
+              These state-of-the-art stadiums are located across 16 incredible
+              {' '}
+              <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-300 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">host cities</a>,
+              {' '}each offering unique cultural experiences and attractions for World Cup visitors.
+            </p>
           </div>
 
           {/* Live Stats Bar */}
@@ -665,6 +719,17 @@ export default function VenuesPage() {
                       <i className="ri-map-pin-line mr-2 text-lg"></i>
                       <span>{venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city} • {venue.capacity.toLocaleString()} capacity</span>
                     </div>
+                    {(() => {
+                      const hostCity = getHostCityLinkForVenue(venue);
+                      return (
+                        <div className="mt-2 text-white/95 text-sm font-semibold">
+                          <span aria-hidden="true">📍</span>{' '}Located in{' '}
+                          <a href={hostCity.url} className="underline underline-offset-4 decoration-white/40 hover:decoration-white">
+                            {hostCity.label}
+                          </a>
+                        </div>
+                      );
+                    })()}
                   </div>
                   
                   {/* Final Badge (MetLife only) */}
@@ -757,6 +822,44 @@ export default function VenuesPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Beyond the Stadiums (Explore the Cities) */}
+      <section className="py-16 bg-white dark:bg-navy-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-10">
+            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">Beyond the Stadiums</h2>
+            <p className="font-inter text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
+              The World Cup 2026 experience extends far beyond match day. Each host city offers incredible attractions, dining, culture, and entertainment.
+            </p>
+            <p className="mt-4 font-inter text-slate-600 dark:text-slate-300">
+              <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All Host Cities</a>
+              {' '}to discover what makes each destination special, from accommodation options to local transportation tips.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-4 text-center">Featured Destinations</h3>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <li className="text-center">
+                <a href="/world-cup-2026-host-cities/mexico-city" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>
+                <span className="block text-slate-600 dark:text-slate-400">Ancient history meets modern metropolis</span>
+              </li>
+              <li className="text-center">
+                <a href="/world-cup-2026-host-cities/los-angeles" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>
+                <span className="block text-slate-600 dark:text-slate-400">Entertainment capital with perfect weather</span>
+              </li>
+              <li className="text-center">
+                <a href="/world-cup-2026-host-cities/toronto" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a>
+                <span className="block text-slate-600 dark:text-slate-400">Multicultural gem of Canada</span>
+              </li>
+              <li className="text-center">
+                <a href="/travel-guides/new-york-city" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>
+                <span className="block text-slate-600 dark:text-slate-400">The city that never sleeps</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
