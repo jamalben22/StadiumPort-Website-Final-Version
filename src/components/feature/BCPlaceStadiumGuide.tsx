@@ -114,10 +114,10 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Introduction — exact text preserved */}
             <article className="editorial-body editorial-dropcap">
               <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-trophy-line text-emerald-500"></i>
-                BC Place Stadium: Your Ultimate 2026 FIFA World Cup Guide
+                <i className="ri-landscape-line text-emerald-500"></i>
+                Where Mountains Meet Ocean Meet the Pitch
               </h2>
-              <h3 className="editorial-h4 animate-fade-up mb-2">Where Mountains Meet Ocean Meet the Pitch</h3>
+              
               <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 {`There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality, where 54,000 fans will roar in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. Located in the beating heart of downtown Vancouver, this architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
               </p>
@@ -130,18 +130,100 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-information-line text-emerald-500"></i>
                 Stadium Overview & Fast Facts
               </h3>
-              <div className="space-y-2 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-                <p><strong>Official Name:</strong> BC Place Stadium</p>
-                <p><strong>Location:</strong> Downtown Vancouver, British Columbia (777 Pacific Boulevard)</p>
-                <p><strong>Opened:</strong> June 19, 1983</p>
-                <p><strong>Capacity:</strong> 54,000 (World Cup configuration)</p>
-                <p><strong>Primary Tenants:</strong> Vancouver Whitecaps FC (MLS), BC Lions (CFL)</p>
-                <p><strong>Original Architect:</strong> Studio Phillips Barratt, Ltd.</p>
-                <p><strong>Renovation Architects (2010-2011):</strong> Stantec Architecture Ltd., Geiger Engineers</p>
-                <p><strong>Surface Type:</strong> Natural grass (installed for World Cup, FIFA specification)</p>
-                <p><strong>Roof Type:</strong> Cable-supported retractable roof (world's largest of its kind)</p>
-                <p><strong>Roof Opening:</strong> 100m x 85m (7,500 square metres of open sky)</p>
-                <p><strong>Notable Features:</strong> Second-largest centre-hung HD video board in North America, 36-foot LED exterior facade lighting, fully retractable in 20 minutes</p>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                      <p className="leading-relaxed">BC Place Stadium</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                      <p className="leading-relaxed">Downtown Vancouver, British Columbia (777 Pacific Boulevard)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                      <p className="leading-relaxed">June 19, 1983</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+                      <p className="leading-relaxed">54,000 (World Cup configuration)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
+                      <p className="leading-relaxed">Vancouver Whitecaps FC (MLS), BC Lions (CFL)</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Original Architect</span>
+                      <p className="leading-relaxed">Studio Phillips Barratt, Ltd.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-pencil-ruler-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Renovation Architects (2010-2011)</span>
+                      <p className="leading-relaxed">Stantec Architecture Ltd., Geiger Engineers</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-football-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                      <p className="leading-relaxed">Natural grass (installed for World Cup, FIFA specification)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                      <p className="leading-relaxed">Cable-supported retractable roof (world's largest of its kind)</p>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-3 py-2">
+                    <div>
+                      <i className="ri-arrow-up-down-line text-emerald-500 text-3xl mr-2"></i>
+                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Opening</span>
+                      <p className="leading-relaxed">100m x 85m (7,500 square metres of open sky)</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
+                  <i className="ri-star-line text-emerald-500"></i>Notable Features
+                </h4>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="flex items-center gap-2">
+                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <span>Second-largest centre-hung HD video board in North America</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <span>36-foot LED exterior facade lighting</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <span>Fully retractable in 20 minutes</span>
+                  </div>
+                </div>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -227,7 +309,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>By Bike:</strong> {`Complimentary secure bike parking provided by The Bicycle Valet operates at Gate C from gates opening until 30 minutes post-match.`}</p>
 
-                <p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}http://booking.com{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
+                <p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}<a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -249,7 +331,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>Luxury Experiences:</strong> {`JW Marriott Parq Vancouver and the DOUGLAS, Autograph Collection combine five-star service with proximity to BC Place (literally adjacent to the stadium). Fairmont Hotel Vancouver and Rosewood Hotel Georgia deliver historic grandeur with modern luxury in the downtown core.`}</p>
 
-                <p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}http://booking.com{`  or Expedia for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
+                <p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}<a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or `}<a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>{` for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>

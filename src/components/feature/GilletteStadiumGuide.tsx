@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -21,6 +21,19 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">Gillette Stadium</li>
+          </ol>
+        </nav>
+      )}
 
       {/* Preview Card - Collapsed State */}
       {!isExpanded && !hideHero && (
@@ -136,7 +149,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed">
-                When the world's greatest football tournament returns to North America in summer 2026, one of its most compelling chapters will unfold in the unlikeliest of places—a stadium nestled off Route 1 in Foxborough, Massachusetts, where American football royalty has reigned for two decades. Gillette Stadium, home to six-time Super Bowl champions the New England Patriots, will transform into "Boston Stadium" for the FIFA World Cup, hosting seven matches including a quarterfinal that could decide the tournament's destiny. This is where New England's fierce sporting culture meets the beautiful game, where a privately-funded architectural marvel built by Robert Kraft's vision will welcome the planet's most passionate football fans. For those traveling to witness World Cup history, this venue represents something rare: a stadium that actually works, surrounded by infrastructure designed for massive crowds, with a reputation for selling out every single event since opening in 2002.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, Gillette Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Set in Foxborough, approximately 22 miles southwest of Boston, this modern arena combines efficiency with fan-first design, delivering a top-tier matchday experience and stadium operations that rival the best in North America. Hosting seven matches—including a quarterfinal—it represents a stadium that actually works, surrounded by infrastructure designed for massive crowds and a proven record of sellouts since 2002.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -150,48 +163,18 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-building-2-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Official Name: Gillette Stadium (Boston Stadium during World Cup 2026)</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Location: Foxborough, Massachusetts (22 miles southwest of Boston, 18 miles northeast of Providence, Rhode Island)</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-calendar-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Opened: May 11, 2002</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-group-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Capacity: 64,628 (standard) / up to 70,000 (World Cup configuration)</p>
-                  </div>
+                    <p className="leading-relaxed"><i className="ri-building-2-line text-emerald-500 text-3xl"></i> Official Name: Gillette Stadium (Boston Stadium during World Cup 2026)</p>
+                    <p className="leading-relaxed"><i className="ri-map-pin-line text-emerald-500 text-3xl"></i> Location: Foxborough, Massachusetts (22 miles southwest of Boston, 18 miles northeast of Providence, Rhode Island)</p>
+                    <p className="leading-relaxed"><i className="ri-calendar-line text-emerald-500 text-3xl"></i> Opened: May 11, 2002</p>
+                    <p className="leading-relaxed"><i className="ri-group-line text-emerald-500 text-3xl"></i> Capacity: 64,628 (standard) / up to 70,000 (World Cup configuration)</p>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-team-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Primary Tenants: New England Patriots (NFL), New England Revolution (MLS)</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-briefcase-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Owner/Operator: Kraft Sports Group</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Architect/Design Firm: HOK Sport (now Populous)</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-grass-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Surface Type: FieldTurf (artificial)</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-sun-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Roof Type: Open-air</p>
-                  </div>
-                  <div className="flex items-center gap-3 py-2">
-                    <i className="ri-star-line text-emerald-500 text-3xl"></i>
-                    <p className="leading-relaxed">Notable Features: 218-foot lighthouse observation deck, largest outdoor curved-radius video board in North America (22,000 sq ft), 360-degree stadium connectivity, completely cashless venue</p>
-                  </div>
+                    <p className="leading-relaxed"><i className="ri-team-line text-emerald-500 text-3xl"></i> Primary Tenants: New England Patriots (NFL), New England Revolution (MLS)</p>
+                    <p className="leading-relaxed"><i className="ri-briefcase-line text-emerald-500 text-3xl"></i> Owner/Operator: Kraft Sports Group</p>
+                    <p className="leading-relaxed"><i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i> Architect/Design Firm: HOK Sport (now Populous)</p>
+                    <p className="leading-relaxed"><i className="ri-grass-line text-emerald-500 text-3xl"></i> Surface Type: FieldTurf (artificial)</p>
+                    <p className="leading-relaxed"><i className="ri-sun-line text-emerald-500 text-3xl"></i> Roof Type: Open-air</p>
+                    <p className="leading-relaxed"><i className="ri-star-line text-emerald-500 text-3xl"></i> Notable Features: 218-foot lighthouse observation deck, largest outdoor curved-radius video board in North America (22,000 sq ft), 360-degree stadium connectivity, completely cashless venue</p>
                 </div>
               </div>
               <hr className="editorial-divider" />
@@ -314,7 +297,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </p>
               <h4 className="editorial-h4 mt-6">On-Site (Premium)</h4>
               <p className="leading-relaxed mb-6">
-                **Renaissance Boston Patriot Place Hotel** and **Hilton Garden Inn Foxborough Patriot Place** sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. `http://booking.com/`  or `http://hotels.com/`  to secure rates before prices spike.
+                <strong>Renaissance Boston Patriot Place Hotel</strong> and <strong>Hilton Garden Inn Foxborough Patriot Place</strong> sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="http://hotels.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">hotels.com</a>  to secure rates before prices spike.
               </p>
               <h4 className="editorial-h4 mt-6">Nearby Foxborough/Mansfield (Mid-Range)</h4>
               <p className="leading-relaxed mb-6">
@@ -325,7 +308,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
                 Staying in Boston proper provides far richer cultural experiences, dining, and nightlife. The HI Boston Hostel near Chinatown offers budget beds ($40-70), while mid-range chains like Hampton Inn, Courtyard, and Fairfield cluster around Back Bay and Cambridge ($200-350/night). Luxury seekers should consider The Liberty Hotel (converted jail), Four Seasons, or Mandarin Oriental ($500-900). Boston's MBTA train access to the stadium makes this viable despite the distance.
               </p>
               <p className="leading-relaxed">
-                **Search multi-city options:** Sites like `http://expedia.com/`  and `http://kayak.com/`  let you compare Boston, Providence, and Foxborough simultaneously.
+                <strong>Search multi-city options:</strong> Sites like `http://expedia.com/`  and `http://kayak.com/`  let you compare Boston, Providence, and Foxborough simultaneously.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -349,15 +332,15 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
                 <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
                 Matchday Tips & Insider Advice
               </h3>
-              <p className="leading-relaxed mb-4">**Arrive Early**: Gates open 2-3 hours before kickoff. Security screening takes time, especially with FIFA-mandated protocols. Aim to arrive 90 minutes early to explore the stadium, grab food, and soak in pre-match atmosphere.</p>
-              <p className="leading-relaxed mb-4">**Bag Policy is Strict**: Only clear plastic bags (max 12" x 12" x 6") or small clutches (max 6.5" x 4.5") are permitted. No backpacks, purses, or camera bags. Leave non-compliant bags at your hotel—the stadium doesn't offer storage.</p>
-              <p className="leading-relaxed mb-4">**Best Entrances**: The main Ticketmaster Gate (north end, by the lighthouse) is spectacular but crowded. Side gates at CVS Health (west) and Enel X (east) typically move faster. Upper deck ticket holders should use designated upper-level entrances to avoid climbing stairs through lower concourses.</p>
-              <p className="leading-relaxed mb-4">**Food & Drink**: Gillette ranks first among NFL venues for food safety. Highlights include Backyard Barbecue (pulled pork, brisket), Ale House (pizza, pretzel logs), and international options at various concession stands. Everything is pricey ($10-18 for meals, $12-15 for beer). The stadium is completely cashless—credit/debit only, though cash-to-card kiosks are available.</p>
+              <p className="leading-relaxed mb-4"><strong>Arrive Early</strong>: Gates open 2-3 hours before kickoff. Security screening takes time, especially with FIFA-mandated protocols. Aim to arrive 90 minutes early to explore the stadium, grab food, and soak in pre-match atmosphere.</p>
+              <p className="leading-relaxed mb-4"><strong>Bag Policy is Strict</strong>: Only clear plastic bags (max 12" x 12" x 6") or small clutches (max 6.5" x 4.5") are permitted. No backpacks, purses, or camera bags. Leave non-compliant bags at your hotel—the stadium doesn't offer storage.</p>
+              <p className="leading-relaxed mb-4"><strong>Best Entrances</strong>: The main Ticketmaster Gate (north end, by the lighthouse) is spectacular but crowded. Side gates at CVS Health (west) and Enel X (east) typically move faster. Upper deck ticket holders should use designated upper-level entrances to avoid climbing stairs through lower concourses.</p>
+              <p className="leading-relaxed mb-4"><strong>Food & Drink</strong>: Gillette ranks first among NFL venues for food safety. Highlights include Backyard Barbecue (pulled pork, brisket), Ale House (pizza, pretzel logs), and international options at various concession stands. Everything is pricey ($10-18 for meals, $12-15 for beer). The stadium is completely cashless—credit/debit only, though cash-to-card kiosks are available.</p>
               <p className="leading-relaxed mb-6">Smart move: Eat at Patriot Place before entering. Better quality, similar prices, actual seating.</p>
-              <p className="leading-relaxed mb-4">**What to Bring**: Photo ID (required for alcohol, strictly enforced for under-25 with out-of-state IDs), phone/mobile ticket, layers (New England weather is unpredictable—June can be 65°F or 85°F, July typically 75-90°F), sunscreen and hat for day matches.</p>
-              <p className="leading-relaxed mb-4">**What NOT to Bring**: Umbrellas, folding chairs, coolers, outside food/drink (except medical necessity), professional cameras with detachable lenses, selfie sticks, noisemakers, large flags.</p>
-              <p className="leading-relaxed mb-4">**Post-Match Transport**: Trains depart 30 minutes after the final whistle—don't dawdle. If driving, consider waiting 30-45 minutes in Patriot Place bars/restaurants to let traffic clear. Rideshares are chaos immediately post-match; walk 10 minutes toward Route 1 hotels for easier pickups.</p>
-              <p className="leading-relaxed">**Weather Preparation**: June can bring everything from sunny perfection to thunderstorms. July heat can be intense. The stadium is open-air with no protection—bring sunscreen, but remember umbrella prohibition means you'll get wet if it rains.</p>
+              <p className="leading-relaxed mb-4"><strong>What to Bring</strong>: Photo ID (required for alcohol, strictly enforced for under-25 with out-of-state IDs), phone/mobile ticket, layers (New England weather is unpredictable—June can be 65°F or 85°F, July typically 75-90°F), sunscreen and hat for day matches.</p>
+              <p className="leading-relaxed mb-4"><strong>What NOT to Bring</strong>: Umbrellas, folding chairs, coolers, outside food/drink (except medical necessity), professional cameras with detachable lenses, selfie sticks, noisemakers, large flags.</p>
+              <p className="leading-relaxed mb-4"><strong>Post-Match Transport</strong>: Trains depart 30 minutes after the final whistle—don't dawdle. If driving, consider waiting 30-45 minutes in Patriot Place bars/restaurants to let traffic clear. Rideshares are chaos immediately post-match; walk 10 minutes toward Route 1 hotels for easier pickups.</p>
+              <p className="leading-relaxed"><strong>Weather Preparation</strong>: June can bring everything from sunny perfection to thunderstorms. July heat can be intense. The stadium is open-air with no protection—bring sunscreen, but remember umbrella prohibition means you'll get wet if it rains.</p>
               <hr className="editorial-divider" />
             </article>
 
@@ -369,15 +352,18 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </h3>
               <h4 className="editorial-h4 mt-6">Patriot Place (Adjacent)</h4>
               <p className="leading-relaxed mb-4">This open-air shopping and entertainment complex surrounds the stadium with 1.3 million square feet of retail, dining, and activities. Pre-match atmosphere thrives here with 19 restaurants and bars including Six String Grill & Stage (live country music), Scorpion Bar (Mexican with rooftop views), Davio's Northern Italian Steakhouse, and Bar Louie.</p>
-              <p className="leading-relaxed mb-6">**The Hall at Patriot Place** houses the Patriots Hall of Fame ($15 entry)—even non-NFL fans appreciate the interactive exhibits and Tom Brady huddle experience. Bass Pro Shops, Cinema de Lux, and Splitsville Luxury Lanes bowling provide non-football entertainment. Parking is free at Patriot Place (separate from stadium lots).</p>
+              <p className="leading-relaxed mb-6"><strong>The Hall at Patriot Place</strong> houses the Patriots Hall of Fame ($15 entry)—even non-NFL fans appreciate the interactive exhibits and Tom Brady huddle experience. Bass Pro Shops, Cinema de Lux, and Splitsville Luxury Lanes bowling provide non-football entertainment. Parking is free at Patriot Place (separate from stadium lots).</p>
               <h4 className="editorial-h4 mt-6">Boston (30-40 minutes)</h4>
-              <p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through `http://viator.com/`  or `http://getyourguide.com/`  to maximize limited time.</p>
+              <p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through <a href="http://viator.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">viator.com</a> or <a href="http://getyourguide.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">getyourguide.com</a> to maximize limited time.</p>
               <h4 className="editorial-h4 mt-6">Providence (25-30 minutes)</h4>
               <p className="leading-relaxed mb-6">Rhode Island's capital surprises visitors with Federal Hill's Italian restaurants, WaterFire evening art installations along riverwalks, and RISD Museum. Tony's Colonial Food (cash-only diner) is legendary.</p>
               <h4 className="editorial-h4 mt-6">Craft Beer Trail</h4>
               <p className="leading-relaxed mb-6">New England excels at craft brewing. Wormtown Brewery at Patriot Place pours local favorites. Sam Adams brewery in Boston (Jamaica Plain) offers tours. Tree House Brewing in Charlton (30 minutes west) ranks among America's best—worth the detour for beer enthusiasts.</p>
               <h4 className="editorial-h4 mt-6">Cape Cod (60-75 minutes)</h4>
               <p className="leading-relaxed">If extending your stay, Cape Cod's beaches, seafood shacks, and charming towns offer classic New England coastal experiences. Provincetown at the tip combines beaches with vibrant arts and LGBTQ+ culture.</p>
+              <p className="leading-relaxed mt-4">
+                Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia. Cross-border? Consider <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto.
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -398,14 +384,42 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </p>
               <div className="p-6 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
                 <p className="leading-relaxed">
-                  **One unforgettable thing not to miss:** Climb the lighthouse observation deck before kickoff. The 360-degree views of the stadium bowl, the surrounding forests (stunning in summer green), and the entire Patriot Place complex provide perspective on how this venue sits in its landscape—uniquely New England, uniquely American, and for seven special days in 2026, uniquely global.
+                  <strong>One unforgettable thing not to miss:</strong> Climb the lighthouse observation deck before kickoff. The 360-degree views of the stadium bowl, the surrounding forests (stunning in summer green), and the entire Patriot Place complex provide perspective on how this venue sits in its landscape—uniquely New England, uniquely American, and for seven special days in 2026, uniquely global.
                 </p>
               </div>
               <p className="leading-relaxed">
-                Book your accommodation early through `http://booking.com/` , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
+                Book your accommodation early through <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
               </p>
               <hr className="editorial-divider" />
             </article>
+
+            {/* Beyond the Stadium: Explore Boston */}
+            <section className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                Beyond the Stadium: Explore Boston
+              </h3>
+              <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
+                <p>Boston's rich history and New England charm create an unforgettable World Cup 2026 experience.</p>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Discover Boston</h4>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston World Cup 2026 Guide</Link> for everything you need:</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Where to stay near Gillette Stadium</li>
+                    <li>Getting to the stadium from Boston</li>
+                    <li>Historic attractions and the Freedom Trail</li>
+                    <li>Best seafood and local cuisine</li>
+                    <li>Transportation and match day tips</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Other Northeast Stadiums</h4>
+                  <p>Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia.</p>
+                </div>
+                <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+              </div>
+              <hr className="editorial-divider" />
+            </section>
 
             {/* Got It Button - match MetLife premium style */}
             <div className="flex justify-end mt-8">

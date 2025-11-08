@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
@@ -50,6 +51,21 @@ export function PhiladelphiaCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav className="editorial-breadcrumbs mb-3">
+              <ol className="list-none flex flex-wrap items-center gap-2 text-sm md:text-base">
+                <li>
+                  <Link to="/" className="hover:underline">Home</Link>
+                </li>
+                <li className="text-slate-400">›</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+                </li>
+                <li className="text-slate-400">›</li>
+                <li>
+                  <span className="text-slate-600 dark:text-slate-300">Philadelphia World Cup 2026 Guide</span>
+                </li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Philadelphia</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -75,7 +91,7 @@ export function PhiladelphiaCityGuide() {
         <article className="editorial-body editorial-dropcap">
           <div>
             <p className="leading-relaxed mb-6">
-              On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at Lincoln Financial Field. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. This isn't just a football match; it's a historic moment that will never be repeated.
+              On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link>. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. Philadelphia is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> for World Cup 2026. This isn't just a football match; it's a historic moment that will never be repeated.
             </p>
             <p className="leading-relaxed">
               Between June 14 and July 4, Lincoln Financial Field will host six World Cup matches drawing over half a million visitors to the City of Brotherly Love. If you've never visited Philadelphia, prepare for a city where cobblestone streets meet world-class museums, where Revolutionary War history sits beside cutting-edge culinary innovation, and where the most iconic sandwich in America (yes, the cheesesteak) is debated with religious fervor. Philadelphia combines accessibility, walkability, affordability, and authenticity in ways that coastal metropolises can't match. You'll experience American history at its source while watching the world's game played at its highest level.
@@ -83,6 +99,22 @@ export function PhiladelphiaCityGuide() {
           </div>
           <hr className="editorial-divider" />
         </article>
+
+        {/* Essential Links module */}
+        <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+          <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Philadelphia Links</div>
+          <div className="space-y-1 text-slate-800 dark:text-slate-200">
+            <div>
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Lincoln Financial Field Guide</Link>
+            </div>
+            <div>
+              🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+            </div>
+            <div>
+              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
+            </div>
+          </div>
+        </div>
 
         {/* Stadium Section */}
         <article className="editorial-body">
@@ -209,6 +241,9 @@ export function PhiladelphiaCityGuide() {
                 <p className="leading-relaxed">
                   Philadelphia International Airport is located approximately 12 miles southwest of Center City and is one of America's major East Coast hubs, serving over 100 airlines with connections to destinations worldwide.
                 </p>
+                <p className="leading-relaxed">
+                  Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
+                </p>
               </div>
             </div>
 
@@ -230,6 +265,9 @@ export function PhiladelphiaCityGuide() {
                 </p>
                 <p className="leading-relaxed">
                   <strong>Stops in Center City</strong>: The Airport Line stops at Jefferson Station (near Reading Terminal Market and Convention Center), Suburban Station (downtown business district), and 30th Street Station (major Amtrak hub and University City). All three stops put you within walking distance or short ride to most downtown hotels.
+                </p>
+                <p className="leading-relaxed">
+                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
                 </p>
               </div>
             </div>
@@ -749,6 +787,56 @@ export function PhiladelphiaCityGuide() {
           <hr className="editorial-divider" />
         </article>
 
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-map-pin-line text-emerald-500"></i>
+            Plan Your Historic Cities World Cup Journey
+          </h2>
+          <div className="space-y-6">
+            <p>
+              Philadelphia's central East Coast location makes it the perfect hub for exploring multiple World Cup host cities steeped in American history.
+            </p>
+            <div className="space-y-4">
+              <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
+                <i className="ri-route-line text-emerald-500"></i>
+                Popular Combinations
+              </h3>
+              <div className="space-y-2">
+                <h4 className="editorial-h4">Northeast Heritage Trail</h4>
+                <p>
+                  Discover America's founding cities: Start in Philadelphia (current, no link), take the train north to
+                  {' '}
+                  <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+                  {' '}for the big city experience, then continue to{' '}
+                  <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+                  {' '}to complete your Revolutionary history tour.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="editorial-h4">Mid-Atlantic to South</h4>
+                <p>
+                  Connect Philadelphia with{' '}
+                  <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  {' '}to experience both Mid-Atlantic and Southern hospitality, with different architectural styles and culinary traditions.
+                </p>
+              </div>
+              <div className="space-y-2">
+                <h4 className="editorial-h4">Cross-Border Northeast</h4>
+                <p>
+                  Extend your trip north to{' '}
+                  <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>
+                  {' '}for an international perspective, easily accessible from Philadelphia.
+                </p>
+              </div>
+            </div>
+            <p>
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+            </p>
+          </div>
+          <hr className="editorial-divider" />
+        </article>
+
         {/* Start Planning Your 2026 World Cup Trip to Philadelphia */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
@@ -764,9 +852,9 @@ export function PhiladelphiaCityGuide() {
               Your Action Plan
             </h3>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Register for FIFA tickets</strong> at `https://www.fifa.com/tickets`  for future phases</li>
-              <li><strong>Book accommodations early</strong> via `https://www.booking.com`  or `https://www.hotels.com` —6-12 months in advance is essential, especially for July 4th</li>
-              <li><strong>Research flights</strong> to Philadelphia (PHL) through `https://www.skyscanner.com`  or `https://www.google.com/flights` </li>
+              <li><strong>Register for FIFA tickets</strong> at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future phases</li>
+              <li><strong>Book accommodations early</strong> via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.hotels.com</a> —6-12 months in advance is essential, especially for July 4th</li>
+              <li><strong>Research flights</strong> to Philadelphia (PHL) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.google.com/flights</a> </li>
               <li><strong>Purchase a SEPTA Key card</strong> immediately upon arrival for seamless transit</li>
               <li><strong>Plan Independence Hall tour</strong> in advance—book the $1 tickets online weeks before your visit</li>
               <li><strong>Embrace the July 4th experience</strong>—this collision of American independence and World Cup football will never happen again</li>

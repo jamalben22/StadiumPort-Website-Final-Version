@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
@@ -79,6 +80,19 @@ export function VancouverCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            <nav aria-label="Breadcrumb" className="mb-3">
+              <ol className="flex flex-wrap items-center gap-2 text-sm">
+                <li>
+                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Home</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Host Cities</Link>
+                </li>
+                <span className="text-slate-400">/</span>
+                <li className="text-slate-700 dark:text-slate-300">Vancouver World Cup 2026 Guide</li>
+              </ol>
+            </nav>
             <h1 className="editorial-hero-title">Vancouver</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -107,11 +121,27 @@ export function VancouverCityGuide() {
             Seven Matches Under the World's Largest Retractable Roof
           </h3>
           <p>
-            On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at BC Place Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.
+            On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link> Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the{' '}
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.
           </p>
           <p>
             Vancouver will host five group stage matches, including two Team Canada matches, one round of 32 match, and one round of 16 match, with the action running from mid-June through early July. BC Place holds 54,500 seats surrounded by more than 50 suites and hospitality lounges, creating an intimate yet electric atmosphere that will showcase Canada's Pacific coast to billions of viewers worldwide.
           </p>
+          {/* Essential Links module */}
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+            <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Vancouver Links</div>
+            <div className="space-y-1 text-slate-800 dark:text-slate-200">
+              <div>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place Guide</Link>
+              </div>
+              <div>
+                🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </div>
+              <div>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> | <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+              </div>
+            </div>
+          </div>
         </article>
         <hr className="editorial-divider" />
 
@@ -280,6 +310,10 @@ export function VancouverCityGuide() {
           <p>
             The Expo Line connects Stadium-Chinatown directly to Waterfront Station (downtown core), Commercial-Broadway (hip neighborhood), and points east. The Canada Line runs from Vancouver International Airport to downtown in 25 minutes—take it instead of taxis or rideshares. Trains run frequently from early morning until after midnight.
           </p>
+          <p>
+            Vancouver is just a few hours from{' '}
+            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
+          </p>
         </article>
         <hr className="editorial-divider" />
 
@@ -343,6 +377,56 @@ export function VancouverCityGuide() {
           <p>
             <strong>Airport to Downtown</strong>: Vancouver International Airport (YVR) sits 12 kilometers south of downtown. The Canada Line SkyTrain connects the airport to downtown's Waterfront Station in approximately 25 minutes. Trains run every 6-8 minutes during peak hours, cost around CAD $11, and operate until past midnight. This is faster and cheaper than taxis or rideshares—skip the ground transportation line and head directly to the SkyTrain platform.
           </p>
+          <p>
+            Combine{' '}
+            <span className="font-semibold">Vancouver</span> with{' '}
+            <Link to="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
+          </p>
+        </article>
+        <hr className="editorial-divider" />
+
+        {/* Related Destinations */}
+        <article className="editorial-body" id="related-destinations">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-500"></i>
+            Plan Your Pacific & Canadian World Cup Journey
+          </h3>
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p>
+              Vancouver's stunning location makes it perfect for exploring the Pacific Northwest and experiencing Canada's coast-to-coast diversity during World Cup 2026.
+            </p>
+            <p>
+              <strong>Pacific Northwest Perfection</strong>
+              <br />
+              Experience the best cross-border pairing: <span className="font-semibold">Vancouver</span> for mountain-meets-ocean beauty, then just 3 hours south to{' '}
+              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
+            </p>
+            <p>
+              <strong>Coast to Coast Canada</strong>
+              <br />
+              Explore both Canadian host cities: Start in <span className="font-semibold">Vancouver</span> on the Pacific, then fly across the country to{' '}
+              <Link to="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
+            </p>
+            <p>
+              <strong>Ultimate West Coast Circuit</strong>
+              <br />
+              Create the definitive Pacific Coast adventure: <span className="font-semibold">Vancouver</span> to{' '}
+              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
+              — four incredible cities, stunning coastal scenery, and diverse cultures all along the Pacific Ocean.
+            </p>
+            <p>
+              <strong>Mountain Cities Connection</strong>
+              <br />
+              Vancouver's mountain setting pairs beautifully with other scenic destinations. Combine with{' '}
+              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
+              <Link to="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
+            </p>
+            <p>
+              <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            </p>
+          </div>
         </article>
         <hr className="editorial-divider" />
 
@@ -354,6 +438,11 @@ export function VancouverCityGuide() {
           </h3>
           <p>
             Here's what makes this World Cup host city different: Vancouver isn't trying to be anything other than itself. It's not Toronto's cosmopolitan energy or Montreal's European charm—it's a Pacific Rim city where mountains rise directly from the ocean, where you can ski Grouse Mountain in the morning and sail False Creek in the afternoon, where Asian cuisine rivals anything you'll find in Asia itself.
+          </p>
+          <p>
+            Many visitors create a Pacific Coast tour: <span className="font-semibold">Vancouver</span>,{' '}
+            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
           </p>
           <p>
             The city wears its environmental consciousness proudly—you'll notice extensive bike infrastructure, aggressive recycling programs, and a genuine commitment to sustainability that shapes everything from restaurant sourcing to transit policy. This isn't performative; it's how Vancouver operates.

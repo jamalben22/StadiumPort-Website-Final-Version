@@ -89,8 +89,12 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Editorial Article Container */}
           <section className="editorial-article">
             {/* Intro paragraph (below header) */}
-            <article className="editorial-body">
-              <p className="editorial-dropcap">
+            <article className="editorial-body editorial-dropcap">
+              <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-landscape-line text-emerald-500"></i>
+                Where Architecture Meets Landscape Meets the Pitch
+              </h2>
+              <p>
                 Rising from the Guadalajara suburbs like a modern Mesoamerican temple, Estadio Akron doesn't just host football matches—it makes a statement. This architectural marvel, draped in 70,000 square meters of living grass that cascades down its volcano-inspired slopes, will welcome four World Cup 2026 fixtures, including a Mexico group stage clash that promises to ignite the passionate Tapatío spirit. For international fans, this is your chance to experience one of North America's most visually striking venues while immersing yourself in mariachi melodies, tequila sunsets, and the red-and-white fervor of Chivas country.
               </p>
               <hr className="editorial-divider" />
@@ -98,19 +102,96 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
 
           {/* Stadium Overview & Fast Facts */}
           <article className="editorial-body">
-            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
               <i className="ri-information-line text-sky-400"></i>
               Stadium Overview & Fast Facts
             </h3>
-            <p><strong>Official Name:</strong> Estadio Akron (FIFA designation: Estadio Guadalajara during World Cup 2026)</p>
-            <p><strong>Location:</strong> Zapopan, Jalisco (western Guadalajara metropolitan area)</p>
-            <p><strong>Opened:</strong> July 30, 2010</p>
-            <p><strong>Capacity:</strong> 49,850 (standard) / 48,071 (World Cup configuration)</p>
-            <p><strong>Primary Tenant:</strong> Club Deportivo Guadalajara (Chivas) – Liga MX</p>
-            <p><strong>Architect/Design Firm:</strong> VFO Architects (volcano concept with artistic direction by Jean Marie Massaud and Daniel Pouzet)</p>
-            <p><strong>Surface Type:</strong> Natural grass (replaced artificial turf in 2012)</p>
-            <p><strong>Roof Type:</strong> Open-air with suspended white ring canopy supported by 16 columns</p>
-            <p><strong>Notable Features:</strong> Grass-covered exterior resembling a volcano; steep double-tiered bowl; dedicated Chivas museum (Palco del Campeonísimo); over 4,800 parking spaces plus subterranean garage</p>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-building-2-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                    <p className="leading-relaxed">Estadio Akron (FIFA designation: Estadio Guadalajara during World Cup 2026)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-map-pin-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                    <p className="leading-relaxed">Zapopan, Jalisco (western Guadalajara metropolitan area)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-calendar-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                    <p className="leading-relaxed">July 30, 2010</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-group-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+                    <p className="leading-relaxed">49,850 (standard) / 48,071 (World Cup configuration)</p>
+                  </div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-user-star-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
+                    <p className="leading-relaxed">Club Deportivo Guadalajara (Chivas) – Liga MX</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-pencil-ruler-2-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect/Design Firm</span>
+                    <p className="leading-relaxed">VFO Architects (volcano concept with artistic direction by Jean Marie Massaud and Daniel Pouzet)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-grass-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                    <p className="leading-relaxed">Natural grass (replaced artificial turf in 2012)</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 py-2">
+                  <div>
+                    <i className="ri-sun-line text-sky-400 text-3xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                    <p className="leading-relaxed">Open-air with suspended white ring canopy supported by 16 columns</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-8">
+              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
+                <i className="ri-star-line text-sky-400"></i>
+                Notable Features
+              </h4>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex items-center gap-2">
+                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <span>Grass-covered exterior resembling a volcano</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <span>Steep double-tiered bowl</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <span>Dedicated Chivas museum (Palco del Campeonísimo)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <span>Over 4,800 parking spaces plus subterranean garage</span>
+                </div>
+              </div>
+            </div>
             <hr className="editorial-divider" />
           </article>
 
@@ -276,10 +357,10 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Budget Options (Under $50 USD/night)</h4>
                 <p>
-                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via `http://booking.com/`  or Hostelworld for best rates.
+                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Hostelworld for best rates.
                 </p>
                 <p>
-                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or `http://booking.com/` .
+                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> .
                 </p>
                 <p>
                   <strong>Casa Ixaya by Barrio Mexico</strong> (Near Ciudad del Sol): Budget-friendly with modern amenities, though farther from tourist zones ($35-50/night).
@@ -289,7 +370,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Mid-Range Picks ($50-150 USD/night)</h4>
                 <p>
-                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on `http://booking.com/`  or Airbnb.
+                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Airbnb.
                 </p>
                 <p>
                   <strong>Hotel Indigo Guadalajara Expo by IHG</strong> (Zona Expo): Luxury-lite hotel featuring in-room massages, deli, and proximity to Expo Guadalajara ($90-140/night). Convenient for business travelers and families.
@@ -309,7 +390,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               Where to Stay (Continued)
             </h3>
             <p>
-              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via `http://booking.com/`  or directly with the hotel.
+              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or directly with the hotel.
             </p>
             <h4 className="editorial-h4">Luxury Options ($150+ USD/night)</h4>
             <p>
@@ -498,7 +579,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through `http://booking.com/`  or Expedia with flexible cancellation policies. Secure airport transfers or rental cars through <strong>Viator</strong> or <strong>GetYourGuide</strong> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
             </p>
             <p>
-              <strong>¡Vamos a Guadalajara! 🇲🇽⚽</strong>
+              <strong>¡Vamos a Guadalajara!</strong>
             </p>
             <hr className="editorial-divider" />
           </article>

@@ -71,6 +71,14 @@ export default function NewYorkCityArticlePage() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumbs */}
+            <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+              <Link to="/" className="hover:underline">Home</Link>
+              <span className="mx-2">›</span>
+              <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+              <span className="mx-2">›</span>
+              <span className="text-slate-500 dark:text-slate-400">New York/New Jersey World Cup 2026 Guide</span>
+            </nav>
             <h1 className="editorial-hero-title">New York City</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -79,7 +87,7 @@ export default function NewYorkCityArticlePage() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <span>MetLife Stadium</span>
+                <Link to="/world-cup-2026-stadiums/metlife-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">MetLife Stadium</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -99,8 +107,27 @@ export default function NewYorkCityArticlePage() {
             The World's Biggest Game Comes to the World's Biggest Stage
           </h2>
           <p className="whitespace-pre-line">
-            {`When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`}
+            {`When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades.`}
+            {` New York/New Jersey is one of the 16 host cities for the 2026 World Cup—`}
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>
+            {`. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`}
           </p>
+
+          {/* Essential Links module */}
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+            <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential New York/New Jersey Links</div>
+            <div className="space-y-1 text-slate-800 dark:text-slate-200">
+              <div>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/metlife-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">MetLife Stadium Guide</Link>
+              </div>
+              <div>
+                🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+              </div>
+              <div>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
@@ -197,6 +224,9 @@ Budget-Friendly Bus Option
 The Coach USA 351 Meadowlands Express provides door-to-door round-trip transportation from the Port Authority Bus Terminal in New York City to MetLife Sports Complex. Bus service begins three hours prior to event start time, making it perfect for pre-match atmosphere-building. 
 
 Pro Traveler Tip: Book your NJ Transit tickets through their mobile app ahead of time. On match days, expect crowds but efficient service—New Yorkers know how to move people.`}
+          </p>
+          <p className="mt-4">
+            Planning a multi-city trip? The Northeast Corridor makes it easy to add <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link> by Amtrak. For an international angle, <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> is a short flight from NYC.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -501,6 +531,44 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
         </article>
 
         {/* Start Planning CTA */}
+        {/* Related Destinations */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+            <i className="ri-route-line text-emerald-500"></i>
+            Plan Your East Coast World Cup Journey
+          </h3>
+          <p>
+            New York/New Jersey is the gateway to an unforgettable East Coast World Cup experience, with multiple host cities easily accessible by train, car, or short flights.
+          </p>
+          <div className="mt-6 space-y-6">
+            <div>
+              <h4 className="editorial-h4">Popular Combinations:</h4>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Northeast Corridor</h4>
+              <p>
+                Experience the best of the East Coast: Start in New York/New Jersey (current), take the train to <Link to="/world-cup-2026-host-cities/philadelphia" className="underline">Philadelphia</Link> for history and cheesesteaks, then continue to <Link to="/world-cup-2026-host-cities/boston" className="underline">Boston</Link> for New England charm.
+              </p>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Cross-Border Connection</h4>
+              <p>
+                Combine NY/NJ with <Link to="/world-cup-2026-host-cities/toronto" className="underline">Toronto</Link> for an international experience, just a short flight or scenic drive away.
+              </p>
+            </div>
+            <div>
+              <h4 className="editorial-h4">Eastern Seaboard</h4>
+              <p>
+                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami" className="underline">Miami</Link> for completely different cultural vibes.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6">
+            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          </p>
+          <hr className="editorial-divider" />
+        </article>
+
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-flag-line text-emerald-500"></i>

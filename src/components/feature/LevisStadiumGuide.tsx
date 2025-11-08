@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -18,6 +18,19 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">Levi's Stadium</li>
+          </ol>
+        </nav>
+      )}
 
       {/* Editorial Hero — NYC style */}
       {!hideHero && (
@@ -67,7 +80,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             Levi's Stadium: Silicon Valley's World Cup Stage
           </h3>
           <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-            Picture this: you're standing inside one of America's most technologically advanced stadiums, surrounded by 68,500 roaring fans from every corner of the planet, as the world's best footballers compete under the California sun. Welcome to Levi's Stadium — the Bay Area's gateway to World Cup 2026, where cutting-edge innovation meets the beautiful game in the heart of Silicon Valley.
+            <span className="editorial-first-letter">L</span>ocated in the <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>, Levi's Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: you're standing inside one of America's most technologically advanced stadiums, surrounded by 68,500 roaring fans from every corner of the planet, as the world's best footballers compete under the California sun. Welcome to Levi's Stadium — the Bay Area's gateway to World Cup 2026, where cutting-edge innovation meets the beautiful game in the heart of Silicon Valley.
           </p>
           <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
             This isn't just any stadium. Levi's Stadium will host six FIFA World Cup 2026 matches: five group stage fixtures (June 13, 16, 19, 22, and 25) and one crucial Round of 32 clash on July 1. As the 49ers' gleaming home since 2014, this venue has already proven its mettle on football's biggest stages, hosting the 2016 Copa América Centenario, the 2017 Concacaf Gold Cup, and matches featuring international giants like F.C. Barcelona and A.C. Milan. Now it's ready to welcome the world.
@@ -84,43 +97,43 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
 
           <div className="space-y-4 text-slate-700 dark:text-slate-200">
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Official Name</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
               <p className="font-semibold">Levi's Stadium (FIFA designation: San Francisco Bay Area Stadium)</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Location</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
               <p className="font-semibold">Santa Clara, California (Silicon Valley, 40 miles south of San Francisco)</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Opened</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
               <p className="font-semibold">July 17, 2014</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Capacity</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
               <p className="font-semibold">68,500 (expandable to 75,000 for major events)</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Primary Tenant</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
               <p className="font-semibold">San Francisco 49ers (NFL)</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Architect/Design Firm</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect/Design Firm</span>
               <p className="font-semibold">HNTB Architecture</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Construction Cost</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Construction Cost</span>
               <p className="font-semibold">$1.27 billion</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Surface Type</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
               <p className="font-semibold">Natural grass field</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Roof Type</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
               <p className="font-semibold">Open-air stadium</p>
             </div>
             <div>
-              <span className="text-slate-600 dark:text-slate-300 text-sm">Notable Features</span>
+              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Notable Features</span>
               <ul className="list-disc list-inside font-semibold">
                 <li>First NFL stadium to achieve LEED Gold certification</li>
                 <li>27,000-square-foot green roof with native plants</li>
@@ -464,6 +477,28 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                   The Hilton Santa Clara operates "Tailg8" in their parking lot — open to the public 3 hours before Levi's Stadium events and 1 hour after, featuring food, drinks, and fellow fans. Official tailgating is permitted in ten designated stadium parking areas, with restrictions: use your parking spot only, no open-fire grilling, no glass containers, and all activities must cease at kickoff.
                 </p>
               </div>
+              <p className="leading-relaxed mt-4">Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles, <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle, or <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
+          <hr className="editorial-divider" />
+        </article>
+        {/* Beyond the Stadium: Explore San Francisco Bay Area */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-map-pin-line text-emerald-500"></i>
+            Beyond the Stadium: Explore San Francisco Bay Area
+          </h3>
+          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mb-4">The Bay Area's innovation hub and iconic landmarks make it a premier World Cup 2026 destination.</p>
+          <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
+            <p className="leading-relaxed"><strong>Discover San Francisco Bay Area:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area World Cup 2026 Guide</Link> for everything you need:</p>
+            <ul className="list-disc list-inside mt-3 space-y-1">
+              <li>Hotels near Levi's Stadium in Santa Clara</li>
+              <li>Getting to the stadium from San Francisco</li>
+              <li>Golden Gate Bridge and top attractions</li>
+              <li>Silicon Valley experiences</li>
+              <li>Transportation and match day logistics</li>
+            </ul>
+          </div>
+          <p className="leading-relaxed mb-4"><strong>Other West Coast Stadiums:</strong> Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles or <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle.</p>
+          <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
           <hr className="editorial-divider" />
         </article>
         {/* Final Verdict & Key Takeaway */}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -24,6 +24,18 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       {showHeader && <Header />}
+      {/* Breadcrumbs */}
+      {!hideHero && (
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+          <ol className="flex items-center gap-2 text-sm">
+            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li className="text-slate-400">›</li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li className="text-slate-400">›</li>
+            <li className="text-slate-700 dark:text-slate-200">Estadio Azteca</li>
+          </ol>
+        </nav>
+      )}
       {/* Preview Card - Collapsed State */}
       {!isExpanded && !hideHero && (
         <div className="relative">
@@ -137,7 +149,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 The Cathedral Where World Cup History Repeats
               </h2>
               <p>
-                Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
+                Located in <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>, Estadio Azteca is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -151,33 +163,33 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <i className="ri-building-2-line text-emerald-500"></i>
                     <div>
-                      <span>Official Name</span>
+                      <i className="ri-building-2-line text-emerald-500"></i>
+                      <span className="ml-2">Official Name</span>
                       <p>Estadio Azteca (commercially known as Estadio Banorte; FIFA designation: Estadio Ciudad de México for World Cup 2026)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-map-pin-line text-emerald-500"></i>
                     <div>
-                      <span>Location</span>
+                      <i className="ri-map-pin-line text-emerald-500"></i>
+                      <span className="ml-2">Location</span>
                       <p>Coyoacán borough, southern Mexico City (Santa Úrsula Coapa neighborhood)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-group-line text-emerald-500"></i>
                     <div>
-                      <span>Capacity</span>
+                      <i className="ri-group-line text-emerald-500"></i>
+                      <span className="ml-2">Capacity</span>
                       <p>87,523 (reduced from original 114,600 for safety and comfort)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-calendar-line text-emerald-500"></i>
                     <div>
-                      <span>Opened</span>
+                      <i className="ri-calendar-line text-emerald-500"></i>
+                      <span className="ml-2">Opened</span>
                       <p>May 29, 1966 (renovated 2016-2018 for 2026 World Cup)</p>
                     </div>
                   </div>
@@ -185,33 +197,33 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <i className="ri-home-line text-emerald-500"></i>
                     <div>
-                      <span>Home Teams</span>
+                      <i className="ri-home-line text-emerald-500"></i>
+                      <span className="ml-2">Home Teams</span>
                       <p>Club América, Mexico National Team</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-mountain-line text-emerald-500"></i>
                     <div>
-                      <span>Altitude</span>
+                      <i className="ri-mountain-line text-emerald-500"></i>
+                      <span className="ml-2">Altitude</span>
                       <p>2,240 meters (7,349 feet) above sea level</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-grass-line text-emerald-500"></i>
                     <div>
-                      <span>Playing Surface</span>
+                      <i className="ri-grass-line text-emerald-500"></i>
+                      <span className="ml-2">Playing Surface</span>
                       <p>Natural grass (Bermuda hybrid)</p>
                     </div>
                   </div>
                   
                   <div className="flex items-center gap-3">
-                    <i className="ri-trophy-line text-emerald-500"></i>
                     <div>
-                      <span>World Cup Legacy</span>
+                      <i className="ri-trophy-line text-emerald-500"></i>
+                      <span className="ml-2">World Cup Legacy</span>
                       <p>Only stadium to host 3 World Cups (1970, 1986, 2026)</p>
                     </div>
                   </div>
@@ -219,6 +231,35 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               </div>
               <hr className="editorial-divider" />
             </article>
+
+            {/* Beyond the Stadium: Explore Mexico City */}
+            <section className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+                Beyond the Stadium: Explore Mexico City
+              </h3>
+              <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
+                <p>Mexico City offers an incredible cultural experience that extends far beyond the historic Estadio Azteca.</p>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Discover Mexico City</h4>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City World Cup 2026 Guide</Link> for comprehensive travel information:</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>Where to stay near Estadio Azteca</li>
+                    <li>Transportation in Mexico City</li>
+                    <li>Must-visit attractions and neighborhoods</li>
+                    <li>Best food and dining experiences</li>
+                    <li>Safety tips and local customs</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="editorial-h4 mb-2">Other Mexican Stadiums</h4>
+                  <p>Attending multiple matches in Mexico? Check out <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara or <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey.</p>
+                </div>
+                <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+                <p className="text-slate-700 dark:text-slate-200">For iconic venue comparison, also see <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.</p>
+              </div>
+              <hr className="editorial-divider" />
+            </section>
 
             {/* 2026 World Cup Matches */}
             <article className="editorial-body">
@@ -556,7 +597,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                   <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
                   Typical Stadium Pricing (World Cup 2026)
                 </h4>
-                <div className="grid md:grid-cols-4 gap-4 text-sm">
+                <div className="grid md:grid-cols-4 gap-4">
                   <div className="text-center">
                     <p>Beer</p>
                     <p>$8-12 USD</p>
@@ -621,7 +662,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                     <p className="mb-3">
                       Open on non-match days, the museum showcases World Cup history, including Pelé's 1,000th goal ball and Diego Maradona memorabilia. Stadium tours available with field access and locker room visits.
                     </p>
-                    <div className="text-sm">
+                    <div>
                       <strong>Hours:</strong> Tuesday-Sunday 10 AM - 5 PM<br/>
                       <strong>Price:</strong> $15-25 USD (tours $30-45 USD)
                     </div>

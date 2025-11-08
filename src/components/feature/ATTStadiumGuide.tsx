@@ -165,7 +165,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <article className="editorial-body editorial-dropcap">
               <h2 className="editorial-h2 animate-fade-up mb-6 flex items-center gap-3">
                 <i className="ri-trophy-line text-emerald-500 text-3xl"></i>
-                AT&amp;T Stadium: The Colossal Crown Jewel Hosting the Most World Cup 2026 Matches
+                The Colossal Crown Jewel Hosting the Most World Cup 2026 Matches
               </h2>
               <p className="leading-relaxed">
                 When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Rising from the flat North Texas landscape like a steel-and-glass cathedral, AT&amp;T Stadium—affectionately known as "Jerry World" after Cowboys owner Jerry Jones—will host nine matches during the 2026 FIFA World Cup, more than any other venue in the tournament. This includes a semifinal showdown that will determine one of the finalists. For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.

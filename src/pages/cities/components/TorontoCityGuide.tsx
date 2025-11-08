@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
@@ -79,6 +80,14 @@ export function TorontoCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>FIFA World Cup 2026</span>
             </div>
+            {/* Breadcrumbs */}
+            <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+              <Link to="/" className="hover:underline">Home</Link>
+              <span className="mx-2">›</span>
+              <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+              <span className="mx-2">›</span>
+              <span className="text-slate-500 dark:text-slate-400">Toronto World Cup 2026 Guide</span>
+            </nav>
             <h1 className="editorial-hero-title">Toronto</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -87,7 +96,7 @@ export function TorontoCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <span>BMO Field</span>
+                <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">BMO Field</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -107,11 +116,32 @@ export function TorontoCityGuide() {
             Making History at BMO Field
           </h3>
             <p>
-              Toronto isn't just hosting the 2026 FIFA World Cup—it's hosting <strong>history</strong>. On June 12, 2026, Canada's Men's National Team will play their very first FIFA World Cup match on home soil, and you'll want to be there when it happens. Picture this: 45,736 fans packed into Toronto Stadium (BMO Field) at Exhibition Place, the energy electric as the Maple Leaf flag waves across a sea of red. This isn't just another match—it's a national milestone, and Toronto is the stage.
+              Toronto isn't just hosting the 2026 FIFA World Cup—it's hosting <strong>history</strong>. Toronto is one of the 16 host cities for the 2026 World Cup—
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>
+              . On June 12, 2026, Canada's Men's National Team will play their very first FIFA World Cup match on home soil, and you'll want to be there when it happens. Picture this: 45,736 fans packed into Toronto Stadium (
+              <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BMO Field</Link>
+              ) at Exhibition Place, the energy electric as the Maple Leaf flag waves across a sea of red. This isn't just another match—it's a national milestone, and Toronto is the stage.
             </p>
             <p>
-              The city will host six World Cup matches total between June and July 2026, making it one of just two Canadian host cities (alongside Vancouver). BMO Field is undergoing a major transformation, adding over 17,000 temporary seats to reach the tournament capacity of 45,736—intimate enough to feel the roar, big enough to create unforgettable atmosphere.
+              The city will host six World Cup matches total between June and July 2026, making it one of just two Canadian host cities (alongside 
+              <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
+              ). BMO Field is undergoing a major transformation, adding over 17,000 temporary seats to reach the tournament capacity of 45,736—intimate enough to feel the roar, big enough to create unforgettable atmosphere.
             </p>
+            {/* Essential Links module */}
+            <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+              <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Toronto Links</div>
+              <div className="space-y-1 text-slate-800 dark:text-slate-200">
+                <div>
+                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BMO Field Guide</Link>
+                </div>
+                <div>
+                  🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+                </div>
+                <div>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/travel-guides/new-york-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>
+                </div>
+              </div>
+            </div>
         </article>
         <hr className="editorial-divider" />
 
@@ -314,6 +344,9 @@ export function TorontoCityGuide() {
             <p>
               <strong>Toronto Pearson Airport</strong>: The UP Express train connects the airport to Union Station in 25 minutes for around CAD $12.35. Trains run every 15 minutes. Skip the taxi line—this is faster and way cheaper.
             </p>
+            <p>
+              Planning a multi-city itinerary? Cross-border connections are straightforward—consider pairing Toronto with <Link to="/travel-guides/new-york-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> or <Link to="/world-cup-2026-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> to expand your World Cup experience.
+            </p>
         </article>
         <hr className="editorial-divider" />
 
@@ -374,16 +407,54 @@ export function TorontoCityGuide() {
         </article>
         <hr className="editorial-divider" />
 
-        {/* Book your Toronto experience now */}
+        {/* Related Destinations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-flag-line text-indigo-500 dark:text-indigo-300 text-3xl"></i>
-            Book your Toronto experience now
+            <i className="ri-route-line text-emerald-500"></i>
+            Plan Your Canadian World Cup Journey
           </h3>
           <p>
-            <strong>Book your Toronto experience now</strong>. June 2026 will be here before you know it, and this city is ready to welcome the world.
+            Toronto is Canada's gateway city and pairs perfectly with other North American host cities for an unforgettable 2026 World Cup experience.
+          </p>
+          <div className="space-y-4">
+            <div>
+              <p className="font-inter font-semibold">Popular Combinations:</p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">Coast to Coast Canada</p>
+              <p>
+                Experience both Canadian host cities: Start in Toronto (current, no link), then fly west to <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for Pacific Coast beauty and a completely different Canadian vibe.
+              </p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">Cross-Border Northeast</p>
+              <p>
+                Toronto connects easily with US East Coast cities like <Link to="/travel-guides/new-york-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>, <Link to="/world-cup-2026-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>, and <Link to="/world-cup-2026-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> — perfect for a multi-country World Cup tour.
+              </p>
+            </div>
+            <div>
+              <p className="font-inter font-semibold">Great Lakes Circuit</p>
+              <p>
+                Combine Toronto with nearby US cities like Chicago (link when available) and explore the Great Lakes region.
+              </p>
+            </div>
+          </div>
+          <p className="mt-4">
+            <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
           </p>
         </article>
+        <hr className="editorial-divider" />
+
+      {/* Book your Toronto experience now */}
+      <article className="editorial-body">
+        <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <i className="ri-flag-line text-indigo-500 dark:text-indigo-300 text-3xl"></i>
+          Book your Toronto experience now
+        </h3>
+        <p>
+          <strong>Book your Toronto experience now</strong>. June 2026 will be here before you know it, and this city is ready to welcome the world.
+        </p>
+      </article>
 
       </main>
 

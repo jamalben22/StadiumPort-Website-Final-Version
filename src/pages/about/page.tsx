@@ -101,11 +101,11 @@ export default function AboutPage() {
  
  ### **Why Trust Stadiumport?** 
  
- ✅ **Independent:** We're not affiliated with FIFA, hotels, or stadiums—just passionate about helping fans  
- ✅ **Comprehensive:** Every stadium, every city, every detail you need  
- ✅ **Transparent:** Clear disclosure of affiliate relationships  
- ✅ **Experienced:** Our team has attended major tournaments worldwide  
- ✅ **Free:** All guides are 100% free to access  
+ ✔ **Independent:** We're not affiliated with FIFA, hotels, or stadiums—just passionate about helping fans  
+ ✔ **Comprehensive:** Every stadium, every city, every detail you need  
+ ✔ **Transparent:** Clear disclosure of affiliate relationships  
+ ✔ **Experienced:** Our team has attended major tournaments worldwide  
+ ✔ **Free:** All guides are 100% free to access  
  
  --- 
  
@@ -182,13 +182,13 @@ export default function AboutPage() {
  ### **Join Our Community** 
  
  Follow us for daily World Cup content: 
- - 📧 **Newsletter:** [Subscribe link] 
- - 🐦 **Twitter:** [@stadiumport - if you create it] 
- - 📷 **Instagram:** [@stadiumport - if you create it] 
+ - **Newsletter:** [Subscribe link] 
+ - **Twitter:** [@stadiumport - if you create it] 
+ - **Instagram:** [@stadiumport - if you create it] 
  
  --- 
  
- **Let's make 2026 unforgettable. Together.** ⚽🌎 
+ **Let's make 2026 unforgettable. Together.** 
  
  --- 
  
@@ -229,10 +229,10 @@ export default function AboutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
       <main className="pt-20">
-        <section className="relative py-28 bg-white">
+        <section className="relative py-28 bg-white dark:bg-navy-900">
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
             <Card
               variant="default"
@@ -240,7 +240,7 @@ export default function AboutPage() {
               border={false}
               hover={false}
               animate={false}
-              className="bg-white rounded-3xl"
+              className="bg-white rounded-3xl dark:bg-navy-900"
             >
               <div className="relative z-10 p-6 md:p-10">
                 <div className="mx-auto max-w-2xl">
@@ -263,7 +263,7 @@ export default function AboutPage() {
                           />
                         ),
                         p: ({ node, children, ...props }) => (
-                          <p className="text-slate-700 leading-8" {...props}>
+                          <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
                             {children}
                           </p>
                         ),
@@ -274,12 +274,12 @@ export default function AboutPage() {
                           <ol className="lux-ol space-y-2" {...props} />
                         ),
                         li: ({ node, children, ...props }) => (
-                          <li className="text-slate-700" {...props}>
+                          <li className="text-slate-700 dark:text-slate-300" {...props}>
                             {children}
                           </li>
                         ),
                         strong: ({ node, ...props }) => (
-                          <strong className="font-semibold text-slate-900" {...props} />
+                          <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                         ),
                         hr: () => (
                           <hr className="my-12 border-t border-slate-200" />
