@@ -99,12 +99,12 @@ export default function CityDetailPage() {
             generateCityGuideSchema(
               'Houston – World Cup 2026 Guide',
               'Comprehensive Houston travel guide for FIFA World Cup 2026: NRG Stadium details, match schedule, transportation, and where to stay.',
-              `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/houston`
+              `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/houston`
             ),
             generateBreadcrumbSchema([
               { name: 'Home', url: '/' },
-              { name: 'Host Cities', url: '/world-cup-2026-cities' },
-              { name: 'Houston', url: '/world-cup-2026-cities/houston' }
+              { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+              { name: 'Houston', url: '/world-cup-2026-host-cities/houston' }
             ]),
             generateImageObjectSchema('/images/cities/houston-world-cup-2026.webp', {
               width: 1600,
@@ -1303,144 +1303,7 @@ export default function CityDetailPage() {
 
   // City data with full content
   const cityData: { [key: string]: any } = {
-    'new-york': {
-      name: 'New York / New Jersey',
-      country: '🇺🇸',
-      stadium: 'MetLife Stadium, East Rutherford, NJ',
-      capacity: '82,500',
-      matches: '8 Matches Including Final',
-      finalDate: 'July 19, 2026 Final',
-      description: "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
-      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
-      content: {
-        overview: `New York City will host the FIFA World Cup 2026 Final at MetLife Stadium on July 19, 2026. As the most populous city in the United States and a global hub for finance, arts, fashion, and culture, NYC offers an unparalleled World Cup experience.
-
-The tournament will feature 8 matches at MetLife Stadium in East Rutherford, New Jersey, just 8 miles from Manhattan. With its world-class infrastructure, diverse neighborhoods, and iconic landmarks, New York provides the perfect backdrop for football's greatest celebration.
-
-From the bright lights of Times Square to the green spaces of Central Park, from Broadway theaters to world-renowned museums, New York City promises an unforgettable experience for every World Cup visitor.`,
-        
-        stadium: `MetLife Stadium, home to both the New York Giants and New York Jets, will host 8 World Cup matches including the Final on July 19, 2026. Located in East Rutherford, New Jersey, the stadium opened in 2010 and features:
-
-• Capacity: 82,500 (largest in the NFL)
-• Retractable roof sections for weather protection
-• State-of-the-art LED lighting and video boards
-• Premium hospitality suites and club seating
-• Accessible design with elevators and ramps throughout
-
-The stadium is easily accessible via NJ Transit trains, buses, and the Lincoln Tunnel. Special World Cup shuttles will operate from Manhattan hotels and transportation hubs.
-
-Ticket prices range from $200 for group stage matches to $2,500+ for Final premium seating. VIP packages include hospitality suites, premium dining, and exclusive access areas.`,
-
-        transportation: `Getting around New York during the World Cup:
-
-**To/From MetLife Stadium:**
-• NJ Transit trains from Penn Station (30 minutes)
-• Dedicated World Cup shuttle buses from Midtown
-• Private car service and ride-sharing available
-• Special fan trains on match days
-
-**Within NYC:**
-• Subway system covers all five boroughs ($2.90 per ride)
-• Yellow taxis and ride-sharing (Uber/Lyft)
-• Citi Bike sharing system throughout Manhattan and Brooklyn
-• Walking is often fastest in Midtown Manhattan
-
-**Airports:**
-• JFK International (45 minutes to Manhattan)
-• LaGuardia (30 minutes to Manhattan)
-• Newark Liberty (45 minutes to Manhattan)
-• All airports connected by AirTrain and subway/bus`,
-
-        accommodation: `New York offers accommodations for every budget:
-
-**Luxury Hotels ($400-800/night):**
-• The Plaza, The St. Regis, The Carlyle
-• Four Seasons, The Ritz-Carlton, The Peninsula
-• Mandarin Oriental, The Greenwich Hotel
-
-**Mid-Range Hotels ($200-400/night):**
-• Pod Hotels (multiple locations)
-• citizenM, Arlo Hotels, The High Line Hotel
-• Hampton Inn, Courtyard by Marriott
-
-**Budget Options ($80-200/night):**
-• HI New York City Hostel
-• The Local NYC, Brooklyn neighborhoods
-• Airbnb in Queens, Brooklyn, or New Jersey
-
-**World Cup Packages:**
-Many hotels offer special World Cup packages including:
-• Match tickets and transportation
-• Welcome receptions and fan events
-• Concierge services for restaurant reservations
-• Group rates for international visitors`,
-
-        attractions: `Must-see attractions during your World Cup visit:
-
-**Iconic Landmarks:**
-• Statue of Liberty and Ellis Island
-• Empire State Building and Top of the Rock
-• One World Trade Center and 9/11 Memorial
-• Brooklyn Bridge and Central Park
-
-**Culture & Arts:**
-• Metropolitan Museum of Art
-• Museum of Modern Art (MoMA)
-• Broadway shows in the Theater District
-• Lincoln Center for performing arts
-
-**Neighborhoods to Explore:**
-• Times Square and Midtown Manhattan
-• Greenwich Village and SoHo
-• Williamsburg and DUMBO in Brooklyn
-• Chinatown and Little Italy
-
-**Food & Dining:**
-• Classic New York pizza and bagels
-• Fine dining in Michelin-starred restaurants
-• Food trucks and street vendors
-• Rooftop bars with skyline views
-
-**Shopping:**
-• Fifth Avenue luxury boutiques
-• SoHo designer stores
-• Brooklyn Flea Markets
-• Century 21 and outlet shopping`,
-
-        localTips: `Insider tips for World Cup visitors:
-
-**Best Times to Visit Attractions:**
-• Early morning (8-10 AM) for popular sites
-• Weekday afternoons for museums
-• Evening for rooftop bars and skyline views
-
-**Money-Saving Tips:**
-• Many museums have "pay-what-you-wish" hours
-• Happy hour specials at bars and restaurants
-• Free events in Central Park and Bryant Park
-• Walking tours often work on tips only
-
-**Safety & Etiquette:**
-• NYC is generally very safe for tourists
-• Keep valuables secure in crowded areas
-• Tip 18-20% at restaurants and bars
-• Stand right, walk left on escalators
-
-**Weather Preparation:**
-• July temperatures: 70-85°F (21-29°C)
-• Afternoon thunderstorms possible
-• Comfortable walking shoes essential
-• Light layers for air-conditioned buildings
-
-**Local Soccer Culture:**
-• New York City FC plays at Yankee Stadium
-• New York Red Bulls play at Red Bull Arena
-• Soccer bars: Legends, Football Factory, The Blind Pig
-• Pick-up games in Central Park and Prospect Park`,
-
-      }
-    },
-
+    
     'miami': {
       name: 'Miami',
       country: '🇺🇸',
@@ -1961,15 +1824,15 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
   }, [city]);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` },
-    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/${normalizedId}` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` },
+    { name: city.name, url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/${normalizedId}` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     `${city.name} World Cup 2026 Guide`,
     city.description,
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/${normalizedId}`
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/${normalizedId}`
   );
 
   return (

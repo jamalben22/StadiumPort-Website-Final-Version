@@ -375,7 +375,7 @@ export default function TravelGuideArticlePage() {
                       <a 
                         href="https://hotel-affiliate-link.com"
                         target="_blank"
-                        rel="nofollow sponsored"
+                        rel="nofollow sponsored noopener noreferrer"
                         data-affiliate-type="hotel"
                         className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105"
                       >

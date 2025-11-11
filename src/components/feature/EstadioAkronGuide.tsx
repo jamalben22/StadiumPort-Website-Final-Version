@@ -86,6 +86,19 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             </header>
           )}
 
+          {/* Breadcrumbs */}
+          {!hideHero && (
+            <nav className="editorial-breadcrumbs">
+              <ol className="flex items-center gap-2 text-sm">
+                <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+                <li className="text-slate-400">›</li>
+                <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+                <li className="text-slate-400">›</li>
+                <li className="text-slate-700 dark:text-slate-200">Estadio Akron</li>
+              </ol>
+            </nav>
+          )}
+
           {/* Editorial Article Container */}
           <section className="editorial-article">
             {/* Intro paragraph (below header) */}
@@ -94,6 +107,9 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
                 <i className="ri-landscape-line text-emerald-500"></i>
                 Where Architecture Meets Landscape Meets the Pitch
               </h2>
+              <p>
+                Located in <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>, Estadio Akron is the modern home of Chivas and a showcase of Mexican football culture. Estadio Akron is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
+              </p>
               <p>
                 Rising from the Guadalajara suburbs like a modern Mesoamerican temple, Estadio Akron doesn't just host football matches—it makes a statement. This architectural marvel, draped in 70,000 square meters of living grass that cascades down its volcano-inspired slopes, will welcome four World Cup 2026 fixtures, including a Mexico group stage clash that promises to ignite the passionate Tapatío spirit. For international fans, this is your chance to experience one of North America's most visually striking venues while immersing yourself in mariachi melodies, tequila sunsets, and the red-and-white fervor of Chivas country.
               </p>
@@ -258,6 +274,21 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             <hr className="editorial-divider" />
           </article>
 
+          {/* Related Stadiums (after What Matches to Expect) */}
+          <article className="editorial-body">
+            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+              <i className="ri-links-line text-emerald-500"></i>
+              Related Stadiums
+            </h3>
+            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              Attending multiple matches? Consider{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey, or{' '}
+              <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
+            </p>
+            <hr className="editorial-divider" />
+          </article>
+
           {/* Getting to the Stadium */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -357,10 +388,10 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Budget Options (Under $50 USD/night)</h4>
                 <p>
-                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Hostelworld for best rates.
+                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Hostelworld for best rates.
                 </p>
                 <p>
-                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> .
+                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> .
                 </p>
                 <p>
                   <strong>Casa Ixaya by Barrio Mexico</strong> (Near Ciudad del Sol): Budget-friendly with modern amenities, though farther from tourist zones ($35-50/night).
@@ -370,7 +401,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Mid-Range Picks ($50-150 USD/night)</h4>
                 <p>
-                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Airbnb.
+                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Airbnb.
                 </p>
                 <p>
                   <strong>Hotel Indigo Guadalajara Expo by IHG</strong> (Zona Expo): Luxury-lite hotel featuring in-room massages, deli, and proximity to Expo Guadalajara ($90-140/night). Convenient for business travelers and families.
@@ -390,7 +421,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               Where to Stay (Continued)
             </h3>
             <p>
-              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or directly with the hotel.
+              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or directly with the hotel.
             </p>
             <h4 className="editorial-h4">Luxury Options ($150+ USD/night)</h4>
             <p>
@@ -406,7 +437,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <strong>Hacienda Labor De Rivera</strong> (Teuchitlán, 1 hour outside Guadalajara): For a unique Mexican experience, consider this 1560-era hacienda-turned-spa-hotel surrounded by tequila distilleries ($200-350/night). Not practical for daily stadium trips but unforgettable for multi-day stays combining World Cup matches with agave field exploration.
             </p>
             <p>
-              <strong>Pro Tip:</strong> Book accommodations 6-9 months ahead of World Cup 2026—Guadalajara's hotel inventory will tighten significantly, especially in Zapopan and Colonia Americana. Use `http://booking.com/` 's free cancellation options for flexibility, and consider Airbnb for family-sized apartments in Chapalita or Providencia neighborhoods.
+              <strong>Pro Tip:</strong> Book accommodations 6-9 months ahead of World Cup 2026—Guadalajara's hotel inventory will tighten significantly, especially in Zapopan and Colonia Americana. Use `https://booking.com/` 's free cancellation options for flexibility, and consider Airbnb for family-sized apartments in Chapalita or Providencia neighborhoods.
             </p>
             <hr className="editorial-divider" />
           </article>
@@ -551,6 +582,38 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             <hr className="editorial-divider" />
           </article>
 
+          {/* Beyond the Stadium: Explore Guadalajara */}
+          <article className="editorial-body">
+            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+              <i className="ri-compass-3-line text-emerald-500"></i>
+              Beyond the Stadium: Explore Guadalajara
+            </h3>
+            <p>
+              Guadalajara's traditional Mexican culture and mariachi heritage create an authentic World Cup 2026 experience.
+            </p>
+            <p>
+              Explore our complete{' '}
+              <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara World Cup 2026 Guide</Link>{' '}for comprehensive information:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>Hotels near Estadio Akron</li>
+              <li>Historic city center and attractions</li>
+              <li>Tequila region and distillery tours</li>
+              <li>Authentic Mexican dining</li>
+              <li>Transportation and match day tips</li>
+            </ul>
+            <p>
+              <strong>Other Mexican Stadiums:</strong>{' '}
+              Visit the iconic{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City or modern{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link>{' '}in Monterrey.
+            </p>
+            <p>
+              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+            </p>
+            <hr className="editorial-divider" />
+          </article>
+
           {/* Final Verdict & Key Takeaway */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -576,7 +639,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               Call to Action
             </h3>
             <p>
-              Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through `http://booking.com/`  or Expedia with flexible cancellation policies. Secure airport transfers or rental cars through <strong>Viator</strong> or <strong>GetYourGuide</strong> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
+            Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through `https://booking.com/`  or Expedia with flexible cancellation policies. Secure airport transfers or rental cars through <strong>Viator</strong> or <strong>GetYourGuide</strong> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
             </p>
             <p>
               <strong>¡Vamos a Guadalajara!</strong>

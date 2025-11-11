@@ -16,12 +16,12 @@ export function MonterreyCityGuide() {
           generateCityGuideSchema(
             'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide',
             "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.",
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/monterrey`
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/monterrey`
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Monterrey', url: '/world-cup-2026-cities/monterrey' }
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey' }
           ]),
           generateImageObjectSchema('/images/cities/monterrey-world-cup-2026.webp', {
             width: 1600,
@@ -38,7 +38,7 @@ export function MonterreyCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities/monterrey`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/monterrey`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/monterrey-world-cup-2026.webp`;
         const title = 'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide';
         const description = "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.";

@@ -20,7 +20,7 @@ export function Header() {
   // Search data
   const searchData = [
     // Cities
-    { type: 'city', title: 'New York', path: '/world-cup-2026-host-cities/new-york', description: 'The Big Apple - MetLife Stadium' },
+  { type: 'city', title: 'New York / New Jersey', path: '/world-cup-2026-host-cities/new-york-new-jersey', description: 'MetLife Stadium – World Cup Final Host' },
     { type: 'city', title: 'Los Angeles', path: '/world-cup-2026-host-cities/los-angeles', description: 'City of Angels - SoFi Stadium & Rose Bowl' },
     { type: 'city', title: 'Miami', path: '/world-cup-2026-host-cities/miami', description: 'Magic City - Hard Rock Stadium' },
     { type: 'city', title: 'Atlanta', path: '/world-cup-2026-host-cities/atlanta', description: 'Hotlanta - Mercedes-Benz Stadium' },

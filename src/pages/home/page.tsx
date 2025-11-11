@@ -41,8 +41,8 @@ export default function HomePage() {
   // Route mapping identical to Cities page behavior
   const getCityRoute = (cityName: string): string => {
     const routeMap: { [key: string]: string } = {
-      'New York / New Jersey': '/travel-guides/new-york-city',
-      'New York City': '/travel-guides/new-york-city',
+  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey',
+  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey',
       'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
     };
 
@@ -289,7 +289,7 @@ export default function HomePage() {
                 <a
                   href="https://hotel-affiliate-link.com"
                   target="_blank"
-                  rel="nofollow sponsored"
+                  rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="accommodation"
                   className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40"
                 >
@@ -324,7 +324,7 @@ export default function HomePage() {
                 <a
                   href="https://flight-affiliate-link.com"
                   target="_blank"
-                  rel="nofollow sponsored"
+                  rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="flights"
                   className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/40"
                 >
@@ -359,7 +359,7 @@ export default function HomePage() {
                 <a
                   href="https://tour-affiliate-link.com"
                   target="_blank"
-                  rel="nofollow sponsored"
+                  rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="experiences"
                   className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/40"
                 >
@@ -513,7 +513,7 @@ export default function HomePage() {
 
           {/* CTA: Discover All 16 Host Cities */}
           <div className="text-center mt-12">
-            <Link to="/world-cup-2026-cities" className="group" aria-label="Discover all 16 host cities">
+            <Link to="/world-cup-2026-host-cities" className="group" aria-label="Discover all 16 host cities">
               <button
                 aria-label="Discover all 16 host cities"
                 className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl"

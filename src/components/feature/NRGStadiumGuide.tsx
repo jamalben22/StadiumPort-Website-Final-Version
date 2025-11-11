@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -99,6 +99,16 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               <div className="editorial-hero-overlay"></div>
             </div>
             <div className="editorial-hero-content">
+              {/* Breadcrumbs */}
+              <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+                <ol className="flex items-center gap-2 text-sm text-white/90">
+                  <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li>NRG Stadium</li>
+                </ol>
+              </nav>
               <div className="editorial-hero-inner">
                 <div className="editorial-hero-eyebrow">
                   <span className="editorial-hero-pulse"></span>
@@ -130,6 +140,14 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <i className="ri-trophy-line text-emerald-500"></i>
                 NRG Stadium: Your Complete Guide to World Cup 2026 in Houston
               </h2>
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                Located in <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
+              </p>
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                <strong>NRG Stadium is one of the </strong>
+                <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+                {`, welcoming fans from across the globe to Texas.`}
+              </p>
               <p className="whitespace-pre-line">
                 {`When the world's greatest football tournament arrives in Texas in summer 2026, there's no better place to experience the beautiful game than inside NRG Stadium's air-conditioned comfort. As one of only two Texas venues selected to host World Cup matches, this architectural marvel in Houston will welcome seven fixtures—including knockout rounds—to its retractable-roofed bowl. Picture this: 72,000 passionate fans from every corner of the globe, creating an electric atmosphere as nations battle for glory, all while enjoying the intimacy of an indoor arena with the grandeur of an open-air spectacle. Whether you're tracking down your national team or simply want to witness football history, Houston's sporting cathedral promises an unforgettable World Cup experience.`}
               </p>
@@ -208,6 +226,18 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               <hr className="editorial-divider" />
             </article>
 
+            {/* Related Stadiums (after What Matches to Expect) */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3">
+                <i className="ri-links-line text-emerald-500"></i>
+                Related Stadiums
+              </h3>
+              <p className="text-slate-700 dark:text-slate-200">
+                Explore nearby and regional venues: <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas, <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta, or <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+              </p>
+              <hr className="editorial-divider" />
+            </article>
+
             {/* Getting to the Stadium (Part 2) */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -276,7 +306,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6"><strong>Montrose:</strong> Houston's eclectic arts district combines trendy restaurants, craft cocktail bars, and vintage shops with a bohemian atmosphere. Slightly farther from the stadium but offers authentic local flavor and excellent dining.</p>
 
                 <h4 className="editorial-h4 animate-fade-up mb-2">Budget Options</h4>
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Chain hotels near the Medical Center and South Main corridor offer competitive rates (typically $100-150/night outside tournament weeks). Consider booking accommodations early through platforms like <a href="http://booking.com/" target="_blank" rel="noopener" className="text-sky-600 dark:text-sky-400 underline">booking.com</a> or Expedia, as over 90% of Houston's hotels were already booked by late 2025 for the World Cup period.</p>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Chain hotels near the Medical Center and South Main corridor offer competitive rates (typically $100-150/night outside tournament weeks). Consider booking accommodations early through platforms like <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-sky-600 dark:text-sky-400 underline">booking.com</a> or Expedia, as over 90% of Houston's hotels were already booked by late 2025 for the World Cup period.</p>
 
                 <h4 className="editorial-h4 animate-fade-up mb-2">Mid-Range Picks</h4>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Downtown Houston hotels—including newer properties like the Home2Suites and Tru by Hilton added specifically for World Cup capacity—provide modern amenities and transit convenience. Expect $200-300/night during the tournament.</p>
@@ -379,6 +409,40 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               <hr className="editorial-divider" />
             </article>
 
+            {/* Beyond the Stadium: Explore Houston */}
+            <article className="editorial-body">
+              <h2 className="editorial-h2">
+                <i className="ri-compass-3-line text-emerald-500"></i>
+                Beyond the Stadium: Explore Houston
+              </h2>
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston's diversity and Gulf Coast energy make it an exceptional World Cup 2026 destination.</p>
+              <div className="grid md:grid-cols-2 gap-6 mt-4">
+                <div>
+                  <p className="font-semibold">Discover Houston:</p>
+                  <p>
+                    Explore our complete <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston World Cup 2026 Guide</Link> for comprehensive information:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Hotels near NRG Stadium</li>
+                    <li>Houston's diverse dining scene</li>
+                    <li>Space Center Houston and attractions</li>
+                    <li>Transportation and getting around</li>
+                    <li>Match day planning tips</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold">Other Southern Stadiums:</p>
+                  <p>
+                    Planning a Texas tour? Visit <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas. Also check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+                  </p>
+                </div>
+                <p>
+                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                </p>
+              </div>
+              <hr className="editorial-divider" />
+            </article>
+
             {/* Final Verdict & Key Takeaway (Part 4) */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -404,7 +468,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                   <i className="ri-calendar-check-line text-emerald-500"></i>
                   Book now:
                 </h4>
-                <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
+                <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
 
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston is ready to welcome the world. Are you ready to experience World Cup 2026 in Texas style?</p>
               </div>

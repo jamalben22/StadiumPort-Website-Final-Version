@@ -23,9 +23,9 @@ const getCityRoute = (cityName: string) => {
   switch (cityName) {
     // Ensure NYC/NJ card links to the original New York City guide
     case 'New York / New Jersey':
-      return '/travel-guides/new-york-city';
+  return '/world-cup-2026-host-cities/new-york-new-jersey';
     case 'New York City':
-      return '/travel-guides/new-york-city';
+  return '/world-cup-2026-host-cities/new-york-new-jersey';
     case 'Los Angeles':
       return '/world-cup-2026-host-cities/los-angeles';
     case 'Miami':

@@ -14,7 +14,7 @@ const AccommodationPage = lazy(() => import('../pages/accommodation/page'));
 const TransportationPage = lazy(() => import('../pages/transportation/page'));
 const TravelGuidesPage = lazy(() => import('../pages/travel-guides/page'));
 const TravelGuideArticlePage = lazy(() => import('../pages/travel-guides/article/page'));
-const NewYorkCityArticlePage = lazy(() => import('../pages/travel-guides/new-york-city/page'));
+const NewYorkCityArticlePage = lazy(() => import('../pages/cities/new-york-new-jersey/page'));
 const LosAngelesArticlePage = lazy(() => import('../pages/cities/los-angeles/page'));
 const MiamiArticlePage = lazy(() => import('../pages/cities/miami/page'));
 const DallasArticlePage = lazy(() => import('../pages/cities/dallas/page'));
@@ -51,15 +51,7 @@ const routes: RouteObject[] = [
     element: <CitiesPage />
   },
   {
-    path: '/world-cup-2026-cities',
-    element: <CitiesPage />
-  },
-  {
     path: '/world-cup-2026-host-cities/:cityId',
-    element: <CityDetailPage />
-  },
-  {
-    path: '/world-cup-2026-cities/:cityId',
     element: <CityDetailPage />
   },
   {
@@ -83,7 +75,7 @@ const routes: RouteObject[] = [
     element: <TravelGuidesPage />
   },
   {
-    path: '/travel-guides/new-york-city',
+    path: '/world-cup-2026-host-cities/new-york-new-jersey',
     element: <NewYorkCityArticlePage />
   },
   {

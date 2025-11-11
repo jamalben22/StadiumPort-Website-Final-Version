@@ -412,7 +412,7 @@ export default function DealsPage() {
                   <a 
                     href="https://deal-affiliate-link.com"
                     target="_blank"
-                    rel="nofollow sponsored"
+                    rel="nofollow sponsored noopener noreferrer"
                     data-affiliate-type="deal"
                     className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-2.5 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
                   >
@@ -603,7 +603,7 @@ export default function DealsPage() {
                       <a 
                         href="https://deal-affiliate-link.com"
                         target="_blank"
-                        rel="nofollow sponsored"
+                        rel="nofollow sponsored noopener noreferrer"
                         data-affiliate-type="deal"
                         className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
                       >

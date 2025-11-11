@@ -149,7 +149,7 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                 The Stage for Football's Greatest Moment
               </h2>
               <p className="leading-relaxed">
-                Located in <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>, MetLife Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, including the tournament&apos;s climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you&apos;re crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
+Located in <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>, MetLife Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, including the tournament&apos;s climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you&aposre crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -270,7 +270,7 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                   Discover New York/New Jersey
                 </h4>
                 <p>
-                  Explore our complete <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey World Cup 2026 Guide</Link> for everything you need:
+Explore our complete <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey World Cup 2026 Guide</Link> for everything you need:
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li>Hotels near MetLife Stadium</li>

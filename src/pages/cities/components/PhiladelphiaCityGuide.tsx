@@ -13,12 +13,12 @@ export function PhiladelphiaCityGuide() {
           generateCityGuideSchema(
             'Philadelphia – World Cup 2026 Guide',
             'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/philadelphia`
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/philadelphia`
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Philadelphia', url: '/world-cup-2026-cities/philadelphia' }
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia' }
           ]),
           generateImageObjectSchema('/images/cities/philadelphia-world-cup-2026.webp', {
             width: 1600,
@@ -111,7 +111,7 @@ export function PhiladelphiaCityGuide() {
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
             </div>
             <div>
-              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
+✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
             </div>
           </div>
         </div>
@@ -242,7 +242,7 @@ export function PhiladelphiaCityGuide() {
                   Philadelphia International Airport is located approximately 12 miles southwest of Center City and is one of America's major East Coast hubs, serving over 100 airlines with connections to destinations worldwide.
                 </p>
                 <p className="leading-relaxed">
-                  Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
+Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
                 </p>
               </div>
             </div>
@@ -807,7 +807,7 @@ export function PhiladelphiaCityGuide() {
                 <p>
                   Discover America's founding cities: Start in Philadelphia (current, no link), take the train north to
                   {' '}
-                  <Link to="/world-cup-2026-host-cities/new-york" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
                   {' '}for the big city experience, then continue to{' '}
                   <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
                   {' '}to complete your Revolutionary history tour.

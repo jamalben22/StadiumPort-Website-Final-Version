@@ -233,7 +233,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                 <a
                   href={acc.affiliateUrl}
                   target="_blank"
-                  rel="nofollow sponsored"
+                  rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="hotel"
                   className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105 flex-shrink-0"
                   onClick={() => handleViewDetails(acc)}
@@ -258,7 +258,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
           <a 
             href="https://hotel-affiliate-link.com"
             target="_blank"
-            rel="nofollow sponsored"
+            rel="nofollow sponsored noopener noreferrer"
             data-affiliate-type="hotel"
             className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-3 text-sm sm:text-base border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105"
             onClick={handleViewAllAccommodations}

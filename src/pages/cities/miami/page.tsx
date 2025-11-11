@@ -18,22 +18,35 @@ export default function MiamiCityGuide() {
       metaDescription.setAttribute('content', 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.');
     }
 
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami`);
+      canonical.setAttribute('href', `${siteUrl}/world-cup-2026-host-cities/miami`);
     }
+
+    // Optional: set OG/Twitter images consistently
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+      if (el) el.setAttribute(attr, value);
+    };
+    const ogImage = `${siteUrl}/images/cities/miami-world-cup-2026.webp`;
+    const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami`;
+    setMeta('meta[property="og:url"]', 'content', fullUrl);
+    setMeta('meta[property="og:image"]', 'content', ogImage);
+    setMeta('meta[property="twitter:url"]', 'content', fullUrl);
+    setMeta('meta[property="twitter:image"]', 'content', ogImage);
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` },
-    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` },
+    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/miami`
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`
   );
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -36,6 +36,16 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <div className="editorial-hero-overlay"></div>
           </div>
           <div className="editorial-hero-content">
+            {/* Breadcrumbs */}
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+              <ol className="flex items-center gap-2 text-sm text-white/90">
+                <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                <li className="opacity-70">›</li>
+                <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                <li className="opacity-70">›</li>
+                <li>Lumen Field</li>
+              </ol>
+            </nav>
             <div className="editorial-hero-inner">
               <div className="editorial-hero-eyebrow">
                 <span className="editorial-hero-pulse"></span>
@@ -63,7 +73,9 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
           <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-            When FIFA selected Seattle to host matches for the 2026 World Cup, they chose more than just a stadium—they picked a sonic fortress. Lumen Field, home to one of sport's most legendary atmospheres, will transform into Seattle Stadium for the tournament, welcoming global football to the Pacific Northwest for the first time since the 2003 Women's World Cup. This isn't a venue that simply accommodates fans; it amplifies them, channeling 68,000 voices into a deafening roar that once registered 137.6 decibels—louder than a jet engine at takeoff. Built specifically with World Cup hosting in mind back in 2002, this open-air cathedral sits against Seattle's stunning skyline and Puget Sound, offering visiting fans an experience where architectural ingenuity meets raw passion.
+            When FIFA selected <Link to="/world-cup-2026-host-cities/seattle" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Seattle</Link> to host matches for the 2026 World Cup, they chose more than just a stadium—they picked a sonic fortress. <strong>Lumen Field is one of the </strong>
+            <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+            {`, bringing the tournament to the Pacific Northwest.`} Lumen Field, home to one of sport's most legendary atmospheres, will transform into Seattle Stadium for the tournament, welcoming global football to the Pacific Northwest for the first time since the 2003 Women's World Cup. This isn't a venue that simply accommodates fans; it amplifies them, channeling 68,000 voices into a deafening roar that once registered 137.6 decibels—louder than a jet engine at takeoff. Built specifically with World Cup hosting in mind back in 2002, this open-air cathedral sits against Seattle's stunning skyline and Puget Sound, offering visiting fans an experience where architectural ingenuity meets raw passion.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -211,6 +223,9 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <p>
               The venue's commitment to sustainability has earned international recognition, including a 2018 award at the International Stadium Business Summit in London. Expect these values front and center during the World Cup, with organizers targeting zero-waste operations.
             </p>
+            <p>
+              Just hours from <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver, Lumen Field is part of the Pacific Northwest's World Cup presence.
+            </p>
           </div>
           <hr className="editorial-divider" />
         </article>
@@ -227,6 +242,9 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             </p>
             <p>
               The stadium previously hosted three 2016 Copa América matches, including a U.S. quarterfinal victory over Ecuador, plus the crucial 2013 World Cup qualifier between the U.S. and Panama—proof that Seattle delivers when international football comes calling. With FIFA expecting over 2 billion viewers watching Seattle's matches globally, the atmosphere will be electric, potentially matching or exceeding the decibel levels that made this venue legendary.
+            </p>
+            <p>
+              Along with <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link> and <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>, Lumen Field showcases the West Coast's World Cup venues.
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -348,7 +366,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="space-y-4 text-slate-700 dark:text-slate-200">
                 <p><strong>Fairmont Olympic Hotel</strong> delivers grand-dame elegance in a 1924 building with 450 rooms, sumptuous Olympic Bar, spa, and refined service—for those wanting historic luxury alongside easy stadium access. Luxury pricing.</p>
                 <p><strong>Hyatt Regency Seattle</strong> combines business-friendly amenities with adventure access, featuring nearby cycling and climbing, plus quick light rail connections to the stadium. Mid-range, excellent for active travelers.</p>
-                <p>Consider booking through <a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a> for competitive rates and flexible cancellation policies—essential given uncertain match schedules. Airbnb also offers condos in Belltown and Capitol Hill, both 20 minutes from the stadium via light rail.</p>
+<p>Consider booking through <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a> for competitive rates and flexible cancellation policies—essential given uncertain match schedules. Airbnb also offers condos in Belltown and Capitol Hill, both 20 minutes from the stadium via light rail.</p>
               </div>
             </div>
 
@@ -492,6 +510,42 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <p><strong>Bainbridge Island</strong> (35-minute ferry): Escape the city for waterfront trails, wineries, and small-town charm. Ferries depart from terminals near stadium.</p>
             <p><strong>Mount Rainier National Park</strong> (2.5 hours drive): Rent a car and experience Washington's alpine crown jewel—one of America's most stunning national parks.</p>
             <p>For tours and activities, platforms like GetYourGuide and Viator offer excellent options including food tours, brewery crawls, and Pacific Northwest adventures—worth booking ahead for popular dates.</p>
+          </div>
+          <hr className="editorial-divider" />
+        </article>
+
+        {/* Beyond the Stadium: Explore Seattle */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
+            <i className="ri-compass-3-line text-emerald-500"></i>
+            Beyond the Stadium: Explore Seattle
+          </h3>
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p>
+              Seattle's Pacific Northwest charm and coffee culture create an unforgettable World Cup 2026 experience beyond Lumen Field.
+            </p>
+            <div>
+              <p className="font-semibold">Discover Seattle:</p>
+              <p>
+                Explore our complete <Link to="/world-cup-2026-host-cities/seattle" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Seattle World Cup 2026 Guide</Link> for comprehensive information:
+              </p>
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Hotels near Lumen Field and downtown</li>
+                <li>Seattle's efficient public transit</li>
+                <li>Pike Place Market and top attractions</li>
+                <li>Coffee culture and local dining</li>
+                <li>Match day transportation tips</li>
+              </ul>
+            </div>
+            <div>
+              <p className="font-semibold">Other Pacific Northwest Stadium:</p>
+              <p>
+                Visiting the Pacific Northwest? Just a short drive to <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver for a cross-border experience.
+              </p>
+            </div>
+            <p>
+              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+            </p>
           </div>
           <hr className="editorial-divider" />
         </article>

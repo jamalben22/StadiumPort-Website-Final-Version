@@ -5,7 +5,7 @@ import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
-import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 
 interface CitySection {
@@ -60,11 +60,11 @@ export default function CitiesPage() {
 
   const canonical = document.querySelector('link[rel="canonical"]');
   if (canonical) {
-    canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities`);
+    canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities`);
   }
 
   // Set OG/Twitter image for social previews
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
   const setMeta = (property: string, content: string) => {
     let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
@@ -80,22 +80,22 @@ export default function CitiesPage() {
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     'World Cup 2026 Host Cities',
     'Complete guide to all 16 World Cup 2026 host cities across USA, Canada, and Mexico with travel information, hotels, and attractions.',
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities`
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities`
   );
 
   // Function to convert city name to route slug
   const getCityRoute = (cityName: string): string => {
     const routeMap: { [key: string]: string } = {
       // Route NYC/NJ card to the original New York City travel guide page
-      'New York / New Jersey': '/travel-guides/new-york-city',
-      'New York City': '/travel-guides/new-york-city',
+  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey',
+  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey',
       'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
       'Miami': '/world-cup-2026-host-cities/miami',
       'Kansas City': '/world-cup-2026-host-cities/kansas-city',
@@ -496,10 +496,31 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
     }
   ];
 
+  // Build ItemList and CollectionPage JSON-LD for Host Cities
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const itemListItems = hostCities.map((city) => ({
+    name: city.name,
+    url: `${siteUrl}${getCityRoute(city.name)}`,
+    // Pass relative image path; generator will make it absolute
+    image: city.image,
+  }));
+
+  const itemListSchema = generateItemListSchema(itemListItems);
+  const collectionPageSchema = generateCollectionPageSchema({
+    name: 'World Cup 2026 Host Cities Guide',
+    description:
+      'Complete travel guide to all 16 World Cup 2026 host cities across USA, Canada, and Mexico. Explore hotels, transportation, neighborhoods, attractions, and matchday tips.',
+    url: `${siteUrl}/world-cup-2026-host-cities`,
+    image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
+    items: itemListItems,
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={cityGuideSchema} />
+      <SchemaOrg schema={itemListSchema} />
+      <SchemaOrg schema={collectionPageSchema} />
       
       <Header />
       
@@ -581,17 +602,29 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                 className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full"
               >
                 <div className="relative h-56 overflow-hidden">
-                  <OptimizedImage
-                    src={city.image}
-                    alt={city.alt || `${city.name} skyline`}
-                    className="w-full h-full"
-                    imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
-                    width={1600}
-                    height={900}
-                    priority={index < 2}
-                    placeholder="blur"
-                    sizes="100vw"
-                  />
+                  {(() => {
+                    const base = city.image.replace(/\.(webp|jpg|jpeg|png)$/i, '');
+                    const small = `${base}-640.webp`;
+                    const medium = `${base}-1024.webp`;
+                    const large = `${base}-1600.webp`;
+                    return (
+                      <picture>
+                        <source srcSet={large} media="(min-width: 1024px)" type="image/webp" />
+                        <source srcSet={medium} media="(min-width: 640px)" type="image/webp" />
+                        <img
+                          src={small}
+                          alt={city.alt || `${city.name} skyline – World Cup 2026 host city`}
+                          loading={index < 2 ? 'eager' : 'lazy'}
+                          fetchPriority={index < 2 ? 'high' : 'auto'}
+                          decoding="async"
+                          width={1600}
+                          height={900}
+                          sizes="100vw"
+                          className="object-cover w-full h-full object-top group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </picture>
+                    );
+                  })()}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
                     <span>{city.flag}</span>
@@ -744,7 +777,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
               <div>
                 <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-3">East Coast Circuit</h3>
                 <p className="font-inter text-slate-600 dark:text-slate-300">
-                  Start in <a href="/travel-guides/new-york-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
+Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
                 </p>
               </div>
 
@@ -789,7 +822,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl border border-white/10 bg-white/5 dark:bg-navy-800 backdrop-blur-sm shadow-xl p-8 md:p-12">
-            
+            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white">Frequently Asked Questions About World Cup 2026 Host cities</h2>
             <div className="mt-6 md:mt-8 font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed text-center">
               <p>The 2026 FIFA World Cup features <strong>16 host cities</strong> across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026.</p>
             </div>

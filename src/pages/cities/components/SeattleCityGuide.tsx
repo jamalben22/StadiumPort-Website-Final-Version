@@ -13,12 +13,12 @@ export function SeattleCityGuide() {
           generateCityGuideSchema(
             'Seattle – World Cup 2026 Guide',
             'Comprehensive Seattle travel guide for FIFA World Cup 2026: Lumen Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/seattle`
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/seattle`
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Seattle', url: '/world-cup-2026-cities/seattle' }
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle' }
           ]),
           generateImageObjectSchema('/images/cities/seattle-world-cup-2026.webp', {
             width: 1600,
@@ -58,7 +58,7 @@ export function SeattleCityGuide() {
                 </li>
                 <li className="text-slate-400">›</li>
                 <li>
-                  <Link to="/world-cup-2026-cities" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                  <Link to="/world-cup-2026-host-cities" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
                 </li>
                 <li className="text-slate-400">›</li>
                 <li>
@@ -92,7 +92,7 @@ export function SeattleCityGuide() {
           <div className="space-y-6">
 
             <p className="leading-relaxed mb-6">
-              When the 2026 FIFA World Cup arrives in Seattle, the Emerald City will host <strong>six matches</strong> across three weeks of tournament action—including a crucial <strong>Round of 16 knockout match</strong> that guarantees high-stakes drama. Seattle is one of the <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026. This isn't Seattle's first major football rodeo. The city's deep soccer roots run through the Seattle Sounders FC (MLS champions, CONCACAF Champions League winners), the Seattle Reign FC, and a fan culture that's repeatedly set attendance records across multiple leagues.
+              When the 2026 FIFA World Cup arrives in Seattle, the Emerald City will host <strong>six matches</strong> across three weeks of tournament action—including a crucial <strong>Round of 16 knockout match</strong> that guarantees high-stakes drama. Seattle is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026. This isn't Seattle's first major football rodeo. The city's deep soccer roots run through the Seattle Sounders FC (MLS champions, CONCACAF Champions League winners), the Seattle Reign FC, and a fan culture that's repeatedly set attendance records across multiple leagues.
             </p>
             <p className="leading-relaxed mb-6">
               Beyond the matches, Seattle delivers what few World Cup host cities can: a compact, walkable downtown connected to world-class attractions, a functioning public transit system that actually works, and the Pacific Northwest's signature blend of coffee culture, outdoor adventure, and genuine friendliness. Whether you're watching the USMNT's second group match on June 19 or witnessing Round of 16 intensity on July 6, Seattle promises a World Cup experience wrapped in evergreen forests, Puget Sound views, and neighborhoods where everyone knows their coffee order by heart.
@@ -107,10 +107,10 @@ export function SeattleCityGuide() {
                   🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/lumen-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Lumen Field Guide</Link>
                 </div>
                 <div>
-                  🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+                  🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
                 </div>
                 <div>
-                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
                 </div>
               </div>
             </div>
@@ -201,7 +201,7 @@ export function SeattleCityGuide() {
               Here's Seattle's World Cup superpower: <strong>public transit that actually works</strong>. Unlike sprawling Sunbelt cities where you're hostage to traffic and surge pricing, Seattle delivers multiple efficient, affordable transit options directly to the stadium. This section could end there, but let's break down your options:
             </p>
             <p className="leading-relaxed">
-              Planning a regional trip? Seattle is just a few hours from <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> across the Canadian border—many fans combine matches in both cities for a cross-border Pacific experience.
+              Planning a regional trip? Seattle is just a few hours from <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> across the Canadian border—many fans combine matches in both cities for a cross-border Pacific experience.
             </p>
             <h3 className="editorial-h3">Your Best Options</h3>
             <div>
@@ -387,7 +387,7 @@ export function SeattleCityGuide() {
               Seattle’s self-proclaimed <strong>“Center of the Universe”</strong> embraces quirky bohemian vibes. Visit the <strong>Fremont Troll</strong> (VW Bug–crushing sculpture under Aurora Bridge), <strong>Waiting for the Interurban</strong> statue, and the <strong>Lenin Statue</strong>. Browse vintage shops and the <strong>Fremont Sunday Market</strong>. Great for offbeat exploring—about a <strong>20-minute bus</strong> from downtown.
             </p>
             <p className="leading-relaxed">
-              Many fans create a West Coast circuit: <strong>Seattle</strong>, then south to the <Link to="/world-cup-2026-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>, and onward to <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
+              Many fans create a West Coast circuit: <strong>Seattle</strong>, then south to the <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>, and onward to <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
             </p>
           </div>
         </article>
@@ -563,19 +563,19 @@ export function SeattleCityGuide() {
               <h3 className="editorial-h3">Popular Combinations:</h3>
               <p className="mb-2 font-semibold">Cross-Border Pacific</p>
               <p>
-                Experience two countries in one trip: Start in <strong>Seattle</strong> (current, no link), then drive or take the train to <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> — just 3 hours away — for stunning mountain scenery and multicultural Canadian charm.
+                Experience two countries in one trip: Start in <strong>Seattle</strong> (current, no link), then drive or take the train to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> — just 3 hours away — for stunning mountain scenery and multicultural Canadian charm.
               </p>
               <p className="mt-6 mb-2 font-semibold">Pacific Coast Complete</p>
               <p>
-                Create the ultimate West Coast adventure: <strong>Seattle</strong> for the Pacific Northwest, <Link to="/world-cup-2026-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> for tech and culture, and <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
+                Create the ultimate West Coast adventure: <strong>Seattle</strong> for the Pacific Northwest, <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> for tech and culture, and <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
               </p>
               <p className="mt-6 mb-2 font-semibold">Northern Neighbor Connection</p>
               <p>
-                Combine Seattle with <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> and <Link to="/world-cup-2026-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> for a Canada-USA World Cup experience, with easy connections between all three cities.
+                Combine Seattle with <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> and <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> for a Canada-USA World Cup experience, with easy connections between all three cities.
               </p>
             </div>
             <p>
-              <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
         </article>

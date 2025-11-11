@@ -200,6 +200,28 @@ export default function StadiumDetailPage() {
   
   const stadium = stadiumId ? stadiumData[stadiumId as keyof typeof stadiumData] : null;
 
+  // Map stadium slug to its host city slug for CTA linking
+  const citySlugByStadiumId: Record<string, string> = {
+    // Use the dedicated NYC/NJ article route to avoid a 404 on the dynamic city page
+    'metlife-stadium': 'new-york-new-jersey',
+    'estadio-azteca': 'mexico-city',
+    'arrowhead-stadium': 'kansas-city',
+    'att-stadium': 'dallas',
+    'nrg-stadium': 'houston',
+    'estadio-bbva': 'monterrey',
+    'sofi-stadium': 'los-angeles',
+    'mercedes-benz-stadium': 'atlanta',
+    'levis-stadium': 'san-francisco',
+    'lumen-field': 'seattle',
+    'gillette-stadium': 'boston',
+    'hard-rock-stadium': 'miami',
+    'bmo-field': 'toronto',
+    'bc-place-stadium': 'vancouver',
+    'estadio-akron': 'guadalajara',
+    'lincoln-financial-field': 'philadelphia'
+  };
+  const hostCitySlug = stadiumId ? citySlugByStadiumId[stadiumId] : undefined;
+
   // Stadium slug -> image mapping for social previews
   const stadiumImages: Record<string, string> = {
     'estadio-azteca': '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp',
@@ -220,10 +242,18 @@ export default function StadiumDetailPage() {
     'estadio-akron': '/images/stadiums/estadio-akron-guadalajara-world-cup-2026.webp'
   };
 
-  // Set OG/Twitter meta images based on stadium
+  // Set canonical and OG/Twitter meta images based on stadium
   useEffect(() => {
-    const img = stadiumId ? stadiumImages[stadiumId] : '/images/metlife-stadium-east-rutherford-world-cup-2026.webp';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
+    const img = `${siteUrl}${imgPath}`;
     if (!img) return;
+
+    // canonical
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical && stadiumId) {
+      canonical.setAttribute('href', `${siteUrl}/world-cup-2026-stadiums/${stadiumId}`);
+    }
 
     // og:image
     let ogImage = document.querySelector('meta[property="og:image"]');
@@ -269,6 +299,8 @@ export default function StadiumDetailPage() {
   const StadiumComponent = stadium.component;
   const heroImage = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
   const altText = `Inside view of ${stadium?.name} – World Cup 2026`;
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const heroImageAbs = `${siteUrl}${heroImage}`;
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-navy-900">
@@ -283,11 +315,11 @@ export default function StadiumDetailPage() {
             matches: stadium.matches
           }),
           generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Venues', url: '/world-cup-2026-stadiums' },
-            { name: stadium.name, url: `/world-cup-2026-stadiums/${stadiumId}` }
+            { name: 'Home', url: siteUrl },
+            { name: 'Venues', url: `${siteUrl}/world-cup-2026-stadiums` },
+            { name: stadium.name, url: `${siteUrl}/world-cup-2026-stadiums/${stadiumId}` }
           ]),
-          generateImageObjectSchema(heroImage, {
+          generateImageObjectSchema(heroImageAbs, {
             width: 1600,
             height: 900,
             caption: `${stadium.name} – World Cup 2026`,
@@ -332,6 +364,17 @@ export default function StadiumDetailPage() {
                 <i className="ri-group-line"></i>
                 <span>{stadium.capacity.toLocaleString()} capacity</span>
               </div>
+              {hostCitySlug && (
+                <div className="mt-6">
+                  <Link
+                    to={`/world-cup-2026-host-cities/${hostCitySlug}`}
+                    className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
+                  >
+                    <i className="ri-route-line mr-2"></i>
+                    View Host City Guide
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -114,6 +114,16 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
 
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
+              {/* Breadcrumbs */}
+              <nav className="mb-3">
+                <ol className="flex items-center gap-2 text-sm text-white/90">
+                  <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                  <li className="opacity-70">›</li>
+                  <li>AT&amp;T Stadium</li>
+                </ol>
+              </nav>
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-blue-400 rounded-full animate-pulse"></div>
                 <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
@@ -168,7 +178,12 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 The Colossal Crown Jewel Hosting the Most World Cup 2026 Matches
               </h2>
               <p className="leading-relaxed">
-                When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Rising from the flat North Texas landscape like a steel-and-glass cathedral, AT&amp;T Stadium—affectionately known as "Jerry World" after Cowboys owner Jerry Jones—will host nine matches during the 2026 FIFA World Cup, more than any other venue in the tournament. This includes a semifinal showdown that will determine one of the finalists. For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.
+                When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Located in <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>, AT&amp;T Stadium is one of the world's largest and most impressive venues. <strong>AT&amp;T Stadium is one of the </strong>
+                <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+                {`, and will host nine matches—more than any other venue in the tournament, including a semifinal showdown that will determine one of the finalists.`} For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.
+              </p>
+              <p className="leading-relaxed mt-4">
+                Planning to see multiple matches across the region? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City, and <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey for a cross-border experience.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -630,6 +645,42 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               <p className="leading-relaxed">
                 Return to Texas Live! for late-night celebrations with fellow fans. Downtown Arlington offers additional bars and restaurants along Front Street and Division Street, though the energy will be concentrated at Texas Live! on matchdays.
               </p>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Beyond the Stadium: Explore Dallas */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+                Beyond the Stadium: Explore Dallas
+              </h3>
+              <div className="space-y-6">
+                <p className="leading-relaxed">
+                  Dallas's vibrant culture and Texas hospitality create an exciting World Cup 2026 experience beyond AT&amp;T Stadium.
+                </p>
+                <div>
+                  <p className="font-semibold">Discover Dallas:</p>
+                  <p>
+                    Explore our complete <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas World Cup 2026 Guide</Link> for essential information:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Hotels near AT&amp;T Stadium in Arlington</li>
+                    <li>Transportation to the stadium</li>
+                    <li>Downtown Dallas attractions</li>
+                    <li>Texas BBQ and dining scene</li>
+                    <li>Match day logistics and tips</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold">Other Texas &amp; Central Stadiums:</p>
+                  <p>
+                    Catching multiple matches in Texas? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston. Also visit <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City.
+                  </p>
+                </div>
+                <p>
+                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                </p>
+              </div>
               <hr className="editorial-divider" />
             </article>
 

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../base/Button';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -27,6 +28,19 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
       {/* Full Guide - Expanded State */}
       {isExpanded && (
         <div className="animate-fade-in">
+          {/* Breadcrumbs */}
+          <nav className="editorial-breadcrumbs">
+            <ol className="flex items-center gap-2 text-sm">
+              <li>
+                <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+              </li>
+              <li className="text-slate-400">/</li>
+              <li>
+                <Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link>
+              </li>
+              <li className="text-slate-500 dark:text-slate-400">/ Arrowhead Stadium</li>
+            </ol>
+          </nav>
           {/* Hero Section - Miami Style */}
           {!hideHero && (
             <section className="editorial-hero">
@@ -75,6 +89,9 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               </p>
               <p>
                 For international visitors, Arrowhead offers something no other World Cup venue can: a genuine slice of Americana wrapped around world-class football facilities. This is where you'll experience the heartland of American sports passion, complete with legendary Kansas City barbecue, Midwestern hospitality, and a sound level that has literally registered on seismographs.
+              </p>
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                Located in <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>, Arrowhead Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -265,6 +282,21 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   The venue's experience hosting major events—including AFC Championship games, college football playoffs, and international soccer friendlies—ensures smooth operations for World Cup matches. Kansas City's passionate sports culture will embrace international visitors while maintaining the intimidating atmosphere that makes Arrowhead special.
                 </p>
               </div>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Related Stadiums (after What Matches to Expect) */}
+            <article className="editorial-body">
+              <h2 className="editorial-h2">
+                <i className="ri-links-line text-emerald-500"></i>
+                Related Stadiums
+              </h2>
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                Planning matches across the Central and Southern US? Consider
+                {' '}<Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+                {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or
+                {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -709,6 +741,29 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                     </p>
                   </div>
                 </div>
+              </div>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Beyond the Stadium: Explore Kansas City */}
+            <article className="editorial-body">
+              <h2 className="editorial-h2">
+                <i className="ri-compass-3-line text-emerald-500"></i>
+                Beyond the Stadium: Explore Kansas City
+              </h2>
+              <div className="prose prose-lg max-w-none dark:prose-invert">
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Explore our complete <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City World Cup 2026 Guide</Link> for transport, neighborhoods, and essential tips.
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Catching more matches nearby? Consider
+                  {' '}<Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+                  {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, and
+                  {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
+                </p>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                </p>
               </div>
               <hr className="editorial-divider" />
             </article>

@@ -135,6 +135,19 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
             </section>
           )}
 
+          {/* Breadcrumbs */}
+          {!hideHero && (
+            <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+              <ol className="flex items-center gap-2 text-sm">
+                <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+                <li className="text-slate-400">›</li>
+                <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+                <li className="text-slate-400">›</li>
+                <li className="text-slate-700 dark:text-slate-200">Estadio BBVA</li>
+              </ol>
+            </nav>
+          )}
+
           {/* Content Sections — Editorial presentation */}
           <section className="editorial-article py-12">
             {/* Guide Title & Introduction (PART 1/4) */}
@@ -143,7 +156,12 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
                 <i className="ri-book-open-line text-emerald-500"></i>
                 Estadio BBVA: Your Complete Guide to Monterrey's World Cup 2026 Venue
               </h2>
-              <p>Rising from the edge of Monterrey like a metallic fortress, Estadio BBVA—nicknamed "El Gigante de Acero" (The Steel Giant)—represents a new generation of Latin American football architecture. When this architectural marvel hosts four World Cup 2026 matches, international fans will discover why Mexico's industrial capital built a stadium that honors its brewing and steel-making heritage while delivering one of the most intimate viewing experiences in world football. With the majestic Cerro de la Silla mountain framing the north stand and seats positioned just nine meters from the pitch, this venue promises an atmosphere unlike any other in the tournament.</p>
+              <p>
+                Located in <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>, Estadio BBVA is one of the most technologically advanced stadiums in Latin America. Estadio BBVA is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
+              </p>
+              <p>
+                Rising from the edge of Monterrey like a metallic fortress, Estadio BBVA—nicknamed "El Gigante de Acero" (The Steel Giant)—represents a new generation of Latin American football architecture. When this architectural marvel hosts four World Cup 2026 matches, international fans will discover why Mexico's industrial capital built a stadium that honors its brewing and steel-making heritage while delivering one of the most intimate viewing experiences in world football. With the majestic Cerro de la Silla mountain framing the north stand and seats positioned just nine meters from the pitch, this venue promises an atmosphere unlike any other in the tournament.
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -218,6 +236,21 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
               <p>Estadio BBVA will host four World Cup 2026 fixtures: three group stage matches scheduled for June 14, 20, and 24, plus one Round of 32 knockout match on June 29. While specific matchups remain to be confirmed, the venue's 53,500 capacity and dramatic mountain backdrop position it perfectly for memorable afternoon and evening fixtures.</p>
               <p>Monterrey's football culture is legendary. C.F. Monterrey's supporters—known as La Adicción Azul (The Blue Addiction)—create one of Liga MX's most passionate atmospheres. Expect World Cup crowds to embrace this energy, with international fans blending seamlessly with local traditions. The stadium's steep stands and excellent acoustics mean every chant, every song, every collective gasp will reverberate throughout the bowl.</p>
               <p>This is Monterrey's first World Cup since Mexico hosted the tournament in 1986 (when matches were played at the old Estadio Tecnológico and Estadio Universitario). For a city passionate about football and proud of its industrial heritage, June 2026 represents a homecoming decades in the making.</p>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Related Stadiums (after What Matches to Expect) */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-links-line text-emerald-500"></i>
+                Related Stadiums
+              </h3>
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                Planning a Mexico or cross-border circuit? Visit{' '}
+                <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
+                <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
+                <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -375,6 +408,37 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
 
               <h3 className="editorial-h3">Post-Match Celebrations</h3>
               <p>After the final whistle, head back to <strong>Barrio Antiguo</strong> where the party continues until dawn. <strong>Casa Morelos</strong>, <strong>La Tumba</strong>, and <strong>Gargantuas Cultural Space</strong> offer live music ranging from rock to jazz. For upscale options, San Pedro's lounges and rooftop bars provide a more refined atmosphere.</p>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Beyond the Stadium: Explore Monterrey */}
+            <article className="editorial-body">
+              <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500"></i>
+                Beyond the Stadium: Explore Monterrey
+              </h2>
+              <p>Monterrey's mountain backdrop and modern energy create a unique World Cup 2026 destination.</p>
+              <p>
+                Explore our complete{' '}
+                <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey World Cup 2026 Guide</Link>{' '}for everything you need:
+              </p>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Hotels near Estadio BBVA</li>
+                <li>Mountain attractions and outdoor activities</li>
+                <li>Modern Mexican cuisine scene</li>
+                <li>Transportation around Monterrey</li>
+                <li>Border crossing and travel tips</li>
+              </ul>
+              <p>
+                <strong>Other Stadiums:</strong>{' '}
+                Completing a Mexico tour? Visit{' '}
+                <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City and{' '}
+                <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>{' '}in Guadalajara. Close to Texas? Check out{' '}
+                <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link>{' '}in Dallas.
+              </p>
+              <p>
+                <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+              </p>
               <hr className="editorial-divider" />
             </article>
 

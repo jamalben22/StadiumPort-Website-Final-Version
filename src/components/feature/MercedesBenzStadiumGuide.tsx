@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Header } from './Header';
 import { OptimizedImage } from '../base/OptimizedImage';
 
@@ -81,6 +82,19 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
       {/* Full Guide - Expanded State */}
       {isExpanded && (
         <div className="animate-fade-in">
+          {/* Breadcrumbs */}
+          <nav className="editorial-breadcrumbs">
+            <ol className="flex items-center gap-2 text-sm">
+              <li>
+                <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+              </li>
+              <li className="text-slate-400">/</li>
+              <li>
+                <Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link>
+              </li>
+              <li className="text-slate-500 dark:text-slate-400">/ Mercedes-Benz Stadium</li>
+            </ol>
+          </nav>
           {/* Editorial Hero — NYC style */}
           {!hideHero && (
           <section className="editorial-hero">
@@ -130,6 +144,9 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
             <article className="editorial-body editorial-dropcap">
               <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 Stand beneath the world's first retractable petal roof as it opens like a camera aperture to the Georgia sky. Watch 75,000 voices reverberate off the circular halo board—the largest video screen in professional sports. Welcome to Mercedes-Benz Stadium, a venue that didn't just raise the bar for American stadium design when it opened in 2017; it obliterated it entirely. As one of 11 US host cities, Atlanta will welcome eight World Cup matches in 2026, including a semifinal—making this architectural marvel the stage where footballing dreams will either flourish or shatter. For the tournament, FIFA regulations require the stadium to be called "Atlanta Stadium", but locals will always know it by its revolutionary spirit.
+              </p>
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mt-4">
+                Located in <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>, Mercedes-Benz Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -258,6 +275,23 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                   An economic impact study estimates the World Cup will generate $415 million in revenue for Atlanta—the equivalent of hosting eight Super Bowls in one summer.
                 </p>
               </div>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Related Stadiums (after What Matches to Expect) */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-links-line text-emerald-500"></i>
+                Related Stadiums
+              </h3>
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mb-2">
+                Planning an East/South circuit? Consider nearby or regional venues:
+              </p>
+              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas ·
+                {' '}<Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia ·
+                {' '}<Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey
+              </p>
               <hr className="editorial-divider" />
             </article>
 
@@ -541,6 +575,29 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
               <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
                 Stone Mountain Park (30 minutes east), Georgia Aquarium, and the Atlanta BeltLine Eastside Trail justify extending your stay beyond matchday.
               </p>
+              <hr className="editorial-divider" />
+            </article>
+
+            {/* Beyond the Stadium: Explore Atlanta */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500"></i>
+                Beyond the Stadium: Explore Atlanta
+              </h3>
+              <div className="space-y-4 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                <p>
+                  Explore our complete <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta World Cup 2026 Guide</Link> for essential travel info, neighborhoods, transport, and top experiences.
+                </p>
+                <p>
+                  Catching multiple matches in the South? Visit
+                  {' '}<Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+                  {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or
+                  {' '}<Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+                </p>
+                <p>
+                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                </p>
+              </div>
               <hr className="editorial-divider" />
             </article>
 
