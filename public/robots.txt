@@ -20,4 +20,4 @@ Disallow: /privacy
 Disallow: /terms
 Disallow: /affiliate-disclaimer
 
-Sitemap: https://example.com/sitemap.xml
+Sitemap: https://stadiumport.com/sitemap.xml

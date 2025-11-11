@@ -6,11 +6,13 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 
 export default function NewYorkCityArticlePage() {
-  const pageUrl = '/travel-guides/new-york-city';
+  const pageUrl = '/world-cup-2026-host-cities/new-york-new-jersey';
 
   useEffect(() => {
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
+    const title = 'New York / New Jersey – World Cup 2026 Guide';
+    const description = 'New York / New Jersey host city guide for FIFA World Cup 2026: MetLife Stadium details, match schedule, transportation, and where to stay.';
     const setMeta = (property: string, content: string) => {
       let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
       if (!el) {
@@ -22,6 +24,15 @@ export default function NewYorkCityArticlePage() {
     };
     setMeta('og:image', ogImageUrl);
     setMeta('twitter:image', ogImageUrl);
+
+    // Update document title and meta description
+    document.title = title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', description);
+
+    // Update canonical URL
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) canonical.setAttribute('href', `${siteUrl}${pageUrl}`);
   }, []);
 
   return (
@@ -29,14 +40,14 @@ export default function NewYorkCityArticlePage() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'New York City – World Cup 2026 Guide',
-            'Comprehensive New York City travel guide for FIFA World Cup 2026: MetLife Stadium details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}${pageUrl}`
+            'New York / New Jersey – World Cup 2026 Guide',
+            'New York / New Jersey host city guide for FIFA World Cup 2026: MetLife Stadium details, match schedule, transportation, and where to stay.',
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}${pageUrl}`
           ),
           generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Travel Guides', url: '/travel-guides' },
-            { name: 'New York City', url: pageUrl }
+            { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+            { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` },
+            { name: 'New York / New Jersey', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}${pageUrl}` }
           ]),
           generateImageObjectSchema('/images/cities/new-york-new-jersey-world-cup-2026.webp', {
             width: 1600,

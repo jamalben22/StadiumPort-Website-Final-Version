@@ -13,12 +13,12 @@ export function AtlantaCityGuide() {
           generateCityGuideSchema(
             'Atlanta – World Cup 2026 Guide',
             'Comprehensive Atlanta travel guide for FIFA World Cup 2026: Mercedes-Benz Stadium details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/atlanta`
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/atlanta`
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Atlanta', url: '/world-cup-2026-cities/atlanta' }
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta' }
           ]),
           generateImageObjectSchema('/images/cities/atlanta-world-cup-2026.webp', {
             width: 1600,
@@ -860,7 +860,7 @@ export function AtlantaCityGuide() {
               Connect Atlanta with Eastern cities like{" "}
               <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
               ,{" "}
-              <Link to="/travel-guides/new-york-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
               , or{" "}
               <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
               {" "}for a journey from Southern hospitality to historic Northeastern culture.

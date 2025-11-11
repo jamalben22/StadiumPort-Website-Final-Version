@@ -2,10 +2,56 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 
 export function KansasCityCityGuide() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-host-cities/kansas-city';
+
+  useEffect(() => {
+    const title = 'Kansas City – World Cup 2026 Guide';
+    const description = 'Complete Kansas City World Cup 2026 travel guide: Arrowhead Stadium details, match schedule, transportation, hotels, and attractions.';
+    const fullUrl = `${siteUrl}${pageUrl}`;
+    const ogImage = `${siteUrl}/images/cities/kansas-city-world-cup-2026.webp`;
+    document.title = title;
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+      if (el) el.setAttribute(attr, value);
+    };
+    setMeta('meta[name="description"]', 'content', description);
+    setMeta('link[rel="canonical"]', 'href', fullUrl);
+    setMeta('meta[property="og:title"]', 'content', title);
+    setMeta('meta[property="og:description"]', 'content', description);
+    setMeta('meta[property="og:url"]', 'content', fullUrl);
+    setMeta('meta[property="og:image"]', 'content', ogImage);
+    setMeta('meta[property="twitter:title"]', 'content', title);
+    setMeta('meta[property="twitter:description"]', 'content', description);
+    setMeta('meta[property="twitter:url"]', 'content', fullUrl);
+    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+  }, []);
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+      <SchemaOrg
+        schema={[
+          generateCityGuideSchema(
+            'Kansas City – World Cup 2026 Guide',
+            'Complete Kansas City World Cup 2026 travel guide: Arrowhead Stadium details, match schedule, transportation, hotels, and attractions.',
+            `${siteUrl}${pageUrl}`
+          ),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: siteUrl },
+            { name: 'Host Cities', url: `${siteUrl}/world-cup-2026-host-cities` },
+            { name: 'Kansas City', url: `${siteUrl}${pageUrl}` }
+          ]),
+          generateImageObjectSchema('/images/cities/kansas-city-world-cup-2026.webp', {
+            width: 1600,
+            height: 900,
+            caption: 'Kansas City skyline – World Cup 2026 host city'
+          })
+        ]}
+      />
       <Header />
 
       {/* Editorial Hero — cohesive with NYC guide styling */}
@@ -850,7 +896,7 @@ export function KansasCityCityGuide() {
                 ,{' '}
                 <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
                 , or{' '}
-                <Link to="/travel-guides/new-york-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
                 {' '}to experience the full diversity of American culture from the heartland to the coasts.
               </p>
             </div>

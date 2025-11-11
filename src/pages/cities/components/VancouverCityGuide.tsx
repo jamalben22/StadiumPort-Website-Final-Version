@@ -6,6 +6,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 
 export function VancouverCityGuide() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
@@ -16,12 +17,12 @@ export function VancouverCityGuide() {
           generateCityGuideSchema(
             'Vancouver World Cup 2026 – BC Place & Pacific Coast Guide',
             'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/vancouver`
+            `${siteUrl}/world-cup-2026-host-cities/vancouver`
           ),
           generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Vancouver', url: '/world-cup-2026-cities/vancouver' }
+            { name: 'Home', url: siteUrl },
+            { name: 'Host Cities', url: `${siteUrl}/world-cup-2026-host-cities` },
+            { name: 'Vancouver', url: `${siteUrl}/world-cup-2026-host-cities/vancouver` }
           ]),
           generateImageObjectSchema('/images/cities/vancouver-world-cup-2026.webp', {
             width: 1600,
@@ -32,8 +33,8 @@ export function VancouverCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities/vancouver`;
-        const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/vancouver-world-cup-2026.webp`;
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/vancouver`;
+        const ogImage = `${siteUrl}/images/cities/vancouver-world-cup-2026.webp`;
         const title = 'Vancouver World Cup 2026 – BC Place & Pacific Coast Guide';
         const description = 'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.';
 

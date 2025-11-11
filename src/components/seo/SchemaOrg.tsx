@@ -26,19 +26,19 @@ export const generateWebsiteSchema = () => ({
   "@type": "WebSite",
   "name": "StadiumPort",
   "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
-  "url": import.meta.env.VITE_SITE_URL || "https://example.com",
+  "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "potentialAction": {
     "@type": "SearchAction",
     "target": {
       "@type": "EntryPoint",
-      "urlTemplate": `${import.meta.env.VITE_SITE_URL || "https://example.com"}/search?q={search_term_string}`
+      "urlTemplate": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/search?q={search_term_string}`
     },
     "query-input": "required name=search_term_string"
   },
   "publisher": {
     "@type": "Organization",
     "name": "StadiumPort",
-    "url": import.meta.env.VITE_SITE_URL || "https://example.com"
+    "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });
 
@@ -47,8 +47,8 @@ export const generateOrganizationSchema = () => ({
   "@type": "Organization",
   "name": "StadiumPort",
   "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
-  "url": import.meta.env.VITE_SITE_URL || "https://example.com",
-  "logo": `${import.meta.env.VITE_SITE_URL || "https://example.com"}/logo.png`,
+  "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
+  "logo": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/logo.png`,
   "sameAs": [
     "https://twitter.com/stadiumport",
     "https://facebook.com/stadiumport"
@@ -69,7 +69,7 @@ export const generateTravelGuideSchema = (title: string, description: string, ur
   "publisher": {
     "@type": "Organization",
     "name": "StadiumPort",
-    "url": import.meta.env.VITE_SITE_URL || "https://example.com"
+    "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   },
   "about": {
     "@type": "Event",
@@ -96,7 +96,7 @@ export const generateCityGuideSchema = (cityName: string, description: string, u
   "publisher": {
     "@type": "Organization",
     "name": "StadiumPort",
-    "url": import.meta.env.VITE_SITE_URL || "https://example.com"
+    "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });
 
@@ -136,10 +136,70 @@ export const generateImageObjectSchema = (
 ) => ({
   "@context": "https://schema.org",
   "@type": "ImageObject",
-  "url": (import.meta.env.VITE_SITE_URL || "https://example.com") + url,
-  "contentUrl": (import.meta.env.VITE_SITE_URL || "https://example.com") + url,
+  "url": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + url,
+  "contentUrl": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + url,
   ...(options?.width ? { width: options.width } : {}),
   ...(options?.height ? { height: options.height } : {}),
   ...(options?.caption ? { caption: options.caption } : {}),
   ...(options?.description ? { description: options.description } : {}),
+});
+
+// ItemList schema for listing pages (e.g., all stadiums)
+export const generateItemListSchema = (
+  items: Array<{ name: string; url: string; image?: string }>
+) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.name,
+    "item": item.url,
+    ...(item.image
+      ? {
+          "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.image,
+        }
+      : {}),
+  })),
+});
+
+// CollectionPage schema that references the ItemList
+export const generateCollectionPageSchema = (
+  args: {
+    name: string;
+    description: string;
+    url: string;
+    image?: string;
+    items: Array<{ name: string; url: string; image?: string }>;
+  }
+) => ({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": args.name,
+  "description": args.description,
+  "url": args.url,
+  ...(args.image
+    ? {
+        "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + args.image,
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + args.image,
+          "contentUrl": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + args.image,
+        },
+      }
+    : {}),
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": args.items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": item.url,
+      ...(item.image
+        ? {
+            "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.image,
+          }
+        : {}),
+    })),
+  },
 });

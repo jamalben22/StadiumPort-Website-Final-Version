@@ -84,6 +84,15 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div className="editorial-hero-overlay"></div>
               </div>
               <div className="editorial-hero-content">
+                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+                  <ol className="flex items-center gap-2 text-sm text-white/90">
+                    <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                    <li className="opacity-70">›</li>
+                    <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                    <li className="opacity-70">›</li>
+                    <li>BC Place</li>
+                  </ol>
+                </nav>
                 <div className="editorial-hero-inner">
                   <div className="editorial-hero-eyebrow">
                     <span className="editorial-hero-pulse"></span>
@@ -119,7 +128,9 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               </h2>
               
               <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-                {`There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality, where 54,000 fans will roar in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. Located in the beating heart of downtown Vancouver, this architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
+                There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
+                <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+                {`, welcoming 54,000 fans in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. This architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -287,6 +298,9 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <p>
                   {`Matches are scheduled for 12:00, 15:00, 18:00, and 21:00 Pacific Time, with evening kickoffs likely offering the most spectacular visual experience as the roof opens to twilight skies. This will be only the second time Canada has hosted men's World Cup matches on home soil, making these fixtures genuinely historic moments.`}
                 </p>
+                <p>
+                  Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also explore <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada, and on the West Coast, <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link>.
+                </p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -309,7 +323,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>By Bike:</strong> {`Complimentary secure bike parking provided by The Bicycle Valet operates at Gate C from gates opening until 30 minutes post-match.`}</p>
 
-                <p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}<a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
+<p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -331,7 +345,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>Luxury Experiences:</strong> {`JW Marriott Parq Vancouver and the DOUGLAS, Autograph Collection combine five-star service with proximity to BC Place (literally adjacent to the stadium). Fairmont Hotel Vancouver and Rosewood Hotel Georgia deliver historic grandeur with modern luxury in the downtown core.`}</p>
 
-                <p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}<a href="http://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or `}<a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>{` for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
+<p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or `}<a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>{` for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -431,7 +445,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 </div>
                 <div>
                   <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-                    <strong>Activity Booking Tip:</strong> {`Consider booking a `}http://booking.com{`  or Vancouver City Tour for non-match days—these experiences showcase Vancouver's culinary diversity and stunning natural setting. Grouse Mountain gondola rides and Capilano Suspension Bridge offer breathtaking nature experiences just 30 minutes from downtown.`}
+<strong>Activity Booking Tip:</strong> {`Consider booking a `}https://booking.com{`  or Vancouver City Tour for non-match days—these experiences showcase Vancouver's culinary diversity and stunning natural setting. Grouse Mountain gondola rides and Capilano Suspension Bridge offer breathtaking nature experiences just 30 minutes from downtown.`}
                   </p>
                 </div>
               </div>
@@ -462,6 +476,42 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               <hr className="editorial-divider" />
             </article>
 
+            {/* Beyond the Stadium: Explore Vancouver */}
+            <article className="editorial-body">
+              <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+                <i className="ri-compass-3-line text-emerald-500"></i>
+                Beyond the Stadium: Explore Vancouver
+              </h3>
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                <p>
+                  Vancouver's stunning natural beauty and cosmopolitan culture make it a premier World Cup 2026 destination.
+                </p>
+                <div>
+                  <p className="font-semibold">Discover Vancouver:</p>
+                  <p>
+                    Explore our complete <Link to="/world-cup-2026-host-cities/vancouver" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver World Cup 2026 Guide</Link> for everything you need:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>Hotels near BC Place and downtown</li>
+                    <li>Mountains and ocean attractions</li>
+                    <li>Diverse neighborhoods and dining</li>
+                    <li>Transportation around Vancouver</li>
+                    <li>Match day planning essentials</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold">Other Stadiums Nearby:</p>
+                  <p>
+                    Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also check out <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada.
+                  </p>
+                </div>
+                <p>
+                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                </p>
+              </div>
+              <hr className="editorial-divider" />
+            </article>
+
             {/* Final Verdict & Key Takeaway */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -475,7 +525,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p>{`The one unforgettable moment? Being inside BC Place when Canada's national team takes the pitch. The stadium holds the record for largest attendance for any Canadian national team event (any sport, men's or women's), and the atmosphere when 54,000 fans sing "O Canada" will give you goosebumps you'll remember forever.`}</p>
 
-                <p><strong>{`Book early.`}</strong> {`Vancouver's summer peak tourism season coincides with the World Cup, and accommodation near transit lines fills quickly. Secure your `}http://booking.com{`  and start planning your Vancouver adventure now—this isn't just about watching world-class football; it's about experiencing one of the planet's most beautiful cities at its proudest moment.`}</p>
+<p><strong>{`Book early.`}</strong> {`Vancouver's summer peak tourism season coincides with the World Cup, and accommodation near transit lines fills quickly. Secure your `}https://booking.com{`  and start planning your Vancouver adventure now—this isn't just about watching world-class football; it's about experiencing one of the planet's most beautiful cities at its proudest moment.`}</p>
 
                 <p><em>{`See you under the retractable roof.`}</em></p>
               </div>

@@ -153,87 +153,87 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Stadium Overview & Fast Facts
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
-                    <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
-                    <p class="leading-relaxed">Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")</p>
+                    <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                    <p className="leading-relaxed">Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
-                    <p class="leading-relaxed">Miami Gardens, Florida (northern Miami suburb)</p>
+                    <i className="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                    <p className="leading-relaxed">Miami Gardens, Florida (northern Miami suburb)</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Address</span>
-                    <p class="leading-relaxed">347 Don Shula Drive, Miami Gardens, FL 33056</p>
+                    <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Address</span>
+                    <p className="leading-relaxed">347 Don Shula Drive, Miami Gardens, FL 33056</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-calendar-2-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
-                    <p class="leading-relaxed">1987</p>
+                    <i className="ri-calendar-2-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                    <p className="leading-relaxed">1987</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">World Cup Capacity</span>
-                    <p class="leading-relaxed">67,518</p>
+                    <i className="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">World Cup Capacity</span>
+                    <p className="leading-relaxed">67,518</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Standard Capacity</span>
-                    <p class="leading-relaxed">64,767</p>
+                    <i className="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Standard Capacity</span>
+                    <p className="leading-relaxed">64,767</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-shield-star-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
-                    <p class="leading-relaxed">Miami Dolphins (NFL), Miami Hurricanes (NCAA)</p>
+                    <i className="ri-shield-star-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
+                    <p className="leading-relaxed">Miami Dolphins (NFL), Miami Hurricanes (NCAA)</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
-                    <p class="leading-relaxed">HOK (original); HOK with Arquitectonica (2015-16 renovation)</p>
+                    <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
+                    <p className="leading-relaxed">HOK (original); HOK with Arquitectonica (2015-16 renovation)</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-building-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Structural Engineer</span>
-                    <p class="leading-relaxed">Thornton Tomasetti</p>
+                    <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Structural Engineer</span>
+                    <p className="leading-relaxed">Thornton Tomasetti</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
-                    <p class="leading-relaxed">Natural grass</p>
+                    <i className="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                    <p className="leading-relaxed">Natural grass</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i class="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
-                    <p class="leading-relaxed">Open-air canopy covering seating areas (field exposed)</p>
+                    <i className="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                    <p className="leading-relaxed">Open-air canopy covering seating areas (field exposed)</p>
                   </div>
                 </div>
-                <div class="flex items-center gap-3 py-2">
+                <div className="flex items-center gap-3 py-2">
                   <div>
-                    <span class="text-slate-700 dark:text-slate-200 text-lg leading-relaxed font-semibold mb-3">Notable Features</span>
-                    <ul class="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
+                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed font-semibold mb-3">Notable Features</span>
+                    <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
                       <li>Massive cable-supported canopy suspended by eight concrete mega-columns and 350-foot steel masts</li>
                       <li>Four corner-mounted video boards</li>
                       <li>Over 1,090 tap handles (one of highest in NFL)</li>

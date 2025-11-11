@@ -6,6 +6,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { Link } from 'react-router-dom';
 
 export function MexicoCityGuide() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
@@ -16,12 +17,12 @@ export function MexicoCityGuide() {
           generateCityGuideSchema(
             'Mexico City World Cup 2026 – Estadio Azteca & Cultural Capital Guide',
             'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/mexico-city`
+            `${siteUrl}/world-cup-2026-host-cities/mexico-city`
           ),
           generateBreadcrumbSchema([
-            { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'Mexico City', url: '/world-cup-2026-cities/mexico-city' }
+            { name: 'Home', url: siteUrl },
+            { name: 'Host Cities', url: `${siteUrl}/world-cup-2026-host-cities` },
+            { name: 'Mexico City', url: `${siteUrl}/world-cup-2026-host-cities/mexico-city` }
           ]),
           generateImageObjectSchema('/images/cities/mexico-city-world-cup-2026.webp', {
             width: 1600,
@@ -32,8 +33,8 @@ export function MexicoCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-cities/mexico-city`;
-        const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/mexico-city-world-cup-2026.webp`;
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/mexico-city`;
+        const ogImage = `${siteUrl}/images/cities/mexico-city-world-cup-2026.webp`;
         const title = 'Mexico City World Cup 2026 – Estadio Azteca & Cultural Capital Guide';
         const description = 'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.';
 

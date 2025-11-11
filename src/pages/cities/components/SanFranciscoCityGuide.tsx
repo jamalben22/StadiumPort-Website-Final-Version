@@ -13,12 +13,12 @@ export function SanFranciscoCityGuide() {
           generateCityGuideSchema(
             'San Francisco Bay Area – World Cup 2026 Guide',
             "Comprehensive San Francisco Bay Area travel guide for FIFA World Cup 2026: Levi's Stadium details, match schedule, transportation, and where to stay.",
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-cities/san-francisco`
+            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/san-francisco`
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
-            { name: 'Host Cities', url: '/world-cup-2026-cities' },
-            { name: 'San Francisco Bay Area', url: '/world-cup-2026-cities/san-francisco' }
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'San Francisco Bay Area', url: '/world-cup-2026-host-cities/san-francisco' }
           ]),
           generateImageObjectSchema('/images/cities/san-francisco-world-cup-2026.webp', {
             width: 1600,
@@ -57,7 +57,7 @@ export function SanFranciscoCityGuide() {
                 </li>
                 <li className="text-slate-400">›</li>
                 <li>
-                  <Link to="/world-cup-2026-cities" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                  <Link to="/world-cup-2026-host-cities" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
                 </li>
                 <li className="text-slate-400">›</li>
                 <li>
@@ -93,7 +93,7 @@ export function SanFranciscoCityGuide() {
               <strong>Match Schedule:</strong> June 13, 16, 19, 22, 25 (Group Stage) | July 1 (Round of 32)
             </p>
             <p>
-              When the 2026 FIFA World Cup arrives in the Bay Area, it's <strong>technically</strong> happening in Santa Clara—but every international fan will fly into San Francisco, stay in San Francisco, and experience the Bay Area's cultural energy radiating from San Francisco. The Bay Area is one of the <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> welcoming fans to World Cup 2026. The matches may unfold at <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium</Link> in Silicon Valley, but this is San Francisco's World Cup moment, and the city plans to celebrate accordingly.
+              When the 2026 FIFA World Cup arrives in the Bay Area, it's <strong>technically</strong> happening in Santa Clara—but every international fan will fly into San Francisco, stay in San Francisco, and experience the Bay Area's cultural energy radiating from San Francisco. The Bay Area is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> welcoming fans to World Cup 2026. The matches may unfold at <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium</Link> in Silicon Valley, but this is San Francisco's World Cup moment, and the city plans to celebrate accordingly.
             </p>
             <p>
               <strong>Six matches</strong> across three weeks (five group stage encounters plus a Round of 32 knockout showdown on July 1) bring the world's game to a region that invented modern tech, perfected sourdough bread, and painted the most photographed bridge on Earth a color officially called "International Orange." This is Northern California's chance to show 70,000+ fans per match that innovation, natural beauty, and football passion coexist in perfect harmony.
@@ -112,10 +112,10 @@ export function SanFranciscoCityGuide() {
                 🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium Guide</Link>
               </div>
               <div>
-                🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
+            🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
               </div>
               <div>
-                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> | <Link to="/world-cup-2026-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
+            ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> | <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
               </div>
             </div>
           </div>
@@ -205,7 +205,7 @@ export function SanFranciscoCityGuide() {
               Here's the honest Bay Area reality: <strong>Levi's Stadium is 40 miles from San Francisco</strong>. You're not walking from your downtown hotel. But the Bay Area offers multiple transit options if you plan ahead and set realistic expectations.
             </p>
             <p>
-              Planning a wider West Coast trip? The Bay Area connects easily to other Pacific cities like <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> and <Link to="/world-cup-2026-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>. From Seattle, it's a short hop north to <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true cross-border Pacific experience.
+            Planning a wider West Coast trip? The Bay Area connects easily to other Pacific cities like <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> and <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>. From Seattle, it's a short hop north to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true cross-border Pacific experience.
             </p>
             <h4 className="editorial-h4 animate-fade-up mb-2">Your Best Options</h4>
             <div>
@@ -370,7 +370,7 @@ export function SanFranciscoCityGuide() {
               The 210-foot Art Deco tower atop <strong>Telegraph Hill</strong> offers 360° city views (<strong>$10</strong>). The surrounding <strong>Telegraph Hill neighborhood</strong> features <strong>Filbert Steps</strong>—wooden stairs through hidden gardens descending to the Embarcadero waterfront. Free, beautiful, locals' favorite.
             </p>
             <p>
-              Create a Pacific Coast circuit: start in the Bay Area, then head north to <Link to="/world-cup-2026-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> for coffee culture and mountain views, and cross the border to <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true Pacific international experience.
+            Create a Pacific Coast circuit: start in the Bay Area, then head north to <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> for coffee culture and mountain views, and cross the border to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true Pacific international experience.
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -584,15 +584,15 @@ export function SanFranciscoCityGuide() {
               </p>
               <p className="mt-6 mb-2 font-semibold">Pacific Northwest Circuit</p>
               <p>
-                Travel north from the Bay Area to <Link to="/world-cup-2026-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> for coffee culture and mountain views, then cross the border to <Link to="/world-cup-2026-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true Pacific Coast international experience.
+            Travel north from the Bay Area to <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> for coffee culture and mountain views, then cross the border to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for a true Pacific Coast international experience.
               </p>
               <p className="mt-6 mb-2 font-semibold">West Coast to Mexico</p>
               <p>
-                Connect California's tech hub with Mexico's cultural treasures: Combine San Francisco with <Link to="/world-cup-2026-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>, <Link to="/world-cup-2026-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>, or <Link to="/world-cup-2026-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link> for a diverse North American adventure.
+            Connect California's tech hub with Mexico's cultural treasures: Combine San Francisco with <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>, <Link to="/world-cup-2026-host-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>, or <Link to="/world-cup-2026-host-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link> for a diverse North American adventure.
               </p>
             </div>
             <p>
-              <Link to="/world-cup-2026-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
           <hr className="editorial-divider" />

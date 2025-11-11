@@ -297,7 +297,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </p>
               <h4 className="editorial-h4 mt-6">On-Site (Premium)</h4>
               <p className="leading-relaxed mb-6">
-                <strong>Renaissance Boston Patriot Place Hotel</strong> and <strong>Hilton Garden Inn Foxborough Patriot Place</strong> sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="http://hotels.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">hotels.com</a>  to secure rates before prices spike.
+<strong>Renaissance Boston Patriot Place Hotel</strong> and <strong>Hilton Garden Inn Foxborough Patriot Place</strong> sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="https://hotels.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">hotels.com</a>  to secure rates before prices spike.
               </p>
               <h4 className="editorial-h4 mt-6">Nearby Foxborough/Mansfield (Mid-Range)</h4>
               <p className="leading-relaxed mb-6">
@@ -308,7 +308,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
                 Staying in Boston proper provides far richer cultural experiences, dining, and nightlife. The HI Boston Hostel near Chinatown offers budget beds ($40-70), while mid-range chains like Hampton Inn, Courtyard, and Fairfield cluster around Back Bay and Cambridge ($200-350/night). Luxury seekers should consider The Liberty Hotel (converted jail), Four Seasons, or Mandarin Oriental ($500-900). Boston's MBTA train access to the stadium makes this viable despite the distance.
               </p>
               <p className="leading-relaxed">
-                <strong>Search multi-city options:</strong> Sites like `http://expedia.com/`  and `http://kayak.com/`  let you compare Boston, Providence, and Foxborough simultaneously.
+<strong>Search multi-city options:</strong> Sites like `https://expedia.com/`  and `https://kayak.com/`  let you compare Boston, Providence, and Foxborough simultaneously.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -321,7 +321,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </p>
               <h4 className="editorial-h4 mt-6">Alternative Accommodations</h4>
               <p className="leading-relaxed">
-                `http://airbnb.com/`  rentals in Walpole, Wrentham, and Sharon (towns surrounding Foxborough) might offer whole-home options for groups. Expect $250-500/night for houses sleeping 6-8.
+`https://airbnb.com/`  rentals in Walpole, Wrentham, and Sharon (towns surrounding Foxborough) might offer whole-home options for groups. Expect $250-500/night for houses sleeping 6-8.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -354,7 +354,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               <p className="leading-relaxed mb-4">This open-air shopping and entertainment complex surrounds the stadium with 1.3 million square feet of retail, dining, and activities. Pre-match atmosphere thrives here with 19 restaurants and bars including Six String Grill & Stage (live country music), Scorpion Bar (Mexican with rooftop views), Davio's Northern Italian Steakhouse, and Bar Louie.</p>
               <p className="leading-relaxed mb-6"><strong>The Hall at Patriot Place</strong> houses the Patriots Hall of Fame ($15 entry)—even non-NFL fans appreciate the interactive exhibits and Tom Brady huddle experience. Bass Pro Shops, Cinema de Lux, and Splitsville Luxury Lanes bowling provide non-football entertainment. Parking is free at Patriot Place (separate from stadium lots).</p>
               <h4 className="editorial-h4 mt-6">Boston (30-40 minutes)</h4>
-              <p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through <a href="http://viator.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">viator.com</a> or <a href="http://getyourguide.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">getyourguide.com</a> to maximize limited time.</p>
+<p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through <a href="https://viator.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">viator.com</a> or <a href="https://getyourguide.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">getyourguide.com</a> to maximize limited time.</p>
               <h4 className="editorial-h4 mt-6">Providence (25-30 minutes)</h4>
               <p className="leading-relaxed mb-6">Rhode Island's capital surprises visitors with Federal Hill's Italian restaurants, WaterFire evening art installations along riverwalks, and RISD Museum. Tony's Colonial Food (cash-only diner) is legendary.</p>
               <h4 className="editorial-h4 mt-6">Craft Beer Trail</h4>
@@ -388,7 +388,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
                 </p>
               </div>
               <p className="leading-relaxed">
-                Book your accommodation early through <a href="http://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
+Book your accommodation early through <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
               </p>
               <hr className="editorial-divider" />
             </article>

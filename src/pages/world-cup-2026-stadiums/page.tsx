@@ -5,7 +5,7 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { useEffect, useState } from 'react';
-import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 
 export default function VenuesPage() {
@@ -56,11 +56,12 @@ export default function VenuesPage() {
     // Add canonical URL
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-stadiums`);
     }
 
     // Set social preview images
-    const img = '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    const img = `${siteUrl}/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp`;
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (!ogImage) {
       ogImage = document.createElement('meta');
@@ -79,8 +80,8 @@ export default function VenuesPage() {
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Stadiums', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-stadiums` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Stadiums', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-stadiums` }
   ]);
 
   // Helper: map each stadium to its host city route and display label
@@ -90,7 +91,7 @@ export default function VenuesPage() {
         return { url: '/world-cup-2026-host-cities/mexico-city', label: 'Mexico City' };
       case 2:
         // NYC/NJ links to the original NYC travel guide
-        return { url: '/travel-guides/new-york-city', label: 'New York / New Jersey' };
+  return { url: '/world-cup-2026-host-cities/new-york-new-jersey', label: 'New York / New Jersey' };
       case 3:
         return { url: '/world-cup-2026-host-cities/dallas', label: 'Dallas' };
       case 4:
@@ -604,8 +605,30 @@ export default function VenuesPage() {
     }
   ];
 
+  // Build ItemList/CollectionPage schemas for the stadiums listing
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const itemListItems = venues.map((v) => ({
+    name: v.name,
+    url: `${siteUrl}/world-cup-2026-stadiums/${getStadiumSlug(v)}`,
+    image: `${siteUrl}${v.image}`,
+  }));
+
+  const itemListSchema = generateItemListSchema(itemListItems);
+  const collectionPageSchema = generateCollectionPageSchema({
+    name: 'World Cup 2026 Stadiums & Venues Guide',
+    description:
+      'Complete guide to all 16 World Cup 2026 stadiums across USA, Canada, and Mexico. Explore capacity, location, transport, hotels, and matchday tips for each venue.',
+    url: `${siteUrl}/world-cup-2026-stadiums`,
+    image: `${siteUrl}/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp`,
+    items: itemListItems,
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+      {/* JSON-LD Schemas */}
+      <SchemaOrg schema={breadcrumbSchema} />
+      <SchemaOrg schema={itemListSchema} />
+      <SchemaOrg schema={collectionPageSchema} />
       <Header />
       
       {/* Hero Section - Matching Host Cities Page */}
@@ -856,10 +879,75 @@ export default function VenuesPage() {
                 <span className="block text-slate-600 dark:text-slate-400">Multicultural gem of Canada</span>
               </li>
               <li className="text-center">
-                <a href="/travel-guides/new-york-city" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>
+<a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>
                 <span className="block text-slate-600 dark:text-slate-400">The city that never sleeps</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Stadiums FAQ Section */}
+      <section className="py-16 bg-white dark:bg-navy-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-3xl border border-white/10 bg-white/5 dark:bg-navy-800 backdrop-blur-sm shadow-xl p-8 md:p-12">
+            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white">Frequently Asked Questions About World Cup 2026 Stadiums</h2>
+
+            {/* Featured Snippet */}
+            <div className="mt-6 md:mt-8 font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed text-center">
+              <p>
+                <strong>The 2026 FIFA World Cup will be played in 16 stadiums</strong> across the United States (11), Canada (2), and Mexico (3). The largest venue is MetLife Stadium in New York/New Jersey with 82,500 capacity, while the final venue will be announced by FIFA in 2025, with MetLife and AT&T Stadium in Dallas as leading candidates.
+              </p>
+            </div>
+
+            {/* FAQ Grid */}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">How many stadiums will host World Cup 2026 matches?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">The 2026 FIFA World Cup will be played across 16 stadiums in North America: 11 in the United States, 2 in Canada, and 3 in Mexico. This includes iconic venues like MetLife Stadium (New York/New Jersey), SoFi Stadium (Los Angeles), and Estadio Azteca (Mexico City), which will become the first stadium to host three World Cups.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Which stadium will host the World Cup 2026 final?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">FIFA has not officially announced the 2026 World Cup final venue. The leading candidates are MetLife Stadium in New York/New Jersey (capacity 82,500) and AT&T Stadium in Dallas (80,000). Both venues meet FIFA's requirements and have hosted major sporting events. The official announcement is expected in 2025 after the match schedule is finalized.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">What is the largest stadium hosting World Cup 2026?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">MetLife Stadium in East Rutherford, New Jersey (New York area) is the largest World Cup 2026 venue with a capacity of 82,500 for football matches. It's followed closely by AT&T Stadium in Arlington, Texas (80,000) and Arrowhead Stadium in Kansas City (76,416). These venues will likely host quarterfinals, semifinals, and potentially the final.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Can I tour World Cup 2026 stadiums before the tournament?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">Yes, most World Cup 2026 stadiums offer public tours year-round, though availability may be limited closer to the tournament. Popular stadium tours include SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Estadio Azteca (Mexico City). Tours typically cost $20-40 per person and must be booked in advance. Check individual stadium websites for schedules and restrictions during World Cup preparation periods.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Are World Cup 2026 stadiums accessible by public transportation?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">Accessibility varies significantly by venue. Stadiums with excellent public transit access include MetLife Stadium (NJ Transit trains), Mercedes-Benz Stadium in Atlanta (MARTA rail), and BMO Field in Toronto (TTC streetcar). However, venues like SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Arrowhead Stadium (Kansas City) require rental cars or ride-sharing services. Plan transportation early, as ride-sharing prices surge dramatically on match days.</p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Which World Cup 2026 stadiums are indoor vs outdoor?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">Three World Cup 2026 venues feature retractable roofs: AT&T Stadium (Dallas), SoFi Stadium (Los Angeles), and BC Place (Vancouver). Mercedes-Benz Stadium in Atlanta also has a retractable roof. All other venues are open-air stadiums. The indoor/covered options provide climate control for extreme weather but may affect atmosphere compared to traditional outdoor football stadiums.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">What is the smallest stadium hosting World Cup 2026?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">BMO Field in Toronto is the smallest World Cup 2026 venue with a capacity of approximately 45,500 (after temporary expansion). Despite its size, it offers an intimate atmosphere and excellent sightlines. Other smaller venues include Levi's Stadium in Santa Clara (68,500) and Gillette Stadium near Boston (65,878). Smaller stadiums typically host group stage matches rather than knockout rounds.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Are any World Cup 2026 stadiums brand new?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">No stadiums are being built specifically for the 2026 World Cup, but several are recently constructed. SoFi Stadium (2020) in Los Angeles is the newest venue and the most expensive stadium ever built at $5+ billion. Allegiant Stadium in Las Vegas (2020) and Mercedes-Benz Stadium in Atlanta (2017) are also recent constructions. All venues will undergo modifications to meet FIFA standards, including wider fields and additional seating.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Can I visit multiple World Cup 2026 stadiums in one trip?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">Yes, with strategic planning. Geographic clusters make multi-stadium trips feasible: the Texas duo (AT&T Stadium in Dallas and NRG Stadium in Houston are 4 hours apart), East Coast corridor (MetLife, Lincoln Financial Field in Philadelphia, and Gillette Stadium), and West Coast route (SoFi, Levi's Stadium, and Lumen Field in Seattle). Mexico's three venues (Azteca, Akron, BBVA) are also within a manageable circuit. Factor in match schedules and rest days when planning.</p>
+                </div>
+                <div>
+                  <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Do World Cup 2026 stadiums have different grass than their regular seasons?</h3>
+                  <p className="font-inter text-slate-600 dark:text-slate-300">Yes, FIFA requires natural grass for World Cup matches. Several NFL stadiums that normally use artificial turf—including AT&T Stadium, Mercedes-Benz Stadium, SoFi Stadium, and Lumen Field—will install temporary natural grass surfaces for the tournament. This process involves laying grass pallets over the existing surface weeks before matches. Gillette Stadium and MetLife Stadium, which use FieldTurf for NFL games, will undergo similar conversions.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
