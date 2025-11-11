@@ -27,3 +27,8 @@ pnpm-debug.log*
 
 # Coverage
 coverage/
+
+# Lighthouse reports and local temp cache
+lighthouse-*/
+lighthouse-*
+.tmp/
