@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
+import GuideCard from '../../components/base/GuideCard';
 import { Button } from '../../components/base/Button';
 
 // Modified safetyCategories definition
@@ -41,6 +42,86 @@ export const safetyGuides = [
     image: 'https://readdy.ai/api/search-image?query=hotel%20room%20security%20with%20door%20locks%2C%20safe%20deposit%20box%2C%20security%20features%2C%20accommodation%20safety%20checklist%2C%20secure%20lodging%20environment&width=400&height=250&seq=safety8&orientation=landscape',
     featured: false,
     priority: 'Medium'
+  }
+];
+
+const guideArticles = [
+  {
+    title: 'Matchday Crowd Safety Essentials',
+    excerpt: 'Navigate stadium crowds, entry checkpoints, and post-match dispersal with confidence.',
+    category: 'Stadium & Crowd Safety',
+    author: 'Alex Rivera',
+    readTime: '9 min read',
+    priority: 'High' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=stadium%20crowd%20safety%2C%20entry%20checkpoints%2C%20safe%20movement%2C%20stewards%20guiding%20fans&width=400&height=250&seq=guides1&orientation=landscape',
+    slug: 'matchday-crowd-safety-essentials'
+  },
+  {
+    title: 'Emergency Planning: Before You Go',
+    excerpt: 'Build a quick-response plan: contacts, meeting points, and local emergency resources for hosts.',
+    category: 'Emergency Planning',
+    author: 'Priya Shah',
+    readTime: '8 min read',
+    priority: 'Medium' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=travel%20emergency%20plan%2C%20contact%20list%2C%20meeting%20points%2C%20preparedness&width=400&height=250&seq=guides2&orientation=landscape',
+    slug: 'emergency-planning-before-you-go'
+  },
+  {
+    title: 'Health & Medical Preparedness',
+    excerpt: 'Vaccinations, travel insurance notes, and carrying essentials for quick medical support.',
+    category: 'Health & Medical',
+    author: 'Dr. Lina Chen',
+    readTime: '12 min read',
+    priority: 'High' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=travel%20health%20kit%2C%20vaccination%2C%20first%20aid%2C%20medical%20preparedness&width=400&height=250&seq=guides3&orientation=landscape',
+    slug: 'health-and-medical-preparedness'
+  },
+  {
+    title: 'Digital Security & Privacy Protection',
+    excerpt: 'Protect accounts, payments, and identity on public Wi‑Fi and mobile networks.',
+    category: 'Digital Security',
+    author: 'Nora Patel',
+    readTime: '7 min read',
+    priority: 'Medium' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=digital%20security%20travel%2C%20vpn%2C%20account%20protection%2C%20privacy&width=400&height=250&seq=guides4&orientation=landscape',
+    slug: 'digital-security-and-privacy-protection'
+  },
+  {
+    title: 'Safe Transportation: Rideshare, Taxi, Transit',
+    excerpt: 'Verify rides, choose licensed providers, and avoid common scams across three hosts.',
+    category: 'Travel Security',
+    author: 'Maria Gonzalez',
+    readTime: '11 min read',
+    priority: 'Medium' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=licensed%20taxi%2C%20verified%20rideshare%2C%20safe%20public%20transport&width=400&height=250&seq=guides5&orientation=landscape',
+    slug: 'safe-transportation-rideshare-taxi-transit'
+  },
+  {
+    title: 'Accommodation Safety Checklist',
+    excerpt: 'Room security, hotel policies, and avoiding accommodation‑related scams.',
+    category: 'Travel Security',
+    author: 'David Thompson',
+    readTime: '10 min read',
+    priority: 'Medium' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=hotel%20room%20security%2C%20safe%20deposit%20box%2C%20secure%20lodging&width=400&height=250&seq=guides6&orientation=landscape',
+    slug: 'accommodation-safety-checklist'
+  },
+  {
+    title: 'Local Scams: Spot and Avoid',
+    excerpt: 'Common fan‑targeted scams and how to identify and avoid them quickly.',
+    category: 'Travel Security',
+    author: 'Omar Delgado',
+    readTime: '6 min read',
+    priority: 'Low' as const,
+    image:
+      'https://readdy.ai/api/search-image?query=travel%20scams%20awareness%2C%20money%20fraud%2C%20street%20scams%20guide&width=400&height=250&seq=guides7&orientation=landscape',
+    slug: 'local-scams-spot-and-avoid'
   }
 ];
 
@@ -377,10 +458,10 @@ export default function SafetyGuidePage() {
             </div>
           </div>
 
-          {/* Safety Guides Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredGuides.map((guide) => (
-              <Card key={guide.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
+      {/* Safety Guides Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {filteredGuides.map((guide) => (
+          <Card key={guide.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="relative">
                   <img 
                     src={guide.image} 
@@ -422,8 +503,8 @@ export default function SafetyGuidePage() {
                   </div>
                 </div>
               </Card>
-            ))}
-          </div>
+        ))}
+      </div>
 
           {filteredGuides.length === 0 && (
             <div className="text-center py-12">
@@ -436,6 +517,32 @@ export default function SafetyGuidePage() {
               </p>
             </div>
           )}
+        </div>
+      </section>
+
+      {/* Dedicated Guide Articles */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">Dedicated Article Guides</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">Explore focused guides with deep‑dive advice for fans.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {guideArticles.map((g) => (
+              <GuideCard
+                key={g.slug}
+                title={g.title}
+                excerpt={g.excerpt}
+                category={g.category}
+                author={g.author}
+                readTime={g.readTime}
+                priority={g.priority}
+                image={g.image}
+                href={`/guides/${g.slug}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
