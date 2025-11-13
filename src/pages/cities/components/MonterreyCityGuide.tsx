@@ -246,7 +246,7 @@ export function MonterreyCityGuide() {
               <strong>Match Day Access:</strong> Direct metro access to stadium via Line 1
             </p>
             <p>
-              <strong>Book Through:</strong> Search hotels in "Monterrey Centro" on Booking.com, Hotels.com, or Expedia to compare prices and find deals on properties near Macroplaza
+              <strong>Book Through:</strong> Search hotels in "Monterrey Centro" on <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline">Booking.com</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline">Hotels.com</a>, or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline">Expedia</a> to compare prices and find deals on properties near Macroplaza
             </p>
             <p>
               <strong>Vibe Check:</strong> Urban and bustling during the day; some areas get quieter at night. Stick to well-populated streets after dark.
@@ -270,7 +270,7 @@ export function MonterreyCityGuide() {
               <strong>Match Day Access:</strong> About 20-30 minutes to stadium by car/Uber; public transport requires transfers
             </p>
             <p>
-              <strong>Book Through:</strong> Filter for "San Pedro Garza García" on Hotels.com or Expedia; look for properties near Fashion Drive for walkability
+              <strong>Book Through:</strong> Filter for "San Pedro Garza García" on Hotels.com or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline">Expedia</a>; look for properties near Fashion Drive for walkability
             </p>
             <p>
               <strong>Vibe Check:</strong> Polished, modern, and safe—but you're paying for the experience. Perfect for travelers who want resort-style comfort in an urban setting.
@@ -318,13 +318,13 @@ export function MonterreyCityGuide() {
               <strong>Match Day Access:</strong> Excellent—short metro ride or FIFA shuttle to stadium
             </p>
             <p>
-              <strong>Book Through:</strong> Search "Parque Fundidora hotels" on Booking.com or check IHG properties (Holiday Inn Express Monterrey - Fundidora)
+              <strong>Book Through:</strong> Search "Parque Fundidora hotels" on <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline">Booking.com</a> or check <a href="https://www.ihg.com/holidayinnexpress/hotels/us/en/monterrey/mtyfd/hoteldetail" target="_blank" rel="noopener noreferrer" className="underline">IHG properties (Holiday Inn Express Monterrey - Fundidora)</a>
             </p>
             <p>
               <strong>Vibe Check:</strong> Mix of business and leisure travelers; great for families wanting a bit of everything.
             </p>
             <p>
-              <strong>Smart Booking Strategy:</strong> Prices will surge for World Cup dates. Book early through sites like Booking.com (flexible cancellation policies), compare rates on Kayak or Google Hotels, or consider vacation rentals via Airbnb for group travel. Many hotels offer free airport shuttles—confirm when booking.
+              <strong>Smart Booking Strategy:</strong> Prices will surge for World Cup dates. Book early through sites like <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline">Booking.com</a> (flexible cancellation policies), compare rates on Kayak or Google Hotels, or consider vacation rentals via Airbnb for group travel. Many hotels offer free airport shuttles—confirm when booking.
             </p>
           <hr className="editorial-divider" />
         </article>
@@ -597,7 +597,7 @@ export function MonterreyCityGuide() {
               When you take your seat in Estadio BBVA with 53,000 other roaring fans, the Sierra Madre mountains rising behind the stands, you'll understand why FIFA chose Monterrey to represent Mexico's northeastern spirit on football's biggest stage.
             </p>
             <p><strong>Ready to plan your trip?</strong></p>
-            <p> <strong>Book Accommodation Early:</strong> Search "Monterrey Centro," "San Pedro Garza García," or "Fundidora Park hotels" on Booking.com, Expedia, or Hotels.com to lock in World Cup rates before they skyrocket</p>
+            <p> <strong>Book Accommodation Early:</strong> Search "Monterrey Centro," "San Pedro Garza García," or "Fundidora Park hotels" on Booking.com, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline">Expedia</a>, or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline">Hotels.com</a> to lock in World Cup rates before they skyrocket</p>
             <p> <strong>Find Flights:</strong> Use Google Flights, Kayak, or Going.com to track fares to General Mariano Escobedo International Airport (MTY). Direct flights available from major U.S. cities</p>
             <p> <strong>Stay Updated:</strong> Check FIFA's official website and FWC26Monterrey.com for match schedules, ticket sales, and Fan Fest details as they're announced</p>
             <p> <strong>Plan Your Days:</strong> Balance match day with experiences—mix football fever with mountain hikes, museum visits, and carne asadas</p>

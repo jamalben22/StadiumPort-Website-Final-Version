@@ -547,7 +547,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
               </p>
             </div>
             <div>
-              <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </div>
           </div>
         </article>
@@ -654,7 +654,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
                 <li>Download <strong>MBTA mTicket app</strong> and <strong>Transit app</strong> for real-time updates</li>
               </ul>
               <p>
-                Affiliate booking moment: When comparing hotel prices, check <strong>Booking.com</strong>, <strong>Hotels.com</strong>, <strong>Expedia</strong>, and <strong>direct hotel websites</strong>—rates vary 15-25% for identical rooms. Properties near South Station (Seaport, downtown) or Back Bay Station offer best commuter rail access to stadium. Membership programs (Hotels.com One Key, Expedia rewards) provide additional savings on multi-night bookings.
+                Affiliate booking moment: When comparing hotel prices, check <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Booking.com</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hotels.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Expedia</a>, and <strong>direct hotel websites</strong>—rates vary 15-25% for identical rooms. Properties near South Station (Seaport, downtown) or Back Bay Station offer best commuter rail access to stadium. Membership programs (Hotels.com One Key, Expedia rewards) provide additional savings on multi-night bookings.
               </p>
             </div>
         </article>

@@ -812,49 +812,6 @@ export function KansasCityCityGuide() {
           <hr className="editorial-divider" />
         </article>
 
-        {/* Start Planning */}
-        <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-road-map-line text-emerald-500"></i>
-            Start Planning Your 2026 World Cup Trip to Kansas City
-          </h3>
-          <div className="space-y-6">
-            <p>The countdown is on. Hotels are booking up. Flights are being reserved. And Kansas City is preparing to show the world what Midwest hospitality looks like.</p>
-            <h4 className="editorial-h4">Your Action Plan</h4>
-            <ol className="list-decimal pl-6 space-y-2">
-              <li>
-                <strong>Register for FIFA tickets</strong> at
-                {' '}
-                <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer">https://www.fifa.com/tickets</a>
-                {' '}for future phases
-              </li>
-              <li>
-                <strong>Book accommodations early</strong> via
-                {' '}
-                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">https://www.booking.com</a>
-                {' '}or{' '}
-                <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">https://www.hotels.com</a>
-                {' '}—6-12 months in advance recommended
-              </li>
-              <li>
-                <strong>Research flights</strong> to Kansas City (MCI) through
-                {' '}
-                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer">https://www.skyscanner.com</a>
-                {' '}or{' '}
-                <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer">https://www.google.com/flights</a>
-              </li>
-              <li><strong>Download the RideKC Transit app</strong> for free airport bus service</li>
-              <li><strong>Make BBQ reservations</strong> if possible—Joe's Kansas City and top spots fill up during major events</li>
-              <li><strong>Plan cultural activities</strong>: Nelson-Atkins Museum, WWI Museum, Union Station, 18th &amp; Vine Jazz District</li>
-            </ol>
-            <p>
-              Kansas City will host six World Cup matches at Arrowhead Stadium from June 16 through July 11, 2026, including a quarterfinal that could determine which team advances to the semifinals. This is Kansas City's moment to prove the heart of America has the heart to host the world's game.
-            </p>
-            <p><strong>See you in the City of Fountains.</strong> Bring your appetite, your team colors, and your loudest voice. Kansas City's ready to show you why this place is special.</p>
-          </div>
-          <hr className="editorial-divider" />
-        </article>
-
         {/* Related Destinations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
@@ -902,8 +859,51 @@ export function KansasCityCityGuide() {
             </div>
           </div>
           <p className="mt-6">
-            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
           </p>
+        </article>
+
+        {/* Start Planning */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <i className="ri-road-map-line text-emerald-500"></i>
+            Start Planning Your 2026 World Cup Trip to Kansas City
+          </h3>
+          <div className="space-y-6">
+            <p>The countdown is on. Hotels are booking up. Flights are being reserved. And Kansas City is preparing to show the world what Midwest hospitality looks like.</p>
+            <h4 className="editorial-h4">Your Action Plan</h4>
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>
+                <strong>Register for FIFA tickets</strong> at
+                {' '}
+                <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer">https://www.fifa.com/tickets</a>
+                {' '}for future phases
+              </li>
+              <li>
+                <strong>Book accommodations early</strong> via
+                {' '}
+                <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer">https://www.booking.com</a>
+                {' '}or{' '}
+                <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer">https://www.hotels.com</a>
+                {' '}—6-12 months in advance recommended
+              </li>
+              <li>
+                <strong>Research flights</strong> to Kansas City (MCI) through
+                {' '}
+                <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer">https://www.skyscanner.com</a>
+                {' '}or{' '}
+                <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer">https://www.google.com/flights</a>
+              </li>
+              <li><strong>Download the RideKC Transit app</strong> for free airport bus service</li>
+              <li><strong>Make BBQ reservations</strong> if possible—Joe's Kansas City and top spots fill up during major events</li>
+              <li><strong>Plan cultural activities</strong>: Nelson-Atkins Museum, WWI Museum, Union Station, 18th &amp; Vine Jazz District</li>
+            </ol>
+            <p>
+              Kansas City will host six World Cup matches at Arrowhead Stadium from June 16 through July 11, 2026, including a quarterfinal that could determine which team advances to the semifinals. This is Kansas City's moment to prove the heart of America has the heart to host the world's game.
+            </p>
+            <p><strong>See you in the City of Fountains.</strong> Bring your appetite, your team colors, and your loudest voice. Kansas City's ready to show you why this place is special.</p>
+          </div>
+          <hr className="editorial-divider" />
         </article>
 
         {/* Back CTA */}

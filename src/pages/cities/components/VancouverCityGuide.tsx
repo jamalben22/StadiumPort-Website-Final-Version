@@ -370,7 +370,7 @@ export function VancouverCityGuide() {
             World Cup Specific Information
           </h3>
           <p>
-            <strong>FIFA Tickets</strong>: Official ticket sales operate through FIFA.com/tickets. Additional ticket release phases will continue closer to the tournament. Register even if you missed early sales—returns and last-minute availability can appear.
+            <strong>FIFA Tickets</strong>: Official ticket sales operate through <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">FIFA.com/tickets</a>. Additional ticket release phases will continue closer to the tournament. Register even if you missed early sales—returns and last-minute availability can appear.
           </p>
           <p>
             <strong>Fan Zones</strong>: Vancouver will designate official FIFA Fan Festival locations for free live broadcasts, creating festival atmospheres throughout the tournament. These typically feature food vendors, entertainment, and massive screens. Follow vancouverfwc26.ca for official announcements about fan zone locations.
@@ -392,7 +392,7 @@ export function VancouverCityGuide() {
             <i className="ri-route-line text-emerald-500"></i>
             Plan Your Pacific & Canadian World Cup Journey
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-xl leading-relaxed">
             <p>
               Vancouver's stunning location makes it perfect for exploring the Pacific Northwest and experiencing Canada's coast-to-coast diversity during World Cup 2026.
             </p>

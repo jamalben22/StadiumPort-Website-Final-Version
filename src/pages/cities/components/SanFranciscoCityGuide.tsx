@@ -89,9 +89,7 @@ export function SanFranciscoCityGuide() {
         {/* Introduction and Match Schedule */}
         <article className="editorial-body editorial-dropcap">
           <div className="mt-6 space-y-6">
-            <p>
-              <strong>Match Schedule:</strong> June 13, 16, 19, 22, 25 (Group Stage) | July 1 (Round of 32)
-            </p>
+
             <p>
               When the 2026 FIFA World Cup arrives in the Bay Area, it's <strong>technically</strong> happening in Santa Clara—but every international fan will fly into San Francisco, stay in San Francisco, and experience the Bay Area's cultural energy radiating from San Francisco. The Bay Area is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> welcoming fans to World Cup 2026. The matches may unfold at <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium</Link> in Silicon Valley, but this is San Francisco's World Cup moment, and the city plans to celebrate accordingly.
             </p>
@@ -561,7 +559,7 @@ export function SanFranciscoCityGuide() {
             </ul>
 
             <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4 dark:border-indigo-900 dark:bg-indigo-950/40">
-              <p className="m-0"><strong>Affiliate booking moment:</strong> When comparing hotel prices, check <strong>Booking.com</strong>, <strong>Expedia</strong>, <strong>Hotels.com</strong>, and <strong>direct hotel websites</strong>—rates vary <strong>15–25%</strong> for identical rooms. Properties near <strong>Powell</strong> or <strong>Montgomery BART</strong> stations deliver best access to both San Francisco attractions and stadium transit. Membership programs (<strong>Hotels.com rewards</strong>, <strong>Expedia points</strong>) offer additional savings for multi-night stays.</p>
+              <p className="m-0"><strong>Affiliate booking moment:</strong> When comparing hotel prices, check <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Expedia</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hotels.com</a>, and <strong>direct hotel websites</strong>—rates vary <strong>15–25%</strong> for identical rooms. Properties near <strong>Powell</strong> or <strong>Montgomery BART</strong> stations deliver best access to both San Francisco attractions and stadium transit. Membership programs (<strong>Hotels.com rewards</strong>, <strong>Expedia points</strong>) offer additional savings for multi-night stays.</p>
             </div>
           </div>
           <hr className="editorial-divider" />

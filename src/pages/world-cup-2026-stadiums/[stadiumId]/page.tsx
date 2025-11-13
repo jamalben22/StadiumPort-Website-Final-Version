@@ -358,7 +358,7 @@ export default function StadiumDetailPage() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-calendar-event-line"></i>
-                <span>Matches: {stadium.matches}</span>
+                <span>{stadium.matches} matches</span>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -366,13 +366,7 @@ export default function StadiumDetailPage() {
               </div>
               {hostCitySlug && (
                 <div className="mt-6">
-                  <Link
-                    to={`/world-cup-2026-host-cities/${hostCitySlug}`}
-                    className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
-                  >
-                    <i className="ri-route-line mr-2"></i>
-                    View Host City Guide
-                  </Link>
+
                 </div>
               )}
             </div>

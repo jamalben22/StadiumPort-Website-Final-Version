@@ -127,28 +127,28 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-building-2-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                     <p className="leading-relaxed">Estadio Akron (FIFA designation: Estadio Guadalajara during World Cup 2026)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-map-pin-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                     <p className="leading-relaxed">Zapopan, Jalisco (western Guadalajara metropolitan area)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-calendar-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                     <p className="leading-relaxed">July 30, 2010</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-group-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                     <p className="leading-relaxed">49,850 (standard) / 48,071 (World Cup configuration)</p>
                   </div>
                 </div>
@@ -157,28 +157,28 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-user-star-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenant</span>
                     <p className="leading-relaxed">Club Deportivo Guadalajara (Chivas) – Liga MX</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-pencil-ruler-2-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect/Design Firm</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect/Design Firm</span>
                     <p className="leading-relaxed">VFO Architects (volcano concept with artistic direction by Jean Marie Massaud and Daniel Pouzet)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-grass-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                     <p className="leading-relaxed">Natural grass (replaced artificial turf in 2012)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-sun-line text-sky-400 text-3xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                     <p className="leading-relaxed">Open-air with suspended white ring canopy supported by 16 columns</p>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <i className="ri-links-line text-emerald-500"></i>
               Related Stadiums
             </h3>
-            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               Attending multiple matches? Consider{' '}
               <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
               <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey, or{' '}
@@ -639,7 +639,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               Call to Action
             </h3>
             <p>
-            Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through `https://booking.com/`  or Expedia with flexible cancellation policies. Secure airport transfers or rental cars through <strong>Viator</strong> or <strong>GetYourGuide</strong> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
+            Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://booking.com/" data-discover="true">https://booking.com/</a>  or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.expedia.com" data-discover="true">Expedia</a> with flexible cancellation policies. Secure airport transfers or rental cars through <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.viator.com" data-discover="true">Viator</a> or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.getyourguide.com" data-discover="true">GetYourGuide</a> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
             </p>
             <p>
               <strong>¡Vamos a Guadalajara!</strong>

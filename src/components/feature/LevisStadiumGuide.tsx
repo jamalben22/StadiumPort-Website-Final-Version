@@ -79,10 +79,10 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-map-pin-line text-emerald-500"></i>
             Levi's Stadium: Silicon Valley's World Cup Stage
           </h3>
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             <span className="editorial-first-letter">L</span>ocated in the <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>, Levi's Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: you're standing inside one of America's most technologically advanced stadiums, surrounded by 68,500 roaring fans from every corner of the planet, as the world's best footballers compete under the California sun. Welcome to Levi's Stadium — the Bay Area's gateway to World Cup 2026, where cutting-edge innovation meets the beautiful game in the heart of Silicon Valley.
           </p>
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             This isn't just any stadium. Levi's Stadium will host six FIFA World Cup 2026 matches: five group stage fixtures (June 13, 16, 19, 22, and 25) and one crucial Round of 32 clash on July 1. As the 49ers' gleaming home since 2014, this venue has already proven its mettle on football's biggest stages, hosting the 2016 Copa América Centenario, the 2017 Concacaf Gold Cup, and matches featuring international giants like F.C. Barcelona and A.C. Milan. Now it's ready to welcome the world.
           </p>
           <hr className="editorial-divider" />
@@ -97,43 +97,43 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
 
           <div className="space-y-4 text-slate-700 dark:text-slate-200">
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
               <p className="font-semibold">Levi's Stadium (FIFA designation: San Francisco Bay Area Stadium)</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
               <p className="font-semibold">Santa Clara, California (Silicon Valley, 40 miles south of San Francisco)</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
               <p className="font-semibold">July 17, 2014</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
               <p className="font-semibold">68,500 (expandable to 75,000 for major events)</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenant</span>
               <p className="font-semibold">San Francisco 49ers (NFL)</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect/Design Firm</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect/Design Firm</span>
               <p className="font-semibold">HNTB Architecture</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Construction Cost</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Construction Cost</span>
               <p className="font-semibold">$1.27 billion</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
               <p className="font-semibold">Natural grass field</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
               <p className="font-semibold">Open-air stadium</p>
             </div>
             <div>
-              <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Notable Features</span>
+              <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Notable Features</span>
               <ul className="list-disc list-inside font-semibold">
                 <li>First NFL stadium to achieve LEED Gold certification</li>
                 <li>27,000-square-foot green roof with native plants</li>
@@ -152,7 +152,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-time-line text-emerald-500"></i>
             History & Legacy
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Built in just five months — making it the fastest-constructed stadium in NFL history — Levi's Stadium opened on July 17, 2014, at a cost of $1.2 billion. The facility represents a dramatic modernization from the 49ers' previous home at windswept Candlestick Park, trading nostalgia for Silicon Valley sophistication.
             </p>
@@ -175,7 +175,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-pantone-line text-emerald-500"></i>
             Stadium Architecture & Experience
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Designed by internationally renowned firm HNTB, Levi's Stadium is an open-air venue with a natural grass field, featuring a seating capacity of 68,500 that places approximately two-thirds of fans (around 45,000) in the lower bowl — one of the largest lower bowls in the entire NFL. This creates an intimate, immersive atmosphere despite the venue's massive scale.
             </p>
@@ -198,7 +198,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-trophy-line text-emerald-500"></i>
             What Matches to Expect
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Levi's Stadium will host six 2026 FIFA World Cup matches — five in the group stage and one in the Round of 32. While specific team matchups won't be determined until December 2025, expect electrifying atmospheres as the tournament's expanded 48-team format brings unprecedented global diversity to Santa Clara.
             </p>
@@ -220,7 +220,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           </h3>
 
               {/* By Light Rail (Recommended) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-train-line text-emerald-500"></i>
                   By Light Rail (Recommended)
@@ -238,7 +238,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* By Train from San Francisco */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-train-line text-emerald-500"></i>
                   By Train from San Francisco
@@ -255,7 +255,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* By Car */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-car-line text-emerald-500"></i>
                   By Car
@@ -269,7 +269,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* By Rideshare / Taxi */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-taxi-line text-emerald-500"></i>
                   By Rideshare / Taxi
@@ -282,7 +282,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* By Bike */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-bike-line text-emerald-500"></i>
                   By Bike
@@ -303,14 +303,14 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           </h3>
 
               {/* Walking Distance (Under 1 Mile) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2">Walking Distance (Under 1 Mile)</h4>
                 <p>
                   The Hilton Santa Clara and Hyatt Regency Santa Clara are both less than a 5-minute walk from Levi's Stadium, making them the ultimate convenience picks for World Cup matchdays. The Hilton features a heated outdoor pool, 24/7 fitness center with Peloton bikes, and California-inspired dining at La Fontana restaurant. Expect premium pricing during the tournament ($300-$500/night), but you can't beat rolling out of bed and strolling to the stadium.
                 </p>
               </div>
               {/* Mid-Range Options (1-2 Miles) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2">Mid-Range Options (1-2 Miles)</h4>
                 <p>
                   Santa Clara Marriott is about 1 mile from the stadium (25-minute walk), featuring a heated outdoor pool, hot tub, fitness center, and two restaurants including Bosc + Bartlett for casual dining. Embassy Suites by Hilton Santa Clara Silicon Valley offers indoor heated pool, fitness center, and included cooked-to-order breakfast. These properties typically run $200-$350/night.
@@ -320,14 +320,14 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Alternative Accommodations */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2">Alternative Accommodations</h4>
                 <p>
                   Airbnb and vacation rentals in Santa Clara neighborhoods offer excellent value for groups, with many properties just a 5-10 minute drive from the stadium, featuring full kitchens, outdoor spaces, and parking. Search platforms like `https://www.airbnb.com`  or `https://www.booking.com`  for options sleeping 4-8 guests.
                 </p>
               </div>
               {/* Planning Advice */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2">Planning Advice</h4>
                 <p>
                   Based on previous high-profile events at Levi's Stadium, hotel rooms in Santa Clara are expected to sell out quickly, with some properties requiring three-to-four-night minimum stays. Book early — ideally 6-12 months before the tournament — and consider staying in downtown San Jose (10 minutes away) or even San Francisco if you're planning to explore the broader Bay Area.
@@ -343,7 +343,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           </h3>
 
               {/* Arrive Early */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-time-line text-emerald-500"></i>
                   Arrive Early
@@ -353,7 +353,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* What to Bring (Bag Policy) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-shopping-bag-3-line text-emerald-500"></i>
                   What to Bring (Bag Policy)
@@ -365,7 +365,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 <div><strong>What you CAN'T bring:</strong> Glass bottles, thermoses, outside food, non-clear bags, umbrellas, large camera equipment</div>
               </div>
               {/* Beat the Heat */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-sun-line text-emerald-500"></i>
                   Beat the Heat
@@ -376,7 +376,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
               </div>
 
               {/* Food & Drink Strategy */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-restaurant-2-line text-emerald-500"></i>
                   Food & Drink Strategy
@@ -389,7 +389,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Best Gates/Sections */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-door-open-line text-emerald-500"></i>
                   Best Gates/Sections
@@ -399,7 +399,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Post-Match Transport */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-train-line text-emerald-500"></i>
                   Post-Match Transport
@@ -418,7 +418,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           </h3>
 
               {/* Pre-Match: California's Great America */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-time-line text-emerald-500"></i>
                   Pre-Match: California's Great America
@@ -428,7 +428,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* 49ers Museum */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-building-4-line text-emerald-500"></i>
                   49ers Museum
@@ -438,7 +438,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Santana Row (15 minutes) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-store-2-line text-emerald-500"></i>
                   Santana Row (15 minutes)
@@ -448,7 +448,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Downtown San Jose (15 minutes) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-community-line text-emerald-500"></i>
                   Downtown San Jose (15 minutes)
@@ -458,7 +458,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Stanford University (15 minutes) */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-school-line text-emerald-500"></i>
                   Stanford University (15 minutes)
@@ -468,7 +468,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                 </p>
               </div>
               {/* Fan Zones & Tailgating */}
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
                   <i className="ri-flag-line text-emerald-500"></i>
                   Fan Zones & Tailgating
@@ -486,7 +486,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-map-pin-line text-emerald-500"></i>
             Beyond the Stadium: Explore San Francisco Bay Area
           </h3>
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mb-4">The Bay Area's innovation hub and iconic landmarks make it a premier World Cup 2026 destination.</p>
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">The Bay Area's innovation hub and iconic landmarks make it a premier World Cup 2026 destination.</p>
           <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
             <p className="leading-relaxed"><strong>Discover San Francisco Bay Area:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area World Cup 2026 Guide</Link> for everything you need:</p>
             <ul className="list-disc list-inside mt-3 space-y-1">
@@ -507,7 +507,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             <i className="ri-check-double-line text-emerald-500"></i>
             Final Verdict & Key Takeaway
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
                   Levi's Stadium is where Silicon Valley's tech-forward innovation meets the world's most passionate sporting event. This isn't a historic coliseum steeped in centuries of football lore — it's a gleaming, 21st-century marvel designed to deliver comfort, technology, and accessibility at every turn. The LEED Gold certification, rooftop farm, and terabit WiFi aren't just gimmicks; they represent a stadium built for the future.
                 </p>

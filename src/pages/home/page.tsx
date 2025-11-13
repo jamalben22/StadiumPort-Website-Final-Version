@@ -214,7 +214,7 @@ export default function HomePage() {
           placeholder="blur"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent" style={{ backgroundImage: `url('/images/realistic_cinematic_photograph_from_center_pitch_of_World_Cup_2026_stadium.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">

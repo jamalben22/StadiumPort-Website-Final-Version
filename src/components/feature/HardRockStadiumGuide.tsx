@@ -48,7 +48,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               <div className="bg-white/90 dark:bg-slate-900/80 backdrop-blur rounded-2xl p-6 border border-slate-200 dark:border-slate-700">
                 <div className="flex items-center justify-between gap-4">
                   <div className="min-w-0">
-                    <h2 className="text-lg md:text-xl font-semibold text-slate-900 dark:text-white truncate">
+                    <h2 className="md:text-xl font-semibold text-slate-900 dark:text-white truncate">
                       Hard Rock Stadium: Your Complete 2026 FIFA World Cup Guide
                     </h2>
                     <p className="mt-1 text-slate-700 dark:text-slate-300 text-sm">
@@ -117,7 +117,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
 
               {/* Stadium Info Badge */}
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
-                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <i className="ri-map-pin-line text-emerald-300"></i>
                 <span className="text-emerald-200 font-inter font-medium">Miami Gardens, Florida • USA</span>
               </div>
             </div>
@@ -156,83 +156,83 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                     <p className="leading-relaxed">Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                     <p className="leading-relaxed">Miami Gardens, Florida (northern Miami suburb)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Address</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Address</span>
                     <p className="leading-relaxed">347 Don Shula Drive, Miami Gardens, FL 33056</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-calendar-2-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                     <p className="leading-relaxed">1987</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">World Cup Capacity</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">World Cup Capacity</span>
                     <p className="leading-relaxed">67,518</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Standard Capacity</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Standard Capacity</span>
                     <p className="leading-relaxed">64,767</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-shield-star-line text-amber-400 dark:text-amber-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenants</span>
                     <p className="leading-relaxed">Miami Dolphins (NFL), Miami Hurricanes (NCAA)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect</span>
                     <p className="leading-relaxed">HOK (original); HOK with Arquitectonica (2015-16 renovation)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Structural Engineer</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Structural Engineer</span>
                     <p className="leading-relaxed">Thornton Tomasetti</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                     <p className="leading-relaxed">Natural grass</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
                     <i className="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                     <p className="leading-relaxed">Open-air canopy covering seating areas (field exposed)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed font-semibold mb-3">Notable Features</span>
+                    <span className="text-slate-700 dark:text-slate-200 leading-relaxed font-semibold mb-3">Notable Features</span>
                     <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
                       <li>Massive cable-supported canopy suspended by eight concrete mega-columns and 350-foot steel masts</li>
                       <li>Four corner-mounted video boards</li>

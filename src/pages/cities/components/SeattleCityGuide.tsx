@@ -615,7 +615,7 @@ export function SeattleCityGuide() {
             </ul>
 
             <p className="leading-relaxed">
-              <strong>Affiliate booking moment:</strong> When comparing hotel prices, check <strong>Booking.com</strong>, <strong>Expedia</strong>, <strong>Hotels.com</strong>, and direct hotel websites—rates often vary 10–20% for identical rooms. Loyalty programs offer additional perks (free breakfast, late checkout). Properties near <strong>Link</strong> stations deliver best value—convenient access to stadium, airport, and attractions without paying premium for downtown waterfront location.
+              <strong>Affiliate booking moment:</strong> When comparing hotel prices, check <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Expedia</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hotels.com</a>, and direct hotel websites—rates often vary 10–20% for identical rooms. Loyalty programs offer additional perks (free breakfast, late checkout). Properties near <strong>Link</strong> stations deliver best value—convenient access to stadium, airport, and attractions without paying premium for downtown waterfront location.
             </p>
           </div>
         </article>

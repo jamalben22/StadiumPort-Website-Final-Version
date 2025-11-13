@@ -580,6 +580,14 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
         </div>
       </section>
 
+      {/* Premium Divider — Between City Cards Grid and Plan Your Journey */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
+      </div>
+
 
 
       {/* Host Cities Grid - 2 Column Layout */}
@@ -766,6 +774,14 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
         </div>
       </section>
 
+      {/* Premium Divider — Between City Grid and Plan Your Journey */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
+      </div>
+
       {/* Plan Your Journey Section */}
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -813,16 +829,19 @@ Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="fo
         </div>
       </section>
 
-      {/* Subtle Divider Between Journey and FAQ */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="my-6 h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-navy-700 to-transparent"></div>
+      {/* Premium Divider — Between Plan Your Journey and FAQ */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
       </div>
 
       {/* FAQ Section */}
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-3xl border border-white/10 bg-white/5 dark:bg-navy-800 backdrop-blur-sm shadow-xl p-8 md:p-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white">Frequently Asked Questions About World Cup 2026 Host cities</h2>
+            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white text-center">Frequently Asked Questions About World Cup 2026 Host cities</h2>
             <div className="mt-6 md:mt-8 font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed text-center">
               <p>The 2026 FIFA World Cup features <strong>16 host cities</strong> across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026.</p>
             </div>

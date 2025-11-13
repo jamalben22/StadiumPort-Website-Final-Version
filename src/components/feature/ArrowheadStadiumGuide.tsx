@@ -28,19 +28,6 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
       {/* Full Guide - Expanded State */}
       {isExpanded && (
         <div className="animate-fade-in">
-          {/* Breadcrumbs */}
-          <nav className="editorial-breadcrumbs">
-            <ol className="flex items-center gap-2 text-sm">
-              <li>
-                <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
-              </li>
-              <li className="text-slate-400">/</li>
-              <li>
-                <Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link>
-              </li>
-              <li className="text-slate-500 dark:text-slate-400">/ Arrowhead Stadium</li>
-            </ol>
-          </nav>
           {/* Hero Section - Miami Style */}
           {!hideHero && (
             <section className="editorial-hero">
@@ -57,6 +44,16 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               />
               <div className="editorial-hero-overlay"></div>
               <div className="editorial-hero-content">
+                {/* Overlay breadcrumbs inside hero */}
+                <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
+                  <ol className="flex items-center gap-2 text-sm text-white/90">
+                    <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
+                    <li className="opacity-70">›</li>
+                    <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
+                    <li className="opacity-70">›</li>
+                    <li>Arrowhead Stadium</li>
+                  </ol>
+                </nav>
                 <p className="editorial-hero-eyebrow">
                   <span className="editorial-hero-pulse"></span>
                   FIFA World Cup 2026

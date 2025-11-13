@@ -145,18 +145,13 @@ export default function LosAngelesArticlePage() {
           </p>
 
           {/* Essential Links Module */}
-          <hr className="editorial-divider" />
-          <div className="rounded-lg border border-slate-200 dark:border-slate-700 bg-white/60 dark:bg-navy-800/60 p-5">
-            <p className="font-inter text-slate-900 dark:text-white font-semibold mb-2">🔗 Essential Los Angeles Links</p>
-            <p className="font-inter text-slate-700 dark:text-slate-300">
-              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/sofi-stadium" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium Guide</Link>
-            </p>
-            <p className="font-inter text-slate-700 dark:text-slate-300">
-              🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
-            </p>
-            <p className="font-inter text-slate-700 dark:text-slate-300">
-              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
-            </p>
+          <div class="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
+            <div class="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Los Angeles Links</div>
+            <div class="space-y-1 text-slate-800 dark:text-slate-200">
+              <div>🏟️ <strong>Stadium:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-stadiums/sofi-stadium" data-discover="true">SoFi Stadium Guide</a></div>
+              <div>🗺️ <strong>All Host Cities:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities" data-discover="true">Explore All 16 Cities</a></div>
+              <div>✈️ <strong>Nearby Cities:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/san-francisco" data-discover="true">San Francisco Bay Area</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/seattle" data-discover="true">Seattle</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/vancouver" data-discover="true">Vancouver</a></div>
+            </div>
           </div>
           <hr className="editorial-divider" />
         </article>
@@ -226,7 +221,7 @@ Stadium Vibe: SoFi sits inside the Hollywood Park entertainment complex, meaning
           <p className="whitespace-pre-line mb-6">
             {`Here's the good news LA doesn't advertise enough: You absolutely don't need a car for World Cup matches. In fact, you probably shouldn't drive.`}
           </p>
-          <p className="font-inter text-slate-700 dark:text-slate-300 mb-6">
+          <p className="whitespace-pre-line mb-6">
             Los Angeles is well-connected to other host cities like
             {' '}<Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
             {' '}and{' '}
@@ -375,7 +370,7 @@ Book Smart: Downtown LA Proper delivers boutique style in the historic district.
                 Hollywood: Tourist Central with Purpose ($-$$)
               </h4>
               <p className="whitespace-pre-line">
-                {`Why Stay Here: You came to LA, you want Hollywood Boulevard, Chinese Theatre, Walk of Fame, Griffith Observatory access. First-timers often regret skipping the classics.
+                {`Why Stay Here: You came to LA, you want Hollywood Boulevard, Chinese Theatre, Watch of Fame, Griffith Observatory access. First-timers often regret skipping the classics.
 
 The Vibe: Touristy, yes. But also energetic, affordable (compared to beaches), and better than its reputation suggests. Hollywood & Highland area cleans up well; Hills neighborhoods offer canyon views.
 

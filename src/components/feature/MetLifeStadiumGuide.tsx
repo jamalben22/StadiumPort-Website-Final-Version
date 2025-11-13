@@ -72,7 +72,7 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
               </div>
             </div>
             
-            <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-300 leading-relaxed mb-8 max-w-2xl">
               When the referee blows the final whistle on July 19, 2026, history will be made at MetLife Stadium. The world's most prestigious football trophy will be lifted under the lights of this architectural powerhouse, just eight miles from the Manhattan skyline.
             </p>
           </div>

@@ -73,7 +73,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </div>
 
               {/* Tagline from Part 1 intro */}
-              <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+              <p className="text-slate-300 leading-relaxed mb-8 max-w-2xl">
                 When the world's greatest football tournament returns to North America in summer 2026, one of its most compelling chapters will unfold in the unlikeliest of places—a stadium nestled off Route 1 in Foxborough, Massachusetts, where American football royalty has reigned for two decades.
               </p>
 

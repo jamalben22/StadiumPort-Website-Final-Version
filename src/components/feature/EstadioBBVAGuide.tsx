@@ -245,8 +245,8 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
                 <i className="ri-links-line text-emerald-500"></i>
                 Related Stadiums
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
-                Planning a Mexico or cross-border circuit? Visit{' '}
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+    Planning a Mexico or cross-border circuit? Visit{' '}
                 <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
                 <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
                 <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.

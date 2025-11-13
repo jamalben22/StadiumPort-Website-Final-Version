@@ -575,7 +575,7 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
             </div>
           </div>
           <p className="mt-6">
-            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 hover:text-emerald-700 underline">Browse All World Cup 2026 Host Cities</Link>
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -598,16 +598,85 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
             Your Action Plan
           </h3>
           <p className="whitespace-pre-line">
-            {`1. **Register for FIFA tickets** at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:underline">https://www.fifa.com/tickets</a> 
-2. **Book accommodations early** via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:underline">https://www.hotels.com</a> —aim for 6-12 months in advance
-3. **Reserve flights** through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" class="text-emerald-500 hover:underline">https://www.google.com/flights</a> to compare prices across airlines
-4. **Research neighborhoods** and plan your non-match activities
-5. **Download the NJ Transit app** for seamless stadium transportation
-6. **Join your national team's supporters group** for watch parties and meetups
- 
-The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
- 
-**See you in July 2026. Come for the football. Stay for the experience of a lifetime.**`}
+            <>
+              <span>
+                <strong>1. Register for FIFA tickets</strong> at{' '}
+                <a
+                  href="https://www.fifa.com/tickets"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  https://www.fifa.com/tickets
+                </a>
+              </span>
+              <br />
+              <span>
+                <strong>2. Book accommodations early</strong> via{' '}
+                <a
+                  href="https://www.booking.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  https://www.booking.com
+                </a>{' '}
+                or{' '}
+                <a
+                  href="https://www.hotels.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  https://www.hotels.com
+                </a>{' '}
+                —aim for 6-12 months in advance
+              </span>
+              <br />
+              <span>
+                <strong>3. Reserve flights</strong> through{' '}
+                <a
+                  href="https://www.skyscanner.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  https://www.skyscanner.com
+                </a>{' '}
+                or{' '}
+                <a
+                  href="https://www.google.com/flights"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  https://www.google.com/flights
+                </a>{' '}
+                to compare prices across airlines
+              </span>
+              <br />
+              <span>
+                <strong>4. Research neighborhoods</strong> and plan your non-match activities
+              </span>
+              <br />
+              <span>
+                <strong>5. Download the NJ Transit app</strong> for seamless stadium transportation
+              </span>
+              <br />
+              <span>
+                <strong>6. Join your national team's supporters group</strong> for watch parties and meetups
+              </span>
+              <br />
+              <br />
+              <span>
+                The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
+              </span>
+              <br />
+              <br />
+              <strong>
+                See you in July 2026. Come for the football. Stay for the experience of a lifetime.
+              </strong>
+            </>
           </p>
           <hr className="editorial-divider" />
         </article>
