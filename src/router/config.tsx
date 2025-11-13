@@ -15,6 +15,11 @@ const TransportationPage = lazy(() => import('../pages/transportation/page'));
 const TravelGuidesPage = lazy(() => import('../pages/travel-guides/page'));
 const TravelGuideArticlePage = lazy(() => import('../pages/travel-guides/article/page'));
 const SafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/page'));
+const GuidesArticlePage = lazy(() => import('../pages/guides/article/page'));
+const GuidesPage = lazy(() => import('../pages/guides/page'));
+const EmergencyPlanningPage = lazy(() => import('../pages/guides/emergency-planning/page'));
+const HealthMedicalPreparednessPage = lazy(() => import('../pages/guides/health-medical-preparedness/page'));
+const DigitalSecurityPrivacyProtectionPage = lazy(() => import('../pages/guides/digital-security-privacy-protection/page'));
 const TransportationSafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/transportation-safety-guidelines/page'));
 const NewYorkCityArticlePage = lazy(() => import('../pages/cities/new-york-new-jersey/page'));
 const LosAngelesArticlePage = lazy(() => import('../pages/cities/los-angeles/page'));
@@ -96,6 +101,26 @@ const routes: RouteObject[] = [
   {
     path: '/travel-guides/:slug',
     element: <TravelGuideArticlePage />
+  },
+  {
+    path: '/guides',
+    element: <GuidesPage />
+  },
+  {
+    path: '/guides/:slug',
+    element: <GuidesArticlePage />
+  },
+  {
+    path: '/guides/emergency-planning-before-you-go',
+    element: <EmergencyPlanningPage />
+  },
+  {
+    path: '/guides/health-and-medical-preparedness',
+    element: <HealthMedicalPreparednessPage />
+  },
+  {
+    path: '/guides/digital-security-and-privacy-protection',
+    element: <DigitalSecurityPrivacyProtectionPage />
   },
   {
     path: '/safety-guide/:slug',
