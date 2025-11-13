@@ -75,7 +75,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               </div>
 
               {/* Tagline using exact sentences from Part 1 */}
-              <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+              <p className="text-slate-300 leading-relaxed mb-8 max-w-2xl">
                 When Lincoln Financial Field hosts six World Cup matches in summer 2026 — including a knockout round clash on July 4th, America's 250th birthday — Philadelphia will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer.
               </p>
 
@@ -172,35 +172,35 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                       <p className="leading-relaxed">Lincoln Financial Field (temporarily "Philadelphia Stadium" during World Cup)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-flag-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Nickname</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Nickname</span>
                       <p className="leading-relaxed">The Linc</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                       <p className="leading-relaxed">South Philadelphia, Sports Complex (1 Lincoln Financial Field Way)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                       <p className="leading-relaxed">August 3, 2003</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                       <p className="leading-relaxed">67,594 (expandable to approximately 69,000 for major events)</p>
                     </div>
                   </div>
@@ -210,35 +210,35 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenant</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenant</span>
                       <p className="leading-relaxed">Philadelphia Eagles (NFL), Temple Owls (NCAA Football)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Architect</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect</span>
                       <p className="leading-relaxed">NBBJ (designed by Dan Meis, FAIA)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Construction Cost</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Construction Cost</span>
                       <p className="leading-relaxed">$512 million</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                       <p className="leading-relaxed">Natural grass</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                       <p className="leading-relaxed">Open-air with partial canopy coverage</p>
                     </div>
                   </div>
@@ -527,7 +527,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Kimpton Hotel Palomar Philadelphia (stylish boutique in Rittenhouse)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  Search <code>https://www.expedia.com</code>  for package deals combining hotel + airport transfers, often saving 15-20% versus booking separately.
+                  Search <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.expedia.com" data-discover="true">https://www.expedia.com</a>  for package deals combining hotel + airport transfers, often saving 15-20% versus booking separately.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
@@ -541,7 +541,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Sofitel Philadelphia at Rittenhouse Square (French luxury meets Philly charm)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  For luxury travelers, consider <code>https://www.virtuoso.com</code>  or <code>https://www.mrandmrssmith.com</code>  for boutique hotels with exclusive perks.
+                  For luxury travelers, consider <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.virtuoso.com" data-discover="true">https://www.virtuoso.com</a>  or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.mrandmrssmith.com" data-discover="true">https://www.mrandmrssmith.com</a>  for boutique hotels with exclusive perks.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">

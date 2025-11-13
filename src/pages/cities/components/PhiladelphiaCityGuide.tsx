@@ -732,7 +732,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
               Tickets for the 2026 FIFA World Cup are sold in multiple phases. The first presale draw began September 10, 2025, exclusively for Visa cardholders. Group stage tickets start at $60, with prices increasing for knockout rounds.
             </p>
             <p>
-              Register at `https://www.fifa.com/tickets`  for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
+              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
             </p>
             <div className="space-y-2">
               <h4 className="editorial-h4">July 4th Premium</h4>

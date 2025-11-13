@@ -127,7 +127,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 Where Mountains Meet Ocean Meet the Pitch
               </h2>
               
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
                 <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
                 {`, welcoming 54,000 fans in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. This architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
@@ -146,35 +146,35 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Official Name</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                       <p className="leading-relaxed">BC Place Stadium</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Location</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                       <p className="leading-relaxed">Downtown Vancouver, British Columbia (777 Pacific Boulevard)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Opened</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                       <p className="leading-relaxed">June 19, 1983</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Capacity</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                       <p className="leading-relaxed">54,000 (World Cup configuration)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Primary Tenants</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenants</span>
                       <p className="leading-relaxed">Vancouver Whitecaps FC (MLS), BC Lions (CFL)</p>
                     </div>
                   </div>
@@ -183,35 +183,35 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Original Architect</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Original Architect</span>
                       <p className="leading-relaxed">Studio Phillips Barratt, Ltd.</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-pencil-ruler-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Renovation Architects (2010-2011)</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Renovation Architects (2010-2011)</span>
                       <p className="leading-relaxed">Stantec Architecture Ltd., Geiger Engineers</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-football-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Surface Type</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                       <p className="leading-relaxed">Natural grass (installed for World Cup, FIFA specification)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Type</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                       <p className="leading-relaxed">Cable-supported retractable roof (world's largest of its kind)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
                       <i className="ri-arrow-up-down-line text-emerald-500 text-3xl mr-2"></i>
-                      <span className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">Roof Opening</span>
+                      <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Opening</span>
                       <p className="leading-relaxed">100m x 85m (7,500 square metres of open sky)</p>
                     </div>
                   </div>
@@ -245,7 +245,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-time-line text-emerald-500"></i>
                 History & Legacy
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
                   {`When BC Place opened its doors in 1983, it featured the world's largest air-supported dome—a billowing white "marshmallow" that became Vancouver's most recognizable skyline feature. Built for Expo 86 and a then-staggering $126 million, the stadium launched with the Vancouver Whitecaps defeating Seattle 2-1 before 60,342 ecstatic fans. For nearly three decades, it defined Vancouver sports culture, hosting ten Grey Cup championships and countless concerts from U2 to The Rolling Stones.`}
                 </p>
@@ -265,7 +265,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-building-3-line text-emerald-500"></i>
                 Stadium Architecture & Experience
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
                   {`BC Place is architectural theatre. The retractable roof—supported by 18 suspension bridge-like structures—can open or close in just 20 minutes, revealing panoramic mountain and sky views when weather permits. When closed, the translucent Tenara fabric allows 40% light transmission, creating a naturally lit indoor environment unlike traditional domed stadiums. The exterior facade features ETFE panels that transform the building into a 36-foot LED canvas, illuminating downtown Vancouver with customizable light displays.`}
                 </p>
@@ -288,7 +288,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-calendar-event-line text-emerald-500"></i>
                 What Matches to Expect
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
                   {`Vancouver will host seven 2026 FIFA World Cup matches across three weeks—five group stage fixtures (June 13, 18, 21, 24, 26) and two knockout rounds (Round of 32 on July 2, Round of 16 on July 7). Expect at least two Canada national team matches, plus one featuring the United States, meaning BC Place will be ground zero for North American football fever.`}
                 </p>
@@ -311,7 +311,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-train-line text-emerald-500"></i>
                 Getting to the Stadium
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p><strong>By SkyTrain (Recommended):</strong> {`Stadium-Chinatown Station on the Expo Line sits just 5 minutes' walk from BC Place's northern gates. Exit at Beatty Street, turn left, and gates A, B, and H are straight ahead. Alternatively, use the lower Expo Boulevard exit for a 5-minute walk to the stadium's south side. SkyTrain runs frequently from early morning until past 1:00 AM, with extended service on event nights. Travel time from downtown Waterfront Station: 4 minutes. From Vancouver International Airport (YVR): take the Canada Line to Waterfront, transfer to Expo Line—total journey approximately 35-40 minutes.`}</p>
                 <p>{`Yaletown-Roundhouse Station (Canada Line) offers a 10-15 minute scenic walk through Yaletown's heritage warehouses and trendy restaurant district.`}</p>
                 <p><em>{`Pro tip: Purchase a day pass or load funds onto a Compass Card before match day. Stadium-Chinatown gets extremely busy post-match—consider walking 5-10 minutes to Granville or Waterfront stations to avoid platform crowding.`}</em></p>
@@ -334,7 +334,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-hotel-line text-emerald-500"></i>
                 Where to Stay
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p><strong>Downtown Core (Walking Distance):</strong> {`Staying downtown puts you 10-20 minutes on foot from BC Place while immersing you in Vancouver's energy. The Georgian Court Hotel (just steps from the stadium) offers boutique elegance, while YWCA Hotel Vancouver provides excellent budget-friendly rooms within easy walking distance. Hampton Inn & Suites Vancouver Downtown delivers reliable mid-range comfort with modern amenities.`}</p>
 
                 <p><strong>Yaletown (10-15 Minute Walk):</strong> {`Vancouver's trendiest neighborhood combines heritage industrial architecture with upscale dining and nightlife. L'Hermitage Hotel and Rosedale on Robson Suite Hotel offer stylish accommodations with full kitchens—perfect for extended stays. Yaletown's pedestrian-friendly streets and Canada Line access make it ideal for blending stadium access with sightseeing.`}</p>
@@ -356,7 +356,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-lightbulb-line text-emerald-500"></i>
                 Matchday Tips & Insider Advice
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p><strong>Arrival Time:</strong> {`Gates typically open 2 hours before kickoff. For World Cup matches, arrive 90 minutes early minimum—security screening will be thorough, lines will be long, and you'll want time to soak up the atmosphere. Evening matches during Vancouver's stunning summer twilight are worth experiencing from your seat as the sun sets over English Bay.`}</p>
 
                 <p><strong>Best Gates & Entrances:</strong> {`Gates A, B, and H (north side via Beatty Street from Stadium-Chinatown Station) handle the majority of crowd flow. For potentially shorter lines, try Gates F or G on the Pacific Boulevard side, though these require walking around the stadium perimeter.`}</p>
@@ -374,7 +374,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-suitcase-line text-emerald-500"></i>
                 What to Bring
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>{`BC Place enforces a clear bag policy: one clear bag up to approximately 12"x6"x12" or small clutch, plus medical/childcare items after inspection. Backpacks and large bags are prohibited. Ensure mobile tickets are downloaded before arrival—digital connectivity can be spotty with 54,000 people on networks.`}</p>
 
                 <p>{`Weather preparation: Even in summer, bring a light jacket or sweater—Vancouver evenings cool down, and the roof being open means you're exposed to elements. Sunscreen, hat, and sunglasses recommended for day matches with open roof.`}</p>
@@ -388,7 +388,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-close-circle-line text-emerald-500"></i>
                 What NOT to Do
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 {`No selfie sticks, no outside alcohol, no smoking anywhere inside gates. Cameras must be smaller than 6 inches with lens attached. Leave large electronics (laptops, tablets over 12"x12"x6") at your accommodation. No re-entry once you've entered the stadium.`}
               </p>
               <hr className="editorial-divider" />
@@ -400,7 +400,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-navigation-line text-emerald-500"></i>
                 Post-Match Transport
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 {`Stadium-Chinatown Station gets absolutely mobbed post-match. Smart alternatives: walk 10 minutes to Granville or Waterfront stations, or head to Yaletown-Roundhouse via the scenic False Creek seawall walk. If using rideshare, walk several blocks away from the immediate stadium area to avoid surge pricing and traffic gridlock—try pickup locations near Yaletown or along Robson Street.`}
               </p>
               <hr className="editorial-divider" />
@@ -415,36 +415,36 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               <div className="space-y-8">
                 <div>
                   <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">Pre-Match Atmosphere:</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     {`Terry Fox Plaza (immediately outside BC Place) will likely host FIFA Fan Festival activities and big-screen viewing areas. Arrive early to experience the global football party. Parq Vancouver Casino offers dining and entertainment options steps from the stadium.`}
                   </p>
                 </div>
                 <div>
                   <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">Yaletown (10-Minute Walk):</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     {`Explore this converted warehouse district's trendy restaurants and breweries. The Yaletown Keg features a year-round rooftop patio with stadium views, while craft beer enthusiasts should visit Yaletown Brewing Company. Pre-match options range from quick tacos at Tacofino to upscale Italian at Robba da Matti.`}
                   </p>
                 </div>
                 <div>
                   <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">Gastown (15 Minutes):</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     {`Vancouver's historic heart features cobblestone streets, the famous steam clock, and exceptional dining. Alibi Room draws locals with 50+ craft beers, while L'Abattoir delivers French-West Coast fusion in a stunning historic building. Save Gastown exploration for post-match celebrations—its bars and restaurants stay lively late.`}
                   </p>
                 </div>
                 <div>
                   <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">False Creek Seawall:</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     {`This waterfront pedestrian path connects BC Place to Granville Island Public Market (20-minute walk)—perfect for pre-match food shopping or post-match sunset strolls. Water taxis provide scenic transit across False Creek.`}
                   </p>
                 </div>
                 <div>
                   <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">Nearby Attractions:</h4>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     {`Science World geodesic dome (15-minute walk) offers interactive exhibits. Rogers Arena, home of the Vancouver Canucks, sits adjacent to BC Place. Vancouver Public Library's stunning Colosseum-inspired architecture (5-minute walk) provides a unique photo backdrop.`}
                   </p>
                 </div>
                 <div>
-                  <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
 <strong>Activity Booking Tip:</strong> {`Consider booking a `}https://booking.com{`  or Vancouver City Tour for non-match days—these experiences showcase Vancouver's culinary diversity and stunning natural setting. Grouse Mountain gondola rides and Capilano Suspension Bridge offer breathtaking nature experiences just 30 minutes from downtown.`}
                   </p>
                 </div>
@@ -458,7 +458,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-football-line text-emerald-500"></i>
                 PART 4: New Section Title 1
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 {`This is placeholder content for PART 4 of the BC Place guide. The actual content will be integrated here later.`}
               </p>
               <hr className="editorial-divider" />
@@ -470,7 +470,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-trophy-line text-emerald-500"></i>
                 PART 5: New Section Title 2
               </h3>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 {`This is placeholder content for PART 5 of the BC Place guide. The actual content will be integrated here later.`}
               </p>
               <hr className="editorial-divider" />
@@ -482,7 +482,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-compass-3-line text-emerald-500"></i>
                 Beyond the Stadium: Explore Vancouver
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
                   Vancouver's stunning natural beauty and cosmopolitan culture make it a premier World Cup 2026 destination.
                 </p>
@@ -518,7 +518,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <i className="ri-check-double-line text-emerald-500"></i>
                 Final Verdict & Key Takeaway
               </h3>
-              <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>{`BC Place delivers everything a World Cup venue should: world-class infrastructure, electric atmosphere, stunning architecture, and seamless urban integration. Unlike stadiums marooned in parking lots, BC Place sits in Vancouver's vibrant downtown core, surrounded by restaurants, hotels, transit, and entertainment. The retractable roof adds a "wow factor" few venues can match—the moment those massive panels pull back to reveal mountains and sky creates an unforgettable connection between football and Vancouver's natural magnificence.`}</p>
 
                 <p>{`This stadium is perfect for fans who want the complete World Cup experience: arrive by efficient transit, explore world-class dining and culture, watch football in a technologically advanced venue, then celebrate victory (or commiserate defeat) in nearby bars and restaurants—all without ever needing a car. Vancouver's legendary hospitality, combined with Canada's genuine excitement about hosting the World Cup, guarantees BC Place will be one of 2026's most memorable venues.`}</p>

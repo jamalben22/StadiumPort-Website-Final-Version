@@ -434,7 +434,7 @@ export function MexicoCityGuide() {
             </div>
           </div>
           <p className="mt-6">
-            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="underline">Browse All World Cup 2026 Host Cities</Link>
           </p>
           <hr className="editorial-divider" />
         </article>

@@ -168,7 +168,7 @@ export function Header() {
                   }`}
                 >
                   <div className="flex items-center space-x-2">
-                    <i className={`${item.icon} text-lg transition-transform duration-300 group-hover:scale-110`}></i>
+                    <i className={`${item.icon} transition-transform duration-300 group-hover:scale-110`}></i>
                     <span className="font-inter">{item.label}</span>
                   </div>
                   
@@ -190,7 +190,7 @@ export function Header() {
                 onClick={() => setIsSearchOpen(true)}
                 className="hidden md:flex items-center space-x-2 px-4 py-2 rounded-xl bg-white/10 dark:bg-navy-800/50 backdrop-blur-xl border border-white/20 dark:border-navy-700/20 text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:border-emerald-500/30 transition-all duration-300 group"
               >
-                <i className="ri-search-line text-lg group-hover:scale-110 transition-transform duration-300"></i>
+                <i className="ri-search-line group-hover:scale-110 transition-transform duration-300"></i>
                 <span className="text-sm font-inter">Search</span>
               </button>
 
@@ -241,13 +241,13 @@ export function Header() {
                           ? 'bg-emerald-500 text-white shadow-glow' 
                           : 'bg-slate-100 dark:bg-navy-700 text-slate-600 dark:text-slate-300 group-hover:bg-emerald-500 group-hover:text-white'
                       }`}>
-                        <i className={`${item.icon} text-lg`}></i>
+                        <i className={`${item.icon}`}></i>
                       </div>
                       <div className="flex-1">
-                        <div className="font-inter font-semibold text-lg">{item.label}</div>
+                        <div className="font-inter font-semibold">{item.label}</div>
                         <div className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</div>
                       </div>
-                      <i className="ri-arrow-right-line text-lg opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"></i>
+                      <i className="ri-arrow-right-line opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"></i>
                     </div>
                   </Link>
                 ))}
@@ -262,7 +262,7 @@ export function Header() {
                   }}
                   className="w-full mb-4 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
                 >
-                  <i className="ri-search-line text-lg"></i>
+                  <i className="ri-search-line"></i>
                   <span className="font-inter font-medium">Search</span>
                 </button>
                 
@@ -303,7 +303,7 @@ export function Header() {
             <div className="p-6 border-b border-slate-200/50 dark:border-navy-700/50">
               <div className="flex items-center space-x-4">
                 <div className="relative flex-1">
-                  <i className="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg"></i>
+                  <i className="ri-search-line absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
                   <input
                     type="text"
                     placeholder="Search cities, stadiums, guides..."
@@ -317,7 +317,7 @@ export function Header() {
                   onClick={() => setIsSearchOpen(false)}
                   className="p-3 rounded-xl bg-slate-100 dark:bg-navy-700 text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:bg-emerald-500/10 transition-all duration-300"
                 >
-                  <i className="ri-close-line text-lg"></i>
+                  <i className="ri-close-line"></i>
                 </button>
               </div>
             </div>
@@ -329,7 +329,7 @@ export function Header() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-emerald-500/10 flex items-center justify-center">
                     <i className="ri-search-line text-2xl text-emerald-500"></i>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 font-space">Search StadiumPort</h3>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-2 font-space">Search StadiumPort</h3>
                   <p className="text-slate-600 dark:text-slate-400 font-inter">Find cities, stadiums, travel guides, and more...</p>
                 </div>
               ) : filteredResults.length === 0 ? (
@@ -337,7 +337,7 @@ export function Header() {
                   <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-slate-100 dark:bg-navy-700 flex items-center justify-center">
                     <i className="ri-search-line text-2xl text-slate-400"></i>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-2 font-space">No results found</h3>
+                  <h3 className="font-semibold text-slate-900 dark:text-white mb-2 font-space">No results found</h3>
                   <p className="text-slate-600 dark:text-slate-400 font-inter">Try searching for cities, stadiums, or travel guides</p>
                 </div>
               ) : (
@@ -351,7 +351,7 @@ export function Header() {
                     >
                       <div className="flex items-center space-x-4">
                         <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${getTypeColor(result.type)}`}>
-                          <i className={`${getTypeIcon(result.type)} text-lg`}></i>
+                          <i className={`${getTypeIcon(result.type)}`}></i>
                         </div>
                         <div className="flex-1">
                           <div className="font-inter font-semibold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors duration-300">
@@ -361,7 +361,7 @@ export function Header() {
                             {result.description}
                           </div>
                         </div>
-                        <i className="ri-arrow-right-line text-lg text-slate-400 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all duration-300"></i>
+                        <i className="ri-arrow-right-line text-slate-400 group-hover:text-emerald-500 group-hover:translate-x-1 transition-all duration-300"></i>
                       </div>
                     </button>
                   ))}

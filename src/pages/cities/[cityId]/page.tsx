@@ -166,12 +166,12 @@ export default function CityDetailPage() {
         <main className="editorial-article py-12">
           
           {/* Introduction Section */}
-          <article className="editorial-body editorial-dropcap">
+          <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
               <i className="ri-star-line text-emerald-500"></i>
               Space City Takes Center Stage on Football's Biggest Stage
             </h2>
-            <div>
+            <div className="editorial-dropcap">
               <p className="leading-relaxed mb-6">
                 Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas. Houston is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026.
               </p>
@@ -594,10 +594,10 @@ export default function CityDetailPage() {
                   Space Center Houston: NASA's Crown Jewel
                 </h3>
                 <div className="space-y-4">
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-bold">
                     Space Center Houston is a science museum that serves as the official visitor center of NASA Johnson Space Center, displaying over 400 space artifacts, including the Mercury 9, Gemini 5, and Apollo 17 flown space capsules.
                   </p>
-                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-bold">
                     The NASA Tram Tour is included in general admission and takes guests to see the enormous Saturn V rocket at Rocket Park as well as across the 650-hectare campus, including the historic Mission Control room (the "Houston" in "Houston, we have a problem").
                   </p>
                   
@@ -607,7 +607,7 @@ export default function CityDetailPage() {
                         <i className="ri-map-pin-line text-emerald-500"></i>
                         Logistics
                       </h4>
-                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-bold">
                         Located about 30 minutes southeast of downtown. Tickets to Space Center Houston start at $29.95 for adults (12 and older), $27.95 for seniors and $24.95 for children ages 4 to 11. Budget 4-5 hours for the full experience, including tram tours.
                       </p>
                     </div>
@@ -1160,7 +1160,7 @@ export default function CityDetailPage() {
 
             <div className="space-y-6">
               <div className="prose prose-lg max-w-none dark:prose-invert">
-                <p className="text-slate-700 dark:text-slate-200 leading-relaxed text-lg">
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                   This is the most popular and prestigious sporting event in the world, and these matches will put our community on the global stage.
                 </p>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1185,7 +1185,7 @@ export default function CityDetailPage() {
             </h2>
 
             <div className="space-y-6">
-              <p className="text-slate-700 dark:text-slate-200 leading-relaxed text-lg">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 The countdown is on. Hotels are booking up. Flights are being reserved. And Houston is preparing to host the world.
               </p>
 
@@ -1276,7 +1276,7 @@ export default function CityDetailPage() {
                   </div>
                 </div>
                 <p className="mt-6">
-                  <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+                  <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
                 </p>
               </div>
 
@@ -1287,8 +1287,8 @@ export default function CityDetailPage() {
               </div>
 
               <div>
-                <p className="text-slate-900 dark:text-slate-100 text-lg font-semibold leading-relaxed">
-                  <strong>See you in Space City. Bring your appetite, your team colors, and your sense of adventure. Houston's ready to show the world what Texas hospitality looks like.</strong>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-bold">
+                  See you in Space City. Bring your appetite, your team colors, and your sense of adventure. Houston's ready to show the world what Texas hospitality looks like.
                 </p>
               </div>
             </div>

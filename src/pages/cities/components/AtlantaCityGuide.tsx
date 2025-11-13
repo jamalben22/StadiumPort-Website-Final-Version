@@ -87,9 +87,9 @@ export function AtlantaCityGuide() {
       {/* Main Content — Editorial layout mirroring NYC guide (design-only changes) */}
       <main className="editorial-article py-12">
         {/* Opening Section */}
-        <article className="editorial-body editorial-dropcap">
-          <div>
-            <p><strong>The Capital of the South Hosts a Semifinal</strong></p>
+        <article className="editorial-body">
+          <div className="editorial-dropcap">
+            <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3"><i className="ri-trophy-line text-emerald-500"></i>The Capital of the South Hosts a Semifinal</h2>
             <p>
               Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football.
               {' '}Atlanta is one of the{' '}
@@ -833,7 +833,7 @@ export function AtlantaCityGuide() {
             <p className="font-inter font-semibold">Popular Combinations:</p>
           </div>
           <div className="space-y-2">
-            <p className="font-inter font-semibold">Southern Sweep</p>
+            <p className="font-bold">Southern Sweep</p>
             <p>
               Experience the full spectrum of the American South: Atlanta (current) for urban Southern charm,{" "}
               <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
@@ -843,7 +843,7 @@ export function AtlantaCityGuide() {
             </p>
           </div>
           <div className="space-y-2">
-            <p className="font-inter font-semibold">Coast to Coast Southern</p>
+            <p className="font-bold">Coast to Coast Southern</p>
             <p>
               Create an Atlantic to Gulf journey: Start in{" "}
               <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
@@ -855,7 +855,7 @@ export function AtlantaCityGuide() {
             </p>
           </div>
           <div className="space-y-2">
-            <p className="font-inter font-semibold">Southern to East Coast</p>
+            <p className="font-bold">Southern to East Coast</p>
             <p>
               Connect Atlanta with Eastern cities like{" "}
               <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
@@ -868,7 +868,7 @@ export function AtlantaCityGuide() {
           </div>
         </div>
         <p className="mt-6">
-          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+          <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
         </p>
       </article>
 

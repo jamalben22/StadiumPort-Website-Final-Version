@@ -14,11 +14,14 @@ const AccommodationPage = lazy(() => import('../pages/accommodation/page'));
 const TransportationPage = lazy(() => import('../pages/transportation/page'));
 const TravelGuidesPage = lazy(() => import('../pages/travel-guides/page'));
 const TravelGuideArticlePage = lazy(() => import('../pages/travel-guides/article/page'));
+const SafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/page'));
+const TransportationSafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/transportation-safety-guidelines/page'));
 const NewYorkCityArticlePage = lazy(() => import('../pages/cities/new-york-new-jersey/page'));
 const LosAngelesArticlePage = lazy(() => import('../pages/cities/los-angeles/page'));
 const MiamiArticlePage = lazy(() => import('../pages/cities/miami/page'));
 const DallasArticlePage = lazy(() => import('../pages/cities/dallas/page'));
 const TravelTipsPage = lazy(() => import('../pages/travel-tips/page'));
+const TravelTipsArticlePage = lazy(() => import('../pages/travel-tips/article/page'));
 const TravelRoutesPage = lazy(() => import('../pages/travel-routes/page'));
 const BudgetGuidesPage = lazy(() => import('../pages/budget-guides/page'));
 const PackingListsPage = lazy(() => import('../pages/packing-lists/page'));
@@ -95,8 +98,24 @@ const routes: RouteObject[] = [
     element: <TravelGuideArticlePage />
   },
   {
+    path: '/safety-guide/:slug',
+    element: <SafetyGuideArticlePage />
+  },
+  {
+    path: '/safety-guide/transportation-safety-guidelines',
+    element: <TransportationSafetyGuideArticlePage />
+  },
+  {
+    path: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know',
+    element: <SafetyGuideArticlePage />
+  },
+  {
     path: '/travel-tips',
     element: <TravelTipsPage />
+  },
+  {
+    path: '/travel-tips/:slug',
+    element: <TravelTipsArticlePage />
   },
   {
     path: '/travel-routes',

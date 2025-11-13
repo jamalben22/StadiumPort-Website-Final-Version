@@ -17,73 +17,8 @@ const safetyCategories = [
 ];
 
 // Original data definitions
-const safetyGuides = [
-  {
-    id: 1,
-    title: 'Complete World Cup Safety Guide',
-    excerpt: 'Comprehensive safety protocols for international travel, crowd management, and emergency preparedness during the tournament.',
-    category: 'Personal Safety',
-    author: 'Dr. Sarah Mitchell',
-    readTime: '20 min read',
-    image: 'https://readdy.ai/api/search-image?query=travel%20safety%20equipment%20with%20first%20aid%20kit%2C%20emergency%20supplies%2C%20personal%20security%20items%2C%20safety%20preparation%20for%20international%20travel%2C%20professional%20safety%20gear&width=400&height=250&seq=safety1&orientation=landscape',
-    featured: true,
-    priority: 'Critical'
-  },
-  {
-    id: 2,
-    title: 'Stadium Crowd Safety & Emergency Procedures',
-    excerpt: 'Essential knowledge for navigating large crowds, emergency exits, and safety protocols at World Cup stadiums.',
-    category: 'Crowd Safety',
-    author: 'Captain Mike Rodriguez',
-    readTime: '15 min read',
-    image: 'https://readdy.ai/api/search-image?query=stadium%20emergency%20exit%20signs%20and%20safety%20procedures%2C%20crowd%20management%20systems%2C%20professional%20security%20measures%2C%20organized%20evacuation%20routes%2C%20safety%20infrastructure&width=400&height=250&seq=safety2&orientation=landscape',
-    featured: true,
-    priority: 'High'
-  },
-  {
-    id: 3,
-    title: 'Health & Medical Preparedness',
-    excerpt: 'Medical preparations, vaccination requirements, health insurance, and finding medical care in host countries.',
-    category: 'Health & Medical',
-    author: 'Dr. Elena Vasquez',
-    readTime: '18 min read',
-    image: 'https://readdy.ai/api/search-image?query=travel%20medical%20kit%20with%20prescription%20medications%2C%20health%20insurance%20documents%2C%20vaccination%20records%2C%20medical%20preparedness%20for%20international%20travel&width=400&height=250&seq=safety3&orientation=landscape',
-    featured: false,
-    priority: 'High'
-  },
-  {
-    id: 4,
-    title: 'Digital Security & Privacy Protection',
-    excerpt: 'Protect your devices, data, and privacy while traveling. VPN usage, secure Wi-Fi, and identity protection strategies.',
-    category: 'Digital Security',
-    author: 'Alex Chen',
-    readTime: '12 min read',
-    image: 'https://readdy.ai/api/search-image?query=cybersecurity%20setup%20with%20laptop%2C%20smartphone%20security%2C%20VPN%20protection%2C%20digital%20privacy%20tools%2C%20secure%20travel%20technology%2C%20online%20safety%20measures&width=400&height=250&seq=safety4&orientation=landscape',
-    featured: false,
-    priority: 'Medium'
-  },
-  {
-    id: 5,
-    title: 'Emergency Contact & Communication Plan',
-    excerpt: 'Create comprehensive emergency plans, establish communication protocols, and prepare backup contact methods.',
-    category: 'Emergency Prep',
-    author: 'Jennifer Park',
-    readTime: '14 min read',
-    image: 'https://readdy.ai/api/search-image?query=emergency%20communication%20devices%20with%20satellite%20phone%2C%20emergency%20contacts%20list%2C%20communication%20planning%2C%20crisis%20management%20preparation%2C%20emergency%20preparedness&width=400&height=250&seq=safety5&orientation=landscape',
-    featured: false,
-    priority: 'High'
-  },
-  {
-    id: 6,
-    title: 'Money & Valuables Security',
-    excerpt: 'Protect your finances and valuables with secure payment methods, hidden storage, and theft prevention strategies.',
-    category: 'Travel Security',
-    author: 'Robert Kim',
-    readTime: '11 min read',
-    image: 'https://readdy.ai/api/search-image?query=travel%20security%20accessories%20with%20money%20belt%2C%20RFID%20blocking%20wallet%2C%20secure%20luggage%20locks%2C%20valuables%20protection%2C%20anti-theft%20travel%20gear&width=400&height=250&seq=safety6&orientation=landscape',
-    featured: false,
-    priority: 'High'
-  },
+export const safetyGuides = [
+
   {
     id: 7,
     title: 'Transportation Safety Guidelines',
@@ -93,11 +28,12 @@ const safetyGuides = [
     readTime: '13 min read',
     image: 'https://readdy.ai/api/search-image?query=safe%20transportation%20with%20licensed%20taxi%2C%20verified%20rideshare%20app%2C%20secure%20public%20transport%2C%20professional%20transportation%20safety%2C%20travel%20security%20measures&width=400&height=250&seq=safety7&orientation=landscape',
     featured: false,
-    priority: 'Medium'
+    priority: 'Medium',
+    href: '/safety-guide/transportation-safety-guidelines'
   },
   {
     id: 8,
-    title: 'Accommodation Security Checklist',
+    title: 'World Cup 2026 Travel Insurance: Complete Protection Guide',
     excerpt: 'Evaluate hotel security, room safety, and accommodation scams. Ensure your lodging meets safety standards.',
     category: 'Travel Security',
     author: 'David Thompson',
@@ -119,6 +55,14 @@ export default function SafetyGuidePage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGuide, setSelectedGuide] = useState<any>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const slugify = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
 
   const filteredGuides = safetyGuides.filter(guide => {
     const matchesCategory = selectedCategory === 'All Topics' || guide.category === selectedCategory;
@@ -285,9 +229,9 @@ export default function SafetyGuidePage() {
                       </div>
                       <span className="text-sm text-slate-600 dark:text-slate-300">{guide.author}</span>
                     </div>
-                    <Button variant="outline" size="sm" onClick={() => openGuideModal(guide)}>
+                    <a href={`/safety-guide/${slugify(guide.title)}`} className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm">
                       Read Guide
-                    </Button>
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -297,22 +241,22 @@ export default function SafetyGuidePage() {
       </section>
 
       {/* Emergency Numbers Section */}
-      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy-900 dark:via-navy-800 dark:to-navy-900">
+      <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-800 dark:to-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy-900 dark:text-white mb-6 ultra-premium-text">
-              Emergency Numbers to Save Now
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-extrabold text-navy-900 dark:text-white mb-8 leading-tight tracking-tight">
+              Your Lifeline: <span className="text-red-600 dark:text-red-400">Emergency Numbers</span>
             </h2>
-            <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              All three countries use 911 for emergencies. Save these numbers in your phone before you travel.
+            <p className="text-xl text-slate-700 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+              In any emergency, dial 911 across all three host nations. Save these vital numbers to your phone before you embark on your World Cup journey.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-16 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-10 mb-20 max-w-6xl mx-auto">
             {[
-              { country: 'USA' },
-              { country: 'Mexico' },
-              { country: 'Canada' }
+              { country: 'USA', icon: 'ri-flag-us-fill' },
+              { country: 'Mexico', icon: 'ri-flag-mx-fill' },
+              { country: 'Canada', icon: 'ri-flag-ca-fill' }
             ].map((item, index) => (
               <Card
                 key={item.country}
@@ -323,39 +267,39 @@ export default function SafetyGuidePage() {
                 animate={true}
                 shadow="premium"
                 effect="shimmer"
-                className="group transform-gpu will-change-transform hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500"
+                className="group transform-gpu will-change-transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500"
               >
                 <div className="text-center">
                   {/* Country Header */}
                   <div className="flex items-center justify-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
-                      <i className="ri-phone-fill text-white text-2xl"></i>
+                    <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
+                      <i className={`${item.icon} text-white text-4xl`}></i>
                     </div>
                   </div>
 
                   <div className="text-center mb-8">
-                    <h3 className="text-2xl font-bold text-navy-900 dark:text-white ultra-premium-text">
+                    <h3 className="text-3xl font-bold text-navy-900 dark:text-white ultra-premium-text">
                       {item.country}
                     </h3>
                   </div>
 
                   {/* Emergency Number Display */}
-                  <div className="bg-gradient-to-br from-red-50 via-red-25 to-orange-50 dark:from-red-950/30 dark:via-red-900/20 dark:to-orange-950/30 rounded-2xl p-8 mb-6 border border-red-200/60 dark:border-red-800/40 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-red-50 via-red-25 to-orange-50 dark:from-red-950/30 dark:via-red-900/20 dark:to-orange-950/30 rounded-3xl p-10 mb-8 border border-red-200/60 dark:border-red-800/40 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     <div className="relative z-10 text-center">
-                      <div className="flex items-center justify-center space-x-3 mb-4">
-                        <span className="text-3xl">🚨</span>
-                        <span className="text-slate-700 dark:text-slate-300 font-semibold text-lg">
+                      <div className="flex items-center justify-center space-x-4 mb-4">
+                        <span className="text-4xl">🚨</span>
+                        <span className="text-slate-800 dark:text-slate-200 font-semibold text-xl">
                           All Emergencies:
                         </span>
                       </div>
                       
-                      <div className="text-5xl font-bold text-red-600 dark:text-red-400 mb-3 ultra-premium-text">
+                      <div className="text-6xl font-extrabold text-red-700 dark:text-red-400 mb-4 ultra-premium-text">
                         911
                       </div>
                       
-                      <div className="text-base text-slate-600 dark:text-slate-400 font-medium">
+                      <div className="text-lg text-slate-700 dark:text-slate-400 font-medium">
                         (Police, Medical, Fire)
                       </div>
                     </div>
@@ -363,67 +307,39 @@ export default function SafetyGuidePage() {
 
                   {/* Status Badge */}
                   <div className="flex justify-center">
-                    <div className="inline-flex items-center space-x-2 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-semibold border border-emerald-200/60 dark:border-emerald-800/40">
-                      <i className="ri-shield-check-fill text-emerald-600 dark:text-emerald-400"></i>
+                    <div className="inline-flex items-center space-x-2 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-5 py-2.5 rounded-full text-base font-semibold border border-emerald-200/60 dark:border-emerald-800/40 shadow-sm">
+                      <i className="ri-shield-check-fill text-emerald-600 dark:text-emerald-400 text-lg"></i>
                       <span>24/7 Available</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Decorative Corner Accent */}
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-red-500/10 to-transparent rounded-tr-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-red-500/10 to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </Card>
             ))}
           </div>
 
-          {/* Enhanced Tip Section */}
-          <div className="relative max-w-4xl mx-auto">
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-cyan-500/10 to-blue-500/5 rounded-3xl blur-2xl"></div>
-            
-            <Card
-              variant="premium"
-              padding="xl"
-              hover={true}
-              glow={false}
-              animate={true}
-              shadow="premium"
-              effect="shimmer"
-              className="relative bg-gradient-to-br from-blue-50/80 via-white to-cyan-50/60 dark:from-blue-950/30 dark:via-navy-800 dark:to-cyan-950/20 border border-blue-200/60 dark:border-blue-800/40"
-            >
-              {/* Decorative Elements */}
-              <div className="absolute top-0 left-0 w-24 h-24 bg-gradient-to-br from-blue-400/15 to-transparent rounded-tl-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-20 h-20 bg-gradient-to-tl from-cyan-400/15 to-transparent rounded-br-3xl"></div>
-              
-              <div className="relative z-10 text-center">
-                {/* Icon Container */}
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-16 h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
-                    <i className="ri-lightbulb-fill text-white text-2xl"></i>
-                    <div className="absolute inset-0 bg-gradient-to-r from-white/20 via-transparent to-white/20 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="text-center">
-                  <div className="flex items-center justify-center space-x-3 mb-4">
-                    <span className="text-3xl">💡</span>
-                    <h4 className="font-bold text-2xl text-blue-800 dark:text-blue-300 ultra-premium-text">
-                      Pro Tip:
-                    </h4>
-                  </div>
-                  <p className="text-blue-700 dark:text-blue-400 text-xl leading-relaxed font-medium ultra-premium-text max-w-3xl mx-auto">
-                    911 works from any phone, even without a SIM card or service plan. This emergency number is accessible worldwide on any mobile device.
-                  </p>
+          {/* Pro Tip Section */}
+          <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 dark:from-blue-950/40 dark:via-blue-900/30 dark:to-blue-800/20 rounded-3xl p-8 md:p-12 shadow-xl border border-blue-200/70 dark:border-blue-800/50 overflow-hidden max-w-4xl mx-auto mt-16 mb-20 transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]">
+            <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
+            <div className="relative z-10 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
+              <div className="flex-shrink-0">
+                <div className="w-24 h-24 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center shadow-lg transform-gpu transition-transform duration-500 hover:scale-110">
+                  <i className="ri-lightbulb-fill text-white text-5xl"></i>
                 </div>
               </div>
-
-              {/* Subtle Border Animation */}
-              <div className="absolute inset-0 rounded-3xl overflow-hidden pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-400/60 to-transparent"></div>
-                <div className="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-transparent via-cyan-400/60 to-transparent"></div>
+              <div className="text-center md:text-left">
+                <h3 className="text-3xl font-extrabold text-blue-800 dark:text-blue-300 mb-3 leading-tight ultra-premium-text">
+                  Pro Tip: Stay Connected
+                </h3>
+                <p className="text-lg text-blue-700 dark:text-blue-200 leading-relaxed">
+                  Consider purchasing a local SIM card or an international eSIM plan upon arrival. This ensures you have reliable access to maps, translation apps, and emergency services without relying solely on Wi-Fi.
+                </p>
               </div>
-            </Card>
+            </div>
+            {/* Decorative Corner Accent */}
+            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </section>
@@ -497,13 +413,12 @@ export default function SafetyGuidePage() {
                       </div>
                       <span className="text-xs text-slate-600 dark:text-slate-300">{guide.author}</span>
                     </div>
-                    <button
-                      type="button"
-                      onClick={() => openGuideModal(guide)}
+                    <a
+                      href={`/safety-guide/${slugify(guide.title)}`}
                       className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm"
                     >
                       <i className="ri-arrow-right-line"></i>
-                    </button>
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -530,125 +445,17 @@ export default function SafetyGuidePage() {
           <div className="grid lg:grid-cols-4 gap-8">
             <div className="lg:col-span-3">
               <div className="space-y-8">
-                {safetyGuides.map((guide, index) => (
-                  <Card key={index} className="p-8" id={`guide-${index}`}>
-                    <div className="flex items-start space-x-4 mb-6">
-                      <div className={`w-16 h-16 bg-gradient-to-br ${guide.color} rounded-xl flex items-center justify-center flex-shrink-0`}>
-                        <i className={`${guide.icon} text-white text-2xl`}></i>
-                      </div>
-                      <div className="flex-1">
-                        <h2 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-2">
-                          {guide.title}
-                        </h2>
-                        <p className="text-slate-600 dark:text-slate-400 mb-4">
-                          {guide.description}
-                        </p>
-                        <div className="flex items-center space-x-4 text-sm text-slate-500 dark:text-slate-400">
-                          <span className="flex items-center">
-                            <i className="ri-shield-check-line mr-1"></i>
-                            {guide.level} Priority
-                          </span>
-                          <span className="flex items-center">
-                            <i className="ri-time-line mr-1"></i>
-                            {guide.readTime}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="prose prose-slate dark:prose-invert max-w-none">
-                      <div className="space-y-4">
-                        {guide.content && guide.content.map((section, sectionIndex) => (
-                          <div key={sectionIndex}>
-                            <h4 className="font-semibold text-navy-900 dark:text-white mb-2">{section.subtitle}</h4>
-                            <p className="text-slate-600 dark:text-slate-400 mb-3">{section.text}</p>
-                            {section.tips && (
-                              <ul className="space-y-2">
-                                {section.tips.map((tip, tipIndex) => (
-                                  <li key={tipIndex} className="flex items-start space-x-2">
-                                    <i className="ri-check-line text-emerald-500 mt-0.5 flex-shrink-0"></i>
-                                    <span className="text-slate-600 dark:text-slate-400 text-sm">{tip}</span>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {guide.emergencyInfo && (
-                      <div className="mt-6 p-4 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
-                        <div className="flex items-start space-x-3">
-                          <i className="ri-alarm-warning-line text-red-600 text-lg mt-0.5"></i>
-                          <div>
-                            <h4 className="font-semibold text-red-800 dark:text-red-300 mb-1">Emergency Information</h4>
-                            <p className="text-red-700 dark:text-red-400 text-sm">{guide.emergencyInfo}</p>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </Card>
-                ))}
               </div>
             </div>
 
             {/* Sidebar */}
             <div className="lg:col-span-1">
               <div className="sticky top-8 space-y-6">
-                <Card className="p-6">
-                  <h3 className="font-space font-bold text-lg text-navy-900 dark:text-white mb-4">
-                    Quick Navigation
-                  </h3>
-                  <div className="space-y-3">
-                    {safetyGuides.map((guide, index) => (
-                      <a
-                        key={index}
-                        href={`#guide-${index}`}
-                        className="block text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors cursor-pointer text-sm"
-                      >
-                        {guide.title}
-                      </a>
-                    ))}
-                  </div>
-                </Card>
 
-                <Card className="p-6">
-                  <h3 className="font-space font-bold text-lg text-navy-900 dark:text-white mb-4">
-                    Emergency Contacts
-                  </h3>
-                  <div className="space-y-3 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <i className="ri-phone-line text-red-500"></i>
-                      <span className="text-slate-600 dark:text-slate-400">Emergency: 911</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <i className="ri-hospital-line text-blue-500"></i>
-                      <span className="text-slate-600 dark:text-slate-400">Medical: 911</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <i className="ri-shield-line text-green-500"></i>
-                      <span className="text-slate-600 dark:text-slate-400">Police: 911</span>
-                    </div>
-                  </div>
-                </Card>
 
-                <Card className="p-6">
-                  <h3 className="font-space font-bold text-lg text-navy-900 dark:text-white mb-4">
-                    Related Guides
-                  </h3>
-                  <div className="space-y-3">
-                    <a href="/travel-tips" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">
-                      Travel Tips & Hacks
-                    </a>
-                    <a href="/packing-lists" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">
-                      Essential Packing Lists
-                    </a>
-                    <a href="/budget-guides" className="block text-emerald-600 hover:text-emerald-700 transition-colors text-sm">
-                      Budget Planning
-                    </a>
-                  </div>
-                </Card>
+
+
+
               </div>
             </div>
           </div>
@@ -743,6 +550,55 @@ export default function SafetyGuidePage() {
           </div>
         </div>
       )}
+
+      <section className="py-20 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-navy-950 dark:to-navy-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-extrabold text-center text-navy-900 dark:text-white mb-16 leading-tight">
+            Explore More <span className="text-emerald-500">Safety Guides</span>
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <Card className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 bg-white dark:bg-navy-700 border border-transparent hover:border-emerald-400">
+              <div className="p-6">
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 dark:bg-emerald-900 rounded-full mb-4">
+                  <i className="ri-shield-line text-3xl text-emerald-600 dark:text-emerald-300"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-3">Guide Title 1</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">A brief description of the related guide content goes here, enticing the user to click and learn more. This text is designed to be engaging and informative.</p>
+                <a href={`/safety-guide/${slugify('Transportation Safety Guidelines')}`} className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-500 transition-colors duration-300 group">
+                  Read More
+                  <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+              </div>
+            </Card>
+            <Card className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 bg-white dark:bg-navy-700 border border-transparent hover:border-emerald-400">
+              <div className="p-6">
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 dark:bg-emerald-900 rounded-full mb-4">
+                  <i className="ri-walk-line text-3xl text-emerald-600 dark:text-emerald-300"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-3">Guide Title 2</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">Another compelling description for a related guide, highlighting its key takeaways or benefits. This section aims to capture user attention effectively.</p>
+                <a href={`/safety-guide/${slugify('Digital Security & Privacy Protection')}`} className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-500 transition-colors duration-300 group">
+                  Read More
+                  <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+              </div>
+            </Card>
+            <Card className="relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 bg-white dark:bg-navy-700 border border-transparent hover:border-emerald-400">
+              <div className="p-6">
+                <div className="flex items-center justify-center w-16 h-16 bg-emerald-100 dark:bg-emerald-900 rounded-full mb-4">
+                  <i className="ri-hospital-line text-3xl text-emerald-600 dark:text-emerald-300"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-3">Guide Title 3</h3>
+                <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">A third description, perhaps focusing on a different aspect or a unique selling point of the guide. This content is crafted to be highly engaging.</p>
+                <a href={`/safety-guide/${slugify('Health & Medical Preparedness')}`} className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-500 transition-colors duration-300 group">
+                  Read More
+                  <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
+                </a>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
 
       <Footer />
     </div>

@@ -89,7 +89,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-building-2-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Official Name</span>
+                      <span className="text-slate-600 dark:text-slate-300">Official Name</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Stadium (FIFA designation) / SoFi Stadium</p>
                     </div>
                   </div>
@@ -97,7 +97,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-map-pin-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Location</span>
+                      <span className="text-slate-600 dark:text-slate-300">Location</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Inglewood, California (Hollywood Park district), 3 miles from LAX Airport</p>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-calendar-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Opened</span>
+                      <span className="text-slate-600 dark:text-slate-300">Opened</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">September 2020</p>
                     </div>
                   </div>
@@ -113,7 +113,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-group-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">World Cup Capacity</span>
+                      <span className="text-slate-600 dark:text-slate-300">World Cup Capacity</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">70,000+ (standard: 70,240; expandable to 100,000)</p>
                     </div>
                   </div>
@@ -123,7 +123,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-team-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Primary Tenants</span>
+                      <span className="text-slate-600 dark:text-slate-300">Primary Tenants</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Rams (NFL), Los Angeles Chargers (NFL), LA Bowl (college football)</p>
                     </div>
                   </div>
@@ -131,7 +131,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-magic-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Architect/Design Firm</span>
+                      <span className="text-slate-600 dark:text-slate-300">Architect/Design Firm</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">HKS Architects</p>
                     </div>
                   </div>
@@ -139,7 +139,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-hammer-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Construction Team</span>
+                      <span className="text-slate-600 dark:text-slate-300">Construction Team</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Turner-AECOM/Hunt joint venture</p>
                     </div>
                   </div>
@@ -147,7 +147,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <div className="flex items-start gap-3">
                     <i className="ri-user-star-line text-emerald-400 text-xl"></i>
                     <div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm">Owner/Developer</span>
+                      <span className="text-slate-600 dark:text-slate-300">Owner/Developer</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Stan Kroenke (Rams owner)</p>
                     </div>
                   </div>
@@ -158,21 +158,21 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <div className="flex items-start gap-3">
                   <i className="ri-leaf-line text-emerald-400 text-xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Surface Type</span>
+                    <span className="text-slate-600 dark:text-slate-300">Surface Type</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">Natural grass (to be installed for World Cup; typically artificial turf)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <i className="ri-cloudy-line text-emerald-400 text-xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Roof Type</span>
+                    <span className="text-slate-600 dark:text-slate-300">Roof Type</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">Translucent cable-net ETFE canopy (open-air sides)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <i className="ri-ruler-line text-emerald-400 text-xl"></i>
                   <div>
-                    <span className="text-slate-600 dark:text-slate-300 text-sm">Total Area</span>
+                    <span className="text-slate-600 dark:text-slate-300">Total Area</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">3.1 million square feet—the NFL's largest stadium</p>
                   </div>
                 </div>
@@ -554,7 +554,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <p className="text-slate-700 dark:text-slate-200"><strong>Santa Monica</strong> – Third Street Promenade and Main Street packed with bars, restaurants, live music.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Downtown LA</strong> (9 miles) – Full urban nightlife: rooftop bars, clubs, live music venues, late-night eats.</p>
                 <div className="mt-4 rounded-lg border border-amber-300/40 bg-amber-50 p-4 text-amber-900 dark:border-amber-600/40 dark:bg-amber-900/20 dark:text-amber-200">
-                  <em>Book tours and activities via Viator or GetYourGuide for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
+                  <em>Book tours and activities via <a href="https://www.viator.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Viator</a> or <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">GetYourGuide</a> for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
                 </div>
                 <p className="text-slate-700 dark:text-slate-200">
                   Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>.

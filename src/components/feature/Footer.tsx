@@ -64,7 +64,7 @@ export function Footer() {
           <h3 className="font-space font-bold text-3xl md:text-4xl mb-4 gradient-text">
             Don't Miss Your Shot at 2026
           </h3>
-          <p className="font-inter text-lg text-slate-300 mb-8 max-w-2xl mx-auto">Get stadium guides, city travel tips, safety alerts, hotel deals, and insider planning advice everything you need in one weekly email.</p>
+          <p className="font-inter text-slate-300 mb-8 max-w-2xl mx-auto">Get stadium guides, city travel tips, safety alerts, hotel deals, and insider planning advice everything you need in one weekly email.</p>
           
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubscribe} data-readdy-form className="flex flex-col sm:flex-row gap-3">
@@ -155,7 +155,7 @@ export function Footer() {
                   className="group w-12 h-12 rounded-2xl bg-white/5 hover:bg-emerald-500 border border-white/10 hover:border-emerald-500 flex items-center justify-center transition-all duration-500 hover:scale-110 hover:shadow-glow"
                   aria-label={social.label}
                 >
-                  <i className={`${social.icon} text-lg text-slate-400 group-hover:text-white transition-colors duration-300`}></i>
+                  <i className={`${social.icon} text-slate-400 group-hover:text-white transition-colors duration-300`}></i>
                 </a>
               ))}
             </div>
@@ -163,7 +163,7 @@ export function Footer() {
 
           {/* Premium Destinations */}
           <div className="animate-fade-up-delay-200">
-            <h3 className="text-lg font-space font-semibold mb-6 flex items-center">
+            <h3 className="font-space font-semibold mb-6 flex items-center">
               <div className="w-2 h-2 rounded-full bg-emerald-500 mr-3 animate-pulse"></div>
               Destinations
             </h3>
@@ -190,7 +190,7 @@ export function Footer() {
 
           {/* Premium Plan Your Trip */}
           <div className="animate-fade-up-delay-300">
-            <h3 className="text-lg font-space font-semibold mb-6 flex items-center">
+            <h3 className="font-space font-semibold mb-6 flex items-center">
               <div className="w-2 h-2 rounded-full bg-gold-400 mr-3 animate-pulse"></div>
               Plan Your Trip
             </h3>
@@ -218,7 +218,7 @@ export function Footer() {
 
           {/* Premium Tools & Tips */}
           <div className="animate-fade-up-delay-400">
-            <h3 className="text-lg font-space font-semibold mb-6 flex items-center">
+            <h3 className="font-space font-semibold mb-6 flex items-center">
               <div className="w-2 h-2 rounded-full bg-emerald-500 mr-3 animate-pulse"></div>
               Tools & Tips
             </h3>

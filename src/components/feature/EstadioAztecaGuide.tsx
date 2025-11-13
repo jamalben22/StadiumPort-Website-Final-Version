@@ -84,7 +84,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               </div>
             </div>
             
-            <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-300 leading-relaxed mb-8 max-w-2xl">
               Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." The only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy.
             </p>
           </div>
@@ -133,7 +133,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
 
               {/* Stadium Info Badge */}
               <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
-                <i className="ri-map-pin-line text-emerald-300 text-lg"></i>
+                <i className="ri-map-pin-line text-emerald-300"></i>
                 <span className="text-emerald-200 font-inter font-medium">Mexico City • Altitude: 2,240m</span>
               </div>
             </div>

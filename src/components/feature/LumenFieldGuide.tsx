@@ -38,7 +38,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
           <div className="editorial-hero-content">
             {/* Breadcrumbs */}
             <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
-              <ol className="flex items-center gap-2 text-sm text-white/90">
+              <ol className="flex items-center gap-2 text-white/90">
                 <li><Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link></li>
                 <li className="opacity-70">›</li>
                 <li><Link to="/world-cup-2026-stadiums" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Stadiums</Link></li>
@@ -72,7 +72,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
       <section className="editorial-article py-12">
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             When FIFA selected <Link to="/world-cup-2026-host-cities/seattle" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Seattle</Link> to host matches for the 2026 World Cup, they chose more than just a stadium—they picked a sonic fortress. <strong>Lumen Field is one of the </strong>
             <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
             {`, bringing the tournament to the Pacific Northwest.`} Lumen Field, home to one of sport's most legendary atmospheres, will transform into Seattle Stadium for the tournament, welcoming global football to the Pacific Northwest for the first time since the 2003 Women's World Cup. This isn't a venue that simply accommodates fans; it amplifies them, channeling 68,000 voices into a deafening roar that once registered 137.6 decibels—louder than a jet engine at takeoff. Built specifically with World Cup hosting in mind back in 2002, this open-air cathedral sits against Seattle's stunning skyline and Puget Sound, offering visiting fans an experience where architectural ingenuity meets raw passion.
@@ -92,7 +92,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-building-2-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Official Name</p>
+                  <p className="text-slate-600 dark:text-slate-300">Official Name</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">Lumen Field (rebranded "Seattle Stadium" during World Cup 2026)</p>
                 </div>
               </div>
@@ -100,7 +100,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-map-pin-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Location</p>
+                  <p className="text-slate-600 dark:text-slate-300">Location</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">SoDo neighborhood, Seattle, Washington (1 mile south of downtown)</p>
                 </div>
               </div>
@@ -108,7 +108,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-calendar-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Opened</p>
+                  <p className="text-slate-600 dark:text-slate-300">Opened</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">2002</p>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-group-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Capacity</p>
+                  <p className="text-slate-600 dark:text-slate-300">Capacity</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">69,000 (World Cup configuration) / 68,740 (standard NFL)</p>
                 </div>
               </div>
@@ -126,7 +126,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-team-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Primary Tenants</p>
+                  <p className="text-slate-600 dark:text-slate-300">Primary Tenants</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">Seattle Seahawks (NFL), Seattle Sounders FC (MLS), OL Reign (NWSL)</p>
                 </div>
               </div>
@@ -134,7 +134,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-pencil-ruler-2-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Architect</p>
+                  <p className="text-slate-600 dark:text-slate-300">Architect</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">Ellerbe Becket (with LMN Architects)</p>
                 </div>
               </div>
@@ -142,7 +142,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-grass-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Surface Type</p>
+                  <p className="text-slate-600 dark:text-slate-300">Surface Type</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">FieldTurf artificial (FIFA-required grass to be installed for 2026)</p>
                 </div>
               </div>
@@ -150,7 +150,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               <div className="flex items-start gap-3">
                 <i className="ri-umbrella-line text-emerald-500 text-xl"></i>
                 <div>
-                  <p className="text-slate-600 dark:text-slate-300 text-sm">Roof Type</p>
+                  <p className="text-slate-600 dark:text-slate-300">Roof Type</p>
                   <p className="text-slate-900 dark:text-slate-100 font-semibold">Partial cantilever roof covering 70% of seats</p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <i className="ri-time-line text-emerald-500"></i>
             History & Legacy
           </h3>
-          <div className="prose dark:prose-invert prose-lg max-w-none">
+          <div className="prose dark:prose-invert max-w-none">
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">
               Washington state voters approved the stadium's construction via referendum in 1997, with legislation specifically calling out the ability to host the FIFA World Cup—making Lumen Field literally built for this moment. The venue rose on the site of the demolished Kingdome, opening in September 2002 with Microsoft co-founder Paul Allen driving the vision for an intimate, noise-amplifying design inspired by the University of Washington's Husky Stadium.
             </p>
@@ -210,7 +210,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <i className="ri-building-3-line text-emerald-500"></i>
             Stadium Architecture & Experience
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Lumen Field's design is a masterclass in acoustic engineering disguised as a football stadium. Built on just 30 acres—the smallest footprint of modern NFL stadiums—architects cantilevered the upper decks over lower sections, pushing seats closer to the action while the partial roof covering 70% of seating deflects crowd noise directly back onto the pitch. The result? An intimidation machine.
             </p>
@@ -236,7 +236,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <i className="ri-calendar-event-line text-emerald-500"></i>
             What Matches to Expect
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Seattle will host six World Cup 2026 matches at Lumen Field, including one USMNT group stage fixture and two knockout round games. While specific matchups won't be finalized until closer to the tournament, Seattle's inclusion among elite venues suggests the stadium could host a Round of 32 or Round of 16 encounter—and possibly more if the Americans advance deep.
             </p>
@@ -257,7 +257,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             Getting to the Stadium
           </h3>
 
-          <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             Lumen Field sits in Seattle's SoDo (South of Downtown) district, exceptionally well-connected by public transit—one of the best-served stadiums in North America.
           </p>
 
@@ -267,10 +267,10 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-train-line text-emerald-500 text-3xl"></i>
                 By Light Rail (Recommended)
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Sound Transit's 1 Line has two stations within walking distance: Stadium Station (2-minute walk) and International District/Chinatown Station (7-minute walk). Trains run from SeaTac Airport to Lynnwood, with airport-to-stadium journey taking approximately 38 minutes. One-way adult fares are $3, with reduced fares for seniors, disabled riders, and youth. Purchase tickets at station kiosks or via Transit GO mobile app. Expect trains to be packed 90 minutes before kickoff—arrive early.
               </p>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mt-4">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
                 <strong>Pro tip:</strong> Park & Ride facilities are available at Northgate Transit Center (north Seattle) and Angle Lake Station (south), allowing you to drive partway and ride the train to avoid downtown congestion.
               </p>
             </div>
@@ -280,7 +280,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-bus-2-line text-emerald-500 text-3xl"></i>
                 By Bus
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 King County Metro operates 15+ routes stopping within three blocks of the stadium. Sound Transit Express buses connect from throughout Pierce, King, and Snohomish counties every 30 minutes. Check Metro's real-time transit app for matchday schedules.
               </p>
             </div>
@@ -290,7 +290,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-train-line text-emerald-500 text-3xl"></i>
                 By Commuter Rail
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Sounder commuter trains arrive at King Street Station (5-minute walk from stadium) on select weekend matchdays—check Sound Transit's event calendar. Amtrak Cascades service connects Seattle to Portland, Vancouver BC, and points between, with the station directly adjacent to Lumen Field.
               </p>
             </div>
@@ -300,7 +300,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-steering-line text-emerald-500 text-3xl"></i>
                 By Car
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Not recommended for World Cup matches. The stadium's parking garage accommodates 2,000 vehicles, with 3,100 spaces onsite and 8,400 in surrounding areas, but these sell out months ahead for major events. If driving, budget $40-65 for parking. Alternative garages include Union Station (northeast) and Metro Garage (east), both within 10-minute walks.
               </p>
             </div>
@@ -310,7 +310,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-taxi-line text-emerald-500 text-3xl"></i>
                 By Rideshare/Taxi
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 The designated drop-off zone is located at S Charles Street and Occidental Avenue (near the Pro Shop). Surge pricing will be severe after matches—consider walking 10-15 minutes toward downtown or Pioneer Square for better pickup zones.
               </p>
             </div>
@@ -325,7 +325,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <li>- Downtown Seattle hotels: 10-15 minutes (light rail/bus)</li>
                 <li>- Bellevue: 45-60 minutes (bus + light rail)</li>
               </ul>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed mt-4">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
                 Seattle also has ferry connections from Bainbridge Island and Bremerton, with terminals 10 minutes' walk from the stadium—a spectacular arrival if you're staying across Puget Sound.
               </p>
             </div>
@@ -375,7 +375,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-community-line text-emerald-500 text-3xl"></i>
                 Alternative Neighborhoods
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 <strong>Capitol Hill:</strong> Seattle's vibrant LGBTQ+ hub with nightlife and restaurants, 15 minutes by light rail. <strong>Fremont/Ballard:</strong> Quirky neighborhoods north of downtown, 30-40 minutes via bus, offering brewery tours and local character.
               </p>
             </div>
@@ -396,7 +396,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-time-line text-emerald-500 text-3xl"></i>
                 Timing
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Arrive 90-120 minutes early for World Cup matches. Security will be tighter than standard Seahawks games, and light rail stations will be mobbed. Stadium gates typically open 2 hours before kickoff, allowing time to explore the venue and soak in pre-match atmosphere.
               </p>
             </div>
@@ -406,7 +406,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-shopping-bag-3-line text-emerald-500 text-3xl"></i>
                 Bag Policy
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Only clear bags up to 12" x 6" x 12" are permitted. Small clutches under 4.5" x 6.5" are allowed. No backpacks, diaper bags, or computer bags. Outside food is permitted if carried in approved bags.
               </p>
             </div>
@@ -416,7 +416,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-sun-line text-emerald-500 text-3xl"></i>
                 Weather
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 June-July in Seattle means 65-75°F (18-24°C) with low humidity, but pack a light jacket—evenings cool quickly. The roof covers 70% of seats, but end zones and lower sections are exposed. Sunscreen recommended for afternoon matches.
               </p>
             </div>
@@ -426,7 +426,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-restaurant-line text-emerald-500 text-3xl"></i>
                 Food & Drink
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Lumen Field is cashless—credit cards and contactless payments only. Local favorites include Maria Luisa Empanadas, Big Walt's Kitchen (hot chicken sandwich), Ivar's fish & chips, and vegan options at Cook T's Kitchen. Craft beer at Craft House, Starbucks coffee throughout. Prices run $12-18 for entrees, $14-16 for beer.
               </p>
             </div>
@@ -436,7 +436,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-football-line text-emerald-500 text-3xl"></i>
                 Best Sections
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Lower bowl sidelines (sections 111-137) offer prime viewing. For budget-conscious fans, upper deck corners (sections 301-303, 339-341) provide excellent value with full field views. Sounders supporters traditionally occupy the south end (sections 121-123)—expect standing, chanting, and flags if seated nearby.
               </p>
             </div>
@@ -446,7 +446,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-walk-line text-emerald-500 text-3xl"></i>
                 Post-Match Exodus
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Stadium Station will be absolute chaos—consider walking 10 minutes to International District/Chinatown Station for easier boarding. Alternatively, head to Pioneer Square bars and wait 60-90 minutes for transit crowds to thin.
               </p>
             </div>
@@ -456,7 +456,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
                 <i className="ri-star-line text-emerald-500 text-3xl"></i>
                 Don't Miss
               </h4>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 The 12th Man flag raising platform in the south end, Pioneer Square's totem pole and pergola (5-minute walk), and the Olympic Sculpture Park (30 minutes north via waterfront).
               </p>
             </div>
@@ -506,7 +506,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <i className="ri-map-2-line text-emerald-500"></i>
             Day Trips
           </h3>
-          <div className="space-y-4 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p><strong>Bainbridge Island</strong> (35-minute ferry): Escape the city for waterfront trails, wineries, and small-town charm. Ferries depart from terminals near stadium.</p>
             <p><strong>Mount Rainier National Park</strong> (2.5 hours drive): Rent a car and experience Washington's alpine crown jewel—one of America's most stunning national parks.</p>
             <p>For tours and activities, platforms like GetYourGuide and Viator offer excellent options including food tours, brewery crawls, and Pacific Northwest adventures—worth booking ahead for popular dates.</p>
@@ -520,7 +520,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <i className="ri-compass-3-line text-emerald-500"></i>
             Beyond the Stadium: Explore Seattle
           </h3>
-          <div className="space-y-6 text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+          <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
               Seattle's Pacific Northwest charm and coffee culture create an unforgettable World Cup 2026 experience beyond Lumen Field.
             </p>
@@ -557,16 +557,16 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             Final Verdict & Key Takeaway
           </h3>
           <div className="space-y-6">
-            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               Lumen Field represents everything special about North American soccer culture: intimate design, passionate supporters, and a venue that makes visiting teams genuinely uncomfortable. For World Cup 2026, this stadium offers international visitors more than great football—it's a gateway to the Pacific Northwest's natural beauty, progressive urban culture, and that distinctly Seattle blend of outdoorsy grit and tech-forward thinking.
             </p>
-            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               <strong>Who will love it most?</strong> Fans who appreciate atmosphere over glitz, travelers who want to explore beyond the stadium, and anyone curious about why Seattle consistently ranks among the world's most livable cities.
             </p>
-            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               <strong>The one thing you absolutely cannot miss?</strong> Experience the ground shake during a goal celebration. When 69,000 fans erupt simultaneously under that amplifying roof, you'll understand why visiting players describe it as "the most insane place" they've ever competed.
             </p>
-            <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               Book your accommodation now through trusted platforms—Seattle's hotel inventory will strain under World Cup demand, and proximity to light rail stations will be worth its weight in gold. This is your chance to experience football's biggest tournament in one of its loudest stadiums. Don't just watch history—feel it reverberate through your chest.
             </p>
           </div>

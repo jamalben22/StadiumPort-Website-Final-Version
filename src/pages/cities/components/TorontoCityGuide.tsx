@@ -111,10 +111,10 @@ export function TorontoCityGuide() {
       <main className="editorial-article py-12">
         {/* Making History at BMO Field */}
         <article className="editorial-body editorial-dropcap">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Making History at BMO Field
-          </h3>
+          </h2>
             <p>
               Toronto isn't just hosting the 2026 FIFA World Cup—it's hosting <strong>history</strong>. Toronto is one of the 16 host cities for the 2026 World Cup—
               <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>
@@ -147,10 +147,10 @@ export function TorontoCityGuide() {
 
         {/* Why Toronto Will Win Your Heart */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-heart-line text-rose-400 dark:text-rose-300 text-3xl"></i>
             Why Toronto Will Win Your Heart
-          </h3>
+          </h2>
             <p>
               If you've never been to Toronto, prepare yourself. Canada's largest city is famously nicknamed "The World in a City," and once you're here, you'll understand why. This is a place where over 200 languages are spoken daily, where you can eat authentic dim sum for breakfast, Italian porchetta for lunch, and Caribbean jerk chicken for dinner—all within walking distance of each other.
             </p>
@@ -162,10 +162,10 @@ export function TorontoCityGuide() {
 
         {/* Getting to BMO Field: Easier Than You Think */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Getting to BMO Field: Easier Than You Think
-          </h3>
+          </h2>
             <p>
               BMO Field sits on the grounds of Exhibition Place, about 3 kilometers west of downtown Toronto, right on the lakefront. Here's the best part: you don't need a car, and honestly, you probably don't want one on game day.
             </p>
@@ -183,10 +183,10 @@ export function TorontoCityGuide() {
 
         {/* Where to Stay: Your Tournament Home Base */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Where to Stay: Your Tournament Home Base
-          </h3>
+          </h2>
             <p>
               Toronto's accommodation scene is as diverse as the city itself, and for World Cup 2026, location matters. Here's the insider breakdown:
             </p>
@@ -210,10 +210,10 @@ export function TorontoCityGuide() {
 
         {/* The Weather Factor: Pack Smart */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-sun-line text-amber-400 dark:text-amber-300 text-3xl"></i>
             The Weather Factor: Pack Smart
-          </h3>
+          </h2>
             <p>
               June in Toronto typically sees daytime temperatures around 24°C (75°F), dropping to about 13°C (55°F) at night, with normally 9 hours of bright sunshine daily. Toronto experiences significant rainfall in June, averaging over 20 rainy days, so layers are your friend.
             </p>
@@ -225,10 +225,10 @@ export function TorontoCityGuide() {
 
         {/* Beyond the Stadium: Why You'll Want Extra Days */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Beyond the Stadium: Why You'll Want Extra Days
-          </h3>
+          </h2>
             <p>
               Here's the truth: if you're flying to Toronto just for a match and leaving immediately, you're missing the point. This city rewards exploration.
             </p>
@@ -241,10 +241,10 @@ export function TorontoCityGuide() {
 
         {/* CN Tower & Rogers Centre */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             CN Tower & Rogers Centre
-          </h3>
+          </h2>
             <p>
               The CN Tower isn't just Toronto's signature landmark—it features the EdgeWalk experience, where brave visitors walk hands-free along a 1.5-meter-wide ledge at 356 meters, the world's highest full-circle open-air walk. The 360 Restaurant rotates once every 72 minutes, offering seasonal Canadian cuisine with Ontario wine pairings. Book dinner here, and observation deck access is complimentary.
             </p>
@@ -256,10 +256,10 @@ export function TorontoCityGuide() {
 
         {/* St. Lawrence Market */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-store-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             St. Lawrence Market
-          </h3>
+          </h2>
             <p>
               National Geographic declared St. Lawrence Market the "Best Food Market in the World" in 2011, beating London's Borough Market and New York's Union Square Greenmarket. Since 1803, this market has housed 200 vendors selling everything from local mustard to international cheeses and fresh pasta. Come hungry, come early (Saturday mornings are prime time), and don't leave without trying the famous peameal bacon sandwich—it's a Toronto rite of passage.
             </p>
@@ -268,10 +268,10 @@ export function TorontoCityGuide() {
 
         {/* Neighborhood Hopping: Where the Real Toronto Lives */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-community-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Neighborhood Hopping: Where the Real Toronto Lives
-          </h3>
+          </h2>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-2">Kensington Market</h4>
               <p>
@@ -295,10 +295,10 @@ export function TorontoCityGuide() {
 
         {/* Eating Your Way Through Toronto */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-restaurant-line text-rose-400 dark:text-rose-300 text-3xl"></i>
             Eating Your Way Through Toronto
-          </h3>
+          </h2>
             <p>
               This is where Toronto becomes dangerous for your wallet and your diet—but in the best way possible.
             </p>
@@ -331,10 +331,10 @@ export function TorontoCityGuide() {
 
         {/* Getting Around Like a Local */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-bus-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Getting Around Like a Local
-          </h3>
+          </h2>
             <p>
               Toronto's transit system takes getting used to, but it's comprehensive. The TTC (Toronto Transit Commission) operates subways, streetcars, and buses. You can access BMO Field via the Exhibition GO station or TTC streetcars from Union Station. A PRESTO card (Toronto's transit payment card) is your friend—available at Union Station and any convenience store with a green-and-white PRESTO sign. Load it with CAD $50 and you're set for a long weekend.
             </p>
@@ -352,22 +352,22 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
 
         {/* Tournament Practicalities */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-information-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Tournament Practicalities
-          </h3>
+          </h2>
             <p>
-              <strong>Tickets</strong>: FIFA ticket sales opened with the Visa Presale Draw running September 10-19, 2025. Register at FIFA.com/tickets even if you missed early sales—additional phases will open closer to the tournament.
+              <strong>Tickets</strong>: FIFA ticket sales opened with the Visa Presale Draw running September 10-19, 2025. Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">FIFA.com/tickets</a> even if you missed early sales—additional phases will open closer to the tournament.
             </p>
         </article>
         <hr className="editorial-divider" />
 
         {/* Fan Festival */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-group-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
             Fan Festival
-          </h3>
+          </h2>
             <p>
               <strong>Fan Festival</strong>: Toronto has officially designated Fort York National Historic Site and The Bentway as venues for the FIFA Fan Festival, offering free live broadcasts and official FIFA World Cup atmosphere. These free events run throughout the tournament—perfect for non-ticket holders or pre-match gathering points.
             </p>
@@ -376,10 +376,10 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
 
         {/* Safety & Practicalities */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-shield-check-line text-blue-400 dark:text-sky-300 text-3xl"></i>
             Safety & Practicalities
-          </h3>
+          </h2>
             <p>
               <strong>Safety & Practicalities</strong>: Toronto is exceptionally safe for international visitors. The downtown core is walkable day and night, though standard urban awareness applies. Tap water is perfectly safe to drink. Tipping culture mirrors the U.S.—15-20% at restaurants is standard. Most places accept credit cards, but carry some Canadian cash for markets and streetcars.
             </p>
@@ -388,10 +388,10 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
 
         {/* Why Toronto Deserves Your Full Attention */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-heart-line text-rose-400 dark:text-rose-300 text-3xl"></i>
             Why Toronto Deserves Your Full Attention
-          </h3>
+          </h2>
             <p>
               Look, plenty of cities can host big matches. But Toronto brings something different to World Cup 2026. This is a place where you'll hear a dozen languages walking down one street, where neighborhoods shift from luxury boutiques to vintage shops to ethnic markets in just a few blocks. It's a city preparing to showcase "exceptional diversity, creativity, and international character" to a global audience.
             </p>
@@ -409,10 +409,10 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
 
         {/* Related Destinations */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+          <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-route-line text-emerald-500"></i>
             Plan Your Canadian World Cup Journey
-          </h3>
+          </h2>
           <p>
             Toronto is Canada's gateway city and pairs perfectly with other North American host cities for an unforgettable 2026 World Cup experience.
           </p>
@@ -447,10 +447,10 @@ Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026
 
       {/* Book your Toronto experience now */}
       <article className="editorial-body">
-        <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
+        <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
           <i className="ri-flag-line text-indigo-500 dark:text-indigo-300 text-3xl"></i>
           Book your Toronto experience now
-        </h3>
+        </h2>
         <p>
           <strong>Book your Toronto experience now</strong>. June 2026 will be here before you know it, and this city is ready to welcome the world.
         </p>

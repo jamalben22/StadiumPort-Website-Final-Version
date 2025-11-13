@@ -651,20 +651,13 @@ export default function VenuesPage() {
               <span className="mx-2">›</span>
               <span className="text-white/80">Stadiums</span>
             </nav>
-            <div className="inline-flex items-center space-x-2 bg-gold-400/20 backdrop-blur-sm border border-gold-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-building-line text-gold-400"></i>
-              <span className="text-gold-300 font-medium">2026 FIFA World Cup Stadiums: Complete Guide to All 16 Venues</span>
-            </div>
+
             
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">Complete Travel Guides for All 16 USA, Canada & Mexico Venues</h1>
+            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">World Cup 2026 Stadiums: Complete Guide to All 16 Venues</h1>
             
+
             <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Complete guide to all 16 FIFA World Cup 2026 stadiums. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue across USA, Canada & Mexico.
-              {' '}
-              These state-of-the-art stadiums are located across 16 incredible
-              {' '}
-              <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-300 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">host cities</a>,
-              {' '}each offering unique cultural experiences and attractions for World Cup visitors.
+              Complete guide to all 16 FIFA World Cup 2026 stadiums across USA, Canada & Mexico. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue.
             </p>
           </div>
 
@@ -672,11 +665,11 @@ export default function VenuesPage() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <div className="text-3xl font-bold text-gold-400 mb-2">3</div>
-              <div className="text-slate-300 font-inter text-sm">Countries</div>
+              <div className="text-slate-300 font-inter text-sm">Countries (USA, Canada, Mexico)</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Host Venues</div>
+              <div className="text-slate-300 font-inter text-sm">World-Class Stadiums</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <div className="text-3xl font-bold text-purple-400 mb-2">104</div>
@@ -684,15 +677,23 @@ export default function VenuesPage() {
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
               <div className="text-3xl font-bold text-white mb-2">1.2M+</div>
-              <div className="text-slate-300 font-inter text-sm">Total Capacity</div>
+              <div className="text-slate-300 font-inter text-sm">Combined Seating Capacity</div>
             </div>
             <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">1,347</div>
-              <div className="text-slate-300 font-inter text-sm">Hotels Nearby</div>
+              <div className="text-3xl font-bold text-emerald-400 mb-2">87,523</div>
+              <div className="text-slate-300 font-inter text-sm">Largest Stadium (Estadio Azteca)</div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Premium Divider — Between Header and Select Your Venue */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
+      </div>
 
       {/* Stadiums Grid - 2 Column Layout matching Cities */}
       <section className="py-16 bg-white dark:bg-navy-900">
@@ -740,19 +741,9 @@ export default function VenuesPage() {
                     </div>
                     <div className="flex items-center text-white/95 text-sm font-medium">
                       <i className="ri-map-pin-line mr-2 text-lg"></i>
-                      <span>{venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city} • {venue.capacity.toLocaleString()} capacity</span>
+                      <span><a href={getHostCityLinkForVenue(venue).url} className="underline underline-offset-4 decoration-white/40 hover:decoration-white">{venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city === 'East Rutherford, NJ' ? 'New York / New Jersey' : venue.city}</a> • {venue.capacity.toLocaleString()} capacity</span>
                     </div>
-                    {(() => {
-                      const hostCity = getHostCityLinkForVenue(venue);
-                      return (
-                        <div className="mt-2 text-white/95 text-sm font-semibold">
-                          <span aria-hidden="true">📍</span>{' '}Located in{' '}
-                          <a href={hostCity.url} className="underline underline-offset-4 decoration-white/40 hover:decoration-white">
-                            {hostCity.label}
-                          </a>
-                        </div>
-                      );
-                    })()}
+
                   </div>
                   
                   {/* Final Badge (MetLife only) */}
@@ -849,6 +840,14 @@ export default function VenuesPage() {
         </div>
       </section>
 
+      {/* Premium Divider — Between Stadium Grid and Beyond the Stadiums */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
+      </div>
+
       {/* Beyond the Stadiums (Explore the Cities) */}
       <section className="py-16 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -886,6 +885,14 @@ export default function VenuesPage() {
           </div>
         </div>
       </section>
+
+      {/* Premium Divider — Between Beyond the Stadiums and FAQ */}
+      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative h-px w-full">
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+        </div>
+      </div>
 
       {/* Stadiums FAQ Section */}
       <section className="py-16 bg-white dark:bg-navy-900">

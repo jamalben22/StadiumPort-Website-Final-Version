@@ -71,7 +71,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
 
             {/* Tagline populated from full guide content when expanded */}
-            <p className="text-slate-300 text-lg leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-300 leading-relaxed mb-8 max-w-2xl">
               Climate-controlled comfort and world-class infrastructure in the heart of Houston.
             </p>
           </div>
@@ -140,7 +140,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <i className="ri-trophy-line text-emerald-500"></i>
                 NRG Stadium: Your Complete Guide to World Cup 2026 in Houston
               </h2>
-              <p className="text-slate-700 dark:text-slate-200 text-lg leading-relaxed">
+              <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 Located in <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
               </p>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
