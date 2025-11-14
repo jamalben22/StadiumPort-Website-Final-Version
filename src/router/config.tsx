@@ -28,6 +28,7 @@ const DallasArticlePage = lazy(() => import('../pages/cities/dallas/page'));
 const TravelTipsPage = lazy(() => import('../pages/travel-tips/page'));
 const TravelTipsArticlePage = lazy(() => import('../pages/travel-tips/article/page'));
 const TravelRoutesPage = lazy(() => import('../pages/travel-routes/page'));
+const TransportationArticlePage = lazy(() => import('../pages/transportation/article/page'));
 const BudgetGuidesPage = lazy(() => import('../pages/budget-guides/page'));
 const PackingListsPage = lazy(() => import('../pages/packing-lists/page'));
 const SafetyGuidePage = lazy(() => import('../pages/safety-guide/page'));
@@ -77,6 +78,10 @@ const routes: RouteObject[] = [
   {
     path: '/transportation',
     element: <TransportationPage />
+  },
+  {
+    path: '/transportation/:slug',
+    element: <TransportationArticlePage />
   },
   {
     path: '/travel-guides',

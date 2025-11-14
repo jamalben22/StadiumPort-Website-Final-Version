@@ -3,7 +3,6 @@ import { useState, useEffect } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
-import { Button } from '../../components/base/Button';
 
 interface TransportSection {
   title: string;
@@ -61,7 +60,7 @@ export default function TransportationPage() {
   const transportGuides: TransportGuide[] = [
     {
       id: 1,
-      title: 'Complete Flight Guide to All Host Cities',
+      title: 'New York / New Jersey World Cup 2026: Your Complete Getting Around Guide',
       excerpt: 'Comprehensive guide to booking flights, finding deals, and navigating airports in all 16 World Cup host cities.',
       category: 'Flights',
       author: 'Michael Rodriguez',
@@ -81,7 +80,7 @@ export default function TransportationPage() {
     },
     {
       id: 2,
-      title: 'High-Speed Rail Networks: City to City Travel',
+      title: 'Los Angeles World Cup 2026: Your Complete Transportation Guide to SoFi Stadium',
       excerpt: 'Navigate efficient train systems connecting host cities, including booking tips, schedules, and comfort classes.',
       category: 'Trains',
       author: 'Sarah Chen',
@@ -230,6 +229,14 @@ export default function TransportationPage() {
 
   const featuredGuides = transportGuides.filter(guide => guide.featured);
 
+  const slugifyGuide = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
+
   const openGuideModal = (guide: TransportGuide) => {
     setSelectedGuide(guide);
     setIsModalOpen(true);
@@ -351,16 +358,15 @@ export default function TransportationPage() {
                     </div>
                   </div>
                   
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openGuideModal(guide)}
+                  <a
+                    href={`/transportation/${slugifyGuide(guide.title)}`}
+                    className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 w-full transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3 text-sm"
                   >
-                    <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
-                  </Button>
+                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                      <i className="ri-eye-line mr-2"></i>
+                      Read Full Guide
+                    </span>
+                  </a>
                 </div>
               </Card>
             ))}

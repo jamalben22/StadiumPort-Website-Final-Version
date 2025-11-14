@@ -16,20 +16,21 @@ interface FullContent {
   sections: TipSection[];
 }
 
-interface TravelTip {
-  id: number;
-  title: string;
-  category: string;
-  readTime: string;
-  difficulty: string;
-  savings: string;
-  author: string;
-  authorImage: string;
-  description: string;
-  tips: string[];
-  image: string;
-  fullContent: FullContent;
-}
+  interface TravelTip {
+    id: number;
+    title: string;
+    category: string;
+    readTime: string;
+    difficulty: string;
+    savings: string;
+    author: string;
+    authorImage: string;
+    description: string;
+    tips: string[];
+    image: string;
+    fullContent: FullContent;
+    slugOverride?: string;
+  }
 
 export default function TravelTipsPage() {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -63,7 +64,7 @@ export default function TravelTipsPage() {
   const travelTips: TravelTip[] = [
     {
       id: 1,
-      title: 'Stadium Proximity Strategy',
+      title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
       category: 'accommodation',
       readTime: '5 min',
       difficulty: 'Beginner',
@@ -71,6 +72,7 @@ export default function TravelTipsPage() {
       author: 'Alex Thompson',
       authorImage: 'https://readdy.ai/api/search-image?query=Professional%20male%20accommodation%20expert%20headshot%2C%20hotel%20booking%20specialist%2C%20friendly%20travel%20advisor%2C%20confident%20expression&width=100&height=100&seq=author-alex&orientation=squarish',
       description: 'Master the art of finding accommodations within walking distance of stadiums without paying premium prices.',
+      slugOverride: 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies',
       tips: [
         'Book accommodations 2-3 subway stops away from stadiums for 40-60% savings',
         'Look for hotels near team practice facilities - often overlooked but well-connected',
@@ -106,7 +108,7 @@ export default function TravelTipsPage() {
     },
     {
       id: 2,
-      title: 'Multi-City Tournament Planning',
+      title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
       category: 'planning',
       readTime: '8 min',
       difficulty: 'Advanced',
@@ -149,7 +151,7 @@ export default function TravelTipsPage() {
     },
     {
       id: 3,
-      title: 'Dynamic Pricing Mastery',
+      title: 'World Cup 2026 Host City Guide: Which Cities Should You Visit?',
       category: 'booking',
       readTime: '6 min',
       difficulty: 'Intermediate',
@@ -190,7 +192,197 @@ export default function TravelTipsPage() {
         ]
       }
     }
-    // ... rest of tips with similar fullContent structure
+    ,
+    {
+      id: 4,
+      title: 'World Cup 2026 Accommodation Guide: Where to Stay for Every Budget',
+      category: 'planning',
+      readTime: '6 min',
+      difficulty: 'Beginner',
+      savings: '$100+',
+      author: 'Nora Patel',
+      authorImage: 'https://readdy.ai/api/search-image?query=Professional%20female%20travel%20security%20expert%20headshot%2C%20stadium%20rules%20specialist%2C%20organized%20planner&width=100&height=100&seq=author-nora&orientation=squarish',
+      description: 'Bring everything you need on matchday without breaking security rules or buying overpriced gear inside the stadium.',
+      tips: [
+        'Use 12" x 6" x 12" clear bags to pass security quickly',
+        'Pack travel-size sunscreen (lotion), cooling towel, reusable empty bottle',
+        'Add portable battery, noise plugs, and small snack pre-security'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=clear%20bag%20stadium%20policy%2C%20matchday%20packing%20checklist%2C%20transparent%20bag%20with%20essentials&width=400&height=250&seq=clear-bag&orientation=landscape',
+      fullContent: {
+        introduction: 'Matchday packing is an art: bring essentials while flying through security. This guide shows exactly what to pack to stay safe, comfortable, and compliant with clear bag rules.',
+        sections: [
+          { title: 'Approved Bag Sizes', content: 'Most venues enforce clear bags up to 12" x 6" x 12". Small clutch up to 4.5" x 6.5" may be allowed. Soft-sided, no logos that obstruct view, and avoid hard cases.' },
+          { title: 'Heat & Comfort Essentials', content: 'Cooling towel, hat, sunglasses, lotion sunscreen, lip balm with SPF, and lightweight layer for evening matches. Empty reusable bottle to refill at hydration stations.' },
+          { title: 'Tech & Tickets', content: 'Portable battery, short cable, phone with FIFA app and tickets downloaded. Screenshot QR as backup. Keep battery above 40% before leaving hotel.' },
+          { title: 'Food & Medical', content: 'Small sealed snack if permitted, medication in original containers, basic bandages, hand sanitizer (non-aerosol). Check venue rules for allowances.' },
+          { title: 'Security Flow', content: 'Pre-pack in pouches, remove metal items, arrive 2–3 hours early, use the fastest lane, and avoid bottlenecks near kickoff.' }
+        ]
+      }
+    },
+    {
+      id: 5,
+      title: 'World Cup 2026 Flight Booking Guide: Routes, Airlines & Strategies',
+      category: 'transportation',
+      readTime: '7 min',
+      difficulty: 'Intermediate',
+      savings: '$120+',
+      author: 'Alex Thompson',
+      authorImage: 'https://readdy.ai/api/search-image?query=Professional%20male%20mobility%20strategy%20expert%20headshot%2C%20rideshare%20planning%2C%20street%20logistics&width=100&height=100&seq=author-alex2&orientation=squarish',
+      description: 'Beat surge pricing and post-match chaos by using mapped pickup zones, walking offsets, and transit pairings.',
+      tips: [
+        'Walk 10–15 minutes to pre-selected pickup offsets to avoid surge',
+        'Use official zones only; pair Metro for first/last mile',
+        'Share fare with group and wait 30 minutes for price to normalize'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=rideshare%20pickup%20zone%2C%20post%20match%20crowd%2C%20city%20traffic%20management&width=400&height=250&seq=rideshare-zone&orientation=landscape',
+      fullContent: {
+        introduction: 'Rideshare works—if you play it smart. Learn offset walking routes, surge avoidance, and safe meeting locations that clear crowds fast.',
+        sections: [
+          { title: 'Pre-Match Mapping', content: 'Identify two pickup offsets 10–15 minutes from the venue on opposite sides. Save pins and share with your group before kickoff.' },
+          { title: 'Surge Avoidance', content: 'Wait 20–30 minutes post-match or walk to lower-demand areas. Watch live price trends; avoid queueing at stadium gates.' },
+          { title: 'Safety Protocols', content: 'Verify license plate and driver name, ride only in lit areas, and keep group together. Use in-app safety features.' },
+          { title: 'Transit Pairing', content: 'Use Metro or shuttle for first/last mile, then rideshare the final leg. Cheaper and faster than door-to-door after big games.' },
+          { title: 'Group Savings', content: 'Split fares with friends, avoid premium services unless necessary, and pre-agree reimbursements to simplify payments.' }
+        ]
+      }
+    },
+    {
+      id: 6,
+      title: 'Heat Safety Gear Checklist',
+      category: 'planning',
+      readTime: '6 min',
+      difficulty: 'Beginner',
+      savings: '$80+',
+      author: 'Dr. Lina Chen',
+      authorImage: 'https://readdy.ai/api/search-image?query=Medical%20doctor%20headshot%20female%2C%20heat%20safety%20expert%2C%20travel%20health%20advisor&width=100&height=100&seq=author-lina&orientation=squarish',
+      description: 'Stay cool and hydrated with proven gear and timing protocols tailored for summer matchdays.',
+      tips: [
+        'Cooling towel + misting fan reduce perceived heat quickly',
+        'Force hydration schedule: 8–12 oz every 20 minutes',
+        'Shade breaks during peak hours 2–5 PM'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=heat%20safety%20gear%20for%20stadium%2C%20cooling%20towels%2C%20portable%20fan%2C%20hydration%20bottle&width=400&height=250&seq=heat-gear&orientation=landscape',
+      fullContent: {
+        introduction: 'Extreme heat requires preparation. This checklist and protocol ensure you enjoy the match safely while minimizing risk.',
+        sections: [
+          { title: 'Gear Basics', content: 'Wide-brim hat, SPF 50+ lotion sunscreen, sunglasses, cooling towel, misting fan, and light long-sleeves for sun protection.' },
+          { title: 'Hydration Protocol', content: 'Start 3 hours before departure, hydrate on schedule, and alternate water with electrolyte drinks if sweating heavily.' },
+          { title: 'Timing Strategy', content: 'Aim for evening matches; take concourse shade breaks during peak thermal stress and monitor symptoms continuously.' },
+          { title: 'Family Adjustments', content: 'Children need more frequent breaks and forced hydration; use ear defenders and lighter clothing.' },
+          { title: 'Recovery', content: 'Post-match hydration for 2–3 hours, monitor urine color, and avoid dehydrating drinks.' }
+        ]
+      }
+    },
+    {
+      id: 7,
+      title: 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather',
+      category: 'booking',
+      readTime: '7 min',
+      difficulty: 'Advanced',
+      savings: '$400+',
+      author: 'David Chen',
+      authorImage: 'https://readdy.ai/api/search-image?query=Asian%20male%20loyalty%20program%20expert%20headshot%2C%20hotel%20points%20strategist&width=100&height=100&seq=author-david2&orientation=squarish',
+      description: 'Unlock elite benefits, free nights, and late check-outs by stacking promos and matching status across chains.',
+      tips: [
+        'Combine member rates with cardholder promos and app-only deals',
+        'Status match across Marriott/Hilton/IHG before booking',
+        'Redeem points for peak nights; pay cash off-peak'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=hotel%20loyalty%20points%2C%20elite%20status%2C%20membership%20cards%2C%20travel%20rewards&width=400&height=250&seq=points-stack&orientation=landscape',
+      slugOverride: 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather',
+      fullContent: {
+        introduction: 'Strategic loyalty stacking can cut costs dramatically. Learn status matching and promo stacking for World Cup peak dates.',
+        sections: [
+          { title: 'Status Match 101', content: 'Use official match programs to port status between chains. Secure elite benefits before booking peak nights.' },
+          { title: 'Promo Stacking', content: 'Combine member rates, credit card offers, and app-only discounts. Book direct when perks exceed OTA savings.' },
+          { title: 'Cash vs. Points', content: 'Redeem points for peak nights with highest cash rates; pay cash when rates drop. Track value per point.' },
+          { title: 'Late Check-out & Upgrades', content: 'Elite status unlocks late check-out and room upgrades—critical for matchday timing and rest.' },
+          { title: 'Group Strategy', content: 'Split costs with friends using multi-room bookings and shared points redemptions where allowed.' }
+        ]
+      }
+    },
+    {
+      id: 8,
+      title: 'City Pass & Local Transit Mastery',
+      category: 'transportation',
+      readTime: '6 min',
+      difficulty: 'Intermediate',
+      savings: '$150+',
+      author: 'Priya Shah',
+      authorImage: 'https://readdy.ai/api/search-image?query=Professional%20female%20urban%20mobility%20expert%20headshot%2C%20city%20transit%20planner&width=100&height=100&seq=author-priya&orientation=squarish',
+      description: 'Use day passes, trip planners, and park-and-ride lots to move efficiently between matches and sights.',
+      tips: [
+        'Buy unlimited day passes; avoid single-ride overpaying',
+        'Use park-and-ride lots on matchdays',
+        'Plan transfers with official trip planner apps'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=city%20transit%20day%20pass%2C%20metro%20station%2C%20trip%20planner%20app%20on%20phone&width=400&height=250&seq=city-pass&orientation=landscape',
+      fullContent: {
+        introduction: 'Local transit is the World Cup hack. Master day passes, route planners, and shuttle integrations to avoid traffic.',
+        sections: [
+          { title: 'Pass Types', content: 'Buy unlimited day passes to cap daily costs. Load cards or apps in advance to skip queues.' },
+          { title: 'Trip Planning', content: 'Use official apps for live updates, delays, and optimal transfers. Save offline route screenshots.' },
+          { title: 'Park-and-Ride', content: 'Drive to transit hubs, then ride in—faster and cheaper than stadium parking on matchdays.' },
+          { title: 'Shuttle Integration', content: 'Leverage event shuttles from key stations for reliable last-mile service.' },
+          { title: 'Safety & Timing', content: 'Travel in groups after late matches, and aim for trains before the last departure windows.' }
+        ]
+      }
+    },
+    {
+      id: 9,
+      title: 'Late-Night Food & Transit Tactics',
+      category: 'planning',
+      readTime: '5 min',
+      difficulty: 'Beginner',
+      savings: '$60+',
+      author: 'Omar Delgado',
+      authorImage: 'https://readdy.ai/api/search-image?query=Professional%20male%20night%20city%20expert%20headshot%2C%20food%20and%20transit%20guide&width=100&height=100&seq=author-omar&orientation=squarish',
+      description: 'Find reliable post-match eats and get back safely using late-night service maps and group movement.',
+      tips: [
+        'Bookmark 24/7 spots near transit hubs',
+        'Plan last train times before kickoff',
+        'Move in groups; avoid isolated streets'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=late%20night%20food%20near%20metro%20station%2C%20city%20street%20at%20night%2C%20safe%20transit&width=400&height=250&seq=late-night&orientation=landscape',
+      fullContent: {
+        introduction: 'Post-match hunger meets closing hours. Use these tactics to eat well and get home safely without paying surge pricing.',
+        sections: [
+          { title: 'Pre-Game Mapping', content: 'Identify late-night food corridors near major stations. Save a short list with addresses and hours.' },
+          { title: 'Transit Windows', content: 'Know last train times. Leave the stadium early if necessary to catch reliable service.' },
+          { title: 'Group Flow', content: 'Walk together, stick to lit routes, and use main avenues. Avoid isolated shortcuts.' },
+          { title: 'Backup Options', content: 'If transit ends, move to rideshare offsets near police-patrolled areas or taxi stands.' },
+          { title: 'Budget Tips', content: 'Street food and quick-service spots beat sit-down restaurants after late games.' }
+        ]
+      }
+    },
+    {
+      id: 10,
+      title: 'Airfare Deal Window Timing',
+      category: 'booking',
+      readTime: '7 min',
+      difficulty: 'Intermediate',
+      savings: '$350+',
+      author: 'Maria Rodriguez',
+      authorImage: 'https://readdy.ai/api/search-image?query=Professional%20female%20airfare%20analyst%20headshot%2C%20pricing%20expert%2C%20travel%20economics&width=100&height=100&seq=author-maria2&orientation=squarish',
+      description: 'Book flights inside the best pricing windows and use alerts to catch dips for tournament travel.',
+      tips: [
+        'Set multi-platform alerts 6–9 months ahead',
+        'Target Tuesday/Wednesday fare changes',
+        'Compare nearby airports for cheaper routes'
+      ],
+      image: 'https://readdy.ai/api/search-image?query=airfare%20deal%20search%2C%20price%20alerts%20on%20phone%2C%20flight%20booking%20calendar&width=400&height=250&seq=airfare-window&orientation=landscape',
+      fullContent: {
+        introduction: 'Airfare drops follow patterns. This guide shows the timing, alerts, and airport arbitrage to fly cheaper to multiple host cities.',
+        sections: [
+          { title: 'Alert Setup', content: 'Use multiple platforms (Google Flights, Hopper, Skyscanner). Track trends and set flexible date ranges.' },
+          { title: 'Window Timing', content: 'For long-haul, 6–9 months is ideal; domestic 2–4 months. Watch midweek fare adjustments.' },
+          { title: 'Airport Arbitrage', content: 'Check secondary airports and nearby hubs. Factor ground transfers vs airfare savings.' },
+          { title: 'Booking Rules', content: 'Avoid non-refundable basic fares unless the savings are substantial; protect with cards offering insurance.' },
+          { title: 'Change Strategy', content: 'Use refundable or flexible tickets where possible and reprice when dips occur.' }
+        ]
+      }
+    }
   ];
 
   const categories = [
@@ -207,6 +399,14 @@ export default function TravelTipsPage() {
                        tip.description.toLowerCase().includes(searchTerm.toLowerCase());
     return categoryMatch && searchMatch;
   });
+
+  const slugifyTip = (title: string) =>
+    title
+      .toLowerCase()
+      .replace(/&/g, 'and')
+      .replace(/[^a-z0-9\s-]/g, '')
+      .trim()
+      .replace(/\s+/g, '-');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -309,7 +509,7 @@ export default function TravelTipsPage() {
                   </p>
                   
                   <a 
-                    href="/travel-tips/sample-article" 
+                    href={`/travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`} 
                     className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm"
                   >
                     <i className="ri-arrow-right-line mr-2"></i>
@@ -414,15 +614,13 @@ export default function TravelTipsPage() {
                           ))}
                         </div>
                         
-                        <Button 
-                          variant="primary" 
-                          size="sm" 
-                          className="whitespace-nowrap cursor-pointer"
-                          onClick={() => openTipModal(tip)}
+                        <a
+                          href={`/travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`}
+                          className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm"
                         >
                           <i className="ri-arrow-right-line mr-2"></i>
                           Read Complete Guide
-                        </Button>
+                        </a>
                       </div>
                     </div>
                   </Card>
@@ -481,98 +679,7 @@ export default function TravelTipsPage() {
         </div>
       </section>
 
-      {/* Tip Modal - Safety Guide Style */}
-      {isModalOpen && selectedTip && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
-          <div className="flex items-center justify-center min-h-screen px-4 pt-4 pb-20 text-center sm:block sm:p-0">
-            <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" onClick={closeModal}></div>
-            
-            <div className="inline-block w-full max-w-4xl my-8 overflow-hidden text-left align-middle transition-all transform bg-white dark:bg-navy-800 shadow-xl rounded-2xl">
-              <div className="relative">
-                <img 
-                  src={selectedTip.image} 
-                  alt={selectedTip.title}
-                  className="w-full h-64 object-cover"
-                />
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 w-10 h-10 bg-black bg-opacity-50 text-white rounded-full flex items-center justify-center hover:bg-opacity-70 transition-all cursor-pointer"
-                >
-                  <i className="ri-close-line text-xl"></i>
-                </button>
-                <div className="absolute bottom-4 left-4">
-                  <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-bold">
-                    Save {selectedTip.savings}
-                  </span>
-                </div>
-              </div>
-              
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-emerald-500 text-sm font-medium capitalize">{selectedTip.category}</span>
-                  <span className="text-slate-500 text-sm">{selectedTip.readTime}</span>
-                </div>
-                
-                <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">
-                  {selectedTip.title}
-                </h2>
-                
-                <div className="flex items-center space-x-3 mb-6">
-                  <img
-                    src={selectedTip.authorImage}
-                    alt={selectedTip.author}
-                    className="w-10 h-10 rounded-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = 'https://readdy.ai/api/search-image?query=default%20user%20profile%20avatar&width=100&height=100';
-                    }}
-                  />
-                  <div>
-                    <div className="font-medium text-navy-900 dark:text-white">{selectedTip.author}</div>
-                    <div className="text-sm text-slate-500">Travel Expert</div>
-                  </div>
-                </div>
-                
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-8">
-                  {selectedTip.fullContent?.introduction}
-                </p>
-                
-                <div className="space-y-6">
-                  {selectedTip.fullContent?.sections.map((section, index) => (
-                    <div key={index}>
-                      <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-3">
-                        {section.title}
-                      </h3>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        {section.content}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                
-                <div className="mt-8 p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-800">
-                  <div className="flex items-start space-x-3">
-                    <i className="ri-lightbulb-line text-emerald-600 text-lg mt-0.5"></i>
-                    <div>
-                      <h4 className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">Pro Tip</h4>
-                      <p className="text-emerald-700 dark:text-emerald-400 text-sm">
-                        Combine multiple strategies for maximum savings. The best travelers use 3-4 techniques simultaneously.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="flex justify-end mt-8">
-                  <Button variant="primary" onClick={closeModal} className="cursor-pointer">
-                    <i className="ri-check-line mr-2"></i>
-                    Got It
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Tip Modal removed: Read Complete Guide opens dedicated pages */}
 
       <Footer />
     </div>
