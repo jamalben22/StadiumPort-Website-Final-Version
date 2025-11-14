@@ -12,12 +12,17 @@ const TARGETS = [
 ];
 
 async function ensureVariant(srcPath, destPath, width, quality) {
-  if (fs.existsSync(destPath)) return false; // already exists
-  await sharp(srcPath)
-    .resize({ width, withoutEnlargement: true })
-    .webp({ quality })
-    .toFile(destPath);
-  return true;
+  if (fs.existsSync(destPath)) return false;
+  try {
+    await sharp(srcPath)
+      .resize({ width, withoutEnlargement: true })
+      .webp({ quality })
+      .toFile(destPath);
+    return true;
+  } catch (e) {
+    console.error('Variant generation failed for', srcPath, '->', destPath);
+    return false;
+  }
 }
 
 async function processImage(srcPath) {
