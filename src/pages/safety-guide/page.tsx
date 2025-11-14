@@ -22,15 +22,14 @@ export const safetyGuides = [
 
   {
     id: 7,
-    title: 'Transportation Safety Guidelines',
+    title: 'World Cup 2026 Safety Guide: Everything Fans Need to Know',
     excerpt: 'Safe practices for flights, trains, buses, taxis, and rideshares. Avoiding scams and ensuring secure transport.',
     category: 'Travel Security',
     author: 'Maria Gonzalez',
     readTime: '13 min read',
-    image: 'https://readdy.ai/api/search-image?query=safe%20transportation%20with%20licensed%20taxi%2C%20verified%20rideshare%20app%2C%20secure%20public%20transport%2C%20professional%20transportation%20safety%2C%20travel%20security%20measures&width=400&height=250&seq=safety7&orientation=landscape',
     featured: false,
     priority: 'Medium',
-    href: '/safety-guide/transportation-safety-guidelines'
+    href: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know'
   },
   {
     id: 8,
@@ -47,7 +46,7 @@ export const safetyGuides = [
 
 const guideArticles = [
   {
-    title: 'Matchday Crowd Safety Essentials',
+    title: 'World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud',
     excerpt: 'Navigate stadium crowds, entry checkpoints, and post-match dispersal with confidence.',
     category: 'Stadium & Crowd Safety',
     author: 'Alex Rivera',
@@ -55,10 +54,10 @@ const guideArticles = [
     priority: 'High' as const,
     image:
       'https://readdy.ai/api/search-image?query=stadium%20crowd%20safety%2C%20entry%20checkpoints%2C%20safe%20movement%2C%20stewards%20guiding%20fans&width=400&height=250&seq=guides1&orientation=landscape',
-    slug: 'matchday-crowd-safety-essentials'
+    slug: 'world-cup-2026-scams-how-to-avoid-ticket-travel-fraud'
   },
   {
-    title: 'Emergency Planning: Before You Go',
+    title: 'Stadium Safety at World Cup 2026: Security Rules & What to Expect',
     excerpt: 'Build a quick-response plan: contacts, meeting points, and local emergency resources for hosts.',
     category: 'Emergency Planning',
     author: 'Priya Shah',
@@ -66,7 +65,7 @@ const guideArticles = [
     priority: 'Medium' as const,
     image:
       'https://readdy.ai/api/search-image?query=travel%20emergency%20plan%2C%20contact%20list%2C%20meeting%20points%2C%20preparedness&width=400&height=250&seq=guides2&orientation=landscape',
-    slug: 'emergency-planning-before-you-go'
+    slug: 'stadium-safety-at-world-cup-2026-security-rules-what-to-expect'
   },
   {
     title: 'Health & Medical Preparedness',
@@ -77,10 +76,10 @@ const guideArticles = [
     priority: 'High' as const,
     image:
       'https://readdy.ai/api/search-image?query=travel%20health%20kit%2C%20vaccination%2C%20first%20aid%2C%20medical%20preparedness&width=400&height=250&seq=guides3&orientation=landscape',
-    slug: 'health-and-medical-preparedness'
+    slug: ''
   },
   {
-    title: 'Digital Security & Privacy Protection',
+    title: 'Transportation Safety: Getting Around World Cup 2026 Host Cities',
     excerpt: 'Protect accounts, payments, and identity on public Wi‑Fi and mobile networks.',
     category: 'Digital Security',
     author: 'Nora Patel',
@@ -88,10 +87,10 @@ const guideArticles = [
     priority: 'Medium' as const,
     image:
       'https://readdy.ai/api/search-image?query=digital%20security%20travel%2C%20vpn%2C%20account%20protection%2C%20privacy&width=400&height=250&seq=guides4&orientation=landscape',
-    slug: 'digital-security-and-privacy-protection'
+    slug: 'transportation-safety-getting-around-world-cup-2026-host-cities'
   },
   {
-    title: 'Safe Transportation: Rideshare, Taxi, Transit',
+    title: 'World Cup 2026 Emergency Contacts & Resources Guide',
     excerpt: 'Verify rides, choose licensed providers, and avoid common scams across three hosts.',
     category: 'Travel Security',
     author: 'Maria Gonzalez',
@@ -99,10 +98,10 @@ const guideArticles = [
     priority: 'Medium' as const,
     image:
       'https://readdy.ai/api/search-image?query=licensed%20taxi%2C%20verified%20rideshare%2C%20safe%20public%20transport&width=400&height=250&seq=guides5&orientation=landscape',
-    slug: 'safe-transportation-rideshare-taxi-transit'
+    slug: 'world-cup-2026-emergency-contacts-resources-guide'
   },
   {
-    title: 'Accommodation Safety Checklist',
+    title: 'Solo Travel Safety Guide: Attending World Cup 2026 Alone',
     excerpt: 'Room security, hotel policies, and avoiding accommodation‑related scams.',
     category: 'Travel Security',
     author: 'David Thompson',
@@ -110,10 +109,10 @@ const guideArticles = [
     priority: 'Medium' as const,
     image:
       'https://readdy.ai/api/search-image?query=hotel%20room%20security%2C%20safe%20deposit%20box%2C%20secure%20lodging&width=400&height=250&seq=guides6&orientation=landscape',
-    slug: 'accommodation-safety-checklist'
+    slug: 'solo-travel-safety-guide-attending-world-cup-2026-alone'
   },
   {
-    title: 'Local Scams: Spot and Avoid',
+    title: 'Family Safety Guide: Taking Kids to World Cup 2026',
     excerpt: 'Common fan‑targeted scams and how to identify and avoid them quickly.',
     category: 'Travel Security',
     author: 'Omar Delgado',
@@ -121,7 +120,7 @@ const guideArticles = [
     priority: 'Low' as const,
     image:
       'https://readdy.ai/api/search-image?query=travel%20scams%20awareness%2C%20money%20fraud%2C%20street%20scams%20guide&width=400&height=250&seq=guides7&orientation=landscape',
-    slug: 'local-scams-spot-and-avoid'
+    slug: 'family-safety-guide-taking-kids-to-world-cup-2026'
   }
 ];
 
@@ -426,42 +425,32 @@ export default function SafetyGuidePage() {
       </section>
 
       {/* Search and Filter */}
-      <section className="py-16">
+      {/* Deleted section per request */}
+
+      {/* Dedicated Guide Articles */}
+      <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              <div className="relative flex-1 max-w-md">
-                <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
-                <input
-                  type="text"
-                  placeholder="Search safety guides..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-slate-300 dark:border-navy-600 rounded-xl bg-white dark:bg-navy-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-red-500 focus:border-transparent"
-                />
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {safetyCategories.map((category) => (
-                  <button
-                    key={category}
-                    onClick={() => setSelectedCategory(category)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      selectedCategory === category
-                        ? 'bg-red-500 text-white shadow-lg'
-                        : 'bg-white dark:bg-navy-700 text-slate-600 dark:text-slate-300 hover:bg-red-50 dark:hover:bg-navy-600'
-                    }`}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">Dedicated Article Guides</h2>
+            <p className="text-lg text-slate-600 dark:text-slate-300">Explore focused guides with deep‑dive advice for fans.</p>
           </div>
 
-      {/* Safety Guides Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredGuides.map((guide) => (
-          <Card key={guide.id} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {guideArticles.map((g) => (
+              <GuideCard
+                key={g.slug}
+                title={g.title}
+                excerpt={g.excerpt}
+                category={g.category}
+                author={g.author}
+                readTime={g.readTime}
+                priority={g.priority}
+                image={g.image}
+                href={`/guides/${g.slug}`}
+              />
+            ))}
+            {safetyGuides.slice(0,2).map((guide) => (
+              <Card key={`dedicated-${guide.id}`} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
                 <div className="relative">
                   <img 
                     src={guide.image} 
@@ -503,44 +492,6 @@ export default function SafetyGuidePage() {
                   </div>
                 </div>
               </Card>
-        ))}
-      </div>
-
-          {filteredGuides.length === 0 && (
-            <div className="text-center py-12">
-              <i className="ri-search-line text-4xl text-slate-400 mb-4"></i>
-              <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-300 mb-2">
-                No safety guides found
-              </h3>
-              <p className="text-slate-500">
-                Try adjusting your search or filter criteria
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Dedicated Guide Articles */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">Dedicated Article Guides</h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300">Explore focused guides with deep‑dive advice for fans.</p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {guideArticles.map((g) => (
-              <GuideCard
-                key={g.slug}
-                title={g.title}
-                excerpt={g.excerpt}
-                category={g.category}
-                author={g.author}
-                readTime={g.readTime}
-                priority={g.priority}
-                image={g.image}
-                href={`/guides/${g.slug}`}
-              />
             ))}
           </div>
         </div>
@@ -671,7 +622,7 @@ export default function SafetyGuidePage() {
                 </div>
                 <h3 className="text-2xl font-bold text-navy-900 dark:text-white mb-3">Guide Title 1</h3>
                 <p className="text-slate-700 dark:text-slate-300 text-base mb-6 leading-relaxed">A brief description of the related guide content goes here, enticing the user to click and learn more. This text is designed to be engaging and informative.</p>
-                <a href={`/safety-guide/${slugify('Transportation Safety Guidelines')}`} className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-500 transition-colors duration-300 group">
+                <a href={`/safety-guide/${slugify('World Cup 2026 Safety Guide: Everything Fans Need to Know')}`} className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-500 transition-colors duration-300 group">
                   Read More
                   <i className="ri-arrow-right-line ml-2 group-hover:translate-x-1 transition-transform duration-300"></i>
                 </a>

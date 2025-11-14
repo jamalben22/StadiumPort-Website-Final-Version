@@ -15,10 +15,17 @@ function toTitle(slug?: string) {
     .join(' ')
 }
 
+const TITLE_OVERRIDES: Record<string, string> = {
+  'world-cup-2026-scams-how-to-avoid-ticket-travel-fraud': 'World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud',
+  'world-cup-2026-emergency-contacts-resources-guide': 'World Cup 2026 Emergency Contacts & Resources Guide',
+  'solo-travel-safety-guide-attending-world-cup-2026-alone': 'Solo Travel Safety Guide: Attending World Cup 2026 Alone',
+  'family-safety-guide-taking-kids-to-world-cup-2026': 'Family Safety Guide: Taking Kids to World Cup 2026',
+}
+
 export default function GuidesArticlePage() {
   const { slug } = useParams()
   const [visible, setVisible] = useState(false)
-  const title = toTitle(slug)
+  const title = TITLE_OVERRIDES[slug ?? ''] ?? toTitle(slug)
   const url = `/guides/${slug ?? ''}`
 
   useEffect(() => {
@@ -90,10 +97,736 @@ export default function GuidesArticlePage() {
 
       <section className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
-          {slug === 'accommodation-safety-checklist' ? (
+          {slug === 'solo-travel-safety-guide-attending-world-cup-2026-alone' ? (
             <AccommodationSafetyChecklistContent />
-          ) : slug === 'local-scams-spot-and-avoid' ? (
+          ) : slug === 'local-scams-spot-and-avoid' || slug === 'family-safety-guide-taking-kids-to-world-cup-2026' ? (
             <LocalScamsSpotAndAvoidContent />
+          ) : slug === 'world-cup-2026-emergency-contacts-resources-guide' ? (
+            <>
+              <p className="whitespace-pre-line">Part 1/2</p>
+
+              <h2 className="editorial-h2">World Cup 2026 Emergency Contacts & Resources Guide</h2>
+              <p className="whitespace-pre-line">When emergency strikes thousands of miles from home, in an unfamiliar city, possibly in a foreign country, you need accurate information immediately. Not tomorrow. Not after you search Google while panicking. Right now.</p>
+              <p className="whitespace-pre-line">This comprehensive reference guide consolidates every critical emergency contact, resource, and protocol you'll need during World Cup 2026—organized by host city, country, and emergency type. Bookmark this page. Save it offline. Share it with your travel companions. Because when your passport is stolen in Mexico City at 2 AM, when you need urgent medical care in Dallas, or when you're arrested in Toronto, every second counts.</p>
+              <p className="whitespace-pre-line">According to FEMA, the 2026 FIFA World Cup is expected to be the largest sporting event in history, with $625 million in federal funding distributed to 11 U.S. host cities to support law enforcement and emergency response training. Atlanta's Executive Director of Emergency Preparedness Felipe den Brok describes hosting eight World Cup games as "like hosting eight Super Bowls within a few weeks," emphasizing that coordination among federal, state, regional, and local public safety agencies is key to managing security challenges.</p>
+              <p className="whitespace-pre-line">Whether you're a U.S. citizen traveling internationally, a foreign visitor navigating North America, or anyone facing an emergency situation, this guide provides the phone numbers, addresses, and protocols that could save your trip—or your life.</p>
+
+              <h2 className="editorial-h2">Universal Emergency Numbers</h2>
+
+              <h3 className="editorial-h3">All Three Countries Use 911</h3>
+              <p className="whitespace-pre-line"><strong>United States: 911</strong>
+ <strong>Canada: 911</strong>  
+ <strong>Mexico: 911</strong></p>
+              <p className="whitespace-pre-line">In 2017, Mexico standardized its emergency number to 911, aligning with the United States and Canada. This makes emergency response access consistent across all three World Cup host nations.</p>
+              <p className="whitespace-pre-line"><strong>What 911 Covers:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Police emergencies</li>
+                <li>Fire emergencies</li>
+                <li>Medical emergencies (ambulance)</li>
+                <li>All life-threatening situations</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>When to Call 911:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Crime in progress</li>
+                <li>Medical emergency requiring immediate attention</li>
+                <li>Fire or explosion</li>
+                <li>Traffic accident with injuries</li>
+                <li>Any situation where someone is in immediate danger</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>When NOT to Call 911:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Non-emergency police reports (use local non-emergency numbers)</li>
+                <li>General inquiries or directions</li>
+                <li>Noise complaints (unless violent situation)</li>
+                <li>Lost property (unless theft just occurred)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Important Notes:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>English and Spanish widely spoken by dispatchers in all three countries</li>
+                <li>Provide your exact location immediately</li>
+                <li>Stay on the line until dispatcher says you can hang up</li>
+                <li>If you accidentally dial 911, do NOT hang up—explain it was a mistake</li>
+              </ul>
+
+              <h2 className="editorial-h2">United States Emergency Resources</h2>
+
+              <h3 className="editorial-h3">Federal Emergency Assistance</h3>
+              <p className="whitespace-pre-line"><strong>U.S. Department of State (24/7 Emergency Line):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>From U.S. and Canada:</strong> 1-888-407-4747</li>
+                <li><strong>From all other locations:</strong> +1-202-501-4444</li>
+                <li><strong>Purpose:</strong> Emergency assistance for U.S. citizens abroad, including lost/stolen passports, arrests, medical emergencies, deaths</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Smart Traveler Enrollment Program (STEP):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Website:</strong> step.state.gov</li>
+                <li><strong>Purpose:</strong> Register your travel plans so U.S. Embassy can assist in emergencies</li>
+                <li><strong>Action Required:</strong> Enroll before leaving the U.S. if traveling to Canada or Mexico</li>
+              </ul>
+
+              <h3 className="editorial-h3">U.S. Host Cities Emergency Contacts</h3>
+
+              <h4 className="editorial-h4">Atlanta, Georgia (Mercedes-Benz Stadium)</h4>
+              <p className="whitespace-pre-line"><strong>Emergency Services:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>911:</strong> Police, Fire, Medical</li>
+                <li><strong>Non-Emergency Police:</strong> (404) 546-4235</li>
+                <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Major Hospitals:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Grady Memorial Hospital:</strong> (404) 616-1000 - Level I Trauma Center<br/>80 Jesse Hill Jr. Dr SE, Atlanta, GA 30303</li>
+                <li><strong>Emory University Hospital:</strong> (404) 712-2000<br/>1364 Clifton Rd NE, Atlanta, GA 30322</li>
+                <li><strong>Piedmont Hospital:</strong> (404) 605-5000<br/>1968 Peachtree Rd NW, Atlanta, GA 30309</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Stadium Information:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Mercedes-Benz Stadium Security:</strong> (404) 965-4500</li>
+                <li><strong>Location:</strong> 1 AMB Dr NW, Atlanta, GA 30313</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Transportation:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>MARTA Transit Police:</strong> (404) 848-4911</li>
+                <li><strong>Airport (ATL) Police:</strong> (404) 530-2100</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Tourist Assistance:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Atlanta Police Tourist Precinct:</strong> (404) 817-6900</li>
+                <li><strong>Atlanta Convention & Visitors Bureau:</strong> (404) 521-6600</li>
+              </ul>
+
+              <h4 className="editorial-h4">Boston, Massachusetts (Gillette Stadium in Foxborough)</h4>
+              <p className="whitespace-pre-line"><strong>Emergency Services:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>911:</strong> Police, Fire, Medical</li>
+                <li><strong>Massachusetts State Police:</strong> (508) 820-2300</li>
+                <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Major Hospitals:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Massachusetts General Hospital:</strong> (617) 726-2000 - Level I Trauma Center<br/>55 Fruit St, Boston, MA 02114</li>
+                <li><strong>Beth Israel Deaconess Medical Center:</strong> (617) 667-7000<br/>330 Brookline Ave, Boston, MA 02215</li>
+                <li><strong>Sturdy Memorial Hospital (Foxborough area):</strong> (508) 222-5200<br/>211 Park St, Attleboro, MA 02703</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Stadium Information:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Gillette Stadium:</strong> (508) 543-1776</li>
+                <li><strong>Location:</strong> 1 Patriot Pl, Foxborough, MA 02035</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Transportation:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>MBTA Transit Police:</strong> (617) 222-1212</li>
+                <li><strong>Logan Airport Police:</strong> (617) 561-1807</li>
+              </ul>
+
+              <h4 className="editorial-h4">Dallas, Texas (AT&T Stadium in Arlington)</h4>
+              <p className="whitespace-pre-line"><strong>Emergency Services:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>911:</strong> Police, Fire, Medical</li>
+                <li><strong>Dallas Police Non-Emergency:</strong> (214) 671-3481</li>
+                <li><strong>Arlington Police Non-Emergency:</strong> (817) 459-5700</li>
+                <li><strong>Poison Control:</strong> 1-800-222-1222</li>
+              </ul>
+
+              <hr className="my-8 border-gray-300" />
+
+              <p className="whitespace-pre-line"><strong>Major Hospitals:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Hospital San José:</strong> +52-81-8347-1010<br/>Av. Ignacio Morones Prieto 3000, Monterrey</li>
+                <li><strong>Christus Muguerza Hospital del Parque:</strong> +52-81-8888-0300<br/>Hidalgo 2425, Monterrey</li>
+                <li><strong>Hospital Universitario:</strong> +52-81-8333-8111<br/>Av. Francisco I. Madero, Monterrey</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Stadium Information:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Estadio BBVA:</strong> +52-81-8158-6200</li>
+                <li><strong>Location:</strong> Av. Pablo Livas 2011, Guadalupe, Nuevo León</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>U.S. Consulate Monterrey:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Address:</strong> Av. Universidad 399, Col. Valle Oriente, San Pedro Garza García, N.L. 66260</li>
+                <li><strong>Phone:</strong> +52-81-8047-3100</li>
+                <li><strong>Emergency (after hours):</strong> +52-81-8047-3100</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Canadian Consulate Monterrey:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Address:</strong> Torre Gomez Morin 955, Ave. Gomez Morin, San Pedro Garza Garcia</li>
+                <li><strong>Phone:</strong> +52-81-8363-3200</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Transportation:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Monterrey Airport:</strong> +52-81-8345-4434</li>
+              </ul>
+
+              <h2 className="editorial-h2">Emergency Situation Protocols</h2>
+
+              <h3 className="editorial-h3">Medical Emergencies</h3>
+              <p className="whitespace-pre-line"><strong>Immediate Actions:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Call 911 for life-threatening situations</li>
+                <li>Call your travel insurance emergency hotline</li>
+                <li>Alert hotel or venue medical staff if available</li>
+                <li>Have someone contact your emergency contact back home</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Hospital Protocol:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Bring passport and travel insurance documentation</li>
+                <li>Have credit card ready (most require payment/deposit before treatment)</li>
+                <li>Request itemized bills in English for insurance claims</li>
+                <li>Get full medical reports and prescriptions</li>
+                <li>Keep ALL receipts and documentation</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Travel Insurance Emergency Hotlines:</strong>
+              Save these before traveling (from our <a href="#" className="underline">Travel Insurance Guide</a>):</p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>World Nomads:</strong> Check your policy documents</li>
+                <li><strong>Allianz:</strong> Check your policy documents</li>
+                <li><strong>IMG Global:</strong> Check your policy documents</li>
+                <li><strong>GeoBlue:</strong> Check your policy documents</li>
+              </ul>
+
+              <h3 className="editorial-h3">Lost or Stolen Passport</h3>
+              <p className="whitespace-pre-line"><strong>U.S. Citizens:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Report theft to local police immediately (get police report)</li>
+                <li>Contact nearest U.S. Embassy or Consulate</li>
+                <li>Complete Form DS-64 (Statement Regarding Lost or Stolen Passport)</li>
+                <li>Apply for emergency passport replacement</li>
+                <li>Bring passport photos, ID, police report, travel itinerary</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Emergency Passport Replacement Timeframes:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Emergency travel document: Same day (limited validity)</li>
+                <li>Full passport: 2-5 business days (expedited)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Canadian Citizens:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Report to local police (get report number)</li>
+                <li>Contact nearest Canadian Embassy or Consulate</li>
+                <li>Complete Declaration Concerning a Lost, Stolen, Inaccessible, Damaged or Found Canadian Travel Document</li>
+                <li>Apply for emergency travel document</li>
+                <li>Bring photos, ID, police report, travel plans</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Other Nationalities:</strong>
+              Contact your country's embassy or consulate immediately.</p>
+
+              <h3 className="editorial-h3">Arrest or Detention</h3>
+              <p className="whitespace-pre-line"><strong>Your Rights:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Right to contact your embassy/consulate</li>
+                <li>Right to legal representation</li>
+                <li>Right to humane treatment</li>
+                <li>Right to interpreter if needed</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Immediate Actions:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Remain calm and cooperative</li>
+                <li>Do NOT resist arrest</li>
+                <li>Request to contact your embassy immediately</li>
+                <li>Do NOT sign documents you don't understand</li>
+                <li>Ask for interpreter if needed</li>
+                <li>Request lawyer before answering questions</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Embassy Assistance:</strong>
+              Embassies can:</p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Provide list of local attorneys</li>
+                <li>Contact family members</li>
+                <li>Visit you in detention</li>
+                <li>Monitor treatment</li>
+                <li>Explain local legal system</li>
+              </ul>
+              <p className="whitespace-pre-line">Embassies CANNOT:</p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Get you out of jail</li>
+                <li>Pay legal fees or fines</li>
+                <li>Represent you in court</li>
+                <li>Override local laws</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Legal Representation:</strong>
+              Each embassy maintains lists of English-speaking attorneys.</p>
+
+              <h3 className="editorial-h3">Crime Victimization</h3>
+              <p className="whitespace-pre-line"><strong>If You're Robbed or Attacked:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Prioritize your safety—don't resist</li>
+                <li>Call 911 if immediate danger exists</li>
+                <li>Go to safe location</li>
+                <li>Report to local police (required for insurance claims)</li>
+                <li>Get police report number</li>
+                <li>Contact embassy if passport stolen</li>
+                <li>Cancel credit cards</li>
+                <li>File travel insurance claim within 24 hours</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Reporting Resources:</strong></p>
+              <p className="whitespace-pre-line"><strong>United States:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Local police department</li>
+                <li>FBI (for major crimes): tips.fbi.gov or 1-800-CALL-FBI</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Canada:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Local police service</li>
+                <li>RCMP (for major crimes): 1-800-771-5401</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Local police: 911</li>
+                <li>Tourist Police: Varies by city (see city sections above)</li>
+                <li>PROFECO (consumer protection): 800-468-8722</li>
+              </ul>
+
+              <h3 className="editorial-h3">Natural Disasters or Severe Weather</h3>
+              <p className="whitespace-pre-line"><strong>Before Disaster:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Monitor local weather/news</li>
+                <li>Know evacuation routes from hotel/stadium</li>
+                <li>Have emergency kit ready (water, medications, documents, cash)</li>
+                <li>Charge all devices fully</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>During Disaster:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Follow official evacuation orders</li>
+                <li>Go to designated shelters</li>
+                <li>Stay away from windows during storms</li>
+                <li>Don't drive through flooded areas</li>
+                <li>Monitor emergency broadcasts</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>After Disaster:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Check in with embassy (they track citizens in disasters)</li>
+                <li>Document damage for insurance</li>
+                <li>Follow official guidance before returning to affected areas</li>
+                <li>Be cautious of damaged buildings and infrastructure</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Emergency Alert Systems:</strong></p>
+              <p className="whitespace-pre-line"><strong>United States:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>AlertSeattle (Seattle):</strong> Sign up at alertseattle.com</li>
+                <li>Local emergency management websites for other cities</li>
+                <li>Weather alerts via NOAA Weather Radio</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Canada:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Alert Ready:</strong> National public alert system (automatic on phones)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Sistema de Alerta Sísmica (Earthquake Alert):</strong> Active in Mexico City</li>
+              </ul>
+
+              <h3 className="editorial-h3">Terrorist Attack or Active Shooter</h3>
+              <p className="whitespace-pre-line"><strong>Run, Hide, Fight Protocol:</strong></p>
+              <p className="whitespace-pre-line"><strong>1. RUN:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Evacuate if safe path available</li>
+                <li>Leave belongings behind</li>
+                <li>Help others evacuate if possible</li>
+                <li>Call 911 when safe</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>2. HIDE:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>If evacuation impossible, find hiding place</li>
+                <li>Lock/barricade doors</li>
+                <li>Silence phones</li>
+                <li>Remain quiet</li>
+                <li>Spread out if with others (don't huddle)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>3. FIGHT:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Only as last resort if life in imminent danger</li>
+                <li>Use improvised weapons</li>
+                <li>Commit to actions</li>
+                <li>Act with aggression</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>After Attack:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Follow law enforcement instructions</li>
+                <li>Keep hands visible</li>
+                <li>Don't make sudden movements</li>
+                <li>Expect lengthy questioning</li>
+                <li>Contact embassy for assistance</li>
+              </ul>
+
+              <h2 className="editorial-h2">Travel Document Checklist</h2>
+              <h3 className="editorial-h3">Keep These Documents Accessible</h3>
+              <p className="whitespace-pre-line"><strong>Physical Copies (in hotel safe):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Passport (main pages)</li>
+                <li>Travel insurance policy and emergency hotline</li>
+                <li>Credit cards (front and back)</li>
+                <li>Prescription medications (label details)</li>
+                <li>Embassy/consulate contact information</li>
+                <li>Emergency contact information</li>
+                <li>Hotel address and phone number</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Digital Copies (email yourself or cloud storage):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Everything listed above</li>
+                <li>Flight confirmations</li>
+                <li>Hotel reservations</li>
+                <li>Match tickets</li>
+                <li>Medical records (if relevant conditions)</li>
+                <li>Prescriptions</li>
+                <li>Driver's license</li>
+                <li>COVID-19 vaccination card (if traveling internationally)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Carry With You:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Actual passport</li>
+                <li>Credit cards</li>
+                <li>Small amount of local currency</li>
+                <li>Hotel key card with address</li>
+                <li>Phone with emergency contacts saved</li>
+                <li>This emergency resource guide</li>
+              </ul>
+
+              <h2 className="editorial-h2">Essential Apps to Download</h2>
+              <p className="whitespace-pre-line"><strong>Before Traveling:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Google Maps</strong> (download offline maps for each host city)</li>
+                <li><strong>Google Translate</strong> (download offline language packs)</li>
+                <li><strong>FIFA Official App</strong> (match tickets, schedules, venues)</li>
+                <li><strong>Rideshare apps:</strong> Uber, Lyft (U.S./Canada); Uber, Didi, Cabify (Mexico)</li>
+                <li><strong>Travel Insurance app</strong> (if your provider offers one)</li>
+                <li><strong>Emergency alert apps</strong> for specific cities</li>
+                <li><strong>WhatsApp</strong> (international communication)</li>
+              </ul>
+
+              <h2 className="editorial-h2">Embassy and Consulate Locations</h2>
+              <h3 className="editorial-h3">U.S. Embassies and Consulates</h3>
+              <p className="whitespace-pre-line"><strong>In Canada:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Ottawa (Embassy):</strong> 490 Sussex Dr, Ottawa, ON K1N 1G8 - (613) 238-5335</li>
+                <li><strong>Toronto:</strong> 225 Simcoe St, Toronto, ON M5G 1S4 - (416) 595-1700</li>
+                <li><strong>Vancouver:</strong> 1095 W Pender St, Vancouver, BC V6E 2M6 - (604) 685-4311</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>In Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Mexico City (Embassy):</strong> Paseo de la Reforma 305, Mexico City - +52-55-5080-2000</li>
+                <li><strong>Guadalajara:</strong> Progreso 175, Guadalajara - +52-33-3268-2100</li>
+                <li><strong>Monterrey:</strong> Av. Universidad 399, San Pedro Garza García - +52-81-8047-3100</li>
+              </ul>
+              <h3 className="editorial-h3">Canadian Embassies and Consulates</h3>
+              <p className="whitespace-pre-line"><strong>In United States:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Washington, D.C. (Embassy):</strong> 501 Pennsylvania Ave NW - (202) 682-1740</li>
+                <li>Multiple consulates in major cities - contact embassy for nearest location</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>In Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Mexico City (Embassy):</strong> Calle Schiller 529, Polanco - +52-55-5724-7900</li>
+                <li><strong>Guadalajara:</strong> World Trade Center Torre Pacifico - +52-33-3671-4740</li>
+                <li><strong>Monterrey:</strong> Torre Gomez Morin 955 - +52-81-8363-3200</li>
+              </ul>
+              <h3 className="editorial-h3">Other Major Embassies in Mexico City</h3>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>United Kingdom:</strong> Río Lerma 71, Cuauhtémoc, Mexico City — +52-55-1670-3200</li>
+                <li><strong>Australia:</strong> Rubén Darío 55, Polanco, Mexico City — +52-55-1101-2200</li>
+                <li><strong>Germany:</strong> Horacio 1506, Polanco, Mexico City — +52-55-5283-2200</li>
+                <li><strong>France:</strong> Havre 15, Juárez, Mexico City — +52-55-9171-9700</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>For other nationalities:</strong> Contact your embassy before traveling for emergency contact information.</p>
+
+              <h2 className="editorial-h2">Financial Emergency Resources</h2>
+              <h3 className="editorial-h3">Lost or Stolen Credit Cards</h3>
+              <p className="whitespace-pre-line"><strong>Major Credit Card Emergency Numbers (U.S. cards):</strong></p>
+              <p className="whitespace-pre-line"><strong>Visa:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>From U.S.:</strong> 1-800-847-2911</li>
+                <li><strong>International Collect:</strong> +1-303-967-1096</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Mastercard:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>From U.S.:</strong> 1-800-307-7309</li>
+                <li><strong>International Collect:</strong> +1-636-722-7111</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>American Express:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>From U.S.:</strong> 1-800-528-4800</li>
+                <li><strong>International Collect:</strong> +1-336-393-1111</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Discover:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>From U.S.:</strong> 1-800-347-2683</li>
+                <li><strong>International Collect:</strong> +1-801-902-3100</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Emergency Actions:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Report cards stolen immediately</li>
+                <li>Request emergency replacement card</li>
+                <li>Get police report (required for fraud claims)</li>
+                <li>Monitor accounts daily for fraudulent charges</li>
+                <li>Contact travel insurance if theft covered</li>
+              </ol>
+              <h3 className="editorial-h3">Emergency Cash Services</h3>
+              <p className="whitespace-pre-line"><strong>Western Union:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Website:</strong> westernunion.com</li>
+                <li><strong>U.S. Phone:</strong> 1-800-325-6000</li>
+                <li><strong>Purpose:</strong> Emergency money transfers from friends/family</li>
+                <li><strong>Available:</strong> Throughout all host cities</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>MoneyGram:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Website:</strong> moneygram.com</li>
+                <li><strong>U.S. Phone:</strong> 1-800-926-9400</li>
+                <li><strong>Purpose:</strong> Alternative emergency money transfer service</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>U.S. State Department (for U.S. citizens):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Can facilitate emergency money transfers from friends/family through embassies/consulates</li>
+                <li>Contact embassy for procedures</li>
+              </ul>
+              <h3 className="editorial-h3">ATM Safety</h3>
+              <p className="whitespace-pre-line"><strong>Safe ATM Usage:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Use ATMs inside banks during business hours when possible</li>
+                <li>Avoid standalone ATMs on streets (especially in Mexico)</li>
+                <li>Cover keypad when entering PIN</li>
+                <li>Be aware of surroundings</li>
+                <li>Have companion watch for suspicious activity</li>
+                <li>Don't count cash openly after withdrawal</li>
+                <li>Immediately secure cash before leaving ATM</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>ATM Skimming Protection:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Check card reader for loose or unusual attachments</li>
+                <li>Wiggle card reader before inserting card</li>
+                <li>Shield PIN entry with hand</li>
+                <li>Monitor accounts daily for unauthorized charges</li>
+              </ul>
+
+              <h2 className="editorial-h2">Language Emergency Phrases</h2>
+              <h3 className="editorial-h3">Essential Spanish Phrases for Mexico</h3>
+              <p className="whitespace-pre-line"><strong>Medical:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>"Necesito un médico" (I need a doctor)</li>
+                <li>"Estoy enfermo/a" (I am sick)</li>
+                <li>"Llame una ambulancia" (Call an ambulance)</li>
+                <li>"Tengo dolor aquí" (I have pain here)</li>
+                <li>"Soy alérgico/a a..." (I'm allergic to...)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Emergency:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>"¡Ayuda!" (Help!)</li>
+                <li>"¡Policía!" (Police!)</li>
+                <li>"¡Fuego!" (Fire!)</li>
+                <li>"Me robaron" (I was robbed)</li>
+                <li>"Perdí mi pasaporte" (I lost my passport)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Directions:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>"¿Dónde está el hospital?" (Where is the hospital?)</li>
+                <li>"¿Dónde está la estación de policía?" (Where is the police station?)</li>
+                <li>"¿Dónde está la embajada americana/canadiense?" (Where is the American/Canadian embassy?)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Communication:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>"No hablo español" (I don't speak Spanish)</li>
+                <li>"¿Habla inglés?" (Do you speak English?)</li>
+                <li>"Necesito un intérprete" (I need an interpreter)</li>
+              </ul>
+              <h3 className="editorial-h3">French Phrases for Quebec/Montreal Areas</h3>
+              <p className="whitespace-pre-line">If traveling near French-speaking regions:</p>
+              <p className="whitespace-pre-line"><strong>Emergency:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>"J'ai besoin d'aide" (I need help)</li>
+                <li>"Appelez la police" (Call the police)</li>
+                <li>"Appelez une ambulance" (Call an ambulance)</li>
+                <li>"Je ne parle pas français" (I don't speak French)</li>
+                <li>"Parlez-vous anglais?" (Do you speak English?)</li>
+              </ul>
+
+              <h2 className="editorial-h2">Insurance Claims Emergency Process</h2>
+              <h3 className="editorial-h3">Medical Emergency Claims</h3>
+              <p className="whitespace-pre-line"><strong>During Emergency:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Call insurance emergency hotline BEFORE treatment if possible</li>
+                <li>They may authorize direct payment to hospital</li>
+                <li>Get pre-authorization number</li>
+                <li>Keep calling card or emergency hotline info with you</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>If You Must Pay Upfront:</strong></p>
+              <ol className="list-decimal list-inside ml-4 space-y-1">
+                <li>Keep ALL receipts (hospital, ambulance, pharmacy, medical equipment)</li>
+                <li>Get itemized bills in English if possible</li>
+                <li>Obtain complete medical records and doctor's reports</li>
+                <li>Take photos of all documentation</li>
+                <li>Get receipts for all transportation to/from medical facilities</li>
+              </ol>
+              <p className="whitespace-pre-line"><strong>Claim Filing:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Submit within 30-90 days (check your specific policy)</li>
+                <li>Include all documentation, receipts, and medical reports</li>
+                <li>Provide translations of foreign documents</li>
+                <li>Follow up weekly if claim pending</li>
+                <li>Appeal denials with additional evidence</li>
+              </ul>
+              <h3 className="editorial-h3">Trip Interruption/Cancellation Claims</h3>
+              <p className="whitespace-pre-line"><strong>Required Documentation:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Police reports (for theft, crime)</li>
+                <li>Medical records (for illness/injury)</li>
+                <li>Death certificates (for family emergency)</li>
+                <li>Airline/transportation documentation showing delays</li>
+                <li>Hotel cancellation confirmations</li>
+                <li>Receipts for additional expenses incurred</li>
+                <li>Original booking confirmations</li>
+              </ul>
+
+              <h2 className="editorial-h2">Mental Health and Crisis Resources</h2>
+              <h3 className="editorial-h3">Crisis Hotlines</h3>
+              <p className="whitespace-pre-line"><strong>United States:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>National Suicide Prevention Lifeline:</strong> 988 or 1-800-273-8255</li>
+                <li><strong>Crisis Text Line:</strong> Text HOME to 741741</li>
+                <li><strong>SAMHSA National Helpline:</strong> 1-800-662-4357</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Canada:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Canada Suicide Prevention Service:</strong> 1-833-456-4566</li>
+                <li><strong>Crisis Text Line:</strong> Text CONNECT to 686868</li>
+                <li><strong>Kids Help Phone:</strong> 1-800-668-6868</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>SAPTEL (Crisis Line):</strong> 55-5259-8121</li>
+                <li><strong>Available:</strong> 24/7 in Spanish</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>International:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Befrienders Worldwide:</strong> befrienders.org (directory of crisis centers worldwide)</li>
+              </ul>
+              <h3 className="editorial-h3">Substance Abuse Resources</h3>
+              <p className="whitespace-pre-line"><strong>Alcoholics Anonymous:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>U.S.:</strong> aa.org for meeting locations</li>
+                <li><strong>Canada:</strong> aa.org for meeting locations</li>
+                <li><strong>Mexico:</strong> aamexico.org.mx</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Narcotics Anonymous:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>International:</strong> na.org for meeting locations in all three countries</li>
+              </ul>
+              <h3 className="editorial-h3">Sexual Assault Resources</h3>
+              <p className="whitespace-pre-line"><strong>RAINN (Rape, Abuse & Incest National Network):</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li><strong>Hotline:</strong> 1-800-656-4673</li>
+                <li><strong>Available:</strong> 24/7, confidential support</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>In Mexico:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Report to tourist police immediately</li>
+                <li>Contact embassy for victim assistance resources</li>
+                <li>Request English-speaking support</li>
+              </ul>
+
+              <h2 className="editorial-h2">Pre-Trip Emergency Preparation</h2>
+              <h3 className="editorial-h3">30 Days Before Departure</h3>
+              <ul className="list-none ml-4 space-y-1">
+                <li>☐ Enroll in STEP (U.S. citizens) or Registration of Canadians Abroad</li>
+                <li>☐ Make copies of all travel documents (physical and digital)</li>
+                <li>☐ Save all emergency numbers in phone contacts</li>
+                <li>☐ Share complete itinerary with emergency contact at home</li>
+                <li>☐ Verify travel insurance coverage and save emergency hotline</li>
+                <li>☐ Research hospitals and emergency services in each host city</li>
+                <li>☐ Download and test essential apps</li>
+                <li>☐ Set up international phone plan or local SIM options</li>
+              </ul>
+              <h3 className="editorial-h3">1 Week Before Departure</h3>
+              <ul className="list-none ml-4 space-y-1">
+                <li>☐ Print physical copies of emergency contacts</li>
+                <li>☐ Screenshot critical information for offline access</li>
+                <li>☐ Verify embassy locations and hours</li>
+                <li>☐ Confirm emergency contact back home has your full itinerary</li>
+                <li>☐ Review travel insurance policy details</li>
+                <li>☐ Bookmark this emergency resource guide</li>
+                <li>☐ Pack emergency contact card in wallet</li>
+              </ul>
+              <h3 className="editorial-h3">Upon Arrival in Each City</h3>
+              <ul className="list-none ml-4 space-y-1">
+                <li>☐ Identify nearest hospital to accommodation</li>
+                <li>☐ Locate embassy/consulate</li>
+                <li>☐ Test local emergency number (911) on your phone</li>
+                <li>☐ Inform hotel of any medical conditions</li>
+                <li>☐ Note hotel's 24-hour contact number</li>
+                <li>☐ Verify your phone works for local and international calls</li>
+              </ul>
+
+              <h2 className="editorial-h2">The Bottom Line: Preparation Prevents Panic</h2>
+              <p className="whitespace-pre-line">Emergencies are rare, but they happen. The difference between a manageable incident and a catastrophic disaster often comes down to one thing: immediate access to accurate information.</p>
+              <p className="whitespace-pre-line"><strong>The Statistics Are Clear:</strong>
+              According to the Association for Safe International Road Travel, approximately 1.3 million people die in road traffic crashes annually worldwide, and between 20-50 million suffer non-fatal injuries. The U.S. Department of State assists thousands of Americans abroad annually with emergencies ranging from lost passports to serious medical crises to arrests.</p>
+              <p className="whitespace-pre-line"><strong>Your Emergency Preparedness Equals:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Faster medical response (minutes can save lives)</li>
+                <li>Quicker document replacement (hours vs. days)</li>
+                <li>Better legal outcomes (know your rights)</li>
+                <li>Successful insurance claims (proper documentation)</li>
+                <li>Peace of mind (you know what to do)</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>Essential Actions:</strong></p>
+              <p className="whitespace-pre-line"><strong>Before You Travel:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Save this guide offline</li>
+                <li>Add all emergency numbers to phone contacts</li>
+                <li>Share with travel companions</li>
+                <li>Review relevant sections for your specific cities</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>During Your Trip:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Keep emergency contact card in wallet</li>
+                <li>Charge phone nightly</li>
+                <li>Check in with emergency contact regularly</li>
+                <li>Stay aware of surroundings</li>
+              </ul>
+              <p className="whitespace-pre-line"><strong>If Emergency Occurs:</strong></p>
+              <ul className="list-disc list-inside ml-4 space-y-1">
+                <li>Stay calm</li>
+                <li>Follow protocols in this guide</li>
+                <li>Call appropriate emergency services immediately</li>
+                <li>Contact embassy if serious situation</li>
+                <li>Document everything</li>
+              </ul>
+              <p className="whitespace-pre-line">The 2026 World Cup will be extraordinary. With proper emergency preparation, you can handle whatever comes your way and focus on celebrating the beautiful game.</p>
+              <p className="whitespace-pre-line">Stay safe. Be prepared. Enjoy the tournament.</p>
+
+              <hr className="my-8 border-gray-300" />
+
+              <h2 className="editorial-h2">Quick Reference Card (Print and Carry)</h2>
+              <p className="whitespace-pre-line"><strong>EMERGENCY: 911 (All three countries)</strong></p>
+              <p className="whitespace-pre-line"><strong>My Emergency Contact:</strong> ________________</p>
+              <p className="whitespace-pre-line"><strong>My Travel Insurance:</strong> ________________
+              <br/><strong>Emergency Hotline:</strong> ________________</p>
+              <p className="whitespace-pre-line"><strong>U.S. Citizens:</strong>
+              <br/><strong>State Dept 24/7:</strong> 1-888-407-4747</p>
+              <p className="whitespace-pre-line"><strong>Canadian Citizens:</strong>
+              <br/><strong>Global Affairs 24/7:</strong> 1-613-996-8885</p>
+              <p className="whitespace-pre-line"><strong>Embassy Location (fill in for your city):</strong>
+              <br/>_______________________________________</p>
+              <p className="whitespace-pre-line"><strong>Hotel Name/Address:</strong>
+              <br/>_______________________________________
+              <br/><strong>Hotel Phone:</strong> _______________________</p>
+              <p className="whitespace-pre-line"><strong>Blood Type:</strong> _____ <strong>Allergies:</strong> __________</p>
+
+              <hr className="my-8 border-gray-300" />
+
+              <h2 className="editorial-h2">Related World Cup 2026 Safety Guides</h2>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Main Safety Hub</a>:</strong> Comprehensive overview of all safety considerations</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Travel Insurance Guide</a>:</strong> Detailed coverage comparison and claim filing</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Stadium Security Guide</a>:</strong> Security procedures and entry requirements</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Health and Medical Guide</a>:</strong> Medical preparation and heat safety</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Transportation Safety</a>:</strong> Moving safely between host cities</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Scam Prevention Guide</a>:</strong> Avoid ticket fraud and travel scams</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Solo Travel Safety</a>:</strong> Attending World Cup 2026 alone</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Family Safety Guide</a>:</strong> Taking kids to World Cup 2026</p>
+
+              <hr className="my-8 border-gray-300" />
+
+              <p className="whitespace-pre-line"><strong>Bookmark This Page:</strong> This emergency resource guide may be updated as the tournament approaches. Check back regularly for latest information.</p>
+              <p className="whitespace-pre-line"><strong>Disclosure:</strong> This article contains affiliate links to travel insurance and safety services. We may earn a commission if you purchase through these links at no additional cost to you. All emergency contact information is verified from official government and organizational sources as of November 2025.</p>
+              <p className="whitespace-pre-line"><strong>Last Updated:</strong> November 2025 | Emergency contact information verified through official government websites, embassy directories, and local emergency services. Always verify critical numbers upon arrival in each city as contact information can change.</p>
+            </>
           ) : (
             <>
           <p className="whitespace-pre-line">

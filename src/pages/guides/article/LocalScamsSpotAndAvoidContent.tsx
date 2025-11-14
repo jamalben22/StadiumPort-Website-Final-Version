@@ -3,7 +3,7 @@ import React from 'react'
 export default function LocalScamsSpotAndAvoidContent() {
   return (
     <>
-      <h2 className="editorial-h2">Family Safety Guide: Taking Kids to World Cup 2026</h2>
+      
       <p className="whitespace-pre-line">The 2026 FIFA World Cup represents a once-in-a-generation opportunity to share the beautiful game with your children. Imagine your child watching their first World Cup match live, surrounded by fans from around the world, experiencing the electricity of international football at the highest level. These are memories families treasure for decades.</p>
       <p className="whitespace-pre-line">But taking children to World Cup 2026 requires different preparation than adult-only travel. The extreme summer heat poses genuine medical risks to children, who regulate body temperature less efficiently than adults. Stadium crowds can separate families in seconds. The tri-national format means navigating three different healthcare systems. Match-day chaos can overwhelm young children, turning excitement into meltdowns.</p>
       <p className="whitespace-pre-line">Despite knowing these risks, FIFA has not published a Child Safeguarding policy for the 2026 World Cup—what will probably be the largest and most lucrative sporting event ever. According to Human Rights Watch, this lack of comprehensive child protection standards creates gaps families must address themselves through proper preparation.</p>

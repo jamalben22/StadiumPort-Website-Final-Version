@@ -16,8 +16,8 @@ function toTitle(slug?: string) {
 export default function EmergencyPlanningPage() {
   const { slug } = useParams()
   const [visible, setVisible] = useState(false)
-  const title = 'Emergency Planning: Before You Go'
-  const url = '/guides/emergency-planning-before-you-go'
+  const title = 'Stadium Safety at World Cup 2026: Security Rules & What to Expect'
+  const url = '/guides/stadium-safety-at-world-cup-2026-security-rules-what-to-expect'
 
   useEffect(() => {
     const pageTitle = `${title} – Guide | StadiumPort`
