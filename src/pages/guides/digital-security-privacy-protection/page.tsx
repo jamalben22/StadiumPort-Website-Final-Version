@@ -4,8 +4,8 @@ import { Header } from '../../../components/feature/Header'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 
 export default function DigitalSecurityPrivacyProtectionPage() {
-  const title = 'Digital Security & Privacy Protection'
-  const url = '/guides/digital-security-and-privacy-protection'
+  const title = 'Transportation Safety: Getting Around World Cup 2026 Host Cities'
+  const url = '/guides/transportation-safety-getting-around-world-cup-2026-host-cities'
 
   useEffect(() => {
     const structuredData = {
@@ -52,7 +52,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
         <div className="editorial-hero-media">
           <OptimizedImage
             src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
-            alt="Digital Security & Privacy Protection"
+            alt={title}
             className="editorial-hero-image-wrapper"
             imgClassName="editorial-hero-image"
             width={1600}
@@ -80,10 +80,10 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <Link to="/guides" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guides</Link>
                 </li>
                 <li><span aria-hidden>›</span></li>
-                <li className="text-white font-semibold">Digital Security & Privacy Protection</li>
+                <li className="text-white font-semibold">{title}</li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Digital Security & Privacy Protection</h1>
+            <h1 className="editorial-hero-title">{title}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-book-mark-line"></i>
@@ -110,7 +110,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
           <div className="mb-16">
             
             
-              <h3 className="editorial-h3 mb-4">Transportation Safety: Getting Around World Cup 2026 Host Cities</h3>
+              
               
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
                 Over 6.5 million fans will move through 16 cities across three countries during the 39-day World Cup 2026 tournament. This unprecedented tri-national format creates the most complex transportation challenge in FIFA history—and the greatest opportunity for things to go wrong.

@@ -1,5 +1,6 @@
 
 import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 
 // Lazy load components for better performance
@@ -18,7 +19,6 @@ const SafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/
 const GuidesArticlePage = lazy(() => import('../pages/guides/article/page'));
 const GuidesPage = lazy(() => import('../pages/guides/page'));
 const EmergencyPlanningPage = lazy(() => import('../pages/guides/emergency-planning/page'));
-const HealthMedicalPreparednessPage = lazy(() => import('../pages/guides/health-medical-preparedness/page'));
 const DigitalSecurityPrivacyProtectionPage = lazy(() => import('../pages/guides/digital-security-privacy-protection/page'));
 const TransportationSafetyGuideArticlePage = lazy(() => import('../pages/safety-guide/article/transportation-safety-guidelines/page'));
 const NewYorkCityArticlePage = lazy(() => import('../pages/cities/new-york-new-jersey/page'));
@@ -104,6 +104,14 @@ const routes: RouteObject[] = [
   },
   {
     path: '/guides',
+    element: <Navigate to="/guides/health-&-medical-guide-for-world-cup-2026-travelers" replace />
+  },
+  {
+    path: '/guides/health-&-medical-guide-for-world-cup-2026-travelers',
+    element: <GuidesPage />
+  },
+  {
+    path: '/guides/Health & Medical Guide for World Cup 2026 Travelers',
     element: <GuidesPage />
   },
   {
@@ -111,28 +119,48 @@ const routes: RouteObject[] = [
     element: <GuidesArticlePage />
   },
   {
-    path: '/guides/emergency-planning-before-you-go',
+    path: '/guides/accommodation-safety-checklist',
+    element: <Navigate to="/guides/solo-travel-safety-guide-attending-world-cup-2026-alone" replace />
+  },
+  {
+    path: '/guides/safe-transportation-rideshare-taxi-transit',
+    element: <Navigate to="/guides/world-cup-2026-emergency-contacts-resources-guide" replace />
+  },
+  {
+    path: '/guides/matchday-crowd-safety-essentials',
+    element: <Navigate to="/guides/world-cup-2026-scams-how-to-avoid-ticket-travel-fraud" replace />
+  },
+  {
+    path: '/guides/local-scams-spot-and-avoid',
+    element: <Navigate to="/guides/family-safety-guide-taking-kids-to-world-cup-2026" replace />
+  },
+  {
+    path: '/guides/stadium-safety-at-world-cup-2026-security-rules-what-to-expect',
     element: <EmergencyPlanningPage />
   },
   {
+    path: '/guides/emergency-planning-before-you-go',
+    element: <Navigate to="/guides/stadium-safety-at-world-cup-2026-security-rules-what-to-expect" replace />
+  },
+  {
     path: '/guides/health-and-medical-preparedness',
-    element: <HealthMedicalPreparednessPage />
+    element: <Navigate to="/guides" replace />
+  },
+  {
+    path: '/guides/transportation-safety-getting-around-world-cup-2026-host-cities',
+    element: <DigitalSecurityPrivacyProtectionPage />
   },
   {
     path: '/guides/digital-security-and-privacy-protection',
-    element: <DigitalSecurityPrivacyProtectionPage />
+    element: <Navigate to="/guides/transportation-safety-getting-around-world-cup-2026-host-cities" replace />
   },
   {
     path: '/safety-guide/:slug',
     element: <SafetyGuideArticlePage />
   },
   {
-    path: '/safety-guide/transportation-safety-guidelines',
-    element: <TransportationSafetyGuideArticlePage />
-  },
-  {
     path: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know',
-    element: <SafetyGuideArticlePage />
+    element: <TransportationSafetyGuideArticlePage />
   },
   {
     path: '/travel-tips',

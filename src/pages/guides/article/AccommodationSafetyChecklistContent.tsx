@@ -3,7 +3,7 @@ import React from 'react'
 export default function AccommodationSafetyChecklistContent() {
   return (
     <>
-      <h2 className="editorial-h2">Solo Travel Safety Guide: Attending World Cup 2026 Alone</h2>
+      
       <p className="whitespace-pre-line">Thousands of fans will attend World Cup 2026 alone—and they'll have some of the best experiences of the tournament. Solo travel to major sporting events isn't just common; it's often more rewarding than group travel. You move at your own pace, make spontaneous decisions, connect with fans from around the world, and create memories that are entirely yours.</p>
       <p className="whitespace-pre-line">But solo travel also requires different preparation. When you're navigating three countries, 16 cities, and crowds of millions without a companion to watch your back, share expenses, or help problem-solve, the margin for error shrinks. One wrong rideshare, one sketchy accommodation choice, or one moment of distraction in a crowded fan zone can turn your dream trip into a nightmare.</p>
       <p className="whitespace-pre-line">The good news: solo travelers have been successfully attending World Cups for decades. With proper planning, situational awareness, and smart safety protocols, attending World Cup 2026 alone can be not just safe, but transformative. Many solo travelers report that attending alone forced them to connect with other fans, pushed them out of comfort zones, and created opportunities that wouldn't have existed in a group.</p>
@@ -429,4 +429,3 @@ export default function AccommodationSafetyChecklistContent() {
     </>
   )
 }
-

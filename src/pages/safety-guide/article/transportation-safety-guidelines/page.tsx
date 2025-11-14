@@ -44,17 +44,6 @@ export default function TransportationSafetyGuideArticlePage() {
       <section class="editorial-hero">
         <div class="editorial-hero-media">
           <div class="editorial-hero-image-wrapper">
-            <img
-              alt={article.title}
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-              width="1600"
-              height="900"
-              sizes="100vw"
-              class="object-cover w-full h-full editorial-hero-image"
-              src={article.image}
-            />
           </div>
           <div class="editorial-hero-overlay"></div>
         </div>
@@ -94,7 +83,7 @@ export default function TransportationSafetyGuideArticlePage() {
       <main class="flex-grow container mx-auto px-4 py-8">
         <section class="editorial-article">
           <article class="editorial-body editorial-dropcap">
-            <h1 class="editorial-hero-title">World Cup 2026 Safety Guide: Everything Fans Need to Know</h1>
+            
             <p class="whitespace-pre-line">The 2026 FIFA World Cup will be the largest in history—48 teams, 104 matches, and over 6 million fans converging across the United States, Canada, and Mexico from June 11 to July 19, 2026. While the tournament promises unforgettable moments, the scale and complexity bring unique safety challenges that every traveler must understand.</p>
             <p class="whitespace-pre-line">This comprehensive guide cuts through the noise with verified intelligence from security agencies, law enforcement officials, and veteran World Cup travelers. Whether you're attending your first match or following your team across multiple cities, here's what you need to know to stay safe.</p>
             <h2 class="editorial-h2 animate-fade-up mb-4 flex items-center gap-3"><i class="ri-question-line text-emerald-500"></i>Why World Cup 2026 Safety Matters More Than Ever</h2>
