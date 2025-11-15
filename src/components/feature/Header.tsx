@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { DarkModeToggle } from '../base/DarkModeToggle';
 
@@ -10,6 +10,11 @@ export function Header() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [activeTab, setActiveTab] = useState<'explore' | 'actions'>('explore');
+  const tablistRef = useRef<HTMLDivElement>(null);
+  const exploreRef = useRef<HTMLButtonElement>(null);
+  const actionsRef = useRef<HTMLButtonElement>(null);
+  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -123,6 +128,30 @@ export function Header() {
     }
   }, [isSearchOpen]);
 
+  useEffect(() => {
+    const el = activeTab === 'explore' ? exploreRef.current : actionsRef.current;
+    const parent = tablistRef.current;
+    if (el && parent) {
+      const rect = el.getBoundingClientRect();
+      const parentRect = parent.getBoundingClientRect();
+      setIndicatorStyle({ left: rect.left - parentRect.left, width: rect.width });
+    }
+  }, [activeTab, isMenuOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const el = activeTab === 'explore' ? exploreRef.current : actionsRef.current;
+      const parent = tablistRef.current;
+      if (el && parent) {
+        const rect = el.getBoundingClientRect();
+        const parentRect = parent.getBoundingClientRect();
+        setIndicatorStyle({ left: rect.left - parentRect.left, width: rect.width });
+      }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeTab]);
+
   return (
     <>
       <header className={`fixed top-0 left-0 right-0 z-90 transition-all duration-700 ${
@@ -213,65 +242,133 @@ export function Header() {
             </div>
           </div>
 
-          {/* Ultra Premium Mobile Navigation */}
+          {/* Ultra Premium Mobile Navigation — Tabbed */}
           <div className={`lg:hidden transition-all duration-700 ease-out overflow-hidden ${
-            isMenuOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'
+            isMenuOpen ? 'max-h-[520px] opacity-100 pb-6' : 'max-h-0 opacity-0'
           }`}>
             <div className="mt-4 p-6 rounded-3xl bg-white/80 dark:bg-navy-800/80 backdrop-blur-2xl border border-white/20 dark:border-navy-700/20 shadow-premium">
-              <nav className="space-y-2">
-                {[
-                  { path: '/world-cup-2026-host-cities', label: 'Host Cities', icon: 'ri-map-pin-line', desc: 'Explore all 16 cities' },
-                  { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line', desc: 'Discover every venue' },
-                  { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line', desc: 'Expert travel tips' },
-                  { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line', desc: 'Best prices & offers' }
-                ].map((item, index) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={closeMenu}
-                    className={`group block p-4 rounded-2xl transition-all duration-500 animate-fade-up-delay-${(index + 1) * 100} ${
-                      isActive(item.path) 
-                        ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 shadow-glow' 
-                        : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-700/50 hover:text-emerald-500'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
-                        isActive(item.path) 
-                          ? 'bg-emerald-500 text-white shadow-glow' 
-                          : 'bg-slate-100 dark:bg-navy-700 text-slate-600 dark:text-slate-300 group-hover:bg-emerald-500 group-hover:text-white'
-                      }`}>
-                        <i className={`${item.icon}`}></i>
-                      </div>
-                      <div className="flex-1">
-                        <div className="font-inter font-semibold">{item.label}</div>
-                        <div className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</div>
-                      </div>
-                      <i className="ri-arrow-right-line opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"></i>
-                    </div>
-                  </Link>
-                ))}
-              </nav>
-              
-              {/* Mobile Search Button */}
-              <div className="mt-6 pt-6 border-t border-slate-200 dark:border-navy-700">
-                <button 
-                  onClick={() => {
-                    setIsSearchOpen(true);
-                    closeMenu();
+              <div
+                ref={tablistRef}
+                role="tablist"
+                aria-label="Mobile navigation tabs"
+                className="relative mb-6 grid grid-cols-2 gap-2 bg-white/30 dark:bg-navy-700/30 p-2 rounded-2xl border border-white/20 dark:border-navy-700/20"
+              >
+                <button
+                  ref={exploreRef}
+                  id="tab-explore"
+                  role="tab"
+                  aria-selected={activeTab === 'explore'}
+                  aria-controls="tab-panel-explore"
+                  tabIndex={activeTab === 'explore' ? 0 : -1}
+                  onClick={() => setActiveTab('explore')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'ArrowRight' || e.key === 'End') setActiveTab('actions');
                   }}
-                  className="w-full mb-4 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
+                  className={`relative z-10 w-full px-4 py-2 rounded-xl transition-all duration-300 font-inter tracking-wide ${
+                    activeTab === 'explore'
+                      ? 'text-emerald-600 dark:text-emerald-400'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:bg-white/40 dark:hover:bg-navy-700/40'
+                  }`}
                 >
-                  <i className="ri-search-line"></i>
-                  <span className="font-inter font-medium">Search</span>
+                  <span className="inline-flex items-center justify-center space-x-2">
+                    <i className="ri-compass-3-line"></i>
+                    <span className="font-medium">Explore</span>
+                  </span>
                 </button>
-                
-                <Link to="/deals" onClick={closeMenu}>
-                  <button className="w-full btn-premium text-white font-inter">
-                    <i className="ri-rocket-line mr-2"></i>
-                    Start Planning Your Trip
+                <button
+                  ref={actionsRef}
+                  id="tab-actions"
+                  role="tab"
+                  aria-selected={activeTab === 'actions'}
+                  aria-controls="tab-panel-actions"
+                  tabIndex={activeTab === 'actions' ? 0 : -1}
+                  onClick={() => setActiveTab('actions')}
+                  onKeyDown={(e) => {
+                    if (e.key === 'ArrowLeft' || e.key === 'Home') setActiveTab('explore');
+                  }}
+                  className={`relative z-10 w-full px-4 py-2 rounded-xl transition-all duration-300 font-inter tracking-wide ${
+                    activeTab === 'actions'
+                      ? 'text-emerald-600 dark:text-emerald-400'
+                      : 'text-slate-600 dark:text-slate-300 hover:text-emerald-500 hover:bg-white/40 dark:hover:bg-navy-700/40'
+                  }`}
+                >
+                  <span className="inline-flex items-center justify-center space-x-2">
+                    <i className="ri-rocket-line"></i>
+                    <span className="font-medium">Quick Actions</span>
+                  </span>
+                </button>
+                <div
+                  className="absolute bottom-2 h-[3px] rounded-full bg-gradient-to-r from-emerald-400 via-gold-400 to-emerald-600 transition-all duration-500"
+                  style={{ width: `${indicatorStyle.width}px`, transform: `translateX(${indicatorStyle.left}px)` }}
+                ></div>
+              </div>
+
+              <div
+                id="tab-panel-explore"
+                role="tabpanel"
+                aria-labelledby="tab-explore"
+                className={`${activeTab === 'explore' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none absolute'} transition-all duration-500`}
+              >
+                <nav className="space-y-2">
+                  {[
+                    { path: '/world-cup-2026-host-cities', label: 'Host Cities', icon: 'ri-map-pin-line', desc: 'Explore all 16 cities' },
+                    { path: '/world-cup-2026-stadiums', label: 'Stadiums', icon: 'ri-building-line', desc: 'Discover every venue' },
+                    { path: '/travel-guides', label: 'Travel Guides', icon: 'ri-book-open-line', desc: 'Expert travel tips' },
+                    { path: '/deals', label: 'Deals', icon: 'ri-price-tag-3-line', desc: 'Best prices & offers' }
+                  ].map((item, index) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={closeMenu}
+                      className={`group block p-4 rounded-2xl transition-all duration-500 animate-fade-up-delay-${(index + 1) * 100} ${
+                        isActive(item.path) 
+                          ? 'bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 shadow-glow' 
+                          : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-navy-700/50 hover:text-emerald-500'
+                      }`}
+                    >
+                      <div className="flex items-center space-x-4">
+                        <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 ${
+                          isActive(item.path) 
+                            ? 'bg-emerald-500 text-white shadow-glow' 
+                            : 'bg-slate-100 dark:bg-navy-700 text-slate-600 dark:text-slate-300 group-hover:bg-emerald-500 group-hover:text-white'
+                        }`}>
+                          <i className={`${item.icon}`}></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-inter font-semibold">{item.label}</div>
+                          <div className="text-sm text-slate-500 dark:text-slate-400">{item.desc}</div>
+                        </div>
+                        <i className="ri-arrow-right-line opacity-50 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300"></i>
+                      </div>
+                    </Link>
+                  ))}
+                </nav>
+              </div>
+
+              <div
+                id="tab-panel-actions"
+                role="tabpanel"
+                aria-labelledby="tab-actions"
+                className={`${activeTab === 'actions' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none absolute'} transition-all duration-500`}
+              >
+                <div className="pt-2">
+                  <button 
+                    onClick={() => {
+                      setIsSearchOpen(true);
+                      closeMenu();
+                    }}
+                    className="w-full mb-4 flex items-center justify-center space-x-2 px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-all duration-300"
+                  >
+                    <i className="ri-search-line"></i>
+                    <span className="font-inter font-medium">Search</span>
                   </button>
-                </Link>
+                  <Link to="/deals" onClick={closeMenu}>
+                    <button className="w-full btn-premium text-white font-inter">
+                      <i className="ri-rocket-line mr-2"></i>
+                      Start Planning Your Trip
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -370,7 +467,7 @@ export function Header() {
             </div>
 
             {/* Search Footer */}
-            <div className="p-4 border-t border-slate-200/50 dark:border-navy-700/50 bg-slate-50/50 dark:bg-navy-700/20 rounded-b-3xl">
+            <div className="hidden md:block p-4 border-t border-slate-200/50 dark:border-navy-700/50 bg-slate-50/50 dark:bg-navy-700/20 rounded-b-3xl">
               <div className="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 font-inter">
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center space-x-1">

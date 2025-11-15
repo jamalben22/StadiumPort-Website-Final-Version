@@ -257,169 +257,75 @@ export default function SafetyGuidePage() {
         </div>
       </section>
 
-      {/* Featured Safety Guides */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-navy-900 dark:text-white mb-4">
-              Must-Read Safety Essentials
-            </h2>
-            <p className="text-lg text-slate-600 dark:text-slate-300">
-              The key things every World Cup traveler should know before they go.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {featuredGuides.map((guide) => (
-              <Card key={guide.id} className="overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                <div className="relative">
-                  <img 
-                    src={guide.image} 
-                    alt={guide.title}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Essential
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className={`${getPriorityColor(guide.priority)} text-white px-3 py-1 rounded-full text-sm font-bold`}>
-                      {guide.priority}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-red-500 text-sm font-medium">{guide.category}</span>
-                    <span className="text-slate-500 text-sm">{guide.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-bold text-navy-900 dark:text-white mb-3 group-hover:text-red-500 transition-colors">
-                    {guide.title}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-4">
-                    {guide.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-orange-500 rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">
-                          {guide.author.split(' ').map(n => n[0]).join('')}
-                        </span>
-                      </div>
-                      <span className="text-sm text-slate-600 dark:text-slate-300">{guide.author}</span>
-                    </div>
-                    <a href={`/safety-guide/${slugify(guide.title)}`} className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm">
-                      Read Guide
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Emergency Numbers Section */}
       <section className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-800 dark:to-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl font-extrabold text-navy-900 dark:text-white mb-8 leading-tight tracking-tight">
-              Your Lifeline: <span className="text-red-600 dark:text-red-400">Emergency Numbers</span>
-            </h2>
-            <p className="text-xl text-slate-700 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              In any emergency, dial 911 across all three host nations. Save these vital numbers to your phone before you embark on your World Cup journey.
-            </p>
-          </div>
+          
 
-          <div className="grid md:grid-cols-3 gap-10 mb-20 max-w-6xl mx-auto">
-            {[
-              { country: 'USA', icon: 'ri-flag-us-fill' },
-              { country: 'Mexico', icon: 'ri-flag-mx-fill' },
-              { country: 'Canada', icon: 'ri-flag-ca-fill' }
-            ].map((item, index) => (
-              <Card
-                key={item.country}
-                variant="premium"
-                padding="lg"
-                hover={true}
-                glow={false}
-                animate={true}
-                shadow="premium"
-                effect="shimmer"
-                className="group transform-gpu will-change-transform hover:scale-[1.02] hover:-translate-y-2 transition-all duration-500"
-              >
-                <div className="text-center">
-                  {/* Country Header */}
-                  <div className="flex items-center justify-center mb-8">
-                    <div className="w-20 h-20 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-500">
-                      <i className={`${item.icon} text-white text-4xl`}></i>
-                    </div>
-                  </div>
-
-                  <div className="text-center mb-8">
-                    <h3 className="text-3xl font-bold text-navy-900 dark:text-white ultra-premium-text">
-                      {item.country}
-                    </h3>
-                  </div>
-
-                  {/* Emergency Number Display */}
-                  <div className="bg-gradient-to-br from-red-50 via-red-25 to-orange-50 dark:from-red-950/30 dark:via-red-900/20 dark:to-orange-950/30 rounded-3xl p-10 mb-8 border border-red-200/60 dark:border-red-800/40 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    
-                    <div className="relative z-10 text-center">
-                      <div className="flex items-center justify-center space-x-4 mb-4">
-                        <span className="text-4xl">🚨</span>
-                        <span className="text-slate-800 dark:text-slate-200 font-semibold text-xl">
-                          All Emergencies:
-                        </span>
-                      </div>
-                      
-                      <div className="text-6xl font-extrabold text-red-700 dark:text-red-400 mb-4 ultra-premium-text">
-                        911
-                      </div>
-                      
-                      <div className="text-lg text-slate-700 dark:text-slate-400 font-medium">
-                        (Police, Medical, Fire)
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Status Badge */}
-                  <div className="flex justify-center">
-                    <div className="inline-flex items-center space-x-2 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 px-5 py-2.5 rounded-full text-base font-semibold border border-emerald-200/60 dark:border-emerald-800/40 shadow-sm">
-                      <i className="ri-shield-check-fill text-emerald-600 dark:text-emerald-400 text-lg"></i>
-                      <span>24/7 Available</span>
-                    </div>
+          <div className="max-w-6xl mx-auto mb-20">
+            <Card
+              variant="minimal"
+              padding="lg"
+              hover={true}
+              glow={false}
+              animate={true}
+              shadow="xl"
+              effect="none"
+              className="relative group rounded-3xl bg-white/80 dark:bg-navy-800/80 border border-slate-200/60 dark:border-navy-700/60 backdrop-blur-md hover:bg-white/90 dark:hover:bg-navy-800/90 transition-all duration-500"
+            >
+              <div className="absolute inset-0 rounded-3xl bg-mesh-gradient opacity-25 pointer-events-none"></div>
+              <div className="relative z-10 p-8 md:p-10">
+                <div className="flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="text-center font-luxury tracking-wide text-platinum-700 dark:text-platinum-300 text-sm sm:text-base">
+                    <span className="block mx-auto text-5xl md:text-6xl font-extrabold text-navy-900 dark:text-white leading-tight tracking-tight">Emergency Number Available across USA, Mexico, and Canada</span>
                   </div>
                 </div>
 
-                {/* Decorative Corner Accent */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-red-500/10 to-transparent rounded-tr-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              </Card>
-            ))}
-          </div>
-
-          {/* Pro Tip Section */}
-          <div className="relative bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 dark:from-blue-950/40 dark:via-blue-900/30 dark:to-blue-800/20 rounded-3xl p-8 md:p-12 shadow-xl border border-blue-200/70 dark:border-blue-800/50 overflow-hidden max-w-4xl mx-auto mt-16 mb-20 transform-gpu transition-all duration-500 hover:shadow-2xl hover:scale-[1.01]">
-            <div className="absolute inset-0 bg-grid-pattern opacity-10 dark:opacity-5"></div>
-            <div className="relative z-10 flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:space-x-8">
-              <div className="flex-shrink-0">
-                <div className="w-24 h-24 bg-blue-600 dark:bg-blue-500 rounded-full flex items-center justify-center shadow-lg transform-gpu transition-transform duration-500 hover:scale-110">
-                  <i className="ri-lightbulb-fill text-white text-5xl"></i>
+                <div className="flex items-center justify-center">
+                  <div className="relative text-center max-w-xl rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border border-platinum-600/40 dark:border-platinum-700/40 bg-white/60 dark:bg-navy-800/60 backdrop-blur-md">
+                    <div className="absolute inset-0 rounded-3xl bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.7),transparent_60%),radial-gradient(ellipse_at_bottom_right,rgba(255,0,0,0.08),transparent_60%)]"></div>
+                    <div className="relative z-10 space-y-6">
+                      <div className="relative mx-auto w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-rose-700 via-red-800 to-gold-500 opacity-20 blur-xl"></div>
+                        <div className="absolute inset-0 rounded-full ring-2 ring-gold-400/60 dark:ring-gold-500/40"></div>
+                        <div className="relative flex items-center justify-center w-full h-full">
+                          <span className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-rose-700 via-red-800 to-gold-500 font-space">911</span>
+                        </div>
+                      </div>
+                      <div className="font-inter font-medium text-platinum-700 dark:text-platinum-300 text-sm sm:text-base">Police · Medical · Fire</div>
+                      <div className="inline-flex items-center justify-center gap-2 text-platinum-700 dark:text-platinum-300 text-sm sm:text-base">
+                        <i className="ri-time-line text-gold-500"></i>
+                        <span className="font-semibold">24/7 Available</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-3xl font-extrabold text-blue-800 dark:text-blue-300 mb-3 leading-tight ultra-premium-text">
-                  Pro Tip: Stay Connected
-                </h3>
-                <p className="text-lg text-blue-700 dark:text-blue-200 leading-relaxed">
-                  Consider purchasing a local SIM card or an international eSIM plan upon arrival. This ensures you have reliable access to maps, translation apps, and emergency services without relying solely on Wi-Fi.
-                </p>
+            </Card>
+          </div>
+
+          <div className="relative max-w-5xl mx-auto mt-16 mb-20">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/70 dark:border-navy-700/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 dark:from-navy-950 dark:via-navy-900 dark:to-navy-800 opacity-90"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(255,255,255,0.08),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(255,255,255,0.06),transparent_50%)]"></div>
+              <div className="relative z-10 p-10 md:p-12 flex flex-col md:flex-row items-center md:items-start gap-8">
+                <div className="flex-shrink-0">
+                  <div className="w-24 h-24 rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-500 flex items-center justify-center shadow-xl">
+                    <i className="ri-shield-star-line text-white text-5xl"></i>
+                  </div>
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-3xl md:text-4xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-100 to-emerald-200 mb-3 leading-tight">
+                    Premium Safety Insight
+                  </h3>
+                  <p className="text-slate-200/90 md:text-lg max-w-3xl">
+                    Save emergency numbers and key contacts before travel. Keep battery backups, enable location sharing with trusted contacts, and memorize nearest exits upon arrival.
+                  </p>
+                </div>
               </div>
             </div>
-            {/* Decorative Corner Accent */}
-            <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-500/10 to-transparent rounded-bl-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
           </div>
         </div>
       </section>
@@ -487,7 +393,8 @@ export default function SafetyGuidePage() {
                       href={`/safety-guide/${slugify(guide.title)}`}
                       className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm"
                     >
-                      <i className="ri-arrow-right-line"></i>
+                      Read More
+                      <i className="ri-arrow-right-line ml-2"></i>
                     </a>
                   </div>
                 </div>
