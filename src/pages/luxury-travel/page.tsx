@@ -26,6 +26,7 @@ interface LuxuryGuide {
   featured: boolean;
   price: string;
   fullContent: FullContent;
+  slugOverride?: string;
 }
 
 export default function LuxuryTravelPage() {
@@ -68,6 +69,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=luxury%20private%20suite%20at%20Qatar%20World%20Cup%20stadium%20with%20champagne%20service%2C%20premium%20seating%2C%20elegant%20interior%20design%2C%20golden%20accents%2C%20sophisticated%20atmosphere&width=600&height=400&seq=lux1&orientation=landscape',
       featured: true,
       price: 'From $15,000',
+      slugOverride: 'ultimate-luxury-guide-to-qatar-world-cup',
       fullContent: {
         introduction: 'Experience the FIFA World Cup like never before with our ultimate luxury package. This comprehensive guide covers everything from private helicopter transfers to exclusive stadium suites, ensuring your World Cup experience is nothing short of extraordinary.',
         sections: [
@@ -88,6 +90,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=luxury%20Miami%20beach%20penthouse%20with%20ocean%20view%2C%20elegant%20modern%20interior%2C%20premium%20hospitality%2C%20sophisticated%20coastal%20design%2C%20World%20Cup%20atmosphere&width=600&height=400&seq=miami1&orientation=landscape',
       featured: true,
       price: 'From $12,500',
+      slugOverride: 'miami-2026-complete-luxury-world-cup-experience',
       fullContent: {
         introduction: 'Experience the 2026 World Cup in Miami like never before. This comprehensive luxury guide covers everything from oceanfront penthouses and VIP stadium experiences to exclusive cultural tours and premium dining.',
         sections: [
@@ -108,6 +111,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=luxury%20private%20jet%20interior%20with%20leather%20seats%2C%20champagne%20service%2C%20elegant%20cabin%20design%2C%20premium%20aviation%20experience%2C%20sophisticated%20travel&width=600&height=400&seq=lux2&orientation=landscape',
       featured: true,
       price: 'From $50,000',
+      slugOverride: 'private-jet-travel-to-all-host-cities',
       fullContent: {
         introduction: 'Travel between World Cup host cities in ultimate comfort and style with our private jet charter service. Skip the crowds and enjoy personalized service from takeoff to landing.',
         sections: [
@@ -128,6 +132,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=elegant%20Michelin%20star%20restaurant%20interior%20with%20fine%20dining%20setup%2C%20premium%20table%20setting%2C%20sophisticated%20ambiance%2C%20luxury%20culinary%20experience&width=600&height=400&seq=lux3&orientation=landscape',
       featured: false,
       price: 'From $500',
+      slugOverride: 'michelin-starred-dining-in-host-cities',
       fullContent: {
         introduction: 'Indulge in world-class cuisine at Michelin-starred restaurants across all World Cup host cities. Our curated dining experiences feature exclusive chef tables and wine pairings.',
         sections: [
@@ -148,6 +153,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=presidential%20hotel%20suite%20with%20panoramic%20city%20views%2C%20marble%20bathroom%2C%20luxury%20furnishings%2C%20elegant%20bedroom%2C%20premium%20hospitality%20design&width=600&height=400&seq=lux4&orientation=landscape',
       featured: false,
       price: 'From $2,500/night',
+      slugOverride: 'luxury-hotels-presidential-suites-guide',
       fullContent: {
         introduction: 'Stay in the most exclusive hotel suites across World Cup host cities. Each presidential suite offers unparalleled luxury with dedicated butler service and premium amenities.',
         sections: [
@@ -168,6 +174,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=VIP%20stadium%20box%20with%20premium%20seating%2C%20champagne%20service%2C%20panoramic%20field%20view%2C%20luxury%20hospitality%20suite%2C%20elegant%20sports%20viewing%20experience&width=600&height=400&seq=lux5&orientation=landscape',
       featured: false,
       price: 'From $8,000',
+      slugOverride: 'vip-stadium-experiences-and-private-boxes',
       fullContent: {
         introduction: 'Experience World Cup matches from exclusive VIP boxes with premium amenities, gourmet catering, and unobstructed views of the action.',
         sections: [
@@ -188,6 +195,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=private%20museum%20tour%20with%20expert%20guide%2C%20exclusive%20art%20collection%20viewing%2C%20sophisticated%20cultural%20experience%2C%20premium%20educational%20travel&width=600&height=400&seq=lux6&orientation=landscape',
       featured: false,
       price: 'From $1,200',
+      slugOverride: 'exclusive-cultural-tours-with-private-guides',
       fullContent: {
         introduction: 'Discover the rich cultural heritage of World Cup host cities through exclusive private tours with expert guides and behind-the-scenes access to museums and historical sites.',
         sections: [
@@ -208,6 +216,7 @@ export default function LuxuryTravelPage() {
       image: 'https://readdy.ai/api/search-image?query=luxury%20yacht%20charter%20with%20elegant%20deck%20setup%2C%20premium%20marine%20experience%2C%20sophisticated%20boat%20interior%2C%20exclusive%20water%20travel%2C%20coastal%20luxury&width=600&height=400&seq=lux7&orientation=landscape',
       featured: false,
       price: 'From $25,000',
+      slugOverride: 'luxury-yacht-charters-in-coastal-cities',
       fullContent: {
         introduction: 'Experience the ultimate in maritime luxury with private yacht charters in coastal World Cup host cities. Enjoy gourmet dining, water sports, and exclusive coastal access.',
         sections: [
@@ -349,16 +358,15 @@ export default function LuxuryTravelPage() {
                     </div>
                   </div>
                   
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openGuideModal(guide)}
+                  <a
+                    href={`/luxury-travel/${guide.slugOverride ?? guide.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                    className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 w-full transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3 text-sm"
                   >
-                    <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
-                  </Button>
+                    <span className="relative z-10 flex items-center justify-center space-x-2">
+                      <i className="ri-eye-line mr-2"></i>
+                      Read Full Guide
+                    </span>
+                  </a>
                 </div>
               </Card>
             ))}
