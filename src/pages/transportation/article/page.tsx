@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
@@ -17,6 +17,7 @@ function toTitleCase(slug?: string) {
 
 export default function TransportationArticlePage() {
   const { slug } = useParams()
+  const navigate = useNavigate()
 
   const guides = [
     {
@@ -36,7 +37,7 @@ export default function TransportationArticlePage() {
       intro: 'Navigate efficient train systems connecting host cities, including booking tips, schedules, and comfort classes.'
     },
     {
-      title: 'Budget Bus Travel: Intercity Connections',
+      title: 'Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium',
       category: 'Buses',
       author: 'David Thompson',
       readTime: '12 min read',
@@ -82,6 +83,70 @@ export default function TransportationArticlePage() {
       readTime: '11 min read',
       image: 'https://readdy.ai/api/search-image?query=accessible%20transportation%20vehicle%20with%20wheelchair%20ramp%2C%20inclusive%20design%2C%20barrier-free%20travel%20options%2C%20mobility%20assistance%2C%20universal%20access%20transportation&width=1600&height=900&seq=trans8&orientation=landscape',
       intro: 'Comprehensive guide to wheelchair-accessible transport, special assistance services, and mobility solutions.'
+    },
+    {
+      title: 'Mexico City World Cup 2026: Transportation Guide to Estadio Azteca',
+      category: 'City Transit',
+      author: 'Alejandro Ruiz',
+      readTime: '12 min read',
+      image: 'https://readdy.ai/api/search-image?query=Mexico%20City%20metro%20train%20platform%20crowd%2C%20urban%20transit%20scene%2C%20CDMX%20transportation%2C%20clean%20modern%20station&width=1600&height=900&seq=trans-mx-azteca&orientation=landscape',
+      intro: 'Reach Estadio Azteca efficiently using Mexico City metro and bus connections. Detailed stadium access and timing guidance.'
+    },
+    {
+      title: 'Guadalajara World Cup 2026: Transportation Guide to Estadio Akron',
+      category: 'City Transit',
+      author: 'Sofia Hernandez',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Guadalajara%20city%20bus%20transport%2C%20urban%20transit%20corridor%2C%20Jalisco%20travel%20scene&width=1600&height=900&seq=trans-gdl-akron&orientation=landscape',
+      intro: 'Navigate to Estadio Akron with city transit and express routes.'
+    },
+    {
+      title: 'Monterrey World Cup 2026: Transportation Guide to Estadio BBVA',
+      category: 'City Transit',
+      author: 'Luis Castillo',
+      readTime: '12 min read',
+      image: 'https://readdy.ai/api/search-image?query=Monterrey%20urban%20transport%20skyline%2C%20public%20transit%20bus%2C%20modern%20city%20scene&width=1600&height=900&seq=trans-mty-bbva&orientation=landscape',
+      intro: 'Plan your trip to Estadio BBVA using Monterrey transit options.'
+    },
+    {
+      title: 'Toronto World Cup 2026: Transportation Guide to BMO Field',
+      category: 'City Transit',
+      author: 'Ava Patel',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Toronto%20streetcar%20or%20GO%20Transit%20platform%2C%20urban%20commuter%20scene%2C%20Ontario%20transportation&width=1600&height=900&seq=trans-tor-bmo&orientation=landscape',
+      intro: 'Use GO Transit and TTC for seamless access to BMO Field.'
+    },
+    {
+      title: 'Vancouver World Cup 2026: Transportation Guide to BC Place',
+      category: 'City Transit',
+      author: 'Noah Williams',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Vancouver%20SkyTrain%20station%20platform%2C%20urban%20transit%20scene%2C%20British%20Columbia%20transportation&width=1600&height=900&seq=trans-van-bcplace&orientation=landscape',
+      intro: 'Reach BC Place via SkyTrain and downtown walking routes.'
+    },
+    {
+      title: 'Atlanta World Cup 2026: Transportation Guide to Mercedes-Benz Stadium',
+      category: 'Match Day Transport',
+      author: 'Olivia Harris',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Atlanta%20MARTA%20train%20station%2C%20urban%20transit%20scene%2C%20Georgia%20transportation&width=1600&height=900&seq=trans-atl-mbs&orientation=landscape',
+      intro: 'Plan MARTA and rideshare for Mercedes-Benz Stadium access.'
+    },
+    {
+      title: 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field',
+      category: 'Match Day Transport',
+      author: 'Ethan Miller',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Philadelphia%20SEPTA%20station%20platform%2C%20urban%20transit%20scene%2C%20Pennsylvania%20transportation&width=1600&height=900&seq=trans-phl-lff&orientation=landscape',
+      intro: 'Use SEPTA transit for Lincoln Financial Field match access.'
+    },
+    {
+      title: 'Houston World Cup 2026: Transportation Guide to NRG Stadium',
+      category: 'City Transit',
+      author: 'Grace Nguyen',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Houston%20METRORail%20platform%20train%2C%20urban%20transit%20scene%2C%20Texas%20transportation&width=1600&height=900&seq=trans-hou-nrg&orientation=landscape',
+      intro: 'Ride METRORail and use park-and-ride for NRG Stadium.'
     }
   ]
 
@@ -96,6 +161,30 @@ export default function TransportationArticlePage() {
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) metaDesc.setAttribute('content', description)
   }, [title])
+
+  useEffect(() => {
+    if (slug === 'budget-bus-travel-intercity-connections') {
+      window.history.replaceState(null, '', `/transportation/miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium`)
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'car-rental-guide-freedom-to-explore') {
+      window.history.replaceState(null, '', `/transportation/dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium`)
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'airport-transfer-options-seamless-arrivals') {
+      window.history.replaceState(null, '', `/transportation/kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium`)
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-atandt-stadium') {
+      navigate('/404', { replace: true })
+    }
+  }, [slug])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -136,7 +225,19 @@ export default function TransportationArticlePage() {
                 <li><span aria-hidden>›</span></li>
                 <li><Link to="/transportation" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Transportation</Link></li>
                 <li><span aria-hidden>›</span></li>
-                <li className="text-slate-900 dark:text-white font-semibold">{title}</li>
+                <li className="text-slate-900 dark:text-white font-semibold">{
+                  slug === 'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide'
+                    ? 'Your Complete Getting Around Guide'
+                    : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium'
+                    ? 'Los Angeles: Transportation Guide to SoFi Stadium'
+                    : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections')
+                    ? 'Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium'
+                    : (slug === 'car-rental-guide-freedom-to-explore' || slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium')
+                    ? 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium'
+                    : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium')
+                    ? 'Kansas City World Cup 2026: Your Complete Transportation Guide to Arrowhead Stadium'
+                    : title
+                }</li>
               </ol>
             </nav>
             <h1 className="editorial-hero-title">{
@@ -144,6 +245,12 @@ export default function TransportationArticlePage() {
                 ? 'Your Complete Getting Around Guide'
                 : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium'
                 ? 'Los Angeles: Transportation Guide to SoFi Stadium'
+                : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections')
+                ? 'Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium'
+                : (slug === 'car-rental-guide-freedom-to-explore' || slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium')
+                ? 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium'
+                : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium')
+                ? 'Kansas City World Cup 2026: Transportation Guide to Arrowhead Stadium'
                 : title
             }</h1>
             <div className="editorial-hero-meta">
@@ -1403,6 +1510,2046 @@ See you at SoFi Stadium (officially "Los Angeles Stadium" during the tournament)
 ---
 
 *Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—LA Metro (metro.net), LAX Official (flylax.com), Metrolink (metrolinktrains.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Match-specific transportation programs may be announced in spring 2026.*`}
+              </ReactMarkdown>
+            </div>
+          ) : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: () => null,
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`# Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium 
+
+When Hard Rock Stadium in Miami Gardens hosts seven World Cup 2026 matches—including the prestigious Bronze Final (Third-Place Match) on July 18, 2026—South Florida will showcase why it's earned its reputation as "the capital of Latin American soccer." But here's the transportation reality that catches most visitors off guard: Hard Rock Stadium sits 20 miles north of Miami Beach and 15 miles from downtown Miami, in the suburban city of Miami Gardens. Unlike walkable urban stadiums, getting here requires strategic planning. 
+
+This guide solves Miami's unique transportation challenge. You'll discover how to leverage Brightline's innovative Hard Rock Stadium Connect shuttle, navigate Miami's expanding Metrorail system, and avoid the parking nightmares that plague major events. Whether you're flying into MIA or Fort Lauderdale, staying on South Beach or in downtown Miami, this comprehensive resource ensures you arrive relaxed and on time for kickoff. 
+
+## Quick Navigation 
+- [Understanding Miami's Transit Landscape](#understanding-miamis-transit-landscape) 
+- [Hard Rock Stadium Connect: The Brightline Solution](#hard-rock-stadium-connect-the-brightline-solution) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Miami Metrorail & Metromover](#miami-metrorail-metromover) 
+- [Tri-Rail Commuter Service](#tri-rail-commuter-service) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Miami's Transit Landscape 
+
+### What Makes Miami Transportation Unique 
+
+Miami-Dade County operates across 1,946 square miles with distinct transportation zones: urban Miami, suburban Miami Gardens (where the stadium sits), beach communities, and sprawling residential areas. Unlike compact cities with stadium-adjacent transit, Hard Rock Stadium requires multimodal connections. 
+
+**The Key Players:** 
+- **Brightline**: Premium intercity rail connecting Miami, Fort Lauderdale, and beyond, with event shuttles to Hard Rock Stadium 
+- **Miami-Dade Transit**: Operates Metrorail (25-mile elevated rapid transit), Metromover (free downtown people mover), and Metrobus network 
+- **Tri-Rail**: Commuter rail connecting Miami-Dade, Broward, and Palm Beach counties 
+- **Municipal Systems**: Free trolleys in Miami, Miami Beach, Coral Gables 
+
+### World Cup Transportation Innovation 
+
+Hard Rock Stadium announced a partnership with Brightline to operate the **Hard Rock Stadium Connect** shuttle service on event days. After arriving at Brightline's Aventura station, passengers can board an event shuttle offering direct transport to the stadium, eliminating parking and traffic concerns. 
+
+This service transforms stadium access for World Cup visitors, particularly those staying in downtown Miami, Fort Lauderdale, or anywhere along Brightline's route. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Hard Rock Stadium will be called **"Miami Stadium"** following FIFA's requirement to use neutral stadium names that don't promote commercial brands during international tournaments. 
+
+## Hard Rock Stadium Connect: The Brightline Solution 
+
+### How Brightline + Stadium Shuttle Works 
+
+For World Cup 2026, the most innovative transportation solution combines Brightline's premium rail service with dedicated stadium shuttles. 
+
+**The Complete Journey**: 
+1. Take Brightline to **Aventura Station** (serves MiamiCentral, Fort Lauderdale, and beyond) 
+2. Board **Hard Rock Stadium Connect** shuttle (free for Brightline passengers with event tickets) 
+3. Direct service to stadium entrances (approximately 15-20 minutes) 
+4. Post-match return shuttles run until crowds clear 
+
+**Brightline Fares** (as of July 2025): 
+- **Average short-haul fare**: $24.32 (Miami to Fort Lauderdale, West Palm Beach) 
+- **SMART class**: Business-class comfort, complimentary Wi-Fi, starting around $19-36 
+- **PREMIUM class**: First-class service, complimentary food/drinks, priority boarding, starting $149+ 
+
+**Money-Saving Brightline Passes**: 
+- 10-ride pass: Starting at $239 (save vs. single tickets) 
+- 20-ride pass: Deeper savings for multiple trips 
+- 40-ride pass: Best value, up to 33% savings 
+
+### When This Is Your Best Option 
+
+**Ideal For**: 
+- Visitors staying in downtown Miami or Fort Lauderdale 
+- Fans attending multiple matches (use pass for all trips) 
+- Premium experience seekers (PREMIUM class offers luxury) 
+- Groups wanting hassle-free transport 
+- Anyone wanting to avoid parking entirely 
+
+**How to Book**: 
+1. Download Brightline app or visit gobrightline.com 
+2. Select travel to Aventura Station 
+3. Look for event icons when booking (indicates shuttle availability) 
+4. Arrive at least 20 minutes before train departure 
+
+**Pro Tip**: Book your Brightline ticket when World Cup match dates are announced. Stadium Connect shuttles are included with your Brightline fare on event days. 
+
+## Airport to Stadium Connections 
+
+### Miami International Airport (MIA) — Primary Gateway 
+
+**Distance to Hard Rock Stadium**: 18 miles  
+**Best For**: International arrivals, direct connections to downtown Miami 
+
+Miami International Airport ranks #1 in the U.S. for international passengers, making it the primary arrival point for World Cup visitors. 
+
+**Option 1: MIA to Brightline to Stadium** (Most Convenient) 
+
+**Total Time**: 75-90 minutes  
+**Total Cost**: $25-40 
+
+**The Route**: 
+1. **From MIA terminals**: Follow signs to MIA Mover (free automated people mover) 
+2. **Take MIA Mover to Miami Intermodal Center** (5 minutes, connects terminals to ground transportation) 
+3. **At Miami Intermodal Center**: Board Metrorail Orange Line to MiamiCentral Brightline Station (Government Center) (15-20 minutes, $2.25) 
+4. **At MiamiCentral**: Board Brightline to Aventura Station ($19-36) 
+5. **At Aventura**: Board Hard Rock Stadium Connect shuttle (free with Brightline ticket) 
+
+**Option 2: MIA to Metrorail to Stadium Area** (Budget Option) 
+
+**Total Time**: 90-120 minutes  
+**Total Cost**: $2.25 plus shuttle/rideshare from nearest station 
+
+Miami-Dade Transit doesn't have direct Metrorail service to Miami Gardens. You'll need: 
+1. MIA Mover to Miami Intermodal Center 
+2. Metrorail Orange Line to downtown 
+3. Transfer to bus or rideshare for final miles to stadium 
+
+This option is not recommended due to complexity and limited service frequency to stadium area. 
+
+**Option 3: Ride-Share Direct** (Fastest) 
+
+**Total Cost**: $45-65 (normal pricing); $80-120+ (match-day surge)  
+**Time**: 25-35 minutes (no traffic); 45-75 minutes (typical traffic) 
+
+**Match-Day Reality**: Uber/Lyft surge pricing can double or triple rates. Pre-book if possible or use for arrival only (take Brightline home). 
+
+**Option 4: Private Airport Transfer** (Groups) 
+
+**Cost**: $75-120 pre-booked  
+**Best For**: Groups of 4+, families with luggage 
+
+Services like Welcome Pickups, Jayride, and GO Airport Shuttle offer: 
+- Meet-and-greet at baggage claim 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct door-to-stadium service 
+
+**Value for 4 People**: 
+- Metrorail + Brightline: $25-40 per person = $100-160 total 
+- Private transfer: $75-120 total = $19-30 per person 
+
+### Fort Lauderdale-Hollywood International Airport (FLL) 
+
+**Distance to Hard Rock Stadium**: 15-20 miles  
+**Best For**: Domestic travelers, sometimes cheaper flights, actually closer to stadium 
+
+**Option 1: FLL to Brightline to Stadium** (Recommended) 
+
+**Total Time**: 60-75 minutes  
+**Total Cost**: $25-40 
+
+**The Route**: 
+1. **From FLL terminals**: Take free shuttle bus to Tri-Rail station (10 minutes) 
+2. **Tri-Rail to Brightline Fort Lauderdale Station** (or take rideshare/taxi $8-12) 
+3. **Brightline to Aventura Station** ($19-28) 
+4. **Hard Rock Stadium Connect shuttle** (free with Brightline ticket) 
+
+**Alternative**: Direct rideshare from FLL to Aventura Brightline Station ($20-30), then shuttle. 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: $35-55 (normal); $70-100+ (surge)  
+**Time**: 20-30 minutes (no traffic); 40-60 minutes (typical) 
+
+FLL is actually closer to Hard Rock Stadium than MIA, making it the better airport for stadium-centric visits. 
+
+## Miami Metrorail & Metromover 
+
+### Current Miami-Dade Transit Fares 
+
+**Metrorail Fares** (as of 2025): 
+- Single ride: $2.25 
+- Day pass: $5.65 (unlimited rides on Metrorail and Metrobus) 
+
+**Fare Capping** (Automatic Savings): 
+Once you've tapped your EASY Card or contactless bank card, your total cost will be capped once you reach $5.65 per day or $18 maximum for seven days. This means unlimited rides after hitting the cap. 
+
+**Metromover**: 100% FREE (always) 
+
+### How Fare Capping Works for World Cup Visitors 
+
+**Sample 5-Day Miami Visit**: 
+
+**Day 1**: Airport to hotel + exploring downtown = 3 rides × $2.25 = $5.65 → **Capped at $5.65** (ride 4+ free)  
+**Day 2**: Hotel to beach to dinner = 4 rides = **Free after reaching daily cap**  
+**Day 3**: Match day transport = 2+ rides = **Contributes to weekly cap**  
+**Days 4-5**: Once you hit $18 total (after approximately 8 rides), **ALL remaining rides that week are FREE** 
+
+**Total Weekly Cost**: Maximum $18 (compare to unlimited single rides: potentially $40-60+) 
+
+### Metrorail Lines 
+
+Miami Metrorail operates two lines covering 25 miles with 23 stations: 
+
+**Orange Line**: Dadeland South ↔ Miami International Airport  
+**Green Line**: Dadeland South ↔ Palmetto (northern suburbs) 
+
+**Operating Hours**: 5:00 AM - midnight, seven days a week  
+**Frequency**: Every 10-15 minutes during peak hours; every 20 minutes off-peak 
+
+### Getting to MiamiCentral (Brightline Connection) 
+
+From most tourist areas, you'll connect to Brightline via Metrorail: 
+
+**From Miami Beach**: 
+No direct Metrorail. Take bus to downtown, then: 
+- Bus 120 to Government Center Station 
+- Walk to MiamiCentral Brightline (adjacent) 
+- Board Brightline to Aventura for stadium shuttle 
+
+**From Downtown Miami/Brickell**: 
+- Take Metromover (free) to Government Center 
+- Walk to MiamiCentral Brightline (3-minute walk) 
+- Board Brightline to Aventura 
+
+**From Miami Airport**: 
+- MIA Mover to Miami Intermodal Center 
+- Metrorail Orange Line to Government Center 
+- Walk to MiamiCentral 
+
+### Metromover: Your Downtown Secret Weapon 
+
+Metromover is a free elevated people mover serving downtown Miami and Brickell with 21 stations located approximately every two blocks. 
+
+**Three Loops**: 
+- **Inner Loop**: Downtown business district 
+- **Omni Loop**: Arts & Entertainment District, Adrienne Arsht Center 
+- **Brickell Loop**: Financial district, residential high-rises 
+
+**Operating Hours**: 5:00 AM - midnight  
+**Frequency**: Every 90 seconds during rush hour; every 3 minutes off-peak 
+
+**World Cup Value**: If staying downtown, use free Metromover to reach Metrorail connections to MiamiCentral Brightline. Zero cost. 
+
+### Payment Methods 
+
+**EASY Card** (Recommended): 
+- Reloadable transit card ($2 card purchase) 
+- Available at all Metrorail stations 
+- Load via GO Miami-Dade Transit app or Token Transit app 
+- Fare capping applies automatically 
+
+**Contactless Payment**: 
+- Tap credit/debit card, smartphone, or smartwatch at turnstiles 
+- Fare capping works with same payment method 
+- No need to buy EASY Card 
+
+**Cash**: 
+- Accepted only at ticket vending machines (not for tap-to-board) 
+
+## Tri-Rail Commuter Service 
+
+For visitors staying in Broward County (Fort Lauderdale area) or Palm Beach County, Tri-Rail provides regional connections. 
+
+**Tri-Rail Route**: West Palm Beach ↔ Miami Airport Station (18 stations, 72 miles) 
+
+**Key Connection for World Cup**: 
+1. Take Tri-Rail to Fort Lauderdale Brightline Station (connects directly) 
+2. Board Brightline to Aventura 
+3. Take Hard Rock Stadium Connect shuttle 
+
+**Tri-Rail Fares**: 
+- Zone-based pricing 
+- Fort Lauderdale to Miami: Approximately $6-8 one-way 
+- Weekend passes and multi-ride tickets available 
+
+**Tri-Rail Benefits**: 
+- Valid Tri-Rail tickets include free Miami-Dade Transit connections same day 
+- Connects to Miami Intermodal Center (MIA access) 
+- Links to Brightline stations 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Miami-Dade and Broward counties with designated pickup zones at Hard Rock Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Miami Beach to Hard Rock Stadium: $35-50 
+- Downtown Miami to stadium: $30-45 
+- Fort Lauderdale to stadium: $25-40 
+- MIA to stadium: $45-65 
+
+**World Cup Match-Day Reality**: 
+
+Hard Rock Stadium has hosted six Super Bowls, Formula 1 races, and major concerts. Based on these events: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off can add 20-30 minutes in traffic 
+- Designated rideshare zones help organize pickups 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60 minutes for pickup 
+- Prices from stadium to Miami Beach can reach $80-150 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: Use ride-share freely during non-peak hours (before 2 PM for afternoon matches). 
+
+**For Departures** (Critical): 
+
+**DON'T** request immediately after final whistle. Instead: 
+
+**Strategy A** (Recommended): Take Brightline back 
+- Walk to Hard Rock Stadium Connect shuttle 
+- Return to Aventura Brightline Station 
+- Brightline to your destination 
+- No surge pricing, guaranteed transport 
+
+**Strategy B**: Wait it out 
+- Stay at stadium 60-90 minutes 
+- Browse merchandise, grab food, use restrooms 
+- Surge pricing normalizes 
+- Shorter wait times 
+
+**Strategy C**: Walk to nearby hotels 
+- Holiday Inn, Hilton Garden Inn within 10-15 minute walk 
+- Request pickup there (less congestion, lower surge) 
+
+### Park-and-Ride Option 
+
+Hard Rock Stadium announced new Park & Ride options for the 2024 season, the first of its kind among pro and collegiate sports venues in South Florida. 
+
+**How It Works**: 
+- Park at designated remote lots 
+- Free shuttle service to stadium 
+- Avoid stadium parking congestion 
+- Cost: Typically $20-30 (vs. $40-100 stadium parking) 
+
+**Availability**: Check hardrockstadium.com for World Cup Park & Ride locations (will be announced closer to tournament). 
+
+## Driving & Parking 
+
+### Should You Drive to Hard Rock Stadium? 
+
+**Short Answer**: Only if you're traveling from distant suburbs with 4+ people, arriving very early, and willing to wait 60-90 minutes post-match to exit. 
+
+**The Reality**: 
+- Stadium parking: $40-100 per space (varies by proximity and event) 
+- Post-event exit times: 60-90 minutes minimum from parking lots 
+- I-95 congestion: Severe on match days 
+- Miami traffic patterns: Unpredictable 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **Advance Reservations Required**: 
+   - Book through hardrockstadium.com or Ticketmaster 
+   - Parking often sells out for major events 
+   - Prices: $40-60 standard lots; $75-100 premium proximity 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 20-30% below game-day rates 
+   - Nearby hotels and commercial lots 
+   - Guaranteed space 
+
+3. **Park-and-Ride Facilities**: 
+   - Remote lots with free shuttles (when available) 
+   - Check stadium website for World Cup-specific offerings 
+
+### Driving Directions 
+
+**From Miami/Miami Beach**: 
+- Take I-95 North to NW 199th Street exit 
+- Follow signs to Hard Rock Stadium 
+- Approximately 20-30 miles (30-60 minutes depending on traffic) 
+
+**From Fort Lauderdale**: 
+- Take I-95 South to NW 199th Street or Florida's Turnpike 
+- 15-20 miles (20-35 minutes) 
+
+**From West Palm Beach**: 
+- Take I-95 South or Florida's Turnpike South 
+- 60-70 miles (75-90 minutes) 
+
+### Post-Match Exit Strategy 
+
+**The Brutal Truth**: Exiting Hard Rock Stadium parking after major events creates massive traffic jams. Parking lots close approximately 1 hour after event conclusion, but getting to the exit can take longer. 
+
+**Better Plan**: 
+1. Stay at stadium 60-90 minutes post-match 
+2. Visit American Dream-style surrounding businesses (once developed) 
+3. Let the initial wave clear 
+4. Exit with 70% less traffic 
+
+## Match-Day Transportation Strategy 
+
+### Timing Your Journey to Hard Rock Stadium 
+
+**For Afternoon Matches** (12 PM - 3 PM Kickoffs): 
+
+**Departing Downtown Miami**: 
+- Leave hotel: 10:00 AM 
+- Walk/Metromover to MiamiCentral: 10:15 AM 
+- Board Brightline: 10:30 AM 
+- Arrive Aventura: 10:50 AM 
+- Stadium Connect shuttle: 11:00 AM 
+- Arrive Hard Rock Stadium: 11:20 AM (100 minutes before kickoff) 
+
+**Departing Miami Beach**: 
+- Leave hotel: 9:30 AM 
+- Bus to downtown: 10:00 AM 
+- MiamiCentral Brightline: 10:30 AM 
+- Follow timeline above 
+- Allow extra time for beach traffic 
+
+**For Evening Matches** (6 PM - 9 PM Kickoffs): 
+
+**Critical**: Account for rush hour traffic (4 PM - 7 PM). Add 30-45 minutes to all journey times. 
+
+**Departing Downtown Miami**: 
+- Leave hotel: 3:30 PM 
+- Brightline: 4:00 PM 
+- Arrive stadium: 5:00 PM (2 hours before kickoff for rush hour buffer) 
+
+### Weather Considerations 
+
+**June-July in Miami**: 
+- Average temperatures: 80-90°F (27-32°C) 
+- High humidity (70-85%) 
+- Frequent afternoon thunderstorms (typically 3-5 PM) 
+- Hard Rock Stadium features a canopy roof providing shade while maintaining open-air atmosphere 
+
+**What to Bring**: 
+- Sunscreen (essential) 
+- Light rain jacket (afternoon storms) 
+- Reusable water bottle (refill inside stadium) 
+- Hat/sunglasses 
+
+### Bronze Final (July 18, 2026) Special Considerations 
+
+The Third-Place Match on July 18, 2026, carries significant prestige and draws massive crowds. This match determines global third place one day before the World Cup Final at MetLife Stadium. 
+
+**Timeline for Bronze Final**: 
+- Expect 2x normal traffic and transit crowding 
+- Arrive 2-3 hours early 
+- Security screening will be extensive 
+- All transportation modes will run extended service 
+- Book Brightline tickets immediately when match details announced 
+
+## Money-Saving Transit Options 
+
+### The Fare Capping Strategy (Best Value) 
+
+Miami-Dade Transit's automatic fare capping ensures you never pay more than $5.65 per day or $18 per week. 
+
+**Sample 7-Day Miami World Cup Visit** (2 Matches): 
+
+**Days 1-2** (Arrival + Exploring): 
+- Airport to downtown: $2.25 
+- Downtown sightseeing: 4+ rides = Hit $5.65 daily cap 
+- **Total**: $11.30 (2 days) 
+
+**Day 3** (First Match): 
+- Hotel to Brightline: $2.25 
+- (Brightline to stadium: separate $19-36) 
+- Post-match return: $2.25 
+- Evening exploring: Free (daily cap reached) 
+- **Total**: $4.50 
+
+**Days 4-7**: After ~8 rides ($18 total), ALL remaining Metrorail/bus rides FREE 
+
+**Week Transportation Budget**: 
+- Metrorail/Metromover: $18 maximum 
+- 2 Brightline round-trips: $76-144 (depending on class) 
+- **Total**: $94-162`}
+              </ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: () => null,
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`part 2/2 
+
+Compare to ride-share for same trips: $400-600+ 
+
+### Brightline Multi-Ride Passes 
+
+**10-Ride Pass**: $239 (saves vs. 10 individual tickets at $24-36 each)  
+**20-Ride Pass**: Deeper savings  
+**40-Ride Pass**: Up to 33% savings 
+
+**When Passes Make Sense**: 
+- Attending 3+ World Cup matches in different cities (Miami, Orlando) 
+- Combining matches with South Florida tourism 
+- Groups sharing a pass 
+
+### Free Transportation Options 
+
+**100% Free**: 
+- Metromover (all of downtown Miami) 
+- Hard Rock Stadium Connect shuttle (with Brightline ticket) 
+- MIA Mover (airport terminal connections) 
+
+**Nearly Free**: 
+- Miami Trolley (free in certain neighborhoods) 
+- Coral Gables Trolley (free) 
+- Miami Beach Trolley (free) 
+
+### Budget Transportation Summary 
+
+**Most Economical 5-Day Visit** (1 match): 
+- Metrorail fare capping: $18 maximum 
+- Brightline to stadium (round-trip): $38-72 
+- **Total**: $56-90 
+
+**Moderate Budget** (flexibility): 
+- Metrorail: $18 
+- Brightline: $76 
+- 2 strategic Uber rides: $50 
+- **Total**: $144 
+
+**Premium Budget**: 
+- Metrorail: $18 
+- Brightline PREMIUM class: $298+ 
+- Occasional Uber: $100 
+- **Total**: $416+ 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **GO Miami-Dade Transit App** 
+   - Purchase EASY Card transit passes 
+   - Real-time Metrorail/bus arrivals 
+   - Trip planning 
+   - Fare capping progress tracker 
+
+2. **Token Transit App** 
+   - Alternative for buying Miami transit passes 
+   - User-friendly interface 
+   - Works with EASY Card system 
+
+3. **Brightline App** 
+   - Book train tickets 
+   - Access mobile boarding passes 
+   - Check event shuttle availability (look for event icons) 
+   - Manage Brightline Passes 
+
+4. **Google Maps** 
+   - Most accurate Miami transit routing 
+   - Integrates Metrorail, Metrobus, Brightline 
+   - Real-time traffic and delays 
+   - Walking directions 
+
+5. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save frequent locations (Hard Rock Stadium, hotel) 
+   - Monitor surge pricing 
+
+6. **Moovit** (Optional) 
+   - Comprehensive Miami transit app 
+   - Crowdsourced real-time updates 
+   - Multi-modal trip planning 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download GO Miami-Dade Transit app 
+- Register contactless credit/debit card for fare capping 
+- Download Brightline app and create account 
+- Load $20-30 to start (automatic reloading available) 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Hard Rock Stadium**: 
+- 300 accessible seating locations throughout venue 
+- Accessible parking in designated lots close to entrances 
+- Wheelchair escorts and accessible transportation options 
+- Request services through hardrockstadium.com 
+
+**Metrorail Accessibility**: 
+- All 23 stations are wheelchair accessible with elevators and ramps 
+- Platform gap accommodations 
+- Audio/visual announcements 
+- Priority seating areas 
+
+**Brightline Accessibility**: 
+- Wheelchair-accessible trains and stations 
+- Accessible restrooms 
+- Priority boarding available 
+- Request assistance when booking 
+
+**Hard Rock Stadium Connect Shuttle**: 
+- Wheelchair-accessible buses 
+- Priority boarding for passengers with disabilities 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Miami Metrorail/Metrobus: Children under 42 inches ride free with paying adult (up to 3 children) 
+- Brightline: Children 2 and under free on adult's lap; ages 3-12 may qualify for discounts 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on Metrorail; fold during crowded periods 
+- Brightline offers spacious seating and restrooms (better for families than transit) 
+- Hard Rock Stadium has family restrooms and nursing areas 
+- Pack snacks for transit journeys (Brightline sells food onboard) 
+
+**Recommended Family Strategy**: 
+- **To Stadium**: Brightline SMART class (comfortable, bathrooms, snack bar) 
+- **Around Downtown**: Free Metromover (kids love the elevated views) 
+- **Backup Plan**: Pre-book rideshare if kids get tired/cranky 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Miami to Other Florida World Cup City 
+
+**Miami to Orlando** (Camping World Stadium hosts 6 matches): 
+
+**By Brightline**: 
+- Journey time: 3-3.5 hours direct 
+- Cost: SMART class $79+; PREMIUM $149+ 
+- Frequency: 10+ daily departures 
+- Most comfortable option 
+- Orlando Brightline Station at Orlando International Airport 
+
+**By Car**: 
+- Distance: 235 miles (3.5-4.5 hours driving) 
+- Rental car: $40-80 per day 
+- Tolls: $20-30 round-trip 
+- Makes sense for groups of 4+ attending multiple matches 
+
+**By Bus** (Greyhound, FlixBus): 
+- Journey time: 4-5 hours 
+- Cost: $20-45 if booked early 
+- Budget option but less comfortable 
+
+### Miami to East Coast Host Cities 
+
+**To Atlanta** (Mercedes-Benz Stadium, 8 matches): 
+- Flight: 2 hours, $150-300 
+- Drive: 660 miles, 10-11 hours (not recommended) 
+
+**To Philadelphia** (Lincoln Financial Field, 6 matches): 
+- Flight: 2.5 hours, $200-400 
+- No practical train/bus option 
+
+**Strategic Multi-City Planning**: 
+Miami's geographic location makes it better paired with Orlando for a Florida-focused World Cup experience. Flights to other East Coast host cities are the only practical option. 
+
+## Critical Transportation Tips 
+
+1. **Brightline + Hard Rock Stadium Connect is your best option**—premium experience, no parking stress 
+2. **Fare capping saves money**—$18 buys unlimited weekly Metrorail/bus rides 
+3. **Post-match patience pays off**—wait 60+ minutes to avoid surge pricing and crowds 
+4. **Fort Lauderdale Airport (FLL) is closer to the stadium** than MIA—consider for arrivals 
+5. **Free Metromover is amazing**—use it extensively if staying downtown 
+6. **Book Brightline early**—prices and availability fluctuate, especially for World Cup dates 
+7. **Miami Beach has no direct rail**—factor in bus connections or ride-share to downtown 
+8. **Hard Rock Stadium parking sells out**—never plan to "just drive and park" 
+9. **Afternoon thunderstorms are common**—June-July weather, stadium has cover 
+10. **Bronze Final (July 18) is huge**—third-place match, massive crowds, book everything early 
+
+## Your Miami World Cup Transportation Plan 
+
+Miami rewards those who understand its unique geography. Hard Rock Stadium's suburban location, 20 miles from the beach excitement and downtown energy, creates transportation challenges—but also opportunities for those who plan ahead. 
+
+Your winning strategy: Stay downtown or in Fort Lauderdale along the Brightline route. Use Brightline + Hard Rock Stadium Connect for all matches. Let fare capping handle your local transit budget automatically. Save rideshare for strategic moments (late nights, beach days, convenience). 
+
+Hard Rock Stadium will host seven matches from June 15 through the prestigious Bronze Final on July 18, 2026. This Third-Place Match carries massive prestige globally and draws enormous crowds. Between matches, Miami offers world-renowned beaches, vibrant nightlife, Latin American culture, art deco architecture, and cuisine that rivals any city on Earth. 
+
+Miami's genuinely international population, with residents from over 150 countries, creates authentic World Cup energy unlike anywhere else in the United States. The city has hosted six Super Bowls and countless international soccer friendlies. It knows how to welcome the world. 
+
+See you at "Miami Stadium" (Hard Rock Stadium during the tournament). When those seven matches light up South Florida, you'll arrive relaxed, on time, and ready for the beautiful game. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Miami-Dade Transit (miamidade.gov/transit), Brightline (gobrightline.com), Hard Rock Stadium (hardrockstadium.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. World Cup-specific transportation programs will be announced in spring 2026.*`}
+              </ReactMarkdown>
+            </div>
+          ) : (slug === 'car-rental-guide-freedom-to-explore' || slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h3" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`When AT&T Stadium in Arlington hosts nine World Cup 2026 matches—more than any other venue in the entire tournament—the Dallas-Fort Worth metroplex will welcome hundreds of thousands of international soccer fans to North America's largest domestic sports market. But here's the transportation reality that surprises most visitors: AT&T Stadium sits in Arlington, Texas, a city that has deliberately rejected public transit three separate times. There's no subway station at the stadium. No light rail. No conventional bus service. Arlington is the largest U.S. city without public transportation. 
+
+Yet Dallas area officials have developed an innovative "bus bridge" solution specifically for World Cup 2026, combining Trinity Railway Express trains, express bus lanes on I-30, and coordinated shuttle services to move an estimated 100,000+ daily visitors efficiently. This guide reveals exactly how North Texas plans to transport the world's biggest sporting event to a venue that was never designed for transit access—and how you can navigate it successfully. 
+
+## Quick Navigation 
+- [Understanding the Dallas-Arlington Transit Challenge](#understanding-the-dallas-arlington-transit-challenge) 
+- [The Bus Bridge Solution](#the-bus-bridge-solution) 
+- [DART Rail & Trinity Railway Express](#dart-rail-trinity-railway-express) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding the Dallas-Arlington Transit Challenge 
+
+### What Makes Dallas-Arlington Transportation Unique 
+
+The Dallas-Fort Worth metroplex spans 9,286 square miles—larger than Connecticut and Rhode Island combined. AT&T Stadium sits in Arlington, strategically positioned between Dallas (12 miles east) and Fort Worth (20 miles west), but deliberately outside both cities' transit systems. 
+
+**The Key Players:** 
+- **DART (Dallas Area Rapid Transit)**: Operates rail and bus in Dallas and 12 surrounding cities—but not Arlington 
+- **Trinity Railway Express (TRE)**: Commuter rail connecting Dallas and Fort Worth with a station near the stadium (CentrePort) 
+- **Trinity Metro**: Fort Worth's transit system 
+- **Via Arlington**: On-demand rideshare service (Arlington's transit alternative) 
+- **North Central Texas Council of Governments (NCTCOG)**: Regional planning body coordinating World Cup transportation 
+
+### Arlington's Transit-Free Reality 
+
+Arlington voters have thrice rejected attempts to use tax revenue to join a regional transit authority or create its own. This creates the World Cup's most unique transportation challenge: the venue hosting the most matches (9 total) has no conventional public transit. 
+
+### World Cup Transportation Innovation 
+
+DART proposes utilizing Trinity Railway Express trains between Victory Station outside the American Airlines Center and the CentrePoint station in Fort Worth to transport approximately 5,800 game-related riders, with a last-mile connection to AT&T Stadium via private shuttle paid for by the North Central Texas Council of Governments. 
+
+Additionally, DART proposes utilizing what it calls a "bus bridge" of an estimated 50 DART buses utilizing a directional express lane on I-30 between Victory Station and a parking lot at AT&T Stadium, to accommodate another 4,000 fans. 
+
+This innovative "bus bridge" system impressed FIFA officials and is credited with helping North Texas secure nine matches—more than any other host city. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, AT&T Stadium will be called **"Dallas Stadium"** following FIFA's requirement to use neutral stadium names that don't promote commercial brands. The name has been set as Dallas Stadium, though officials have asked FIFA to add Arlington to the name and are still waiting on a response. 
+
+## The Bus Bridge Solution 
+
+### How the World Cup Bus Bridge Works 
+
+Regional planners tested the use of managed lanes and buses over several major events, including WrestleMania 38 and Super Bowl XLV, to bridge the trackless expanse between the TRE CentrePort station in Fort Worth and Arlington's Entertainment District. 
+
+**The System** (Final details to be announced): 
+
+**Primary Route - Via Victory Station (Dallas)**: 
+1. Take DART Rail to Victory Station (near American Airlines Center) 
+2. Board dedicated World Cup express bus 
+3. Buses use directional express lanes on I-30 (bypassing traffic) 
+4. Direct service to AT&T Stadium parking areas 
+5. Travel time: 20-30 minutes from Victory Station 
+6. Capacity: ~4,000 fans per match via 50-bus fleet 
+
+**Secondary Route - Via CentrePort Station (Fort Worth)**: 
+1. Take Trinity Railway Express to CentrePort Station 
+2. Board FIFA-funded shuttle to AT&T Stadium 
+3. Travel time: 10-15 minutes 
+4. Capacity: ~5,800 fans per match 
+
+**Combined System Capacity**: ~10,000 fans per match via public transit (supplemented by parking, rideshare, and private shuttles) 
+
+### When Service Operates 
+
+**Match-Day Schedule** (specifics to be announced): 
+- Buses begin running approximately 4 hours before kickoff 
+- Frequency: Every 5-10 minutes during peak periods 
+- Last bus: Approximately 90 minutes after match conclusion 
+- Return service continues until crowds clear 
+
+**Cost**: Private shuttle from CentrePort paid for by the North Central Texas Council of Governments, likely included with transit fare or event ticket. 
+
+### Why This Is Your Best Option 
+
+1. **Dedicated express lanes**: Bypass I-30 traffic congestion 
+2. **Proven system**: Tested during Super Bowl XLV and WrestleMania 
+3. **No parking stress**: Zero parking fees or post-match exit delays 
+4. **Cost-effective**: Fraction of parking and rideshare costs 
+5. **FIFA-endorsed**: This solution won Dallas 9 matches 
+
+## DART Rail & Trinity Railway Express 
+
+### Current DART Fares (March 2025) 
+
+DART condensed its single-ride fares from three different prices to one flat fee of $3 for a three-hour pass and a discounted rate of $1.50. 
+
+**DART Fare Structure** (effective March 1, 2025): 
+- **3-Hour Pass**: $3 adult / $1.50 reduced (replaces single-ride, AM/PM/Midday passes) 
+- **Day Pass**: $6 adult / $3 reduced (unchanged) 
+- **Monthly Pass**: $126 adult / $63 reduced (increased from $96/$48) 
+
+**What the 3-Hour Pass Includes**: 
+- Unlimited rides on DART buses, trains, and GoLink for 3 hours 
+- Free transfers between all DART services 
+- Valid any time of day (replaces time-specific passes) 
+
+### DART Rail Lines to Victory Station 
+
+Victory Station serves as the primary World Cup transit hub for Dallas-area fans. 
+
+**From Downtown Dallas** (20 minutes): 
+- Take Green Line or Orange Line from any downtown station 
+- Direct service to Victory Station 
+- Trains run every 10-15 minutes 
+
+**From Dallas Love Field Airport** (30 minutes): 
+- Take Orange Line from Burbank Station (free shuttle from airport) 
+- Direct to Victory Station 
+
+**From DFW Airport** (60-75 minutes): 
+- Take TRE (Trinity Railway Express) from DFW Airport Station 
+- Or take Orange Line from Bachman Station (requires shuttle/bus from airport) 
+
+**From North Dallas/Plano** (45-60 minutes): 
+- Take Red Line to downtown, transfer to Green/Orange Line 
+- To Victory Station 
+
+### Trinity Railway Express (TRE) 
+
+TRE provides the commuter rail backbone between Dallas and Fort Worth with the critical CentrePort Station serving as AT&T Stadium's closest rail connection. 
+
+**TRE Route**: Dallas Union Station ↔ Fort Worth T&P Station (10 stations, 34 miles) 
+
+**Key World Cup Stations**: 
+- **Victory Station** (Dallas): Bus bridge departure point 
+- **CentrePort Station** (Fort Worth side, near Arlington): Closest to stadium, FIFA shuttle pickup 
+- **DFW Airport Station**: Airport access 
+
+**TRE Fares**: 
+Zone-based pricing integrated with DART fares 
+- Victory to CentrePort: Approximately $2.50-5 (exact World Cup pricing TBD) 
+
+**Operating Hours**: 
+Weekdays: First trains ~5 AM, last trains ~midnight 
+Weekend service: Reduced frequency 
+**World Cup Exception**: Extended hours and increased frequency for match days 
+
+### Payment Methods 
+
+**GoPass® Tap Card** (Recommended): 
+- Physical card available at vending machines 
+- Load via GoPass app or at stations 
+- Works on DART, TRE, and connected services 
+
+**GoPass App**: 
+- Digital tickets on smartphone 
+- Purchase 3-hour, day, or monthly passes 
+- Mobile ticket valid as proof of payment 
+- Download before arrival to avoid station lines 
+
+**Credit/Debit Cards**: 
+- Ticket vending machines accept cards 
+- Coming soon: Tap-to-pay at turnstiles 
+
+## Airport to Stadium Connections 
+
+### Dallas/Fort Worth International Airport (DFW) — Primary Gateway 
+
+**Distance to AT&T Stadium**: 15 miles  
+**Best For**: International arrivals, largest airport in North Texas 
+
+DFW Airport is the second-busiest airport in the world by aircraft movements and serves as the primary gateway for World Cup visitors. 
+
+**Option 1: DFW to TRE to Stadium Shuttle** (Most Transit-Friendly) 
+
+**Total Time**: 75-90 minutes  
+**Total Cost**: $5-8 (transit) + shuttle (cost TBD, likely included) 
+
+**The Route**: 
+1. **From DFW terminals**: Follow signs to "Terminal Link" (Skylink train) 
+2. **Terminal Link to Terminal B**: Free airport train connects all terminals 
+3. **Exit Terminal B to Ground Transportation**: Follow "Trinity Railway Express" signs 
+4. **Walk/shuttle to TRE DFW Airport Station**: 5-10 minute walk or free airport shuttle 
+5. **TRE to CentrePort Station**: Board Fort Worth-bound train (2-3 stops, 15-20 minutes) 
+6. **CentrePort to AT&T Stadium**: Board FIFA shuttle (10-15 minutes) 
+
+**Timing Considerations**: TRE runs limited weekend service. Check schedules for match-day frequency increases. 
+
+**Option 2: DFW to Victory Station to Bus Bridge** 
+
+**Total Time**: 90-110 minutes  
+**Total Cost**: $6-10 
+
+**The Route**: 
+1. From DFW Airport, take TRE to Victory Station (45-60 minutes) 
+2. Board World Cup bus bridge to AT&T Stadium (20-30 minutes) 
+
+This route makes sense if staying in downtown Dallas and combining airport pickup with stadium trip. 
+
+**Option 3: Ride-Share Direct** (Fastest) 
+
+**Cost**: $30-45 (normal); $60-90+ (surge pricing)  
+**Time**: 20-30 minutes (no traffic); 45-75 minutes (typical traffic) 
+
+**Match-Day Reality**: I-30 congestion near stadium can add 30-60 minutes on event days. Surge pricing multiplies costs 2-3x post-match. 
+
+**Option 4: Private Airport Transfer** (Premium) 
+
+**Cost**: $60-100 pre-booked for sedan; $120-180 for SUV  
+**Best For**: Groups of 4-6, families with luggage, business travelers 
+
+Services like Welcome Pickups, Jayride, and GO Airport Shuttle offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct door-to-stadium service 
+
+**Value for Groups of 5**: 
+- Individual transit: $3-8 per person × 5 = $15-40 total 
+- Shared SUV transfer: $120 ÷ 5 = $24 per person with zero transfers 
+
+### Dallas Love Field Airport (DAL) — Secondary Option 
+
+**Distance to AT&T Stadium**: 18 miles  
+**Best For**: Domestic travelers, Southwest Airlines hub, closer to downtown Dallas 
+
+**Best Route: Love Field to Victory Station to Bus Bridge** 
+
+**Total Time**: 70-90 minutes  
+**Total Cost**: $6-9 
+
+**The Route**: 
+1. **From Love Field**: Free shuttle to DART's Burbank Station (10 minutes) 
+2. **Orange Line to Victory Station** (25-30 minutes, $3) 
+3. **Bus bridge to AT&T Stadium** (20-30 minutes, cost TBD) 
+
+**Ride-Share Direct**: $35-50 (normal); $70-100+ (surge) 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout DFW metroplex with designated pickup/drop-off zones at AT&T Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- DFW Airport to AT&T Stadium: $30-45 
+- Dallas downtown to stadium: $25-40 
+- Fort Worth downtown to stadium: $20-35 
+
+**World Cup Match-Day Pricing**: 
+
+AT&T Stadium has hosted six Super Bowls, numerous major concerts, and WrestleMania events providing extensive surge pricing data: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2.5x normal rates 
+- Drop-off congestion adds 15-30 minutes 
+- Designated rideshare zones help organize flow 
+
+**Leaving Stadium**: 
+AT&T Stadium has very little, if any, mass transit access, which is quite annoying to those of us in the DFW area, leading to heavy reliance on parking, making it so Jerry Jones can collect $75 to $125 per vehicle that tries to park outside the stadium 
+
+Post-match surge realities: 
+- Surge multipliers: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From stadium to downtown Dallas: $60-120 typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Book Uber Reserve 3-4 hours before match for guaranteed pickup 
+- Arrive 2 hours before kickoff to avoid worst drop-off congestion 
+- Consider dropping at nearby Rangers' Globe Life Field and walking 10 minutes 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take bus bridge back to Victory Station 
+- Walk to bus pickup area 
+- Free/low-cost return to Dallas 
+- Avoid surge pricing entirely 
+- Request Uber from Victory Station to final destination (normal pricing) 
+
+**Strategy B**: Wait it out 
+- Stay at stadium/Entertainment District 60-90 minutes 
+- Visit Texas Live! entertainment complex adjacent to stadium 
+- Browse Rangers/Cowboys merchandise at nearby retail 
+- Surge pricing normalizes after initial rush 
+
+**Strategy C**: Walk to alternative pickup location 
+- Walk 15-20 minutes to hotels on Stadium Drive 
+- Courtyard Marriott, Holiday Inn Express nearby 
+- Request pickup there (less congestion, lower surge) 
+
+### Arlington Via Service 
+
+Arlington operates Via as its on-demand rideshare transit service—a unique approach for a major city. 
+
+**How Via Works**: 
+- App-based shared rides (like Uber Pool) 
+- Subsidized by city for low fares 
+- Service area covers Arlington Entertainment District 
+- Cost: $3-5 per ride (significantly cheaper than Uber/Lyft) 
+
+**World Cup Applicability**: 
+Via will likely supplement transportation from nearby hotels to stadium, but won't replace bus bridge for fans arriving from Dallas/Fort Worth. 
+
+## Driving & Parking 
+
+### Should You Drive to AT&T Stadium? 
+
+**Short Answer**: Only if traveling from distant suburbs with 4+ people, arriving very early, and willing to accept 60-90 minute post-match parking lot exits. 
+
+**The Parking Reality**: 
+Jerry Jones and friends can collect $75 to $125 per vehicle that tries to park outside the stadium 
+
+- **Official parking**: $40-100 per space (World Cup pricing likely higher) 
+- **Post-event exit times**: 60-120 minutes to leave parking lots 
+- **I-30 congestion**: Severe backups for 2-3 hours post-match 
+- **Advance reservations required**: Parking often sells out for major events 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **AT&T Stadium Official Lots**: 
+   - Book through attstadium.com or Ticketmaster 
+   - Lots open 4 hours before kickoff 
+   - Prices: $40-60 standard; $75-125 premium proximity (based on Cowboys games) 
+   - World Cup pricing will be announced closer to matches 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 15-25% below game-day rates 
+   - Nearby businesses and private lots 
+   - Guaranteed space eliminates stress 
+
+3. **Rangers/Entertainment District Parking**: 
+   Parking isn't expected to be an issue when considering lots for the Texas Rangers and local Entertainment District businesses 
+   - Globe Life Field parking (across the street) 
+   - Texas Live! complex parking 
+   - 10-15 minute walk to AT&T Stadium 
+
+### Driving Directions 
+
+**From Dallas** (12 miles, 20-40 minutes): 
+- I-30 West to AT&T Way/Stadium Drive exit 
+- Follow signs to stadium parking 
+
+**From Fort Worth** (20 miles, 25-45 minutes): 
+- I-30 East to AT&T Way/Stadium Drive exit 
+
+**From DFW Airport** (15 miles, 20-35 minutes): 
+- TX-360 South to I-30 East 
+- Exit Stadium Drive 
+
+### Critical Traffic Infrastructure 
+
+The strategy will rely on the new $400 million interchange at State Highway 360 and I-30, express lanes for attendees headed to the games, and managed lanes on I-30 
+
+This new interchange, completed specifically to improve World Cup access, should alleviate some congestion, but event-day traffic remains challenging. 
+
+### Post-Match Exit Strategy 
+
+Based on Super Bowl and major event experience: 
+
+**If You Park at Stadium**: 
+1. Accept 60-90 minute minimum wait 
+2. Stay in Entertainment District (Texas Live!, restaurants, shops) 
+3. Let initial wave of 30,000+ vehicles exit first 
+4. Depart 90+ minutes post-match for reasonable exit times 
+
+**Better Strategy**: Park at Victory Station DART lot in Dallas, take bus bridge to/from stadium. Return to your car in 30 minutes vs. 90+ minute stadium lot exit. 
+
+## Match-Day Transportation Strategy 
+
+### Timing Your Journey 
+
+**For Afternoon Matches** (12 PM - 3 PM Kickoffs): 
+
+**Departing Downtown Dallas**: 
+- Leave hotel: 10:00 AM 
+- Walk/Uber to Victory Station: 10:30 AM 
+- Board bus bridge: 10:45 AM 
+- Arrive AT&T Stadium: 11:15-11:30 AM (90-105 minutes before kickoff) 
+
+**Departing Fort Worth**: 
+- Leave hotel: 10:15 AM 
+- Take TRE/bus to CentrePort Station: 10:45 AM 
+- Board FIFA shuttle: 11:00 AM 
+- Arrive stadium: 11:15 AM 
+
+**For Evening Matches** (6 PM - 9 PM Kickoffs): 
+
+Add 30-45 minutes to all journey times due to rush hour (4-7 PM) I-30 congestion: 
+
+**Departing Downtown Dallas**: 
+- Leave hotel: 3:30 PM 
+- Victory Station: 4:00 PM 
+- Bus bridge: 4:15 PM 
+- Arrive stadium: 5:00-5:15 PM (2 hours before kickoff for traffic buffer) 
+
+### Weather Considerations 
+
+**June-July in North Texas**: 
+- Average temperatures: 85-100°F (29-38°C) 
+- High humidity (50-70%) 
+- Afternoon thunderstorms possible (June especially) 
+- AT&T Stadium features retractable roof (will likely remain closed for climate control during World Cup) 
+
+**What to Bring**: 
+- Water bottle (refill inside stadium) 
+- Sunscreen (for outdoor areas/tailgating) 
+- Light jacket (stadium air conditioning can be cold) 
+
+### Nine Matches: Complete Schedule Planning 
+
+Arlington will host the most matches of the tournament with nine 
+
+With nine matches spanning June 11 - July 19, 2026, Dallas-Arlington offers the most World Cup action of any host city. This creates opportunities to attend multiple matches with perfected transportation strategies. 
+
+**Multi-Match Transportation Tips**: 
+- Stay in downtown Dallas near DART stations for consistent bus bridge access 
+- Consider DART monthly pass ($126) if attending 3+ matches over 30 days 
+- Learn Victory Station and bus bridge system on first match for easier subsequent trips 
+- Book parking/transit early for later-stage matches (higher demand)`}
+              </ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h3" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`## Money-Saving Transit Options 
+
+### DART Pass Strategy 
+
+DART's new fare structure offers a 3-Hour Pass for $3 that includes unlimited rides on buses, trains, and GoLink 
+
+**Budget Breakdown for Multi-Day Visits**: 
+
+**Sample 5-Day Dallas Visit** (2 World Cup matches): 
+
+**Transit Costs**: 
+- Day 1 (Arrival): Airport to hotel via TRE + DART = 3-Hour Pass ($3) 
+- Day 2 (Sightseeing): Multiple DART trips = Day Pass ($6) 
+- Day 3 (Match #1): Hotel to Victory to stadium and back = Day Pass ($6) 
+- Day 4 (Exploring): Fort Worth day trip = Day Pass ($6) 
+- Day 5 (Match #2): Repeat match-day transit = Day Pass ($6) 
+
+**5-Day Total**: $27 in transit passes 
+
+**Alternative Monthly Pass**: $126 (makes sense if attending 4+ matches or staying 3+ weeks) 
+
+### Free Transportation Options 
+
+**100% Free**: 
+- Walking within Arlington Entertainment District (stadium, Rangers ballpark, entertainment venues within 15 minutes) 
+- DART's free transfer system (unlimited transfers within 3-hour pass window) 
+- DFW Airport Skylink (connects all terminals) 
+
+**Nearly Free**: 
+- Arlington Via ($3-5 for short trips within city) 
+- Victory Station parking (if driving from suburbs, park free/cheap, take bus bridge) 
+
+### Budget Transportation Summary 
+
+**Most Economical 5-Day Visit** (2 matches): 
+- DART transit passes: $27-36 
+- Bus bridge to/from stadium: $0-10 (final pricing TBD, likely included) 
+- **Total**: $27-46 
+
+**Moderate Budget** (flexibility): 
+- DART passes: $27-36 
+- 2 strategic Uber rides: $40-60 
+- **Total**: $67-96 
+
+**Premium Budget**: 
+- DART for local travel: $27 
+- Uber for convenience: $100-150 
+- Private transfer for one match: $75 
+- **Total**: $202-252 
+
+Compare to parking for 2 matches: $80-250+ with post-match frustration included. 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **GoPass App** (DART Official) 
+   - Purchase all DART tickets digitally 
+   - 3-hour, day, and monthly passes 
+   - Real-time rail/bus arrivals 
+   - Works offline after downloading 
+
+2. **Google Maps** 
+   - Most accurate DFW transit routing 
+   - Integrates DART, TRE, Trinity Metro 
+   - Real-time traffic for driving 
+   - Walking directions between stations/venues 
+
+3. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save Victory Station, AT&T Stadium, hotel locations 
+   - Pre-book rides via Uber Reserve 
+
+4. **Via Arlington** 
+   - On-demand service within Arlington 
+   - Budget-friendly for short trips 
+   - Supplement to other transit 
+
+5. **Waze** (If Driving) 
+   - Real-time traffic updates 
+   - Alternative route suggestions 
+   - User-reported incidents 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download GoPass app and load $20-30 
+- Link credit card for automatic reloading 
+- Save Victory Station and AT&T Stadium addresses 
+- Screenshot transit routes for offline reference 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**AT&T Stadium**: 
+- ADA-compliant with extensive accessible seating (approximately 90,000 seats maintained for World Cup) 
+- Accessible parking in designated lots close to entrances 
+- Elevators, ramps, and accessible restrooms throughout 
+- Request accessibility services through attstadium.com 
+
+**DART Rail & TRE**: 
+- All rail stations wheelchair accessible with elevators 
+- Priority seating on trains 
+- Audio/visual stop announcements 
+- Accessible ticket vending machines 
+
+**Bus Bridge Accessibility**: 
+- Wheelchair-accessible buses 
+- Priority boarding for passengers with disabilities 
+- DART Customer Service: 214-979-1111 (request assistance 48 hours advance recommended) 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Children under 5 ride free on DART with paying adult (up to 3 children per adult) 
+- Ages 5-12: Full fare (no child discount on DART) 
+- TRE: Similar policies 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on DART trains; fold during crowded periods 
+- Bus bridge may be challenging with strollers—arrive early for space 
+- AT&T Stadium has family restrooms and nursing areas 
+- Pack snacks for transit journeys (no food service on DART/buses) 
+
+**Recommended Family Strategy**: 
+- **To Stadium**: Bus bridge (kids love the "special World Cup bus") 
+- **Around Dallas**: DART Rail (children enjoy watching trains) 
+- **Backup Option**: Uber/Lyft if children get tired or cranky 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Dallas to Other Texas/Southern Host Cities 
+
+**Dallas to Houston** (Minute Maid Park, 6 matches): 
+
+**By Car**: 
+- Distance: 240 miles (3.5-4.5 hours driving) 
+- Rental car: $40-80 per day plus gas 
+- Makes sense for groups of 4+ attending multiple matches 
+
+**By Bus** (Greyhound, FlixBus, Megabus): 
+- Journey time: 4-5 hours 
+- Cost: $20-50 if booked early 
+- Budget option 
+
+**By Air**: 
+- Flight time: 1 hour 
+- Dallas Love Field or DFW to Houston Hobby or IAH 
+- Cost: $100-250 round-trip 
+- Most time-efficient 
+
+### Dallas to Central US Host Cities 
+
+**To Kansas City** (Arrowhead Stadium, 6 matches): 
+- Flight: 1 hour 30 minutes, $150-300 
+- Drive: 500 miles, 7-8 hours 
+
+**To Atlanta** (Mercedes-Benz Stadium, 8 matches): 
+- Flight: 2 hours, $200-400 
+- Drive: 780 miles, 11-12 hours (not recommended) 
+
+**Strategic Multi-City Planning**: 
+Dallas's central location makes it an ideal base for flying to other host cities. DFW Airport offers direct flights to all North American World Cup venues. 
+
+## Critical Transportation Tips 
+
+1. **The bus bridge is your best friend**—tested during Super Bowl, designed for World Cup 
+2. **Victory Station is the main hub**—learn its location relative to your hotel 
+3. **3-Hour DART passes are perfect**—$3 covers most journey windows 
+4. **Don't drive unless absolutely necessary**—parking and exits are brutal 
+5. **Post-match patience saves money**—waiting 60+ minutes avoids surge pricing 
+6. **Download GoPass app before arrival**—mobile tickets save time at stations 
+7. **CentrePort Station is closest rail stop**—but shuttle still required 
+8. **Arlington has no traditional transit**—bus bridge bypasses this limitation 
+9. **Book everything early for 9 matches**—Dallas has most matches of any city 
+10. **I-30 gets severely congested**—express lanes help but expect delays 
+
+## Your Dallas World Cup Transportation Plan 
+
+Arlington will host the most matches of the tournament with nine, giving you more opportunities to perfect your transportation strategy than any other host city. 
+
+The innovative bus bridge system—tested over several major events including WrestleMania 38 and Super Bowl XLV—transforms Arlington's transit-free reality into a manageable World Cup experience. Michael Morris, NCTCOG transportation director, credits the "bus bridge" as the special sauce that helped North Texas score nine events, saying FIFA heard from someone who's done this before. 
+
+Your winning strategy: Stay in downtown Dallas near DART Rail stations. Use Victory Station as your consistent departure point. Embrace the bus bridge for all matches. Avoid driving and parking entirely. Save rideshare for exploring Fort Worth, late nights, or backup scenarios. 
+
+Between matches, explore two distinct cities: Dallas's arts district, museums, and Dealey Plaza; Fort Worth's cowboy culture, stockyards, and Western heritage. The Dallas-Fort Worth metroplex offers world-class dining, entertainment, and Southern hospitality that rivals any host region. 
+
+When the referee's whistle blows across nine World Cup matches from June through July 2026, you'll be in your seat at "Dallas Stadium" (AT&T Stadium during the tournament)—relaxed, on time, and ready to witness soccer history at North America's premier sporting venue. 
+
+See you at the most matches of any World Cup 2026 city. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—DART (dart.org), North Central Texas Council of Governments (nctcog.org), AT&T Stadium (attstadium.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026.*`}
+              </ReactMarkdown>
+            </div>
+          ) : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h3" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`When GEHA Field at Arrowhead Stadium hosts six World Cup 2026 matches—including a quarterfinal on July 11, 2026—Kansas City will showcase one of America's most passionate soccer cities to the world. With half a million visitors expected over six match days between June 16 and July 11, Kansas City faces a transportation challenge unlike any other host city: moving tens of thousands of fans to a stadium located 10 miles east of downtown with limited existing transit infrastructure. 
+
+But here's the game-changer: Kansas City is pioneering America's first major fare-free public transit system, and for the World Cup, KC2026 has leased 200 additional buses to create an unprecedented regional transportation network. This guide reveals how Kansas City's innovative approach—combining zero-fare buses, strategic park-and-ride locations, and expanded regional routes—transforms stadium access into a model other cities will study for years. 
+
+## Quick Navigation 
+- [Understanding Kansas City's Transit Innovation](#understanding-kansas-citys-transit-innovation) 
+- [The 200-Bus World Cup Network](#the-200-bus-world-cup-network) 
+- [Zero-Fare RideKC System](#zero-fare-ridekc-system) 
+- [KC Streetcar](#kc-streetcar) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking Reality](#driving-parking-reality) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [FIFA Fan Festival Transportation](#fifa-fan-festival-transportation) 
+
+## Understanding Kansas City's Transit Innovation 
+
+### What Makes Kansas City Transportation Unique 
+
+In 2020, Kansas City became the first major U.S. city to offer universal free bus service. While the program faces long-term funding challenges, RideKC buses remain zero-fare as of November 2025, making Kansas City's World Cup experience uniquely accessible. 
+
+**The Key Players:** 
+- **RideKC (KCATA)**: Kansas City Area Transportation Authority operating fare-free buses across the metro 
+- **KC2026**: Nonprofit organizing World Cup logistics, including 200 leased buses 
+- **KC Streetcar**: Free downtown rail service (recently expanded to include Main Street Extension, opened October 2025) 
+- **IRIS**: App-based on-demand service for Kansas City, Missouri 
+
+### World Cup Transportation Revolution 
+
+KC2026 has procured 200 extra buses to help with transportation by tapping into and expanding existing routes. This will include routes to matches at Arrowhead Stadium, the airport, hotel centers and key destinations on both sides of the state line. 
+
+**Critical Transportation Reality**: 
+"The biggest is going to be that you won't be able to drive to the stadium and park," KCPD Captain Abigail Martinez said. "They have transportation experts that are looking at all of that and whether it will be a park-and-ride or some type of express shuttle." 
+
+This represents a fundamental shift from typical Arrowhead Stadium operations. For World Cup matches, traditional parking will be severely limited or eliminated entirely, with the security perimeter expanded dramatically compared to a Chiefs game. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, GEHA Field at Arrowhead Stadium will be called **"Kansas City Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## The 200-Bus World Cup Network 
+
+### How the Expanded Bus System Works 
+
+KC2026 is currently planning to fund and operate all transportation required to meet the Host City obligations, including the 200 buses leased specifically for the World Cup, as well as any event-specific services provided by partners. 
+
+**The Network** (Final routes to be announced): 
+
+**Expected Service Coverage**: 
+- **Airport Shuttles**: Kansas City International Airport (MCI) to downtown hotels and major lodging areas 
+- **Stadium Express**: Downtown/Power & Light District to Arrowhead Stadium 
+- **Hotel Hubs**: Major hotel corridors on both Kansas and Missouri sides 
+- **Regional Connections**: Cross-state line service (Kansas City, Kansas ↔ Kansas City, Missouri) 
+- **Fan Festival Shuttles**: National WWI Museum and Memorial to stadium 
+
+**Service Hours** (Match-Day): 
+- Buses begin approximately 4-5 hours before kickoff 
+- Frequency: Every 10-15 minutes during peak periods 
+- Post-match service: Continues until crowds clear (estimated 90+ minutes after final whistle) 
+
+**Cost**: Free or minimal fare (KC2026 funding transportation as part of Host City obligations) 
+
+### Why This Changes Everything 
+
+Unlike most host cities where you navigate complex fare systems and transfers, Kansas City offers: 
+
+1. **Zero-fare baseline**: Regular RideKC buses already free 
+2. **200 additional buses**: Dedicated World Cup capacity 
+3. **Simplified routing**: Direct express service without complicated transfers 
+4. **Cross-state coordination**: Unified system across Kansas-Missouri state line 
+5. **FIFA-funded**: Transportation costs covered by organizing committee 
+
+## Zero-Fare RideKC System 
+
+### Current RideKC Fares (November 2025) 
+
+**RideKC buses are Zero Fare.** This groundbreaking program, launched in 2020, remains in effect as of November 2025, making Kansas City the only major U.S. city with universal free bus service. 
+
+**Important Update**: Kansas City Council approved a contract in August 2025 requiring KCATA to implement a "functionally free" fare model in the future, where most riders will pay a fare (officials want $2), but low-income residents and people receiving aid from social service agencies will ride for free. However, fares will take months to implement because KCATA must install new electronic payment systems. 
+
+**For World Cup 2026**: All indications suggest buses will remain free or minimal cost during the tournament, with KC2026 covering operational costs. 
+
+### Key RideKC Routes to Arrowhead Stadium 
+
+**Route 47** provides regular service from downtown Kansas City to the Truman Sports Complex where Arrowhead Stadium is located. 
+
+**Operating Hours**: 
+- Weekdays: Approximately 5:00 AM - 11:00 PM 
+- Weekends: Reduced frequency 
+- **World Cup Exception**: Extended hours and dramatically increased frequency 
+
+**Journey Time**: 
+- Downtown to Arrowhead: 35-45 minutes (regular service) 
+- World Cup express routes: 25-35 minutes (fewer stops) 
+
+### Additional RideKC Services 
+
+**RideKC Freedom**: Paratransit service for qualifying adults with disabilities  
+**RideKC Micro Transit**: On-demand service in specific zones (small fares apply)  
+**IRIS**: App-based on-demand service covering Kansas City, Missouri, North Kansas City, and Gladstone 
+
+### How to Use RideKC 
+
+**Planning Your Trip**: 
+1. Download the **Transit App** (official RideKC app) 
+2. View real-time bus locations and arrivals 
+3. Plan routes with integrated trip planning 
+4. Receive service alerts 
+
+**Boarding**: 
+- Board through front door 
+- No fare payment required (zero-fare system) 
+- Capacity limits apply during World Cup (first-come, first-served) 
+- Allow extra time for match-day crowds 
+
+## KC Streetcar 
+
+### America's Newest Major Streetcar Extension 
+
+The KC Streetcar Main Street Extension opened October 24, 2025, extending the free streetcar line north through midtown Kansas City to Berkley Riverfront, adding 13 new stops over 3.5 miles. 
+
+**Complete Route**: 
+- **Riverfront Extension**: Berkley Riverfront (northernmost stop) 
+- **Main Street Extension**: Through midtown to Union Station 
+- **Original Line**: Union Station ↔ River Market (2.2 miles, operational since 2016) 
+
+**Total System**: 16 total stops covering 5.7 miles 
+
+**Operating Hours**: 6:00 AM - midnight, seven days a week  
+**Frequency**: Every 10-15 minutes  
+**Cost**: 100% FREE (always) 
+
+### Streetcar Connection to World Cup 
+
+**FIFA Fan Festival**: The National World War I Museum and Memorial, located along the streetcar route, will host the official FIFA Fan Festival for 18 nights next summer—on the day of every Kansas City or Team USA match. 
+
+**Critical Capacity Issue**: Transportation planners worry the streetcar can only handle a few thousand people per hour, but the Fan Festival expects 25,000-35,000 people leaving at one time. This "crush load" scenario prompted Kansas City to repurpose $2.1 million in federal grants to bolster bus operations during the World Cup. 
+
+**Streetcar Does NOT Go to Arrowhead**: While the streetcar is excellent for downtown and Fan Festival access, it won't get you to the stadium itself. You'll need to transfer to World Cup buses or RideKC. 
+
+### Using the Streetcar for World Cup 
+
+**Best Uses**: 
+- **Airport to downtown hotels**: Take bus/shuttle to Union Station, board streetcar north 
+- **Fan Festival access**: Perfect for National WWI Museum and Memorial 
+- **Downtown exploring**: Free transit between Power & Light, Crossroads Arts District, River Market 
+- **Hotel to stadium departure points**: Reach bus departure hubs downtown 
+
+## Airport to Stadium Connections 
+
+### Kansas City International Airport (MCI) — The New Terminal 
+
+Kansas City opened a brand-new single terminal at MCI in February 2023, modernizing what was one of America's most outdated airports. 
+
+**Distance to Arrowhead Stadium**: 22 miles  
+**Distance to Downtown**: 18 miles  
+**Best For**: All visitors (only major commercial airport serving region) 
+
+**Option 1: Airport to Stadium via World Cup Buses** (Expected Primary Route) 
+
+KC2026's 200-bus fleet will include routes between the airport, downtown, and Arrowhead Stadium. 
+
+**Expected Journey**: 
+1. Exit baggage claim to ground transportation 
+2. Follow World Cup shuttle signs (exact locations TBD) 
+3. Board direct stadium shuttle OR downtown shuttle + transfer 
+4. Estimated time: 45-60 minutes direct; 60-90 minutes with downtown transfer 
+
+**Cost**: Free or minimal (KC2026-funded) 
+
+**Availability**: Check kansascityfwc26.com closer to match dates for exact pickup locations and schedules 
+
+**Option 2: Airport to Downtown via Public Transit** (Then Transfer) 
+
+**The Route**: 
+1. **Exit MCI**: Follow signs to ground transportation 
+2. **RideKC Bus Route 229**: Limited airport service to downtown (check schedules, infrequent) 
+3. **Downtown to Stadium**: Transfer to Route 47 or World Cup express buses 
+
+**Total Time**: 90-120 minutes  
+**Cost**: FREE (zero-fare system)  
+**Drawback**: Limited frequency, multiple transfers 
+
+**Option 3: Ride-Share Direct** 
+
+**Cost**: 
+- Airport to Downtown: $35-50 
+- Airport to Arrowhead Stadium: $40-60 (normal pricing) 
+- Match-day surge: $80-120+ possible 
+
+**Time**: 
+- To downtown: 25-35 minutes 
+- To Arrowhead: 30-40 minutes (no traffic); 50-75 minutes (typical/event traffic) 
+
+**Option 4: Private Airport Transfer** (Premium) 
+
+**Cost**: $70-120 pre-booked sedan; $130-180 SUV  
+**Best For**: Groups of 4+, families with luggage, international travelers unfamiliar with system 
+
+Services like Welcome Pickups, Jayride, and GO Airport Shuttle offer: 
+- Meet-and-greet at arrivals (helpful in new terminal) 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual transit + transfers: FREE but 90+ minutes 
+- Shared SUV transfer: $140 ÷ 5 = $28 per person, door-to-door in 30-40 minutes 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Kansas City metro with designated pickup zones at the new MCI terminal and at Arrowhead Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Airport to downtown: $35-50 
+- Airport to Arrowhead: $40-60 
+- Downtown to Arrowhead: $25-40 
+- Power & Light to Arrowhead: $25-40 
+
+**World Cup Match-Day Pricing**: 
+
+KCPD Captain Abigail Martinez confirmed that you won't be able to drive to the stadium and park for World Cup matches, fundamentally changing transportation dynamics from typical Chiefs games. 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off zones may be distant from entrances due to expanded security perimeter 
+- Expect 15-30 minute walks from drop-off to gates 
+
+**Leaving Stadium**: 
+Based on Chiefs playoff games and major events: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From Arrowhead to downtown: $60-120 typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airport to downtown hotel (reasonable pricing) 
+- Pre-book Uber Reserve 3-4 hours before stadium departure for guaranteed ride 
+- Consider dropping at hotel near stadium, walking final distance 
+
+**For Stadium Drop-Off**: 
+- Arrive 2+ hours before kickoff to avoid worst congestion 
+- Be prepared for extended walks from drop-off zones to entrances 
+- Save drop-off confirmation (helps locating pickup spot later) 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take free buses back 
+- Walk to World Cup bus pickup area 
+- Free ride to downtown or park-and-ride lot 
+- Request Uber from there to final destination (avoid surge) 
+
+**Strategy B**: Wait it out 
+- Stay at Truman Sports Complex 60-90 minutes 
+- Visit nearby restaurants (limited options, mostly chains) 
+- Surge pricing normalizes gradually 
+
+**Strategy C**: Walk to alternative location 
+- Walk to hotels on Stadium Drive (15-20 minutes) 
+- Courtyard Kansas City at Briarcliff, nearby options 
+- Request pickup there (less congestion, potentially lower surge) 
+
+## Driving & Parking Reality 
+
+### Should You Drive to Arrowhead Stadium? 
+
+**Short Answer for World Cup**: NO. Traditional parking will be severely limited or eliminated. 
+
+**KCPD Captain Abigail Martinez**: "The biggest is going to be that you won't be able to drive to the stadium and park. They have transportation experts that are looking at all of that and whether it will be a park-and-ride or some type of express shuttle." 
+
+**The World Cup Parking Reality**: 
+
+- **Security perimeter dramatically expanded**: Much larger than Chiefs games 
+- **Limited or zero general parking**: FIFA requirements eliminate most stadium lots 
+- **Lot P may be transportation depot**: Far-flung overflow lot repurposed for bus storage and FIFA equipment 
+- **Fan experience zone**: Area between regular and expanded perimeter used for activities, consuming parking space 
+
+### Park-and-Ride (Expected Primary Option) 
+
+KC2026 is in the planning phase for park-and-ride locations. Fans will arrive at the stadium via park-and-ride bus service, rideshare, or designated park-and-walk routes. 
+
+**How It Will Work** (Details to be announced): 
+1. **Park at designated remote lots**: Locations across metro area (both Kansas and Missouri sides) 
+2. **Free shuttle service to stadium**: Included with parking or separate small fee 
+3. **Return shuttles run until crowds clear**: Post-match service guaranteed 
+
+**Expected Benefits**: 
+- Avoid stadium congestion entirely 
+- Lower parking costs than traditional stadium lots 
+- Faster departure (buses use express lanes or priority routing) 
+- Support regional economic impact (parking near businesses) 
+
+**Check Updates**: Visit kansascityfwc26.com or text KC2026 Support Line (1-877-392-5226) for park-and-ride locations as they're announced. 
+
+### If You Insist on Driving Close 
+
+**Limited Options**: 
+- Nearby hotels (if you're a guest) 
+- Extremely limited commercial lots (very expensive, advance reservation essential) 
+- Designated park-and-walk routes (if FIFA allows any general stadium-adjacent parking) 
+
+**Post-Match Reality**: Even with limited parking, expect 60-90 minute exits. FIFA events create more traffic control complexity than NFL games. 
+
+## Match-Day Transportation Strategy 
+
+### Six Matches: Complete Schedule 
+
+Kansas City will host six matches at Arrowhead Stadium: 
+
+1. **Tuesday, June 16, 2026** — Group Stage (Match 19: Group J) 
+2. **Saturday, June 20, 2026** — Group Stage (Match 34: Group E) 
+3. **Thursday, June 25, 2026** — Group Stage (Match 58) 
+4. **Saturday, June 27, 2026** — Group Stage (Match 69) 
+5. **Friday, July 3, 2026** — Round of 32 knockout match (Match 87) 
+6. **Saturday, July 11, 2026** — **Quarterfinal** (Match 100) 
+
+### Timing Your Journey 
+
+**For Afternoon Matches** (12 PM - 3 PM Kickoffs): 
+
+**Departing Downtown Kansas City**: 
+- Leave hotel: 10:00 AM 
+- Walk/streetcar to bus departure hub: 10:30 AM 
+- Board World Cup express bus: 10:45 AM 
+- Arrive Arrowhead Stadium: 11:30 AM (90 minutes before kickoff) 
+
+**Departing from Regional Locations** (Overland Park, KS; Lee's Summit, MO): 
+- Identify your nearest park-and-ride location 
+- Depart home: 9:30-10:00 AM 
+- Arrive park-and-ride lot: 10:15-10:30 AM 
+- Board shuttle: 10:45-11:00 AM 
+- Arrive stadium: 11:30 AM - 12:00 PM 
+
+**For Evening Matches** (6 PM - 9 PM Kickoffs): 
+
+Account for evening traffic (4-7 PM peak): 
+- Add 30-45 minutes to all journey times 
+- Depart accommodations by 3:30-4:00 PM 
+- Arrive stadium 5:00-5:30 PM (2+ hours before kickoff for safety buffer) 
+
+### Weather Considerations 
+
+**June-July in Kansas City**: 
+- Average temperatures: 75-90°F (24-32°C) 
+- High humidity (50-70%) 
+- Frequent thunderstorms possible (especially June) 
+- Arrowhead Stadium is fully open-air (no roof) 
+
+**What to Bring**: 
+- Sunscreen and hat (essential for day matches) 
+- Light rain jacket or poncho (June storms) 
+- Reusable water bottle (clear, empty for security—refill inside) 
+- Layers (temperatures drop in evenings) 
+
+### Quarterfinal (July 11, 2026) Special Considerations 
+
+The quarterfinal on July 11 represents Kansas City's biggest match, with maximum crowd intensity and global attention. 
+
+**Plan Ahead**: 
+- Book accommodations immediately when match details announced 
+- Arrive 2-3 hours before kickoff (security more extensive) 
+- Expect all transportation options at maximum capacity 
+- Consider attending Fan Festival before or after match for full experience 
+
+## FIFA Fan Festival Transportation 
+
+### National WWI Museum and Memorial 
+
+The official FIFA Fan Festival will be held at the National World War I Museum and Memorial grounds—one of Kansas City's most iconic landmarks. 
+
+**Festival Schedule**: 18 nights during the tournament (every Kansas City or USA match day)  
+**Expected Attendance**: 25,000-35,000 per night  
+**Location**: 2 Memorial Drive, Kansas City, MO 64108 (downtown, on streetcar line) 
+
+### Getting to the Fan Festival 
+
+**Via KC Streetcar** (Best Option): 
+- Free streetcar stops at Crown Center (closest to museum) 
+- Walk 5 minutes to festival entrance 
+- Operating 6 AM - midnight 
+- Every 10-15 minutes 
+
+**Capacity Warning**: The streetcar can only handle a few thousand people per hour. Transportation planners worry about "crush loads" with 25,000-35,000 leaving simultaneously. 
+
+**Alternative Transportation**: 
+- **RideKC Buses**: Multiple downtown routes serve area 
+- **Walking**: From most downtown hotels (10-20 minute walk) 
+- **Bike Share**: Available in downtown area 
+- **Rideshare**: Drop-off/pickup on surrounding streets 
+
+**Pro Tip**: Arrive early or stay late to avoid peak streetcar crush. The festival offers activities for hours, so you don't need to leave immediately when crowds do.`}
+              </ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h3" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
+{`### Fan Festival + Match Day Strategy 
+
+**Attending Both**: 
+1. **Morning/Afternoon**: Explore downtown, visit Fan Festival 
+2. **Early Afternoon**: Board World Cup bus to Arrowhead (2-3 hours before kickoff) 
+3. **Post-Match**: Return downtown via free bus, grab late dinner, celebrate/commiserate 
+
+**Attending Fan Festival Only** (No Match Ticket): 
+- Watch match on giant screen at Fan Festival 
+- Immerse in international atmosphere 
+- Free admission (typically for FIFA Fan Fests) 
+- Streetcar access throughout operating hours 
+
+## Money-Saving Transportation Budget 
+
+### The Zero-Fare Advantage 
+
+Kansas City offers the most economical World Cup transportation of any host city thanks to fare-free public transit. 
+
+**Sample 5-Day Kansas City Visit** (2 Matches): 
+
+**Transportation Costs**: 
+- **Airport to downtown**: FREE (RideKC bus) or $35-50 (rideshare) 
+- **All downtown travel**: FREE (RideKC + streetcar) 
+- **Two match-day trips to Arrowhead**: FREE (World Cup buses) 
+- **Fan Festival access**: FREE (streetcar) 
+- **Return to airport**: FREE (RideKC) or $35-50 (rideshare) 
+
+**5-Day Total**: $0-100 (depending on rideshare usage) 
+
+Compare to other host cities where transit alone costs $50-200+ 
+
+### Budget Transportation Summary 
+
+**Most Economical 5-Day Visit** (2 matches): 
+- RideKC buses everywhere: $0 
+- KC Streetcar: $0 
+- World Cup stadium buses: $0 (KC2026-funded) 
+- **Total**: $0 
+
+**Moderate Budget** (convenience): 
+- Rideshare airport transfers: $70-100 
+- All other transit: $0 
+- **Total**: $70-100 
+
+**Premium Budget**: 
+- Private airport transfer: $140 
+- Rideshare for match days: $80-120 
+- All downtown transit: $0 
+- **Total**: $220-260 
+
+**The Kansas City Difference**: Every other host city charges fares, making Kansas City up to 75% cheaper for transportation. 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **Transit App** (Official RideKC) 
+   - Real-time bus tracking 
+   - Trip planning across all systems 
+   - Service alerts 
+   - Free download 
+
+2. **KC Streetcar App** 
+   - Track streetcar location in real-time 
+   - Arrival predictions 
+   - Route information 
+
+3. **Google Maps** 
+   - Integrates RideKC, streetcar, walking 
+   - Most accurate Kansas City routing 
+   - Real-time traffic 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save frequent locations 
+   - Pre-book via Uber Reserve 
+
+5. **IRIS App** (Optional) 
+   - On-demand service in Kansas City, Missouri 
+   - Minimal fares 
+   - Good for trips RideKC doesn't cover well 
+
+### Digital Tools Setup 
+
+**Before You Arrive**: 
+- Download Transit app 
+- Save Arrowhead Stadium, your hotel, Fan Festival addresses 
+- Enable push notifications for service alerts 
+- Screenshot key routes for offline reference 
+
+**KC2026 Contact**: 
+- Call/text Support Line: 1-877-392-5226 
+- Email: transportation@kansascityfwc26.com 
+- Website: kansascityfwc26.com 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Arrowhead Stadium**: 
+- ADA-compliant with accessible seating throughout 76,000+ seats 
+- Accessible parking in designated areas (limited for World Cup) 
+- Elevators, ramps, accessible restrooms 
+- Request services through Chiefs/stadium website 
+
+**RideKC Accessibility**: 
+- All buses wheelchair accessible with ramps/lifts 
+- Priority seating areas 
+- Audio stop announcements 
+- RideKC Freedom paratransit service available 
+
+**KC Streetcar**: 
+- Fully accessible platforms (level boarding) 
+- Wheelchair spaces on every car 
+- Audio/visual stop announcements 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- RideKC: FREE for all (zero-fare system) 
+- KC Streetcar: FREE for all 
+- World Cup buses: FREE/minimal for all 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on all transit; fold during crowded periods 
+- Arrowhead has family restrooms and nursing areas 
+- Pack snacks for transit journeys (no food service on buses) 
+- Bus routes may involve standing during peak times—arrive early for seats 
+
+**Recommended Family Strategy**: 
+- Use free transit to/from stadium (kids enjoy "special World Cup bus") 
+- Attend Fan Festival in afternoon, then take bus to evening match 
+- Stay downtown near streetcar for easy, stress-free exploring 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Kansas City to Other Central US Host Cities 
+
+Kansas City's central location makes it an ideal hub for attending matches in multiple cities. 
+
+**To Dallas** (500 miles, 7-8 hours drive): 
+- **Flight**: 1 hour 30 minutes, $150-300 round-trip 
+- **Drive**: Rental car makes sense for groups of 4+ 
+- Dallas hosts 9 matches—most of any city 
+
+**To Houston** (700 miles, 10-11 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip 
+- **Drive**: Not recommended 
+- Houston hosts 6 matches 
+
+**To Denver** (600 miles, 9 hours drive): 
+- **Flight**: 1 hour 45 minutes, $150-350 
+- Not a World Cup host city, but gateway to West Coast venues 
+
+**Strategic Multi-City Planning**: 
+Kansas City's geography positions you perfectly for Dallas (closest major host city) and connects well to all venues via direct flights from MCI. 
+
+## Critical Transportation Tips 
+
+1. **You cannot park at the stadium**—embrace buses, park-and-ride, or rideshare 
+2. **RideKC is FREE**—use it extensively without worrying about fares 
+3. **200 World Cup buses** create unprecedented capacity—trust the system 
+4. **Streetcar to Fan Festival** is perfect—but crush loads possible, arrive early 
+5. **Download Transit app**—real-time tracking essential for route planning 
+6. **Park-and-ride locations TBD**—check kansascityfwc26.com regularly for updates 
+7. **Post-match patience pays**—free buses run until crowds clear, no rush 
+8. **Six matches over 25 days**—perfect spacing to explore KC between games 
+9. **Contact KC2026 Support Line** (1-877-392-5226) with transportation questions 
+10. **Zero-fare transit is unique**—Kansas City is the only host city where transportation is essentially free 
+
+## Your Kansas City World Cup Transportation Plan 
+
+Half a million visitors expected. Six matches over 25 days. America's first major fare-free transit system. And 200 buses specifically leased to move the world. 
+
+Kansas City's World Cup transportation story breaks every convention. While other cities charge fares and require complex navigation, Kansas City offers free buses, free streetcars, and dedicated World Cup express service. The city's central location, world-class stadium, and pioneering transit model create an accessible experience unlike anywhere else in the tournament. 
+
+Your winning strategy: Stay downtown near the streetcar line. Use free RideKC buses for everything. Board World Cup express buses for all matches. Visit the Fan Festival at the National WWI Museum and Memorial. Let Kansas City's hospitality and zero-fare transit welcome you without breaking your budget. 
+
+The quarterfinal on July 11, 2026, brings global stakes to America's heartland. Between matches, explore Kansas City's legendary barbecue, jazz heritage, Negro Leagues Baseball Museum, and passionate soccer culture at CPKC Stadium (home of the Current, the NWSL champions). 
+
+When that referee's whistle echoes through Arrowhead Stadium—one of the loudest venues in all of sports—you'll be there, having navigated transportation stress-free, ready to witness soccer history in Kansas City's moment on the world stage. 
+
+See you at "Kansas City Stadium" (Arrowhead during the tournament). The heart of America welcomes the world. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—RideKC (ridekc.org), KC2026 (kansascityfwc26.com), KC Streetcar (kcstreetcar.org), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation plans will be announced spring 2026. Contact KC2026 Support Line: 1-877-392-5226 or transportation@kansascityfwc26.com.*`}
               </ReactMarkdown>
             </div>
           ) : (

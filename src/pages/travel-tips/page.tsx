@@ -249,7 +249,7 @@ export default function TravelTipsPage() {
     },
     {
       id: 6,
-      title: 'Heat Safety Gear Checklist',
+      title: 'World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries',
       category: 'planning',
       readTime: '6 min',
       difficulty: 'Beginner',
@@ -263,6 +263,7 @@ export default function TravelTipsPage() {
         'Shade breaks during peak hours 2–5 PM'
       ],
       image: 'https://readdy.ai/api/search-image?query=heat%20safety%20gear%20for%20stadium%2C%20cooling%20towels%2C%20portable%20fan%2C%20hydration%20bottle&width=400&height=250&seq=heat-gear&orientation=landscape',
+      slugOverride: 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries',
       fullContent: {
         introduction: 'Extreme heat requires preparation. This checklist and protocol ensure you enjoy the match safely while minimizing risk.',
         sections: [
@@ -304,7 +305,7 @@ export default function TravelTipsPage() {
     },
     {
       id: 8,
-      title: 'City Pass & Local Transit Mastery',
+      title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend',
       category: 'transportation',
       readTime: '6 min',
       difficulty: 'Intermediate',
@@ -318,6 +319,7 @@ export default function TravelTipsPage() {
         'Plan transfers with official trip planner apps'
       ],
       image: 'https://readdy.ai/api/search-image?query=city%20transit%20day%20pass%2C%20metro%20station%2C%20trip%20planner%20app%20on%20phone&width=400&height=250&seq=city-pass&orientation=landscape',
+      slugOverride: 'world-cup-2026-match-selection-startegy-which-games-to-attend',
       fullContent: {
         introduction: 'Local transit is the World Cup hack. Master day passes, route planners, and shuttle integrations to avoid traffic.',
         sections: [
@@ -331,7 +333,7 @@ export default function TravelTipsPage() {
     },
     {
       id: 9,
-      title: 'Late-Night Food & Transit Tactics',
+      title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
       category: 'planning',
       readTime: '5 min',
       difficulty: 'Beginner',
@@ -345,6 +347,7 @@ export default function TravelTipsPage() {
         'Move in groups; avoid isolated streets'
       ],
       image: 'https://readdy.ai/api/search-image?query=late%20night%20food%20near%20metro%20station%2C%20city%20street%20at%20night%2C%20safe%20transit&width=400&height=250&seq=late-night&orientation=landscape',
+      slugOverride: 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget',
       fullContent: {
         introduction: 'Post-match hunger meets closing hours. Use these tactics to eat well and get home safely without paying surge pricing.',
         sections: [

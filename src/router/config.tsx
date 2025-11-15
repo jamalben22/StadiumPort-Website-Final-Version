@@ -12,6 +12,7 @@ import CityDetailPage from '../pages/cities/[cityId]/page';
 const DealsPage = lazy(() => import('../pages/deals/page'));
 const DealAlertsPage = lazy(() => import('../pages/deal-alerts/page'));
 const AccommodationPage = lazy(() => import('../pages/accommodation/page'));
+const AccommodationArticlePage = lazy(() => import('../pages/accommodation/article/page'));
 const TransportationPage = lazy(() => import('../pages/transportation/page'));
 const TravelGuidesPage = lazy(() => import('../pages/travel-guides/page'));
 const TravelGuideArticlePage = lazy(() => import('../pages/travel-guides/article/page'));
@@ -28,14 +29,18 @@ const DallasArticlePage = lazy(() => import('../pages/cities/dallas/page'));
 const TravelTipsPage = lazy(() => import('../pages/travel-tips/page'));
 const TravelTipsArticlePage = lazy(() => import('../pages/travel-tips/article/page'));
 const TravelRoutesPage = lazy(() => import('../pages/travel-routes/page'));
+const TravelRoutesArticlePage = lazy(() => import('../pages/travel-routes/article/page'));
 const TransportationArticlePage = lazy(() => import('../pages/transportation/article/page'));
 const BudgetGuidesPage = lazy(() => import('../pages/budget-guides/page'));
+const BudgetGuideArticlePage = lazy(() => import('../pages/budget-guides/article/page'));
 const PackingListsPage = lazy(() => import('../pages/packing-lists/page'));
 const SafetyGuidePage = lazy(() => import('../pages/safety-guide/page'));
 const LuxuryTravelPage = lazy(() => import('../pages/luxury-travel/page'));
+const LuxuryTravelArticlePage = lazy(() => import('../pages/luxury-travel/article/page'));
 const VenuesPage = lazy(() => import('../pages/world-cup-2026-stadiums/page'));
 const StadiumDetailPage = lazy(() => import('../pages/world-cup-2026-stadiums/[stadiumId]/page'));
 const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'));
+const CityComparisonsArticlePage = lazy(() => import('../pages/city-comparisons/article/page'));
 // Direct imports for legal pages to ensure they load properly
 import PrivacyPage from '../pages/legal/privacy/page';
 import TermsPage from '../pages/legal/terms/page';
@@ -74,6 +79,10 @@ const routes: RouteObject[] = [
   {
     path: '/accommodation',
     element: <AccommodationPage />
+  },
+  {
+    path: '/accommodation/:slug',
+    element: <AccommodationArticlePage />
   },
   {
     path: '/transportation',
@@ -180,8 +189,16 @@ const routes: RouteObject[] = [
     element: <TravelRoutesPage />
   },
   {
+    path: '/travel-routes/:slug',
+    element: <TravelRoutesArticlePage />
+  },
+  {
     path: '/budget-guides',
     element: <BudgetGuidesPage />
+  },
+  {
+    path: '/budget-guides/:slug',
+    element: <BudgetGuideArticlePage />
   },
   {
     path: '/packing-lists',
@@ -196,6 +213,10 @@ const routes: RouteObject[] = [
     element: <LuxuryTravelPage />
   },
   {
+    path: '/luxury-travel/:slug',
+    element: <LuxuryTravelArticlePage />
+  },
+  {
     path: '/world-cup-2026-stadiums',
     element: <VenuesPage />
   },
@@ -206,6 +227,10 @@ const routes: RouteObject[] = [
   {
     path: '/city-comparisons',
     element: <CityComparisonsPage />
+  },
+  {
+    path: '/city-comparisons/:slug',
+    element: <CityComparisonsArticlePage />
   },
   {
     path: '/legal/privacy',

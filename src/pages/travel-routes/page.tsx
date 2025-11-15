@@ -549,16 +549,13 @@ export default function TravelRoutesPage() {
                       <div className="text-slate-500">{route.duration}</div>
                     </div>
                   </div>
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openRouteModal(route)}
+                  <a
+                    href={`/travel-routes/${route.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
                   >
                     <i className="ri-eye-line mr-2"></i>
                     Read Full Guide
-                  </Button>
+                  </a>
                 </div>
               </Card>
             ))}
@@ -644,16 +641,13 @@ export default function TravelRoutesPage() {
                     </div>
                   </div>
                   
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openRouteModal(route)}
+                  <a
+                    href={`/travel-routes/${route.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
                   >
                     <i className="ri-eye-line mr-2"></i>
                     Read Full Guide
-                  </Button>
+                  </a>
                 </div>
               </Card>
             ))}

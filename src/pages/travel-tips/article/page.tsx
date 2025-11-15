@@ -133,7 +133,18 @@ export default function TravelTipsArticlePage() {
   ];
   const tip = tips.find(t => slugify(t.title) === slug);
   const title = tip?.title || toTitleCase(slug);
-  const displayTitle = slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather' ? 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather' : title;
+  const displayTitle =
+    slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather'
+      ? 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather'
+      : slug === 'world-cup-2026-match-selection-startegy-which-games-to-attend'
+      ? 'World Cup 2026 Match Selection Strategy: Which Games to Attend'
+      : slug === 'heat-safety-gear-checklist'
+      ? 'World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries'
+      : slug === 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries'
+      ? 'World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries'
+      : slug === 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget'
+      ? 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget'
+      : title;
   const description = tip?.intro || 'Premium travel tips guide with cohesive editorial layout and structured sections.';
 
   const navigate = useNavigate();
@@ -143,6 +154,23 @@ export default function TravelTipsArticlePage() {
     document.title = pageTitle;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', description);
+
+    const canonicalHref = `${window.location.origin}/travel-tips/${slug ?? ''}`;
+    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', canonicalHref);
+
+    let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
+    if (!ogUrl) {
+      ogUrl = document.createElement('meta');
+      ogUrl.setAttribute('property', 'og:url');
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute('content', canonicalHref);
   }, [displayTitle]);
 
   useEffect(() => {
@@ -176,6 +204,20 @@ export default function TravelTipsArticlePage() {
   }, [slug]);
 
   useEffect(() => {
+    if (slug === 'late-night-food-and-transit-tactics') {
+      navigate('/travel-tips/world-cup-2026-food-and-dining-guide-eating-well-on-any-budget', { replace: true });
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    if (slug === 'heat-safety-gear-checklist') {
+      navigate('/travel-tips/world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries', { replace: true });
+    }
+  }, [slug]);
+
+  // ensure itinerary slug is a valid route
+
+  useEffect(() => {
     if (slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather') {
       // no-op; valid route
     }
@@ -184,6 +226,18 @@ export default function TravelTipsArticlePage() {
   useEffect(() => {
     if (slug === 'hotel-points-stacking-and-status-match') {
       navigate('/travel-tips/world-cup-2026-packing-guide-ultimate-checklist-for-all-weather', { replace: true });
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    if (slug === 'city-pass-and-local-transit-mastery') {
+      navigate('/travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    if (slug === 'city-pass-local-transit-mastery') {
+      navigate('/travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
     }
   }, [slug]);
 
@@ -3180,7 +3234,7 @@ Comprehensive policies cover:</p>
             </article>
           </>
         ) : (
-          slug === 'heat-safety-gear-checklist' ? (
+          (slug === 'heat-safety-gear-checklist' || slug === 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries') ? (
             <>
             <article className="editorial-body editorial-dropcap">
               <ReactMarkdown
@@ -3212,9 +3266,7 @@ Comprehensive policies cover:</p>
                   ),
                 }}
               >
-{`# World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries
-
-Planning a World Cup 2026 itinerary isn't like planning a typical vacation. You're coordinating across three countries, 16 cities, 39 days, and 104 matches—while competing with six million other fans for flights, hotels, and tickets. Franz Beckenbauer famously said, "The World Cup is a truly international event. It brings people together, uniting nations, races, and cultures." But what he didn't mention: it also brings together complex logistics, border crossings, and rapid decision-making.
+{`Planning a World Cup 2026 itinerary isn't like planning a typical vacation. You're coordinating across three countries, 16 cities, 39 days, and 104 matches—while competing with six million other fans for flights, hotels, and tickets. Franz Beckenbauer famously said, "The World Cup is a truly international event. It brings people together, uniting nations, races, and cultures." But what he didn't mention: it also brings together complex logistics, border crossings, and rapid decision-making.
 
 The data reveals critical patterns: The tournament runs June 11 to July 19, 2026—exactly 39 days. Group stage spans 14 days across 48 matches. The knockout rounds compress into 25 days with just 56 matches. Travel advisors warn that booking reactively after your team advances is risky—availability drops and prices spike within hours. Yet booking too early without knowing knockout matchups wastes money on canceled reservations.
 
@@ -4425,36 +4477,36 @@ Pre-pack clear bag night before match. Store at hotel until match day. Grab and 
 - ☐ Verify tickets downloaded to phone
 - ☐ Lock luggage
 - ☐ Head to airport 3 hours before international flights`}
-                </ReactMarkdown>
-                <ReactMarkdown
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    h1: ({ node, ...props }) => (
-                      <h2 className="editorial-h2" {...props} />
-                    ),
-                    h2: ({ node, ...props }) => (
-                      <h3 className="editorial-h3" {...props} />
-                    ),
-                    h3: ({ node, ...props }) => (
-                      <h4 className="editorial-h4" {...props} />
-                    ),
-                    p: ({ node, ...props }) => (
-                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
-                    ),
-                    ul: ({ node, ...props }) => (
-                      <ul className="list-disc pl-6 space-y-2" {...props} />
-                    ),
-                    ol: ({ node, ...props }) => (
-                      <ol className="list-decimal pl-6 space-y-2" {...props} />
-                    ),
-                    li: ({ node, ...props }) => (
-                      <li className="text-slate-700 dark:text-slate-300" {...props} />
-                    ),
-                    strong: ({ node, ...props }) => (
-                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
-                    ),
-                  }}
-                >
+              </ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                }}
+              >
 {`## The Bottom Line: Pack Light, Pack Smart
 
 World Cup 2026's three-country format across dramatically varying climates creates packing challenges unlike any previous tournament. But the principles remain constant:
@@ -4515,6 +4567,1234 @@ The 2026 FIFA World Cup will be extraordinary. Don't let packing mistakes—wron
 **Disclosure:** This article contains affiliate links to travel gear and packing supplies. We may earn a commission if you purchase through these links at no additional cost to you. All packing recommendations based on verified FIFA stadium policies, climate data, and experienced traveler wisdom.
 
 **Last Updated:** November 2025 | Stadium bag policies confirmed based on 2025 FIFA Club World Cup enforcement and official venue guidelines. Climate recommendations based on 20-year meteorological averages for June-July in host cities.`}
+              </ReactMarkdown>
+            </article>
+            </>
+          ) : slug === 'world-cup-2026-match-selection-startegy-which-games-to-attend' ? (
+            <>
+              <article className="editorial-body editorial-dropcap">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{`Choosing which World Cup 2026 matches to attend is perhaps the most consequential decision you'll make. With 104 matches over 39 days across 16 cities in three countries, you face impossible choices: Group stage atmosphere vs. knockout drama? Following your team vs. guaranteed great matches? Budget-friendly early rounds vs. splurging on the final? Miss a single strategic decision, and you could spend $1,500 on tickets to tepid group stage mismatches while epic knockout games unfold elsewhere.
+
+The data reveals critical patterns: AT&T Stadium in Dallas hosts the most matches (9) including a semi-final, making it the optimal hub for quantity-focused fans. The Eastern Region (NYC, Boston, Philadelphia) offers 21 matches within easy Amtrak distance. Group stage matches cost $60-230 while the final reaches $455-990+ base price before dynamic pricing pushes premium seats toward $10,000. Travel advisors confirm that Dallas as an anchor city allows "easy hops" to Houston, Kansas City, and Monterrey, while West Coast venues (LA, Seattle, SF, Vancouver) form a "linear flight path" for regional travel.
+
+This comprehensive guide reveals which matches provide the best value, atmosphere, and experience across every budget and strategy. Based on verified tournament structure, expert recommendations from National Geographic and AFAR travel advisors, and lessons from veteran World Cup attendees, here's exactly how to select your perfect World Cup 2026 match schedule.
+
+## Understanding Tournament Structure
+
+### The 48-Team Format (First Time Ever)
+
+**Group Stage: June 11-27, 2026**
+- 48 teams divided into 12 groups of 4
+- Top 2 from each group advance (24 teams)
+- **8 best third-place teams also advance** (NEW in 2026)
+- Total: 48 group stage matches
+- Each team plays 3 matches with 4-day gaps
+
+**Round of 32: June 28-July 3, 2026** (NEW Round)
+- 32 qualified teams
+- Single-elimination bracket begins
+- 16 matches over 6 days
+
+**Round of 16: July 5-8, 2026**
+- 8 matches over 4 days
+- Every match elimination stakes
+
+**Quarter-Finals: July 10-11, 2026**
+- 4 matches over 2 days
+- **Venues:** Boston, Los Angeles, Miami, Kansas City
+
+**Semi-Finals: July 14-15, 2026**
+- 2 matches over 2 days
+- **Venues:** Dallas (July 14), Atlanta (July 15)
+
+**Bronze Final: July 18, 2026**
+- **Venue:** Miami
+
+**Final: July 19, 2026**
+- **Venue:** MetLife Stadium, New York/New Jersey
+- Sunday afternoon/evening kickoff
+- Capacity: 82,500
+
+### Match Distribution by Venue
+
+**Most Matches (9):** Dallas
+**High-Volume (8):** Los Angeles, New York/New Jersey, Atlanta, Mercedes-Benz Stadium
+**High-Volume (7):** Houston, Philadelphia, Boston, Miami, Vancouver
+**Standard (6):** Seattle, Kansas City, Toronto
+**Moderate (5):** Mexico City
+**Lower (4):** Guadalajara, Monterrey, San Francisco
+
+**Key Insight:** Dallas's 9 matches + semi-final make it the quantity champion, but venue quality matters as much as volume.
+
+## Strategy #1: Following Your Team
+
+### The Team Loyalist Approach
+
+**Who This Is For:**
+- Die-hard national team supporters
+- Fans willing to pay premium prices
+- Those with flexible schedules and budgets
+- Supporters prioritizing emotional connection over cost
+
+### How It Works
+
+**Phase 1: Group Stage (Guaranteed)**
+
+After the December 5, 2025 draw, you'll know your team's three group stage cities and dates. Book immediately:
+- Flights to all three cities
+- Hotels for each city (3-4 nights)
+- Ground transportation
+- Activities for rest days
+
+**Example: Following England (Hypothetical)**
+- Match 1: June 12, Vancouver
+- Match 2: June 16, Los Angeles
+- Match 3: June 20, Dallas
+
+**Budget:** $6,000-10,000 for group stage alone (flights, hotels, tickets, food)
+
+**Phase 2: Knockout Rounds (Unknown)**
+
+You won't know knockout locations until matches conclude. Strategy:
+
+**Immediate Actions After Group Stage:**
+1. Monitor results in real-time
+2. Book flights/hotels within 2 hours of learning matchup
+3. Accept 30-50% premium pricing
+4. Cancel any speculative bookings
+
+**Flexibility Tools:**
+- Southwest Airlines (no change fees)
+- Refundable hotel rates
+- Credit cards with travel insurance
+
+**Reality Check:**
+Following a team through the final (if they make it) easily costs $15,000-25,000+ including:
+- 3 group stage matches
+- Round of 32
+- Round of 16
+- Quarter-final
+- Semi-final
+- Final
+
+Most teams won't make the final. Budget for what you can afford if they're eliminated early.
+
+### Best Teams to Follow (Value + Success Probability)
+
+**Traditional Powerhouses (High Probability, High Cost):**
+- Brazil, Argentina, France, Germany, Spain, England
+- Expensive tickets due to demand
+- Large supporter bases drive up accommodation
+- Higher odds of deep runs = more matches
+
+**Dark Horses (Medium Probability, Better Value):**
+- Netherlands, Portugal, Belgium, Croatia, Uruguay
+- Competitive ticket prices
+- Passionate but smaller fan bases
+- Realistic final-four potential
+
+**Long Shots (Low Probability, Budget-Friendly):**
+- CONCACAF teams (USA, Mexico, Canada)
+- Asian qualifiers (Japan, South Korea)
+- Group stage only unless magical run
+- Lowest ticket prices, easier accommodation
+
+**Host Nations Strategy:**
+USA, Mexico, and Canada are guaranteed group stage matches in home regions. Attending a host nation's opening match guarantees electric atmosphere regardless of quality.
+
+---
+
+## Strategy #2: Experience-Focused (Neutral Fan)
+
+### The Atmosphere Hunter Approach
+
+**Who This Is For:**
+- Fans without strong team allegiance
+- Those prioritizing iconic moments over specific teams
+- Travelers wanting cultural immersion
+- Budget-conscious attendees maximizing value
+
+### Must-Attend Matches (Regardless of Teams)
+
+**Opening Match: June 11, 2026**
+- **Venue:** Estadio Azteca, Mexico City
+- **Matchup:** Mexico vs. TBD
+- **Why:** Historic venue's third World Cup, guaranteed sellout, incredible atmosphere
+- **Capacity:** 87,523 (largest stadium)
+- **Ticket Price:** $150-400 (Category 2-3, dynamic pricing will surge)
+
+**Value Proposition:** 
+National Geographic calls Mexico City's Azteca "legendary" and recommends staying in Coyoacán to avoid traffic. This is THE can't-miss cultural experience of the tournament.
+
+**Canada Opening: June 12, 2026**
+- **Venue:** BMO Field, Toronto
+- **Matchup:** Canada vs. TBD
+- **Why:** Smallest, most intimate stadium (45,736), Canadian passion, unique atmosphere
+- **Ticket Price:** $120-300
+
+**USA Opening: June 12, 2026**
+- **Venue:** SoFi Stadium, Los Angeles
+- **Matchup:** USA vs. TBD
+- **Why:** $5.5 billion state-of-the-art stadium, Hollywood glamour, massive event
+- **Ticket Price:** $150-400+
+
+**Semi-Finals: July 14-15, 2026**
+- **Venues:** Dallas (July 14), Atlanta (July 15)
+- **Why:** Guaranteed drama, elimination stakes, elite teams only
+- **Ticket Price:** $250-800 base (dynamic pricing likely doubles this)
+
+**Atlanta Advantage:**
+Mercedes-Benz Stadium has retractable roof with air conditioning—critical for July heat. More comfortable than outdoor Dallas venue.
+
+**The Final: July 19, 2026**
+- **Venue:** MetLife Stadium, New York/New Jersey
+- **Why:** Once-in-a-lifetime opportunity, greatest atmosphere in sports
+- **Capacity:** 82,500
+- **Ticket Price:** $455-990 baseline, $3,000-10,000+ for premium after dynamic pricing
+
+**Reality:**
+If you attend ONE match, make it the final. The experience justifies the cost.
+
+### Regional Rivalry Matches (Group Stage Hidden Gems)
+
+**High Intensity, Low Cost:**
+- Argentina vs. Brazil (if drawn together)
+- England vs. USA
+- Mexico vs. USA
+- Any South American derby (Uruguay/Chile/Colombia combinations)
+- European rivalries (Netherlands vs. Germany, England vs. Scotland)
+
+**Strategy:**
+Wait for December 5 draw, identify spicy matchups, book immediately. These matches deliver knockout-level intensity at group stage prices.
+
+---
+
+## Strategy #3: Hub-and-Spoke (Multiple Cities, Regional Focus)
+
+### The Geographic Optimizer Approach
+
+**Who This Is For:**
+- Fans wanting variety without chaos
+- Those attending 3-5 matches
+- Balance seekers (football + tourism)
+- Regional travelers
+
+### Best Hub Cities
+
+**Dallas (Central Region Hub)**
+- **Hosted Matches:** 9 (including semi-final July 14)
+- **Nearby Cities:** Houston (3.5-hour drive, 7 matches), Kansas City (1-hour flight, 6 matches including quarter-final), Monterrey (2-hour flight, 4 matches)
+- **Strategy:** Anchor in Dallas, day-trip to Houston, quick flights to KC or Mexico
+
+**AFAR Travel Recommendation:** "Anchor yourself in Dallas—home to nine total matches, including a semifinal—and from there you could easily hop a quick flight (or embark on a slightly longer road trip) to Houston, Kansas City, or even Monterrey, Mexico."
+
+**Budget:** $7,000-12,000 for 2-week stay, 4-5 matches
+
+---
+
+**New York City (Eastern Region Hub)**
+- **Hosted Matches:** 8 (including FINAL)
+- **Nearby Cities:** Boston (4-hour train, 7 matches), Philadelphia (2-hour train, 7 matches), Toronto (1.5-hour flight, 6 matches), Atlanta (2-hour flight, 8 matches including semi-final)
+- **Strategy:** Base in NYC, Amtrak trains make day trips easy, attend final
+
+**National Geographic Insight:** "The Eastern Region...is arguably the easiest region to travel within, thanks to Amtrak's strong presence and comfy new Acela trains. The big three northeastern cities—New York, Philadelphia, and Boston—are easy to combine due to their close proximity. Plus, these three cities will share an impressive 21 matches between them."
+
+**Budget:** $8,000-15,000+ for 2-week stay, 4-5 matches (NYC expensive)
+
+---
+
+**Los Angeles (Western Region Hub)**
+- **Hosted Matches:** 8 (including USA opening June 12)
+- **Nearby Cities:** San Francisco (1-hour flight, 6 matches), Seattle (2.5-hour flight, 6 matches), Vancouver (2.5-hour flight, 7 matches)
+- **Strategy:** Perfect weather, beach culture, form "linear flight path" up West Coast
+
+**AFAR Strategy:** "L.A., Seattle, San Francisco, and Vancouver form a linear flight path."
+
+**Budget:** $8,000-13,000 for 2-week stay, 4-5 matches
+
+---
+
+**Mexico City (Cultural + Football Hub)**
+- **Hosted Matches:** 5 (including opening June 11)
+- **Nearby Cities:** Guadalajara (1-hour flight, 4 matches), Monterrey (2-hour flight, 4 matches), Houston (3-hour flight, 7 matches), Dallas (2.5-hour flight, 9 matches)
+- **Strategy:** Experience all three Mexican venues plus affordable Texas cities
+
+**Budget:** $5,000-8,000 for 2-week stay, 4-5 matches (Mexico affordable)
+
+---
+
+## Strategy #4: Budget Maximizer (Most Matches, Least Money)
+
+### The Value Hunter Approach
+
+**Who This Is For:**
+- Budget-conscious fans
+- Those prioritizing quantity over quality
+- Fans flexible on matchups
+- Maximum football, minimum cost
+
+### The Houston Base Strategy
+
+**Why Houston:**
+- Hotels: $146/night average (cheapest major city)
+- Matches: 7 (third-most)
+- Stadium: NRG Stadium with retractable roof and AC
+- Quality: Comfortable, safe, well-organized
+
+**Two-Week Houston-Anchored Plan:**
+- Attend 3-4 Houston matches ($60-150 each for Category 3)
+- Day trip to Dallas for 1-2 matches (3.5-hour drive)
+- Total accommodations: 13 nights × $146 = $1,898
+
+**Budget Breakdown:**
+- Hotels: $1,898
+- Match tickets (4 × $100 avg): $400
+- Food (13 days × $60): $780
+- Local transportation: $200
+- Flights (domestic): $400
+- **Total: $3,678 for 4 matches**
+
+**Per-Match Cost: $920** (including all expenses)
+
+**Compare to:**
+- NYC-based plan: $2,000+ per match
+- Following team through tournament: $2,500+ per match
+
+### Mexico City Budget Power Move
+
+Even better value if flying internationally:
+
+**Why Mexico City:**
+- Hotels: $60-150/night (exceptional value)
+- Matches: 5 (including iconic opening)
+- Culture: World-class museums, food, history
+- Climate: Comfortable 70-80°F (unlike brutal Texas heat)
+
+**One-Week Mexico City Plan:**
+- Attend 2 Mexico City matches
+- Day trip to Guadalajara for 1 match (1-hour flight, $100)
+- Total: 3 matches, full cultural immersion
+
+**Budget:** $2,500-3,500 total
+
+### Budget Match Selection Rules
+
+**Attend:**
+✓ Group stage matches (cheapest tickets $60-150)
+✓ Weekday matches (lower demand)
+✓ Non-powerhouse matchups (Uruguay vs. Japan cheaper than Brazil vs. Argentina)
+✓ Secondary venues (Monterrey, Guadalajara, Kansas City have lowest demand)
+
+**Avoid:**
+✗ Knockout rounds (2-4x group stage prices)
+✗ Host nation matches (demand surges)
+✗ Traditional powerhouses (Brazil, Argentina, Germany drive prices up)
+✗ Weekend matches (higher demand, surge pricing)
+
+---
+
+## Strategy #5: Once-in-a-Lifetime Splurge
+
+### The Premium Experience Approach
+
+**Who This Is For:**
+- Bucket-list travelers
+- Those with significant budget ($20,000-40,000+)
+- Fans wanting VIP treatment
+- Once-every-four-years mindset
+
+### The Ultimate World Cup Package
+
+**Matches to Attend:**
+1. **Opening Match** (Azteca, June 11) - $400
+2. **USA Opening** (LA, June 12) - $500
+3. **Group Stage Marquee** (Brazil/Argentina/France in premium city) - $600
+4. **Round of 32** (Following compelling storyline) - $400
+5. **Round of 16** (Elite matchup) - $500
+6. **Quarter-Final** (Any venue) - $700
+7. **Semi-Final** (Atlanta, July 15 - climate controlled!) - $900
+8. **Final** (MetLife, July 19) - $5,000-10,000
+
+**Total Tickets:** $9,000-14,000
+
+**Accommodations:**
+- Premium hotels throughout ($400-600/night average)
+- 20 nights: $8,000-12,000
+
+**Flights:**
+- Business class international: $4,000-6,000
+- Domestic connections (6 segments): $2,000
+
+**Ground Transportation:**
+- Premium car service, first-class trains: $1,500
+
+**Food and Activities:**
+- Fine dining, exclusive tours: $4,000
+
+**Total Budget:** $28,500-39,500
+
+**Value Proposition:**
+You'll never do this again. The memories justify the cost for those who can afford it.
+
+### Hospitality Packages (Turnkey Premium)
+
+**OnLocation (Official FIFA Partner):**
+- Packages range from $5,300 (four-match series) to $73,200 (venue series including final)
+- Includes: Guaranteed tickets, premium hospitality, food/beverage, expedited entry, VIP experiences
+
+**When It Makes Sense:**
+- Eliminates logistics stress
+- Guaranteed tickets (no lottery risk)
+- Premium seating assured
+- Worth it for groups or families wanting seamless experience
+
+---
+
+## Match Selection Decision Framework
+
+### Step 1: Define Your Priority
+
+**Team Loyalty** → Follow your team strategy
+**Experience** → Opening + semi-finals + final
+**Geography** → Hub-and-spoke regional approach
+**Budget** → Houston/Mexico City maximizer
+**Premium** → Cherry-pick best matches regardless of cost
+
+### Step 2: Calculate Your Budget
+
+**Per-Match All-In Costs:**
+- **Budget (Houston group stage):** $500-800
+- **Moderate (mid-tier city, group stage):** $1,000-1,500
+- **Premium (knockout rounds, major cities):** $2,000-4,000
+- **Final (NYC):** $5,000-15,000
+
+### Step 3: Choose Your Matches
+
+**3-Match Budget Plan ($3,000-5,000):**
+- 2 group stage matches (Houston or Mexico City)
+- 1 knockout round match (Round of 32 or 16)
+
+**5-Match Moderate Plan ($7,000-12,000):**
+- 3 group stage matches (mix of venues)
+- 1 quarter-final
+- 1 semi-final
+
+**8-Match Premium Plan ($20,000-35,000):**
+- Opening match (Azteca)
+- 3 group stage matches (premium seats)
+- Round of 32
+- Round of 16
+- Semi-final (Atlanta)
+- Final (NYC)
+
+### Step 4: Book Strategically
+
+**Group Stage:**
+- Book immediately after December 5 draw
+- Target matches within 24-48 hours
+
+**Knockout Rounds:**
+- Research likely cities based on group standings
+- Book refundable options
+- Rebook after matchups confirmed
+
+---
+
+## Pro Tips from Veteran World Cup Travelers
+
+### Timing Matters
+
+**Arrive Days Early:**
+- Acclimate to time zones
+- Explore city before match chaos
+- Secure best restaurants and activities
+- Rest before match day intensity
+
+**Schedule Rest Days:**
+- Don't pack matches back-to-back
+- Travel days count as activity days
+- You'll be exhausted—pace yourself
+
+### Match-Day Priorities
+
+**Value Atmosphere Over Seats:**
+- Nosebleed seats at great matches beat premium seats at mediocre ones
+- Stadiums are designed well—sight lines good from anywhere
+- The crowd energy matters more than proximity
+
+**Evening Matches in Hot Cities:**
+- If attending Dallas, Houston, Miami, Kansas City, Monterrey
+- Choose evening kickoffs (cooler, better atmosphere)
+- Avoid afternoon matches (dangerous heat, lower energy)
+
+### Fan Zones Are Underrated
+
+**Free Alternative:**
+- All host cities will have official FIFA Fan Festivals
+- Large screens showing all matches
+- Food, drinks, activities
+- Great atmosphere without ticket costs
+- Meet fellow fans
+
+**Strategy:**
+Attend expensive knockout matches in person, watch group stage matches in fan zones to save money.
+
+## The Bottom Line: Match Selection = Trip Success
+
+Your match choices determine your World Cup 2026 experience more than any other factor. Choose wisely:
+
+**For Team Loyalists:**
+Commit to the journey. Budget $15,000-25,000+ if following through knockout rounds. Accept premium pricing as the cost of passion.
+
+**For Experience Seekers:**
+Opening match (Azteca) + one semi-final + final = three perfect matches capturing the tournament arc.
+
+**For Regional Explorers:**
+Hub-and-spoke from Dallas, NYC, or LA delivers 4-5 matches with cultural exploration and manageable logistics.
+
+**For Budget Maximizers:**
+Houston base with 3-4 matches offers maximum football for minimum money. Mexico City adds cultural richness at unbeatable value.
+
+**For Premium Travelers:**
+Cherry-pick the best: Opening (Azteca), semi-finals (Atlanta), final (NYC). Pay for hospitality packages. Experience every moment in luxury.
+
+The 2026 FIFA World Cup offers something for everyone—if you plan strategically. Choose matches aligned with your budget, priorities, and travel style.
+
+See you at the stadiums—wherever you decide to be.
+
+---
+
+## Essential Match Selection Resources
+
+**Official Match Information:**
+- ** \`https://www.fifa.com\` :** Official schedule, match assignments (after December 5, 2025 draw)
+
+**Expert Travel Planning:**
+- ** \`https://www.mybucketlistevents.com\` :** World Cup specialists, package deals
+- ** \`https://www.roadtrips.com\` :** Custom itineraries, match packages
+- See AFAR and National Geographic guides for regional strategies
+
+**Ticket Information:**
+- ** \`https://www.fifa.com/tickets\` :** Official ticket lottery and sales
+- Monitor for Phase 3 registration opening after December 5`}
+                </ReactMarkdown>
+              </article>
+              <article className="editorial-body">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{[
+'## Related World Cup 2026 Planning Guides',
+'',
+'- **[Budget Guide](#):** Complete cost breakdown by match type and city',
+'- **[Best Time to Book](#):** When to purchase tickets and travel',
+'- **[Host City Guide](#):** Which cities offer best atmosphere and value',
+'- **[Itinerary Planning](#):** Sample schedules for 1, 2, and 3-week trips',
+'- **[Accommodation Guide](#):** Where to stay in each host city',
+'- **[Flight Booking Guide](#):** Getting between match cities efficiently',
+'',
+'---',
+'',
+'**Disclosure:** This article may contain affiliate links to ticket resale platforms and travel planning services. We may earn a commission if you purchase through these links at no additional cost to you. All match selection strategies based on verified tournament structure from FIFA, expert travel guidance from National Geographic and AFAR, and experienced World Cup traveler insights.',
+'',
+'**Last Updated:** November 2025 | Match distribution and venue assignments confirmed. Specific group stage matchups TBD until December 5, 2025 draw. Ticket pricing based on FIFA announcements and historical World Cup data. Dynamic pricing will affect actual costs.'
+].join('\n')}
+                </ReactMarkdown>
+              </article>
+            </>
+          ) : slug === 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget' ? (
+            <>
+              <article className="editorial-body editorial-dropcap">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{`Food will be one of your largest World Cup 2026 expenses after tickets and accommodation—and one of your most memorable experiences. The tri-national tournament offers an unprecedented culinary journey: authentic Mexican street tacos in Guadalajara, Kansas City burnt ends BBQ, Vancouver's Pacific salmon sushi, and Atlanta's legendary fried chicken. But it also presents budget challenges: stadium hot dogs cost $8-12, San Francisco dining averages 30-40% more expensive than Kansas City, and a single upscale dinner in New York can exceed $150 per person.
+
+The data reveals critical patterns: Kansas City restaurants prepared 50 common hospitality phrases in multiple languages anticipating international fans. Missouri passed temporary liquor laws allowing 23-hour alcohol service during the tournament. SeatPick analysis confirms Kansas City and Philadelphia offer the best food value, while San Francisco requires "significantly higher costs" preparation. Stadium dining will feature regional specialties—Mercedes-Benz Stadium's famous $2 hot dogs and $2 sodas contrast sharply with typical venue pricing.
+
+This comprehensive guide reveals the signature dish in every host city, where to find it, how to eat affordably, and stadium dining strategies across all 16 venues. Based on verified culinary intelligence from food writers, local restaurant associations, and experienced international travelers, here's exactly how to eat well during World Cup 2026—at any budget.
+
+## The Signature Dish Guide: Every Host City
+
+### United States Host Cities
+
+#### Atlanta, Georgia: Fried Chicken
+
+**The Story:**
+Atlanta's fried chicken is deeply rooted in both the city's African American history and the broader story of the American South. The dish is a blend of Scottish frying techniques and West African seasoning traditions, created in the antebellum South by enslaved Africans. Today, Atlanta's fried chicken remains a culinary must-try, with everything from cash-only strip mall restaurants to five-star, Zagat-rated establishments.
+
+**Where to Try:**
+- **Busy Bee Cafe:** Historic soul food institution since 1947, served Martin Luther King Jr.
+- **Gus's World Famous Fried Chicken:** Memphis-style hot chicken
+- **South City Kitchen:** Upscale Southern with modern twist
+- **Price Range:** $12-30 per person
+
+---
+
+#### Boston, Massachusetts: New England Clam Chowder
+
+**The Story:**
+Cream-based New England clam chowder is Boston's iconic dish—hearty, warm, and filled with fresh shellfish from nearby Atlantic waters.
+
+**Where to Try:**
+- **Union Oyster House:** America's oldest restaurant (1826), historic setting
+- **Legal Sea Foods:** Boston institution, consistent quality
+- **Neptune Oyster:** North End gem, also excellent lobster rolls
+- **Price Range:** $10-25 for soup, $25-45 with lobster roll
+
+---
+
+#### Dallas, Texas: Texas BBQ & Tex-Mex
+
+**The Story:**
+Dallas represents the meeting point of two great Texas food traditions: slow-smoked BBQ with molasses-based sauce and Tex-Mex fusion cuisine.
+
+**Where to Try:**
+- **Pecan Lodge:** Legendary brisket, burnt ends, long lines worth it
+- **Cattleack Barbecue:** Thursday-Saturday only, arrive early
+- **Mi Cocina:** Upscale Tex-Mex, multiple locations
+- **Price Range:** $15-35 per person
+
+---
+
+#### Houston, Texas: Tex-Mex Fajitas
+
+**The Story:**
+Fajitas originated on Texas ranches in the 1930s when Mexican vaqueros were paid with less desirable cuts of beef. They marinated and grilled the meat over open flames and served it in tortillas. The turning point came in 1973 when María Ninfa Rodríguez Laurenzo (Mama Ninfa) began serving "tacos al carbon" at her Houston restaurant. The sizzling platters, later called fajitas, introduced the dish to a broad audience.
+
+**Where to Try:**
+- **The Original Ninfa's on Navigation:** Where it all started in 1973, still family-owned
+- **Pappasito's Cantina:** Houston chain, consistent quality, famous mesquite-grilled fajitas
+- **Hugo's:** Upscale Mexican interior cuisine
+- **Price Range:** $18-35 per person
+
+---
+
+#### Kansas City, Missouri: Kansas City BBQ
+
+**The Story:**
+Kansas City BBQ is defined by burnt ends (crispy, caramelized brisket points) and thick, molasses-based sauce. The city has over 100 BBQ restaurants with unique sauce styles.
+
+**Where to Try:**
+- **Joe's Kansas City Bar-B-Que:** Consistently rated top BBQ in America, Z-Man sandwich legendary
+- **LC's Bar-B-Q:** Local favorite, authentic burnt ends
+- **Q39:** Modern upscale BBQ
+- **Price Range:** $12-30 per person
+
+**Restaurant Preparation Note:**
+Kansas City restaurants created guides with 50 hospitality phrases in multiple languages. They're also prepared for cash payments (Europeans prefer cash) and adjusted to 23-hour alcohol service during World Cup.
+
+**Economic Impact:** Kansas City restaurants expect $60-90 million in World Cup revenue.
+
+---
+
+#### Los Angeles, California: Street Tacos & Korean-Mexican Fusion
+
+**The Story:**
+LA's taco scene reflects Mexican heritage and immigrant diversity. King Taco started the first taco truck in 1974. The city also pioneered Korean-Mexican fusion (Kogi BBQ), creating innovative taco varieties.
+
+**Where to Try:**
+- **King Taco:** Historic taco truck, multiple locations
+- **Sonoratown:** Sonora-style flour tortillas, mesquite-grilled carne asada
+- **Mariscos Jalisco:** Famous tostadas de ceviche
+- **Kogi BBQ:** Korean BBQ tacos (food truck, check location online)
+- **Price Range:** $8-20 per person
+
+---
+
+#### Miami, Florida: Cuban Sandwich
+
+**The Story:**
+Miami's Cuban community created the Cuban sandwich—roast pork, ham, Swiss cheese, pickles, mustard, pressed on Cuban bread.
+
+**Where to Try:**
+- **Versailles Restaurant:** Little Havana institution since 1971
+- **Sanguich de Miami:** Modern Cuban sandwiches
+- **La Carreta:** Chain but authentic, 24/7 locations
+- **Price Range:** $12-25 per person
+
+**Also Try:** Stone crab claws (season: October-May, unfortunately just before World Cup), key lime pie
+
+---
+
+#### New York/New Jersey: Pizza, Bagels, Cheesecake
+
+**The Story:**
+New York-style pizza (thin crust, large slices, foldable), bagels (boiled then baked), and New York cheesecake define the city's food identity.
+
+**Where to Try:**
+- **Joe's Pizza:** Greenwich Village, classic NY slice since 1975
+- **Russ & Daughters:** Historic Lower East Side, bagels with smoked fish
+- **Junior's:** Brooklyn institution, famous cheesecake
+- **New Jersey Specialty:** Taylor ham (pork roll) sandwiches at diners
+- **Price Range:** $5-15 (pizza/bagels), $30-60 (sit-down meals)
+
+---
+
+#### Philadelphia, Pennsylvania: Cheesesteak
+
+**The Story:**
+The Philly cheesesteak—thinly sliced ribeye, melted cheese (Cheez Whiz, provolone, or American), on Italian roll—is Philadelphia's most iconic creation.
+
+**Where to Try:**
+- **Pat's King of Steaks:** Original (1930), open 24/7, tourist favorite
+- **Geno's Steaks:** Across the street from Pat's, rival since 1966
+- **John's Roast Pork:** Locals' choice, also excellent roast pork sandwiches
+- **Dalessandro's:** Roxborough neighborhood, less touristy
+- **Price Range:** $10-18 per sandwich
+
+**Good Value:** SeatPick analysis ranks Philadelphia among best food value cities.
+
+---
+
+#### San Francisco Bay Area, California: Mission-Style Burrito & Clam Chowder
+
+**The Story:**
+Mission-style burritos (huge, rice and beans inside) originated in San Francisco's Mission District. San Francisco is also famous for clam chowder served in sourdough bread bowls.
+
+**Where to Try:**
+- **La Taqueria:** James Beard Award-winning burritos, no rice (controversial but excellent)
+- **El Farolito:** Late-night favorite, enormous portions
+- **Boudin Bakery:** Fisherman's Wharf, famous for sourdough bowls with clam chowder
+- **Price Range:** $12-20 (burritos), $15-25 (clam chowder)
+
+**Budget Warning:** SeatPick warns San Francisco has "significantly higher costs" than other cities—30-40% more expensive than Kansas City.
+
+---
+
+#### Seattle, Washington: Pacific Salmon & Seafood
+
+**The Story:**
+Seattle's Pacific Rim location provides access to fresh wild salmon, Dungeness crab, and oysters. Pike Place Market is the culinary heart of the city.
+
+**Where to Try:**
+- **Pike Place Market:** Fresh seafood, local produce, original Starbucks
+- **The Walrus and the Carpenter:** Oyster bar, Capitol Hill
+- **Ivar's:** Local chain, waterfront locations, clam chowder and fish & chips
+- **Price Range:** $15-40 per person
+
+---
+
+### Canada Host Cities
+
+#### Toronto, Canada: Peameal Bacon Sandwich
+
+**The Story:**
+Toronto's peameal bacon sandwich is a uniquely Canadian creation from the city's 19th-century pork industry. It's brined pork loin rolled in cornmeal, grilled, and served on a bun.
+
+**Where to Try:**
+- **Carousel Bakery:** St. Lawrence Market, most famous version
+- **St. Lawrence Market:** Explore entire market, diverse food stalls
+- **Price Range:** $8-15 per sandwich
+
+**Also Try:** Poutine (fries, gravy, cheese curds) everywhere
+
+---
+
+#### Vancouver, Canada: Sushi
+
+**The Story:**
+Vancouver's sushi scene is a product of its Pacific Rim location and significant Japanese community. In the 1970s-80s, chefs like Hidekazu Tojo popularized creative rolls and West Coast fish, making Vancouver a sushi destination.
+
+**Where to Try:**
+- **Tojo's:** Legendary chef Hidekazu Tojo's restaurant
+- **Miku:** Waterfront location, aburi (flame-seared) sushi
+- **Sushi Bar Maumi:** Authentic omakase experience
+- **Price Range:** $30-100+ per person (quality sushi is expensive)
+
+---
+
+### Mexico Host Cities
+
+#### Guadalajara, Mexico: Tortas Ahogadas
+
+**The Story:**
+Tortas ahogadas ("drowned sandwiches") are Guadalajara's signature dish. Crisp birote bread is stuffed with tender carnitas, then submerged in fiery chile salsa and finished with pickled onions. It's almost always eaten standing up, with diners braving the heat and inevitable mess.
+
+**Where to Try:**
+- **Tortas Ahogadas El Güerito:** Since 1959, Ignacio Saldaña (apprentice of the legendary Luis de la Torre) serves the classic version. Location: Calle Francisco I. Madero 13, Zona Centro.
+- **Price Range:** $3-8 (incredibly affordable)
+
+---
+
+#### Mexico City, Mexico: Street Tacos
+
+**The Story:**
+Mexico City is taco paradise—authentic street tacos with endless varieties: al pastor (spit-roasted pork), carnitas (braised pork), barbacoa (slow-cooked beef), and more.
+
+**Where to Try:**
+- **Tacos El Güero:** Roma Norte, famous al pastor
+- **Taquería Orinoco:** Condesa, excellent barbacoa
+- **El Vilsito:** Opens late, amazing al pastor
+- **Street vendors:** Throughout the city, incredibly cheap and delicious
+- **Price Range:** $1-3 per taco (street), $8-15 (restaurants)
+
+**Budget Gold Mine:** Mexico City offers world-class food at unbeatable prices.
+
+---
+
+#### Monterrey, Mexico: Cabrito (Roasted Kid Goat)
+
+**The Story:**
+Monterrey's signature dish is cabrito—young goat roasted over open flames, crispy outside and tender inside, served with charro beans, salsa, and tortillas.
+
+**Where to Try:**
+- **El Rey del Cabrito:** Landmark restaurant, whole goats roasted in view of diners, lively atmosphere with locals and travelers. The meat has simple seasonings, letting quality shine.
+- **Price Range:** $15-30 per person
+
+**Safety Note:** Monterrey has security concerns. Use only Uber/Didi. See our [Transportation Safety Guide](#).
+
+---
+
+## Stadium Dining: What to Expect
+
+### Mercedes-Benz Stadium (Atlanta): Fan-Friendly Pricing
+
+**The Exception:**
+Mercedes-Benz Stadium revolutionized stadium concessions with fan-first pricing:
+- **Hot dogs:** $2
+- **Sodas:** $2
+- **Burgers, pizza, fries:** $5-8
+- **Beer:** $5
+
+**Impact:** 
+16% increase in food sales despite 50% lower prices. Fans eat more when it's affordable.
+
+**World Cup Reality:**
+Unclear if FIFA will allow this pricing to continue during World Cup. Stadium contracts may require standard event pricing. Hope for the best, but don't count on $2 hot dogs.
+
+### Typical Stadium Pricing
+
+**Standard Concession Costs:**
+- Hot dogs/basic items: $8-12
+- Premium food items: $15-25
+- Beer: $12-18
+- Soft drinks: $6-10
+- Bottled water: $5-8
+
+**Budget Per Match:**
+- Light eating: $20-30
+- Standard: $30-50
+- Full meal + drinks: $50-80+ per person
+
+### Stadium Dining Innovations
+
+**Local Flavors:**
+FIFA partners with local restaurants and vendors in each city. Expect:
+- Dallas: BBQ options
+- Houston: Tex-Mex
+- Miami: Cuban sandwiches
+- Vancouver: Pacific seafood
+- Mexico venues: Authentic tacos, tortas
+
+**Quality Standards:**
+FIFA-approved food safety and quality protocols ensure consistent, safe food across all venues.
+
+### Money-Saving Stadium Strategies
+
+**Eat Before Arriving:**
+Have substantial meal 2-3 hours before match. Arrive at stadium for atmosphere, not hunger.
+
+**Bring Snacks (Pre-Security):**
+Some venues allow sealed snacks through security. Check specific stadium policies.
+
+**Share Items:**
+Stadium portions are large. Split entrees with companions.
+
+**Skip Stadium Food Entirely:**
+Eat post-match at local restaurants (better food, better value).
+
+**Stay Hydrated:**
+Bring empty water bottle, fill at fountains (free). Avoid buying $5-8 bottled water.
+
+---
+
+## Budget Dining Strategies
+
+### Ultra-Budget (Under $40/day)
+
+**Breakfast:**
+- Hotel continental breakfast (free)
+- Grocery store: bread, fruit, yogurt ($5-10)
+- Coffee at hotel (free) vs. coffee shop ($5)
+
+**Lunch:**
+- Street tacos (Mexico): $3-8
+- Food trucks (U.S. cities): $8-15
+- Pizza by slice (NYC): $3-5
+- Lunch specials at restaurants: $10-15
+
+**Dinner:**
+- Grocery store prepared meals: $8-15
+- Fast-casual chains (Chipotle, etc.): $10-15
+- Happy hour specials: $15-25
+- Cook at Airbnb: $10-20
+
+**Reality:**
+Requires discipline and planning. Best in Mexico City (cheapest) and Houston.
+
+---
+
+### Budget-Conscious ($40-70/day)
+
+**Breakfast:**
+- Hotel or local cafes: $8-15
+- Diners: $10-18
+
+**Lunch:**
+- Casual restaurants: $15-25
+- Food halls: $12-20
+- Lunch specials: $12-20
+
+**Dinner:**
+- Mid-range restaurants: $20-40
+- Happy hour + appetizers: $20-35
+- Ethnic restaurants: $15-30
+
+**Strategy:**
+- Big lunch, light dinner (lunch specials cheaper)
+- Split entrees
+- Water instead of sodas/alcohol
+
+**Best Cities:**
+Houston, Kansas City, Philadelphia, Mexico City
+
+---
+
+### Moderate ($70-120/day)
+
+**Breakfast:**
+- Quality cafes: $12-20
+- Hotel restaurants: $15-25
+
+**Lunch:**
+- Sit-down restaurants: $25-40
+- Exploring local specialties: $20-35
+
+**Dinner:**
+- Nice restaurants: $40-70
+- Signature dishes at recommended spots: $30-60
+- Moderate alcohol: $15-30
+
+**Strategy:**
+- Experience local specialties
+- Mix high and low (fancy dinner, cheap lunch)
+- One splurge meal per city
+
+**Works in:** All cities except San Francisco/Vancouver (add 30%)
+
+---
+
+### Comfortable ($120-200+/day)
+
+**Breakfast:**
+- Upscale hotel or brunch: $25-50
+
+**Lunch:**
+- Quality restaurants: $40-70
+- Tasting menus (lunch): $50-100
+
+**Dinner:**
+- Fine dining: $75-150+
+- Tasting menus: $100-250+
+- Wine pairings: $50-150
+
+**Strategy:**
+- Experience best each city offers
+- Celebrity chef restaurants
+- Don't worry about costs
+
+**Best For:**
+Premium travelers, once-in-a-lifetime splurges
+
+---
+
+## Restaurant Reservation Strategies
+
+**High-Demand Restaurants:**
+- Book 2-4 weeks ahead (longer for celebrity chefs)
+- Use OpenTable, Resy, Tock
+- Call directly if platforms full
+
+**World Cup Surge:**
+Restaurants will be PACKED. Book immediately after confirming your itinerary.
+
+**Walk-In Alternatives:**
+- Bar seating (often available without reservations)
+- Off-peak hours (late lunch 2-4 PM, early dinner 5-6 PM)
+- Food halls and markets (no reservations needed)
+
+---
+
+## Dietary Restrictions Navigation
+
+### Vegetarian/Vegan
+
+**Easy Cities:**
+- Los Angeles (abundant options)
+- San Francisco (vegan-friendly)
+- Seattle (progressive food scene)
+- Vancouver (Asian influence, tofu options)
+- Toronto (multicultural, many options)
+
+**Challenging Cities:**
+- Kansas City (BBQ culture)
+- Dallas/Houston (Tex-Mex and BBQ heavy)
+
+**Strategies:**
+- Research ahead with HappyCow app
+- Mexican cuisine has excellent veggie options (beans, rice, grilled vegetables)
+- Indian, Thai, Vietnamese restaurants in all major cities
+
+### Gluten-Free
+
+**All cities have options now:**
+- Many restaurants offer gluten-free menus
+- Communicate clearly with servers
+- Mexican corn tortillas are naturally gluten-free
+- Rice-based dishes (Asian cuisine) safe
+
+### Food Allergies
+
+**Critical Steps:**
+- Learn how to say your allergy in Spanish (for Mexico)
+- Carry allergy cards in multiple languages
+- Research restaurants ahead
+- Communicate directly with chefs if severe
+- Carry EpiPen if prescribed
+
+---
+
+## Cultural Dining Differences
+
+### Tipping
+
+**United States:** 18-20% standard, 15% minimum
+**Canada:** 15-18% standard
+**Mexico:** 10-15% typical, sometimes included as "servicio"
+
+**Reality:** Most international fans underestimate U.S. tipping. Budget an extra 20% on all restaurant bills.
+
+### Meal Timing
+
+**United States/Canada:**
+- Lunch: 11:30 AM - 1:30 PM
+- Dinner: 6:00 PM - 9:00 PM (earlier than Europe)
+
+**Mexico:**
+- Lunch (main meal): 2:00 PM - 4:00 PM
+- Dinner: 8:00 PM - 11:00 PM (later)
+
+**European Fans:** U.S. dinner times are early by European standards. Restaurants may close kitchens by 10 PM.
+
+### Payment Customs
+
+**Credit Cards:** Widely accepted in U.S./Canada
+**Cash:** Still preferred in Mexico (especially street food, small restaurants)
+
+**European Visitors:** U.S. credit card systems don't always work with chip-and-PIN cards (signature often required). Carry cash backup.
+
+---
+
+## Food Safety in Mexico
+
+**Water:**
+- **Don't drink tap water**
+- Use bottled water for drinking and brushing teeth
+- Ice in restaurants usually safe (made with purified water)
+- Street food: choose busy vendors with high turnover
+
+**"Montezuma's Revenge" Prevention:**
+- Wash hands frequently
+- Peel fruits yourself
+- Avoid raw vegetables washed in tap water
+- Cooked foods safer than raw
+- "Boil it, cook it, peel it, or forget it"
+
+**If You Get Sick:**
+- Bismuth subsalicylate (Pepto-Bismol) helps
+- Oral rehydration salts (Pedialyte)
+- Antibiotics (bring prescription from doctor)
+- See our [Health & Medical Guide](#) for complete traveler's diarrhea protocols
+
+---
+
+## Your Food Budget Breakdown
+
+### Sample Daily Costs by City
+
+**Cheapest (Mexico City, Guadalajara):**
+- Budget: $20-30/day
+- Moderate: $40-60/day
+- Comfortable: $80-120/day
+
+**Mid-Range (Houston, Kansas City, Philadelphia, Atlanta):**
+- Budget: $40-60/day
+- Moderate: $70-100/day
+- Comfortable: $120-180/day
+
+**Expensive (NYC, LA, Vancouver, SF):**
+- Budget: $60-80/day
+- Moderate: $100-140/day
+- Comfortable: $180-250+/day
+
+---
+
+### 2-Week Trip Food Budget
+
+**Budget Traveler:** $560-840 (avg $40-60/day)
+**Moderate:** $980-1,680 (avg $70-120/day)
+**Comfortable:** $1,680-2,800+ (avg $120-200/day)
+
+**Plus:** Stadium food (4 matches × $35 avg) = $140
+
+**Total:** $700-2,940+ depending on style
+
+---
+
+## The Bottom Line: Food Is Culture
+
+World Cup 2026 food experiences will define your trip as much as the matches. The tournament offers unprecedented culinary diversity:
+- Authentic street tacos for $2 in Mexico City
+- World-class sushi in Vancouver
+- Legendary BBQ in Kansas City and Dallas
+- Southern fried chicken in Atlanta
+- Cuban sandwiches in Miami
+
+**Keys to Success:**
+
+**1. Budget Realistically**
+Food costs $40-200/day depending on city and style. Don't underestimate—it adds up fast.
+
+**2. Experience Local Specialties**
+Every city has signature dishes. Try them. This is part of the World Cup experience.
+
+**3. Mix High and Low**
+Splurge on one great meal per city. Balance with affordable options.
+
+**4. Plan Ahead**
+Book restaurants immediately after confirming itinerary. World Cup surge will fill everything.
+
+**5. Mexico City Is Your Budget Savior**
+$2 tacos, $8 dinners at excellent restaurants. Eat like royalty without the cost.
+
+The beautiful game tastes even better with great food.
+
+---
+
+## Essential Food Resources
+
+**Restaurant Reservations:**
+- **https://www.opentable.com** : U.S./Canada reservations
+- **https://resy.com** : Trendy restaurants, major cities
+- **https://www.exploretock.com** : Upscale dining, tasting menus
+
+**Finding Restaurants:**
+- **https://www.yelp.com** : Reviews, photos, prices
+- **https://www.google.com/maps** : Reviews, hours, locations
+- **https://www.happycow.net** : Vegetarian/vegan options
+
+**Food Delivery (If Needed):**
+- **https://www.ubereats.com** : U.S./Canada/Mexico
+- **https://www.doordash.com** : U.S./Canada
+- **https://www.rappi.com** : Mexico
+
+---
+
+## Related World Cup 2026 Planning Guides
+
+- **[Budget Guide](#):** Complete cost breakdown including food
+- **[Host City Guide](#):** Cultural context for each city's cuisine
+- **[Itinerary Planning](#):** Scheduling meals around matches
+- **[Health & Medical Guide](#):** Food safety in Mexico, traveler's diarrhea
+- **[Transportation Safety](#):** Getting to restaurants safely
+
+---
+
+**Disclosure:** This article may contain affiliate links to restaurant reservation platforms and food delivery services. We may earn a commission if you use these services at no additional cost to you. All restaurant recommendations based on verified sources, food writer expertise, and local knowledge as of November 2025.
+
+**Last Updated:** November 2025 | Restaurant recommendations current as of publication. Specific restaurants may close or change. Verify current status before visiting. Stadium pricing subject to change. Mercedes-Benz pricing model may not apply during World Cup due to FIFA contracts.`}
                 </ReactMarkdown>
               </article>
             </>

@@ -381,14 +381,13 @@ export default function TravelGuidesPage() {
                   </div>
                   
                   <div className="flex justify-center">
-                    <button
-                      onClick={() => openArticleModal(article)}
-                      type="button"
-                      className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:hover:scale-100"
+                    <a
+                      href={`/travel-guides/${article.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                      className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105"
                     >
                       <i className="ri-eye-line mr-2"></i>
                       Read Full Guide
-                    </button>
+                    </a>
                   </div>
                 </div>
               </Card>
@@ -529,16 +528,13 @@ export default function TravelGuidesPage() {
                     </div>
                   </div>
                   
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth 
-                    className="whitespace-nowrap cursor-pointer"
-                    onClick={() => openArticleModal(article)}
+                  <a
+                    href={`/travel-guides/${article.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
                   >
                     <i className="ri-eye-line mr-2"></i>
                     Read Full Guide
-                  </Button>
+                  </a>
                 </div>
               </Card>
             ))}

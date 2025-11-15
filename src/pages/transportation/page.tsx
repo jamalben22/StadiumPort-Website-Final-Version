@@ -25,6 +25,7 @@ interface TransportGuide {
   featured: boolean;
   savings: string;
   fullContent: FullContent;
+  slugOverride?: string;
 }
 
 export default function TransportationPage() {
@@ -100,7 +101,7 @@ export default function TransportationPage() {
     },
     {
       id: 3,
-      title: 'Budget Bus Travel: Intercity Connections',
+      title: 'Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium',
       excerpt: 'Affordable bus routes between host cities with comfort ratings, booking platforms, and money-saving strategies.',
       category: 'Buses',
       author: 'David Thompson',
@@ -120,7 +121,7 @@ export default function TransportationPage() {
     },
     {
       id: 4,
-      title: 'Car Rental Guide: Freedom to Explore',
+      title: 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium',
       excerpt: 'Complete car rental comparison, insurance options, driving tips, and scenic routes between host cities.',
       category: 'Car Rentals',
       author: 'Emma Wilson',
@@ -128,6 +129,7 @@ export default function TransportationPage() {
       image: 'https://readdy.ai/api/search-image?query=modern%20car%20rental%20facility%20with%20various%20vehicles%2C%20professional%20service%20counter%2C%20clean%20automotive%20showroom%2C%20travel%20convenience%2C%20rental%20car%20selection&width=600&height=400&seq=trans4&orientation=landscape',
       featured: false,
       savings: 'Save up to 30%',
+      slugOverride: 'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium',
       fullContent: {
         introduction: 'Gain the freedom to explore World Cup host cities at your own pace with our comprehensive car rental guide. From booking tips to scenic routes, we cover everything for independent travel.',
         sections: [
@@ -140,7 +142,7 @@ export default function TransportationPage() {
     },
     {
       id: 5,
-      title: 'Airport Transfer Options: Seamless Arrivals',
+      title: 'Kansas City World Cup 2026: Your Complete Transportation Guide to Arrowhead Stadium',
       excerpt: 'Compare taxis, rideshares, shuttles, and public transport from airports to city centers and stadiums.',
       category: 'Airport Transfers',
       author: 'James Park',
@@ -148,6 +150,7 @@ export default function TransportationPage() {
       image: 'https://readdy.ai/api/search-image?query=airport%20shuttle%20service%20with%20professional%20driver%2C%20comfortable%20passenger%20seating%2C%20efficient%20transfer%20vehicle%2C%20travel%20convenience%2C%20airport%20transportation&width=600&height=400&seq=trans5&orientation=landscape',
       featured: false,
       savings: 'Save up to 35%',
+      slugOverride: 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium',
       fullContent: {
         introduction: 'Make your arrival in World Cup host cities seamless with our comprehensive airport transfer guide. Compare options from budget-friendly to premium services.',
         sections: [
@@ -216,6 +219,134 @@ export default function TransportationPage() {
             content: 'Detailed transportation guide content will be available soon. Stay tuned for comprehensive information about accessible transport for World Cup 2026.'
           }
         ]
+      }
+    },
+    {
+      id: 9,
+      title: 'Mexico City World Cup 2026: Transportation Guide to Estadio Azteca',
+      excerpt: 'How to reach Estadio Azteca with metro, buses, and match-day shuttles.',
+      category: 'City Transit',
+      author: 'Alejandro Ruiz',
+      readTime: '12 min read',
+      image: 'https://readdy.ai/api/search-image?query=Mexico%20City%20metro%20train%20platform%20crowd%2C%20urban%20transit%20scene%2C%20CDMX%20transportation%2C%20clean%20modern%20station&width=600&height=400&seq=trans-mx-azteca&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 40%',
+      slugOverride: 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca',
+      fullContent: {
+        introduction: 'Reach Estadio Azteca efficiently using Mexico City metro and bus connections. Detailed stadium access and timing guidance.',
+        sections: [{ title: 'Coming Soon', content: 'Comprehensive Mexico City stadium access guide coming soon.' }]
+      }
+    },
+    {
+      id: 10,
+      title: 'Guadalajara World Cup 2026: Transportation Guide to Estadio Akron',
+      excerpt: 'Best routes to Estadio Akron via city buses, taxis, and rideshare.',
+      category: 'City Transit',
+      author: 'Sofia Hernandez',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Guadalajara%20city%20bus%20transport%2C%20urban%20transit%20corridor%2C%20Jalisco%20travel%20scene&width=600&height=400&seq=trans-gdl-akron&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 35%',
+      slugOverride: 'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron',
+      fullContent: {
+        introduction: 'Navigate to Estadio Akron with city transit and express routes.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Guadalajara transit guide coming soon.' }]
+      }
+    },
+    {
+      id: 11,
+      title: 'Monterrey World Cup 2026: Transportation Guide to Estadio BBVA',
+      excerpt: 'Metrobus, rideshare, and park-and-ride options to Estadio BBVA.',
+      category: 'City Transit',
+      author: 'Luis Castillo',
+      readTime: '12 min read',
+      image: 'https://readdy.ai/api/search-image?query=Monterrey%20urban%20transport%20skyline%2C%20public%20transit%20bus%2C%20modern%20city%20scene&width=600&height=400&seq=trans-mty-bbva&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 30%',
+      slugOverride: 'monterrey-world-cup-2026-transportation-guide-to-estadio-bbva',
+      fullContent: {
+        introduction: 'Plan your trip to Estadio BBVA using Monterrey transit options.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Monterrey stadium access guide coming soon.' }]
+      }
+    },
+    {
+      id: 12,
+      title: 'Toronto World Cup 2026: Transportation Guide to BMO Field',
+      excerpt: 'GO Transit, TTC, and walking routes for match-day at BMO Field.',
+      category: 'City Transit',
+      author: 'Ava Patel',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Toronto%20streetcar%20or%20GO%20Transit%20platform%2C%20urban%20commuter%20scene%2C%20Ontario%20transportation&width=600&height=400&seq=trans-tor-bmo&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 25%',
+      slugOverride: 'toronto-world-cup-2026-transportation-guide-to-bmo-field',
+      fullContent: {
+        introduction: 'Use GO Transit and TTC for seamless access to BMO Field.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Toronto stadium transport guide coming soon.' }]
+      }
+    },
+    {
+      id: 13,
+      title: 'Vancouver World Cup 2026: Transportation Guide to BC Place',
+      excerpt: 'SkyTrain and downtown connections to BC Place on match days.',
+      category: 'City Transit',
+      author: 'Noah Williams',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Vancouver%20SkyTrain%20station%20platform%2C%20urban%20transit%20scene%2C%20British%20Columbia%20transportation&width=600&height=400&seq=trans-van-bcplace&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 20%',
+      slugOverride: 'vancouver-world-cup-2026-transportation-guide-to-bc-place',
+      fullContent: {
+        introduction: 'Reach BC Place via SkyTrain and downtown walking routes.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Vancouver stadium transport guide coming soon.' }]
+      }
+    },
+    {
+      id: 14,
+      title: 'Atlanta World Cup 2026: Transportation Guide to Mercedes-Benz Stadium',
+      excerpt: 'MARTA, streetcar, and rideshare strategies for match-day in Atlanta.',
+      category: 'Match Day Transport',
+      author: 'Olivia Harris',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Atlanta%20MARTA%20train%20station%2C%20urban%20transit%20scene%2C%20Georgia%20transportation&width=600&height=400&seq=trans-atl-mbs&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 30%',
+      slugOverride: 'atlanta-world-cup-2026-transportation-guide-to-mercedes-benz-stadium',
+      fullContent: {
+        introduction: 'Plan MARTA and rideshare for Mercedes-Benz Stadium access.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Atlanta match-day transport guide coming soon.' }]
+      }
+    },
+    {
+      id: 15,
+      title: 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field',
+      excerpt: 'SEPTA routes, Broad Street Line, and match-day shuttles to LFF.',
+      category: 'Match Day Transport',
+      author: 'Ethan Miller',
+      readTime: '10 min read',
+      image: 'https://readdy.ai/api/search-image?query=Philadelphia%20SEPTA%20station%20platform%2C%20urban%20transit%20scene%2C%20Pennsylvania%20transportation&width=600&height=400&seq=trans-phl-lff&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 25%',
+      slugOverride: 'philadelphia-world-cup-2026-transportation-guide-to-lincoln-financial-field',
+      fullContent: {
+        introduction: 'Use SEPTA transit for Lincoln Financial Field match access.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Philadelphia stadium transport guide coming soon.' }]
+      }
+    },
+    {
+      id: 16,
+      title: 'Houston World Cup 2026: Transportation Guide to NRG Stadium',
+      excerpt: 'METRORail, park-and-ride, and rideshare tips for NRG Stadium.',
+      category: 'City Transit',
+      author: 'Grace Nguyen',
+      readTime: '11 min read',
+      image: 'https://readdy.ai/api/search-image?query=Houston%20METRORail%20platform%20train%2C%20urban%20transit%20scene%2C%20Texas%20transportation&width=600&height=400&seq=trans-hou-nrg&orientation=landscape',
+      featured: false,
+      savings: 'Save up to 30%',
+      slugOverride: 'houston-world-cup-2026-transportation-guide-to-nrg-stadium',
+      fullContent: {
+        introduction: 'Ride METRORail and use park-and-ride for NRG Stadium.',
+        sections: [{ title: 'Coming Soon', content: 'Detailed Houston stadium transport guide coming soon.' }]
       }
     }
   ];
@@ -359,7 +490,7 @@ export default function TransportationPage() {
                   </div>
                   
                   <a
-                    href={`/transportation/${slugifyGuide(guide.title)}`}
+                    href={`/transportation/${guide.slugOverride ?? slugifyGuide(guide.title)}`}
                     className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 w-full transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3 text-sm"
                   >
                     <span className="relative z-10 flex items-center justify-center space-x-2">
