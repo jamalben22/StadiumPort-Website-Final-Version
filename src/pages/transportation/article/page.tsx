@@ -3552,6 +3552,492 @@ See you at "Kansas City Stadium" (Arrowhead during the tournament). The heart of
 *Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—RideKC (ridekc.org), KC2026 (kansascityfwc26.com), KC Streetcar (kcstreetcar.org), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation plans will be announced spring 2026. Contact KC2026 Support Line: 1-877-392-5226 or transportation@kansascityfwc26.com.*`}
               </ReactMarkdown>
             </div>
+          ) : slug === 'local-transport-mastery-navigate-like-a-local' ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`# Houston World Cup 2026: Your Complete Transportation Guide to NRG Stadium 
+
+When NRG Stadium hosts seven World Cup 2026 matches—including crucial knockout rounds on June 29 (Round of 32) and an Independence Day (July 4) Round of 16 showdown—Houston will demonstrate why it's one of America's most diverse, welcoming, and logistically capable cities. With over a billion dollars in expected economic impact and experience hosting the Super Bowl, Final Four, and College Football Playoff, Houston's transportation template is battle-tested. 
+
+But here's what makes Houston's World Cup unique: Bishop James Dixon, chairman of the Harris County Sports and Convention Corporation, says hosting seven World Cup matches equals hosting **seven Super Bowls**. NRG Stadium will receive $55 million in upgrades, Houston METRO is ordering new buses specifically for the tournament, and the city is expanding its microtransit system to seamlessly connect visitors from over 100 countries to the world's biggest sporting event. 
+
+## Quick Navigation 
+- [Understanding Houston's Transit System](#understanding-houstons-transit-system) 
+- [METRORail Red Line: Direct Stadium Access](#metrorail-red-line-direct-stadium-access) 
+- [World Cup Transportation Enhancements](#world-cup-transportation-enhancements) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Houston's Transit System 
+
+### What Makes Houston Transportation Unique 
+
+Houston spans 671 square miles with 2.3 million residents across the fourth-largest U.S. city. Unlike compact urban centers, Houston's sprawl requires strategic transit planning—but NRG Stadium enjoys a significant advantage: **direct METRORail service** via the Red Line's Stadium Park/Astrodome station. 
+
+**The Key Players:** 
+- **Houston METRO**: Operates METRORail (three light rail lines), local bus network, Park & Ride express services, and paratransit 
+- **METRORail Red Line**: Direct service from downtown to NRG Stadium (critical for World Cup) 
+- **METRO Microtransit**: Expanding on-demand service for first/last-mile connections 
+- **Harris County**: Coordinating $55 million NRG Stadium upgrades for World Cup 
+
+### World Cup 2026: Seven Matches = Seven Super Bowls 
+
+Houston will host seven matches from June 14 through July 4, 2026: 
+
+1. **Saturday, June 14** — 6:00 PM — Group Stage 
+2. **Tuesday, June 17** — 2:00 PM — Group Stage 
+3. **Saturday, June 20** — TBD — Group Stage 
+4. **Tuesday, June 23** — TBD — Group Stage 
+5. **Thursday, June 26** — TBD — Group Stage 
+6. **Monday, June 29** — 6:00 PM — **Round of 32** 
+7. **Saturday, July 4** — 5:00 PM — **Round of 16 (Independence Day)** 
+
+The July 4 knockout match creates extraordinary excitement, combining America's Independence Day celebrations with World Cup drama at one of Texas's premier venues. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, NRG Stadium will be called **"Houston Stadium"** following FIFA's requirement to use neutral stadium names. All NRG signage will be temporarily covered during the tournament. 
+
+## METRORail Red Line: Direct Stadium Access 
+
+### Your Primary Transportation Solution 
+
+Houston's METRORail Red Line provides **direct service to NRG Stadium**, making it the optimal transportation choice for World Cup visitors. 
+
+**Red Line Route**: Northline Transit Center ↔ Downtown Houston ↔ Texas Medical Center ↔ NRG Stadium (Stadium Park/Astrodome Station) 
+
+**Operating Hours**: 
+- Monday-Friday: First trains ~5:00 AM, last trains ~midnight 
+- Saturday-Sunday: Continuous service with 12-minute frequency 
+- **World Cup Enhancement**: Extended hours and increased frequency for match days 
+
+**Frequency**: 
+- Monday-Friday: Every 6 minutes during peak hours 
+- Saturday-Sunday: Every 12 minutes 
+- **Match Days**: Expect every 5-8 minutes during peak periods 
+
+### Current METRO Fares (2025) 
+
+**Regular Fare**: $1.25 one-way  
+**Discounted Fare**: $0.60 (seniors 65-69, students, individuals with disabilities)  
+**Seniors 70+**: FREE 
+
+**Transfer Policy**: Free transfers within 3 hours to buses or other rail lines with METRO Q Fare Card or mobile ticket 
+
+**Day Pass**: Pricing varies, available through METRO Q Fare Card or mobile app 
+
+### Stadium Park/Astrodome Station 
+
+This station sits directly adjacent to NRG Stadium, providing seamless access to World Cup matches. 
+
+**From Station to Stadium Entrance**: 5-minute walk via designated pedestrian pathways 
+
+**Station Features**: 
+- Level boarding (wheelchair accessible) 
+- Ticket vending machines 
+- Security presence 
+- Clear signage to stadium gates 
+
+**Post-Match Capacity**: During major events (Texans games, rodeos, concerts), trains add extra capacity. World Cup matches will receive similar service expansion. 
+
+## World Cup Transportation Enhancements 
+
+### New Buses & Expanded Services 
+
+METRO Chair Elizabeth Gonzalez Brock confirmed: **"We've actually got new buses that are going to be on order. We also have a new microtransit that we're rolling out."** 
+
+**What This Means**: 
+- **New Bus Fleet**: Additional vehicles specifically for World Cup demand 
+- **Microtransit Expansion**: On-demand app-based service connecting hotels, attractions, and transit stations 
+- **Park & Ride Enhancement**: Express bus service from suburban park-and-ride lots to stadium area 
+- **Technology Integration**: Enhanced real-time tracking and customer experience improvements 
+
+### $55 Million NRG Stadium Upgrades 
+
+The Harris County Sports and Convention Corporation approved a $55 million Capital Improvement Project for NRG Stadium and surrounding facilities. 
+
+**Priority Improvements**: 
+- **Vertical transportation**: Elevators and escalators throughout NRG Park buildings 
+- **Infrastructure upgrades**: Enhanced capacity for World Cup crowds 
+- **Natural grass field**: Installation beginning May 2026 (FIFA requirement) 
+
+FIFA World Cup 2026 Host Committee President Chris Canetti: **"I'm pleased to say that while we're 500 days out, the organization and the planning is going quite well. We're in good shape. We're not facing any major roadblocks."** 
+
+### Houston's Experience Hosting Major Events 
+
+Houston has successfully hosted: 
+- **Super Bowl LI (2017)**: $347 million economic impact 
+- **Men's Final Four (2023)**: $50 parking, template for World Cup 
+- **College Football Playoff National Championship (2024)**: $50 parking, refined operations 
+
+World Cup committee president Chris Canetti: **"Houston already has a great transportation 'template that's been set forth by all the other' large sports events our city has hosted."** 
+
+## Airport to Stadium Connections 
+
+### Houston George Bush Intercontinental Airport (IAH) — Primary International Gateway 
+
+**Distance to NRG Stadium**: 26 miles  
+**Distance to Downtown**: 23 miles  
+**Best For**: International arrivals, largest Houston airport 
+
+IAH is the eighth-busiest airport in the U.S. by total passengers and the primary arrival point for World Cup visitors from around the globe. 
+
+**Option 1: IAH to Downtown to Stadium via Public Transit** 
+
+**Total Time**: 90-120 minutes  
+**Total Cost**: $2.50-4.50 (Park & Ride bus) + $1.25 (METRORail) = $3.75-5.75 
+
+**The Route**: 
+1. **From IAH terminals**: Exit to Ground Transportation (curbside) 
+2. **Board METRO Bus 102**: Express service to Downtown Transit Center (40-60 minutes, $2-4.50 depending on zone) 
+3. **Downtown Transit Center to Main Street Square Station**: Walk or short connection 
+4. **Board METRORail Red Line southbound**: Toward NRG Stadium 
+5. **Exit at Stadium Park/Astrodome Station**: 5-minute walk to stadium 
+
+**Drawback**: Multiple transfers, long journey time. Best for budget-conscious solo travelers. 
+
+**Option 2: Ride-Share Direct** (Most Common) 
+
+**Cost**: 
+- IAH to NRG Stadium: $50-75 (normal pricing) 
+- Match-day surge: $100-150+ possible 
+
+**Time**: 35-45 minutes (no traffic); 60-90 minutes (typical/event traffic) 
+
+**Option 3: Private Airport Transfer** (Premium/Groups) 
+
+**Cost**: $90-150 pre-booked sedan; $150-220 SUV  
+**Best For**: Groups of 4-6, families with luggage, international travelers 
+
+Services like Welcome Pickups, Jayride, and GO Airport Shuttle offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking (crucial for international arrivals) 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual transit + transfers: $3.75-5.75 per person × 5 = $19-29 total (but 90-120 minutes) 
+- Shared SUV transfer: $150 ÷ 5 = $30 per person, door-to-door in 35-60 minutes 
+
+### William P. Hobby Airport (HOU) — Domestic Gateway 
+
+**Distance to NRG Stadium**: 12 miles  
+**Distance to Downtown**: 11 miles  
+**Best For**: Domestic travelers, Southwest Airlines hub, closer to stadium 
+
+**Option 1: Hobby to Stadium via Public Transit** 
+
+**Total Time**: 60-75 minutes  
+**Total Cost**: $1.25 (bus) + $1.25 (rail) = $2.50 
+
+**The Route**: 
+1. **From HOU terminals**: Exit to Ground Transportation 
+2. **Board METRO Bus Route 40**: To Medical Center Transit Center (30-40 minutes, $1.25) 
+3. **Transfer to METRORail Red Line**: Southbound toward NRG Stadium 
+4. **Exit Stadium Park/Astrodome Station**: 5-minute walk to stadium 
+
+**Better Option**: Hobby is close enough that ride-share makes more sense for most visitors. 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: 
+- HOU to NRG Stadium: $20-35 (normal pricing) 
+- Match-day surge: $40-70+ 
+
+**Time**: 15-25 minutes (no traffic); 30-50 minutes (typical) 
+
+**Strategic Tip**: For stadium-centric visits, Hobby Airport offers closer proximity and often lower airfares than IAH. 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Houston with designated pickup/drop-off zones at NRG Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- IAH to downtown: $40-60 
+- IAH to NRG Stadium: $50-75 
+- HOU to NRG Stadium: $20-35 
+- Downtown to NRG Stadium: $15-25 
+- Medical Center area to NRG Stadium: $8-15 
+
+**World Cup Match-Day Pricing**: 
+
+Based on Super Bowl LI (2017), Men's Final Four (2023), and CFP National Championship (2024): 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off zones well-organized (lessons from past events) 
+- Expect 10-15 minute wait in drop-off queue during peak arrivals 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From NRG to downtown: $40-80 typical post-match cost 
+- From NRG to IAH: $120-180+ with surge 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airports to downtown hotel (reasonable pricing) 
+- Pre-book Uber Reserve 3-4 hours before stadium departure 
+- Consider ride-share from hotel to stadium if traveling as a couple (split cost with METRORail pricing, much faster) 
+
+**For Stadium Drop-Off**: 
+- Arrive 2+ hours before kickoff to avoid worst congestion 
+- Designated rideshare zones are well-marked 
+- Save drop-off location in app for easier post-match pickup 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take METRORail Red Line back 
+- Walk to Stadium Park/Astrodome Station 
+- Board Red Line toward downtown 
+- $1.25 fare (compare to $40-80 surge ride-share) 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Wait it out 
+- Stay at NRG Park complex 60-90 minutes 
+- Visit nearby restaurants (limited options but chains available) 
+- Browse Texans/rodeo merchandise at team stores 
+- Surge pricing normalizes gradually 
+
+**Strategy C**: Walk to alternative pickup location 
+- Walk to hotels on Kirby Drive (10-15 minutes) 
+- Holiday Inn, nearby properties 
+- Request pickup there (less congestion, potentially lower surge) 
+
+## Driving & Parking 
+
+### Should You Drive to NRG Stadium? 
+
+**Short Answer**: Only if traveling from distant Houston suburbs with 4+ people and willing to pay premium parking plus accept 60-90 minute post-match exits. 
+
+**Parking Reality Check**: 
+
+According to recent Houston Chronicle reporting, FIFA's official parking website has not yet listed prices for NRG Stadium, but other host venues provide guidance: 
+- AT&T Stadium (Dallas): $40-100+ 
+- Hard Rock Stadium (Miami): $40-100+ 
+- Lincoln Financial Field (Philadelphia): Similar range 
+
+**Historical NRG Parking Costs**: 
+- **2024 College Football Playoff National Championship**: $50 per vehicle 
+- **2023 Men's Final Four**: $50 per vehicle 
+- **World Cup Pricing Expected**: $50-100+ (likely higher than regular events) 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **NRG Stadium Official Lots**: 
+   - Book through nrgpark.com or Ticketmaster once available 
+   - Advance reservation strongly recommended (FIFA events often sell out) 
+   - Lots open 4 hours before kickoff 
+   - Expect $50-100 per space for World Cup matches 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 15-25% below game-day rates 
+   - Nearby commercial lots within walking distance 
+   - Guaranteed space eliminates stress 
+
+3. **Texas Medical Center Area Parking**: 
+   - Some garages/lots within 1-2 miles 
+   - Walk or short Uber to stadium 
+   - Potentially cheaper but adds time 
+
+### Driving Directions 
+
+**From Downtown Houston** (8 miles, 15-25 minutes): 
+- I-45 South to TX-288/South Freeway 
+- Exit Kirby Drive 
+- Follow signs to NRG Stadium 
+
+**From IAH Airport** (26 miles, 35-60 minutes): 
+- I-45 South through downtown 
+- Continue to Kirby Drive exit 
+- Traffic-dependent journey times 
+
+**From HOU Airport** (12 miles, 15-30 minutes): 
+- I-45 North to Kirby Drive exit 
+- Closest airport for driving to stadium 
+
+### Post-Match Exit Strategy 
+
+Based on extensive major event experience at NRG Stadium: 
+
+**If You Park at Stadium**: 
+1. Accept 60-90 minute minimum exit wait 
+2. Stay in NRG Park area (limited amenities but some restaurants) 
+3. Let initial wave of vehicles clear (first 30-45 minutes are worst) 
+4. Depart 90+ minutes post-match for reasonable exit 
+
+**Better Strategy**: Park at a METRO Park & Ride lot, take Red Line to stadium. Return to your car in 30-40 minutes vs. 60-90 minute stadium lot exit. 
+
+## Match-Day Transportation Strategy 
+
+### Seven Matches: Complete Schedule Planning 
+
+Houston's seven matches create multiple opportunities to perfect your transportation routine. The July 4 Independence Day Round of 16 match represents the pinnacle of Houston's World Cup experience. 
+
+**Multi-Match Transportation Tips**: 
+- Stay near METRORail Red Line for consistent stadium access 
+- Medical Center area hotels offer direct Red Line service (15-20 minutes to stadium) 
+- Learn Stadium Park/Astrodome Station on first match for easier subsequent trips 
+- Book premium transportation (if desired) earliest for July 4 match (highest demand) 
+
+### Timing Your Journey 
+
+**For Afternoon/Early Evening Matches** (2:00-6:00 PM Kickoffs): 
+
+**Departing Downtown Houston**: 
+- Leave hotel: 90-120 minutes before kickoff 
+- Walk to nearest Red Line station: 10 minutes 
+- Board Red Line southbound: 60-90 minutes before kickoff 
+- Travel time to stadium: 20-30 minutes 
+- Arrive NRG Stadium: 60 minutes before kickoff (ideal) 
+
+**Example for 6:00 PM Match**: 
+- Leave hotel: 4:00-4:30 PM 
+- Board METRORail: 4:30 PM 
+- Arrive stadium: 5:00 PM 
+
+**For Late Evening Matches** (9:00 PM Kickoffs): 
+
+Earlier departure recommended to avoid any peak hour overlap: 
+- Leave hotel: 6:30-7:00 PM 
+- Board METRORail: 7:00 PM 
+- Arrive stadium: 7:30 PM (90 minutes before kickoff) 
+
+### Weather Considerations 
+
+**June-July in Houston**: 
+- Average temperatures: 80-95°F (27-35°C) 
+- High humidity (70-85%) — Houston's famous "feels like 105°F" heat index 
+- Frequent afternoon thunderstorms (especially June) 
+- NRG Stadium features retractable roof (will remain closed for climate control during World Cup) 
+
+**What to Bring**: 
+- Sunscreen (for outdoor tailgating/walking) 
+- Light layers (stadium air conditioning can be cold despite outdoor heat) 
+- Clear water bottle (empty for security—refill inside) 
+- Compact rain gear (afternoon storms common) 
+- Hat for walking in sun 
+
+### July 4 Independence Day Match Special Considerations 
+
+The **Round of 16 match on Saturday, July 4, 2026 at 5:00 PM** combines America's Independence Day with World Cup knockout drama. 
+
+**Expect**: 
+- **Maximum crowds**: Double national celebration (USA Independence + World Cup) 
+- **Fireworks/celebrations**: Extended post-match festivities likely 
+- **All transportation at capacity**: METRO, parking, rideshare all maxed 
+- **Book everything early**: Hotels, parking, any premium transport 
+
+**Timeline for July 4 Match**: 
+- Arrive 2-3 hours early (security more extensive for knockout rounds) 
+- Plan post-match celebration time (don't rush to exit) 
+- Consider staying for potential fireworks/festivities 
+- Extended METRORail service likely (confirm closer to date) 
+
+## Money-Saving Transit Options 
+
+### The METRORail Value Proposition 
+
+At $1.25 per ride with free transfers within 3 hours, METRORail offers exceptional value. 
+
+**Sample 5-Day Houston Visit** (2 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to downtown** (IAH): $4.50 Park & Ride bus + $1.25 rail = $5.75 
+- **Daily downtown exploration**: $1.25-2.50 per day (1-2 round trips) 
+- **Two match days to NRG Stadium**: $1.25 each way × 2 matches = $5 total 
+- **Return to airport**: $5.75 
+- **Miscellaneous trips**: $5-10 
+
+**5-Day Total**: $25-35 in transit 
+
+Compare to ride-share for same trips: $350-500+ 
+
+### METRO Q Fare Card Benefits 
+
+**5 for 50 Bonus**: Buy 50 single ride trips, earn 5 free trips automatically 
+
+**How It Works**: 
+- Purchase rides using METRO Q Fare Card or mobile app 
+- After 50 paid trips, automatically receive 5 free trips 
+- Perfect for extended stays or multiple-match attendance 
+
+### Discounted Fares 
+
+**Eligible Riders**: 
+- **Seniors 65-69**: $0.60 per ride (50% discount) 
+- **Seniors 70+**: FREE rides 
+- **Students**: $0.60 per ride (with valid ID) 
+- **Individuals with disabilities**: $0.60 per ride 
+
+**How to Obtain**: Visit METRO RideStore location or apply online through METRO Online RideStore 
+
+### Budget Transportation Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- METRO for all transportation: $35-50 
+- Walking within downtown/Medical Center: $0 
+- **Total**: $35-50 
+
+**Moderate Budget** (occasional convenience): 
+- METRO for regular transit: $35-50 
+- 2-3 strategic Uber rides: $40-60 
+- **Total**: $75-110 
+
+**Premium Budget**: 
+- Private airport transfer: $150 
+- METRO for stadium trips: $6-10 
+- Uber for convenience: $100-150 
+- **Total**: $256-310 
+
+**The Houston Advantage**: Direct METRORail service to NRG Stadium eliminates the need for expensive ride-share or parking, making Houston one of the most economical World Cup host cities for transportation.`
+              }</ReactMarkdown>
+            </div>
           ) : (
             <div>
               <p className="whitespace-pre-line">{guide?.intro || 'Detailed transportation guide coming soon.'}</p>
