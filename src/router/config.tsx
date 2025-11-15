@@ -89,6 +89,10 @@ const routes: RouteObject[] = [
     element: <TransportationPage />
   },
   {
+    path: '/transportation/multi-city-travel-passes-maximum-savings',
+    element: <Navigate to="/transportation/atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium" replace />
+  },
+  {
     path: '/transportation/:slug',
     element: <TransportationArticlePage />
   },
