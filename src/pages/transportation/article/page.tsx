@@ -19,7 +19,7 @@ export default function TransportationArticlePage() {
   const { slug } = useParams()
   const navigate = useNavigate()
 
-  const guides = [
+    const guides = [
     {
       title: 'New York / New Jersey World Cup 2026: Your Complete Getting Around Guide',
       category: 'Flights',
@@ -69,7 +69,7 @@ export default function TransportationArticlePage() {
       intro: 'Master metro systems, buses, trams, and bike-sharing in each host city with apps, tickets, and insider tips.'
     },
     {
-      title: 'Multi-City Travel Passes: Maximum Savings',
+      title: 'Atlanta World Cup 2026: Your Complete Transportation Guide to Mercedes-Benz Stadium',
       category: 'Flights',
       author: 'Robert Kim',
       readTime: '15 min read',
@@ -148,6 +148,15 @@ export default function TransportationArticlePage() {
       image: 'https://readdy.ai/api/search-image?query=Houston%20METRORail%20platform%20train%2C%20urban%20transit%20scene%2C%20Texas%20transportation&width=1600&height=900&seq=trans-hou-nrg&orientation=landscape',
       intro: 'Ride METRORail and use park-and-ride for NRG Stadium.'
     }
+    ,
+    {
+      title: 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field',
+      category: 'City Transit',
+      author: 'Adiam Emery',
+      readTime: '12 min read',
+      image: 'https://readdy.ai/api/search-image?query=Seattle%20Link%20Light%20Rail%20Stadium%20Station%2C%20urban%20transit%20scene%2C%20Pacific%20Northwest%20transportation&width=1600&height=900&seq=trans-sea-lumen&orientation=landscape',
+      intro: 'Link Light Rail direct to Stadium Station, Sounder special service, and walkable routes to Lumen Field.'
+    }
   ]
 
   const slugify = (title: string) => title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')
@@ -160,7 +169,38 @@ export default function TransportationArticlePage() {
     document.title = pageTitle
     const metaDesc = document.querySelector('meta[name="description"]')
     if (metaDesc) metaDesc.setAttribute('content', description)
-  }, [title])
+
+    const ensureMeta = (selector: string, attr: 'name' | 'property', attrValue: string) => {
+      let el = document.querySelector(selector) as HTMLMetaElement | null
+      if (!el) {
+        el = document.createElement('meta')
+        el.setAttribute(attr, attrValue)
+        document.head.appendChild(el)
+      }
+      return el
+    }
+
+    const ogTitle = ensureMeta('meta[property="og:title"]', 'property', 'og:title')
+    const ogDesc = ensureMeta('meta[property="og:description"]', 'property', 'og:description')
+    const ogUrl = ensureMeta('meta[property="og:url"]', 'property', 'og:url')
+    const twTitle = ensureMeta('meta[name="twitter:title"]', 'name', 'twitter:title')
+    const twDesc = ensureMeta('meta[name="twitter:description"]', 'name', 'twitter:description')
+    const twCard = ensureMeta('meta[name="twitter:card"]', 'name', 'twitter:card')
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
+    if (!canonical) {
+      canonical = document.createElement('link')
+      canonical.setAttribute('rel', 'canonical')
+      document.head.appendChild(canonical)
+    }
+
+    ogTitle?.setAttribute('content', pageTitle)
+    ogDesc?.setAttribute('content', description)
+    ogUrl?.setAttribute('content', `${window.location.origin}/transportation/${slug}`)
+    twTitle?.setAttribute('content', pageTitle)
+    twDesc?.setAttribute('content', description)
+    twCard?.setAttribute('content', 'summary_large_image')
+    canonical?.setAttribute('href', `${window.location.origin}/transportation/${slug}`)
+  }, [title, description, slug])
 
   useEffect(() => {
     if (slug === 'budget-bus-travel-intercity-connections') {
@@ -183,6 +223,27 @@ export default function TransportationArticlePage() {
   useEffect(() => {
     if (slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-atandt-stadium') {
       navigate('/404', { replace: true })
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca') {
+      window.history.replaceState(null, '', `/transportation/seattle-world-cup-2026-your-complete-transportation-guide-to-lumen-field`)
+    }
+    if (slug === 'local-transport-mastery-navigate-like-a-local') {
+      window.history.replaceState(null, '', `/transportation/houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium`)
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'accessible-transportation-options') {
+      window.history.replaceState(null, '', `/transportation/philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field`)
+    }
+  }, [slug])
+
+  useEffect(() => {
+    if (slug === 'multi-city-travel-passes-maximum-savings') {
+      window.history.replaceState(null, '', `/transportation/atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium`)
     }
   }, [slug])
 
@@ -227,7 +288,7 @@ export default function TransportationArticlePage() {
                 <li><span aria-hidden>›</span></li>
                 <li className="text-slate-900 dark:text-white font-semibold">{
                   slug === 'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide'
-                    ? 'Your Complete Getting Around Guide'
+                    ? 'New York / New Jersey World Cup 2026: Your Complete Getting Around Guide'
                     : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium'
                     ? 'Los Angeles: Transportation Guide to SoFi Stadium'
                     : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections')
@@ -236,13 +297,21 @@ export default function TransportationArticlePage() {
                     ? 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium'
                     : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium')
                     ? 'Kansas City World Cup 2026: Your Complete Transportation Guide to Arrowhead Stadium'
+                    : slug === 'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium'
+                    ? 'Atlanta World Cup 2026: Your Complete Transportation Guide to Mercedes-Benz Stadium'
+                    : slug === 'local-transport-mastery-navigate-like-a-local'
+                    ? 'Houston World Cup 2026: Your Complete Transportation Guide to NRG Stadium'
+                    : (slug === 'accessible-transportation-options' || slug === 'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field')
+                    ? 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field'
+                    : slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca'
+                    ? 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field'
                     : title
                 }</li>
               </ol>
             </nav>
             <h1 className="editorial-hero-title">{
               slug === 'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide'
-                ? 'Your Complete Getting Around Guide'
+                ? 'New York / New Jersey World Cup 2026: Getting Around Guide'
                 : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium'
                 ? 'Los Angeles: Transportation Guide to SoFi Stadium'
                 : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections')
@@ -251,6 +320,14 @@ export default function TransportationArticlePage() {
                 ? 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium'
                 : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium')
                 ? 'Kansas City World Cup 2026: Transportation Guide to Arrowhead Stadium'
+                : slug === 'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium'
+                ? 'Atlanta World Cup 2026: Transportation Guide to Mercedes-Benz Stadium'
+                : (slug === 'local-transport-mastery-navigate-like-a-local' || slug === 'houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium')
+                ? 'Houston World Cup 2026: Transportation Guide to NRG Stadium'
+                : (slug === 'accessible-transportation-options' || slug === 'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field')
+                ? 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field'
+                : slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca'
+                ? 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field'
                 : title
             }</h1>
             <div className="editorial-hero-meta">
@@ -861,7 +938,7 @@ export default function TransportationArticlePage() {
               <p>Start with public transit as your primary plan. Layer in ride-share as your backup. Budget for the occasional splurge on convenience. And remember: the journey from Times Square to the World Cup Final whistle is part of the adventure. Embrace the organized chaos, chat with fellow fans from around the world on the train platform, and arrive ready to witness soccer history.</p>
               <p>See you at MetLife Stadium.</p>
               <hr className="editorial-divider" />
-              <p><em>This guide reflects transportation information current as of November 2025. All fares, schedules, and services are subject to change. Verify details through official sources—NJ Transit (njtransit.com), MTA (mta.info), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. World Cup-specific transportation programs may be announced in spring 2026.</em></p>
+              <p><em>This guide reflects transportation information current as of November 2025. All fares, schedules, and services are subject to change. Verify details through official sources—NJ Transit (<a href="https://www.njtransit.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">njtransit.com</a>), MTA (<a href="https://www.mta.info" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">mta.info</a>), and FIFA World Cup 2026 (<a href="https://www.fifa.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">fifa.com</a>)—closer to your travel dates. World Cup-specific transportation programs may be announced in spring 2026.</em></p>
             </div>
           ) : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium' ? (
             <div className="space-y-8">
@@ -889,6 +966,9 @@ export default function TransportationArticlePage() {
                   ),
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -1210,7 +1290,7 @@ Metrolink tickets can add $12.75 for LAX FlyAway access, and Monthly Pass holder
 **Best Park-and-Ride Locations**:
 - **Redondo Beach Station** (K Line): Free/low-cost parking, direct K Line to LAX/Metro Transit Center
 - **Norwalk Station** (C Line): Large parking structure, frequent C Line service
-- **Any Metro Station with Parking**: Check metro.net for parking availability and fees
+ - **Any Metro Station with Parking**: Check [metro.net](https://metro.net) for parking availability and fees
 
 **Why This Works**:
 - Parking costs: $0-8 per day (vs. $40-100 at stadium)
@@ -1321,6 +1401,9 @@ Compare this to:
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
                 }}
               >
 {`### Transit Pass Options
@@ -1406,7 +1489,7 @@ Students at participating GoPass schools ride Metro for FREE
 **Metro Rail Accessibility**:
 - All C and K Line stations feature elevators, ramps, and platform gap accommodations
 - Stations have tactile warning strips, audio/visual announcements, and accessibility features
-- Some older Metro stations may have elevator outages—check metro.net before traveling
+ - Some older Metro stations may have elevator outages—check [metro.net](https://metro.net) before traveling
 
 **SoFi Shuttle Accessibility**:
 - Wheelchair-accessible buses
@@ -1509,7 +1592,7 @@ See you at SoFi Stadium (officially "Los Angeles Stadium" during the tournament)
 
 ---
 
-*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—LA Metro (metro.net), LAX Official (flylax.com), Metrolink (metrolinktrains.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Match-specific transportation programs may be announced in spring 2026.*`}
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—LA Metro ([metro.net](https://metro.net)), LAX Official ([flylax.com](https://www.flylax.com)), Metrolink ([metrolinktrains.com](https://metrolinktrains.com)), and FIFA World Cup 2026 ([fifa.com](https://www.fifa.com))—closer to your travel dates. Match-specific transportation programs may be announced in spring 2026.*`}
               </ReactMarkdown>
             </div>
           ) : (slug === 'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium' || slug === 'budget-bus-travel-intercity-connections') ? (
@@ -1538,6 +1621,9 @@ See you at SoFi Stadium (officially "Los Angeles Stadium" during the tournament)
                   ),
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -1612,7 +1698,7 @@ For World Cup 2026, the most innovative transportation solution combines Brightl
 - Anyone wanting to avoid parking entirely 
 
 **How to Book**: 
-1. Download Brightline app or visit gobrightline.com 
+1. Download Brightline app or visit [gobrightline.com](https://gobrightline.com) 
 2. Select travel to Aventura Station 
 3. Look for event icons when booking (indicates shuttle availability) 
 4. Arrive at least 20 minutes before train departure 
@@ -1864,7 +1950,7 @@ Hard Rock Stadium announced new Park & Ride options for the 2024 season, the fir
 - Avoid stadium parking congestion 
 - Cost: Typically $20-30 (vs. $40-100 stadium parking) 
 
-**Availability**: Check hardrockstadium.com for World Cup Park & Ride locations (will be announced closer to tournament). 
+**Availability**: Check [hardrockstadium.com](https://hardrockstadium.com) for World Cup Park & Ride locations (will be announced closer to tournament). 
 
 ## Driving & Parking 
 
@@ -1883,7 +1969,7 @@ Hard Rock Stadium announced new Park & Ride options for the 2024 season, the fir
 **Official Parking Options**: 
 
 1. **Advance Reservations Required**: 
-   - Book through hardrockstadium.com or Ticketmaster 
+  - Book through [hardrockstadium.com](https://hardrockstadium.com) or Ticketmaster 
    - Parking often sells out for major events 
    - Prices: $40-60 standard lots; $75-100 premium proximity 
 
@@ -2028,6 +2114,9 @@ Miami-Dade Transit's automatic fare capping ensures you never pay more than $5.6
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
                 }}
               >
 {`part 2/2 
@@ -2129,7 +2218,7 @@ Compare to ride-share for same trips: $400-600+
 - 300 accessible seating locations throughout venue 
 - Accessible parking in designated lots close to entrances 
 - Wheelchair escorts and accessible transportation options 
-- Request services through hardrockstadium.com 
+- Request services through [hardrockstadium.com](https://hardrockstadium.com) 
 
 **Metrorail Accessibility**: 
 - All 23 stations are wheelchair accessible with elevators and ramps 
@@ -2228,7 +2317,7 @@ See you at "Miami Stadium" (Hard Rock Stadium during the tournament). When those
 
 --- 
 
-*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Miami-Dade Transit (miamidade.gov/transit), Brightline (gobrightline.com), Hard Rock Stadium (hardrockstadium.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. World Cup-specific transportation programs will be announced in spring 2026.*`}
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Miami-Dade Transit ([miamidade.gov/transit](https://miamidade.gov/transit)), Brightline ([gobrightline.com](https://gobrightline.com)), Hard Rock Stadium ([hardrockstadium.com](https://hardrockstadium.com)), and FIFA World Cup 2026 ([fifa.com](https://www.fifa.com))—closer to your travel dates. World Cup-specific transportation programs will be announced in spring 2026.*`}
               </ReactMarkdown>
             </div>
           ) : (slug === 'car-rental-guide-freedom-to-explore' || slug === 'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium') ? (
@@ -2259,6 +2348,9 @@ See you at "Miami Stadium" (Hard Rock Stadium during the tournament). When those
                   ),
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -2581,7 +2673,7 @@ Jerry Jones and friends can collect $75 to $125 per vehicle that tries to park o
 **Official Parking Options**: 
 
 1. **AT&T Stadium Official Lots**: 
-   - Book through attstadium.com or Ticketmaster 
+   - Book through [attstadium.com](https://attstadium.com) or [Ticketmaster](https://www.ticketmaster.com) 
    - Lots open 4 hours before kickoff 
    - Prices: $40-60 standard; $75-125 premium proximity (based on Cowboys games) 
    - World Cup pricing will be announced closer to matches 
@@ -2708,6 +2800,9 @@ With nine matches spanning June 11 - July 19, 2026, Dallas-Arlington offers the 
                   strong: ({ node, ...props }) => (
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
                 }}
               >
 {`## Money-Saving Transit Options 
@@ -2809,7 +2904,7 @@ Compare to parking for 2 matches: $80-250+ with post-match frustration included.
 - ADA-compliant with extensive accessible seating (approximately 90,000 seats maintained for World Cup) 
 - Accessible parking in designated lots close to entrances 
 - Elevators, ramps, and accessible restrooms throughout 
-- Request accessibility services through attstadium.com 
+ - Request accessibility services through [attstadium.com](https://attstadium.com) 
 
 **DART Rail & TRE**: 
 - All rail stations wheelchair accessible with elevators 
@@ -2904,7 +2999,7 @@ See you at the most matches of any World Cup 2026 city.
 
 --- 
 
-*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—DART (dart.org), North Central Texas Council of Governments (nctcog.org), AT&T Stadium (attstadium.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026.*`}
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—DART ([dart.org](https://dart.org)), North Central Texas Council of Governments ([nctcog.org](https://nctcog.org)), AT&T Stadium ([attstadium.com](https://attstadium.com)), and FIFA World Cup 2026 ([fifa.com](https://www.fifa.com))—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026.*`}
               </ReactMarkdown>
             </div>
           ) : (slug === 'airport-transfer-options-seamless-arrivals' || slug === 'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium') ? (
@@ -3108,7 +3203,7 @@ KC2026's 200-bus fleet will include routes between the airport, downtown, and Ar
 
 **Cost**: Free or minimal (KC2026-funded) 
 
-**Availability**: Check kansascityfwc26.com closer to match dates for exact pickup locations and schedules 
+**Availability**: Check [kansascityfwc26.com](https://kansascityfwc26.com) closer to match dates for exact pickup locations and schedules 
 
 **Option 2: Airport to Downtown via Public Transit** (Then Transfer) 
 
@@ -3233,7 +3328,7 @@ KC2026 is in the planning phase for park-and-ride locations. Fans will arrive at
 - Faster departure (buses use express lanes or priority routing) 
 - Support regional economic impact (parking near businesses) 
 
-**Check Updates**: Visit kansascityfwc26.com or text KC2026 Support Line (1-877-392-5226) for park-and-ride locations as they're announced. 
+**Check Updates**: Visit [kansascityfwc26.com](https://kansascityfwc26.com) or text KC2026 Support Line (1-877-392-5226) for park-and-ride locations as they're announced. 
 
 ### If You Insist on Driving Close 
 
@@ -3454,9 +3549,9 @@ Compare to other host cities where transit alone costs $50-200+
 - Screenshot key routes for offline reference 
 
 **KC2026 Contact**: 
-- Call/text Support Line: 1-877-392-5226 
-- Email: transportation@kansascityfwc26.com 
-- Website: kansascityfwc26.com 
+ - Call/text Support Line: 1-877-392-5226 
+ - Email: transportation@kansascityfwc26.com 
+ - Website: [kansascityfwc26.com](https://kansascityfwc26.com) 
 
 ## Accessibility & Family Travel 
 
@@ -3549,7 +3644,7 @@ See you at "Kansas City Stadium" (Arrowhead during the tournament). The heart of
 
 --- 
 
-*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—RideKC (ridekc.org), KC2026 (kansascityfwc26.com), KC Streetcar (kcstreetcar.org), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation plans will be announced spring 2026. Contact KC2026 Support Line: 1-877-392-5226 or transportation@kansascityfwc26.com.*`}
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—RideKC ([ridekc.org](https://ridekc.org)), KC2026 ([kansascityfwc26.com](https://kansascityfwc26.com)), KC Streetcar ([kcstreetcar.org](https://kcstreetcar.org)), and FIFA World Cup 2026 ([fifa.com](https://www.fifa.com))—closer to your travel dates. Final World Cup transportation plans will be announced spring 2026. Contact KC2026 Support Line: 1-877-392-5226 or transportation@kansascityfwc26.com.*`}
               </ReactMarkdown>
             </div>
           ) : slug === 'local-transport-mastery-navigate-like-a-local' ? (
@@ -3585,16 +3680,14 @@ See you at "Kansas City Stadium" (Arrowhead during the tournament). The heart of
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" {...props} />
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
                   )
                 }}
               >{
-`# Houston World Cup 2026: Your Complete Transportation Guide to NRG Stadium 
-
-When NRG Stadium hosts seven World Cup 2026 matches—including crucial knockout rounds on June 29 (Round of 32) and an Independence Day (July 4) Round of 16 showdown—Houston will demonstrate why it's one of America's most diverse, welcoming, and logistically capable cities. With over a billion dollars in expected economic impact and experience hosting the Super Bowl, Final Four, and College Football Playoff, Houston's transportation template is battle-tested. 
+`When NRG Stadium hosts seven World Cup 2026 matches—including crucial knockout rounds on June 29 (Round of 32) and an Independence Day (July 4) Round of 16 showdown—Houston will demonstrate why it's one of America's most diverse, welcoming, and logistically capable cities. With over a billion dollars in expected economic impact and experience hosting the Super Bowl, Final Four, and College Football Playoff, Houston's transportation template is battle-tested. 
 
 But here's what makes Houston's World Cup unique: Bishop James Dixon, chairman of the Harris County Sports and Convention Corporation, says hosting seven World Cup matches equals hosting **seven Super Bowls**. NRG Stadium will receive $55 million in upgrades, Houston METRO is ordering new buses specifically for the tournament, and the city is expanding its microtransit system to seamlessly connect visitors from over 100 countries to the world's biggest sporting event. 
 
@@ -4036,6 +4129,2062 @@ Compare to ride-share for same trips: $350-500+
 - **Total**: $256-310 
 
 **The Houston Advantage**: Direct METRORail service to NRG Stadium eliminates the need for expensive ride-share or parking, making Houston one of the most economical World Cup host cities for transportation.`
+              }</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **RideMetro App** (Official METRO App) 
+   - Purchase mobile tickets 
+   - Real-time METRORail arrivals 
+   - Trip planning across all METRO services 
+   - Service alerts 
+   - Free download 
+
+2. **METRO Q Fare Card App** 
+   - Load and reload fare card 
+   - Track fare balance 
+   - Activate mobile tickets 
+   - View transaction history 
+
+3. **Google Maps** 
+   - Integrates METRORail, buses, walking 
+   - Most accurate Houston transit routing 
+   - Real-time traffic conditions 
+   - Alternative route suggestions 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save Stadium Park/Astrodome Station, hotel, stadium 
+   - Pre-book via Uber Reserve 
+
+5. **Transit App** (Optional) 
+   - Multi-system trip planning 
+   - Real-time vehicle tracking 
+   - Alternative to official METRO app 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download RideMetro app and load $20-30 
+- Link credit card for automatic reloading 
+- Save NRG Stadium, Stadium Park/Astrodome Station addresses 
+- Enable push notifications for service alerts 
+
+**METRO Customer Service**: 713-635-4000 (available for trip planning assistance) 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**NRG Stadium**: 
+- Full ADA compliance with accessible seating throughout 72,220+ seats 
+- Accessible parking in designated lots close to entrances 
+- $55 million upgrade includes elevator/escalator improvements 
+- Request services through nrgpark.com 
+
+**METRORail Red Line**: 
+- Level boarding at all stations (wheelchair accessible) 
+- Designated wheelchair areas on all rail cars 
+- Audio/visual stop announcements 
+- Priority seating 
+
+**METRO Buses**: 
+- All buses wheelchair accessible with ramps/lifts 
+- Priority seating areas 
+- Audio stop announcements 
+
+**METROLift**: Paratransit service for qualifying adults with disabilities (advance booking required) 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Children under specific height ride free with paying adult (check METRO policies) 
+- Discounted student fares available with valid ID 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on METRORail; fold during crowded periods 
+- NRG Stadium has family restrooms and nursing areas 
+- Pack snacks for transit journeys (no food service on METRO) 
+- Red Line journey is short (20-30 minutes)—manageable for young children 
+
+**Recommended Family Strategy**: 
+- **To Stadium**: METRORail Red Line (kids enjoy train rides, stress-free) 
+- **Around Houston**: Combination of METRO and occasional Uber for flexibility 
+- **Backup Option**: Rideshare if children get tired or cranky 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Houston to Other Southeastern Host Cities 
+
+**To Dallas** (240 miles, 3.5-4.5 hours drive): 
+- **Flight**: 1 hour, $100-250 round-trip (best option) 
+- **Drive**: Rental car makes sense for groups of 4+ attending multiple matches 
+- **Bus** (Greyhound, FlixBus): 4-5 hours, $20-50 if booked early 
+- Dallas hosts 9 matches—most of any city 
+
+**To Atlanta** (780 miles, 11-12 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip (only practical option) 
+- Atlanta hosts 8 matches 
+
+**To Kansas City** (700 miles, 10-11 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip 
+- Kansas City hosts 6 matches 
+
+**Strategic Multi-City Planning**: 
+Houston's central-south location and major airports (IAH, HOU) provide direct flights to all North American World Cup venues. For fans attending multiple matches, Houston serves as an excellent base city with frequent flight options. 
+
+## Critical Transportation Tips 
+
+1. **METRORail Red Line is your best friend**—direct service to stadium, $1.25 each way 
+2. **Seven matches equal seven Super Bowls**—Houston's experience shows in refined operations 
+3. **Stadium Park/Astrodome Station is 5 minutes from gates**—seamless connection 
+4. **Post-match: Take the train home**—avoid surge pricing and guaranteed transport 
+5. **Download RideMetro app before arrival**—mobile tickets save time 
+6. **July 4 match is special**—Independence Day + Round of 16 = maximum crowds 
+7. **Parking will be expensive**—$50-100 expected based on past major events 
+8. **Houston humidity is intense**—stay hydrated, dress for heat then cold AC inside 
+9. **New buses coming for World Cup**—enhanced capacity and microtransit expansion 
+10. **METRO Customer Service: 713-635-4000**—real humans available for help 
+
+## Your Houston World Cup Transportation Plan 
+
+Seven matches. Seven Super Bowls. A billion dollars in economic impact. And the best stadium transportation solution of any Texas host city—direct METRORail service. 
+
+Houston's experience hosting Super Bowl LI, multiple Final Fours, and College Football Playoff championships has refined transportation operations to world-class levels. The $55 million NRG Stadium upgrade, new METRO buses, and expanded microtransit system ensure Houston welcomes over 100 countries with Southern hospitality and logistical excellence. 
+
+Your winning strategy: Stay in or near downtown Houston or the Texas Medical Center area along the METRORail Red Line. Use the Red Line for all stadium trips—it's fast, cheap, and drops you 5 minutes from the gates. Save rideshare for airport transfers or strategic convenience. Embrace the July 4 Round of 16 match as a once-in-a-lifetime combination of American patriotism and World Cup knockout drama. 
+
+Between matches, explore Houston's world-renowned Space Center, Museum District, diverse culinary scene (home to over 70 consulates and cuisine from around the globe), and vibrant arts culture. Houston's international character—with residents from every corner of Earth—creates authentic World Cup atmosphere rivaled only by truly global cities. 
+
+When that referee's whistle sounds across seven matches from June through July 2026, you'll be at "Houston Stadium" (NRG Stadium during the tournament)—relaxed, on time, and ready to witness the beautiful game in Texas's most international city. 
+
+See you in Space City. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Houston METRO (ridemetro.org), NRG Stadium (nrgpark.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026. Contact METRO Customer Service: 713-635-4000.*`
+              }</ReactMarkdown>
+            </div>
+          ) : slug === 'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium' ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`
+When Mercedes-Benz Stadium hosts eight World Cup 2026 matches—including the prestigious **Semi-Final on July 15, 2026**, which determines one of the two teams that will compete for the championship—Atlanta will showcase why it's called the "City Too Busy to Hate." With direct MARTA rail service literally at the stadium's front door, a brand-new fare payment system launching spring 2026, and hard-earned experience hosting the 2025 FIFA Club World Cup, Atlanta offers what may be the most accessible, efficient World Cup transportation in the entire United States. 
+
+Here's Atlanta's game-changing advantage: MARTA stations sit just hundreds of feet from Mercedes-Benz Stadium entrances, with the GWCC/CNN Center Station located right at the doorstep. For just $2.50 each way, enjoy convenient access right at the front door. No long walks. No shuttle transfers. No parking nightmares. Just simple, affordable, direct rail service to one of the world's most sophisticated sporting venues. 
+
+## Quick Navigation 
+- [Understanding Atlanta's Transit Advantage](#understanding-atlantas-transit-advantage) 
+- [MARTA Rail: Direct Stadium Access](#marta-rail-direct-stadium-access) 
+- [New Breeze Payment System (Spring 2026)](#new-breeze-payment-system-spring-2026) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Atlanta's Transit Advantage 
+
+### What Makes Atlanta Transportation Unique 
+
+Atlanta is one of only a handful of U.S. cities with rapid transit directly serving a major stadium. MARTA is one of the only transit systems in the world that offers direct access to the airport, with a train station inside the concourse—and it delivers that same convenience to Mercedes-Benz Stadium. 
+
+**The Key Players:** 
+- **MARTA (Metropolitan Atlanta Rapid Transit Authority)**: Operates rapid rail (Red, Gold, Blue, Green lines), bus network, and streetcar 
+- **Hartsfield-Jackson Atlanta International Airport**: World's busiest airport with MARTA station inside terminal 
+- **Mercedes-Benz Stadium**: Located at 1 AMB Drive, downtown Atlanta, with two MARTA stations within 2-3 blocks 
+
+### Eight Matches Including a Semi-Final 
+
+Atlanta hosts 8 matches during the 2026 FIFA World Cup, including a Semi-Final at Mercedes-Benz Stadium. The Semi-Final on **July 15, 2026** represents Atlanta's crown jewel—one of only two matches that determine who plays for the World Cup championship. 
+
+**Match Schedule** (dates confirmed, specific matchups TBD): 
+- **Group Stage**: June 15, 18, 21, 24, 27 (5 matches) 
+- **Round of 32**: June 30 (1 match) 
+- **Round of 16**: July 6 (1 match) 
+- **Semi-Final**: July 15, 2026 (THE prestigious match) 
+
+### 2025 FIFA Club World Cup: Atlanta's Dress Rehearsal 
+
+MARTA is preparing to play a central role in hosting soccer fans from around the world during the 2025 FIFA Club World Cup, with expanded service and enhanced customer support for the six matches scheduled at Mercedes-Benz Stadium. 
+
+This June 2025 tournament serves as Atlanta's World Cup preparation—testing expanded MARTA service, crowd management, and international visitor experience. Lessons learned directly benefit 2026 operations. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Mercedes-Benz Stadium will be called **"Atlanta Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## MARTA Rail: Direct Stadium Access 
+
+### Your Primary Transportation Solution 
+
+The GWCC/CNN Center Station is the preferred stop, located right at the doorstep of Mercedes-Benz Stadium, making it the ideal choice for both arrival and departure. 
+
+**Two Convenient Stations**: 
+1. **GWCC/CNN Center Station** (Recommended): Blue and Green Lines 
+2. **Vine City Station**: Blue and Green Lines (alternative, slightly longer walk) 
+
+**From Station to Stadium**: Exit either station and walk 2-3 blocks to the stadium—approximately 3-5 minutes. 
+
+### Current MARTA Fares (November 2025) 
+
+MARTA fare is $2.50 for a one-way trip 
+
+**Important Fare Details**: 
+- All MARTA fares must be purchased with a Breeze card or Breeze ticket 
+- Breeze cards are $2 and may be reloaded for up to 3 years 
+- Breeze tickets are $1 for single-use only and expire in 90 days from purchase 
+
+**Total Cost for Visitors**: 
+- **First trip**: $2 (Breeze Card) + $2.50 (fare) = $4.50 
+- **All subsequent trips**: $2.50 per ride (just reload your card) 
+- **Round-trip to stadium**: $4.50 (first time) + $2.50 (return) = $7 total 
+
+### MARTA Rail Lines to Mercedes-Benz Stadium 
+
+If you're coming from the north: Take the red or gold line heading toward the Airport Station. Get off at Five Points Station, where you'll transfer onto either the green line heading toward Bankhead or the blue line heading toward Hamilton E. Holmes. Get off at Vine City or Dome/GWCC/Philips Arena/CNN Center. 
+
+**From Hartsfield-Jackson Airport** (Direct, No Transfers): 
+- Board Red or Gold Line northbound at Airport Station 
+- Transfer at Five Points Station to Blue or Green Line 
+- Exit at GWCC/CNN Center Station 
+- Total journey: 25-30 minutes, $2.50 
+
+**From North Atlanta/Buckhead/Midtown**: 
+- Board Red Line (North Springs) or Gold Line (Doraville) southbound 
+- Transfer at Five Points to Blue or Green Line 
+- Exit at GWCC/CNN Center Station 
+- Journey time: 20-35 minutes depending on origin 
+
+**From Decatur/East Atlanta**: 
+- Board Blue Line westbound directly to GWCC/CNN Center 
+- No transfers required 
+- Journey time: 20-25 minutes 
+
+### Operating Hours & Frequency 
+
+**Regular Service**: 
+- Monday-Friday: First trains ~5:00 AM, last trains ~1:00 AM 
+- Saturday-Sunday: Continuous service 24 hours (varies by line) 
+- Frequency: Every 10-20 minutes depending on line and time 
+
+**World Cup Enhancement**: For World Cup matches, MARTA typically extends service hours beyond normal schedules and increases train frequency to accommodate international crowds and late-finishing matches. 
+
+## New Breeze Payment System (Spring 2026) 
+
+### Revolutionary Upgrade for World Cup 
+
+MARTA will replace its entire fare collection system over the next six months, with a goal of spring 2026 for implementation and customer transition. 
+
+**What's Changing**: 
+- The new system will allow open payment where riders can tap their bank card, smartphone, or mobile wallet to pay for their ride 
+- Fare will remain $2.50 for a one-way trip 
+- New Breeze cards and tickets 
+- Updated faregates, vending machines, and mobile app 
+
+**For World Cup Visitors**: By June-July 2026, you'll be able to simply tap your credit card, Apple Pay, Google Pay, or smartphone at the faregate—no need to buy a Breeze Card first. 
+
+**MARTA CEO Jonathan Hunt**: "MARTA is implementing some incredible projects and initiatives next year ahead of the World Cup, including new trains, a new bus network with on demand transit zones, a new bus rapid transit line, and a new On the Go app and MARTA website. We need to ensure our Breeze system is aligned with these once-in-a-generation improvements and ready for the future." 
+
+### How to Use the New System (Spring 2026) 
+
+1. **Contactless Payment**: Tap credit/debit card, smartphone, or smartwatch at faregate 
+2. **Automatic Fare Deduction**: $2.50 charged per ride 
+3. **Free Transfers**: Built into system when using same payment method 
+4. **No Card Purchase Required**: Skip Breeze Card entirely if using contactless payment 
+
+**Note**: There will be a monthlong period in spring 2026 for customers to transition from the current Breeze system to the Better Breeze system. Check [itsmarta.com](https://itsmarta.com) before your visit for current status. 
+
+## Airport to Stadium Connections 
+
+### Hartsfield-Jackson Atlanta International Airport (ATL) 
+
+**Distance to Mercedes-Benz Stadium**: 11 miles  
+**Best For**: All visitors—world's busiest airport by passenger traffic 
+
+ATL serves as the primary gateway for World Cup visitors, with Delta Air Lines as the largest hub carrier. 
+
+**Option 1: MARTA Direct (Best Value & Convenience)** 
+
+**Total Time**: 25-30 minutes  
+**Total Cost**: $4.50 (first time: $2 card + $2.50 fare); $2.50 (if you have Breeze Card) 
+
+**The Route**: 
+1. **From any ATL terminal**: Follow "Ground Transportation" signs to the west end 
+2. **Pass baggage claim**: Continue to MARTA station entrance (inside airport terminal) 
+3. **Purchase Breeze Card**: At vending machines ($2 card + load $2.50 minimum) 
+4. **Board Red or Gold Line northbound**: Toward North Springs or Doraville 
+5. **Transfer at Five Points Station**: Follow signs to Blue or Green Line 
+6. **Board Blue or Green Line**: Toward Hamilton E. Holmes or Bankhead 
+7. **Exit at GWCC/CNN Center Station**: Walk 3 minutes to stadium 
+
+**Why This Is The Best Option**: 
+- Fastest route (beats traffic) 
+- Cheapest ($2.50 vs $35-60 rideshare) 
+- No parking costs 
+- Direct access inside airport terminal (no shuttle to off-site train) 
+- Runs frequently (every 10-15 minutes) 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: 
+- ATL to Mercedes-Benz Stadium: $35-50 (normal pricing) 
+- Match-day surge: $70-120+ possible 
+
+**Time**: 20-30 minutes (no traffic); 45-75 minutes (typical/event traffic) 
+
+**When This Makes Sense**: Groups of 3-4, heavy luggage, arriving very late at night (though MARTA runs 24 hours on weekends). 
+
+**Option 3: Private Airport Transfer** (Premium) 
+
+**Cost**: $80-130 pre-booked sedan; $140-200 SUV  
+**Best For**: Groups of 5-6, VIP service, guaranteed fixed pricing 
+
+Services like Welcome Pickups, Jayride, and Savoya offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual MARTA: $2.50 per person × 5 = $12.50 total (unbeatable) 
+- Shared SUV transfer: $140 ÷ 5 = $28 per person (comfort premium) 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Atlanta with designated zones near Mercedes-Benz Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- ATL Airport to downtown: $30-45 
+- ATL Airport to Mercedes-Benz Stadium: $35-50 
+- Buckhead to stadium: $15-25 
+- Midtown to stadium: $10-18 
+
+**World Cup Match-Day Pricing**: 
+
+Mercedes-Benz Stadium is at the heart of the Club World Cup experience and that means traffic in and around the downtown area is heavy. Road closures, redirected lanes, and high pedestrian volume are all in effect during game times. 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off zone: Standard Rideshare Zone located on Northside Drive in front of Georgia World Congress Center – Building C. Exit the stadium at Gate 1 and head north 
+- Approximately 10-minute walk from drop-off to stadium entrances 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From stadium to airport: $70-150+ typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airport to downtown hotel if desired 
+- For stadium trips, strongly consider MARTA (faster, cheaper, no traffic) 
+- Pre-book Uber Reserve if absolutely committed to ride-share 
+
+**For Stadium Drop-Off**: 
+- Standard Rideshare Zone - GWCC Bus Lane C Located at GWCC Bus Lane C on Northside Drive - Best for guests exiting Gate 1 and heading north - Follow wayfinding signs from Gate 1 across the Home Depot Backyard Bridge - Approximately 10-minute walk from the stadium 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take MARTA back 
+- Walk to GWCC/CNN Center Station (3 minutes) 
+- Board Red or Gold Line to airport or your destination 
+- $2.50 fare vs. $70-150 surge ride-share 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Wait it out 
+- In the event of extended wait times, the closest MARTA station for expedited departure is Vine City Station (Blue/Green Line) 
+- Stay at stadium/nearby restaurants 60-90 minutes 
+- Visit Centennial Olympic Park, World of Coca-Cola area 
+- Surge pricing normalizes gradually 
+
+## Driving & Parking 
+
+### Should You Drive to Mercedes-Benz Stadium? 
+
+**Short Answer**: Not recommended unless traveling from distant suburbs with 4+ people. 
+
+Avoid parking hassles by taking MARTA to Mercedes-Benz Stadium 
+
+**Parking Reality**: 
+- Parking around Mercedes-Benz Stadium varies widely from $6-50 or even higher on days with major games or events 
+- World Cup pricing expected: $40-75+ 
+- Post-event exit times: 60-90 minutes 
+- Downtown Atlanta traffic is dense and unpredictable 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **Mercedes-Benz Stadium Official Lots**: 
+   - Parking garages and surface lots available but recommend pre-booking, if possible 
+   - Book through [mercedesbenzstadium.com](https://mercedesbenzstadium.com) or [Ticketmaster](https://www.ticketmaster.com) 
+   - World Cup pricing: $50-100+ expected 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 15-25% below game-day rates 
+   - Commercial lots within 10-15 minute walk 
+   - Guaranteed space 
+
+3. **Park-and-Ride at MARTA Stations**: 
+   - Park 'n' ride facilities at certain MARTA stations 
+   - Park at suburban MARTA station (free or low-cost) 
+   - Take MARTA to stadium 
+   - Best of both worlds: drive from home, avoid downtown parking 
+
+**Recommended Park-and-Ride Stations**: 
+- **Lindbergh Center**: Large parking deck, Red/Gold Lines 
+- **Doraville**: Gold Line terminus, ample parking 
+- **North Springs**: Red Line terminus, free parking 
+- **Any suburban station**: Check [itsmarta.com](https://itsmarta.com) for parking availability 
+
+## Match-Day Transportation Strategy 
+
+### Eight Matches: Complete Schedule Planning 
+
+With eight matches spanning June 15 - July 15, Atlanta offers more World Cup action than most host cities. The **July 15 Semi-Final** represents the tournament's penultimate match—one of only two games that determine the championship finalists. 
+
+**Multi-Match Transportation Tips**: 
+- Stay near MARTA Red, Gold, Blue, or Green Lines 
+- Midtown, Buckhead, and Decatur offer excellent transit access 
+- Learn GWCC/CNN Center Station on first match for easier subsequent trips 
+- Book premium accommodations earliest for Semi-Final week (July 10-16) 
+
+### Timing Your Journey 
+
+**For Afternoon/Early Evening Matches** (3:00-7:00 PM Kickoffs): 
+
+**Departing from Airport Area**: 
+- Complete airport arrival procedures: 60-90 minutes before MARTA departure 
+- Board MARTA at Airport Station: 2.5 hours before kickoff 
+- Transfer at Five Points: 2 hours before kickoff 
+- Arrive stadium: 90 minutes before kickoff 
+
+**Example for 6:00 PM Match**: 
+- Airport procedures complete: 3:30 PM 
+- Board MARTA: 3:45 PM 
+- Arrive stadium: 4:30 PM 
+
+**Departing from Midtown/Buckhead Hotels**: 
+- Leave hotel: 2 hours before kickoff 
+- Walk to nearest MARTA station: 10 minutes 
+- Board Red/Gold Line: 90 minutes before kickoff 
+- Transfer at Five Points (if needed): 75 minutes before kickoff 
+- Arrive stadium: 60-75 minutes before kickoff 
+
+**Example for 3:00 PM Match**: 
+- Leave hotel: 1:00 PM 
+- Arrive station: 1:10 PM 
+- Arrive stadium: 2:00 PM 
+
+### Weather Considerations 
+
+**June-July in Atlanta**: 
+- Average temperatures: 75-90°F (24-32°C) 
+- High humidity (60-80%) creates "feels like" temperatures 5-10°F higher 
+- Visitors should prepare for hot, humid conditions and occasional afternoon thunderstorms 
+- Mercedes-Benz Stadium's retractable roof and climate control provide comfortable viewing conditions regardless of outside weather 
+
+**What to Bring**: 
+- Sunscreen (for outdoor activities pre/post-match) 
+- Light rain jacket (June thunderstorms) 
+- Clear water bottle (empty for security—refill inside) 
+- Light layers (stadium AC can be cold) 
+
+### Semi-Final (July 15, 2026) Special Considerations 
+
+**The Match That Determines a World Cup Finalist** 
+
+The July 15 Semi-Final is Atlanta's most prestigious match—one of only two games that decide who plays for the championship. 
+
+**Expect**: 
+- **Maximum demand**: Highest ticket prices, fullest crowds 
+- **Extended security**: Longer screening times for late-stage matches 
+- **All transportation at capacity**: MARTA running maximum service 
+- **Global attention**: Media from every continent 
+
+**Timeline for Semi-Final**: 
+- Arrive 2-3 hours early (security more extensive) 
+- MARTA will expand service and enhance customer support for major matches 
+- Plan extended celebration time post-match (don't rush to exit) 
+- Book accommodations 6-12 months in advance 
+
+## Money-Saving Transit Options 
+
+### The MARTA Value Proposition 
+
+At $2.50 per ride with stations at the airport AND stadium doorstep, MARTA offers unbeatable value. 
+
+**Sample 7-Day Atlanta Visit** (3 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to downtown hotel**: $2.50 (using pre-purchased Breeze Card) 
+- **Daily exploring** (2-3 MARTA trips per day): $5-7.50 per day × 5 days = $25-37.50 
+- **Three match days to/from stadium**: $2.50 each way × 3 matches = $15 total 
+- **Return to airport**: $2.50 
+- **Initial Breeze Card**: $2 
+
+**7-Day Total**: $47-57.50 in transit 
+
+Compare to ride-share for same trips: $600-900+ 
+
+### Multi-Day Pass Options 
+
+MARTA offers various pass options through Breeze Cards (check [itsmarta.com](https://itsmarta.com) for current offerings): 
+- **7-Day Pass**: Often available for unlimited rides (check current pricing) 
+- **30-Day Pass**: For extended stays 
+- **Reduced Fare**: Seniors 65+, students, persons with disabilities ($1.25 per ride) 
+
+**Senior Travelers**: An individual age 65 or older, resident or non-resident, is eligible for the MARTA Reduced Fare Breeze card—50% discount on every ride. 
+
+### Budget Transportation Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- MARTA for all transportation: $47-57.50 
+- Walking within downtown/Midtown: $0 
+- **Total**: $47-57.50 
+
+**Moderate Budget** (occasional convenience): 
+- MARTA for regular transit: $47-57.50 
+- 2-3 strategic Uber rides: $40-60 
+- **Total**: $87-117.50 
+
+**Premium Budget**: 
+- Private airport transfer: $130 
+- MARTA for stadium trips: $15 
+- Uber for convenience: $100-150 
+- **Total**: $245-295 
+
+**The Atlanta Advantage**: Direct MARTA service from airport to stadium—with stations literally at both doorsteps—creates the most economical major-event transportation in North America.`
+              }</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **MARTA On the Go App** (New in 2026) 
+   - MARTA is implementing a new On the Go app ahead of the World Cup 
+   - Real-time train arrivals 
+   - Trip planning 
+   - Mobile Breeze tickets 
+   - Service alerts 
+
+2. **Breeze Mobile 2.0** 
+   - Download the Breeze Mobile 2.0 app on iOS and Android devices before you head out. With the new app, you can pre-purchase your roundtrip tickets 
+   - Contactless payment via smartphone 
+   - Avoid vending machine lines 
+
+3. **Google Maps** 
+   - Accurate MARTA integration 
+   - Real-time traffic and delays 
+   - Walking directions from stations 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save GWCC/CNN Center Station, hotel addresses 
+   - Pre-book via Uber Reserve if needed 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download Breeze Mobile 2.0 or MARTA On the Go app (spring 2026) 
+- Add credit/debit card for contactless payment 
+- Alternative: Plan to buy Breeze Card at airport vending machines ($2 + fare) 
+- Save Mercedes-Benz Stadium, GWCC/CNN Center Station addresses 
+
+**MARTA Customer Service**: 404-848-5000 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Mercedes-Benz Stadium**: 
+- Full ADA compliance throughout 75,000-seat capacity 
+- The stadium can be expanded to 75,000 seats to host events such as the Super Bowl, or up to 83,000 seats for the NCAA Final Four 
+- Accessible parking, elevators, ramps, seating 
+- Text (470) 444-0234 for in-venue emergencies during events 
+
+**MARTA Accessibility**: 
+- All stations wheelchair accessible with elevators 
+- Level boarding at platforms 
+- Priority seating on trains 
+- Audio/visual announcements 
+- Mobility service available (advanced booking) 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Specific age policies vary; check [itsmarta.com](https://itsmarta.com) 
+- Young children typically ride free with paying adult 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on MARTA; fold during crowded periods 
+- The free bike valet service is provided for Atlanta Falcons games and Atlanta United matches. Service will be available starting two hours before the event and one hour after each event (may extend to World Cup) 
+- Mercedes-Benz Stadium has family restrooms 
+- MARTA journey is short (20-30 minutes)—manageable for children 
+
+**Recommended Family Strategy**: 
+- **To Stadium**: MARTA (kids enjoy trains, stress-free, air-conditioned) 
+- **Around Atlanta**: Combination of MARTA and walking (downtown is family-friendly) 
+- **Backup**: Uber/Lyft if children get tired 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Atlanta to Other Southeastern Host Cities 
+
+**To Miami** (663 miles, 10-11 hours drive): 
+- **Flight**: 2 hours, $150-350 round-trip (only practical option) 
+- Miami hosts 7 matches including Bronze Final 
+
+**To Houston** (780 miles, 11-12 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip 
+- Houston hosts 7 matches 
+
+**To Dallas** (780 miles, 11-12 hours drive): 
+- **Flight**: 2 hours 15 minutes, $200-400 
+- Dallas hosts 9 matches (most of any city) 
+
+**To Philadelphia** (670 miles, 10 hours drive): 
+- **Flight**: 2 hours, $200-400 
+- Philadelphia hosts 6 matches 
+
+**Strategic Multi-City Planning**: 
+Atlanta's Hartsfield-Jackson airport offers direct flights to every World Cup host city. Delta Air Lines operates its largest hub from ATL, providing extensive flight options for multi-city attendance. 
+
+## Critical Transportation Tips 
+
+1. **MARTA is literally at the stadium doorstep**—use it for every match 
+2. **New contactless payment launches spring 2026**—tap credit card/phone at faregates 
+3. **Airport has MARTA inside terminal**—no shuttle to off-site station 
+4. **$2.50 each way beats everything**—cheapest World Cup stadium transport anywhere 
+5. **Post-match: Take MARTA home**—avoid $70-150 surge pricing 
+6. **Download Breeze Mobile 2.0 before arrival**—skip vending machine lines 
+7. **July 15 Semi-Final is prestigious**—book everything 6+ months early 
+8. **Seniors 65+ get 50% discount**—$1.25 per ride instead of $2.50 
+9. **Park-and-ride option exists**—drive to suburban MARTA station, train to stadium 
+10. **Contact MARTA: 404-848-5000**—real humans available for trip planning 
+
+## Your Atlanta World Cup Transportation Plan 
+
+Eight matches. A World Cup Semi-Final. Direct rail service from the world's busiest airport to the stadium's front door. And a brand-new contactless payment system launching just in time for the world's biggest sporting event. 
+
+Atlanta's transportation story is simple: MARTA makes everything easy. While other cities require shuttles, transfers, and complicated park-and-ride systems, Atlanta offers what may be the most straightforward World Cup stadium access in the entire United States. Walk out of the airport terminal. Board a train. Transfer once at Five Points. Exit at GWCC/CNN Center. Walk 3 minutes. You're at the stadium. 
+
+Your winning strategy: Stay anywhere along MARTA's Red, Gold, Blue, or Green Lines. Use MARTA for every stadium trip—it's faster, cheaper, and more reliable than any alternative. Save ride-share for late nights or specific convenience. Embrace the July 15 Semi-Final as a once-in-a-lifetime opportunity to witness one of only two matches that determine the World Cup championship game participants. 
+
+Between matches, explore Atlanta's rich civil rights history, world-class dining scene, BeltLine trail system, and Southern hospitality that welcomes visitors from every nation. The city that hosted the 1996 Olympics, countless Super Bowls, and hundreds of international conventions knows how to welcome the world. 
+
+When that referee's whistle sounds across eight matches from June through July 2026—including the prestigious Semi-Final—you'll be at "Atlanta Stadium" (Mercedes-Benz Stadium during the tournament), having arrived via one of the world's most efficient transportation systems. 
+
+See you in the ATL. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. New Breeze payment system launches spring 2026—verify current status at [itsmarta.com](https://itsmarta.com). For real-time updates, visit [itsmarta.com](https://itsmarta.com) or call MARTA Customer Service: 404-848-5000. FIFA World Cup 2026 information: [fifa.com](https://www.fifa.com).*`
+              }</ReactMarkdown>
+            </div>
+          ) : (slug === 'accessible-transportation-options' || slug === 'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`When Lincoln Financial Field hosts six World Cup 2026 matches—including the spectacular **July 4, 2026 Round of 16 knockout match** coinciding with America's 250th anniversary (Semiquincentennial)—Philadelphia will showcase why FIFA selected it as a host city. The answer is simple: SEPTA's Broad Street Line provides one of the tournament's simplest, most direct stadium connections, with the NRG Station literally steps away from the stadium entrance. 
+
+Here's Philadelphia's game-changing advantage: While locals might grumble about SEPTA, **the Broad Street Line's straight shot from Center City to Lincoln Financial Field is a key reason FIFA picked the city**. No transfers. No complicated connections. No shuttles. Just board the southbound Orange Line [B] from anywhere in Center City, ride to the last stop (NRG Station), and walk 5-10 minutes to the gates. It's that straightforward. 
+
+## Quick Navigation 
+- [Understanding Philadelphia's Transit Advantage](#understanding-philadelphias-transit-advantage) 
+- [Broad Street Line: Direct Stadium Access](#broad-street-line-direct-stadium-access) 
+- [Current SEPTA Fares (December 2024-2025)](#current-septa-fares-december-2024-2025) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Regional Rail & Amtrak Connections](#regional-rail-amtrak-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [July 4 Semiquincentennial Match Strategy](#july-4-semiquincentennial-match-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Philadelphia's Transit Advantage 
+
+### What Makes Philadelphia Transportation Unique 
+
+Philadelphia organizers have made SEPTA a key talking point in their work. While locals in town might not like the Broad Street Line, its straight shot from Center City to Lincoln Financial Field is a key reason FIFA picked the city. 
+
+**The Key Players**: 
+- **SEPTA (Southeastern Pennsylvania Transportation Authority)**: Operates Broad Street Line (subway), Market-Frankford Line, trolleys, buses, and Regional Rail 
+- **Broad Street Line Orange [B]**: Direct service from downtown to NRG Station (stadium stop) 
+- **Amtrak**: 30th Street Station connects to regional and national rail 
+- **Lincoln Financial Field**: Located at 1020 Pattison Avenue in South Philadelphia Sports Complex 
+
+### Six Matches Including July 4 Knockout 
+
+Philadelphia hosts 6 matches during the 2026 FIFA World Cup: 
+
+- **Match 9**: Saturday, June 14, 2026 — Group Stage 
+- **Group Stage**: Four additional matches (June 15-27) 
+- **Round of 16**: **Saturday, July 4, 2026** — The big one 
+
+The July 4 match coincides with the 250th anniversary of the signing of the Declaration of Independence (Semiquincentennial). It's going to be an absolute spectacle. Philadelphia organizers are planning for this match to combine America's birthday celebration with World Cup knockout drama in the birthplace of American democracy. 
+
+### Strategic Position Near New York/New Jersey 
+
+Lincoln Financial Field and MetLife Stadium are the closest stadiums of any in the tournament. Philadelphia's host committee chair Meg Kane emphasized: "Philadelphia offers a unique value proposition to the fans of so many teams, [including] for the two teams that will qualify for the final. Because of our Fan Fest being open through the end of the tournament, [and] the fact that Philadelphia, from a cost perspective, may be more cost-effective for fans to stay [in] and to be part of that celebration. And certainly, it can be easier to access MetLife Stadium from the south than it is to come through the tunnels in New York." 
+
+**Strategic Tip**: Attending the World Cup Final at MetLife Stadium on July 19? Consider staying in Philadelphia for better value and easier access. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Lincoln Financial Field will be called **"Philadelphia Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## Broad Street Line: Direct Stadium Access 
+
+### Your Primary Transportation Solution 
+
+SEPTA's Broad Street Line Orange [B] provides **direct, no-transfer service** from Center City Philadelphia to NRG Station, the last stop on the line. 
+
+**The Route**: Fern Rock Transportation Center (north) ↔ Center City ↔ NRG Station (Lincoln Financial Field) 
+
+**Key Stations in Center City**: 
+- City Hall Station 
+- Walnut-Locust Station 
+- Lombard-South Station 
+- Ellsworth-Federal Station 
+
+**Operating Hours**: 
+- Monday-Friday: First trains ~5:00 AM, last trains ~midnight 
+- Saturday-Sunday: First trains ~5:30 AM, last trains ~midnight 
+- **World Cup Enhancement**: Extended hours for match days (late-finishing matches accommodated) 
+
+**Frequency**: 
+- Rush hour (Mon-Fri 6-9 AM, 4-7 PM): Every 5-8 minutes 
+- Midday/Evening: Every 10-15 minutes 
+- **Match Days**: Express trains added (June 2025 FIFA Club World Cup proved this model) 
+
+### NRG Station to Lincoln Financial Field 
+
+**Distance**: 10-minute walk  
+**Route**: Exit NRG Station, walk north on Broad Street, follow crowd toward stadium 
+
+The quickest way to reach Lincoln Financial Field involves taking SEPTA's Broad Street Line southbound to the Pattison Avenue station, the last stop on the line. This station places fans just steps away from the stadium entrance. 
+
+### 2025 FIFA Club World Cup: The Dress Rehearsal 
+
+SEPTA is offering extra service on the Broad Street Line [B] to help fans get to the FIFA Club World Cup matches in June 2025. This tournament serves as Philadelphia's World Cup preparation, testing expanded service and operations. 
+
+**Proven Express Service Model**: 
+- Express trains depart Fern Rock Transit Center every 10 minutes during peak arrival times 
+- Extended B2 service to NRG Station for late-finishing matches 
+- This same model will expand for 2026 World Cup 
+
+## Current SEPTA Fares (December 2024-2025) 
+
+### Important Fare Updates 
+
+SEPTA implemented fare increases in December 2024 and January 2025 due to budget shortfalls. Here's what you need to know: 
+
+**Current Broad Street Line & Market-Frankford Line Fares** (as of December 1, 2024): 
+- **SEPTA Key Card**: $2.50 per ride 
+- **Contactless Payment** (credit/debit card tap): $2.50 per ride 
+- **Cash/Quick Trip**: $2.50 per ride 
+
+**Note**: SEPTA eliminated the discount for Key Card users on December 1, 2024. All payment methods now cost the same: $2.50. 
+
+**Free Transfers**: 
+- Riders using a SEPTA Key card or Contactless payment with their credit or debit card can make up to two transfers for free 
+- These transfers must be made within 2 hours of their first tap 
+- You must use the same card for all segments of your trip to receive free transfers 
+- Cash or Quick Trip riders are NOT eligible for free transfers 
+
+### SEPTA Key Card 
+
+**Cost**: $4.95 to purchase (refunded if you register at [septakey.org](https://www.septakey.org))  
+**How It Works**: Reloadable contactless chip card for all SEPTA services  
+**Where to Buy**: Fare kiosks at stations, select retail locations, online at [septakey.org](https://www.septakey.org) 
+
+**Travel Wallet**: Load money onto card, pay as you go ($2.50 per ride deducted automatically) 
+
+### Contactless Payment (Recommended for Visitors) 
+
+**The Easiest Option**: Simply tap your credit card, debit card, Apple Pay, Google Pay, or Samsung Pay at the faregate. 
+
+**Benefits**: 
+- No need to buy SEPTA Key Card 
+- Same price as Key Card ($2.50) 
+- Up to 2 free transfers within 2 hours 
+- Works exactly like Key Card 
+
+### Multi-Day Passes 
+
+**Weekly TransPass**: $25.50 (unlimited rides Monday 12:01 AM through Monday 2:00 AM)  
+**Monthly TransPass**: $96 (unlimited rides first day of month through first day of next month) 
+
+**When Passes Make Sense**: 
+- Weekly Pass pays for itself after 11 rides ($2.50 × 11 = $27.50) 
+- Monthly Pass pays for itself after 39 rides ($2.50 × 39 = $97.50) 
+
+**For World Cup Visitors**: If attending multiple matches and exploring Philadelphia extensively, Weekly Pass offers excellent value. 
+
+### Children & Seniors 
+
+**Children under 12**: Ride FREE with fare-paying adult  
+**Seniors 65+**: Ride FREE with valid SEPTA Senior Fare card (Pennsylvania residents) 
+
+## Airport to Stadium Connections 
+
+### Philadelphia International Airport (PHL) 
+
+**Distance to Lincoln Financial Field**: 7 miles  
+**Distance to Center City**: 8 miles  
+**Best For**: All visitors—major international gateway 
+
+PHL ranks among America's top airports for international connectivity, making it a primary arrival point for World Cup visitors. 
+
+**Option 1: Airport Line to Broad Street Line** (Best Value) 
+
+**Total Time**: 45-60 minutes  
+**Total Cost**: $5 (Airport Line) + $2.50 (Broad Street Line) = $7.50 
+
+**The Route**: 
+1. **From any PHL terminal**: Follow "SEPTA" signs to underground station (inside airport) 
+2. **Board Airport Line Regional Rail**: Any train goes to Center City (trains every 30 minutes) 
+3. **Exit at Suburban Station or Jefferson Station** (both in Center City, approximately 25 minutes from airport) 
+4. **Walk to nearest Broad Street Line station**: 
+   - From Suburban Station: Walk to City Hall Broad Street Line station (5 minutes) 
+   - From Jefferson Station: Walk to City Hall station (7 minutes) 
+5. **Board Broad Street Line Orange [B] southbound**: Toward NRG Station 
+6. **Exit at NRG Station** (last stop, approximately 15 minutes from Center City) 
+7. **Walk to stadium** (10 minutes) 
+
+**Airport Line Fares**: 
+- SEPTA Key/Contactless to Center City: $5.00 
+- Quick Trip/On-board: $7.00 
+- All children under age 12 ride free with a fare-paying adult 
+
+**Why This Is Best**: 
+- Cheapest option ($7.50 total) 
+- Predictable timing (no traffic) 
+- Direct connection (one transfer at Center City) 
+- Station inside airport terminal 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: 
+- PHL to Lincoln Financial Field: $20-30 (normal pricing) 
+- Match-day surge: $40-70+ possible 
+
+**Time**: 15-25 minutes (no traffic); 30-50 minutes (typical/event traffic) 
+
+**When This Makes Sense**: Groups of 3-4 with luggage, late arrivals. 
+
+**Option 3: Private Airport Transfer** (Premium) 
+
+**Cost**: $70-110 pre-booked sedan; $130-180 SUV  
+**Best For**: Groups of 5-6, VIP service 
+
+Services like Welcome Pickups, Jayride, and King Transportation offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual transit: $7.50 per person × 5 = $37.50 total 
+- Shared SUV transfer: $130 ÷ 5 = $26 per person (competitive with extra convenience) 
+
+## Regional Rail & Amtrak Connections 
+
+### Amtrak 30th Street Station 
+
+Philadelphia's 30th Street Station ranks among America's most beautiful train stations and serves as a major Amtrak hub. 
+
+**Connections from 30th Street Station to Stadium**: 
+1. Take SEPTA Regional Rail or Market-Frankford Line to Center City 
+2. Transfer to Broad Street Line at City Hall 
+3. Board southbound to NRG Station 
+
+**OR**: 
+1. Take SEPTA Bus Route 4 directly from 30th Street Station area toward Sports Complex (longer but no transfers) 
+
+### SEPTA Regional Rail 
+
+Regional Rail connects suburban Philadelphia and surrounding counties to Center City. Visitors can take trains to Suburban Station, then transfer to the Broad Street Line. 
+
+**Key Regional Rail Lines**: 
+- Airport Line (from PHL) 
+- West Trenton Line (from New Jersey) 
+- Warminster, Lansdale, etc. (from suburbs) 
+
+**Regional Rail to Stadium Strategy**: 
+1. Board Regional Rail to Suburban Station or Jefferson Station 
+2. Walk to Broad Street Line City Hall Station 
+3. Board southbound to NRG Station 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Philadelphia with designated zones near Lincoln Financial Field. 
+
+**Typical Fares** (Non-Event Pricing): 
+- PHL Airport to stadium: $20-30 
+- Center City to stadium: $12-20 
+- 30th Street Station to stadium: $15-25 
+
+**World Cup Match-Day Pricing**: 
+
+Mercedes-Benz Stadium is at the heart of the Club World Cup experience and that means traffic in and around the downtown area is heavy. Road closures, redirected lanes, and high pedestrian volume are all in effect during game times. 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off zone: Standard Rideshare Zone located on Northside Drive (specifics TBD for World Cup) 
+- Approximately 10-minute walk from drop-off to some stadium entrances 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From stadium to Center City: $30-60+ typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airport to Center City hotel if desired 
+- For stadium trips, strongly consider Broad Street Line (faster, cheaper, no traffic) 
+
+**For Stadium Drop-Off**: 
+- Designated rideshare zones will be announced (check [lincolnfinancialfield.com](https://www.lincolnfinancialfield.com)) 
+- Arrive 2+ hours before kickoff to avoid worst congestion 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take Broad Street Line back 
+- Walk to NRG Station (10 minutes) 
+- Board Broad Street Line northbound toward Fern Rock 
+- $2.50 fare vs. $30-60+ surge ride-share 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Walk to alternative pickup location 
+- In the event of extended wait times, the closest SEPTA station for expedited departure is Pattison Avenue Station (NRG Station alternate name) 
+- Walk to nearby hotels on Pattison Avenue 
+- Request pickup there (less congestion, potentially lower surge) 
+
+## Driving & Parking 
+
+### Should You Drive to Lincoln Financial Field? 
+
+**Short Answer**: Not recommended unless traveling from distant suburbs with 4+ people. 
+
+One thing we did notice over in Qatar [is] what they really wanted to focus on was having people not drive to the venues. 
+
+**Parking Reality**: 
+
+Lincoln Financial Field sits within the South Philadelphia Sports Complex, with extensive surface lots surrounding the venue. Official maps list public and reserved lots by letter (A/B/G/H, C/D, FDR, M/N, P, Q, R/W/X, T/S, U/V), plus reserved J, K, and L areas. 
+
+**World Cup Parking Costs** (Expected): 
+- Event-rate pricing varies by event type 
+- Expect $40-75+ for World Cup matches (based on major event precedent) 
+- Post-event exit times: 60-90 minutes following police-directed egress patterns 
+
+### Expanded Security Perimeter 
+
+The most visible difference from how things usually are probably will be the ticketing perimeter around the stadium. It won't just be the fences as fans know them now, it will be much bigger. 
+
+**Expected Changes**: 
+- Security perimeter expands to Pattison Avenue (north side) 
+- Across 11th Street into Wells Fargo Center parking lots (west side) 
+- K parking lots north of main entrance sealed off 
+- 11th Street likely closed to public on match days (usually open for Eagles games) 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **Lincoln Financial Field Official Lots**: 
+   - Book through [lincolnfinancialfield.com](https://www.lincolnfinancialfield.com) or [Ticketmaster](https://www.ticketmaster.com) once available 
+   - Advance reservation strongly recommended (FIFA events often sell out) 
+   - ADA guests: Designated drop-off zones in Lot L (Darien Street) and Lot J (11th Street) 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 15-25% below game-day rates 
+   - Commercial lots within 15-minute walk 
+
+3. **Park-and-Ride Strategy**: 
+   - Park at suburban SEPTA Regional Rail station 
+   - Take train to Suburban Station, transfer to Broad Street Line 
+   - Avoid downtown parking and stadium congestion entirely 
+
+## July 4 Semiquincentennial Match Strategy 
+
+### The Most Spectacular Match 
+
+The biggest FIFA World Cup game in Philadelphia is likely the Round of 16 showdown set for July 4, 2026. 
+
+This match combines: 
+- **America's 250th birthday** (Semiquincentennial celebration) 
+- **World Cup knockout drama** (elimination match) 
+- **Philadelphia's historic role** (birthplace of American independence) 
+
+"We go big or we go home," said Philadelphia Representative Jazelle Jones. This match will be part of the sports world focusing on Philadelphia during the nation's semiquincentennial. 
+
+### Expected Impact 
+
+Each match will need about 26,000 "room nights" to accommodate everyone expected to flock toward the action. The July 4 match will likely exceed this significantly. 
+
+**What to Expect**: 
+- **Maximum crowds**: Highest attendance of Philadelphia's six matches 
+- **Extended celebrations**: Wawa Welcome America festival (16 days of free events celebrating freedom and liberty) 
+- **All transportation at capacity**: SEPTA running maximum service 
+- **Security extensive**: Late-stage knockout match protocols 
+- **Global attention**: Media from every continent 
+
+### Timeline for July 4 Match 
+
+**Plan Ahead**: 
+- Book accommodations 6-12 months in advance 
+- Arrive at stadium 2-3 hours early (security more extensive + crowds) 
+- SEPTA will run express trains and extended service 
+- Consider staying in Philadelphia for post-match celebrations 
+- Independence Hall, Liberty Bell area will have massive crowds 
+
+**Transportation Strategy**: 
+- Use Broad Street Line (expanded service for July 4) 
+- Avoid driving (parking will sell out, traffic severe) 
+- Book any private transfers months in advance 
+- Allow extra time for everything (security, crowds, celebrations) 
+
+## Money-Saving Transit Options 
+
+### The SEPTA Value Proposition 
+
+At $2.50 per ride with direct Broad Street Line service from Center City to stadium, SEPTA offers exceptional value. 
+
+**Sample 7-Day Philadelphia Visit** (3 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to Center City**: $5 (Airport Line) 
+- **Center City to hotel**: $2.50 (first Broad Street Line trip) = $7.50 arrival total 
+- **Three match days to/from stadium**: $2.50 each way × 3 matches = $15 total 
+- **Daily exploring Center City** (2-3 trips per day): $5-7.50 per day × 4 non-match days = $20-30 
+- **Return to airport**: $7.50 
+
+**7-Day Total**: $50-60 in transit 
+
+**Alternative with Weekly Pass**: $25.50 (unlimited rides) + $5 (airport arrival) + $5 (airport departure) = $35.50 total 
+
+Compare to ride-share for same trips: $500-700+ 
+
+### Weekly Pass Strategy 
+
+If attending 2+ matches and exploring extensively, the Weekly TransPass ($25.50) pays for itself after 11 rides. 
+
+**Break-Even Calculation**: 
+- Weekly Pass: $25.50 
+- Individual rides: $2.50 each 
+- Break-even: 11 rides 
+- Typical 7-day visit: 15-20+ rides easily 
+
+**Plus Airport Fare**: Weekly Pass doesn't include Regional Rail, so airport trips ($5 each way) are separate. Still cheaper than individual fares for active visitors.`
+              }</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`### Budget Transportation Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- Weekly TransPass: $25.50 
+- Airport Line (2 trips): $10 
+- **Total**: $35.50 
+
+**Moderate Budget** (occasional convenience): 
+- Weekly TransPass: $25.50 
+- Airport transfers: $10 
+- 2 strategic Uber rides: $30-40 
+- **Total**: $65.50-75.50 
+
+**Premium Budget**: 
+- Private airport transfer: $140 
+- Broad Street Line for stadium (3 matches): $15 
+- Uber for convenience: $100-150 
+- **Total**: $255-305 
+
+**The Philadelphia Advantage**: Direct Broad Street Line with no transfers required—simplest major-event transportation in the Northeast. 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **SEPTA App** (Official) 
+   - Real-time train arrivals 
+   - Trip planning 
+   - Purchase mobile tickets 
+   - Service alerts 
+   - Free download 
+
+2. **SEPTA Key App** 
+   - Manage SEPTA Key Card balance 
+   - Load Travel Wallet remotely 
+   - Register card for protection 
+
+3. **Google Maps** 
+   - Accurate SEPTA integration 
+   - Real-time delays 
+   - Walking directions from stations 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save NRG Station, Lincoln Financial Field, hotel addresses 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Plan to use contactless payment (credit card, Apple/Google Pay) at faregates—simplest option 
+- Alternative: Buy SEPTA Key Card at airport ($4.95, refunded if registered) 
+- Download SEPTA app for real-time updates 
+- Save Lincoln Financial Field, NRG Station addresses 
+
+**SEPTA Customer Service**: (215) 580-7800 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Lincoln Financial Field**: 
+- 685 wheelchair-accessible seats throughout venue 
+- Accessible parking in Lots L (Darien Street) and J (11th Street) 
+- Elevators, ramps, accessible restrooms 
+- Text (470) 444-0234 for in-venue emergencies (number may change for World Cup) 
+
+**Broad Street Line**: 
+- Most stations wheelchair accessible with elevators 
+- Level boarding at platforms 
+- Priority seating on trains 
+- Audio/visual announcements 
+
+**SEPTA Access** (Paratransit): 
+- Service for individuals with disabilities 
+- Advanced booking required 
+- Learn more: [septa.org/access](https://www.septa.org/access) 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Children under 12 ride FREE with fare-paying adult (up to 3 children per adult) 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on Broad Street Line; fold during crowded periods 
+- Lincoln Financial Field has family restrooms 
+- Journey from Center City to stadium: 15 minutes (manageable for children) 
+- No food service on SEPTA trains—pack snacks 
+
+**Recommended Family Strategy**: 
+- Use Broad Street Line for all stadium trips (kids enjoy train rides, stress-free) 
+- Stay in Center City near Broad Street Line stations 
+- Visit Independence Hall, Liberty Bell between matches (walking distance from Center City hotels) 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Philadelphia's Strategic Position 
+
+Philadelphia offers a unique value proposition to the fans of so many teams, [including] for the two teams that will qualify for the final. Because of our Fan Fest being open through the end of the tournament, [and] the fact that Philadelphia, from a cost perspective, may be more cost-effective for fans to stay [in] and to be part of that celebration. And certainly, it can be easier to access MetLife Stadium from the south than it is to come through the tunnels in New York. 
+
+### To New York/New Jersey (MetLife Stadium Final) 
+
+**Distance**: 95 miles  
+**World Cup Final**: July 19, 2026 at MetLife Stadium 
+
+**By Amtrak**: 
+- 30th Street Station to New York Penn Station 
+- Journey time: 1 hour 15 minutes 
+- Cost: $50-120 depending on train type 
+- Most convenient option 
+
+**By NJ Transit**: 
+- SEPTA to Trenton, transfer to NJ Transit 
+- Journey time: 2-2.5 hours 
+- Cost: $25-35 
+- Budget option 
+
+**Strategic Advantage**: Stay in Philadelphia for better hotel rates, use Amtrak for Final day trip. 
+
+### To Other East Coast Host Cities 
+
+**To Boston** (Gillette Stadium, 4 matches): 
+- Amtrak: 5-6 hours, $80-200 
+- Flight: 1.5 hours, $150-300 
+
+**To Atlanta** (Mercedes-Benz Stadium, 8 matches including Semi-Final): 
+- Flight: 2 hours, $200-400 (only practical option) 
+
+**To Miami** (Hard Rock Stadium, 7 matches): 
+- Flight: 3 hours, $200-450 
+
+## Critical Transportation Tips 
+
+1. **Broad Street Line is FIFA's reason for picking Philadelphia**—use it for every match 
+2. **NRG Station is the last stop**—can't miss it, literally end of the line 
+3. **No transfers required from Center City**—simplest connection of any host city 
+4. **$2.50 each way beats everything**—cheapest major-event transportation 
+5. **Contactless payment works**—just tap credit card at faregate (no Key Card needed) 
+6. **July 4 match is historic**—Semiquincentennial + World Cup knockout, book early 
+7. **Weekly Pass pays off after 11 rides**—$25.50 for unlimited travel 
+8. **Parking will sell out and exit takes 90+ minutes**—take transit instead 
+9. **Security perimeter expanding**—arrive earlier than normal Eagles games 
+10. **Contact SEPTA: (215) 580-7800**—real humans available for trip planning 
+
+## Your Philadelphia World Cup Transportation Plan 
+
+Six matches. July 4 Semiquincentennial spectacular. Direct subway service that impressed FIFA enough to award matches. And the simplest stadium access in the Northeast Corridor. 
+
+Philadelphia's transportation story is refreshingly straightforward: The Broad Street Line makes everything easy. While other cities require transfers, shuttles, or complicated systems, Philadelphia offers a straight shot from Center City to the stadium doorstep. This simplicity—combined with Philadelphia's 250th birthday celebration and proximity to the World Cup Final—positions the city as an ideal base for multi-match attendance. 
+
+Your winning strategy: Stay in Center City Philadelphia along the Broad Street Line. Use the Orange Line [B] for every stadium trip—no transfers, no traffic, no stress. Save ride-share for late nights or airports. Embrace the July 4 match as a once-in-250-years combination of American patriotism and World Cup knockout drama in the birthplace of the United States. 
+
+Between matches, explore Independence Hall, Liberty Bell, Reading Terminal Market, Philadelphia Museum of Art, and the nation's most historic square mile. The city that gave birth to American democracy welcomes the world's game. 
+
+When that referee's whistle sounds across six matches from June through the July 4 spectacular, you'll be at "Philadelphia Stadium" (Lincoln Financial Field during the tournament)—having arrived via one of the tournament's simplest, most reliable transportation systems. 
+
+See you in the City of Brotherly Love. 
+
+--- 
+
+*Information current as of November 2025. Fares reflect December 2024 changes ($2.50 base fare). SEPTA Key 2.0 system planned for 2027 rollout—no wholesale changes expected before World Cup concludes. Verify details at [septa.org](https://www.septa.org) or call (215) 580-7800. FIFA World Cup 2026 information: [fifa.com](https://www.fifa.com).*`
+              }</ReactMarkdown>
+            </div>
+          ) : (slug === 'seattle-world-cup-2026-your-complete-transportation-guide-to-lumen-field' || slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`When Lumen Field hosts six World Cup 2026 matches between June 15 and July 6, Seattle will demonstrate why it's one of North America's premier soccer cities. With 750,000 visitors expected across just three weeks, and an economic impact approaching $1 billion, Seattle's transportation goal is ambitious but achievable: **80% of fans arriving by transit, foot, or bike—no car access**. 
+
+Here's Seattle's game-changing advantage: Link Light Rail provides direct service to Stadium Station, just steps from Lumen Field's gates. Sound Transit is testing trains across the floating I-90 bridge for 2 Line service from Bellevue and Redmond. The Federal Way extension opens early 2026. And the city is transforming downtown with pedestrian routes connecting the Fan Fest at Seattle Center to the stadium via the revitalized waterfront. Seattle isn't just hosting the World Cup—it's reimagining urban transportation for the world's biggest sporting event. 
+
+## Quick Navigation 
+- [Understanding Seattle's 80% Transit Goal](#understanding-seattles-80-transit-goal) 
+- [Link Light Rail: Direct Stadium Access](#link-light-rail-direct-stadium-access) 
+- [2025 FIFA Club World Cup Testing](#2025-fifa-club-world-cup-testing) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Sounder Trains & Special Service](#sounder-trains-special-service) 
+- [King County Metro & Water Taxi](#king-county-metro-water-taxi) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking Reality](#driving-parking-reality) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Seattle's 80% Transit Goal 
+
+### What Makes Seattle Transportation Unique 
+
+"Our goal is to have 80% of our attendees to these games to be on alternate mode and no car access, which means it's walking by foot, it's access to transit, it's making sure that regionally, Link Light Rail and then the Sounders train are bringing people in," said Adiam Emery, Seattle Department of Transportation's interim director. 
+
+**The Vision**: 
+- **80% transit/walk/bike**: Most ambitious car-free goal of any host city 
+- **Pedestrian route**: Seattle Center Fan Fest → Waterfront → Lumen Field 
+- **Construction paused**: SDOT pausing work during World Cup 
+- **Road closures**: Downtown more pedestrian-friendly during matches 
+- **Seamless transfers**: "Bus to train to train to bus, from bus to the ferry or water taxi" 
+
+### Six Matches, 750,000 Visitors, $929M Impact 
+
+Seattle hosts 6 World Cup matches over 22 days: 
+- **June 15, 2026** — First match 
+- **Five additional matches** through **July 6, 2026** 
+- **750,000 regional visitors** projected 
+- **$929 million economic impact** for King County 
+- **$100M+ direct state/local tax revenue** 
+- **20,762 jobs** supported 
+
+### Washington State Funding: $45 Million 
+
+Lawmakers approved $45 million for World Cup preparations: 
+- **$19.4M**: Lumen Field upgrades (security, field size, media space) 
+- **$9M**: Transit agency grants (increased frequency, cleaning, operations) 
+- **$2.75M**: Security and safety grants 
+- **Ferry operations**: Additional crews, sailings, terminal improvements 
+- **SR-99 tunnel maintenance**: Traffic flow improvements 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Lumen Field will be called **"Seattle Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## Link Light Rail: Direct Stadium Access 
+
+### Your Primary Transportation Solution 
+
+Sound Transit's Link Light Rail provides **direct service to Stadium Station**, located just steps from Lumen Field. 
+
+**Stadium Station**: 
+- Exit station, walk 5 minutes to Lumen Field gates 
+- Part of 1 Line (formerly Red/Blue) 
+- Direct connections from SeaTac Airport, downtown, north Seattle 
+
+**Alternative: International District/Chinatown Station**: 
+- 10-minute walk to stadium 
+- Sound Transit partnering with Chinatown-ID Business Improvement Area to host game-day info booths before all six matches 
+
+**Pioneer Square Station**: 
+- 12-minute walk through historic Pioneer Square 
+- Alliance for Pioneer Square hosting info booths on match days 
+
+### Current Link Light Rail Fares (August 2024) 
+
+Sound Transit implemented **flat $3 fares** starting August 30, 2024, replacing distance-based pricing. 
+
+**Regular Adult Fare**: $3.00 (flat rate, any distance)  
+**ORCA LIFT** (low-income): $1.00  
+**Seniors/Disabled**: $1.00  
+**Youth 18 and under**: FREE 
+
+**ORCA Day Pass**: $6.00 (promotional pricing through 2026)  
+**Reduced Day Pass**: $2.00 (ORCA LIFT) 
+
+**No Tap-Off Required**: With flat fares, riders no longer need to tap off when exiting Link Light Rail (exception: Sounder trains still require tap-off). 
+
+### Link Light Rail Network Expansion 
+
+**By World Cup 2026, Seattle will have unprecedented transit access**: 
+
+**1 Line** (Current): 
+- **Lynnwood to Federal Way** via downtown Seattle 
+- Lynnwood extension opened August 2024 
+- **Federal Way extension**: Opens early 2026 (ahead of World Cup) 
+- SeaTac Airport access included 
+
+**2 Line** (Opening 2025): 
+- **Downtown Seattle ↔ Bellevue ↔ Redmond** 
+- Crosses Lake Washington via **I-90 floating bridge** (world's first floating bridge rail) 
+- "The plan is to open that prior to the World Cup," said David Jackson, Sound Transit's public information officer 
+- Opens access from entire Eastside region 
+
+**Operating Hours**: 
+- Weekdays: ~5:00 AM - 1:00 AM 
+- Weekend: Continuous service 
+- Frequency: Every 6-15 minutes (more frequent during peak/match times) 
+
+### World Cup Service Enhancements 
+
+Sound Transit confirms: 
+- **Additional Link service** to support post-match travel 
+- **Extended hours** for late-finishing matches 
+- **Increased frequency** during peak arrival/departure times 
+- **Enhanced wayfinding**: Directional signs showing distance in miles AND kilometers 
+- **Game-day events at stations**: Info booths, wayfinding assistance, community partnerships 
+
+## 2025 FIFA Club World Cup Testing 
+
+### Seattle's Dress Rehearsal (June 2025) 
+
+Seattle hosts **six FIFA Club World Cup matches in June 2025** at Lumen Field—a complete dress rehearsal for 2026. 
+
+**What's Being Tested**: 
+- **Special Sounder weekday service**: Piloting game trains outside normal commute hours 
+- **Game-day station events**: Info booths at International District/Chinatown and Occidental Square 
+- **Enhanced wayfinding signage**: Testing directional signs for 2026 deployment 
+- **Seamless regional coordination**: All transit agencies working together 
+- **Crowd management**: 100,000-150,000 visitors over 10 days 
+
+**Why This Matters**: Sound Transit and partners are using the 2025 tournament to refine operations, test new services, and gather feedback before the much larger 2026 World Cup. 
+
+"Sound Transit staff have also been attending conferences to gather best practices and lessons learned from other cities that have hosted recent major events, like the 2024 Paris Olympic Games and FIFA World Cup Qatar 2022." 
+
+## Airport to Stadium Connections 
+
+### Seattle-Tacoma International Airport (SEA) 
+
+**Distance to Lumen Field**: 13 miles  
+**Distance to Downtown**: 13 miles  
+**Best For**: All visitors—Pacific Northwest's primary airport 
+
+SeaTac Airport serves as the main gateway for World Cup visitors. 
+
+**Option 1: Link Light Rail Direct** (Best Value & Convenience) 
+
+**Total Time**: 50-60 minutes  
+**Total Cost**: $3.00 
+
+**The Route**: 
+1. **From any SEA terminal**: Follow "Link Light Rail" signs 
+2. **Take elevator/escalator to 4th floor**: Parking garage level 
+3. **Cross skybridge**: To SeaTac/Airport Station 
+4. **Board 1 Line northbound**: Toward Lynnwood 
+5. **Exit at Stadium Station**: 5-minute walk to Lumen Field 
+6. **Journey time**: ~38 minutes to downtown, ~45-50 minutes to Stadium Station 
+
+**Why This Is Best**: 
+- Cheapest option ($3) 
+- Predictable timing (no traffic) 
+- No transfers required 
+- Runs frequently (every 6-15 minutes) 
+- Direct to stadium doorstep 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: 
+- SEA to Lumen Field: $35-50 (normal pricing) 
+- Match-day surge: $70-120+ possible 
+
+**Time**: 20-30 minutes (no traffic); 40-70 minutes (typical/event traffic) 
+
+**When This Makes Sense**: Groups of 3-4 with luggage, late arrivals when Link isn't running. 
+
+**Option 3: Private Airport Transfer** (Premium) 
+
+**Cost**: $80-130 pre-booked sedan; $150-200 SUV  
+**Best For**: Groups of 5-6, VIP service, guaranteed fixed pricing 
+
+Services like Welcome Pickups, Jayride, and Premier Airport Shuttle offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual Link: $3 per person × 5 = $15 total (unbeatable) 
+- Shared SUV transfer: $150 ÷ 5 = $30 per person (premium convenience) 
+
+## Sounder Trains & Special Service 
+
+### Commuter Rail for Regional Access 
+
+Sounder trains provide regional connections to Lumen Field via **King Street Station** (3 blocks from stadium). 
+
+**Two Lines**: 
+- **N Line**: Everett ↔ Seattle (Snohomish County) 
+- **S Line**: Lakewood ↔ Seattle (Pierce County) 
+
+**Regular Schedule**: Monday-Friday commute hours only 
+
+**World Cup Special Service**: 
+Sound Transit is piloting **special game trains on weekdays** for the 2025 Club World Cup, with expanded service for 2026. 
+
+"This summer we'll be piloting special game trains on weekdays as well. This will mean a few schedule tweaks on both the N Line, between Everett and Seattle, and the S Line, between Lakewood and Seattle." 
+
+**Sounder Fares**: 
+- **Flat fare**: $2.00 (regardless of distance, starting 2024) 
+- **Day pass**: $4.00 
+- **Remember**: Tap on AND tap off with ORCA card 
+
+**When to Use Sounder**: 
+- Coming from Everett, Edmonds, Mukilteo (North) 
+- Coming from Tacoma, Lakewood, Puyallup (South) 
+- Match-day special service announced closer to tournament 
+
+## King County Metro & Water Taxi 
+
+### Bus Connections 
+
+King County Metro operates extensive bus service to Lumen Field area. 
+
+**Key Routes**: 
+- **Route 21**: Connects downtown to stadium area 
+- **Route 101**: Express service 
+- **Route 150**: Connects south King County 
+- **RapidRide D Line**: Ballard to downtown 
+- **RapidRide E Line**: Aurora corridor 
+
+**Match-Day Service**: "Metro will also deploy additional buses to help fans get home after the match. There will be more service to support post-match rides south, north and east." 
+
+**Metro Fares**: 
+- **Adult**: $2.75 
+- **Youth**: $1.50 
+- **Seniors/Disabled**: $1.00 
+
+### Water Taxi (Unique Seattle Option) 
+
+**West Seattle Water Taxi** provides special post-match service for select evening matches. 
+
+**Route**: Pier 50 (near stadium) → West Seattle  
+**Fares**: $5.75 one-way ($5.00 with ORCA card)  
+**Match-Day Service**: Special sailings after evening matches (times announced per match) 
+
+During 2025 Club World Cup: "The King County Water Taxi will have special post-match service to West Seattle from Pier 50 for these two night matches." 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate throughout Seattle with designated pickup/drop-off zones near Lumen Field. 
+
+**Typical Fares** (Non-Event Pricing): 
+- SEA Airport to Lumen Field: $35-50 
+- Downtown to Lumen Field: $12-20 
+- Capitol Hill to Lumen Field: $15-25 
+
+**World Cup Match-Day Pricing**: 
+
+"Traffic in and around the downtown area is heavy. Road closures, redirected lanes, and high pedestrian volume are all in effect during game times." 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- **Drop-off locations**: 
+  - **North**: King St & Occidental 
+  - **South**: Royal Brougham & Occidental 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From stadium to downtown: $35-70+ typical post-match cost 
+- From stadium to airport: $70-150+ with surge 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Consider ride-share from airport to downtown hotel, then Link to stadium 
+- Pre-book Uber Reserve for guaranteed pickup 
+- Drop at Stadium or International District/Chinatown stations 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take Link Light Rail back 
+- Walk to Stadium Station (5 minutes) 
+- Board 1 Line toward SeaTac/Federal Way or Lynnwood 
+- $3 fare vs. $35-70+ surge ride-share 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Walk to alternative pickup location 
+- Walk 10-15 minutes to Pioneer Square or downtown 
+- Request pickup there (less congestion, lower surge) 
+- Explore bars/restaurants while surge normalizes 
+
+## Driving & Parking Reality 
+
+### Should You Drive to Lumen Field? 
+
+**Short Answer for World Cup**: NO. Seattle's 80% transit goal means limited parking. 
+
+"One thing we did notice over in Qatar [is] what they really wanted to focus on was having people not drive to the venues." 
+
+**Parking Reality**: 
+
+Lumen Field has two primary facilities: 
+- **Lumen Field Parking Garage**: South, attached to Event Center 
+- **North Lot**: North of stadium (oversized vehicles only) 
+
+**World Cup Parking Challenges**: 
+- On-site parking limited and often pre-sold 
+- **Not guaranteed without pre-purchase** 
+- Opens 6:00 AM event days, closes 2 hours post-event 
+- EV charging available but limited 
+- Post-event exit times: 60-90 minutes minimum 
+
+**Expected Costs**: $40-75+ (based on major event precedent) 
+
+### If You Must Drive 
+
+**Recommended Strategy: Park-and-Ride** 
+
+Sound Transit offers **free parking at multiple Link stations**: 
+- **Northgate Station**: Large lot, north Seattle 
+- **Angle Lake Station**: South end, large capacity 
+- **Tukwila International Blvd**: Between airport and stadium 
+
+**How It Works**: 
+1. Park at Link station (free for 24 hours) 
+2. Take Link to Stadium Station ($3 each way) 
+3. Return to your car after match (avoid stadium parking congestion) 
+4. Best of both worlds: drive partway, avoid downtown traffic 
+
+**Check**: [soundtransit.org](https://soundtransit.org) for park-and-ride availability and restrictions 
+
+## Match-Day Transportation Strategy 
+
+### Timing Your Journey 
+
+**For Afternoon/Early Evening Matches**: 
+
+**Departing from Downtown Hotels**: 
+- Leave hotel: 90 minutes before kickoff 
+- Walk to Westlake Station: 10 minutes 
+- Board 1 Line southbound: 75 minutes before kickoff 
+- Arrive Stadium Station: 60 minutes before kickoff 
+
+**Departing from SeaTac Airport** (same-day arrival + match): 
+- Complete airport procedures: 2.5 hours before kickoff 
+- Board Link at SeaTac: 2 hours before kickoff 
+- Arrive Stadium Station: 75 minutes before kickoff (tight but manageable) 
+
+**Departing from Eastside** (Bellevue, Redmond via 2 Line—opens 2025): 
+- Board 2 Line: 90 minutes before kickoff 
+- Transfer at downtown station: 60 minutes before kickoff 
+- Arrive Stadium Station: 45-50 minutes before kickoff 
+
+### Weather Considerations 
+
+**June in Seattle**: 
+- Average temperatures: 60-70°F (15-21°C) 
+- **Marine drizzle possible**: "Even with the canopies, wind-driven drizzle can sneak in—bring a light layer" 
+- Lumen Field is open-air with partial canopy coverage 
+- Evenings can be cool with Puget Sound breezes 
+
+**What to Bring**: 
+- Light waterproof jacket (June drizzle) 
+- Layers (temperatures drop evening) 
+- Comfortable walking shoes (pedestrian routes emphasized) 
+- Clear water bottle (refill inside) 
+
+### Fan Fest to Stadium Pedestrian Route 
+
+"Imagine all that space through the waterfront to have a walkability and access for pedestrians and transit, shuttles going around, and then our micro mobility, biking and scooters. Also, what is the route that we're going to create for them that's designated?" 
+
+**The Vision**: 
+- **Seattle Center** (Fan Fest location) → **Waterfront Park** → **Pioneer Square** → **Lumen Field** 
+- **Distance**: ~2 miles total 
+- **Walking time**: 35-45 minutes 
+- **Experience**: Transformed downtown, Elliott Bay views, historic neighborhoods 
+- **Support**: Shuttles, bike lanes, scooters available along route 
+
+**Seattle Center Fan Fest**: Official FIFA fan zone with giant screens, activities, international atmosphere 
+
+## Money-Saving Transit Options 
+
+### The ORCA Card Value 
+
+**ORCA Card** ("One Regional Card for All"): Works across all regional transit—Link, Sounder, Metro, ferries, Community Transit, more. 
+
+**How to Get ORCA**: 
+- Buy at Link stations from vending machines 
+- Download **Transit GO Ticket** app (mobile ticketing) 
+- Add to Google Wallet (Android users) 
+
+**Cost**: $3 initial purchase (refunded if registered at [myorca.com](https://myorca.com)) 
+
+### Flat Fare Simplicity 
+
+Link Light Rail's $3 flat fare (any distance) simplifies budgeting: 
+
+**Sample 7-Day Seattle Visit** (3 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to downtown hotel**: $3 
+- **Three match days to/from stadium**: $3 each way × 3 = $18 
+- **Daily downtown exploring**: $3-6 per day × 4 days = $12-24 
+- **Return to airport**: $3 
+- **ORCA card purchase**: $3 (refundable) 
+
+**7-Day Total**: $39-51 
+
+**With ORCA Day Pass Strategy**: 
+- **Day Pass**: $6 (unlimited rides that day) 
+- **Three match days**: $6 × 3 = $18 
+- **Airport arrival/departure**: $6 
+- **4 days exploring**: $6 × 4 = $24 
+- **Total**: $48 
+
+Compare to ride-share for same trips: $600-900+ 
+
+### Free Transit for Youth 
+
+**Youth 18 and under ride FREE** on all Sound Transit services (Link, Sounder, ST Express buses). Apply for **Free Youth Transit Pass** at [soundtransit.org](https://soundtransit.org). 
+
+### Budget Transportation Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- Link for all transportation: $39-51 
+- Walking downtown/waterfront: $0 
+- **Total**: $39-51 
+
+**Moderate Budget** (occasional convenience): 
+- Link for regular transit: $48 (Day Pass strategy) 
+- 2 strategic Uber rides: $40-60 
+- **Total**: $88-108 
+
+**Premium Budget**: 
+- Private airport transfer: $130 
+- Link for stadium trips: $18 
+- Uber for convenience: $100-150 
+- **Total**: $248-298 
+
+**The Seattle Advantage**: Link Light Rail's $3 flat fare + direct stadium access + free youth fares creates the most affordable major-city World Cup transportation in North America. 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **Transit GO Ticket App** (Official ORCA) 
+   - Purchase Link/Sounder tickets 
+   - Mobile ORCA card 
+   - Activate before boarding 
+   - Works offline after ticket purchase 
+
+2. **myORCA App** 
+   - Manage ORCA card balance 
+   - Load money remotely 
+   - View transaction history 
+   - Android users: Add to Google Wallet 
+
+3. **Sound Transit Trip Planner** 
+   - Door-to-door routing 
+   - Real-time arrivals 
+   - Service alerts 
+   - Works for Link, Sounder, ST Express 
+
+4. **Google Maps** 
+   - Accurate Seattle transit integration 
+   - Real-time delays 
+   - Walking directions 
+   - Alternative routes 
+
+5. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save Stadium Station, Lumen Field addresses`
+              }</ReactMarkdown>
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download Transit GO Ticket app 
+- Load $20-30 for convenience 
+- Alternative: Buy ORCA card at SeaTac Airport Link station ($3) 
+- Save Lumen Field, Stadium Station, hotel addresses 
+
+**Sound Transit Customer Service**: 1-888-889-6368 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Lumen Field**: 
+- Full ADA compliance throughout 68,000+ seat capacity 
+- **Accessible drop-off**: 1st Ave S & S Charles St (near Pro Shop) 
+- Elevators, ramps, accessible seating 
+- Accessible parking at Union Station Garage (first-come, first-served) 
+
+**Link Light Rail**: 
+- **Fully wheelchair-accessible** all stations and trains 
+- Level boarding at all platforms 
+- Priority seating areas 
+- Audio/visual announcements 
+- "No transfers, no stress" 
+
+**Sounder & Buses**: 
+- All vehicles wheelchair accessible 
+- Ramps/lifts standard 
+- Priority seating 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- **Youth 18 and under**: FREE on all Sound Transit (Link, Sounder) 
+- **Children under 6**: FREE on King County Metro 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on Link; fold during crowded periods 
+- Lumen Field has family restrooms 
+- Link journey from downtown: 15 minutes (manageable for children) 
+- Stadium Station to gates: 5-minute walk 
+
+**Recommended Family Strategy**: 
+- Use Link Light Rail for all stadium trips (kids enjoy trains, stress-free) 
+- Explore Seattle Center, waterfront before match (free activities) 
+- Consider Water Taxi for unique experience (West Seattle matches) 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Seattle to Other West Coast Host Cities 
+
+**To Vancouver, BC** (Nearest host city, 140 miles): 
+- **Amtrak Cascades**: 4 hours, $40-80 
+- **BoltBus/FlixBus**: 3.5-4 hours, $15-40 
+- **Drive**: 2.5-3.5 hours (border crossing) 
+- Vancouver hosts 7 matches—excellent pairing with Seattle 
+
+**To San Francisco Bay Area** (Levi's Stadium, 808 miles): 
+- **Flight**: 2 hours, $150-350 
+- **Drive**: 12-13 hours (not recommended) 
+
+**To Los Angeles** (SoFi Stadium, 1,135 miles): 
+- **Flight**: 2.5 hours, $200-450 
+- LA hosts 8 matches 
+
+### West Coast Corridor Strategy 
+
+Seattle's location creates natural pairing with **Vancouver** (via Amtrak/bus) and strong flight connections to all West Coast host cities (SF, LA). 
+
+## Critical Transportation Tips 
+
+1. **Link Light Rail is your best friend**—$3 flat fare, direct to Stadium Station 
+2. **80% transit goal means limited parking**—embrace public transportation 
+3. **Stadium Station is 5 minutes from gates**—simplest connection 
+4. **Youth 18 and under ride FREE**—huge family savings 
+5. **2 Line opens before World Cup**—access from Bellevue/Redmond 
+6. **Federal Way extension opens early 2026**—south county access improved 
+7. **Download Transit GO Ticket app**—mobile ORCA card convenience 
+8. **Fan Fest to stadium walkable**—2-mile pedestrian route via waterfront 
+9. **June drizzle possible**—bring light waterproof layer 
+10. **2025 Club World Cup tests everything**—system refined before 2026 
+
+## Your Seattle World Cup Transportation Plan 
+
+Six matches. 750,000 visitors. An 80% transit goal. And Link Light Rail expansion creating unprecedented regional access. 
+
+Seattle's World Cup transportation story combines Pacific Northwest innovation with environmental consciousness. While other cities grudgingly accept transit, Seattle embraces it as identity—the nation's largest car-free goal demonstrates confidence in Link Light Rail, Sounder trains, buses, ferries, and walkable urbanism. 
+
+Your winning strategy: Fly into SeaTac. Board Link Light Rail. Ride directly to Stadium Station for every match. Between games, explore Pike Place Market, the transformed waterfront, the Space Needle, and neighborhoods connected by the region's expanding rail network. Save ride-share for late nights or backup scenarios. 
+
+The 2025 FIFA Club World Cup tests operations in June. Lessons learned refine 2026. By the time World Cup matches begin June 15, 2026, Seattle will have perfected one of the tournament's most ambitious transportation plans. 
+
+When that referee's whistle sounds across six matches through July 6, you'll be at "Seattle Stadium" (Lumen Field during the tournament)—having arrived via one of the world's most scenic, sustainable, and affordable transit systems, surrounded by fans from 80 countries in the city that proved major events don't require cars. 
+
+See you in the Emerald City. 
+
+--- 
+
+*Information current as of November 2025. Link flat $3 fare effective August 2024. 2 Line and Federal Way extensions open 2025-early 2026—verify at [soundtransit.org](https://soundtransit.org). For real-time updates: [soundtransit.org](https://soundtransit.org) or call 1-888-889-6368. FIFA World Cup 2026: [fifa.com](https://www.fifa.com). Seattle LOC: [seattleworldcup.com](https://seattleworldcup.com).*`
               }</ReactMarkdown>
             </div>
           ) : (

@@ -163,7 +163,7 @@ export default function TransportationPage() {
     },
     {
       id: 6,
-      title: 'Local Transport Mastery: Navigate Like a Local',
+      title: 'Houston World Cup 2026: Your Complete Transportation Guide to NRG Stadium',
       excerpt: 'Master metro systems, buses, trams, and bike-sharing in each host city with apps, tickets, and insider tips.',
       category: 'Local Transport',
       author: 'Lisa Martinez',
@@ -171,6 +171,7 @@ export default function TransportationPage() {
       image: 'https://readdy.ai/api/search-image?query=modern%20metro%20station%20with%20clean%20platforms%2C%20digital%20information%20displays%2C%20efficient%20urban%20transportation%2C%20contemporary%20public%20transit%20design%2C%20passenger%20convenience&width=600&height=400&seq=trans6&orientation=landscape',
       featured: false,
       savings: 'Save up to 50%',
+      slugOverride: 'houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium',
       fullContent: {
         introduction: 'Navigate World Cup host cities like a local with our comprehensive public transport guide. Master metro systems, bus networks, and alternative transport options.',
         sections: [
@@ -183,7 +184,7 @@ export default function TransportationPage() {
     },
     {
       id: 7,
-      title: 'Multi-City Travel Passes: Maximum Savings',
+      title: 'Atlanta World Cup 2026: Your Complete Transportation Guide to Mercedes-Benz Stadium',
       excerpt: 'Discover rail passes, flight packages, and transport bundles for visiting multiple host cities efficiently.',
       category: 'Flights',
       author: 'Robert Kim',
@@ -191,6 +192,7 @@ export default function TransportationPage() {
       image: 'https://readdy.ai/api/search-image?query=travel%20planning%20with%20multiple%20tickets%20and%20passes%2C%20organized%20travel%20documents%2C%20efficient%20multi-city%20journey%20planning%2C%20transportation%20coordination%2C%20travel%20savings&width=600&height=400&seq=trans7&orientation=landscape',
       featured: false,
       savings: 'Save up to 45%',
+      slugOverride: 'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium',
       fullContent: {
         introduction: 'Maximize your savings and efficiency when visiting multiple World Cup host cities with our guide to travel passes and multi-city packages.',
         sections: [
@@ -203,7 +205,7 @@ export default function TransportationPage() {
     },
     {
       id: 8,
-      title: 'Accessible Transportation Options',
+      title: 'Philadelphia World Cup 2026: Your Complete Transportation Guide to Lincoln Financial Field',
       excerpt: 'Comprehensive guide to wheelchair-accessible transport, special assistance services, and mobility solutions.',
       category: 'Local Transport',
       author: 'Maria Gonzalez',
@@ -211,6 +213,7 @@ export default function TransportationPage() {
       image: 'https://readdy.ai/api/search-image?query=accessible%20transportation%20vehicle%20with%20wheelchair%20ramp%2C%20inclusive%20design%2C%20barrier-free%20travel%20options%2C%20mobility%20assistance%2C%20universal%20access%20transportation&width=600&height=400&seq=trans8&orientation=landscape',
       featured: false,
       savings: 'Special Rates',
+      slugOverride: 'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field',
       fullContent: {
         introduction: 'Ensure accessible and comfortable travel to World Cup host cities with our comprehensive guide to mobility-friendly transportation options and assistance services.',
         sections: [
@@ -223,7 +226,7 @@ export default function TransportationPage() {
     },
     {
       id: 9,
-      title: 'Mexico City World Cup 2026: Transportation Guide to Estadio Azteca',
+      title: 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field',
       excerpt: 'How to reach Estadio Azteca with metro, buses, and match-day shuttles.',
       category: 'City Transit',
       author: 'Alejandro Ruiz',
