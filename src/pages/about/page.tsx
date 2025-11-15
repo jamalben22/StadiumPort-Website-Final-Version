@@ -2,7 +2,6 @@
 import { useEffect, Children } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
-import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { Link } from 'react-router-dom';
 import { SchemaOrg, generateOrganizationSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
@@ -234,64 +233,53 @@ export default function AboutPage() {
       <main className="pt-20">
         <section className="relative py-28 bg-white dark:bg-navy-900">
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <Card
-              variant="default"
-              padding="xl"
-              border={false}
-              hover={false}
-              animate={false}
-              className="bg-white rounded-3xl dark:bg-navy-900"
-            >
-              <div className="relative z-10 p-6 md:p-10">
-                <div className="mx-auto max-w-2xl">
-                  <div
-                    className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter"
+            <div className="relative z-10 p-6 md:p-10">
+              <div className="mx-auto max-w-2xl">
+                <div className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter">
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      h2: ({ node, ...props }) => (
+                        <h2
+                          className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
+                          {...props}
+                        />
+                      ),
+                      h3: ({ node, ...props }) => (
+                        <h3
+                          className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
+                          {...props}
+                        />
+                      ),
+                      p: ({ node, children, ...props }) => (
+                        <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
+                          {children}
+                        </p>
+                      ),
+                      ul: ({ node, ...props }) => (
+                        <ul className="lux-ul space-y-2" {...props} />
+                      ),
+                      ol: ({ node, ...props }) => (
+                        <ol className="lux-ol space-y-2" {...props} />
+                      ),
+                      li: ({ node, children, ...props }) => (
+                        <li className="text-slate-700 dark:text-slate-300" {...props}>
+                          {children}
+                        </li>
+                      ),
+                      strong: ({ node, ...props }) => (
+                        <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                      ),
+                      hr: () => (
+                        <hr className="my-12 border-t border-slate-200" />
+                      ),
+                    }}
                   >
-                    <ReactMarkdown
-                      remarkPlugins={[remarkGfm]}
-                      components={{
-                        h2: ({ node, ...props }) => (
-                          <h2
-                            className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
-                            {...props}
-                          />
-                        ),
-                        h3: ({ node, ...props }) => (
-                          <h3
-                            className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
-                            {...props}
-                          />
-                        ),
-                        p: ({ node, children, ...props }) => (
-                          <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
-                            {children}
-                          </p>
-                        ),
-                        ul: ({ node, ...props }) => (
-                          <ul className="lux-ul space-y-2" {...props} />
-                        ),
-                        ol: ({ node, ...props }) => (
-                          <ol className="lux-ol space-y-2" {...props} />
-                        ),
-                        li: ({ node, children, ...props }) => (
-                          <li className="text-slate-700 dark:text-slate-300" {...props}>
-                            {children}
-                          </li>
-                        ),
-                        strong: ({ node, ...props }) => (
-                          <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
-                        ),
-                        hr: () => (
-                          <hr className="my-12 border-t border-slate-200" />
-                        ),
-                      }}
-                    >
-                      {content}
-                    </ReactMarkdown>
-                  </div>
+                    {content}
+                  </ReactMarkdown>
                 </div>
               </div>
-            </Card>
+            </div>
           </div>
         </section>
       </main>

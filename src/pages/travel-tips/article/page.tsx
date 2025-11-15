@@ -144,6 +144,8 @@ export default function TravelTipsArticlePage() {
       ? 'World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries'
       : slug === 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget'
       ? 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget'
+      : slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi'
+      ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi'
       : title;
   const description = tip?.intro || 'Premium travel tips guide with cohesive editorial layout and structured sections.';
 
@@ -292,10 +294,10 @@ export default function TravelTipsArticlePage() {
                   <Link to="/travel-tips" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Travel Tips</Link>
                 </li>
                 <li><span aria-hidden>›</span></li>
-                <li className="text-slate-900 dark:text-white font-semibold">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : displayTitle}</li>
+                <li className="text-slate-900 dark:text-white font-semibold">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}</li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'Complete Cost Breakdown & Savings Strategies' : (slug === 'multi-city-tournament-planning' || slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels') ? 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels' : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? 'Which Cities Should You Visit?' : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? 'Where to Stay for Every Budget' : (slug === 'rideshare-pickup-zone-strategy' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? 'Flight Booking Guide: Routes, Airlines & Strategies' : (slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather') ? 'Ultimate Checklist for All Weather' : displayTitle}</h1>
+            <h1 className="editorial-hero-title">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'Complete Cost Breakdown & Savings Strategies' : (slug === 'multi-city-tournament-planning' || slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels') ? 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels' : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? 'Which Cities Should You Visit?' : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? 'Where to Stay for Every Budget' : (slug === 'rideshare-pickup-zone-strategy' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? 'Flight Booking Guide: Routes, Airlines & Strategies' : (slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather') ? 'Ultimate Checklist for All Weather' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-book-open-line"></i>
@@ -5796,6 +5798,934 @@ The beautiful game tastes even better with great food.
 
 **Last Updated:** November 2025 | Restaurant recommendations current as of publication. Specific restaurants may close or change. Verify current status before visiting. Stadium pricing subject to change. Mercedes-Benz pricing model may not apply during World Cup due to FIFA contracts.`}
                 </ReactMarkdown>
+              </article>
+            </>
+        ) : slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi' ? (
+            <>
+              <article className="editorial-body editorial-dropcap">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{`Staying connected during the 2026 FIFA World Cup isn't just convenient—it's essential. Whether you're coordinating meetups at packed stadiums, navigating unfamiliar cities, or sharing match highlights in real time, reliable mobile connectivity will transform your experience across the United States, Canada, and Mexico. 
+
+This comprehensive guide cuts through the confusion of international roaming, local SIM cards, and emerging eSIM technology to help you choose the smartest connectivity solution for your World Cup journey. 
+
+## Understanding Your Connectivity Options 
+
+The 2026 World Cup presents a unique challenge: three host countries, potentially dozens of matches, and connectivity needs that vary dramatically depending on your travel plans. The good news? You have more options than ever, from seamless international roaming to budget-friendly local carriers. 
+
+Your ideal solution depends on several factors: how long you're staying, which countries you're visiting, how much data you'll consume, and whether your phone supports newer technologies like eSIM. Let's break down every option so you can make an informed decision. 
+
+## International Roaming with U.S. Carriers 
+
+If you're traveling from the United States, your existing carrier might already include coverage in Canada and Mexico. But the details matter enormously—some plans offer genuine seamless service, while others will quietly rack up charges that rival your flight costs. 
+
+### T-Mobile: The North American Advantage 
+
+T-Mobile has positioned itself as the most traveler-friendly U.S. carrier for this tournament. Most of their current unlimited plans include full talk, text, and data in Canada and Mexico at no extra charge, treating all three countries as a single coverage zone. 
+
+**Go5G Plans and Experience Plans:** These newer offerings provide generous high-speed data allowances across North America. The Experience Beyond plan delivers up to 30GB of high-speed data in Canada and Mexico before throttling to 256 Kbps, while also including 15GB of high-speed data in 215+ other countries if your travels extend beyond the tournament. 
+
+**International Pass Options:** For fans heading to multiple countries or attending matches outside North America, T-Mobile offers supplemental passes. The 10-day International Pass provides 5GB of high-speed data plus unlimited calling for $35, while the 30-day pass increases to 15GB for $50. These passes work in over 210 destinations worldwide. 
+
+**Who Should Choose T-Mobile:** Fans planning extensive cross-border travel between all three host nations. The seamless integration means your phone simply works without activation or daily charges. If you're already a T-Mobile customer with a qualifying plan, you may not need to do anything at all. 
+
+### Verizon: Premium Coverage with Daily Charges 
+
+Verizon's approach relies primarily on TravelPass, a daily fee system that activates only on days you use your device internationally. 
+
+**TravelPass Pricing:** You'll pay $12 per day in most international countries (reduced to $5-6 per day specifically for Canada and Mexico). On TravelPass days, you can use your domestic plan's talk, text, and data allowances as if you were home, though data is capped at 5GB of high-speed access per day before throttling to 3G speeds. 
+
+**Unlimited Ultimate Plans:** Verizon's top-tier plan ($90/month for a single line) includes TravelPass benefits without daily charges, offering 15GB of monthly high-speed data, unlimited texting, and calling internationally. However, this requires paying for the premium tier year-round. 
+
+**Hidden Costs:** Without TravelPass activated, Verizon charges a staggering $2.05 per MB ($2,050 per GB) for international data. Always verify TravelPass is active before crossing borders. 
+
+**Who Should Choose Verizon:** Travelers making brief trips to one or two countries who already have Verizon domestically. The daily fee structure works for short visits but becomes expensive during extended stays. 
+
+### AT&T: Flexible Day Passes 
+
+AT&T's International Day Pass mirrors Verizon's approach but with slightly different economics and broader coverage. 
+
+**Day Pass Details:** At $10 per day (automatically activated when you use your device), AT&T's pass includes unlimited high-speed data, not just 5GB like Verizon. The pass works in over 230 countries, making it valuable if you're combining World Cup travel with other international destinations. 
+
+**Canada and Mexico Plans:** Some AT&T unlimited plans bundle Canada and Mexico coverage at no additional cost, though you'll need to verify this with your specific plan tier. 
+
+**Who Should Choose AT&T:** Travelers who value unlimited daily data and plan to visit multiple countries beyond the World Cup hosts. The $10 daily fee with truly unlimited data can be worthwhile for heavy users. 
+
+### The Math: When Roaming Makes Sense 
+
+International roaming is most economical for trips under one week in a single country, or for travelers who already maintain premium domestic plans. For a seven-day World Cup trip exclusively in the United States, you'll pay nothing extra. Add a week in Mexico, and that's potentially $70-84 in additional fees with Verizon or AT&T, or $0 with the right T-Mobile plan. 
+
+Beyond two weeks across multiple countries, you'll almost always save money with alternative solutions. 
+
+## Local SIM Cards: Deep Dive by Country 
+
+Purchasing a local SIM card provides the most authentic connectivity experience and often the best value for extended stays. However, the process, pricing, and value proposition varies significantly across the three host nations. 
+
+### United States: Premium Pricing, Premium Networks 
+
+The U.S. mobile market offers extensive coverage but at some of the world's highest prices. Tourist SIM cards are less common here than in many countries because most international visitors can roam affordably from their home countries. 
+
+**Major Carriers:** 
+- **AT&T, Verizon, T-Mobile:** The "Big Three" dominate with nationwide 5G networks. Prepaid plans typically start around $40-50 per month for basic data allowances. Tourist-specific packages are rare, though all three offer prepaid options purchasable at retail locations, airports, and online. 
+
+**MVNOs (Better Value):** 
+- **Mint Mobile:** Running on T-Mobile's network, Mint offers the best value with plans starting at $15/month for unlimited talk, text, and data (with 35GB before deprioritization). However, the $15 rate requires a three-month commitment. 
+- **Visible:** Operating on Verizon's network, Visible+ includes unlimited data in Canada, Mexico, and the U.S. Virgin Islands. Plans start around $45/month with no annual contracts. 
+- **Ultra Mobile:** Offers 12GB of 5G data plus unlimited talk and text for $29/month, with free international calling to 80+ countries including Mexico and Canada. 
+
+**Where to Buy:** Airports (premium prices), carrier retail stores nationwide, Target, Best Buy, Walmart, and online with delivery to U.S. addresses. 
+
+**Activation Requirements:** Passport or government ID, payment method, and an unlocked phone. 
+
+**Recommendation for World Cup Fans:** For most international visitors attending matches only in the U.S., roaming from your home country or an eSIM will likely offer better value. Consider a U.S. SIM only if staying three or more weeks primarily in one country. 
+
+### Canada: Expensive but Reliable 
+
+Canada has earned a reputation for some of the world's highest mobile costs, a reality that extends to prepaid tourist options. The vast geography and relatively small population make network deployment expensive, costs that get passed to consumers. 
+
+**Major Carriers:** 
+- **Rogers:** The largest carrier offers nationwide coverage with 4G/LTE reaching 96% of the population. Prepaid plans start around $40 CAD ($29 USD) for 2.5GB of data plus unlimited Canada-wide calling for 30 days. 
+- **Bell:** Strong coverage across Canada, including remote areas. Recently improved prepaid offerings now include $40 CAD ($29 USD) for 25GB of data, or $50 CAD ($36 USD) for 50GB—the best value among major carriers. 
+- **Telus:** Comparable coverage to Rogers and Bell, particularly strong in Western Canada. Prepaid options are less competitive for tourists, with limited data at higher prices. 
+
+**Budget Options:** 
+- **Virgin Mobile (Bell network):** Operates on Bell's infrastructure with similar prepaid pricing around $40-50 CAD for 25-50GB. 
+- **Koodo (Telus MVNO):** Offers Telus network access at more affordable rates, though with a 100 Mbps speed cap on prepaid plans. 
+- **Chatr (Rogers MVNO):** Budget-friendly prepaid available at convenience stores and airports. 
+
+**Important Limitation:** None of the Canadian carriers offer 5G access to prepaid customers—you're capped at 4G/LTE speeds regardless of provider or device capability. Postpaid plans require Canadian residency. 
+
+**Where to Buy:** Toronto Pearson Airport (YYZ), Vancouver International Airport (YVR), and Montreal Trudeau International Airport (YUL) all have carrier kiosks, though prices run 10-20% above retail. Better deals await at carrier stores in city centers, Best Buy, Staples, and convenience stores. 
+
+**Activation Process:** Straightforward—show your passport, choose a plan, pay, and activate. Staff assistance is typically available at carrier stores. 
+
+**Recommendation for World Cup Fans:** Bell currently offers the best prepaid value at $40-50 CAD. However, eSIMs often prove more economical and convenient for stays under three weeks. Consider a local SIM only if attending multiple matches across different Canadian cities over an extended period. 
+
+### Mexico: Excellent Value and Coverage 
+
+Mexico provides the most affordable local SIM options of the three hosts, with robust coverage in tourist areas and surprisingly comprehensive rural networks. 
+
+**Major Carriers:** 
+- **Telcel:** The undisputed market leader with the most extensive network coverage, particularly crucial if traveling between cities or visiting smaller venues. Coverage reaches deep into rural areas where competitors struggle. 
+- **AT&T Mexico:** Strong urban coverage with improving rural reach. Often the most affordable option, particularly during promotions. Plans include unlimited calling between Mexico and the United States. 
+- **Movistar:** The budget option with decent city coverage but weaker rural service. Known for aggressive promotions and free SIM card offers at airports. 
+
+**Pricing (Extremely Affordable):** 
+
+Telcel prepaid packages: 
+- 50 MXN (~$2.45 USD): 1GB data, unlimited social media (WhatsApp, Instagram, Facebook), calls, and texts for 7 days 
+- 100 MXN (~$5 USD): 4GB data, unlimited social media, calls, and texts for 30 days 
+- 200 MXN (~$10 USD): 6GB data, unlimited social media, calls, and texts for 30 days 
+
+AT&T Mexico prepaid packages: 
+- 100 MXN (~$5 USD): 1.5GB data, unlimited social media, calls/texts for 14 days 
+- 150 MXN (~$7.50 USD): 4.6GB data, unlimited social media, calls/texts for 30 days (includes 2.3GB for TikTok/YouTube) 
+- 200 MXN (~$10 USD): 6GB data, unlimited social media, calls/texts for 30 days (includes 3GB for TikTok/YouTube) 
+
+**Remarkable Bonus:** All major Mexican carriers include unlimited data for WhatsApp, Facebook Messenger, Instagram, Twitter, Snapchat, and Facebook—traffic that doesn't count against your data allowance. 
+
+**Where to Buy:** OXXO convenience stores (literally everywhere—Mexico has over 20,000 locations), carrier stores in major cities, airports (expect 20-30% markup), and 7-Eleven. 
+
+**OXXO Tip:** OXXO stores operate OXXO CEL, a virtual carrier using Telcel's network, offering identical coverage at competitive prices. This is often the easiest option. 
+
+**Airport Warning:** Kiosks at Cancun, Mexico City, and Guadalajara airports sell SIM cards at inflated tourist prices. Use free airport WiFi to arrange transport, then purchase a SIM at any OXXO en route to your hotel. 
+
+**Network Recommendation:** Telcel is strongly recommended for anyone traveling between cities or visiting multiple stadiums. Their coverage advantage is substantial once you leave major urban areas. AT&T offers the best value for stays confined to large cities. 
+
+**Activation:** Insert SIM, wait for signal (30-60 seconds), receive activation text. For top-ups, visit any OXXO and provide your phone number—they'll add credit instantly. 
+
+**Recommendation for World Cup Fans:** Mexico offers unbeatable local SIM value. For stays of any length, a Telcel SIM at $5-10 USD for 30 days is exceptional. This is the one country where buying local almost always makes economic sense. 
+
+## eSIM Technology: The Modern Solution 
+
+eSIM (embedded SIM) technology has revolutionized international travel connectivity. Instead of physical cards, you purchase and activate plans digitally, often receiving service within minutes of landing. For the World Cup, eSIMs offer unmatched flexibility for multi-country travel. 
+
+### What Is eSIM and Do You Have It? 
+
+An eSIM is a digital SIM embedded in your phone's hardware. Rather than inserting a physical chip, you scan a QR code or use an app to download your plan profile. 
+
+**Compatible Devices:** 
+- iPhone XS, XR, and all newer models 
+- Recent Samsung Galaxy phones (S20 and later, Note 20+, Z series) 
+- Google Pixel 3 and later 
+- Recent iPads with cellular 
+- Many 2022-2023 flagship Android devices 
+
+**Check Compatibility:** Settings → General → About. If you see "Digital SIM" or "Available SIM," you're equipped. Android users can check Settings → Connections → SIM Manager. 
+
+**Dual SIM Advantage:** Most eSIM devices support keeping your home SIM active while adding an eSIM for data. You'll maintain your original number for calls and texts while routing data through the more affordable eSIM plan. 
+
+### Top eSIM Providers Compared 
+
+The eSIM market has exploded with options. Here are the most reliable providers, tested extensively by millions of travelers: 
+
+**Airalo: Best for Budget and Flexibility** 
+
+Airalo pioneered consumer eSIMs and remains the value leader. They offer fixed data packages rather than unlimited plans, which translates to lower costs for light-to-moderate users. 
+
+**Pricing Examples (North America plans):** 
+- USA: 1GB/7 days ($4.50), 3GB/30 days ($11), 10GB/30 days ($26) 
+- Canada: 1GB/7 days ($5), 3GB/30 days ($11.50), 10GB/30 days ($26) 
+- Mexico: 1GB/7 days ($3.50), 3GB/30 days ($8), 10GB/30 days ($19.50) 
+- North America Regional: 1GB/7 days ($7), 3GB/30 days ($16), 10GB/30 days ($39) (works in all three countries) 
+
+**Pros:** 
+- Most affordable per-GB pricing 
+- Regional plans cover all three World Cup hosts 
+- Can include voice minutes and SMS on some plans (rare in eSIM market) 
+- Excellent customer support (24/7 via app and WhatsApp) 
+- User-friendly app with clear setup instructions 
+- Loyalty program (Airmoney) provides discounts on future purchases 
+
+**Cons:** 
+- Fixed data limits require monitoring usage 
+- Must purchase additional packages if you run out 
+- Maximum package size is typically 20GB 
+
+**Best For:** Budget-conscious travelers, those with predictable data needs, short trips (under two weeks), and users who primarily rely on WiFi with mobile data for maps and messaging. 
+
+### Holafly: Best for Unlimited Data 
+
+Holafly differentiated itself by offering exclusively unlimited data plans. You pay based on duration rather than gigabytes, eliminating usage anxiety. 
+
+**Pricing Examples:** 
+- USA: $19 for 5 days, $29 for 7 days, $47 for 15 days, $64 for 20 days, $99 for 30 days 
+- Canada: $19 for 5 days, $27 for 7 days, $47 for 15 days, $64 for 20 days, $99 for 30 days 
+- Mexico: $17 for 5 days, $27 for 7 days, $47 for 15 days, $64 for 20 days, $99 for 30 days 
+
+**Holafly Plans Subscription:** $64.90/month for unlimited data in 160+ destinations with a single eSIM—ideal for frequent international travelers attending matches across all three countries. 
+
+**Pros:** 
+- Unlimited data removes usage stress—ideal for heavy users, streaming, and video calls 
+- Flexible durations (any length from 1-90 days) 
+- Hotspot sharing included on most plans 
+- 24/7 customer support with fast response times 
+- Data-only simplicity (uses WhatsApp/internet calling for voice) 
+
+**Cons:** 
+- Significantly more expensive than Airalo for light users 
+- No voice minutes or SMS included 
+- Some users report variable speeds, particularly during peak times 
+- "Unlimited" may include fair use policies or throttling after high usage (though not widely reported) 
+
+**Best For:** Data-heavy travelers, digital nomads working remotely during the tournament, streamers who'll broadcast matches and experiences, groups needing mobile hotspots, and travelers uncomfortable monitoring data usage. 
+
+### Other Notable eSIM Providers 
+
+**GigSky:** Premium option with coverage in 172 countries and integrated directly into Apple's iPhone settings. Higher pricing but rock-solid reliability. Offers a free trial (100MB-3GB) to test connectivity. 
+
+**Saily:** Budget alternative to Airalo with plans starting at $1.99 in select countries. Good for travelers seeking maximum savings. 
+
+**Nomad:** Middle ground between Airalo and Holafly, offering both fixed and unlimited plans with a sleek app interface. 
+
+### How to Activate Your eSIM 
+
+The process is remarkably simple, typically taking under five minutes: 
+
+1. **Purchase your plan** through the provider's website or app 
+2. **Receive QR code** via email or app 
+3. **Scan the code:** Settings → Cellular/Mobile Data → Add eSIM → Scan QR code 
+4. **Label your plan** (e.g., "World Cup Data") 
+5. **Configure settings:** Choose which line for data (use eSIM) and which for calls (keep home SIM) 
+6. **Enable data roaming** for your eSIM line 
+
+Many providers now offer "Direct Install" for iOS 17.4+, eliminating even the QR code step. 
+
+**Pro Tip:** Install and test your eSIM before traveling. Most activate only when detecting the destination network, but pre-installation ensures everything works and you have support access if needed. 
+
+### eSIM vs Local SIM: The Real Comparison 
+
+For the 2026 World Cup, eSIM typically wins on convenience while local SIMs edge ahead on value for extended single-country stays. 
+
+**Choose eSIM if:** 
+- Visiting multiple countries (regional eSIM plans are ideal) 
+- Staying less than two weeks per country 
+- You value convenience over maximum savings 
+- Your phone supports eSIM 
+- You want to keep your home number active 
+
+**Choose Local SIM if:** 
+- Staying three or more weeks primarily in one country (especially Mexico) 
+- Need absolute maximum data at minimum cost 
+- Require a local phone number for reservations, delivery services, or local contacts 
+- Your device doesn't support eSIM 
+
+## WiFi Expectations Across the Tournament 
+
+Understanding where WiFi is abundant—and where it's useless—helps you plan your connectivity strategy and avoid frustration. 
+
+### Stadium WiFi: Manage Your Expectations 
+
+FIFA and host stadium venues typically provide WiFi, but meaningful connectivity for 50,000+ simultaneous users remains challenging even with modern infrastructure.`}
+                </ReactMarkdown>
+                <hr className="editorial-divider" />
+              </article>
+              <article className="editorial-body">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{`**Realistic Expectations:** 
+- **Pre-match and halftime:** WiFi may work for messaging and light browsing 
+- **During matches:** Network congestion makes WiFi nearly unusable for most fans 
+- **Post-match exodus:** Forget about it—everyone simultaneously trying to call rides and share highlights overwhelms the system 
+
+**Strategy:** Don't rely on stadium WiFi for anything time-sensitive. Have mobile data for ride-hailing apps, group coordination, and uploading celebrations. Download offline maps and transit information before entering the venue. 
+
+### Fan Zones and Public Viewing Areas 
+
+Officially designated FIFA Fan Zones in host cities typically provide free WiFi, though quality varies dramatically by location and attendance. 
+
+**What Works:** Text messaging, checking scores, light social media during off-peak times. 
+
+**What Doesn't:** Video streaming, large file uploads, or sustained video calls when crowds are heavy. 
+
+### Hotels: Generally Reliable 
+
+Most hotels across North America offer complimentary WiFi, though quality ranges from "perfectly adequate" to "barely functional." 
+
+**Budget/Mid-Range Hotels:** Often implement bandwidth restrictions that make video calls challenging. Adequate for email, browsing, and messaging. 
+
+**Business/Upscale Hotels:** Typically provide faster, more reliable connections suitable for streaming and video calls. Some charge premium fees for upgraded speeds. 
+
+**Strategy:** Use hotel WiFi for major downloads, backups, and video streaming. Don't depend on it for last-minute ticket verification or ride-hailing—mobile data is your insurance policy. 
+
+### Airports: Universally Available 
+
+All major airports in the United States, Canada, and Mexico provide free WiFi, usually without passwords or time limits. Quality is generally excellent, suitable for video calls and heavy usage. 
+
+**Security Note:** Airport WiFi is public and unencrypted. Avoid accessing banking or entering passwords without VPN protection (more on this below). 
+
+### Restaurants, Cafés, and Public Spaces 
+
+Urban areas across all three countries offer abundant free WiFi, though Mexico requires cautious selection due to security concerns. 
+
+**United States:** Starbucks, McDonald's, libraries, and most chain restaurants provide reliable free WiFi. Many public parks and squares in major cities offer municipal WiFi. 
+
+**Canada:** Similar to the U.S. with widespread availability in cafés, restaurants, and shopping centers. Tim Hortons is particularly ubiquitous with reliable WiFi. 
+
+**Mexico:** WiFi is widely available but connect cautiously. Stick to established chains and verify network names with staff to avoid spoofed connections designed to intercept data. 
+
+### Public WiFi Security: Critical Warnings 
+
+Free WiFi is convenient but inherently insecure. Malicious actors frequently set up fake networks with legitimate-sounding names to intercept passwords, credit card data, and personal information. 
+
+**Never access on public WiFi:** 
+- Banking websites or apps 
+- Credit card accounts 
+- Work email or VPN 
+- Any site requiring password entry 
+
+**If you must access sensitive information:** Use a VPN (Virtual Private Network) to encrypt your connection. More on this below. 
+
+## Estimating Your Data Usage 
+
+Understanding how much data you'll actually consume helps you choose between unlimited plans and fixed packages without overpaying or running dry. 
+
+### Real-World Data Consumption 
+
+**Google Maps Navigation:** 
+- Active turn-by-turn directions: 5-7 MB per hour 
+- General browsing/zooming: 1-3 MB per minute 
+- **Pro tip:** Download offline maps for host cities (typically 200-500MB each) to eliminate this usage entirely 
+
+**Translation Apps:** 
+- Google Translate text: Negligible (under 1MB per hour) 
+- Camera translation (real-time): 10-15 MB per hour 
+- Offline language packs available (100MB download, then zero data usage) 
+
+**Social Media:** 
+- Instagram browsing: 100-150 MB per hour 
+- Instagram Stories viewing: 200-300 MB per hour 
+- Facebook browsing: 80-120 MB per hour 
+- Twitter/X scrolling: 50-80 MB per hour 
+- TikTok (high consumption): 300-500 MB per hour 
+
+**Messaging:** 
+- WhatsApp messages: Negligible 
+- WhatsApp voice calls: 0.5-1 MB per minute 
+- WhatsApp video calls: 3-7 MB per minute (varies with quality) 
+- FaceTime audio: 1-3 MB per minute 
+- FaceTime video: 5-15 MB per minute 
+
+**Email and Web Browsing:** 
+- Email checking: 1-5 MB per hour 
+- General web browsing: 50-100 MB per hour 
+- News site with images: 10-25 MB per article 
+
+**Video Streaming:** 
+- YouTube 480p: 300-500 MB per hour 
+- YouTube 720p: 1-1.5 GB per hour 
+- Match highlight clips (1-2 minutes): 20-50 MB each 
+- Instagram/TikTok video auto-play: Can consume 300-500 MB per hour of scrolling 
+
+**Typical World Cup Day Example:** 
+
+Morning preparation (1 hour): Maps, social media, messaging = 150 MB 
+Match day travel (2 hours): Maps navigation, photo uploads, group coordination = 300 MB 
+At stadium (4 hours): Light usage (congested WiFi), photo uploads during halftime = 200 MB 
+Post-match (2 hours): Heavy social media, photo/video uploads, video calls home = 800 MB 
+Evening (2 hours): Restaurant research, messaging, social media = 200 MB 
+
+**Daily Total: Approximately 1.5-2 GB for an active user** 
+
+**Weekly World Cup Trip Estimate:** 10-15 GB for moderate use, 20-30 GB for heavy users streaming and video calling frequently 
+
+### Data-Saving Strategies 
+
+**Essential tactics to minimize consumption:** 
+
+- **Download offline content:** Maps (Google Maps, Apple Maps), Netflix episodes, Spotify playlists, translation app language packs 
+- **Disable auto-play videos:** Instagram, Facebook, Twitter all default to auto-play—turn this off 
+- **Lower streaming quality:** If you must stream, choose 480p instead of HD 
+- **Use WiFi for uploads:** Wait until you're on hotel WiFi to upload high-res photos and videos 
+- **Enable data-saving modes:** WhatsApp, Instagram, and Facebook all offer low-data modes 
+- **Disable background app refresh:** Prevents apps from using data when you're not actively using them 
+
+## Cross-Border Calling and Texting 
+
+The three-country format creates unique challenges for staying in touch with fellow travelers as your group splits between matches in different nations. 
+
+### North American Calling Considerations 
+
+**Within North America (US/Canada/Mexico to US/Canada/Mexico):** 
+Most modern plans treat these three countries as a unified calling zone, particularly on T-Mobile plans and on local carriers in each country. Local Mexican SIMs from Telcel, AT&T Mexico, and Movistar include unlimited calling between all three countries. 
+
+**Potential Pitfall:** Verify your specific plan details. Some budget carriers and older plans treat Canada and Mexico as "international" requiring add-ons. 
+
+### Internet-Based Communication: The Universal Solution 
+
+Rather than worrying about calling minutes and international charges, most World Cup travelers exclusively use internet-based communication: 
+
+**WhatsApp (Essential):** 
+- Free text, voice, and video calls over data or WiFi 
+- Most popular globally—many international fans already use it 
+- Group chats ideal for coordinating meetups 
+- Works identically whether you're on local SIM, eSIM, or roaming 
+
+**Other Reliable Options:** 
+- **Facebook Messenger:** Similar features to WhatsApp, good for friends not on WhatsApp 
+- **FaceTime (Apple users):** Free video and audio calls between iPhones and iPads 
+- **Signal:** Privacy-focused alternative to WhatsApp 
+- **Telegram:** Feature-rich with better group management than WhatsApp 
+
+**Data Consideration:** Voice calls use minimal data (1MB per minute), while video calls consume more (5-10MB per minute). A 30-minute video call home will cost you roughly 150-300MB. 
+
+### Calling Traditional Phone Numbers 
+
+If you need to call restaurants, hotels, or local services: 
+
+**From US/Canadian phones roaming in Mexico:** Usually included in your plan at no extra cost (verify with your carrier) 
+
+**From Mexican local SIM to US/Canada:** Included free on Telcel, AT&T Mexico, and Movistar prepaid plans 
+
+**From eSIM data plans:** Most eSIMs are data-only without calling capability. Use apps like Skype or Google Voice to call traditional numbers over data (charges apply—typically $0.02-0.05 per minute). 
+
+## VPN: When You Need One and Which to Choose 
+
+A Virtual Private Network (VPN) encrypts your internet connection, providing security on public WiFi and unlocking geo-restricted content. 
+
+### Why World Cup Travelers Need VPNs 
+
+**Public WiFi Security:** 
+Airports, stadiums, cafés, and hotels all present security risks. A VPN creates an encrypted tunnel between your device and the internet, preventing hackers from intercepting passwords, credit card data, or personal information. 
+
+**Streaming Access:** 
+Your subscriptions to U.S. streaming services (ESPN+, Paramount+, Peacock) may be geo-blocked when you're abroad. A VPN makes it appear you're accessing from the United States, bypassing restrictions. 
+
+**Accessing Home Banking:** 
+Some banks flag international logins as suspicious and temporarily block accounts. A VPN can reduce these false alarms by showing a domestic connection. 
+
+### Recommended VPN Services 
+
+**NordVPN (Best Overall):** 
+- Extensive server network with dedicated U.S., Canadian, and Mexican servers 
+- Fast speeds suitable for HD streaming 
+- Works reliably with major streaming services 
+- User-friendly apps for all devices 
+- Pricing: ~$4-5/month with annual commitment, ~$12/month monthly 
+
+**ExpressVPN (Fastest Performance):** 
+- Premium service with consistently fast connections 
+- Excellent for streaming match replays and highlights 
+- Simple interface ideal for non-technical users 
+- Pricing: ~$8-10/month with annual commitment, ~$13/month monthly 
+
+**Proton VPN (Budget Option):** 
+- Reliable security with adequate speeds 
+- Free tier available (though with limitations) 
+- Good for travelers primarily needing WiFi security 
+- Pricing: $5-8/month for paid plans 
+
+### VPN Usage Strategy 
+
+**Always use VPN when:** 
+- Connected to public WiFi (airports, cafés, stadiums) 
+- Accessing banking or financial accounts 
+- Streaming content from home subscriptions 
+- Making online purchases 
+
+**Skip the VPN for:** 
+- Standard browsing on mobile data (already secure) 
+- Speed-critical activities where security isn't paramount 
+- Hotel WiFi after verifying it's the legitimate network 
+
+**Mobile Data Consideration:** VPNs add slight overhead (typically 10-15% additional data consumption). On limited eSIM plans, use VPN judiciously. 
+
+## Essential Offline Apps and Preparation 
+
+When connectivity fails—and it will in crowded stadiums and remote areas—offline capabilities become invaluable. 
+
+### Offline Navigation 
+
+**Google Maps:** 
+1. Search for your destination city 
+2. Tap the city name at bottom 
+3. Select "Download offline map" 
+4. Choose area coverage (balance size vs. coverage) 
+
+Download all host cities you're visiting: Los Angeles, San Francisco, Seattle, Dallas, Houston, Kansas City, Philadelphia, Boston, New York/Jersey, Atlanta, Miami, Toronto, Vancouver, Mexico City, Guadalajara, Monterrey. 
+
+**Storage Requirement:** 200-500MB per major metropolitan area 
+
+**Functionality:** Full turn-by-turn navigation, business locations, and transit directions work offline. Real-time traffic and transit schedules require connectivity. 
+
+**Apple Maps Alternative:** Download maps by city name with similar functionality on iOS devices. 
+
+### Offline Translation 
+
+**Google Translate:** 
+Download language packs for Spanish (essential for Mexico) and French (helpful in Montreal/Quebec). Each language pack is approximately 50-60MB. 
+
+With offline packs downloaded, you can: 
+- Translate text with camera (point at signs, menus) 
+- Type or speak phrases for translation 
+- Access phrasebook basics 
+
+Critical phrases downloaded offline can save you in restaurants, emergencies, and transportation situations. 
+
+### Transit Apps with Offline Capability 
+
+**Citymapper (Where Available):** 
+Available in major World Cup cities (New York, Boston, Toronto, Mexico City). Download transit maps and schedules for offline reference. 
+
+**Transit App:** 
+Works across North American cities with offline schedule access once you've downloaded your location data. 
+
+### Offline Entertainment 
+
+**Spotify/Apple Music:** 
+Download playlists and albums before traveling. Essential for flights, long drives between matches, and data conservation. 
+
+**Netflix/Amazon Prime:** 
+Most services allow downloading select content. Pre-match nerves are easier with offline entertainment. 
+
+### Digital Ticket Storage 
+
+**Apple Wallet/Google Pay:** 
+Add all World Cup tickets, boarding passes, hotel reservations, and event confirmations. These work completely offline and won't disappear if you lose connectivity. 
+
+**Screenshot Backup:** 
+Take screenshots of all confirmations, QR codes, and booking references. Store in an offline folder for emergency access. 
+
+### Emergency Information (Critical) 
+
+Store offline (screenshots or notes app): 
+- Emergency numbers (911 in US/Canada, 911 also works in Mexico) 
+- Hotel addresses with local-language versions 
+- Embassy contact information for your country 
+- Medical insurance policy numbers and emergency contact lines 
+- Key contacts with international phone numbers 
+
+## Staying Connected with Your Travel Group 
+
+Coordinating groups at massive tournament events requires more planning than a regular vacation. 
+
+### Group Communication Apps 
+
+**WhatsApp Groups (Most Popular):** 
+Create dedicated groups for your entire travel party. Name them clearly ("World Cup 2026 - LA Crew") and establish basic etiquette around usage. 
+
+**GroupMe:** 
+Popular alternative in North America, particularly for university-age travelers. Works similarly to WhatsApp but doesn't require international numbers. 
+
+**Telegram:** 
+Superior group management features for larger parties. Allows polls (deciding on restaurants), shared files (ticket confirmations), and better search. 
+
+### Location Sharing Strategy 
+
+**Find My (Apple) / Google Maps Location Sharing:** 
+Enable real-time location sharing among your group, particularly valuable when signal is weak or spotty in crowded areas. You can see where friends are even if you can't message them. 
+
+**Set Up Before Traveling:** Practice using these features at home so everyone understands how they work under pressure. 
+
+### Backup Communication Plan 
+
+When stadium crowds overwhelm networks, you need contingency plans. Establish these before separating: 
+
+**Designated Meeting Points:** 
+Agree on specific physical locations with exact landmarks. "Near the main entrance" is useless—"under the north scoreboard, Section 112 entrance" works. 
+
+**Scheduled Check-in Times:** 
+When signal is impossible, pre-arranged times for reuniting eliminate panic. "We meet at the car at 30 minutes after final whistle" removes uncertainty. 
+
+**One Person Stays Put:** 
+If separated, designate one person who remains stationary at the last known meeting point while others search. 
+
+**Offline Messaging (Bridgefy):** 
+This mesh networking app allows messaging via Bluetooth when cellular and WiFi are unavailable. Limited range (330 feet) but invaluable in dead zones. 
+
+## Complete Cost Comparison: Finding Your Best Value 
+
+Let's compare all connectivity options across realistic World Cup travel scenarios to identify your optimal solution. 
+
+### Scenario 1: One Week, Single Country (USA Only) 
+
+**Traveler Profile:** International visitor attending 3 matches in the United States over 7 days 
+
+| Option | Cost | Data Included | Pros | Cons | 
+|--------|------|---------------|------|------| 
+| **Airalo eSIM** | $11 | 3GB / 30 days | Instant activation, keep home number | Limited data for heavy users | 
+| **Holafly eSIM** | $29 | Unlimited / 7 days | No usage anxiety | Expensive for light users | 
+| **US Prepaid SIM** | $40-50 | 15-30GB / 30 days | Most data, local number | Physical SIM hassle, overkill for 1 week | 
+| **Home Carrier Roaming** | $0-70 | Varies by carrier | Seamless, no setup | Can be expensive or include overage fees | 
+
+**Winner for Most Travelers:** Airalo eSIM at $11 provides perfect value for a week-long trip with moderate data needs. 
+
+**Winner for Heavy Data Users:** Holafly unlimited at $29 if you'll stream content, make video calls, or need mobile hotspot capability. 
+
+### Scenario 2: Two Weeks, Two Countries (USA + Mexico) 
+
+**Traveler Profile:** Fan attending matches in both countries over 14 days 
+
+| Option | Cost | Data Included | Pros | Cons | 
+|--------|------|---------------|------|------| 
+| **Airalo North America Regional** | $16 | 3GB across US/Mexico | One plan, both countries | Limited data | 
+| **Holafly USA + Mexico** | $94 | Unlimited in both | No limits, simple | Expensive | 
+| **Two Separate eSIMs** | $19 | 3GB each country | Maximum flexibility | Must switch between plans | 
+| **Mexico SIM + US eSIM** | $16 | 6GB Mexico + 3GB US | Best value option | Requires SIM swap | 
+| **T-Mobile Roaming** | $0 | Unlimited (with qualifying plan) | Zero effort if you have T-Mobile | Only works for T-Mobile customers | 
+
+**Winner for Most Travelers:** Purchase a Telcel SIM in Mexico ($5 for 4GB) plus an Airalo USA eSIM ($11 for 3GB). Total: $16 with 7GB combined. 
+
+**Winner for Convenience:** Airalo North America Regional eSIM at $16 if you don't want to think about switching plans. 
+
+**Winner for T-Mobile Customers:** Use your existing plan at no additional cost. 
+
+### Scenario 3: Three Weeks, All Three Countries 
+
+**Traveler Profile:** Dedicated fan following the tournament across USA, Canada, and Mexico 
+
+| Option | Cost | Data Included | Pros | Cons | 
+|--------|------|---------------|------|------| 
+| **Airalo North America 10GB** | $39 | 10GB / 30 days across all three | Affordable, unified plan | May need to monitor usage | 
+| **Holafly Subscription** | $65 | Unlimited in all three | Truly unlimited, works beyond World Cup | Monthly subscription | 
+| **Three Local SIMs** | $60-75 | 50GB+ combined | Maximum data, cheapest per-GB | Complex, requires unlocked phone, SIM swaps | 
+| **Verizon TravelPass** | $252-378 | Uses home plan allowance | Seamless for existing customers | Extremely expensive ($12/day × 21 days) | 
+| **AT&T International Pass** | $210 | Unlimited daily | Works everywhere, truly unlimited | Expensive for extended trips | 
+
+**Winner Overall:** Airalo North America 10GB regional eSIM at $39 offers the best balance of value, convenience, and coverage for most travelers. 
+
+**Winner for Heavy Users:** Holafly subscription at $65 monthly provides unlimited peace of mind and works if you travel internationally beyond the World Cup. 
+
+**Winner for Maximum Savings:** Buy local SIMs in each country (Mint Mobile in USA $45, Bell in Canada $40 CAD, Telcel in Mexico $5 USD) for approximately $75 total with 50GB+ combined data. Best for travelers comfortable managing multiple SIMs. 
+
+### Scenario 4: WiFi-Only Strategy 
+
+**Traveler Profile:** Budget traveler comfortable with limited connectivity 
+
+| Strategy | Cost | Limitations | 
+|----------|------|-------------| 
+| **No cellular plan, WiFi only** | $0 | No connectivity while traveling, in transit, or at stadiums | 
+| **WhatsApp/Telegram on WiFi** | $0 | Must find WiFi to communicate | 
+| **Download offline maps** | $0 | Navigation works, but no real-time traffic or updates | 
+
+**Reality Check:** While theoretically possible, WiFi-only is genuinely risky for World Cup travel. Coordinating with groups, booking rides, handling emergencies, and navigating unfamiliar cities become exponentially more difficult. We strongly recommend budgeting at least $15-40 for basic connectivity insurance.`}
+                </ReactMarkdown>
+                <hr className="editorial-divider" />
+              </article>
+              <article className="editorial-body">
+                <ReactMarkdown
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    h1: ({ node, ...props }) => (
+                      <h2 className="editorial-h2" {...props} />
+                    ),
+                    h2: ({ node, ...props }) => (
+                      <h3 className="editorial-h3" {...props} />
+                    ),
+                    h3: ({ node, ...props }) => (
+                      <h4 className="editorial-h4" {...props} />
+                    ),
+                    p: ({ node, ...props }) => (
+                      <p className="whitespace-pre-line text-slate-700 dark:text-slate-300 leading-relaxed" {...props} />
+                    ),
+                    ul: ({ node, ...props }) => (
+                      <ul className="list-disc pl-6 space-y-2" {...props} />
+                    ),
+                    ol: ({ node, ...props }) => (
+                      <ol className="list-decimal pl-6 space-y-2" {...props} />
+                    ),
+                    li: ({ node, ...props }) => (
+                      <li className="text-slate-700 dark:text-slate-300" {...props} />
+                    ),
+                    strong: ({ node, ...props }) => (
+                      <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                    ),
+                  }}
+                >
+{`## Portable WiFi Hotspots: Worth Considering? 
+
+Portable WiFi devices create a mobile hotspot by housing a local SIM card and broadcasting WiFi to your devices. They're particularly valuable for groups sharing one connection. 
+
+### Rental Services 
+
+**Solis:** 
+Rent a portable hotspot for approximately $8-10 per day plus data charges. Coverage across all three World Cup hosts. Data packages typically run $8-15 per GB. 
+
+**TravelWiFi:** 
+Similar pricing with devices available for pickup at major airports or delivery to hotels. Plans vary but expect $50-80 weekly for moderate data allowances. 
+
+### When Hotspots Make Sense 
+
+**Ideal for:** 
+- Groups of 3-5 people splitting costs (potentially cheaper than 5 individual eSIMs) 
+- Travelers with multiple devices (phone, tablet, laptop) 
+- Families with children needing connectivity on tablets 
+- Business travelers needing simultaneous device connections 
+
+**Skip Hotspots if:** 
+- Traveling solo or as a couple (eSIMs are more economical) 
+- You only need phone connectivity 
+- Your group will frequently split up (everyone needs individual access) 
+
+### The Math: Group Example 
+
+Five friends traveling together for 2 weeks across all three countries: 
+
+**Individual eSIMs:** 5 × $39 (Airalo 10GB each) = $195 total 
+
+**Shared Portable Hotspot:** $10/day × 14 days + $50 data package = $190 total 
+
+**Savings:** Minimal ($5), but everyone shares data from one pool, potentially problematic if one person streams heavily. Individual eSIMs provide independence and fairness. 
+
+**Verdict:** Portable hotspots rarely offer compelling value over modern eSIMs unless you specifically need multi-device connectivity or have unique group dynamics. 
+
+## Data Management and Monitoring 
+
+Regardless of which connectivity option you choose, monitoring usage prevents surprise overages or running dry at critical moments. 
+
+### Built-In Monitoring Tools 
+
+**iPhone:** Settings → Cellular/Mobile Data → Scroll to bottom for current period usage. Reset statistics at the start of your trip for accurate tracking. 
+
+**Android:** Settings → Network & Internet → Mobile Data → App data usage. Shows per-app consumption and total usage. 
+
+### Provider Apps 
+
+**Airalo, Holafly, and other eSIM providers** include in-app data tracking showing remaining balance. Check daily during your trip. 
+
+**T-Mobile, Verizon, AT&T apps** display real-time international usage and alert you to approaching limits. 
+
+### Data Management Best Practices 
+
+**Set usage alerts:** Most phones allow setting warnings at specific thresholds (e.g., alert at 2GB, 5GB, 8GB). 
+
+**Identify data hogs:** Check which apps consume the most and adjust behavior. Often social media apps with auto-play videos are the culprits. 
+
+**Use WiFi proactively:** Connect to hotel WiFi before beginning large downloads, OS updates, or backing up photos. 
+
+**Turn off background app refresh:** Prevents apps from consuming data while you're not actively using them. 
+
+## Special Situations and Advanced Tips 
+
+### Dual SIM Strategy (Advanced) 
+
+Modern iPhones and many Android devices support physical SIM plus eSIM simultaneously. Advanced travelers can maintain their home SIM for receiving calls and texts while routing all data through a cheaper eSIM. 
+
+**Setup:** Keep home SIM in physical slot, add travel eSIM. Configure: Settings → Cellular → Cellular Data → Select eSIM. This preserves your home number for verification codes and important calls while avoiding data roaming charges. 
+
+### Stadium-Specific Connectivity Hacks 
+
+**Arrive early:** Networks are most functional 90+ minutes before kickoff. Send your "we're here!" photos and location pins before crowds arrive. 
+
+**Disable automatic WiFi:** Your phone constantly searching for stadium WiFi drains battery and often connects to unusable networks. Stick with mobile data. 
+
+**Download content during halftime:** Everyone rushes to post at the final whistle. Halftime offers a brief window before congestion peaks. 
+
+**Use text-only messaging:** When data is crawling, text messages through WhatsApp or iMessage often still work when images and videos won't send. 
+
+### Battery Management 
+
+Connectivity searching drains batteries rapidly. Essential accessories: 
+
+**Portable battery pack:** Minimum 10,000 mAh capacity (can charge phone 2-3 times). Anker and Belkin make reliable options. 
+
+**Charging strategy:** Charge phone overnight to 100%, carry portable battery, charge at hotel during midday break, preserve power during match. 
+
+**Low battery mode:** Extends life significantly when approaching critical levels. Enable at 30% remaining. 
+
+### International Calling to Home 
+
+While WhatsApp and FaceTime cover most needs, occasionally you'll need to call traditional numbers in your home country. 
+
+**Google Voice (Free):** 
+Set up before traveling. Make free calls to US and Canadian numbers over WiFi or data. Texting also included. 
+
+**Skype Credit:** 
+Purchase small amounts ($5-10) for international calling. Rates typically $0.02-0.05 per minute to landlines and mobiles in most countries. 
+
+**WhatsApp Calling:** 
+If your family uses WhatsApp, this is free and works identically to regular calls once connected. 
+
+## Troubleshooting Common Connectivity Issues 
+
+### "No Service" or "Emergency Calls Only" 
+
+**eSIM users:** Verify data roaming is enabled for your eSIM line. Settings → Cellular → [eSIM line] → Data Roaming: ON. 
+
+**All travelers:** Toggle Airplane Mode on/off to force network re-registration. Often fixes temporary glitches. 
+
+**Still not working:** Restart your phone completely. 
+
+### Slow Data Speeds 
+
+**Check network type:** If you're seeing "E," "3G," or "H+" instead of "LTE" or "5G," you're on older networks. Move to a different location or wait briefly. 
+
+**VPN interference:** Disconnect VPN temporarily to see if speeds improve. Some VPNs add significant latency. 
+
+**Deprioritization:** During peak times (match days), carriers often deprioritize prepaid and eSIM users. This is normal—speeds recover during off-peak hours. 
+
+### eSIM Won't Activate 
+
+**Verify compatibility:** Ensure your phone is carrier-unlocked. Contact your home carrier if uncertain. 
+
+**Manual installation:** Some eSIMs require manual entry of activation codes rather than QR scanning. Check provider instructions. 
+
+**Contact support immediately:** Airalo, Holafly, and other providers offer 24/7 support. Don't wait—resolve issues before you're desperate for connectivity. 
+
+### Unexpected Roaming Charges 
+
+**Disable cellular data for home SIM:** Settings → Cellular → [Home SIM] → Cellular Data: OFF. This prevents accidental roaming on your expensive home plan. 
+
+**Check after border crossings:** Networks sometimes automatically connect to your home carrier when available. Verify you're on the intended network. 
+
+**Contact carrier immediately:** If you notice unexpected charges appearing, call your home carrier's international support line to dispute and prevent further charges. 
+
+## The Bottom Line: Your Connectivity Playbook 
+
+After analyzing costs, coverage, and convenience across every scenario, here's the definitive guidance for World Cup 2026 connectivity: 
+
+### For Most International Travelers 
+
+**Best Overall Solution:** Airalo eSIM with regional North America coverage. At $16-39 depending on duration and data needs, it offers exceptional value, works across all three host countries, and eliminates SIM swapping hassles. Purchase before departure, activate on arrival, forget about it. 
+
+**Runner-Up:** Country-specific eSIMs from Airalo or Holafly if staying primarily in one nation. Often $10-15 for one week with adequate data. 
+
+### For American Fans Traveling Domestically 
+
+**T-Mobile customers:** Use your existing plan. Most unlimited plans include free Canada and Mexico coverage—verify your specific plan, then travel worry-free. 
+
+**Verizon/AT&T customers:** Calculate whether your daily pass charges ($5-12 per day) exceed eSIM costs for your trip length. Beyond one week, eSIMs almost always win economically. 
+
+### For Extended Stays (3+ Weeks) in One Country 
+
+**Mexico:** Buy a Telcel SIM immediately. At $5-10 for 30 days with 4-6GB plus unlimited social media, nothing beats this value. Purchase at any OXXO convenience store. 
+
+**United States:** Consider Mint Mobile if you can commit to three months ($45 for 3 months). Otherwise, Airalo eSIM remains competitive. 
+
+**Canada:** Bell's prepaid at $40 CAD for 50GB offers solid value for extended stays. eSIMs remain competitive for shorter visits under three weeks. 
+
+### For Heavy Data Users and Streamers 
+
+**Holafly unlimited plans** eliminate usage anxiety completely. At $47-99 depending on duration, they're expensive but worthwhile for travelers who'll stream matches, make frequent video calls, or need mobile hotspots for tablets and laptops. 
+
+### For Budget-Conscious Travelers 
+
+**Airalo budget eSIMs** with careful data management. The $8-16 plans with 2-5GB force mindful usage but provide essential connectivity at rock-bottom prices. Combine with aggressive WiFi usage and offline map downloads. 
+
+### For Groups and Families 
+
+**Individual eSIMs for each person** rather than shared portable hotspots. Modern eSIM pricing makes individual plans economical while providing independence. Exception: families with young children using tablets may benefit from a shared hotspot. 
+
+## Final Preparations Checklist 
+
+Two weeks before departure: 
+- [ ] Choose your connectivity solution 
+- [ ] Verify phone is unlocked (if buying local SIM or eSIM) 
+- [ ] Confirm eSIM compatibility 
+- [ ] Purchase and install eSIM if applicable 
+- [ ] Download offline maps for all host cities 
+- [ ] Download offline translation language packs 
+- [ ] Install WhatsApp and create travel groups 
+- [ ] Set up VPN service 
+- [ ] Screenshot all tickets, confirmations, hotel addresses 
+- [ ] Create emergency contact list with international numbers 
+
+One day before departure: 
+- [ ] Test eSIM activation (if not already active) 
+- [ ] Fully charge all devices 
+- [ ] Pack portable battery charger 
+- [ ] Download entertainment for flights 
+- [ ] Verify data roaming settings 
+- [ ] Share location sharing permissions with travel group 
+- [ ] Turn off automatic app updates 
+
+The 2026 World Cup spans three countries, two languages, and countless unforgettable moments. With the right connectivity strategy, you'll navigate seamlessly, coordinate effortlessly, and share instantly—ensuring technology enhances your experience rather than hindering it. The matches themselves will deliver the magic, but staying connected ensures you never miss a moment of the journey.`}
+                </ReactMarkdown>
+                <hr className="editorial-divider" />
               </article>
             </>
           ) : (

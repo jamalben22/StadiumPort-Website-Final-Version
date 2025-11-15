@@ -301,12 +301,7 @@ export function Card({
         {children}
       </div>
 
-      {/* Ultra Premium Border Animation */}
-      {animate && hover && border && (
-        <div className="absolute inset-0 rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-          <div className="absolute inset-0 rounded-4xl border-2 border-gradient-to-r from-emerald-500/0 via-emerald-500/60 to-emerald-500/0 animate-spin-slow"></div>
-        </div>
-      )}
+      
 
       {/* Parallax Effect */}
       {effect === 'parallax' && (

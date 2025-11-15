@@ -177,6 +177,14 @@ const routes: RouteObject[] = [
     element: <TransportationSafetyGuideArticlePage />
   },
   {
+    path: '/travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi',
+    element: <NotFoundPage />
+  },
+  {
+    path: '/travel-tips/airfare-deal-window-timing',
+    element: <Navigate to="/travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi" replace />
+  },
+  {
     path: '/travel-tips',
     element: <TravelTipsPage />
   },
