@@ -96,7 +96,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div className="editorial-hero-inner">
                   <div className="editorial-hero-eyebrow">
                     <span className="editorial-hero-pulse"></span>
-                    <span>FIFA World Cup 2026</span>
+                    <span>World Cup 2026</span>
                   </div>
                   <h1 className="editorial-hero-title">BC Place Stadium</h1>
                   <div className="editorial-hero-meta">

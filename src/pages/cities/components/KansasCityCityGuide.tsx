@@ -74,7 +74,7 @@ export function KansasCityCityGuide() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>FIFA World Cup 2026</span>
+              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumb Navigation */}
             <nav aria-label="Breadcrumb" className="mt-4">

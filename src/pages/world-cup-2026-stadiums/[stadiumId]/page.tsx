@@ -307,13 +307,6 @@ export default function StadiumDetailPage() {
       <Header />
       <SchemaOrg 
         schema={[
-          generateStadiumSchema({
-            name: stadium.name,
-            city: stadium.city,
-            country: stadium.country,
-            capacity: stadium.capacity,
-            matches: stadium.matches
-          }),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
             { name: 'Venues', url: `${siteUrl}/world-cup-2026-stadiums` },
@@ -324,7 +317,137 @@ export default function StadiumDetailPage() {
             height: 900,
             caption: `${stadium.name} – World Cup 2026`,
             description: altText
-          })
+          }),
+          {
+            "@context": "https://schema.org",
+            "@type": "StadiumOrArena",
+            "name": stadium.name,
+            "description": `${stadium.name} in ${stadium.city} is a featured World Cup 2026 venue offering world-class infrastructure, seating and access.`,
+            "image": heroImageAbs,
+            "address": {
+              "@type": "PostalAddress",
+              ...(stadiumId && {
+                ...(function(){
+                  const meta: Record<string, any> = {
+                    'metlife-stadium': { streetAddress: '1 MetLife Stadium Dr', addressLocality: 'East Rutherford', addressRegion: 'NJ', postalCode: '07073', addressCountry: 'USA', latitude: 40.8135, longitude: -74.0745 },
+                    'estadio-azteca': { streetAddress: 'Calz. de Tlalpan 3465, Santa Úrsula Coapa', addressLocality: 'Ciudad de México', addressRegion: 'CDMX', postalCode: '04650', addressCountry: 'Mexico', latitude: 19.3029, longitude: -99.1506 },
+                    'arrowhead-stadium': { streetAddress: '1 Arrowhead Dr', addressLocality: 'Kansas City', addressRegion: 'MO', postalCode: '64129', addressCountry: 'USA', latitude: 39.0490, longitude: -94.4839 },
+                    'att-stadium': { streetAddress: '1 AT&T Way', addressLocality: 'Arlington', addressRegion: 'TX', postalCode: '76011', addressCountry: 'USA', latitude: 32.7473, longitude: -97.0945 },
+                    'nrg-stadium': { streetAddress: 'NRG Pkwy', addressLocality: 'Houston', addressRegion: 'TX', postalCode: '77054', addressCountry: 'USA', latitude: 29.6847, longitude: -95.4107 },
+                    'estadio-bbva': { streetAddress: 'Av. Pablo Livas 2011, La Pastora', addressLocality: 'Guadalupe', addressRegion: 'Nuevo León', postalCode: '67140', addressCountry: 'Mexico', latitude: 25.6720, longitude: -100.2436 },
+                    'sofi-stadium': { streetAddress: '1001 S Stadium Dr', addressLocality: 'Inglewood', addressRegion: 'CA', postalCode: '90301', addressCountry: 'USA', latitude: 33.9535, longitude: -118.3391 },
+                    'mercedes-benz-stadium': { streetAddress: '1 AMB Dr NW', addressLocality: 'Atlanta', addressRegion: 'GA', postalCode: '30313', addressCountry: 'USA', latitude: 33.7554, longitude: -84.4009 },
+                    'levis-stadium': { streetAddress: '4900 Marie P DeBartolo Way', addressLocality: 'Santa Clara', addressRegion: 'CA', postalCode: '95054', addressCountry: 'USA', latitude: 37.4030, longitude: -121.9690 },
+                    'lumen-field': { streetAddress: '800 Occidental Ave S', addressLocality: 'Seattle', addressRegion: 'WA', postalCode: '98134', addressCountry: 'USA', latitude: 47.5952, longitude: -122.3316 },
+                    'gillette-stadium': { streetAddress: '1 Patriot Pl', addressLocality: 'Foxborough', addressRegion: 'MA', postalCode: '02035', addressCountry: 'USA', latitude: 42.0909, longitude: -71.2643 },
+                    'lincoln-financial-field': { streetAddress: '1 Lincoln Financial Field Way', addressLocality: 'Philadelphia', addressRegion: 'PA', postalCode: '19148', addressCountry: 'USA', latitude: 39.9008, longitude: -75.1675 },
+                    'hard-rock-stadium': { streetAddress: '347 Don Shula Dr', addressLocality: 'Miami Gardens', addressRegion: 'FL', postalCode: '33056', addressCountry: 'USA', latitude: 25.9580, longitude: -80.2389 },
+                    'bmo-field': { streetAddress: "170 Princes' Blvd", addressLocality: 'Toronto', addressRegion: 'ON', postalCode: 'M6K 3C3', addressCountry: 'Canada', latitude: 43.6332, longitude: -79.4186 },
+                    'bc-place-stadium': { streetAddress: '777 Pacific Blvd', addressLocality: 'Vancouver', addressRegion: 'BC', postalCode: 'V6B 4Y8', addressCountry: 'Canada', latitude: 49.2768, longitude: -123.1119 },
+                    'estadio-akron': { streetAddress: 'Anillo Periférico Manuel Gómez Morin 5000, El Bajío', addressLocality: 'Zapopan', addressRegion: 'Jalisco', postalCode: '45019', addressCountry: 'Mexico', latitude: 20.7369, longitude: -103.4621 },
+                  };
+                  const m = meta[stadiumId];
+                  return m ? { streetAddress: m.streetAddress, addressLocality: m.addressLocality, addressRegion: m.addressRegion, postalCode: m.postalCode, addressCountry: m.addressCountry } : {};
+                })()
+              })
+            },
+            ...(stadiumId && (function(){
+              const meta: Record<string, any> = {
+                'metlife-stadium': { latitude: 40.8135, longitude: -74.0745 },
+                'estadio-azteca': { latitude: 19.3029, longitude: -99.1506 },
+                'arrowhead-stadium': { latitude: 39.0490, longitude: -94.4839 },
+                'att-stadium': { latitude: 32.7473, longitude: -97.0945 },
+                'nrg-stadium': { latitude: 29.6847, longitude: -95.4107 },
+                'estadio-bbva': { latitude: 25.6720, longitude: -100.2436 },
+                'sofi-stadium': { latitude: 33.9535, longitude: -118.3391 },
+                'mercedes-benz-stadium': { latitude: 33.7554, longitude: -84.4009 },
+                'levis-stadium': { latitude: 37.4030, longitude: -121.9690 },
+                'lumen-field': { latitude: 47.5952, longitude: -122.3316 },
+                'gillette-stadium': { latitude: 42.0909, longitude: -71.2643 },
+                'lincoln-financial-field': { latitude: 39.9008, longitude: -75.1675 },
+                'hard-rock-stadium': { latitude: 25.9580, longitude: -80.2389 },
+                'bmo-field': { latitude: 43.6332, longitude: -79.4186 },
+                'bc-place-stadium': { latitude: 49.2768, longitude: -123.1119 },
+                'estadio-akron': { latitude: 20.7369, longitude: -103.4621 },
+              };
+              const m = meta[stadiumId];
+              return m ? { "geo": { "@type": "GeoCoordinates", latitude: m.latitude, longitude: m.longitude } } : {};
+            })()),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "SportsEvent",
+            "name": `FIFA World Cup 2026 Matches at ${stadium.name}`,
+            "description": `World Cup 2026 matches at ${stadium.name} in ${stadium.city}. This venue hosts international fixtures with modern amenities, strong transit access and an electric atmosphere.`,
+            "startDate": "2026-06-11",
+            "endDate": "2026-07-19",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "image": heroImageAbs,
+            "organizer": {
+              "@type": "Organization",
+              "name": "FIFA",
+              "url": "https://www.fifa.com"
+            },
+            "location": {
+              "@type": "SportsActivityLocation",
+              "name": stadium.name,
+              "address": {
+                "@type": "PostalAddress",
+                ...(function(){
+                  const meta: Record<string, any> = {
+                    'metlife-stadium': { streetAddress: '1 MetLife Stadium Dr', addressLocality: 'East Rutherford', addressRegion: 'NJ', postalCode: '07073', addressCountry: 'USA' },
+                    'estadio-azteca': { streetAddress: 'Calz. de Tlalpan 3465, Santa Úrsula Coapa', addressLocality: 'Ciudad de México', addressRegion: 'CDMX', postalCode: '04650', addressCountry: 'Mexico' },
+                    'arrowhead-stadium': { streetAddress: '1 Arrowhead Dr', addressLocality: 'Kansas City', addressRegion: 'MO', postalCode: '64129', addressCountry: 'USA' },
+                    'att-stadium': { streetAddress: '1 AT&T Way', addressLocality: 'Arlington', addressRegion: 'TX', postalCode: '76011', addressCountry: 'USA' },
+                    'nrg-stadium': { streetAddress: 'NRG Pkwy', addressLocality: 'Houston', addressRegion: 'TX', postalCode: '77054', addressCountry: 'USA' },
+                    'estadio-bbva': { streetAddress: 'Av. Pablo Livas 2011, La Pastora', addressLocality: 'Guadalupe', addressRegion: 'Nuevo León', postalCode: '67140', addressCountry: 'Mexico' },
+                    'sofi-stadium': { streetAddress: '1001 S Stadium Dr', addressLocality: 'Inglewood', addressRegion: 'CA', postalCode: '90301', addressCountry: 'USA' },
+                    'mercedes-benz-stadium': { streetAddress: '1 AMB Dr NW', addressLocality: 'Atlanta', addressRegion: 'GA', postalCode: '30313', addressCountry: 'USA' },
+                    'levis-stadium': { streetAddress: '4900 Marie P DeBartolo Way', addressLocality: 'Santa Clara', addressRegion: 'CA', postalCode: '95054', addressCountry: 'USA' },
+                    'lumen-field': { streetAddress: '800 Occidental Ave S', addressLocality: 'Seattle', addressRegion: 'WA', postalCode: '98134', addressCountry: 'USA' },
+                    'gillette-stadium': { streetAddress: '1 Patriot Pl', addressLocality: 'Foxborough', addressRegion: 'MA', postalCode: '02035', addressCountry: 'USA' },
+                    'lincoln-financial-field': { streetAddress: '1 Lincoln Financial Field Way', addressLocality: 'Philadelphia', addressRegion: 'PA', postalCode: '19148', addressCountry: 'USA' },
+                    'hard-rock-stadium': { streetAddress: '347 Don Shula Dr', addressLocality: 'Miami Gardens', addressRegion: 'FL', postalCode: '33056', addressCountry: 'USA' },
+                    'bmo-field': { streetAddress: "170 Princes' Blvd", addressLocality: 'Toronto', addressRegion: 'ON', postalCode: 'M6K 3C3', addressCountry: 'Canada' },
+                    'bc-place-stadium': { streetAddress: '777 Pacific Blvd', addressLocality: 'Vancouver', addressRegion: 'BC', postalCode: 'V6B 4Y8', addressCountry: 'Canada' },
+                    'estadio-akron': { streetAddress: 'Anillo Periférico Manuel Gómez Morin 5000, El Bajío', addressLocality: 'Zapopan', addressRegion: 'Jalisco', postalCode: '45019', addressCountry: 'Mexico' },
+                  };
+                  return meta[stadiumId] || {};
+                })()
+              },
+              ...(function(){
+                const meta: Record<string, any> = {
+                  'metlife-stadium': { latitude: 40.8135, longitude: -74.0745 },
+                  'estadio-azteca': { latitude: 19.3029, longitude: -99.1506 },
+                  'arrowhead-stadium': { latitude: 39.0490, longitude: -94.4839 },
+                  'att-stadium': { latitude: 32.7473, longitude: -97.0945 },
+                  'nrg-stadium': { latitude: 29.6847, longitude: -95.4107 },
+                  'estadio-bbva': { latitude: 25.6720, longitude: -100.2436 },
+                  'sofi-stadium': { latitude: 33.9535, longitude: -118.3391 },
+                  'mercedes-benz-stadium': { latitude: 33.7554, longitude: -84.4009 },
+                  'levis-stadium': { latitude: 37.4030, longitude: -121.9690 },
+                  'lumen-field': { latitude: 47.5952, longitude: -122.3316 },
+                  'gillette-stadium': { latitude: 42.0909, longitude: -71.2643 },
+                  'lincoln-financial-field': { latitude: 39.9008, longitude: -75.1675 },
+                  'hard-rock-stadium': { latitude: 25.9580, longitude: -80.2389 },
+                  'bmo-field': { latitude: 43.6332, longitude: -79.4186 },
+                  'bc-place-stadium': { latitude: 49.2768, longitude: -123.1119 },
+                  'estadio-akron': { latitude: 20.7369, longitude: -103.4621 },
+                };
+                const m = meta[stadiumId];
+                return m ? { "geo": { "@type": "GeoCoordinates", latitude: m.latitude, longitude: m.longitude } } : {};
+              })()
+            },
+            "offers": {
+              "@type": "AggregateOffer",
+              "url": "https://www.fifa.com/tickets",
+              "priceCurrency": "USD",
+              "lowPrice": 60,
+              "highPrice": 1500,
+              "offerCount": 1000,
+              "availability": "https://schema.org/InStock"
+            }
+          }
         ]}
       />
 
@@ -348,7 +471,7 @@ export default function StadiumDetailPage() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>FIFA World Cup 2026</span>
+              <span>World Cup 2026</span>
             </div>
             <h1 className="editorial-hero-title">{stadium.name}</h1>
             <div className="editorial-hero-meta">

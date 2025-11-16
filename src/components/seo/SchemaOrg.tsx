@@ -125,7 +125,9 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: 
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": item.url
+    "item": item.url.startsWith('http')
+      ? item.url
+      : (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.url
   }))
 });
 
@@ -154,7 +156,9 @@ export const generateItemListSchema = (
     "@type": "ListItem",
     "position": index + 1,
     "name": item.name,
-    "item": item.url,
+    "item": item.url.startsWith('http')
+      ? item.url
+      : (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.url,
     ...(item.image
       ? {
           "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.image,
@@ -194,7 +198,9 @@ export const generateCollectionPageSchema = (
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": item.url,
+      "item": item.url.startsWith('http')
+        ? item.url
+        : (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.url,
       ...(item.image
         ? {
             "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.image,
