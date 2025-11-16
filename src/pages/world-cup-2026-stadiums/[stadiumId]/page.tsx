@@ -388,6 +388,10 @@ export default function StadiumDetailPage() {
               "name": "FIFA",
               "url": "https://www.fifa.com"
             },
+            "performer": [
+              { "@type": "SportsTeam", "name": "TBD Team A" },
+              { "@type": "SportsTeam", "name": "TBD Team B" }
+            ],
             "location": {
               "@type": "SportsActivityLocation",
               "name": stadium.name,
@@ -445,7 +449,8 @@ export default function StadiumDetailPage() {
               "lowPrice": 60,
               "highPrice": 1500,
               "offerCount": 1000,
-              "availability": "https://schema.org/InStock"
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2025-09-10T00:00:00Z"
             }
           }
         ]}
