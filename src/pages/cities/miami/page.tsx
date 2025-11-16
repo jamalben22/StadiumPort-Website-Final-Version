@@ -74,10 +74,10 @@ export default function MiamiCityGuide() {
 
           <div className="editorial-hero-content">
             <div className="editorial-hero-inner">
-              <div className="editorial-hero-eyebrow">
-                <span className="editorial-hero-pulse"></span>
-                <span>FIFA World Cup 2026</span>
-              </div>
+            <div className="editorial-hero-eyebrow">
+              <span className="editorial-hero-pulse"></span>
+              <span>World Cup 2026</span>
+            </div>
               <nav className="editorial-breadcrumbs mb-3">
                 <ol className="list-none flex flex-wrap items-center gap-2 text-sm md:text-base">
                   <li>

@@ -281,7 +281,7 @@ export default function TravelTipsArticlePage() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>FIFA World Cup 2026</span>
+              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumbs (match city guide style) */}
             <nav aria-label="Breadcrumb" className="mb-3">

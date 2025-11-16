@@ -28,7 +28,7 @@ export default function GuidesPage() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>FIFA World Cup 2026</span>
+              <span>World Cup 2026</span>
             </div>
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>

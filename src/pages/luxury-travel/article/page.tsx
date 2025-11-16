@@ -127,7 +127,7 @@ export default function LuxuryArticlePage() {
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
               <span className="editorial-hero-pulse"></span>
-              <span>FIFA World Cup 2026</span>
+              <span>World Cup 2026</span>
             </div>
             <nav aria-label="Breadcrumb" className="mb-3">
               <ol className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
