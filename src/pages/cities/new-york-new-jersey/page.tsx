@@ -649,10 +649,6 @@ export default function NewYorkCityArticlePage() {
 
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
-            <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
-            </div>
             {/* Breadcrumbs */}
             <nav aria-label="Breadcrumb navigation for New York New Jersey World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
               <ol>
@@ -679,7 +675,7 @@ export default function NewYorkCityArticlePage() {
               </ol>
             </nav>
             <h1 className="editorial-hero-title" itemProp="headline">
-              New York New Jersey World Cup 2026 Guide | MetLife Stadium Final Venue
+              New York New Jersey World Cup 2026 Guide
             </h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
