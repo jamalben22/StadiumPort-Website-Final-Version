@@ -613,6 +613,7 @@ export default function NewYorkCityArticlePage() {
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.fifa.com/worldcup/tickets/",
+                "price": "TBD",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "validFrom": "2025-01-01T00:00:00Z",
@@ -643,6 +644,7 @@ export default function NewYorkCityArticlePage() {
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.fifa.com/worldcup/tickets/",
+                "price": "TBD",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "validFrom": "2025-01-01T00:00:00Z",
@@ -700,6 +702,7 @@ export default function NewYorkCityArticlePage() {
             "offers": {
               "@type": "Offer",
               "url": "https://www.fifa.com/worldcup/tickets/",
+              "price": "TBD",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
               "validFrom": "2025-01-01T00:00:00Z",
@@ -729,9 +732,33 @@ export default function NewYorkCityArticlePage() {
             "maximumAttendeeCapacity": 75000,
             "containsPlace": {
               "@type": "SportsEvent",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final',
               "name": "FIFA World Cup 2026 Final",
+              "description": "The FIFA World Cup 2026 Final will be held at MetLife Stadium in East Rutherford, New Jersey on July 19, 2026.",
               "startDate": "2026-07-19T18:00:00-05:00",
-              "endDate": "2026-07-19T21:00:00-05:00"
+              "endDate": "2026-07-19T21:00:00-05:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "organizer": {
+                "@type": "Organization",
+                "name": "FIFA",
+                "url": "https://www.fifa.com"
+              },
+              "performer": {
+                "@type": "SportsTeam",
+                "name": "FIFA World Cup Final Teams",
+                "url": "https://www.fifa.com/worldcup/"
+              },
+              "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.fifa.com/worldcup/tickets/",
+                "price": "TBD",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2025-01-01T00:00:00Z",
+                "validThrough": "2026-07-19T18:00:00-05:00"
+              }
             }
           },
           // Enhanced Breadcrumb Schema
