@@ -376,6 +376,7 @@ export default function NewYorkCityArticlePage() {
     };
     
     // Enhanced Open Graph tags for maximum social sharing
+    setMeta('og:url', siteUrl + pageUrl);
     setMeta('og:image', ogImageUrl);
     setMeta('twitter:image', ogImageUrl);
     setMeta('og:image:width', '1600');
@@ -650,59 +651,6 @@ export default function NewYorkCityArticlePage() {
               }
             }
           },
-          // Standalone SportsEvent Schema for the Final (references the main one)
-          {
-            "@context": "https://schema.org",
-            "@type": "SportsEvent",
-            "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final-event',
-            "name": "FIFA World Cup 2026 Final",
-            "description": "The FIFA World Cup 2026 Final will be held at MetLife Stadium in East Rutherford, New Jersey on July 19, 2026.",
-            "startDate": "2026-07-19T18:00:00-05:00",
-            "endDate": "2026-07-19T21:00:00-05:00",
-            "eventStatus": "https://schema.org/EventScheduled",
-            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl + '#world-cup-2026-final'
-            },
-            "organizer": {
-              "@type": "Organization",
-              "name": "FIFA",
-              "url": "https://www.fifa.com"
-            },
-            "performer": {
-              "@type": "SportsTeam",
-              "name": "FIFA World Cup Final Teams",
-              "url": "https://www.fifa.com/worldcup/"
-            },
-            "location": {
-              "@type": "StadiumOrArena",
-              "name": "MetLife Stadium",
-              "address": {
-                "@type": "PostalAddress",
-                "streetAddress": "1 MetLife Stadium Dr",
-                "addressLocality": "East Rutherford",
-                "addressRegion": "NJ",
-                "postalCode": "07073",
-                "addressCountry": "US"
-              },
-              "geo": {
-                "@type": "GeoCoordinates",
-                "latitude": 40.8135,
-                "longitude": -74.0744
-              }
-            },
-            "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
-            "offers": {
-              "@type": "Offer",
-              "url": "https://www.fifa.com/worldcup/tickets/",
-              "price": "TBD",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock",
-              "validFrom": "2025-01-01T00:00:00Z",
-              "validThrough": "2026-07-19T18:00:00-05:00"
-            }
-          },
           // Stadium Schema
           {
             "@context": "https://schema.org",
@@ -726,32 +674,7 @@ export default function NewYorkCityArticlePage() {
             "maximumAttendeeCapacity": 75000,
             "containsPlace": {
               "@type": "SportsEvent",
-              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final',
-              "name": "FIFA World Cup 2026 Final",
-              "description": "The FIFA World Cup 2026 Final will be held at MetLife Stadium in East Rutherford, New Jersey on July 19, 2026.",
-              "startDate": "2026-07-19T18:00:00-05:00",
-              "endDate": "2026-07-19T21:00:00-05:00",
-              "eventStatus": "https://schema.org/EventScheduled",
-              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "organizer": {
-                "@type": "Organization",
-                "name": "FIFA",
-                "url": "https://www.fifa.com"
-              },
-              "performer": {
-                "@type": "SportsTeam",
-                "name": "FIFA World Cup Final Teams",
-                "url": "https://www.fifa.com/worldcup/"
-              },
-              "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
-              "offers": {
-                "@type": "Offer",
-                "url": "https://www.fifa.com/worldcup/tickets/",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2025-01-01T00:00:00Z",
-                "validThrough": "2026-07-19T18:00:00-05:00"
-              }
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final'
             }
           },
           // Enhanced Breadcrumb Schema
