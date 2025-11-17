@@ -613,7 +613,6 @@ export default function NewYorkCityArticlePage() {
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.fifa.com/worldcup/tickets/",
-                "price": "TBD",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "validFrom": "2025-01-01T00:00:00Z",
@@ -644,16 +643,11 @@ export default function NewYorkCityArticlePage() {
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.fifa.com/worldcup/tickets/",
-                "price": "TBD",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "validFrom": "2025-01-01T00:00:00Z",
                 "validThrough": "2026-07-19T18:00:00-05:00"
               }
-            },
-            "mainEntity": {
-              "@type": "FAQPage",
-              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl + '#faq'
             }
           },
           // Standalone SportsEvent Schema for the Final (references the main one)
@@ -753,7 +747,6 @@ export default function NewYorkCityArticlePage() {
               "offers": {
                 "@type": "Offer",
                 "url": "https://www.fifa.com/worldcup/tickets/",
-                "price": "TBD",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "validFrom": "2025-01-01T00:00:00Z",
@@ -1453,7 +1446,7 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
       </div>
 
       {/* Premium FAQ Section - New York/New Jersey World Cup 2026 */}
-      <section className="py-20 bg-white dark:bg-navy-900" itemScope itemType="https://schema.org/FAQPage">
+      <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <WorldClassFAQ 
