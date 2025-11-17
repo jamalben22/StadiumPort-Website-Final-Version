@@ -5,7 +5,7 @@ import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
-import { PremiumFAQ } from '../../components/feature/PremiumFAQ';
+import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { SchemaOrg, generateCollectionPageSchema, generateItemListSchema } from '../../components/seo/SchemaOrg';
 
@@ -725,105 +725,83 @@ export default function TravelTipsPage() {
   const faqData = [
     {
       id: 1,
-      question: "Q1: When should I book flights for World Cup 2026?",
-      answer: "<strong>A:</strong> Book international flights 4-6 months before your travel dates (January-March 2026 for June/July matches). Prices typically spike 8-12 weeks before departure. For best deals, use flexible date searches, consider nearby airports (e.g., Newark instead of JFK), and book Tuesday-Thursday for lower fares. Budget airlines often release sales 3-4 months out. Multi-city travelers should book open-jaw tickets (fly into one city, out of another) to save time and money."
+      question: "When should I book flights for World Cup 2026?",
+      answer: "Book international flights 4-6 months before your travel dates (January-March 2026 for June/July matches). Prices typically spike 8-12 weeks before departure. For best deals, use flexible date searches, consider nearby airports (e.g., Newark instead of JFK), and book Tuesday-Thursday for lower fares. Budget airlines often release sales 3-4 months out. Multi-city travelers should book open-jaw tickets (fly into one city, out of another) to save time and money.",
+      category: "Flight Planning",
+      popularity: 10,
+      readingTime: 3
     },
     {
       id: 2,
-      question: "Q2: How much should I budget for a World Cup 2026 trip?",
-      answer: `<strong>A:</strong> Budget varies by travel style:
-      <ul class="mt-2 space-y-1">
-        <li>• <strong>Budget:</strong> $2,500-4,000 (hostels, public transport, cheap eats, upper-level seats)</li>
-        <li>• <strong>Mid-Range:</strong> $5,000-8,000 (3-star hotels, mix of transit/Uber, good restaurants, decent seats)</li>
-        <li>• <strong>Luxury:</strong> $10,000-20,000+ (4-5 star hotels, private transport, fine dining, premium seats)</li>
-      </ul>
-      <p class="mt-2">Major costs: Match tickets ($100-500+), accommodation ($150-400/night in host cities), flights ($600-1,500 roundtrip), food ($50-100/day), local transport ($20-50/day). Book early to save 30-40%.</p>`
+      question: "How much should I budget for a World Cup 2026 trip?",
+      answer: "Budget varies by travel style:\n\n**Budget:** $2,500-4,000 (hostels, public transport, cheap eats, upper-level seats)\n**Mid-Range:** $5,000-8,000 (3-star hotels, mix of transit/Uber, good restaurants, decent seats)\n**Luxury:** $10,000-20,000+ (4-5 star hotels, private transport, fine dining, premium seats)\n\nMajor costs: Match tickets ($100-500+), accommodation ($150-400/night in host cities), flights ($600-1,500 roundtrip), food ($50-100/day), local transport ($20-50/day). Book early to save 30-40%.",
+      category: "Budget Planning",
+      popularity: 9,
+      readingTime: 4
     },
     {
       id: 3,
-      question: "Q3: Do I need a visa to attend World Cup 2026 in USA, Canada, and Mexico?",
-      answer: `<strong>A:</strong> Depends on your nationality:
-      <ul class="mt-2 space-y-1">
-        <li>• <strong>USA:</strong> Most visitors need ESTA (travel authorization, $21) or B-2 tourist visa. Apply for ESTA at least 72 hours before travel.</li>
-        <li>• <strong>Canada:</strong> Many countries need eTA (electronic travel authorization, CAD $7). Some require visitor visa.</li>
-        <li>• <strong>Mexico:</strong> Most nationalities get 180-day tourist permit free on arrival. Some need visa.</li>
-      </ul>
-      <p class="mt-2">If attending matches in multiple countries, you need valid entry documents for EACH country. Processing times vary: ESTA (instant-72 hours), eTA (minutes-days), visas (weeks-months). Start visa applications 3-6 months before travel.</p>`
+      question: "Do I need a visa to attend World Cup 2026 in USA, Canada, and Mexico?",
+      answer: "Depends on your nationality:\n\n**USA:** Most visitors need ESTA (travel authorization, $21) or B-2 tourist visa. Apply for ESTA at least 72 hours before travel.\n**Canada:** Many countries need eTA (electronic travel authorization, CAD $7). Some require visitor visa.\n**Mexico:** Most nationalities get 180-day tourist permit free on arrival. Some need visa.\n\nIf attending matches in multiple countries, you need valid entry documents for EACH country. Processing times vary: ESTA (instant-72 hours), eTA (minutes-days), visas (weeks-months). Start visa applications 3-6 months before travel.",
+      category: "Visa & Documentation",
+      popularity: 8,
+      readingTime: 3
     },
     {
       id: 4,
-      question: "Q4: What's the best way to get between World Cup host cities?",
-      answer: `<strong>A:</strong> Depends on distance:
-      <ul class="mt-2 space-y-1">
-        <li>• <strong>Short distances (under 300 miles):</strong> Train/bus often beats flying when you factor in airport time. Examples: Philadelphia-New York (train), Dallas-Houston (drive).</li>
-        <li>• <strong>Medium distances (300-800 miles):</strong> Budget airlines (Spirit, Frontier, Southwest) or drive if you have 3+ people.</li>
-        <li>• <strong>Long distances (800+ miles):</strong> Fly. Book domestic flights 2-3 months ahead. Consider overnight buses to save hotel costs.</li>
-        <li>• <strong>Cross-border:</strong> Flying is fastest. Remember you'll need to clear customs/immigration.</li>
-      </ul>
-      <p class="mt-2">Popular routes: NYC → Philadelphia → Boston (train), LA → SF → Seattle (fly or drive), Mexico City → Guadalajara → Monterrey (fly).</p>`
+      question: "What's the best way to get between World Cup host cities?",
+      answer: "Depends on distance:\n\n**Short distances (under 300 miles):** Train/bus often beats flying when you factor in airport time. Examples: Philadelphia-New York (train), Dallas-Houston (drive).\n**Medium distances (300-800 miles):** Budget airlines (Spirit, Frontier, Southwest) or drive if you have 3+ people.\n**Long distances (800+ miles):** Fly. Book domestic flights 2-3 months ahead. Consider overnight buses to save hotel costs.\n**Cross-border:** Flying is fastest. Remember you'll need to clear customs/immigration.\n\nPopular routes: NYC → Philadelphia → Boston (train), LA → SF → Seattle (fly or drive), Mexico City → Guadalajara → Monterrey (fly).",
+      category: "Transportation",
+      popularity: 8,
+      readingTime: 4
     },
     {
       id: 5,
-      question: "Q5: Where should I stay: near the stadium or downtown?",
-      answer: `<strong>A:</strong> <strong>Downtown usually wins:</strong>
-      <ul class="mt-2 space-y-1">
-        <li>✅ More hotel options (better prices)</li>
-        <li>✅ Restaurants, nightlife, attractions</li>
-        <li>✅ Better public transport connections</li>
-        <li>✅ Easier to explore on non-match days</li>
-      </ul>
-      <p class="mt-2"><strong>Near stadium only if:</strong> Stadium is downtown (Atlanta, Vancouver, Toronto, Philadelphia), you're attending multiple matches at same venue, or you find significantly cheaper accommodation.</p>
-      <p class="mt-2">Most stadiums are 20-45 minutes from downtown via public transit or rideshare. Budget $20-40 for transport to/from stadium on match days.</p>`
+      question: "Where should I stay: near the stadium or downtown?",
+      answer: "**Downtown usually wins:**\n✅ More hotel options (better prices)\n✅ Restaurants, nightlife, attractions\n✅ Better public transport connections\n✅ Easier to explore on non-match days\n\n**Near stadium only if:** Stadium is downtown (Atlanta, Vancouver, Toronto, Philadelphia), you're attending multiple matches at same venue, or you find significantly cheaper accommodation.\n\nMost stadiums are 20-45 minutes from downtown via public transit or rideshare. Budget $20-40 for transport to/from stadium on match days.",
+      category: "Accommodation",
+      popularity: 7,
+      readingTime: 3
     },
     {
       id: 6,
-      question: "Q6: Is it safe to travel to USA, Canada, and Mexico for World Cup?",
-      answer: `<strong>A:</strong> <strong>Yes, all 16 host cities are safe for tourists</strong> with normal precautions:
-      <p class="mt-2"><strong>USA Cities:</strong> Generally safe. Use common sense: avoid poorly lit areas at night, watch belongings in crowds, use licensed taxis/Ubers. Cities with excellent safety: Seattle, Vancouver, Boston. Cities requiring more awareness: certain areas of Philadelphia, Miami.</p>
-      <p class="mt-2"><strong>Canadian Cities:</strong> Very safe. Toronto and Vancouver have low crime rates. Standard tourist precautions apply.</p>
-      <p class="mt-2"><strong>Mexican Cities:</strong> Safe in tourist/stadium areas with extra awareness: Stay in established neighborhoods, use authorized taxis or Uber, avoid displaying expensive items, travel in groups at night. Mexico City, Guadalajara, and Monterrey have strong World Cup security.</p>
-      <p class="mt-2">Check travel.state.gov (USA) and government travel advisories before booking.</p>`
+      question: "Is it safe to travel to USA, Canada, and Mexico for World Cup?",
+      answer: "**Yes, all 16 host cities are safe for tourists** with normal precautions:\n\n**USA Cities:** Generally safe. Use common sense: avoid poorly lit areas at night, watch belongings in crowds, use licensed taxis/Ubers. Cities with excellent safety: Seattle, Vancouver, Boston. Cities requiring more awareness: certain areas of Philadelphia, Miami.\n\n**Canadian Cities:** Very safe. Toronto and Vancouver have low crime rates. Standard tourist precautions apply.\n\n**Mexican Cities:** Safe in tourist/stadium areas with extra awareness: Stay in established neighborhoods, use authorized taxis or Uber, avoid displaying expensive items, travel in groups at night. Mexico City, Guadalajara, and Monterrey have strong World Cup security.\n\nCheck travel.state.gov (USA) and government travel advisories before booking.",
+      category: "Safety & Security",
+      popularity: 7,
+      readingTime: 4
     },
     {
       id: 7,
-      question: "Q7: Can I use my cell phone in USA, Canada, and Mexico?",
-      answer: `<strong>A:</strong> <strong>Yes, with preparation:</strong>
-      <p class="mt-2"><strong>Best Options:</strong></p>
-      <ol class="mt-2 space-y-1">
-        <li>1. <strong>eSIM (Recommended):</strong> Digital SIM card, instant activation, 5-30GB data for $15-50. Providers: Airalo, Holafly, Nomad. Works in most modern phones.</li>
-        <li>2. <strong>International Roaming:</strong> Contact your carrier. Often expensive ($10-15/day) but convenient.</li>
-        <li>3. <strong>Local SIM Cards:</strong> Buy at airports or carrier stores. Cheaper for long stays (2+ weeks).</li>
-      </ol>
-      <p class="mt-2"><strong>T-Mobile customers:</strong> Free data/texting in Canada and Mexico (slow speeds). <strong>AT&T/Verizon:</strong> Expensive roaming unless you buy international plans.</p>
-      <p class="mt-2"><strong>Download offline maps</strong> (Google Maps, Maps.me) before arrival. Stadium Wi-Fi often overloaded on match days.</p>`
+      question: "Can I use my cell phone in USA, Canada, and Mexico?",
+      answer: "**Yes, with preparation:**\n\n**Best Options:**\n1. **eSIM (Recommended):** Digital SIM card, instant activation, 5-30GB data for $15-50. Providers: Airalo, Holafly, Nomad. Works in most modern phones.\n2. **International Roaming:** Contact your carrier. Often expensive ($10-15/day) but convenient.\n3. **Local SIM Cards:** Buy at airports or carrier stores. Cheaper for long stays (2+ weeks).\n\n**T-Mobile customers:** Free data/texting in Canada and Mexico (slow speeds). **AT&T/Verizon:** Expensive roaming unless you buy international plans.\n\n**Download offline maps** (Google Maps, Maps.me) before arrival. Stadium Wi-Fi often overloaded on match days.",
+      category: "Connectivity",
+      popularity: 6,
+      readingTime: 3
     },
     {
       id: 8,
-      question: "Q8: What should I pack for World Cup 2026?",
-      answer: `<strong>A:</strong> <strong>Essential items:</strong>
-      <p class="mt-2"><strong>Documents:</strong> Passport (valid 6+ months), Visa/ESTA/eTA confirmation, Match tickets (digital + printed backup), Hotel confirmations, Travel insurance documents, Emergency contacts</p>
-      <p class="mt-2"><strong>Clothing (June-July weather):</strong> Light, breathable clothes (most cities are HOT), Light jacket/sweater (evening, air-conditioned venues), Comfortable walking shoes (you'll walk 15,000+ steps/day), Sunglasses, hat, sunscreen (strong summer sun), Rain jacket (afternoon storms common)</p>
-      <p class="mt-2"><strong>Stadium Essentials:</strong> Small clear bag (most stadiums require this), Empty water bottle (refill inside), Portable phone charger, Team colors/jersey</p>
-      <p class="mt-2"><strong>Don't bring:</strong> Large bags, backpacks (not allowed), selfie sticks, outside food/drinks.</p>`
+      question: "What should I pack for World Cup 2026?",
+      answer: "**Essential items:**\n\n**Documents:** Passport (valid 6+ months), Visa/ESTA/eTA confirmation, Match tickets (digital + printed backup), Hotel confirmations, Travel insurance documents, Emergency contacts\n\n**Clothing (June-July weather):** Light, breathable clothes (most cities are HOT), Light jacket/sweater (evening, air-conditioned venues), Comfortable walking shoes (you'll walk 15,000+ steps/day), Sunglasses, hat, sunscreen (strong summer sun), Rain jacket (afternoon storms common)\n\n**Stadium Essentials:** Small clear bag (most stadiums require this), Empty water bottle (refill inside), Portable phone charger, Team colors/jersey\n\n**Don't bring:** Large bags, backpacks (not allowed), selfie sticks, outside food/drinks.",
+      category: "Packing & Gear",
+      popularity: 6,
+      readingTime: 3
     },
     {
       id: 9,
-      question: "Q9: How early should I arrive at the stadium?",
-      answer: `<strong>A:</strong> <strong>Arrive 90 minutes before kickoff minimum</strong> for World Cup matches:
-      <p class="mt-2"><strong>Why so early:</strong> Security screening takes 15-30 minutes, lines longer than regular season games, want time to find seats, buy food, use restroom, soak in pre-match atmosphere</p>
-      <p class="mt-2"><strong>For high-profile matches (Final, Semifinals, USA/Mexico/Canada):</strong> Arrive 2+ hours early. Security lines can exceed 45 minutes.</p>
-      <p class="mt-2"><strong>Gates typically open:</strong> 2 hours before kickoff</p>
-      <p class="mt-2"><strong>Post-match transport:</strong> Plan 30-60 minutes to exit stadium and catch transit/rideshare. Stay 10-15 minutes after final whistle if you want to avoid worst crowds.</p>`
+      question: "How early should I arrive at the stadium?",
+      answer: "**Arrive 90 minutes before kickoff minimum** for World Cup matches:\n\n**Why so early:** Security screening takes 15-30 minutes, lines longer than regular season games, want time to find seats, buy food, use restroom, soak in pre-match atmosphere\n\n**For high-profile matches (Final, Semifinals, USA/Mexico/Canada):** Arrive 2+ hours early. Security lines can exceed 45 minutes.\n\n**Gates typically open:** 2 hours before kickoff\n\n**Post-match transport:** Plan 30-60 minutes to exit stadium and catch transit/rideshare. Stay 10-15 minutes after final whistle if you want to avoid worst crowds.",
+      category: "Matchday Experience",
+      popularity: 5,
+      readingTime: 2
     },
     {
       id: 10,
-      question: "Q10: Should I buy travel insurance for World Cup 2026?",
-      answer: `<strong>A:</strong> <strong>YES, absolutely recommended:</strong>
-      <p class="mt-2"><strong>What it covers:</strong> Trip cancellation (if you can't attend), Medical emergencies abroad, Lost/delayed luggage, Missed connections, Emergency evacuation</p>
-      <p class="mt-2"><strong>Cost:</strong> 4-10% of total trip cost ($200-600 for most travelers)</p>
-      <p class="mt-2"><strong>When to buy:</strong> Within 14-21 days of booking flights for maximum coverage</p>
-      <p class="mt-2"><strong>Recommended providers:</strong> World Nomads (good for adventure travelers), Allianz (comprehensive, affordable), Travel Guard (excellent coverage), SafetyWing (budget-friendly for longer trips)</p>
-      <p class="mt-2"><strong>Don't skip this.</strong> A medical emergency in the USA without insurance can cost $10,000-100,000+. Even a canceled flight can ruin a $5,000 trip. Travel insurance pays for itself if anything goes wrong.</p>`
+      question: "Should I buy travel insurance for World Cup 2026?",
+      answer: "**YES, absolutely recommended:**\n\n**What it covers:** Trip cancellation (if you can't attend), Medical emergencies abroad, Lost/delayed luggage, Missed connections, Emergency evacuation\n\n**Cost:** 4-10% of total trip cost ($200-600 for most travelers)\n\n**When to buy:** Within 14-21 days of booking flights for maximum coverage\n\n**Recommended providers:** World Nomads (good for adventure travelers), Allianz (comprehensive, affordable), Travel Guard (excellent coverage), SafetyWing (budget-friendly for longer trips)\n\n**Don't skip this.** A medical emergency in the USA without insurance can cost $10,000-100,000+. Even a canceled flight can ruin a $5,000 trip. Travel insurance pays for itself if anything goes wrong.",
+      category: "Insurance & Protection",
+      popularity: 5,
+      readingTime: 3
     }
   ];
 
@@ -848,7 +826,7 @@ export default function TravelTipsPage() {
         )
       ]} />
       <style dangerouslySetInnerHTML={{ __html: breadcrumbStyles }} />
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+      <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
       
       {/* Hero Section */}
@@ -985,7 +963,7 @@ export default function TravelTipsPage() {
       </section>
 
       {/* All Tips with Sidebar */}
-      <section className="py-16 bg-gradient-to-br from-slate-50 to-white dark:from-navy-800 dark:to-navy-900">
+      <section className="py-16 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
@@ -1381,12 +1359,15 @@ export default function TravelTipsPage() {
             </div>
           </div>
 
-          {/* FAQ Section */}
+          {/* World-Class FAQ Section */}
           <div className="mt-16">
-            <PremiumFAQ 
+            <WorldClassFAQ 
               faqs={faqData}
               title="Frequently Asked Questions About World Cup 2026 Travel"
               subtitle="Everything you need to know about planning your perfect World Cup 2026 journey, from booking flights to staying safe."
+              showCategories={true}
+              showSearch={true}
+              locationSpecific={true}
             />
           </div>
         </div>
