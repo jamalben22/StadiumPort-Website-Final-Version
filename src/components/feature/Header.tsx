@@ -50,7 +50,7 @@ export function Header() {
     { type: 'stadium', title: 'Arrowhead Stadium', path: '/world-cup-2026-stadiums', description: 'Kansas City - Loudest stadium' },
     
     // Travel Guides
-    { type: 'guide', title: 'Travel Tips', path: '/travel-tips', description: 'Essential travel advice for World Cup 2026' },
+    { type: 'guide', title: 'Travel Tips', path: '/world-cup-2026-travel-tips', description: 'Essential travel advice for World Cup 2026' },
     { type: 'guide', title: 'Budget Guides', path: '/budget-guides', description: 'Save money on your World Cup trip' },
     { type: 'guide', title: 'Accommodation', path: '/accommodation', description: 'Best places to stay during the tournament' },
     { type: 'guide', title: 'Transportation', path: '/transportation', description: 'Getting around host cities' },

@@ -133,7 +133,7 @@ export default function TransportationArticlePage() {
       intro: 'Plan MARTA and rideshare for Mercedes-Benz Stadium access.'
     },
     {
-      title: 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field',
+      title: 'Guadalajara World Cup 2026 Complete Transportation Guide To Estadio Akron',
       category: 'Match Day Transport',
       author: 'Ethan Miller',
       readTime: '10 min read',
@@ -305,7 +305,15 @@ export default function TransportationArticlePage() {
                     ? 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field'
                     : slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca'
                     ? 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field'
-                    : title
+                    : (slug === 'atlanta-world-cup-2026-transportation-guide-to-mercedes-benz-stadium' || slug === 'mexico-city-world-cup-2026-complete-transportation-guide-to-estadio-azteca')
+                    ? 'Mexico City World Cup 2026: Complete Transportation Guide to Estadio Azteca'
+                    : (slug === 'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron' || slug === 'san-francisco-world-cup-2026-complete-transportation-guide-to-levis-stadium')
+                    ? 'San Francisco World Cup 2026: Complete Transportation Guide to Levi\'s Stadium'
+                  : (slug === 'monterrey-world-cup-2026-transportation-guide-to-estadio-bbva' || slug === 'boston-world-cup-2026-complete-transportation-guide-to-gillette-stadium')
+                  ? 'Boston World Cup 2026: Complete Transportation Guide to Gillette Stadium'
+                  : slug === 'vancouver-world-cup-2026-transportation-guide-to-bc-place'
+                  ? 'Vancouver World Cup 2026: Complete Transportation Guide to BC Place'
+                  : title
                 }</li>
               </ol>
             </nav>
@@ -328,6 +336,14 @@ export default function TransportationArticlePage() {
                 ? 'Philadelphia World Cup 2026: Transportation Guide to Lincoln Financial Field'
                 : slug === 'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca'
                 ? 'Seattle World Cup 2026: Your Complete Transportation Guide to Lumen Field'
+                : (slug === 'atlanta-world-cup-2026-transportation-guide-to-mercedes-benz-stadium' || slug === 'mexico-city-world-cup-2026-complete-transportation-guide-to-estadio-azteca')
+                ? 'Mexico City World Cup 2026: Complete Transportation Guide to Estadio Azteca'
+                : (slug === 'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron' || slug === 'san-francisco-world-cup-2026-complete-transportation-guide-to-levis-stadium')
+                ? 'San Francisco World Cup 2026: Transportation Guide to Levi\'s Stadium'
+                : (slug === 'monterrey-world-cup-2026-transportation-guide-to-estadio-bbva' || slug === 'boston-world-cup-2026-complete-transportation-guide-to-gillette-stadium')
+                ? 'Boston World Cup 2026: Complete Transportation Guide to Gillette Stadium'
+                : slug === 'vancouver-world-cup-2026-transportation-guide-to-bc-place'
+                ? 'Vancouver World Cup 2026: Complete Transportation Guide to BC Place'
                 : title
             }</h1>
             <div className="editorial-hero-meta">
@@ -340,7 +356,2578 @@ export default function TransportationArticlePage() {
 
       <section className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
-          {slug === 'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide' ? (
+          {(slug === 'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron' || slug === 'san-francisco-world-cup-2026-complete-transportation-guide-to-levis-stadium') ? (
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`
+
+When Levi's Stadium in Santa Clara hosts six World Cup 2026 matches—including five group stage games (June 13, 16, 19, 22, 25) and one Round of 32 knockout match (July 1)—the San Francisco Bay Area will demonstrate why it's one of the world's most sophisticated transit regions. Here's the transportation reality: **Levi's Stadium sits 45 miles south of San Francisco in the heart of Silicon Valley**, requiring a strategic multi-modal journey combining Caltrain's electrified rail service with VTA Light Rail's final connection. 
+
+But here's what makes Bay Area transit exceptional: The Clipper Card—one payment system across 24 transit operators—creates seamless connections between San Francisco, the Peninsula, and Silicon Valley. Caltrain's brand-new electric trains (operational since September 2024) cut journey times by 10 minutes. And VTA's Orange Line drops you literally at the stadium's north entrance. This guide reveals how to master the Bay Area's interconnected transit ecosystem for the most efficient World Cup experience west of the Mississippi. 
+
+## Quick Navigation 
+- [Understanding the Bay Area Transit Ecosystem](#understanding-the-bay-area-transit-ecosystem) 
+- [The Caltrain + VTA Connection](#the-caltrain-vta-connection) 
+- [Clipper Card: Your Bay Area Transit Key](#clipper-card-your-bay-area-transit-key) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [BART Connections](#bart-connections) 
+- [Match-Day Service Enhancements](#match-day-service-enhancements) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Money-Saving Transit Strategies](#money-saving-transit-strategies) 
+
+## Understanding the Bay Area Transit Ecosystem 
+
+### What Makes Bay Area Transportation Unique 
+
+The San Francisco Bay Area operates **24 different transit agencies** serving 9 counties—yet they're unified by the Clipper Card payment system. For World Cup visitors, this means one card works seamlessly across: 
+
+- **Caltrain**: Electric commuter rail (SF ↔ San Jose) 
+- **VTA**: Santa Clara Valley Transit Authority (light rail + buses) 
+- **BART**: Bay Area Rapid Transit (SF ↔ East Bay ↔ Peninsula) 
+- **Muni**: San Francisco Municipal Railway (buses, light rail, cable cars) 
+- Plus 20 other regional operators 
+
+### Six Matches at Levi's Stadium 
+
+Levi's Stadium will host **six matches** during the FIFA World Cup 2026: 
+- **June 13, 2026** — Group Stage 
+- **June 16, 2026** — Group Stage 
+- **June 19, 2026** — Group Stage 
+- **June 22, 2026** — Group Stage 
+- **June 25, 2026** — Group Stage 
+- **July 1, 2026** — **Round of 32 (Knockout)** 
+
+### Santa Clara Coordination Efforts 
+
+"Santa Clara is working closely with Levi's Stadium, Amtrak, VTA, ACE, Caltrain, and rideshare providers to ensure a seamless transportation experience for all visitors. Optimizing traffic flow, expanding public transit options, and providing clear signage throughout relevant areas of the city are just some of the ways we're implementing this plan." 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Levi's Stadium will be called **"San Francisco Bay Area Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## The Caltrain + VTA Connection 
+
+### Your Primary Transportation Solution (From San Francisco) 
+
+**The Journey**: San Francisco → Caltrain (1 hour) → Mountain View → VTA Light Rail (35 minutes) → Great America Station (at stadium) 
+
+This two-transfer journey represents the most reliable, cost-effective route from San Francisco to Levi's Stadium. 
+
+### Step-by-Step: San Francisco to Levi's Stadium 
+
+**Step 1: San Francisco to Mountain View (Caltrain)** 
+
+1. **Start at Caltrain's San Francisco Station**  
+   Location: 700 4th Street (at King Street), near Oracle Park  
+   Access: Muni Metro T-Third, N-Judah stops nearby 
+
+2. **Purchase fare or use Clipper Card**  
+   One-way fare SF to Mountain View: 
+   - With Clipper Card: $7.50 (Zone 3, effective July 2025) 
+   - With Clipper: $8.00 (July 2026 pricing) 
+   - Cash/Mobile App: Slightly higher 
+
+3. **Board Caltrain toward San Jose**  
+   Look for "SJ" or "San Jose Diridon" destination  
+   **Electrified service** (since September 2024): Faster, quieter, more frequent 
+
+4. **Ride to Mountain View Station**  
+   Journey time: ~55-60 minutes  
+   Trains run every 15-30 minutes (more frequent during peak hours) 
+
+**Step 2: Mountain View to Great America Station (VTA Light Rail)** 
+
+1. **Exit Caltrain, follow signs to VTA Light Rail**  
+   Mountain View Station has direct VTA platform connection 
+
+2. **Board VTA Orange Line toward Alum Rock**  
+   VTA fare: 
+   - Adult: $2.50 one-way with Clipper 
+   - Senior/Disabled: $1.25 
+   - Youth (5-18): $1.25 
+
+3. **Ride to Great America Station**  
+   Journey time: ~35 minutes  
+   Frequency: Every 15 minutes (increased on event days) 
+
+4. **Exit at Great America Station**  
+   Location: North side of Levi's Stadium  
+   Walk: 5 minutes (0.2 miles) to stadium gates 
+
+**Total Journey**: 2 hours (with buffer for transfers)  
+**Total Cost**: $10-10.50 one-way (SF to stadium) 
+
+### Joint Caltrain + VTA Day Pass 
+
+For visitors making multiple trips, VTA offers a **Joint Caltrain + VTA Day Pass**: 
+
+**Cost**: Caltrain Day Pass price + $7.50 = Joint Pass  
+**Coverage**: 
+- Caltrain: Valid to Zone 3 (covers SF to Mountain View) 
+- VTA: All local buses and light rail until 3:00 AM 
+
+**Where to Buy**: Caltrain ticket machines, Caltrain Mobile App 
+
+**Value Calculation**: 
+- Caltrain SF to Mountain View round-trip: $15-16 
+- VTA round-trip: $5 
+- Joint Day Pass: ~$25 total (saves if making 3+ VTA trips) 
+
+### Caltrain's Electric Revolution 
+
+In September 2024, Caltrain completed electrification—replacing all diesel trains with electric multiple units (EMUs). 
+
+**Benefits for World Cup Visitors**: 
+- **Faster service**: 10 minutes shorter SF to San Jose 
+- **More frequent**: Every 15 minutes during peak hours 
+- **Quieter, smoother**: Modern European-style trains 
+- **Environmentally friendly**: Zero emissions 
+
+## Clipper Card: Your Bay Area Transit Key 
+
+### The Universal Bay Area Payment System 
+
+Clipper Card works across **24 transit operators**, making it essential for World Cup visitors navigating the Bay Area. 
+
+**How to Get a Clipper Card**: 
+
+1. **Digital Clipper (Recommended)**  
+   - Download **Clipper app** (iOS/Android) 
+   - Add virtual Clipper card to Apple Wallet or Google Pay 
+   - Tap phone at validators—no physical card needed 
+   - **Cost**: FREE 
+
+2. **Physical Clipper Card**  
+   - Purchase at Caltrain stations, BART stations, Walgreens, whole Foods 
+   - **Cost**: $3 (one-time fee) 
+   - Youth/Senior cards: FREE (must apply with documentation) 
+
+### Clipper Next Generation (Rolling Out 2025-2026) 
+
+The Bay Area is upgrading to **Clipper Next Generation**: 
+
+**New Features**: 
+- **Open payment**: Tap credit/debit card directly (no Clipper card needed) 
+- **Faster processing**: Instant tap recognition 
+- **Better app**: Improved balance management 
+- **Seamless transfers**: Automatic transfer discounts 
+
+**Timeline**: Rolling out across systems through 2026—expect full functionality by World Cup. 
+
+### Loading Your Clipper Card 
+
+**Minimum Balance Required**: 
+- **Caltrain**: Must have $1.25 minimum cash value (even with monthly pass) 
+- **VTA**: Recommended $10-20 for multiple trips 
+
+**How to Load**: 
+- Clipper app (instant) 
+- Transit station vending machines (instant) 
+- Walgreens, Whole Foods (instant when card taps terminal) 
+- Online at clippercard.com (3-5 days to reflect) 
+
+## Airport to Stadium Connections 
+
+### San Jose Mineta International Airport (SJC) — Closest Airport 
+
+**Distance to Levi's Stadium**: 5 miles  
+**Best For**: Southwest Airlines hub, closest proximity to stadium 
+
+SJC sits in the heart of Silicon Valley, making it the most convenient airport for stadium-centric visits. 
+
+**Option 1: VTA Light Rail Direct** (Budget Champion) 
+
+**Total Time**: 45-60 minutes  
+**Total Cost**: $2.50 
+
+**The Route**: 
+1. **From SJC terminals**: Follow "VTA Light Rail" signs 
+2. **Board VTA Blue or Green Line** at Metro/Airport Station (inside airport) 
+3. **Transfer at Santa Clara Transit Center** or **Tasman Station**: Switch to Orange Line toward Alum Rock 
+4. **Exit at Great America Station**: Walk 5 minutes to stadium 
+
+**Why This Works**: 
+- Cheapest option ($2.50 one-way) 
+- No Caltrain transfer needed 
+- Direct light rail access from airport 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: $15-25 (normal pricing); $30-50 (match-day surge)  
+**Time**: 10-15 minutes (no traffic); 20-35 minutes (typical) 
+
+**When This Makes Sense**: Arriving with luggage on match day, groups of 3-4. 
+
+### San Francisco International Airport (SFO) 
+
+**Distance to Levi's Stadium**: 40 miles  
+**Best For**: International arrivals, United/Alaska Airlines hub 
+
+**Option 1: BART + Caltrain + VTA** (Most Complex) 
+
+**Total Time**: 2-2.5 hours  
+**Total Cost**: $15-18 
+
+**The Route**: 
+1. **From SFO terminals**: Follow "BART" signs 
+2. **Board BART Red or Yellow Line** toward Millbrae 
+3. **Exit at Millbrae Station**: Transfer to Caltrain (same platform level) 
+4. **Board Caltrain toward San Jose**: Ride to Mountain View 
+5. **Transfer to VTA Orange Line**: To Great America Station 
+
+**Challenges**: Three transfers, long journey time, complex for first-time visitors. 
+
+**Option 2: BART to Milpitas, VTA to Stadium** 
+
+**Total Time**: 2+ hours  
+**Total Cost**: $14-16 
+
+**The Route**: 
+1. **BART from SFO** to Milpitas Station (eastern terminus) 
+2. **Transfer to VTA Orange Line** toward Alum Rock 
+3. **Exit at Great America Station** 
+
+**Note**: Still requires transfer and long journey. 
+
+**Option 3: Ride-Share Direct** (Most Common) 
+
+**Cost**: $70-95 (normal); $140-200+ (match-day surge)  
+**Time**: 45-60 minutes (no traffic); 75-120 minutes (typical/event traffic) 
+
+**Option 4: Private Airport Transfer** (Premium) 
+
+**Cost**: $120-180 pre-booked sedan; $200-280 SUV  
+**Best For**: Groups of 5-6, international arrivals with luggage 
+
+Services like Welcome Pickups, Jayride, and Quake City Shuttle offer: 
+- Meet-and-greet at international arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 6**: 
+- Individual BART + Caltrain + VTA: $15-18 per person × 6 = $90-108 (but 2.5 hours) 
+- Shared SUV transfer: $220 ÷ 6 = $37 per person, door-to-door in 45-75 minutes 
+
+### Oakland International Airport (OAK) 
+
+**Distance to Levi's Stadium**: 45 miles  
+**Best For**: Southwest, Alaska, Spirit hub, often cheaper fares 
+
+**Best Route: BART + Caltrain + VTA** 
+
+**Total Time**: 2-2.5 hours  
+**Total Cost**: $15-18 
+
+**The Route**: 
+1. **From OAK**: Take BART Connector (free automated train) to Coliseum Station 
+2. **Board BART toward San Francisco/Millbrae**: Ride to Millbrae Station 
+3. **Transfer to Caltrain**: San Jose-bound train to Mountain View 
+4. **Transfer to VTA Orange Line**: To Great America Station 
+
+**Alternative**: Ride-share direct ($80-110 normal; $160-220+ surge) 
+
+## BART Connections 
+
+### Bay Area Rapid Transit Network 
+
+BART connects San Francisco, East Bay, and parts of the Peninsula with high-frequency rail service. 
+
+**BART Fares** (Distance-Based): 
+- Typical trip: $3-6 depending on zones 
+- SFO to Millbrae: $4.75 
+- Oakland to Milpitas: $7-8 
+
+**For Levi's Stadium Access**: 
+BART doesn't go directly to Santa Clara, so you'll always need to transfer: 
+- **Millbrae Station**: Transfer to Caltrain (most common) 
+- **Milpitas Station**: Transfer to VTA Orange Line (eastern approach) 
+
+**BART Operating Hours**: 
+- Monday-Friday: ~5:00 AM - midnight 
+- Saturday: ~6:00 AM - midnight 
+- Sunday: ~8:00 AM - midnight 
+
+## Match-Day Service Enhancements 
+
+### VTA Special Event Service 
+
+VTA provides **enhanced service for all Levi's Stadium events**, with expanded capacity for World Cup matches. 
+
+**What VTA Offers**: 
+- **Extra trains**: Orange and Green Lines run more frequently 
+- **Extended service**: Extra bus and light rail return service runs for up to 1 hour following events 
+- **VTA Ambassadors**: Staff at stadium and key transit centers (Mountain View Caltrain, Milpitas BART) answering questions and helping customers 
+
+**Caltrain Match-Day Adjustments**: 
+- Increased frequency on Peninsula corridor 
+- Potential express trains during peak hours 
+- Extended evening service for late-finishing matches 
+
+### Post-Match Queuing Strategy 
+
+**Light rail customers need to get in queue lines on the Gate A side (facing Tasman Drive) of the stadium.** 
+
+**VTA Recommendations**: 
+"We encourage customers to reach their return stop location immediately following the event to meet their connecting service if using Caltrain and BART." 
+
+**Translation**: Don't linger—head straight to VTA platform after final whistle to catch connecting Caltrain/BART before last trains depart. 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate throughout the Bay Area with designated zones at Levi's Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- SF to Levi's Stadium: $55-75 
+- SJC Airport to stadium: $15-25 
+- Mountain View to stadium: $8-15 
+
+**World Cup Match-Day Pricing**: 
+
+Levi's Stadium has extensive major event experience (Super Bowl 50, Copa América, etc.), providing surge pricing precedent. 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- **Rideshare drop-off zones**: Separate from parking lots near Red Lot 7 and Tasman Drive 
+- Traffic delays: Add 30-45 minutes during peak arrival times 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From stadium to SF: $120-200+ typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from SFO airport to SF hotel (reasonable) 
+- Take Caltrain + VTA for match days (beats traffic and surge) 
+- Pre-book Uber Reserve 3-4 hours before departure 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take VTA + Caltrain back 
+- Walk to Great America Station (5 minutes) 
+- Board VTA Orange Line to Mountain View 
+- Board Caltrain to San Francisco 
+- $10-11 fare vs. $120-200+ surge ride-share 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Walk to alternative pickup location 
+- Walk to California's Great America theme park (15 minutes) 
+- Request pickup at main entrance (less congestion, lower surge) 
+
+## Driving & Parking 
+
+### Should You Drive to Levi's Stadium? 
+
+**Short Answer**: Not recommended from San Francisco (45 miles, 60-120 minutes depending on traffic). 
+
+**Parking Reality**: 
+
+Levi's Stadium offers extensive parking but follows strict pre-booking protocols for major events. 
+
+**Official Parking**: 
+- **Parking passes must be bought in advance** (levisstadium.com or Ticketmaster) 
+- World Cup pricing: $40-75+ expected (based on Super Bowl/major event precedent) 
+- Lots sell out quickly during major events 
+- Opens 6:00 AM event days, closes 2 hours post-event 
+- Post-event exit times: 60-90 minutes minimum 
+
+**Santa Clara Parking Options**: 
+- Hotels near stadium (if you're a guest) 
+- Commercial lots within 15-minute walk 
+- Pre-book via **SpotHero/ParkWhiz** at 15-25% below game-day rates 
+
+### If You're Driving from South Bay 
+
+**Park-and-Ride Strategy** (From Peninsula/South Bay): 
+
+If driving from Peninsula locations: 
+1. **Park at Mountain View Caltrain Station** (metered/lot parking) 
+2. **Take VTA Orange Line** to Great America Station ($2.50) 
+3. **Return to your car** after match (avoid stadium parking congestion) 
+
+**From San Francisco**: Taking Caltrain makes more sense than driving 45 miles. 
+
+## Money-Saving Transit Strategies 
+
+### The Clipper Card Advantage 
+
+Clipper Card provides **automatic discounts** on Caltrain fares compared to cash/mobile app purchases. 
+
+**Fare Comparison** (SF to Mountain View): 
+- **Clipper Card**: $7.50 (July 2025) / $8.00 (July 2026) 
+- **Cash/Quick Trip**: $8.00+ (July 2025) / $8.50+ (July 2026) 
+- **Savings**: $0.50-0.75 per ride 
+
+**For 3 Matches** (round-trip each): 
+- Clipper: $48 total 
+- Cash: $51+ total 
+- **Clipper saves $3-6** even without counting VTA savings 
+
+### VTA Day Pass Accumulator 
+
+VTA's Clipper system features **automatic Day Pass accumulation**: 
+
+**How It Works**: 
+- Load Clipper with cash value 
+- Tag at each VTA boarding 
+- Once you've paid equivalent of Day Pass ($7), **all further rides that day are FREE** 
+
+**Perfect for World Cup**: If exploring San Jose, Santa Clara, and attending a match—you'll hit the cap and ride free all day. 
+
+### Sample 7-Day Bay Area Visit Budget (2 Matches) 
+
+**Transportation Costs**: 
+- **SFO to SF hotel** (BART): $10 
+- **Two match days SF to stadium round-trip**: $20-22 per match × 2 = $40-44 
+- **Daily SF exploring** (Muni): $3 per day × 4 days = $12 
+- **SF to SFO departure** (BART): $10 
+- **Clipper Card**: $3 (one-time, or FREE digital) 
+
+**7-Day Total**: $75-82 
+
+**With Joint Caltrain + VTA Day Pass** (if making multiple VTA trips each match day): 
+- Two Joint Day Passes: $50-55 
+- Other transit: $35 
+- **Total**: $85-90 
+
+Compare to ride-share for same trips: $800-1,200+ 
+
+### Youth & Senior Discounts 
+
+**Clipper START** (Low-Income Adults): 
+- 50% discount on fares 
+- Caltrain one-way: $3.45 instead of $7.50 
+- VTA one-way: $1.25 instead of $2.50 
+- Apply at clippercard.com 
+
+**Youth (5-18)**: 
+- Caltrain: $2.00 flat fare (any distance) 
+- VTA: $1.25 
+
+**Seniors (65+)**: 
+- 50% discount on all Caltrain/VTA fares 
+- Must apply for senior Clipper Card 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **Clipper App** (Universal) 
+   - Add virtual Clipper card 
+   - Load funds remotely 
+   - Apple Wallet/Google Pay integration 
+   - Free download 
+
+2. **Caltrain Mobile App** 
+   - Purchase tickets 
+   - View real-time train status 
+   - Trip planning 
+   - Service alerts 
+
+3. **VTA GO Mobile App** 
+   - Purchase VTA tickets/passes 
+   - Real-time arrivals 
+   - Trip planning specific to VTA 
+
+4. **Transit or Moovit** 
+   - Multi-agency trip planning 
+   - Real-time across all Bay Area transit 
+   - Walking directions between connections 
+
+5. **Google Maps** 
+   - Excellent Bay Area transit integration 
+   - Accurate journey times 
+   - Alternative route suggestions 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download Clipper app and add virtual card (FREE) 
+- Load $20-30 for multiple trips 
+- Add to Apple Wallet or Google Pay for easy tapping 
+- Alternative: Buy physical Clipper at airport BART station ($3) 
+
+**Caltrain Customer Service**: 1-800-660-4287  
+**VTA Customer Service**: (408) 321-2300`}</ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Levi's Stadium**: 
+- Full ADA compliance throughout 68,500-seat venue 
+- Accessible parking in designated lots 
+- **Accessible courtesy wheelchair service** available from VTA Great America Station to stadium's west gates 
+
+**Caltrain**: 
+- All electric trains fully accessible 
+- Level boarding at platforms 
+- Wheelchair areas on every train 
+- Audio/visual announcements 
+
+**VTA Light Rail**: 
+- Level boarding at all platforms 
+- Designated wheelchair areas 
+- Priority seating 
+- Audio/visual stop announcements 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- **Caltrain Youth (5-18)**: $2.00 flat fare (any distance) 
+- **VTA Youth (5-18)**: $1.25 
+- **Children under 5**: FREE (both systems) 
+
+**Family-Friendly Tips**: 
+- Caltrain electric trains have smooth ride (less motion sickness) 
+- VTA light rail short journey (35 minutes manageable for children) 
+- Great America theme park adjacent to stadium (pre/post-match activity) 
+- Pack snacks for 2-hour journey from SF 
+
+**Recommended Family Strategy**: 
+- Use public transit for unique experience (kids enjoy trains) 
+- Build in extra time for bathroom breaks at Mountain View transfer 
+- Consider staying in Mountain View or Santa Clara to eliminate SF-Mountain View leg 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Bay Area to Other West Coast Host Cities 
+
+**To Los Angeles** (SoFi Stadium, 380 miles): 
+- **Flight**: 1 hour 20 minutes, $100-250 (best option) 
+- **Amtrak Coast Starlight**: 11-12 hours, $60-150 (scenic but slow) 
+- LA hosts 8 matches 
+
+**To Seattle** (Lumen Field, 808 miles): 
+- **Flight**: 2 hours, $150-350 
+- Seattle hosts 6 matches 
+
+**To Vancouver, BC** (BC Place, 950 miles): 
+- **Flight**: 2.5 hours, $200-450 
+- Vancouver hosts 7 matches 
+
+**Strategic Planning**: Bay Area's three major airports (SFO, OAK, SJC) offer extensive West Coast flight options for multi-city World Cup attendance. 
+
+## Critical Transportation Tips 
+
+1. **Caltrain + VTA is your best friend**—master the Mountain View transfer 
+2. **Clipper Card essential**—works across all 24 Bay Area transit operators 
+3. **SJC Airport is closest**—5 miles vs. 40 miles from SFO 
+4. **VTA ambassadors at Mountain View**—ask them for help on match days 
+5. **Post-match: Head straight to Great America Station**—catch connecting Caltrain before last trains 
+6. **Download Clipper app before arrival**—digital card is FREE 
+7. **Electric Caltrain is faster**—10 minutes quicker than old diesel trains 
+8. **Joint Caltrain + VTA Day Pass exists**—good value for multiple VTA trips 
+9. **Great America Station is at stadium entrance**—0.2-mile walk (5 minutes) 
+10. **Allow 2 hours SF to stadium**—includes transfer buffer time 
+
+## Your Bay Area World Cup Transportation Plan 
+
+Six matches. Silicon Valley's crown jewel stadium. And one of the world's most sophisticated multi-modal transit networks connecting San Francisco, the Peninsula, and Santa Clara. 
+
+The Bay Area's transportation story requires coordination but delivers efficiency. While other cities offer simple direct rail, the Bay Area's Caltrain-to-VTA connection represents the reality of serving a 7,000-square-mile metropolitan region. The good news: Caltrain's brand-new electric trains (operational since September 2024) make the journey faster and more comfortable than ever. VTA's Orange Line drops you at the stadium's doorstep. And the Clipper Card unifies payment across 24 agencies. 
+
+Your winning strategy: Master the Mountain View transfer. Stay in San Francisco, San Jose, or Mountain View based on your budget and preferences. Use Caltrain + VTA for all matches—it's cheaper, more reliable, and often faster than driving on match days. Download the Clipper app for seamless payment. Build in buffer time for your first journey, then relax knowing you've cracked the code. 
+
+Between matches, explore San Francisco's iconic landmarks, San Jose's tech innovation, wine country in Napa and Sonoma, or Big Sur's dramatic coastline. The Bay Area's diversity rivals any region on Earth. 
+
+When that referee's whistle sounds across six matches from June through July 1, 2026, you'll be at "San Francisco Bay Area Stadium" (Levi's Stadium during the tournament)—having mastered one of the world's most complex yet sophisticated transit networks. 
+
+See you in the Bay Area. 
+
+--- 
+
+*Information current as of November 2025. Caltrain electrified September 2024. Fares reflect July 2025-2026 schedule increases. Clipper Next Generation rolling out through 2026. Verify details at caltrain.com, vta.org, clippercard.com, and fifaworldcup.com. For help: Caltrain 1-800-660-4287, VTA (408) 321-2300.*`}</ReactMarkdown>
+            </div>
+          ) : (slug === 'atlanta-world-cup-2026-transportation-guide-to-mercedes-benz-stadium' || slug === 'mexico-city-world-cup-2026-complete-transportation-guide-to-estadio-azteca') ? (
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`
+
+When Estadio Azteca hosts **the opening match on June 11, 2026**—plus four additional matches through June 27—Mexico City will make history as **the only city to host the World Cup three times** (1970, 1986, 2026). This legendary stadium witnessed Pelé's 1970 triumph and Maradona's "Hand of God" in 1986. Now, with massive infrastructure upgrades underway, Mexico City is transforming access to "Coloso de Santa Úrsula" with modernized Metro Line 2, renovated Tren Ligero (being renamed Tren Ajolote), and the $400 million "Play Fair, Walk Fair" program improving roads, bridges, and public spaces around the stadium. 
+
+Here's what makes Mexico City transportation unique: **Metro fares cost just 5 pesos ($0.28 USD)**—among the world's cheapest. The journey from downtown to Estadio Azteca requires Metro Line 2 (Blue Line) to Tasqueña Station, then Tren Ligero directly to the stadium stop. Total cost: 8 pesos ($0.45 USD). Total time: 45-60 minutes. With 5.5 million additional tourists expected and authorities modernizing every connection point, Mexico City is ready to welcome the world to football's most storied venue. 
+
+## Quick Navigation 
+- [Understanding Mexico City's Transit Network](#understanding-mexico-citys-transit-network) 
+- [Metro Line 2 + Tren Ligero Route](#metro-line-2-tren-ligero-route) 
+- [Integrated Mobility Card](#integrated-mobility-card) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Match-Day Strategy](#match-day-strategy) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Mexico City's Transit Network 
+
+### What Makes Mexico City Transportation Unique 
+
+Mexico City operates one of the **world's largest public transit systems**, serving over 20 million people daily across: 
+
+- **Metro**: 12 lines, 195 stations, 200+ km of track 
+- **Metrobús**: 7 BRT (Bus Rapid Transit) lines with dedicated lanes 
+- **Tren Ligero**: Light rail extending Metro coverage 
+- **Tren Suburbano**: Commuter rail to northern suburbs 
+- **Trolebús, RTP buses, Cablebús**: Additional options 
+
+**Critical for World Cup**: Estadio Azteca requires **Metro Line 2 (Blue) to Tasqueña, then Tren Ligero** to the stadium station—a two-part journey that's straightforward once you understand the system. 
+
+### Five Matches Including Opening Ceremony 
+
+Estadio Azteca hosts **five FIFA World Cup 2026 matches**: 
+
+- **Wednesday, June 11, 2026** — **Opening Match** (historic third World Cup opener) 
+- **Four additional group stage matches** through June 27 
+
+**Capacity**: 83,264 (official FIFA capacity for 2026) 
+
+### $400 Million Infrastructure Transformation 
+
+Under Mayor Clara Brugada's **"Juega Limpio, Paso Limpio" (Play Fair, Walk Fair)** program: 
+
+**Transportation Upgrades** (completion target: Q1 2026): 
+- **Metro Line 2 modernization**: Better connection to Tren Ligero at Tasqueña 
+- **Tren Ligero renovation**: Being renamed "Tren Ajolote" with 17 new trains (capacity increase to 400,000 passengers/day) 
+- **Tasqueña station redesign**: "Barcelona solution" with side platforms (alighting) and central island platform (boarding) for higher passenger volumes 
+- **CETRAM Huipulco transfer center**: Complete remodel 
+- **36 km bicycle route**: Along Calzada de Tlalpan with bike parking at key stations 
+- **Circuito Estadio Azteca bridge**: Renovation, widening sidewalks, upgraded lighting 
+
+**Stadium Renovations**: €35 million invested by COMSA (Spanish contractor), with stadium reopening March 28, 2026—just 2.5 months before opening match. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Estadio Azteca will be called **"Estadio Ciudad de México"** (Mexico City Stadium) or **"Stadium Mexico 2026"** following FIFA's commercial naming policy. In March 2025, Banorte bought naming rights ("Estadio Banorte"), but FIFA requires neutral names during tournaments. 
+
+## Metro Line 2 + Tren Ligero Route 
+
+### Your Primary Transportation Solution 
+
+**The Route**: Any downtown location → Metro Line 2 (Blue) to Tasqueña Station → Tren Ligero (Light Rail) to Estadio Azteca Station 
+
+This is **the most reliable, affordable route** for World Cup visitors. 
+
+### Step-by-Step: Downtown to Estadio Azteca 
+
+**Step 1: Board Metro Line 2 (Blue Line)** 
+
+**Key downtown starting stations**: 
+- **Zócalo/Tenochtitlan**: Historic center, main plaza 
+- **Pino Suárez**: Connects to Line 1 (Pink) 
+- **San Antonio Abad**: Connects to Line 8 (Green) 
+- **Chabacano**: Connects to Lines 8 and 9 
+
+**Direction**: Toward "Tasqueña" (southern terminus of Line 2) 
+
+**Journey time**: 20-35 minutes depending on starting station 
+
+**Step 2: Transfer at Tasqueña Station** 
+
+Tasqueña is the **critical transfer point** where Metro Line 2 connects to Tren Ligero. 
+
+**What's Happening at Tasqueña** (2025-2026 upgrades): 
+- New platform construction 
+- "Barcelona solution" design (side platforms for alighting, central island for boarding) 
+- Enhanced accessibility 
+- Improved lighting and wayfinding 
+- Designed specifically for World Cup crowds 
+
+**Transfer process**: 
+1. Exit Metro Line 2 train at Tasqueña 
+2. Follow "Tren Ligero" or "Estadio Azteca" signs 
+3. Navigate to Tren Ligero platforms (clearly marked) 
+4. Board southbound Tren Ligero 
+
+**Step 3: Tren Ligero to Estadio Azteca Station** 
+
+**Tren Ligero** (Light Rail) extends Metro coverage south from Tasqueña. 
+
+**Route**: Tasqueña → Estadio Azteca (terminal station)  
+**Stops**: Multiple stations between Tasqueña and stadium  
+**Journey time**: 15-20 minutes  
+**Frequency**: Every 10-15 minutes (increased for World Cup) 
+
+**New for 2026**: 17 new light rail trains increase capacity to ~400,000 passengers/day. 
+
+**Step 4: Exit at Estadio Azteca Station** 
+
+**Distance to stadium gates**: 5-10 minute walk (short) 
+
+Follow crowds and signage from station to stadium entrance. 
+
+**Total Journey Time**: 45-60 minutes downtown to stadium gates  
+**Total Cost**: 5 pesos (Metro) + 3 pesos (Tren Ligero) = **8 pesos ($0.45 USD)** 
+
+## Integrated Mobility Card 
+
+### The Universal Payment System 
+
+The **Integrated Mobility Card** (Tarjeta de Movilidad Integrada) works across all Mexico City transit: Metro, Metrobús, Tren Ligero, Trolebús, RTP buses, Cablebús, and Ecobici bike share. 
+
+**Cost**: 15 pesos (card purchase)  
+**Initial top-up**: Minimum 5 pesos  
+**Total at purchase**: 20 pesos (15 for card + 5 first ride) 
+
+### How to Get Your Card 
+
+**Where to Buy**: 
+- Metro station ticket windows (taquillas) 
+- Metrobús station vending machines 
+- Some convenience stores 
+
+**What to Say**: "Una tarjeta de movilidad, por favor" (One mobility card, please) 
+
+**Important**: Card can be shared among multiple people if it has sufficient balance—just tap for each person. 
+
+### Recharging Your Card 
+
+**Maximum balance**: 500 pesos  
+**Recharge locations**: 
+- Metro station ticket windows 
+- Metrobús/Cablebús vending machines 
+- Some only accept cash; others accept coins only 
+
+**Pro Tip**: Buy 100-200 pesos of credit initially to avoid frequent recharges during your visit. 
+
+### Current Transit Fares (2025) 
+
+**Metro**: 5 pesos per ride (any distance, unlimited transfers within system)  
+**Metrobús**: 6 pesos per ride  
+**Metrobús Airport**: 30 pesos (special airport service)  
+**Tren Ligero**: 3 pesos per ride  
+**Tren Suburbano**: 6.50-15.50 pesos (distance-based) 
+
+**World Cup Travel Cost**: Downtown to Estadio Azteca = 8 pesos ($0.45 USD) round-trip = 16 pesos ($0.90 USD) 
+
+### Paper Tickets (Being Phased Out) 
+
+**Metro paper tickets**: Still available (5 pesos each) but Integrated Mobility Card strongly recommended for visitors making multiple trips. 
+
+**How to Buy Paper Tickets**: At Metro ticket windows (taquillas), say "Cuatro boletos, por favor" (Four tickets, please) and hand over 20 pesos. 
+
+## Airport to Stadium Connections 
+
+### Mexico City International Airport (AICM / MEX) 
+
+**Distance to Estadio Azteca**: 20 kilometers (12 miles)  
+**Distance to downtown**: 13 kilometers  
+**Best For**: All international and most domestic visitors 
+
+MEX is one of Latin America's busiest airports, serving as the primary gateway for World Cup visitors. 
+
+**Option 1: Metrobús Line 4 + Metro + Tren Ligero** (Budget Champion) 
+
+**Total Time**: 90-120 minutes  
+**Total Cost**: 30 pesos (Metrobús airport) + 5 pesos (Metro) + 3 pesos (Tren Ligero) = 38 pesos ($2.10 USD) 
+
+**The Route**: 
+1. **From Terminal 1 or 2**: Follow "Metrobús" signs to Line 4 stops 
+   - Terminal 1: Outside Door 7 on arrivals level 
+   - Terminal 2: Connect via free airport bus to Terminal 1, then Metrobús 
+2. **Board Metrobús Line 4**: Toward San Lázaro or Museo de la Luz 
+   - Journey time: 35-50 minutes 
+   - Dedicated bus lane bypasses traffic 
+   - Security guard on each bus 
+   - Luggage space available 
+3. **Exit at convenient Metro connection**: 
+   - **Recommended**: Candelaria Station (connects to Metro Line 1 Pink, Line 4 Cyan) 
+   - Transfer to Metro Line 1, ride to Pino Suárez 
+   - Transfer to Metro Line 2 (Blue), ride to Tasqueña 
+   - Transfer to Tren Ligero, ride to Estadio Azteca 
+4. **Alternative**: San Lázaro Station (connects to Metro Line 1) 
+
+**Metrobús Card Note**: Airport vending machines dispense Integrated Mobility Cards usable on both Metrobús and Metro. 
+
+**Option 2: Taxi from Airport** (Direct) 
+
+**Cost**: 300-400 pesos ($16-22 USD) to Estadio Azteca  
+**Time**: 30-45 minutes (no traffic); 60-90+ minutes (typical Mexico City traffic) 
+
+**Official Airport Taxis**: Purchase ticket at authorized taxi counters inside terminal before exiting (safer than street taxis). 
+
+**Option 3: Uber/DiDi** (Most Common) 
+
+**Cost**: 250-350 pesos ($14-19 USD) normal; 500-700+ pesos ($28-38 USD) match-day surge  
+**Time**: 30-45 minutes (no traffic); 60-120 minutes (typical/event traffic) 
+
+**DiDi**: Mexican equivalent to Uber, often cheaper, widely used locally. 
+
+**When This Makes Sense**: Arriving with luggage on match day, groups of 3-4, late arrivals. 
+
+**Option 4: Private Airport Transfer** (Premium) 
+
+**Cost**: $40-70 USD pre-booked  
+**Best For**: Groups of 4-6, families, guaranteed service 
+
+Services include meet-and-greet, flight tracking, fixed pricing (no surge). 
+
+**Value for Groups of 5**: 
+- Individual transit: 38 pesos × 5 = 190 pesos ($10.50 USD) total but 90-120 minutes with transfers and luggage 
+- Shared transfer: $50 ÷ 5 = $10 per person, door-to-door in 30-75 minutes 
+
+### Felipe Ángeles International Airport (AIFA) — New Airport 
+
+**Distance to Estadio Azteca**: 60+ kilometers (37+ miles)  
+**Best For**: Budget airlines, less crowded alternative 
+
+AIFA opened March 2022 as Mexico City's second airport, located north of the city. 
+
+**Transportation**: Official airport buses connect to city transit points. Check schedules closer to travel dates. Generally requires 2+ hours to reach stadium. 
+
+**Recommendation**: For World Cup convenience, fly into MEX (AICM) if possible—much closer to stadium and downtown. 
+
+## Match-Day Strategy 
+
+### Opening Match: June 11, 2026 
+
+The **World Cup opening match at Estadio Azteca** marks the first time any stadium hosts three World Cup opening ceremonies (1970, 1986, 2026). 
+
+**Expect**: 
+- **Full 83,264 capacity**: Sold out 
+- **National celebration**: Mexico's proudest football moment 
+- **Maximum transit demand**: Metro and Tren Ligero at full capacity 
+- **Extended service**: Authorities operating maximum frequency trains 
+
+**Timeline for Opening Match**: 
+- **4 hours before kickoff**: First Tren Ligero service begins 
+- **3 hours before**: Peak arrival period starts 
+- **Arrive 2+ hours early**: Security screening extensive, crowds massive 
+- **Post-match**: Tren Ligero runs 90+ minutes after final whistle 
+
+### Five Matches: Planning Multiple Visits 
+
+**Recommended Strategy**: 
+- **First match**: Allow extra time to learn Metro + Tren Ligero transfer at Tasqueña 
+- **Subsequent matches**: Process becomes second nature, faster boarding 
+- **Stay in neighborhoods near Metro Line 2**: Roma, Condesa, Centro Histórico, Coyoacán (easy Blue Line access) 
+
+### Timing Your Journey 
+
+**For Afternoon/Evening Matches**: 
+
+**Departing from Roma Norte or Condesa**: 
+- **Distance to Estadio Azteca**: 16-20 km 
+- Leave hotel/accommodation: 2 hours before kickoff 
+- Walk to nearest Metro Line 2 station or connecting line: 10-15 minutes 
+- Metro + Tren Ligero journey: 45-60 minutes 
+- Arrive stadium: 60-75 minutes before kickoff 
+
+**Example for 5:00 PM Match**: 
+- Leave hotel: 3:00 PM 
+- Board Metro: 3:15 PM 
+- Transfer at Tasqueña: 3:45 PM 
+- Board Tren Ligero: 3:50 PM 
+- Arrive Estadio Azteca: 4:05 PM 
+- Walk to gates: 4:15 PM (105 minutes before kickoff—perfect) 
+
+### Weather Considerations 
+
+**June in Mexico City**: 
+- Average temperatures: 22-27°C (72-81°F) 
+- **Altitude**: 2,240 meters (7,350 feet) above sea level—can affect visitors not acclimated 
+- Rainy season beginning (June-September): Afternoon thunderstorms possible 
+- **Estadio Azteca is open-air** with partial canopy coverage 
+
+**What to Bring**: 
+- Light rain jacket (June showers common) 
+- Sunscreen and hat (strong UV at altitude) 
+- Layers (temperatures drop in evening) 
+- Water bottle (hydration critical at altitude) 
+
+**Altitude Tip**: Arrive in Mexico City 1-2 days before match if possible to acclimate. Stay hydrated. 
+
+## Ride-Share & Taxis 
+
+### Uber, DiDi, and Cabify Availability 
+
+All three services operate throughout Mexico City with designated zones at Estadio Azteca. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Centro Histórico to Estadio Azteca: 150-250 pesos ($8-14 USD) 
+- Roma/Condesa to stadium: 120-200 pesos ($7-11 USD) 
+- Airport (MEX) to stadium: 250-350 pesos ($14-19 USD) 
+
+**Match-Day Reality**: 
+
+Mexico City traffic is **famously congested**, especially on event days. 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Traffic delays: Add 30-60 minutes during peak arrival (2-4 PM for evening matches) 
+- Drop-off zones: Follow stadium signage 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-90+ minutes for pickup 
+- From stadium to Centro: 400-800 pesos ($22-44 USD) typical post-match surge 
+- From stadium to Polanco: 500-900 pesos ($28-50 USD) 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: Use Metro + Tren Ligero—faster and dramatically cheaper than sitting in traffic. 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take Tren Ligero + Metro back 
+- Walk to Estadio Azteca Tren Ligero station (5-10 minutes) 
+- Board Tren Ligero to Tasqueña 
+- Transfer to Metro Line 2 northbound 
+- 8 pesos vs. 400-800 pesos surge pricing 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Extended stay at stadium area 
+- Walk to nearby restaurants/bars in Coyoacán neighborhood (20-30 minutes) 
+- Wait 90+ minutes for surge to normalize 
+- Explore historic Coyoacán (Frida Kahlo Museum area nearby) 
+
+**Safety Note**: Use only official pink-and-white taxis or app-based services (Uber, DiDi, Cabify). Never hail unofficial taxis on the street. 
+
+## Driving & Parking 
+
+### Should You Drive to Estadio Azteca? 
+
+**Short Answer**: Not recommended unless traveling from distant suburbs with 5+ people. 
+
+**Mexico City Traffic Reality**: "Traffic in Mexico City can be consistently heavy, particularly on match days, making public transportation the more reliable option." 
+
+**Parking at Estadio Azteca**: 
+- **Official parking**: Opens 4 hours before events 
+- **Published rates**: MXN 120 for cars/motorcycles, MXN 360 for minibuses, MXN 480 for buses 
+- **World Cup pricing**: Likely higher (expect 200-400 pesos / $11-22 USD) 
+- **Post-event exit**: 60-120 minutes minimum 
+
+**Better Strategy**: Drive to suburban Metro station with parking, take Metro + Tren Ligero to stadium. 
+
+**Park-and-Ride Options**: 
+- Tasqueña Station: Parking available, direct Tren Ligero access 
+- Universidad Station: Large parking, Metro Line 3 (transfer to Line 2) 
+- Various suburban stations on Metro periphery 
+
+## Money-Saving Transit Options 
+
+### The 8-Peso World Cup Trip 
+
+**Most Economical Transportation**: 
+- Metro Line 2: 5 pesos 
+- Tren Ligero: 3 pesos 
+- **Total one-way**: 8 pesos ($0.45 USD) 
+- **Round-trip**: 16 pesos ($0.90 USD) 
+
+Compare to: 
+- Uber one-way: 150-250 pesos normal ($8-14); 400-800 pesos surge ($22-44) 
+- Taxi: 200-350 pesos ($11-19) 
+
+**Savings per match**: 280-780 pesos ($15-43 USD) by using public transit 
+
+### Sample 7-Day Mexico City Budget (3 Matches) 
+
+**Transportation Costs**: 
+- **Integrated Mobility Card**: 15 pesos one-time 
+- **Airport to Centro** (Metrobús + Metro): 35 pesos 
+- **Three match days** (roundtrip Metro + Tren Ligero): 16 pesos × 3 = 48 pesos 
+- **Daily exploring** (Metro rides): 10 pesos/day × 4 days = 40 pesos 
+- **Return to airport**: 35 pesos 
+
+**7-Day Total**: 173 pesos ($9.50 USD) 
+
+**With Occasional Metrobús**: 
+- Add 50-100 pesos for convenience 
+- **Total**: 223-273 pesos ($12-15 USD) 
+
+Compare to ride-share for same trips: 3,000-5,000 pesos ($165-275 USD) 
+
+### Free & Nearly-Free Options 
+
+**Walking**: Mexico City's historic center, Roma, Condesa, Coyoacán are highly walkable. 
+
+**Ecobici Bike Share**: 
+- 1-day pass: 15 pesos (45-minute rides unlimited) 
+- 36 km new bike route along Calzada de Tlalpan 
+- Bike parking at Tasqueña and Universidad stations 
+
+## Critical Transportation Tips 
+
+1. **Metro Line 2 (Blue) to Tasqueña, then Tren Ligero**—memorize this route 
+2. **8 pesos gets you to the stadium**—world's cheapest World Cup transport 
+3. **Integrated Mobility Card essential**—works on all transit, shareable 
+4. **Tasqueña is the key transfer**—new "Barcelona solution" platforms for World Cup crowds 
+5. **Opening match June 11 is historic**—third World Cup opening at Estadio Azteca 
+6. **Arrive 2+ hours early**—security extensive, crowds massive for opening 
+7. **17 new Tren Ligero trains**—400,000 passenger/day capacity for World Cup 
+8. **Mexico City altitude: 7,350 feet**—hydrate, acclimate if possible 
+9. **DiDi often cheaper than Uber**—compare both apps before booking 
+10. **Use official pink-white taxis or apps only**—safety first 
+
+## Your Mexico City World Cup Transportation Plan 
+
+Five matches. The opening ceremony. And the only stadium to host three World Cups. 
+
+Mexico City's transportation story combines affordability (8 pesos to the stadium), massive infrastructure investment ($400 million "Play Fair, Walk Fair" program), and the passion of 20+ million people who live and breathe football. Estadio Azteca isn't just a venue—it's a shrine where Pelé lifted the trophy in 1970, where Maradona's "Hand of God" created eternal controversy in 1986, and where Mexico welcomes the world again in 2026.`}</ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`Your winning strategy: Get an Integrated Mobility Card on arrival. Master the Metro Line 2 + Tren Ligero connection at Tasqueña. Arrive 2+ hours early for the opening match. Between games, explore Mexico City's 150 museums, ancient Teotihuacán pyramids, Frida Kahlo's Blue House in Coyoacán, floating gardens of Xochimilco, and culinary scene that rivals any capital on Earth. 
+
+When that referee's whistle sounds for the opening match on June 11, 2026, you'll be at "Estadio Ciudad de México" (Estadio Azteca during the tournament)—having experienced the world's most affordable, most historic World Cup venue, where football's greatest legends created immortal moments. 
+
+Bienvenidos a México. Welcome to football's most legendary stadium. Welcome to the World Cup. 
+
+--- 
+
+*Information current as of November 2025. Fares: Metro 5 pesos, Tren Ligero 3 pesos. Infrastructure upgrades complete Q1 2026. Verify details at metro.cdmx.gob.mx, semovi.cdmx.gob.mx, and fifaworldcup.com. Stadium reopens March 28, 2026. For help: Metro Customer Service 55-5709-1133.*`}</ReactMarkdown>
+            </div>
+          ) : (slug === 'monterrey-world-cup-2026-transportation-guide-to-estadio-bbva' || slug === 'boston-world-cup-2026-complete-transportation-guide-to-gillette-stadium') ? (
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`
+
+When Gillette Stadium hosts seven World Cup 2026 matches—including **five group stage games (June 13-27), one Round of 32 (June 30), and a prestigious Quarterfinal (July 9)**—Boston will demonstrate why former Olympics opponent Chris Dempsey now says: "The less alarmist way to say it is it's seven Patriots games, or seven Patriots preseason games." But here's the transportation reality: Gillette Stadium sits **22 miles southwest of Boston in Foxborough**, requiring MBTA Commuter Rail service that historically carried just 7% of stadium crowds. 
+
+That's changing dramatically. The MBTA is investing **$35 million to revolutionize Foxboro Station** ahead of the World Cup, building new high-level platforms designed to move **20,000 fans per match**—nearly one-third of capacity—via 10 trains per game. With the permanent 800-foot covered platform on the stadium side and a temporary 600-foot platform completing by April 2026, Boston is transforming its weakest transportation link into a World Cup-ready rail connection that leaves permanent benefits for years to come. 
+
+## Quick Navigation 
+- [Understanding Boston's Unique Challenge](#understanding-bostons-unique-challenge) 
+- [$35 Million Foxboro Station Transformation](#35-million-foxboro-station-transformation) 
+- [MBTA Commuter Rail Service](#mbta-commuter-rail-service) 
+- [Boston to Foxborough Journey](#boston-to-foxborough-journey) 
+- [Airport Connections](#airport-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking Reality](#driving-parking-reality) 
+- [Match-Day Strategy](#match-day-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Boston's Unique Challenge 
+
+### What Makes Boston-Foxborough Transportation Unique 
+
+**"Massachusetts also has one of the longest trips between where most visitors will flock and where the games will actually be played. Gillette Stadium in Foxborough — dubbed 'Boston Stadium' in the official FIFA branding — is about 25 miles from downtown Boston, a trip that can regularly take one to two hours by car depending on traffic."** —WBUR, August 2025 
+
+**Among all 16 host sites, only one stadium sits farther from its city center**: Levi's Stadium in Santa Clara (42+ miles from San Francisco). 
+
+### Seven Matches, 434,000 Fans, $1 Billion Impact 
+
+Gillette Stadium hosts **seven matches** during FIFA World Cup 2026: 
+
+- **Friday, June 13, 2026** (Opening Match - Saturday) 
+- **Four additional group stage matches** through June 27 
+- **Tuesday, June 30, 2026** — Round of 32 
+- **Thursday, July 9, 2026** — **Quarterfinal** 
+
+**Economic Projections**: 
+- **$1 billion+ economic impact** for Greater Boston 
+- **$60+ million in tax revenue** 
+- **Thousands of jobs created** 
+- **62,000 fans per match** (FIFA capacity) 
+
+**MBTA Challenge**: "This is probably the biggest transportation planning event in recent history in the Massachusetts area." —Sam Zhou, MBTA Assistant General Manager 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Gillette Stadium will be called **"Boston Stadium"** following FIFA's requirement to use neutral stadium names. 
+
+## $35 Million Foxboro Station Transformation 
+
+### The Game-Changing Upgrade 
+
+**"In order to serve up to 20,000 that means 10 trains have to come here, every game."** —Sam Zhou, MBTA Assistant General Manager 
+
+The MBTA is in the middle of a massive **$35 million construction project** to renovate Foxboro Station specifically for World Cup 2026. 
+
+### What's Being Built 
+
+**Before World Cup**: 
+- One non-accessible, low-level platform 
+- Passengers climbed stairs to board trains 
+- Slow boarding/disembarkingprocesses 
+- Capacity: ~4,500 fans (7% of sold-out events) via 2 trains 
+
+**After Transformation (April 2026 completion)**: 
+
+**Permanent Infrastructure**: 
+- **800-foot covered high-level platform** (stadium side) 
+- Fully accessible, level boarding 
+- Considerably faster passenger boarding/disembarking 
+- Permanent improvement for future events 
+
+**Temporary Infrastructure** (World Cup period): 
+- **600-foot high-level platform** (neighborhood side) 
+- Provides second boarding area for massive crowds 
+- May be redeployed for future large events 
+
+**New Capacity**: 20,000 riders per match via 10 trains (nearly one-third of 62,000 capacity) 
+
+### Construction Timeline 
+
+**May 2025**: Project announced to Foxborough Conservation Commission  
+**November 2025**: Construction underway (7 months until first match)  
+**April 2026**: New platforms completion target  
+**June 13, 2026**: Opening match—just one month after completion 
+
+**Federal Accessibility Requirement**: Original plan for temporary-only platforms prohibited by federal rules. The T must provide permanent accessibility improvements, not temporary upgrades that would later be removed. 
+
+### Why This Matters 
+
+**FIFA International Fanbase Expectation**: "With this international fanbase, we do expect a much higher attendance by public transportation." —Tess Paganelli, MBTA Environmental Permitting Official 
+
+Europeans are accustomed to "a much more robust public transportation system, especially to and from their football — soccer — facilities." The $35 million investment addresses this expectation. 
+
+## MBTA Commuter Rail Service 
+
+### The Franklin/Foxboro Line 
+
+Foxboro Station is the terminus of the **Franklin/Foxboro Line**, with special event service supplemented by **Providence/Stoughton Line** trains during stadium events. 
+
+**Regular Weekday Service** (Non-Event Days): 
+- **10 daily round trips** between Boston and Foxborough 
+- Made permanent October 2023 (after 2022 pilot) 
+- Average daily ridership: 112-133 passengers 
+- Designed for commuters, not major events 
+
+**Special Event Service** (Patriots games, concerts, World Cup): 
+Two train routes operate: 
+1. **Boston Route**: South Station/Back Bay → Dedham → Foxboro 
+2. **Providence Route**: Providence → Pawtucket → Attleboro → Mansfield → Foxboro 
+
+### World Cup Event Service Expectations 
+
+Based on the $35 million platform upgrade and 20,000-rider capacity goal: 
+
+**Match-Day Operations**: 
+- **10 trains minimum** (5 from Boston, 5 from Providence typical pattern) 
+- Trains begin running **4 hours before kickoff** 
+- Frequency: **Every 10-20 minutes** during peak arrival window 
+- Post-match service: Runs until **90+ minutes after final whistle** 
+- Extended service for late-finishing matches 
+
+**Kraft Group Funding**: Stadium owner Robert Kraft previously subsidized commuter rail pilots (up to $200,000/year). The Kraft Group paid for the design of the updated station, with ongoing discussions about construction contributions. 
+
+## Boston to Foxborough Journey 
+
+### From Boston South Station (Primary Route) 
+
+**Step-by-Step**: 
+
+1. **Arrive at South Station**  
+   Location: 700 Atlantic Avenue, Boston  
+   Access: Red Line, Silver Line, multiple bus routes 
+
+2. **Look for World Cup Event Trains**  
+   Separate ticket/boarding area for special event service  
+   NOT regular Franklin/Foxboro Line—distinct World Cup trains 
+
+3. **Purchase Special Event Ticket**  
+   **Cost**: $20 round-trip (typical Patriots game pricing)  
+   **Purchase via**: mTicket app (recommended) or station ticket office  
+   **Important**: Regular commuter rail tickets/passes NOT valid on event trains 
+
+4. **Board designated World Cup train**  
+   Direct service to Foxboro Station  
+   **Stops**: Back Bay, Dedham Corporate Center (typical pattern)  
+   **Journey time**: 50-60 minutes 
+
+5. **Arrive Foxboro Station**  
+   Exit via new high-level platform  
+   **Walk to stadium**: 10-15 minutes (0.5 miles)  
+   Follow crowds and signage 
+
+**Total Journey**: 75-90 minutes door-to-door (Boston accommodation to stadium gates) 
+
+### From Providence, Rhode Island 
+
+For visitors attending matches from Providence or staying in Rhode Island: 
+
+1. **Depart Providence Station**  
+   Location: 100 Gaspee Street, Providence, RI 
+
+2. **Board Foxboro-bound event train**  
+   **Stops**: Pawtucket, Attleboro, Mansfield (typical)  
+   **Journey time**: 45-60 minutes  
+   **Cost**: Approximately $15-20 round-trip 
+
+3. **Arrive Foxboro Station**  
+   Walk to stadium (10-15 minutes) 
+
+**Strategic Note**: Providence hotels often cheaper than Boston. Valid option for budget-conscious visitors. 
+
+## Airport Connections 
+
+### Boston Logan International Airport (BOS) 
+
+**Distance to Gillette Stadium**: 35 miles  
+**Distance to Boston South Station**: 4 miles  
+**Best For**: All visitors—New England's primary airport 
+
+**Option 1: Silver Line + Commuter Rail** (Budget, Complex) 
+
+**Total Time**: 2-2.5 hours  
+**Total Cost**: $2.40 (Silver Line) + $20 (event train) = ~$22.40 
+
+**The Route**: 
+1. **From any Logan terminal**: Follow "Silver Line" signs 
+2. **Board Silver Line SL1**: Free from airport, toward South Station 
+3. **Arrive South Station**: 20-30 minutes 
+4. **Transfer to Foxboro event train**: As described above (50-60 minutes) 
+
+**Challenges**: Tight connection if flight delayed, luggage on crowded trains. 
+
+**Option 2: Ride-Share Direct** (Most Common) 
+
+**Cost**: 
+- Logan to Gillette Stadium: $60-80 (normal pricing) 
+- Match-day surge: $120-180+ possible 
+
+**Time**: 35-45 minutes (no traffic); 60-90+ minutes (typical/event traffic) 
+
+**When This Makes Sense**: Arriving with luggage on match day, groups of 3-4, late arrival. 
+
+**Option 3: Private Airport Transfer** (Premium/Groups) 
+
+**Cost**: $110-160 pre-booked sedan; $180-250 SUV  
+**Best For**: Groups of 5-6, VIP service, guaranteed fixed pricing 
+
+Services like Logan Airport Shuttle, GO Airport Shuttle, and King Transportation offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to Foxborough hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual transit: $22.40 per person × 5 = $112 (but 2.5 hours with transfers) 
+- Shared SUV transfer: $180 ÷ 5 = $36 per person, door-to-door in 35-75 minutes 
+
+### TF Green Airport (Providence, RI) 
+
+**Distance to Gillette Stadium**: 25 miles  
+**Distance to Foxborough**: Closer than Logan  
+**Best For**: Southwest Airlines travelers, lower fares, Rhode Island base 
+
+**Best Route**: MBTA Commuter Rail direct from TF Green/Airport Station to Foxboro (event days only, if available). 
+
+**Alternative**: Ride-share direct ($40-60 normal; $80-120 surge) 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate throughout Massachusetts with designated zones at Gillette Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Logan Airport to Gillette Stadium: $60-80 
+- Boston South Station to stadium: $40-55 
+- Providence to stadium: $35-50 
+
+**World Cup Match-Day Pricing**: 
+
+Gillette Stadium has extensive major event experience (6 Super Bowls, Copa América, concerts), providing surge pricing data: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- **Rideshare drop-off**: Lot 15 (designated zone) 
+- Traffic delays: Add 30-60 minutes during peak arrival times 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-90+ minutes for pickup 
+- From stadium to Boston: $100-180+ typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airport to Boston hotel (reasonable) 
+- Take Commuter Rail for match days (beats traffic, cheaper) 
+- Pre-book Uber Reserve if committed to rideshare 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take Commuter Rail back 
+- Walk to Foxboro Station (10-15 minutes) 
+- Board return train to South Station or Providence 
+- $20 round-trip vs. $100-180+ surge ride-share 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Walk to alternative pickup location 
+- **Patriot Place** shopping/dining complex (adjacent to stadium) 
+- Request pickup there after 60-90 minute wait (less congestion, surge normalizing) 
+
+**Strategy C**: Extended post-match dining 
+- Stay at Patriot Place 2-3 hours 
+- Dinner, shopping, Bass Pro Shops, bars 
+- Surge pricing returns to normal 
+- Easier pickup with minimal wait 
+
+## Driving & Parking Reality 
+
+### Should You Drive to Gillette Stadium? 
+
+**Short Answer**: Only if traveling from western Massachusetts, northern New England, or distant suburbs with 4+ people. 
+
+**Route 1 Reality**: "With so many likely planning to drive down Route 1, the MBTA is making sure public transportation can help to move fans." —NBC Boston 
+
+**Parking Facts**: 
+
+Gillette Stadium has extensive surface lots surrounding the venue, but FIFA World Cup creates unique challenges: 
+
+**Official Parking**: 
+- **Pre-purchase required** for major events 
+- **Cost**: $50 per vehicle (recent major events); World Cup likely $60-100+ 
+- Opens 6:00 AM event days, closes 2 hours post-event 
+- Post-event exit times: **60-120 minutes** minimum (police-directed egress) 
+
+**Advance Booking**: levisstadium.com or Ticketmaster once World Cup parking sales open. 
+
+### If You Must Drive 
+
+**Recommended Strategy**: 
+
+1. **Park at suburban Commuter Rail station** with parking: 
+   - **Norwood Central**: Franklin Line, parking available 
+   - **Dedham Corporate Center**: Franklin Line, parking 
+   - **Attleboro**: Providence Line, parking 
+   - Drive partway, avoid Foxborough traffic entirely 
+
+2. **Take Commuter Rail to Foxboro Station** from your park-and-ride location 
+
+3. **Return to car after match** (no stadium parking congestion) 
+
+**This Strategy**: 
+- Parking: $0-10 vs. $60-100 stadium 
+- Exit time: 20 minutes vs. 60-120 minutes 
+- Route 1 avoided entirely 
+
+## Match-Day Strategy 
+
+### Seven Matches: Planning for Multiple Visits 
+
+With seven matches spanning June 13 - July 9, Boston offers extended World Cup experience opportunities. 
+
+**Match Schedule**: 
+- **Saturday, June 13**: Opening match (weekend) 
+- **Weekday matches**: June 16, 19, 22, 25, 30 (mostly weekdays) 
+- **Thursday, July 9**: Quarterfinal (weekday) 
+
+**Weekday vs. Weekend Timing**: 
+- **Weekend matches**: Easier MBTA schedule, less traffic 
+- **Weekday matches**: Rush hour complications (3-7 PM) add 30-45 minutes to all journeys 
+
+### Timing Your Journey 
+
+**For Weekend Matches** (June 13 likely 3:00 PM or later): 
+
+**Departing Boston Hotel**: 
+- Leave hotel: 12:00-12:30 PM 
+- Walk/Uber to South Station: 12:30 PM 
+- Board Commuter Rail: 1:00 PM 
+- Arrive Foxboro Station: 2:00 PM 
+- Walk to stadium: 2:10 PM 
+- Gates open: Typically 2 hours before kickoff 
+
+**For Weekday Evening Matches** (6:00-7:00 PM kickoffs): 
+
+Account for evening rush hour (4-7 PM): 
+- Leave hotel: 2:30-3:00 PM 
+- Arrive South Station: 3:00 PM 
+- Board train: 3:30 PM (trains start running 4 hours before kickoff) 
+- Arrive stadium: 4:45-5:00 PM (2+ hours early for traffic buffer) 
+
+### Weather Considerations 
+
+**June-Early July in Boston**: 
+- Average temperatures: 70-80°F (21-27°C) 
+- Occasional rain (June especially) 
+- Gillette Stadium is **fully open-air** (no roof, no retractable cover) 
+- Bring layers—temperatures drop in evening 
+
+**What to Bring**: 
+- Light rain jacket (June showers common) 
+- Sunscreen and hat (afternoon sun) 
+- Layers (evenings cool, wind from coast) 
+- Clear water bottle (refill inside) 
+
+### Quarterfinal (July 9, 2026) Special Considerations 
+
+The **Thursday, July 9 Quarterfinal** represents Boston's most prestigious match. 
+
+**Expect**: 
+- **Maximum demand**: Highest ticket prices, fullest crowds 
+- **Extended security**: Longer screening for knockout stages 
+- **All transportation at capacity**: 10-train full operation 
+- **Global attention**: Media from every continent 
+
+**Plan Ahead**: 
+- Book accommodations 6-12 months early 
+- Arrive 2-3 hours before kickoff (security extensive) 
+- MBTA will run maximum service 
+- Consider Providence hotels (often cheaper, viable alternative) 
+
+## Money-Saving Transit Options 
+
+### MBTA Fares & Contactless Payment 
+
+**Subway/Bus Fares** (for getting around Boston): 
+- **One-way**: $2.40 with CharlieCard 
+- **Day Pass**: $11 (unlimited subway/bus) 
+- **Week Pass**: $22.50 (unlimited subway/bus) 
+
+**Contactless Payment** (Launched 2024): 
+Tap credit card, Apple Pay, Google Pay, or smartwatch directly at fare gates—no CharlieCard needed. 
+
+**New CharlieCard System** (Spring 2025-2026): 
+The MBTA is rolling out an upgraded fare system through 2026. Expect improved functionality by World Cup. 
+
+### Commuter Rail Special Event Pricing 
+
+**Foxboro Event Trains**: $20 round-trip (typical pricing based on Patriots games) 
+
+**Budget Calculation for Multi-Match Visitors**: 
+
+**Sample 7-Day Boston Visit** (3 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to Boston**: $2.40 (Silver Line) 
+- **Three match days**: $20 per match × 3 = $60 
+- **Daily Boston exploring**: $11 day pass × 4 days = $44 
+- **Return to airport**: $2.40 
+- **Total**: $108.80 
+
+**Alternative with More Transit**: 
+- **Week Pass**: $22.50 (covers Boston exploring) 
+- **Three match days**: $60 
+- **Airport transfers**: $4.80 
+- **Total**: $87.30 
+
+Compare to ride-share for same trips: $700-1,100+ 
+
+### Income-Eligible Reduced Fare 
+
+**MBTA offers 50% discount** for riders ages 18-64 enrolled in state assistance programs: 
+- Individuals earning ~$30,000 or less 
+- Families of 4 earning ~$62,000 or less 
+- Enrolled in SNAP, MassHealth, or similar programs 
+
+**Apply**: Visit mycharlie.mbta.com 
+
+**Benefits**: 
+- Subway/bus: $1.20 per ride (vs. $2.40) 
+- Commuter Rail: 50% discount on event trains 
+- 7-day pass: $10 (vs. $22.50) 
+- Monthly pass: $30 (vs. $90) 
+
+### Budget Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- MBTA Week Pass: $22.50 
+- Three match-day trains: $60 
+- Airport transfers: $4.80 
+- **Total**: $87.30 
+
+**Moderate Budget** (occasional convenience): 
+- MBTA for regular transit: $87.30 
+- 2 strategic Uber rides: $40-60 
+- **Total**: $127.30-147.30 
+
+**Premium Budget**: 
+- Private airport transfer: $160 
+- Uber for convenience: $100-150 
+- Match-day trains: $60 
+- **Total**: $320-370 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **MBTA mTicket App** 
+   - Purchase Commuter Rail event tickets 
+   - Mobile ticket scan (no paper needed) 
+   - iPhone and Android 
+   - **Critical for World Cup**: Special event train tickets 
+
+2. **MBTA Official App** ("MBTA Go") 
+   - Real-time train arrivals 
+   - Service alerts 
+   - Trip planning 
+   - CharlieCard balance (at machines) 
+
+3. **Transit or Google Maps** 
+   - Door-to-door routing 
+   - Real-time delays 
+   - Walking directions 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save South Station, Foxboro Station addresses 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download mTicket app for event train tickets 
+- Consider contactless payment (tap credit card) for Boston subway/bus 
+- Alternative: Get CharlieCard at Logan Airport upon arrival ($2 + reload) 
+
+**MBTA Customer Service**: 617-222-3200`}</ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**Gillette Stadium**: 
+- Full ADA compliance throughout 64,628-seat venue 
+- **Accessible parking**: Designated lots (4/5/6 and 22 for special events) 
+- Valid placard required; arrive early (spaces fill quickly) 
+
+**New Foxboro Station** (Opening April 2026): 
+- **High-level platforms**: Eliminates stairs, level boarding 
+- **Fully accessible**: Federal accessibility requirement 
+- **Priority seating** on trains 
+
+**MBTA Commuter Rail**: 
+- All trains wheelchair accessible 
+- Audio/visual announcements 
+- Priority seating areas 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- **MBTA Subway/Bus**: Children under 11 ride free with paying adult 
+- **Commuter Rail**: Check specific event train policies (often reduced fares for children) 
+
+**Family-Friendly Tips**: 
+- Foxboro event trains can be crowded—arrive at South Station early for seats 
+- Stadium walk from station: 10-15 minutes (manageable for children) 
+- Patriot Place has restaurants, Bass Pro Shops, shopping (pre/post-match activities) 
+- June temperatures pleasant for families (70-80°F) 
+
+**Recommended Family Strategy**: 
+- Use Commuter Rail for adventure (kids enjoy trains) 
+- Stay at Patriot Place 60-90 minutes post-match (kids burn energy, crowds thin) 
+- Consider Providence hotels for budget-friendly lodging 
+
+## Critical Transportation Tips 
+
+1. **$35 million Foxboro Station upgrade changes everything**—new platforms handle 20,000 riders 
+2. **Special event trains are separate**—regular passes NOT valid, buy $20 event tickets 
+3. **Download mTicket app before match day**—mobile tickets required 
+4. **10 trains will run per match**—5 from Boston, 5 from Providence (typical) 
+5. **Post-match: Take the train home**—avoid $100-180 surge rideshare 
+6. **Foxborough is 22 miles from Boston**—longest distance among East Coast venues 
+7. **April 2026 completion leaves just 1 month buffer**—construction timeline tight 
+8. **"Seven Patriots games, not seven Super Bowls"**—Dempsey's reassuring framing 
+9. **Quarterfinal July 9 is peak match**—book everything early 
+10. **Contact MBTA: 617-222-3200**—real humans for trip planning help 
+
+## Your Boston World Cup Transportation Plan 
+
+Seven matches. A $35 million station transformation. And a transportation challenge that's being solved just in time. 
+
+Boston's World Cup story combines honest acknowledgment of distance challenges with aggressive infrastructure investment. While Foxborough sits 22 miles from downtown—farther than most host city stadium-center distances—the MBTA's $35 million Foxboro Station overhaul specifically addresses FIFA's international fanbase expectations. The April 2026 completion leaves permanent benefits: high-level platforms, accessible boarding, and capacity to move 20,000 fans per match via 10 trains. 
+
+Your winning strategy: Stay in Boston or Providence. Use MBTA Commuter Rail for all matches—it's faster than driving on match days, cheaper than surge-priced rideshare, and showcases New England rail infrastructure at its finest. Download the mTicket app, purchase your $20 round-trip event ticket, and embrace the Foxborough journey as part of your World Cup experience. 
+
+Between matches, explore Boston's Revolutionary War history, Harvard/MIT campuses, Fenway Park, Freedom Trail, world-class museums, and New England's maritime heritage. The city that hosted the 1994 World Cup welcomes the world again—this time with dramatically better transit to its stadium. 
+
+When that referee's whistle sounds across seven matches from June through the July 9 Quarterfinal, you'll be at "Boston Stadium" (Gillette Stadium during the tournament)—having arrived via the most dramatically upgraded transit connection of any World Cup 2026 host city. 
+
+See you in Foxborough. Go Revolution. Go World Cup. 
+
+--- 
+
+*Information current as of November 2025. Foxboro Station upgrades target April 2026 completion. Event train fares/schedules announced closer to match dates. Verify at mbta.com or call 617-222-3200. FIFA World Cup 2026: fifa.com. Boston 2026 World Cup: bostonsoccerhost.com.*`}</ReactMarkdown>
+            </div>
+          ) : slug === 'toronto-world-cup-2026-transportation-guide-to-bmo-field' ? (
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`Pat 1/2 
+
+# Toronto World Cup 2026: Complete Transportation Guide to BMO Field 
+
+When BMO Field hosts six World Cup 2026 matches—including **Canada's opening match on June 12, 2026**, five group stage games, and one Round of 16 knockout (June 29)—Toronto will showcase why it's one of North America's most accessible World Cup venues. Here's what sets Toronto apart: Exhibition GO Station sits literally **2 minutes from the stadium gates**, providing direct regional rail access. The 509 and 511 streetcars drop you at Exhibition Loop **at the stadium doorstep**. And the entire system runs on PRESTO, Canada's universal transit payment card. 
+
+With $146 million in renovations underway—including 17,756 new temporary seats expanding capacity to 45,736—BMO Field will hand over to FIFA on May 12, 2026, just one month before Canada's historic opening match. Sharon Bollenbach, Executive Director for the FIFA World Cup 26 Toronto Secretariat, confirms: "We're encouraging people to take transit, to walk" with transportation hubs for both GO service and increased TTC streetcar service ready for the world stage. 
+
+## Quick Navigation 
+- [Understanding Toronto's Transit Advantage](#understanding-torontos-transit-advantage) 
+- [$146 Million BMO Field Transformation](#146-million-bmo-field-transformation) 
+- [Exhibition GO Station: 2-Minute Walk](#exhibition-go-station-2-minute-walk) 
+- [TTC Streetcars: Direct Stadium Access](#ttc-streetcars-direct-stadium-access) 
+- [PRESTO Card: Your Transit Key](#presto-card-your-transit-key) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Toronto's Transit Advantage 
+
+### What Makes Toronto Transportation Unique 
+
+BMO Field enjoys **exceptional public transit access** unmatched by most World Cup venues: 
+
+- **Exhibition GO Station**: 2-minute walk (regional rail from across Ontario) 
+- **509 Harbourfront & 511 Bathurst TTC streetcars**: Stop at Exhibition Loop directly at stadium 
+- **29 Dufferin TTC bus**: Connects from Bloor-Danforth subway line 
+- **Waterfront location**: Walkable from downtown, Liberty Village, King West 
+- **Bike Share Toronto**: Bike racks available at stadium 
+
+**Sharon Bollenbach, Executive Director, FIFA World Cup 26 Toronto Secretariat**: "Whether that's transit, whether it's walking, whether it's biking, rideshare, we're going to be providing a number of options for people other than coming down in their own cars and congesting the area." 
+
+### Six Matches Including Canada's Opener 
+
+BMO Field hosts **six World Cup 2026 matches**: 
+
+- **Thursday, June 12, 2026, 1:00 PM** — **Canada's Opening Match** (historic debut as World Cup host) 
+- **Tuesday, June 17, 2026, 1:00 PM** — Group Stage 
+- **Friday, June 20, 2026, 7:00 PM** — Group Stage 
+- **Wednesday, June 24, 2026, 4:00 PM** — Group Stage 
+- **Friday, June 26, 2026, 4:00 PM** — Group Stage 
+- **Sunday, June 29, 2026, 2:00 PM** — **Round of 16** (knockout) 
+
+**Canada's Debut**: "It's an honour to host the first match for Canada men's national soccer team," said Nick Eaves, MLSE Chief Venues and Operations Officer. 
+
+### FIFA Fan Festival 
+
+**Fort York National Historic Site and The Bentway** will host Toronto's official FIFA Fan Festival: 
+- Free match screenings on giant screens 
+- Food vendors, live music, family activities 
+- Located 10-15 minute walk from BMO Field 
+- TTC 511 streetcar provides direct access 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, BMO Field will be called **"Toronto Stadium"** following FIFA's requirement. All existing BMO Field signs will be replaced before the tournament begins. 
+
+## $146 Million BMO Field Transformation 
+
+### The Renovation Project 
+
+BMO Field is undergoing **$146 million in renovations** to meet FIFA World Cup standards and accommodate international fans. 
+
+**Phase 1** (Completed September 2025): 
+- **Four new high-resolution video boards** at each corner 
+- **Updated control room** for broadcast production 
+- **New kitchen** for enhanced food service 
+- **Luxury suites** for premium seating 
+- **Permanent upgrades** that benefit post-World Cup events 
+
+**Phase 2** (November 2025 - May 2026): 
+- **17,756 temporary seats** added to north and south ends 
+- **Expanding capacity to 45,736** (minimum FIFA requirement, up from 28,180 current) 
+- **Construction timeline**: Begins after November 15, 2025 (Women's Northern Super League championship) 
+- **FIFA handover**: May 12, 2026 (30 days before first match) 
+
+**Nick Eaves, MLSE**: "It's going to be a bit of a sprint, but so was the first phase, so we're ready for it. We have to hand the stadium over to FIFA 30 days before the first match, so May 12, 2026, so between now and then, there's a lot of work to do." 
+
+### The Canadian Connection 
+
+BMO Field has been the home of **Toronto FC (MLS) since 2007** and the **Toronto Argonauts (CFL) since 2016**. The venue has hosted: 
+- Countless Canadian men's and women's national team matches 
+- **Historic 2-1 victory over Mexico** in 2022 World Cup Qualifiers 
+- MLS Cup Finals 
+- CONCACAF tournaments 
+- Rugby and football championships 
+
+"BMO Field is more than a stadium—it's a symbol of soccer's growth in Canada, and the FIFA World Cup 2026 will be its biggest stage yet." 
+
+## Exhibition GO Station: 2-Minute Walk 
+
+### GO Transit Regional Rail 
+
+**Exhibition GO Station**, located next to Exhibition Place, is only a **short 2-5 minute walk from the stadium** and connects directly to Union Station on the Lakeshore GO line. 
+
+**What is GO Transit?** 
+GO Transit provides regional rail and bus service connecting Toronto with the Greater Toronto and Hamilton Area (GTHA), including: 
+- **Lakeshore West Line**: Hamilton, Burlington, Oakville, Mississauga → Toronto → Exhibition 
+- **Lakeshore East Line**: Oshawa, Whitby, Ajax, Pickering → Toronto → Exhibition 
+- Other GO lines connect to Union Station for transfer to Lakeshore Lines 
+
+**Why Exhibition GO Station is Your Best Friend**: 
+- **2-minute walk** to BMO Field gates 
+- **Direct service** from Union Station downtown (10 minutes) 
+- **Regional access** from across Greater Toronto Area 
+- **Frequent service** (every 15-30 minutes on Lakeshore Lines) 
+- **Match-day enhancements** planned for World Cup 
+
+### GO Transit Fares (PRESTO) 
+
+**GO Transit fares are distance-based**: 
+- **Union Station to Exhibition Station**: $4.30 (with PRESTO card) 
+- **Oakville to Exhibition**: $7.20 
+- **Hamilton to Exhibition**: $10.55 
+- **Oshawa to Exhibition**: $9.80 
+
+**Co-Fare Discount**: When you transfer between GO Transit and TTC using PRESTO, you get a discount on your GO fare (typically $1-2 off). 
+
+**GO Day Pass**: Unlimited GO Transit travel on weekends and holidays (check gotransit.com for current pricing) 
+
+### Union Station Connection 
+
+**Union Station** is Toronto's central transportation hub, connecting: 
+- All GO Transit lines 
+- Via Rail (intercity passenger rail) 
+- TTC Subway (Line 1 Yellow - University-Yonge) 
+- UP Express (airport train) 
+- TTC streetcars and buses 
+
+**Union Station to BMO Field**: 
+1. **Option A**: Take GO Transit Lakeshore Line to Exhibition (10 minutes, $4.30) 
+2. **Option B**: Take TTC 509 or 511 streetcar (20-25 minutes, $3.35) 
+
+## TTC Streetcars: Direct Stadium Access 
+
+### The Toronto Transit Commission (TTC) 
+
+TTC operates Toronto's comprehensive transit network: subways, streetcars, buses. 
+
+**Key Routes to BMO Field**: 
+
+**509 Harbourfront Streetcar** (Recommended): 
+- **Route**: Union Station ↔ Exhibition Loop 
+- **Frequency**: Every 10-15 minutes 
+- **Journey time**: 20-25 minutes from Union Station 
+- **Stops**: Directly at BMO Field (Exhibition Loop terminus) 
+- **Match-day service**: Increased frequency for World Cup 
+
+**511 Bathurst Streetcar**: 
+- **Route**: Bathurst Station (Bloor-Danforth Line 2) ↔ Exhibition Loop 
+- **Frequency**: Every 10-12 minutes 
+- **Journey time**: 30-35 minutes from Bathurst Station 
+- **Stops**: Directly at BMO Field (Exhibition Loop terminus) 
+- **Serves**: Bathurst Street corridor, connects to subway 
+
+**29 Dufferin Bus**: 
+- **Route**: Dufferin Station (Bloor-Danforth Line 2) ↔ Dufferin Gate (near BMO Field) 
+- **Frequency**: Every 10-15 minutes 
+- **Journey time**: 20-25 minutes 
+- **Walking**: 10-minute walk from Dufferin Gate to stadium 
+
+### Current TTC Fares (2025) 
+
+**Adult Fares**: 
+- **Single ride** (PRESTO): $3.35 
+- **Single ride** (cash): $3.35 (exact change, no transfers) 
+- **Single ride** (contactless credit/debit): $3.35 
+- **Day Pass** (PRESTO Ticket): $13.50 
+
+**Youth/Student Fares** (ages 13-19): 
+- **Single ride** (PRESTO with student ID): $2.30 
+
+**Senior Fares** (65+): 
+- **Single ride** (PRESTO): $2.30 
+
+**Children 12 and under**: FREE 
+
+### Two-Hour Transfer 
+
+**When you pay your fare on the TTC using a PRESTO card, PRESTO Ticket, PRESTO in Google Wallet, debit or credit card, you get a two-hour transfer** that allows you to enter and exit the TTC as much as you'd like within a two-hour period. 
+
+**This is perfect for World Cup visitors**: 
+- Ride streetcar from hotel to BMO Field (tap on) 
+- After match, ride back to downtown (tap on again within 2 hours = free) 
+- Stop for dinner, then continue home (still within 2 hours) 
+
+## PRESTO Card: Your Transit Key 
+
+### The Universal Transit Payment System 
+
+**PRESTO** is the contactless payment card that works across all Greater Toronto and Hamilton Area transit: 
+- TTC (Toronto) 
+- GO Transit (regional) 
+- Mississauga (MiWay) 
+- Brampton Transit 
+- York Region Transit 
+- Hamilton (HSR) 
+- Ottawa (OC Transpo) 
+- And more 
+
+**How to Get PRESTO**: 
+
+1. **Physical PRESTO Card**: 
+   - Purchase at Union Station, TTC stations, Shoppers Drug Mart 
+   - **Cost**: FREE (no card fee) 
+   - Load with funds at station vending machines or online 
+
+2. **PRESTO in Mobile Wallet** (Digital): 
+   - Download PRESTO app (iOS/Android) 
+   - Add to Apple Wallet or Google Pay 
+   - Tap your phone to pay—no physical card needed 
+   - **Cost**: FREE 
+
+3. **Contactless Credit/Debit Card**: 
+   - Simply tap your credit card, debit card, or mobile wallet at readers 
+   - Works on TTC (not GO Transit as of 2025) 
+   - Same price as PRESTO ($3.35) 
+   - Two-hour transfer included 
+
+### Loading Your PRESTO Card 
+
+**Minimum Balance Recommended**: $20-30 for multi-day visits 
+
+**How to Load**: 
+- PRESTO app (instant) 
+- Station vending machines (instant) 
+- Online at prestocard.ca (24-48 hours to reflect) 
+- Shoppers Drug Mart (instant) 
+
+**Auto-reload**: Set up automatic reloading when balance falls below $10 
+
+## Airport to Stadium Connections 
+
+### Toronto Pearson International Airport (YYZ) 
+
+**Distance to BMO Field**: 30 kilometers (19 miles)  
+**Distance to Union Station**: 27 kilometers (17 miles)  
+**Best For**: All international and most domestic visitors 
+
+Pearson is Canada's largest airport, serving over 180 destinations worldwide. 
+
+**Option 1: UP Express + GO Transit** (Most Efficient) 
+
+**Total Time**: 45-55 minutes  
+**Total Cost**: $12.35 (UP Express) + $4.30 (GO Transit) = $16.65 
+
+**The Route**: 
+1. **From any YYZ terminal**: Follow "UP Express" signs 
+2. **Board UP Express train**: To Union Station 
+   - Trains every 15 minutes 
+   - Journey time: 25 minutes 
+   - Cost: $12.35 adult (with PRESTO) 
+3. **At Union Station**: Transfer to GO Transit Lakeshore Line 
+4. **Board Lakeshore West or East train**: To Exhibition Station 
+   - Trains every 15-30 minutes 
+   - Journey time: 10 minutes 
+   - Cost: $4.30 with PRESTO 
+5. **Exit Exhibition Station**: Walk 2 minutes to BMO Field 
+
+**Why This Works**: 
+- Fast: Under 1 hour total 
+- Predictable: Trains run on schedule 
+- Affordable: $16.65 vs. $50-80 rideshare 
+- Direct to stadium doorstep 
+
+**Option 2: UP Express + TTC 509 Streetcar** (Alternative) 
+
+**Total Time**: 60-75 minutes  
+**Total Cost**: $12.35 (UP Express) + $3.35 (TTC) = $15.70 
+
+**The Route**: 
+1. UP Express to Union Station (25 minutes) 
+2. Walk to 509 streetcar platform at Union 
+3. Board 509 toward Exhibition Loop 
+4. Exit at Exhibition Loop (20-25 minutes) 
+5. Stadium is right there 
+
+**Option 3: Ride-Share Direct** 
+
+**Cost**: $50-70 (normal); $100-150+ (match-day surge)  
+**Time**: 30-40 minutes (no traffic); 60-90+ minutes (typical/event traffic) 
+
+**When This Makes Sense**: Groups of 3-4 with luggage, late arrivals, families with young children. 
+
+**Option 4: Private Airport Transfer** (Premium) 
+
+**Cost**: $80-120 pre-booked sedan; $140-200 SUV  
+**Best For**: Groups of 5-6, VIP service 
+
+Services like GO Airport Express, Pearson Shuttle, and Airport Taxi offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual UP Express + GO: $16.65 × 5 = $83 (but with luggage on trains) 
+- Shared SUV transfer: $140 ÷ 5 = $28 per person, door-to-door comfort 
+
+## Match-Day Transportation Strategy 
+
+### Canada's Opening Match: June 12, 2026, 1:00 PM 
+
+This historic match—**Canada's debut as World Cup host**—will draw maximum crowds and national attention. 
+
+**Expect**: 
+- **Sold-out stadium**: All 45,736 seats filled 
+- **Maximum transit demand**: GO Transit and TTC running full service 
+- **National holiday atmosphere**: Canada Day-like celebrations across Toronto 
+- **Security extensive**: Arrive 2+ hours early 
+
+**Timeline for Canada's Opener**: 
+- Leave downtown accommodation: 10:00 AM 
+- Board GO Transit or TTC: 10:30 AM 
+- Arrive BMO Field: 11:00 AM (2 hours before kickoff) 
+- Gates open: Typically 2 hours before kickoff 
+- Explore Fan Fest, grab food, find seats 
+
+### Six Matches: Planning Multiple Visits 
+
+With six matches over 18 days (June 12-29), Toronto offers extended World Cup experience. 
+
+**Match Schedule**: 
+- **June 12 (Thursday), 1:00 PM**: Canada opener (weekday afternoon) 
+- **June 17 (Tuesday), 1:00 PM**: Group stage (weekday afternoon) 
+- **June 20 (Friday), 7:00 PM**: Group stage (evening, rush hour) 
+- **June 24 (Wednesday), 4:00 PM**: Group stage (rush hour start) 
+- **June 26 (Friday), 4:00 PM**: Group stage (rush hour start) 
+- **June 29 (Sunday), 2:00 PM**: Round of 16 (weekend afternoon) 
+
+**Weekday Afternoon Matches** (1:00 PM - 4:00 PM): 
+- Easier travel, less congestion 
+- GO Transit and TTC normal frequency 
+- Post-match return avoids rush hour 
+
+**Evening/Rush Hour Matches** (4:00 PM - 7:00 PM): 
+- Account for rush hour (4-7 PM): Add 30-45 minutes to journey times 
+- TTC more crowded 
+- GO Transit peak frequency (actually helpful) 
+
+### Weather Considerations 
+
+**June in Toronto**: 
+- Average temperatures: 18-24°C (64-75°F) 
+- Pleasant early summer weather 
+- Occasional rain (bring light jacket) 
+- **BMO Field features roof canopy** covering south, east, and west stands (protects from rain while maintaining open-air atmosphere) 
+
+**What to Bring**: 
+- Light layers (temperatures drop in evening) 
+- Sunscreen and sunglasses (afternoon sun) 
+- Light rain jacket (June showers) 
+- Clear water bottle (refill inside) 
+
+### Round of 16 (June 29) Special Considerations 
+
+The knockout match on June 29 represents Toronto's highest-stakes game. 
+
+**Expect**: 
+- **Highest demand** of Toronto's six matches 
+- **Extended security**: Longer screening for knockout stages 
+- **Full transit operation**: GO and TTC maximum service 
+- **Book early**: Hotels, restaurants fill quickly 
+
+## Money-Saving Transit Options 
+
+### The PRESTO Two-Hour Transfer Advantage 
+
+**TTC's two-hour transfer is a game-changer for visitors**: 
+
+**Sample Match Day**: 
+- 11:00 AM: Tap on TTC at hotel, ride to BMO Field ($3.35) 
+- 1:00-4:00 PM: Watch match 
+- 4:30 PM: Tap on TTC at Exhibition Loop to return 
+- **Cost if within 2 hours**: $3.35 total (return is FREE) 
+- **Cost if over 2 hours**: $6.70 total 
+
+**Strategy**: Time your arrival to maximize the 2-hour window for free return. 
+
+### TTC Day Pass Value 
+
+**TTC Day Pass**: $13.50 (unlimited TTC travel all day) 
+
+**Break-Even**: 5 trips at $3.35 = $16.75, so Day Pass saves money after 4+ trips 
+
+**Perfect For**: 
+- Match day + exploring Toronto before/after 
+- Attending Fan Fest + match + post-match celebrations 
+- Making multiple TTC trips in one day 
+
+### Sample 7-Day Toronto Budget (3 Matches) 
+
+**Transportation Costs**: 
+- **Airport to Union Station** (UP Express): $12.35 
+- **Union to Exhibition (GO)** or **Hotel to Stadium (TTC)** per match day: $4.30-7.05 per match × 3 = $13-21 
+- **Daily downtown exploring** (TTC Day Pass): $13.50 × 4 non-match days = $54 
+- **Return to airport** (UP Express): $12.35 
+- **PRESTO card**: FREE 
+
+**7-Day Total**: $91-100 
+
+**With More TTC Usage**: 
+- **TTC Weekly Pass**: Not offered (only monthly $143) 
+- **Stick with Day Passes**: $13.50 × 7 days = $94.50 
+- **Plus airport transfers**: $94.50 + $24.70 = $119.20 
+
+Compare to ride-share for same trips: $600-900+ 
+
+### Fair Pass Transit Discount Program 
+
+Toronto residents and **eligible visitors with Canadian status** can access **36% discount on TTC fares** through the Fair Pass program: 
+
+**Eligibility**: 
+- Income below 75% of Low-Income Measure After-Tax threshold 
+- Ontario Works, ODSP, or similar program participants 
+- Must have Canadian residency/status 
+
+**Savings**: 
+- Single ride: $2.15 (vs. $3.35 = save $1.20) 
+- Monthly pass: $110 (vs. $143 = save $32.75) 
+
+**Apply**: toronto.ca/fairpass (must apply in advance) 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate throughout Toronto with designated zones at BMO Field. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Pearson Airport to BMO Field: $50-70 
+- Downtown to BMO Field: $15-25 
+- Union Station to BMO Field: $10-18 
+
+**World Cup Match-Day Pricing**: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- **Rideshare drop-off zone**: Use Dufferin Gate entrance for quickest access 
+- Traffic delays: Add 20-40 minutes during peak arrival 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From BMO Field to downtown: $40-80+ typical post-match cost 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use GO Transit/TTC for match days (faster, cheaper, more reliable) 
+- Rideshare works for airport-to-hotel transfer with luggage 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take GO Transit or TTC back 
+- Walk to Exhibition GO Station (2 minutes) or Exhibition Loop (5 minutes) 
+- Board GO or 509/511 streetcar 
+- $4.30-7.05 fare vs. $40-80+ surge rideshare 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Walk to Liberty Village 
+- Walk 15 minutes northwest to Liberty Village neighborhood 
+- Request pickup on King Street West (less congestion, lower surge) 
+- Browse restaurants, bars while waiting 
+
+**Strategy C**: Extended stay at Patriot Place 
+- Visit restaurants at Exhibition Place or nearby King West 
+- Wait 60-90 minutes for surge to normalize 
+- Explore area while crowds clear`}</ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`## Driving & Parking 
+
+### Should You Drive to BMO Field? 
+
+**Short Answer**: Not recommended if staying downtown or accessible by GO Transit. 
+
+**Parking Reality**: 
+
+BMO Field is near **Lake Shore Boulevard & Gardiner Expressway**, with parking available nearby at Exhibition Place. 
+
+**Official Parking**: 
+- **Exhibition Place parking lots**: Multiple options surrounding stadium 
+- **Cost**: $20-40 typical events; World Cup likely $40-60+ 
+- Opens several hours before kickoff 
+- Post-event exit times: 45-90 minutes 
+
+**Alternative Strategy**: **Park in Liberty Village** (residential neighborhood 10-15 minute walk west) to avoid post-game traffic congestion. Street parking available (check signage for restrictions). 
+
+### If You Must Drive 
+
+**Recommended**: Drive from distant suburbs, park at GO Transit station with parking, take GO to Exhibition. 
+
+**GO Stations with Parking**: 
+- Aldershot Station (Lakeshore West) 
+- Oakville Station (Lakeshore West) 
+- Pickering Station (Lakeshore East) 
+- Many others—check gotransit.com 
+
+**Why This Works**: 
+- Parking: $0-8 per day vs. $40-60 at stadium 
+- Avoid downtown/waterfront traffic entirely 
+- No post-match parking lot congestion 
+- Return to car in 20 minutes vs. 90-minute stadium exit 
+
+## Walkability & Cycling 
+
+### Walking to BMO Field 
+
+BMO Field's **waterfront location** makes it walkable from several Toronto neighborhoods: 
+
+**Liberty Village**: 10-15 minute walk northwest  
+**King West**: 20-25 minute walk northeast  
+**Fort York**: 10-15 minute walk east (where Fan Fest is located)  
+**Downtown core**: 30-40 minute walk via **Toronto Waterfront Trail** 
+
+**Toronto's Waterfront Trail** offers a scenic route to the stadium—ideal for pleasant June weather. 
+
+### Bike Share Toronto 
+
+**Bike Share Toronto** operates throughout downtown with stations near BMO Field. 
+
+**How It Works**: 
+- Download Bike Share Toronto app 
+- Purchase day pass: $15 (unlimited 30-minute trips for 24 hours) 
+- Overage fees: $4 per additional 30 minutes 
+
+**Bike Parking at BMO Field**: 
+- Bike racks available at stadium 
+- Free bike valet service often provided for major events (confirm for World Cup) 
+
+**Perfect For**: Active visitors staying downtown who want flexibility. 
+
+## Critical Transportation Tips 
+
+1. **Exhibition GO Station is 2 minutes from gates**—fastest option from anywhere in GTHA 
+2. **509 and 511 streetcars stop AT the stadium**—Exhibition Loop terminus is your destination 
+3. **PRESTO two-hour transfer saves money**—return trip often free within 2 hours 
+4. **Canada's June 12 opener will be massive**—arrive 2+ hours early, national celebration 
+5. **TTC Day Pass is $13.50**—pays for itself after 4+ trips 
+6. **Download PRESTO app before arrival**—add to mobile wallet, no physical card needed 
+7. **UP Express gets you downtown in 25 minutes**—from Pearson Airport to Union Station 
+8. **BMO Field has roof canopy**—protects most seats from rain 
+9. **Phase 2 construction completes May 12**—just 1 month before first match 
+10. **Fort York Fan Fest is 10-15 minute walk**—combine with match day experience 
+
+## Your Toronto World Cup Transportation Plan 
+
+Six matches. Canada's historic opening game. And one of the tournament's most transit-accessible venues. 
+
+Toronto's transportation story is refreshingly straightforward: Exhibition GO Station delivers regional rail fans directly to the stadium doorstep in 2 minutes. TTC's 509 and 511 streetcars stop at Exhibition Loop at the stadium entrance. PRESTO unifies payment across all systems. And the $146 million BMO Field renovation ensures Canada's soccer cathedral is World Cup-ready by May 12, 2026—just one month before the world arrives. 
+
+Your winning strategy: Get a PRESTO card (or use mobile wallet). Take UP Express from Pearson to Union Station. Board GO Transit Lakeshore Line to Exhibition Station for every match. Walk 2 minutes to the gates. After the final whistle, reverse the journey for stress-free, affordable travel. Between matches, explore Toronto's diverse neighborhoods, CN Tower, Royal Ontario Museum, Hockey Hall of Fame, and multicultural dining that rivals any city on Earth. 
+
+When that referee's whistle sounds for Canada's opening match on June 12, 2026, you'll be at "Toronto Stadium" (BMO Field during the tournament)—having experienced one of the smoothest transportation systems in the entire World Cup 2026 tournament, watching Canada make history on home soil. 
+
+Welcome to Toronto. Welcome to the World Cup. Let's make history. 
+
+--- 
+
+*Information current as of November 2025. BMO Field renovations complete May 12, 2026. Fares reflect 2025 pricing. Verify details at gotransit.com, ttc.ca, prestocard.ca, and fifaworldcup.com. For help: GO Transit Customer Service 1-888-438-6646, TTC Customer Service 416-393-4636.*`}</ReactMarkdown>
+            </div>
+          ) : slug === 'vancouver-world-cup-2026-transportation-guide-to-bc-place' ? (
+            <div className="prose prose-lg max-w-none dark:prose-invert">
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`
+
+When BC Place hosts seven World Cup 2026 matches—including **two games featuring Canada's men's national team** and knockout rounds through June 29—Vancouver will demonstrate why it's consistently ranked among the world's most livable cities. Here's Vancouver's transportation advantage: **Stadium-Chinatown SkyTrain station sits just 2 minutes from BC Place gates**, providing seamless rapid transit access from across Metro Vancouver. The Canada Line delivers fans from Vancouver International Airport to downtown in 25 minutes. And the entire system operates on Compass Card—or simply tap your credit card contactless payment at any gate. 
+
+With BC Place located at **777 Pacific Boulevard in the heart of downtown**—walkable from Gastown (15 minutes), Yaletown (12 minutes), and countless hotels—Vancouver offers what may be the most accessible, pedestrian-friendly World Cup experience in the entire tournament. Add the official **FIFA Fan Festival at Hastings Park** (PNE grounds with 10,000-capacity amphitheater), Vancouver's commitment to sustainable transportation, and stunning mountain/ocean vistas at every turn, and you have a World Cup destination unlike any other. 
+
+## Quick Navigation 
+- [Understanding Vancouver's Transit Excellence](#understanding-vancouvers-transit-excellence) 
+- [Stadium-Chinatown Station: 2-Minute Walk](#stadium-chinatown-station-2-minute-walk) 
+- [Compass Card & Contactless Payment](#compass-card-contactless-payment) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Walking & Cycling to BC Place](#walking-cycling-to-bc-place) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Vancouver's Transit Excellence 
+
+### What Makes Vancouver Transportation Unique 
+
+BC Place enjoys **exceptional downtown location** with multiple transportation options: 
+
+- **Stadium-Chinatown SkyTrain Station**: 2-minute walk (Expo & Millennium Lines) 
+- **Yaletown-Roundhouse Station**: 10-minute walk (Canada Line—airport access) 
+- **Multiple bus routes**: 17, 19, N8 within 5-minute walk 
+- **Walkable from downtown**: 10-20 minutes from most hotels 
+- **Bike-friendly**: Protected lanes along Expo Blvd and Cambie Bridge 
+- **Mobi bike share**: Docking stations on Expo Blvd near stadium 
+
+**Sustainability Focus**: "Vancouver aims to be the most eco-friendly host city, with a focus on public transport and green energy." 
+
+### Seven Matches Including Two Canada Games 
+
+BC Place hosts **seven World Cup 2026 matches**: 
+
+- **Group Stage**: Five matches (June 12-27) 
+  - Including **two matches featuring Canada's men's national team** 
+- **Round of 32**: One knockout match (June 30) 
+- **Round of 16**: One knockout match (June 29) 
+
+**Capacity**: 54,000 for World Cup (standard 54,500) 
+
+### BC Place Stadium Features 
+
+**Retractable Roof**: Cable-supported roof fully retracts to reveal over 7,500 m² of open sky—allows outdoor atmosphere while preserving weather protection when closed. 
+
+**Location**: 777 Pacific Boulevard, downtown Vancouver  
+**Opened**: June 19, 1983 (air-supported dome); renovated 2010-2011 ($563 million CAD upgrade)  
+**Home Teams**: BC Lions (CFL), Vancouver Whitecaps FC (MLS) 
+
+### FIFA Fan Festival: Hastings Park 
+
+**Location**: Hastings Park (PNE grounds), East Vancouver  
+**Dates**: June 11 - July 19, 2026  
+**Capacity**: 10,000 (Freedom Mobile Arch Amphitheatre—to be built)  
+**Features**: Giant screen showing all matches, live music, cultural performances, interactive exhibits, lawn games  
+**Cost**: FREE  
+**Access**: SkyTrain Expo Line to Renfrew Station (10-minute walk) or bus routes 
+
+## Stadium-Chinatown Station: 2-Minute Walk 
+
+### SkyTrain: Vancouver's Rapid Transit System 
+
+**TransLink operates three SkyTrain lines** serving Metro Vancouver: 
+
+**Expo Line** (waterfront blue): 
+- Route: Waterfront ↔ Production Way-University (Burnaby) or King George (Surrey) 
+- Serves: Downtown, Stadium-Chinatown, Commercial-Broadway, Burnaby, New Westminster, Surrey 
+- **Stadium-Chinatown Station**: Direct access to BC Place (2-minute walk to Gate C) 
+
+**Millennium Line** (yellow): 
+- Route: VCC-Clark ↔ Lafarge Lake-Douglas (Coquitlam) 
+- Serves: Commercial-Broadway, Burnaby, New Westminster, Coquitlam 
+- **Also stops at Stadium-Chinatown Station** 
+
+**Canada Line** (teal): 
+- Route: Waterfront ↔ Richmond-Brighouse or YVR Airport 
+- Serves: Downtown, Yaletown-Roundhouse (10-minute walk to BC Place), Richmond, Airport 
+- **Critical for airport access** 
+
+### Stadium-Chinatown Station to BC Place 
+
+**Distance**: 2-minute walk (steps from Gate C)  
+**Lines**: Expo and Millennium  
+**Access**: Exit station, follow crowd and signage to stadium 
+
+**Alternative: Yaletown-Roundhouse Station** 
+- **Distance**: 10-15 minute walk to BC Place 
+- **Line**: Canada Line (connects to airport) 
+- **When to use**: Coming from Richmond or YVR Airport direction 
+
+### Operating Hours & Frequency 
+
+**Regular Service**: 
+- Monday-Friday: ~5:00 AM - 1:30 AM 
+- Saturday-Sunday: ~5:30 AM - 1:30 AM 
+- Frequency: Every 3-6 minutes during peak hours; every 7-15 minutes off-peak 
+
+**Match-Day Enhancement**: TransLink increases service frequency for major events at BC Place, with trains running every 2-4 minutes during peak arrival/departure times. 
+
+## Compass Card & Contactless Payment 
+
+### Current TransLink Fares (July 2025) 
+
+**Zone System**: Metro Vancouver uses 3 fare zones (downtown is Zone 1). 
+
+**Adult Fares** (Compass Card Stored Value): 
+- **1 Zone**: $2.70 
+- **2 Zones**: $4.00 
+- **3 Zones**: $5.10 
+
+**Cash/Contactless Fares** (higher than Compass): 
+- **1 Zone**: $3.35 
+- **2 Zones**: $4.85 
+- **3 Zones**: $6.60 
+
+**DayPass**: $11.95 adult (unlimited travel all zones, all day) 
+
+**Concession Fares** (ages 13-18, 65+): 
+- **1 Zone**: $2.25 
+- **2 Zones**: $3.30 
+- **3 Zones**: $4.50 
+- **Monthly concession pass**: $63.80 (unlimited all zones) 
+
+**Children 12 and under**: FREE when accompanied by paying adult (maximum 4 children per adult) 
+
+### Contactless Payment (Easiest for Visitors) 
+
+**Simply tap your credit card, debit card, Apple Pay, Google Pay, or Samsung Pay** at SkyTrain fare gates or bus card readers—no Compass Card needed. 
+
+**Benefits**: 
+- Skip ticket machine lines 
+- Same 90-minute transfer window (120 minutes on West Coast Express) 
+- Use same card/device for tap-in and tap-out to avoid double charges 
+- Works exactly like Compass Card 
+
+**Important**: Tap your card, not your wallet. Use the same payment method for all transfers. 
+
+### Compass Card (Physical or Digital) 
+
+**How to Get**: 
+- Purchase at any SkyTrain station Compass Vending Machine (CVM) 
+- Cost: $6 refundable deposit 
+- Load with Stored Value ($5 minimum) 
+- Also available at Compass Retailers (London Drugs, 7-Eleven, Shoppers Drug Mart) 
+
+**Digital Option**: Purchase and manage online at compasscard.ca 
+
+### 90-Minute Transfer Window 
+
+When you tap on TransLink services (SkyTrain, SeaBus, bus), you have **90 minutes to transfer between services** using the same Compass Card or contactless payment. 
+
+**Perfect for World Cup**: 
+- Tap on SkyTrain from hotel to BC Place 
+- Watch match (typically 2 hours) 
+- Tap on for return journey—likely need new fare (but only if over 90 minutes from initial tap) 
+
+## Airport to Stadium Connections 
+
+### Vancouver International Airport (YVR) 
+
+**Distance to BC Place**: 12 kilometers (7.5 miles)  
+**Distance to downtown**: 12 kilometers  
+**Best For**: All visitors—one of North America's best airports 
+
+YVR consistently ranks among the world's best airports for service and efficiency. 
+
+**Canada Line Direct: Airport to Stadium** (Best Option) 
+
+**Total Time**: 40-50 minutes  
+**Total Cost**: $5.10 (YVR is Zone 3) 
+
+**The Route**: 
+1. **From YVR terminals**: Follow "Canada Line" signs (inside International and Domestic terminals) 
+2. **Board Canada Line at YVR-Airport Station**: Toward Waterfront 
+   - Trains every 6-8 minutes 
+   - Journey time: ~25 minutes to downtown 
+3. **Two Options**: 
+   - **Option A**: Exit at **Yaletown-Roundhouse Station**, walk 10-15 minutes to BC Place 
+   - **Option B**: Exit at **Waterfront Station**, transfer to Expo Line, ride one stop to **Stadium-Chinatown Station**, walk 2 minutes 
+
+**Why Canada Line is Best**: 
+- Fastest route (40-50 minutes total) 
+- Cheapest ($5.10 one-way) 
+- Most reliable (trains every 6-8 minutes) 
+- Direct connection (no traffic) 
+- Station inside airport terminal 
+
+**Canada Line AddFare**: YVR Airport adds a $5 AddFare on top of regular zone fare. Total YVR to downtown: $2.70 (1-zone) + $5 (AddFare) = $7.70 **CORRECTION**: The $5.10 fare quoted above already includes AddFare. 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: $45-65 (normal); $90-150+ (match-day surge)  
+**Time**: 20-30 minutes (no traffic); 40-70 minutes (typical/event traffic) 
+
+**When This Makes Sense**: Groups of 3-4 with luggage, late arrivals, families with young children. 
+
+**Option 3: Private Airport Shuttle** (Premium) 
+
+**Cost**: $70-110 pre-booked sedan; $130-180 SUV  
+**Best For**: Groups of 5-6, VIP service 
+
+Services like YVR Skylynx, Pacific Coach Lines, and private shuttles offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking 
+- Fixed pricing (no surge) 
+- Direct service to downtown hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual Canada Line: $5.10 × 5 = $25.50 total 
+- Shared SUV transfer: $130 ÷ 5 = $26 per person (comparable with zero hassle)`}</ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown remarkPlugins={[remarkGfm]}>{`## Match-Day Transportation Strategy 
+
+### Seven Matches: Planning Your Visit 
+
+**Match Schedule** (exact dates TBD): 
+- **Group Stage**: Five matches (June 12-27) 
+  - Two featuring Canada men's national team 
+- **Round of 32**: June 30 
+- **Round of 16**: June 29 
+
+### Timing Your Journey 
+
+**From Downtown Vancouver Hotels**: 
+
+**For Afternoon/Evening Matches**: 
+- Leave hotel: 60-90 minutes before kickoff 
+- Walk/SkyTrain to BC Place: 10-30 minutes depending on location 
+- Arrive stadium: 60 minutes before kickoff (ideal) 
+
+**Example for 7:00 PM Match**: 
+- Leave hotel: 5:30 PM 
+- Arrive BC Place: 6:00 PM (gates typically open 2 hours before kickoff) 
+
+**From YVR Airport** (same-day arrival + match): 
+- Complete airport procedures: 2.5 hours before kickoff minimum 
+- Board Canada Line: 2 hours before kickoff 
+- Arrive BC Place: 1.5 hours before kickoff (tight but manageable) 
+
+### Weather Considerations 
+
+**June in Vancouver**: 
+- Average temperatures: 14-20°C (57-68°F) 
+- Possible rain (June is transition month, occasional showers) 
+- **BC Place retractable roof**: Protects fans regardless of weather 
+- Evenings cool—bring light layers 
+
+**What to Bring**: 
+- Light rain jacket (June showers possible) 
+- Layers (evening temperatures drop) 
+- Comfortable walking shoes (downtown is pedestrian-friendly) 
+- Clear water bottle (refill inside) 
+
+### Post-Match Transportation 
+
+**SkyTrain Strategy** (Recommended): 
+
+1. **Exit BC Place**: Follow crowd to Stadium-Chinatown Station 
+2. **Expect queues**: TransLink runs trains every 2-4 minutes post-match to clear crowds 
+3. **Board Expo or Millennium Line**: Toward your destination 
+4. **Wait time**: 10-20 minutes typical (vs. 30-60+ minutes for rideshare) 
+
+**Alternative**: Walk 10-15 minutes to Yaletown, Gastown, or downtown core—explore bars, restaurants while crowds thin, then continue home. 
+
+## Walking & Cycling to BC Place 
+
+### Vancouver's Walkability 
+
+BC Place's downtown location makes it **walkable from most tourist accommodations**: 
+
+**Walking Times**: 
+- **Gastown**: 15 minutes northeast 
+- **Yaletown**: 10-12 minutes southwest 
+- **Downtown core** (Granville, Robson): 15-20 minutes 
+- **Coal Harbour**: 20-25 minutes 
+- **Chinatown**: 10 minutes east 
+
+**Walking Routes**: Vancouver's waterfront offers scenic routes along False Creek and English Bay. 
+
+### Cycling to BC Place 
+
+**Bike Infrastructure**: 
+- **Protected lanes** along Expo Boulevard and Cambie Bridge 
+- **Bike racks** available at BC Place 
+- **Mobi by Shaw Go** bike share: Docking stations on Expo Blvd near stadium 
+
+**Mobi Bike Share**: 
+- **Day Pass**: $12 (unlimited 60-minute trips for 24 hours) 
+- **Overage**: $4 per additional 30 minutes 
+- Download Mobi app, find/unlock bikes 
+- Perfect for exploring Vancouver between matches 
+
+**World Cup Note**: "Bikes may get snapped up fast with so many people in town all trying to get to the same place." 
+
+## Money-Saving Transit Options 
+
+### DayPass Value 
+
+**TransLink DayPass**: $11.95 adult (unlimited travel all zones, all day) 
+
+**Break-Even**: 3 trips across zones  
+- Example: YVR to downtown ($5.10) + downtown to stadium ($2.70) + return to hotel ($2.70) = $10.50  
+- DayPass $11.95 covers all this plus unlimited additional trips 
+
+**Perfect For**: 
+- Match day + exploring Vancouver 
+- Airport arrival + stadium visit + evening exploration 
+- Making 4+ trips in one day 
+
+### Concession Fares (Ages 13-18, 65+) 
+
+**Significant Savings**: 
+- Single trip: $2.25-4.50 (vs. $2.70-5.10 adult) 
+- DayPass: $9.40 (vs. $11.95 adult) 
+- Monthly pass: $63.80 unlimited all zones (vs. $111.60-201.55 adult) 
+
+### Sample 7-Day Vancouver Budget (3 Matches) 
+
+**Transportation Costs**: 
+- **YVR to downtown**: $5.10 (Canada Line) 
+- **Three match days** (hotel to stadium roundtrip): $2.70 × 2 × 3 = $16.20 
+- **Daily exploring** (DayPass): $11.95 × 4 non-match days = $47.80 
+- **Return to YVR**: $5.10 
+- **Compass Card deposit**: $6 (refundable) 
+
+**7-Day Total**: $74.20 + $6 refundable = $80.20 net 
+
+**Alternative with More Transit**: 
+- **DayPasses all 7 days**: $11.95 × 7 = $83.65 (unlimited travel, explores everything) 
+
+Compare to ride-share for same trips: $500-800+ 
+
+### Free Transit Options 
+
+**Children 12 and under**: FREE when with paying adult (max 4 children) 
+
+**Concession Compass Card**: For HandyCard holders (disabled), seniors 65+, youth 13-18 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate throughout Metro Vancouver with designated zones at BC Place. 
+
+**Typical Fares** (Non-Event Pricing): 
+- YVR Airport to BC Place: $45-65 
+- Downtown to BC Place: $10-18 (if walking not preferred) 
+- Richmond to BC Place: $25-35 
+
+**World Cup Match-Day Pricing**: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off: Designated rideshare zones near Pacific Boulevard 
+- Traffic delays: Add 20-40 minutes during peak arrival 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes 
+- BC Place to downtown: $30-60+ typical post-match 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: Use Canada Line—faster and cheaper than rideshare. 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take SkyTrain back 
+- Walk to Stadium-Chinatown Station (2 minutes) 
+- Board Expo or Millennium Line 
+- $2.70 fare vs. $30-60+ surge rideshare 
+- Guaranteed transport 
+
+**Strategy B**: Walk to Yaletown or Gastown 
+- 10-15 minute walk from stadium 
+- Request pickup on Davie Street (Yaletown) or Water Street (Gastown) 
+- Browse restaurants, bars while surge normalizes 
+
+## Driving & Parking 
+
+### Should You Drive to BC Place? 
+
+**Short Answer**: Not recommended if staying downtown or accessible by SkyTrain. 
+
+**Parking Reality**: 
+
+"Parking in downtown Vancouver is both expensive and limited, especially during major events." 
+
+**Options**: 
+- **EasyPark, Impark, WestPark**: Private parkades near stadium 
+- **Plaza of Nations**: Across Pacific Boulevard 
+- **Cost**: Event-rate pricing $30-50+ expected for World Cup 
+- **Post-match exit**: Traffic control around Pacific Boulevard and Expo Boulevard delays exits significantly 
+
+**Better Strategy**: Park at suburban SkyTrain station with parking, take SkyTrain to Stadium-Chinatown. 
+
+**SkyTrain Park & Ride Options**: 
+- King George Station (Surrey) 
+- Scott Road Station (Surrey) 
+- Gateway Station (Surrey) 
+- Check TransLink park-and-ride availability 
+
+## Critical Transportation Tips 
+
+1. **Stadium-Chinatown Station is 2 minutes from BC Place**—use it for every match 
+2. **Canada Line gets you from YVR to downtown in 25 minutes**—fastest airport connection 
+3. **Tap contactless credit card directly**—no Compass Card needed (same price) 
+4. **BC Place is walkable from downtown**—10-20 minutes from most hotels 
+5. **DayPass is $11.95**—pays for itself after 3-4 trips 
+6. **Children 12 and under ride FREE**—huge family savings 
+7. **90-minute transfer window**—switch between SkyTrain/bus freely 
+8. **Mobi bike share available**—$12 day pass for cycling around city 
+9. **Hastings Park Fan Festival FREE**—10,000 capacity, all matches shown 
+10. **Vancouver is eco-friendly**—walk, bike, transit encouraged over driving 
+
+## Your Vancouver World Cup Transportation Plan 
+
+Seven matches. Two featuring Canada. And North America's most accessible, walkable, sustainable World Cup venue. 
+
+Vancouver's transportation story combines urban planning excellence with natural beauty. Stadium-Chinatown SkyTrain station sits 2 minutes from BC Place. The Canada Line delivers fans from YVR Airport in 25 minutes. Downtown's compact core makes walking the default transport between hotels, restaurants, stadiums, and attractions. And TransLink's integrated system—or simply tapping your credit card—eliminates payment complexity. 
+
+Your winning strategy: Fly into YVR. Take Canada Line to downtown. Stay near SkyTrain stations. Use Stadium-Chinatown Station for every match. Walk everywhere else—Vancouver's pedestrian infrastructure rivals European cities. Between matches, explore Stanley Park, Granville Island, Gastown, Grouse Mountain, Capilano Suspension Bridge, and Pacific coastline that makes Vancouver one of Earth's most beautiful cities. 
+
+When that referee's whistle sounds across seven matches through June 29, 2026, you'll be at BC Place—having experienced the easiest, most sustainable, most scenic World Cup transportation in the entire tournament. 
+
+Welcome to Vancouver. Welcome to Beautiful British Columbia. Welcome to the World Cup. 
+
+--- 
+
+*Information current as of November 2025. TransLink fares reflect July 2025 increase (4%). Verify details at translink.ca, compasscard.ca, vancouverfwc26.ca, and fifaworldcup.com. For help: TransLink Customer Service 604-953-3333.*`}</ReactMarkdown>
+            </div>
+          ) : slug === 'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide' ? (
             <div className="space-y-8">
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">When MetLife Stadium hosts the 2026 FIFA World Cup Final on July 19, 2026—plus seven other matches throughout the tournament—the New York/New Jersey region will welcome over 1 million international visitors to the world's biggest sporting event. But here's what most travel guides won't tell you: getting to MetLife Stadium in East Rutherford, New Jersey, from Manhattan takes roughly the same time whether you're 5 miles away or 15 miles away. Traffic, not distance, rules transportation decisions during major events in this region.</p>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">This guide arms you with battle-tested strategies for navigating one of the world's most complex transit networks during the World Cup's most intense moments. You'll discover exactly which transportation mode saves you money for your specific scenario, which routes avoid the post-match crush, and how to move seamlessly between New York's five boroughs and New Jersey's World Cup venues.</p>
@@ -4304,6 +6891,1178 @@ See you in Space City.
 *Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Houston METRO (ridemetro.org), NRG Stadium (nrgpark.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026. Contact METRO Customer Service: 713-635-4000.*`
               }</ReactMarkdown>
             </div>
+          ) : slug === 'monterrey-world-cup-2026-complete-transportation-guide-to-estadio-bbva' ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`When Estadio BBVA hosts **four matches during the 2026 FIFA World Cup**—including three group stage clashes (June 14, 20, 24) and one Round of 32 knockout (June 29)—Monterrey will showcase why it's Mexico's industrial powerhouse and gateway to North America. Nicknamed **"El Gigante de Acero" (The Steel Giant)**, this $200 million stadium sits beneath the dramatic Sierra Madre mountains in Guadalupe, with Metrorrey Line 1 delivering fans directly to Exposición Station just a **9-10 minute walk from the gates**. With new Lines 4 and 6 targeting June 2026 completion, billions invested in a "FIFA corridor" connecting Fundidora Park to the airport, and Monterrey's position as Mexico's most economically dynamic city, this northern metroplex is ready to welcome the world. 
+
+Here's Monterrey's transportation advantage: **Metrorrey Line 1 runs from downtown to Exposición Station** (the stadium terminus) in approximately 25 minutes for just **10.30 pesos ($0.56 USD) in June 2026**. Multiple bus routes (214, 223, TME, 093) stop at Pablo Livas station mere minutes from the stadium. The "Me Muevo" transit card works across all Metrorrey and buses. And with Monterrey International Airport just 30 minutes away via taxi or the coming Line 4, getting to "El Gigante de Acero" is straightforward—once you understand the system. 
+
+## Quick Navigation 
+- [Understanding Monterrey's Transit System](#understanding-monterreys-transit-system) 
+- [Metrorrey Line 1 to Exposición Station](#metrorrey-line-1-to-exposición-station) 
+- [Me Muevo Card & Payment](#me-muevo-card-payment) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Bus Routes to Stadium](#bus-routes-to-stadium) 
+- [Match-Day Strategy](#match-day-strategy) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Monterrey's Transit System 
+
+### What Makes Monterrey Transportation Unique 
+
+Monterrey, with a **metro population of 5.3 million**, is Mexico's third-largest city and the **most economically developed** outside Mexico City. The city operates comprehensive public transit: 
+
+- **Metrorrey**: 3 light rail lines (Lines 1, 2, 3) with 41 stations covering 40+ km 
+- **Ecovía**: Bus Rapid Transit (BRT) with dedicated lanes 
+- **Regular bus routes**: Extensive network operated by state and private companies 
+- **Coming expansions**: Lines 4, 5, and 6 under construction targeting 2026 
+
+**World Cup Infrastructure Push**: 
+- **"FIFA corridor"**: Billions invested linking Fundidora Park (Fan Festival), Estadio BBVA, airport 
+- **Line 4**: Airport to downtown direct connection (targeting June 2026) 
+- **Line 6**: Additional stadium connectivity (targeting June 2026) 
+- **Enhanced capacity**: Preparing system for 53,500-capacity matches 
+
+### Four Matches at "El Gigante de Acero" 
+
+Estadio BBVA hosts **four FIFA World Cup 2026 matches**: 
+
+- **Saturday, June 14, 2026** — Group Stage 
+- **Saturday, June 20, 2026** — Group Stage 
+- **Wednesday, June 24, 2026** — Group Stage 
+- **Monday, June 29, 2026** — **Round of 32** (knockout) 
+
+**Capacity**: 53,500 (FIFA capacity for 2026) 
+
+### Estadio BBVA Features 
+
+**Opened**: August 2, 2015  
+**Location**: Guadalupe (east of Monterrey Centro), Avenida Pablo Livas 2011  
+**Nickname**: "El Gigante de Acero" (The Steel Giant)  
+**Design**: Modern architecture honoring Monterrey's steel industry heritage  
+**Home Team**: C.F. Monterrey (Rayados)  
+**Setting**: Open corners frame breathtaking Sierra Madre mountain backdrop  
+**Sustainability**: LEED Silver certified—2,000 native trees, rainwater capture, low-water grass 
+
+**FIFA Upgrades**: New Musco Lighting LED system (40% energy reduction), pitch improvements, accessibility enhancements 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Estadio BBVA will be called **"Estadio Monterrey"** following FIFA's requirement to use neutral stadium names. 
+
+## Metrorrey Line 1 to Exposición Station 
+
+### Your Primary Transportation Solution 
+
+**Metrorrey Line 1 (Yellow Line)** provides **direct access from downtown Monterrey to Exposición Station**, the terminus located just a 9-10 minute walk from Estadio BBVA. 
+
+**Line 1 Route**: Talleres (north) ↔ Exposición (south, stadium area)  
+**Distance**: 18.8 km  
+**Stations**: 19 total  
+**Operating hours**: First train ~5:01 AM, last train ~12:15-12:17 AM 
+
+### Current Fares (June 2026 Projection) 
+
+**Monthly fare increases**: Starting January 2025, Metrorrey fares increase **10 centavos per month** through May 2030. 
+
+**Metrorrey Fare Timeline**: 
+- November 2025: 9.60 pesos 
+- December 2025: 9.70 pesos 
+- January 2026: 9.80 pesos 
+- February 2026: 9.90 pesos 
+- March 2026: 10.00 pesos 
+- April 2026: 10.10 pesos 
+- May 2026: 10.20 pesos 
+- **June 2026 (World Cup)**: **10.30 pesos ($0.56 USD)** 
+
+**Final target**: 15 pesos in May 2030 
+
+### Downtown to Exposición Station 
+
+**From Centro Histórico (Downtown)**: 
+
+1. **Locate nearest Line 1 station**: 
+   - **Alameda Station**: Near Macroplaza, historic center 
+   - **Zaragoza Station**: Government Palace area 
+   - **Cuauhtémoc Station**: Major transfer hub (connects Lines 1 and 2) 
+
+2. **Board Line 1 southbound**: Toward "Exposición" 
+   - Frequency: Every 4-8 minutes during peak hours; 10-15 minutes off-peak 
+   - Journey time: ~25 minutes from downtown stations 
+   - Fare: 10.30 pesos (June 2026) 
+
+3. **Ride to Exposición Station** (terminus): 
+   - Last stop on Line 1—can't miss it 
+   - Exit station following "Estadio BBVA" signs 
+
+4. **Walk to stadium** (9-10 minutes): 
+   - Exit Exposición Station 
+   - Head east on Avenida Pablo Livas 
+   - Follow crowds and directional signage 
+   - Stadium visible from station area 
+
+**Total Journey**: 40-50 minutes downtown to stadium gates  
+**Total Cost**: 10.30 pesos ($0.56 USD) 
+
+### Alternative: Lerdo de Tejada Station 
+
+Some sources mention **Lerdo de Tejada Station** (also Line 1) as stadium access: 
+- **Distance**: 9-minute walk to stadium 
+- Closer than Exposición but not the terminus 
+- Useful if coming from northern Monterrey (avoid transferring at Exposición) 
+
+**Either station works—choose based on your origin point**. 
+
+## Me Muevo Card & Payment 
+
+### The Universal Payment System 
+
+**"Me Muevo" Card** (formerly called various names, unified as Me Muevo) works across Metrorrey, Ecovía BRT, and participating bus routes. 
+
+**Card Cost**: 20 pesos ($1.10 USD)  
+**Where to Buy**: All Metrorrey stations, Ecovía stations, participating Oxxo stores  
+**Initial top-up**: Minimum 20-30 pesos recommended 
+
+### How to Use 
+
+1. **Purchase card** at any Metrorrey station vending machine 
+2. **Load funds**: Minimum 10.30 pesos per trip (June 2026 fare) 
+3. **Tap card** at turnstiles when entering/exiting stations 
+4. **Recharge** at vending machines or Oxxo stores as needed 
+
+**Pro Tip**: Load 100-200 pesos initially to avoid frequent recharges during World Cup visit. 
+
+### Alternative Payment Options 
+
+**Digital Payment Apps**: 
+- **Urbani App**: QR code payment for Metrorrey 
+- **e-UANL Campus Digital**: University system integration 
+
+**Cash**: Still accepted at ticket windows (taquillas) but Me Muevo Card strongly recommended for speed. 
+
+### Paper Tickets (Phased Out) 
+
+Metrorrey **eliminated magnetic tickets in 2024**, pushing all users to Me Muevo Card or digital payment. Visitors must obtain Me Muevo Card or use app-based QR codes. 
+
+## Airport to Stadium Connections 
+
+### General Mariano Escobedo International Airport (MTY) 
+
+**Distance to Estadio BBVA**: 30 km (18.6 miles)  
+**Distance to downtown Monterrey**: 24 km (15 miles)  
+**Best For**: All visitors—northern Mexico's primary international gateway 
+
+MTY serves direct flights from major U.S. cities, Canada, and Latin America, making Monterrey highly accessible for World Cup fans. 
+
+**Option 1: Future Line 4 (If Operational by June 2026)** 
+
+**Status**: Metrorrey **Lines 4 and 6 are aiming to be operational by June 2026**, significantly boosting connectivity to airport, stadium, and downtown. 
+
+**If Line 4 is complete**: 
+- Direct light rail from airport to downtown 
+- Connect to Line 1 at transfer station 
+- Ride to Exposición Station 
+- Total cost: 20-25 pesos (~$1.10-1.35 USD) 
+- Total time: 60-75 minutes 
+
+**Check status**: Visit metrorrey.gob.mx closer to matches for Line 4/6 operational status. 
+
+**Option 2: Official Airport Taxi** (Current Best Option) 
+
+**Cost**: 350-450 pesos ($19-25 USD) to Estadio BBVA area  
+**Time**: 25-35 minutes (no traffic); 45-70 minutes (typical traffic) 
+
+**How it works**: 
+1. Exit baggage claim to ground transportation 
+2. Locate **official taxi counters** (zona de taxis autorizados) 
+3. Purchase fixed-price ticket to your destination 
+4. Board designated taxi with ticket 
+
+**Official taxis provide zone-based fixed pricing**—safer than street taxis, no haggling. 
+
+**Option 3: Uber/DiDi** (Most Common) 
+
+**Cost**: 250-400 pesos ($14-22 USD) normal; 500-800 pesos ($28-44 USD) match-day surge  
+**Time**: 25-35 minutes (no traffic); 45-90 minutes (typical/event traffic) 
+
+**DiDi**: Mexican ride-share app, often cheaper than Uber—compare both before booking. 
+
+**Pickup Location**: Follow signs to designated ride-share pickup areas outside terminals. 
+
+**Option 4: Private Airport Transfer** (Premium/Groups) 
+
+**Cost**: $35-65 USD pre-booked  
+**Best For**: Groups of 4-6, families, guaranteed service 
+
+Services provide meet-and-greet, flight tracking, fixed pricing (no surge). 
+
+**Value for Groups of 5**: 
+- Individual taxi: 400 pesos ÷ 5 = 80 pesos ($4.40) per person 
+- Shared private transfer: $50 ÷ 5 = $10 per person (premium convenience) 
+
+## Bus Routes to Stadium 
+
+### Multiple Bus Options 
+
+Several **bus routes stop near Estadio BBVA**, providing alternatives to Metrorrey. 
+
+**Key Bus Routes**: 
+- **214** 
+- **223** (last bus ~1:37 AM—useful for late-finishing matches) 
+- **TME** (Transporte del Estado) 
+- **093** 
+
+**Nearest Bus Stops**: 
+- **Las Torres (Estadio B.B.V.A.)**: 3-minute walk (151 meters) 
+- **Pablo Livas (Estadio B.B.V.A.)**: 7-8 minute walk (576 meters) 
+- **Valparaíso**: 7-minute walk 
+- **Pablo Livas (Las Quintas - Las Torres)**: 7-minute walk 
+
+**Bus Fares** (June 2026): 
+- **Ruta Troncal, Directa, Alimentadora, Remanente**: 16.90 pesos (increases 10 centavos monthly through August 2026, final fare 17 pesos) 
+
+**How to Use**: 
+1. Use Me Muevo Card (works on buses too) or pay cash to driver 
+2. Board bus toward stadium area 
+3. Request stop at "Estadio BBVA" or "Las Torres" 
+4. Follow pedestrian signs to stadium 
+
+**When buses make sense**: Coming from areas not served by Line 1, or very late departures (bus 223 runs past midnight). 
+
+## Match-Day Strategy 
+
+### Four Matches: Planning Your Visit 
+
+**Match Schedule**: 
+- **Weekend matches**: June 14, 20 (easier transit, less crowding) 
+- **Weekday matches**: June 24 (Wednesday), June 29 (Monday—Round of 32) 
+
+### Timing Your Journey 
+
+**For Evening Matches** (typical 6:00-9:00 PM kickoffs): 
+
+**Departing from Downtown Monterrey**: 
+- Leave hotel/accommodation: 4:00-4:30 PM 
+- Walk to nearest Metrorrey station: 10 minutes 
+- Board Line 1 to Exposición: 4:30-5:00 PM 
+- Arrive Exposición Station: 5:00-5:30 PM 
+- Walk to stadium: 5:10-5:40 PM 
+- Gates open: Typically 2 hours before kickoff (5:00 PM for 7:00 PM match) 
+
+**Example for 7:00 PM Match**: 
+- Leave hotel: 4:15 PM 
+- Board Metrorrey: 4:30 PM 
+- Arrive stadium: 5:30 PM (90 minutes before kickoff—perfect timing) 
+
+**For Afternoon Matches** (June 14, 20 may have 3:00 PM kickoffs): 
+- Adjust timeline 3-4 hours earlier 
+- Less traffic, easier travel 
+
+### Weather Considerations 
+
+**June in Monterrey**: 
+- Average temperatures: 26-35°C (79-95°F) 
+- **Very hot and sunny**—among Mexico's hottest cities in summer 
+- Low humidity (compared to Mexico City) 
+- Occasional brief thunderstorms 
+- **Estadio BBVA has canopy** covering most seating (shade provided) 
+
+**What to Bring**: 
+- Sunscreen and sunglasses (essential) 
+- Hat or cap (strong sun) 
+- Water bottle (stay hydrated—heat at 540 meters / 1,772 feet elevation) 
+- Light layers (stadium AC can be cool despite outdoor heat) 
+
+### Fundidora Park Fan Festival 
+
+**FIFA Fan Festival Location**: Fundidora Park (downtown Monterrey)  
+**Duration**: 39 days throughout tournament  
+**Expected attendance**: 2+ million fans total  
+**Features**: Giant screens, live music, food, cultural activities 
+
+**How to Get to Fundidora Park**: 
+- **Metrorrey Line 1**: Exit at "Y Griega" station, 5-minute walk to park entrance 
+- **Walking**: 15-20 minutes from downtown historic center 
+- **Free admission**: Open to all fans 
+
+**Combine Fan Festival + Match**: Spend afternoon at Fundidora, take Metrorrey Line 1 directly to Exposición for evening match—perfect game-day experience. 
+
+## Ride-Share & Taxis 
+
+### Uber, DiDi, and Cabify Availability 
+
+All three services operate throughout Monterrey Metro Area with designated zones at Estadio BBVA. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Downtown Monterrey to Estadio BBVA: 80-150 pesos ($4.50-8.50 USD) 
+- San Pedro Garza García to stadium: 100-180 pesos ($5.50-10 USD) 
+- Airport (MTY) to stadium: 250-400 pesos ($14-22 USD) 
+
+**Match-Day Surge Pricing**: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Traffic delays: Add 30-60 minutes during peak arrival (4-6 PM for evening matches) 
+- **Drop-off zone**: Uber/DiDi drop-off near Gate D (clearly marked) 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-90+ minutes for pickup 
+- From stadium to downtown: 300-600 pesos ($16-33 USD) typical post-match 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: Use for airport-to-hotel with luggage. For match day, strongly consider Metrorrey—faster during traffic, dramatically cheaper. 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take Metrorrey Line 1 back 
+- Walk to Exposición Station (9-10 minutes) 
+- Board Line 1 northbound toward Talleres 
+- 10.30 pesos vs. 300-600 pesos surge pricing 
+- Guaranteed transport, frequent trains 
+
+**Strategy B**: Extended stay at stadium area 
+- Walk to nearby shopping/dining (Citadel Premium Outlets 15 minutes) 
+- Wait 90+ minutes for surge to normalize 
+- Request pickup from commercial area (less congestion) 
+
+### Safety Note 
+
+**Use only official app-based services (Uber, DiDi, Cabify) or official taxis from authorized stands**. Never hail unmarked taxis on the street in Mexico—important safety consideration for international visitors. 
+
+## Driving & Parking 
+
+### Should You Drive to Estadio BBVA? 
+
+**Short Answer**: Not recommended unless traveling from distant suburbs with 5+ people. 
+
+**Parking Reality**: 
+
+**Official stadium parking requires annual parking pass (abono)**—matchday drive-ups are NOT available in official lots. 
+
+**Alternative Parking**: 
+- **Nearby recommended parking areas** outside stadium complex 
+- **Commercial lots**: Walk to stadium per posted routes 
+- **Cost**: Typically 150-300 pesos ($8-16 USD); World Cup likely 200-400 pesos ($11-22 USD) 
+- **Advanced booking**: Use Parkimovil app to reserve parking ahead 
+
+**Post-Match Exit**: Traffic around stadium can be intense—expect 60-90 minute delays. 
+
+### Driving Directions 
+
+**From Downtown Monterrey**: 
+- Take Avenida Constitución (Highway 85D) east toward Guadalupe 
+- Follow signs for Estadio BBVA 
+- Approximately 10-15 km, 20-35 minutes depending on traffic 
+
+**From Airport (MTY)**: 
+- Head south via Carretera Miguel Alemán (Highway 54D) 
+- Merge onto Periférico 
+- Follow signs to Guadalupe/Estadio BBVA 
+
+## Money-Saving Transit Options 
+
+### The 10.30-Peso World Cup Trip 
+
+**Most Economical Transportation** (June 2026): 
+- Metrorrey Line 1: 10.30 pesos one-way 
+- **Round-trip to stadium**: 20.60 pesos ($1.12 USD) 
+
+Compare to: 
+- Uber one-way normal: 80-150 pesos ($4.50-8.50) 
+- Uber one-way surge: 300-600 pesos ($16-33) 
+- Taxi: 150-250 pesos ($8-14) 
+
+**Savings per match**: 140-580 pesos ($7.70-32 USD) by using Metrorrey 
+
+### Sample 5-Day Monterrey Budget (2 Matches) 
+
+**Transportation Costs**: 
+- **Me Muevo Card**: 20 pesos one-time 
+- **Airport to downtown** (taxi): 350 pesos 
+- **Two match days** (roundtrip Metrorrey): 20.60 pesos × 2 = 41.20 pesos 
+- **Daily exploring** (Metrorrey, buses): 30 pesos/day × 3 days = 90 pesos 
+- **Return to airport** (taxi): 350 pesos 
+
+**5-Day Total**: 851.20 pesos ($46.50 USD) 
+
+**With More Transit Use**: 
+- Replace airport taxis with future Line 4 (if operational): Save 700 pesos 
+- **Optimistic total with Line 4**: 151.20 pesos ($8.30 USD) 
+
+Compare to rideshare for all trips: 2,500-4,000 pesos ($137-220 USD) 
+
+## Critical Transportation Tips 
+
+1. **Metrorrey Line 1 to Exposición Station**—9-10 minute walk to stadium, simplest route 
+2. **10.30 pesos in June 2026**—fare increases 10 centavos monthly through 2030 
+3. **Me Muevo Card essential**—20 pesos, works on Metrorrey and buses 
+4. **Lines 4 & 6 targeting June 2026**—check operational status for airport connection 
+5. **Official airport taxis use zone-based pricing**—safer than street taxis 
+6. **DiDi often cheaper than Uber**—compare both apps in Mexico 
+7. **Fundidora Park Fan Festival**—Metrorrey Line 1 "Y Griega" station, same line as stadium 
+8. **June heat intense**—26-35°C (79-95°F), hydrate constantly 
+9. **Stadium parking requires advance pass**—don't plan to drive and park day-of 
+10. **Use only official taxis or apps**—safety first for international visitors`
+              }
+              </ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`## Your Monterrey World Cup Transportation Plan 
+
+Four matches. El Gigante de Acero beneath the Sierra Madre. And northern Mexico's economic powerhouse welcoming the world. 
+
+Monterrey's transportation story combines existing Metrorrey Line 1 (operational, reliable, cheap) with ambitious expansions (Lines 4, 5, 6 targeting June 2026) and billions in FIFA corridor investments. Estadio BBVA's location in Guadalupe, just 25 minutes from downtown via Line 1 to Exposición Station for 10.30 pesos, makes public transit practical and economical. The Me Muevo Card unifies payment. And Monterrey's proximity to Texas (3 hours to San Antonio, 4 to Houston) positions it as the perfect cross-border World Cup destination. 
+
+Your winning strategy: Get a Me Muevo Card on arrival. Use Metrorrey Line 1 for all stadium trips—reliable, affordable, air-conditioned escape from June heat. Check Line 4 status for airport connection. Between matches, explore Fundidora Park, Cerro de la Silla hiking, Santa Lucía Riverwalk, Barrio Antiguo nightlife, world-class museums, and Monterrey's legendary carne asada (northern Mexico's BBQ culture). 
+
+When that referee's whistle sounds across four matches through June 29, 2026, you'll be at "Estadio Monterrey" (Estadio BBVA during the tournament)—surrounded by passionate Rayados fans beneath mountain vistas, in Mexico's most economically dynamic city. 
+
+Bienvenidos a Monterrey. Welcome to El Gigante de Acero. Welcome to the World Cup. 
+
+--- 
+
+*Information current as of November 2025. Metrorrey fare June 2026: 10.30 pesos (increases 10 centavos monthly through May 2030). Lines 4 & 6 target June 2026 completion—verify at metrorrey.gob.mx. For updates: metrorrey.gob.mx, and fifaworldcup.com.*`
+              }
+              </ReactMarkdown>
+            </div>
+          ) : slug === 'houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium' ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`When NRG Stadium hosts seven World Cup 2026 matches—including crucial knockout rounds on June 29 (Round of 32) and an Independence Day (July 4) Round of 16 showdown—Houston will demonstrate why it's one of America's most diverse, welcoming, and logistically capable cities. With over a billion dollars in expected economic impact and experience hosting the Super Bowl, Final Four, and College Football Playoff, Houston's transportation template is battle-tested. 
+
+But here's what makes Houston's World Cup unique: Bishop James Dixon, chairman of the Harris County Sports and Convention Corporation, says hosting seven World Cup matches equals hosting **seven Super Bowls**. NRG Stadium will receive $55 million in upgrades, Houston METRO is ordering new buses specifically for the tournament, and the city is expanding its microtransit system to seamlessly connect visitors from over 100 countries to the world's biggest sporting event. 
+
+## Quick Navigation 
+- [Understanding Houston's Transit System](#understanding-houstons-transit-system) 
+- [METRORail Red Line: Direct Stadium Access](#metrorail-red-line-direct-stadium-access) 
+- [World Cup Transportation Enhancements](#world-cup-transportation-enhancements) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Driving & Parking](#driving-parking) 
+- [Match-Day Transportation Strategy](#match-day-transportation-strategy) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Houston's Transit System 
+
+### What Makes Houston Transportation Unique 
+
+Houston spans 671 square miles with 2.3 million residents across the fourth-largest U.S. city. Unlike compact urban centers, Houston's sprawl requires strategic transit planning—but NRG Stadium enjoys a significant advantage: **direct METRORail service** via the Red Line's Stadium Park/Astrodome station. 
+
+**The Key Players:** 
+- **Houston METRO**: Operates METRORail (three light rail lines), local bus network, Park & Ride express services, and paratransit 
+- **METRORail Red Line**: Direct service from downtown to NRG Stadium (critical for World Cup) 
+- **METRO Microtransit**: Expanding on-demand service for first/last-mile connections 
+- **Harris County**: Coordinating $55 million NRG Stadium upgrades for World Cup 
+
+### World Cup 2026: Seven Matches = Seven Super Bowls 
+
+Houston will host seven matches from June 14 through July 4, 2026: 
+
+1. **Saturday, June 14** — 6:00 PM — Group Stage 
+2. **Tuesday, June 17** — 2:00 PM — Group Stage 
+3. **Saturday, June 20** — TBD — Group Stage 
+4. **Tuesday, June 23** — TBD — Group Stage 
+5. **Thursday, June 26** — TBD — Group Stage 
+6. **Monday, June 29** — 6:00 PM — **Round of 32** 
+7. **Saturday, July 4** — 5:00 PM — **Round of 16 (Independence Day)** 
+
+The July 4 knockout match creates extraordinary excitement, combining America's Independence Day celebrations with World Cup drama at one of Texas's premier venues. 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, NRG Stadium will be called **"Houston Stadium"** following FIFA's requirement to use neutral stadium names. All NRG signage will be temporarily covered during the tournament. 
+
+## METRORail Red Line: Direct Stadium Access 
+
+### Your Primary Transportation Solution 
+
+Houston's METRORail Red Line provides **direct service to NRG Stadium**, making it the optimal transportation choice for World Cup visitors. 
+
+**Red Line Route**: Northline Transit Center ↔ Downtown Houston ↔ Texas Medical Center ↔ NRG Stadium (Stadium Park/Astrodome Station) 
+
+**Operating Hours**: 
+- Monday-Friday: First trains ~5:00 AM, last trains ~midnight 
+- Saturday-Sunday: Continuous service with 12-minute frequency 
+- **World Cup Enhancement**: Extended hours and increased frequency for match days 
+
+**Frequency**: 
+- Monday-Friday: Every 6 minutes during peak hours 
+- Saturday-Sunday: Every 12 minutes 
+- **Match Days**: Expect every 5-8 minutes during peak periods 
+
+### Current METRO Fares (2025) 
+
+**Regular Fare**: $1.25 one-way  
+**Discounted Fare**: $0.60 (seniors 65-69, students, individuals with disabilities)  
+**Seniors 70+**: FREE 
+
+**Transfer Policy**: Free transfers within 3 hours to buses or other rail lines with METRO Q Fare Card or mobile ticket 
+
+**Day Pass**: Pricing varies, available through METRO Q Fare Card or mobile app 
+
+### Stadium Park/Astrodome Station 
+
+This station sits directly adjacent to NRG Stadium, providing seamless access to World Cup matches. 
+
+**From Station to Stadium Entrance**: 5-minute walk via designated pedestrian pathways 
+
+**Station Features**: 
+- Level boarding (wheelchair accessible) 
+- Ticket vending machines 
+- Security presence 
+- Clear signage to stadium gates 
+
+**Post-Match Capacity**: During major events (Texans games, rodeos, concerts), trains add extra capacity. World Cup matches will receive similar service expansion. 
+
+## World Cup Transportation Enhancements 
+
+### New Buses & Expanded Services 
+
+METRO Chair Elizabeth Gonzalez Brock confirmed: **"We've actually got new buses that are going to be on order. We also have a new microtransit that we're rolling out."** 
+
+**What This Means**: 
+- **New Bus Fleet**: Additional vehicles specifically for World Cup demand 
+- **Microtransit Expansion**: On-demand app-based service connecting hotels, attractions, and transit stations 
+- **Park & Ride Enhancement**: Express bus service from suburban park-and-ride lots to stadium area 
+- **Technology Integration**: Enhanced real-time tracking and customer experience improvements 
+
+### $55 Million NRG Stadium Upgrades 
+
+The Harris County Sports and Convention Corporation approved a $55 million Capital Improvement Project for NRG Stadium and surrounding facilities. 
+
+**Priority Improvements**: 
+- **Vertical transportation**: Elevators and escalators throughout NRG Park buildings 
+- **Infrastructure upgrades**: Enhanced capacity for World Cup crowds 
+- **Natural grass field**: Installation beginning May 2026 (FIFA requirement) 
+
+FIFA World Cup 2026 Host Committee President Chris Canetti: **"I'm pleased to say that while we're 500 days out, the organization and the planning is going quite well. We're in good shape. We're not facing any major roadblocks."** 
+
+### Houston's Experience Hosting Major Events 
+
+Houston has successfully hosted: 
+- **Super Bowl LI (2017)**: $347 million economic impact 
+- **Men's Final Four (2023)**: $50 parking, template for World Cup 
+- **College Football Playoff National Championship (2024)**: $50 parking, refined operations 
+
+World Cup committee president Chris Canetti: **"Houston already has a great transportation 'template that's been set forth by all the other' large sports events our city has hosted."** 
+
+## Airport to Stadium Connections 
+
+### Houston George Bush Intercontinental Airport (IAH) — Primary International Gateway 
+
+**Distance to NRG Stadium**: 26 miles  
+**Distance to Downtown**: 23 miles  
+**Best For**: International arrivals, largest Houston airport 
+
+IAH is the eighth-busiest airport in the U.S. by total passengers and the primary arrival point for World Cup visitors from around the globe. 
+
+**Option 1: IAH to Downtown to Stadium via Public Transit** 
+
+**Total Time**: 90-120 minutes  
+**Total Cost**: $2.50-4.50 (Park & Ride bus) + $1.25 (METRORail) = $3.75-5.75 
+
+**The Route**: 
+1. **From IAH terminals**: Exit to Ground Transportation (curbside) 
+2. **Board METRO Bus 102**: Express service to Downtown Transit Center (40-60 minutes, $2-4.50 depending on zone) 
+3. **Downtown Transit Center to Main Street Square Station**: Walk or short connection 
+4. **Board METRORail Red Line southbound**: Toward NRG Stadium 
+5. **Exit at Stadium Park/Astrodome Station**: 5-minute walk to stadium 
+
+**Drawback**: Multiple transfers, long journey time. Best for budget-conscious solo travelers. 
+
+**Option 2: Ride-Share Direct** (Most Common) 
+
+**Cost**: 
+- IAH to NRG Stadium: $50-75 (normal pricing) 
+- Match-day surge: $100-150+ possible 
+
+**Time**: 35-45 minutes (no traffic); 60-90 minutes (typical/event traffic) 
+
+**Option 3: Private Airport Transfer** (Premium/Groups) 
+
+**Cost**: $90-150 pre-booked sedan; $150-220 SUV  
+**Best For**: Groups of 4-6, families with luggage, international travelers 
+
+Services like Welcome Pickups, Jayride, and GO Airport Shuttle offer: 
+- Meet-and-greet at arrivals 
+- Flight tracking (crucial for international arrivals) 
+- Fixed pricing (no surge) 
+- Direct service to hotel or stadium 
+
+**Value for Groups of 5**: 
+- Individual transit + transfers: $3.75-5.75 per person × 5 = $19-29 total (but 90-120 minutes) 
+- Shared SUV transfer: $150 ÷ 5 = $30 per person, door-to-door in 35-60 minutes 
+
+### William P. Hobby Airport (HOU) — Domestic Gateway 
+
+**Distance to NRG Stadium**: 12 miles  
+**Distance to Downtown**: 11 miles  
+**Best For**: Domestic travelers, Southwest Airlines hub, closer to stadium 
+
+**Option 1: Hobby to Stadium via Public Transit** 
+
+**Total Time**: 60-75 minutes  
+**Total Cost**: $1.25 (bus) + $1.25 (rail) = $2.50 
+
+**The Route**: 
+1. **From HOU terminals**: Exit to Ground Transportation 
+2. **Board METRO Bus Route 40**: To Medical Center Transit Center (30-40 minutes, $1.25) 
+3. **Transfer to METRORail Red Line**: Southbound toward NRG Stadium 
+4. **Exit Stadium Park/Astrodome Station**: 5-minute walk to stadium 
+
+**Better Option**: Hobby is close enough that ride-share makes more sense for most visitors. 
+
+**Option 2: Ride-Share Direct** 
+
+**Cost**: 
+- HOU to NRG Stadium: $20-35 (normal pricing) 
+- Match-day surge: $40-70+ 
+
+**Time**: 15-25 minutes (no traffic); 30-50 minutes (typical) 
+
+**Strategic Tip**: For stadium-centric visits, Hobby Airport offers closer proximity and often lower airfares than IAH. 
+
+## Ride-Share & Taxis 
+
+### Uber & Lyft Availability 
+
+Both services operate extensively throughout Houston with designated pickup/drop-off zones at NRG Stadium. 
+
+**Typical Fares** (Non-Event Pricing): 
+- IAH to downtown: $40-60 
+- IAH to NRG Stadium: $50-75 
+- HOU to NRG Stadium: $20-35 
+- Downtown to NRG Stadium: $15-25 
+- Medical Center area to NRG Stadium: $8-15 
+
+**World Cup Match-Day Pricing**: 
+
+Based on Super Bowl LI (2017), Men's Final Four (2023), and CFP National Championship (2024): 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Drop-off zones well-organized (lessons from past events) 
+- Expect 10-15 minute wait in drop-off queue during peak arrivals 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-60+ minutes for pickup 
+- From NRG to downtown: $40-80 typical post-match cost 
+- From NRG to IAH: $120-180+ with surge 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: 
+- Use ride-share from airports to downtown hotel (reasonable pricing) 
+- Pre-book Uber Reserve 3-4 hours before stadium departure 
+- Consider ride-share from hotel to stadium if traveling as a couple (split cost with METRORail pricing, much faster) 
+
+**For Stadium Drop-Off**: 
+- Arrive 2+ hours before kickoff to avoid worst congestion 
+- Designated rideshare zones are well-marked 
+- Save drop-off location in app for easier post-match pickup 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Strongly Recommended): Take METRORail Red Line back 
+- Walk to Stadium Park/Astrodome Station 
+- Board Red Line toward downtown 
+- $1.25 fare (compare to $40-80 surge ride-share) 
+- Guaranteed transport, no waiting 
+
+**Strategy B**: Wait it out 
+- Stay at NRG Park complex 60-90 minutes 
+- Visit nearby restaurants (limited options but chains available) 
+- Browse Texans/rodeo merchandise at team stores 
+- Surge pricing normalizes gradually 
+
+**Strategy C**: Walk to alternative pickup location 
+- Walk to hotels on Kirby Drive (10-15 minutes) 
+- Holiday Inn, nearby properties 
+- Request pickup there (less congestion, potentially lower surge) 
+
+## Driving & Parking 
+
+### Should You Drive to NRG Stadium? 
+
+**Short Answer**: Only if traveling from distant Houston suburbs with 4+ people and willing to pay premium parking plus accept 60-90 minute post-match exits. 
+
+**Parking Reality Check**: 
+
+According to recent Houston Chronicle reporting, FIFA's official parking website has not yet listed prices for NRG Stadium, but other host venues provide guidance: 
+- AT&T Stadium (Dallas): $40-100+ 
+- Hard Rock Stadium (Miami): $40-100+ 
+- Lincoln Financial Field (Philadelphia): Similar range 
+
+**Historical NRG Parking Costs**: 
+- **2024 College Football Playoff National Championship**: $50 per vehicle 
+- **2023 Men's Final Four**: $50 per vehicle 
+- **World Cup Pricing Expected**: $50-100+ (likely higher than regular events) 
+
+### If You Must Drive 
+
+**Official Parking Options**: 
+
+1. **NRG Stadium Official Lots**: 
+   - Book through nrgpark.com or Ticketmaster once available 
+   - Advance reservation strongly recommended (FIFA events often sell out) 
+   - Lots open 4 hours before kickoff 
+   - Expect $50-100 per space for World Cup matches 
+
+2. **Pre-Booking Services**: 
+   - **SpotHero/ParkWhiz**: Reserve advance parking at 15-25% below game-day rates 
+   - Nearby commercial lots within walking distance 
+   - Guaranteed space eliminates stress 
+
+3. **Texas Medical Center Area Parking**: 
+   - Some garages/lots within 1-2 miles 
+   - Walk or short Uber to stadium 
+   - Potentially cheaper but adds time 
+
+### Driving Directions 
+
+**From Downtown Houston** (8 miles, 15-25 minutes): 
+- I-45 South to TX-288/South Freeway 
+- Exit Kirby Drive 
+- Follow signs to NRG Stadium 
+
+**From IAH Airport** (26 miles, 35-60 minutes): 
+- I-45 South through downtown 
+- Continue to Kirby Drive exit 
+- Traffic-dependent journey times 
+
+**From HOU Airport** (12 miles, 15-30 minutes): 
+- I-45 North to Kirby Drive exit 
+- Closest airport for driving to stadium 
+
+### Post-Match Exit Strategy 
+
+Based on extensive major event experience at NRG Stadium: 
+
+**If You Park at Stadium**: 
+1. Accept 60-90 minute minimum exit wait 
+2. Stay in NRG Park area (limited amenities but some restaurants) 
+3. Let initial wave of vehicles clear (first 30-45 minutes are worst) 
+4. Depart 90+ minutes post-match for reasonable exit 
+
+**Better Strategy**: Park at a METRO Park & Ride lot, take Red Line to stadium. Return to your car in 30-40 minutes vs. 60-90 minute stadium lot exit. 
+
+## Match-Day Transportation Strategy 
+
+### Seven Matches: Complete Schedule Planning 
+
+Houston's seven matches create multiple opportunities to perfect your transportation routine. The July 4 Independence Day Round of 16 match represents the pinnacle of Houston's World Cup experience. 
+
+**Multi-Match Transportation Tips**: 
+- Stay near METRORail Red Line for consistent stadium access 
+- Medical Center area hotels offer direct Red Line service (15-20 minutes to stadium) 
+- Learn Stadium Park/Astrodome Station on first match for easier subsequent trips 
+- Book premium transportation (if desired) earliest for July 4 match (highest demand) 
+
+### Timing Your Journey 
+
+**For Afternoon/Early Evening Matches** (2:00-6:00 PM Kickoffs): 
+
+**Departing Downtown Houston**: 
+- Leave hotel: 90-120 minutes before kickoff 
+- Walk to nearest Red Line station: 10 minutes 
+- Board Red Line southbound: 60-90 minutes before kickoff 
+- Travel time to stadium: 20-30 minutes 
+- Arrive NRG Stadium: 60 minutes before kickoff (ideal) 
+
+**Example for 6:00 PM Match**: 
+- Leave hotel: 4:00-4:30 PM 
+- Board METRORail: 4:30 PM 
+- Arrive stadium: 5:00 PM 
+
+**For Late Evening Matches** (9:00 PM Kickoffs): 
+
+Earlier departure recommended to avoid any peak hour overlap: 
+- Leave hotel: 6:30-7:00 PM 
+- Board METRORail: 7:00 PM 
+- Arrive stadium: 7:30 PM (90 minutes before kickoff) 
+
+### Weather Considerations 
+
+**June-July in Houston**: 
+- Average temperatures: 80-95°F (27-35°C) 
+- High humidity (70-85%) — Houston's famous "feels like 105°F" heat index 
+- Frequent afternoon thunderstorms (especially June) 
+- NRG Stadium features retractable roof (will remain closed for climate control during World Cup) 
+
+**What to Bring**: 
+- Sunscreen (for outdoor tailgating/walking) 
+- Light layers (stadium air conditioning can be cold despite outdoor heat) 
+- Clear water bottle (empty for security—refill inside) 
+- Compact rain gear (afternoon storms common) 
+- Hat for walking in sun 
+
+### July 4 Independence Day Match Special Considerations 
+
+The **Round of 16 match on Saturday, July 4, 2026 at 5:00 PM** combines America's Independence Day with World Cup knockout drama. 
+
+**Expect**: 
+- **Maximum crowds**: Double national celebration (USA Independence + World Cup) 
+- **Fireworks/celebrations**: Extended post-match festivities likely 
+- **All transportation at capacity**: METRO, parking, rideshare all maxed 
+- **Book everything early**: Hotels, parking, any premium transport 
+
+**Timeline for July 4 Match**: 
+- Arrive 2-3 hours early (security more extensive for knockout rounds) 
+- Plan post-match celebration time (don't rush to exit) 
+- Consider staying for potential fireworks/festivities 
+- Extended METRORail service likely (confirm closer to date) 
+
+## Money-Saving Transit Options 
+
+### The METRORail Value Proposition 
+
+At $1.25 per ride with free transfers within 3 hours, METRORail offers exceptional value. 
+
+**Sample 5-Day Houston Visit** (2 World Cup Matches): 
+
+**Transportation Costs**: 
+- **Airport to downtown** (IAH): $4.50 Park & Ride bus + $1.25 rail = $5.75 
+- **Daily downtown exploration**: $1.25-2.50 per day (1-2 round trips) 
+- **Two match days to NRG Stadium**: $1.25 each way × 2 matches = $5 total 
+- **Return to airport**: $5.75 
+- **Miscellaneous trips**: $5-10 
+
+**5-Day Total**: $25-35 in transit 
+
+Compare to ride-share for same trips: $350-500+ 
+
+### METRO Q Fare Card Benefits 
+
+**5 for 50 Bonus**: Buy 50 single ride trips, earn 5 free trips automatically 
+
+**How It Works**: 
+- Purchase rides using METRO Q Fare Card or mobile app 
+- After 50 paid trips, automatically receive 5 free trips 
+- Perfect for extended stays or multiple-match attendance 
+
+### Discounted Fares 
+
+**Eligible Riders**: 
+- **Seniors 65-69**: $0.60 per ride (50% discount) 
+- **Seniors 70+**: FREE rides 
+- **Students**: $0.60 per ride (with valid ID) 
+- **Individuals with disabilities**: $0.60 per ride 
+
+**How to Obtain**: Visit METRO RideStore location or apply online through METRO Online RideStore 
+
+### Budget Transportation Summary 
+
+**Most Economical 7-Day Visit** (3 matches): 
+- METRO for all transportation: $35-50 
+- Walking within downtown/Medical Center: $0 
+- **Total**: $35-50 
+
+**Moderate Budget** (occasional convenience): 
+- METRO for regular transit: $35-50 
+- 2-3 strategic Uber rides: $40-60 
+- **Total**: $75-110 
+
+**Premium Budget**: 
+- Private airport transfer: $150 
+- METRO for stadium trips: $6-10 
+- Uber for convenience: $100-150 
+- **Total**: $256-310`
+              }
+              </ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`**The Houston Advantage**: Direct METRORail service to NRG Stadium eliminates the need for expensive ride-share or parking, making Houston one of the most economical World Cup host cities for transportation. 
+
+## Essential Transportation Apps & Tools 
+
+### Must-Download Before Arrival 
+
+1. **RideMetro App** (Official METRO App) 
+   - Purchase mobile tickets 
+   - Real-time METRORail arrivals 
+   - Trip planning across all METRO services 
+   - Service alerts 
+   - Free download 
+
+2. **METRO Q Fare Card App** 
+   - Load and reload fare card 
+   - Track fare balance 
+   - Activate mobile tickets 
+   - View transaction history 
+
+3. **Google Maps** 
+   - Integrates METRORail, buses, walking 
+   - Most accurate Houston transit routing 
+   - Real-time traffic conditions 
+   - Alternative route suggestions 
+
+4. **Uber & Lyft** 
+   - Compare prices before booking 
+   - Save Stadium Park/Astrodome Station, hotel, stadium 
+   - Pre-book via Uber Reserve 
+
+5. **Transit App** (Optional) 
+   - Multi-system trip planning 
+   - Real-time vehicle tracking 
+   - Alternative to official METRO app 
+
+### Digital Payment Setup 
+
+**Before You Arrive**: 
+- Download RideMetro app and load $20-30 
+- Link credit card for automatic reloading 
+- Save NRG Stadium, Stadium Park/Astrodome Station addresses 
+- Enable push notifications for service alerts 
+
+**METRO Customer Service**: 713-635-4000 (available for trip planning assistance) 
+
+## Accessibility & Family Travel 
+
+### Accessible Transportation 
+
+**NRG Stadium**: 
+- Full ADA compliance with accessible seating throughout 72,220+ seats 
+- Accessible parking in designated lots close to entrances 
+- $55 million upgrade includes elevator/escalator improvements 
+- Request services through nrgpark.com 
+
+**METRORail Red Line**: 
+- Level boarding at all stations (wheelchair accessible) 
+- Designated wheelchair areas on all rail cars 
+- Audio/visual stop announcements 
+- Priority seating 
+
+**METRO Buses**: 
+- All buses wheelchair accessible with ramps/lifts 
+- Priority seating areas 
+- Audio stop announcements 
+
+**METROLift**: Paratransit service for qualifying adults with disabilities (advance booking required) 
+
+### Family Travel Considerations 
+
+**Children's Fares**: 
+- Children under specific height ride free with paying adult (check METRO policies) 
+- Discounted student fares available with valid ID 
+
+**Family-Friendly Tips**: 
+- Strollers allowed on METRORail; fold during crowded periods 
+- NRG Stadium has family restrooms and nursing areas 
+- Pack snacks for transit journeys (no food service on METRO) 
+- Red Line journey is short (20-30 minutes)—manageable for young children 
+
+**Recommended Family Strategy**: 
+- **To Stadium**: METRORail Red Line (kids enjoy train rides, stress-free) 
+- **Around Houston**: Combination of METRO and occasional Uber for flexibility 
+- **Backup Option**: Rideshare if children get tired or cranky 
+
+## Inter-City Travel: Multiple World Cup Matches 
+
+### Houston to Other Southeastern Host Cities 
+
+**To Dallas** (240 miles, 3.5-4.5 hours drive): 
+- **Flight**: 1 hour, $100-250 round-trip (best option) 
+- **Drive**: Rental car makes sense for groups of 4+ attending multiple matches 
+- **Bus** (Greyhound, FlixBus): 4-5 hours, $20-50 if booked early 
+- Dallas hosts 9 matches—most of any city 
+
+**To Atlanta** (780 miles, 11-12 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip (only practical option) 
+- Atlanta hosts 8 matches 
+
+**To Kansas City** (700 miles, 10-11 hours drive): 
+- **Flight**: 2 hours, $200-400 round-trip 
+- Kansas City hosts 6 matches 
+
+**Strategic Multi-City Planning**: 
+Houston's central-south location and major airports (IAH, HOU) provide direct flights to all North American World Cup venues. For fans attending multiple matches, Houston serves as an excellent base city with frequent flight options. 
+
+## Critical Transportation Tips 
+
+1. **METRORail Red Line is your best friend**—direct service to stadium, $1.25 each way 
+2. **Seven matches equal seven Super Bowls**—Houston's experience shows in refined operations 
+3. **Stadium Park/Astrodome Station is 5 minutes from gates**—seamless connection 
+4. **Post-match: Take the train home**—avoid surge pricing and guaranteed transport 
+5. **Download RideMetro app before arrival**—mobile tickets save time 
+6. **July 4 match is special**—Independence Day + Round of 16 = maximum crowds 
+7. **Parking will be expensive**—$50-100 expected based on past major events 
+8. **Houston humidity is intense**—stay hydrated, dress for heat then cold AC inside 
+9. **New buses coming for World Cup**—enhanced capacity and microtransit expansion 
+10. **METRO Customer Service: 713-635-4000**—real humans available for help 
+
+## Your Houston World Cup Transportation Plan 
+
+Seven matches. Seven Super Bowls. A billion dollars in economic impact. And the best stadium transportation solution of any Texas host city—direct METRORail service. 
+
+Houston's experience hosting Super Bowl LI, multiple Final Fours, and College Football Playoff championships has refined transportation operations to world-class levels. The $55 million NRG Stadium upgrade, new METRO buses, and expanded microtransit system ensure Houston welcomes over 100 countries with Southern hospitality and logistical excellence. 
+
+Your winning strategy: Stay in or near downtown Houston or the Texas Medical Center area along the METRORail Red Line. Use the Red Line for all stadium trips—it's fast, cheap, and drops you 5 minutes from the gates. Save rideshare for airport transfers or strategic convenience. Embrace the July 4 Round of 16 match as a once-in-a-lifetime combination of American patriotism and World Cup knockout drama. 
+
+Between matches, explore Houston's world-renowned Space Center, Museum District, diverse culinary scene (home to over 70 consulates and cuisine from around the globe), and vibrant arts culture. Houston's international character—with residents from every corner of Earth—creates authentic World Cup atmosphere rivaled only by truly global cities. 
+
+When that referee's whistle sounds across seven matches from June through July 2026, you'll be at "Houston Stadium" (NRG Stadium during the tournament)—relaxed, on time, and ready to witness the beautiful game in Texas's most international city. 
+
+See you in Space City. 
+
+--- 
+
+*Information current as of November 2025. All fares, schedules, and services subject to change. Verify details through official sources—Houston METRO (ridemetro.org), NRG Stadium (nrgpark.com), and FIFA World Cup 2026 (fifa.com)—closer to your travel dates. Final World Cup transportation programs will be announced spring 2026. Contact METRO Customer Service: 713-635-4000.*`
+              }
+              </ReactMarkdown>
+            </div>
           ) : slug === 'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium' ? (
             <div className="space-y-8">
               <ReactMarkdown
@@ -4897,6 +8656,506 @@ See you in the ATL.
 
 *Information current as of November 2025. All fares, schedules, and services subject to change. New Breeze payment system launches spring 2026—verify current status at [itsmarta.com](https://itsmarta.com). For real-time updates, visit [itsmarta.com](https://itsmarta.com) or call MARTA Customer Service: 404-848-5000. FIFA World Cup 2026 information: [fifa.com](https://www.fifa.com).*`
               }</ReactMarkdown>
+            </div>
+          ) : (slug === 'philadelphia-world-cup-2026-transportation-guide-to-lincoln-financial-field' || slug === 'guadalajara-world-cup-2026-complete-transportation-guide-to-estadio-akron') ? (
+            <div className="space-y-8">
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`When Estadio Akron hosts **four group stage matches during the 2026 FIFA World Cup**—including **Mexico's June 18 clash**, guaranteed to be one of the tournament's most electric atmospheres—Guadalajara will demonstrate why it's the cultural heart of Mexico and the birthplace of mariachi music, tequila, and unmatched soccer passion. With $50 million earmarked for access and service upgrades around the stadium, new Light Rail Line 4 and Line 5 electromobility connections to the airport, and an electric train between Paseo Chivas and the stadium, Guadalajara is transforming Zapopan's Estadio Akron into a World Cup-ready destination. 
+
+Here's Guadalajara's transportation reality: **Estadio Akron sits in Zapopan, about 30 minutes west of downtown Guadalajara Centro by Uber**, depending on traffic. Public transit is doable—Mi Macro Periférico BRT stops at Estadio Chivas station close to the venue, Tren Ligero (Light Rail) Line 3 connects to the system, and regular city buses serve the area. But this is where Guadalajara differs from other host cities: While infrastructure improvements are underway, **World Cup-specific shuttles from downtown haven't been confirmed yet**. This guide reveals your best options now—and how to stay updated as match day approaches. 
+
+## Quick Navigation 
+- [Understanding Guadalajara's Transit Landscape](#understanding-guadalajaras-transit-landscape) 
+- [Mi Macro Periférico: BRT to Stadium](#mi-macro-periferico-brt-to-stadium) 
+- [Tren Ligero Light Rail](#tren-ligero-light-rail) 
+- [Mi Movilidad Card](#mi-movilidad-card) 
+- [Airport to Stadium Connections](#airport-to-stadium-connections) 
+- [Match-Day Strategy](#match-day-strategy) 
+- [Ride-Share & Taxis](#ride-share-taxis) 
+- [Money-Saving Transit Options](#money-saving-transit-options) 
+
+## Understanding Guadalajara's Transit Landscape 
+
+### What Makes Guadalajara Transportation Unique 
+
+Guadalajara, with a **metro population of just over five million**, is one of Mexico's largest cities—but it's **far more manageable than sprawling Mexico City**, making it especially welcoming for visiting fans. 
+
+**The Transit Ecosystem**: 
+- **Tren Ligero (Light Rail)**: 3 lines covering 48 km with 49 stations 
+- **Mi Macro**: 2 BRT (Bus Rapid Transit) lines with dedicated lanes 
+- **Mi Transporte Eléctrico**: 2 electric trolleybus lines 
+- **Regular bus routes**: Extensive network throughout metro area 
+- **Cablebús**: Coming expansions for greater connectivity 
+
+**World Cup Transformation Underway**: 
+- **Light Rail Line 4**: Airport to Estadio Akron connection (under construction) 
+- **Line 5 electromobility**: Additional stadium connectivity 
+- **Electric train**: Paseo Chivas to stadium 
+- **Chapala highway**: Now 6 lanes with bike paths and sidewalks 
+- **$50 million investment**: Access and service upgrades around Estadio Akron 
+
+### Four Matches Including Mexico 
+
+Estadio Akron hosts **four group stage matches**: 
+
+- **Wednesday, June 18, 2026** — **Mexico national team** (guaranteed to be most electric atmosphere) 
+- **Three additional group stage matches** through June 27 
+
+**Capacity**: 48,071 (FIFA capacity for 2026) 
+
+### Estadio Akron Features 
+
+**Opened**: July 30, 2010  
+**Location**: Zapopan (suburb of Guadalajara), part of JVC complex  
+**Design**: Resembles a volcano with grassy exterior blending into landscape  
+**Home Teams**: Chivas (C.D. Guadalajara), C.D. Guadalajara Femenil  
+**Previous Major Events**: 2011 Pan American Games opening/closing ceremonies, Copa Libertadores, CONCACAF Champions League 
+
+### FIFA Name Change 
+
+During the 2026 World Cup, Estadio Akron will be called **"Estadio Guadalajara"** following FIFA's requirement to use neutral stadium names. 
+
+## Mi Macro Periférico: BRT to Stadium 
+
+### The Primary Public Transit Option 
+
+**Mi Macro Periférico** is Guadalajara's Bus Rapid Transit (BRT) system running along the Anillo Periférico ring road with **dedicated bus lanes** that bypass regular traffic. 
+
+**Key Facts**: 
+- **Route**: 41.5 km circular route with 42 stations 
+- **Stadium Access**: "Estadio Chivas" station located close to Estadio Akron 
+- **Operating hours**: 4:30 AM - 11:30 PM (troncal routes) 
+- **Frequency**: Every 7-9 minutes (5 minutes during rush hour) 
+- **Journey time**: Varies by origin, approximately 45-75 minutes from downtown 
+
+### Current Fares (2025) 
+
+**Mi Macro Periférico fare**: 9.50 pesos ($0.52 USD) 
+
+**Transfer Discount**: If you transfer from Mi Macro to Tren Ligero (or vice versa), you pay **half price** for the second leg. 
+
+**Example**: Mi Macro (9.50 pesos) + Tren Ligero transfer (4.75 pesos) = **14.25 pesos total ($0.78 USD)** 
+
+### How to Get to Estadio Akron via Mi Macro 
+
+**From Downtown Guadalajara**: 
+
+1. **Locate nearest Mi Macro Periférico station**: 
+   - If starting from historic center, you'll need to connect via Tren Ligero or regular bus first 
+   - Mi Macro runs along the Periférico (ring road), not through downtown core 
+
+2. **Board Mi Macro Periférico troncal route**: 
+   - Routes T01, T02, or T03 depending on your location 
+   - Look for "Estadio Chivas" as destination or intermediate stop 
+
+3. **Exit at "Estadio Chivas" station**: 
+   - This station is specifically named for the stadium 
+   - Located along Periférico Poniente (western section of ring road) 
+
+4. **Walk to stadium** (5-10 minutes): 
+   - Follow crowds and signage from BRT station to stadium gates 
+
+### New Mi Macro Expansion (2024-2025) 
+
+Guadalajara is preparing **a new access from "Poder Judicial" Mi Macro station toward Estadio Akron**, specifically for the 2026 World Cup. This will provide an additional connection point. 
+
+**Status**: Under preparation by Zapopan mayor Juan José Frangie (as of November 2024) 
+
+## Tren Ligero Light Rail 
+
+### Guadalajara's Light Rail System 
+
+**Tren Ligero (Sistema de Tren Eléctrico Urbano - SITEUR)** operates 3 lines: 
+
+**Line 1** (north-south): Auditorio ↔ Periférico Sur (20 km, 19 stations)  
+**Line 2** (east-west): Juárez ↔ Tetlán (21 km, 18 stations)  
+**Line 3** (diagonal): Periférico Norte ↔ Arroyo (12 km, 12 stations) 
+
+**Current Fares**: 10 pesos ($0.55 USD) per ride 
+
+**Operating Hours**: 5:00 AM - 11:00 PM daily 
+
+### Connection to Estadio Akron 
+
+**There is NO direct Tren Ligero station at Estadio Akron**. However, Tren Ligero connects to Mi Macro Periférico at several transfer points: 
+
+**Key Transfer Stations**: 
+- **Periférico Sur**: Line 1 connects to Mi Macro 
+- **Atemajac**: Line 3 station near Mi Macro connection 
+- **Various other connection points** throughout the system 
+
+**Recommended Route**: 
+1. Take Tren Ligero to nearest connection with Mi Macro Periférico 
+2. Transfer to Mi Macro (pay half-price with transfer) 
+3. Ride Mi Macro to "Estadio Chivas" station 
+4. Walk to stadium 
+
+### Line 4 Under Construction 
+
+**New Line 4**: Airport ↔ Estadio Akron connection (part of World Cup preparations) 
+
+**Status**: Under construction, completion timeline TBD (may not be operational before June 2026) 
+
+**What this means**: Check closer to match dates whether Line 4 is operational. If complete, this would provide **direct light rail from Miguel Hidalgo y Costilla International Airport to Estadio Akron**—a game-changer for visitors. 
+
+## Mi Movilidad Card 
+
+### The Universal Payment System 
+
+**Mi Movilidad Card** works across all Guadalajara public transit: Tren Ligero, Mi Macro, Mi Transporte Eléctrico, and participating bus routes. 
+
+**Card Cost**: 30 pesos ($1.65 USD)  
+**Initial top-up**: Minimum 20-50 pesos recommended  
+**Total at purchase**: 50-80 pesos 
+
+### How to Get Your Card 
+
+**Where to Buy**: 
+- Tren Ligero station machines (recommended) 
+- Mi Macro station vending machines 
+- Some convenience stores 
+
+**Registration**: SITEUR recommends registering the card at Tren Ligero modules so you can recover your balance if lost or stolen. 
+
+### Recharging Your Card 
+
+**Recharge locations**: 
+- Tren Ligero station vending machines 
+- Mi Macro station machines 
+- Participating retail locations 
+
+**Pro Tip**: Load 100-200 pesos initially for multiple trips without needing frequent recharges. 
+
+### App Payment Option 
+
+Jalisco government recently introduced **QR code payment via app**: 
+- Recharge digital wallet in app 
+- Generate QR code to enter transit system 
+- Alternative to carrying physical card or exact change 
+
+**App**: Check for "Mi Movilidad" or official Jalisco transit apps 
+
+## Airport to Stadium Connections 
+
+### Miguel Hidalgo y Costilla International Airport (GDL) 
+
+**Distance to Estadio Akron**: Approximately 25-30 km (15-18 miles)  
+**Distance to downtown Guadalajara**: 17 km (10.5 miles)  
+**Best For**: All visitors—Guadalajara's primary airport with direct flights from U.S., Europe, Latin America 
+
+GDL offers **international accessibility**, making it easy for World Cup fans to arrive. 
+
+**Option 1: Future Line 4 Light Rail** (If Operational) 
+
+**Total Time**: 45-60 minutes (estimated)  
+**Total Cost**: 10 pesos ($0.55 USD) 
+
+**Status**: Line 4 connecting airport to Estadio Akron is **under construction** as part of World Cup preparations. Check status closer to June 2026. 
+
+**If operational, this will be the best public transit option**—direct, affordable, traffic-independent. 
+
+**Option 2: Airport Bus + Mi Macro Periférico** 
+
+**Total Time**: 90-120 minutes  
+**Total Cost**: 20-30 pesos (bus) + 9.50 pesos (Mi Macro) = ~30-40 pesos ($1.65-2.20 USD) 
+
+**The Route**: 
+1. Exit airport to ground transportation 
+2. Board airport bus toward downtown or Periférico connection points 
+3. Transfer to Mi Macro Periférico 
+4. Ride to "Estadio Chivas" station 
+5. Walk to stadium 
+
+**Complexity**: Requires research on current airport bus routes and connections. Ask airport information desk for "autobús a Estadio Akron" recommendations. 
+
+**Option 3: Uber/DiDi Direct** (Most Common) 
+
+**Cost**: 200-300 pesos ($11-16 USD) normal; 400-600 pesos ($22-33 USD) match-day surge  
+**Time**: 25-35 minutes (no traffic); 50-90 minutes (typical Guadalajara traffic) 
+
+**When This Makes Sense**: Arriving with luggage on match day, groups of 3-4, wanting guaranteed direct transport. 
+
+**DiDi**: Often cheaper than Uber in Mexico—compare both apps before booking. 
+
+**Option 4: Airport Taxi** (Fixed Price) 
+
+**Cost**: 350-450 pesos ($19-25 USD) to Estadio Akron area  
+**Booth Location**: Official taxi counters inside terminal after baggage claim 
+
+**Official airport taxis provide fixed pricing and are safer than street taxis**. 
+
+**Option 5: Private Airport Transfer** (Premium/Groups) 
+
+**Cost**: $35-60 USD pre-booked  
+**Best For**: Groups of 4-6, families, guaranteed service 
+
+Services provide meet-and-greet, flight tracking, and direct transfer to hotel or stadium area. 
+
+**Value for Groups of 5**: 
+- Individual transit: 30-40 pesos × 5 = 150-200 pesos ($8-11 USD) but 90-120 minutes 
+- Shared transfer: $50 ÷ 5 = $10 per person, door-to-door in 25-60 minutes 
+
+## Match-Day Strategy 
+
+### Mexico's June 18 Match 
+
+**Wednesday, June 18, 2026** — Mexico national team match at Estadio Akron 
+
+**Expect**: 
+- **Full 48,071 capacity** sell-out 
+- **Intense national pride**: Guadalajara is Chivas heartland, Mexico's most passionate soccer city 
+- **All transportation at capacity**: Mi Macro, taxis, rideshare, roads 
+- **Arrive 2-3 hours early**: Security screening, crowds, atmosphere 
+
+### Four Matches: Planning Your Visit 
+
+With four group stage matches over approximately 2 weeks, Guadalajara offers opportunities to experience multiple games. 
+
+**Recommended Strategy**: 
+- **First match**: Allow extra time to learn Mi Macro/transit system 
+- **Stay in downtown Guadalajara or Zapopan**: Easy access to transit connections 
+- **Research shuttle options**: Check kansascityfwc26.com or official sources for potential World Cup shuttles from city center (not yet confirmed but likely) 
+
+### Timing Your Journey 
+
+**For Evening Matches** (typical 6:00-9:00 PM kickoffs): 
+
+**Departing from Downtown Guadalajara**: 
+- Leave hotel: 3:30-4:00 PM 
+- Connect to Mi Macro Periférico: 4:00-4:30 PM 
+- Board toward Estadio Chivas: 4:30 PM 
+- Arrive stadium: 5:15-5:45 PM (75-90 minutes before kickoff) 
+
+**Account for**: 
+- Rush hour traffic (4-7 PM) affecting taxi/Uber times 
+- Mi Macro Periférico dedicated lanes help bypass traffic 
+- Security screening lines at stadium 
+
+### Weather Considerations 
+
+**June in Guadalajara**: 
+- Average temperatures: 20-28°C (68-82°F) 
+- **Rainy season begins**: June marks start of Mexico's summer rains 
+- Afternoon thunderstorms common (typically after 4 PM) 
+- **Estadio Akron is open-air** with partial roof coverage 
+
+**What to Bring**: 
+- Light rain jacket or poncho (June showers likely) 
+- Sunscreen and hat (daytime sun strong) 
+- Layers (evenings cooler at 1,560 meters / 5,118 feet elevation) 
+- Clear water bottle (refill inside stadium) 
+
+## Ride-Share & Taxis 
+
+### Uber, DiDi, and Cabify Availability 
+
+All three services operate throughout Guadalajara Metro Area with designated zones at Estadio Akron. 
+
+**Typical Fares** (Non-Event Pricing): 
+- Downtown Guadalajara to Estadio Akron: 100-180 pesos ($5.50-10 USD) 
+- Zapopan Centro to stadium: 80-120 pesos ($4.50-6.50 USD) 
+- Airport (GDL) to stadium: 200-300 pesos ($11-16 USD) 
+
+**Match-Day Surge Pricing**: 
+
+**Arriving at Stadium**: 
+- Pre-match surge: 1.5-2x normal rates 
+- Traffic delays: Add 30-60 minutes during peak arrival (3-5 PM for evening matches) 
+- Drop-off zones: Follow stadium signage and app guidance 
+
+**Leaving Stadium**: 
+- Post-match surge: 2-4x normal rates 
+- Wait times: 30-90+ minutes for pickup 
+- From stadium to downtown: 300-600 pesos ($16-33 USD) typical post-match 
+
+### Smart Ride-Share Strategies 
+
+**For Arrivals**: Use for airport-to-hotel with luggage. For match day, strongly consider Mi Macro Periférico—faster with dedicated lanes, dramatically cheaper. 
+
+**For Departures** (Critical): 
+
+**Strategy A** (Recommended): Take Mi Macro Periférico back 
+- Walk to Estadio Chivas BRT station (5-10 minutes) 
+- Board Mi Macro toward your destination 
+- 9.50 pesos vs. 300-600 pesos surge pricing 
+- Guaranteed transport, dedicated lanes 
+
+**Strategy B**: Extended stay at stadium area 
+- Walk to nearby Andares Shopping District (15-20 minutes) 
+- Upscale shopping, dining, nightlife 
+- Wait 90+ minutes for surge to normalize 
+- Request pickup from Andares (less congestion) 
+
+### Safety Note 
+
+**Use only official app-based services (Uber, DiDi, Cabify) or official taxis**. Never hail unmarked taxis on the street in Mexico—safety concern for international visitors. 
+
+## Driving & Parking 
+
+### Should You Drive to Estadio Akron? 
+
+**Short Answer**: Not recommended unless traveling from distant Jalisco locations with 5+ people. 
+
+**Guadalajara Traffic**: "Traffic in and around downtown Guadalajara and approaching Estadio Akron can be consistently heavy, particularly on match days." 
+
+**Parking at Estadio Akron**: 
+- **Stadium has a big parking lot** 
+- Opens several hours before events 
+- **"Fills up fast and can be a bit chaotic, particularly if you don't speak Spanish or aren't used to navigating game-day traffic in Mexico"** (Goal.com) 
+- Cost: Typically 100-200 pesos ($5.50-11 USD); World Cup likely 200-400 pesos ($11-22 USD) 
+
+**Driving Directions**: 
+
+**From Downtown Guadalajara**: 
+- Take Av. Vallarta (Highway 15D) 
+- Follow signs for Zapopan/Nogales 
+- Take Av. del Bosque to stadium 
+
+**From Airport (GDL)**: 
+- Head northwest via Carretera Guadalajara–Chapala 
+- Merge onto Periférico Manuel Gómez Morín 
+- Follow signs to Estadio Akron 
+
+## Money-Saving Transit Options 
+
+### The Mi Macro + Tren Ligero Value 
+
+**Mi Macro Periférico to stadium**: 9.50 pesos ($0.52 USD) 
+
+**With Tren Ligero transfer**: 14.25 pesos total ($0.78 USD) thanks to 50% transfer discount 
+
+**Round-trip to stadium**: 19-28.50 pesos ($1.05-1.56 USD) 
+
+Compare to: 
+- Uber round-trip normal: 200-360 pesos ($11-20) 
+- Uber round-trip with surge: 600-1,200 pesos ($33-66) 
+
+**Savings per match**: 180-1,180 pesos ($10-65 USD) using public transit 
+
+### Sample 5-Day Guadalajara Budget (2 Matches) 
+
+**Transportation Costs**: 
+- **Mi Movilidad Card**: 30 pesos one-time 
+- **Airport to downtown** (bus): 25 pesos 
+- **Two match days** (roundtrip Mi Macro): 19 pesos × 2 = 38 pesos 
+- **Daily exploring** (Tren Ligero, Mi Macro): 30 pesos/day × 3 days = 90 pesos 
+- **Return to airport** (bus): 25 pesos 
+
+**5-Day Total**: 208 pesos ($11.50 USD) 
+
+**With Occasional Taxis**: 
+- Add 200-400 pesos for convenience 
+- **Total**: 408-608 pesos ($22-33 USD) 
+
+Compare to rideshare for all trips: 2,000-4,000 pesos ($110-220 USD) 
+
+## Critical Transportation Tips 
+
+1. **Mi Macro Periférico BRT goes to stadium**—"Estadio Chivas" station, 9.50 pesos 
+2. **50% transfer discount between Mi Macro and Tren Ligero**—saves money on connections 
+3. **Line 4 under construction**—may provide direct airport-stadium rail (check status closer to matches) 
+4. **Mi Movilidad Card essential**—works on all Guadalajara transit, 30 pesos 
+5. **Mexico June 18 match will be electric**—Chivas heartland, full capacity, arrive early 
+6. **World Cup shuttles not yet confirmed**—check official sources for downtown-stadium shuttles 
+7. **DiDi often cheaper than Uber**—compare both apps in Mexico 
+8. **$50 million stadium access upgrades**—infrastructure improvements underway 
+9. **Use only official taxis or apps**—safety first for international visitors 
+10. **Estadio Akron is open-air**—bring rain gear for June weather`
+              }
+              </ReactMarkdown>
+              <hr className="editorial-divider" />
+              <ReactMarkdown
+                remarkPlugins={[remarkGfm]}
+                components={{
+                  h1: ({ node, ...props }) => (
+                    <h2 className="editorial-h2" {...props} />
+                  ),
+                  h2: ({ node, ...props }) => (
+                    <h3 className="editorial-h3" {...props} />
+                  ),
+                  h3: ({ node, ...props }) => (
+                    <h4 className="editorial-h4" {...props} />
+                  ),
+                  h4: ({ node, ...props }) => (
+                    <h5 className="editorial-h4" {...props} />
+                  ),
+                  p: ({ node, ...props }) => (
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6" {...props} />
+                  ),
+                  ul: ({ node, ...props }) => (
+                    <ul className="list-disc pl-6 space-y-2" {...props} />
+                  ),
+                  ol: ({ node, ...props }) => (
+                    <ol className="list-decimal pl-6 space-y-2" {...props} />
+                  ),
+                  li: ({ node, ...props }) => (
+                    <li className="text-slate-700 dark:text-slate-300" {...props} />
+                  ),
+                  strong: ({ node, ...props }) => (
+                    <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
+                  ),
+                  a: ({ node, ...props }) => (
+                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                  ),
+                  code: ({ node, ...props }) => (
+                    <code className="text-sm" {...props} />
+                  )
+                }}
+              >{
+`## Your Guadalajara World Cup Transportation Plan 
+
+Four matches. Mexico's June 18 showdown in Chivas country. And one of North America's most passionate soccer cities. 
+
+Guadalajara's transportation story combines ongoing World Cup infrastructure upgrades ($50 million for Estadio Akron access, new Light Rail Line 4, electric train connections) with existing Mi Macro Periférico BRT that provides affordable stadium access today. While the city is more manageable than Mexico City, Estadio Akron's Zapopan location requires planning—but Mi Macro's dedicated bus lanes, the 50% transfer discount, and 9.50-peso fares make public transit both practical and economical. 
+
+Your winning strategy: Get a Mi Movilidad Card on arrival. Use Mi Macro Periférico BRT to reach Estadio Chivas station for every match. Stay updated on World Cup-specific shuttle announcements. Between matches, explore Guadalajara's historic center, visit Tlaquepaque's artisan workshops, tour tequila distilleries in nearby Tequila town (UNESCO World Heritage site just 1 hour away), and experience mariachi music in its birthplace. 
+
+When that referee's whistle sounds across four matches through late June 2026, you'll be at "Estadio Guadalajara" (Estadio Akron during the tournament)—surrounded by Mexico's most passionate fans in the cultural heart of the nation. 
+
+Bienvenidos a Guadalajara. Welcome to Chivas country. Welcome to the World Cup. 
+
+--- 
+
+*Information current as of November 2025. Mi Macro fare: 9.50 pesos. Tren Ligero: 10 pesos. Line 4 construction status TBD—verify closer to matches. For updates: siteur.gob.mx, mimacro.jalisco.gob.mx, and fifaworldcup.com. World Cup shuttle services may be announced spring 2026.*`
+              }
+              </ReactMarkdown>
             </div>
           ) : (slug === 'accessible-transportation-options' || slug === 'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field') ? (
             <div className="space-y-8">
