@@ -533,37 +533,97 @@ export default function NewYorkCityArticlePage() {
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       <SchemaOrg
         schema={[
-          // Enhanced City Guide Schema
+          // Main Article Schema - Travel Guide
           {
             "@context": "https://schema.org",
-            "@type": ["TravelGuide", "Article", "SportsEvent"],
-            "headline": "New York New Jersey World Cup 2026 Guide | MetLife Stadium Final Venue",
-            "description": "Complete New York New Jersey World Cup 2026 guide: MetLife Stadium matches, transportation from Manhattan, best hotels, tickets, weather, and insider tips for the Final on July 19, 2026.",
+            "@type": ["Article", "TravelGuide"],
+            "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl + '#article',
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl
+            },
+            "name": "New York New Jersey World Cup 2026 Guide",
+            "headline": "New York New Jersey World Cup 2026 Guide | MetLife Stadium Final Venue | Complete NYC Travel Guide",
+            "description": "Complete New York New Jersey World Cup 2026 guide: MetLife Stadium matches, transportation from Manhattan, best hotels, tickets, weather, and insider tips for the Final on July 19, 2026. Everything you need for the ultimate NYC World Cup experience.",
             "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl,
             "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
             "datePublished": "2024-01-01T00:00:00Z",
             "dateModified": new Date().toISOString(),
+            "dateCreated": "2024-01-01T00:00:00Z",
+            "keywords": ["New York World Cup 2026", "MetLife Stadium", "NYC World Cup", "World Cup Final 2026", "New York New Jersey World Cup", "World Cup 2026 transportation", "World Cup 2026 hotels", "World Cup 2026 tickets", "NYC travel guide", "World Cup 2026 guide"],
             "author": {
               "@type": "Organization",
-              "name": "StadiumPort",
-              "url": import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-            },
-            "publisher": {
-              "@type": "Organization",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#organization',
               "name": "StadiumPort",
               "url": import.meta.env.VITE_SITE_URL || 'https://stadiumport.com',
               "logo": {
                 "@type": "ImageObject",
-                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/logo.png'
+                "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/logo.png',
+                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/logo.png',
+                "width": 600,
+                "height": 200
               }
             },
+            "publisher": {
+              "@type": "Organization",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#organization',
+              "name": "StadiumPort",
+              "url": import.meta.env.VITE_SITE_URL || 'https://stadiumport.com',
+              "logo": {
+                "@type": "ImageObject",
+                "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/logo.png',
+                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/logo.png',
+                "width": 600,
+                "height": 200
+              }
+            },
+            "locationCreated": {
+              "@type": "Place",
+              "name": "New York, NY",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "New York",
+                "addressRegion": "NY",
+                "addressCountry": "US"
+              }
+            },
+            "inLanguage": "en-US",
+            "wordCount": 3500,
             "about": {
               "@type": "SportsEvent",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final',
               "name": "FIFA World Cup 2026 Final",
-              "startDate": "2026-07-19",
+              "description": "The FIFA World Cup 2026 Final will be held at MetLife Stadium in East Rutherford, New Jersey on July 19, 2026.",
+              "startDate": "2026-07-19T18:00:00-05:00",
+              "endDate": "2026-07-19T21:00:00-05:00",
+              "eventStatus": "https://schema.org/EventScheduled",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "organizer": {
+                "@type": "Organization",
+                "@id": "https://www.fifa.com/#organization",
+                "name": "FIFA",
+                "url": "https://www.fifa.com"
+              },
+              "performer": {
+                "@type": "SportsTeam",
+                "name": "FIFA World Cup Final Teams",
+                "url": "https://www.fifa.com/worldcup/"
+              },
+              "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.fifa.com/worldcup/tickets/",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2025-01-01T00:00:00Z",
+                "validThrough": "2026-07-19T18:00:00-05:00"
+              },
               "location": {
                 "@type": "StadiumOrArena",
+                "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#metlife-stadium',
                 "name": "MetLife Stadium",
+                "description": "MetLife Stadium is the venue for the FIFA World Cup 2026 Final, with a capacity of 75,000 spectators.",
+                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/world-cup-2026-stadiums/metlife-stadium',
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "1 MetLife Stadium Dr",
@@ -576,12 +636,102 @@ export default function NewYorkCityArticlePage() {
                   "@type": "GeoCoordinates",
                   "latitude": 40.8135,
                   "longitude": -74.0744
-                }
+                },
+                "maximumAttendeeCapacity": 75000
+              },
+              "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
+              "offers": {
+                "@type": "Offer",
+                "url": "https://www.fifa.com/worldcup/tickets/",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "validFrom": "2025-01-01T00:00:00Z",
+                "validThrough": "2026-07-19T18:00:00-05:00"
               }
             },
             "mainEntity": {
               "@type": "FAQPage",
-              "mainEntity": [] // Will be populated with FAQ data
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl + '#faq'
+            }
+          },
+          // Standalone SportsEvent Schema for the Final (references the main one)
+          {
+            "@context": "https://schema.org",
+            "@type": "SportsEvent",
+            "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#world-cup-2026-final-event',
+            "name": "FIFA World Cup 2026 Final",
+            "description": "The FIFA World Cup 2026 Final will be held at MetLife Stadium in East Rutherford, New Jersey on July 19, 2026.",
+            "startDate": "2026-07-19T18:00:00-05:00",
+            "endDate": "2026-07-19T21:00:00-05:00",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl + '#world-cup-2026-final'
+            },
+            "organizer": {
+              "@type": "Organization",
+              "name": "FIFA",
+              "url": "https://www.fifa.com"
+            },
+            "performer": {
+              "@type": "SportsTeam",
+              "name": "FIFA World Cup Final Teams",
+              "url": "https://www.fifa.com/worldcup/"
+            },
+            "location": {
+              "@type": "StadiumOrArena",
+              "name": "MetLife Stadium",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "1 MetLife Stadium Dr",
+                "addressLocality": "East Rutherford",
+                "addressRegion": "NJ",
+                "postalCode": "07073",
+                "addressCountry": "US"
+              },
+              "geo": {
+                "@type": "GeoCoordinates",
+                "latitude": 40.8135,
+                "longitude": -74.0744
+              }
+            },
+            "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
+            "offers": {
+              "@type": "Offer",
+              "url": "https://www.fifa.com/worldcup/tickets/",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "validFrom": "2025-01-01T00:00:00Z",
+              "validThrough": "2026-07-19T18:00:00-05:00"
+            }
+          },
+          // Stadium Schema
+          {
+            "@context": "https://schema.org",
+            "@type": "StadiumOrArena",
+            "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#metlife-stadium-venue',
+            "name": "MetLife Stadium",
+            "description": "MetLife Stadium is the venue for the FIFA World Cup 2026 Final, with a capacity of 75,000 spectators.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "1 MetLife Stadium Dr",
+              "addressLocality": "East Rutherford",
+              "addressRegion": "NJ",
+              "postalCode": "07073",
+              "addressCountry": "US"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 40.8135,
+              "longitude": -74.0744
+            },
+            "maximumAttendeeCapacity": 75000,
+            "containsPlace": {
+              "@type": "SportsEvent",
+              "name": "FIFA World Cup 2026 Final",
+              "startDate": "2026-07-19T18:00:00-05:00",
+              "endDate": "2026-07-19T21:00:00-05:00"
             }
           },
           // Enhanced Breadcrumb Schema
@@ -601,6 +751,7 @@ export default function NewYorkCityArticlePage() {
           {
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
+            "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#nyc-tourism',
             "name": "New York New Jersey World Cup 2026 Tourism",
             "description": "Official tourism information for World Cup 2026 in New York New Jersey",
             "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl,
@@ -1184,85 +1335,83 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
             Your Action Plan
           </h3>
           <p className="whitespace-pre-line">
-            <>
-              <span>
-                <strong>1. Register for FIFA tickets</strong> at{' '}
-                <a
-                  href="https://www.fifa.com/tickets"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 underline"
-                >
-                  https://www.fifa.com/tickets
-                </a>
-              </span>
-              <br />
-              <span>
-                <strong>2. Book accommodations early</strong> via{' '}
-                <a
-                  href="https://www.booking.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 underline"
-                >
-                  https://www.booking.com
-                </a>{' '}
-                or{' '}
-                <a
-                  href="https://www.hotels.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 underline"
-                >
-                  https://www.hotels.com
-                </a>{' '}
-                —aim for 6-12 months in advance
-              </span>
-              <br />
-              <span>
-                <strong>3. Reserve flights</strong> through{' '}
-                <a
-                  href="https://www.skyscanner.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 underline"
-                >
-                  https://www.skyscanner.com
-                </a>{' '}
-                or{' '}
-                <a
-                  href="https://www.google.com/flights"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 underline"
-                >
-                  https://www.google.com/flights
-                </a>{' '}
-                to compare prices across airlines
-              </span>
-              <br />
-              <span>
-                <strong>4. Research neighborhoods</strong> and plan your non-match activities
-              </span>
-              <br />
-              <span>
-                <strong>5. Download the NJ Transit app</strong> for seamless stadium transportation
-              </span>
-              <br />
-              <span>
-                <strong>6. Join your national team's supporters group</strong> for watch parties and meetups
-              </span>
-              <br />
-              <br />
-              <span>
-                The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
-              </span>
-              <br />
-              <br />
-              <strong>
-                See you in July 2026. Come for the football. Stay for the experience of a lifetime.
-              </strong>
-            </>
+            <span>
+              <strong>1. Register for FIFA tickets</strong> at{' '}
+              <a
+                href="https://www.fifa.com/tickets"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                https://www.fifa.com/tickets
+              </a>
+            </span>
+            <br />
+            <span>
+              <strong>2. Book accommodations early</strong> via{' '}
+              <a
+                href="https://www.booking.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                https://www.booking.com
+              </a>{' '}
+              or{' '}
+              <a
+                href="https://www.hotels.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                https://www.hotels.com
+              </a>{' '}
+              —aim for 6-12 months in advance
+            </span>
+            <br />
+            <span>
+              <strong>3. Reserve flights</strong> through{' '}
+              <a
+                href="https://www.skyscanner.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                https://www.skyscanner.com
+              </a>{' '}
+              or{' '}
+              <a
+                href="https://www.google.com/flights"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-600 hover:text-emerald-700 underline"
+              >
+                https://www.google.com/flights
+              </a>{' '}
+              to compare prices across airlines
+            </span>
+            <br />
+            <span>
+              <strong>4. Research neighborhoods</strong> and plan your non-match activities
+            </span>
+            <br />
+            <span>
+              <strong>5. Download the NJ Transit app</strong> for seamless stadium transportation
+            </span>
+            <br />
+            <span>
+              <strong>6. Join your national team's supporters group</strong> for watch parties and meetups
+            </span>
+            <br />
+            <br />
+            <span>
+              The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
+            </span>
+            <br />
+            <br />
+            <strong>
+              See you in July 2026. Come for the football. Stay for the experience of a lifetime.
+            </strong>
           </p>
           <hr className="editorial-divider" />
         </article>
