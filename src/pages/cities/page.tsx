@@ -6,8 +6,9 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
+import { FAQPageSchema } from '../../components/seo/FAQPageSchema';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
-import { PremiumFAQ } from '../../components/feature/PremiumFAQ';
+import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 
 interface CitySection {
   title: string;
@@ -516,12 +517,53 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
     items: itemListItems,
   });
 
+  // FAQ data for schema markup
+  const faqData = [
+    {
+      question: "Which city will host the most World Cup 2026 matches?",
+      answer: "New York/New Jersey's MetLife Stadium and Los Angeles' SoFi Stadium are expected to host the most matches, including potential knockout rounds. Dallas' AT&T Stadium will also host multiple group stage and elimination matches. The final match allocation will be announced by FIFA in 2025."
+    },
+    {
+      question: "What is the cheapest World Cup 2026 host city to visit?",
+      answer: "Kansas City typically offers the most affordable accommodation and dining among US host cities, with average hotel rates 40-50% lower than coastal destinations. In Mexico, Monterrey provides excellent value, while Guadalajara balances affordability with cultural experiences. Expect prices to surge during match days regardless of destination."
+    },
+    {
+      question: "Can I visit multiple World Cup 2026 cities during the tournament?",
+      answer: "Yes, many fans plan multi-city trips. The tournament runs from June 11 to July 19, 2026, providing 39 days to visit multiple destinations. Popular combinations include West Coast routes (LA-SF-Seattle), the Texas duo (Dallas-Houston), and Mexico's three cities. Book internal flights early as prices will increase closer to the tournament."
+    },
+    {
+      question: "Which World Cup 2026 host city has the best public transportation?",
+      answer: "Toronto, New York, and Vancouver offer the most comprehensive public transit systems among host cities. Mexico City's Metro is extensive and affordable. In contrast, cities like Dallas, Houston, and Los Angeles require rental cars or ride-sharing for convenient stadium access."
+    },
+    {
+      question: "Are any World Cup 2026 host cities unsafe for tourists?",
+      answer: "All 16 host cities are generally safe for tourists, though certain neighborhoods require caution. Exercise standard travel precautions in any large city. Mexico City, Guadalajara, and Monterrey are safe in tourist areas and near stadiums, with increased security expected during the tournament. Check our individual city safety guides for neighborhood-specific advice."
+    },
+    {
+      question: "When should I book accommodation for World Cup 2026?",
+      answer: "Book as early as possible—ideally 12-18 months before your travel dates. Hotels near stadiums in popular cities like New York, Los Angeles, and Miami will sell out quickly once the match schedule is announced. Consider accommodation 30-60 minutes from stadiums for better availability and rates."
+    },
+    {
+      question: "Which World Cup 2026 host city is best for families?",
+      answer: "Seattle, San Francisco Bay Area, and Boston offer family-friendly environments with diverse attractions beyond football. Canada's Toronto and Vancouver provide safe, clean cities with activities for all ages. These destinations combine excellent stadiums with museums, parks, and cultural experiences suitable for children."
+    },
+    {
+      question: "Do I need a visa to visit all World Cup 2026 host cities?",
+      answer: "Visa requirements vary by nationality. US cities require a valid US visa or ESTA for most international visitors. Canada requires an eTA or visa. Mexico has separate visa requirements. If planning a multi-country trip, research visa requirements for your nationality well in advance, as processing times can exceed 6 months during peak periods."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={cityGuideSchema} />
       <SchemaOrg schema={itemListSchema} />
       <SchemaOrg schema={collectionPageSchema} />
+      <FAQPageSchema 
+        title="Frequently Asked Questions About World Cup 2026 Host Cities"
+        description="The 2026 FIFA World Cup features 16 host cities across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026."
+        faqs={faqData}
+      />
       
       <Header />
       
@@ -783,48 +825,144 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
         </div>
       </div>
 
-      {/* Plan Your Journey Section */}
+      {/* Plan Your Journey Section - Apple-Level Luxury Masterpiece */}
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-slate-100 dark:border-navy-700 bg-white dark:bg-navy-800 shadow-lg p-8 md:p-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-6 text-center">Plan Your World Cup 2026 Journey</h2>
-            <p className="font-inter text-slate-600 dark:text-slate-300 mb-8 text-center">Attending multiple matches? Here are popular city combinations that maximize your World Cup experience:</p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-3">East Coast Circuit</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">
-Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-3">West Coast Adventure</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">
-                  Begin in <a href="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>, head to <a href="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>, then north to <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-3">Mexico Experience</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">
-                  Discover <a href="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>, <a href="/world-cup-2026-host-cities/guadalajara" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>, and <a href="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-3">Cross-Border Journey</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">
-                  Connect <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a> with <a href="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</a> for an unforgettable Pacific Northwest experience
-                </p>
-              </div>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 border border-slate-200/30 dark:border-navy-700/30 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10">
+            {/* Ultra-Premium Background Elements */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
             </div>
+            
+            {/* Floating Glass Elements */}
+            <div className="absolute top-8 right-8 w-32 h-32 bg-white/5 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 rotate-12"></div>
+            <div className="absolute bottom-12 left-12 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-xl rounded-2xl border border-emerald-500/20 dark:border-emerald-500/30 -rotate-12"></div>
+            <div className="absolute top-1/3 left-8 w-16 h-16 bg-purple-500/10 dark:bg-purple-500/20 backdrop-blur-xl rounded-2xl border border-purple-500/20 dark:border-purple-500/30 rotate-45"></div>
+            
+            <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
+              {/* Apple-Level Premium Header */}
+              <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                  <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
+                </div>
+                <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                  Plan Your World Cup 2026 Journey
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
+                  Attending multiple matches? Here are popular city combinations that maximize your World Cup experience:
+                </p>
+              </div>
 
-            <div className="mt-10 text-center">
-              <a href="/world-cup-2026-stadiums" className="inline-flex items-center font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-                Explore All World Cup Stadiums
-                <i className="ri-arrow-right-line ml-2"></i>
-              </a>
+              {/* Apple-Level Luxury Feature Cards Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+                {/* East Coast Circuit - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        East Coast Circuit
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* West Coast Adventure - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        West Coast Adventure
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      Begin in <a href="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>, head to <a href="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>, then north to <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional City Combinations */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+                {/* Mexico Experience - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-3xl group-hover:from-orange-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-orange-500/30 group-hover:shadow-orange-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        Mexico Experience
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      Discover <a href="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>, <a href="/world-cup-2026-host-cities/guadalajara" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>, and <a href="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Cross-Border Journey - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl group-hover:from-blue-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-blue-500/30 group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        Cross-Border Journey
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      Connect <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a> with <a href="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</a> for an unforgettable Pacific Northwest experience
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10 text-center">
+                <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg">
+                  <span>Explore All World Cup Stadiums</span>
+                  <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -838,57 +976,80 @@ Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="fo
         </div>
       </div>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <PremiumFAQ 
-            faqs={[
-              {
-                id: 1,
-                question: "Which city will host the most World Cup 2026 matches?",
-                answer: "New York/New Jersey's MetLife Stadium and Los Angeles' SoFi Stadium are expected to host the most matches, including potential knockout rounds. Dallas' AT&T Stadium will also host multiple group stage and elimination matches. The final match allocation will be announced by FIFA in 2025."
-              },
-              {
-                id: 2,
-                question: "What is the cheapest World Cup 2026 host city to visit?",
-                answer: "Kansas City typically offers the most affordable accommodation and dining among US host cities, with average hotel rates 40-50% lower than coastal destinations. In Mexico, Monterrey provides excellent value, while Guadalajara balances affordability with cultural experiences. Expect prices to surge during match days regardless of destination."
-              },
-              {
-                id: 3,
-                question: "Can I visit multiple World Cup 2026 cities during the tournament?",
-                answer: "Yes, many fans plan multi-city trips. The tournament runs from June 11 to July 19, 2026, providing 39 days to visit multiple destinations. Popular combinations include West Coast routes (LA-SF-Seattle), the Texas duo (Dallas-Houston), and Mexico's three cities. Book internal flights early as prices will increase closer to the tournament."
-              },
-              {
-                id: 4,
-                question: "Which World Cup 2026 host city has the best public transportation?",
-                answer: "Toronto, New York, and Vancouver offer the most comprehensive public transit systems among host cities. Mexico City's Metro is extensive and affordable. In contrast, cities like Dallas, Houston, and Los Angeles require rental cars or ride-sharing for convenient stadium access."
-              },
-              {
-                id: 5,
-                question: "Are any World Cup 2026 host cities unsafe for tourists?",
-                answer: "All 16 host cities are generally safe for tourists, though certain neighborhoods require caution. Exercise standard travel precautions in any large city. Mexico City, Guadalajara, and Monterrey are safe in tourist areas and near stadiums, with increased security expected during the tournament. Check our individual city safety guides for neighborhood-specific advice."
-              },
-              {
-                id: 6,
-                question: "When should I book accommodation for World Cup 2026?",
-                answer: "Book as early as possible—ideally 12-18 months before your travel dates. Hotels near stadiums in popular cities like New York, Los Angeles, and Miami will sell out quickly once the match schedule is announced. Consider accommodation 30-60 minutes from stadiums for better availability and rates."
-              },
-              {
-                id: 7,
-                question: "Which World Cup 2026 host city is best for families?",
-                answer: "Seattle, San Francisco Bay Area, and Boston offer family-friendly environments with diverse attractions beyond football. Canada's Toronto and Vancouver provide safe, clean cities with activities for all ages. These destinations combine excellent stadiums with museums, parks, and cultural experiences suitable for children."
-              },
-              {
-                id: 8,
-                question: "Do I need a visa to visit all World Cup 2026 host cities?",
-                answer: "Visa requirements vary by nationality. US cities require a valid US visa or ESTA for most international visitors. Canada requires an eTA or visa. Mexico has separate visa requirements. If planning a multi-country trip, research visa requirements for your nationality well in advance, as processing times can exceed 6 months during peak periods."
-              }
-            ]}
-            title="Frequently Asked Questions About World Cup 2026 Host Cities"
-            subtitle="The 2026 FIFA World Cup features 16 host cities across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026."
-          />
-        </div>
-      </section>
+      {/* World-Class FAQ Section */}
+      <WorldClassFAQ 
+        faqs={[
+          {
+            id: 1,
+            question: "Which city will host the most World Cup 2026 matches?",
+            answer: "New York/New Jersey's MetLife Stadium and Los Angeles' SoFi Stadium are expected to host the most matches, including potential knockout rounds. Dallas' AT&T Stadium will also host multiple group stage and elimination matches. The final match allocation will be announced by FIFA in 2025.",
+            category: "Stadium Information",
+            popularity: 10,
+            readingTime: 2
+          },
+          {
+            id: 2,
+            question: "What is the cheapest World Cup 2026 host city to visit?",
+            answer: "Kansas City typically offers the most affordable accommodation and dining among US host cities, with average hotel rates 40-50% lower than coastal destinations. In Mexico, Monterrey provides excellent value, while Guadalajara balances affordability with cultural experiences. Expect prices to surge during match days regardless of destination.",
+            category: "Budget & Costs",
+            popularity: 9,
+            readingTime: 3
+          },
+          {
+            id: 3,
+            question: "Can I visit multiple World Cup 2026 cities during the tournament?",
+            answer: "Yes, many fans plan multi-city trips. The tournament runs from June 11 to July 19, 2026, providing 39 days to visit multiple destinations. Popular combinations include West Coast routes (LA-SF-Seattle), the Texas duo (Dallas-Houston), and Mexico's three cities. Book internal flights early as prices will increase closer to the tournament.",
+            category: "Travel Planning",
+            popularity: 8,
+            readingTime: 3
+          },
+          {
+            id: 4,
+            question: "Which World Cup 2026 host city has the best public transportation?",
+            answer: "Toronto, New York, and Vancouver offer the most comprehensive public transit systems among host cities. Mexico City's Metro is extensive and affordable. In contrast, cities like Dallas, Houston, and Los Angeles require rental cars or ride-sharing for convenient stadium access.",
+            category: "Transportation",
+            popularity: 8,
+            readingTime: 2
+          },
+          {
+            id: 5,
+            question: "Are any World Cup 2026 host cities unsafe for tourists?",
+            answer: "All 16 host cities are generally safe for tourists, though certain neighborhoods require caution. Exercise standard travel precautions in any large city. Mexico City, Guadalajara, and Monterrey are safe in tourist areas and near stadiums, with increased security expected during the tournament. Check our individual city safety guides for neighborhood-specific advice.",
+            category: "Safety & Security",
+            popularity: 7,
+            readingTime: 3
+          },
+          {
+            id: 6,
+            question: "When should I book accommodation for World Cup 2026?",
+            answer: "Book as early as possible—ideally 12-18 months before your travel dates. Hotels near stadiums in popular cities like New York, Los Angeles, and Miami will sell out quickly once the match schedule is announced. Consider accommodation 30-60 minutes from stadiums for better availability and rates.",
+            category: "Accommodation",
+            popularity: 9,
+            readingTime: 2
+          },
+          {
+            id: 7,
+            question: "Which World Cup 2026 host city is best for families?",
+            answer: "Seattle, San Francisco Bay Area, and Boston offer family-friendly environments with diverse attractions beyond football. Canada's Toronto and Vancouver provide safe, clean cities with activities for all ages. These destinations combine excellent stadiums with museums, parks, and cultural experiences suitable for children.",
+            category: "Family Travel",
+            popularity: 7,
+            readingTime: 3
+          },
+          {
+            id: 8,
+            question: "Do I need a visa to visit all World Cup 2026 host cities?",
+            answer: "Visa requirements vary by nationality. US cities require a valid US visa or ESTA for most international visitors. Canada requires an eTA or visa. Mexico has separate visa requirements. If planning a multi-country trip, research visa requirements for your nationality well in advance, as processing times can exceed 6 months during peak periods.",
+            category: "Visa & Documentation",
+            popularity: 6,
+            readingTime: 3
+          }
+        ]}
+        title="Frequently Asked Questions About World Cup 2026 Host Cities"
+        subtitle="The 2026 FIFA World Cup features 16 host cities across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026."
+        showCategories={true}
+        showSearch={true}
+        locationSpecific={true}
+      />
 
       {/* City Modal - Travel Tips Style */}
       {isModalOpen && selectedCity && (

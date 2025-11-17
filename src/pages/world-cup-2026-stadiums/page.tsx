@@ -7,7 +7,7 @@ import { Button } from '../../components/base/Button';
 import { useEffect, useState } from 'react';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
-import { PremiumFAQ } from '../../components/feature/PremiumFAQ';
+import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 
 export default function VenuesPage() {
   const [selectedCategory, setSelectedCategory] = useState('All Stadiums');
@@ -849,40 +849,142 @@ export default function VenuesPage() {
         </div>
       </div>
 
-      {/* Beyond the Stadiums (Explore the Cities) */}
-      <section className="py-16 bg-white dark:bg-navy-900">
+      {/* Beyond the Stadiums - Apple-Level Luxury Masterpiece */}
+      <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">Beyond the Stadiums</h2>
-            <p className="font-inter text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
-              The World Cup 2026 experience extends far beyond match day. Each host city offers incredible attractions, dining, culture, and entertainment.
-            </p>
-            <p className="mt-4 font-inter text-slate-600 dark:text-slate-300">
-              <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All Host Cities</a>
-              {' '}to discover what makes each destination special, from accommodation options to local transportation tips.
-            </p>
-          </div>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 border border-slate-200/30 dark:border-navy-700/30 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10">
+            {/* Ultra-Premium Background Elements */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+            </div>
+            
+            {/* Floating Glass Elements */}
+            <div className="absolute top-8 right-8 w-32 h-32 bg-white/5 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 rotate-12"></div>
+            <div className="absolute bottom-12 left-12 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-xl rounded-2xl border border-emerald-500/20 dark:border-emerald-500/30 -rotate-12"></div>
+            <div className="absolute top-1/3 left-8 w-16 h-16 bg-purple-500/10 dark:bg-purple-500/20 backdrop-blur-xl rounded-2xl border border-purple-500/20 dark:border-purple-500/30 rotate-45"></div>
+            
+            <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
+              {/* Apple-Level Premium Header */}
+              <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                  <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
+                </div>
+                <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                  Beyond the Stadiums
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
+                  The World Cup 2026 experience extends far beyond match day. Each host city offers incredible attractions, dining, culture, and entertainment.
+                </p>
+                <p className="mt-6 font-inter text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
+                  <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All Host Cities</a>
+                  {' '}to discover what makes each destination special, from accommodation options to local transportation tips.
+                </p>
+              </div>
 
-          <div className="max-w-5xl mx-auto">
-            <h3 className="font-space font-semibold text-xl text-navy-900 dark:text-white mb-4 text-center">Featured Destinations</h3>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <li className="text-center">
-                <a href="/world-cup-2026-host-cities/mexico-city" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>
-                <span className="block text-slate-600 dark:text-slate-400">Ancient history meets modern metropolis</span>
-              </li>
-              <li className="text-center">
-                <a href="/world-cup-2026-host-cities/los-angeles" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>
-                <span className="block text-slate-600 dark:text-slate-400">Entertainment capital with perfect weather</span>
-              </li>
-              <li className="text-center">
-                <a href="/world-cup-2026-host-cities/toronto" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a>
-                <span className="block text-slate-600 dark:text-slate-400">Multicultural gem of Canada</span>
-              </li>
-              <li className="text-center">
-<a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>
-                <span className="block text-slate-600 dark:text-slate-400">The city that never sleeps</span>
-              </li>
-            </ul>
+              {/* Apple-Level Luxury Feature Cards Grid */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+                {/* Mexico City - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        Mexico City
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      <a href="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a> — Ancient history meets modern metropolis
+                    </p>
+                  </div>
+                </div>
+
+                {/* Los Angeles - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        Los Angeles
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      <a href="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a> — Entertainment capital with perfect weather
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Additional City Combinations */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+                {/* Toronto - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-3xl group-hover:from-orange-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-orange-500/30 group-hover:shadow-orange-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        Toronto
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      <a href="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a> — Multicultural gem of Canada
+                    </p>
+                  </div>
+                </div>
+
+                {/* New York/New Jersey - Apple-Level Luxury Card */}
+                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl group-hover:from-blue-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Premium Icon with Animation */}
+                    <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-blue-500/30 group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-500">
+                        <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
+                        New York/New Jersey
+                      </h3>
+                    </div>
+                    
+                    {/* Premium Description */}
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                      <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a> — The city that never sleeps
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -896,63 +998,96 @@ export default function VenuesPage() {
       </div>
 
       {/* Stadiums FAQ Section */}
-      <section className="py-16 bg-white dark:bg-navy-900">
+      <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <PremiumFAQ 
+          <WorldClassFAQ 
             faqs={[
               {
                 id: 1,
                 question: "How many stadiums will host World Cup 2026 matches?",
-                answer: "The 2026 FIFA World Cup will be played across 16 stadiums in North America: 11 in the United States, 2 in Canada, and 3 in Mexico. This includes iconic venues like MetLife Stadium (New York/New Jersey), SoFi Stadium (Los Angeles), and Estadio Azteca (Mexico City), which will become the first stadium to host three World Cups."
+                answer: "The 2026 FIFA World Cup will be played across 16 stadiums in North America: 11 in the United States, 2 in Canada, and 3 in Mexico. This includes iconic venues like MetLife Stadium (New York/New Jersey), SoFi Stadium (Los Angeles), and Estadio Azteca (Mexico City), which will become the first stadium to host three World Cups.",
+                category: "Stadium Overview",
+                popularity: 10,
+                readingTime: 2
               },
               {
                 id: 2,
                 question: "Which stadium will host the World Cup 2026 final?",
-                answer: "FIFA has not officially announced the 2026 World Cup final venue. The leading candidates are MetLife Stadium in New York/New Jersey (capacity 82,500) and AT&T Stadium in Dallas (80,000). Both venues meet FIFA's requirements and have hosted major sporting events. The official announcement is expected in 2025 after the match schedule is finalized."
+                answer: "FIFA has not officially announced the 2026 World Cup final venue. The leading candidates are MetLife Stadium in New York/New Jersey (capacity 82,500) and AT&T Stadium in Dallas (80,000). Both venues meet FIFA's requirements and have hosted major sporting events. The official announcement is expected in 2025 after the match schedule is finalized.",
+                category: "Match Schedule",
+                popularity: 9,
+                readingTime: 3
               },
               {
                 id: 3,
                 question: "What is the largest stadium hosting World Cup 2026?",
-                answer: "MetLife Stadium in East Rutherford, New Jersey (New York area) is the largest World Cup 2026 venue with a capacity of 82,500 for football matches. It's followed closely by AT&T Stadium in Arlington, Texas (80,000) and Arrowhead Stadium in Kansas City (76,416). These venues will likely host quarterfinals, semifinals, and potentially the final."
+                answer: "MetLife Stadium in East Rutherford, New Jersey (New York area) is the largest World Cup 2026 venue with a capacity of 82,500 for football matches. It's followed closely by AT&T Stadium in Arlington, Texas (80,000) and Arrowhead Stadium in Kansas City (76,416). These venues will likely host quarterfinals, semifinals, and potentially the final.",
+                category: "Stadium Information",
+                popularity: 8,
+                readingTime: 2
               },
               {
                 id: 4,
                 question: "Can I tour World Cup 2026 stadiums before the tournament?",
-                answer: "Yes, most World Cup 2026 stadiums offer public tours year-round, though availability may be limited closer to the tournament. Popular stadium tours include SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Estadio Azteca (Mexico City). Tours typically cost $20-40 per person and must be booked in advance. Check individual stadium websites for schedules and restrictions during World Cup preparation periods."
+                answer: "Yes, most World Cup 2026 stadiums offer public tours year-round, though availability may be limited closer to the tournament. Popular stadium tours include SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Estadio Azteca (Mexico City). Tours typically cost $20-40 per person and must be booked in advance. Check individual stadium websites for schedules and restrictions during World Cup preparation periods.",
+                category: "Stadium Tours",
+                popularity: 7,
+                readingTime: 3
               },
               {
                 id: 5,
                 question: "Are World Cup 2026 stadiums accessible by public transportation?",
-                answer: "Accessibility varies significantly by venue. Stadiums with excellent public transit access include MetLife Stadium (NJ Transit trains), Mercedes-Benz Stadium in Atlanta (MARTA rail), and BMO Field in Toronto (TTC streetcar). However, venues like SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Arrowhead Stadium (Kansas City) require rental cars or ride-sharing services. Plan transportation early, as ride-sharing prices surge dramatically on match days."
+                answer: "Accessibility varies significantly by venue. Stadiums with excellent public transit access include MetLife Stadium (NJ Transit trains), Mercedes-Benz Stadium in Atlanta (MARTA rail), and BMO Field in Toronto (TTC streetcar). However, venues like SoFi Stadium (Los Angeles), AT&T Stadium (Dallas), and Arrowhead Stadium (Kansas City) require rental cars or ride-sharing services. Plan transportation early, as ride-sharing prices surge dramatically on match days.",
+                category: "Transportation",
+                popularity: 8,
+                readingTime: 3
               },
               {
                 id: 6,
                 question: "Which World Cup 2026 stadiums are indoor vs outdoor?",
-                answer: "Three World Cup 2026 venues feature retractable roofs: AT&T Stadium (Dallas), SoFi Stadium (Los Angeles), and BC Place (Vancouver). Mercedes-Benz Stadium in Atlanta also has a retractable roof. All other venues are open-air stadiums. The indoor/covered options provide climate control for extreme weather but may affect atmosphere compared to traditional outdoor football stadiums."
+                answer: "Three World Cup 2026 venues feature retractable roofs: AT&T Stadium (Dallas), SoFi Stadium (Los Angeles), and BC Place (Vancouver). Mercedes-Benz Stadium in Atlanta also has a retractable roof. All other venues are open-air stadiums. The indoor/covered options provide climate control for extreme weather but may affect atmosphere compared to traditional outdoor football stadiums.",
+                category: "Stadium Features",
+                popularity: 6,
+                readingTime: 2
               },
               {
                 id: 7,
                 question: "What is the smallest stadium hosting World Cup 2026?",
-                answer: "BMO Field in Toronto is the smallest World Cup 2026 venue with a capacity of approximately 45,500 (after temporary expansion). Despite its size, it offers an intimate atmosphere and excellent sightlines. Other smaller venues include Levi's Stadium in Santa Clara (68,500) and Gillette Stadium near Boston (65,878). Smaller stadiums typically host group stage matches rather than knockout rounds."
+                answer: "BMO Field in Toronto is the smallest World Cup 2026 venue with a capacity of approximately 45,500 (after temporary expansion). Despite its size, it offers an intimate atmosphere and excellent sightlines. Other smaller venues include Levi's Stadium in Santa Clara (68,500) and Gillette Stadium near Boston (65,878). Smaller stadiums typically host group stage matches rather than knockout rounds.",
+                category: "Stadium Information",
+                popularity: 5,
+                readingTime: 2
               },
               {
                 id: 8,
                 question: "Are any World Cup 2026 stadiums brand new?",
-                answer: "No stadiums are being built specifically for the 2026 World Cup, but several are recently constructed. SoFi Stadium (2020) in Los Angeles is the newest venue and the most expensive stadium ever built at $5+ billion. Allegiant Stadium in Las Vegas (2020) and Mercedes-Benz Stadium in Atlanta (2017) are also recent constructions. All venues will undergo modifications to meet FIFA standards, including wider fields and additional seating."
+                answer: "No stadiums are being built specifically for the 2026 World Cup, but several are recently constructed. SoFi Stadium (2020) in Los Angeles is the newest venue and the most expensive stadium ever built at $5+ billion. Allegiant Stadium in Las Vegas (2020) and Mercedes-Benz Stadium in Atlanta (2017) are also recent constructions. All venues will undergo modifications to meet FIFA standards, including wider fields and additional seating.",
+                category: "Stadium History",
+                popularity: 6,
+                readingTime: 3
               },
               {
                 id: 9,
                 question: "Can I visit multiple World Cup 2026 stadiums in one trip?",
-                answer: "Yes, with strategic planning. Geographic clusters make multi-stadium trips feasible: the Texas duo (AT&T Stadium in Dallas and NRG Stadium in Houston are 4 hours apart), East Coast corridor (MetLife, Lincoln Financial Field in Philadelphia, and Gillette Stadium), and West Coast route (SoFi, Levi's Stadium, and Lumen Field in Seattle). Mexico's three venues (Azteca, Akron, BBVA) are also within a manageable circuit. Factor in match schedules and rest days when planning."
+                answer: "Yes, with strategic planning. Geographic clusters make multi-stadium trips feasible: the Texas duo (AT&T Stadium in Dallas and NRG Stadium in Houston are 4 hours apart), East Coast corridor (MetLife, Lincoln Financial Field in Philadelphia, and Gillette Stadium), and West Coast route (SoFi, Levi's Stadium, and Lumen Field in Seattle). Mexico's three venues (Azteca, Akron, BBVA) are also within a manageable circuit. Factor in match schedules and rest days when planning.",
+                category: "Travel Planning",
+                popularity: 7,
+                readingTime: 3
               },
               {
                 id: 10,
                 question: "Do World Cup 2026 stadiums have different grass than their regular seasons?",
-                answer: "Yes, FIFA requires natural grass for World Cup matches. Several NFL stadiums that normally use artificial turf—including AT&T Stadium, Mercedes-Benz Stadium, SoFi Stadium, and Lumen Field—will install temporary natural grass surfaces for the tournament. This process involves laying grass pallets over the existing surface weeks before matches. Gillette Stadium and MetLife Stadium, which use FieldTurf for NFL games, will undergo similar conversions."
+                answer: "Yes, FIFA requires natural grass for World Cup matches. Several NFL stadiums that normally use artificial turf—including AT&T Stadium, Mercedes-Benz Stadium, SoFi Stadium, and Lumen Field—will install temporary natural grass surfaces for the tournament. This process involves laying grass pallets over the existing surface weeks before matches. Gillette Stadium and MetLife Stadium, which use FieldTurf for NFL games, will undergo similar conversions.",
+                category: "Stadium Features",
+                popularity: 8,
+                readingTime: 3
               }
             ]}
             title="Frequently Asked Questions About World Cup 2026 Stadiums"
             subtitle="The 2026 FIFA World Cup will be played in 16 stadiums across the United States (11), Canada (2), and Mexico (3). The largest venue is MetLife Stadium in New York/New Jersey with 82,500 capacity, while the final venue will be announced by FIFA in 2025, with MetLife and AT&T Stadium in Dallas as leading candidates."
+            showCategories={true}
+            showSearch={true}
+            locationSpecific={true}
           />
         </div>
       </section>
