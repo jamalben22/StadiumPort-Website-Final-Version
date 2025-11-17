@@ -226,7 +226,7 @@ export function Footer() {
               {[
                 { to: '/deals', label: 'Today\'s Best Deals', icon: 'ri-price-tag-3-line' },
                 { to: '/deal-alerts', label: 'Deal Alerts', icon: 'ri-notification-line' },
-                { to: '/travel-tips', label: 'Travel Tips', icon: 'ri-lightbulb-line' },
+                { to: '/world-cup-2026-travel-tips', label: 'Travel Tips', icon: 'ri-lightbulb-line' },
                 { to: '/packing-lists', label: 'Packing Lists', icon: 'ri-suitcase-line' },
                 { to: '/safety-guide', label: 'Safety Guide', icon: 'ri-shield-check-line' }
               ].map((item, index) => (

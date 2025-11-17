@@ -10,7 +10,7 @@ Allow: /budget-guides
 Allow: /luxury-travel
 Allow: /packing-lists
 Allow: /safety-guide
-Allow: /travel-tips
+Allow: /world-cup-2026-travel-tips
 Allow: /travel-routes
 Allow: /city-comparisons
 Allow: /deal-alerts

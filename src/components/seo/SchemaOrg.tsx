@@ -121,14 +121,20 @@ export const generateStadiumSchema = (stadiumName: string, cityName: string, cap
 export const generateBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: string}>) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((item, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": item.name,
-    "item": item.url.startsWith('http')
-      ? item.url
-      : (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.url
-  }))
+  "itemListElement": breadcrumbs.map((item, index) => {
+    const site = import.meta.env.VITE_SITE_URL || "https://stadiumport.com";
+    const absolute = item.url.startsWith('http') ? item.url : site + item.url;
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": {
+        "@type": "WebPage",
+        "@id": absolute,
+        "url": absolute
+      }
+    };
+  })
 });
 
 // Image metadata generator for JSON-LD

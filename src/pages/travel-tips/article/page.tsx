@@ -7,6 +7,278 @@ import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
+// Ultra-Premium Perfect Responsive Breadcrumb Styles
+const breadcrumbStyles = `
+  /* Perfect responsive breadcrumb design */
+  .breadcrumb-ultra-premium {
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+  
+  .breadcrumb-ultra-premium ol {
+    display: flex;
+    align-items: center;
+    gap: 0.125rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    flex-wrap: nowrap;
+  }
+  
+  /* Individual breadcrumb items - Perfect responsive design */
+  .breadcrumb-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  
+  .breadcrumb-item:last-child {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+  
+  .breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 0.375rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    white-space: nowrap;
+    flex-shrink: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark .breadcrumb-link {
+    color: #f3f4f6;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover state - subtle and elegant */
+  .breadcrumb-link:hover {
+    color: #1f2937;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark .breadcrumb-link:hover {
+    color: #f9fafb;
+    background-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Current page - Perfect responsive design */
+  .breadcrumb-current {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #111827;
+    border-radius: 0.375rem;
+    background-color: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+    flex: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .dark .breadcrumb-current {
+    color: #ffffff;
+    background-color: rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(16, 185, 129, 0.4);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Minimalist separators */
+  .breadcrumb-separator {
+    display: flex;
+    align-items: center;
+    color: #6b7280;
+    font-size: 0.75rem;
+    font-weight: 400;
+    margin: 0 0.125rem;
+    user-select: none;
+    flex-shrink: 0;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dark .breadcrumb-separator {
+    color: #9ca3af;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Ultra-clean icons */
+  .breadcrumb-icon {
+    width: 0.875rem;
+    height: 0.875rem;
+    margin-right: 0.375rem;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    color: #6b7280;
+    stroke-width: 2;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+  }
+  
+  .dark .breadcrumb-icon {
+    color: #9ca3af;
+    opacity: 0.95;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+  }
+  
+  .breadcrumb-link:hover .breadcrumb-icon {
+    opacity: 1;
+    color: #374151;
+    transform: scale(1.05);
+  }
+  
+  .dark .breadcrumb-link:hover .breadcrumb-icon {
+    color: #f3f4f6;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+  }
+  
+  /* Desktop: Full display */
+  @media (min-width: 1024px) {
+    .breadcrumb-ultra-premium {
+      max-width: 100%;
+    }
+    
+    .breadcrumb-current {
+      max-width: none;
+      flex: 0 1 auto;
+    }
+  }
+  
+  /* Tablet: Optimized display */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .breadcrumb-link,
+    .breadcrumb-current {
+      padding: 0.5rem 0.625rem;
+      font-size: 0.8125rem;
+    }
+    
+    .breadcrumb-current {
+      max-width: 300px;
+    }
+  }
+  
+  /* Mobile: Compact display */
+  @media (max-width: 767px) {
+    .breadcrumb-ultra-premium ol {
+      gap: 0.0625rem;
+    }
+    
+    .breadcrumb-link,
+    .breadcrumb-current {
+      padding: 0.375rem 0.5rem;
+      font-size: 0.75rem;
+    }
+    
+    .breadcrumb-icon {
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-right: 0.25rem;
+      stroke-width: 2.5;
+    }
+    
+    .breadcrumb-separator {
+      font-size: 0.6875rem;
+      margin: 0 0.0625rem;
+    }
+    
+    .breadcrumb-current {
+      max-width: 200px;
+    }
+  }
+  
+  /* Small mobile: Ultra-compact */
+  @media (max-width: 480px) {
+    .breadcrumb-link {
+      padding: 0.375rem 0.375rem;
+      font-size: 0.6875rem;
+    }
+    
+    .breadcrumb-current {
+      padding: 0.375rem 0.5rem;
+      font-size: 0.6875rem;
+      max-width: 120px;
+    }
+    
+    .breadcrumb-icon {
+      width: 0.625rem;
+      height: 0.625rem;
+      margin-right: 0.25rem;
+    }
+    
+    .breadcrumb-separator {
+      font-size: 0.625rem;
+    }
+  }
+  
+  /* Extra small devices: Minimal display */
+  @media (max-width: 360px) {
+    .breadcrumb-link {
+      padding: 0.25rem 0.375rem;
+      font-size: 0.625rem;
+    }
+    
+    .breadcrumb-current {
+      padding: 0.25rem 0.375rem;
+      font-size: 0.625rem;
+      max-width: 100px;
+    }
+    
+    .breadcrumb-icon {
+      width: 0.5rem;
+      height: 0.5rem;
+      margin-right: 0.125rem;
+    }
+    
+    .breadcrumb-separator {
+      font-size: 0.5625rem;
+      margin: 0 0.03125rem;
+    }
+  }
+  
+  /* Subtle animation on page load */
+  @keyframes breadcrumbFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .breadcrumb-ultra-premium {
+    animation: breadcrumbFadeIn 0.4s ease-out;
+  }
+  
+  /* Dark mode transitions */
+  @media (prefers-color-scheme: dark) {
+    .breadcrumb-link,
+    .breadcrumb-current,
+    .breadcrumb-separator {
+      transition: all 0.3s ease;
+    }
+  }
+`;
+
 function toTitleCase(slug?: string) {
   if (!slug) return 'Travel Tip';
   return slug
@@ -151,13 +423,47 @@ export default function TravelTipsArticlePage() {
 
   const navigate = useNavigate();
 
+  const heroSrc = (s?: string) => {
+    switch (s) {
+      case 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies':
+        return '/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp';
+      case 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels':
+        return '/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp';
+      case 'dynamic-pricing-mastery':
+      case 'which-cities-should-you-visit':
+      case 'world-cup-2026-host-city-guide-which-cities-should-you-visit':
+        return '/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp';
+      case 'clear-bag-stadium-packing-essentials':
+      case 'where-to-stay-for-every-budget':
+      case 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget':
+        return '/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp';
+      case 'world-cup-2026-flight-booking-guide-routes-airlines-strategies':
+      case 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies':
+        return '/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp';
+      case 'heat-safety-gear-checklist':
+      case 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries':
+        return '/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp';
+      case 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather':
+        return '/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp';
+      case 'world-cup-2026-match-selection-startegy-which-games-to-attend':
+      case 'world-cup-2026-match-selection-strategy-which-games-to-attend':
+        return '/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp';
+      case 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget':
+        return '/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp';
+      case 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi':
+        return '/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp';
+      default:
+        return '/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp';
+    }
+  };
+
   useEffect(() => {
     const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
     document.title = pageTitle;
     const metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) metaDesc.setAttribute('content', description);
 
-    const canonicalHref = `${window.location.origin}/travel-tips/${slug ?? ''}`;
+    const canonicalHref = `${window.location.origin}/world-cup-2026-travel-tips/${slug ?? ''}`;
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
@@ -176,26 +482,46 @@ export default function TravelTipsArticlePage() {
   }, [displayTitle]);
 
   useEffect(() => {
+    const siteUrl = (import.meta.env.VITE_SITE_URL as string) || window.location.origin;
+    const pageUrl = `${siteUrl}/world-cup-2026-travel-tips/${slug ?? ''}`;
+    const ogImage = `${siteUrl}${heroSrc(slug)}`;
+    const setMeta = (selector: string, attr: string, value: string) => {
+      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+      if (el) el.setAttribute(attr, value);
+    };
+
+    setMeta('meta[property="og:title"]', 'content', `${displayTitle} – Travel Tips | StadiumPort`);
+    setMeta('meta[property="og:description"]', 'content', description);
+    setMeta('meta[property="og:url"]', 'content', pageUrl);
+    setMeta('meta[property="og:image"]', 'content', ogImage);
+
+    setMeta('meta[property="twitter:title"]', 'content', `${displayTitle} – Travel Tips | StadiumPort`);
+    setMeta('meta[property="twitter:description"]', 'content', description);
+    setMeta('meta[property="twitter:url"]', 'content', pageUrl);
+    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+  }, [displayTitle, slug, description]);
+
+  useEffect(() => {
     if (slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies') {
-      navigate('/travel-tips/world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'multi-city-tournament-planning') {
-      navigate('/travel-tips/best-time-to-book-world-cup-2026-tickets-flights-and-hotels', { replace: true });
+      navigate('/world-cup-2026-travel-tips/best-time-to-book-world-cup-2026-tickets-flights-and-hotels', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'clear-bag-stadium-packing-essentials') {
-      navigate('/travel-tips/where-to-stay-for-every-budget', { replace: true });
+      navigate('/world-cup-2026-travel-tips/where-to-stay-for-every-budget', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'dynamic-pricing-mastery') {
-      navigate('/travel-tips/which-cities-should-you-visit', { replace: true });
+      navigate('/world-cup-2026-travel-tips/which-cities-should-you-visit', { replace: true });
     }
   }, [slug]);
 
@@ -207,13 +533,13 @@ export default function TravelTipsArticlePage() {
 
   useEffect(() => {
     if (slug === 'late-night-food-and-transit-tactics') {
-      navigate('/travel-tips/world-cup-2026-food-and-dining-guide-eating-well-on-any-budget', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-food-and-dining-guide-eating-well-on-any-budget', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'heat-safety-gear-checklist') {
-      navigate('/travel-tips/world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries', { replace: true });
     }
   }, [slug]);
 
@@ -227,36 +553,38 @@ export default function TravelTipsArticlePage() {
 
   useEffect(() => {
     if (slug === 'hotel-points-stacking-and-status-match') {
-      navigate('/travel-tips/world-cup-2026-packing-guide-ultimate-checklist-for-all-weather', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-packing-guide-ultimate-checklist-for-all-weather', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'city-pass-and-local-transit-mastery') {
-      navigate('/travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'city-pass-local-transit-mastery') {
-      navigate('/travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-match-selection-startegy-which-games-to-attend', { replace: true });
     }
   }, [slug]);
 
   useEffect(() => {
     if (slug === 'rideshare-pickup-zone-strategy') {
-      navigate('/travel-tips/world-cup-2026-flight-booking-guide-routes-airlines-and-strategies', { replace: true });
+      navigate('/world-cup-2026-travel-tips/world-cup-2026-flight-booking-guide-routes-airlines-and-strategies', { replace: true });
     }
   }, [slug]);
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <>
+      <style dangerouslySetInnerHTML={{ __html: breadcrumbStyles }} />
+      <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
-        generateTravelGuideSchema(title || 'Travel Tip', description || 'Travel tip guide', `/travel-tips/${slug}`),
+        generateTravelGuideSchema(title || 'Travel Tip', description || 'Travel tip guide', `/world-cup-2026-travel-tips/${slug}`),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
-          { name: 'Travel Tips', url: '/travel-tips' },
-          { name: title || 'Travel Tip', url: `/travel-tips/${slug}` }
+          { name: 'Travel Tips', url: '/world-cup-2026-travel-tips' },
+          { name: title || 'Travel Tip', url: `/world-cup-2026-travel-tips/${slug}` }
         ])
       ]} />
       <Header />
@@ -265,8 +593,8 @@ export default function TravelTipsArticlePage() {
       <section className="editorial-hero">
         <div className="editorial-hero-media">
             <OptimizedImage
-              src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
-            alt={`${displayTitle} – Travel Tip`}
+              src={slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies' ? (console.log('Matched Budget Guide condition'), '/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp') : slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels' ? (console.log('Matched Best Time to Book condition'), '/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp') : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? (console.log('Matched Host City Guide condition'), '/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp') : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? (console.log('Matched Accommodation Guide condition'), '/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp') : (slug === 'world-cup-2026-flight-booking-guide-routes-airlines-strategies' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? (console.log('Matched Flight Booking Guide condition'), '/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp') : (slug === 'heat-safety-gear-checklist' || slug === 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries') ? (console.log('Matched Itinerary Planning condition'), '/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp') : slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather' ? (console.log('Matched Packing Guide condition'), '/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp') : (slug === 'world-cup-2026-match-selection-startegy-which-games-to-attend' || slug === 'world-cup-2026-match-selection-strategy-which-games-to-attend') ? (console.log('Matched Match Selection Strategy condition'), '/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp') : slug === 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget' ? (console.log('Matched Food & Dining Guide condition'), '/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp') : slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi' ? (console.log('Matched Connectivity Guide condition'), '/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp') : displayTitle === 'World Cup 2026 Match Selection Strategy: Which Games to Attend' ? (console.log('Matched Match Selection Strategy by displayTitle'), '/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp') : (console.log('Using default stadium image, no condition matched. Slug:', slug, 'DisplayTitle:', displayTitle), '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp')}
+            alt={slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies' ? 'Illustration showing World Cup 2026 travel budgeting elements, including subtle stadium shapes, travel icons, and financial symbols in a clean, modern design.' : slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels' ? 'Illustration featuring a calendar, flight and hotel icons, and subtle stadium shapes representing the best time to book World Cup 2026 tickets, flights, and hotels.' : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? 'Illustration featuring multiple city skylines, location pins, and subtle stadium elements representing the World Cup 2026 host city guide.' : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? 'Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide.' : (slug === 'world-cup-2026-flight-booking-guide-routes-airlines-strategies' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? 'Illustration featuring airplanes, global route lines, airline symbols, and subtle stadium shapes representing the World Cup 2026 flight booking guide.' : (slug === 'heat-safety-gear-checklist' || slug === 'world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries') ? 'Illustration featuring calendars, trip routes, stadium icons, and travel elements representing 1-, 2-, and 3-week World Cup 2026 itineraries.' : slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather' ? 'Illustration featuring luggage, clothing for all weather, travel accessories, and subtle stadium shapes representing the World Cup 2026 ultimate packing checklist.' : slug === 'world-cup-2026-match-selection-startegy-which-games-to-attend' ? 'Illustration featuring stadiums, match tickets, football icons, and calendar elements representing the World Cup 2026 match selection strategy guide.' : slug === 'world-cup-2026-food-and-dining-guide-eating-well-on-any-budget' ? 'Illustration featuring diverse foods, dining icons, budget-to-luxury symbols, and subtle stadium shapes representing the World Cup 2026 food and dining guide.' : slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi' ? 'Illustration featuring smartphones, SIM cards, WiFi symbols, and subtle stadium shapes representing the World Cup 2026 connectivity guide.' : displayTitle === 'World Cup 2026 Match Selection Strategy: Which Games to Attend' ? 'Illustration featuring stadiums, match tickets, football icons, and calendar elements representing the World Cup 2026 match selection strategy guide.' : `${displayTitle} – Travel Tip`}
               className="editorial-hero-image-wrapper"
               imgClassName="editorial-hero-image"
               width={1600}
@@ -279,25 +607,35 @@ export default function TravelTipsArticlePage() {
         </div>
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
-            <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
-            </div>
-            {/* Breadcrumbs (match city guide style) */}
-            <nav aria-label="Breadcrumb" className="mb-3">
-              <ol className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-300">
-                <li>
-                  <Link to="/" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+            {/* Ultra-Premium Perfect Responsive Breadcrumbs */}
+            <nav aria-label="Breadcrumb" className="mb-8 breadcrumb-ultra-premium">
+              <ol>
+                <li className="breadcrumb-item">
+                  <Link to="/" className="breadcrumb-link">
+                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span>Home</span>
+                  </Link>
                 </li>
-                <li><span aria-hidden>›</span></li>
-                <li>
-                  <Link to="/travel-tips" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Travel Tips</Link>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <Link to="/world-cup-2026-travel-tips" className="breadcrumb-link">
+                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <span>Travel Tips</span>
+                  </Link>
                 </li>
-                <li><span aria-hidden>›</span></li>
-                <li className="text-slate-900 dark:text-white font-semibold">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}</li>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <span className="breadcrumb-current" title={(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}>
+                    {(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}
+                  </span>
+                </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'Complete Cost Breakdown & Savings Strategies' : (slug === 'multi-city-tournament-planning' || slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels') ? 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels' : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? 'Which Cities Should You Visit?' : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? 'Where to Stay for Every Budget' : (slug === 'rideshare-pickup-zone-strategy' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? 'Flight Booking Guide: Routes, Airlines & Strategies' : (slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather') ? 'Ultimate Checklist for All Weather' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}</h1>
+            <h1 className="editorial-hero-title">{(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'multi-city-tournament-planning' || slug === 'best-time-to-book-world-cup-2026-tickets-flights-and-hotels') ? 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels' : (slug === 'dynamic-pricing-mastery' || slug === 'which-cities-should-you-visit' || slug === 'world-cup-2026-host-city-guide-which-cities-should-you-visit') ? 'World Cup 2026 Host City Guide: Which Cities Should You Visit?' : (slug === 'clear-bag-stadium-packing-essentials' || slug === 'where-to-stay-for-every-budget' || slug === 'world-cup-2026-accommodation-guide-where-to-stay-for-every-budget') ? 'World Cup 2026 Accommodation Guide: Where to Stay for Every Budget' : (slug === 'rideshare-pickup-zone-strategy' || slug === 'world-cup-2026-flight-booking-guide-routes-airlines-and-strategies') ? 'World Cup 2026 Flight Booking Guide: Routes, Airlines & Strategies' : (slug === 'world-cup-2026-packing-guide-ultimate-checklist-for-all-weather') ? 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-book-open-line"></i>
@@ -6757,5 +7095,6 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
 
       <Footer />
     </div>
+    </>
   );
 }

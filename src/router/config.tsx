@@ -65,8 +65,16 @@ const routes: RouteObject[] = [
     element: <CitiesPage />
   },
   {
+    path: '/world-cup-2026-cities',
+    element: <Navigate to="/world-cup-2026-host-cities" replace />
+  },
+  {
     path: '/world-cup-2026-host-cities/:cityId',
     element: <CityDetailPage />
+  },
+  {
+    path: '/world-cup-2026-cities/:cityId',
+    element: <Navigate to="/world-cup-2026-host-cities/:cityId" replace />
   },
   {
     path: '/deals',
@@ -91,6 +99,14 @@ const routes: RouteObject[] = [
   {
     path: '/transportation/multi-city-travel-passes-maximum-savings',
     element: <Navigate to="/transportation/atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium" replace />
+  },
+  {
+    path: '/transportation/philadelphia-world-cup-2026-transportation-guide-to-lincoln-financial-field',
+    element: <Navigate to="/transportation/guadalajara-world-cup-2026-complete-transportation-guide-to-estadio-akron" replace />
+  },
+  {
+    path: '/transportation/houston-world-cup-2026-transportation-guide-to-nrg-stadium',
+    element: <Navigate to="/transportation/monterrey-world-cup-2026-complete-transportation-guide-to-estadio-bbva" replace />
   },
   {
     path: '/transportation/:slug',
@@ -186,14 +202,14 @@ const routes: RouteObject[] = [
   },
   {
     path: '/travel-tips/airfare-deal-window-timing',
-    element: <Navigate to="/travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi" replace />
+    element: <Navigate to="/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi" replace />
   },
   {
-    path: '/travel-tips',
+    path: '/world-cup-2026-travel-tips',
     element: <TravelTipsPage />
   },
   {
-    path: '/travel-tips/:slug',
+    path: '/world-cup-2026-travel-tips/:slug',
     element: <TravelTipsArticlePage />
   },
   {

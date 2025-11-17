@@ -7,6 +7,7 @@ import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
+import { PremiumFAQ } from '../../components/feature/PremiumFAQ';
 
 interface CitySection {
   title: string;
@@ -840,41 +841,52 @@ Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="fo
       {/* FAQ Section */}
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="rounded-3xl border border-white/10 bg-white/5 dark:bg-navy-800 backdrop-blur-sm shadow-xl p-8 md:p-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white text-center">Frequently Asked Questions About World Cup 2026 Host cities</h2>
-            <div className="mt-6 md:mt-8 font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed text-center">
-              <p>The 2026 FIFA World Cup features <strong>16 host cities</strong> across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026.</p>
-            </div>
-            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-              <div className="space-y-6">
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Which city will host the most World Cup 2026 matches?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">New York/New Jersey's MetLife Stadium and Los Angeles' SoFi Stadium are expected to host the most matches, including potential knockout rounds. Dallas' AT&T Stadium will also host multiple group stage and elimination matches. The final match allocation will be announced by FIFA in 2025.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">What is the cheapest World Cup 2026 host city to visit?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Kansas City typically offers the most affordable accommodation and dining among US host cities, with average hotel rates 40-50% lower than coastal destinations. In Mexico, Monterrey provides excellent value, while Guadalajara balances affordability with cultural experiences. Expect prices to surge during match days regardless of destination.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Can I visit multiple World Cup 2026 cities during the tournament?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Yes, many fans plan multi-city trips. The tournament runs from June 11 to July 19, 2026, providing 39 days to visit multiple destinations. Popular combinations include West Coast routes (LA-SF-Seattle), the Texas duo (Dallas-Houston), and Mexico's three cities. Book internal flights early as prices will increase closer to the tournament.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Which World Cup 2026 host city has the best public transportation?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Toronto, New York, and Vancouver offer the most comprehensive public transit systems among host cities. Mexico City's Metro is extensive and affordable. In contrast, cities like Dallas, Houston, and Los Angeles require rental cars or ride-sharing for convenient stadium access.</p>
-              </div>
-
-              <div className="space-y-6">
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Are any World Cup 2026 host cities unsafe for tourists?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">All 16 host cities are generally safe for tourists, though certain neighborhoods require caution. Exercise standard travel precautions in any large city. Mexico City, Guadalajara, and Monterrey are safe in tourist areas and near stadiums, with increased security expected during the tournament. Check our individual city safety guides for neighborhood-specific advice.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">When should I book accommodation for World Cup 2026?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Book as early as possible—ideally 12-18 months before your travel dates. Hotels near stadiums in popular cities like New York, Los Angeles, and Miami will sell out quickly once the match schedule is announced. Consider accommodation 30-60 minutes from stadiums for better availability and rates.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Which World Cup 2026 host city is best for families?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Seattle, San Francisco Bay Area, and Boston offer family-friendly environments with diverse attractions beyond football. Canada's Toronto and Vancouver provide safe, clean cities with activities for all ages. These destinations combine excellent stadiums with museums, parks, and cultural experiences suitable for children.</p>
-
-                <h3 className="font-space text-xl md:text-2xl text-navy-900 dark:text-white">Do I need a visa to visit all World Cup 2026 host cities?</h3>
-                <p className="font-inter text-slate-600 dark:text-slate-300">Visa requirements vary by nationality. US cities require a valid US visa or ESTA for most international visitors. Canada requires an eTA or visa. Mexico has separate visa requirements. If planning a multi-country trip, research visa requirements for your nationality well in advance, as processing times can exceed 6 months during peak periods.</p>
-              </div>
-            </div>
-          </div>
+          <PremiumFAQ 
+            faqs={[
+              {
+                id: 1,
+                question: "Which city will host the most World Cup 2026 matches?",
+                answer: "New York/New Jersey's MetLife Stadium and Los Angeles' SoFi Stadium are expected to host the most matches, including potential knockout rounds. Dallas' AT&T Stadium will also host multiple group stage and elimination matches. The final match allocation will be announced by FIFA in 2025."
+              },
+              {
+                id: 2,
+                question: "What is the cheapest World Cup 2026 host city to visit?",
+                answer: "Kansas City typically offers the most affordable accommodation and dining among US host cities, with average hotel rates 40-50% lower than coastal destinations. In Mexico, Monterrey provides excellent value, while Guadalajara balances affordability with cultural experiences. Expect prices to surge during match days regardless of destination."
+              },
+              {
+                id: 3,
+                question: "Can I visit multiple World Cup 2026 cities during the tournament?",
+                answer: "Yes, many fans plan multi-city trips. The tournament runs from June 11 to July 19, 2026, providing 39 days to visit multiple destinations. Popular combinations include West Coast routes (LA-SF-Seattle), the Texas duo (Dallas-Houston), and Mexico's three cities. Book internal flights early as prices will increase closer to the tournament."
+              },
+              {
+                id: 4,
+                question: "Which World Cup 2026 host city has the best public transportation?",
+                answer: "Toronto, New York, and Vancouver offer the most comprehensive public transit systems among host cities. Mexico City's Metro is extensive and affordable. In contrast, cities like Dallas, Houston, and Los Angeles require rental cars or ride-sharing for convenient stadium access."
+              },
+              {
+                id: 5,
+                question: "Are any World Cup 2026 host cities unsafe for tourists?",
+                answer: "All 16 host cities are generally safe for tourists, though certain neighborhoods require caution. Exercise standard travel precautions in any large city. Mexico City, Guadalajara, and Monterrey are safe in tourist areas and near stadiums, with increased security expected during the tournament. Check our individual city safety guides for neighborhood-specific advice."
+              },
+              {
+                id: 6,
+                question: "When should I book accommodation for World Cup 2026?",
+                answer: "Book as early as possible—ideally 12-18 months before your travel dates. Hotels near stadiums in popular cities like New York, Los Angeles, and Miami will sell out quickly once the match schedule is announced. Consider accommodation 30-60 minutes from stadiums for better availability and rates."
+              },
+              {
+                id: 7,
+                question: "Which World Cup 2026 host city is best for families?",
+                answer: "Seattle, San Francisco Bay Area, and Boston offer family-friendly environments with diverse attractions beyond football. Canada's Toronto and Vancouver provide safe, clean cities with activities for all ages. These destinations combine excellent stadiums with museums, parks, and cultural experiences suitable for children."
+              },
+              {
+                id: 8,
+                question: "Do I need a visa to visit all World Cup 2026 host cities?",
+                answer: "Visa requirements vary by nationality. US cities require a valid US visa or ESTA for most international visitors. Canada requires an eTA or visa. Mexico has separate visa requirements. If planning a multi-country trip, research visa requirements for your nationality well in advance, as processing times can exceed 6 months during peak periods."
+              }
+            ]}
+            title="Frequently Asked Questions About World Cup 2026 Host Cities"
+            subtitle="The 2026 FIFA World Cup features 16 host cities across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026."
+          />
         </div>
       </section>
 
