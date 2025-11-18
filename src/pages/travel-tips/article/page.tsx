@@ -4,6 +4,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -458,48 +459,14 @@ export default function TravelTipsArticlePage() {
   };
 
   useEffect(() => {
-    const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
-    document.title = pageTitle;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', description);
-
-    const canonicalHref = `${window.location.origin}/world-cup-2026-travel-tips/${slug ?? ''}`;
-    let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', canonicalHref);
-
-    let ogUrl = document.querySelector('meta[property="og:url"]') as HTMLMetaElement | null;
-    if (!ogUrl) {
-      ogUrl = document.createElement('meta');
-      ogUrl.setAttribute('property', 'og:url');
-      document.head.appendChild(ogUrl);
-    }
-    ogUrl.setAttribute('content', canonicalHref);
-  }, [displayTitle]);
-
-  useEffect(() => {
     const siteUrl = (import.meta.env.VITE_SITE_URL as string) || window.location.origin;
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips/${slug ?? ''}`;
-    const ogImage = `${siteUrl}${heroSrc(slug)}`;
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
-      if (el) el.setAttribute(attr, value);
-    };
-
-    setMeta('meta[property="og:title"]', 'content', `${displayTitle} – Travel Tips | StadiumPort`);
-    setMeta('meta[property="og:description"]', 'content', description);
-    setMeta('meta[property="og:url"]', 'content', pageUrl);
-    setMeta('meta[property="og:image"]', 'content', ogImage);
-
-    setMeta('meta[property="twitter:title"]', 'content', `${displayTitle} – Travel Tips | StadiumPort`);
-    setMeta('meta[property="twitter:description"]', 'content', description);
-    setMeta('meta[property="twitter:url"]', 'content', pageUrl);
-    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+    const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
+    const image = `${siteUrl}${heroSrc(slug)}`;
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image });
   }, [displayTitle, slug, description]);
+
+  
 
   useEffect(() => {
     if (slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies') {

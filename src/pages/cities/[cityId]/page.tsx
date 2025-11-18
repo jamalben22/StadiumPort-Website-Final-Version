@@ -16,7 +16,7 @@ import { VancouverCityGuide } from '../components/VancouverCityGuide';
 import { MexicoCityGuide } from '../components/MexicoCityGuide';
 import { GuadalajaraCityGuide } from '../components/GuadalajaraCityGuide';
 import { MonterreyCityGuide } from '../components/MonterreyCityGuide';
-import { setPageMeta } from '../../components/seo/MetaUtils';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
