@@ -17,7 +17,7 @@ export default function DallasArticlePage() {
       url: `${siteUrl}${pageUrl}`,
       image: `${siteUrl}/images/cities/dallas-world-cup-2026.webp`,
       locale: 'en_US',
-      publishedTime: new Date(Date.now() - 4*24*60*60*1000).toISOString(),
+      publishedTime: '2025-11-14T09:00:00Z',
       modifiedTime: new Date().toISOString(),
       section: 'Host Cities',
       tags: ['World Cup 2026', 'Host Cities', 'Dallas', 'AT&T Stadium']
@@ -32,7 +32,7 @@ export default function DallasArticlePage() {
             'Dallas – World Cup 2026 Guide',
             'Comprehensive Dallas travel guide for FIFA World Cup 2026: AT&T Stadium details, nine-match schedule including a semi-final, transportation, and planning tips.',
             `${siteUrl}${pageUrl}`,
-            { datePublished: new Date(Date.now() - 4*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'] }
+            { datePublished: '2025-11-14T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },

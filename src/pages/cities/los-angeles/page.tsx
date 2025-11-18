@@ -26,7 +26,7 @@ export default function LosAngelesArticlePage() {
     const description = 'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.';
     const fullUrl = `${siteUrl}${pageUrl}`;
     const ogImage = `${siteUrl}/images/cities/los-angeles-world-cup-2026.webp`;
-    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: new Date(Date.now() - 6*24*60*60*1000).toISOString(), modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium'] })
+    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-12T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium'] })
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export default function LosAngelesArticlePage() {
             'Los Angeles – World Cup 2026 Guide',
             'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.',
             `${siteUrl}${pageUrl}`,
-            { datePublished: new Date(Date.now() - 6*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
+            { datePublished: '2025-11-12T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },

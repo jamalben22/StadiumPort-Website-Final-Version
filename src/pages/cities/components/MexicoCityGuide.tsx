@@ -3,6 +3,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link } from 'react-router-dom';
 
 export function MexicoCityGuide() {
@@ -17,7 +18,8 @@ export function MexicoCityGuide() {
           generateCityGuideSchema(
             'Mexico City World Cup 2026 – Estadio Azteca & Cultural Capital Guide',
             'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.',
-            `${siteUrl}/world-cup-2026-host-cities/mexico-city`
+            `${siteUrl}/world-cup-2026-host-cities/mexico-city`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Mexico City', 'Estadio Azteca'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
@@ -55,6 +57,7 @@ export function MexicoCityGuide() {
           setMeta('meta[property="twitter:description"]', 'content', description);
           setMeta('meta[property="twitter:url"]', 'content', pageUrl);
           setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Mexico City', 'Estadio Azteca'] })
         }, []);
         return null;
       })()}

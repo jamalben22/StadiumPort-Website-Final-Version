@@ -253,12 +253,12 @@ export default function StadiumDetailPage() {
     const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
     const image = `${siteUrl}${imgPath}`
     const publishedMap: Record<string, string> = {
-      'metlife-stadium': new Date(Date.now() - 7*24*60*60*1000).toISOString(),
-      'sofi-stadium': new Date(Date.now() - 6*24*60*60*1000).toISOString(),
-      'hard-rock-stadium': new Date(Date.now() - 5*24*60*60*1000).toISOString(),
-      'att-stadium': new Date(Date.now() - 4*24*60*60*1000).toISOString(),
-      'nrg-stadium': new Date(Date.now() - 3*24*60*60*1000).toISOString(),
-      'lumen-field': new Date(Date.now() - 2*24*60*60*1000).toISOString()
+      'metlife-stadium': '2025-11-11T09:00:00Z',
+      'sofi-stadium': '2025-11-12T09:00:00Z',
+      'hard-rock-stadium': '2025-11-13T09:00:00Z',
+      'att-stadium': '2025-11-14T09:00:00Z',
+      'nrg-stadium': '2025-11-15T09:00:00Z',
+      'lumen-field': '2025-11-16T09:00:00Z'
     }
     const publishedTime = stadiumId ? publishedMap[stadiumId] : undefined
     setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Stadiums', tags: ['World Cup 2026', 'Stadium Guide', stadium?.name || ''] })
@@ -445,12 +445,12 @@ export default function StadiumDetailPage() {
           },
           (function(){
             const map: Record<string, string> = {
-              'metlife-stadium': new Date(Date.now() - 7*24*60*60*1000).toISOString(),
-              'sofi-stadium': new Date(Date.now() - 6*24*60*60*1000).toISOString(),
-              'hard-rock-stadium': new Date(Date.now() - 5*24*60*60*1000).toISOString(),
-              'att-stadium': new Date(Date.now() - 4*24*60*60*1000).toISOString(),
-              'nrg-stadium': new Date(Date.now() - 3*24*60*60*1000).toISOString(),
-              'lumen-field': new Date(Date.now() - 2*24*60*60*1000).toISOString()
+              'metlife-stadium': '2025-11-11T09:00:00Z',
+              'sofi-stadium': '2025-11-12T09:00:00Z',
+              'hard-rock-stadium': '2025-11-13T09:00:00Z',
+              'att-stadium': '2025-11-14T09:00:00Z',
+              'nrg-stadium': '2025-11-15T09:00:00Z',
+              'lumen-field': '2025-11-16T09:00:00Z'
             }
             const published = stadiumId ? map[stadiumId] : undefined
             return published ? {

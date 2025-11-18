@@ -18,7 +18,7 @@ export default function MiamiCityGuide() {
       title: 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort', 
       description: 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.', 
       url: fullUrl, image: ogImage, locale: 'en_US', 
-      publishedTime: new Date(Date.now() - 5*24*60*60*1000).toISOString(), 
+      publishedTime: '2025-11-13T09:00:00Z', 
       modifiedTime: new Date().toISOString(), section: 'Host Cities', 
       tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium'] 
     })
@@ -34,7 +34,7 @@ export default function MiamiCityGuide() {
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
     `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`,
-    { datePublished: new Date(Date.now() - 5*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
+    { datePublished: '2025-11-13T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
   );
 
   return (

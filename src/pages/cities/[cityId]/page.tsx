@@ -79,7 +79,7 @@ export default function CityDetailPage() {
     if (title && description) {
       const image = imgPath ? `${siteUrl}${imgPath}` : undefined
       const publishedMap: Record<string, string> = {
-        'houston': new Date(Date.now() - 3*24*60*60*1000).toISOString()
+        'houston': '2025-11-15T09:00:00Z'
       }
       setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: publishedMap[normalizedId], modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', title] })
     }

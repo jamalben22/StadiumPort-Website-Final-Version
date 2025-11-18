@@ -3,6 +3,7 @@ import { Footer } from '../../../components/feature/Footer';
 import { Link } from 'react-router-dom';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function SanFranciscoCityGuide() {
   return (
@@ -13,7 +14,8 @@ export function SanFranciscoCityGuide() {
           generateCityGuideSchema(
             'San Francisco Bay Area – World Cup 2026 Guide',
             "Comprehensive San Francisco Bay Area travel guide for FIFA World Cup 2026: Levi's Stadium details, match schedule, transportation, and where to stay.",
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/san-francisco`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/san-francisco`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'San Francisco', "Levi's Stadium"] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },

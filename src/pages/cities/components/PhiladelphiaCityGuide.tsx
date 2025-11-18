@@ -1,10 +1,20 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 
 export function PhiladelphiaCityGuide() {
+  useEffect(() => {
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    const pageUrl = `${siteUrl}/world-cup-2026-host-cities/philadelphia`;
+    const title = 'Philadelphia – World Cup 2026 Guide';
+    const description = 'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.';
+    const image = `${siteUrl}/images/cities/philadelphia-world-cup-2026.webp`;
+    setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Philadelphia', 'Lincoln Financial Field'] })
+  }, [])
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
@@ -13,7 +23,8 @@ export function PhiladelphiaCityGuide() {
           generateCityGuideSchema(
             'Philadelphia – World Cup 2026 Guide',
             'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/philadelphia`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/philadelphia`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Philadelphia', 'Lincoln Financial Field'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
