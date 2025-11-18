@@ -265,7 +265,7 @@ export const generateGlobalSportsEventSchema = (opts: {
 
   return {
     '@context': 'https://schema.org',
-    '@type': 'SportsEvent',
+    '@type': ['Event','SportsEvent'],
     name,
     description,
     startDate,
@@ -309,12 +309,12 @@ export const generateGlobalSportsEventSchema = (opts: {
         }
       : {
           '@type': 'Place',
-          name: 'United States, Canada, and Mexico',
+          name: 'United States, Canada, Mexico',
           address: {
             '@type': 'PostalAddress',
             addressLocality: 'Multiple Cities',
             addressRegion: 'North America',
-            addressCountry: 'US'
+            addressCountry: ['US','CA','MX']
           }
         },
     offers: {
