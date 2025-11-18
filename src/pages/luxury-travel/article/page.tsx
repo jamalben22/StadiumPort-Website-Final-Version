@@ -94,7 +94,8 @@ export default function LuxuryArticlePage() {
     const pageUrl = `${siteUrl}/luxury-travel/${slug}`
     const pageTitle = `${title} – Luxury Travel | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Luxury Travel' })
+    const tags = ['World Cup 2026', 'Luxury Travel', 'VIP Experiences']
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-03T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Luxury Travel', tags })
   }, [title, slug, guide, description])
 
   return (

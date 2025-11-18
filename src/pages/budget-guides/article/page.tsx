@@ -94,7 +94,8 @@ export default function BudgetGuideArticlePage() {
     const pageUrl = `${siteUrl}/budget-guides/${slug}`
     const pageTitle = `${title} – Budget Guides | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Budget Guides' })
+    const tags = ['World Cup 2026', 'Budget Guides', 'Savings']
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-04T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Budget Guides', tags })
   }, [title, slug, guide, description])
 
   return (

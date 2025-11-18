@@ -35,7 +35,16 @@ export default function GuidesArticlePage() {
     const pageTitle = `${title} – Guide | StadiumPort`
     const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
     const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
-    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Guides' })
+    const publishedMap: Record<string, string> = {
+      'world-cup-2026-scams-how-to-avoid-ticket-travel-fraud': '2024-11-20T00:00:00Z',
+      'world-cup-2026-emergency-contacts-resources-guide': '2024-11-22T00:00:00Z',
+      'solo-travel-safety-guide-attending-world-cup-2026-alone': '2024-11-24T00:00:00Z',
+      'family-safety-guide-taking-kids-to-world-cup-2026': '2024-11-26T00:00:00Z'
+    }
+    const publishedTime = publishedMap[(slug ?? '').toString()] || '2024-11-20T00:00:00Z'
+    const tags = ['World Cup 2026', 'Guides']
+    if (slug?.includes('safety') || slug?.includes('emergency')) tags.push('Safety')
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Guides', tags })
     const t = setTimeout(() => setVisible(true), 20)
     return () => clearTimeout(t)
   }, [title, url])

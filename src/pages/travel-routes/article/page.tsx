@@ -94,7 +94,8 @@ export default function TravelRoutesArticlePage() {
     const pageUrl = `${siteUrl}/travel-routes/${slug}`
     const pageTitle = `${title} – Travel Routes | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Routes' })
+    const tags = ['World Cup 2026', 'Travel Routes', 'Itinerary']
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-07T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Routes', tags })
   }, [title, slug, guide, description])
 
   return (
