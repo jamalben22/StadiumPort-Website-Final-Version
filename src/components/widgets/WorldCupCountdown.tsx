@@ -21,31 +21,25 @@ interface CountdownState {
   hasStarted: boolean;
 }
 
-const CountdownUnit: React.FC<{ unit: TimeUnit; index: number }> = ({ unit, index }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ 
-      duration: 0.8, 
-      delay: index * 0.1,
-      type: "spring",
-      stiffness: 100,
-      damping: 15
-    }}
-    className="relative group"
-  >
-    <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-xl border border-slate-200 dark:border-white/20 p-6 md:p-8 shadow-2xl">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-transparent to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-      
-      {/* Glowing border effect */}
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-400 via-gold-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-opacity duration-700 blur-sm"></div>
-      
-      <div className="relative z-10 text-center">
-        <motion.div
-          key={unit.value}
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
+  const CountdownUnit: React.FC<{ unit: TimeUnit; index: number }> = ({ unit, index }) => (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: index * 0.1,
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }}
+      className="relative group"
+    >
+      <div className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 p-6 md:p-8 shadow-md hover:shadow-lg">
+        <div className="relative z-10 text-center">
+          <motion.div
+            key={unit.value}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
           transition={{ 
             duration: 0.6,
             type: "spring",
@@ -144,12 +138,7 @@ const AnimatedCounter: React.FC<{
   }, [value, hasAnimated, enableGlow]);
 
   return (
-    <span 
-      ref={ref} 
-      className={`inline-block transition-all duration-300 ${
-        showGlow ? 'drop-shadow-[0_0_8px_rgba(255,255,255,0.3)] scale-105' : ''
-      }`}
-    >
+    <span ref={ref}>
       {displayValue.toLocaleString()}
     </span>
   );
@@ -241,81 +230,54 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       transition={{ duration: 1, delay: 0.8 }}
       className="mb-8 md:mb-12"
     >
-      {/* Premium horizontal stats row */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-16 lg:gap-20 max-w-7xl mx-auto">
+      {/* Apple-Style Minimal Stats Row */}
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 max-w-6xl mx-auto">
         {stats.map((stat, index) => (
           <motion.div
             key={stat.id}
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: stat.delay, type: "spring", stiffness: 100 }}
-            className="group relative text-center min-w-[180px] lg:min-w-[200px]"
+            transition={{ duration: 0.8, delay: stat.delay }}
+            className="relative text-center min-w-[160px] lg:min-w-[180px]"
           >
-            {/* Perfectly centered icon with subtle glow */}
-            <motion.div 
-              className="relative mb-8 flex justify-center"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              <motion.div 
-                className={`absolute inset-0 ${stat.id === 'travelers' ? 'bg-emerald-500/15' : stat.id === 'deals' ? 'bg-amber-500/15' : stat.id === 'cities' ? 'bg-blue-500/15' : 'bg-purple-500/15'} rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}
-                animate={{ scale: [1, 1.1, 1] }}
-                transition={{ duration: 3, repeat: Infinity }}
-              />
-              <div className={`relative w-20 h-20 rounded-full bg-gradient-to-br ${stat.gradient} flex items-center justify-center text-white shadow-lg group-hover:shadow-xl transition-all duration-500`}>
-                <i className={`${stat.icon} text-2xl md:text-3xl leading-none`}></i>
+            {/* Minimal Icon - Clean and Sophisticated */}
+            <div className="mb-6 flex justify-center">
+              <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${stat.gradient} flex items-center justify-center text-white shadow-sm`}>
+                <i className={`${stat.icon} text-lg`}></i>
               </div>
-            </motion.div>
+            </div>
 
-            {/* Premium number with animated counter */}
-            <motion.div 
-              className="mb-8 relative"
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400 }}
-            >
-              {/* Subtle glow background for animated numbers */}
-              {stat.enableAnimation && (
-                <motion.div 
-                  className={`absolute inset-0 ${stat.id === 'travelers' ? 'bg-emerald-500/5' : 'bg-amber-500/5'} rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-1000`}
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-              )}
-              <span className={`relative text-5xl md:text-6xl lg:text-7xl font-black bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent font-space tracking-tight`}>
+            {/* Clean Number Display - Premium Typography */}
+            <div className="mb-4">
+              <span className={`text-4xl md:text-5xl lg:text-6xl font-semibold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent tracking-tight`}>
                 {stat.enableAnimation ? (
                   <AnimatedCounter 
                     value={stat.value} 
                     startValue={stat.startValue}
                     duration={2.5}
-                    enableGlow={true}
+                    enableGlow={false}
                   />
                 ) : (
                   stat.value.toLocaleString()
                 )}
                 {stat.id === 'travelers' && '+'}
               </span>
-            </motion.div>
-
-            {/* Premium label with consistent bold styling */}
-            <div className="space-y-3">
-              <h3 className={`text-xl md:text-2xl font-bold ${stat.id === 'travelers' ? 'text-emerald-300' : stat.id === 'deals' ? 'text-amber-300' : stat.id === 'cities' ? 'text-blue-300' : 'text-purple-300'} font-inter tracking-wide leading-tight`}>
-                {stat.label}
-              </h3>
-              <p className="text-slate-400 font-inter text-sm md:text-base font-bold uppercase tracking-widest">
-                {stat.id === 'travelers' ? '' : 
-                 stat.id === 'deals' ? '' : 
-                 stat.id === 'cities' ? '' : 
-                 ''}
-              </p>
             </div>
 
-            {/* Elegant divider (except last item) */}
+            {/* Minimal Label - Sophisticated Typography */}
+            <div>
+              <h3 className={`text-base md:text-lg font-medium text-slate-700 dark:text-slate-300 tracking-wide`}>
+                {stat.label}
+              </h3>
+            </div>
+
+            {/* Elegant Divider - Minimal and Refined */}
             {index < stats.length - 1 && (
               <>
                 {/* Desktop divider */}
-                <div className="hidden lg:block absolute -right-10 top-1/2 w-px h-24 bg-gradient-to-b from-transparent via-slate-300/40 dark:via-white/25 to-transparent transform -translate-y-1/2"></div>
+                <div className="hidden lg:block absolute -right-8 top-1/2 w-px h-16 bg-slate-200 dark:bg-slate-800 transform -translate-y-1/2"></div>
                 {/* Mobile divider */}
-                <div className="lg:hidden w-32 h-px bg-gradient-to-r from-transparent via-slate-300/40 dark:via-white/25 to-transparent mt-10 mb-6 mx-auto"></div>
+                <div className="lg:hidden w-24 h-px bg-slate-200 dark:bg-slate-800 mt-8 mb-6 mx-auto"></div>
               </>
             )}
           </motion.div>
@@ -452,17 +414,11 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
               data-affiliate-type="accommodation"
               className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40"
             >
-              {/* Subtle aura glow */}
-              <div className="absolute -top-8 -left-8 w-44 h-44 bg-emerald-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white dark:bg-white/5 dark:backdrop-blur-xl border border-slate-200 dark:border-white/10 ring-1 ring-slate-200/50 dark:ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-slate-50 dark:hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 transition-all duration-500 shadow-md hover:shadow-lg hover:bg-white/90 dark:hover:bg-slate-900/50 hover:-translate-y-[2px] transform-gpu h-full flex flex-col">
                 {/* Centered content: icon + text */}
                 <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                  <div className="relative">
-                    <div className="absolute -top-2 -left-2 w-28 h-28 bg-emerald-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-100 dark:bg-white/10 ring-1 ring-slate-300 dark:ring-white/20 flex items-center justify-center text-navy-900 dark:text-white shadow-premium-sm transition-all duration-600 group-hover:bg-slate-200 dark:group-hover:bg-white/15 group-hover:ring-emerald-400/50">
-                      <i className="ri-hotel-line text-2xl sm:text-3xl"></i>
-                    </div>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-emerald-400 to-teal-400 flex items-center justify-center text-white shadow-sm">
+                    <i className="ri-hotel-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
                     Accommodation
@@ -487,17 +443,11 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
               data-affiliate-type="flights"
               className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/40"
             >
-              {/* Subtle aura glow */}
-              <div className="absolute -top-8 -left-8 w-44 h-44 bg-blue-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white dark:bg-white/5 dark:backdrop-blur-xl border border-slate-200 dark:border-white/10 ring-1 ring-slate-200/50 dark:ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-slate-50 dark:hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 transition-all duration-500 shadow-md hover:shadow-lg hover:bg-white/90 dark:hover:bg-slate-900/50 hover:-translate-y-[2px] transform-gpu h-full flex flex-col">
                 {/* Centered content: icon + text */}
                 <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                  <div className="relative">
-                    <div className="absolute -top-2 -left-2 w-28 h-28 bg-blue-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-100 dark:bg-white/10 ring-1 ring-slate-300 dark:ring-white/20 flex items-center justify-center text-navy-900 dark:text-white shadow-premium-sm transition-all duration-600 group-hover:bg-slate-200 dark:group-hover:bg-white/15 group-hover:ring-blue-400/50">
-                      <i className="ri-flight-takeoff-line text-2xl sm:text-3xl"></i>
-                    </div>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-blue-400 to-cyan-400 flex items-center justify-center text-white shadow-sm">
+                    <i className="ri-flight-takeoff-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
                     Flights
@@ -522,17 +472,11 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
               data-affiliate-type="experiences"
               className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/40"
             >
-              {/* Subtle aura glow */}
-              <div className="absolute -top-8 -left-8 w-44 h-44 bg-amber-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white dark:bg-white/5 dark:backdrop-blur-xl border border-slate-200 dark:border-white/10 ring-1 ring-slate-200/50 dark:ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-slate-50 dark:hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
+              <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/80 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60 transition-all duration-500 shadow-md hover:shadow-lg hover:bg-white/90 dark:hover:bg-slate-900/50 hover:-translate-y-[2px] transform-gpu h-full flex flex-col">
                 {/* Centered content: icon + text */}
                 <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                  <div className="relative">
-                    <div className="absolute -top-2 -left-2 w-28 h-28 bg-amber-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-slate-100 dark:bg-white/10 ring-1 ring-slate-300 dark:ring-white/20 flex items-center justify-center text-navy-900 dark:text-white shadow-premium-sm transition-all duration-600 group-hover:bg-slate-200 dark:group-hover:bg-white/15 group-hover:ring-amber-400/50">
-                      <i className="ri-map-2-line text-2xl sm:text-3xl"></i>
-                    </div>
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-amber-400 to-orange-400 flex items-center justify-center text-white shadow-sm">
+                    <i className="ri-map-2-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
                     Experiences
