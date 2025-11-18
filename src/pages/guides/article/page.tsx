@@ -35,7 +35,7 @@ export default function GuidesArticlePage() {
     const pageTitle = `${title} – Guide | StadiumPort`
     const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
     const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
-    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image })
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Guides' })
     const t = setTimeout(() => setVisible(true), 20)
     return () => clearTimeout(t)
   }, [title, url])

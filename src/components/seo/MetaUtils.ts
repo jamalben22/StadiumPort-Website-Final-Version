@@ -28,8 +28,8 @@ export function ensureCanonical(href: string) {
   canonical.setAttribute('href', href)
 }
 
-export function setPageMeta(opts: { title: string; description: string; url: string; image?: string }) {
-  const { title, description, url, image } = opts
+export function setPageMeta(opts: { title: string; description: string; url: string; image?: string; locale?: string; publishedTime?: string; modifiedTime?: string; section?: string; tags?: string[] }) {
+  const { title, description, url, image, locale = 'en_US', publishedTime, modifiedTime, section, tags } = opts
   document.title = title
   ensureNameMeta('description', description)
   ensureCanonical(url)
@@ -37,8 +37,13 @@ export function setPageMeta(opts: { title: string; description: string; url: str
   ensurePropertyMeta('og:description', description)
   ensurePropertyMeta('og:url', url)
   if (image) ensurePropertyMeta('og:image', image)
+  ensurePropertyMeta('og:locale', locale)
   ensurePropertyMeta('twitter:title', title)
   ensurePropertyMeta('twitter:description', description)
   ensurePropertyMeta('twitter:url', url)
   if (image) ensurePropertyMeta('twitter:image', image)
+  if (publishedTime) ensurePropertyMeta('article:published_time', publishedTime)
+  if (modifiedTime) ensurePropertyMeta('article:modified_time', modifiedTime)
+  if (section) ensurePropertyMeta('article:section', section)
+  if (tags && tags.length) ensurePropertyMeta('article:tag', tags.join(', '))
 }
