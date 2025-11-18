@@ -7,45 +7,62 @@ type CalendarEntry = {
   section?: string
 }
 
-const calendar: Record<CalendarKind, Record<string, CalendarEntry>> = {
-  city: {
-    'new-york-new-jersey': { isPublished: true, datePublished: '2025-11-11T09:00:00Z', keywords: ['World Cup 2026', 'New York', 'MetLife Stadium'], section: 'Host Cities' },
-    'los-angeles': { isPublished: true, datePublished: '2025-11-12T09:00:00Z', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'], section: 'Host Cities' },
-    'miami': { isPublished: true, datePublished: '2025-11-13T09:00:00Z', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'], section: 'Host Cities' },
-    'dallas': { isPublished: true, datePublished: '2025-11-14T09:00:00Z', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'], section: 'Host Cities' },
-    'houston': { isPublished: true, datePublished: '2025-11-15T09:00:00Z', keywords: ['World Cup 2026', 'Houston', 'NRG Stadium'], section: 'Host Cities' },
-    'kansas-city': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Kansas City', 'Arrowhead Stadium'], section: 'Host Cities' },
-    'philadelphia': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Philadelphia', 'Lincoln Financial Field'], section: 'Host Cities' },
-    'boston': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Boston', 'Gillette Stadium'], section: 'Host Cities' },
-    'toronto': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Toronto', 'BMO Field'], section: 'Host Cities' },
-    'vancouver': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Vancouver', 'BC Place'], section: 'Host Cities' },
-    'mexico-city': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Mexico City', 'Estadio Azteca'], section: 'Host Cities' },
-    'guadalajara': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Guadalajara', 'Estadio Akron'], section: 'Host Cities' },
-    'monterrey': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Monterrey', 'Estadio BBVA'], section: 'Host Cities' },
-    'san-francisco': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'San Francisco', "Levi's Stadium"], section: 'Host Cities' },
-    'seattle': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Seattle', 'Lumen Field'], section: 'Host Cities' }
-  },
-  stadium: {
-    'metlife-stadium': { isPublished: true, datePublished: '2025-11-11T09:00:00Z', keywords: ['World Cup 2026', 'MetLife Stadium'], section: 'Stadiums' },
-    'sofi-stadium': { isPublished: true, datePublished: '2025-11-12T09:00:00Z', keywords: ['World Cup 2026', 'SoFi Stadium'], section: 'Stadiums' },
-    'hard-rock-stadium': { isPublished: true, datePublished: '2025-11-13T09:00:00Z', keywords: ['World Cup 2026', 'Hard Rock Stadium'], section: 'Stadiums' },
-    'att-stadium': { isPublished: true, datePublished: '2025-11-14T09:00:00Z', keywords: ['World Cup 2026', 'AT&T Stadium'], section: 'Stadiums' },
-    'nrg-stadium': { isPublished: true, datePublished: '2025-11-15T09:00:00Z', keywords: ['World Cup 2026', 'NRG Stadium'], section: 'Stadiums' },
-    'lumen-field': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Lumen Field'], section: 'Stadiums' },
-    'arrowhead-stadium': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Arrowhead Stadium'], section: 'Stadiums' },
-    'levis-stadium': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', "Levi's Stadium"], section: 'Stadiums' },
-    'gillette-stadium': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Gillette Stadium'], section: 'Stadiums' },
-    'lincoln-financial-field': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Lincoln Financial Field'], section: 'Stadiums' },
-    'bmo-field': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'BMO Field'], section: 'Stadiums' },
-    'bc-place-stadium': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'BC Place'], section: 'Stadiums' },
-    'estadio-azteca': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Estadio Azteca'], section: 'Stadiums' },
-    'estadio-akron': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Estadio Akron'], section: 'Stadiums' },
-    'estadio-bbva': { isPublished: true, datePublished: '2025-11-16T09:00:00Z', keywords: ['World Cup 2026', 'Estadio BBVA'], section: 'Stadiums' }
-  },
-  article: {
+type CalendarData = Record<CalendarKind, Record<string, CalendarEntry>>
+
+let calendarCache: CalendarData = { city: {}, stadium: {}, article: {} }
+let initialized = false
+
+function normalizeKey(k: string) {
+  return (k || '').toLowerCase().trim().replace(/\s+/g, '-')
+}
+
+export async function initEditorialCalendar() {
+  if (initialized) return
+  initialized = true
+  const url = (import.meta.env.VITE_EDITORIAL_CALENDAR_URL as string) || '/editorial-calendar.json'
+  try {
+    const res = await fetch(url, { method: 'GET' })
+    if (!res.ok) throw new Error('calendar fetch failed')
+    const data = (await res.json()) as CalendarData
+    const normalized: CalendarData = { city: {}, stadium: {}, article: {} }
+    for (const kind of ['city', 'stadium', 'article'] as CalendarKind[]) {
+      const entries = (data[kind] || {})
+      for (const key of Object.keys(entries)) {
+        normalized[kind][normalizeKey(key)] = entries[key]
+      }
+    }
+    calendarCache = normalized
+  } catch {
+    // keep empty cache; pages will still render with defaults
+  }
+
+  // Periodic refresh for long-lived sessions
+  if (typeof window !== 'undefined') {
+    window.setInterval(async () => {
+      try {
+        const res = await fetch(url, { method: 'GET', cache: 'no-store' })
+        if (!res.ok) return
+        const data = (await res.json()) as CalendarData
+        const normalized: CalendarData = { city: {}, stadium: {}, article: {} }
+        for (const kind of ['city', 'stadium', 'article'] as CalendarKind[]) {
+          const entries = (data[kind] || {})
+          for (const key of Object.keys(entries)) {
+            normalized[kind][normalizeKey(key)] = entries[key]
+          }
+        }
+        calendarCache = normalized
+      } catch {}
+    }, 10 * 60 * 1000)
   }
 }
 
 export function getEditorialEntry(kind: CalendarKind, key: string): CalendarEntry | undefined {
-  return calendar[kind]?.[key]
+  return calendarCache[kind]?.[normalizeKey(key)]
 }
+
+export function getEditorialCalendar(): CalendarData {
+  return calendarCache
+}
+
+// kick off loader
+void initEditorialCalendar()
