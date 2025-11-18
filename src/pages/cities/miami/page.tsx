@@ -5,6 +5,7 @@ import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function MiamiCityGuide() {
   const pageUrl = '/world-cup-2026-host-cities/miami';
@@ -14,13 +15,14 @@ export default function MiamiCityGuide() {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const ogImage = `${siteUrl}/images/cities/miami-world-cup-2026.webp`;
     const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami`;
+    const entry = getEditorialEntry('city','miami')
     setPageMeta({ 
       title: 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort', 
       description: 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.', 
       url: fullUrl, image: ogImage, locale: 'en_US', 
-      publishedTime: '2025-11-13T09:00:00Z', 
+      publishedTime: entry?.isPublished ? entry.datePublished : undefined, 
       modifiedTime: new Date().toISOString(), section: 'Host Cities', 
-      tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium'] 
+      tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium', ...(entry?.keywords||[])] 
     })
   }, []);
 
@@ -34,7 +36,7 @@ export default function MiamiCityGuide() {
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
     `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`,
-    { datePublished: '2025-11-13T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
+    { datePublished: (getEditorialEntry('city','miami')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
   );
 
   return (

@@ -4,6 +4,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function DallasArticlePage() {
   const pageUrl = '/world-cup-2026-host-cities/dallas';
@@ -11,16 +12,17 @@ export default function DallasArticlePage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
 
   useEffect(() => {
+    const entry = getEditorialEntry('city','dallas')
     setPageMeta({
       title: 'Dallas – World Cup 2026 Guide',
       description: 'Comprehensive Dallas travel guide for FIFA World Cup 2026: AT&T Stadium details, nine-match schedule including a semi-final, transportation, and planning tips.',
       url: `${siteUrl}${pageUrl}`,
       image: `${siteUrl}/images/cities/dallas-world-cup-2026.webp`,
       locale: 'en_US',
-      publishedTime: '2025-11-14T09:00:00Z',
+      publishedTime: entry?.isPublished ? entry.datePublished : undefined,
       modifiedTime: new Date().toISOString(),
-      section: 'Host Cities',
-      tags: ['World Cup 2026', 'Host Cities', 'Dallas', 'AT&T Stadium']
+      section: entry?.section || 'Host Cities',
+      tags: ['World Cup 2026', 'Host Cities', 'Dallas', 'AT&T Stadium', ...(entry?.keywords||[])]
     })
   }, [])
 
@@ -32,7 +34,7 @@ export default function DallasArticlePage() {
             'Dallas – World Cup 2026 Guide',
             'Comprehensive Dallas travel guide for FIFA World Cup 2026: AT&T Stadium details, nine-match schedule including a semi-final, transportation, and planning tips.',
             `${siteUrl}${pageUrl}`,
-            { datePublished: '2025-11-14T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'] }
+            { datePublished: (getEditorialEntry('city','dallas')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
