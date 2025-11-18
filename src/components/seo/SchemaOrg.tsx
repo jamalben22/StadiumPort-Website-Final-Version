@@ -247,7 +247,7 @@ export const generateGlobalSportsEventSchema = (opts: {
       addressLocality?: string;
       addressRegion?: string;
       postalCode?: string;
-      addressCountry: string | string[];
+      addressCountry: string;
     };
   };
 }) => {
@@ -312,14 +312,17 @@ export const generateGlobalSportsEventSchema = (opts: {
           name: 'United States, Canada, and Mexico',
           address: {
             '@type': 'PostalAddress',
-            addressCountry: ['US', 'CA', 'MX'],
-            addressRegion: 'North America'
+            addressLocality: 'Multiple Cities',
+            addressRegion: 'North America',
+            addressCountry: 'US'
           }
         },
     offers: {
       '@type': 'AggregateOffer',
       url: ticketUrl,
       priceCurrency: 'USD',
+      lowPrice: 60,
+      highPrice: 2030,
       availability: 'https://schema.org/InStock',
       offerCount: 1000,
       validFrom: '2025-10-01T00:00:00-00:00'
