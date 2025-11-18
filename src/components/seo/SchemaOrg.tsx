@@ -60,12 +60,22 @@ export const generateOrganizationSchema = () => ({
   }
 });
 
-export const generateTravelGuideSchema = (title: string, description: string, url: string) => ({
+export const generateTravelGuideSchema = (
+  title: string,
+  description: string,
+  url: string,
+  extras?: { datePublished?: string; dateModified?: string; inLanguage?: string; articleSection?: string; keywords?: string[] }
+) => ({
   "@context": "https://schema.org",
   "@type": "TravelGuide",
   "name": title,
   "description": description,
   "url": url,
+  ...(extras?.datePublished ? { datePublished: extras.datePublished } : {}),
+  ...(extras?.dateModified ? { dateModified: extras.dateModified } : {}),
+  ...(extras?.inLanguage ? { inLanguage: extras.inLanguage } : {}),
+  ...(extras?.articleSection ? { articleSection: extras.articleSection } : {}),
+  ...(extras?.keywords && extras.keywords.length ? { keywords: extras.keywords } : {}),
   "publisher": {
     "@type": "Organization",
     "name": "StadiumPort",

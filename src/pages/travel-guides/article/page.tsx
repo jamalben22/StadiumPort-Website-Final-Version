@@ -103,17 +103,10 @@ export default function TravelGuideArticlePage() {
     const pageUrl = `${siteUrl}/travel-guides/${slug}`
     const pageTitle = `${title} – Travel Guides | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    const publishedMap: Record<string, string> = {
-      'complete-new-york-world-cup-2026-travel-guide': '2024-12-01T00:00:00Z',
-      'los-angeles-world-cup-2026-complete-travel-guide': '2024-12-05T00:00:00Z',
-      'miami-world-cup-2026-beach-football-paradise': '2024-12-08T00:00:00Z',
-      'dallas-world-cup-2026-big-d-football-experience': '2024-12-10T00:00:00Z'
-    }
-    const publishedTime = publishedMap[slug ?? ''] || '2024-12-01T00:00:00Z'
     const cityMatch = (title || '').match(/New York|Los Angeles|Miami|Dallas|Toronto|Vancouver|Mexico City|Guadalajara|Kansas City|Boston|Philadelphia|Houston|Seattle|San Francisco/i)
     const tags = ['World Cup 2026', 'Travel Guides']
     if (cityMatch) tags.push(cityMatch[0])
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Travel Guides', tags })
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', modifiedTime: new Date().toISOString(), section: 'Travel Guides', tags })
   }, [title, slug, guide, description])
 
   return (

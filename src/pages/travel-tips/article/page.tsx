@@ -467,7 +467,7 @@ export default function TravelTipsArticlePage() {
     if (slug?.includes('packing')) tags.push('Packing')
     if (slug?.includes('connectivity')) tags.push('Connectivity')
     if (slug?.includes('itinerary')) tags.push('Itinerary')
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-05T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Tips', tags });
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', modifiedTime: new Date().toISOString(), section: 'Travel Tips', tags });
   }, [displayTitle, slug, description]);
 
   
