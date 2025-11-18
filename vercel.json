@@ -10,8 +10,7 @@
   ],
   "redirects": [
     { "source": "/world-cup-2026-cities", "destination": "/world-cup-2026-host-cities", "statusCode": 308 },
-    { "source": "/world-cup-2026-cities/:cityId", "destination": "/world-cup-2026-host-cities/:cityId", "statusCode": 308 },
-    
+    { "source": "/world-cup-2026-cities/:cityId", "destination": "/world-cup-2026-host-cities/:cityId", "statusCode": 308 }
   ],
   "headers": [
     {
