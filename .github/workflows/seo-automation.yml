@@ -53,6 +53,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      - name: Create .env.production
+        run: |
+          echo "VITE_SITE_URL=${SITE_URL}" >> .env.production
+          if [ -n "${CALENDAR_URL}" ]; then echo "VITE_EDITORIAL_CALENDAR_URL=${CALENDAR_URL}" >> .env.production; fi
+        env:
+          SITE_URL: ${{ secrets.SITE_URL }}
+          CALENDAR_URL: ${{ secrets.CALENDAR_URL }}
       - run: npm ci
       - run: npm run build
       - name: Deploy to Vercel (Production)
