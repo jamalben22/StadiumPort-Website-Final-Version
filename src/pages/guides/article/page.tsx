@@ -6,6 +6,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import AccommodationSafetyChecklistContent from './AccommodationSafetyChecklistContent'
 import LocalScamsSpotAndAvoidContent from './LocalScamsSpotAndAvoidContent'
 import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { setPageMeta } from '../../../components/seo/MetaUtils'
 
 function toTitle(slug?: string) {
   if (!slug) return 'Guide Article'
@@ -29,14 +30,15 @@ export default function GuidesArticlePage() {
   const url = `/guides/${slug ?? ''}`
 
   useEffect(() => {
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = `${siteUrl}${url}`
     const pageTitle = `${title} – Guide | StadiumPort`
-    document.title = pageTitle
+    const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
     const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
-    const metaDesc = document.querySelector('meta[name="description"]')
-    if (metaDesc) metaDesc.setAttribute('content', desc)
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image })
     const t = setTimeout(() => setVisible(true), 20)
     return () => clearTimeout(t)
-  }, [title])
+  }, [title, url])
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: '/' },

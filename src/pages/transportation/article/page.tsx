@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { setPageMeta } from '../../../components/seo/MetaUtils'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
@@ -165,42 +166,12 @@ export default function TransportationArticlePage() {
   const description = guide?.intro || 'Transportation guide with premium editorial layout.'
 
   useEffect(() => {
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = `${siteUrl}/transportation/${slug}`
     const pageTitle = `${title} – Transportation | StadiumPort`
-    document.title = pageTitle
-    const metaDesc = document.querySelector('meta[name="description"]')
-    if (metaDesc) metaDesc.setAttribute('content', description)
-
-    const ensureMeta = (selector: string, attr: 'name' | 'property', attrValue: string) => {
-      let el = document.querySelector(selector) as HTMLMetaElement | null
-      if (!el) {
-        el = document.createElement('meta')
-        el.setAttribute(attr, attrValue)
-        document.head.appendChild(el)
-      }
-      return el
-    }
-
-    const ogTitle = ensureMeta('meta[property="og:title"]', 'property', 'og:title')
-    const ogDesc = ensureMeta('meta[property="og:description"]', 'property', 'og:description')
-    const ogUrl = ensureMeta('meta[property="og:url"]', 'property', 'og:url')
-    const twTitle = ensureMeta('meta[name="twitter:title"]', 'name', 'twitter:title')
-    const twDesc = ensureMeta('meta[name="twitter:description"]', 'name', 'twitter:description')
-    const twCard = ensureMeta('meta[name="twitter:card"]', 'name', 'twitter:card')
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
-    if (!canonical) {
-      canonical = document.createElement('link')
-      canonical.setAttribute('rel', 'canonical')
-      document.head.appendChild(canonical)
-    }
-
-    ogTitle?.setAttribute('content', pageTitle)
-    ogDesc?.setAttribute('content', description)
-    ogUrl?.setAttribute('content', `${window.location.origin}/transportation/${slug}`)
-    twTitle?.setAttribute('content', pageTitle)
-    twDesc?.setAttribute('content', description)
-    twCard?.setAttribute('content', 'summary_large_image')
-    canonical?.setAttribute('href', `${window.location.origin}/transportation/${slug}`)
-  }, [title, description, slug])
+    const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image })
+  }, [title, description, slug, guide])
 
   useEffect(() => {
     if (slug === 'budget-bus-travel-intercity-connections') {

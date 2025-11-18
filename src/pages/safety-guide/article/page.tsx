@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link, useParams } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
@@ -17,13 +18,13 @@ export default function SafetyGuideArticlePage() {
   const title = "World Cup 2026 Travel Insurance: Complete Protection Guide";
 
   useEffect(() => {
-    const pageTitle = `${title} – Safety Guide | StadiumPort`;
-    document.title = pageTitle;
-
-    const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.';
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', desc);
-  }, [title]);
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = `${siteUrl}/safety-guide/${slug ?? 'world-cup-2026-safety-guide-everything-fans-need-to-know'}`
+    const pageTitle = `${title} – Safety Guide | StadiumPort`
+    const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
+    const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image })
+  }, [title, slug]);
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">

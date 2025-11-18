@@ -4,6 +4,7 @@ import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
+import { setPageMeta } from '../../../components/seo/MetaUtils'
 
 function toTitleCase(slug?: string) {
   if (!slug) return 'City Comparison'
@@ -89,11 +90,12 @@ export default function CityComparisonsArticlePage() {
   const description = guide?.intro || 'City comparison guide.'
 
   useEffect(() => {
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = `${siteUrl}/city-comparisons/${slug}`
     const pageTitle = `${title} – City Comparisons | StadiumPort`
-    document.title = pageTitle
-    const metaDesc = document.querySelector('meta[name="description"]')
-    if (metaDesc) metaDesc.setAttribute('content', description)
-  }, [title])
+    const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image })
+  }, [title, slug, guide, description])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
