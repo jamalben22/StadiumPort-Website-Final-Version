@@ -46,8 +46,4 @@
       ]
     }
   ]
-  ,
-  "crons": [
-    { "path": "/api/refresh-index", "schedule": "0 */6 * * *" }
-  ]
 }
