@@ -111,24 +111,21 @@ function DateModifiedManager() {
       key = segments[1]
     }
 
-    if (kind && key) {
-      const entry = getEditorialEntry(kind, key)
-      if (entry?.isPublished) {
-        const articleScript = document.createElement('script')
-        articleScript.id = 'jsonld-article-date-modified'
-        articleScript.type = 'application/ld+json'
-        articleScript.text = JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Article",
-          "headline": document.title || key,
-          "url": fullUrl,
-          "dateModified": now,
-          ...(entry.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
-          "inLanguage": "en-US"
-        })
-        document.head.appendChild(articleScript)
-      }
-    }
+    const entry = kind && key ? getEditorialEntry(kind, key) : undefined
+    const articleScript = document.createElement('script')
+    articleScript.id = 'jsonld-article-date-modified'
+    articleScript.type = 'application/ld+json'
+    articleScript.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": document.title || key || fullUrl,
+      "url": fullUrl,
+      "dateModified": now,
+      ...(entry?.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
+      ...(entry?.section ? { articleSection: entry.section } : {}),
+      "inLanguage": "en-US"
+    })
+    document.head.appendChild(articleScript)
   }, [location.pathname])
 
   function ensurePropertyMeta(property: string, content: string) {
