@@ -103,7 +103,7 @@ export default function TravelGuideArticlePage() {
     const pageUrl = `${siteUrl}/travel-guides/${slug}`
     const pageTitle = `${title} – Travel Guides | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image })
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Guides' })
   }, [title, slug, guide, description])
 
   return (

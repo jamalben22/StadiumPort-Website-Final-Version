@@ -463,7 +463,7 @@ export default function TravelTipsArticlePage() {
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips/${slug ?? ''}`;
     const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
     const image = `${siteUrl}${heroSrc(slug)}`;
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image });
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Tips' });
   }, [displayTitle, slug, description]);
 
   
