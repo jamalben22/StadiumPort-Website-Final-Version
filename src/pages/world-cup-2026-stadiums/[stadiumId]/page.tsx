@@ -19,6 +19,7 @@ import { EstadioAkronGuide } from '../../../components/feature/EstadioAkronGuide
 import { BCPlaceStadiumGuide } from '../../../components/feature/BCPlaceStadiumGuide';
 import { Header } from '../../../components/feature/Header';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 // Stadium data mapping
 const stadiumData = {
@@ -242,37 +243,17 @@ export default function StadiumDetailPage() {
     'estadio-akron': '/images/stadiums/estadio-akron-guadalajara-world-cup-2026.webp'
   };
 
-  // Set canonical and OG/Twitter meta images based on stadium
   useEffect(() => {
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
-    const img = `${siteUrl}${imgPath}`;
-    if (!img) return;
-
-    // canonical
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical && stadiumId) {
-      canonical.setAttribute('href', `${siteUrl}/world-cup-2026-stadiums/${stadiumId}`);
-    }
-
-    // og:image
-    let ogImage = document.querySelector('meta[property="og:image"]');
-    if (!ogImage) {
-      ogImage = document.createElement('meta');
-      ogImage.setAttribute('property', 'og:image');
-      document.head.appendChild(ogImage);
-    }
-    ogImage.setAttribute('content', img);
-
-    // twitter:image
-    let twitterImage = document.querySelector('meta[name="twitter:image"]');
-    if (!twitterImage) {
-      twitterImage = document.createElement('meta');
-      twitterImage.setAttribute('name', 'twitter:image');
-      document.head.appendChild(twitterImage);
-    }
-    twitterImage.setAttribute('content', img);
-  }, [stadiumId]);
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = stadiumId ? `${siteUrl}/world-cup-2026-stadiums/${stadiumId}` : `${siteUrl}/world-cup-2026-stadiums`
+    const title = stadium ? `${stadium.name} – World Cup 2026 Stadium Guide` : 'World Cup 2026 Stadiums'
+    const description = stadium
+      ? `${stadium.name} stadium guide: matches, capacity, transportation, and fan tips.`
+      : 'Comprehensive stadiums guide for FIFA World Cup 2026: matches, venues, and travel.'
+    const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
+    const image = `${siteUrl}${imgPath}`
+    setPageMeta({ title, description, url: pageUrl, image })
+  }, [stadiumId, stadium])
   
   if (!stadium) {
     return (

@@ -16,6 +16,7 @@ import { VancouverCityGuide } from '../components/VancouverCityGuide';
 import { MexicoCityGuide } from '../components/MexicoCityGuide';
 import { GuadalajaraCityGuide } from '../components/GuadalajaraCityGuide';
 import { MonterreyCityGuide } from '../components/MonterreyCityGuide';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
@@ -27,8 +28,59 @@ export default function CityDetailPage() {
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [cityId]);
+    window.scrollTo(0, 0)
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const pageUrl = `${siteUrl}/world-cup-2026-host-cities/${normalizedId}`
+    const titleByCity: Record<string, string> = {
+      'kansas-city': 'Kansas City – World Cup 2026 Guide',
+      'atlanta': 'Atlanta – World Cup 2026 Guide',
+      'philadelphia': 'Philadelphia – World Cup 2026 Guide',
+      'seattle': 'Seattle – World Cup 2026 Guide',
+      'san-francisco': 'San Francisco Bay Area – World Cup 2026 Guide',
+      'boston': 'Boston – World Cup 2026 Guide',
+      'toronto': 'Toronto – World Cup 2026 Guide',
+      'vancouver': 'Vancouver – World Cup 2026 Guide',
+      'mexico-city': 'Mexico City – World Cup 2026 Guide',
+      'guadalajara': 'Guadalajara – World Cup 2026 Guide',
+      'monterrey': 'Monterrey – World Cup 2026 Guide',
+      'houston': 'Houston – World Cup 2026 Guide'
+    }
+    const descByCity: Record<string, string> = {
+      'kansas-city': 'Comprehensive Kansas City guide: Arrowhead Stadium details, transportation, and where to stay.',
+      'atlanta': 'Comprehensive Atlanta guide: Mercedes-Benz Stadium details, transportation, and where to stay.',
+      'philadelphia': 'Comprehensive Philadelphia guide: Lincoln Financial Field details, transportation, and where to stay.',
+      'seattle': 'Comprehensive Seattle guide: Lumen Field details, transportation, and where to stay.',
+      'san-francisco': "Comprehensive Bay Area guide: Levi's Stadium details, transportation, and where to stay.",
+      'boston': 'Comprehensive Boston guide: Gillette Stadium details, transportation, and where to stay.',
+      'toronto': 'Comprehensive Toronto guide: BMO Field details, transportation, and where to stay.',
+      'vancouver': 'Comprehensive Vancouver guide: BC Place details, transportation, and where to stay.',
+      'mexico-city': 'Comprehensive Mexico City guide: Estadio Azteca details, transportation, and where to stay.',
+      'guadalajara': 'Comprehensive Guadalajara guide: Estadio Akron details, transportation, and where to stay.',
+      'monterrey': 'Comprehensive Monterrey guide: Estadio BBVA details, transportation, and where to stay.',
+      'houston': 'Comprehensive Houston guide: NRG Stadium details, transportation, and where to stay.'
+    }
+    const imageByCity: Record<string, string> = {
+      'kansas-city': '/images/cities/kansas-city-world-cup-2026.webp',
+      'atlanta': '/images/cities/atlanta-world-cup-2026.webp',
+      'philadelphia': '/images/cities/philadelphia-world-cup-2026.webp',
+      'seattle': '/images/cities/seattle-world-cup-2026.webp',
+      'san-francisco': '/images/cities/san-francisco-world-cup-2026.webp',
+      'boston': '/images/cities/boston-world-cup-2026.webp',
+      'toronto': '/images/cities/toronto-world-cup-2026.webp',
+      'vancouver': '/images/cities/vancouver-world-cup-2026.webp',
+      'mexico-city': '/images/cities/mexico-city-world-cup-2026.webp',
+      'guadalajara': '/images/cities/guadalajara-world-cup-2026.webp',
+      'monterrey': '/images/cities/monterrey-world-cup-2026.webp',
+      'houston': '/images/cities/houston-world-cup-2026.webp'
+    }
+    const title = titleByCity[normalizedId]
+    const description = descByCity[normalizedId]
+    const imgPath = imageByCity[normalizedId]
+    if (title && description) {
+      const image = imgPath ? `${siteUrl}${imgPath}` : undefined
+      setPageMeta({ title, description, url: pageUrl, image })
+    }
+  }, [cityId, normalizedId])
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section);

@@ -249,6 +249,10 @@ const routes: RouteObject[] = [
     element: <VenuesPage />
   },
   {
+    path: '/venues',
+    element: <Navigate to="/world-cup-2026-stadiums" replace />
+  },
+  {
     path: '/world-cup-2026-stadiums/:stadiumId',
     element: <StadiumDetailPage />
   },
