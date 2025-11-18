@@ -94,7 +94,9 @@ export default function CityComparisonsArticlePage() {
     const pageUrl = `${siteUrl}/city-comparisons/${slug}`
     const pageTitle = `${title} – City Comparisons | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'City Comparisons' })
+    const cities = (title || '').match(/New York|Los Angeles|Miami|Dallas|Toronto|Vancouver|Mexico City|Guadalajara|Kansas City|Boston|Philadelphia|Houston|Seattle|San Francisco/gi) || []
+    const tags = ['World Cup 2026', 'City Comparisons', ...cities]
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-06T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'City Comparisons', tags })
   }, [title, slug, guide, description])
 
   return (

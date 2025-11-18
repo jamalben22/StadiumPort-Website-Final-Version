@@ -463,7 +463,11 @@ export default function TravelTipsArticlePage() {
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips/${slug ?? ''}`;
     const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
     const image = `${siteUrl}${heroSrc(slug)}`;
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Tips' });
+    const tags = ['World Cup 2026', 'Travel Tips']
+    if (slug?.includes('packing')) tags.push('Packing')
+    if (slug?.includes('connectivity')) tags.push('Connectivity')
+    if (slug?.includes('itinerary')) tags.push('Itinerary')
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-05T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Travel Tips', tags });
   }, [displayTitle, slug, description]);
 
   

@@ -170,7 +170,27 @@ export default function TransportationArticlePage() {
     const pageUrl = `${siteUrl}/transportation/${slug}`
     const pageTitle = `${title} – Transportation | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Transportation' })
+    const publishedMap: Record<string, string> = {
+      'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide': '2024-12-02T00:00:00Z',
+      'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium': '2024-12-06T00:00:00Z',
+      'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium': '2024-12-09T00:00:00Z',
+      'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium': '2024-12-11T00:00:00Z',
+      'kansas-city-world-cup-2026-your-complete-transportation-guide-to-arrowhead-stadium': '2024-12-12T00:00:00Z',
+      'atlanta-world-cup-2026-your-complete-transportation-guide-to-mercedes-benz-stadium': '2024-12-13T00:00:00Z',
+      'philadelphia-world-cup-2026-your-complete-transportation-guide-to-lincoln-financial-field': '2024-12-14T00:00:00Z',
+      'houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium': '2024-12-15T00:00:00Z',
+      'seattle-world-cup-2026-your-complete-transportation-guide-to-lumen-field': '2024-12-16T00:00:00Z',
+      'mexico-city-world-cup-2026-transportation-guide-to-estadio-azteca': '2024-12-17T00:00:00Z',
+      'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron': '2024-12-18T00:00:00Z',
+      'monterrey-world-cup-2026-transportation-guide-to-estadio-bbva': '2024-12-19T00:00:00Z',
+      'toronto-world-cup-2026-transportation-guide-to-bmo-field': '2024-12-20T00:00:00Z',
+      'vancouver-world-cup-2026-transportation-guide-to-bc-place': '2024-12-21T00:00:00Z'
+    }
+    const publishedTime = publishedMap[slug ?? ''] || '2024-12-02T00:00:00Z'
+    const stadiumMatch = (title || '').match(/SoFi Stadium|Hard Rock Stadium|AT&T Stadium|Arrowhead Stadium|Mercedes-Benz Stadium|Lincoln Financial Field|NRG Stadium|Lumen Field|Estadio Azteca|Estadio Akron|Estadio BBVA|BMO Field|BC Place/i)
+    const tags = ['World Cup 2026', 'Transportation']
+    if (stadiumMatch) tags.push(stadiumMatch[0])
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Transportation', tags })
   }, [title, description, slug, guide])
 
   useEffect(() => {

@@ -23,7 +23,8 @@ export default function SafetyGuideArticlePage() {
     const pageTitle = `${title} – Safety Guide | StadiumPort`
     const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
     const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
-    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-01-01T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Safety Guide' })
+    const tags = ['World Cup 2026', 'Safety Guide', 'Travel Insurance']
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-11-28T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Safety Guide', tags })
   }, [title, slug]);
 
   return (
