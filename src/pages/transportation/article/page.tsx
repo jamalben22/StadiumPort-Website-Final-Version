@@ -241,7 +241,27 @@ export default function TransportationArticlePage() {
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
-        generateTravelGuideSchema(title || 'Transport Guide', description || 'Transport guide', `/transportation/${slug}`),
+        generateTravelGuideSchema(
+          title || 'Transport Guide',
+          description || 'Transport guide',
+          `/transportation/${slug}`,
+          {
+            datePublished: (function(){
+              const map: Record<string,string> = {
+                'new-york-new-jersey-world-cup-2026-your-complete-getting-around-guide': new Date(Date.now() - 7*24*60*60*1000).toISOString(),
+                'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium': new Date(Date.now() - 6*24*60*60*1000).toISOString(),
+                'miami-world-cup-2026-your-complete-transportation-guide-to-hard-rock-stadium': new Date(Date.now() - 5*24*60*60*1000).toISOString(),
+                'dallas-world-cup-2026-your-complete-transportation-guide-to-att-stadium': new Date(Date.now() - 4*24*60*60*1000).toISOString(),
+                'houston-world-cup-2026-your-complete-transportation-guide-to-nrg-stadium': new Date(Date.now() - 3*24*60*60*1000).toISOString(),
+                'seattle-world-cup-2026-your-complete-transportation-guide-to-lumen-field': new Date(Date.now() - 2*24*60*60*1000).toISOString()
+              }
+              return map[slug ?? '']
+            })(),
+            dateModified: new Date().toISOString(),
+            inLanguage: 'en-US',
+            articleSection: 'Transportation'
+          }
+        ),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Transportation', url: '/transportation' },
