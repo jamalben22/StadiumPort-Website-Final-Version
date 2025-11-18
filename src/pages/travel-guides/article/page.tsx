@@ -1,7 +1,7 @@
 
 import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
-import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema, generateGlobalSportsEventSchema } from '../../../components/seo/SchemaOrg'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -115,6 +115,7 @@ export default function TravelGuideArticlePage() {
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
         generateTravelGuideSchema(title || 'Travel Guide', description || 'Travel guide', `/travel-guides/${slug}`,{ datePublished: (getEditorialEntry('article',(slug || ''))?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Travel Guides', keywords: ['World Cup 2026'] }),
+        generateGlobalSportsEventSchema({ url: `${(import.meta.env.VITE_SITE_URL as string) || 'https://stadiumport.com'}/travel-guides/${slug}` }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Travel Guides', url: '/travel-guides' },
