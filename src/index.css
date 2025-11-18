@@ -233,6 +233,35 @@ body.dark {
       radial-gradient(ellipse at center, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 50%, transparent 100%);
     animation: stellar 7s ease-in-out infinite;
   }
+.breadcrumb-ultra-premium { position: relative; margin: 0 auto; max-width: 100%; width: 100%; }
+.breadcrumb-ultra-premium ol { display: flex; align-items: center; gap: 0.125rem; padding: 0; margin: 0; list-style: none; width: 100%; flex-wrap: nowrap; }
+.breadcrumb-item { position: relative; display: flex; align-items: center; flex-shrink: 0; min-width: 0; }
+.breadcrumb-item:last-child { flex-shrink: 1; min-width: 0; }
+.breadcrumb-link span, .breadcrumb-current span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; max-width: 100%; }
+.breadcrumb-link { display: inline-flex; align-items: center; padding: 0.5rem 0.75rem; font-size: 0.8125rem; font-weight: 500; color: #f3f4f6; text-decoration: none; border-radius: 0.375rem; transition: all 0.2s ease; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.dark .breadcrumb-link { color: #f3f4f6; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); }
+.breadcrumb-link:hover { color: #ffffff; background-color: rgba(255, 255, 255, 0.15); }
+.dark .breadcrumb-link:hover { color: #f9fafb; background-color: rgba(255, 255, 255, 0.08); }
+.breadcrumb-current { display: inline-flex; align-items: center; padding: 0.5rem 0.75rem; font-size: 0.8125rem; font-weight: 600; color: #ffffff; background-color: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 0.375rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 200px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); }
+.dark .breadcrumb-current { color: #ffffff; background-color: rgba(16, 185, 129, 0.25); border: 1px solid rgba(16, 185, 129, 0.4); }
+.breadcrumb-separator { display: flex; align-items: center; color: #e5e7eb; font-size: 0.875rem; font-weight: 600; margin: 0 0.125rem; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+.dark .breadcrumb-separator { color: #9ca3af; text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3); }
+.breadcrumb-icon { width: 0.875rem; height: 0.875rem; margin-right: 0.375rem; opacity: 0.9; transition: all 0.2s ease; flex-shrink: 0; color: #f3f4f6; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3)); }
+.dark .breadcrumb-icon { color: #9ca3af; opacity: 0.95; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3)); }
+.breadcrumb-link:hover .breadcrumb-icon { opacity: 1; color: #ffffff; transform: scale(1.05); }
+.dark .breadcrumb-link:hover .breadcrumb-icon { color: #f3f4f6; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4)); }
+@media (min-width: 1024px) { .breadcrumb-ultra-premium { max-width: 100%; } .breadcrumb-current { max-width: none; flex: 0 1 auto; } }
+@media (min-width: 768px) and (max-width: 1023px) { .breadcrumb-link, .breadcrumb-current { padding: 0.5rem 0.625rem; font-size: 0.8125rem; } .breadcrumb-current { max-width: 300px; } }
+@media (max-width: 767px) { .breadcrumb-ultra-premium ol { gap: 0.0625rem; flex-wrap: nowrap; overflow: hidden; } .breadcrumb-link, .breadcrumb-current { padding: 0.375rem 0.5rem; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 140px; } .breadcrumb-item { min-width: 0; flex-shrink: 1; } .breadcrumb-item:first-child .breadcrumb-link { max-width: 80px; } .breadcrumb-item:nth-child(3) .breadcrumb-link { max-width: 100px; } .breadcrumb-current { max-width: 160px; } .breadcrumb-icon { width: 0.75rem; height: 0.75rem; margin-right: 0.25rem; flex-shrink: 0; } .breadcrumb-separator { font-size: 0.6875rem; margin: 0 0.0625rem; flex-shrink: 0; } }
+@media (max-width: 480px) { .breadcrumb-link { padding: 0.375rem 0.375rem; font-size: 0.6875rem; max-width: 100px; } .breadcrumb-item:first-child .breadcrumb-link { max-width: 60px; } .breadcrumb-item:nth-child(3) .breadcrumb-link { max-width: 80px; } .breadcrumb-current { padding: 0.375rem 0.5rem; font-size: 0.6875rem; max-width: 120px; } .breadcrumb-icon { width: 0.75rem; height: 0.75rem; margin-right: 0.25rem; stroke-width: 2.5; } .breadcrumb-separator { font-size: 0.625rem; margin: 0 0.0625rem; }
+}
+@media (max-width: 360px) { .breadcrumb-link { padding: 0.25rem 0.375rem; font-size: 0.625rem; max-width: 80px; } .breadcrumb-item:first-child .breadcrumb-link { max-width: 50px; } .breadcrumb-item:nth-child(3) .breadcrumb-link { max-width: 65px; } .breadcrumb-current { padding: 0.25rem 0.375rem; font-size: 0.625rem; max-width: 90px; } .breadcrumb-icon { width: 0.625rem; height: 0.625rem; margin-right: 0.125rem; stroke-width: 3; } .breadcrumb-separator { font-size: 0.5625rem; margin: 0 0.03125rem; }
+}
+@media (max-width: 320px) { .breadcrumb-link span, .breadcrumb-current span { font-size: 0.5625rem; } .breadcrumb-link { padding: 0.25rem 0.25rem; max-width: 70px; } .breadcrumb-item:first-child .breadcrumb-link { max-width: 40px; } .breadcrumb-item:nth-child(3) .breadcrumb-link { max-width: 55px; } .breadcrumb-current { max-width: 75px; }
+}
+@keyframes breadcrumbFadeIn { from { opacity: 0; transform: translateY(-2px); } to { opacity: 1; transform: translateY(0); } }
+.breadcrumb-ultra-premium { animation: breadcrumbFadeIn 0.4s ease-out; }
+@media (prefers-color-scheme: dark) { .breadcrumb-link, .breadcrumb-current, .breadcrumb-separator { transition: all 0.3s ease; } }
 
 .nav-premium {
   @apply bg-transparent dark:bg-transparent border-b border-white/20 dark:border-navy-700/20;

@@ -111,10 +111,6 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
 
               <div className="editorial-hero-content">
                 <div className="editorial-hero-inner">
-                  <div className="editorial-hero-eyebrow">
-                    <span className="editorial-hero-pulse"></span>
-                    <span>World Cup 2026</span>
-                  </div>
                   <h1 className="editorial-hero-title">Estadio BBVA</h1>
                   <div className="editorial-hero-meta">
                     <div className="meta-item flex items-center gap-2">

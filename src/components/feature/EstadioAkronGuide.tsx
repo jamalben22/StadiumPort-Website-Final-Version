@@ -78,7 +78,6 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               </div>
               <div className="editorial-hero-content">
                 <div className="editorial-hero-inner">
-                  <div className="editorial-hero-eyebrow">FIFA World Cup 2026</div>
                   <h1 className="editorial-hero-title">Estadio Akron</h1>
                   <div className="editorial-hero-meta">~49,850 capacity · Guadalajara, Mexico</div>
                 </div>
