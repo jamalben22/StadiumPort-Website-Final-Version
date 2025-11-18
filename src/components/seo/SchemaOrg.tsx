@@ -148,11 +148,7 @@ export const generateBreadcrumbSchema = (breadcrumbs: Array<{name: string, url: 
       "@type": "ListItem",
       "position": index + 1,
       "name": item.name,
-      "item": {
-        "@type": "WebPage",
-        "@id": absolute,
-        "url": absolute
-      }
+      "item": absolute
     };
   })
 });
@@ -235,3 +231,65 @@ export const generateCollectionPageSchema = (
     })),
   },
 });
+
+export const generateGlobalSportsEventSchema = (opts: {
+  name?: string;
+  description?: string;
+  url?: string;
+  startDate?: string;
+  endDate?: string;
+  imageUrl?: string;
+  ticketUrl?: string;
+}) => {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const {
+    name = 'FIFA World Cup 2026',
+    description = 'International football tournament hosted across USA, Canada, and Mexico in 2026.',
+    url = siteUrl,
+    startDate = '2026-06-11',
+    endDate = '2026-07-19',
+    imageUrl = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`,
+    ticketUrl = 'https://www.fifa.com/worldcup/tickets/'
+  } = opts || ({} as any);
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'SportsEvent',
+    name,
+    description,
+    startDate,
+    endDate,
+    eventStatus: 'https://schema.org/EventScheduled',
+    image: imageUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'FIFA',
+      url: 'https://www.fifa.com'
+    },
+    performer: {
+      '@type': 'SportsTeam',
+      name: 'World Cup 2026 Teams'
+    },
+    location: {
+      '@type': 'Place',
+      name: 'North America',
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: 'USA / Canada / Mexico',
+        addressCountry: 'US'
+      }
+    },
+    offers: {
+      '@type': 'AggregateOffer',
+      url: ticketUrl,
+      priceCurrency: 'USD',
+      availability: 'https://schema.org/InStock',
+      offerCount: 1000,
+      validFrom: '2025-09-10T00:00:00Z'
+    }
+  };
+};
