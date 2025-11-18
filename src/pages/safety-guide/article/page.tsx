@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 import { Link, useParams } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
@@ -24,7 +25,8 @@ export default function SafetyGuideArticlePage() {
     const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
     const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
     const tags = ['World Cup 2026', 'Safety Guide', 'Travel Insurance']
-    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-11-28T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'Safety Guide', tags })
+    const entry = getEditorialEntry('article',(slug || 'world-cup-2026-safety-guide-everything-fans-need-to-know'))
+    setPageMeta({ title: pageTitle, description: desc, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: 'Safety Guide', tags: [...tags, ...((entry?.keywords)||[])] })
   }, [title, slug]);
 
   return (
