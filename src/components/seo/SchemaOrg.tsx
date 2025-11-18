@@ -240,16 +240,27 @@ export const generateGlobalSportsEventSchema = (opts: {
   endDate?: string;
   imageUrl?: string;
   ticketUrl?: string;
+  locationOverride?: {
+    name: string;
+    address: {
+      streetAddress?: string;
+      addressLocality?: string;
+      addressRegion?: string;
+      postalCode?: string;
+      addressCountry: string | string[];
+    };
+  };
 }) => {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const {
     name = 'FIFA World Cup 2026',
-    description = 'International football tournament hosted across USA, Canada, and Mexico in 2026.',
+    description = 'The 23rd FIFA World Cup, featuring 48 teams competing across 104 matches in 16 cities across the United States, Canada, and Mexico from June 11 to July 19, 2026.',
     url = siteUrl,
     startDate = '2026-06-11',
     endDate = '2026-07-19',
     imageUrl = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`,
-    ticketUrl = 'https://www.fifa.com/worldcup/tickets/'
+    ticketUrl = 'https://www.fifa.com/en/tickets',
+    locationOverride
   } = opts || ({} as any);
 
   return {
@@ -260,6 +271,7 @@ export const generateGlobalSportsEventSchema = (opts: {
     startDate,
     endDate,
     eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     image: imageUrl,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -272,24 +284,45 @@ export const generateGlobalSportsEventSchema = (opts: {
     },
     performer: {
       '@type': 'SportsTeam',
-      name: 'World Cup 2026 Teams'
+      name: 'FIFA World Cup 2026 Qualified Teams'
     },
-    location: {
-      '@type': 'Place',
-      name: 'North America',
-      address: {
-        '@type': 'PostalAddress',
-        addressRegion: 'USA / Canada / Mexico',
-        addressCountry: 'US'
-      }
-    },
+    location: locationOverride
+      ? {
+          '@type': 'Place',
+          name: locationOverride.name,
+          address: {
+            '@type': 'PostalAddress',
+            ...(locationOverride.address.streetAddress
+              ? { streetAddress: locationOverride.address.streetAddress }
+              : {}),
+            ...(locationOverride.address.addressLocality
+              ? { addressLocality: locationOverride.address.addressLocality }
+              : {}),
+            ...(locationOverride.address.addressRegion
+              ? { addressRegion: locationOverride.address.addressRegion }
+              : {}),
+            ...(locationOverride.address.postalCode
+              ? { postalCode: locationOverride.address.postalCode }
+              : {}),
+            addressCountry: locationOverride.address.addressCountry
+          }
+        }
+      : {
+          '@type': 'Place',
+          name: 'United States, Canada, and Mexico',
+          address: {
+            '@type': 'PostalAddress',
+            addressCountry: ['US', 'CA', 'MX'],
+            addressRegion: 'North America'
+          }
+        },
     offers: {
       '@type': 'AggregateOffer',
       url: ticketUrl,
       priceCurrency: 'USD',
       availability: 'https://schema.org/InStock',
       offerCount: 1000,
-      validFrom: '2025-09-10T00:00:00Z'
+      validFrom: '2025-10-01T00:00:00-00:00'
     }
   };
 };

@@ -1,6 +1,6 @@
 import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
-import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema, generateGlobalSportsEventSchema } from '../../../components/seo/SchemaOrg'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
@@ -105,6 +105,7 @@ export default function CityComparisonsArticlePage() {
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
         generateTravelGuideSchema(title || 'City Comparison', description || 'City comparison', `/city-comparisons/${slug}`),
+        generateGlobalSportsEventSchema({ url: `${(import.meta.env.VITE_SITE_URL as string) || 'https://stadiumport.com'}/city-comparisons/${slug}` }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'City Comparisons', url: '/city-comparisons' },

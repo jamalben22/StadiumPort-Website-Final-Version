@@ -5,7 +5,7 @@ import { Footer } from '../../../components/feature/Footer'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import AccommodationSafetyChecklistContent from './AccommodationSafetyChecklistContent'
 import LocalScamsSpotAndAvoidContent from './LocalScamsSpotAndAvoidContent'
-import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema, generateGlobalSportsEventSchema } from '../../../components/seo/SchemaOrg'
 import { setPageMeta } from '../../../components/seo/MetaUtils'
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar'
 
@@ -51,11 +51,13 @@ export default function GuidesArticlePage() {
   ])
 
   const guideSchema = generateTravelGuideSchema(title, 'Guide article placeholder content', url)
+  const eventSchema = generateGlobalSportsEventSchema({ url: `${(import.meta.env.VITE_SITE_URL as string) || 'https://stadiumport.com'}${url}` })
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={guideSchema} />
+      <SchemaOrg schema={eventSchema} />
       <Header />
 
       <section className={`editorial-hero ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} transition-all duration-700`}>

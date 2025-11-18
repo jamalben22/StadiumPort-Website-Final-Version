@@ -4,7 +4,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
-import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema, generateGlobalSportsEventSchema } from '../../../components/seo/SchemaOrg'
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
@@ -238,6 +238,7 @@ export default function TransportationArticlePage() {
             articleSection: 'Transportation'
           }
         ),
+        generateGlobalSportsEventSchema({ url: `${(import.meta.env.VITE_SITE_URL as string) || 'https://stadiumport.com'}/transportation/${slug}` }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Transportation', url: '/transportation' },

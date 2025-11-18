@@ -3,7 +3,7 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
-import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg';
+import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema, generateGlobalSportsEventSchema } from '../../../components/seo/SchemaOrg';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 import ReactMarkdown from 'react-markdown';
@@ -554,6 +554,7 @@ export default function TravelTipsArticlePage() {
       <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
         generateTravelGuideSchema(title || 'Travel Tip', description || 'Travel tip guide', `/world-cup-2026-travel-tips/${slug}`),
+        generateGlobalSportsEventSchema({ url: `${(import.meta.env.VITE_SITE_URL as string) || 'https://stadiumport.com'}/world-cup-2026-travel-tips/${slug}` }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Travel Tips', url: '/world-cup-2026-travel-tips' },
