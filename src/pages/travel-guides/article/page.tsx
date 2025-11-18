@@ -6,6 +6,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { setPageMeta } from '../../../components/seo/MetaUtils'
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar'
 
 function toTitleCase(slug?: string) {
   if (!slug) return 'Travel Guide'
@@ -106,13 +107,14 @@ export default function TravelGuideArticlePage() {
     const cityMatch = (title || '').match(/New York|Los Angeles|Miami|Dallas|Toronto|Vancouver|Mexico City|Guadalajara|Kansas City|Boston|Philadelphia|Houston|Seattle|San Francisco/i)
     const tags = ['World Cup 2026', 'Travel Guides']
     if (cityMatch) tags.push(cityMatch[0])
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', modifiedTime: new Date().toISOString(), section: 'Travel Guides', tags })
+    const entry = getEditorialEntry('article', (slug || ''))
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: 'Travel Guides', tags: [...tags, ...((entry?.keywords) || [])] })
   }, [title, slug, guide, description])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
-        generateTravelGuideSchema(title || 'Travel Guide', description || 'Travel guide', `/travel-guides/${slug}`),
+        generateTravelGuideSchema(title || 'Travel Guide', description || 'Travel guide', `/travel-guides/${slug}`,{ datePublished: (getEditorialEntry('article',(slug || ''))?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Travel Guides', keywords: ['World Cup 2026'] }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Travel Guides', url: '/travel-guides' },

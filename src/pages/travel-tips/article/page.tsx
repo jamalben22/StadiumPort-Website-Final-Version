@@ -5,6 +5,7 @@ import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -467,7 +468,8 @@ export default function TravelTipsArticlePage() {
     if (slug?.includes('packing')) tags.push('Packing')
     if (slug?.includes('connectivity')) tags.push('Connectivity')
     if (slug?.includes('itinerary')) tags.push('Itinerary')
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', modifiedTime: new Date().toISOString(), section: 'Travel Tips', tags });
+    const entry = getEditorialEntry('article',(slug || ''))
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: 'Travel Tips', tags: [...tags, ...((entry?.keywords)||[])] });
   }, [displayTitle, slug, description]);
 
   

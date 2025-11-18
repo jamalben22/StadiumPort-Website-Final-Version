@@ -5,6 +5,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { setPageMeta } from '../../../components/seo/MetaUtils'
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar'
 
 function toTitleCase(slug?: string) {
   if (!slug) return 'City Comparison'
@@ -96,7 +97,8 @@ export default function CityComparisonsArticlePage() {
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
     const cities = (title || '').match(/New York|Los Angeles|Miami|Dallas|Toronto|Vancouver|Mexico City|Guadalajara|Kansas City|Boston|Philadelphia|Houston|Seattle|San Francisco/gi) || []
     const tags = ['World Cup 2026', 'City Comparisons', ...cities]
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2024-12-06T00:00:00Z', modifiedTime: new Date().toISOString(), section: 'City Comparisons', tags })
+    const entry = getEditorialEntry('article',(slug || ''))
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: 'City Comparisons', tags: [...tags, ...((entry?.keywords)||[])] })
   }, [title, slug, guide, description])
 
   return (

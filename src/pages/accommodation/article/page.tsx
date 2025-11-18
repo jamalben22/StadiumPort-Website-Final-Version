@@ -5,6 +5,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { Link, useParams } from 'react-router-dom'
 import { useEffect } from 'react'
 import { setPageMeta } from '../../../components/seo/MetaUtils'
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar'
 
 function toTitleCase(slug?: string) {
   if (!slug) return 'Accommodation Guide'
@@ -94,13 +95,14 @@ export default function AccommodationArticlePage() {
     const pageUrl = `${siteUrl}/accommodation/${slug}`
     const pageTitle = `${title} – Accommodation | StadiumPort`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
-    setPageMeta({ title: pageTitle, description, url: pageUrl, image })
+    const entry = getEditorialEntry('article',(slug || ''))
+    setPageMeta({ title: pageTitle, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: 'Accommodation', tags: ['World Cup 2026', 'Accommodation', ...((entry?.keywords)||[])] })
   }, [title, slug, guide, description])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <SchemaOrg schema={[
-        generateTravelGuideSchema(title || 'Accommodation Guide', description || 'Accommodation guide', `/accommodation/${slug}`),
+        generateTravelGuideSchema(title || 'Accommodation Guide', description || 'Accommodation guide', `/accommodation/${slug}`, { datePublished: (getEditorialEntry('article',(slug || ''))?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Accommodation', keywords: ['World Cup 2026'] }),
         generateBreadcrumbSchema([
           { name: 'Home', url: '/' },
           { name: 'Accommodation', url: '/accommodation' },
