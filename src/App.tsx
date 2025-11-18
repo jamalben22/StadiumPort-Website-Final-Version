@@ -121,8 +121,26 @@ function DateModifiedManager() {
       "headline": document.title || key || fullUrl,
       "url": fullUrl,
       "dateModified": now,
+      ...(entry?.datePublished ? { datePublished: entry.datePublished } : {}),
       ...(entry?.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
       ...(entry?.section ? { articleSection: entry.section } : {}),
+      "author": {
+        "@type": "Organization",
+        "name": "StadiumPort Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "StadiumPort",
+        "url": siteUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": `${siteUrl}/favicon.ico`
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": fullUrl
+      },
       "inLanguage": "en-US"
     })
     document.head.appendChild(articleScript)
