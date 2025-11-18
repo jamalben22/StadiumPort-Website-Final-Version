@@ -93,12 +93,22 @@ export const generateTravelGuideSchema = (
   }
 });
 
-export const generateCityGuideSchema = (cityName: string, description: string, url: string) => ({
+export const generateCityGuideSchema = (
+  cityName: string,
+  description: string,
+  url: string,
+  extras?: { datePublished?: string; dateModified?: string; inLanguage?: string; articleSection?: string; keywords?: string[] }
+) => ({
   "@context": "https://schema.org",
   "@type": "TravelGuide",
   "name": `${cityName} World Cup 2026 Travel Guide`,
   "description": description,
   "url": url,
+  ...(extras?.datePublished ? { datePublished: extras.datePublished } : {}),
+  ...(extras?.dateModified ? { dateModified: extras.dateModified } : {}),
+  ...(extras?.inLanguage ? { inLanguage: extras.inLanguage } : {}),
+  ...(extras?.articleSection ? { articleSection: extras.articleSection } : {}),
+  ...(extras?.keywords && extras.keywords.length ? { keywords: extras.keywords } : {}),
   "about": {
     "@type": "City",
     "name": cityName

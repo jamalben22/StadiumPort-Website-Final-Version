@@ -4,37 +4,24 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export default function MiamiCityGuide() {
   const pageUrl = '/world-cup-2026-host-cities/miami';
   useEffect(() => {
     window.scrollTo(0, 0);
     
-    // Update meta tags
-    document.title = 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.');
-    }
-
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${siteUrl}/world-cup-2026-host-cities/miami`);
-    }
-
-    // Optional: set OG/Twitter images consistently
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
-      if (el) el.setAttribute(attr, value);
-    };
     const ogImage = `${siteUrl}/images/cities/miami-world-cup-2026.webp`;
     const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami`;
-    setMeta('meta[property="og:url"]', 'content', fullUrl);
-    setMeta('meta[property="og:image"]', 'content', ogImage);
-    setMeta('meta[property="twitter:url"]', 'content', fullUrl);
-    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+    setPageMeta({ 
+      title: 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort', 
+      description: 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.', 
+      url: fullUrl, image: ogImage, locale: 'en_US', 
+      publishedTime: new Date(Date.now() - 5*24*60*60*1000).toISOString(), 
+      modifiedTime: new Date().toISOString(), section: 'Host Cities', 
+      tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium'] 
+    })
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -46,7 +33,8 @@ export default function MiamiCityGuide() {
   const cityGuideSchema = generateCityGuideSchema(
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
-    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`,
+    { datePublished: new Date(Date.now() - 5*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
   );
 
   return (

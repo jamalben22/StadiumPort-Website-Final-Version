@@ -78,7 +78,10 @@ export default function CityDetailPage() {
     const imgPath = imageByCity[normalizedId]
     if (title && description) {
       const image = imgPath ? `${siteUrl}${imgPath}` : undefined
-      setPageMeta({ title, description, url: pageUrl, image })
+      const publishedMap: Record<string, string> = {
+        'houston': new Date(Date.now() - 3*24*60*60*1000).toISOString()
+      }
+      setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: publishedMap[normalizedId], modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', title] })
     }
   }, [cityId, normalizedId])
 
@@ -151,7 +154,8 @@ export default function CityDetailPage() {
             generateCityGuideSchema(
               'Houston – World Cup 2026 Guide',
               'Comprehensive Houston travel guide for FIFA World Cup 2026: NRG Stadium details, match schedule, transportation, and where to stay.',
-              `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/houston`
+              `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/houston`,
+              { datePublished: new Date(Date.now() - 3*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Houston', 'NRG Stadium'] }
             ),
             generateBreadcrumbSchema([
               { name: 'Home', url: '/' },
