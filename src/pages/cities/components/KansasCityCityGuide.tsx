@@ -4,6 +4,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function KansasCityCityGuide() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
@@ -14,21 +15,7 @@ export function KansasCityCityGuide() {
     const description = 'Complete Kansas City World Cup 2026 travel guide: Arrowhead Stadium details, match schedule, transportation, hotels, and attractions.';
     const fullUrl = `${siteUrl}${pageUrl}`;
     const ogImage = `${siteUrl}/images/cities/kansas-city-world-cup-2026.webp`;
-    document.title = title;
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
-      if (el) el.setAttribute(attr, value);
-    };
-    setMeta('meta[name="description"]', 'content', description);
-    setMeta('link[rel="canonical"]', 'href', fullUrl);
-    setMeta('meta[property="og:title"]', 'content', title);
-    setMeta('meta[property="og:description"]', 'content', description);
-    setMeta('meta[property="og:url"]', 'content', fullUrl);
-    setMeta('meta[property="og:image"]', 'content', ogImage);
-    setMeta('meta[property="twitter:title"]', 'content', title);
-    setMeta('meta[property="twitter:description"]', 'content', description);
-    setMeta('meta[property="twitter:url"]', 'content', fullUrl);
-    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Kansas City', 'Arrowhead Stadium'] })
   }, []);
 
   return (
@@ -38,7 +25,8 @@ export function KansasCityCityGuide() {
           generateCityGuideSchema(
             'Kansas City – World Cup 2026 Guide',
             'Complete Kansas City World Cup 2026 travel guide: Arrowhead Stadium details, match schedule, transportation, hotels, and attractions.',
-            `${siteUrl}${pageUrl}`
+            `${siteUrl}${pageUrl}`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Kansas City', 'Arrowhead Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },

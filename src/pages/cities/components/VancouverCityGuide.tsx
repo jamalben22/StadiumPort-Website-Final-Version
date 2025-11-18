@@ -4,6 +4,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function VancouverCityGuide() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
@@ -17,7 +18,8 @@ export function VancouverCityGuide() {
           generateCityGuideSchema(
             'Vancouver World Cup 2026 – BC Place & Pacific Coast Guide',
             'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.',
-            `${siteUrl}/world-cup-2026-host-cities/vancouver`
+            `${siteUrl}/world-cup-2026-host-cities/vancouver`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Vancouver', 'BC Place'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
@@ -55,6 +57,7 @@ export function VancouverCityGuide() {
           setMeta('meta[property="twitter:description"]', 'content', description);
           setMeta('meta[property="twitter:url"]', 'content', pageUrl);
           setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Vancouver', 'BC Place'] })
         }, []);
         return null;
       })()}

@@ -3,6 +3,7 @@ import { Footer } from '../../../components/feature/Footer';
 import { Link } from 'react-router-dom';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function SeattleCityGuide() {
   return (
@@ -13,7 +14,8 @@ export function SeattleCityGuide() {
           generateCityGuideSchema(
             'Seattle – World Cup 2026 Guide',
             'Comprehensive Seattle travel guide for FIFA World Cup 2026: Lumen Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/seattle`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/seattle`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Seattle', 'Lumen Field'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },

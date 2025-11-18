@@ -4,6 +4,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function BostonCityGuide() {
   return (
@@ -14,7 +15,8 @@ export function BostonCityGuide() {
           generateCityGuideSchema(
             'Boston World Cup 2026 – Gillette Stadium & City Guide',
             "Highlight Boston’s mix of history and sports passion, showcasing its skyline and Gillette Stadium’s nearby location in Foxborough.",
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/boston`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/boston`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Boston', 'Gillette Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
@@ -58,6 +60,7 @@ export function BostonCityGuide() {
           setMeta('meta[property="twitter:description"]', 'content', description);
           setMeta('meta[property="twitter:url"]', 'content', pageUrl);
           setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Boston', 'Gillette Stadium'] })
         }, []);
         return null;
       })()}

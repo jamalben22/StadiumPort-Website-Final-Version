@@ -2,6 +2,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link } from 'react-router-dom';
 
 export function AtlantaCityGuide() {
@@ -13,7 +14,8 @@ export function AtlantaCityGuide() {
           generateCityGuideSchema(
             'Atlanta – World Cup 2026 Guide',
             'Comprehensive Atlanta travel guide for FIFA World Cup 2026: Mercedes-Benz Stadium details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/atlanta`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/atlanta`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Atlanta', 'Mercedes-Benz Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },

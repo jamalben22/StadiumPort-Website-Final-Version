@@ -3,6 +3,7 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema, generateStadiumSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link } from 'react-router-dom';
 
 export function MonterreyCityGuide() {
@@ -16,7 +17,8 @@ export function MonterreyCityGuide() {
           generateCityGuideSchema(
             'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide',
             "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.",
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}/world-cup-2026-host-cities/monterrey`
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/monterrey`,
+            { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Monterrey', 'Estadio BBVA'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
@@ -59,6 +61,7 @@ export function MonterreyCityGuide() {
           setMeta('meta[property="twitter:description"]', 'content', description);
           setMeta('meta[property="twitter:url"]', 'content', pageUrl);
           setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Monterrey', 'Estadio BBVA'] })
         }, []);
         return null;
       })()}
