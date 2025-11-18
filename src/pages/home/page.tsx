@@ -362,11 +362,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust & Authority */}
       <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-space font-bold text-4xl text-navy-900 dark:text-white mb-6">
+            <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
               Trusted by Football Fans Worldwide
             </h2>
             <p className="font-inter text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
@@ -374,39 +373,29 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {trustIndicators.map((indicator, index) => (
-              <Card
+              <div
                 key={index}
-                variant="premium"
-                padding="lg"
-                shadow="premium"
-                effect="shimmer"
-                glow
-                border={false}
-                className="text-center"
+                className="relative rounded-3xl border border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl p-8 text-center"
               >
-                <div className="flex flex-col items-center">
-                  <div className="relative mb-4">
-                    <div className="absolute -top-2 -left-2 w-28 h-28 bg-emerald-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-emerald-50/80 dark:bg-emerald-900/30 ring-1 ring-emerald-400/30 flex items-center justify-center mx-auto shadow-premium-sm">
-                      <i className={`${indicator.icon} text-emerald-600 text-2xl sm:text-3xl`}></i>
-                    </div>
+                <div className="mb-6 flex justify-center">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-sm">
+                    <i className={`${indicator.icon} text-lg`}></i>
                   </div>
-                  <h3 className="font-space font-semibold tracking-tight leading-tight text-navy-900 dark:text-white text-lg sm:text-xl md:text-2xl">
-                    {indicator.text}
-                  </h3>
                 </div>
-              </Card>
+                <h3 className="font-space font-semibold tracking-tight leading-tight text-navy-900 dark:text-white text-lg sm:text-xl md:text-2xl">
+                  {indicator.text}
+                </h3>
+              </div>
             ))}
           </div>
 
-          {/* Featured In */}
           <div className="text-center">
-            <div className="text-slate-500 dark:text-slate-400 font-inter text-sm mb-6">AS FEATURED IN</div>
-            <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
+            <div className="font-inter text-xs tracking-widest text-slate-500 dark:text-slate-400 mb-6">AS FEATURED IN</div>
+            <div className="flex flex-wrap justify-center items-center gap-8">
               {['Travel Weekly', 'Lonely Planet', 'Forbes Travel', 'CNN Travel', 'Travel + Leisure'].map((publication, index) => (
-                <div key={index} className="font-space font-semibold text-slate-600 dark:text-slate-400">
+                <div key={index} className="font-space font-semibold text-slate-600 dark:text-slate-400 opacity-60">
                   {publication}
                 </div>
               ))}
