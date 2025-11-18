@@ -3,9 +3,26 @@ import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export default function DallasArticlePage() {
   const pageUrl = '/world-cup-2026-host-cities/dallas';
+
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+
+  useEffect(() => {
+    setPageMeta({
+      title: 'Dallas – World Cup 2026 Guide',
+      description: 'Comprehensive Dallas travel guide for FIFA World Cup 2026: AT&T Stadium details, nine-match schedule including a semi-final, transportation, and planning tips.',
+      url: `${siteUrl}${pageUrl}`,
+      image: `${siteUrl}/images/cities/dallas-world-cup-2026.webp`,
+      locale: 'en_US',
+      publishedTime: new Date(Date.now() - 4*24*60*60*1000).toISOString(),
+      modifiedTime: new Date().toISOString(),
+      section: 'Host Cities',
+      tags: ['World Cup 2026', 'Host Cities', 'Dallas', 'AT&T Stadium']
+    })
+  }, [])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -14,7 +31,8 @@ export default function DallasArticlePage() {
           generateCityGuideSchema(
             'Dallas – World Cup 2026 Guide',
             'Comprehensive Dallas travel guide for FIFA World Cup 2026: AT&T Stadium details, nine-match schedule including a semi-final, transportation, and planning tips.',
-            `${import.meta.env.VITE_SITE_URL || 'http://localhost:3000'}${pageUrl}`
+            `${siteUrl}${pageUrl}`,
+            { datePublished: new Date(Date.now() - 4*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Dallas', 'AT&T Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },

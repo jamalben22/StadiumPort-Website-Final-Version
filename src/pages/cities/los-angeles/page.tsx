@@ -4,6 +4,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 // Helper: convert **...** emphasis to <strong> while preserving text and spacing
 const renderBoldText = (input: string) => {
@@ -25,21 +26,7 @@ export default function LosAngelesArticlePage() {
     const description = 'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.';
     const fullUrl = `${siteUrl}${pageUrl}`;
     const ogImage = `${siteUrl}/images/cities/los-angeles-world-cup-2026.webp`;
-    document.title = title;
-    const setMeta = (selector: string, attr: string, value: string) => {
-      const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
-      if (el) el.setAttribute(attr, value);
-    };
-    setMeta('meta[name="description"]', 'content', description);
-    setMeta('link[rel="canonical"]', 'href', fullUrl);
-    setMeta('meta[property="og:title"]', 'content', title);
-    setMeta('meta[property="og:description"]', 'content', description);
-    setMeta('meta[property="og:url"]', 'content', fullUrl);
-    setMeta('meta[property="og:image"]', 'content', ogImage);
-    setMeta('meta[property="twitter:title"]', 'content', title);
-    setMeta('meta[property="twitter:description"]', 'content', description);
-    setMeta('meta[property="twitter:url"]', 'content', fullUrl);
-    setMeta('meta[property="twitter:image"]', 'content', ogImage);
+    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: new Date(Date.now() - 6*24*60*60*1000).toISOString(), modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium'] })
   }, []);
 
   return (
@@ -49,7 +36,8 @@ export default function LosAngelesArticlePage() {
           generateCityGuideSchema(
             'Los Angeles – World Cup 2026 Guide',
             'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.',
-            `${siteUrl}${pageUrl}`
+            `${siteUrl}${pageUrl}`,
+            { datePublished: new Date(Date.now() - 6*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },

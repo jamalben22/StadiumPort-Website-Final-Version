@@ -392,13 +392,13 @@ export default function NewYorkCityArticlePage() {
     
     // Additional SEO meta tags for #1 ranking
     setMeta('article:author', 'StadiumPort');
-    setMeta('article:published_time', '2024-01-01T00:00:00Z');
+    setMeta('article:published_time', new Date(Date.now() - 7*24*60*60*1000).toISOString());
     setMeta('article:modified_time', new Date().toISOString());
     setMeta('article:section', 'Sports');
     setMeta('article:tag', 'World Cup 2026, New York, New Jersey, MetLife Stadium, FIFA');
     
     // Advanced social media optimization
-    setMeta('og:article:published_time', '2024-01-01T00:00:00Z');
+    setMeta('og:article:published_time', new Date(Date.now() - 7*24*60*60*1000).toISOString());
     setMeta('og:article:modified_time', new Date().toISOString());
     setMeta('og:article:author', 'StadiumPort');
     setMeta('og:article:section', 'Sports');
@@ -548,7 +548,7 @@ export default function NewYorkCityArticlePage() {
             "description": "Complete New York New Jersey World Cup 2026 guide: MetLife Stadium matches, transportation from Manhattan, best hotels, tickets, weather, and insider tips for the Final on July 19, 2026. Everything you need for the ultimate NYC World Cup experience.",
             "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + pageUrl,
             "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
-            "datePublished": "2024-01-01T00:00:00Z",
+            "datePublished": new Date(Date.now() - 7*24*60*60*1000).toISOString(),
             "dateModified": new Date().toISOString(),
             "dateCreated": "2024-01-01T00:00:00Z",
             "keywords": ["New York World Cup 2026", "MetLife Stadium", "NYC World Cup", "World Cup Final 2026", "New York New Jersey World Cup", "World Cup 2026 transportation", "World Cup 2026 hotels", "World Cup 2026 tickets", "NYC travel guide", "World Cup 2026 guide"],

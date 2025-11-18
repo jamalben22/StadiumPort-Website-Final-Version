@@ -252,7 +252,16 @@ export default function StadiumDetailPage() {
       : 'Comprehensive stadiums guide for FIFA World Cup 2026: matches, venues, and travel.'
     const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
     const image = `${siteUrl}${imgPath}`
-    setPageMeta({ title, description, url: pageUrl, image })
+    const publishedMap: Record<string, string> = {
+      'metlife-stadium': new Date(Date.now() - 7*24*60*60*1000).toISOString(),
+      'sofi-stadium': new Date(Date.now() - 6*24*60*60*1000).toISOString(),
+      'hard-rock-stadium': new Date(Date.now() - 5*24*60*60*1000).toISOString(),
+      'att-stadium': new Date(Date.now() - 4*24*60*60*1000).toISOString(),
+      'nrg-stadium': new Date(Date.now() - 3*24*60*60*1000).toISOString(),
+      'lumen-field': new Date(Date.now() - 2*24*60*60*1000).toISOString()
+    }
+    const publishedTime = stadiumId ? publishedMap[stadiumId] : undefined
+    setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Stadiums', tags: ['World Cup 2026', 'Stadium Guide', stadium?.name || ''] })
   }, [stadiumId, stadium])
   
   if (!stadium) {
@@ -423,17 +432,42 @@ export default function StadiumDetailPage() {
                 return m ? { "geo": { "@type": "GeoCoordinates", latitude: m.latitude, longitude: m.longitude } } : {};
               })()
             },
-            "offers": {
-              "@type": "AggregateOffer",
-              "url": "https://www.fifa.com/tickets",
-              "priceCurrency": "USD",
-              "lowPrice": 60,
-              "highPrice": 1500,
-              "offerCount": 1000,
-              "availability": "https://schema.org/InStock",
-              "validFrom": "2025-09-10T00:00:00Z"
-            }
+          "offers": {
+            "@type": "AggregateOffer",
+            "url": "https://www.fifa.com/tickets",
+            "priceCurrency": "USD",
+            "lowPrice": 60,
+            "highPrice": 1500,
+            "offerCount": 1000,
+            "availability": "https://schema.org/InStock",
+            "validFrom": "2025-09-10T00:00:00Z"
           }
+          },
+          (function(){
+            const map: Record<string, string> = {
+              'metlife-stadium': new Date(Date.now() - 7*24*60*60*1000).toISOString(),
+              'sofi-stadium': new Date(Date.now() - 6*24*60*60*1000).toISOString(),
+              'hard-rock-stadium': new Date(Date.now() - 5*24*60*60*1000).toISOString(),
+              'att-stadium': new Date(Date.now() - 4*24*60*60*1000).toISOString(),
+              'nrg-stadium': new Date(Date.now() - 3*24*60*60*1000).toISOString(),
+              'lumen-field': new Date(Date.now() - 2*24*60*60*1000).toISOString()
+            }
+            const published = stadiumId ? map[stadiumId] : undefined
+            return published ? {
+              "@context": "https://schema.org",
+              "@type": ["WebPage", "Article"],
+              "headline": `${stadium.name} – World Cup 2026 Stadium Guide`,
+              "url": `${siteUrl}/world-cup-2026-stadiums/${stadiumId}`,
+              "datePublished": published,
+              "dateModified": new Date().toISOString(),
+              "inLanguage": "en-US",
+              "keywords": ["World Cup 2026", stadium.name, stadium.city],
+              "about": {
+                "@type": "StadiumOrArena",
+                "name": stadium.name
+              }
+            } : {}
+          })()
         ]}
       />
 
