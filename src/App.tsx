@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { AppRoutes } from './router'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { getEditorialEntry } from './components/seo/EditorialCalendar'
 
 
 function CanonicalManager() {
@@ -78,6 +79,56 @@ function DateModifiedManager() {
       "dateModified": now
     })
     document.head.appendChild(script)
+
+    const articlePrev = document.getElementById('jsonld-article-date-modified')
+    if (articlePrev) articlePrev.remove()
+    const path = location.pathname || '/'
+    const segments = path.split('/').filter(Boolean)
+
+    let kind: 'article' | 'city' | 'stadium' | undefined
+    let key: string | undefined
+    if (segments[0] === 'world-cup-2026-host-cities' && segments[1]) {
+      kind = 'city'
+      key = segments[1]
+    } else if (segments[0] === 'world-cup-2026-stadiums' && segments[1]) {
+      kind = 'stadium'
+      key = segments[1]
+    } else if (
+      (
+        segments[0] === 'travel-guides' ||
+        segments[0] === 'transportation' ||
+        segments[0] === 'world-cup-2026-travel-tips' ||
+        segments[0] === 'guides' ||
+        segments[0] === 'safety-guide' ||
+        segments[0] === 'luxury-travel' ||
+        segments[0] === 'budget-guides' ||
+        segments[0] === 'travel-routes' ||
+        segments[0] === 'city-comparisons' ||
+        segments[0] === 'accommodation'
+      ) && segments[1]
+    ) {
+      kind = 'article'
+      key = segments[1]
+    }
+
+    if (kind && key) {
+      const entry = getEditorialEntry(kind, key)
+      if (entry?.isPublished) {
+        const articleScript = document.createElement('script')
+        articleScript.id = 'jsonld-article-date-modified'
+        articleScript.type = 'application/ld+json'
+        articleScript.text = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": document.title || key,
+          "url": fullUrl,
+          "dateModified": now,
+          ...(entry.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
+          "inLanguage": "en-US"
+        })
+        document.head.appendChild(articleScript)
+      }
+    }
   }, [location.pathname])
 
   function ensurePropertyMeta(property: string, content: string) {
