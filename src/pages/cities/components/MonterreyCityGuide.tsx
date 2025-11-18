@@ -88,17 +88,28 @@ export function MonterreyCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb" className="mb-3">
-              <ol className="flex flex-wrap items-center gap-2 text-sm">
-                <li>
-                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Home</Link>
+            <nav aria-label="Breadcrumb navigation for Monterrey World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+              <ol>
+                <li className="breadcrumb-item">
+                  <Link to="/" className="breadcrumb-link" title="Home">
+                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span className="truncate">Home</span>
+                  </Link>
                 </li>
-                <span className="text-slate-400">/</span>
-                <li>
-                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Host Cities</Link>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
+                    <span className="truncate">Host Cities</span>
+                  </Link>
                 </li>
-                <span className="text-slate-400">/</span>
-                <li className="text-slate-700 dark:text-slate-300">Monterrey World Cup 2026 Guide</li>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <span className="breadcrumb-current" title="Monterrey World Cup 2026 Guide">
+                    <span className="truncate">Monterrey World Cup 2026 Guide</span>
+                  </span>
+                </li>
               </ol>
             </nav>
             <h1 className="editorial-hero-title">Monterrey</h1>

@@ -102,10 +102,6 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
             </div>
             <div className="editorial-hero-content">
               <div className="editorial-hero-inner">
-                <div className="editorial-hero-eyebrow">
-                  <span className="editorial-hero-pulse"></span>
-                  <span>World Cup 2026</span>
-                </div>
                 <h1 className="editorial-hero-title">Mercedes-Benz Stadium</h1>
                 <div className="editorial-hero-meta">
                   <div className="meta-item flex items-center gap-2">

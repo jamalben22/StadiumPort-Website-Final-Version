@@ -112,10 +112,6 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                 </ol>
               </nav>
               <div className="editorial-hero-inner">
-                <div className="editorial-hero-eyebrow">
-                  <span className="editorial-hero-pulse"></span>
-                  <span>World Cup 2026</span>
-                </div>
                 <h1 className="editorial-hero-title">MetLife Stadium</h1>
                 <div className="editorial-hero-meta">
                   <div className="meta-item flex items-center gap-2">

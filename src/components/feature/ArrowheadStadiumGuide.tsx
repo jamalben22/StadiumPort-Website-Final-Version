@@ -54,10 +54,6 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                     <li>Arrowhead Stadium</li>
                   </ol>
                 </nav>
-                <p className="editorial-hero-eyebrow">
-                  <span className="editorial-hero-pulse"></span>
-                  FIFA World Cup 2026
-                </p>
                 <h1 className="editorial-hero-title">Arrowhead Stadium</h1>
                 <p className="editorial-hero-meta">
                   <i className="ri-map-pin-2-line text-emerald-400"></i>

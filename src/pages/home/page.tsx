@@ -8,6 +8,7 @@ import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
 import { AccomFinderWidget } from '../../components/widgets/AccomFinderWidget';
+import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
 
 interface CitySection {
@@ -200,200 +201,10 @@ export default function HomePage() {
       
       <Header />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Optimized hero image (edge-to-edge, SEO-friendly) */}
-        <OptimizedImage
-          src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
-          alt="Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch."
-          className="absolute inset-0"
-          imgClassName="object-cover object-center w-full h-full"
-          width={1920}
-          height={1080}
-          priority={true}
-          placeholder="blur"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-900/70 to-transparent" style={{ backgroundImage: `url('/images/realistic_cinematic_photograph_from_center_pitch_of_World_Cup_2026_stadium.webp')`, backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      {/* World Cup Countdown Section */}
+      <WorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
 
-        {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32">
-          <div className="w-full">
-            <div className="max-w-4xl">
-              <h1 className="font-space font-bold text-5xl md:text-7xl text-white mb-6 leading-tight">
-                The{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-gold-400">
-                  World Cup 2026
-                </span>{' '}
-                Travel Guide Made for Fans Like You
-              </h1>
-              <p className="font-inter text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
-                Chasing your team across the USA, Mexico, and Canada? Planning your first World Cup trip? We've built the ultimate resource for every type of fan—packed with stadium guides, city
-                insights, accommodation tips, and real advice from people who live and breathe football travel.
-              </p>
-
-              {/* Stats */}
-              <div className="flex flex-wrap items-center gap-6 mb-12">
-                <div className="flex items-center space-x-2 text-emerald-400">
-                  <i className="ri-group-line text-2xl"></i>
-                  <span className="font-semibold text-lg">500,028+ Travelers</span>
-                </div>
-                <div className="flex items-center space-x-2 text-gold-400">
-                  <i className="ri-price-tag-3-line text-2xl"></i>
-                  <span className="font-semibold text-lg">1278 Live Deals</span>
-                </div>
-                <div className="flex items-center space-x-2 text-white">
-                  <i className="ri-map-pin-line text-2xl"></i>
-                  <span className="font-semibold text-lg">16 Host Cities</span>
-                </div>
-              </div>
-
-              {/* Hero Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 mb-16">
-                <Link to="/deals" className="group">
-                  <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 backdrop-blur-xl">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                    <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
-                    </div>
-
-                    <div className="relative z-10 flex items-center justify-center space-x-2">
-                      <i className="ri-rocket-line transition-all duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
-                      <span className="ultra-premium-text font-semibold">Start Planning Your Trip</span>
-                      <i className="ri-arrow-right-line transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
-                    </div>
-                  </button>
-                </Link>
-
-                <Link to="/venues" className="group">
-                  <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 text-navy-900 hover:from-gold-500 hover:via-gold-600 hover:to-gold-700 focus:ring-gold-500/30 shadow-premium hover:shadow-premium-lg border border-gold-300/30 backdrop-blur-xl">
-                    <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                    <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
-                    </div>
-
-                    <div className="relative z-10 flex items-center justify-center space-x-2">
-                      <i className="ri-football-line transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 text-navy-900"></i>
-                      <span className="ultra-premium-text font-semibold text-navy-900">Explore All Stadiums</span>
-                      <i className="ri-arrow-right-line transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 text-navy-900"></i>
-                    </div>
-                  </button>
-                </Link>
-              </div>
-
-              {/* Premium Service Widgets */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:gap-12 auto-rows-fr">
-                {/* Accommodation Widget */}
-                <a
-                  href="https://hotel-affiliate-link.com"
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  data-affiliate-type="accommodation"
-                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300/40"
-                >
-                  {/* Subtle aura glow */}
-                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-emerald-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
-                    {/* Centered content: icon + text */}
-                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-emerald-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-emerald-400/50">
-                          <i className="ri-hotel-line text-2xl sm:text-3xl"></i>
-                        </div>
-                      </div>
-                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                        Accommodation
-                      </h3>
-                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                        From luxury hotels and design-forward stays to premium serviced apartments, curated for comfort near venues and city highlights.
-                      </p>
-                    </div>
-
-            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-emerald-500 hover:text-emerald-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
-              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Find Your Stay</span>
-              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
-            </div>
-                  </div>
-                </a>
-
-                {/* Flights Widget */}
-                <a
-                  href="https://flight-affiliate-link.com"
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  data-affiliate-type="flights"
-                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-300/40"
-                >
-                  {/* Subtle aura glow */}
-                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-blue-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
-                    {/* Centered content: icon + text */}
-                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-blue-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-blue-400/50">
-                          <i className="ri-flight-takeoff-line text-2xl sm:text-3xl"></i>
-                        </div>
-                      </div>
-                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                        Flights
-                      </h3>
-                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                        Premium flight search with flexible dates, multi-city itineraries, and trusted carriers — optimized for match schedules and city hops.
-                      </p>
-                    </div>
-
-            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-blue-500 hover:text-blue-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
-              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Search Flights</span>
-              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
-            </div>
-                  </div>
-                </a>
-
-                {/* Experiences Widget */}
-                <a
-                  href="https://tour-affiliate-link.com"
-                  target="_blank"
-                  rel="nofollow sponsored noopener noreferrer"
-                  data-affiliate-type="experiences"
-                  className="affiliate-btn group relative overflow-hidden rounded-3xl block h-full focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-300/40"
-                >
-                  {/* Subtle aura glow */}
-                  <div className="absolute -top-8 -left-8 w-44 h-44 bg-amber-500/12 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                  <div className="relative rounded-3xl p-10 sm:p-10 md:p-11 lg:p-12 bg-white/5 backdrop-blur-xl border border-white/10 ring-1 ring-white/5 transition-all duration-500 shadow-premium hover:shadow-premium-lg hover:bg-white/10 hover:-translate-y-1 transform-gpu h-full flex flex-col">
-                    {/* Centered content: icon + text */}
-                    <div className="flex-1 flex flex-col items-center justify-center text-center gap-4">
-                      <div className="relative">
-                        <div className="absolute -top-2 -left-2 w-28 h-28 bg-amber-500/12 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white/10 ring-1 ring-white/20 flex items-center justify-center text-white shadow-premium-sm transition-all duration-600 group-hover:bg-white/15 group-hover:ring-amber-400/50">
-                          <i className="ri-map-2-line text-2xl sm:text-3xl"></i>
-                        </div>
-                      </div>
-                      <h3 className="font-space font-medium text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                        Experiences
-                      </h3>
-                      <p className="text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                        Curated tours, premium fan events, and immersive activities — discover the city beyond matchday with elevated experiences.
-                      </p>
-                    </div>
-
-            <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-amber-500 hover:text-amber-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
-              <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Explore Activities</span>
-              <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
-            </div>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Featured Host Cities - cloned styling from Cities page */}
       <section className="py-16 bg-white dark:bg-navy-900">
@@ -533,7 +344,7 @@ export default function HomePage() {
 
 
       {/* Widgets Section */}
-      <section className="py-20 bg-slate-50 dark:bg-navy-800">
+      <section className="py-20 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">

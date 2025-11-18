@@ -68,18 +68,27 @@ export default function MiamiCityGuide() {
               <span className="editorial-hero-pulse"></span>
               <span>World Cup 2026</span>
             </div>
-              <nav className="editorial-breadcrumbs mb-3">
-                <ol className="list-none flex flex-wrap items-center gap-2 text-sm md:text-base">
-                  <li>
-                    <Link to="/" className="hover:underline">Home</Link>
+              <nav aria-label="Breadcrumb navigation for Miami World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+                <ol>
+                  <li className="breadcrumb-item">
+                    <Link to="/" className="breadcrumb-link" title="Home">
+                      <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                      </svg>
+                      <span className="truncate">Home</span>
+                    </Link>
                   </li>
-                  <li className="text-slate-400">›</li>
-                  <li>
-                    <Link to="/world-cup-2026-host-cities" className="hover:underline">Host Cities</Link>
+                  <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                  <li className="breadcrumb-item">
+                    <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
+                      <span className="truncate">Host Cities</span>
+                    </Link>
                   </li>
-                  <li className="text-slate-400">›</li>
-                  <li>
-                    <span className="text-slate-600 dark:text-slate-300">Miami World Cup 2026 Guide</span>
+                  <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                  <li className="breadcrumb-item">
+                    <span className="breadcrumb-current" title="Miami World Cup 2026 Guide">
+                      <span className="truncate">Miami World Cup 2026 Guide</span>
+                    </span>
                   </li>
                 </ol>
               </nav>

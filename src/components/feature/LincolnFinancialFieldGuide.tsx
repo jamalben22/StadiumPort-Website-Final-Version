@@ -124,10 +124,6 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
             <div className="editorial-hero-content">
               <div className="editorial-hero-inner">
-                <div className="editorial-hero-eyebrow">
-                  <span className="editorial-hero-pulse"></span>
-                  <span>2026 FIFA World Cup</span>
-                </div>
                 <h1 className="editorial-hero-title">Lincoln Financial Field</h1>
                 <div className="editorial-hero-meta">
                   <div className="meta-item flex items-center gap-2">

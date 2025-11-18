@@ -65,17 +65,28 @@ export function KansasCityCityGuide() {
               <span>World Cup 2026</span>
             </div>
             {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb" className="mt-4">
-              <ol className="flex items-center text-sm text-slate-200 gap-2">
-                <li>
-                  <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
+            <nav aria-label="Breadcrumb navigation for Kansas City World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+              <ol>
+                <li className="breadcrumb-item">
+                  <Link to="/" className="breadcrumb-link" title="Home">
+                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span className="truncate">Home</span>
+                  </Link>
                 </li>
-                <li>›</li>
-                <li>
-                  <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
+                    <span className="truncate">Host Cities</span>
+                  </Link>
                 </li>
-                <li>›</li>
-                <li className="text-slate-300">Kansas City World Cup 2026 Guide</li>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <span className="breadcrumb-current" title="Kansas City World Cup 2026 Guide">
+                    <span className="truncate">Kansas City World Cup 2026 Guide</span>
+                  </span>
+                </li>
               </ol>
             </nav>
             <h1 className="editorial-hero-title">Kansas City</h1>

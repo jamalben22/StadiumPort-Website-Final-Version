@@ -72,12 +72,29 @@ export default function DallasArticlePage() {
               <span className="editorial-hero-pulse"></span>
               <span>World Cup 2026</span>
             </div>
-            <nav className="editorial-breadcrumbs mb-3" aria-label="Breadcrumb">
-              <Link to="/" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Home</Link>
-              <span className="mx-2 text-slate-400">›</span>
-              <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Host Cities</Link>
-              <span className="mx-2 text-slate-400">›</span>
-              <span className="text-slate-500">Dallas World Cup 2026 Guide</span>
+            <nav aria-label="Breadcrumb navigation for Dallas World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+              <ol>
+                <li className="breadcrumb-item">
+                  <Link to="/" className="breadcrumb-link" title="Home">
+                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                    <span className="truncate">Home</span>
+                  </Link>
+                </li>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
+                    <span className="truncate">Host Cities</span>
+                  </Link>
+                </li>
+                <li className="breadcrumb-separator" aria-hidden="true">›</li>
+                <li className="breadcrumb-item">
+                  <span className="breadcrumb-current" title="Dallas World Cup 2026 Guide">
+                    <span className="truncate">Dallas World Cup 2026 Guide</span>
+                  </span>
+                </li>
+              </ol>
             </nav>
             <h1 className="editorial-hero-title">Dallas</h1>
             <div className="editorial-hero-meta">
