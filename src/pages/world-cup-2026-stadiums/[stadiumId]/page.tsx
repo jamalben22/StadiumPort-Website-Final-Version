@@ -20,6 +20,7 @@ import { BCPlaceStadiumGuide } from '../../../components/feature/BCPlaceStadiumG
 import { Header } from '../../../components/feature/Header';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 // Stadium data mapping
 const stadiumData = {
@@ -252,16 +253,8 @@ export default function StadiumDetailPage() {
       : 'Comprehensive stadiums guide for FIFA World Cup 2026: matches, venues, and travel.'
     const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
     const image = `${siteUrl}${imgPath}`
-    const publishedMap: Record<string, string> = {
-      'metlife-stadium': '2025-11-11T09:00:00Z',
-      'sofi-stadium': '2025-11-12T09:00:00Z',
-      'hard-rock-stadium': '2025-11-13T09:00:00Z',
-      'att-stadium': '2025-11-14T09:00:00Z',
-      'nrg-stadium': '2025-11-15T09:00:00Z',
-      'lumen-field': '2025-11-16T09:00:00Z'
-    }
-    const publishedTime = stadiumId ? publishedMap[stadiumId] : undefined
-    setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime, modifiedTime: new Date().toISOString(), section: 'Stadiums', tags: ['World Cup 2026', 'Stadium Guide', stadium?.name || ''] })
+    const entry = stadiumId ? getEditorialEntry('stadium', stadiumId) : undefined
+    setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Stadiums', tags: ['World Cup 2026', 'Stadium Guide', stadium?.name || '', ...(entry?.keywords || [])] })
   }, [stadiumId, stadium])
   
   if (!stadium) {
@@ -444,15 +437,8 @@ export default function StadiumDetailPage() {
           }
           },
           (function(){
-            const map: Record<string, string> = {
-              'metlife-stadium': '2025-11-11T09:00:00Z',
-              'sofi-stadium': '2025-11-12T09:00:00Z',
-              'hard-rock-stadium': '2025-11-13T09:00:00Z',
-              'att-stadium': '2025-11-14T09:00:00Z',
-              'nrg-stadium': '2025-11-15T09:00:00Z',
-              'lumen-field': '2025-11-16T09:00:00Z'
-            }
-            const published = stadiumId ? map[stadiumId] : undefined
+            const entry = stadiumId ? getEditorialEntry('stadium', stadiumId) : undefined
+            const published = entry?.isPublished ? entry.datePublished : undefined
             return published ? {
               "@context": "https://schema.org",
               "@type": ["WebPage", "Article"],
@@ -461,7 +447,7 @@ export default function StadiumDetailPage() {
               "datePublished": published,
               "dateModified": new Date().toISOString(),
               "inLanguage": "en-US",
-              "keywords": ["World Cup 2026", stadium.name, stadium.city],
+              "keywords": ["World Cup 2026", stadium.name, stadium.city, ...((entry?.keywords)||[])],
               "about": {
                 "@type": "StadiumOrArena",
                 "name": stadium.name

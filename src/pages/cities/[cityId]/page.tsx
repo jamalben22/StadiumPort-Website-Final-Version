@@ -17,6 +17,7 @@ import { MexicoCityGuide } from '../components/MexicoCityGuide';
 import { GuadalajaraCityGuide } from '../components/GuadalajaraCityGuide';
 import { MonterreyCityGuide } from '../components/MonterreyCityGuide';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
@@ -78,10 +79,8 @@ export default function CityDetailPage() {
     const imgPath = imageByCity[normalizedId]
     if (title && description) {
       const image = imgPath ? `${siteUrl}${imgPath}` : undefined
-      const publishedMap: Record<string, string> = {
-        'houston': '2025-11-15T09:00:00Z'
-      }
-      setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: publishedMap[normalizedId], modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', title] })
+      const entry = getEditorialEntry('city', normalizedId)
+      setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Host Cities', tags: ['World Cup 2026', 'Host Cities', title, ...(entry?.keywords||[])] })
     }
   }, [cityId, normalizedId])
 

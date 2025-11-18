@@ -5,6 +5,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 // Helper: convert **...** emphasis to <strong> while preserving text and spacing
 const renderBoldText = (input: string) => {
@@ -26,7 +27,8 @@ export default function LosAngelesArticlePage() {
     const description = 'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.';
     const fullUrl = `${siteUrl}${pageUrl}`;
     const ogImage = `${siteUrl}/images/cities/los-angeles-world-cup-2026.webp`;
-    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-12T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium'] })
+    const entry = getEditorialEntry('city','los-angeles')
+    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium', ...(entry?.keywords||[])] })
   }, []);
 
   return (
@@ -37,7 +39,7 @@ export default function LosAngelesArticlePage() {
             'Los Angeles – World Cup 2026 Guide',
             'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.',
             `${siteUrl}${pageUrl}`,
-            { datePublished: '2025-11-12T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
+            { datePublished: (getEditorialEntry('city','los-angeles')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
