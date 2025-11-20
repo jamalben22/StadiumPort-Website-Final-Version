@@ -20,10 +20,10 @@
     { "source": "/world-cup-2026-host-cities/monterrey", "destination": "/world-cup-2026-host-cities/monterrey-world-cup-2026-guide", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "*text/html*" }] },
-    { "source": "/world-cup-2026-host-cities/:path*", "destination": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "*text/html*" }] },
-    { "source": "/world-cup-2026-stadiums", "destination": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "*text/html*" }] },
-    { "source": "/travel-tips", "destination": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "*text/html*" }] },
-    { "source": "/:path*", "destination": "/index.html", "has": [{ "type": "header", "key": "accept", "value": "*text/html*" }] }
+    { "source": "/", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": "text/html" }] },
+    { "source": "/world-cup-2026-host-cities/:path*", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": "text/html" }] },
+    { "source": "/world-cup-2026-stadiums", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": "text/html" }] },
+    { "source": "/travel-tips", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": "text/html" }] },
+    { "source": "/:path*", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": "text/html" }] }
   ]
 }
