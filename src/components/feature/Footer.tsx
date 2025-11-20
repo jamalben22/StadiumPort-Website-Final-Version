@@ -215,6 +215,8 @@ export function Footer() {
               {[
                 { to: '/about', label: 'About Us' },
                 { to: '/contact', label: 'Contact Us' },
+                { to: '/editorial-policy', label: 'Editorial Policy' },
+                { to: '/about/authors', label: 'Author Bios' },
                 { to: '/legal/privacy', label: 'Privacy Policy' },
                 { to: '/legal/terms', label: 'Terms of Service' },
                 { to: '/legal/affiliate-disclaimer', label: 'Affiliate Disclaimer' }

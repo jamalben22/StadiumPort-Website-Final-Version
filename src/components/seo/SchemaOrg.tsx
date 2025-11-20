@@ -51,7 +51,10 @@ export const generateOrganizationSchema = () => ({
   "logo": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/logo.png`,
   "sameAs": [
     "https://twitter.com/stadiumport",
-    "https://facebook.com/stadiumport"
+    "https://facebook.com/stadiumport",
+    "https://www.instagram.com/stadiumport",
+    "https://www.youtube.com/@stadiumport",
+    "https://www.linkedin.com/company/stadiumport"
   ],
   "contactPoint": {
     "@type": "ContactPoint",

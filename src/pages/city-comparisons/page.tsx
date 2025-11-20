@@ -448,7 +448,7 @@ export default function CityComparisonsPage() {
       <Header />
       
       {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
+      <section id="main-content" className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div 
             className="w-full h-full bg-cover bg-center"

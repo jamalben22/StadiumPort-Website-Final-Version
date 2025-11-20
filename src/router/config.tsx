@@ -41,6 +41,8 @@ const VenuesPage = lazy(() => import('../pages/world-cup-2026-stadiums/page'));
 const StadiumDetailPage = lazy(() => import('../pages/world-cup-2026-stadiums/[stadiumId]/page'));
 const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'));
 const CityComparisonsArticlePage = lazy(() => import('../pages/city-comparisons/article/page'));
+const EditorialPolicyPage = lazy(() => import('../pages/legal/editorial-policy/page'));
+const AuthorsPage = lazy(() => import('../pages/about/authors/page'));
 // Direct imports for legal pages to ensure they load properly
 import PrivacyPage from '../pages/legal/privacy/page';
 import TermsPage from '../pages/legal/terms/page';
@@ -351,6 +353,14 @@ const routes: RouteObject[] = [
   {
     path: '/affiliate-disclaimer',
     element: <AffiliateDisclaimerPage />
+  },
+  {
+    path: '/editorial-policy',
+    element: <EditorialPolicyPage />
+  },
+  {
+    path: '/about/authors',
+    element: <AuthorsPage />
   },
   {
     path: '*',

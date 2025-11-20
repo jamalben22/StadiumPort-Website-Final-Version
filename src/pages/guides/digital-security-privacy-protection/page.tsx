@@ -103,7 +103,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
       </section>
 
       {/* Main Content — Premium Editorial Layout */}
-      <section className="editorial-article py-12">
+      <section id="main-content" className="editorial-article py-12">
         <div className="editorial-body editorial-dropcap">
           
 

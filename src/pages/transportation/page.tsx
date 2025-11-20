@@ -467,7 +467,7 @@ export default function TransportationPage() {
 
 
       {/* Essential Transport Guides - Apple-Level Premium Design */}
-      <div className="relative z-10 pb-20">
+      <div id="main-content" className="relative z-10 pb-20">
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">

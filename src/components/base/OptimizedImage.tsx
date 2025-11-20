@@ -79,7 +79,24 @@ export function OptimizedImage({
   });
 
   useEffect(() => {
-    if (priority) return; // eager load above-the-fold
+    if (priority) {
+      try {
+        const link = document.createElement('link')
+        link.rel = 'preload'
+        link.as = 'image'
+        link.href = src
+        const srcset = (disableSrcSet || isExternal) ? undefined : buildSrcSet(src)
+        if (srcset) {
+          // @ts-ignore
+          link.imageSrcset = srcset
+          // @ts-ignore
+          link.imageSizes = sizes
+        }
+        document.head.appendChild(link)
+        return () => { document.head.removeChild(link) }
+      } catch {}
+      return
+    }
 
     const node = wrapperRef.current;
     if (!node) return;
@@ -115,7 +132,7 @@ export function OptimizedImage({
             filter: 'blur(20px)',
             transform: 'scale(1.1)',
             opacity: loaded ? 0 : 1,
-            transition: 'opacity 500ms ease',
+            transition: 'opacity 250ms ease',
           }}
         />
       )}

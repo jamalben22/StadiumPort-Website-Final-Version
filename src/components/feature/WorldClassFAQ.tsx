@@ -1,4 +1,5 @@
-import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useCallback, useRef } from 'react';
+import { SchemaOrg } from '../seo/SchemaOrg';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronRight, X, Hash } from 'lucide-react';
 
@@ -21,6 +22,14 @@ interface WorldClassFAQProps {
 }
 
 
+
+function jsxToText(node: any): string {
+  if (node == null) return ''
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(jsxToText).join(' ')
+  if (React.isValidElement(node)) return jsxToText((node as any).props?.children)
+  return ''
+}
 
 export function WorldClassFAQ({ 
   faqs, 
@@ -119,6 +128,18 @@ export function WorldClassFAQ({
 
   return (
     <section className="relative z-10 py-16 md:py-20 lg:py-32 bg-transparent overflow-hidden">
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": filteredFAQs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": typeof f.answer === 'string' ? f.answer : jsxToText(f.answer)
+          }
+        }))
+      }} />
       {/* Skip to FAQ content link for accessibility */}
       <a 
         href="#faq-content" 
