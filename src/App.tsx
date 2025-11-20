@@ -1,5 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
-import { Suspense } from 'react'
+import React, { Suspense } from 'react'
 import { AppRoutes } from './router'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -165,9 +165,11 @@ function App() {
       <DateModifiedManager />
       <GlobalStructuredData />
       <RouteStructuredData />
-      <Suspense fallback={<div id="route-fallback" className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Loading…</div>}>
-        <AppRoutes />
-      </Suspense>
+      <ErrorBoundary>
+        <Suspense fallback={<div id="route-fallback" className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Loading…</div>}>
+          <AppRoutes />
+        </Suspense>
+      </ErrorBoundary>
     </BrowserRouter>
   )
 }
@@ -283,4 +285,14 @@ function RouteStructuredData() {
     schemas.push(generateItemListSchema(items))
   }
   return <SchemaOrg schema={schemas} />
+}
+
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
+  constructor(props: { children: React.ReactNode }) { super(props); this.state = { hasError: false } }
+  static getDerivedStateFromError() { return { hasError: true } }
+  componentDidCatch() {}
+  render() {
+    if (this.state.hasError) return <div className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Something went wrong</div>
+    return this.props.children
+  }
 }
