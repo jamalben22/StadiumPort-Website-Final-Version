@@ -30,7 +30,11 @@ async function run() {
   ]
 
   const puppeteer = await import('puppeteer')
-  const browser = await puppeteer.launch({ headless: 'new' })
+  const isCI = process.env.CI || process.env.VERCEL
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: isCI ? ['--no-sandbox','--disable-setuid-sandbox','--disable-features=HttpsFirstBalancedModeAutoEnable'] : []
+  })
   const page = await browser.newPage()
   let allOk = true
   const report = []
