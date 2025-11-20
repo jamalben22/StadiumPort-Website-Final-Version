@@ -603,8 +603,8 @@ export default function TravelTipsArticlePage() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title={(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}>
-                    {(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}
+                  <span className="breadcrumb-current" aria-current="page" title={(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}>
+                  {(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies' : (slug === 'airfare-deal-window-timing' || slug === 'world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi') ? 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi' : displayTitle}
                   </span>
                 </li>
               </ol>
@@ -625,7 +625,7 @@ export default function TravelTipsArticlePage() {
       </section>
 
       {/* Editorial Content */}
-      <section className="editorial-article py-12">
+      <section id="main-content" className="editorial-article py-12">
         {(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? (
           <>
             <article className="editorial-body editorial-dropcap">
@@ -7067,6 +7067,11 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
         )}
       </section>
 
+      <section className="max-w-3xl mx-auto px-6 pb-12">
+        <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+        </div>
+      </section>
       <Footer />
     </div>
     </>

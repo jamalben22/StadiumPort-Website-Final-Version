@@ -103,7 +103,7 @@ export default function GuidesArticlePage() {
         </div>
       </section>
 
-      <section className="editorial-article py-12">
+      <section id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           {slug === 'solo-travel-safety-guide-attending-world-cup-2026-alone' ? (
             <AccommodationSafetyChecklistContent />
@@ -1483,6 +1483,11 @@ export default function GuidesArticlePage() {
         </article>
       </section>
 
+      <section className="max-w-3xl mx-auto px-6 pb-12">
+        <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+        </div>
+      </section>
       <Footer />
     </div>
   )

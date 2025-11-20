@@ -101,7 +101,7 @@ export function TorontoCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Toronto">
+                  <span className="breadcrumb-current" title="Toronto" aria-current="page">
                     <span className="truncate">Toronto</span>
                   </span>
                 </li>
@@ -127,7 +127,7 @@ export function TorontoCityGuide() {
       </section>
 
       {/* Main Content - Editorial layout matching NYC guide */}
-      <main className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         {/* Making History at BMO Field */}
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
@@ -477,6 +477,11 @@ Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026
 
       </main>
 
+      <section className="max-w-3xl mx-auto px-6 pb-12">
+        <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+        </div>
+      </section>
       <Footer />
     </div>
   );

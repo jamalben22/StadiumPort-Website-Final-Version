@@ -86,7 +86,7 @@ export default function EmergencyPlanningPage() {
         </div>
       </section>
 
-      <section className="editorial-article py-12">
+      <section id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           <p className="whitespace-pre-line">
             You've secured World Cup tickets and booked your travel. Now comes the crucial question most fans overlook: what actually happens when you arrive at the stadium?

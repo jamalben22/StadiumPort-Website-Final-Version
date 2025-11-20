@@ -292,15 +292,7 @@ export default function NewYorkCityArticlePage() {
                 },
                 "maximumAttendeeCapacity": 75000
               },
-              "image": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
-              "offers": {
-                "@type": "Offer",
-                "url": "https://www.fifa.com/worldcup/tickets/",
-                "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2025-01-01T00:00:00Z",
-                "validThrough": "2026-07-19T18:00:00-05:00"
-              }
+              
             }
           },
           // Stadium Schema
@@ -441,7 +433,7 @@ export default function NewYorkCityArticlePage() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="New York / New Jersey">
+                  <span className="breadcrumb-current" title="New York / New Jersey" aria-current="page">
                     <span className="truncate">New York / New Jersey</span>
                   </span>
                 </li>
@@ -1192,6 +1184,11 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
         </div>
       </section>
 
+      <section className="max-w-3xl mx-auto px-6 pb-12">
+        <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+        </div>
+      </section>
       <Footer />
     </div>
   );

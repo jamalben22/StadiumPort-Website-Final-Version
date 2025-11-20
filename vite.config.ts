@@ -54,13 +54,6 @@ export default defineConfig({
             'Navigate',
             'Outlet'
           ]
-        },
-        // React i18n
-        {
-          'react-i18next': [
-            'useTranslation',
-            'Trans'
-          ]
         }
       ],
       dts: true,
@@ -72,12 +65,19 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-is'],
-          router: ['react-router-dom'],
-          ui: ['@stripe/react-stripe-js', 'recharts'],
-          supabase: ['@supabase/supabase-js'],
-          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector']
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router-dom')) return 'router'
+            if (id.includes('react-markdown') || id.includes('remark')) return 'markdown'
+            if (id.includes('lucide-react')) return 'icons'
+            if (id.includes('react') || id.includes('react-dom') || id.includes('react-is')) return 'vendor'
+            
+            return 'vendor-others'
+          }
+          if (id.includes('/src/pages/')) {
+            const m = id.match(/\/src\/pages\/([^\/]+)/)
+            if (m) return `page-${m[1]}`
+          }
         }
       }
     },

@@ -107,7 +107,7 @@ export default function PackingListsPage() {
       <Header />
       
       {/* Hero Section - Apple-Level Premium Design */}
-      <section className="relative py-32 md:py-40 lg:py-48 bg-white dark:bg-navy-900 overflow-hidden">
+      <section id="main-content" className="relative py-32 md:py-40 lg:py-48 bg-white dark:bg-navy-900 overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0">
           {/* Premium Gradient Overlay */}

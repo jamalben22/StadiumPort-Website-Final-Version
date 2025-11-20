@@ -233,7 +233,7 @@ export default function AffiliateDisclaimerPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
-      <main className="pt-20">
+      <main id="main-content" className="pt-20">
         <section className="relative py-28 bg-white dark:bg-navy-900">
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
             <div className="relative z-10 p-6 md:p-10">

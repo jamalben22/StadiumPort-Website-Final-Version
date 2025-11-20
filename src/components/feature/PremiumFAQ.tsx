@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { SchemaOrg } from '../seo/SchemaOrg';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface FAQItem {
@@ -26,6 +27,18 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
 
   return (
     <div className="w-full">
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(f => ({
+          "@type": "Question",
+          "name": f.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": typeof f.answer === 'string' ? f.answer : jsxToText(f.answer)
+          }
+        }))
+      }} />
       {/* Apple-Level Luxury Header */}
       <div className="text-center mb-16 md:mb-20">
         <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-3xl mb-8 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
@@ -169,4 +182,12 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
       </div>
     </div>
   );
+}
+
+function jsxToText(node: any): string {
+  if (node == null) return ''
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(jsxToText).join(' ')
+  if (React.isValidElement(node)) return jsxToText((node as any).props?.children)
+  return ''
 }
