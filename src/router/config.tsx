@@ -3,8 +3,8 @@ import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 
-// Lazy load components for better performance
-const HomePage = lazy(() => import('../pages/home/page'));
+// Critical homepage imports directly to avoid white screen on first paint
+import HomePage from '../pages/home/page';
 const AboutPage = lazy(() => import('../pages/about/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const CitiesPage = lazy(() => import('../pages/cities/page'));
