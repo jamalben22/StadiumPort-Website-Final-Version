@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
@@ -53,7 +53,7 @@ export default function CitiesPage() {
 
   // Set page title, meta description, and canonical URL
   useEffect(() => {
-    document.title = 'World Cup 2026 Host Cities Guide - All 16 Destinations | StadiumPort';
+    document.title = 'World Cup 2026 Host Cities: Travel Guide to All 16 Cities in USA, Canada & Mexico | StadiumPort';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -96,15 +96,19 @@ export default function CitiesPage() {
   const getCityRoute = (cityName: string): string => {
     const routeMap: { [key: string]: string } = {
       // Route NYC/NJ card to the original New York City travel guide page
-  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey',
-  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey',
-      'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
-      'Miami': '/world-cup-2026-host-cities/miami',
-      'Kansas City': '/world-cup-2026-host-cities/kansas-city',
-      'Houston': '/world-cup-2026-host-cities/houston',
-      'Dallas': '/world-cup-2026-host-cities/dallas',
-      'Atlanta': '/world-cup-2026-host-cities/atlanta',
-      'Seattle': '/world-cup-2026-host-cities/seattle',
+  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide',
+  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide',
+      'Los Angeles': '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide',
+      'Miami': '/world-cup-2026-host-cities/miami-world-cup-2026-guide',
+      'Kansas City': '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide',
+      'Houston': '/world-cup-2026-host-cities/houston-world-cup-2026-guide',
+      'Dallas': '/world-cup-2026-host-cities/dallas-world-cup-2026-guide',
+      'San Francisco': '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide',
+      'Atlanta': '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide',
+      'Seattle': '/world-cup-2026-host-cities/seattle-world-cup-2026-guide',
+      'Toronto': '/world-cup-2026-host-cities/toronto-world-cup-2026-guide',
+      'Vancouver': '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide',
+      'Monterrey': '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide',
       // Add more cities as they become available
     };
     
@@ -567,280 +571,309 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       
       <Header />
       
-      {/* Hero Section - Optimized Responsive Image */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0">
-          <OptimizedImage
-            src="/images/cities/new-york-new-jersey-world-cup-2026.webp"
-            alt="World Cup 2026 host cities montage"
-            className="absolute inset-0 opacity-20"
-            imgClassName="object-cover object-center"
-            width={1600}
-            height={900}
-            priority={true}
-            placeholder="blur"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
 
-            {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-white/80">
-              <a href="/" className="hover:text-white">Home</a>
-              <span className="mx-2">›</span>
-              <span className="text-white/80">Host Cities</span>
-            </nav>
-            
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-                World Cup 2026 Host Cities: Travel Guide to All 16 Cities in USA, Canada & Mexico
-              </h1>
-              <h2 className="text-xl md:text-2xl text-slate-400 mb-12">World Cup 2026 Host Cities: Complete Travel Guide (16)</h2>
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">Planning your World Cup 2026 trip? Explore all 16 host cities with insider tips on accommodation, transport, neighborhoods, and the best match day experiences. Start here! Each of these incredible cities features world-class <a href="/world-cup-2026-stadiums" className="font-semibold text-emerald-300 hover:text-emerald-200 underline decoration-emerald-400/40 underline-offset-4">stadiums</a> that will host unforgettable World Cup 2026 matches.</p>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Host Cities</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">3</div>
-              <div className="text-slate-300 font-inter text-sm">Countries</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">104</div>
-              <div className="text-slate-300 font-inter text-sm">Total Matches</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">48</div>
-              <div className="text-slate-300 font-inter text-sm">Teams</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Premium Divider — Between City Cards Grid and Plan Your Journey */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
-        </div>
-      </div>
-
-
-
-      {/* Host Cities Grid - 2 Column Layout */}
-      <section className="py-16 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              Select Your Destination
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
-            </p>
-          </div>
-
-          {/* 2-Column Grid Layout with responsive, lazy images */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {hostCities.map((city, index) => (
-              <div
-                key={city.id}
-                className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full"
-              >
-                <div className="relative h-56 overflow-hidden">
-                  {(() => {
-                    const base = city.image.replace(/\.(webp|jpg|jpeg|png)$/i, '');
-                    const small = `${base}-640.webp`;
-                    const medium = `${base}-1024.webp`;
-                    const large = `${base}-1600.webp`;
-                    return (
-                      <picture>
-                        <source srcSet={large} media="(min-width: 1024px)" type="image/webp" />
-                        <source srcSet={medium} media="(min-width: 640px)" type="image/webp" />
-                        <img
-                          src={small}
-                          alt={city.alt || `${city.name} skyline – World Cup 2026 host city`}
-                          loading={index < 2 ? 'eager' : 'lazy'}
-                          fetchPriority={index < 2 ? 'high' : 'auto'}
-                          decoding="async"
-                          width={1600}
-                          height={900}
-                          sizes="100vw"
-                          className="object-cover w-full h-full object-top group-hover:scale-110 transition-transform duration-700"
-                        />
-                      </picture>
-                    );
-                  })()}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                    <span>{city.flag}</span>
-                    <span>{city.country}</span>
-                  </div>
-                  <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
-                    <i className="ri-map-pin-line mr-2 text-lg"></i>
-                    <span>{city.stadium} • {city.capacity} capacity</span>
-                  </div>
-                  {city.name === 'New York / New Jersey' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      8 Matches
-                    </div>
-                  )}
-                  {city.name === 'New York / New Jersey' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      8 Matches
-                    </div>
-                  )}
-                  {city.name === 'New York / New Jersey' && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
-                    </div>
-                  )}
-                  {city.name === 'Los Angeles' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      8 Matches
-                    </div>
-                  )}
-                  {city.name === 'Miami' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      6 Matches
-                    </div>
-                  )}
-                  {city.name === 'Dallas' && (
-                    <div className="absolute top-16 right-4 bg-purple-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-medal-fill text-base"></i><span className="tracking-wide">SEMIFINAL VENUE</span>
-                    </div>
-                  )}
-                  {city.name === 'Dallas' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      9 Matches
-                    </div>
-                  )}
-                  {city.name === 'Kansas City' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      4 Matches
-                    </div>
-                  )}
-                  {city.name === 'Houston' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      4 Matches
-                    </div>
-                  )}
-                  {city.name === 'Atlanta' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      6 Matches
-                    </div>
-                  )}
-                  {city.name === 'Philadelphia' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      5 Matches
-                    </div>
-                  )}
-                  {city.name === 'Seattle' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      5 Matches
-                    </div>
-                  )}
-                  {city.name === 'San Francisco' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      6 Matches
-                    </div>
-                  )}
-                  {city.name === 'Boston' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      5 Matches
-                    </div>
-                  )}
-                  {city.name === 'Vancouver' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      5 Matches
-                    </div>
-                  )}
-                  {city.name === 'Mexico City' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      5 Matches
-                    </div>
-                  )}
-                  {city.name === 'Guadalajara' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      4 Matches
-                    </div>
-                  )}
-                  {city.name === 'Monterrey' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      4 Matches
-                    </div>
-                  )}
-                  {city.name === 'Toronto' && (
-                    <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      6 Matches
-                    </div>
-                  )}
-                  {city.name === 'Toronto' && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-red-500 via-rose-500 to-pink-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-flag-fill text-base"></i><span className="tracking-wide">CANADA HOME MATCHES</span>
-                    </div>
-                  )}
+        <div className="relative z-10 py-32 md:py-40 lg:py-48">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="mb-8">
+                <nav className="flex items-center justify-center space-x-2 text-sm">
+                  <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                    Home
+                  </Link>
+                  <span className="text-slate-300 dark:text-slate-600">›</span>
+                  <span className="text-slate-900 dark:text-white font-medium">World Cup 2026 Host Cities</span>
+                </nav>
+              </div>
+              <div className="mb-12">
+                <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
+                  World Cup 2026 Host Cities: Travel Guide to All 16 Cities in USA, Canada & Mexico
+                </h1>
+                <div className="text-center mb-6">
+                  <span className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
+                    World Cup 2026 Host Cities: Complete Travel Guide (16)
+                  </span>
                 </div>
-
-                <div className="p-7 flex flex-col flex-1">
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
-                    {city.name}
-                  </h3>
-                  
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
-                    {city.description}
-                  </p>
-                  
-                  
-                  <Button 
-                    variant="primary" 
-                    size="sm" 
-                    fullWidth
-                    className="whitespace-nowrap cursor-pointer mt-auto"
-                    onClick={() => {
-                      // Navigate to the appropriate city guide page
-                      navigate(getCityRoute(city.name));
-                    }}
-                  >
-                    <i className="ri-eye-line mr-2"></i>
-                    {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
-                  </Button>
+                <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+                <p className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                  Planning your World Cup 2026 trip? Explore all 16 host cities with insider tips on accommodation, transport, neighborhoods, and the best match day experiences. Start here! Each of these incredible cities features world-class stadiums that will host unforgettable World Cup 2026 matches.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Cities</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">3</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Countries</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">104</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Matches</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">48</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Teams</div>
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </div>
-      </section>
 
-      {/* Premium Divider — Between City Grid and Plan Your Journey */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
-        </div>
-      </div>
-
-      {/* Plan Your Journey Section - Apple-Level Luxury Masterpiece */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 border border-slate-200/30 dark:border-navy-700/30 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10">
-            {/* Ultra-Premium Background Elements */}
-            <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="relative z-10 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
+                Select Your Destination
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+                Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
+              </p>
             </div>
-            
-            {/* Floating Glass Elements */}
-            <div className="absolute top-8 right-8 w-32 h-32 bg-white/5 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 rotate-12"></div>
-            <div className="absolute bottom-12 left-12 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-xl rounded-2xl border border-emerald-500/20 dark:border-emerald-500/30 -rotate-12"></div>
-            <div className="absolute top-1/3 left-8 w-16 h-16 bg-purple-500/10 dark:bg-purple-500/20 backdrop-blur-xl rounded-2xl border border-purple-500/20 dark:border-purple-500/30 rotate-45"></div>
-            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+              {hostCities.map((city, index) => (
+                <div
+                  key={city.id}
+                  className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative h-64 md:h-72 overflow-hidden">
+                    {(() => {
+                      const base = city.image.replace(/\.(webp|jpg|jpeg|png)$/i, '');
+                      const small = `${base}-640.webp`;
+                      const medium = `${base}-1024.webp`;
+                      const large = `${base}-1600.webp`;
+                      return (
+                        <picture>
+                          <source srcSet={large} media="(min-width: 1024px)" type="image/webp" />
+                          <source srcSet={medium} media="(min-width: 640px)" type="image/webp" />
+                          <img
+                            src={small}
+                            alt={city.alt || `${city.name} skyline – World Cup 2026 host city`}
+                            loading={index < 2 ? 'eager' : 'lazy'}
+                            fetchPriority={index < 2 ? 'high' : 'auto'}
+                            decoding="async"
+                            width={1600}
+                            height={900}
+                            sizes="100vw"
+                            className="object-cover w-full h-full object-top group-hover:scale-110 transition-transform duration-1000"
+                          />
+                        </picture>
+                      );
+                    })()}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                      <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                        <div className="relative flex items-center justify-between">
+                          <div className="flex items-center flex-1 min-w-0">
+                            <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                              <i className="ri-map-pin-line text-white text-sm"></i>
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                                {city.stadium.split(',')[0]}
+                              </div>
+                              <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
+                                {city.stadium.split(',').slice(1).join(',').trim()}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right ml-3 flex-shrink-0">
+                            <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                              {city.capacity.replace(/,/g, '').toLocaleString()}
+                            </div>
+                            <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">
+                              Capacity
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                      <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
+                        {city.name === 'New York / New Jersey' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              8 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Los Angeles' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              8 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Miami' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              6 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Dallas' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              9 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Kansas City' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              4 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Houston' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              4 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Atlanta' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              6 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Philadelphia' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              5 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Seattle' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              5 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'San Francisco' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              6 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Boston' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              5 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Vancouver' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              5 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Mexico City' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              5 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Guadalajara' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              4 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Monterrey' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              4 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Toronto' && (
+                          <div className="order-1">
+                            <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                              6 Matches
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'New York / New Jersey' && (
+                          <div className="order-2">
+                            <div className="bg-gradient-to-r from-amber-400/75 via-yellow-400/75 to-orange-500/75 text-black/80 px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                              <i className="ri-trophy-fill text-[11px]"></i><span className="tracking-wide">WORLD CUP FINAL</span>
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Dallas' && (
+                          <div className="order-2">
+                            <div className="bg-purple-500/75 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-[11px] font-bold shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                              <i className="ri-medal-fill text-[11px]"></i><span className="tracking-wide">WORLD CUP SEMI</span>
+                            </div>
+                          </div>
+                        )}
+                        {city.name === 'Toronto' && (
+                          <div className="order-2">
+                            <div className="bg-gradient-to-r from-red-500/75 via-rose-500/75 to-pink-500/75 text-white px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                              <i className="ri-flag-fill text-[11px]"></i><span className="tracking-wide">CANADA HOME</span>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-8 md:p-10 flex flex-col flex-1">
+                    <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                      {city.name}
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
+                      {city.description}
+                    </p>
+                    <Button 
+                      variant="primary" 
+                      size="lg" 
+                      fullWidth
+                      className="whitespace-nowrap cursor-pointer mt-auto font-space font-semibold text-base md:text-lg rounded-2xl py-3 md:py-4 group-hover:scale-105 transition-transform duration-500"
+                      onClick={() => {
+                        navigate(getCityRoute(city.name));
+                      }}
+                    >
+                      <i className="ri-compass-3-line mr-3 text-lg"></i>
+                      {city.name === 'New York / New Jersey' ? 'Plan Your NYC Journey' : (city.name === 'Los Angeles' ? 'Discover LA Guide' : `Explore ${city.name}`)}
+                    </Button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className="relative z-10 pt-0 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
               {/* Apple-Level Premium Header */}
               <div className="text-center mb-12 sm:mb-16 md:mb-20">
@@ -858,7 +891,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
               {/* Apple-Level Luxury Feature Cards Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                 {/* East Coast Circuit - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -876,13 +909,13 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
+                      Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
                     </p>
                   </div>
                 </div>
 
                 {/* West Coast Adventure - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -900,7 +933,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Begin in <a href="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>, head to <a href="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>, then north to <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
+                      Begin in <a href="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>, head to <a href="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>, then north to <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
                     </p>
                   </div>
                 </div>
@@ -909,7 +942,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
               {/* Additional City Combinations */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                 {/* Mexico Experience - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-3xl group-hover:from-orange-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -927,13 +960,13 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Discover <a href="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>, <a href="/world-cup-2026-host-cities/guadalajara" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>, and <a href="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
+                      Discover <a href="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>, <a href="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>, and <a href="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
                     </p>
                   </div>
                 </div>
 
                 {/* Cross-Border Journey - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl group-hover:from-blue-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -951,7 +984,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Connect <a href="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a> with <a href="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</a> for an unforgettable Pacific Northwest experience
+                      Connect <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a> with <a href="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</a> for an unforgettable Pacific Northwest experience
                     </p>
                   </div>
                 </div>
@@ -964,17 +997,8 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                 </a>
               </div>
             </div>
-          </div>
         </div>
-      </section>
-
-      {/* Premium Divider — Between Plan Your Journey and FAQ */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
         </div>
-      </div>
 
       {/* World-Class FAQ Section */}
       <WorldClassFAQ 
@@ -1050,6 +1074,8 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
         showSearch={true}
         locationSpecific={true}
       />
+
+      </section>
 
       {/* City Modal - Travel Tips Style */}
       {isModalOpen && selectedCity && (

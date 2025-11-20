@@ -8,7 +8,7 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function KansasCityCityGuide() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/world-cup-2026-host-cities/kansas-city';
+  const pageUrl = '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide';
 
   useEffect(() => {
     const title = 'Kansas City – World Cup 2026 Guide';
@@ -61,11 +61,9 @@ export function KansasCityCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb navigation for Kansas City World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Kansas City" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -83,13 +81,13 @@ export function KansasCityCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Kansas City World Cup 2026 Guide">
-                    <span className="truncate">Kansas City World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Kansas City">
+                    <span className="truncate">Kansas City</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Kansas City</h1>
+            <h1 className="editorial-hero-title">Kansas City World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -142,22 +140,22 @@ export function KansasCityCityGuide() {
               </div>
               <div>
                 ✈️ <strong>Nearby Cities:</strong>{' '}
-                <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>{' '}|
-                {' '}<Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
-                {' '}<Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
+                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
               </div>
             </div>
           </div>
           {/* Regional planning cross-links */}
           <p className="leading-relaxed mt-4">
             Pair Kansas City with{' '}
-            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
             {' '}for a central states circuit. Connect the Midwest with the South by adding{' '}
-            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
             {' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+            <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
             . For contrast and travel planning, combine Kansas City with a coastal city like{' '}
-            <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+            <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
             .
           </p>
           <hr className="editorial-divider" />
@@ -306,11 +304,11 @@ export function KansasCityCityGuide() {
                 </p>
                 <p className="leading-relaxed mt-4">
                   Planning a broader trip? Build a heartland-to-south route: start in Kansas City, then head to{' '}
-                  <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
                   {' '}and{' '}
-                  <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
                   {', '}or pivot east to{' '}
-                  <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
                   {' '}for a diverse American experience.
                 </p>
               </div>
@@ -828,7 +826,7 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Central States Circuit</p>
               <p>
                 Experience authentic American heartland: Kansas City (current) for BBQ and Midwest charm, then head to{' '}
-                <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
                 {' '}for Texas energy and culture.
               </p>
             </div>
@@ -836,11 +834,11 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Heartland to South</p>
               <p>
                 Connect the Midwest with the South: Kansas City (current) to{' '}
-                <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
                 {' '}to{' '}
-                <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
                 {' '}or{' '}
-                <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
                 {' '}for a diverse American experience.
               </p>
             </div>
@@ -848,11 +846,11 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Coast to Heartland</p>
               <p>
                 Combine Kansas City with coastal cities like{' '}
-                <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+                <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
                 ,{' '}
-                <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
+                <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
                 , or{' '}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
                 {' '}to experience the full diversity of American culture from the heartland to the coasts.
               </p>
             </div>
@@ -905,13 +903,7 @@ export function KansasCityCityGuide() {
           <hr className="editorial-divider" />
         </article>
 
-        {/* Back CTA */}
-        <div className="mt-8 flex justify-end">
-          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-            <i className="ri-check-line mr-2"></i>
-            Got It
-          </Link>
-        </div>
+
 
       </main>
 

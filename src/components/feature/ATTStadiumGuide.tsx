@@ -178,7 +178,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 The Colossal Crown Jewel Hosting the Most World Cup 2026 Matches
               </h2>
               <p className="leading-relaxed">
-                When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Located in <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>, AT&amp;T Stadium is one of the world's largest and most impressive venues. <strong>AT&amp;T Stadium is one of the </strong>
+                When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Located in <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>, AT&amp;T Stadium is one of the world's largest and most impressive venues. <strong>AT&amp;T Stadium is one of the </strong>
                 <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
                 {`, and will host nine matches—more than any other venue in the tournament, including a semifinal showdown that will determine one of the finalists.`} For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.
               </p>
@@ -661,7 +661,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <div>
                   <p className="font-semibold">Discover Dallas:</p>
                   <p>
-                    Explore our complete <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas World Cup 2026 Guide</Link> for essential information:
+                    Explore our complete <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas World Cup 2026 Guide</Link> for essential information:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Hotels near AT&amp;T Stadium in Arlington</li>
@@ -708,16 +708,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 </p>
               </div>
 
-              {/* Got It Button */}
-              <div className="flex justify-end mt-8">
-                <button
-                  onClick={handleGotItClick}
-                  className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-                >
-                  <i className="ri-check-line mr-2"></i>
-                  Got It
-                </button>
-              </div>
+              
               <hr className="editorial-divider" />
             </article>
           </main>

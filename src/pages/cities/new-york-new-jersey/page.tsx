@@ -5,9 +5,10 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { WorldClassFAQ } from '../../../components/feature/WorldClassFAQ';
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export default function NewYorkCityArticlePage() {
-  const pageUrl = '/world-cup-2026-host-cities/new-york-new-jersey';
+  const pageUrl = '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide';
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
@@ -374,6 +375,33 @@ export default function NewYorkCityArticlePage() {
       </a>
 
       <Header />
+      {(() => {
+        const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide`;
+        const ogImage = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
+        const title = 'New York / New Jersey World Cup 2026: Complete Travel Guide | StadiumPort';
+        const description = 'Explore New York & New Jersey for World Cup 2026. Find match schedules, hotels, transportation, and travel tips for MetLife Stadium and host city events.';
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+          document.title = title;
+          const setMeta = (selector: string, attr: string, value: string) => {
+            const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+            if (el) el.setAttribute(attr, value);
+          };
+          setMeta('meta[name="description"]', 'content', description);
+          setMeta('link[rel="canonical"]', 'href', pageUrl);
+          setMeta('meta[property="og:title"]', 'content', title);
+          setMeta('meta[property="og:description"]', 'content', description);
+          setMeta('meta[property="og:url"]', 'content', pageUrl);
+          setMeta('meta[property="og:image"]', 'content', ogImage);
+          setMeta('meta[property="twitter:title"]', 'content', title);
+          setMeta('meta[property="twitter:description"]', 'content', description);
+          setMeta('meta[property="twitter:url"]', 'content', pageUrl);
+          setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'New York', 'New Jersey', 'MetLife Stadium'] })
+        }, []);
+        return null;
+      })()}
 
       {/* Editorial Hero — cohesive with article style */}
       <section className="editorial-hero" role="banner" aria-label="New York New Jersey World Cup 2026 Guide Hero">
@@ -395,7 +423,7 @@ export default function NewYorkCityArticlePage() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb navigation for New York New Jersey World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for New York / New Jersey" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -413,14 +441,14 @@ export default function NewYorkCityArticlePage() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="New York/New Jersey World Cup 2026 Guide">
-                    <span className="truncate">New York/New Jersey World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="New York / New Jersey">
+                    <span className="truncate">New York / New Jersey</span>
                   </span>
                 </li>
               </ol>
             </nav>
             <h1 className="editorial-hero-title" itemProp="headline">
-              New York New Jersey World Cup 2026 Guide
+              New York / New Jersey World Cup 2026: Complete Travel Guide
             </h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -466,7 +494,7 @@ export default function NewYorkCityArticlePage() {
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
               </div>
               <div>
-                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
               </div>
             </div>
           </div>
@@ -568,7 +596,7 @@ The Coach USA 351 Meadowlands Express provides door-to-door round-trip transport
 Pro Traveler Tip: Book your NJ Transit tickets through their mobile app ahead of time. On match days, expect crowds but efficient service—New Yorkers know how to move people.`}
           </p>
           <p className="mt-4">
-            Planning a multi-city trip? The Northeast Corridor makes it easy to add <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link> by Amtrak. For an international angle, <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> is a short flight from NYC.
+            Planning a multi-city trip? The Northeast Corridor makes it easy to add <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link> by Amtrak. For an international angle, <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> is a short flight from NYC.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -889,19 +917,19 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
             <div>
               <h4 className="editorial-h4">Northeast Corridor</h4>
               <p>
-                Experience the best of the East Coast: Start in New York/New Jersey (current), take the train to <Link to="/world-cup-2026-host-cities/philadelphia" className="underline">Philadelphia</Link> for history and cheesesteaks, then continue to <Link to="/world-cup-2026-host-cities/boston" className="underline">Boston</Link> for New England charm.
+                Experience the best of the East Coast: Start in New York/New Jersey (current), take the train to <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline">Philadelphia</Link> for history and cheesesteaks, then continue to <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline">Boston</Link> for New England charm.
               </p>
             </div>
             <div>
               <h4 className="editorial-h4">Cross-Border Connection</h4>
               <p>
-                Combine NY/NJ with <Link to="/world-cup-2026-host-cities/toronto" className="underline">Toronto</Link> for an international experience, just a short flight or scenic drive away.
+                Combine NY/NJ with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline">Toronto</Link> for an international experience, just a short flight or scenic drive away.
               </p>
             </div>
             <div>
               <h4 className="editorial-h4">Eastern Seaboard</h4>
               <p>
-                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami" className="underline">Miami</Link> for completely different cultural vibes.
+                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="underline">Miami</Link> for completely different cultural vibes.
               </p>
             </div>
           </div>

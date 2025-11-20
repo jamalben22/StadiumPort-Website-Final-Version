@@ -47,7 +47,7 @@ export default function VenuesPage() {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'World Cup 2026 Stadiums & Venues Guide - All 16 Host Stadiums | StadiumPort';
+    document.title = 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues | StadiumPort';
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -89,38 +89,38 @@ export default function VenuesPage() {
   const getHostCityLinkForVenue = (venue: any): { url: string; label: string } => {
     switch (venue.id) {
       case 1:
-        return { url: '/world-cup-2026-host-cities/mexico-city', label: 'Mexico City' };
+        return { url: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide', label: 'Mexico City' };
       case 2:
         // NYC/NJ links to the original NYC travel guide
-  return { url: '/world-cup-2026-host-cities/new-york-new-jersey', label: 'New York / New Jersey' };
+  return { url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide', label: 'New York / New Jersey' };
       case 3:
-        return { url: '/world-cup-2026-host-cities/dallas', label: 'Dallas' };
+        return { url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide', label: 'Dallas' };
       case 4:
-        return { url: '/world-cup-2026-host-cities/kansas-city', label: 'Kansas City' };
+        return { url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide', label: 'Kansas City' };
       case 5:
-        return { url: '/world-cup-2026-host-cities/monterrey', label: 'Monterrey' };
+        return { url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide', label: 'Monterrey' };
       case 6:
-        return { url: '/world-cup-2026-host-cities/houston', label: 'Houston' };
+        return { url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide', label: 'Houston' };
       case 7:
-        return { url: '/world-cup-2026-host-cities/atlanta', label: 'Atlanta' };
+        return { url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide', label: 'Atlanta' };
       case 8:
-        return { url: '/world-cup-2026-host-cities/los-angeles', label: 'Los Angeles' };
+        return { url: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide', label: 'Los Angeles' };
       case 9:
-        return { url: '/world-cup-2026-host-cities/seattle', label: 'Seattle' };
+        return { url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide', label: 'Seattle' };
       case 10:
-        return { url: '/world-cup-2026-host-cities/san-francisco', label: 'San Francisco Bay Area' };
+        return { url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide', label: 'San Francisco Bay Area' };
       case 11:
-        return { url: '/world-cup-2026-host-cities/philadelphia', label: 'Philadelphia' };
+        return { url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide', label: 'Philadelphia' };
       case 12:
-        return { url: '/world-cup-2026-host-cities/boston', label: 'Boston' };
+        return { url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide', label: 'Boston' };
       case 13:
-        return { url: '/world-cup-2026-host-cities/miami', label: 'Miami' };
+        return { url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide', label: 'Miami' };
       case 14:
-        return { url: '/world-cup-2026-host-cities/toronto', label: 'Toronto' };
+        return { url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide', label: 'Toronto' };
       case 15:
-        return { url: '/world-cup-2026-host-cities/vancouver', label: 'Vancouver' };
+        return { url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide', label: 'Vancouver' };
       case 16:
-        return { url: '/world-cup-2026-host-cities/guadalajara', label: 'Guadalajara' };
+        return { url: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide', label: 'Guadalajara' };
       default:
         return { url: '/world-cup-2026-host-cities', label: 'Host Cities' };
     }
@@ -632,89 +632,114 @@ export default function VenuesPage() {
       <SchemaOrg schema={collectionPageSchema} />
       <Header />
       
-      {/* Hero Section - Matching Host Cities Page */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=Epic%20collection%20of%2016%20football%20stadiums%20across%20North%20America%20aerial%20montage%2C%20diverse%20architectural%20styles%20from%20modern%20to%20classic%2C%20massive%20sports%20venues%2C%20dramatic%20lighting%2C%20tournament%20atmosphere%20excellence&width=1920&height=800&seq=venues-hero-new&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Hero Section - Apple-Level Luxury Design */}
+      <section className="relative pt-32 md:pt-40 lg:pt-48 pb-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0">
+          {/* Premium Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          
+          {/* Floating Glass Elements - Premium Apple Style */}
+          <div className="absolute top-8 right-4 w-16 h-16 xs:top-10 xs:right-6 xs:w-20 xs:h-20 sm:top-16 sm:right-8 sm:w-32 sm:h-32 md:top-20 md:right-10 md:w-40 md:h-40 lg:top-24 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-72 bg-gold-500/5 dark:bg-gold-500/10 backdrop-blur-3xl rounded-full border border-gold-500/10 dark:border-gold-500/20 animate-float"></div>
+          <div className="absolute bottom-8 left-4 w-20 h-20 xs:bottom-10 xs:left-6 xs:w-24 xs:h-24 sm:bottom-16 sm:left-8 sm:w-40 sm:h-40 md:bottom-20 md:left-10 md:w-48 md:h-48 lg:bottom-24 lg:left-12 lg:w-56 lg:h-56 xl:w-80 xl:h-80 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute top-1/3 left-1/2 w-16 h-16 xs:top-1/2 xs:left-1/2 xs:w-20 xs:h-20 sm:top-1/2 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-56 xl:h-56 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb" className="mb-4 text-sm text-white/80">
-              <a href="/" className="hover:text-white">Home</a>
-              <span className="mx-2">›</span>
-              <span className="text-white/80">Stadiums</span>
-            </nav>
-
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            {/* Premium Breadcrumb - Minimal Luxury */}
+            <div className="mb-8">
+              <nav className="flex items-center justify-center space-x-2 text-sm">
+                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                  Home
+                </Link>
+                <span className="text-slate-300 dark:text-slate-600">›</span>
+                <span className="text-slate-900 dark:text-white font-medium">World Cup 2026 Stadiums</span>
+              </nav>
+            </div>
             
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-gold-200 bg-clip-text text-transparent">World Cup 2026 Stadiums: Complete Guide to All 16 Venues</h1>
-            
+            {/* Premium Title - Apple Typography */}
+            <div className="mb-12">
+              <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
+                World Cup 2026 Stadiums: Complete Guide to All 16 Venues
+              </h1>
+              <div className="text-center mb-6">
+                <span className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
+                  World Cup 2026 Stadiums: Complete Venue Guide (16)
+                </span>
+              </div>
+              <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                Complete guide to all 16 FIFA World Cup 2026 stadiums across USA, Canada & Mexico. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue.
+              </p>
+            </div>
 
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Complete guide to all 16 FIFA World Cup 2026 stadiums across USA, Canada & Mexico. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue.
+            {/* Apple-Level Premium Stats - Minimal Luxury Design */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+              
+              {/* Nations Card - Apple Gold */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-amber-200/50 dark:hover:border-amber-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10 dark:hover:shadow-amber-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-amber-600 group-hover:to-orange-600 dark:group-hover:from-amber-400 dark:group-hover:to-orange-400 transition-all duration-700">3</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Nations</div>
+                </div>
+              </div>
+
+              {/* Venues Card - Apple Emerald */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Venues</div>
+                </div>
+              </div>
+
+              {/* Matches Card - Apple Purple */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">104</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Matches</div>
+                </div>
+              </div>
+
+              {/* Capacity Card - Apple Blue */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">1.2M+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Capacity</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+      
+
+      {/* Stadiums Grid - unified into the same background */}
+        <div className="relative z-10 pt-0 pb-20 mt-28 md:mt-36 lg:mt-44 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
+              Select Your Venue
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+              Click any stadium for complete guides covering transport, where to stay, what to do nearby, and insider matchday advice from fans who've been there.
             </p>
           </div>
 
-          {/* Live Stats Bar */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">3</div>
-              <div className="text-slate-300 font-inter text-sm">Countries (USA, Canada, Mexico)</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">World-Class Stadiums</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-purple-400 mb-2">104</div>
-              <div className="text-slate-300 font-inter text-sm">Total Matches</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">1.2M+</div>
-              <div className="text-slate-300 font-inter text-sm">Combined Seating Capacity</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">87,523</div>
-              <div className="text-slate-300 font-inter text-sm">Largest Stadium (Estadio Azteca)</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Premium Divider — Between Header and Select Your Venue */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
-        </div>
-      </div>
-
-      {/* Stadiums Grid - 2 Column Layout matching Cities */}
-      <section className="py-16 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              Select Your Venue
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-                Click any stadium for complete guides covering transport, where to stay, what to do nearby, and insider matchday advice from fans who've been there.
-              </p>
-          </div>
-
-          {/* 2-Column Grid Layout - Matching Cities Page */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Apple-Level Premium 2-Column Grid - Matching Host Cities */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {venues.map((venue, index) => (
-              <div key={venue.id} className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
+              <div
+                key={venue.id}
+                className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+              >
+                {/* Premium Background Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
-                {/* Hero Image */}
-                <div className="relative h-56 overflow-hidden">
+                <div className="relative h-64 md:h-72 overflow-hidden">
                   <OptimizedImage
                     src={venue.image}
                     alt={venue.alt ?? (venue.id === 1 ? "Aerial view of Estadio Azteca in Mexico City, Mexico — historic stadium hosting FIFA World Cup 2026 matches" : 
@@ -725,104 +750,100 @@ export default function VenuesPage() {
                          venue.id === 6 ? "Exterior view of NRG Stadium in Houston, Texas — one of the major FIFA World Cup 2026 venues in the USA." :
                          `${venue.name} stadium`)}
                     className="w-full h-full"
-                    imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                    imgClassName="object-top group-hover:scale-110 transition-transform duration-1000"
                     placeholder="blur"
                     priority={index < 2}
                     sizes="100vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   
-                  {/* Stadium Name with Flag */}
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <span className="text-2xl">{venue.flag}</span>
-                      <h3 className="font-space font-bold text-3xl text-white drop-shadow-lg">
-                        {venue.name}
-                      </h3>
+                  {/* Apple-Level Premium Stadium Info - Ultra Minimal Glass */}
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                    <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                      {/* Premium Minimal Layout */}
+                      <div className="relative flex items-center justify-between">
+                        {/* Stadium Icon - Minimal Apple Style */}
+                        <div className="flex items-center flex-1 min-w-0">
+                          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                            <i className="ri-map-pin-line text-white text-sm"></i>
+                          </div>
+                          
+                          {/* Stadium Info - Compact Apple Typography */}
+                          <div className="min-w-0 flex-1">
+                            <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                              {venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city === 'East Rutherford, NJ' ? 'New York / New Jersey' : venue.city}
+                            </div>
+                          </div>
+                        </div>
+                        
+                        {/* Capacity - Apple Minimal Style */}
+                        <div className="text-right ml-3 flex-shrink-0">
+                          <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                            {venue.capacity.toLocaleString()}
+                          </div>
+                          <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">
+                            Capacity
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center text-white/95 text-sm font-medium">
-                      <i className="ri-map-pin-line mr-2 text-lg"></i>
-                      <span><a href={getHostCityLinkForVenue(venue).url} className="underline underline-offset-4 decoration-white/40 hover:decoration-white">{venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city === 'East Rutherford, NJ' ? 'New York / New Jersey' : venue.city}</a> • {venue.capacity.toLocaleString()} capacity</span>
-                    </div>
-
                   </div>
                   
-                  {/* Final Badge (MetLife only) */}
-                  {venue.id === 2 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-trophy-fill text-base"></i>
-                      <span className="tracking-wide">2026 WORLD CUP FINAL</span>
-                    </div>
-                  )}
+                  {/* Apple-Level Premium Badge System - Perfect Visual Hierarchy - Matching Host Cities */}
+                  {/* Match Count Badges - Top Right */}
+                  <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                    <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
+                      {/* Matches Count - Apple-Level Premium (Order 1 - like host cities) */}
+                      <div className="order-1">
+                        <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                          {venue.matches} Matches
+                        </div>
+                      </div>
 
-                  {/* Canada Home Matches Badge (BMO Field only) */}
-                  {venue.id === 14 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-red-600 to-red-800 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-flag-fill text-base"></i>
-                      <span className="tracking-wide">CANADA HOME MATCHES</span>
-                    </div>
-                  )}
+                      {/* Final Badge (MetLife only) - Apple-Level Premium (Order 2 - like host cities) */}
+                      {venue.id === 2 && (
+                        <div className="order-2">
+                          <div className="bg-gradient-to-r from-amber-400/75 via-yellow-400/75 to-orange-500/75 text-black/80 px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                            <i className="ri-trophy-fill text-[11px]"></i>
+                            <span className="tracking-wide">WORLD CUP FINAL</span>
+                          </div>
+                        </div>
+                      )}
 
-                  {/* Semifinal Badge (AT&T Stadium only) */}
-                  {venue.id === 3 && (
-                    <div
-                      className="absolute top-16 right-4 bg-gradient-to-r from-fuchsia-500 via-purple-600 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2"
-                      aria-label="Semifinal venue"
-                    >
-                      <i className="ri-medal-2-fill text-base"></i>
-                      <span className="tracking-wide">SEMIFINAL VENUE</span>
-                    </div>
-                  )}
+                      {/* Semifinal Badge (AT&T Stadium only) - Apple-Level Premium (Order 2 - like host cities) */}
+                      {venue.id === 3 && (
+                        <div className="order-2">
+                          <div className="bg-purple-500/75 backdrop-blur-sm text-white px-2 py-1 rounded-lg text-[11px] font-bold shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                            <i className="ri-medal-fill text-[11px]"></i>
+                            <span className="tracking-wide">WORLD CUP SEMI</span>
+                          </div>
+                        </div>
+                      )}
 
-                  {/* Matches Badge */}
-                  <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {venue.matches} Matches
+                      {/* Canada Home Matches Badge (BMO Field only) - Apple-Level Premium (Order 2 - like host cities) */}
+                      {venue.id === 14 && (
+                        <div className="order-2">
+                          <div className="bg-gradient-to-r from-red-500/75 via-rose-500/75 to-pink-500/75 text-white px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                            <i className="ri-flag-fill text-[11px]"></i>
+                            <span className="tracking-wide">CANADA HOME</span>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
-
-                  {/* Proximity Badge (SoFi Stadium only) */}
-                  {venue.id === 8 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-sky-400 via-blue-500 to-indigo-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-plane-line text-base"></i>
-                      <span className="tracking-wide">Near LAX</span>
-                    </div>
-                  )}
-
-                  {/* Proximity Badge (Levi's Stadium only) */}
-                  {venue.id === 10 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-cyan-400 via-teal-500 to-emerald-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-route-line text-base"></i>
-                      <span className="tracking-wide">45 min from San Francisco</span>
-                    </div>
-                  )}
-
-                  {/* Proximity Badge (Gillette Stadium only) */}
-                  {venue.id === 12 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-rose-500 via-red-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-car-line text-base"></i>
-                      <span className="tracking-wide">30 miles from Boston</span>
-                    </div>
-                  )}
-
-                  {/* Proximity Badge (Hard Rock Stadium only) */}
-                  {venue.id === 13 && (
-                    <div className="absolute top-16 right-4 bg-gradient-to-r from-teal-400 via-sky-500 to-blue-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-bold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                      <i className="ri-car-line text-base"></i>
-                      <span className="tracking-wide">20 miles from Miami Beach</span>
-                    </div>
-                  )}
                 </div>
 
-                {/* Card Content */}
-                <div className="p-7 flex flex-col flex-1">
+                {/* Premium Content Section - Apple Typography - Matching Host Cities */}
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                    {venue.name}
+                  </h3>
                   
-                  {/* Description */}
-                  <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed mb-6 font-medium">
+                  <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
                     {venue.description}
                   </p>
-
-                  {/* Removed hotel price ranges and availability sections for consistency */}
-
-                  {/* Action Button */}
+                  
+                  {/* Premium Button - Apple Style - Matching Host Cities */}
                   <Button 
                     variant="primary" 
                     size="sm" 
@@ -839,20 +860,8 @@ export default function VenuesPage() {
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Premium Divider — Between Stadium Grid and Beyond the Stadiums */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
-        </div>
-      </div>
-
-      {/* Beyond the Stadiums - Apple-Level Luxury Masterpiece */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 border border-slate-200/30 dark:border-navy-700/30 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10">
+      {/* Beyond the Stadiums - unified into the same background */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Ultra-Premium Background Elements */}
             <div className="absolute inset-0 opacity-20">
               <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
@@ -861,9 +870,7 @@ export default function VenuesPage() {
             </div>
             
             {/* Floating Glass Elements */}
-            <div className="absolute top-8 right-8 w-32 h-32 bg-white/5 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 rotate-12"></div>
-            <div className="absolute bottom-12 left-12 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-xl rounded-2xl border border-emerald-500/20 dark:border-emerald-500/30 -rotate-12"></div>
-            <div className="absolute top-1/3 left-8 w-16 h-16 bg-purple-500/10 dark:bg-purple-500/20 backdrop-blur-xl rounded-2xl border border-purple-500/20 dark:border-purple-500/30 rotate-45"></div>
+            
             
             <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
               {/* Apple-Level Premium Header */}
@@ -886,7 +893,7 @@ export default function VenuesPage() {
               {/* Apple-Level Luxury Feature Cards Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                 {/* Mexico City - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -904,13 +911,13 @@ export default function VenuesPage() {
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a> — Ancient history meets modern metropolis
+                      <a href="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a> — Ancient history meets modern metropolis
                     </p>
                   </div>
                 </div>
 
                 {/* Los Angeles - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -928,7 +935,7 @@ export default function VenuesPage() {
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a> — Entertainment capital with perfect weather
+                      <a href="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a> — Entertainment capital with perfect weather
                     </p>
                   </div>
                 </div>
@@ -937,7 +944,7 @@ export default function VenuesPage() {
               {/* Additional City Combinations */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                 {/* Toronto - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-3xl group-hover:from-orange-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -955,13 +962,13 @@ export default function VenuesPage() {
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a> — Multicultural gem of Canada
+                      <a href="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a> — Multicultural gem of Canada
                     </p>
                   </div>
                 </div>
 
                 {/* New York/New Jersey - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl group-hover:from-blue-400/25 group-hover:scale-110 transition-all duration-700"></div>
@@ -979,7 +986,7 @@ export default function VenuesPage() {
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/new-york-new-jersey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a> — The city that never sleeps
+                      <a href="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a> — The city that never sleeps
                     </p>
                   </div>
                 </div>
@@ -987,19 +994,11 @@ export default function VenuesPage() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* Premium Divider — Between Beyond the Stadiums and FAQ */}
-      <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
-        </div>
-      </div>
+      <div className="relative z-10 pt-0 pb-0">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
       {/* Stadiums FAQ Section */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
           <WorldClassFAQ 
             faqs={[
               {
@@ -1090,6 +1089,7 @@ export default function VenuesPage() {
             locationSpecific={true}
           />
         </div>
+      </div>
       </section>
 
       <Footer />

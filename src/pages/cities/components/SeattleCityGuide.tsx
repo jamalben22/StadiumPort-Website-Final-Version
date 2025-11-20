@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { Link } from 'react-router-dom';
@@ -9,18 +10,45 @@ export function SeattleCityGuide() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
+      {(() => {
+        const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/seattle-world-cup-2026-guide`;
+        const ogImage = `${siteUrl}/images/cities/seattle-world-cup-2026.webp`;
+        const title = 'Seattle World Cup 2026: Complete Travel Guide | StadiumPort';
+        const description = 'Comprehensive Seattle travel guide for FIFA World Cup 2026: Lumen Field details, match schedule, transportation, and where to stay.';
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useEffect(() => {
+          document.title = title;
+          const setMeta = (selector: string, attr: string, value: string) => {
+            const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
+            if (el) el.setAttribute(attr, value);
+          };
+          setMeta('meta[name="description"]', 'content', description);
+          setMeta('link[rel="canonical"]', 'href', pageUrl);
+          setMeta('meta[property="og:title"]', 'content', title);
+          setMeta('meta[property="og:description"]', 'content', description);
+          setMeta('meta[property="og:url"]', 'content', pageUrl);
+          setMeta('meta[property="og:image"]', 'content', ogImage);
+          setMeta('meta[property="twitter:title"]', 'content', title);
+          setMeta('meta[property="twitter:description"]', 'content', description);
+          setMeta('meta[property="twitter:url"]', 'content', pageUrl);
+          setMeta('meta[property="twitter:image"]', 'content', ogImage);
+          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Seattle', 'Lumen Field'] })
+        }, []);
+        return null;
+      })()}
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
             'Seattle – World Cup 2026 Guide',
             'Comprehensive Seattle travel guide for FIFA World Cup 2026: Lumen Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/seattle`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/seattle-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Seattle', 'Lumen Field'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle' }
+            { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/seattle-world-cup-2026.webp', {
             width: 1600,
@@ -50,10 +78,8 @@ export function SeattleCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb navigation for Seattle World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Seattle" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -71,13 +97,13 @@ export function SeattleCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Seattle World Cup 2026 Guide">
-                    <span className="truncate">Seattle World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Seattle">
+                    <span className="truncate">Seattle</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Seattle</h1>
+            <h1 className="editorial-hero-title">Seattle World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -121,7 +147,7 @@ export function SeattleCityGuide() {
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
                 </div>
                 <div>
-                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> | <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
                 </div>
               </div>
             </div>
@@ -212,7 +238,7 @@ export function SeattleCityGuide() {
               Here's Seattle's World Cup superpower: <strong>public transit that actually works</strong>. Unlike sprawling Sunbelt cities where you're hostage to traffic and surge pricing, Seattle delivers multiple efficient, affordable transit options directly to the stadium. This section could end there, but let's break down your options:
             </p>
             <p className="leading-relaxed">
-              Planning a regional trip? Seattle is just a few hours from <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> across the Canadian border—many fans combine matches in both cities for a cross-border Pacific experience.
+              Planning a regional trip? Seattle is just a few hours from <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> across the Canadian border—many fans combine matches in both cities for a cross-border Pacific experience.
             </p>
             <h3 className="editorial-h3">Your Best Options</h3>
             <div>
@@ -398,7 +424,7 @@ export function SeattleCityGuide() {
               Seattle’s self-proclaimed <strong>“Center of the Universe”</strong> embraces quirky bohemian vibes. Visit the <strong>Fremont Troll</strong> (VW Bug–crushing sculpture under Aurora Bridge), <strong>Waiting for the Interurban</strong> statue, and the <strong>Lenin Statue</strong>. Browse vintage shops and the <strong>Fremont Sunday Market</strong>. Great for offbeat exploring—about a <strong>20-minute bus</strong> from downtown.
             </p>
             <p className="leading-relaxed">
-              Many fans create a West Coast circuit: <strong>Seattle</strong>, then south to the <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>, and onward to <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
+              Many fans create a West Coast circuit: <strong>Seattle</strong>, then south to the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>, and onward to <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
             </p>
           </div>
         </article>
@@ -574,15 +600,15 @@ export function SeattleCityGuide() {
               <h3 className="editorial-h3">Popular Combinations:</h3>
               <p className="mb-2 font-semibold">Cross-Border Pacific</p>
               <p>
-                Experience two countries in one trip: Start in <strong>Seattle</strong> (current, no link), then drive or take the train to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> — just 3 hours away — for stunning mountain scenery and multicultural Canadian charm.
+                Experience two countries in one trip: Start in <strong>Seattle</strong> (current, no link), then drive or take the train to <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> — just 3 hours away — for stunning mountain scenery and multicultural Canadian charm.
               </p>
               <p className="mt-6 mb-2 font-semibold">Pacific Coast Complete</p>
               <p>
-                Create the ultimate West Coast adventure: <strong>Seattle</strong> for the Pacific Northwest, <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> for tech and culture, and <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
+                Create the ultimate West Coast adventure: <strong>Seattle</strong> for the Pacific Northwest, <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link> for tech and culture, and <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link> for beaches and entertainment.
               </p>
               <p className="mt-6 mb-2 font-semibold">Northern Neighbor Connection</p>
               <p>
-                Combine Seattle with <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> and <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> for a Canada-USA World Cup experience, with easy connections between all three cities.
+                Combine Seattle with <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> and <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> for a Canada-USA World Cup experience, with easy connections between all three cities.
               </p>
             </div>
             <p>

@@ -130,7 +130,7 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
                 Stand beneath the world's first retractable petal roof as it opens like a camera aperture to the Georgia sky. Watch 75,000 voices reverberate off the circular halo board—the largest video screen in professional sports. Welcome to Mercedes-Benz Stadium, a venue that didn't just raise the bar for American stadium design when it opened in 2017; it obliterated it entirely. As one of 11 US host cities, Atlanta will welcome eight World Cup matches in 2026, including a semifinal—making this architectural marvel the stage where footballing dreams will either flourish or shatter. For the tournament, FIFA regulations require the stadium to be called "Atlanta Stadium", but locals will always know it by its revolutionary spirit.
               </p>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
-                Located in <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>, Mercedes-Benz Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>, Mercedes-Benz Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -570,7 +570,7 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
               </h3>
               <div className="space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed">
                 <p>
-                  Explore our complete <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta World Cup 2026 Guide</Link> for essential travel info, neighborhoods, transport, and top experiences.
+                  Explore our complete <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta World Cup 2026 Guide</Link> for essential travel info, neighborhoods, transport, and top experiences.
                 </p>
                 <p>
                   Catching multiple matches in the South? Visit
@@ -608,16 +608,7 @@ export const MercedesBenzStadiumGuide: React.FC<MercedesBenzStadiumGuideProps> =
               <hr className="editorial-divider" />
             </article>
 
-            {/* Bottom Controls - MetLife premium style */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </section>
         </div>
       )}

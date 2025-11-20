@@ -18,6 +18,7 @@ import { HardRockStadiumGuide } from '../../../components/feature/HardRockStadiu
 import { EstadioAkronGuide } from '../../../components/feature/EstadioAkronGuide';
 import { BCPlaceStadiumGuide } from '../../../components/feature/BCPlaceStadiumGuide';
 import { Header } from '../../../components/feature/Header';
+import { Footer } from '../../../components/feature/Footer';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
@@ -475,6 +476,28 @@ export default function StadiumDetailPage() {
         </div>
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
+            <ol className="flex items-center gap-2 mb-4">
+              <li className="breadcrumb-item">
+                <Link className="breadcrumb-link" title="Home" to="/">
+                  <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                  </svg>
+                  <span className="truncate">Home</span>
+                </Link>
+              </li>
+              <li className="breadcrumb-separator" aria-hidden="true">›</li>
+              <li className="breadcrumb-item">
+                <Link className="breadcrumb-link" title="Stadiums" to="/world-cup-2026-stadiums">
+                  <span className="truncate">Stadiums</span>
+                </Link>
+              </li>
+              <li className="breadcrumb-separator" aria-hidden="true">›</li>
+              <li className="breadcrumb-item">
+                <span className="breadcrumb-current" title={`${stadium.name}`}>
+                  <span className="truncate">{stadium.name}</span>
+                </span>
+              </li>
+            </ol>
             <h1 className="editorial-hero-title">{stadium.name}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
@@ -501,6 +524,9 @@ export default function StadiumDetailPage() {
 
       {/* Main Stadium Guide Content */}
       <StadiumComponent showHeader={false} hideHero={true} />
+      
+      {/* Footer Section */}
+      <Footer />
     </div>
   );
 }

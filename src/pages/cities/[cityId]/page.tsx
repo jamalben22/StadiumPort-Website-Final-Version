@@ -1,5 +1,5 @@
 
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
@@ -21,17 +21,19 @@ import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function CityDetailPage() {
   const { cityId } = useParams<{ cityId: string }>();
+  const location = useLocation();
   // Normalize route param to ensure robust matching
   const normalizedId = (cityId || '')
     .toLowerCase()
     .trim()
     .replace(/\s+/g, '-');
+  const baseId = normalizedId.replace(/-world-cup-2026-guide$/, '');
   const [expandedSection, setExpandedSection] = useState<string | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0)
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-    const pageUrl = `${siteUrl}/world-cup-2026-host-cities/${normalizedId}`
+    const pageUrl = `${siteUrl}${location.pathname}`
     const titleByCity: Record<string, string> = {
       'kansas-city': 'Kansas City – World Cup 2026 Guide',
       'atlanta': 'Atlanta – World Cup 2026 Guide',
@@ -74,12 +76,12 @@ export default function CityDetailPage() {
       'monterrey': '/images/cities/monterrey-world-cup-2026.webp',
       'houston': '/images/cities/houston-world-cup-2026.webp'
     }
-    const title = titleByCity[normalizedId]
-    const description = descByCity[normalizedId]
-    const imgPath = imageByCity[normalizedId]
+    const title = titleByCity[baseId]
+    const description = descByCity[baseId]
+    const imgPath = imageByCity[baseId]
     if (title && description) {
       const image = imgPath ? `${siteUrl}${imgPath}` : undefined
-      const entry = getEditorialEntry('city', normalizedId)
+      const entry = getEditorialEntry('city', baseId)
       setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Host Cities', tags: ['World Cup 2026', 'Host Cities', title, ...(entry?.keywords||[])] })
     }
   }, [cityId, normalizedId])
@@ -89,62 +91,62 @@ export default function CityDetailPage() {
   };
 
   // Kansas City City Guide - Part 1/5 Implementation
-  if (normalizedId === 'kansas-city') {
+  if (baseId === 'kansas-city') {
     return <KansasCityCityGuide />;
   }
 
   // Atlanta City Guide - Part 1/5 Implementation
-  if (normalizedId === 'atlanta') {
+  if (baseId === 'atlanta') {
     return <AtlantaCityGuide />;
   }
 
   // Philadelphia City Guide - Part 1/5 Implementation
-  if (normalizedId === 'philadelphia') {
+  if (baseId === 'philadelphia') {
     return <PhiladelphiaCityGuide />;
   }
 
   // Seattle City Guide - Part 1/5 Implementation
-  if (normalizedId === 'seattle') {
+  if (baseId === 'seattle') {
     return <SeattleCityGuide />;
   }
 
   // San Francisco City Guide - Part 1/5 Implementation
-  if (normalizedId === 'san-francisco') {
+  if (baseId === 'san-francisco') {
     return <SanFranciscoCityGuide />;
   }
 
   // Boston City Guide - Part 1/5 Implementation
-  if (normalizedId === 'boston') {
+  if (baseId === 'boston') {
     return <BostonCityGuide />;
   }
 
   // Toronto City Guide - Part 1/5 Implementation
-  if (normalizedId === 'toronto') {
+  if (baseId === 'toronto') {
     return <TorontoCityGuide />;
   }
 
   // Vancouver City Guide - Part 1/5 Implementation
-  if (normalizedId === 'vancouver') {
+  if (baseId === 'vancouver') {
     return <VancouverCityGuide />;
   }
 
   // Mexico City City Guide - Part 1/5 Implementation
-  if (normalizedId === 'mexico-city') {
+  if (baseId === 'mexico-city') {
     return <MexicoCityGuide />;
   }
 
   // Guadalajara City Guide - Part 1/5 Implementation
-  if (normalizedId === 'guadalajara') {
+  if (baseId === 'guadalajara') {
     return <GuadalajaraCityGuide />;
   }
 
   // Monterrey City Guide - Part 1/5 Implementation
-  if (normalizedId === 'monterrey') {
+  if (baseId === 'monterrey') {
     return <MonterreyCityGuide />;
   }
 
   // Houston City Guide - Part 1/5 Implementation
-  if (normalizedId === 'houston') {
+  if (baseId === 'houston') {
     return (
       <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
         <Header />
@@ -153,13 +155,13 @@ export default function CityDetailPage() {
             generateCityGuideSchema(
               'Houston – World Cup 2026 Guide',
               'Comprehensive Houston travel guide for FIFA World Cup 2026: NRG Stadium details, match schedule, transportation, and where to stay.',
-              `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/houston`,
+              `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}${location.pathname}`,
               { datePublished: new Date(Date.now() - 3*24*60*60*1000).toISOString(), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Houston', 'NRG Stadium'] }
             ),
             generateBreadcrumbSchema([
               { name: 'Home', url: '/' },
               { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-              { name: 'Houston', url: '/world-cup-2026-host-cities/houston' }
+              { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' }
             ]),
             generateImageObjectSchema('/images/cities/houston-world-cup-2026.webp', {
               width: 1600,
@@ -188,8 +190,6 @@ export default function CityDetailPage() {
           <div className="editorial-hero-content">
             <div className="editorial-hero-inner">
               <div className="editorial-hero-eyebrow">
-                <span className="editorial-hero-pulse"></span>
-                <span>World Cup 2026</span>
               </div>
               <nav aria-label="Breadcrumb navigation" className="breadcrumb-ultra-premium mt-2">
                 <ol>
@@ -209,13 +209,32 @@ export default function CityDetailPage() {
                   </li>
                   <li className="breadcrumb-separator" aria-hidden="true">›</li>
                   <li className="breadcrumb-item">
-                    <span className="breadcrumb-current" title={`${city.name} World Cup 2026 Guide`}>
-                      <span className="truncate">{city.name} World Cup 2026 Guide</span>
-                    </span>
+                    {(() => {
+                      const nameByCity: Record<string, string> = {
+                        'kansas-city': 'Kansas City',
+                        'atlanta': 'Atlanta',
+                        'philadelphia': 'Philadelphia',
+                        'seattle': 'Seattle',
+                        'san-francisco': 'San Francisco Bay Area',
+                        'boston': 'Boston',
+                        'toronto': 'Toronto',
+                        'vancouver': 'Vancouver',
+                        'mexico-city': 'Mexico City',
+                        'guadalajara': 'Guadalajara',
+                        'monterrey': 'Monterrey',
+                        'houston': 'Houston'
+                      }
+                      const cityName = nameByCity[baseId] || baseId
+                      return (
+                        <span className="breadcrumb-current" title={cityName}>
+                          <span className="truncate">{cityName}</span>
+                        </span>
+                      )
+                    })()}
                   </li>
                 </ol>
               </nav>
-              <h1 className="editorial-hero-title">Houston</h1>
+              <h1 className="editorial-hero-title">Houston World Cup 2026: Complete Travel Guide</h1>
               <div className="editorial-hero-meta">
                 <div className="meta-item flex items-center gap-2">
                   <i className="ri-map-pin-line"></i>
@@ -262,13 +281,13 @@ export default function CityDetailPage() {
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
                 </div>
                 <div>
-                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> | <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link> | <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> | <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
                 </div>
               </div>
             </div>
             {/* Regional planning cross-links */}
             <p className="leading-relaxed mt-4">
-              Houston pairs perfectly with <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas adventure. Connect Houston with <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> for a true Southern experience, and leverage the Gulf connection to <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> for an international flavor.
+              Houston pairs perfectly with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas adventure. Connect Houston with <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> for a true Southern experience, and leverage the Gulf connection to <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> for an international flavor.
             </p>
             <hr className="editorial-divider" />
           </article>
@@ -295,7 +314,7 @@ export default function CityDetailPage() {
                     During the World Cup, FIFA will refer to the venue as "Houston Stadium" due to sponsorship guidelines. The stadium has undergone specific upgrades for the tournament, including new chillers, LED lights, upgrades to parking lots and adding in a grass field, which is expected to be installed after the 2026 Rodeo season.
                   </p>
                   <p className="leading-relaxed mt-4">
-                    Planning a multi-city trip? Houston pairs well with <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas itinerary, and connects naturally to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for a broader Southern circuit.
+                    Planning a multi-city trip? Houston pairs well with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas itinerary, and connects naturally to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for a broader Southern circuit.
                   </p>
                 </div>
               </div>
@@ -1331,19 +1350,19 @@ export default function CityDetailPage() {
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Texas Takeover</h4>
                     <p>
-                      Experience both Texas host cities: Houston (current, no link) for international cuisine and space exploration, then <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for Cowboys culture and urban energy.
+                      Experience both Texas host cities: Houston (current, no link) for international cuisine and space exploration, then <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for Cowboys culture and urban energy.
                     </p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Southern Hospitality Tour</h4>
                     <p>
-                      Create a Southern states circuit: Houston (current) to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, experiencing three distinct Southern personalities and climates.
+                      Create a Southern states circuit: Houston (current) to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, experiencing three distinct Southern personalities and climates.
                     </p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Gulf & Beyond</h4>
                     <p>
-                      Connect Houston's Gulf Coast location with <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for tropical vibes, or head to Mexican host cities like <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> and <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> for an international flavor.
+                      Connect Houston's Gulf Coast location with <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for tropical vibes, or head to Mexican host cities like <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> for an international flavor.
                     </p>
                   </div>
                 </div>

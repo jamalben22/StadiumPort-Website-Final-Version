@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
@@ -275,311 +276,150 @@ export default function DealsPage() {
       
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=Luxury%20travel%20deals%20and%20discounts%20display%2C%20premium%20hotel%20offers%2C%20savings%20and%20promotional%20atmosphere%2C%20exclusive%20travel%20packages%2C%20deal%20hunting%20excitement&width=1920&height=800&seq=deals-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Unified Premium Section - Apple-Level Design */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        {/* Subtle Background Elements - Unified Across All Sections */}
+        <div className="absolute inset-0">
+          {/* Premium Gradient Overlay - Continuous Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          
+          {/* Floating Glass Elements - Premium Apple Style (More Subtle) */}
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-gold-500/5 dark:bg-gold-500/10 backdrop-blur-3xl rounded-full border border-gold-500/10 dark:border-gold-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-price-tag-3-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">World Cup 2026 Travel Deals</span>
-            </div>
-            
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              Save on Flights, Hotels
-              <br />
-              <span className="text-gold-400">& Experiences</span>
-            </h1>
-            
-            <p className="font-inter text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed">
-              We've partnered with top travel brands to bring you exclusive deals across all 16 host cities. Whether you're booking one match or following your team across the continent, find the best prices here.
-            </p>
-          </div>
 
-          {/* Live Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Up to 40%</div>
-              <div className="text-slate-300 font-inter text-sm">Savings</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">150+</div>
-              <div className="text-slate-300 font-inter text-sm">Active Deals</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Cities</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Daily</div>
-              <div className="text-slate-300 font-inter text-sm">Updates</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Deals */}
-      <section className="py-20 bg-slate-50 dark:bg-navy-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-space font-bold text-4xl text-navy-900 dark:text-white mb-4">
-              Today's Best Deals
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter text-lg max-w-2xl mx-auto">
-              Hand-picked offers with the biggest savings. These deals won't last—grab them while you can.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredDeals.map((deal, index) => (
-              <Card key={index} hover className="overflow-hidden group bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
-                <div className="relative">
-                  <img
-                    src={deal.image}
-                    alt={deal.title}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  
-                  <div className="absolute top-4 left-4 flex space-x-2">
-                    <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      Save ${deal.savings}
-                    </div>
-                    <div className="bg-gold-400 text-navy-900 px-3 py-1 rounded-full text-sm font-semibold">
-                      Featured
-                    </div>
-                  </div>
-                  
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      -{calculateSavingsPercentage(deal.originalPrice, deal.dealPrice)}%
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-space font-bold text-xl text-white mb-2">
-                      {deal.title}
-                    </h3>
-                    <div className="flex items-center text-white/90 text-sm">
-                      <i className="ri-map-pin-line mr-2"></i>
-                      <span>{deal.city}</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                      <div className="flex items-center space-x-1 text-sm text-slate-500 dark:text-slate-400">
-                        <i className="ri-star-fill text-gold-400"></i>
-                        <span>{deal.rating}</span>
-                        <span>({deal.reviews})</span>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-sm text-slate-500 dark:text-slate-400 line-through">${deal.originalPrice}</div>
-                      <div className="text-2xl font-bold text-emerald-600">${deal.dealPrice}</div>
-                    </div>
-                  </div>
-                  
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
-                    {deal.description}
-                  </p>
-                  
-                  <div className="grid grid-cols-2 gap-2 mb-6">
-                    {deal.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
-                        <i className="ri-check-line text-emerald-500"></i>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                  
-                  <div className="flex items-center justify-between mb-4 text-sm text-slate-500 dark:text-slate-400">
-                    <span>Valid until: {new Date(deal.validUntil).toLocaleDateString()}</span>
-                    <span className="text-red-500 font-semibold">Limited Time</span>
-                  </div>
-                  
-                  <a 
-                    href="https://deal-affiliate-link.com"
-                    target="_blank"
-                    rel="nofollow sponsored noopener noreferrer"
-                    data-affiliate-type="deal"
-                    className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-2.5 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
-                  >
-                    <i className="ri-shopping-cart-line mr-2"></i>
-                    Book Now - Save ${deal.savings}
-                  </a>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Filter Section */}
-      <section className="relative py-16 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy-900 dark:via-navy-800 dark:to-navy-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-gold-400/5"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Filter Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-6 py-3 mb-4">
-              <i className="ri-filter-3-line text-emerald-600"></i>
-              <span className="text-slate-700 dark:text-slate-300 font-medium">Smart Filtering</span>
-            </div>
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-2">
-              Find Your Deal
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter">
-              Filter by city, travel type, or budget to discover offers that match your trip.
-            </p>
-          </div>
-
-          {/* Premium Filter Controls */}
-          <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
+        {/* Hero Content */}
+        <div className="relative z-10 py-32 md:py-40 lg:py-48">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              {/* Premium Breadcrumb - Minimal Luxury */}
+              <div className="mb-8">
+                <nav className="flex items-center justify-center space-x-2 text-sm">
+                  <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                    Home
+                  </Link>
+                  <span className="text-slate-300 dark:text-slate-600">›</span>
+                  <span className="text-slate-900 dark:text-white font-medium">Travel Deals</span>
+                </nav>
+              </div>
               
-              {/* City Filter */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <i className="ri-map-pin-line text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-navy-900 dark:text-white">City</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Select your destination</p>
-                  </div>
-                </div>
-                
-                <div className="relative">
-                  <select
-                    value={selectedCity}
-                    onChange={(e) => setSelectedCity(e.target.value)}
-                    className="w-full px-4 py-3 pr-10 rounded-xl text-sm font-medium bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 border border-slate-200/50 dark:border-navy-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 cursor-pointer appearance-none backdrop-blur-sm transition-all duration-300"
-                  >
-                    {cities.map((city) => (
-                      <option key={city} value={city}>
-                        {city === 'all' ? 'All Cities' : city}
-                      </option>
-                    ))}
-                  </select>
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                    <i className="ri-arrow-down-s-line text-slate-400"></i>
-                  </div>
-                </div>
+              {/* Premium Title - Apple Typography */}
+              <div className="mb-12">
+                <h1 className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+                  Travel Deals
+                </h1>
+                <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-gold-500 mx-auto mb-8 rounded-full"></div>
+                <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                  Exclusive savings across all 16 host cities. Premium deals on hotels, flights, and experiences.
+                </p>
               </div>
 
-              {/* Deal Type Filter */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-500 rounded-xl flex items-center justify-center">
-                    <i className="ri-price-tag-3-line text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-navy-900 dark:text-white">Deal Type</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Choose your preference</p>
-                  </div>
-                </div>
+              {/* Apple-Level Premium Stats - Minimal Luxury Design */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
                 
-                <div className="grid grid-cols-2 gap-2">
-                  {types.map((type) => (
-                    <button
-                      key={type}
-                      onClick={() => setSelectedType(type)}
-                      className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
-                        selectedType === type
-                          ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-navy-900 shadow-lg shadow-gold-400/25 scale-105'
-                          : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-gold-50 dark:hover:bg-gold-900/20 border border-slate-200/50 dark:border-navy-600/50 hover:border-gold-300 dark:hover:border-gold-600 hover:scale-102'
-                      }`}
-                    >
-                      {type === 'all' ? 'All Types' : 
-                       type === 'hotel' ? 'Hotels' :
-                       type === 'package' ? 'Packages' : 'Flights'}
-                    </button>
-                  ))}
+                {/* Savings Card - Apple Emerald */}
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">40%</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Max Savings</div>
+                  </div>
                 </div>
-              </div>
 
-              {/* Results Counter */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i className="ri-search-line text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-navy-900 dark:text-white">Results</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Matching your filters</p>
+                {/* Deals Card - Apple Gold */}
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-amber-200/50 dark:hover:border-amber-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10 dark:hover:shadow-amber-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-amber-600 group-hover:to-orange-600 dark:group-hover:from-amber-400 dark:group-hover:to-orange-400 transition-all duration-700">150+</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Live Deals</div>
                   </div>
                 </div>
-                
-                {/* Results Display */}
-                <div className="text-center p-6 bg-gradient-to-r from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-800/50">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">{filteredDeals.length}</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">
-                    of {deals.length} deals match your filters
-                  </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">
-                    Updated in real-time
+
+                {/* Cities Card - Apple Blue */}
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">16</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Cities</div>
                   </div>
                 </div>
+
+                {/* Partners Card - Apple Purple */}
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-pink-600 dark:group-hover:from-purple-400 dark:group-hover:to-pink-400 transition-all duration-700">50+</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Partners</div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      {/* All Deals */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {filteredDeals.map((deal, index) => (
-              <Card key={index} hover className="overflow-hidden bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
-                <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                  <div className="md:col-span-2 relative">
+        {/* Featured Deals - Seamlessly Integrated */}
+        <div className="relative z-10 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="font-space font-bold text-4xl text-navy-900 dark:text-white mb-4">
+                Today's Best Deals
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 font-inter text-lg max-w-2xl mx-auto">
+                Hand-picked offers with the biggest savings. These deals won't last—grab them while you can.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {featuredDeals.map((deal, index) => (
+                <Card key={index} hover className="overflow-hidden group bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
+                  <div className="relative">
                     <img
                       src={deal.image}
                       alt={deal.title}
-                      className="w-full h-48 md:h-full object-cover object-top"
+                      className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    
+                    <div className="absolute top-4 left-4 flex space-x-2">
                       <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        Save ${deal.savings}
+                      </div>
+                      <div className="bg-gold-400 text-navy-900 px-3 py-1 rounded-full text-sm font-semibold">
+                        Featured
+                      </div>
+                    </div>
+                    
+                    <div className="absolute top-4 right-4">
+                      <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         -{calculateSavingsPercentage(deal.originalPrice, deal.dealPrice)}%
                       </div>
                     </div>
-                  </div>
 
-                  <div className="md:col-span-3 p-6">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <h3 className="font-space font-bold text-xl text-navy-900 dark:text-white mb-1">
-                          {deal.title}
-                        </h3>
-                        <div className="flex items-center text-slate-600 dark:text-slate-400 text-sm mb-2">
-                          <i className="ri-map-pin-line mr-1"></i>
-                          <span>{deal.city}</span>
-                          <span className="mx-2">•</span>
-                          <span className="capitalize">{deal.type}</span>
-                        </div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="font-space font-bold text-xl text-white mb-2">
+                        {deal.title}
+                      </h3>
+                      <div className="flex items-center text-white/90 text-sm">
+                        <i className="ri-map-pin-line mr-2"></i>
+                        <span>{deal.city}</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center space-x-3">
                         <div className="flex items-center space-x-1 text-sm text-slate-500 dark:text-slate-400">
                           <i className="ri-star-fill text-gold-400"></i>
                           <span>{deal.rating}</span>
-                          <span>({deal.reviews} reviews)</span>
+                          <span>({deal.reviews})</span>
                         </div>
                       </div>
                       <div className="text-right">
                         <div className="text-sm text-slate-500 dark:text-slate-400 line-through">${deal.originalPrice}</div>
                         <div className="text-2xl font-bold text-emerald-600">${deal.dealPrice}</div>
-                        <div className="text-sm text-red-500 font-semibold">Save ${deal.savings}</div>
                       </div>
                     </div>
                     
@@ -587,34 +427,224 @@ export default function DealsPage() {
                       {deal.description}
                     </p>
                     
-                    <div className="grid grid-cols-2 gap-2 mb-4">
-                      {deal.features.slice(0, 4).map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-2 text-xs text-slate-600 dark:text-slate-400">
+                    <div className="grid grid-cols-2 gap-2 mb-6">
+                      {deal.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
                           <i className="ri-check-line text-emerald-500"></i>
                           <span>{feature}</span>
                         </div>
                       ))}
                     </div>
                     
-                    <div className="flex items-center justify-between">
-                      <div className="text-sm text-slate-500 dark:text-slate-400">
-                        Valid until {new Date(deal.validUntil).toLocaleDateString()}
-                      </div>
-                      <a 
-                        href="https://deal-affiliate-link.com"
-                        target="_blank"
-                        rel="nofollow sponsored noopener noreferrer"
-                        data-affiliate-type="deal"
-                        className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
-                      >
-                        <i className="ri-shopping-cart-line mr-2"></i>
-                        Book Deal
-                      </a>
+                    <div className="flex items-center justify-between mb-4 text-sm text-slate-500 dark:text-slate-400">
+                      <span>Valid until: {new Date(deal.validUntil).toLocaleDateString()}</span>
+                      <span className="text-red-500 font-semibold">Limited Time</span>
+                    </div>
+                    
+                    <a 
+                      href="https://deal-affiliate-link.com"
+                      target="_blank"
+                      rel="nofollow sponsored noopener noreferrer"
+                      data-affiliate-type="deal"
+                      className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-2.5 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
+                    >
+                      <i className="ri-shopping-cart-line mr-2"></i>
+                      Book Now - Save ${deal.savings}
+                    </a>
+                  </div>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Filter Section - Seamlessly Integrated */}
+        <div className="relative z-10 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Filter Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-6 py-3 mb-4">
+                <i className="ri-filter-3-line text-emerald-600"></i>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Smart Filtering</span>
+              </div>
+              <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-2">
+                Find Your Deal
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 font-inter">
+                Filter by city, travel type, or budget to discover offers that match your trip.
+              </p>
+            </div>
+
+            {/* Premium Filter Controls */}
+            <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
+                
+                {/* City Filter */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <i className="ri-map-pin-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy-900 dark:text-white">City</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Select your destination</p>
+                    </div>
+                  </div>
+                  
+                  <div className="relative">
+                    <select
+                      value={selectedCity}
+                      onChange={(e) => setSelectedCity(e.target.value)}
+                      className="w-full px-4 py-3 pr-10 rounded-xl text-sm font-medium bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 border border-slate-200/50 dark:border-navy-600/50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 cursor-pointer appearance-none backdrop-blur-sm transition-all duration-300"
+                    >
+                      {cities.map((city) => (
+                        <option key={city} value={city}>
+                          {city === 'all' ? 'All Cities' : city}
+                        </option>
+                      ))}
+                    </select>
+                    <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                      <i className="ri-arrow-down-s-line text-slate-400"></i>
                     </div>
                   </div>
                 </div>
-              </Card>
-            ))}
+
+                {/* Deal Type Filter */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-gold-400 to-gold-500 rounded-xl flex items-center justify-center">
+                      <i className="ri-price-tag-3-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy-900 dark:text-white">Deal Type</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Choose your preference</p>
+                    </div>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-2">
+                    {types.map((type) => (
+                      <button
+                        key={type}
+                        onClick={() => setSelectedType(type)}
+                        className={`px-3 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
+                          selectedType === type
+                            ? 'bg-gradient-to-r from-gold-400 to-gold-500 text-navy-900 shadow-lg shadow-gold-400/25 scale-105'
+                            : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-gold-50 dark:hover:bg-gold-900/20 border border-slate-200/50 dark:border-navy-600/50 hover:border-gold-300 dark:hover:border-gold-600 hover:scale-102'
+                        }`}
+                      >
+                        {type === 'all' ? 'All Types' : 
+                         type === 'hotel' ? 'Hotels' :
+                         type === 'package' ? 'Packages' : 'Flights'}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Results Counter */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <i className="ri-search-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy-900 dark:text-white">Results</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Matching your filters</p>
+                    </div>
+                  </div>
+                  
+                  {/* Results Display */}
+                  <div className="text-center p-6 bg-gradient-to-r from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-800/50">
+                    <div className="text-3xl font-bold text-emerald-600 mb-2">{filteredDeals.length}</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
+                      of {deals.length} deals match your filters
+                    </div>
+                    <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">
+                      Updated in real-time
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* All Deals - Seamlessly Integrated into Unified Background */}
+        <div className="relative z-10 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {filteredDeals.map((deal, index) => (
+                <Card key={index} hover className="overflow-hidden bg-white/90 dark:bg-navy-800/90 backdrop-blur-xl border-white/20 dark:border-navy-700/30" padding="none">
+                  <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                    <div className="md:col-span-2 relative">
+                      <img
+                        src={deal.image}
+                        alt={deal.title}
+                        className="w-full h-48 md:h-full object-cover object-top"
+                      />
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          -{calculateSavingsPercentage(deal.originalPrice, deal.dealPrice)}%
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="md:col-span-3 p-6">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <h3 className="font-space font-bold text-xl text-navy-900 dark:text-white mb-1">
+                            {deal.title}
+                          </h3>
+                          <div className="flex items-center text-slate-600 dark:text-slate-400 text-sm mb-2">
+                            <i className="ri-map-pin-line mr-1"></i>
+                            <span>{deal.city}</span>
+                            <span className="mx-2">•</span>
+                            <span className="capitalize">{deal.type}</span>
+                          </div>
+                          <div className="flex items-center space-x-1 text-sm text-slate-500 dark:text-slate-400">
+                            <i className="ri-star-fill text-gold-400"></i>
+                            <span>{deal.rating}</span>
+                            <span>({deal.reviews} reviews)</span>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm text-slate-500 dark:text-slate-400 line-through">${deal.originalPrice}</div>
+                          <div className="text-2xl font-bold text-emerald-600">${deal.dealPrice}</div>
+                          <div className="text-sm text-red-500 font-semibold">Save ${deal.savings}</div>
+                        </div>
+                      </div>
+                      
+                      <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                        {deal.description}
+                      </p>
+                      
+                      <div className="grid grid-cols-2 gap-2 mb-4">
+                        {deal.features.slice(0, 4).map((feature, idx) => (
+                          <div key={idx} className="flex items-center space-x-2 text-xs text-slate-600 dark:text-slate-400">
+                            <i className="ri-check-line text-emerald-500"></i>
+                            <span>{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                      
+                      <div className="flex items-center justify-between">
+                        <div className="text-sm text-slate-500 dark:text-slate-400">
+                          Valid until {new Date(deal.validUntil).toLocaleDateString()}
+                        </div>
+                        <a 
+                          href="https://deal-affiliate-link.com"
+                          target="_blank"
+                          rel="nofollow sponsored noopener noreferrer"
+                          data-affiliate-type="deal"
+                          className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
+                        >
+                          <i className="ri-shopping-cart-line mr-2"></i>
+                          Book Deal
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              ))}
+            </div>
           </div>
         </div>
       </section>

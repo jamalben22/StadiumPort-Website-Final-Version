@@ -23,21 +23,29 @@ const getCityRoute = (cityName: string) => {
   switch (cityName) {
     // Ensure NYC/NJ card links to the original New York City guide
     case 'New York / New Jersey':
-  return '/world-cup-2026-host-cities/new-york-new-jersey';
+  return '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide';
     case 'New York City':
-  return '/world-cup-2026-host-cities/new-york-new-jersey';
+  return '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide';
     case 'Los Angeles':
-      return '/world-cup-2026-host-cities/los-angeles';
+      return '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
     case 'Miami':
-      return '/world-cup-2026-host-cities/miami';
+      return '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
     case 'Kansas City':
-      return '/world-cup-2026-host-cities/kansas-city';
+      return '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide';
     case 'Houston':
-      return '/world-cup-2026-host-cities/houston';
+      return '/world-cup-2026-host-cities/houston-world-cup-2026-guide';
     case 'Dallas':
-      return '/world-cup-2026-host-cities/dallas';
+      return '/world-cup-2026-host-cities/dallas-world-cup-2026-guide';
     case 'Seattle':
-      return '/world-cup-2026-host-cities/seattle';
+      return '/world-cup-2026-host-cities/seattle-world-cup-2026-guide';
+    case 'San Francisco':
+      return '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide';
+    case 'Toronto':
+      return '/world-cup-2026-host-cities/toronto-world-cup-2026-guide';
+    case 'Vancouver':
+      return '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide';
+    case 'Monterrey':
+      return '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide';
     default:
       return '/world-cup-2026-host-cities';
   }

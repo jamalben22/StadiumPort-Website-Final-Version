@@ -148,7 +148,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed mb-6">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>, Lincoln Financial Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. When it hosts six matches — including a knockout round clash on July 4th, America's 250th birthday — the city will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>, Lincoln Financial Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. When it hosts six matches — including a knockout round clash on July 4th, America's 250th birthday — the city will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
               </p>
               <p className="leading-relaxed">
                 The stadium's design itself speaks to the city's character. Inspired by the diverse neighborhoods of Philadelphia, its asymmetrical seating provides unique viewing experiences throughout the stadium, while the aggressive canopy profile evokes an eagle's wing, instantly identifiable to global audiences. This is where architecture, sports culture, and American history collide — and where your World Cup 2026 journey could reach its crescendo.
@@ -276,7 +276,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               </h3>
               <p className="leading-relaxed mb-4">Philadelphia's revolutionary history and vibrant culture make it a must-visit World Cup 2026 destination.</p>
               <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
-                <p className="leading-relaxed"><strong>Discover Philadelphia:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia World Cup 2026 Guide</Link> for comprehensive information:</p>
+                <p className="leading-relaxed"><strong>Discover Philadelphia:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia World Cup 2026 Guide</Link> for comprehensive information:</p>
                 <ul className="list-disc list-inside mt-3 space-y-1">
                   <li>Hotels near Lincoln Financial Field</li>
                   <li>Transportation to the stadium</li>
@@ -803,16 +803,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               <hr className="editorial-divider" />
             </article>
 
-            {/* Got It Button - premium CTA aligned with editorial style */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </main>
         </div>
       )}

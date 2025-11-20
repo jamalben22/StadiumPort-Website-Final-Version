@@ -149,7 +149,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 The Cathedral Where World Cup History Repeats
               </h2>
               <p>
-                Located in <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>, Estadio Azteca is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
+                Located in <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>, Estadio Azteca is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -242,7 +242,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 <p>Mexico City offers an incredible cultural experience that extends far beyond the historic Estadio Azteca.</p>
                 <div>
                   <h4 className="editorial-h4 mb-2">Discover Mexico City</h4>
-                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City World Cup 2026 Guide</Link> for comprehensive travel information:</p>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City World Cup 2026 Guide</Link> for comprehensive travel information:</p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Where to stay near Estadio Azteca</li>
                     <li>Transportation in Mexico City</li>
@@ -776,17 +776,6 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               </div>
               <hr className="editorial-divider" />
             </article>
-
-            {/* Got It Button */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
           </main>
         </div>
       )}

@@ -118,7 +118,7 @@ export function WorldClassFAQ({
   }, []);
 
   return (
-    <section className="relative py-16 md:py-20 lg:py-32 bg-white dark:bg-navy-900 overflow-hidden">
+    <section className="relative z-10 py-16 md:py-20 lg:py-32 bg-transparent overflow-hidden">
       {/* Skip to FAQ content link for accessibility */}
       <a 
         href="#faq-content" 
@@ -224,15 +224,13 @@ export function WorldClassFAQ({
                 >
                   <div className={`
                     relative overflow-hidden
-                    bg-white/90 dark:bg-navy-800/90
-                    backdrop-blur-2xl
-                    border-2 
-                    ${isOpen 
-                      ? 'border-emerald-400/50 dark:border-emerald-500/50 shadow-2xl shadow-emerald-500/20' 
-                      : 'border-white/40 dark:border-navy-700/40 hover:border-emerald-400/30 dark:hover:border-emerald-500/30'
-                    }
-                    rounded-2xl md:rounded-3xl
-                    hover:bg-white dark:hover:bg-navy-800
+                    bg-white/80 dark:bg-navy-900/80
+                    backdrop-blur-3xl
+                    border-2 border-white/40 dark:border-navy-700/40
+                    rounded-3xl
+                    shadow-2xl
+                    hover:border-white/50 dark:hover:border-navy-600/50
+                    hover:bg-white/80 dark:hover:bg-navy-900/80
                     hover:shadow-3xl hover:shadow-emerald-500/10
                     transition-all duration-700 ease-out
                     transform hover:-translate-y-1

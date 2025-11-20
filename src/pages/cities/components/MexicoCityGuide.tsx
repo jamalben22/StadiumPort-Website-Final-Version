@@ -16,9 +16,9 @@ export function MexicoCityGuide() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'Mexico City World Cup 2026 – Estadio Azteca & Cultural Capital Guide',
+            'Mexico City World Cup 2026: Complete Travel Guide',
             'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.',
-            `${siteUrl}/world-cup-2026-host-cities/mexico-city`,
+            `${siteUrl}/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Mexico City', 'Estadio Azteca'] }
           ),
           generateBreadcrumbSchema([
@@ -35,9 +35,9 @@ export function MexicoCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/mexico-city`;
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/mexico-city-world-cup-2026.webp`;
-        const title = 'Mexico City World Cup 2026 – Estadio Azteca & Cultural Capital Guide';
+        const title = 'Mexico City World Cup 2026: Complete Travel Guide | StadiumPort';
         const description = 'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -81,11 +81,9 @@ export function MexicoCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb navigation for Mexico City World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Mexico City" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -103,13 +101,13 @@ export function MexicoCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Mexico City World Cup 2026 Guide">
-                    <span className="truncate">Mexico City World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Mexico City">
+                    <span className="truncate">Mexico City</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Mexico City</h1>
+            <h1 className="editorial-hero-title">Mexico City World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -154,7 +152,7 @@ export function MexicoCityGuide() {
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
             </div>
             <div>
-              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/monterrey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link> | <Link to="/world-cup-2026-host-cities/los-angeles" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+              ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link> | <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
             </div>
           </div>
         </div>
@@ -197,7 +195,7 @@ export function MexicoCityGuide() {
             <strong>Pro tip</strong>: Download the "Mi Transporte" or "Moovit" app before arriving. Both show real-time Metro and light rail arrivals, helping you navigate the system like a local.
           </p>
           <p className="mt-4">
-            Planning a multi-city World Cup itinerary? Combine matches in <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link> and <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>. For a cross-border experience, add <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link> to your trip.
+            Planning a multi-city World Cup itinerary? Combine matches in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>. For a cross-border experience, add <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link> to your trip.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -437,13 +435,13 @@ export function MexicoCityGuide() {
             <div>
               <h4 className="editorial-h4">Mexico Circuit</h4>
               <p>
-                Discover all three Mexican host cities: Start in Mexico City (current), travel west to <Link to="/world-cup-2026-host-cities/guadalajara" className="underline">Guadalajara</Link> for mariachi and tequila culture, then north to <Link to="/world-cup-2026-host-cities/monterrey" className="underline">Monterrey</Link> for mountain landscapes and modern energy.
+                Discover all three Mexican host cities: Start in Mexico City (current), travel west to <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="underline">Guadalajara</Link> for mariachi and tequila culture, then north to <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="underline">Monterrey</Link> for mountain landscapes and modern energy.
               </p>
             </div>
             <div>
               <h4 className="editorial-h4">Cross-Border Experience</h4>
               <p>
-                Many international visitors combine Mexico City with US host cities like <Link to="/world-cup-2026-host-cities/los-angeles" className="underline">Los Angeles</Link>, <Link to="/world-cup-2026-host-cities/dallas" className="underline">Dallas</Link>, or <Link to="/world-cup-2026-host-cities/houston" className="underline">Houston</Link> for a diverse North American adventure.
+                Many international visitors combine Mexico City with US host cities like <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="underline">Los Angeles</Link>, <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="underline">Dallas</Link>, or <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="underline">Houston</Link> for a diverse North American adventure.
               </p>
             </div>
             <div>

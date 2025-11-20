@@ -133,7 +133,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Where Miami's Sunshine Meets Football's Biggest Stage
               </h3>
               <p className="leading-relaxed mb-6">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, Hard Rock Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. The stadium will host seven matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, Hard Rock Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. The stadium will host seven matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
               </p>
               <p className="leading-relaxed mb-6">
                 This isn't just another football stadium. Since opening in 1987, this Miami Gardens landmark has hosted six Super Bowls, the 2024 Copa América final, WrestleMania, and Formula 1's Miami Grand Prix. But what makes it truly special for World Cup 2026 is how it blends cutting-edge design with Miami's irresistible culture — where you can watch elite football in world-class comfort, then dance salsa in Little Havana or soak up South Beach vibes within 30 minutes.
@@ -773,7 +773,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               </h3>
               <p className="leading-relaxed mb-4">Miami's tropical paradise atmosphere and vibrant culture create an electric World Cup 2026 experience.</p>
               <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
-                <p className="leading-relaxed"><strong>Discover Miami:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami World Cup 2026 Guide</Link> for essential travel information:</p>
+                <p className="leading-relaxed"><strong>Discover Miami:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami World Cup 2026 Guide</Link> for essential travel information:</p>
                 <ul className="list-disc list-inside mt-3 space-y-1">
                   <li>Hotels near Hard Rock Stadium</li>
                   <li>Best beaches and neighborhoods</li>
@@ -928,16 +928,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               </div>
             </article>
 
-            {/* Bottom Controls — match MetLife premium single button */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </main>
         </div>
       )}

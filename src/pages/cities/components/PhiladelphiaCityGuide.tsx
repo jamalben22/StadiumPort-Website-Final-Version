@@ -9,8 +9,8 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 export function PhiladelphiaCityGuide() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const pageUrl = `${siteUrl}/world-cup-2026-host-cities/philadelphia`;
-    const title = 'Philadelphia – World Cup 2026 Guide';
+    const pageUrl = `${siteUrl}/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide`;
+    const title = 'Philadelphia World Cup 2026: Complete Travel Guide | StadiumPort';
     const description = 'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.';
     const image = `${siteUrl}/images/cities/philadelphia-world-cup-2026.webp`;
     setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Philadelphia', 'Lincoln Financial Field'] })
@@ -21,15 +21,15 @@ export function PhiladelphiaCityGuide() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'Philadelphia – World Cup 2026 Guide',
+            'Philadelphia World Cup 2026: Complete Travel Guide',
             'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/philadelphia`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Philadelphia', 'Lincoln Financial Field'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia' }
+            { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/philadelphia-world-cup-2026.webp', {
             width: 1600,
@@ -59,10 +59,8 @@ export function PhiladelphiaCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb navigation for Philadelphia World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Philadelphia" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -80,13 +78,13 @@ export function PhiladelphiaCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Philadelphia World Cup 2026 Guide">
-                    <span className="truncate">Philadelphia World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Philadelphia">
+                    <span className="truncate">Philadelphia</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Philadelphia</h1>
+            <h1 className="editorial-hero-title">Philadelphia World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -131,7 +129,7 @@ export function PhiladelphiaCityGuide() {
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
             </div>
             <div>
-✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
+✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link>
             </div>
           </div>
         </div>
@@ -262,7 +260,7 @@ export function PhiladelphiaCityGuide() {
                   Philadelphia International Airport is located approximately 12 miles southwest of Center City and is one of America's major East Coast hubs, serving over 100 airlines with connections to destinations worldwide.
                 </p>
                 <p className="leading-relaxed">
-Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
+Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
                 </p>
               </div>
             </div>
@@ -287,7 +285,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                   <strong>Stops in Center City</strong>: The Airport Line stops at Jefferson Station (near Reading Terminal Market and Convention Center), Suburban Station (downtown business district), and 30th Street Station (major Amtrak hub and University City). All three stops put you within walking distance or short ride to most downtown hotels.
                 </p>
                 <p className="leading-relaxed">
-                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
+                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
                 </p>
               </div>
             </div>
@@ -827,9 +825,9 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <p>
                   Discover America's founding cities: Start in Philadelphia (current, no link), take the train north to
                   {' '}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
                   {' '}for the big city experience, then continue to{' '}
-                  <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+                  <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
                   {' '}to complete your Revolutionary history tour.
                 </p>
               </div>
@@ -837,7 +835,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <h4 className="editorial-h4">Mid-Atlantic to South</h4>
                 <p>
                   Connect Philadelphia with{' '}
-                  <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
                   {' '}to experience both Mid-Atlantic and Southern hospitality, with different architectural styles and culinary traditions.
                 </p>
               </div>
@@ -845,7 +843,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <h4 className="editorial-h4">Cross-Border Northeast</h4>
                 <p>
                   Extend your trip north to{' '}
-                  <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>
+                  <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>
                   {' '}for an international perspective, easily accessible from Philadelphia.
                 </p>
               </div>

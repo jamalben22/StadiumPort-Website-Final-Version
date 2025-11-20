@@ -13,15 +13,15 @@ export function BostonCityGuide() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'Boston World Cup 2026 – Gillette Stadium & City Guide',
+            'Boston World Cup 2026: Complete Travel Guide',
             "Highlight Boston’s mix of history and sports passion, showcasing its skyline and Gillette Stadium’s nearby location in Foxborough.",
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/boston`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/boston-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Boston', 'Gillette Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Boston', url: '/world-cup-2026-host-cities/boston' }
+            { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/boston-world-cup-2026.webp', {
             width: 1600,
@@ -33,9 +33,9 @@ export function BostonCityGuide() {
 
       {/* Dynamic Meta Tags for OG/Twitter */}
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/boston`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/boston-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/boston-world-cup-2026.webp`;
-        const title = 'Boston World Cup 2026 – Gillette Stadium & City Guide';
+        const title = 'Boston World Cup 2026: Complete Travel Guide | StadiumPort';
         const description = "Highlight Boston’s mix of history and sports passion, showcasing its skyline and Gillette Stadium’s nearby location in Foxborough.";
 
         // useEffect is safe in client components
@@ -84,10 +84,8 @@ export function BostonCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb navigation for Boston World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Boston" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -105,13 +103,13 @@ export function BostonCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Boston World Cup 2026 Guide">
-                    <span className="truncate">Boston World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Boston">
+                    <span className="truncate">Boston</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Boston</h1>
+            <h1 className="editorial-hero-title">Boston World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -159,7 +157,7 @@ export function BostonCityGuide() {
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
             </div>
             <div>
-✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
             </div>
           </div>
         </div>
@@ -266,7 +264,7 @@ export function BostonCityGuide() {
                 The MBTA expects to transport up to 20,000 fans per match via expanded commuter rail service, with new permanent platforms completed by April 2026. Event trains typically arrive about an hour before events and depart 30 minutes after they end, with Boston trains stopping at South Station, Back Bay, and Dedham Corporate Center.
               </p>
               <p>
-Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
+Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
               </p>
             </div>
 
@@ -459,7 +457,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
                 <li><strong>Rideshare:</strong> $20-35 to downtown from designated pickup zones</li>
               </ul>
               <p>
-                Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
+                Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
               </p>
             </div>
 
@@ -543,19 +541,19 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
             <div>
               <p className="font-inter font-semibold">Northeast Corridor Classic</p>
               <p>
-Experience the historic heart of America: Start in Boston (current), take the train south to <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline">New York/New Jersey</Link> for the ultimate city experience, then continue to <Link to="/world-cup-2026-host-cities/philadelphia" className="underline">Philadelphia</Link> for Revolutionary history and authentic cheesesteaks.
+Experience the historic heart of America: Start in Boston (current), take the train south to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline">New York/New Jersey</Link> for the ultimate city experience, then continue to <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline">Philadelphia</Link> for Revolutionary history and authentic cheesesteaks.
               </p>
             </div>
             <div>
               <p className="font-inter font-semibold">New England to Canada</p>
               <p>
-                Combine Boston's colonial charm with <Link to="/world-cup-2026-host-cities/toronto" className="underline">Toronto</Link> for an international adventure, just a short flight away across the border.
+                Combine Boston's colonial charm with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline">Toronto</Link> for an international adventure, just a short flight away across the border.
               </p>
             </div>
             <div>
               <p className="font-inter font-semibold">Full East Coast Experience</p>
               <p>
-                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami" className="underline">Miami</Link> for completely different climates and cultures while staying on the East Coast.
+                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="underline">Miami</Link> for completely different climates and cultures while staying on the East Coast.
               </p>
             </div>
             <div>

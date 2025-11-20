@@ -8,13 +8,13 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function MiamiCityGuide() {
-  const pageUrl = '/world-cup-2026-host-cities/miami';
+  const pageUrl = '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
   useEffect(() => {
     window.scrollTo(0, 0);
     
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const ogImage = `${siteUrl}/images/cities/miami-world-cup-2026.webp`;
-    const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami`;
+    const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami-world-cup-2026-guide`;
     const entry = getEditorialEntry('city','miami')
     setPageMeta({ 
       title: 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort', 
@@ -29,13 +29,13 @@ export default function MiamiCityGuide() {
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
     { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` },
-    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami` }
+    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami-world-cup-2026-guide` }
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
     'Miami 2026 FIFA World Cup Travel Guide',
     'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
-    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami`,
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami-world-cup-2026-guide`,
     { datePublished: (getEditorialEntry('city','miami')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
   );
 
@@ -65,10 +65,8 @@ export default function MiamiCityGuide() {
           <div className="editorial-hero-content">
             <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-              <nav aria-label="Breadcrumb navigation for Miami World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+              <nav aria-label="Breadcrumb navigation for Miami" className="breadcrumb-ultra-premium mt-2">
                 <ol>
                   <li className="breadcrumb-item">
                     <Link to="/" className="breadcrumb-link" title="Home">
@@ -85,16 +83,14 @@ export default function MiamiCityGuide() {
                     </Link>
                   </li>
                   <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                  <li className="breadcrumb-item">
-                    <span className="breadcrumb-current" title="Miami World Cup 2026 Guide">
-                      <span className="truncate">Miami World Cup 2026 Guide</span>
-                    </span>
-                  </li>
+                <li className="breadcrumb-item">
+                  <span className="breadcrumb-current" title="Miami">
+                    <span className="truncate">Miami</span>
+                  </span>
+                </li>
                 </ol>
               </nav>
-              <h1 className="editorial-hero-title">
-                Miami
-              </h1>
+              <h1 className="editorial-hero-title">Miami World Cup 2026: Complete Travel Guide</h1>
               <div className="editorial-hero-meta">
                 <div className="meta-item flex items-center gap-2">
                   <i className="ri-map-pin-line"></i>
@@ -142,7 +138,7 @@ export default function MiamiCityGuide() {
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
               </div>
               <div>
-                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/atlanta" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> | <Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link> | <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> | <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link> | <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
               </div>
             </div>
           </div>
@@ -538,7 +534,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
                 <strong>Fort Lauderdale-Hollywood International Airport (FLL)</strong>, 30 miles north, sometimes offers cheaper flights. From FLL, take <strong>Brightline train</strong> to Miami (30 minutes, $15-20) or drive/rideshare (45-60 minutes, $50-70).
               </p>
               <p className="leading-relaxed">
-                Miami also serves as a gateway city for North American football travel, with strong flight and cultural connections to <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
+                Miami also serves as a gateway city for North American football travel, with strong flight and cultural connections to <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
               </p>
             </div>
 
@@ -552,7 +548,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
                 Expect <strong>hot, humid, with afternoon thunderstorms</strong>. Daily highs 88-92°F (31-33°C), humidity 70-80%. Pack:
               </p>
               <p className="leading-relaxed mb-4">
-                Miami's tropical weather contrasts with cities like <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>—plan accordingly if you’re building a multi-city itinerary.
+                Miami's tropical weather contrasts with cities like <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>—plan accordingly if you’re building a multi-city itinerary.
               </p>
               <ul className="leading-relaxed space-y-2 list-disc list-inside">
                 <li>Lightweight, breathable clothing</li>
@@ -731,7 +727,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
             </div>
 
             <p className="leading-relaxed mb-6">
-              Travel planning tip: Combine Miami with <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> or <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Southern Gulf experience with distinct regional flavors and matchday atmospheres.
+              Travel planning tip: Combine Miami with <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> or <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Southern Gulf experience with distinct regional flavors and matchday atmospheres.
             </p>
 
             {/* Affiliate Opportunity Moment */}
@@ -797,11 +793,11 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
                   <h4 className="editorial-h4">Southern States Circuit</h4>
                   <p>
                     Experience the diverse American South: Start in Miami (current, no link), head to{' '}
-                    <Link to="/world-cup-2026-host-cities/atlanta" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                    <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
                     {' '}for Southern charm, then continue to{' '}
-                    <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                    <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
                     {' '}or{' '}
-                    <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                    <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
                     {' '}for a taste of Texas.
                   </p>
                 </div>
@@ -809,11 +805,11 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
                   <h4 className="editorial-h4">Latin American Gateway</h4>
                   <p>
                     Miami's strong cultural ties to Latin America make it perfect for combining with Mexican host cities like{' '}
-                    <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>
+                    <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>
                     ,{' '}
                     <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>
                     , or{' '}
-                    <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>
+                    <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>
                     .
                   </p>
                 </div>
@@ -821,9 +817,9 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
                   <h4 className="editorial-h4">Coastal Contrast</h4>
                   <p>
                     Experience both coasts by connecting Miami with West Coast cities like{' '}
-                    <Link to="/world-cup-2026-host-cities/los-angeles" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+                    <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
                     {' '}or{' '}
-                    <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
+                    <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
                     {' '}for a complete American World Cup tour.
                   </p>
                 </div>
@@ -914,13 +910,7 @@ From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heigh
             <hr className="editorial-divider" />
           </article>
 
-          {/* Back CTA */}
-          <div className="mt-8 flex justify-end">
-            <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-              <i className="ri-check-line mr-2"></i>
-              Got It
-            </Link>
-          </div>
+
 
         </section>
 

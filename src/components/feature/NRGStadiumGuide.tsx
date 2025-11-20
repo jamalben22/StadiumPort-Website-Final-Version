@@ -137,7 +137,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 NRG Stadium: Your Complete Guide to World Cup 2026 in Houston
               </h2>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                Located in <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
+                Located in <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
               </p>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                 <strong>NRG Stadium is one of the </strong>
@@ -416,7 +416,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <div>
                   <p className="font-semibold">Discover Houston:</p>
                   <p>
-                    Explore our complete <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston World Cup 2026 Guide</Link> for comprehensive information:
+                    Explore our complete <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston World Cup 2026 Guide</Link> for comprehensive information:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Hotels near NRG Stadium</li>
@@ -471,16 +471,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               <hr className="editorial-divider" />
             </article>
 
-            {/* Got It Button */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </section>
         </div>
       )}

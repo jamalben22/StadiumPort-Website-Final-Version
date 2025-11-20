@@ -385,127 +385,183 @@ export default function TransportationPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
 
-      {/* Hero Section - Matching Cities Page */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=World%20Cup%20transportation%20with%20planes%20trains%20buses%2C%20international%20travel%20to%20stadium%20cities%2C%20efficient%20transport%20networks%2C%20modern%20travel%20infrastructure%2C%20global%20connectivity&width=1920&height=800&seq=transport-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Hero Section - Apple-Level Premium Design */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0">
+          {/* Premium Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          
+          {/* Floating Glass Elements - Premium Apple Style */}
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute bottom-8 right-4 w-20 h-20 xs:bottom-10 xs:right-6 xs:w-24 xs:h-24 sm:bottom-16 sm:right-8 sm:w-40 sm:h-40 md:bottom-20 md:right-10 md:w-48 md:h-48 lg:bottom-24 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute top-1/3 left-1/2 w-16 h-16 xs:top-1/2 xs:left-1/2 xs:w-20 xs:h-20 sm:top-1/2 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-route-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">World Cup 2026 Transportation</span>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 lg:py-48">
+          <div className="text-center">
+            {/* Premium Breadcrumb - Minimal Luxury */}
+            <div className="mb-8">
+              <nav className="flex items-center justify-center space-x-2 text-sm">
+                <a href="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                  Home
+                </a>
+                <span className="text-slate-300 dark:text-slate-600">›</span>
+                <span className="text-slate-900 dark:text-white font-medium">Transportation</span>
+              </nav>
             </div>
             
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              Getting Around for
-              <br />
-              <span className="text-gold-400">World Cup 2026</span>
-            </h1>
-            
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Traveling between cities? Getting from the airport to your hotel? Figuring out match day transport? 
-              Our guides cover every journey you'll need to make—and how to do it for less.
-            </p>
-          </div>
+            {/* Premium Title - Apple Typography */}
+            <div className="mb-12">
+              <h1 className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
+                Getting Around
+              </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                Navigate World Cup 2026 with confidence. Complete transportation guides for every host city.
+              </p>
+            </div>
 
-          {/* Transport Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Host Cities</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">Up to 40%</div>
-              <div className="text-slate-300 font-inter text-sm">Savings</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">200+</div>
-              <div className="text-slate-300 font-inter text-sm">Routes</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">24/7</div>
-              <div className="text-slate-300 font-inter text-sm">Support</div>
+            {/* Apple-Level Premium Stats - Minimal Luxury Design */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+              
+              {/* Cities Card - Apple Emerald */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Cities</div>
+                </div>
+              </div>
+
+              {/* Savings Card - Apple Purple */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">40%</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Max Savings</div>
+                </div>
+              </div>
+
+              {/* Routes Card - Apple Blue */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">200+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Routes</div>
+                </div>
+              </div>
+
+              {/* Support Card - Apple Orange */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">24/7</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Support</div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
-      </section>
 
-      {/* Transport Guides Grid - 2 Column Layout */}
-      <section className="py-16 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
+
+      {/* Essential Transport Guides - Apple-Level Premium Design */}
+      <div className="relative z-10 pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
               Essential Transport Guides
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
               Everything you need to know about getting around for World Cup 2026.
             </p>
           </div>
 
-          {/* 2-Column Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {transportGuides.map((guide) => (
-              <Card key={guide.id} hover className="overflow-hidden group">
-                <div className="relative">
+          {/* Apple-Level Premium 2-Column Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {transportGuides.map((guide, index) => (
+              <div
+                key={guide.id}
+                className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+              >
+                {/* Premium Background Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                
+                <div className="relative h-64 md:h-72 overflow-hidden">
                   <img
                     src={guide.image}
                     alt={`${guide.title} transport guide`}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    fetchPriority={index < 2 ? 'high' : 'auto'}
+                    decoding="async"
+                    width={600}
+                    height={400}
+                    className="object-cover w-full h-full object-top group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                    <span>{guide.category}</span>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  
+                  {/* Apple-Level Premium Category Badge - Top Left */}
+                  <div className="absolute top-4 left-4">
+                    <div className="bg-white/75 backdrop-blur-sm text-navy-900 px-3 py-1.5 rounded-full text-xs font-semibold border border-white/20 shadow-sm shadow-slate-500/10 hover:bg-white/85 hover:shadow-md transition-all duration-300">
+                      {guide.category}
+                    </div>
                   </div>
+                  
+                  {/* Apple-Level Premium Savings Badge - Top Right */}
                   <div className="absolute top-4 right-4">
-                    <span className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-bold">
+                    <div className="bg-gradient-to-r from-emerald-500 to-teal-500 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-bold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:shadow-md hover:from-emerald-600 hover:to-teal-600 transition-all duration-300">
                       {guide.savings}
-                    </span>
+                    </div>
                   </div>
                 </div>
-                
-                <div className="p-6">
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+
+                {/* Premium Content Section - Apple Typography */}
+                <div className="p-8 md:p-10 flex flex-col flex-1">
+                  <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
                     {guide.title}
                   </h3>
                   
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
                     {guide.excerpt}
                   </p>
                   
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6">
+                  {/* Apple-Level Premium Author & Read Time Card */}
+                  <div className="bg-slate-50/50 dark:bg-slate-800/30 rounded-2xl p-4 md:p-6 mb-6 md:mb-8 border border-slate-200/50 dark:border-slate-700/30 group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50 transition-all duration-500">
                     <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Author</div>
-                        <div className="font-semibold text-navy-900 dark:text-white">{guide.author}</div>
+                      <div className="flex items-center space-x-3">
+                        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                          <i className="ri-user-line text-white text-sm"></i>
+                        </div>
+                        <div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Author</div>
+                          <div className="font-semibold text-navy-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">{guide.author}</div>
+                        </div>
                       </div>
                       <div className="text-right">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Read Time</div>
-                        <div className="font-semibold text-emerald-600">{guide.readTime}</div>
+                        <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Read Time</div>
+                        <div className="font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors duration-500">{guide.readTime}</div>
                       </div>
                     </div>
                   </div>
                   
-                  <a
+                  {/* Apple-Level Premium Button - Apple Style */}
+                  <a 
                     href={`/transportation/${guide.slugOverride ?? slugifyGuide(guide.title)}`}
-                    className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 w-full transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3 text-sm"
+                    className="relative inline-flex items-center justify-center font-semibold rounded-2xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 w-full transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3 md:px-8 md:py-4 text-sm md:text-base mt-auto"
                   >
                     <span className="relative z-10 flex items-center justify-center space-x-2">
-                      <i className="ri-eye-line mr-2"></i>
-                      Read Full Guide
+                      <i className="ri-eye-line"></i>
+                      <span>Read Full Guide</span>
                     </span>
                   </a>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
+      </div>
       </section>
 
       {/* Transport Guide Modal - Cities Page Style */}

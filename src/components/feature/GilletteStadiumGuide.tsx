@@ -145,7 +145,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, Gillette Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Set in Foxborough, approximately 22 miles southwest of Boston, this modern arena combines efficiency with fan-first design, delivering a top-tier matchday experience and stadium operations that rival the best in North America. Hosting seven matches—including a quarterfinal—it represents a stadium that actually works, surrounded by infrastructure designed for massive crowds and a proven record of sellouts since 2002.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, Gillette Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Set in Foxborough, approximately 22 miles southwest of Boston, this modern arena combines efficiency with fan-first design, delivering a top-tier matchday experience and stadium operations that rival the best in North America. Hosting seven matches—including a quarterfinal—it represents a stadium that actually works, surrounded by infrastructure designed for massive crowds and a proven record of sellouts since 2002.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -399,7 +399,7 @@ Book your accommodation early through <a href="https://booking.com/" target="_bl
                 <p>Boston's rich history and New England charm create an unforgettable World Cup 2026 experience.</p>
                 <div>
                   <h4 className="editorial-h4 mb-2">Discover Boston</h4>
-                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston World Cup 2026 Guide</Link> for everything you need:</p>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston World Cup 2026 Guide</Link> for everything you need:</p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Where to stay near Gillette Stadium</li>
                     <li>Getting to the stadium from Boston</li>
@@ -417,16 +417,7 @@ Book your accommodation early through <a href="https://booking.com/" target="_bl
               <hr className="editorial-divider" />
             </section>
 
-            {/* Got It Button - match MetLife premium style */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </main>
         </div>
       )}
