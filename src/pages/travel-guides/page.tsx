@@ -266,233 +266,242 @@ export default function TravelGuidesPage() {
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=World%20Cup%202026%20travel%20guides%20collection%20with%20maps%2C%20stadium%20images%2C%20travel%20planning%20materials%2C%20comprehensive%20tournament%20preparation%2C%20expert%20travel%20intelligence&width=1920&height=800&seq=guides-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Unified Hero & Featured Articles Section */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-book-open-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">World Cup 2026 Travel Guides</span>
-            </div>
-            
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              Expert Advice for
-              <br />
-              <span className="text-gold-400">Every Host City</span>
-            </h1>
-            
-            <p className="font-inter text-lg text-slate-400 max-w-4xl mx-auto leading-relaxed">
-              Everything you need to plan your World Cup trip. Our detailed city guides cover where to stay, how to get around, what to eat, and the local secrets that make each destination special.
-            </p>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">30+</div>
-              <div className="text-slate-300 font-inter text-sm">In-Depth Guides</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Host Cities</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">500+</div>
-              <div className="text-slate-300 font-inter text-sm">Insider Tips</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Always</div>
-              <div className="text-slate-300 font-inter text-sm">Up-to-Date</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Articles */}
-      <section className="py-20 bg-slate-50 dark:bg-navy-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-space font-bold text-4xl text-navy-900 dark:text-white mb-4">
-              Start Here: Essential City Guides
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter text-lg max-w-2xl mx-auto">
-              New to World Cup travel? These comprehensive guides cover everything from airport to stadium.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {featuredArticles.map((article, index) => (
-              <Card key={index} hover className="overflow-hidden group bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
-                <div className="relative">
-                  <img
-                    src={article.image}
-                    alt={article.title}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                  
-                  <div className="absolute top-4 left-4">
-                    <div className="bg-gold-400 text-navy-900 px-3 py-1 rounded-full text-sm font-semibold">
-                      Featured
-                    </div>
-                  </div>
-                  
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                      {article.category}
-                    </div>
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="font-space font-bold text-xl text-white mb-2">
-                      {article.title}
-                    </h3>
-                    <div className="flex items-center text-white/90 text-sm">
-                      <i className="ri-time-line mr-2"></i>
-                      <span>{article.readTime}</span>
-                    </div>
+        <div className="relative z-10 pt-32 md:pt-40 lg:pt-48">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="mb-8">
+                <nav className="flex items-center justify-center space-x-2 text-sm">
+                  <a className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium" href="/">Home</a>
+                  <span className="text-slate-300 dark:text-slate-600">›</span>
+                  <span className="text-slate-900 dark:text-white font-medium">Travel Guides</span>
+                </nav>
+              </div>
+              <div className="mb-12">
+                <h1 className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">Travel Guides</h1>
+                <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+                <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">Discover all the expert planning insights you need for World Cup 2026. Detailed guides with where to stay, how to get around, what to eat, and local secrets for every city.</p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">30+</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">In-Depth Guides</div>
                   </div>
                 </div>
-                
-                <div className="p-6">
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-6 leading-relaxed">
-                    {article.excerpt}
-                  </p>
-                  
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
-                        <span className="text-white text-sm font-bold">
-                          {article.author.split(' ').map(n => n[0]).join('')}
-                        </span>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">16</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Cities</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">500+</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Insider Tips</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">Always</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Up-to-Date</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Featured Articles - Now part of unified background */}
+          <div className="pt-20 pb-32 md:pb-40 lg:pb-48">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="font-space font-bold text-4xl text-navy-900 dark:text-white mb-4">
+                  Start Here: Essential City Guides
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-lg max-w-2xl mx-auto">
+                  New to World Cup travel? These comprehensive guides cover everything from airport to stadium.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                {featuredArticles.map((article, index) => (
+                  <Card key={index} hover className="overflow-hidden group bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
+                    <div className="relative">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                      
+                      <div className="absolute top-4 left-4">
+                        <div className="bg-gold-400 text-navy-900 px-3 py-1 rounded-full text-sm font-semibold">
+                          Featured
+                        </div>
                       </div>
-                      <span className="text-slate-600 dark:text-slate-400 text-sm">{article.author}</span>
+                      
+                      <div className="absolute top-4 right-4">
+                        <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          {article.category}
+                        </div>
+                      </div>
+
+                      <div className="absolute bottom-4 left-4 right-4">
+                        <h3 className="font-space font-bold text-xl text-white mb-2">
+                          {article.title}
+                        </h3>
+                        <div className="flex items-center text-white/90 text-sm">
+                          <i className="ri-time-line mr-2"></i>
+                          <span>{article.readTime}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-6 leading-relaxed">
+                        {article.excerpt}
+                      </p>
+                      
+                      <div className="flex items-center justify-between mb-6">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-8 h-8 bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center">
+                            <span className="text-white text-sm font-bold">
+                              {article.author.split(' ').map(n => n[0]).join('')}
+                            </span>
+                          </div>
+                          <span className="text-slate-600 dark:text-slate-400 text-sm">{article.author}</span>
+                        </div>
+                      </div>
+                      
+                      <div className="flex justify-center">
+                        <a
+                          href={`/travel-guides/${article.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                          className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105"
+                        >
+                          <i className="ri-eye-line mr-2"></i>
+                          Read Full Guide
+                        </a>
+                      </div>
+                    </div>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unified Smart Filter & Articles Section */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy-900 dark:via-navy-800 dark:to-navy-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy-900 dark:via-navy-800 dark:to-navy-900"></div>
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+        </div>
+
+        {/* Smart Filter Section */}
+        <div className="relative z-10 pt-16 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Filter Header */}
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-6 py-3 mb-4">
+                <i className="ri-filter-3-line text-emerald-600"></i>
+                <span className="text-slate-700 dark:text-slate-300 font-medium">Smart Filtering</span>
+              </div>
+              <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-2">
+                Find What You Need
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 font-inter">
+                Browse by city, topic, or travel style to get the information that matters to your trip.
+              </p>
+            </div>
+
+            {/* Premium Filter Controls */}
+            <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10 mb-20">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
+                
+                {/* Category Filter */}
+                <div className="lg:col-span-2 space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
+                      <i className="ri-bookmark-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy-900 dark:text-white">Categories</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Choose your topic of interest</p>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                    {categories.map((category) => (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setSelectedCategory(category);
+                          setCurrentPage(1);
+                        }}
+                        className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
+                          selectedCategory === category
+                            ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-105'
+                            : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-102'
+                        }`}
+                      >
+                        {category === 'all' ? 'All Guides' : category}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Results Counter */}
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
+                      <i className="ri-search-line text-white text-lg"></i>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-navy-900 dark:text-white">Results</h3>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Matching your selection</p>
                     </div>
                   </div>
                   
-                  <div className="flex justify-center">
-                    <a
-                      href={`/travel-guides/${article.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
-                      className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl hover:scale-105"
-                    >
-                      <i className="ri-eye-line mr-2"></i>
-                      Read Full Guide
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Smart Filter Section */}
-      <section className="relative py-16 bg-gradient-to-br from-slate-50 via-white to-slate-50 dark:from-navy-900 dark:via-navy-800 dark:to-navy-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/5 via-transparent to-gold-400/5"></div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Filter Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-6 py-3 mb-4">
-              <i className="ri-filter-3-line text-emerald-600"></i>
-              <span className="text-slate-700 dark:text-slate-300 font-medium">Smart Filtering</span>
-            </div>
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-2">
-              Find What You Need
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter">
-              Browse by city, topic, or travel style to get the information that matters to your trip.
-            </p>
-          </div>
-
-          {/* Premium Filter Controls */}
-          <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10">
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
-              
-              {/* Category Filter */}
-              <div className="lg:col-span-2 space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                    <i className="ri-bookmark-line text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-navy-900 dark:text-white">Categories</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Choose your topic of interest</p>
-                  </div>
-                </div>
-                
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                  {categories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => {
-                        setSelectedCategory(category);
-                        setCurrentPage(1);
-                      }}
-                      className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
-                        selectedCategory === category
-                          ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-105'
-                          : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-102'
-                      }`}
-                    >
-                      {category === 'all' ? 'All Guides' : category}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Results Counter */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                    <i className="ri-search-line text-white text-lg"></i>
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-navy-900 dark:text-white">Results</h3>
-                    <p className="text-xs text-slate-500 dark:text-slate-400">Matching your selection</p>
-                  </div>
-                </div>
-                
-                {/* Results Display */}
-                <div className="text-center p-6 bg-gradient-to-r from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-800/50">
-                  <div className="text-3xl font-bold text-emerald-600 mb-2">{filteredArticles.length}</div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400">
-                    of {articles.length} guides match your filter
-                  </div>
-                  <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">
-                    Updated in real-time
+                  {/* Results Display */}
+                  <div className="text-center p-6 bg-gradient-to-r from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-800/50">
+                    <div className="text-3xl font-bold text-emerald-600 mb-2">{filteredArticles.length}</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">
+                      of {articles.length} guides match your filter
+                    </div>
+                    <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">
+                      Updated in real-time
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* All Articles Grid - 2 Column Layout like Cities Page */}
-      <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              World Cup 2026 Travel Guides
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              Explore comprehensive guides for every aspect of your World Cup 2026 journey.
-            </p>
-          </div>
+            {/* All Articles Grid Header */}
+            <div className="text-center mb-12">
+              <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
+                World Cup 2026 Travel Guides
+              </h2>
+              <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
+                Explore comprehensive guides for every aspect of your World Cup 2026 journey.
+              </p>
+            </div>
 
-          {/* 2-Column Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* 2-Column Grid Layout */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             {paginatedArticles.map((article, index) => (
               <Card key={index} hover className="overflow-hidden group">
                 <div className="relative">
@@ -539,12 +548,8 @@ export default function TravelGuidesPage() {
               </Card>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Premium Pagination */}
-      <section className="py-16 bg-slate-50 dark:bg-navy-800/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Premium Pagination - Now part of unified background */}
           <div className="flex justify-center">
             <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-2xl p-6 shadow-xl">
               <div className="flex items-center justify-center space-x-4">
@@ -611,6 +616,7 @@ export default function TravelGuidesPage() {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
 

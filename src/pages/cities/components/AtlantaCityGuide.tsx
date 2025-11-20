@@ -14,13 +14,13 @@ export function AtlantaCityGuide() {
           generateCityGuideSchema(
             'Atlanta – World Cup 2026 Guide',
             'Comprehensive Atlanta travel guide for FIFA World Cup 2026: Mercedes-Benz Stadium details, match schedule, transportation, and where to stay.',
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/atlanta`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/atlanta-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Atlanta', 'Mercedes-Benz Stadium'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta' }
+            { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/atlanta-world-cup-2026.webp', {
             width: 1600,
@@ -50,11 +50,9 @@ export function AtlantaCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumb Navigation */}
-            <nav aria-label="Breadcrumb navigation for Atlanta World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Atlanta" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -72,13 +70,13 @@ export function AtlantaCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Atlanta World Cup 2026 Guide">
-                    <span className="truncate">Atlanta World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Atlanta">
+                    <span className="truncate">Atlanta</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Atlanta</h1>
+            <h1 className="editorial-hero-title">Atlanta World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -130,22 +128,22 @@ export function AtlantaCityGuide() {
               </div>
               <div>
                 ✈️ <strong>Nearby Cities:</strong>{' '}
-                <Link to="/world-cup-2026-host-cities/miami" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Miami</Link>{' '}|
-                {' '}<Link to="/world-cup-2026-host-cities/houston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
-                {' '}<Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link>
+                <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Miami</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link>{' '}|
+                {' '}<Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link>
               </div>
             </div>
           </div>
           {/* Regional planning cross-links */}
           <p className="leading-relaxed mt-4">
             Atlanta connects easily with{' '}
-            <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+            <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
             {' '}for a complete Southern experience. Combine Atlanta with{' '}
-            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
             {' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
             {' '}for a Gulf to Atlantic journey. Atlanta also serves as the Southern gateway to East Coast cities like{' '}
-            <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+            <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
             .
           </p>
           <hr className="editorial-divider" />
@@ -229,11 +227,11 @@ export function AtlantaCityGuide() {
                 </p>
                 <p className="leading-relaxed mt-4">
                   Planning a regional trip? Pair Atlanta with{' '}
-                  <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
                   {' '}or{' '}
-                  <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
                   {' '}for a Gulf-to-Atlantic journey, and add{' '}
-                  <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
                   {' '}for tropical contrast.
                 </p>
               </div>
@@ -849,9 +847,9 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Southern Sweep</p>
             <p>
               Experience the full spectrum of the American South: Atlanta (current) for urban Southern charm,{" "}
-              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
               {" "}for Gulf Coast energy, and{" "}
-              <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
               {" "}for tropical paradise.
             </p>
           </div>
@@ -859,11 +857,11 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Coast to Coast Southern</p>
             <p>
               Create an Atlantic to Gulf journey: Start in{" "}
-              <Link to="/world-cup-2026-host-cities/miami" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
               , head to Atlanta (current), then continue to{" "}
-              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
               {" "}or{" "}
-              <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
               {" "}for a complete Southern experience.
             </p>
           </div>
@@ -871,11 +869,11 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Southern to East Coast</p>
             <p>
               Connect Atlanta with Eastern cities like{" "}
-              <Link to="/world-cup-2026-host-cities/philadelphia" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
               ,{" "}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
               , or{" "}
-              <Link to="/world-cup-2026-host-cities/boston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
               {" "}for a journey from Southern hospitality to historic Northeastern culture.
             </p>
           </div>

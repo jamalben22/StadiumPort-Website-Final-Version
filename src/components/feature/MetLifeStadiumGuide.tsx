@@ -145,7 +145,7 @@ export const MetLifeStadiumGuide = ({ onClose, showHeader = false, hideHero = fa
                 The Stage for Football's Greatest Moment
               </h2>
               <p className="leading-relaxed">
-Located in <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>, MetLife Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, including the tournament&apos;s climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you&aposre crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
+Located in <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>, MetLife Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, including the tournament&apos;s climactic final alongside seven other crucial matches. For international fans planning the journey of a lifetime, MetLife represents everything monumental about North American sports: scale, technology, and an atmosphere that can accommodate 82,500 roaring supporters. Whether you&aposre crossing oceans or states to witness football history, this is your essential guide to conquering match day at the biggest stadium in the NFL.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -266,7 +266,7 @@ Located in <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className=
                   Discover New York/New Jersey
                 </h4>
                 <p>
-Explore our complete <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey World Cup 2026 Guide</Link> for everything you need:
+Explore our complete <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey World Cup 2026 Guide</Link> for everything you need:
                 </p>
                 <ul className="list-disc pl-6 space-y-1">
                   <li>Hotels near MetLife Stadium</li>
@@ -814,17 +814,6 @@ Explore our complete <Link to="/world-cup-2026-host-cities/new-york-new-jersey" 
             </div>
             <hr className="editorial-divider" />
           </article>
-
-          {/* Got It Button */}
-          <div className="flex justify-end mt-8">
-            <button
-              onClick={handleGotItClick}
-              className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-            >
-              <i className="ri-check-line mr-2"></i>
-              Got It
-            </button>
-          </div>
           </main>
         </div>
       )}

@@ -84,7 +84,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 For international visitors, Arrowhead offers something no other World Cup venue can: a genuine slice of Americana wrapped around world-class football facilities. This is where you'll experience the heartland of American sports passion, complete with legendary Kansas City barbecue, Midwestern hospitality, and a sound level that has literally registered on seismographs.
               </p>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                Located in <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>, Arrowhead Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>, Arrowhead Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -746,7 +746,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               </h2>
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  Explore our complete <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City World Cup 2026 Guide</Link> for transport, neighborhoods, and essential tips.
+                  Explore our complete <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City World Cup 2026 Guide</Link> for transport, neighborhoods, and essential tips.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                   Catching more matches nearby? Consider
@@ -811,17 +811,6 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               </div>
               <hr className="editorial-divider" />
             </article>
-
-            {/* Got It Button */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
           </main>
         </div>
       )}

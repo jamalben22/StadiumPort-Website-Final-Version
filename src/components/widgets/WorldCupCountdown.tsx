@@ -63,71 +63,103 @@ const AnimatedCounter: React.FC<{
   duration?: number; 
   startValue?: number;
   enableGlow?: boolean;
-}> = ({ value, duration = 2.5, startValue, enableGlow = true }) => {
-  const [displayValue, setDisplayValue] = useState(startValue || Math.max(0, value - Math.floor(value * 0.1)));
+}> = ({ value, duration = 3, startValue, enableGlow = true }) => {
+  const [displayValue, setDisplayValue] = useState(startValue || Math.max(0, value - Math.floor(value * 0.05)));
   const [hasAnimated, setHasAnimated] = useState(false);
   const [showGlow, setShowGlow] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
-  const previousValueRef = useRef(startValue || Math.max(0, value - Math.floor(value * 0.1)));
+  const previousValueRef = useRef(startValue || Math.max(0, value - Math.floor(value * 0.05)));
+  const animationRef = useRef<number | null>(null);
 
-  // Premium counting animation - starts from near current value
+  // Apple-level premium counting animation - ultra-smooth with perfect easing
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasAnimated) {
           setHasAnimated(true);
           let startTimestamp: number | null = null;
-          const startVal = startValue || Math.max(0, value - Math.floor(value * 0.1));
+          const startVal = startValue || Math.max(0, value - Math.floor(value * 0.05));
           const endValue = value;
           const difference = endValue - startVal;
           
-          // Trigger subtle glow effect on initial animation
+          // Premium glow effect on initial animation - subtle and elegant
           if (enableGlow && difference > 0) {
             setShowGlow(true);
-            setTimeout(() => setShowGlow(false), 800);
+            setTimeout(() => setShowGlow(false), 1200);
           }
           
           const step = (timestamp: number) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
             
-            // Premium easing function for smooth animation
-            const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-            const currentValue = Math.floor(easeOutQuart * difference + startVal);
+            // Apple-level easing - smooth acceleration and deceleration
+            const easeInOutQuart = progress < 0.5 
+              ? 8 * progress * progress * progress * progress 
+              : 1 - Math.pow(-2 * progress + 2, 4) / 2;
+            
+            const currentValue = Math.floor(easeInOutQuart * difference + startVal);
             
             setDisplayValue(currentValue);
             
             if (progress < 1) {
-              requestAnimationFrame(step);
+              animationRef.current = requestAnimationFrame(step);
             } else {
               setDisplayValue(endValue);
             }
           };
           
-          requestAnimationFrame(step);
+          animationRef.current = requestAnimationFrame(step);
         }
       },
-      { threshold: 0.3, rootMargin: "-50px" }
+      { threshold: 0.2, rootMargin: "-30px" }
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+    };
   }, [value, duration, hasAnimated, startValue, enableGlow]);
 
-  // Real-time updates without animation after initial load
+  // Real-time updates with premium micro-animations
   useEffect(() => {
     let glowTimeout: ReturnType<typeof setTimeout> | undefined;
     if (hasAnimated && value !== previousValueRef.current) {
-      // Update immediately without animation for real-time changes
-      setDisplayValue(value);
+      // Smooth transition for live updates - not immediate
+      const startValue = displayValue;
+      const endValue = value;
+      const difference = endValue - startValue;
+      const updateDuration = 800; // Smooth 800ms transition
+      let startTimestamp: number | null = null;
       
-      // Subtle glow effect for live updates
+      const updateStep = (timestamp: number) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / updateDuration, 1);
+        
+        // Smooth easing for live updates
+        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+        const currentValue = Math.floor(easeOutCubic * difference + startValue);
+        
+        setDisplayValue(currentValue);
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateStep);
+        } else {
+          setDisplayValue(endValue);
+        }
+      };
+      
+      requestAnimationFrame(updateStep);
+      
+      // Subtle glow effect for live updates - minimal and elegant
       if (enableGlow && value > previousValueRef.current) {
         setShowGlow(true);
-        glowTimeout = setTimeout(() => setShowGlow(false), 400);
+        glowTimeout = setTimeout(() => setShowGlow(false), 600);
       }
       
       previousValueRef.current = value;
@@ -135,10 +167,17 @@ const AnimatedCounter: React.FC<{
     return () => {
       if (glowTimeout) clearTimeout(glowTimeout);
     };
-  }, [value, hasAnimated, enableGlow]);
+  }, [value, hasAnimated, enableGlow, displayValue]);
 
   return (
-    <span ref={ref}>
+    <span 
+      ref={ref} 
+      className={`transition-all duration-300 ${showGlow ? 'drop-shadow-glow' : ''}`}
+      style={{
+        filter: showGlow ? 'drop-shadow(0 0 8px currentColor)' : 'none',
+        transition: 'filter 0.3s ease-out'
+      }}
+    >
       {displayValue.toLocaleString()}
     </span>
   );
@@ -149,28 +188,29 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
   const [liveDealCount, setLiveDealCount] = useState(dealCount);
   const [hasStartedLiveUpdates, setHasStartedLiveUpdates] = useState(false);
   const intervalsRef = useRef<ReturnType<typeof setInterval>[]>([]);
+  const [isHovered, setIsHovered] = useState<string | null>(null);
 
-  // Simulate real-time updates after initial animation
+  // Premium real-time updates with Apple-level timing
   useEffect(() => {
     if (hasStartedLiveUpdates) return;
     
     const startLiveUpdates = () => {
       setHasStartedLiveUpdates(true);
       
-      // Simulate live updates every 5-8 seconds
+      // Premium timing - less frequent but more meaningful updates
       const travelerInterval = setInterval(() => {
-        setLiveTravelerCount(prev => prev + Math.floor(Math.random() * 3) + 1);
-      }, 5000 + Math.random() * 3000);
+        setLiveTravelerCount(prev => prev + Math.floor(Math.random() * 2) + 1);
+      }, 7000 + Math.random() * 5000);
       
       const dealInterval = setInterval(() => {
-        setLiveDealCount(prev => prev + Math.floor(Math.random() * 2) + 1);
-      }, 6000 + Math.random() * 4000);
+        setLiveDealCount(prev => prev + Math.floor(Math.random() * 1) + 1);
+      }, 8000 + Math.random() * 6000);
       
       intervalsRef.current = [travelerInterval, dealInterval];
     };
     
-    // Start live updates after 3 seconds (after initial animations complete)
-    const timeout = setTimeout(startLiveUpdates, 3000);
+    // Start live updates after 4 seconds (after premium animations complete)
+    const timeout = setTimeout(startLiveUpdates, 4000);
     
     return () => {
       clearTimeout(timeout);
@@ -188,7 +228,7 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       gradient: 'from-emerald-400 to-teal-400',
       delay: 0,
       enableAnimation: true,
-      startValue: Math.max(0, travelerCount - Math.floor(travelerCount * 0.15))
+      startValue: Math.max(0, travelerCount - Math.floor(travelerCount * 0.05))
     },
     {
       id: 'deals',
@@ -197,9 +237,9 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       label: 'Live Travel Deals',
       color: 'gold',
       gradient: 'from-amber-400 to-orange-400',
-      delay: 0.15,
+      delay: 0.2,
       enableAnimation: true,
-      startValue: Math.max(0, dealCount - Math.floor(dealCount * 0.2))
+      startValue: Math.max(0, dealCount - Math.floor(dealCount * 0.08))
     },
     {
       id: 'cities',
@@ -208,7 +248,7 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       label: 'Host City Guides',
       color: 'blue',
       gradient: 'from-blue-400 to-cyan-400',
-      delay: 0.3,
+      delay: 0.4,
       enableAnimation: false
     },
     {
@@ -218,70 +258,148 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       label: 'Stadium Guides',
       color: 'purple',
       gradient: 'from-purple-400 to-pink-400',
-      delay: 0.45,
+      delay: 0.6,
       enableAnimation: false
     }
   ];
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, delay: 0.8 }}
-      className="mb-8 md:mb-12"
+      transition={{ 
+        duration: 1.2, 
+        delay: 1,
+        type: "spring",
+        stiffness: 80,
+        damping: 20
+      }}
+      className="mb-12 md:mb-16"
     >
-      {/* Apple-Style Minimal Stats Row */}
-      <div className="flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-16 max-w-6xl mx-auto">
-        {stats.map((stat, index) => (
-          <motion.div
-            key={stat.id}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: stat.delay }}
-            className="relative text-center min-w-[160px] lg:min-w-[180px]"
-          >
-            {/* Minimal Icon - Clean and Sophisticated */}
-            <div className="mb-6 flex justify-center">
-              <div className={`w-12 h-12 rounded-full bg-gradient-to-br ${stat.gradient} flex items-center justify-center text-white shadow-sm`}>
-                <i className={`${stat.icon} text-lg`}></i>
+      {/* Apple-Level Premium Stats Container */}
+      <div className="relative max-w-6xl mx-auto">
+        {/* Premium Background Elements - Optimized for Mobile */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-1/2 left-1/2 w-48 h-48 xs:w-64 xs:h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-emerald-500/5 dark:bg-emerald-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute top-0 right-0 w-36 h-36 xs:w-48 xs:h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full blur-3xl"></div>
+        </div>
+
+        {/* Premium Stats Grid - Apple-Level Responsive Design */}
+        <div className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-6 xs:gap-8 sm:gap-10 md:gap-12 lg:gap-16">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.id}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 1, 
+                delay: stat.delay,
+                type: "spring",
+                stiffness: 100,
+                damping: 25
+              }}
+              className="relative group"
+              onMouseEnter={() => setIsHovered(stat.id)}
+              onMouseLeave={() => setIsHovered(null)}
+            >
+              {/* Premium Icon Container - Apple-Level Craftsmanship */}
+              <div className="mb-4 xs:mb-5 sm:mb-6 flex justify-center">
+                <div className={`
+                  relative w-12 h-12 xs:w-14 xs:h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br ${stat.gradient} 
+                  flex items-center justify-center text-white 
+                  shadow-lg shadow-${stat.color}-500/20 
+                  group-hover:shadow-xl group-hover:shadow-${stat.color}-500/30 
+                  group-hover:scale-110 
+                  transition-all duration-700 
+                  transform-gpu
+                  ${isHovered === stat.id ? 'scale-110 shadow-xl' : ''}
+                `}>
+                  <div className="absolute inset-0 rounded-2xl bg-white/20 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <i className={`${stat.icon} text-lg xs:text-xl sm:text-xl relative z-10 transition-transform duration-700 ${isHovered === stat.id ? 'scale-110' : ''}`}></i>
+                </div>
               </div>
-            </div>
 
-            {/* Clean Number Display - Premium Typography */}
-            <div className="mb-4">
-              <span className={`text-4xl md:text-5xl lg:text-6xl font-semibold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent tracking-tight`}>
-                {stat.enableAnimation ? (
-                  <AnimatedCounter 
-                    value={stat.value} 
-                    startValue={stat.startValue}
-                    duration={2.5}
-                    enableGlow={false}
-                  />
-                ) : (
-                  stat.value.toLocaleString()
+              {/* Apple-Level Premium Number Display */}
+              <div className="mb-3 xs:mb-4 sm:mb-5 text-center">
+                <div className={`
+                  text-3xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold 
+                  bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent 
+                  tracking-tight font-space
+                  group-hover:scale-105 transition-transform duration-700
+                  ${isHovered === stat.id ? 'scale-105' : ''}
+                `}>
+                  {stat.enableAnimation ? (
+                    <AnimatedCounter 
+                      value={stat.value} 
+                      startValue={stat.startValue}
+                      duration={3}
+                      enableGlow={true}
+                    />
+                  ) : (
+                    <span className="font-bold">{stat.value.toLocaleString()}</span>
+                  )}
+                  {stat.id === 'travelers' && (
+                    <span className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl ml-1">+</span>
+                  )}
+                </div>
+              </div>
+
+              {/* Premium Label - Apple Typography */}
+              <div className="text-center">
+                <h3 className={`
+                  text-sm xs:text-base sm:text-base md:text-lg font-semibold 
+                  text-slate-700 dark:text-slate-300 
+                  tracking-wide font-inter
+                  group-hover:text-slate-900 dark:group-hover:text-white
+                  transition-colors duration-700
+                  ${isHovered === stat.id ? 'text-slate-900 dark:text-white' : ''}
+                `}>
+                  {stat.label}
+                </h3>
+                
+                {/* Premium Live Indicator for Animated Stats */}
+                {stat.enableAnimation && (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: stat.delay + 1.5, duration: 0.6 }}
+                    className="mt-1 xs:mt-2 inline-flex items-center justify-center"
+                  >
+                    <div className="relative">
+                      <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-emerald-500 animate-pulse"></div>
+                      <div className="absolute inset-0 w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-emerald-500 animate-ping"></div>
+                    </div>
+                    <span className="ml-1.5 xs:ml-2 text-xs font-medium text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
+                      Live
+                    </span>
+                  </motion.div>
                 )}
-                {stat.id === 'travelers' && '+'}
-              </span>
-            </div>
+              </div>
 
-            {/* Minimal Label - Sophisticated Typography */}
-            <div>
-              <h3 className={`text-base md:text-lg font-medium text-slate-700 dark:text-slate-300 tracking-wide`}>
-                {stat.label}
-              </h3>
-            </div>
+              {/* Premium Divider - Apple-Level Elegance */}
+              {index < stats.length - 1 && (
+                <div className="hidden lg:block absolute -right-6 xl:-right-8 top-1/2 -translate-y-1/2">
+                  <div className="w-px h-16 xl:h-20 bg-gradient-to-b from-transparent via-slate-200 dark:via-slate-800 to-transparent"></div>
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
 
-            {/* Elegant Divider - Minimal and Refined */}
-            {index < stats.length - 1 && (
-              <>
-                {/* Desktop divider */}
-                <div className="hidden lg:block absolute -right-8 top-1/2 w-px h-16 bg-slate-200 dark:bg-slate-800 transform -translate-y-1/2"></div>
-                {/* Mobile divider */}
-                <div className="lg:hidden w-24 h-px bg-slate-200 dark:bg-slate-800 mt-8 mb-6 mx-auto"></div>
-              </>
-            )}
-          </motion.div>
-        ))}
+        {/* Premium Bottom Accent */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 2, duration: 1 }}
+          className="mt-8 xs:mt-10 sm:mt-12 text-center"
+        >
+          <div className="inline-flex items-center justify-center px-4 xs:px-5 sm:px-6 py-2 xs:py-2.5 sm:py-3 rounded-full bg-white/60 dark:bg-slate-900/40 backdrop-blur-xl border border-slate-200/60 dark:border-slate-800/60">
+            <div className="w-1.5 h-1.5 xs:w-2 xs:h-2 rounded-full bg-emerald-500 animate-pulse mr-2 xs:mr-3"></div>
+            <span className="text-xs xs:text-sm font-medium text-slate-600 dark:text-slate-400 tracking-wide">
+              Stats update in real-time
+            </span>
+          </div>
+        </motion.div>
       </div>
     </motion.div>
   );

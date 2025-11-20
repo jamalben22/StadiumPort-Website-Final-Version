@@ -3,8 +3,7 @@ import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-import { setPageMeta } from '../../../components/seo/MetaUtils';
+ 
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 // Helper: convert **...** emphasis to <strong> while preserving text and spacing
@@ -19,7 +18,7 @@ const renderBoldText = (input: string) => {
 };
 
 export default function LosAngelesArticlePage() {
-  const pageUrl = '/world-cup-2026-host-cities/los-angeles';
+  const pageUrl = '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
 
   useEffect(() => {
@@ -54,6 +53,7 @@ export default function LosAngelesArticlePage() {
       />
 
       <Header />
+      { null }
 
       {/* Editorial Hero — cohesive with article style */}
       <section className="editorial-hero">
@@ -75,11 +75,9 @@ export default function LosAngelesArticlePage() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb navigation for Los Angeles World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Los Angeles" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -97,13 +95,13 @@ export default function LosAngelesArticlePage() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Los Angeles World Cup 2026 Guide">
-                    <span className="truncate">Los Angeles World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Los Angeles">
+                    <span className="truncate">Los Angeles</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Los Angeles</h1>
+            <h1 className="editorial-hero-title">Los Angeles World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -151,7 +149,7 @@ export default function LosAngelesArticlePage() {
             <div class="space-y-1 text-slate-800 dark:text-slate-200">
               <div>🏟️ <strong>Stadium:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-stadiums/sofi-stadium" data-discover="true">SoFi Stadium Guide</a></div>
               <div>🗺️ <strong>All Host Cities:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities" data-discover="true">Explore All 16 Cities</a></div>
-              <div>✈️ <strong>Nearby Cities:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/san-francisco" data-discover="true">San Francisco Bay Area</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/seattle" data-discover="true">Seattle</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/vancouver" data-discover="true">Vancouver</a></div>
+              <div>✈️ <strong>Nearby Cities:</strong> <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" data-discover="true">San Francisco Bay Area</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" data-discover="true">Seattle</a> | <a class="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500" href="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" data-discover="true">Vancouver</a></div>
             </div>
           </div>
           <hr className="editorial-divider" />
@@ -224,9 +222,9 @@ Stadium Vibe: SoFi sits inside the Hollywood Park entertainment complex, meaning
           </p>
           <p className="whitespace-pre-line mb-6">
             Los Angeles is well-connected to other host cities like
-            {' '}<Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+            {' '}<Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
             {' '}and{' '}
-            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
             , making multi-city itineraries easy via air or rail.
           </p>
           
@@ -280,9 +278,9 @@ Driving & Parking: If you must drive, pre-purchase parking through the stadium's
             <p>
               <strong>Pacific Coast Circuit</strong>
               {' '}Start in Los Angeles, head north to{' '}
-              <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
               {' '}for its tech culture and iconic landmarks, then continue to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
               {' '}for Pacific Northwest charm.
             </p>
             <p>
@@ -292,11 +290,11 @@ Driving & Parking: If you must drive, pre-purchase parking through the stadium's
             <p>
               <strong>Cross-Border Adventure</strong>
               {' '}Connect Los Angeles with{' '}
-              <Link to="/world-cup-2026-host-cities/mexico-city" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+              <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
               ,{' '}
-              <Link to="/world-cup-2026-host-cities/guadalajara" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>
+              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>
               , or{' '}
-              <Link to="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>
+              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>
               {' '}for an incredible cultural contrast.
             </p>
             <p>
@@ -695,13 +693,7 @@ Check trusted booking partners that specialize in major sporting events—they o
           <hr className="editorial-divider" />
         </article>
 
-        {/* Back CTA */}
-        <div className="mt-8 flex justify-end">
-          <Link to="/world-cup-2026-host-cities" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-            <i className="ri-check-line mr-2"></i>
-            Got It
-          </Link>
-        </div>
+
       </section>
 
       <Footer />

@@ -76,7 +76,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
             Levi's Stadium: Silicon Valley's World Cup Stage
           </h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-            <span className="editorial-first-letter">L</span>ocated in the <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>, Levi's Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: you're standing inside one of America's most technologically advanced stadiums, surrounded by 68,500 roaring fans from every corner of the planet, as the world's best footballers compete under the California sun. Welcome to Levi's Stadium — the Bay Area's gateway to World Cup 2026, where cutting-edge innovation meets the beautiful game in the heart of Silicon Valley.
+            <span className="editorial-first-letter">L</span>ocated in the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>, Levi's Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: you're standing inside one of America's most technologically advanced stadiums, surrounded by 68,500 roaring fans from every corner of the planet, as the world's best footballers compete under the California sun. Welcome to Levi's Stadium — the Bay Area's gateway to World Cup 2026, where cutting-edge innovation meets the beautiful game in the heart of Silicon Valley.
           </p>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             This isn't just any stadium. Levi's Stadium will host six FIFA World Cup 2026 matches: five group stage fixtures (June 13, 16, 19, 22, and 25) and one crucial Round of 32 clash on July 1. As the 49ers' gleaming home since 2014, this venue has already proven its mettle on football's biggest stages, hosting the 2016 Copa América Centenario, the 2017 Concacaf Gold Cup, and matches featuring international giants like F.C. Barcelona and A.C. Milan. Now it's ready to welcome the world.
@@ -484,7 +484,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           </h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-4">The Bay Area's innovation hub and iconic landmarks make it a premier World Cup 2026 destination.</p>
           <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
-            <p className="leading-relaxed"><strong>Discover San Francisco Bay Area:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/san-francisco" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area World Cup 2026 Guide</Link> for everything you need:</p>
+            <p className="leading-relaxed"><strong>Discover San Francisco Bay Area:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area World Cup 2026 Guide</Link> for everything you need:</p>
             <ul className="list-disc list-inside mt-3 space-y-1">
               <li>Hotels near Levi's Stadium in Santa Clara</li>
               <li>Getting to the stadium from San Francisco</li>
@@ -523,16 +523,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
           <hr className="editorial-divider" />
         </article>
 
-        {/* Got It Button - match MetLife premium style */}
-        <div className="flex justify-end mt-8">
-          <button
-            onClick={handleGotItClick}
-            className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-          >
-            <i className="ri-check-line mr-2"></i>
-            Got It
-          </button>
-        </div>
+        
       </section>
     </div>
   );

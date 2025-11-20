@@ -829,265 +829,587 @@ export default function TravelTipsPage() {
       <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=Expert%20travel%20planning%20workspace%20with%20maps%2C%20guides%2C%20and%20planning%20tools%20spread%20across%20desk%2C%20professional%20travel%20strategy%20setup%2C%20tournament%20planning%20materials%2C%20organized%20travel%20research%20environment&width=1920&height=800&seq=travel-tips-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Hero + Library Unified Background - Apple-Level Luxury Design */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        {/* Subtle Background Elements */}
+        <div className="absolute inset-0">
+          {/* Premium Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          
+          {/* Floating Glass Elements - Premium Apple Style */}
+          <div className="absolute top-6 left-4 w-8 h-8 xs:top-8 xs:left-6 xs:w-12 xs:h-12 sm:top-12 sm:left-8 sm:w-20 sm:h-20 md:top-16 md:left-10 md:w-28 md:h-28 lg:top-20 lg:left-12 lg:w-40 lg:h-40 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute bottom-6 right-4 w-12 h-12 xs:bottom-8 xs:right-6 xs:w-16 xs:h-16 sm:bottom-12 sm:right-8 sm:w-24 sm:h-24 md:bottom-16 md:right-10 md:w-32 md:h-32 lg:bottom-20 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute top-1/3 left-1/2 w-8 h-8 xs:top-1/4 xs:left-1/2 xs:w-12 xs:h-12 sm:top-1/3 sm:left-1/2 sm:w-16 sm:h-16 md:top-1/2 md:left-1/2 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+        </div>
+        
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 lg:py-48">
+          <div className="text-center">
+            {/* Premium Breadcrumb - Minimal Luxury */}
+            <div className="mb-8">
+              <nav className="flex items-center justify-center space-x-2 text-sm">
+                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                  Home
+                </Link>
+                <span className="text-slate-300 dark:text-slate-600">›</span>
+                <span className="text-slate-900 dark:text-white font-medium">Travel Tips</span>
+              </nav>
+            </div>
+            
+            {/* Premium Title - Apple Typography */}
+            <div className="mb-12">
+              <h1 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-tight">
+                Travel Smarter
+                <span className="block text-emerald-600 dark:text-emerald-400 mt-1 md:mt-2">
+                  Save More
+                </span>
+              </h1>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                Expert strategies from seasoned tournament travelers. Master the art of World Cup travel with proven techniques to maximize your experience across all 16 host cities.
+              </p>
+            </div>
+
+            {/* Apple-Level Premium Stats - Minimal Luxury Design */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 lg:gap-6 max-w-6xl mx-auto px-4">
+              
+              {/* Savings Card - Apple Emerald */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-700">$1,500+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Average Savings</div>
+                </div>
+              </div>
+
+              {/* Tips Card - Apple Purple */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-all duration-700">47</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Expert Tips</div>
+                </div>
+              </div>
+
+              {/* Cities Card - Apple Blue */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-700">16</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Cities Covered</div>
+                </div>
+              </div>
+
+              {/* Strategies Card - Apple Amber */}
+              <div className="group relative text-center">
+                <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-amber-200/50 dark:hover:border-amber-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10 dark:hover:shadow-amber-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-all duration-700">Proven</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Strategies</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      
+        {/* Complete World Cup 2026 Travel Guide Library - Apple-Level Premium Design (Unified) */}
+        <div className="relative z-10 pb-20">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
+                Complete World Cup 2026 Travel Guide Library
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+                Browse all 47 expert tips organized by category. From budget strategies to safety advice everything you need to plan your perfect World Cup journey.
+              </p>
+            </div>
+            <div className="grid lg:grid-cols-1 gap-8">
+              <div className="lg:col-span-1">
+                <div className="mb-16 md:mb-20">
+                  <div className="text-center mb-12 md:mb-16">
+                    <div className="inline-flex items-center space-x-3 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-8 py-4 mb-6">
+                      <i className="ri-filter-3-line text-emerald-600 text-lg"></i>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering</span>
+                    </div>
+                    <h3 className="font-space font-bold text-3xl md:text-4xl text-navy-900 dark:text-white mb-6 tracking-tight">
+                      Find What You Need
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
+                      Browse by category to get the tips that matter.
+                    </p>
+                  </div>
+                  <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="relative z-10">
+                      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
+                        <div className="lg:col-span-2 space-y-8">
+                          <div className="flex items-center space-x-4 mb-8">
+                            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                              <i className="ri-bookmark-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Categories</h4>
+                              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Choose your topic of interest</p>
+                            </div>
+                          </div>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                            {categories.map((category) => (
+                              <div key={category.id} className="group relative">
+                                <button
+                                  onClick={() => setSelectedCategory(category.id)}
+                                  className={`${
+                                    selectedCategory === category.id
+                                      ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/30 scale-105'
+                                      : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-105 hover:shadow-lg'
+                                  } w-full px-6 py-4 rounded-2xl text-sm font-semibold transition-all duration-500 cursor-pointer relative overflow-hidden`}
+                                >
+                                  <div className="relative z-10">{category.name}</div>
+                                  {selectedCategory === category.id && (
+                                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl"></div>
+                                  )}
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="space-y-8">
+                          <div className="flex items-center space-x-4 mb-8">
+                            <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all duration-500">
+                              <i className="ri-search-line text-white text-xl"></i>
+                            </div>
+                            <div>
+                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Results</h4>
+                              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Matching your selection</p>
+                            </div>
+                          </div>
+                          <div className="group relative bg-gradient-to-br from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                            <div className="text-center">
+                              <div className="text-4xl md:text-5xl font-space font-bold text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
+                              <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">of {travelTips.length} tips match</div>
+                              <div className="text-sm text-slate-500 dark:text-slate-500">Updated in real-time</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="grid gap-8 md:gap-10">
+                  {filteredTips.map((tip, index) => (
+                    <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20">
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+                        <div className="relative lg:col-span-1">
+                          <div className="relative overflow-hidden rounded-2xl">
+                            <OptimizedImage
+                              src={tip.id === 1 ? "/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp" : tip.id === 2 ? "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp" : tip.id === 3 ? "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp" : tip.id === 4 ? "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" : tip.id === 5 ? "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp" : tip.id === 6 ? "/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp" : tip.id === 7 ? "/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp" : tip.id === 8 ? "/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp" : tip.id === 9 ? "/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp" : tip.id === 10 ? "/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp" : tip.image}
+                              alt={tip.id === 1 ? "Illustration showing World Cup 2026 travel budgeting elements, including subtle stadium shapes, travel icons, and financial symbols in a clean, modern design." : tip.id === 2 ? "Illustration featuring a calendar, flight and hotel icons, and subtle stadium shapes representing the best time to book World Cup 2026 tickets, flights, and hotels." : tip.id === 3 ? "Illustration featuring multiple city skylines, location pins, and subtle stadium elements representing the World Cup 2026 host city guide." : tip.id === 4 ? "Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide." : tip.id === 5 ? "Illustration featuring airplanes, global route lines, airline symbols, and subtle stadium shapes representing the World Cup 2026 flight booking guide." : tip.id === 6 ? "Illustration featuring calendars, trip routes, stadium icons, and travel elements representing 1-, 2-, and 3-week World Cup 2026 itineraries." : tip.id === 7 ? "Illustration featuring luggage, clothing for all weather, travel accessories, and subtle stadium shapes representing the World Cup 2026 ultimate packing checklist." : tip.id === 8 ? "Illustration featuring stadiums, match tickets, football icons, and calendar elements representing the World Cup 2026 match selection strategy guide." : tip.id === 9 ? "Illustration featuring diverse foods, dining icons, budget-to-luxury symbols, and subtle stadium shapes representing the World Cup 2026 food and dining guide." : tip.id === 10 ? "Illustration featuring smartphones, SIM cards, WiFi symbols, and subtle stadium shapes representing the World Cup 2026 connectivity guide." : tip.image}
+                              imgClassName="w-full h-64 lg:h-80 object-cover object-top rounded-2xl group-hover:scale-110 transition-transform duration-1000"
+                              width={1600}
+                              height={900}
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                          </div>
+                          <div className="absolute top-6 right-6 bg-emerald-500/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-emerald-400/30 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                            {tip.savings}
+                          </div>
+                        </div>
+                        <div className="lg:col-span-2">
+                          <div className="flex items-center space-x-4 mb-6">
+                            <span className="text-sm bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-4 py-2 rounded-full capitalize font-medium">
+                              {tip.category}
+                            </span>
+                            <span className="text-sm text-slate-500 dark:text-slate-400 font-medium flex items-center space-x-2">
+                              <i className="ri-time-line"></i>
+                              <span>{tip.readTime}</span>
+                            </span>
+                            <span className="text-sm text-slate-500 dark:text-slate-400 font-medium flex items-center space-x-2">
+                              <i className="ri-signal-tower-line"></i>
+                              <span>{tip.difficulty}</span>
+                            </span>
+                          </div>
+                          <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                            {tip.title}
+                          </h3>
+                          <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg mb-8 leading-relaxed font-light group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
+                            {tip.description}
+                          </p>
+                          <div className="space-y-4 mb-8">
+                            {tip.tips.slice(0, 3).map((tipItem, idx) => (
+                              <div key={idx} className="flex items-start space-x-3">
+                                <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-emerald-500/20">
+                                  <i className="ri-check-line text-white text-xs"></i>
+                                </div>
+                                <span className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">{tipItem}</span>
+                              </div>
+                            ))}
+                          </div>
+                          <a
+                            href={`/world-cup-2026-travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`}
+                            className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
+                          >
+                            <span>Get This Strategy</span>
+                            <i className="ri-arrow-right-line ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className="mt-16">
+              <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
+                  <div className="text-center mb-12 sm:mb-16 md:mb-20">
+                    <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                      <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
+                    </div>
+                    <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                      Complete Your World Cup 2026 Planning
+                    </h2>
+                    <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
+                      Ready to dive deeper? Explore our comprehensive guides for every aspect of your World Cup journey.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
+                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                      <div className="relative z-10">
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
+                          </div>
+                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Match Day Essentials</h3>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                          Get stadium-specific guides covering transport, parking, matchday tips, and what makes each venue special—from MetLife's Final to Estadio Azteca's legendary atmosphere.
+                        </p>
+                        <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
+                          <span>Discover All Stadiums</span>
+                          <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                      <div className="relative z-10">
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
+                          </div>
+                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Destination Guides</h3>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
+                          Discover where to stay, what to do, local transportation, safety tips, and cultural experiences in every World Cup city from Vancouver to Mexico City.
+                        </p>
+                        <a href="/world-cup-2026-host-cities" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
+                          <span>Explore Host Cities</span>
+                          <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="mb-12 sm:mb-16 md:mb-20">
+                    <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
+                      <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-emerald-500/30">
+                        <i className="ri-tools-line text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white"></i>
+                      </div>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-900 dark:text-white mb-4 sm:mb-6 tracking-tight">Essential Planning Resources</h3>
+                      <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto font-light">Everything you need to plan your perfect World Cup trip:</p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-2xl group-hover:from-blue-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-blue-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-file-list-3-line text-white text-base sm:text-lg md:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Complete Planning Checklist</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Step-by-step preparation guide covering tickets, visas, accommodation, transport, and matchday essentials.</p>
+                        <a href="/world-cup-2026-travel-tips/complete-planning-checklist" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                          <span>Get Checklist</span>
+                          <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-2xl group-hover:from-purple-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-purple-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-passport-line text-white text-base sm:text-lg md:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Visa Requirements Guide</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Entry requirements, application processes, and processing times for USA, Canada, and Mexico.</p>
+                        <a href="/world-cup-2026-travel-tips/visa-requirements-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                          <span>Check Requirements</span>
+                          <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-green-500/20 hover:shadow-3xl hover:shadow-green-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-green-400/15 to-transparent rounded-full blur-2xl group-hover:from-green-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-green-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-calculator-line text-white text-base sm:text-lg md:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Budget Planning Calculator</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Estimate your trip costs with our comprehensive budget breakdown by travel style.</p>
+                        <a href="/world-cup-2026-travel-tips/budget-planning-tool" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                          <span>Calculate Your Budget</span>
+                          <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-2xl group-hover:from-orange-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
+                          <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-6 shadow-2xl shadow-orange-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-hotel-line text-white text-lg sm:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-lg sm:text-xl text-navy-900 dark:text-white tracking-tight">Accommodation Guide</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed font-light">Find the best hotels, neighborhoods, and booking strategies for all 16 host cities.</p>
+                        <a href="/world-cup-2026-travel-tips/accommodation-finder" className="inline-flex items-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center">
+                          <span>Find Hotels</span>
+                          <i className="ri-arrow-right-line ml-1"></i>
+                        </a>
+                      </div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-red-500/20 hover:shadow-3xl hover:shadow-red-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-red-400/15 to-transparent rounded-full blur-2xl group-hover:from-red-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-red-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-subway-line text-white text-base sm:text-lg md:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Transportation Guide</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Navigate public transit, rental cars, flights, and trains between World Cup cities.</p>
+                        <a href="/world-cup-2026-travel-tips/transportation-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                          <span>Plan Transport</span>
+                          <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:shadow-indigo-500/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-400/15 to-transparent rounded-full blur-2xl group-hover:from-indigo-400/25 transition-all duration-700"></div>
+                        <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-indigo-500/30 group-hover:scale-110 transition-all duration-500">
+                            <i className="ri-shield-check-line text-white text-base sm:text-lg md:text-xl"></i>
+                          </div>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Safety & Security Tips</h4>
+                        </div>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Stay safe across all three countries with city-specific advice and emergency contacts.</p>
+                        <a href="/world-cup-2026-travel-tips/safety-security-tips" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                          <span>Read Safety Tips</span>
+                          <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <div className="mt-16">
+              <WorldClassFAQ 
+                faqs={faqData}
+                title="Frequently Asked Questions About World Cup 2026 Travel"
+                subtitle="Everything you need to know about planning your perfect World Cup 2026 journey, from booking flights to staying safe."
+                showCategories={true}
+                showSearch={true}
+                locationSpecific={true}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* Complete World Cup 2026 Travel Guide Library - Apple-Level Premium Design */}
+      <section className="hidden">
+        {/* Premium Background Elements */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          
+          {/* Floating Glass Elements - Premium Apple Style */}
+          <div className="absolute top-10 left-6 w-24 h-24 xs:top-12 xs:left-8 xs:w-32 xs:h-32 sm:top-16 sm:left-10 sm:w-48 sm:h-48 md:top-20 md:left-12 md:w-56 md:h-56 lg:top-24 lg:left-16 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute bottom-10 right-6 w-32 h-32 xs:bottom-12 xs:right-8 xs:w-40 xs:h-40 sm:bottom-16 sm:right-10 sm:w-56 sm:h-56 md:bottom-20 md:right-12 md:w-64 md:h-64 lg:bottom-24 lg:right-16 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute top-1/3 left-1/2 w-20 h-20 xs:top-1/2 xs:left-1/2 xs:w-28 xs:h-28 sm:top-1/2 sm:left-1/2 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            {/* Ultra-Premium Perfect Responsive Breadcrumbs */}
-            <nav aria-label="Breadcrumb" className="breadcrumb-ultra-premium mb-8">
-              <ol>
-                <li className="breadcrumb-item">
-                  <a href="/" className="breadcrumb-link text-slate-300 hover:text-white hover:bg-white/10">
-                    <svg className="breadcrumb-icon text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                    <span>Home</span>
-                  </a>
-                </li>
-                <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                <li className="breadcrumb-item">
-                  <span className="breadcrumb-current">
-                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Travel Tips
-                  </span>
-                </li>
-              </ol>
-            </nav>
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              World Cup 2026 Travel Tips:
-              <br />
-              <span className="text-gold-400">Expert Advice to Save Money & Maximize Your Trip</span>
-            </h1>
-            
-            <h2 className="font-space font-semibold text-2xl md:text-3xl text-slate-200 mb-6">
-              Proven Strategies From Fans Who've Been There
-            </h2>
-            
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Planning your 2026 FIFA World Cup journey? Learn from experienced travelers who've attended major tournaments worldwide. Our expert tips help you save on flights, find better accommodation, skip tourist traps, and make the most of your World Cup experience across all 16 host cities.
-            </p>
-          </div>
-
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">$1,500+</div>
-              <div className="text-slate-300 font-inter text-sm">Avg. Savings</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">47</div>
-              <div className="text-slate-300 font-inter text-sm">Expert Tips</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Cities Covered</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Proven</div>
-              <div className="text-slate-300 font-inter text-sm">Strategies</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Tips */}
-      <section className="py-16 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              Essential Travel Tips: Start Here
-            </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              New to World Cup travel? Master these three critical strategies first. They deliver the biggest savings and prevent the most common (and expensive) mistakes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {travelTips.slice(0, 3).map((tip, index) => (
-              <Card key={tip.id} hover className="overflow-hidden group flex flex-col min-h-[480px]">
-                <div className="relative">
-                  <OptimizedImage
-                    src={index === 0 ? "/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp" : index === 1 ? "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp" : index === 2 ? "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp" : tip.image}
-                    alt={index === 0 ? "Illustration showing World Cup 2026 travel budgeting elements, including subtle stadium shapes, travel icons, and financial symbols in a clean, modern design." : index === 1 ? "Illustration featuring a calendar, flight and hotel icons, and subtle stadium shapes representing the best time to book World Cup 2026 tickets, flights, and hotels." : index === 2 ? "Illustration featuring multiple city skylines, location pins, and subtle stadium elements representing the World Cup 2026 host city guide." : tip.title}
-                    imgClassName="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                    width={800}
-                    height={400}
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                  <div className="absolute top-4 right-4 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    Save {tip.savings}
-                  </div>
-                </div>
-                
-                <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-center space-x-4 mb-6 h-6">
-                    <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full capitalize">
-                      {tip.category}
-                    </span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400">{tip.readTime}</span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400">{tip.difficulty}</span>
-                  </div>
-                  
-                  <h3 className="font-space font-bold text-xl text-navy-900 dark:text-white mb-6 h-20 flex items-start">
-                    {tip.title}
-                  </h3>
-                  
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-8 leading-relaxed flex-1">
-                    {tip.description}
-                  </p>
-                  
-                  <a 
-                    href={`/world-cup-2026-travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`} 
-                    className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm mt-auto"
-                  >
-                    <i className="ri-arrow-right-line mr-2"></i>
-                    Get This Strategy
-                  </a>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Tips with Sidebar */}
-      <section className="py-16 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
+          <div className="text-center mb-16 md:mb-20">
+            <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
               Complete World Cup 2026 Travel Guide Library
             </h2>
-            <p className="text-slate-600 dark:text-slate-400 font-inter text-lg max-w-3xl mx-auto leading-relaxed">
+            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
               Browse all 47 expert tips organized by category. From budget strategies to safety advice everything you need to plan your perfect World Cup journey.
             </p>
           </div>
           <div className="grid lg:grid-cols-1 gap-8">
             <div className="lg:col-span-1">
-              <div className="mb-8">
-                <div className="text-center mb-6">
-                  <div className="inline-flex items-center space-x-2 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-6 py-3 mb-3">
-                    <i className="ri-filter-3-line text-emerald-600"></i>
-                    <span className="text-slate-700 dark:text-slate-300 font-medium">Smart Filtering</span>
+              {/* Premium Filtering Section - Apple-Level Glass Morphism */}
+              <div className="mb-16 md:mb-20">
+                <div className="text-center mb-12 md:mb-16">
+                  <div className="inline-flex items-center space-x-3 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-8 py-4 mb-6">
+                    <i className="ri-filter-3-line text-emerald-600 text-lg"></i>
+                    <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering</span>
                   </div>
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white">Find What You Need</h3>
-                  <p className="text-slate-600 dark:text-slate-400 font-inter">Browse by category to get the tips that matter.</p>
+                  <h3 className="font-space font-bold text-3xl md:text-4xl text-navy-900 dark:text-white mb-6 tracking-tight">
+                    Find What You Need
+                  </h3>
+                  <p className="text-slate-600 dark:text-slate-400 font-inter text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
+                    Browse by category to get the tips that matter.
+                  </p>
                 </div>
 
-                <div className="bg-white/80 dark:bg-navy-800/80 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-3xl p-6 md:p-8 shadow-2xl shadow-emerald-500/10">
-                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8 items-center">
-                    <div className="lg:col-span-2 space-y-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center">
-                          <i className="ri-bookmark-line text-white text-lg"></i>
+                {/* Apple-Level Premium Glass Card */}
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
+                  {/* Premium Background Glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
+                      {/* Categories Section - Apple Premium */}
+                      <div className="lg:col-span-2 space-y-8">
+                        <div className="flex items-center space-x-4 mb-8">
+                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                            <i className="ri-bookmark-line text-white text-xl"></i>
+                          </div>
+                          <div>
+                            <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Categories</h4>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Choose your topic of interest</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-navy-900 dark:text-white">Categories</h4>
-                          <p className="text-xs text-slate-500 dark:text-slate-400">Choose your topic of interest</p>
+                        
+                        {/* Premium Category Buttons Grid */}
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                          {categories.map((category) => (
+                            <div key={category.id} className="group relative">
+                              <button
+                                onClick={() => setSelectedCategory(category.id)}
+                                className={`w-full px-6 py-4 rounded-2xl text-sm font-semibold transition-all duration-500 cursor-pointer relative overflow-hidden ${
+                                  selectedCategory === category.id
+                                    ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/30 scale-105'
+                                    : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-105 hover:shadow-lg'
+                                }`}
+                              >
+                                <div className="relative z-10">{category.name}</div>
+                                {selectedCategory === category.id && (
+                                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl"></div>
+                                )}
+                              </button>
+                            </div>
+                          ))}
                         </div>
                       </div>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        {categories.map((category) => (
-                          <button
-                            key={category.id}
-                            onClick={() => setSelectedCategory(category.id)}
-                            className={`px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 cursor-pointer ${
-                              selectedCategory === category.id
-                                ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-lg shadow-emerald-500/25 scale-105'
-                                : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-emerald-50 dark:hover:bg-emerald-900/20 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600'
-                            }`}
-                          >
-                            {category.name}
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center">
-                          <i className="ri-search-line text-white text-lg"></i>
+                      
+                      {/* Results Section - Apple Premium Stats */}
+                      <div className="space-y-8">
+                        <div className="flex items-center space-x-4 mb-8">
+                          <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/20 group-hover:shadow-purple-500/30 group-hover:scale-105 transition-all duration-500">
+                            <i className="ri-search-line text-white text-xl"></i>
+                          </div>
+                          <div>
+                            <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Results</h4>
+                            <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Matching your selection</p>
+                          </div>
                         </div>
-                        <div>
-                          <h4 className="font-semibold text-navy-900 dark:text-white">Results</h4>
-                          <p className="text-xs text-slate-500 dark:text-slate-400">Matching your selection</p>
+                        
+                        {/* Premium Stats Card */}
+                        <div className="group relative bg-gradient-to-br from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                          <div className="text-center">
+                            <div className="text-4xl md:text-5xl font-space font-bold text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
+                            <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">of {travelTips.length} tips match</div>
+                            <div className="text-sm text-slate-500 dark:text-slate-500">Updated in real-time</div>
+                          </div>
                         </div>
-                      </div>
-                      <div className="text-center p-6 bg-gradient-to-r from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-xl border border-emerald-200/50 dark:border-emerald-800/50">
-                        <div className="text-3xl font-bold text-emerald-600 mb-2">{filteredTips.length}</div>
-                        <div className="text-sm text-slate-600 dark:text-slate-400">of {travelTips.length} tips match your filter</div>
-                        <div className="text-xs text-slate-500 dark:text-slate-500 mt-1">Updated in real-time</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Tips Grid */}
-              <div className="space-y-6">
+              {/* Apple-Level Premium Tips Grid */}
+              <div className="grid gap-8 md:gap-10">
                 {filteredTips.map((tip, index) => (
-                  <Card key={tip.id} hover className="overflow-hidden">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="relative">
-                        <OptimizedImage
-                          src={tip.id === 1 ? "/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp" : tip.id === 2 ? "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp" : tip.id === 3 ? "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp" : tip.id === 4 ? "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" : tip.id === 5 ? "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp" : tip.id === 6 ? "/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp" : tip.id === 7 ? "/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp" : tip.id === 8 ? "/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp" : tip.id === 9 ? "/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp" : tip.id === 10 ? "/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp" : tip.title === 'World Cup 2026 Flight Booking Guide: Routes, Airlines & Strategies' ? "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp" : tip.title === 'World Cup 2026 Accommodation Guide: Where to Stay for Every Budget' ? "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" : tip.image}
-                          alt={tip.id === 1 ? "Illustration showing World Cup 2026 travel budgeting elements, including subtle stadium shapes, travel icons, and financial symbols in a clean, modern design." : tip.id === 2 ? "Illustration featuring a calendar, flight and hotel icons, and subtle stadium shapes representing the best time to book World Cup 2026 tickets, flights, and hotels." : tip.id === 3 ? "Illustration featuring multiple city skylines, location pins, and subtle stadium elements representing the World Cup 2026 host city guide." : tip.id === 4 ? "Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide." : tip.id === 5 ? "Illustration featuring airplanes, global route lines, airline symbols, and subtle stadium shapes representing the World Cup 2026 flight booking guide." : tip.id === 6 ? "Illustration featuring calendars, trip routes, stadium icons, and travel elements representing 1-, 2-, and 3-week World Cup 2026 itineraries." : tip.id === 7 ? "Illustration featuring luggage, clothing for all weather, travel accessories, and subtle stadium shapes representing the World Cup 2026 ultimate packing checklist." : tip.id === 8 ? "Illustration featuring stadiums, match tickets, football icons, and calendar elements representing the World Cup 2026 match selection strategy guide." : tip.id === 9 ? "Illustration featuring diverse foods, dining icons, budget-to-luxury symbols, and subtle stadium shapes representing the World Cup 2026 food and dining guide." : tip.id === 10 ? "Illustration featuring smartphones, SIM cards, WiFi symbols, and subtle stadium shapes representing the World Cup 2026 connectivity guide." : tip.title.includes("Accommodation") || tip.title.includes("Where to Stay") ? "Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide." : tip.title}
-                          imgClassName="w-full h-48 md:h-full object-cover object-top rounded-lg"
-                          width={1600}
-                          height={900}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        />
-                        <div className="absolute top-3 right-3 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                  <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20">
+                    {/* Premium Background Glow */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    
+                    <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
+                      {/* Premium Image Section */}
+                      <div className="relative lg:col-span-1">
+                        <div className="relative overflow-hidden rounded-2xl">
+                          <OptimizedImage
+                            src={tip.id === 1 ? "/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp" : tip.id === 2 ? "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp" : tip.id === 3 ? "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp" : tip.id === 4 ? "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" : tip.id === 5 ? "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp" : tip.id === 6 ? "/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp" : tip.id === 7 ? "/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp" : tip.id === 8 ? "/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp" : tip.id === 9 ? "/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp" : tip.id === 10 ? "/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp" : tip.title === 'World Cup 2026 Flight Booking Guide: Routes, Airlines & Strategies' ? "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp" : tip.title === 'World Cup 2026 Accommodation Guide: Where to Stay for Every Budget' ? "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" : tip.image}
+                            alt={tip.id === 1 ? "Illustration showing World Cup 2026 travel budgeting elements, including subtle stadium shapes, travel icons, and financial symbols in a clean, modern design." : tip.id === 2 ? "Illustration featuring a calendar, flight and hotel icons, and subtle stadium shapes representing the best time to book World Cup 2026 tickets, flights, and hotels." : tip.id === 3 ? "Illustration featuring multiple city skylines, location pins, and subtle stadium elements representing the World Cup 2026 host city guide." : tip.id === 4 ? "Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide." : tip.id === 5 ? "Illustration featuring airplanes, global route lines, airline symbols, and subtle stadium shapes representing the World Cup 2026 flight booking guide." : tip.id === 6 ? "Illustration featuring calendars, trip routes, stadium icons, and travel elements representing 1-, 2-, and 3-week World Cup 2026 itineraries." : tip.id === 7 ? "Illustration featuring luggage, clothing for all weather, travel accessories, and subtle stadium shapes representing the World Cup 2026 ultimate packing checklist." : tip.id === 8 ? "Illustration featuring stadiums, match tickets, football icons, and calendar elements representing the World Cup 2026 match selection strategy guide." : tip.id === 9 ? "Illustration featuring diverse foods, dining icons, budget-to-luxury symbols, and subtle stadium shapes representing the World Cup 2026 food and dining guide." : tip.id === 10 ? "Illustration featuring smartphones, SIM cards, WiFi symbols, and subtle stadium shapes representing the World Cup 2026 connectivity guide." : tip.title.includes("Accommodation") || tip.title.includes("Where to Stay") ? "Illustration of hotel options with budget and luxury symbols, location markers, and subtle stadium shapes representing the World Cup 2026 accommodation guide." : tip.title}
+                            imgClassName="w-full h-64 lg:h-80 object-cover object-top rounded-2xl group-hover:scale-110 transition-transform duration-1000"
+                            width={1600}
+                            height={900}
+                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
+                        </div>
+                        
+                        {/* Premium Savings Badge - Apple Style */}
+                        <div className="absolute top-6 right-6 bg-emerald-500/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-emerald-400/30 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
                           {tip.savings}
                         </div>
                       </div>
                       
-                      <div className="md:col-span-2">
-                        <div className="flex items-center space-x-4 mb-3">
-                          <span className="text-xs bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-400 px-3 py-1 rounded-full capitalize">
+                      {/* Premium Content Section */}
+                      <div className="lg:col-span-2">
+                        {/* Premium Meta Tags */}
+                        <div className="flex items-center space-x-4 mb-6">
+                          <span className="text-sm bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-4 py-2 rounded-full capitalize font-medium">
                             {tip.category}
                           </span>
-                          <span className="text-xs text-slate-500 dark:text-slate-400">{tip.readTime}</span>
-                          <span className="text-xs text-slate-500 dark:text-slate-400">{tip.difficulty}</span>
+                          <span className="text-sm text-slate-500 dark:text-slate-400 font-medium flex items-center space-x-2">
+                            <i className="ri-time-line"></i>
+                            <span>{tip.readTime}</span>
+                          </span>
+                          <span className="text-sm text-slate-500 dark:text-slate-400 font-medium flex items-center space-x-2">
+                            <i className="ri-signal-tower-line"></i>
+                            <span>{tip.difficulty}</span>
+                          </span>
                         </div>
                         
-                        <h3 className="font-space font-bold text-xl text-navy-900 dark:text-white mb-3">
+                        {/* Premium Title - Apple Typography */}
+                        <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
                           {tip.title}
                         </h3>
                         
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                        {/* Premium Description */}
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg mb-8 leading-relaxed font-light group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
                           {tip.description}
                         </p>
                         
-                        <div className="space-y-2 mb-6">
-                          {tip.tips.slice(0, 2).map((tipItem, idx) => (
-                            <div key={idx} className="flex items-start space-x-2">
-                              <i className="ri-check-line text-emerald-500 mt-0.5 text-sm"></i>
-                              <span className="text-slate-600 dark:text-slate-400 text-sm">{tipItem}</span>
+                        {/* Premium Tips Preview */}
+                        <div className="space-y-4 mb-8">
+                          {tip.tips.slice(0, 3).map((tipItem, idx) => (
+                            <div key={idx} className="flex items-start space-x-3">
+                              <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-emerald-500/20">
+                                <i className="ri-check-line text-white text-xs"></i>
+                              </div>
+                              <span className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">{tipItem}</span>
                             </div>
                           ))}
                         </div>
                         
+                        {/* Premium CTA Button - Apple Style */}
                         <a
                           href={`/world-cup-2026-travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`}
-                          className="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-transparent disabled:hover:text-emerald-500 px-3 py-2 text-sm"
+                          className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
                         >
-                          <i className="ri-arrow-right-line mr-2"></i>
-                          Get This Strategy
+                          <span>Get This Strategy</span>
+                          <i className="ri-arrow-right-line ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
                     </div>
-                  </Card>
+                  </div>
                 ))}
               </div>
             </div>

@@ -153,7 +153,7 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
                 Estadio BBVA: Your Complete Guide to Monterrey's World Cup 2026 Venue
               </h2>
               <p>
-                Located in <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>, Estadio BBVA is one of the most technologically advanced stadiums in Latin America. Estadio BBVA is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>, Estadio BBVA is one of the most technologically advanced stadiums in Latin America. Estadio BBVA is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
               </p>
               <p>
                 Rising from the edge of Monterrey like a metallic fortress, Estadio BBVA—nicknamed "El Gigante de Acero" (The Steel Giant)—represents a new generation of Latin American football architecture. When this architectural marvel hosts four World Cup 2026 matches, international fans will discover why Mexico's industrial capital built a stadium that honors its brewing and steel-making heritage while delivering one of the most intimate viewing experiences in world football. With the majestic Cerro de la Silla mountain framing the north stand and seats positioned just nine meters from the pitch, this venue promises an atmosphere unlike any other in the tournament.
@@ -416,7 +416,7 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
               <p>Monterrey's mountain backdrop and modern energy create a unique World Cup 2026 destination.</p>
               <p>
                 Explore our complete{' '}
-                <Link to="/world-cup-2026-host-cities/monterrey" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey World Cup 2026 Guide</Link>{' '}for everything you need:
+                <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey World Cup 2026 Guide</Link>{' '}for everything you need:
               </p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Hotels near Estadio BBVA</li>
@@ -456,16 +456,7 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
               <p><em>Travel smart: Use Booking.com or Expedia for competitive hotel rates, compare flights through Skyscanner or Google Flights, and book airport transfers through authorized services like Uber or official taxi kiosks. For authentic local experiences, consider Airbnb rentals in Barrio Antiguo or San Pedro. Your World Cup dream starts with the right preparation.</em></p>
             </article>
 
-            {/* Got It Button */}
-            <div className="flex justify-end mt-8">
-              <button
-                onClick={handleGotItClick}
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20 px-6 py-3"
-              >
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </button>
-            </div>
+            
           </section>
         </div>
       )}

@@ -17,13 +17,13 @@ export function MonterreyCityGuide() {
           generateCityGuideSchema(
             'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide',
             "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.",
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/monterrey`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/monterrey-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Monterrey', 'Estadio BBVA'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey' }
+            { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/monterrey-world-cup-2026.webp', {
             width: 1600,
@@ -40,7 +40,7 @@ export function MonterreyCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/monterrey`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/monterrey-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/monterrey-world-cup-2026.webp`;
         const title = 'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide';
         const description = "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.";
@@ -85,10 +85,8 @@ export function MonterreyCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb navigation for Monterrey World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Monterrey" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -106,13 +104,13 @@ export function MonterreyCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Monterrey World Cup 2026 Guide">
-                    <span className="truncate">Monterrey World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Monterrey">
+                    <span className="truncate">Monterrey</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Monterrey</h1>
+            <h1 className="editorial-hero-title">Monterrey World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -149,7 +147,7 @@ export function MonterreyCityGuide() {
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
                 </div>
                 <div>
-                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/mexico-city" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link> | <Link to="/world-cup-2026-host-cities/guadalajara" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/dallas" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>
+                  ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link> | <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link> | <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Dallas</Link>
                 </div>
               </div>
             </div>
@@ -158,8 +156,8 @@ export function MonterreyCityGuide() {
             </p>
             <p className="mt-2">
               Combine with{' '}
-              <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}and{' '}
-              <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for a complete Mexican experience—culture in Guadalajara, the capital’s energy in Mexico City, and mountain-backed modernity in Monterrey.
+              <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for a complete Mexican experience—culture in Guadalajara, the capital’s energy in Mexico City, and mountain-backed modernity in Monterrey.
             </p>
             <p>
               If you're planning to catch a World Cup match in Monterrey, you're in for something special. This isn't a tourist resort; it's a real Mexican city with serious football heritage, incredible carne asada, and a stadium that rivals anything in North America.
@@ -226,8 +224,8 @@ export function MonterreyCityGuide() {
             </p>
             <p>
               Regional planning: Monterrey is closest to Texas cities like{' '}
-              <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}and{' '}
-              <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, making cross-border itineraries straightforward.
+              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, making cross-border itineraries straightforward.
             </p>
           <hr className="editorial-divider" />
         </article>
@@ -576,21 +574,21 @@ export function MonterreyCityGuide() {
           <p className="mt-4 font-semibold">Popular Combinations:</p>
           <p className="mt-2">
             <strong>Texas to Mexico</strong>{' '}Create the perfect cross-border experience: Start in{' '}
-            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico at Monterrey (current, no link) — just a few hours' drive — before continuing to{' '}
-            <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}and{' '}
-            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico at Monterrey (current, no link) — just a few hours' drive — before continuing to{' '}
+            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}and{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
           </p>
           <p className="mt-2">
             <strong>Complete Mexico Tour</strong>{' '}Experience all three Mexican host cities: Monterrey (current) for mountains and modernity,{' '}
-            <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for culture and tradition, then{' '}
-            <Link to="/world-cup-2026-host-cities/mexico-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for the ultimate metropolitan experience.
+            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for culture and tradition, then{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for the ultimate metropolitan experience.
           </p>
           <p className="mt-2">
             <strong>Border Region Circuit</strong>{' '}Focus on the border region: Combine Monterrey (current) with nearby Texas cities{' '}
-            <Link to="/world-cup-2026-host-cities/dallas" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>,{' '}
-            <Link to="/world-cup-2026-host-cities/houston" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, and{' '}
-            <Link to="/world-cup-2026-host-cities/kansas-city" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>{' '}for an efficient multi-city tour with minimal travel time.
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, and{' '}
+            <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>{' '}for an efficient multi-city tour with minimal travel time.
           </p>
           <p className="mt-4">
             <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>

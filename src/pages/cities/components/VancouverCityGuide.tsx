@@ -16,15 +16,15 @@ export function VancouverCityGuide() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'Vancouver World Cup 2026 – BC Place & Pacific Coast Guide',
+            'Vancouver World Cup 2026: Complete Travel Guide',
             'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.',
-            `${siteUrl}/world-cup-2026-host-cities/vancouver`,
+            `${siteUrl}/world-cup-2026-host-cities/vancouver-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Vancouver', 'BC Place'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
             { name: 'Host Cities', url: `${siteUrl}/world-cup-2026-host-cities` },
-            { name: 'Vancouver', url: `${siteUrl}/world-cup-2026-host-cities/vancouver` }
+            { name: 'Vancouver', url: `${siteUrl}/world-cup-2026-host-cities/vancouver-world-cup-2026-guide` }
           ]),
           generateImageObjectSchema('/images/cities/vancouver-world-cup-2026.webp', {
             width: 1600,
@@ -35,9 +35,9 @@ export function VancouverCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/vancouver`;
+        const pageUrl = `${siteUrl}/world-cup-2026-host-cities/vancouver-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/vancouver-world-cup-2026.webp`;
-        const title = 'Vancouver World Cup 2026 – BC Place & Pacific Coast Guide';
+        const title = 'Vancouver World Cup 2026: Complete Travel Guide | StadiumPort';
         const description = 'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -81,10 +81,8 @@ export function VancouverCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
-            <nav aria-label="Breadcrumb navigation for Vancouver World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Vancouver" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -102,13 +100,13 @@ export function VancouverCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Vancouver World Cup 2026 Guide">
-                    <span className="truncate">Vancouver World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Vancouver">
+                    <span className="truncate">Vancouver</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Vancouver</h1>
+            <h1 className="editorial-hero-title">Vancouver World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -153,7 +151,7 @@ export function VancouverCityGuide() {
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
               </div>
               <div>
-                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/seattle" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/toronto" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> | <Link to="/world-cup-2026-host-cities/san-francisco" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
+                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link> | <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link> | <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
               </div>
             </div>
           </div>
@@ -327,7 +325,7 @@ export function VancouverCityGuide() {
           </p>
           <p>
             Vancouver is just a few hours from{' '}
-            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -395,7 +393,7 @@ export function VancouverCityGuide() {
           <p>
             Combine{' '}
             <span className="font-semibold">Vancouver</span> with{' '}
-            <Link to="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
+            <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -414,29 +412,29 @@ export function VancouverCityGuide() {
               <strong>Pacific Northwest Perfection</strong>
               <br />
               Experience the best cross-border pairing: <span className="font-semibold">Vancouver</span> for mountain-meets-ocean beauty, then just 3 hours south to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
             </p>
             <p>
               <strong>Coast to Coast Canada</strong>
               <br />
               Explore both Canadian host cities: Start in <span className="font-semibold">Vancouver</span> on the Pacific, then fly across the country to{' '}
-              <Link to="/world-cup-2026-host-cities/toronto" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
+              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
             </p>
             <p>
               <strong>Ultimate West Coast Circuit</strong>
               <br />
               Create the definitive Pacific Coast adventure: <span className="font-semibold">Vancouver</span> to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/los-angeles" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
               — four incredible cities, stunning coastal scenery, and diverse cultures all along the Pacific Ocean.
             </p>
             <p>
               <strong>Mountain Cities Connection</strong>
               <br />
               Vancouver's mountain setting pairs beautifully with other scenic destinations. Combine with{' '}
-              <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
-              <Link to="/world-cup-2026-host-cities/monterrey" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
+              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
             </p>
             <p>
               <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
@@ -456,8 +454,8 @@ export function VancouverCityGuide() {
           </p>
           <p>
             Many visitors create a Pacific Coast tour: <span className="font-semibold">Vancouver</span>,{' '}
-            <Link to="/world-cup-2026-host-cities/seattle" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
-            <Link to="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
           </p>
           <p>
             The city wears its environmental consciousness proudly—you'll notice extensive bike infrastructure, aggressive recycling programs, and a genuine commitment to sustainability that shapes everything from restaurant sourcing to transit policy. This isn't performative; it's how Vancouver operates.

@@ -124,7 +124,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               </h2>
               
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
+                There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
                 <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
                 {`, welcoming 54,000 fans in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. This architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
               </p>
@@ -485,7 +485,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div>
                   <p className="font-semibold">Discover Vancouver:</p>
                   <p>
-                    Explore our complete <Link to="/world-cup-2026-host-cities/vancouver" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver World Cup 2026 Guide</Link> for everything you need:
+                    Explore our complete <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver World Cup 2026 Guide</Link> for everything you need:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Hotels near BC Place and downtown</li>
@@ -529,13 +529,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               <hr className="editorial-divider" />
             </article>
 
-            {/* Back CTA — editorial style aligned right */}
-            <div className="mt-8 flex justify-end">
-              <Link to="/world-cup-2026-stadiums" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-                <i className="ri-check-line mr-2"></i>
-                Got It
-              </Link>
-            </div>
+            
           </main>
         </div>
       )}

@@ -295,60 +295,65 @@ export default function BudgetGuidesPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
 
-      {/* Hero Section - Matching Cities Page */}
-      <section className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=Budget%20travelers%20with%20backpacks%20exploring%20stadium%20cities%2C%20affordable%20travel%20planning%2C%20money-saving%20strategies%2C%20young%20adventurers%20with%20maps%20and%20guidebooks%2C%20budget%20travel%20lifestyle&width=1920&height=800&seq=budget-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Hero Section - Apple-Level Premium Design */}
+      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          {/* Floating Glass Elements - Premium Apple Style */}
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 lg:py-48">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-wallet-3-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">Budget World Cup 2026 Travel</span>
+            {/* Premium Breadcrumb - Minimal Luxury */}
+            <div className="mb-8">
+              <nav className="flex items-center justify-center space-x-2 text-sm">
+                <a href="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                  Home
+                </a>
+                <span className="text-slate-300 dark:text-slate-600">›</span>
+                <span className="text-slate-900 dark:text-white font-medium">Budget Guides</span>
+              </nav>
             </div>
+
+
             
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+            <h1 className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-navy-900 dark:text-white mb-6 tracking-tight leading-tight">
               See the World Cup
               <br />
-              <span className="text-gold-400">Without Breaking the Bank</span>
+              <span className="text-emerald-600 dark:text-emerald-400">Without Breaking the Bank</span>
             </h1>
             
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
+            <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
               You don't need deep pockets to experience the World Cup. Our budget guides show you how to travel smart, eat cheap, find affordable places to stay, and still catch the matches you want to see.
             </p>
           </div>
 
           {/* Budget Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">From $50</div>
-              <div className="text-slate-300 font-inter text-sm">Per Day</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            <div className="text-center p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5 transition-all duration-500 group">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">From $50</div>
+              <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Per Day</div>
             </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Cities</div>
+            <div className="text-center p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5 transition-all duration-500 group">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">16</div>
+              <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Cities</div>
             </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">Up to 70%</div>
-              <div className="text-slate-300 font-inter text-sm">Savings</div>
+            <div className="text-center p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 transition-all duration-500 group">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">Up to 70%</div>
+              <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Savings</div>
             </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">50+</div>
-              <div className="text-slate-300 font-inter text-sm">Money-Saving Tips</div>
+            <div className="text-center p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5 transition-all duration-500 group">
+              <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">50+</div>
+              <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Money-Saving Tips</div>
             </div>
           </div>
         </div>
-      </section>
+      
 
-      {/* Budget Guides Grid - 2 Column Layout */}
-      <section className="py-16 bg-white dark:bg-navy-900">
+      <div className="relative z-10 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
@@ -359,64 +364,97 @@ export default function BudgetGuidesPage() {
             </p>
           </div>
 
-          {/* 2-Column Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {budgetGuides.map((guide) => (
-              <Card key={guide.id} hover className="overflow-hidden group">
-                <div className="relative">
+          {/* 2-Column Grid Layout - Apple-Level Premium Cards */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {budgetGuides.map((guide, index) => (
+              <div
+                key={guide.id}
+                className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative h-64 md:h-72 overflow-hidden">
                   <img
                     src={guide.image}
                     alt={`${guide.city} budget guide`}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    fetchPriority={index < 2 ? 'high' : 'auto'}
+                    decoding="async"
+                    className="object-cover w-full h-full object-top group-hover:scale-110 transition-transform duration-1000"
                   />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                    <span>${guide.dailyBudget}/day</span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <div className={`px-3 py-1 rounded-full text-sm font-semibold ${getBudgetColor(guide.budget)}`}>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                    <div className={`px-3 py-1 rounded-lg text-xs font-semibold backdrop-blur-sm border ${getBudgetColor(guide.budget)} backdrop-blur-sm border-white/20`}>
                       {getBudgetLabel(guide.budget)}
+                    </div>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                    <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                      <div className="relative flex items-center justify-between">
+                        <div className="flex items-center flex-1 min-w-0">
+                          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                            <i className="ri-wallet-3-line text-white text-sm"></i>
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                              ${guide.dailyBudget}/day
+                            </div>
+                            <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
+                              Daily Budget
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-right ml-3 flex-shrink-0">
+                          <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                            {guide.city}
+                          </div>
+                          <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">
+                            City
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
                 
-                <div className="p-6">
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+                <div className="p-6 md:p-8">
+                  <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
                     {guide.title}
                   </h3>
                   
-                  <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                  <p className="text-slate-600 dark:text-slate-400 font-inter text-base mb-6 leading-relaxed">
                     {guide.excerpt}
                   </p>
                   
-                  <div className="bg-slate-50 dark:bg-slate-800 rounded-lg p-4 mb-6">
-                    <div className="grid grid-cols-3 gap-3">
+                  <div className="bg-slate-50 dark:bg-slate-800 rounded-xl p-5 mb-6 border border-slate-200/50 dark:border-slate-700/50">
+                    <div className="grid grid-cols-3 gap-4">
                       <div className="text-center">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Stay</div>
-                        <div className="font-semibold text-emerald-600">{guide.accommodation}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-2 font-medium">Stay</div>
+                        <div className="font-semibold text-emerald-600 text-sm">{guide.accommodation}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Food</div>
-                        <div className="font-semibold text-blue-600">{guide.food}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-2 font-medium">Food</div>
+                        <div className="font-semibold text-blue-600 text-sm">{guide.food}</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Transport</div>
-                        <div className="font-semibold text-purple-600">{guide.transport}</div>
+                        <div className="text-sm text-slate-500 dark:text-slate-400 mb-2 font-medium">Transport</div>
+                        <div className="font-semibold text-purple-600 text-sm">{guide.transport}</div>
                       </div>
                     </div>
                   </div>
                   
                   <a
                     href={`/budget-guides/${guide.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-lg hover:shadow-emerald-500/25 transition-all w-full text-base font-semibold whitespace-nowrap cursor-pointer group-hover:scale-105 group-hover:shadow-xl group-hover:shadow-emerald-500/30 transition-all duration-500"
                   >
                     <i className="ri-eye-line mr-2"></i>
                     Read Full Guide
                   </a>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
+      </div>
       </section>
 
       {/* Budget Guide Modal - Cities Page Style */}

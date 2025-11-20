@@ -42,9 +42,9 @@ export default function HomePage() {
   // Route mapping identical to Cities page behavior
   const getCityRoute = (cityName: string): string => {
     const routeMap: { [key: string]: string } = {
-  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey',
-  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey',
-      'Los Angeles': '/world-cup-2026-host-cities/los-angeles',
+  'New York / New Jersey': '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide',
+  'New York City': '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide',
+      'Los Angeles': '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide',
     };
 
     return routeMap[cityName] || `/world-cup-2026-host-cities/${cityName.toLowerCase().replace(/\s+/g, '-')}`;
@@ -218,104 +218,164 @@ export default function HomePage() {
             </p>
           </div>
 
-          {/* 2-Column Grid Layout with responsive, lazy images (exactly from Cities page) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Apple-Level Premium 2-Column Grid — match Host Cities styling exactly */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* New York / New Jersey Card */}
-            <div className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
-              <div className="relative h-56 overflow-hidden">
+            <div
+              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+            >
+              <div className="relative h-64 md:h-72 overflow-hidden">
                 <OptimizedImage
                   src={featuredCities[0].image}
-                  alt={featuredCities[0].alt || `${featuredCities[0].name} skyline`}
+                  alt={featuredCities[0].alt || `${featuredCities[0].name} skyline – World Cup 2026 host city`}
                   className="w-full h-full"
-                  imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                  imgClassName="object-top group-hover:scale-110 transition-transform duration-1000"
                   width={1600}
                   height={900}
                   priority={true}
                   placeholder="blur"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                  <span>{featuredCities[0].flag}</span>
-                  <span>{featuredCities[0].country}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                {/* Stadium Info Glass */}
+                <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                    <div className="relative flex items-center justify-between">
+                      <div className="flex items-center flex-1 min-w-0">
+                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                          <i className="ri-map-pin-line text-white text-sm"></i>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                            {featuredCities[0].stadium.split(',')[0]}
+                          </div>
+                          <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
+                            {featuredCities[0].stadium.split(',').slice(1).join(',').trim()}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-right ml-3 flex-shrink-0">
+                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                          {featuredCities[0].capacity.replace(/,/g, '').toLocaleString()}
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">Capacity</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
-                  <i className="ri-map-pin-line mr-2 text-lg"></i>
-                  <span>{featuredCities[0].stadium} • {featuredCities[0].capacity} capacity</span>
-                </div>
-                <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  8 Matches
-                </div>
-                <div className="absolute top-16 right-4 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-black/90 px-3 py-1 rounded-full text-xs sm:text-sm font-extrabold backdrop-blur-sm shadow-lg ring-1 ring-white/20 flex items-center gap-2">
-                  <i className="ri-trophy-fill text-base"></i><span className="tracking-wide">2026 WORLD CUP FINAL</span>
+
+                {/* Badge Stack */}
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                  <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
+                    <div className="order-1">
+                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">8 Matches</div>
+                    </div>
+                    <div className="order-2">
+                      <div className="bg-gradient-to-r from-amber-400/75 via-yellow-400/75 to-orange-500/75 text-black/80 px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
+                        <i className="ri-trophy-fill text-[11px]"></i><span className="tracking-wide">WORLD CUP FINAL</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+
+              {/* Content */}
+              <div className="p-8 md:p-10 flex flex-col flex-1">
+                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
                   {featuredCities[0].name}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
                   {featuredCities[0].description}
                 </p>
                 <Button 
                   variant="primary" 
-                  size="sm" 
+                  size="lg" 
                   fullWidth
-                  className="whitespace-nowrap cursor-pointer mt-auto"
+                  className="whitespace-nowrap cursor-pointer mt-auto font-space font-semibold text-base md:text-lg rounded-2xl py-3 md:py-4 group-hover:scale-105 transition-transform duration-500"
                   onClick={() => {
                     navigate(getCityRoute(featuredCities[0].name));
                   }}
                 >
-                  <i className="ri-eye-line mr-2"></i>
+                  <i className="ri-compass-3-line mr-3 text-lg"></i>
                   Plan Your NYC Journey
                 </Button>
               </div>
             </div>
 
             {/* Los Angeles Card */}
-            <div className="group bg-white dark:bg-navy-900 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-slate-100 dark:border-navy-700 hover:scale-[1.02] backdrop-blur-sm flex flex-col h-full">
-              <div className="relative h-56 overflow-hidden">
+            <div
+              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+            >
+              <div className="relative h-64 md:h-72 overflow-hidden">
                 <OptimizedImage
                   src={featuredCities[1].image}
-                  alt={featuredCities[1].alt || `${featuredCities[1].name} skyline`}
+                  alt={featuredCities[1].alt || `${featuredCities[1].name} skyline – World Cup 2026 host city`}
                   className="w-full h-full"
-                  imgClassName="object-top group-hover:scale-110 transition-transform duration-700"
+                  imgClassName="object-top group-hover:scale-110 transition-transform duration-1000"
                   width={1600}
                   height={900}
                   priority={true}
                   placeholder="blur"
                   sizes="100vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
-                  <span>{featuredCities[1].flag}</span>
-                  <span>{featuredCities[1].country}</span>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+
+                {/* Stadium Info Glass */}
+                <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
+                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                    <div className="relative flex items-center justify-between">
+                      <div className="flex items-center flex-1 min-w-0">
+                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                          <i className="ri-map-pin-line text-white text-sm"></i>
+                        </div>
+                        <div className="min-w-0 flex-1">
+                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                            {featuredCities[1].stadium.split(',')[0]}
+                          </div>
+                          <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
+                            {featuredCities[1].stadium.split(',').slice(1).join(',').trim()}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-right ml-3 flex-shrink-0">
+                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                          {featuredCities[1].capacity.replace(/,/g, '').toLocaleString()}
+                        </div>
+                        <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">Capacity</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="absolute bottom-5 left-5 right-5 flex items-center text-white/95 text-sm font-medium">
-                  <i className="ri-map-pin-line mr-2 text-lg"></i>
-                  <span>{featuredCities[1].stadium} • {featuredCities[1].capacity} capacity</span>
-                </div>
-                <div className="absolute top-4 right-4 bg-emerald-500/90 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-semibold">
-                  8 Matches
+
+                {/* Badge Stack */}
+                <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
+                  <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
+                    <div className="order-1">
+                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">8 Matches</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="p-7 flex flex-col flex-1">
-                <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+
+              {/* Content */}
+              <div className="p-8 md:p-10 flex flex-col flex-1">
+                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
                   {featuredCities[1].name}
                 </h3>
-                <p className="text-slate-600 dark:text-slate-400 font-inter text-sm mb-4 leading-relaxed">
+                <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
                   {featuredCities[1].description}
                 </p>
                 <Button 
                   variant="primary" 
-                  size="sm" 
+                  size="lg" 
                   fullWidth
-                  className="whitespace-nowrap cursor-pointer mt-auto"
+                  className="whitespace-nowrap cursor-pointer mt-auto font-space font-semibold text-base md:text-lg rounded-2xl py-3 md:py-4 group-hover:scale-105 transition-transform duration-500"
                   onClick={() => {
                     navigate(getCityRoute(featuredCities[1].name));
                   }}
                 >
-                  <i className="ri-eye-line mr-2"></i>
+                  <i className="ri-compass-3-line mr-3 text-lg"></i>
                   Discover LA Guide
                 </Button>
               </div>

@@ -107,7 +107,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
                 Where Architecture Meets Landscape Meets the Pitch
               </h2>
               <p>
-                Located in <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>, Estadio Akron is the modern home of Chivas and a showcase of Mexican football culture. Estadio Akron is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>, Estadio Akron is the modern home of Chivas and a showcase of Mexican football culture. Estadio Akron is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
               </p>
               <p>
                 Rising from the Guadalajara suburbs like a modern Mesoamerican temple, Estadio Akron doesn't just host football matches—it makes a statement. This architectural marvel, draped in 70,000 square meters of living grass that cascades down its volcano-inspired slopes, will welcome four World Cup 2026 fixtures, including a Mexico group stage clash that promises to ignite the passionate Tapatío spirit. For international fans, this is your chance to experience one of North America's most visually striking venues while immersing yourself in mariachi melodies, tequila sunsets, and the red-and-white fervor of Chivas country.
@@ -592,7 +592,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             </p>
             <p>
               Explore our complete{' '}
-              <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara World Cup 2026 Guide</Link>{' '}for comprehensive information:
+              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara World Cup 2026 Guide</Link>{' '}for comprehensive information:
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Hotels near Estadio Akron</li>
@@ -647,12 +647,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           </article>
 
           {/* Back CTA — match NYC editorial style */}
-          <div className="mt-8 flex justify-end">
-            <Link to="/world-cup-2026-stadiums" className="font-inter font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">
-              <i className="ri-check-line mr-2"></i>
-              Got It
-            </Link>
-          </div>
+          
           </section>
         </div>
       )}

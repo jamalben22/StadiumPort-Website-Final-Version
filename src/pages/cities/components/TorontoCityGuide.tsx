@@ -15,15 +15,15 @@ export function TorontoCityGuide() {
       <SchemaOrg
         schema={[
           generateCityGuideSchema(
-            'Toronto World Cup 2026 – BMO Field & City Travel Guide',
+            'Toronto World Cup 2026: Complete Travel Guide',
             'Emphasize Toronto’s multicultural energy, waterfront beauty, and the excitement surrounding BMO Field’s World Cup matches.',
-            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/toronto`,
+            `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/toronto-world-cup-2026-guide`,
             { datePublished: '2025-11-16T09:00:00Z', dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Toronto', 'BMO Field'] }
           ),
           generateBreadcrumbSchema([
             { name: 'Home', url: '/' },
             { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
-            { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto' }
+            { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' }
           ]),
           generateImageObjectSchema('/images/cities/toronto-world-cup-2026.webp', {
             width: 1600,
@@ -34,9 +34,9 @@ export function TorontoCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/toronto`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/toronto-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/toronto-world-cup-2026.webp`;
-        const title = 'Toronto World Cup 2026 – BMO Field & City Travel Guide';
+        const title = 'Toronto World Cup 2026: Complete Travel Guide | StadiumPort';
         const description = 'Emphasize Toronto’s multicultural energy, waterfront beauty, and the excitement surrounding BMO Field’s World Cup matches.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -81,11 +81,9 @@ export function TorontoCityGuide() {
         <div className="editorial-hero-content">
           <div className="editorial-hero-inner">
             <div className="editorial-hero-eyebrow">
-              <span className="editorial-hero-pulse"></span>
-              <span>World Cup 2026</span>
             </div>
             {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb navigation for Toronto World Cup 2026 Guide" className="breadcrumb-ultra-premium mt-2">
+            <nav aria-label="Breadcrumb navigation for Toronto" className="breadcrumb-ultra-premium mt-2">
               <ol>
                 <li className="breadcrumb-item">
                   <Link to="/" className="breadcrumb-link" title="Home">
@@ -103,13 +101,13 @@ export function TorontoCityGuide() {
                 </li>
                 <li className="breadcrumb-separator" aria-hidden="true">›</li>
                 <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Toronto World Cup 2026 Guide">
-                    <span className="truncate">Toronto World Cup 2026 Guide</span>
+                  <span className="breadcrumb-current" title="Toronto">
+                    <span className="truncate">Toronto</span>
                   </span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Toronto</h1>
+            <h1 className="editorial-hero-title">Toronto World Cup 2026: Complete Travel Guide</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>
@@ -145,7 +143,7 @@ export function TorontoCityGuide() {
             </p>
             <p>
               The city will host six World Cup matches total between June and July 2026, making it one of just two Canadian host cities (alongside 
-              <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
+              <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link>
               ). BMO Field is undergoing a major transformation, adding over 17,000 temporary seats to reach the tournament capacity of 45,736—intimate enough to feel the roar, big enough to create unforgettable atmosphere.
             </p>
             {/* Essential Links module */}
@@ -159,7 +157,7 @@ export function TorontoCityGuide() {
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
                 </div>
                 <div>
-✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>
+✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> | <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> | <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>
                 </div>
               </div>
             </div>
@@ -366,7 +364,7 @@ export function TorontoCityGuide() {
               <strong>Toronto Pearson Airport</strong>: The UP Express train connects the airport to Union Station in 25 minutes for around CAD $12.35. Trains run every 15 minutes. Skip the taxi line—this is faster and way cheaper.
             </p>
             <p>
-Planning a multi-city itinerary? Cross-border connections are straightforward—consider pairing Toronto with <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> or <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> to expand your World Cup experience.
+Planning a multi-city itinerary? Cross-border connections are straightforward—consider pairing Toronto with <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link> or <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> to expand your World Cup experience.
             </p>
         </article>
         <hr className="editorial-divider" />
@@ -444,13 +442,13 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
             <div>
               <p className="font-inter font-semibold">Coast to Coast Canada</p>
               <p>
-                Experience both Canadian host cities: Start in Toronto (current, no link), then fly west to <Link to="/world-cup-2026-host-cities/vancouver" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for Pacific Coast beauty and a completely different Canadian vibe.
+                Experience both Canadian host cities: Start in Toronto (current, no link), then fly west to <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</Link> for Pacific Coast beauty and a completely different Canadian vibe.
               </p>
             </div>
             <div>
               <p className="font-inter font-semibold">Cross-Border Northeast</p>
               <p>
-Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026-host-cities/new-york-new-jersey" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>, <Link to="/world-cup-2026-host-cities/boston" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>, and <Link to="/world-cup-2026-host-cities/philadelphia" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> — perfect for a multi-country World Cup tour.
+Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>, <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link>, and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> — perfect for a multi-country World Cup tour.
               </p>
             </div>
             <div>
