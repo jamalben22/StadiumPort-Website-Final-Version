@@ -1,4 +1,6 @@
 {
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist",
   "redirects": [
     { "source": "/world-cup-2026-host-cities/los-angeles", "destination": "/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide", "permanent": true },
     { "source": "/world-cup-2026-host-cities/new-york-new-jersey", "destination": "/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide", "permanent": true },
@@ -16,5 +18,12 @@
     { "source": "/world-cup-2026-host-cities/mexico-city", "destination": "/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide", "permanent": true },
     { "source": "/world-cup-2026-host-cities/guadalajara", "destination": "/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide", "permanent": true },
     { "source": "/world-cup-2026-host-cities/monterrey", "destination": "/world-cup-2026-host-cities/monterrey-world-cup-2026-guide", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/world-cup-2026-host-cities/:path*", "destination": "/index.html" },
+    { "source": "/world-cup-2026-stadiums", "destination": "/index.html" },
+    { "source": "/travel-tips", "destination": "/index.html" },
+    { "source": "/:path*", "destination": "/index.html" }
   ]
 }
