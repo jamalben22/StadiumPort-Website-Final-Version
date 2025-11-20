@@ -204,15 +204,19 @@ const routes: RouteObject[] = [
   },
   {
     path: '/guides',
-    element: <Navigate to="/guides/health-&-medical-guide-for-world-cup-2026-travelers" replace />
+    element: <Navigate to="/guides/health-and-medical-guide-for-world-cup-2026-travelers" replace />
+  },
+  {
+    path: '/guides/health-and-medical-guide-for-world-cup-2026-travelers',
+    element: <GuidesPage />
   },
   {
     path: '/guides/health-&-medical-guide-for-world-cup-2026-travelers',
-    element: <GuidesPage />
+    element: <Navigate to="/guides/health-and-medical-guide-for-world-cup-2026-travelers" replace />
   },
   {
     path: '/guides/Health & Medical Guide for World Cup 2026 Travelers',
-    element: <GuidesPage />
+    element: <Navigate to="/guides/health-and-medical-guide-for-world-cup-2026-travelers" replace />
   },
   {
     path: '/guides/:slug',

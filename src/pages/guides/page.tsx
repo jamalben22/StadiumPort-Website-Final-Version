@@ -33,7 +33,7 @@ export default function GuidesPage() {
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/guides/health-&-medical-guide-for-world-cup-2026-travelers" className="hover:underline">Guides</Link>
+              <Link to="/guides/health-and-medical-guide-for-world-cup-2026-travelers" className="hover:underline">Guides</Link>
               <span className="mx-2">›</span>
               <span className="hover:underline">{title}</span>
             </nav>
