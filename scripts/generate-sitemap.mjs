@@ -114,6 +114,12 @@ function resolveAllRoutes() {
 }
 
 function buildSitemapXml(urls, siteUrl) {
+  const xmlEscape = (s) => String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;')
   const lines = []
   lines.push('<?xml version="1.0" encoding="UTF-8"?>')
   lines.push('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
@@ -125,7 +131,7 @@ function buildSitemapXml(urls, siteUrl) {
     else if (u.startsWith('/world-cup-2026-host-cities/') || u.startsWith('/world-cup-2026-stadiums/')) priority = 0.8
     else if (['/world-cup-2026-host-cities','/world-cup-2026-stadiums','/travel-guides','/guides','/safety-guide','/luxury-travel','/budget-guides','/packing-lists','/travel-routes','/world-cup-2026-travel-tips','/city-comparisons'].includes(u)) priority = 0.7
     lines.push('<url>')
-    lines.push(`<loc>${loc}</loc>`)
+    lines.push(`<loc>${xmlEscape(loc)}</loc>`)
     lines.push(`<lastmod>${now}</lastmod>`)
     lines.push('<changefreq>weekly</changefreq>')
     lines.push(`<priority>${priority.toFixed(1)}</priority>`)
