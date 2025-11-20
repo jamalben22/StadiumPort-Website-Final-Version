@@ -104,12 +104,23 @@ async function startPreview(port = 5050) {
 }
 
 async function prerender() {
+  const routes = resolveAllRoutes()
+  const indexPath = path.join(distDir, 'index.html')
+  const useFallback = process.env.VERCEL || process.env.CI
+  if (useFallback) {
+    const html = fs.readFileSync(indexPath, 'utf8')
+    for (const route of routes) {
+      const out = ensureDir(route)
+      fs.writeFileSync(out, html)
+      process.stdout.write(`Stubbed: ${route}\n`)
+    }
+    return
+  }
   const puppeteer = await import('puppeteer')
   const port = 5050
   const server = await startPreview(port)
   try {
-    const routes = resolveAllRoutes()
-    const browser = await puppeteer.launch({ headless: 'new' })
+    const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox'] })
     const page = await browser.newPage()
     page.setDefaultNavigationTimeout(60000)
     for (const route of routes) {
@@ -122,6 +133,13 @@ async function prerender() {
       process.stdout.write(`Prerendered: ${route}\n`)
     }
     await browser.close()
+  } catch (e) {
+    const html = fs.readFileSync(indexPath, 'utf8')
+    for (const route of routes) {
+      const out = ensureDir(route)
+      fs.writeFileSync(out, html)
+      process.stdout.write(`Stubbed: ${route}\n`)
+    }
   } finally {
     server.kill('SIGTERM')
   }
