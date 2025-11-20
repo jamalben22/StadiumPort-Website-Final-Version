@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
+import { Suspense } from 'react'
 import { AppRoutes } from './router'
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
@@ -164,7 +165,9 @@ function App() {
       <DateModifiedManager />
       <GlobalStructuredData />
       <RouteStructuredData />
-      <AppRoutes />
+      <Suspense fallback={<div id="route-fallback" className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Loading…</div>}>
+        <AppRoutes />
+      </Suspense>
     </BrowserRouter>
   )
 }
