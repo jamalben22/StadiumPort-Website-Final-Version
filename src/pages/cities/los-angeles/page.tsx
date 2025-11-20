@@ -3,7 +3,8 @@ import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
- 
+import { useEffect } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 // Helper: convert **...** emphasis to <strong> while preserving text and spacing
