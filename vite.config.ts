@@ -4,13 +4,12 @@ import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 
-const routerBase = process.env.BASE_PATH || '/'
-const assetBase = process.env.ASSET_BASE_PATH || '/'
-const isPreview = process.env.IS_PREVIEW ? true : false
+const base = process.env.BASE_PATH || '/'
+const isPreview = process.env.IS_PREVIEW  ? true : false;
 // https://vite.dev/config/
 export default defineConfig({
   define: {
-   __BASE_PATH__: JSON.stringify(routerBase),
+   __BASE_PATH__: JSON.stringify(base),
    __IS_PREVIEW__: JSON.stringify(isPreview)
   },
   plugins: [react(),
@@ -60,7 +59,7 @@ export default defineConfig({
       dts: true,
     }),
   ],
-  base: assetBase,
+  base,
   build: {
     sourcemap: true,
     outDir: 'dist',
@@ -68,12 +67,7 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
-            if (id.includes('react-router-dom')) return 'router'
-            if (id.includes('react-markdown') || id.includes('remark')) return 'markdown'
-            if (id.includes('lucide-react')) return 'icons'
-            if (id.includes('react') || id.includes('react-dom') || id.includes('react-is')) return 'vendor'
-            
-            return 'vendor-others'
+            return 'vendor'
           }
           if (id.includes('/src/pages/')) {
             const m = id.match(/\/src\/pages\/([^\/]+)/)
