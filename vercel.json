@@ -20,6 +20,6 @@
     { "source": "/world-cup-2026-host-cities/monterrey", "destination": "/world-cup-2026-host-cities/monterrey-world-cup-2026-guide", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": ".*text/html.*" }], "missing": [{ "type": "filesystem" }] }
+    { "source": "/(.*)", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": ".*text/html.*" }] }
   ]
 }
