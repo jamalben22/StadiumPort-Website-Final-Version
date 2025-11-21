@@ -6,6 +6,11 @@ import { useLocation } from 'react-router-dom'
 import { getEditorialEntry } from './components/seo/EditorialCalendar'
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateBreadcrumbSchema, generateCityGuideSchema, generateCollectionPageSchema, generateItemListSchema } from './components/seo/SchemaOrg'
 
+// Global declaration for __BASE_PATH__
+declare global {
+  var __BASE_PATH__: string | undefined
+}
+
 
 function CanonicalManager() {
   const location = useLocation()
@@ -159,8 +164,11 @@ function DateModifiedManager() {
 }
 
 function App() {
+  // Handle cases where __BASE_PATH__ might be undefined in production
+  const basePath = typeof __BASE_PATH__ !== 'undefined' ? __BASE_PATH__ : '/'
+  
   return (
-    <BrowserRouter basename={__BASE_PATH__}>
+    <BrowserRouter basename={basePath}>
       <CanonicalManager />
       <DateModifiedManager />
       <GlobalStructuredData />
@@ -287,12 +295,39 @@ function RouteStructuredData() {
   return <SchemaOrg schema={schemas} />
 }
 
-class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean }> {
-  constructor(props: { children: React.ReactNode }) { super(props); this.state = { hasError: false } }
-  static getDerivedStateFromError() { return { hasError: true } }
-  componentDidCatch() {}
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error?: Error }> {
+  constructor(props: { children: React.ReactNode }) { 
+    super(props); 
+    this.state = { hasError: false } 
+  }
+  
+  static getDerivedStateFromError(error: Error) { 
+    return { hasError: true, error } 
+  }
+  
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    console.error('Error caught by boundary:', error, errorInfo)
+  }
+  
   render() {
-    if (this.state.hasError) return <div className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Something went wrong</div>
+    if (this.state.hasError) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-white dark:bg-slate-900">
+          <div className="text-center p-8">
+            <h1 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">Something went wrong</h1>
+            <p className="text-slate-600 dark:text-slate-300 mb-4">
+              We're experiencing technical difficulties. Please try refreshing the page.
+            </p>
+            {this.state.error && (
+              <details className="text-left text-sm text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-slate-800 p-4 rounded-lg">
+                <summary className="cursor-pointer">Error details</summary>
+                <pre className="mt-2 whitespace-pre-wrap">{this.state.error.message}</pre>
+              </details>
+            )}
+          </div>
+        </div>
+      )
+    }
     return this.props.children
   }
 }
