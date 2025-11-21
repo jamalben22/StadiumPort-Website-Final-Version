@@ -68,8 +68,8 @@ function DateModifiedManager() {
       }
       el.setAttribute('content', content)
     }
-    ensurePropertyMeta('og:updated_time', now)
-    ensurePropertyMeta('article:modified_time', now)
+    ensureMeta('og:updated_time', now)
+    ensureMeta('article:modified_time', now)
     ensureNameMeta('last-modified', now)
 
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
