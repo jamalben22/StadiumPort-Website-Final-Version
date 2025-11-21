@@ -27,19 +27,30 @@ function useScrollToTop() {
 
 // AppRoutes component that combines ScrollToTop with routing
 export function AppRoutes() {
-  const element = useRoutes(routes)
-  const navigate = useNavigate() // Always call useNavigate at the top level
-  
-  // Use the scroll to top functionality
-  useScrollToTop()
-  
-  // Set up navigation in useEffect
-  useEffect(() => {
-    if (!window.REACT_APP_NAVIGATE) {
-      window.REACT_APP_NAVIGATE = navigate
-      navigateResolver(window.REACT_APP_NAVIGATE)
+  try {
+    const element = useRoutes(routes)
+    const navigate = useNavigate() // Always call useNavigate at the top level
+    
+    // Use the scroll to top functionality
+    useScrollToTop()
+    
+    // Set up navigation in useEffect
+    useEffect(() => {
+      if (!window.REACT_APP_NAVIGATE) {
+        window.REACT_APP_NAVIGATE = navigate
+        navigateResolver(window.REACT_APP_NAVIGATE)
+      }
+    }, [navigate])
+    
+    if (!element) {
+      console.error('No routes matched, returning null')
+      return null
     }
-  }, [navigate])
-  
-  return element
+    
+    return element
+  } catch (error) {
+    console.error('Error in AppRoutes:', error)
+    // Return a simple error message instead of JSX since this is a .ts file
+    return null
+  }
 }

@@ -167,6 +167,15 @@ function App() {
   // Handle cases where __BASE_PATH__ might be undefined in production
   const basePath = typeof __BASE_PATH__ !== 'undefined' ? __BASE_PATH__ : '/'
   
+  // Safety check for production environment
+  if (typeof window === 'undefined') {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">
+        Initializing...
+      </div>
+    )
+  }
+  
   return (
     <BrowserRouter basename={basePath}>
       <CanonicalManager />
