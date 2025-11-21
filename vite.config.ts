@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 
 const routerBase = process.env.BASE_PATH || '/'
-const assetBase = process.env.ASSET_BASE_PATH || './'
+const assetBase = process.env.ASSET_BASE_PATH || '/'
 const isPreview = process.env.IS_PREVIEW ? true : false
 // https://vite.dev/config/
 export default defineConfig({
