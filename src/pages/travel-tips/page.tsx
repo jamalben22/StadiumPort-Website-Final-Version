@@ -8,7 +8,6 @@ import { Button } from '../../components/base/Button';
 import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { SchemaOrg, generateCollectionPageSchema, generateItemListSchema } from '../../components/seo/SchemaOrg';
-import { setPageMeta } from '../../components/seo/MetaUtils';
 
 // Ultra-Premium Perfect Responsive Breadcrumb Styles
 const breadcrumbStyles = `
