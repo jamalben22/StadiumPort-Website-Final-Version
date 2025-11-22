@@ -8,6 +8,13 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function MiamiCityGuide() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/miami-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   const pageUrl = '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
   useEffect(() => {
     window.scrollTo(0, 0);

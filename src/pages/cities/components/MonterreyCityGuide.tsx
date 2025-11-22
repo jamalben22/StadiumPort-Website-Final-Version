@@ -7,6 +7,13 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link } from 'react-router-dom';
 
 export function MonterreyCityGuide() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/monterrey-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />

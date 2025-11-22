@@ -285,6 +285,13 @@ export default function StadiumDetailPage() {
   const altText = `Inside view of ${stadium?.name} – World Cup 2026`;
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const heroImageAbs = `${siteUrl}${heroImage}`;
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = heroImage
+    document.head.appendChild(link)
+  }, [heroImage])
 
   return (
     <div className="min-h-screen w-full bg-white dark:bg-navy-900">

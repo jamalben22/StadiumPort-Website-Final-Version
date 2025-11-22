@@ -14,6 +14,11 @@ export function PhiladelphiaCityGuide() {
     const description = 'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.';
     const image = `${siteUrl}/images/cities/philadelphia-world-cup-2026.webp`;
     setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Philadelphia', 'Lincoln Financial Field'] })
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/philadelphia-world-cup-2026.webp'
+    document.head.appendChild(link)
   }, [])
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">

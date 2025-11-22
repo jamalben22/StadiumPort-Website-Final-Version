@@ -35,6 +35,20 @@ export default function LuxuryTravelPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGuide, setSelectedGuide] = useState<LuxuryGuide | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [gridReady, setGridReady] = useState(false)
+  const gridRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    const el = gridRef.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        setGridReady(true)
+        io.disconnect()
+      }
+    }, { rootMargin: '200px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
 
   // Lock body scroll when modal is open
   useEffect(() => {
@@ -335,9 +349,8 @@ export default function LuxuryTravelPage() {
             </p>
           </div>
 
-          {/* 2-Column Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {luxuryGuides.map((guide) => (
+          <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {gridReady && luxuryGuides.map((guide) => (
               <Card key={guide.id} hover className="overflow-hidden group">
                 <div className="relative">
                   <img

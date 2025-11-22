@@ -19,6 +19,13 @@ const renderBoldText = (input: string) => {
 };
 
 export default function LosAngelesArticlePage() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/los-angeles-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   const pageUrl = '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
 

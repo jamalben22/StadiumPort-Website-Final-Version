@@ -8,6 +8,13 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
 export default function DallasArticlePage() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/dallas-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   const pageUrl = '/world-cup-2026-host-cities/dallas-world-cup-2026-guide';
 
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'

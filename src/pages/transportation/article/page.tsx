@@ -342,7 +342,7 @@ export default function TransportationArticlePage() {
         </div>
       </section>
 
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           {(slug === 'guadalajara-world-cup-2026-transportation-guide-to-estadio-akron' || slug === 'san-francisco-world-cup-2026-complete-transportation-guide-to-levis-stadium') ? (
             <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -10441,7 +10441,7 @@ See you in the Emerald City.
             </div>
           )}
         </article>
-      </section>
+      </main>
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">

@@ -7,6 +7,13 @@ import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Link } from 'react-router-dom';
 
 export function MexicoCityGuide() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/mexico-city-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
