@@ -18,6 +18,7 @@ jobs:
           node-version: '22.x'
 
       - name: Setup Chrome
+        id: setup-chrome
         uses: browser-actions/setup-chrome@v1
 
       - name: Install Lighthouse CLI
@@ -28,27 +29,48 @@ jobs:
           mkdir -p lighthouse/mobile
           mkdir -p lighthouse/desktop
 
-      - name: Run Lighthouse (Mobile)
+      - name: Run Lighthouse (Mobile HTML)
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: |
+          lighthouse https://stadiumport.com \
+            --output=html \
+            --output-path=./lighthouse/mobile/mobile.report.html \
+            --save-assets \
+            --chrome-flags="--headless" \
+            --quiet
+
+      - name: Run Lighthouse (Mobile JSON)
         env:
           CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
           lighthouse https://stadiumport.com \
             --output=json \
-            --output=html \
-            --output-path=./lighthouse/mobile/report \
+            --output-path=./lighthouse/mobile/mobile.report.json \
             --save-assets \
             --chrome-flags="--headless" \
             --quiet
 
-      - name: Run Lighthouse (Desktop)
+      - name: Run Lighthouse (Desktop HTML)
+        env:
+          CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
+        run: |
+          lighthouse https://stadiumport.com \
+            --preset=desktop \
+            --output=html \
+            --output-path=./lighthouse/desktop/desktop.report.html \
+            --save-assets \
+            --chrome-flags="--headless" \
+            --quiet
+
+      - name: Run Lighthouse (Desktop JSON)
         env:
           CHROME_PATH: ${{ steps.setup-chrome.outputs.chrome-path }}
         run: |
           lighthouse https://stadiumport.com \
             --preset=desktop \
             --output=json \
-            --output=html \
-            --output-path=./lighthouse/desktop/report \
+            --output-path=./lighthouse/desktop/desktop.report.json \
             --save-assets \
             --chrome-flags="--headless" \
             --quiet
@@ -58,15 +80,15 @@ jobs:
         with:
           name: lighthouse-mobile
           path: |
-            lighthouse/mobile/report.html
-            lighthouse/mobile/report.json
-            lighthouse/mobile/report-assets/**
+            lighthouse/mobile/mobile.report.html
+            lighthouse/mobile/mobile.report.json
+            lighthouse/mobile/*report-assets/**
 
       - name: Upload Desktop Artifacts
         uses: actions/upload-artifact@v4
         with:
           name: lighthouse-desktop
           path: |
-            lighthouse/desktop/report.html
-            lighthouse/desktop/report.json
-            lighthouse/desktop/report-assets/**
+            lighthouse/desktop/desktop.report.html
+            lighthouse/desktop/desktop.report.json
+            lighthouse/desktop/*report-assets/**
