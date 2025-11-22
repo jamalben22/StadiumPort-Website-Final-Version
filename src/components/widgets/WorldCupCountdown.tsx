@@ -507,6 +507,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
         </motion.div>
 
         {/* Countdown Display */}
+        <h2 className="sr-only">Live World Cup Planning Stats</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-4xl mx-auto mb-12">
           <CountdownUnit unit={countdown.days} index={0} />
           <CountdownUnit unit={countdown.hours} index={1} />
