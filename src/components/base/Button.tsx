@@ -166,7 +166,7 @@ export function Button({
   const effects = {
     none: '',
     shimmer: 'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/30 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700',
-    ripple: 'after:absolute after:inset-0 after:rounded-3xl after:opacity-0 active:after:opacity-100 after:transition-opacity after:duration-200 after:bg-white/20 after:transform after:scale-105 after:animate-pulse',
+    ripple: 'after:absolute after:inset-0 after:rounded-3xl after:opacity-0 active:after:opacity-100 after:transition-opacity after:duration-200 after:bg-white/20 after:animate-ping',
     glow: 'hover:shadow-ultra-glow',
     pulse: 'animate-hyper-pulse',
     morph: 'animate-morph',
