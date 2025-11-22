@@ -1906,13 +1906,12 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
   }
 
   useEffect(() => {
-    document.title = `${city.name} World Cup 2026 Guide - Complete Travel Information | StadiumPort`;
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', `Complete ${city.name} World Cup 2026 travel guide. ${city.description} Find hotels, transportation, attractions, and insider tips.`);
-    }
-  }, [city]);
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const title = `${city.name} World Cup 2026 Guide – Complete Travel Information`
+    const description = `Complete ${city.name} World Cup 2026 travel guide. ${city.description} Find hotels, transportation, attractions, and insider tips.`
+    const url = `${siteUrl}/world-cup-2026-host-cities/${normalizedId}`
+    setPageMeta({ title, description, url })
+  }, [city])
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
@@ -2336,3 +2335,4 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
     </div>
   );
 }
+import { setPageMeta } from '../../../components/seo/MetaUtils'

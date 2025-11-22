@@ -7,6 +7,7 @@ import { Button } from '../../components/base/Button';
 import { useEffect, useState } from 'react';
 import { SchemaOrg, generateStadiumSchema, generateBreadcrumbSchema, generateItemListSchema, generateCollectionPageSchema } from '../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 
 export default function VenuesPage() {
@@ -46,13 +47,12 @@ export default function VenuesPage() {
   };
 
   useEffect(() => {
-    // Set page title and meta description
-    document.title = 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Complete guide to all 16 World Cup 2026 stadiums including MetLife, SoFi, Estadio Azteca. Get transport routes, capacity, location, matchday tips for every venue.');
-    }
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    setPageMeta({
+      title: 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues',
+      description: 'Complete guide to all 16 World Cup 2026 stadiums including MetLife, SoFi, Estadio Azteca. Get transport routes, capacity, location, matchday tips for every venue.',
+      url: `${siteUrl}/world-cup-2026-stadiums`
+    })
 
     // Add canonical URL
     const canonical = document.querySelector('link[rel="canonical"]');
