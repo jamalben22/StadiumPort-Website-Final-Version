@@ -49,7 +49,6 @@ export function MexicoCityGuide() {
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
-          document.title = title;
           const setMeta = (selector: string, attr: string, value: string) => {
             const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
             if (el) el.setAttribute(attr, value);
