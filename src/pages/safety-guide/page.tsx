@@ -220,7 +220,7 @@ export default function SafetyGuidePage() {
       <Header />
       
       {/* Apple-Level Premium Safety Guide Hero - Matching Host Cities Style */}
-      <section id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden pb-20 md:pb-24 lg:pb-32">
+      <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden pb-20 md:pb-24 lg:pb-32">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
           <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-red-500/5 dark:bg-red-500/10 backdrop-blur-3xl rounded-full border border-red-500/10 dark:border-red-500/20 animate-float"></div>
@@ -586,7 +586,7 @@ export default function SafetyGuidePage() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Guide Detail Modal */}
       {isModalOpen && selectedGuide && (

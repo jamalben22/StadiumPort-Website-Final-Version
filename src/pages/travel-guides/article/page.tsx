@@ -165,7 +165,7 @@ export default function TravelGuideArticlePage() {
         </div>
       </section>
 
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-information-line text-emerald-500"></i>
@@ -174,7 +174,7 @@ export default function TravelGuideArticlePage() {
           <p className="whitespace-pre-line">Detailed travel guide content will be available soon.</p>
           <hr className="editorial-divider" />
         </article>
-      </section>
+      </main>
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">

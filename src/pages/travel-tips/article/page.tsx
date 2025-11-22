@@ -625,7 +625,7 @@ export default function TravelTipsArticlePage() {
       </section>
 
       {/* Editorial Content */}
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         {(slug === 'stadium-proximity-strategy' || slug === 'complete-cost-breakdown-and-savings-strategies' || slug === 'world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies') ? (
           <>
             <article className="editorial-body editorial-dropcap">
@@ -7065,7 +7065,7 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
             </>
           )
         )}
-      </section>
+      </main>
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">

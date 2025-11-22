@@ -277,7 +277,7 @@ export default function DealsPage() {
       <Header />
       
       {/* Unified Premium Section - Apple-Level Design */}
-      <section id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+      <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
         {/* Subtle Background Elements - Unified Across All Sections */}
         <div className="absolute inset-0">
           {/* Premium Gradient Overlay - Continuous Background */}
@@ -649,7 +649,7 @@ export default function DealsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

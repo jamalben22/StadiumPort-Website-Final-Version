@@ -52,7 +52,7 @@ export default function GuidesPage() {
         </div>
       </section>
 
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           <p className="whitespace-pre-line">The 2026 FIFA World Cup will be the first tournament where extreme heat presents a medically verified threat to every attendee. During the 2024 Copa América, a Guatemalan referee collapsed on the pitch in Kansas City when temperatures reached 33°C (91°F) with 50% humidity—conditions that 14 out of 16 World Cup 2026 host locations will experience on an average June or July day.</p>
           <p className="whitespace-pre-line">Climate scientists from Queen's University Belfast analyzed 20 years of meteorological data and delivered a stark warning: six host cities—Atlanta, Dallas, Houston, Kansas City, Miami, and Monterrey—pose an "extremely high risk" of heat-stress injury, with at least 75% of June and July afternoons in Dallas, Houston, Monterrey, and Miami expected to exceed dangerous heat thresholds.</p>
@@ -494,7 +494,7 @@ export default function GuidesPage() {
           <p className="whitespace-pre-line">More flexible pre-existing condition waivers than competitors. The massive evacuation limit covers worst-case scenarios.</p>
           <p className="whitespace-pre-line">Get a Quote: `https://www.allianztravelinsurance.com`</p>
         </article>
-      </section>
+      </main>
       <section className="editorial-article py-6">
         <article className="editorial-body">
           <hr className="my-8 border-gray-300" />
