@@ -61,7 +61,6 @@ export default function VenuesPage() {
     }
 
     // Set social meta (title/description) and preview images
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const img = `${siteUrl}/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp`;
     let ogTitle = document.querySelector('meta[property="og:title"]') as HTMLMetaElement | null;
     if (!ogTitle) {
