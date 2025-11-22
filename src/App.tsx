@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getEditorialEntry } from './components/seo/EditorialCalendar'
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateBreadcrumbSchema, generateCityGuideSchema, generateCollectionPageSchema, generateItemListSchema } from './components/seo/SchemaOrg'
+import { formatTitle } from './components/seo/MetaUtils'
 
 // Global declaration for __BASE_PATH__
 declare global {
@@ -163,6 +164,29 @@ function DateModifiedManager() {
   return null
 }
 
+function GlobalTitleManager() {
+  const location = useLocation()
+  useEffect(() => {
+    const current = document.title || ''
+    const formatted = formatTitle(current || 'Stadiumport')
+    if (formatted !== current) {
+      document.title = formatted
+      const ensure = (prop: string, content: string) => {
+        let el = document.querySelector(`meta[property="${prop}"]`) as HTMLMetaElement | null
+        if (!el) {
+          el = document.createElement('meta')
+          el.setAttribute('property', prop)
+          document.head.appendChild(el)
+        }
+        el.setAttribute('content', content)
+      }
+      ensure('og:title', formatted)
+      ensure('twitter:title', formatted)
+    }
+  }, [location.pathname])
+  return null
+}
+
 function App() {
   // Handle cases where __BASE_PATH__ might be undefined in production
   const basePath = typeof __BASE_PATH__ !== 'undefined' ? __BASE_PATH__ : '/'
@@ -180,6 +204,7 @@ function App() {
     <BrowserRouter basename={basePath}>
       <CanonicalManager />
       <DateModifiedManager />
+      <GlobalTitleManager />
       <GlobalStructuredData />
       <RouteStructuredData />
       <ErrorBoundary>
