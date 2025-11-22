@@ -35,7 +35,7 @@ export function DarkModeToggle() {
         <i className={`${isDark ? 'ri-moon-line text-slate-200' : 'ri-sun-line text-amber-500'} text-lg`}></i>
       </div>
       {isAnimating && (
-        <div className="absolute inset-0 rounded-full border border-emerald-400/40 opacity-75 transition-opacity duration-500 transform scale-105 animate-pulse"></div>
+        <div className="absolute inset-0 rounded-full border border-emerald-400/40 animate-ping opacity-75"></div>
       )}
     </button>
   );
