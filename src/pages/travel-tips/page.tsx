@@ -8,6 +8,7 @@ import { Button } from '../../components/base/Button';
 import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { SchemaOrg, generateCollectionPageSchema, generateItemListSchema } from '../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 
 // Ultra-Premium Perfect Responsive Breadcrumb Styles
 const breadcrumbStyles = `
@@ -339,7 +340,6 @@ export default function TravelTipsPage() {
       if (el) el.setAttribute(attr, value);
     };
 
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
       title: pageTitle,
       description: 'Practical World Cup 2026 travel tips including visas, budgeting, connectivity, transportation, and packing to make your tournament trip smooth.',
