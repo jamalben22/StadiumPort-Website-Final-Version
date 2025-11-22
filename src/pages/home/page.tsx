@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, memo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
@@ -7,7 +7,6 @@ import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
-import { AccomFinderWidget } from '../../components/widgets/AccomFinderWidget';
 import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
 
@@ -32,6 +31,54 @@ interface HostCity {
   image: string;
   fullContent: FullContent;
 }
+
+const TPFlightWidget = memo(() => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&powered_by=true&border_radius=0&plain=true&color_background=%23092140&color_button=%23ef4e25&color_button_text=%23ffffff&promo_id=4684&campaign_id=146';
+    script.charset = 'utf-8';
+    container.appendChild(script);
+    container.setAttribute('data-tp-loaded', 'true');
+  }, []);
+  return (
+    <div
+      ref={containerRef}
+      data-tp-loaded="false"
+      className="mt-10 rounded-none bg-[#092140] p-4 sm:p-6 text-white shadow-md"
+    />
+  );
+});
+
+const TPDealsWidget = memo(() => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) {
+      return;
+    }
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=14&plain=true&color_button=%23ef4e25&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121';
+    script.charset = 'utf-8';
+    container.appendChild(script);
+    container.setAttribute('data-tp-loaded', 'true');
+  }, []);
+  return (
+    <div
+      ref={containerRef}
+      data-tp-loaded="false"
+      className="mt-8 rounded-[14px] bg-white p-4 sm:p-6 shadow-md ring-1 ring-[#2681ff]/30"
+    />
+  );
+});
 
 export default function HomePage() {
   const [travelerCount, setTravelerCount] = useState(500000);
@@ -415,10 +462,9 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
-            <FlightCompareWidget />
-            <AccomFinderWidget />
-          </div>
+          
+          <TPFlightWidget />
+          <TPDealsWidget />
         </div>
       </section>
 
