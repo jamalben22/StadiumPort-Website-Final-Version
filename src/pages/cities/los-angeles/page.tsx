@@ -75,7 +75,7 @@ export default function LosAngelesArticlePage() {
             height={900}
             priority={true}
             placeholder="empty"
-            sizes="100vw"
+            sizes="(max-width: 600px) 400px, 100vw"
           />
           <div className="editorial-hero-overlay"></div>
         </div>

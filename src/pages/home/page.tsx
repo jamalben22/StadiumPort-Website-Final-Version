@@ -9,6 +9,8 @@ import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
 import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
+import { lazy, Suspense } from 'react';
+const LazyWorldCupCountdown = lazy(() => import('../../components/widgets/WorldCupCountdown'));
 
 interface CitySection {
   title: string;
@@ -273,7 +275,9 @@ export default function HomePage() {
       <div className="h-16 lg:h-20"></div>
 
       {/* World Cup Countdown Section */}
-      <WorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
+      <Suspense fallback={<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-12 text-slate-600 dark:text-slate-300">Loading…</div>}>
+        <LazyWorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
+      </Suspense>
 
       
 
