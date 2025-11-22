@@ -37,15 +37,25 @@ const TPFlightWidget = memo(() => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) {
-      return;
-    }
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&powered_by=true&border_radius=0&plain=true&color_background=%23092140&color_button=%23ef4e25&color_button_text=%23ffffff&promo_id=4684&campaign_id=146';
-    script.charset = 'utf-8';
-    container.appendChild(script);
-    container.setAttribute('data-tp-loaded', 'true');
+    const load = () => {
+      if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&powered_by=true&border_radius=0&plain=true&color_background=%23092140&color_button=%23ef4e25&color_button_text=%23000000&promo_id=4684&campaign_id=146';
+      script.charset = 'utf-8';
+      container.appendChild(script);
+      container.setAttribute('data-tp-loaded', 'true');
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          load();
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(container);
+    return () => io.disconnect();
   }, []);
   return (
     <div
@@ -61,15 +71,25 @@ const TPDealsWidget = memo(() => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) {
-      return;
-    }
-    const script = document.createElement('script');
-    script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=14&plain=true&color_button=%23ef4e25&color_button_text=%23ffffff&color_border=%232681ff&promo_id=4132&campaign_id=121';
-    script.charset = 'utf-8';
-    container.appendChild(script);
-    container.setAttribute('data-tp-loaded', 'true');
+    const load = () => {
+      if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=14&plain=true&color_button=%23ef4e25&color_button_text=%23000000&color_border=%232681ff&promo_id=4132&campaign_id=121';
+      script.charset = 'utf-8';
+      container.appendChild(script);
+      container.setAttribute('data-tp-loaded', 'true');
+    };
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          load();
+          io.disconnect();
+        }
+      });
+    }, { rootMargin: '200px' });
+    io.observe(container);
+    return () => io.disconnect();
   }, []);
   return (
     <div
@@ -204,6 +224,17 @@ export default function HomePage() {
     }
   ];
 
+  useEffect(() => {
+    const imgs = [featuredCities[0]?.image, featuredCities[1]?.image].filter(Boolean) as string[];
+    imgs.forEach((href) => {
+      const link = document.createElement('link');
+      link.rel = 'preload';
+      link.as = 'image';
+      link.href = href;
+      document.head.appendChild(link);
+    });
+  }, []);
+
   const trustIndicators = [
     { icon: 'ri-shield-check-line', text: 'Secure Booking' },
     { icon: 'ri-customer-service-2-line', text: '24/7 Support' },
@@ -254,7 +285,7 @@ export default function HomePage() {
       
 
       {/* Featured Host Cities - cloned styling from Cities page */}
-      <section id="main-content" className="py-16 bg-white dark:bg-navy-900">
+      <main id="main-content" className="py-16 bg-white dark:bg-navy-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
@@ -447,7 +478,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </main>
 
 
       {/* Widgets Section */}

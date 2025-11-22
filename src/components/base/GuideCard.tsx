@@ -44,6 +44,8 @@ export default function GuideCard({
           <img
             src={image}
             alt={title}
+            width={1600}
+            height={900}
             className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
           />
           <div className="absolute top-3 right-3">

@@ -150,7 +150,7 @@ export function Footer() {
                 <li key={item.to}>
                   <Link 
                     to={item.to} 
-                    className="text-slate-400 hover:text-white transition-colors duration-200"
+                    className="text-slate-300 hover:text-white transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -221,11 +221,11 @@ export function Footer() {
                 { to: '/legal/terms', label: 'Terms of Service' },
                 { to: '/legal/affiliate-disclaimer', label: 'Affiliate Disclaimer' }
               ].map((item) => (
-                <Link 
-                  key={item.to}
-                  to={item.to} 
-                  className="text-slate-400 hover:text-white transition-colors duration-200"
-                >
+                  <Link 
+                    key={item.to}
+                    to={item.to} 
+                    className="text-slate-300 hover:text-white transition-colors duration-200"
+                  >
                   {item.label}
                 </Link>
               ))}
