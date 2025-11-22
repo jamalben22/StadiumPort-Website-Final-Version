@@ -48,7 +48,6 @@ export function BostonCityGuide() {
         // useEffect is safe in client components
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
-          document.title = title;
 
           const setMeta = (selector: string, attr: string, value: string) => {
             const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;

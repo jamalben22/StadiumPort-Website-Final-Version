@@ -53,7 +53,6 @@ export function MonterreyCityGuide() {
         const description = "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.";
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
-          document.title = title;
           const setMeta = (selector: string, attr: string, value: string) => {
             const el = document.querySelector(selector) as HTMLMetaElement | HTMLLinkElement | null;
             if (el) el.setAttribute(attr, value);

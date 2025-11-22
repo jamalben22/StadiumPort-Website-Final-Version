@@ -73,14 +73,7 @@ export default function NewYorkCityArticlePage() {
     setMeta('twitter:label2', 'Topic');
     setMeta('twitter:data2', 'World Cup 2026');
     
-    // Update document title and meta description
-    document.title = title;
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute('content', description);
-
-    // Update canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) canonical.setAttribute('href', siteUrl + pageUrl);
+    setPageMeta({ title, description, url: siteUrl + pageUrl, image: ogImageUrl, locale: 'en_US', publishedTime: '2025-11-11T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'New York', 'New Jersey', 'MetLife Stadium'] })
     
     // Performance monitoring for Core Web Vitals (#1 ranking factor)
     const measurePerformance = () => {
