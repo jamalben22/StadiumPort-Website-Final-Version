@@ -466,7 +466,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
   }
 
   return (
-    <section className="relative py-20 md:py-32 overflow-hidden bg-white dark:bg-navy-900">
+    <section className="relative py-20 md:py-32 overflow-hidden bg-white dark:bg-navy-900 min-h-[720px] md:min-h-[840px] lg:min-h-[900px]">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
