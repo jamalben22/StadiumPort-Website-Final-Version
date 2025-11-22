@@ -103,7 +103,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
       </section>
 
       {/* Main Content — Premium Editorial Layout */}
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <div className="editorial-body editorial-dropcap">
           
 
@@ -1778,7 +1778,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
             <strong>Last Updated:</strong> November 2025 | Transportation information based on confirmed services and host city mobility plans. Specific schedules and pricing subject to change as tournament approaches. Check official sources for final details.
           </p>
         </div>
-      </section>
+      </main>
     </div>
   )
 }

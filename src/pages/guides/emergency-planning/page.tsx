@@ -86,7 +86,7 @@ export default function EmergencyPlanningPage() {
         </div>
       </section>
 
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           <p className="whitespace-pre-line">
             You've secured World Cup tickets and booked your travel. Now comes the crucial question most fans overlook: what actually happens when you arrive at the stadium?
@@ -1040,7 +1040,7 @@ export default function EmergencyPlanningPage() {
             <strong>Last Updated:</strong> November 2025 | Information based on confirmed FIFA protocols, stadium policies, and law enforcement briefings. Specific procedures may be updated as match dates approach. Check official FIFA and venue websites for final details.
           </p>
         </article>
-      </section>
+      </main>
 
       <Footer />
     </div>

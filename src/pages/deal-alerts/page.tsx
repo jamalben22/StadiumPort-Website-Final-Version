@@ -142,7 +142,7 @@ export default function DealAlertsPage() {
       <Header />
 
       {/* Hero Section */}
-      <section id="main-content" className="pt-24 pb-16 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-navy-800 dark:to-navy-700">
+      <main id="main-content" className="pt-24 pb-16 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-navy-800 dark:to-navy-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-navy-900 dark:text-white mb-6">
@@ -175,7 +175,7 @@ export default function DealAlertsPage() {
             </div>
           </div>
         </div>
-      </section>
+      </main>
 
       {/* Recent Alerts */}
       <section className="py-16">

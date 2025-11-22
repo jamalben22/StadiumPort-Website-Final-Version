@@ -103,7 +103,7 @@ export default function GuidesArticlePage() {
         </div>
       </section>
 
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           {slug === 'solo-travel-safety-guide-attending-world-cup-2026-alone' ? (
             <AccommodationSafetyChecklistContent />
@@ -1481,7 +1481,7 @@ export default function GuidesArticlePage() {
           </>
           )}
         </article>
-      </section>
+      </main>
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">

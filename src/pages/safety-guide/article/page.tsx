@@ -79,7 +79,7 @@ export default function SafetyGuideArticlePage() {
       </section>
 
       {/* Editorial Content */}
-      <section id="main-content" className="editorial-article py-12">
+      <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
             
 
@@ -1028,7 +1028,7 @@ export default function SafetyGuideArticlePage() {
              <li><a href="#">Emergency Resources</a> - Critical contact information for all host cities</li>
            </ul>
          </article>
-      </section>
+      </main>
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
