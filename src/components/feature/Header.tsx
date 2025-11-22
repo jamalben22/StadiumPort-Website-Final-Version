@@ -194,6 +194,8 @@ export function Header() {
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
                     alt="StadiumPort Logo"
+                    width={2400}
+                    height={600}
                     className={`h-12 w-auto object-contain transition-all duration-500 ease-out ${
                       isDarkMode ? 'opacity-0' : 'opacity-100'
                     }`}
@@ -202,6 +204,8 @@ export function Header() {
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
                     alt="StadiumPort Logo"
+                    width={2400}
+                    height={600}
                     className={`absolute top-0 left-0 h-12 w-auto object-contain transition-all duration-500 ease-out ${
                       isDarkMode ? 'opacity-100' : 'opacity-0'
                     }`}
@@ -211,6 +215,8 @@ export function Header() {
                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px.svg"
                     alt="StadiumPort Logo"
+                    width={180}
+                    height={180}
                     className={`h-8 w-auto object-contain transition-all duration-500 ease-out ${
                       isDarkMode ? 'opacity-0' : 'opacity-100'
                     }`}
@@ -218,6 +224,8 @@ export function Header() {
                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
                     alt="StadiumPort Logo"
+                    width={180}
+                    height={180}
                     className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-500 ease-out ${
                       isDarkMode ? 'opacity-100' : 'opacity-0'
                     }`}
@@ -335,7 +343,7 @@ export function Header() {
                   </span>
                 </button>
                 <div
-                  className="absolute bottom-1 h-0.5 bg-slate-900 dark:bg-white rounded-full transition-all duration-300"
+                  className="absolute bottom-1 h-0.5 bg-slate-900 dark:bg-white rounded-full transition-transform duration-300 will-change-transform"
                   style={{ width: `${indicatorStyle.width}px`, transform: `translateX(${indicatorStyle.left}px)` }}
                 ></div>
               </div>

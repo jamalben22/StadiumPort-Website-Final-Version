@@ -110,6 +110,8 @@ export function Footer() {
               <img 
                 src="/images/Logos/Footer Logo 400 x 100 px.svg"
                 alt="StadiumPort Logo"
+                width={400}
+                height={100}
                 className="h-8 w-auto object-contain"
               />
             </div>
@@ -230,7 +232,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            <div className="text-sm text-slate-400">
+            <div className="text-sm text-slate-600">
               © {currentYear} StadiumPort. All rights reserved.
             </div>
           </div>
