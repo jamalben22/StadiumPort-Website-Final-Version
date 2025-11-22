@@ -38,25 +38,13 @@ const TPUnifiedWidget = memo(() => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    const load = () => {
-      if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=20&plain=false&color_button=%2301b47d&color_button_text=%23ffffff&color_border=%2301b47d&promo_id=4132&campaign_id=121';
-      script.charset = 'utf-8';
-      container.appendChild(script);
-      container.setAttribute('data-tp-loaded', 'true');
-    };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          load();
-          io.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    io.observe(container);
-    return () => io.disconnect();
+    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=20&plain=false&color_button=%2301b47d&color_button_text=%23ffffff&color_border=%2301b47d&promo_id=4132&campaign_id=121';
+    script.charset = 'utf-8';
+    container.appendChild(script);
+    container.setAttribute('data-tp-loaded', 'true');
   }, []);
   return (
     <div
@@ -72,25 +60,13 @@ const TPDestinationWidget = memo(() => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    const load = () => {
-      if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://tpwgts.com/content?currency=usd&trs=468014&shmarker=679735&powered_by=true&locale=en&destination=77&lowest_price=&highest_price=&min_lines=4&color_button=%2301b47d&promo_id=5850&campaign_id=47';
-      script.charset = 'utf-8';
-      container.appendChild(script);
-      container.setAttribute('data-tp-loaded', 'true');
-    };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          load();
-          io.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    io.observe(container);
-    return () => io.disconnect();
+    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://tpwgts.com/content?currency=usd&trs=468014&shmarker=679735&powered_by=true&locale=en&destination=77&lowest_price=&highest_price=&min_lines=4&color_button=%2301b47d&promo_id=5850&campaign_id=47';
+    script.charset = 'utf-8';
+    container.appendChild(script);
+    container.setAttribute('data-tp-loaded', 'true');
   }, []);
   return (
     <div
@@ -106,25 +82,13 @@ const TPEventsWidget = memo(() => {
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
-    const load = () => {
-      if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&start_date=2025-11-22&country=US&event_type=Sport&keyword=fifa%20world%20cup&sort=date%2Cdesc&powered_by=true&min_lines=5&width=800&promo_id=5448&campaign_id=183';
-      script.charset = 'utf-8';
-      container.appendChild(script);
-      container.setAttribute('data-tp-loaded', 'true');
-    };
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          load();
-          io.disconnect();
-        }
-      });
-    }, { rootMargin: '200px' });
-    io.observe(container);
-    return () => io.disconnect();
+    if (container.getAttribute('data-tp-loaded') === 'true' || container.hasChildNodes()) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&start_date=2025-11-22&country=US&event_type=Sport&keyword=fifa%20world%20cup&sort=date%2Cdesc&powered_by=true&min_lines=5&width=800&promo_id=5448&campaign_id=183';
+    script.charset = 'utf-8';
+    container.appendChild(script);
+    container.setAttribute('data-tp-loaded', 'true');
   }, []);
   return (
     <div
@@ -141,8 +105,8 @@ const VrboWidget = memo(() => {
   const VRBO_URL_GENERAL = import.meta.env.VITE_VRBO_URL_GENERAL || 'https://vrbo.tpo.li/Sj3x6Mp4';
   return (
     <div className="mt-8 mx-auto max-w-[900px]">
-      <div className="relative overflow-hidden rounded-3xl bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl p-6 sm:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/10">
-        <div className="absolute top-4 right-4 z-20">
+      <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-2xl p-6 sm:p-8 border border-white/40 shadow-2xl shadow-emerald-500/10">
+        <div className="absolute top-4 left-4 z-20 sm:top-4 sm:left-auto sm:right-4 max-w-[calc(100%-2rem)]">
           <a
             href={VRBO_URL_GENERAL}
             target="_blank"
@@ -150,10 +114,8 @@ const VrboWidget = memo(() => {
             aria-label="Vrbo - Find Your Stay"
           >
             <span
-              className="font-space font-bold tracking-wide cursor-pointer hover:opacity-80 transition-opacity"
+              className="font-space font-bold tracking-wide cursor-pointer hover:opacity-80 transition-opacity text-[22px] sm:text-[28px] leading-none"
               style={{
-                fontSize: '28px',
-                lineHeight: '28px',
                 backgroundImage:
                   'repeating-linear-gradient(90deg, #0E214B 0, #0E214B 6px, #1C4695 6px, #1C4695 12px, #245ABC 12px, #245ABC 18px, #328EEE 18px, #328EEE 24px)',
                 WebkitBackgroundClip: 'text',
@@ -171,50 +133,50 @@ const VrboWidget = memo(() => {
           <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-2xl"></div>
         </div>
         <div className="relative z-10">
-          <div className="text-center mb-6">
-            <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-2">Stay Near the Stadiums</h3>
-            <p className="font-inter text-slate-600 dark:text-slate-400">Comfortable rentals for families, friends, and groups attending the matches.</p>
+          <div className="text-center mb-6 mt-12 sm:mt-0">
+            <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 mb-2">Stay Near the Stadiums</h3>
+            <p className="font-inter text-slate-600">Comfortable rentals for families, friends, and groups attending the matches.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
             <a
               href={VRBO_URL_NYNJ}
               target="_blank"
               rel="nofollow noopener sponsored"
-              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-6 py-4 text-base md:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
+              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
               aria-label="Check Availability in New York / New Jersey"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
               </div>
-              <span className="relative z-10">Check Availability – New York / New Jersey</span>
+              <span className="relative z-10 text-center leading-tight">Check Availability – New York / New Jersey</span>
             </a>
             <a
               href={VRBO_URL_LA}
               target="_blank"
               rel="nofollow noopener sponsored"
-              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-6 py-4 text-base md:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
+              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
               aria-label="Check Availability in Los Angeles"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute inset-0 rounded-3xl overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
               </div>
-              <span className="relative z-10">Check Availability – Los Angeles</span>
+              <span className="relative z-10 text-center leading-tight">Check Availability – Los Angeles</span>
             </a>
           </div>
           <a
             href={VRBO_URL_GENERAL}
             target="_blank"
             rel="nofollow noopener sponsored"
-            className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-8 py-4 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20"
+            className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20"
             aria-label="Browse all Vrbo stays"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="absolute inset-0 rounded-3xl overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
             </div>
-            <span className="relative z-10 flex items-center justify-center space-x-2">
+            <span className="relative z-10 flex items-center justify-center space-x-2 text-center leading-tight">
               <i className="ri-search-line"></i>
               <span className="ultra-premium-text font-semibold">Search Vrbo – Find Your Stay</span>
             </span>
