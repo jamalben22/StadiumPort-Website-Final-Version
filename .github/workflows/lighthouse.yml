@@ -37,7 +37,7 @@ jobs:
             --output=html \
             --output-path=./lighthouse/mobile/mobile.report.html \
             --save-assets \
-            --chrome-flags="--headless" \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage --disable-gpu" \
             --quiet
 
       - name: Run Lighthouse (Mobile JSON)
@@ -48,7 +48,7 @@ jobs:
             --output=json \
             --output-path=./lighthouse/mobile/mobile.report.json \
             --save-assets \
-            --chrome-flags="--headless" \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage --disable-gpu" \
             --quiet
 
       - name: Run Lighthouse (Desktop HTML)
@@ -60,7 +60,7 @@ jobs:
             --output=html \
             --output-path=./lighthouse/desktop/desktop.report.html \
             --save-assets \
-            --chrome-flags="--headless" \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage --disable-gpu" \
             --quiet
 
       - name: Run Lighthouse (Desktop JSON)
@@ -72,7 +72,7 @@ jobs:
             --output=json \
             --output-path=./lighthouse/desktop/desktop.report.json \
             --save-assets \
-            --chrome-flags="--headless" \
+            --chrome-flags="--headless --no-sandbox --disable-dev-shm-usage --disable-gpu" \
             --quiet
 
       - name: Upload Mobile Artifacts
