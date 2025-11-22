@@ -302,7 +302,7 @@ export default function HomePage() {
             <div
               className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
             >
-              <div className="relative h-64 md:h-72 overflow-hidden">
+              <div className="relative aspect-video overflow-hidden">
                 <OptimizedImage
                   src={featuredCities[0].image}
                   alt={featuredCities[0].alt || `${featuredCities[0].name} skyline – World Cup 2026 host city`}
@@ -385,7 +385,7 @@ export default function HomePage() {
             <div
               className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
             >
-              <div className="relative h-64 md:h-72 overflow-hidden">
+              <div className="relative aspect-video overflow-hidden">
                 <OptimizedImage
                   src={featuredCities[1].image}
                   alt={featuredCities[1].alt || `${featuredCities[1].name} skyline – World Cup 2026 host city`}
