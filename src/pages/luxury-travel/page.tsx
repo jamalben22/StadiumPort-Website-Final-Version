@@ -266,6 +266,7 @@ export default function LuxuryTravelPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
+      <div className="h-16 lg:h-20"></div>
 
       {/* Hero Section - Apple-Level Premium Design */}
       <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">

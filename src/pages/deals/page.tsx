@@ -289,6 +289,7 @@ export default function DealsPage() {
       <SchemaOrg schema={dealsSchema} />
       
       <Header />
+      <div className="h-16 lg:h-20"></div>
       
       {/* Unified Premium Section - Apple-Level Design */}
       <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">

@@ -570,6 +570,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
       />
       
       <Header />
+      <div className="h-16 lg:h-20"></div>
       
       <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0">
