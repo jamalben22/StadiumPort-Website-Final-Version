@@ -278,6 +278,7 @@ export default function HomePage() {
       />
       
       <Header />
+      <div className="h-16 lg:h-20"></div>
 
       {/* World Cup Countdown Section */}
       <WorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
