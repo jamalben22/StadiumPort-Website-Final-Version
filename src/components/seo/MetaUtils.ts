@@ -28,17 +28,31 @@ export function ensureCanonical(href: string) {
   canonical.setAttribute('href', href)
 }
 
+export const BRAND = 'Stadiumport'
+export function formatTitle(title: string) {
+  const normalized = title.trim()
+  const hasBrand = /stadiumport/i.test(normalized)
+  if (hasBrand) {
+    return normalized
+      .replace(/\s*\|\s*stadiumport/i, ` – ${BRAND}`)
+      .replace(/\s*–\s*stadiumport/i, ` – ${BRAND}`)
+      .replace(/stadiumport\.com/i, BRAND)
+  }
+  return `${normalized} – ${BRAND}`
+}
+
 export function setPageMeta(opts: { title: string; description: string; url: string; image?: string; locale?: string; publishedTime?: string; modifiedTime?: string; section?: string; tags?: string[] }) {
   const { title, description, url, image, locale = 'en_US', publishedTime, modifiedTime, section, tags } = opts
-  document.title = title
+  const formattedTitle = formatTitle(title)
+  document.title = formattedTitle
   ensureNameMeta('description', description)
   ensureCanonical(url)
-  ensurePropertyMeta('og:title', title)
+  ensurePropertyMeta('og:title', formattedTitle)
   ensurePropertyMeta('og:description', description)
   ensurePropertyMeta('og:url', url)
   if (image) ensurePropertyMeta('og:image', image)
   ensurePropertyMeta('og:locale', locale)
-  ensurePropertyMeta('twitter:title', title)
+  ensurePropertyMeta('twitter:title', formattedTitle)
   ensurePropertyMeta('twitter:description', description)
   ensurePropertyMeta('twitter:url', url)
   if (image) ensurePropertyMeta('twitter:image', image)
