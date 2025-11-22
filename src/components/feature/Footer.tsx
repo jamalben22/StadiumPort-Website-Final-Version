@@ -230,7 +230,7 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-slate-400">
               © {currentYear} StadiumPort. All rights reserved.
             </div>
           </div>
