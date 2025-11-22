@@ -25,12 +25,12 @@ export default async function handler(req: Request): Promise<Response> {
         pingedSitemap: sitemapUrl,
         prefetchResults
       }),
-      { status: ok ? 200 : 500, headers: { 'content-type': 'application/json' } }
+      { status: ok ? 200 : 500, headers: { 'content-type': 'application/json', 'Cache-Control': 'no-store' } }
     )
   } catch (e) {
     return new Response(JSON.stringify({ error: 'refresh-index failed' }), {
       status: 500,
-      headers: { 'content-type': 'application/json' }
+      headers: { 'content-type': 'application/json', 'Cache-Control': 'no-store' }
     })
   }
 }

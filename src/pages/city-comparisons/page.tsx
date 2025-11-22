@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
@@ -447,225 +448,186 @@ export default function CityComparisonsPage() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
       <Header />
       
-      {/* Hero Section */}
-      <section id="main-content" className="relative py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-emerald-900 text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="w-full h-full bg-cover bg-center"
-            style={{
-              backgroundImage: `url('https://readdy.ai/api/search-image?query=World%20Cup%202026%20city%20comparison%20visualization%2C%20multiple%20city%20skylines%2C%20urban%20comparison%20graphics%2C%20metropolitan%20contrast%2C%20travel%20destination%20analysis&width=1920&height=800&seq=city-comparison-hero&orientation=landscape')`,
-            }}
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/80 via-navy-900/60 to-emerald-900/80"></div>
+      {/* Hero Section - Apple-Level Premium Design with Unified Background */}
+      <section id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
+          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-emerald-500/20 backdrop-blur-sm border border-emerald-400/30 rounded-full px-6 py-3 mb-6">
-              <i className="ri-scales-3-line text-emerald-400"></i>
-              <span className="text-emerald-300 font-medium">City Comparisons</span>
-            </div>
-            
-            <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
-              Compare Cities,
-              <br />
-              <span className="text-gold-400">Make Better Choices</span>
-            </h1>
-            
-            <p className="font-inter text-xl md:text-2xl text-slate-300 max-w-4xl mx-auto leading-relaxed">
-              Not sure which cities to visit? Compare costs, weather, things to do, and how easy it is to get around. 
-              See which destinations fit your budget, timeline, and travel style.
-            </p>
-          </div>
 
-          {/* Quick Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">16</div>
-              <div className="text-slate-300 font-inter text-sm">Cities</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-gold-400 mb-2">50+</div>
-              <div className="text-slate-300 font-inter text-sm">Comparisons</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-white mb-2">25</div>
-              <div className="text-slate-300 font-inter text-sm">Factors Analyzed</div>
-            </div>
-            <div className="text-center p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-              <div className="text-3xl font-bold text-emerald-400 mb-2">Data-Driven</div>
-              <div className="text-slate-300 font-inter text-sm">Insights</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Comparisons */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              Popular City Comparisons
-            </h2>
-            <p className="font-inter text-lg text-slate-600 dark:text-slate-300">
-              See how the most-visited host cities stack up.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            {featuredComparisons.map((comparison) => (
-              <Card key={comparison.id} hover className="overflow-hidden group cursor-pointer">
-                <div className="relative">
-                  <img 
-                    src={comparison.image} 
-                    alt={comparison.title}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                      Featured
-                    </span>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-white/90 text-navy-900 px-3 py-1 rounded-full text-sm font-bold">
-                      Winner: {comparison.winner}
-                    </span>
+        <div className="relative z-10 py-32 md:py-40 lg:py-48">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center">
+              <div className="mb-8">
+                <nav className="flex items-center justify-center space-x-2 text-sm">
+                  <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                    Home
+                  </Link>
+                  <span className="text-slate-300 dark:text-slate-600">›</span>
+                  <span className="text-slate-900 dark:text-white font-medium">City Comparisons</span>
+                </nav>
+              </div>
+              <div className="mb-12">
+                <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
+                  Compare Cities,
+                  <br />
+                  <span className="bg-gradient-to-r from-emerald-600 via-emerald-700 to-emerald-800 bg-clip-text text-transparent">Make Better Choices</span>
+                </h1>
+                <div className="text-center mb-6">
+                  <span className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
+                    City Comparison Guides (8)
+                  </span>
+                </div>
+                <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+                <p className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+                  Not sure which cities to visit? Compare costs, weather, things to do, and how easy it is to get around. 
+                  See which destinations fit your budget, timeline, and travel style.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Cities</div>
                   </div>
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-emerald-500 text-sm font-medium">{comparison.type}</span>
-                    <div className="flex items-center space-x-3 text-xs text-slate-500">
-                      <span>{comparison.author}</span>
-                      <span>•</span>
-                      <span>{comparison.readTime}</span>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">8</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Comparisons</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">25</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Factors</div>
+                  </div>
+                </div>
+                <div className="group relative text-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">
+                      <i className="ri-bar-chart-2-line"></i>
+                    </div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Data-Driven</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="relative z-10 pb-20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 md:mb-20">
+              <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
+                Find Your Perfect Match
+              </h2>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
+                Explore our comprehensive city comparisons to discover which destinations align with your travel preferences, budget, and World Cup experience goals.
+              </p>
+            </div>
+
+            {/* Search and Filter - Merged into same section */}
+            <div className="mb-8">
+              <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+                <div className="relative flex-1 max-w-md">
+                  <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
+                  <input
+                    type="text"
+                    placeholder="Search city comparisons..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    className="w-full pl-10 pr-4 py-3 border border-slate-300 dark:border-navy-600 rounded-xl bg-white dark:bg-navy-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                  />
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {comparisonTypes.map((type) => (
+                    <button
+                      key={type}
+                      onClick={() => setSelectedType(type)}
+                      className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                        selectedType === type
+                          ? 'bg-emerald-500 text-white shadow-lg'
+                          : 'bg-white dark:bg-navy-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-navy-600'
+                      }`}
+                    >
+                      {type}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Comparisons Grid - 2 Column Layout */}
+            <div className="grid md:grid-cols-2 gap-8">
+              {filteredComparisons.map((comparison) => (
+                <Card key={comparison.id} hover className="overflow-hidden group cursor-pointer">
+                  <div className="relative">
+                    <img 
+                      src={comparison.image} 
+                      alt={comparison.title}
+                      className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute top-3 right-3">
+                      <span className="bg-white/90 text-navy-900 px-2 py-1 rounded-lg text-xs font-bold">
+                        {comparison.winner}
+                      </span>
                     </div>
                   </div>
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
-                    {comparison.title}
-                  </h3>
-                  <p className="font-inter text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
-                    {comparison.description}
-                  </p>
-                  <div className="mb-4">
-                    <div className="flex flex-wrap gap-1">
-                      {comparison.cities.map((city, index) => (
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-emerald-500 text-sm font-medium">{comparison.type}</span>
+                      <div className="flex items-center space-x-3 text-xs text-slate-500">
+                        <span>{comparison.author}</span>
+                        <span>•</span>
+                        <span>{comparison.readTime}</span>
+                      </div>
+                    </div>
+                    <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
+                      {comparison.title}
+                    </h3>
+                    <p className="font-inter text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
+                      {comparison.description}
+                    </p>
+                    <div className="flex flex-wrap gap-1 mb-4">
+                      {comparison.cities.slice(0, 3).map((city, index) => (
                         <span key={index} className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full">
                           {city}
                         </span>
                       ))}
                     </div>
+                    
+                    <a
+                      href={`/city-comparisons/${comparison.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
+                      className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
+                    >
+                      <i className="ri-eye-line mr-2"></i>
+                      Read Full Guide
+                    </a>
                   </div>
-                  
-                  <a
-                    href={`/city-comparisons/${comparison.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
-                  >
-                    <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
-                  </a>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Search and Filter */}
-      <section className="py-16 bg-slate-50 dark:bg-navy-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-              <div className="relative flex-1 max-w-md">
-                <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
-                <input
-                  type="text"
-                  placeholder="Search city comparisons..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-3 border border-slate-300 dark:border-navy-600 rounded-xl bg-white dark:bg-navy-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
-                />
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {comparisonTypes.map((type) => (
-                  <button
-                    key={type}
-                    onClick={() => setSelectedType(type)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-                      selectedType === type
-                        ? 'bg-emerald-500 text-white shadow-lg'
-                        : 'bg-white dark:bg-navy-700 text-slate-600 dark:text-slate-300 hover:bg-emerald-50 dark:hover:bg-navy-600'
-                    }`}
-                  >
-                    {type}
-                  </button>
-                ))}
-              </div>
+                </Card>
+              ))}
             </div>
-          </div>
 
-          {/* Comparisons Grid - 2 Column Layout */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredComparisons.map((comparison) => (
-              <Card key={comparison.id} hover className="overflow-hidden group cursor-pointer">
-                <div className="relative">
-                  <img 
-                    src={comparison.image} 
-                    alt={comparison.title}
-                    className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute top-3 right-3">
-                    <span className="bg-white/90 text-navy-900 px-2 py-1 rounded-lg text-xs font-bold">
-                      {comparison.winner}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-emerald-500 text-sm font-medium">{comparison.type}</span>
-                    <div className="flex items-center space-x-3 text-xs text-slate-500">
-                      <span>{comparison.author}</span>
-                      <span>•</span>
-                      <span>{comparison.readTime}</span>
-                    </div>
-                  </div>
-                  <h3 className="font-space font-bold text-2xl text-navy-900 dark:text-white mb-3">
-                    {comparison.title}
-                  </h3>
-                  <p className="font-inter text-slate-600 dark:text-slate-400 text-sm mb-4 leading-relaxed">
-                    {comparison.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {comparison.cities.slice(0, 3).map((city, index) => (
-                      <span key={index} className="text-xs bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 px-2 py-1 rounded-full">
-                        {city}
-                      </span>
-                    ))}
-                  </div>
-                  
-                  <a
-                    href={`/city-comparisons/${comparison.title.toLowerCase().replace(/&/g,'and').replace(/[^a-z0-9\s-]/g,'').trim().replace(/\s+/g,'-')}`}
-                    className="inline-flex items-center justify-center px-4 py-2 rounded-md bg-emerald-600 text-white hover:bg-emerald-700 transition-all w-full text-sm font-semibold whitespace-nowrap cursor-pointer"
-                  >
-                    <i className="ri-eye-line mr-2"></i>
-                    Read Full Guide
-                  </a>
-                </div>
-              </Card>
-            ))}
+            {filteredComparisons.length === 0 && (
+              <div className="text-center py-12">
+                <i className="ri-search-line text-4xl text-slate-400 mb-4"></i>
+                <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-300 mb-2">
+                  No city comparisons found
+                </h3>
+                <p className="text-slate-500">
+                  Try adjusting your search or filter criteria
+                </p>
+              </div>
+            )}
           </div>
-
-          {filteredComparisons.length === 0 && (
-            <div className="text-center py-12">
-              <i className="ri-search-line text-4xl text-slate-400 mb-4"></i>
-              <h3 className="text-xl font-semibold text-slate-600 dark:text-slate-300 mb-2">
-                No city comparisons found
-              </h3>
-              <p className="text-slate-500">
-                Try adjusting your search or filter criteria
-              </p>
-            </div>
-          )}
         </div>
       </section>
 

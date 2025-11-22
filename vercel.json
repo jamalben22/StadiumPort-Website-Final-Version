@@ -1,6 +1,35 @@
 {
   "buildCommand": "npm run vercel-build",
   "outputDirectory": "dist",
+  "headers": [
+    {
+      "source": "/(.*)\\.(js|css|mjs|map|png|jpg|jpeg|webp|svg|ico|gif|woff2|woff)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2037 23:55:55 GMT" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
+        { "key": "Expires", "value": "Thu, 31 Dec 2037 23:55:55 GMT" }
+      ]
+    },
+    {
+      "source": "/images/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=2592000" }
+      ]
+    },
+    {
+      "source": "/(.*)\\.(html)",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-cache" },
+        { "key": "Expires", "value": "0" }
+      ]
+    }
+  ],
   "redirects": [
     { "source": "/world-cup-2026-host-cities/los-angeles", "destination": "/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide", "permanent": true },
     { "source": "/world-cup-2026-host-cities/new-york-new-jersey", "destination": "/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide", "permanent": true },
