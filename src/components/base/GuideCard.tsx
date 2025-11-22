@@ -41,13 +41,23 @@ export default function GuideCard({
     <Card className={`overflow-hidden group hover:shadow-xl transition-all duration-300 ${className}`} {...props}>
       {image && (
         <div className="relative">
-          <img
-            src={image}
-            alt={title}
-            width={1600}
-            height={900}
-            className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-          />
+          {(() => {
+            const isLocal = image?.startsWith('/images/');
+            const srcSet = isLocal
+              ? `${image.replace('.webp','-640.webp')} 640w, ${image.replace('.webp','-1024.webp')} 1024w, ${image.replace('.webp','-1600.webp')} 1600w`
+              : undefined;
+            return (
+              <img
+                src={image}
+                alt={title}
+                width={1600}
+                height={900}
+                srcSet={srcSet}
+                sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            );
+          })()}
           <div className="absolute top-3 right-3">
             <span className={`${getPriorityColor(priority)} text-white px-2 py-1 rounded-lg text-xs font-bold`}>
               {priority}
