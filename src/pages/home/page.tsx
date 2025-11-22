@@ -9,6 +9,7 @@ import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
 import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 
 interface CitySection {
   title: string;
@@ -118,29 +119,15 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    // Set page title and meta description (hero-focused for SEO)
-    document.title = 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    const descriptionText = 'Expert guides for all 16 World Cup 2026 stadiums and host cities across USA, Canada & Mexico. Get transport tips, hotel recommendations, and matchday advice.';
+    setPageMeta({
+      title: 'World Cup 2026 Guide: Complete Stadium, City & Travel Planning',
+      description: descriptionText,
+      url: `${siteUrl}/`
+    });
 
-    const metaDescription = document.querySelector('meta[name="description"]');
-    const descriptionText = 'Experience the epic energy of World Cup 2026 with three massive flags of USA, Mexico, and Canada prominently displayed in the middle of a cinematic stadium at night.';
-    if (metaDescription) {
-      metaDescription.setAttribute('content', descriptionText);
-    } else {
-      // Graceful fallback: create meta tag if missing
-      const meta = document.createElement('meta');
-      meta.name = 'description';
-      meta.content = descriptionText;
-      document.head.appendChild(meta);
-    }
-
-    // Add canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/`);
-    }
-
-    // Set OG/Twitter image to new cinematic hero asset
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://example.com';
+    // Social image
     const ogImageUrl = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`;
     const setMeta = (property: string, content: string) => {
       let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
@@ -154,8 +141,6 @@ export default function HomePage() {
     setMeta('og:image', ogImageUrl);
     setMeta('og:image:width', '1920');
     setMeta('og:image:height', '1080');
-    setMeta('og:title', 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort');
-    setMeta('og:description', descriptionText);
     setMeta('twitter:image', ogImageUrl);
     setMeta('twitter:card', 'summary_large_image');
     setMeta(

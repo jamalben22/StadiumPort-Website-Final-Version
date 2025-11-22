@@ -9,6 +9,7 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { FAQPageSchema } from '../../components/seo/FAQPageSchema';
 import { OptimizedImage } from '../../components/base/OptimizedImage';
 import { WorldClassFAQ } from '../../components/feature/WorldClassFAQ';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 
 interface CitySection {
   title: string;
@@ -51,34 +52,26 @@ export default function CitiesPage() {
     };
   }, [isModalOpen]);
 
-  // Set page title, meta description, and canonical URL
+  // Set page meta
   useEffect(() => {
-    document.title = 'World Cup 2026 Host Cities: Travel Guide to All 16 Cities in USA, Canada & Mexico | StadiumPort';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Complete guide to all 16 World Cup 2026 host cities. Explore New York, Los Angeles, Miami, Mexico City, Toronto, Vancouver and more. Find hotels, attractions, and travel tips.');
-    }
-
-  const canonical = document.querySelector('link[rel="canonical"]');
-  if (canonical) {
-    canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities`);
-  }
-
-  // Set OG/Twitter image for social previews
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
-  const setMeta = (property: string, content: string) => {
-    let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
-    if (!el) {
-      el = document.createElement('meta');
-      el.setAttribute('property', property);
-      document.head.appendChild(el);
-    }
-    el.setAttribute('content', content);
-  };
-  setMeta('og:image', ogImageUrl);
-  setMeta('twitter:image', ogImageUrl);
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'World Cup 2026 Host Cities: Complete Travel Guide to All 16 Cities',
+      description: 'Complete guide to all 16 World Cup 2026 host cities. Explore New York, Los Angeles, Miami, Mexico City, Toronto, Vancouver and more. Find hotels, attractions, and travel tips.',
+      url: `${siteUrl}/world-cup-2026-host-cities`
+    });
+    const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
+    const setMeta = (property: string, content: string) => {
+      let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('property', property);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+    setMeta('og:image', ogImageUrl);
+    setMeta('twitter:image', ogImageUrl);
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([

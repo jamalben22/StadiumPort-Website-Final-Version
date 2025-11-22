@@ -1,5 +1,6 @@
 
 import { useEffect, Children } from 'react';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Button } from '../../components/base/Button';
@@ -10,18 +11,12 @@ import remarkGfm from 'remark-gfm';
 
 export default function AboutPage() {
   useEffect(() => {
-    document.title = 'About Stadiumport - Your World Cup 2026 Travel Companion';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.');
-    }
-
-    // Add canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/about`);
-    }
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
+      description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
+      url: `${siteUrl}/about`
+    });
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([

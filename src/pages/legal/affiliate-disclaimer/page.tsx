@@ -1,5 +1,6 @@
 
 import { useEffect, Children } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import ReactMarkdown from 'react-markdown';
@@ -7,7 +8,12 @@ import remarkGfm from 'remark-gfm';
 
 export default function AffiliateDisclaimerPage() {
   useEffect(() => {
-    document.title = 'Affiliate Disclaimer - StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'Affiliate Disclaimer',
+      description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
+      url: `${siteUrl}/legal/affiliate-disclaimer`
+    });
   }, []);
 
   const content = `## **Affiliate Disclaimer** 

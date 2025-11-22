@@ -1,4 +1,5 @@
 import { useEffect, Children } from 'react';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Button } from '../../components/base/Button';
@@ -7,25 +8,19 @@ import { SchemaOrg, generateOrganizationSchema, generateBreadcrumbSchema } from 
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
-export default function AboutPage() {
+export default function ContactPage() {
   useEffect(() => {
-    document.title = 'About Stadiumport - Your World Cup 2026 Travel Companion';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.');
-    }
-
-    // Add canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/about`);
-    }
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'Contact – Stadiumport',
+      description: 'Get in touch with Stadiumport for World Cup 2026 questions, corrections, partnerships, press/media, and general inquiries.',
+      url: `${siteUrl}/contact`
+    });
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'About', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/about` }
+    { name: 'Contact', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/contact` }
   ]);
 
   const organizationSchema = generateOrganizationSchema();
