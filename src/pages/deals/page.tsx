@@ -6,6 +6,7 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../components/seo/MetaUtils';
 
 export default function DealsPage() {
   const [gridReady, setGridReady] = useState(false)
@@ -26,20 +27,13 @@ export default function DealsPage() {
   const [selectedType, setSelectedType] = useState('all');
 
   useEffect(() => {
-    // Set page title and meta description
-    document.title = 'World Cup 2026 Travel Deals - Hotels, Flights & Packages | StadiumPort';
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Find the best World Cup 2026 travel deals across all 16 host cities. Save up to 40% on hotels, flights, and vacation packages. Exclusive offers updated daily.');
-    }
-
-    // Add canonical URL
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/deals`);
-    }
-  }, []);
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    setPageMeta({
+      title: 'World Cup 2026 Travel Deals – Hotels, Flights & Packages',
+      description: 'Find the best World Cup 2026 travel deals across all 16 host cities. Save up to 40% on hotels, flights, and vacation packages. Exclusive offers updated daily.',
+      url: `${siteUrl}/deals`
+    })
+  }, [])
 
   const deals = [
     {

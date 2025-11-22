@@ -4,6 +4,7 @@ import { Header } from '../../../components/feature/Header'
 import { Footer } from '../../../components/feature/Footer'
 import { OptimizedImage } from '../../../components/base/OptimizedImage'
 import { SchemaOrg, generateBreadcrumbSchema, generateTravelGuideSchema } from '../../../components/seo/SchemaOrg'
+import { setPageMeta } from '../../../components/seo/MetaUtils'
 
 function toTitle(slug?: string) {
   if (!slug) return 'Guide Article'
@@ -20,11 +21,9 @@ export default function EmergencyPlanningPage() {
   const url = '/guides/stadium-safety-at-world-cup-2026-security-rules-what-to-expect'
 
   useEffect(() => {
-    const pageTitle = `${title} – Guide | StadiumPort`
-    document.title = pageTitle
-    const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
-    const metaDesc = document.querySelector('meta[name="description"]')
-    if (metaDesc) metaDesc.setAttribute('content', desc)
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const desc = 'Comprehensive World Cup 2026 safety and emergency planning guidance with structured content blocks.'
+    setPageMeta({ title: `${title}`, description: desc, url: `${siteUrl}${url}` })
     const t = setTimeout(() => setVisible(true), 20)
     return () => clearTimeout(t)
   }, [title])
