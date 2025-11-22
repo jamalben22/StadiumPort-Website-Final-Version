@@ -8,7 +8,7 @@ import HomePage from '../pages/home/page';
 const AboutPage = lazy(() => import('../pages/about/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const CitiesPage = lazy(() => import('../pages/cities/page'));
-import CityDetailPage from '../pages/cities/[cityId]/page';
+const CityDetailPage = lazy(() => import('../pages/cities/[cityId]/page'));
 const DealsPage = lazy(() => import('../pages/deals/page'));
 const DealAlertsPage = lazy(() => import('../pages/deal-alerts/page'));
 const AccommodationPage = lazy(() => import('../pages/accommodation/page'));
@@ -43,10 +43,9 @@ const CityComparisonsPage = lazy(() => import('../pages/city-comparisons/page'))
 const CityComparisonsArticlePage = lazy(() => import('../pages/city-comparisons/article/page'));
 const EditorialPolicyPage = lazy(() => import('../pages/legal/editorial-policy/page'));
 const AuthorsPage = lazy(() => import('../pages/about/authors/page'));
-// Direct imports for legal pages to ensure they load properly
-import PrivacyPage from '../pages/legal/privacy/page';
-import TermsPage from '../pages/legal/terms/page';
-import AffiliateDisclaimerPage from '../pages/legal/affiliate-disclaimer/page';
+const PrivacyPage = lazy(() => import('../pages/legal/privacy/page'));
+const TermsPage = lazy(() => import('../pages/legal/terms/page'));
+const AffiliateDisclaimerPage = lazy(() => import('../pages/legal/affiliate-disclaimer/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 const routes: RouteObject[] = [
