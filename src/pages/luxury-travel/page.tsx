@@ -254,7 +254,7 @@ export default function LuxuryTravelPage() {
       <Header />
 
       {/* Hero Section - Apple-Level Premium Design */}
-      <section id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+      <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
           <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
@@ -343,6 +343,8 @@ export default function LuxuryTravelPage() {
                   <img
                     src={guide.image}
                     alt={`${guide.title} luxury experience`}
+                    width={1600}
+                    height={900}
                     className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-navy-900 px-3 py-1 rounded-full text-sm font-semibold flex items-center space-x-2">
@@ -392,7 +394,7 @@ export default function LuxuryTravelPage() {
           </div>
         </div>
       </div>
-      </section>
+      </main>
 
       {/* Luxury Guide Modal - Cities Page Style */}
       {isModalOpen && selectedGuide && (

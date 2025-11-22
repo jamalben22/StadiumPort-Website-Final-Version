@@ -378,6 +378,8 @@ export default function DealsPage() {
                     <img
                       src={deal.image}
                       alt={deal.title}
+                      width={1600}
+                      height={900}
                       className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
