@@ -312,7 +312,7 @@ export default function HomePage() {
                   height={900}
                   priority={true}
                   placeholder="blur"
-                  sizes="100vw"
+                  sizes="(min-width:1024px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
@@ -395,7 +395,7 @@ export default function HomePage() {
                   height={900}
                   priority={true}
                   placeholder="blur"
-                  sizes="100vw"
+                  sizes="(min-width:1024px) 50vw, 100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
