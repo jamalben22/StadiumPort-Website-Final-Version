@@ -108,7 +108,8 @@ async function prerender() {
   const indexPath = path.join(distDir, 'index.html')
   const useFallback = process.env.VERCEL || process.env.CI
   if (useFallback) {
-    const html = fs.readFileSync(indexPath, 'utf8')
+    let html = fs.readFileSync(indexPath, 'utf8')
+    html = transformStylesheetsToPreload(html)
     for (const route of routes) {
       const out = ensureDir(route)
       fs.writeFileSync(out, html)
@@ -125,16 +126,21 @@ async function prerender() {
     page.setDefaultNavigationTimeout(60000)
     for (const route of routes) {
       const url = `http://localhost:${port}${route}`
+      await page.coverage.startCSSCoverage()
       await page.goto(url, { waitUntil: 'networkidle0' })
       try { await page.waitForSelector('script[type="application/ld+json"]', { timeout: 3000 }) } catch {}
-      const html = await page.content()
+      const htmlContent = await page.content()
+      const cssCoverage = await page.coverage.stopCSSCoverage()
+      const criticalCss = buildCriticalCss(cssCoverage, 30000)
+      const html = inlineCriticalCssAndAsyncStyles(htmlContent, criticalCss)
       const out = ensureDir(route)
       fs.writeFileSync(out, html)
       process.stdout.write(`Prerendered: ${route}\n`)
     }
     await browser.close()
   } catch (e) {
-    const html = fs.readFileSync(indexPath, 'utf8')
+    let html = fs.readFileSync(indexPath, 'utf8')
+    html = transformStylesheetsToPreload(html)
     for (const route of routes) {
       const out = ensureDir(route)
       fs.writeFileSync(out, html)
@@ -151,3 +157,32 @@ async function main() {
 }
 
 main().catch((e) => { console.error(e); process.exit(1) })
+
+function buildCriticalCss(cssCoverage, limitBytes = 30000) {
+  let css = ''
+  for (const entry of cssCoverage) {
+    for (const range of entry.ranges) {
+      css += entry.text.slice(range.start, range.end)
+      if (css.length >= limitBytes) return css.slice(0, limitBytes)
+    }
+  }
+  return css
+}
+
+function inlineCriticalCssAndAsyncStyles(html, criticalCss) {
+  let out = html
+  const criticalTag = criticalCss ? `<style>${escapeStyle(criticalCss)}</style>` : ''
+  out = out.replace(/<head>/i, `<head>${criticalTag}`)
+  out = transformStylesheetsToPreload(out)
+  return out
+}
+
+function transformStylesheetsToPreload(html) {
+  return html.replace(/<link\s+rel=["']stylesheet["']\s+href=["']([^"']+)["']\s*\/>/gi, (m, href) => {
+    return `<link rel="preload" href="${href}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="${href}"></noscript>`
+  })
+}
+
+function escapeStyle(s) {
+  return s.replace(/<\/(?!style)/g, '<\\/')
+}
