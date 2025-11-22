@@ -7,6 +7,13 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function SeattleCityGuide() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/seattle-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <Header />

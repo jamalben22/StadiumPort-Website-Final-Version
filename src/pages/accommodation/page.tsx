@@ -30,6 +30,20 @@ interface AccommodationGuide {
 }
 
 export default function AccommodationPage() {
+  const [gridReady, setGridReady] = useState(false)
+  const gridRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    const el = gridRef.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        setGridReady(true)
+        io.disconnect()
+      }
+    }, { rootMargin: '200px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState('All Types');
   const [searchTerm, setSearchTerm] = useState('');
@@ -334,9 +348,8 @@ export default function AccommodationPage() {
             </p>
           </div>
 
-          {/* 2-Column Grid Layout */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {accommodationGuides.map((guide) => (
+          <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {gridReady && accommodationGuides.map((guide) => (
               <Card key={guide.id} hover className="overflow-hidden group">
                 <div className="relative">
                   <img

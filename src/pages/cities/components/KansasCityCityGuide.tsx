@@ -7,6 +7,13 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 
 export function KansasCityCityGuide() {
+  useEffect(() => {
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/kansas-city-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const pageUrl = '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide';
 

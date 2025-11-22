@@ -390,8 +390,13 @@ export default function NewYorkCityArticlePage() {
           setMeta('meta[property="twitter:description"]', 'content', description);
           setMeta('meta[property="twitter:url"]', 'content', pageUrl);
           setMeta('meta[property="twitter:image"]', 'content', ogImage);
-          setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'New York', 'New Jersey', 'MetLife Stadium'] })
-        }, []);
+    setPageMeta({ title, description, url: pageUrl, image: ogImage, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'New York', 'New Jersey', 'MetLife Stadium'] })
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/new-york-new-jersey-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, []);
         return null;
       })()}
 

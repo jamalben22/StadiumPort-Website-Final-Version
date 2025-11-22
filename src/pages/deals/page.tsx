@@ -8,6 +8,20 @@ import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
 
 export default function DealsPage() {
+  const [gridReady, setGridReady] = useState(false)
+  const gridRef = useRef<HTMLDivElement | null>(null)
+  useEffect(() => {
+    const el = gridRef.current
+    if (!el) return
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some(e => e.isIntersecting)) {
+        setGridReady(true)
+        io.disconnect()
+      }
+    }, { rootMargin: '200px' })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
   const [selectedCity, setSelectedCity] = useState('all');
   const [selectedType, setSelectedType] = useState('all');
 
@@ -371,8 +385,8 @@ export default function DealsPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-              {featuredDeals.map((deal, index) => (
+            <div ref={gridRef} className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {gridReady && featuredDeals.map((deal, index) => (
                 <Card key={index} hover className="overflow-hidden group bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-700" padding="none">
                   <div className="relative">
                     <img
