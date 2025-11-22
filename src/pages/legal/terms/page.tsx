@@ -1,5 +1,6 @@
 
 import { useEffect, Children } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import ReactMarkdown from 'react-markdown';
@@ -7,7 +8,12 @@ import remarkGfm from 'remark-gfm';
 
 export default function TermsPage() {
   useEffect(() => {
-    document.title = 'Terms of Service - StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'Terms of Service',
+      description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
+      url: `${siteUrl}/legal/terms`
+    });
   }, []);
 
   const content = `## **Terms of Service** 

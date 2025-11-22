@@ -1,4 +1,5 @@
 import { useEffect, Children } from 'react';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import ReactMarkdown from 'react-markdown';
@@ -6,7 +7,12 @@ import remarkGfm from 'remark-gfm';
 
 export default function PrivacyPage() {
   useEffect(() => {
-    document.title = 'Privacy Policy - StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'Privacy Policy',
+      description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+      url: `${siteUrl}/legal/privacy`
+    });
   }, []);
 
   const content = `## **Privacy Policy** 

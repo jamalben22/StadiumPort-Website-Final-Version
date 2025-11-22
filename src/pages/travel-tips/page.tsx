@@ -339,7 +339,12 @@ export default function TravelTipsPage() {
       if (el) el.setAttribute(attr, value);
     };
 
-    document.title = pageTitle;
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: pageTitle,
+      description: 'Practical World Cup 2026 travel tips including visas, budgeting, connectivity, transportation, and packing to make your tournament trip smooth.',
+      url: `${siteUrl}/world-cup-2026-travel-tips`
+    });
     setMeta('meta[name="description"]', 'content', descriptionText);
 
     let canonicalLink = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null;
@@ -1702,3 +1707,4 @@ export default function TravelTipsPage() {
     </>
   );
 }
+import { setPageMeta } from '../../components/seo/MetaUtils';

@@ -134,7 +134,12 @@ export default function SafetyGuidePage() {
 
   // Set page title and meta description
   useEffect(() => {
-    document.title = 'World Cup 2026 Safety Guide: Complete Protection for All 16 Host Cities | StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'World Cup 2026 Safety Guide: Complete Protection for All 16 Host Cities',
+      description: 'Essential safety tips, emergency contacts, health guidance, and city-specific precautions for all 16 World Cup host cities.',
+      url: `${siteUrl}/safety-guide`
+    });
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -681,3 +686,4 @@ export default function SafetyGuidePage() {
     </div>
   );
 }
+import { setPageMeta } from '../../components/seo/MetaUtils';

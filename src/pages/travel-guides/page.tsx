@@ -29,7 +29,12 @@ export default function TravelGuidesPage() {
 
   useEffect(() => {
     // Set page title and meta description
-    document.title = 'World Cup 2026 Travel Guides - Expert Tips & City Guides | StadiumPort';
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+    setPageMeta({
+      title: 'World Cup 2026 Travel Guides – Expert Tips & City Guides',
+      description: 'Expert World Cup 2026 travel guides covering stadiums, host cities, transport, accommodation, safety, and matchday planning.',
+      url: `${siteUrl}/travel-guides`
+    });
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
@@ -705,3 +710,4 @@ export default function TravelGuidesPage() {
     </div>
   );
 }
+import { setPageMeta } from '../../components/seo/MetaUtils';
