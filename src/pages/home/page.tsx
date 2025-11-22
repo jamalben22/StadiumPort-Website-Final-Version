@@ -182,41 +182,33 @@ export default function HomePage() {
   const featuredCities: HostCity[] = [
     {
       id: 1,
-      name: 'New York / New Jersey',
+      name: 'Miami',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'MetLife Stadium, East Rutherford, NJ',
-      capacity: '82,500',
+      stadium: 'Hard Rock Stadium, Miami Gardens, FL',
+      capacity: '65,326',
       description:
-        "Where champions are crowned. The 2026 Final comes to the world's biggest stage—82,500 fans, 30 minutes from Times Square, and football's ultimate moment. Navigate NJ Transit from Manhattan, explore diverse NYC neighborhoods where every nation has a home, and discover why this metropolitan area delivers the World Cup's most electric atmosphere.",
-      image: '/images/cities/new-york-new-jersey-world-cup-2026.webp',
+        'Seven World Cup matches, knockout drama, and the Bronze Final in South Florida. Plan transportation to Miami Gardens, book the right neighborhoods, and explore beaches, nightlife, and Miami’s electric fan culture.',
+      image: '/images/cities/miami-world-cup-2026.webp',
       fullContent: {
-        introduction: `The World's Biggest Game Comes to the World's Biggest Stage`,
+        introduction: 'Miami World Cup 2026: Complete Travel Guide',
         sections: [
-          {
-            title: 'New York City: Your Ultimate 2026 FIFA World Cup Travel Guide',
-            content:
-              `When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`
-          },
-          {
-            title: 'Why New York/New Jersey Won the World Cup Final',
-            content: 'Coming Soon'
-          }
+          { title: 'Coming Soon', content: 'Detailed guide content will be available soon.' }
         ]
       }
     },
     {
       id: 2,
-      name: 'Los Angeles',
+      name: 'Dallas',
       country: 'USA',
       flag: '🇺🇸',
-      stadium: 'SoFi Stadium, Inglewood, CA',
-      capacity: '70,240',
+      stadium: 'AT&T Stadium, Arlington, TX',
+      capacity: '80,000',
       description:
-        "Where $5.5 billion meets global football. LA's architectural masterpiece—SoFi Stadium—hosts eight World Cup matches in the world's entertainment capital. The most expensive venue ever built features a hovering translucent roof and 120-yard Infinity Screen. Located in Inglewood near LAX, plan Metro connections or rideshares. Explore Hollywood, beaches (30 min away), and why LA's sprawling diversity means every team has a neighborhood. This is spectacle, California-style.",
-      image: '/images/cities/los-angeles-world-cup-2026.webp',
+        'Nine World Cup matches including a semi-final in the Metroplex. Massive venue, premium amenities, and easy access from Dallas and Fort Worth—plan transit and matchday logistics for a smooth experience.',
+      image: '/images/cities/dallas-world-cup-2026.webp',
       fullContent: {
-        introduction: 'Los Angeles brings together the best of entertainment, culture, and natural beauty for an unforgettable World Cup 2026 experience.',
+        introduction: 'Dallas – World Cup 2026 Guide',
         sections: [
           { title: 'Coming Soon', content: 'Detailed guide content will be available soon.' }
         ]
@@ -377,7 +369,7 @@ export default function HomePage() {
                   }}
                 >
                   <i className="ri-compass-3-line mr-3 text-lg"></i>
-                  Plan Your NYC Journey
+                  Plan Your Miami Journey
                 </Button>
               </div>
             </div>
@@ -455,7 +447,7 @@ export default function HomePage() {
                   }}
                 >
                   <i className="ri-compass-3-line mr-3 text-lg"></i>
-                  Discover LA Guide
+                  Discover Dallas Guide
                 </Button>
               </div>
             </div>
