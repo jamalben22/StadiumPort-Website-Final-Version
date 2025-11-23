@@ -285,7 +285,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Match day planning essentials</li>
                 </ul>
               </div>
-              <p className="leading-relaxed mb-4"><strong>Other East Coast Stadiums:</strong> Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.</p>
+              <p className="leading-relaxed mb-4"><strong>Other East Coast Stadiums:</strong> Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.</p>
               <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               <hr className="editorial-divider" />
             </article>
@@ -769,7 +769,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   Since Rocky's first triumphant run in 1976, the 72 stone steps of the Philadelphia Museum of Art have become an international destination for travelers who jog up the stairs and pump their fists with spectacular views of Benjamin Franklin Parkway and the city skyline. The bronze Rocky statue at the bottom provides the perfect photo opportunity.
                 </p>
                 <p><strong>Distance:</strong> 20 minutes via SEPTA Broad Street Line to City Hall, then 10-minute walk or quick bus ride</p>
-                <p className="leading-relaxed mt-4">Planning an East Coast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a southeastern option, consider <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.</p>
+                <p className="leading-relaxed mt-4">Planning an East Coast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a southeastern option, consider <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.</p>
               </div>
               <hr className="editorial-divider" />
             </article>

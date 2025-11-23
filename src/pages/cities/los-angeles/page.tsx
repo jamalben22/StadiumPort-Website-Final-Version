@@ -141,7 +141,7 @@ export default function LosAngelesArticlePage() {
           </p>
           <p className="whitespace-pre-line">
             {`Get ready for the opening kick: The U.S. Men's National Team launches their World Cup journey at `}
-            <Link to="/world-cup-2026-stadiums/sofi-stadium" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
+            <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
             {` on June 12, 2026`}
           </p>
           <p className="whitespace-pre-line">

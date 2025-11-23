@@ -238,7 +238,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   But the showstopper is the Infinity Screen—a 120-yard-long, double-sided 4K video board that hangs from the roof like a hovering spacecraft, displaying 80 million pixels from 260 built-in speakers. It's the first center-hung, dual-sided display in any stadium, allowing fans in every section to follow replays, stats, and atmosphere shots without craning their necks.
                 </p>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-6">
-                  Along with <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link>, SoFi ranks among the largest venues in the tournament. Tech-forward fans also compare its experience to <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the Bay Area.
+                  Along with <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link>, SoFi ranks among the largest venues in the tournament. Tech-forward fans also compare its experience to <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the Bay Area.
                 </p>
           </div>
         </section>
@@ -557,7 +557,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   <em>Book tours and activities via <a href="https://www.viator.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Viator</a> or <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">GetYourGuide</a> for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
                 </div>
                 <p className="text-slate-700 dark:text-slate-200">
-                  Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>.
+                  Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>.
                 </p>
           </div>
         </section>
@@ -584,7 +584,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
             </div>
             <div>
               <h4 className="editorial-h4 mb-2">Other California Stadium</h4>
-              <p>If you&apos;re catching multiple matches in California, check out <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the San Francisco Bay Area.</p>
+              <p>If you&apos;re catching multiple matches in California, check out <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the San Francisco Bay Area.</p>
             </div>
             <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
           </div>

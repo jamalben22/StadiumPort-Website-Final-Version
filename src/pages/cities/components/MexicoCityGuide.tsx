@@ -121,7 +121,7 @@ export function MexicoCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <Link to="/world-cup-2026-stadiums/estadio-azteca" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Estadio Azteca</Link>
+                <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Estadio Azteca</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -141,7 +141,7 @@ export function MexicoCityGuide() {
             The Only Stadium to Host Three World Cup Opening Matches
           </h3>
           <p>
-            On June 11, 2026, football history will repeat itself in the most spectacular way possible. <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. Mexico City is one of the 16 host cities for World Cup 2026—{' '}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
+            On June 11, 2026, football history will repeat itself in the most spectacular way possible. <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. Mexico City is one of the 16 host cities for World Cup 2026—{' '}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
           </p>
           <p>
             Mexico City will host five matches total during the tournament: three group stage games, one round of 32 match, and one round of 16 match. The stadium is undergoing its most extensive renovation in decades—a two-year, $180 million transformation that will increase capacity to 90,000 spectators while adding 2,000 square meters of LED screens, new hospitality areas covering over 7,000 square meters, and completely modernized facilities. The renovated Azteca reopens March 28, 2026, just 75 days before kickoff.
@@ -152,7 +152,7 @@ export function MexicoCityGuide() {
           <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Mexico City Links</div>
           <div className="space-y-1 text-slate-800 dark:text-slate-200">
             <div>
-              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-azteca" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Azteca Guide</Link>
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Azteca Guide</Link>
             </div>
             <div>
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>

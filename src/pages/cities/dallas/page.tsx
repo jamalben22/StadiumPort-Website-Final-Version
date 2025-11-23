@@ -144,7 +144,7 @@ Whether you're a die-hard football fan plotting your summer 2026 pilgrimage or a
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 mt-4">
             <div className="space-y-2">
               <div>
-                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/att-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium Guide</Link>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium Guide</Link>
               </div>
               <div>
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
@@ -161,7 +161,7 @@ Whether you're a die-hard football fan plotting your summer 2026 pilgrimage or a
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-4-line text-emerald-500"></i>
-            The Stadium: <Link to="/world-cup-2026-stadiums/att-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium</Link> (Dallas Stadium)
+            The Stadium: <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">AT&T Stadium</Link> (Dallas Stadium)
           </h3>
           <div className="space-y-6">
             <div>

@@ -438,7 +438,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 </p>
               </div>
               <p className="leading-relaxed mt-4">
-                Planning matches across North America? Consider <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver or <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey.
+                Planning matches across North America? Consider <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver or <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -464,7 +464,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 </div>
                 <div>
                   <h4 className="editorial-h4 mb-2">Other Canadian Stadium</h4>
-                  <p>Visiting both Canadian host cities? Check out <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
+                    <p>Visiting both Canadian host cities? Check out <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
                 </div>
                 <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               </div>

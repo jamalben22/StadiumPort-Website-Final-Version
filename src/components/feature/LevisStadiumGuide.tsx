@@ -473,7 +473,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
                   The Hilton Santa Clara operates "Tailg8" in their parking lot — open to the public 3 hours before Levi's Stadium events and 1 hour after, featuring food, drinks, and fellow fans. Official tailgating is permitted in ten designated stadium parking areas, with restrictions: use your parking spot only, no open-fire grilling, no glass containers, and all activities must cease at kickoff.
                 </p>
               </div>
-              <p className="leading-relaxed mt-4">Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles, <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle, or <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
+              <p className="leading-relaxed mt-4">Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles, <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle, or <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
           <hr className="editorial-divider" />
         </article>
         {/* Beyond the Stadium: Explore San Francisco Bay Area */}
@@ -493,7 +493,7 @@ export const LevisStadiumGuide: React.FC<LevisStadiumGuideProps> = ({ showHeader
               <li>Transportation and match day logistics</li>
             </ul>
           </div>
-          <p className="leading-relaxed mb-4"><strong>Other West Coast Stadiums:</strong> Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles or <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle.</p>
+          <p className="leading-relaxed mb-4"><strong>Other West Coast Stadiums:</strong> Planning a West Coast tour? Check out <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link> in Los Angeles or <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle.</p>
           <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
           <hr className="editorial-divider" />
         </article>

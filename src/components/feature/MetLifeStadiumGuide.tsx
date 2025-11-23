@@ -246,7 +246,7 @@ Located in <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2
                 </div>
               </div>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-6">
-                Planning an East Coast circuit? Pair MetLife with <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a West Coast contrast, compare it with <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.
+                Planning an East Coast circuit? Pair MetLife with <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a West Coast contrast, compare it with <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.
               </p>
             </div>
             <hr className="editorial-divider" />
@@ -282,7 +282,7 @@ Explore our complete <Link to="/world-cup-2026-host-cities/new-york-new-jersey-w
                   Other Northeast Stadiums
                 </h4>
                 <p>
-                  Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.
+                  Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.
                 </p>
               </div>
               <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>

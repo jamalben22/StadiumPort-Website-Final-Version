@@ -157,7 +157,7 @@ export function TorontoCityGuide() {
               <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Toronto Links</div>
               <div className="space-y-1 text-slate-800 dark:text-slate-200">
                 <div>
-                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BMO Field Guide</Link>
+                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BMO Field Guide</Link>
                 </div>
                 <div>
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>

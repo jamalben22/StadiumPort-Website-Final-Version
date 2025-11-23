@@ -183,7 +183,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 {`, and will host nine matches—more than any other venue in the tournament, including a semifinal showdown that will determine one of the finalists.`} For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.
               </p>
               <p className="leading-relaxed mt-4">
-                Planning to see multiple matches across the region? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City, and <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey for a cross-border experience.
+                Planning to see multiple matches across the region? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City, and <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey for a cross-border experience.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -674,7 +674,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <div>
                   <p className="font-semibold">Other Texas &amp; Central Stadiums:</p>
                   <p>
-                    Catching multiple matches in Texas? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston. Also visit <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City.
+                    Catching multiple matches in Texas? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston. Also visit <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City.
                   </p>
                 </div>
                 <p>

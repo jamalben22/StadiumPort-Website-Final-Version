@@ -134,7 +134,7 @@ export function SanFranciscoCityGuide() {
           <div className="mt-6 space-y-6">
 
             <p>
-              When the 2026 FIFA World Cup arrives in the Bay Area, it's <strong>technically</strong> happening in Santa Clara—but every international fan will fly into San Francisco, stay in San Francisco, and experience the Bay Area's cultural energy radiating from San Francisco. The Bay Area is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> welcoming fans to World Cup 2026. The matches may unfold at <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium</Link> in Silicon Valley, but this is San Francisco's World Cup moment, and the city plans to celebrate accordingly.
+              When the 2026 FIFA World Cup arrives in the Bay Area, it's <strong>technically</strong> happening in Santa Clara—but every international fan will fly into San Francisco, stay in San Francisco, and experience the Bay Area's cultural energy radiating from San Francisco. The Bay Area is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> welcoming fans to World Cup 2026. The matches may unfold at <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium</Link> in Silicon Valley, but this is San Francisco's World Cup moment, and the city plans to celebrate accordingly.
             </p>
             <p>
               <strong>Six matches</strong> across three weeks (five group stage encounters plus a Round of 32 knockout showdown on July 1) bring the world's game to a region that invented modern tech, perfected sourdough bread, and painted the most photographed bridge on Earth a color officially called "International Orange." This is Northern California's chance to show 70,000+ fans per match that innovation, natural beauty, and football passion coexist in perfect harmony.
@@ -150,7 +150,7 @@ export function SanFranciscoCityGuide() {
             <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential San Francisco Bay Area Links</div>
             <div className="space-y-1 text-slate-800 dark:text-slate-200">
               <div>
-                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/levis-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium Guide</Link>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Levi's Stadium Guide</Link>
               </div>
               <div>
             🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
