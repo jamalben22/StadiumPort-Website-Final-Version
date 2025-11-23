@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { Analytics } from '@vercel/analytics/react'
 import React, { Suspense } from 'react'
 import { AppRoutes } from './router'
@@ -214,6 +215,7 @@ function App() {
         </Suspense>
       </ErrorBoundary>
       <Analytics />
+      <SpeedInsights />
     </BrowserRouter>
   )
 }
