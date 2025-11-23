@@ -123,7 +123,7 @@ export function BostonCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline"><span>Gillette Stadium</span></Link>
+                <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline"><span>Gillette Stadium</span></Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -146,7 +146,7 @@ export function BostonCityGuide() {
             But 2026 is different. Boston hosts more than just matches—the city becomes the epicenter of a once-in-a-lifetime sports trifecta. <strong>Sail Boston</strong> (July 11-16), the largest maritime celebration ever to visit the United States, arrives days after the quarter-final. <strong>America 250</strong> commemorations celebrating the nation's founding run throughout summer. Add seven World Cup matches to the mix, and Boston delivers the perfect storm of international football, nautical spectacle, and patriotic celebration.
           </p>
           <p>
-            Whether you're watching matches at <Link to="/world-cup-2026-stadiums/gillette-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
+            Whether you're watching matches at <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
           </p>
           <p>
             This guide delivers the real intel: stadium access via commuter rail, neighborhood strategies, revolutionary history tours, and what to do when you're not watching 65,000 fans roar inside the home of the six-time Super Bowl champion Patriots.
@@ -157,7 +157,7 @@ export function BostonCityGuide() {
           <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Boston Links</div>
           <div className="space-y-1 text-slate-800 dark:text-slate-200">
             <div>
-              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/gillette-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Gillette Stadium Guide</Link>
+              🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Gillette Stadium Guide</Link>
             </div>
             <div>
               🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>

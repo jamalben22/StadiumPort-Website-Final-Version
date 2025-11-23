@@ -269,7 +269,7 @@ export default function NewYorkCityArticlePage() {
                 "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#metlife-stadium',
                 "name": "MetLife Stadium",
                 "description": "MetLife Stadium is the venue for the FIFA World Cup 2026 Final, with a capacity of 75,000 spectators.",
-                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/world-cup-2026-stadiums/metlife-stadium',
+                "url": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/world-cup-2026-stadiums/metlife-stadium-guide',
                 "address": {
                   "@type": "PostalAddress",
                   "streetAddress": "1 MetLife Stadium Dr",
@@ -477,7 +477,7 @@ export default function NewYorkCityArticlePage() {
             <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential New York/New Jersey Links</div>
             <div className="space-y-1 text-slate-800 dark:text-slate-200">
               <div>
-                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/metlife-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">MetLife Stadium Guide</Link>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">MetLife Stadium Guide</Link>
               </div>
               <div>
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>

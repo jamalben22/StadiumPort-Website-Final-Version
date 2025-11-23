@@ -244,8 +244,8 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
     Planning a Mexico or cross-border circuit? Visit{' '}
                 <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
-                <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
-                <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
+                <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
+                <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -429,8 +429,8 @@ export const EstadioBBVAGuide: React.FC<EstadioBBVAGuideProps> = ({ showHeader =
                 <strong>Other Stadiums:</strong>{' '}
                 Completing a Mexico tour? Visit{' '}
                 <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City and{' '}
-                <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>{' '}in Guadalajara. Close to Texas? Check out{' '}
-                <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link>{' '}in Dallas.
+                <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>{' '}in Guadalajara. Close to Texas? Check out{' '}
+                <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link>{' '}in Dallas.
               </p>
               <p>
                 <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>

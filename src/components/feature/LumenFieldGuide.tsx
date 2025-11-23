@@ -220,7 +220,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               The venue's commitment to sustainability has earned international recognition, including a 2018 award at the International Stadium Business Summit in London. Expect these values front and center during the World Cup, with organizers targeting zero-waste operations.
             </p>
             <p>
-              Just hours from <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver, Lumen Field is part of the Pacific Northwest's World Cup presence.
+              Just hours from <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver, Lumen Field is part of the Pacific Northwest's World Cup presence.
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -240,7 +240,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
               The stadium previously hosted three 2016 Copa América matches, including a U.S. quarterfinal victory over Ecuador, plus the crucial 2013 World Cup qualifier between the U.S. and Panama—proof that Seattle delivers when international football comes calling. With FIFA expecting over 2 billion viewers watching Seattle's matches globally, the atmosphere will be electric, potentially matching or exceeding the decibel levels that made this venue legendary.
             </p>
             <p>
-              Along with <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link> and <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>, Lumen Field showcases the West Coast's World Cup venues.
+              Along with <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link> and <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>, Lumen Field showcases the West Coast's World Cup venues.
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -536,7 +536,7 @@ export const LumenFieldGuide: React.FC<LumenFieldGuideProps> = ({ showHeader = f
             <div>
               <p className="font-semibold">Other Pacific Northwest Stadium:</p>
               <p>
-                Visiting the Pacific Northwest? Just a short drive to <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver for a cross-border experience.
+                Visiting the Pacific Northwest? Just a short drive to <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver for a cross-border experience.
               </p>
             </div>
             <p>

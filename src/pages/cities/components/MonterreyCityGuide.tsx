@@ -147,7 +147,7 @@ export function MonterreyCityGuide() {
               <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Monterrey Links</div>
               <div className="space-y-1 text-slate-800 dark:text-slate-200">
                 <div>
-                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-bbva" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA Guide</Link>
+                  🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA Guide</Link>
                 </div>
                 <div>
                   🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
@@ -175,7 +175,7 @@ export function MonterreyCityGuide() {
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
             <i className="ri-building-line text-emerald-500 text-3xl"></i>
-            The Stadium: <Link to="/world-cup-2026-stadiums/estadio-bbva" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA</Link> – Where Steel Meets Football
+            The Stadium: <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA</Link> – Where Steel Meets Football
           </h3>
             <p><strong>Official World Cup Name:</strong> Estadio Monterrey</p>
             <p><strong>Actual Name:</strong> Estadio BBVA (nicknamed "El Gigante de Acero" – The Steel Giant)</p>
@@ -196,7 +196,7 @@ export function MonterreyCityGuide() {
               For the 2026 World Cup, the stadium will feature upgraded pitch technology including an underground ventilation system to maintain grass quality despite Monterrey's summer heat. FIFA has confirmed four matches here: three Group Stage encounters and one Round of 32 match scheduled across June 14, 20, 24, and 29, 2026.
             </p>
             <p>
-              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
+              <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
                 <i className="ri-external-link-line mr-2"></i>
                 Explore the detailed Estadio BBVA stadium guide
               </Link>

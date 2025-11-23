@@ -229,7 +229,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 Related Stadiums
               </h3>
               <p className="text-slate-700 dark:text-slate-200">
-                Explore nearby and regional venues: <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas, <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta, or <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+                Explore nearby and regional venues: <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas, <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta, or <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -429,7 +429,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 <div>
                   <p className="font-semibold">Other Southern Stadiums:</p>
                   <p>
-                    Planning a Texas tour? Visit <Link to="/world-cup-2026-stadiums/att-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas. Also check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+                    Planning a Texas tour? Visit <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas. Also check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
                   </p>
                 </div>
                 <p>

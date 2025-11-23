@@ -127,7 +127,7 @@ export function KansasCityCityGuide() {
             <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
             {' '}for World Cup 2026.
             {' '}From June 16 through July 11,{' '}
-            <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link>
+            <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link>
             {' '}(known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.
           </p>
           <p>
@@ -139,7 +139,7 @@ export function KansasCityCityGuide() {
             <div className="space-y-1 text-slate-800 dark:text-slate-200">
               <div>
                 🏟️ <strong>Stadium:</strong>{' '}
-                <Link to="/world-cup-2026-stadiums/arrowhead-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Arrowhead Stadium Guide</Link>
+                <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Arrowhead Stadium Guide</Link>
               </div>
               <div>
                 🗺️ <strong>All Host Cities:</strong>{' '}

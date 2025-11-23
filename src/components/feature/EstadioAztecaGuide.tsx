@@ -253,10 +253,10 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 </div>
                 <div>
                   <h4 className="editorial-h4 mb-2">Other Mexican Stadiums</h4>
-                  <p>Attending multiple matches in Mexico? Check out <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara or <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey.</p>
+                  <p>Attending multiple matches in Mexico? Check out <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara or <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey.</p>
                 </div>
                 <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
-                <p className="text-slate-700 dark:text-slate-200">For iconic venue comparison, also see <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.</p>
+                <p className="text-slate-700 dark:text-slate-200">For iconic venue comparison, also see <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.</p>
               </div>
               <hr className="editorial-divider" />
             </section>

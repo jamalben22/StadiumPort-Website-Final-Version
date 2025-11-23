@@ -155,7 +155,7 @@ export default function MiamiCityGuide() {
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
               <i className="ri-building-4-line text-emerald-500"></i>
-              The Stadium: <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> (Miami Stadium)
+              The Stadium: <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> (Miami Stadium)
             </h3>
             <p className="whitespace-pre-line">
               {`347 Don Shula Drive, Miami Gardens, FL 33056

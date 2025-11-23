@@ -318,6 +318,70 @@ const routes: RouteObject[] = [
     element: <VenuesPage />
   },
   {
+    path: '/world-cup-2026-stadiums/estadio-azteca',
+    element: <Navigate to="/world-cup-2026-stadiums/estadio-azteca-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/metlife-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/metlife-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/att-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/att-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/arrowhead-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/arrowhead-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/estadio-bbva',
+    element: <Navigate to="/world-cup-2026-stadiums/estadio-bbva-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/nrg-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/nrg-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/mercedes-benz-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/sofi-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/sofi-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/lumen-field',
+    element: <Navigate to="/world-cup-2026-stadiums/lumen-field-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/levis-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/levis-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/lincoln-financial-field',
+    element: <Navigate to="/world-cup-2026-stadiums/lincoln-financial-field-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/gillette-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/gillette-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/hard-rock-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/hard-rock-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/bmo-field',
+    element: <Navigate to="/world-cup-2026-stadiums/bmo-field-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/bc-place-stadium',
+    element: <Navigate to="/world-cup-2026-stadiums/bc-place-stadium-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-stadiums/estadio-akron',
+    element: <Navigate to="/world-cup-2026-stadiums/estadio-akron-guide" replace />
+  },
+  {
     path: '/venues',
     element: <Navigate to="/world-cup-2026-stadiums" replace />
   },

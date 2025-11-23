@@ -142,14 +142,14 @@ export function GuadalajaraCityGuide() {
             Guadalajara is one of the{' '}
             <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}
             for World Cup 2026. On June 11, 2026—the same night Mexico City hosts the World Cup's opening match—Guadalajara kicks off its own World Cup journey at{' '}
-            <Link to="/world-cup-2026-stadiums/estadio-akron" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>, one of Mexico's most architecturally striking football venues. This city that gave the world mariachi music, tequila, and the iconic tortas ahogadas will host four group stage matches, including Mexico's second match on June 18. Get ready for what locals promise will be the most passionate atmosphere of the entire tournament.
+            <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>, one of Mexico's most architecturally striking football venues. This city that gave the world mariachi music, tequila, and the iconic tortas ahogadas will host four group stage matches, including Mexico's second match on June 18. Get ready for what locals promise will be the most passionate atmosphere of the entire tournament.
           </p>
           <div className="mt-6 rounded-lg border border-slate-200 dark:border-slate-700 p-4 bg-slate-50 dark:bg-navy-800">
             <p className="font-semibold mb-2">🔗 Essential Guadalajara Links</p>
             <ul className="space-y-2">
               <li>
                 🏟️ <span className="font-semibold">Stadium:</span>{' '}
-                <Link to="/world-cup-2026-stadiums/estadio-akron" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Akron Guide</Link>
+                <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio Akron Guide</Link>
               </li>
               <li>
                 🗺️ <span className="font-semibold">All Host Cities:</span>{' '}

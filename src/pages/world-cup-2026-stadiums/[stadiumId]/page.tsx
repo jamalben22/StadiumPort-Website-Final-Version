@@ -200,8 +200,25 @@ const stadiumData = {
 
 export default function StadiumDetailPage() {
   const { stadiumId } = useParams<{ stadiumId: string }>();
-  
-  const stadium = stadiumId ? stadiumData[stadiumId as keyof typeof stadiumData] : null;
+  const effectiveId =
+    stadiumId === 'estadio-azteca-guide' ? 'estadio-azteca' :
+    stadiumId === 'metlife-stadium-guide' ? 'metlife-stadium' :
+    stadiumId === 'att-stadium-guide' ? 'att-stadium' :
+    stadiumId === 'arrowhead-stadium-guide' ? 'arrowhead-stadium' :
+    stadiumId === 'estadio-bbva-guide' ? 'estadio-bbva' :
+    stadiumId === 'nrg-stadium-guide' ? 'nrg-stadium' :
+    stadiumId === 'mercedes-benz-stadium-guide' ? 'mercedes-benz-stadium' :
+    stadiumId === 'lumen-field-guide' ? 'lumen-field' :
+    stadiumId === 'sofi-stadium-guide' ? 'sofi-stadium' :
+    stadiumId === 'levis-stadium-guide' ? 'levis-stadium' :
+    stadiumId === 'lincoln-financial-field-guide' ? 'lincoln-financial-field' :
+    stadiumId === 'gillette-stadium-guide' ? 'gillette-stadium' :
+    stadiumId === 'hard-rock-stadium-guide' ? 'hard-rock-stadium' :
+    stadiumId === 'bmo-field-guide' ? 'bmo-field' :
+    stadiumId === 'bc-place-stadium-guide' ? 'bc-place-stadium' :
+    stadiumId === 'estadio-akron-guide' ? 'estadio-akron' :
+    stadiumId;
+  const stadium = effectiveId ? stadiumData[effectiveId as keyof typeof stadiumData] : null;
 
   // Map stadium slug to its host city slug for CTA linking
   const citySlugByStadiumId: Record<string, string> = {
@@ -223,7 +240,7 @@ export default function StadiumDetailPage() {
     'estadio-akron': 'guadalajara',
     'lincoln-financial-field': 'philadelphia'
   };
-  const hostCitySlug = stadiumId ? citySlugByStadiumId[stadiumId] : undefined;
+  const hostCitySlug = effectiveId ? citySlugByStadiumId[effectiveId] : undefined;
 
   // Stadium slug -> image mapping for social previews
   const stadiumImages: Record<string, string> = {
@@ -247,16 +264,64 @@ export default function StadiumDetailPage() {
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-    const pageUrl = stadiumId ? `${siteUrl}/world-cup-2026-stadiums/${stadiumId}` : `${siteUrl}/world-cup-2026-stadiums`
-    const title = stadium ? `${stadium.name} – World Cup 2026 Stadium Guide` : 'World Cup 2026 Stadiums'
+    const canonicalId =
+      effectiveId === 'estadio-azteca' ? 'estadio-azteca-guide' :
+      effectiveId === 'metlife-stadium' ? 'metlife-stadium-guide' :
+      effectiveId === 'att-stadium' ? 'att-stadium-guide' :
+      effectiveId === 'arrowhead-stadium' ? 'arrowhead-stadium-guide' :
+      effectiveId === 'estadio-bbva' ? 'estadio-bbva-guide' :
+      effectiveId === 'nrg-stadium' ? 'nrg-stadium-guide' :
+      effectiveId === 'mercedes-benz-stadium' ? 'mercedes-benz-stadium-guide' :
+      effectiveId === 'lumen-field' ? 'lumen-field-guide' :
+      effectiveId === 'sofi-stadium' ? 'sofi-stadium-guide' :
+      effectiveId === 'levis-stadium' ? 'levis-stadium-guide' :
+      effectiveId === 'gillette-stadium' ? 'gillette-stadium-guide' :
+      effectiveId === 'lincoln-financial-field' ? 'lincoln-financial-field-guide' :
+      effectiveId === 'hard-rock-stadium' ? 'hard-rock-stadium-guide' :
+      effectiveId === 'bmo-field' ? 'bmo-field-guide' :
+      effectiveId === 'bc-place-stadium' ? 'bc-place-stadium-guide' :
+      effectiveId === 'estadio-akron' ? 'estadio-akron-guide' :
+      effectiveId || ''
+    const pageUrl = effectiveId ? `${siteUrl}/world-cup-2026-stadiums/${canonicalId}` : `${siteUrl}/world-cup-2026-stadiums`
+    const title = stadium
+      ? (effectiveId === 'estadio-azteca'
+          ? 'Estadio Azteca Guide: World Cup 2026 Stadium & Tickets'
+          : effectiveId === 'metlife-stadium'
+            ? 'MetLife Stadium Guide: World Cup 2026 Final Venue | NY/NJ'
+            : effectiveId === 'att-stadium'
+              ? 'AT&T Stadium Guide: World Cup 2026 Venue | Dallas Cowboys'
+              : effectiveId === 'arrowhead-stadium'
+                ? 'Arrowhead Stadium Guide: World Cup 2026 Venue | Kansas City'
+                : effectiveId === 'estadio-bbva'
+                  ? 'Estadio BBVA Guide: World Cup 2026 Stadium | Monterrey Mexico'
+                  : effectiveId === 'nrg-stadium'
+                    ? 'NRG Stadium Guide: World Cup 2026 Venue | Houston Texans'
+                    : effectiveId === 'mercedes-benz-stadium'
+                      ? 'Mercedes-Benz Stadium Guide: World Cup 2026 Venue | Atlanta'
+                    : effectiveId === 'lumen-field'
+                      ? 'Lumen Field Guide: World Cup 2026 Venue | Seattle Sounders'
+                    : effectiveId === 'sofi-stadium'
+                      ? 'SoFi Stadium Guide: World Cup 2026 Venue | Los Angeles'
+                    : effectiveId === 'levis-stadium'
+                      ? 'Levi\'s Stadium Guide: World Cup 2026 Venue | San Francisco Bay'
+                    : effectiveId === 'gillette-stadium'
+                      ? 'Gillette Stadium Guide: World Cup 2026 Venue | Boston Patriots'
+                    : effectiveId === 'lincoln-financial-field'
+                      ? 'Lincoln Financial Field Guide: World Cup 2026 | Philadelphia'
+                    : effectiveId === 'hard-rock-stadium'
+                      ? 'Hard Rock Stadium Guide: World Cup 2026 Venue | Miami Florida'
+                    : effectiveId === 'bmo-field'
+                      ? 'BMO Field Guide: World Cup 2026 Venue | Toronto Canada'
+                : `${stadium.name} – World Cup 2026 Stadium Guide`)
+      : 'World Cup 2026 Stadiums'
     const description = stadium
       ? `${stadium.name} stadium guide: matches, capacity, transportation, and fan tips.`
       : 'Comprehensive stadiums guide for FIFA World Cup 2026: matches, venues, and travel.'
-    const imgPath = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
+    const imgPath = effectiveId ? stadiumImages[effectiveId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp'
     const image = `${siteUrl}${imgPath}`
     const entry = stadiumId ? getEditorialEntry('stadium', stadiumId) : undefined
     setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Stadiums', tags: ['World Cup 2026', 'Stadium Guide', stadium?.name || '', ...(entry?.keywords || [])] })
-  }, [stadiumId, stadium])
+  }, [effectiveId, stadium])
   
   if (!stadium) {
     return (
@@ -281,7 +346,7 @@ export default function StadiumDetailPage() {
   }
 
   const StadiumComponent = stadium.component;
-  const heroImage = stadiumId ? stadiumImages[stadiumId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
+  const heroImage = effectiveId ? stadiumImages[effectiveId] : '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp';
   const altText = `Inside view of ${stadium?.name} – World Cup 2026`;
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const heroImageAbs = `${siteUrl}${heroImage}`;
@@ -301,7 +366,7 @@ export default function StadiumDetailPage() {
           generateBreadcrumbSchema([
             { name: 'Home', url: siteUrl },
             { name: 'Venues', url: `${siteUrl}/world-cup-2026-stadiums` },
-            { name: stadium.name, url: `${siteUrl}/world-cup-2026-stadiums/${stadiumId}` }
+            { name: stadium.name, url: `${siteUrl}/world-cup-2026-stadiums/${effectiveId === 'estadio-azteca' ? 'estadio-azteca-guide' : effectiveId === 'metlife-stadium' ? 'metlife-stadium-guide' : effectiveId === 'att-stadium' ? 'att-stadium-guide' : effectiveId === 'arrowhead-stadium' ? 'arrowhead-stadium-guide' : effectiveId === 'estadio-bbva' ? 'estadio-bbva-guide' : effectiveId === 'nrg-stadium' ? 'nrg-stadium-guide' : effectiveId === 'mercedes-benz-stadium' ? 'mercedes-benz-stadium-guide' : effectiveId === 'lumen-field' ? 'lumen-field-guide' : effectiveId === 'sofi-stadium' ? 'sofi-stadium-guide' : effectiveId === 'levis-stadium' ? 'levis-stadium-guide' : effectiveId === 'lincoln-financial-field' ? 'lincoln-financial-field-guide' : effectiveId === 'gillette-stadium' ? 'gillette-stadium-guide' : effectiveId === 'hard-rock-stadium' ? 'hard-rock-stadium-guide' : effectiveId === 'bmo-field' ? 'bmo-field-guide' : effectiveId === 'bc-place-stadium' ? 'bc-place-stadium-guide' : effectiveId === 'estadio-akron' ? 'estadio-akron-guide' : effectiveId}` }
           ]),
           generateImageObjectSchema(heroImageAbs, {
             width: 1600,
@@ -450,8 +515,8 @@ export default function StadiumDetailPage() {
             return published ? {
               "@context": "https://schema.org",
               "@type": ["WebPage", "Article"],
-              "headline": `${stadium.name} – World Cup 2026 Stadium Guide`,
-              "url": `${siteUrl}/world-cup-2026-stadiums/${stadiumId}`,
+              "headline": `${effectiveId === 'estadio-azteca' ? 'Estadio Azteca Guide: World Cup 2026 Stadium & Tickets' : effectiveId === 'metlife-stadium' ? 'MetLife Stadium Guide: World Cup 2026 Final Venue | NY/NJ' : effectiveId === 'att-stadium' ? 'AT&T Stadium Guide: World Cup 2026 Venue | Dallas Cowboys' : effectiveId === 'arrowhead-stadium' ? 'Arrowhead Stadium Guide: World Cup 2026 Venue | Kansas City' : effectiveId === 'estadio-bbva' ? 'Estadio BBVA Guide: World Cup 2026 Stadium | Monterrey Mexico' : effectiveId === 'nrg-stadium' ? 'NRG Stadium Guide: World Cup 2026 Venue | Houston Texans' : effectiveId === 'mercedes-benz-stadium' ? 'Mercedes-Benz Stadium Guide: World Cup 2026 Venue | Atlanta' : effectiveId === 'lumen-field' ? 'Lumen Field Guide: World Cup 2026 Venue | Seattle Sounders' : effectiveId === 'sofi-stadium' ? 'SoFi Stadium Guide: World Cup 2026 Venue | Los Angeles' : effectiveId === 'levis-stadium' ? 'Levi\'s Stadium Guide: World Cup 2026 Venue | San Francisco Bay' : effectiveId === 'lincoln-financial-field' ? 'Lincoln Financial Field Guide: World Cup 2026 | Philadelphia' : effectiveId === 'gillette-stadium' ? 'Gillette Stadium Guide: World Cup 2026 Venue | Boston Patriots' : effectiveId === 'hard-rock-stadium' ? 'Hard Rock Stadium Guide: World Cup 2026 Venue | Miami Florida' : effectiveId === 'bmo-field' ? 'BMO Field Guide: World Cup 2026 Venue | Toronto Canada' : effectiveId === 'bc-place-stadium' ? 'BC Place Stadium Guide: World Cup 2026 Venue | Vancouver Canada' : effectiveId === 'estadio-akron' ? 'Estadio Akron Guide: World Cup 2026 Stadium | Guadalajara Mexico' : `${stadium.name} – World Cup 2026 Stadium Guide`}`,
+              "url": `${siteUrl}/world-cup-2026-stadiums/${effectiveId === 'estadio-azteca' ? 'estadio-azteca-guide' : effectiveId === 'metlife-stadium' ? 'metlife-stadium-guide' : effectiveId === 'att-stadium' ? 'att-stadium-guide' : effectiveId === 'arrowhead-stadium' ? 'arrowhead-stadium-guide' : effectiveId === 'estadio-bbva' ? 'estadio-bbva-guide' : effectiveId === 'nrg-stadium' ? 'nrg-stadium-guide' : effectiveId === 'mercedes-benz-stadium' ? 'mercedes-benz-stadium-guide' : effectiveId === 'lumen-field' ? 'lumen-field-guide' : effectiveId === 'sofi-stadium' ? 'sofi-stadium-guide' : effectiveId === 'levis-stadium' ? 'levis-stadium-guide' : effectiveId === 'lincoln-financial-field' ? 'lincoln-financial-field-guide' : effectiveId === 'gillette-stadium' ? 'gillette-stadium-guide' : effectiveId}`,
               "datePublished": published,
               "dateModified": new Date().toISOString(),
               "inLanguage": "en-US",
@@ -505,7 +570,7 @@ export default function StadiumDetailPage() {
                 </span>
               </li>
             </ol>
-            <h1 className="editorial-hero-title">{stadium.name}</h1>
+            <h1 className="editorial-hero-title">{effectiveId === 'estadio-azteca' ? 'Estadio Azteca Guide: World Cup 2026 Stadium & Tickets' : effectiveId === 'metlife-stadium' ? 'MetLife Stadium Guide: World Cup 2026 Final Venue | NY/NJ' : effectiveId === 'att-stadium' ? 'AT&T Stadium Guide: World Cup 2026 Venue | Dallas Cowboys' : effectiveId === 'arrowhead-stadium' ? 'Arrowhead Stadium Guide: World Cup 2026 Venue | Kansas City' : effectiveId === 'estadio-bbva' ? 'Estadio BBVA Guide: World Cup 2026 Stadium | Monterrey Mexico' : effectiveId === 'nrg-stadium' ? 'NRG Stadium Guide: World Cup 2026 Venue | Houston Texans' : effectiveId === 'mercedes-benz-stadium' ? 'Mercedes-Benz Stadium Guide: World Cup 2026 Venue | Atlanta' : effectiveId === 'lumen-field' ? 'Lumen Field Guide: World Cup 2026 Venue | Seattle Sounders' : effectiveId === 'sofi-stadium' ? 'SoFi Stadium Guide: World Cup 2026 Venue | Los Angeles' : effectiveId === 'levis-stadium' ? 'Levi\'s Stadium Guide: World Cup 2026 Venue | San Francisco Bay' : effectiveId === 'lincoln-financial-field' ? 'Lincoln Financial Field Guide: World Cup 2026 | Philadelphia' : effectiveId === 'gillette-stadium' ? 'Gillette Stadium Guide: World Cup 2026 Venue | Boston Patriots' : effectiveId === 'hard-rock-stadium' ? 'Hard Rock Stadium Guide: World Cup 2026 Venue | Miami Florida' : effectiveId === 'bmo-field' ? 'BMO Field Guide: World Cup 2026 Venue | Toronto Canada' : effectiveId === 'bc-place-stadium' ? 'BC Place Stadium Guide: World Cup 2026 Venue | Vancouver Canada' : effectiveId === 'estadio-akron' ? 'Estadio Akron Guide: World Cup 2026 Stadium | Guadalajara Mexico' : stadium.name}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-map-pin-line"></i>

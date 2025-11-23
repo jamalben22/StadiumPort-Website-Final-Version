@@ -114,7 +114,7 @@ export function AtlantaCityGuide() {
               <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
               {' '}for the 2026 World Cup.
               {' '}From June 15 through July 15, 2026,{' '}
-              <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link>
+              <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link>
               {' '}will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
             </p>
             <p>
@@ -127,7 +127,7 @@ export function AtlantaCityGuide() {
             <div className="space-y-1 text-slate-800 dark:text-slate-200">
               <div>
                 🏟️ <strong>Stadium:</strong>{' '}
-                <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mercedes-Benz Stadium Guide</Link>
+                <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mercedes-Benz Stadium Guide</Link>
               </div>
               <div>
                 🗺️ <strong>All Host Cities:</strong>{' '}

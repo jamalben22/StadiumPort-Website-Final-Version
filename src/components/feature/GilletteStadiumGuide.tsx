@@ -358,7 +358,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               <h4 className="editorial-h4 mt-6">Cape Cod (60-75 minutes)</h4>
               <p className="leading-relaxed">If extending your stay, Cape Cod's beaches, seafood shacks, and charming towns offer classic New England coastal experiences. Provincetown at the tip combines beaches with vibrant arts and LGBTQ+ culture.</p>
               <p className="leading-relaxed mt-4">
-                Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia. Cross-border? Consider <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto.
+                Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia. Cross-border? Consider <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -410,7 +410,7 @@ Book your accommodation early through <a href="https://booking.com/" target="_bl
                 </div>
                 <div>
                   <h4 className="editorial-h4 mb-2">Other Northeast Stadiums</h4>
-                  <p>Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia.</p>
+                  <p>Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia.</p>
                 </div>
                 <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               </div>

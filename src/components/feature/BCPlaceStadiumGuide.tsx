@@ -295,7 +295,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                   {`Matches are scheduled for 12:00, 15:00, 18:00, and 21:00 Pacific Time, with evening kickoffs likely offering the most spectacular visual experience as the roof opens to twilight skies. This will be only the second time Canada has hosted men's World Cup matches on home soil, making these fixtures genuinely historic moments.`}
                 </p>
                 <p>
-                  Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also explore <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada, and on the West Coast, <Link to="/world-cup-2026-stadiums/levis-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link>.
+                  Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also explore <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada, and on the West Coast, <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link>.
                 </p>
               </div>
               <hr className="editorial-divider" />

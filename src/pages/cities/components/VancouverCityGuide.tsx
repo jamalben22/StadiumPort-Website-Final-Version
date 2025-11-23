@@ -140,7 +140,7 @@ export function VancouverCityGuide() {
             Seven Matches Under the World's Largest Retractable Roof
           </h3>
           <p>
-            On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link> Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the{' '}
+            On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link> Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the{' '}
             <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.
           </p>
           <p>
@@ -151,7 +151,7 @@ export function VancouverCityGuide() {
             <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential Vancouver Links</div>
             <div className="space-y-1 text-slate-800 dark:text-slate-200">
               <div>
-                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bc-place-stadium" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place Guide</Link>
+                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place Guide</Link>
               </div>
               <div>
                 🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
