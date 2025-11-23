@@ -548,16 +548,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
               </div>
               <div className="mb-12">
                 <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
-                  World Cup 2026 Host Cities: Travel Guide to All 16 Cities in USA, Canada & Mexico
+                  World Cup 2026 Host Cities: Complete Travel Guide to All 16 Cities
                 </h1>
-                <div className="text-center mb-6">
-                  <span className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
-                    World Cup 2026 Host Cities: Complete Travel Guide (16)
-                  </span>
-                </div>
                 <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
                 <p className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-                  Planning your World Cup 2026 trip? Explore all 16 host cities with insider tips on accommodation, transport, neighborhoods, and the best match day experiences. Start here! Each of these incredible cities features world-class stadiums that will host unforgettable World Cup 2026 matches.
+                  Explore every World Cup 2026 host city across the USA, Canada, and Mexico with expert guides covering accommodations near stadiums, public transport, top neighborhoods, safety tips, fan zones, local culture, and essential match-day planning.
                 </p>
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
@@ -565,28 +560,28 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                   <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Cities</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Cities</div>
                   </div>
                 </div>
                 <div className="group relative text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">3</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Countries</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Countries</div>
                   </div>
                 </div>
                 <div className="group relative text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">104</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Matches</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Total Matches</div>
                   </div>
                 </div>
                 <div className="group relative text-center">
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">48</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Teams</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Competing Teams</div>
                   </div>
                 </div>
               </div>
@@ -598,11 +593,11 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
-                Select Your Destination
+                Choose Your World Cup 2026 Destination
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-                Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
+                Select any host city below for in-depth travel guides—stadium details, nearby hotels, public transportation, must-visit attractions, safety protocols, fan-friendly neighborhoods, official fan zones, and top sports bars for every match.
               </p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
@@ -836,10 +831,10 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                   <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                 </div>
                 <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
-                  Plan Your World Cup 2026 Journey
+                  Plan Your Multi-City World Cup 2026 Itinerary
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
-                  Attending multiple matches? Here are popular city combinations that maximize your World Cup experience:
+                  Attending multiple matches across North America? These strategic city combinations maximize your tournament experience with seamless travel connections and diverse cultural experiences:
                 </p>
               </div>
 
@@ -858,13 +853,23 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        East Coast Circuit
+                        East Coast USA Circuit
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Start in <a href="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>, explore <a href="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>, and finish in <a href="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
+                      <a href="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a>
+                      
+                      <span className="mx-2">→</span>
+                      
+                      <a href="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</a>
+                      
+                      <span className="mx-2">→</span>
+                      
+                      <a href="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</a>
+                      <br/>
+                      Iconic stadiums, major metros, efficient train connections
                     </p>
                   </div>
                 </div>
@@ -882,13 +887,19 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        West Coast Adventure
+                        West Coast USA Adventure
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Begin in <a href="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>, head to <a href="/world-cup-2026-host-cities/san-francisco" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>, then north to <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
+                      <a href="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a>
+                      <span className="mx-2">→</span>
+                      <a href="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</a>
+                      <span className="mx-2">→</span>
+                      <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a>
+                      <br/>
+                      Pacific vibes, world-class cities, scenic coastal route
                     </p>
                   </div>
                 </div>
@@ -909,13 +920,19 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        Mexico Experience
+                        Mexico Heritage Tour
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Discover <a href="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>, <a href="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>, and <a href="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
+                      <a href="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a>
+                      <span className="mx-2">→</span>
+                      <a href="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</a>
+                      <span className="mx-2">→</span>
+                      <a href="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</a>
+                      <br/>
+                      Historic stadiums, rich culture, authentic football passion
                     </p>
                   </div>
                 </div>
@@ -933,13 +950,17 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        Cross-Border Journey
+                        Pacific Northwest Cross-Border
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      Connect <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</a> with <a href="/world-cup-2026-host-cities/vancouver" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver</a> for an unforgettable Pacific Northwest experience
+                      <a href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle, USA</a>
+                      <span className="mx-2">→</span>
+                      <a href="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Vancouver, Canada</a>
+                      <br/>
+                      Stunning scenery, dual-nation experience, short travel distance
                     </p>
                   </div>
                 </div>
@@ -947,7 +968,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
 
               <div className="mt-10 text-center">
                 <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg">
-                  <span>Explore All World Cup Stadiums</span>
+                  <span>Explore All 16 World Cup 2026 Stadiums</span>
                   <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                 </a>
               </div>
@@ -1024,7 +1045,7 @@ Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickof
           }
         ]}
         title="Frequently Asked Questions About World Cup 2026 Host Cities"
-        subtitle="The 2026 FIFA World Cup features 16 host cities across three countries: 11 cities in the United States, 2 in Canada, and 3 in Mexico. This marks the first World Cup hosted by three nations simultaneously, with a total of 104 matches across 16 stadiums from June 11 to July 19, 2026."
+        subtitle="The 2026 FIFA World Cup spans 16 host cities across North America: 11 in the United States, 3 in Mexico, and 2 in Canada. This historic tournament marks the first World Cup co-hosted by three nations, featuring 104 matches across 48 teams from June 11 to July 19, 2026 — the largest World Cup in history."
         showCategories={true}
         showSearch={true}
         locationSpecific={true}

@@ -223,7 +223,7 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       id: 'travelers',
       icon: 'ri-group-line',
       value: liveTravelerCount,
-      label: 'Travelers Planning Trips',
+      label: 'Fans Planning Trips',
       color: 'emerald',
       gradient: 'from-emerald-400 to-teal-400',
       delay: 0,
@@ -234,7 +234,7 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       id: 'deals',
       icon: 'ri-price-tag-3-line',
       value: liveDealCount,
-      label: 'Live Travel Deals',
+      label: 'Active Travel Deals',
       color: 'gold',
       gradient: 'from-amber-400 to-orange-400',
       delay: 0.2,
@@ -245,7 +245,7 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       id: 'cities',
       icon: 'ri-map-pin-line',
       value: 16,
-      label: 'Host City Guides',
+      label: 'Host Cities Covered',
       color: 'blue',
       gradient: 'from-blue-400 to-cyan-400',
       delay: 0.4,
@@ -426,7 +426,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
       
       if (timeLeft <= 0) {
         setCountdown({
-          days: { value: 0, label: 'Days', singular: 'Day' },
+          days: { value: 0, label: 'Days to Go', singular: 'Day to Go' },
           hours: { value: 0, label: 'Hours', singular: 'Hour' },
           minutes: { value: 0, label: 'Minutes', singular: 'Minute' },
           seconds: { value: 0, label: 'Seconds', singular: 'Second' },
@@ -442,7 +442,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
       setCountdown({
-        days: { value: days, label: 'Days', singular: 'Day' },
+        days: { value: days, label: 'Days to Go', singular: 'Day to Go' },
         hours: { value: hours, label: 'Hours', singular: 'Hour' },
         minutes: { value: minutes, label: 'Minutes', singular: 'Minute' },
         seconds: { value: seconds, label: 'Seconds', singular: 'Second' },
@@ -483,7 +483,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
           >
             Your Complete
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-gold-400 to-blue-400 mt-2">
-              World Cup 2026 Guide
+              World Cup 2026 Travel Hub
             </span>
           </motion.h1>
           
@@ -493,14 +493,21 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            The 2026 FIFA World Cup kicks off across the United States, Canada, and Mexico. Get expert guides for every stadium, host city, and travel essential—from MetLife Stadium's Final to Estadio Azteca's legendary atmosphere.
+            Explore every World Cup 2026 stadium and host city across the USA, Canada, and Mexico. Get expert travel tips, venue guides, safety information, match-day planning, and insider strategies from MetLife Stadium’s Final to the historic atmosphere of Estadio Azteca.
           </motion.p>
           
           <motion.p 
-            className="text-xl md:text-2xl text-navy-900 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed font-inter mt-4 font-bold tracking-wide"
+            className="text-xl md:text-2xl max-w-2xl mx-auto leading-relaxed font-inter mt-4 font-bold tracking-wide bg-gradient-to-r from-emerald-400 via-gold-400 to-blue-400 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
+            style={{
+              fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif',
+              fontWeight: 600,
+              letterSpacing: '0.025em',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
+            }}
           >
             COUNTDOWN TO KICKOFF:
           </motion.p>
@@ -527,7 +534,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 xl:gap-12 auto-rows-fr max-w-7xl mx-auto">
             {/* Accommodation Widget */}
             <a
-              href="https://hotel-affiliate-link.com"
+              href="https://trip.tpo.li/xgpbK8RD"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               data-affiliate-type="accommodation"
@@ -540,15 +547,15 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
                     <i className="ri-hotel-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                    Accommodation
+                    Accommodations Near Stadiums
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                    From luxury hotels and design-forward stays to premium serviced apartments, curated for comfort near venues and city highlights.
+                    Luxury hotels, boutique stays, and serviced apartments within walking distance of World Cup 2026 venues—book early for best rates in all 16 host cities.
                   </p>
                 </div>
 
                 <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-emerald-500 hover:text-emerald-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
-                  <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Find Your Stay</span>
+                  <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Find Your Perfect Stay</span>
                   <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
                 </div>
               </div>
@@ -556,7 +563,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
 
             {/* Flights Widget */}
             <a
-              href="https://flight-affiliate-link.com"
+              href="https://trip.tpo.li/xgpbK8RD"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               data-affiliate-type="flights"
@@ -569,15 +576,15 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
                     <i className="ri-flight-takeoff-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                    Flights
+                    Smart Flight Booking
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                    Premium flight search with flexible dates, multi-city itineraries, and trusted carriers — optimized for match schedules and city hops.
+                    Compare flights across all major carriers with flexible dates and multi-city options—optimized for World Cup 2026 match schedules across USA, Canada, and Mexico.
                   </p>
                 </div>
 
                 <div className="mt-auto mx-auto inline-flex h-10 sm:h-11 md:h-12 items-center justify-center gap-3 text-blue-500 hover:text-blue-400 transition-colors duration-600 transform-gpu transition-transform group-hover:translate-x-1">
-                  <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Search Flights</span>
+                  <span className="font-medium tracking-tight leading-none text-base sm:text-lg md:text-xl">Search Flights Now</span>
                   <i className="ri-arrow-right-line text-lg sm:text-xl md:text-2xl"></i>
                 </div>
               </div>
@@ -585,7 +592,7 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
 
             {/* Experiences Widget */}
             <a
-              href="https://tour-affiliate-link.com"
+              href="https://viator.tpo.li/1skEZRlA"
               target="_blank"
               rel="nofollow sponsored noopener noreferrer"
               data-affiliate-type="experiences"
@@ -598,10 +605,10 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
                     <i className="ri-map-2-line text-2xl sm:text-3xl"></i>
                   </div>
                   <h3 className="font-space font-medium text-navy-900 dark:text-white text-2xl md:text-3xl tracking-normal leading-tight">
-                    Experiences
+                    Local Experiences & Tours
                   </h3>
                   <p className="text-slate-600 dark:text-slate-300 font-inter text-base sm:text-lg leading-relaxed max-w-[50ch] sm:max-w-[52ch] md:max-w-[54ch] mx-auto">
-                    Curated tours, premium fan events, and immersive activities — discover the city beyond matchday with elevated experiences.
+                    Official fan festivals, stadium tours, city experiences, and cultural activities—discover each World Cup 2026 host city beyond matchday.
                   </p>
                 </div>
 
