@@ -189,6 +189,19 @@ function GlobalTitleManager() {
   return null
 }
 
+function SpeedInsightsRouting() {
+  const location = useLocation()
+  const endpoint = import.meta.env.VITE_VERCEL_SPEED_ENDPOINT
+  const scriptSrc = import.meta.env.VITE_VERCEL_SPEED_SCRIPT
+  return (
+    <SpeedInsights
+      route={location.pathname || '/'}
+      {...(endpoint ? { endpoint } : {})}
+      {...(scriptSrc ? { scriptSrc } : {})}
+    />
+  )
+}
+
 function App() {
   // Handle cases where __BASE_PATH__ might be undefined in production
   const basePath = typeof __BASE_PATH__ !== 'undefined' ? __BASE_PATH__ : '/'
@@ -215,7 +228,7 @@ function App() {
         </Suspense>
       </ErrorBoundary>
       <Analytics />
-      <SpeedInsights />
+      <SpeedInsightsRouting />
     </BrowserRouter>
   )
 }
