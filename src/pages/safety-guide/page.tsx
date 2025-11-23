@@ -21,22 +21,23 @@ export const safetyGuides = [
   {
     id: 7,
     title: 'World Cup 2026 Safety Guide: Everything Fans Need to Know',
-    excerpt: 'Safe practices for flights, trains, buses, taxis, and rideshares. Avoiding scams and ensuring secure transport.',
-    category: 'Travel Security',
+    excerpt: 'Master guide covering stadium security, travel safety, scam prevention, emergency protocols, and health precautions for the ultimate safe World Cup 2026 experience.',
+    category: 'Complete Fan Safety & Security ',
     author: 'Maria Gonzalez',
     readTime: '13 min read',
     featured: false,
     priority: 'Medium',
+    image: '/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp',
     href: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know'
   },
   {
     id: 8,
     title: 'World Cup 2026 Travel Insurance: Complete Protection Guide',
-    excerpt: 'Evaluate hotel security, room safety, and accommodation scams. Ensure your lodging meets safety standards.',
-    category: 'Travel Security',
+    excerpt: 'Essential coverage for trip cancellations, medical emergencies, lost tickets, flight delays, and theft protection—choose the right travel insurance for World Cup 2026.',
+    category: 'Travel Insurance & Financial Protection ',
     author: 'David Thompson',
     readTime: '10 min read',
-    image: 'https://readdy.ai/api/search-image?query=hotel%20room%20security%20with%20door%20locks%2C%20safe%20deposit%20box%2C%20security%20features%2C%20accommodation%20safety%20checklist%2C%20secure%20lodging%20environment&width=400&height=250&seq=safety8&orientation=landscape',
+    image: '/images/safety-guide/A_realistic_high-detail_photo_of_travel_insurance_essentials_for_World_Cup_2026.webp',
     featured: false,
     priority: 'Medium'
   }
@@ -45,79 +46,79 @@ export const safetyGuides = [
 const guideArticles = [
   {
     title: 'World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud',
-    excerpt: 'Navigate stadium crowds, entry checkpoints, and post-match dispersal with confidence.',
-    category: 'Stadium & Crowd Safety',
+    excerpt: 'Protect yourself from fake tickets, phishing scams, and fraudulent travel packages targeting World Cup 2026 fans across USA, Canada, and Mexico.',
+    category: 'Stadium Security & Fan Safety',
     author: 'Alex Rivera',
     readTime: '9 min read',
     priority: 'High' as const,
     image:
-      'https://readdy.ai/api/search-image?query=stadium%20crowd%20safety%2C%20entry%20checkpoints%2C%20safe%20movement%2C%20stewards%20guiding%20fans&width=400&height=250&seq=guides1&orientation=landscape',
+      '/images/safety-guide/A_realistic_photo-style_image_showing_a_worried_football_fan_reviewing_suspiciou.webp',
     slug: 'world-cup-2026-scams-how-to-avoid-ticket-travel-fraud'
   },
   {
     title: 'Stadium Safety at World Cup 2026: Security Rules & What to Expect',
-    excerpt: 'Build a quick-response plan: contacts, meeting points, and local emergency resources for hosts.',
-    category: 'Emergency Planning',
+    excerpt: 'Complete guide to stadium security screening, prohibited items, bag policies, and safety procedures at all 16 World Cup 2026 venues across North America.',
+    category: 'Stadium Safety & Security Protocols',
     author: 'Priya Shah',
     readTime: '8 min read',
     priority: 'Medium' as const,
     image:
-      'https://readdy.ai/api/search-image?query=travel%20emergency%20plan%2C%20contact%20list%2C%20meeting%20points%2C%20preparedness&width=400&height=250&seq=guides2&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp',
     slug: 'stadium-safety-at-world-cup-2026-security-rules-what-to-expect'
   },
   {
     title: 'Health & Medical Preparedness',
-    excerpt: 'Vaccinations, travel insurance notes, and carrying essentials for quick medical support.',
-    category: 'Health & Medical',
+    excerpt: 'Essential vaccinations, travel insurance requirements, prescription medications, and medical facility locations for World Cup 2026 travelers in USA, Canada, and Mexico.',
+    category: 'Travel Health & Medical Safety',
     author: 'Dr. Lina Chen',
     readTime: '12 min read',
     priority: 'High' as const,
     image:
-      'https://readdy.ai/api/search-image?query=travel%20health%20kit%2C%20vaccination%2C%20first%20aid%2C%20medical%20preparedness&width=400&height=250&seq=guides3&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp',
     slug: ''
   },
   {
     title: 'Transportation Safety: Getting Around World Cup 2026 Host Cities',
-    excerpt: 'Protect accounts, payments, and identity on public Wi‑Fi and mobile networks.',
-    category: 'Digital Security',
+    excerpt: 'Navigate public transit, ride-sharing, taxi services, and intercity travel safely across all 16 host cities with real-time safety tips and official transport options.',
+    category: 'Safe Transportation & Travel Logistics ',
     author: 'Nora Patel',
     readTime: '7 min read',
     priority: 'Medium' as const,
     image:
-      'https://readdy.ai/api/search-image?query=digital%20security%20travel%2C%20vpn%2C%20account%20protection%2C%20privacy&width=400&height=250&seq=guides4&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp',
     slug: 'transportation-safety-getting-around-world-cup-2026-host-cities'
   },
   {
     title: 'World Cup 2026 Emergency Contacts & Resources Guide',
-    excerpt: 'Verify rides, choose licensed providers, and avoid common scams across three hosts.',
-    category: 'Travel Security',
+    excerpt: 'Complete directory of emergency numbers, embassy contacts, police stations, hospitals, and 24/7 crisis hotlines for every World Cup 2026 host city in USA, Canada, and Mexico.',
+    category: 'Emergency Response & Crisis Management ',
     author: 'Maria Gonzalez',
     readTime: '11 min read',
     priority: 'Medium' as const,
     image:
-      'https://readdy.ai/api/search-image?query=licensed%20taxi%2C%20verified%20rideshare%2C%20safe%20public%20transport&width=400&height=250&seq=guides5&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp',
     slug: 'world-cup-2026-emergency-contacts-resources-guide'
   },
   {
     title: 'Solo Travel Safety Guide: Attending World Cup 2026 Alone',
-    excerpt: 'Room security, hotel policies, and avoiding accommodation‑related scams.',
-    category: 'Travel Security',
+    excerpt: 'Essential safety strategies for solo travelers: secure accommodations, meeting fellow fans, navigating cities alone, and staying connected during World Cup 2026 matches.',
+    category: 'Solo Travel & Personal Safety ',
     author: 'David Thompson',
     readTime: '10 min read',
     priority: 'Medium' as const,
     image:
-      'https://readdy.ai/api/search-image?query=hotel%20room%20security%2C%20safe%20deposit%20box%2C%20secure%20lodging&width=400&height=250&seq=guides6&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_of_a_solo_traveler_at_a_World_Cup_2026_host_city.webp',
     slug: 'solo-travel-safety-guide-attending-world-cup-2026-alone'
   },
   {
     title: 'Family Safety Guide: Taking Kids to World Cup 2026',
-    excerpt: 'Common fan‑targeted scams and how to identify and avoid them quickly.',
-    category: 'Travel Security',
+    excerpt: 'Plan a safe family experience: child-friendly seating sections, stadium amenities, crowd management tips, ID wristbands, and keeping kids secure at World Cup 2026 venues.',
+    category: 'Family Travel & Child Safety ',
     author: 'Omar Delgado',
     readTime: '6 min read',
     priority: 'Low' as const,
     image:
-      'https://readdy.ai/api/search-image?query=travel%20scams%20awareness%2C%20money%20fraud%2C%20street%20scams%20guide&width=400&height=250&seq=guides7&orientation=landscape',
+      '/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near.webp',
     slug: 'family-safety-guide-taking-kids-to-world-cup-2026'
   }
 ];
@@ -263,36 +264,36 @@ export default function SafetyGuidePage() {
                 </div>
                 <div className="w-24 h-1 bg-gradient-to-r from-red-500 to-orange-500 mx-auto mb-8 rounded-full"></div>
                 <p className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-                  Heading to the World Cup? Get practical safety advice for all three host countries—from what to watch out for in crowds to emergency contacts you should save now. Travel prepared, not paranoid.
+                  Your essential safety companion for World Cup 2026 across USA, Canada, and Mexico. Expert advice on stadium security, travel safety, scam prevention, emergency contacts, and health protocols—ensuring a worry-free tournament experience at all 16 host cities.
                 </p>
               </div>
 
               {/* Apple-Level Premium Safety Stats - Matching Host Cities */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
-                <div className="group relative text-center">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto auto-rows-fr">
+                <div className="group relative text-center h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-red-200/50 dark:hover:border-red-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 dark:hover:shadow-red-500/5">
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-red-200/50 dark:hover:border-red-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-500/10 dark:hover:shadow-red-500/5 h-full">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-red-600 group-hover:to-orange-600 dark:group-hover:from-red-400 dark:group-hover:to-orange-400 transition-all duration-700">24/7</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Emergency</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Emergency Support</div>
                   </div>
                 </div>
-                <div className="group relative text-center">
+                <div className="group relative text-center h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-green-200/50 dark:hover:border-green-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/10 dark:hover:shadow-green-500/5">
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-green-200/50 dark:hover:border-green-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/10 dark:hover:shadow-green-500/5 h-full">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-green-600 group-hover:to-emerald-600 dark:group-hover:from-green-400 dark:group-hover:to-emerald-400 transition-all duration-700">3</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Countries</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Countries</div>
                   </div>
                 </div>
-                <div className="group relative text-center">
+                <div className="group relative text-center h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
-                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">100+</div>
-                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Expert Tips</div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 h-full">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">9+</div>
+                    <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Safety Tips</div>
                   </div>
                 </div>
-                <div className="group relative text-center">
+                <div className="group relative text-center h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5 h-full">
                     <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">Safe</div>
                     <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Travel</div>
                   </div>
@@ -308,11 +309,11 @@ export default function SafetyGuidePage() {
             <h2 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl text-slate-900 dark:text-white mb-6 leading-tight tracking-tight">
               Emergency Numbers
               <span className="block bg-gradient-to-r from-red-600 via-orange-600 to-amber-600 bg-clip-text text-transparent mt-2">
-                Across All Countries
+                Across All Host Countries
               </span>
             </h2>
             <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Save these essential contacts before you travel. Available 24/7 across USA, Mexico, and Canada.
+              Save these critical emergency contacts before traveling to World Cup 2026. Instant access to police, medical, and fire services 24/7 across USA, Mexico, and Canada.
             </p>
           </div>
 
@@ -334,13 +335,13 @@ export default function SafetyGuidePage() {
                     </div>
                   </div>
                   <div className="font-inter font-semibold text-slate-700 dark:text-slate-300 text-lg md:text-xl mb-2">
-                    Police • Medical • Fire
+                    Police • Ambulance • Fire
                   </div>
                   <div className="inline-flex items-center justify-center gap-2 text-slate-600 dark:text-slate-400">
                     <svg className="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clipRule="evenodd" />
                     </svg>
-                    <span className="font-medium">24/7 Available</span>
+                    <span className="font-medium">24/7 Immediate Response</span>
                   </div>
                 </div>
 
@@ -357,7 +358,7 @@ export default function SafetyGuidePage() {
                         Pro Safety Tip
                       </h3>
                       <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                        Save emergency numbers before travel. Keep battery backups, enable location sharing with trusted contacts, and memorize nearest exits upon arrival.
+                        Download offline maps and save emergency numbers with country codes (+1 for USA/Canada, +52 for Mexico). Share your live location with trusted contacts, carry portable chargers, and identify emergency exits at every venue.
                       </p>
                     </div>
                   </div>
@@ -372,17 +373,14 @@ export default function SafetyGuidePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 lg:pt-48">
           <div className="text-center mb-20">
             <h2 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl text-slate-900 dark:text-white mb-6 leading-tight tracking-tight">
-              Dedicated Article
-              <span className="block bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 bg-clip-text text-transparent mt-2">
-                Guides
-              </span>
+              In-Depth Safety Guides For World Cup 2026 Travelers
             </h2>
             <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Explore focused guides with deep‑dive advice for fans.
+              Comprehensive articles covering every aspect of fan safety—from stadium security protocols to emergency planning across all 16 host cities in USA, Canada, and Mexico.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 auto-rows-fr">
             {/* Unified Card Design for All Guides */}
             {[...guideArticles, ...safetyGuides.slice(0,2)].map((item, index) => {
               const isAdditionalGuide = index >= guideArticles.length;
@@ -398,9 +396,9 @@ export default function SafetyGuidePage() {
               const key = isAdditionalGuide ? `dedicated-${(item as any).id || index}` : slug;
               
               return (
-                <div key={key} className="group relative">
+                <div key={key} className="group relative h-full">
                   <div className="absolute inset-0 bg-gradient-to-br from-slate-50 to-white dark:from-navy-900/20 dark:to-navy-800/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative bg-white/90 dark:bg-navy-900/90 backdrop-blur-3xl rounded-3xl border border-slate-200/50 dark:border-navy-700/50 hover:border-slate-300/70 dark:hover:border-navy-600/70 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-500/10 dark:hover:shadow-navy-500/10 overflow-hidden">
+                  <div className="relative bg-white/90 dark:bg-navy-900/90 backdrop-blur-3xl rounded-3xl border border-slate-200/50 dark:border-navy-700/50 hover:border-slate-300/70 dark:hover:border-navy-600/70 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-slate-500/10 dark:hover:shadow-navy-500/10 overflow-hidden h-full flex flex-col">
                     
                     {/* Premium Image Container - Consistent Height */}
                     <div className="relative h-56 md:h-60 lg:h-64 overflow-hidden">
@@ -422,7 +420,7 @@ export default function SafetyGuidePage() {
                     </div>
 
                     {/* Premium Content - Consistent Layout */}
-                    <div className="p-6 md:p-7 lg:p-8">
+                    <div className="p-6 md:p-7 lg:p-8 flex-1 flex flex-col">
                       <div className="flex items-center justify-between mb-4">
                         <span className="inline-flex items-center text-slate-600 dark:text-slate-400 text-sm font-semibold">
                           <i className="ri-shield-check-line mr-2"></i>
@@ -439,15 +437,7 @@ export default function SafetyGuidePage() {
                         {excerpt}
                       </p>
                       
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-3">
-                          <div className="w-8 h-8 bg-gradient-to-br from-slate-500 to-slate-600 dark:from-slate-400 dark:to-slate-500 rounded-full flex items-center justify-center shadow-lg">
-                            <span className="text-white text-xs font-bold">
-                              {author.split(' ').map(n => n[0]).join('')}
-                            </span>
-                          </div>
-                          <span className="text-sm text-slate-600 dark:text-slate-400 font-medium">{author}</span>
-                        </div>
+                      <div className="flex items-center justify-end mt-auto">
                         <a
                           href={href}
                           className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-slate-900 disabled:dark:hover:bg-white px-4 py-2.5 text-sm"
@@ -468,13 +458,10 @@ export default function SafetyGuidePage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 md:pt-40 lg:pt-48">
           <div className="text-center mb-20">
             <h2 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl text-slate-900 dark:text-white mb-6 leading-tight tracking-tight">
-              Explore More
-              <span className="block bg-gradient-to-r from-slate-600 via-slate-700 to-slate-800 bg-clip-text text-transparent mt-2">
-                Safety Guides
-              </span>
+              Explore More World Cup 2026 Guides
             </h2>
             <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-              Continue your safety journey with expert-curated guides for every travel scenario.
+              Plan your complete World Cup 2026 experience with expert resources covering stadiums, budgets, travel logistics, and insider tips for all host cities.
             </p>
           </div>
 
@@ -490,16 +477,16 @@ export default function SafetyGuidePage() {
                     <div className="relative mx-auto mb-6">
                       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-navy-800 dark:to-navy-700 rounded-full opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-700"></div>
                       <div className="relative w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 dark:from-slate-400 dark:to-slate-500 rounded-full flex items-center justify-center shadow-lg">
-                        <i className="ri-shield-line text-3xl text-white"></i>
+                        <i className="ri-route-line text-3xl text-white"></i>
                       </div>
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-300">
-                      Personal Safety
+                      Travel Planning Guides
                     </h3>
                     
                     <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed line-clamp-4 min-h-[96px]">
-                      Essential personal security strategies for confident travel. Learn situational awareness, risk assessment, and protective measures.
+                      Flights, visas, transportation between cities, accommodation options, and itinerary planning across USA, Canada, and Mexico.
                     </p>
                   </div>
                   
@@ -527,16 +514,16 @@ export default function SafetyGuidePage() {
                     <div className="relative mx-auto mb-6">
                       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-navy-800 dark:to-navy-700 rounded-full opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-700"></div>
                       <div className="relative w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 dark:from-slate-400 dark:to-slate-500 rounded-full flex items-center justify-center shadow-lg">
-                        <i className="ri-smartphone-line text-3xl text-white"></i>
+                        <i className="ri-football-line text-3xl text-white"></i>
                       </div>
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-300">
-                      Digital Security
+                      Stadium Guides
                     </h3>
                     
                     <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed line-clamp-4 min-h-[96px]">
-                      Protect your digital identity and devices while traveling. Secure your data, accounts, and online presence.
+                      Complete profiles of all 16 World Cup 2026 venues seating charts, transportation, amenities, and matchday tips.
                     </p>
                   </div>
                   
@@ -564,16 +551,16 @@ export default function SafetyGuidePage() {
                     <div className="relative mx-auto mb-6">
                       <div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-slate-200 dark:from-navy-800 dark:to-navy-700 rounded-full opacity-50 blur-xl group-hover:opacity-70 transition-opacity duration-700"></div>
                       <div className="relative w-16 h-16 bg-gradient-to-br from-slate-500 to-slate-600 dark:from-slate-400 dark:to-slate-500 rounded-full flex items-center justify-center shadow-lg">
-                        <i className="ri-heart-pulse-line text-3xl text-white"></i>
+                        <i className="ri-money-dollar-circle-line text-3xl text-white"></i>
                       </div>
                     </div>
                     
                     <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white mb-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-300">
-                      Health & Medical
+                      Budget & Money Guides
                     </h3>
                     
                     <p className="text-slate-600 dark:text-slate-400 text-base leading-relaxed line-clamp-4 min-h-[96px]">
-                      Complete medical preparedness for tournament travel. Vaccinations, insurance, and emergency health protocols.
+                      Save thousands with smart booking strategies, affordable accommodations, free activities, and cost breakdowns for each host city.
                     </p>
                   </div>
                   

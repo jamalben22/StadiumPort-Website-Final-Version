@@ -693,14 +693,9 @@ export default function VenuesPage() {
               <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
                 World Cup 2026 Stadiums: Complete Guide to All 16 Venues
               </h1>
-              <div className="text-center mb-6">
-                <span className="font-inter text-lg md:text-xl text-slate-600 dark:text-slate-400 font-medium">
-                  World Cup 2026 Stadiums: Complete Venue Guide (16)
-                </span>
-              </div>
               <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-                Complete guide to all 16 FIFA World Cup 2026 stadiums across USA, Canada & Mexico. Get transport routes, hotel recommendations, matchday tips & insider advice for every venue.
+                Explore every World Cup 2026 stadium across the USA, Canada, and Mexico with detailed guides including seating charts, public transport options, nearby hotels, parking, prohibited items, security protocols, amenities, and match-day strategies for every venue.
               </p>
             </div>
 
@@ -712,7 +707,7 @@ export default function VenuesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-amber-200/50 dark:hover:border-amber-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10 dark:hover:shadow-amber-500/5">
                   <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-amber-600 group-hover:to-orange-600 dark:group-hover:from-amber-400 dark:group-hover:to-orange-400 transition-all duration-700">3</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Nations</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Nations</div>
                 </div>
               </div>
 
@@ -721,7 +716,7 @@ export default function VenuesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
                   <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Venues</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">World-Class Venues</div>
                 </div>
               </div>
 
@@ -730,7 +725,7 @@ export default function VenuesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
                   <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">104</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Matches</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Tournament Matches</div>
                 </div>
               </div>
 
@@ -739,7 +734,7 @@ export default function VenuesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
                   <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">1.2M+</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Capacity</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Total Stadium Capacity</div>
                 </div>
               </div>
 
@@ -751,11 +746,11 @@ export default function VenuesPage() {
         <div className="relative z-10 pt-0 pb-20 mt-28 md:mt-36 lg:mt-44 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
-              Select Your Venue
+              Explore All 16 World Cup 2026 Stadiums
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-gold-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
             <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-              Click any stadium for complete guides covering transport, where to stay, what to do nearby, and insider matchday advice from fans who've been there.
+              Select any venue below for comprehensive stadium guides—detailed seating maps, best transportation options, top nearby hotels, parking information, local attractions, food & drink options, security tips, and expert matchday advice.
             </p>
           </div>
 
@@ -909,15 +904,17 @@ export default function VenuesPage() {
                   <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                 </div>
                 <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
-                  Beyond the Stadiums
+                  Experience More Than Just the Match
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
-                  The World Cup 2026 experience extends far beyond match day. Each host city offers incredible attractions, dining, culture, and entertainment.
+                  World Cup 2026 extends far beyond the 90 minutes—each host city offers world-class attractions, diverse dining scenes, rich culture, vibrant nightlife, and unforgettable local experiences before and after kickoff.
                 </p>
                 <p className="mt-6 font-inter text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-                  <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All Host Cities</a>
-                  {' '}to discover what makes each destination special, from accommodation options to local transportation tips.
+                  <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Host Cities →</a>
+                  {' '}to discover accommodations near stadiums, public transportation guides, safety tips, fan zones, top neighborhoods, and what makes each destination unique.
                 </p>
+
+                
               </div>
 
               {/* Apple-Level Luxury Feature Cards Grid */}
@@ -935,13 +932,14 @@ export default function VenuesPage() {
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        Mexico City
+                        <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                        {', Mexico'}
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</a> — Ancient history meets modern metropolis
+                      Ancient Aztec heritage meets modern cosmopolitan energy
                     </p>
                   </div>
                 </div>
@@ -959,13 +957,14 @@ export default function VenuesPage() {
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        Los Angeles
+                        <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+                        {', USA'}
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</a> — Entertainment capital with perfect weather
+                      Global entertainment capital with year-round perfect weather
                     </p>
                   </div>
                 </div>
@@ -986,13 +985,14 @@ export default function VenuesPage() {
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        Toronto
+                        <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+                        {', Canada'}
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</a> — Multicultural gem of Canada
+                      World's most multicultural city with diverse neighborhoods
                     </p>
                   </div>
                 </div>
@@ -1010,16 +1010,24 @@ export default function VenuesPage() {
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        New York/New Jersey
+                        <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>
+                        {', USA'}
                       </h3>
                     </div>
                     
                     {/* Premium Description */}
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                      <a href="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</a> — The city that never sleeps
+                      Iconic skyline and 24/7 energy in the city that never sleeps
                     </p>
                   </div>
                 </div>
+              </div>
+
+              <div className="mt-4 sm:mt-6 md:mt-8 text-center">
+                <a href="/world-cup-2026-host-cities" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg">
+                  <span>View All 16 Host Cities</span>
+                  <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -1113,7 +1121,7 @@ export default function VenuesPage() {
               }
             ]}
             title="Frequently Asked Questions About World Cup 2026 Stadiums"
-            subtitle="The 2026 FIFA World Cup will be played in 16 stadiums across the United States (11), Canada (2), and Mexico (3). The largest venue is MetLife Stadium in New York/New Jersey with 82,500 capacity, while the final venue will be announced by FIFA in 2025, with MetLife and AT&T Stadium in Dallas as leading candidates."
+            subtitle="The 2026 FIFA World Cup features 16 world-class stadiums across North America: 11 in the United States, 3 in Mexico, and 2 in Canada. MetLife Stadium (New York/New Jersey) is the largest venue with 82,500 capacity and will host the Final on July 19, 2026. AT&T Stadium (Dallas) will host the most matches with 9 games, including a semifinal."
             showCategories={true}
             showSearch={true}
             locationSpecific={true}

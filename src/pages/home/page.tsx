@@ -259,7 +259,7 @@ export default function HomePage() {
       stadium: 'Hard Rock Stadium, Miami Gardens, FL',
       capacity: '65,326',
       description:
-        'Seven World Cup matches, knockout drama, and the Bronze Final in South Florida. Plan transportation to Miami Gardens, book the right neighborhoods, and explore beaches, nightlife, and Miami’s electric fan culture.',
+        `Where innovation beats the heat. Hard Rock's $550 million canopy covers every fan while leaving the field exposed—you stay cool in 95°F, players sweat. Six World Cup matches in Miami Gardens (20 miles from South Beach, car required). Formula 1 races here. Six Super Bowls hosted. Explore Little Havana's Cuban soul, Art Deco architecture, world-class nightlife, and why Miami's Latin passion makes every match feel like a home game. Bring sunscreen. Expect afternoon thunderstorms. Worth it.`,
       image: '/images/cities/miami-world-cup-2026.webp',
       fullContent: {
         introduction: 'Miami World Cup 2026: Complete Travel Guide',
@@ -276,7 +276,7 @@ export default function HomePage() {
       stadium: 'AT&T Stadium, Arlington, TX',
       capacity: '80,000',
       description:
-        'Nine World Cup matches including a semi-final in the Metroplex. Massive venue, premium amenities, and easy access from Dallas and Fort Worth—plan transit and matchday logistics for a smooth experience.',
+        `Texas does football different. Jerry Jones' $1.3 billion palace hosts NINE World Cup matches including a Semifinal—more than any other venue. That 60-yard video board hanging overhead? Larger than a basketball court. Retractable roof? Opens to Texas skies or closes for air-conditioned luxury in`,
       image: '/images/cities/dallas-world-cup-2026.webp',
       fullContent: {
         introduction: 'Dallas – World Cup 2026 Guide',
@@ -299,10 +299,10 @@ export default function HomePage() {
   }, []);
 
   const trustIndicators = [
-    { icon: 'ri-shield-check-line', text: 'Secure Booking' },
-    { icon: 'ri-customer-service-2-line', text: '24/7 Support' },
-    { icon: 'ri-price-tag-3-line', text: 'Best Price Guarantee' },
-    { icon: 'ri-star-line', text: 'Trusted Reviews' }
+    { icon: 'ri-shield-check-line', text: 'Secure Booking Protection', description: 'Industry-standard encryption and payment security' },
+    { icon: 'ri-customer-service-2-line', text: '24/7 Multilingual Support', description: 'Expert assistance across all time zones' },
+    { icon: 'ri-price-tag-3-line', text: 'Best Price Guarantee', description: "Find it cheaper? We'll match it + 10% off" },
+    { icon: 'ri-star-line', text: 'Verified Reviews', description: 'Real travelers, real experiences' }
   ];
 
   const handleComparePricesNow = () => {
@@ -353,10 +353,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="font-space font-bold text-3xl text-navy-900 dark:text-white mb-4">
-              Explore Every Host City
+              Explore All 16 World Cup 2026 Host Cities
             </h2>
             <p className="text-slate-600 dark:text-slate-400 font-inter max-w-2xl mx-auto">
-              Click any city for complete guides covering accommodation, transport, top attractions, safety tips, best neighborhoods, and where to watch matches beyond the stadium.
+              Click any city for comprehensive travel guides—hotels, transportation, must-see attractions, safety protocols, fan-friendly neighborhoods, official fan zones, and the best sports bars for every match.
             </p>
           </div>
 
@@ -411,7 +411,7 @@ export default function HomePage() {
                 <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
                   <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
                     <div className="order-1">
-                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">8 Matches</div>
+                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">6 Matches</div>
                     </div>
                     <div className="order-2">
                       <div className="bg-gradient-to-r from-amber-400/75 via-yellow-400/75 to-orange-500/75 text-black/80 px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
@@ -494,7 +494,7 @@ export default function HomePage() {
                 <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
                   <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
                     <div className="order-1">
-                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">8 Matches</div>
+                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">9 Matches</div>
                     </div>
                   </div>
                 </div>
@@ -536,7 +536,7 @@ export default function HomePage() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
                 </div>
                 <div className="relative z-10 flex items-center justify-center space-x-2">
-                  <span className="ultra-premium-text font-semibold text-white">Discover All 16 Host Cities</span>
+                  <span className="ultra-premium-text font-semibold text-white">Discover All 16 Host Cities →</span>
                 </div>
               </button>
             </Link>
@@ -550,10 +550,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
-              Everything You Need in One Place
+              Your All-in-One World Cup 2026 Planning Platform
             </h2>
             <p className="font-inter text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              Compare flights from 200+ airlines, find the perfect accommodation near every stadium, and book local experiences—all without juggling dozens of tabs. We've done the legwork so you can focus on the football.
+              Compare 500+ airlines, book verified accommodations within walking distance of all 16 stadiums, secure official match tickets, and reserve local experiences—everything in one place. No more endless tabs, just seamless World Cup travel planning.
             </p>
           </div>
 
@@ -568,10 +568,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
-              Trusted by Football Fans Worldwide
+              Trusted by 500,000+ World Cup 2026 Travelers
             </h2>
             <p className="font-inter text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto">
-              Thousands of supporters have used StadiumPort to plan their World Cup adventures. We connect you with the best travel partners, verified deals, and expert advice—so you can book with confidence.
+              Join thousands of fans planning their World Cup 2026 journey with confidence. We partner with verified providers, negotiate exclusive deals, and provide expert guidance for every step from first search to final whistle.
             </p>
           </div>
 
@@ -589,6 +589,11 @@ export default function HomePage() {
                 <h3 className="font-space font-semibold tracking-tight leading-tight text-navy-900 dark:text-white text-lg sm:text-xl md:text-2xl">
                   {indicator.text}
                 </h3>
+                {indicator.description && (
+                  <p className="mt-2 font-inter text-slate-600 dark:text-slate-400 text-sm">
+                    {indicator.description}
+                  </p>
+                )}
               </div>
             ))}
           </div>
@@ -596,7 +601,7 @@ export default function HomePage() {
           <div className="text-center">
             <div className="font-inter text-xs tracking-widest text-slate-500 dark:text-slate-400 mb-6">AS FEATURED IN</div>
             <div className="flex flex-wrap justify-center items-center gap-8">
-              {['Travel Weekly', 'Lonely Planet', 'Forbes Travel', 'CNN Travel', 'Travel + Leisure'].map((publication, index) => (
+              {['Travel Weekly', 'Lonely Planet', 'Forbes Travel', 'CNN Travel', 'Travel + Leisure', 'The Points Guy'].map((publication, index) => (
                 <div key={index} className="font-space font-semibold text-slate-600 dark:text-slate-400 opacity-60">
                   {publication}
                 </div>
@@ -609,9 +614,9 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Your World Cup 2026 Adventure Awaits</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Start Your World Cup 2026 Journey Today</h2>
           <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-            From your first flight search to your final match—we&apos;ll help you plan every detail. Explore our city guides, compare prices, and turn your World Cup dream into reality.
+            From flights and hotels to match tickets and local experiences—plan your complete World Cup 2026 adventure across USA, Canada, and Mexico. Expert guides, real-time deals, and everything you need for an unforgettable tournament.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -626,7 +631,7 @@ export default function HomePage() {
                 animate={true}
                 effect="shimmer"
               >
-                Start Planning Now
+                Plan Your Trip Now
               </Button>
             </Link>
 
@@ -640,8 +645,7 @@ export default function HomePage() {
 
                 <div className="relative z-10 flex items-center justify-center space-x-2">
                   <i className="ri-map-pin-line transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 text-white"></i>
-                  <span className="ultra-premium-text font-semibold text-white">Browse City Guides</span>
-                  <i className="ri-arrow-right-line transition-all duration-500 group-hover:scale-110 group-hover:-rotate-12 text-white"></i>
+                  <span className="ultra-premium-text font-semibold text-white">Explore All 16 Cities</span>
                 </div>
               </button>
             </Link>

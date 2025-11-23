@@ -57,9 +57,9 @@ export function Footer() {
         {/* Minimal Newsletter Section */}
         <div className="text-center mb-16">
           <h3 className="font-space font-semibold text-2xl md:text-3xl mb-4 text-white">
-            Don't Miss Your Shot at 2026
+            Don't Miss Your World Cup 2026 Journey
           </h3>
-          <p className="font-inter text-slate-400 mb-8 max-w-2xl mx-auto">Get stadium guides, city travel tips, safety alerts, hotel deals, and insider planning advice everything you need in one weekly email.</p>
+          <p className="font-inter text-slate-400 mb-8 max-w-2xl mx-auto">Get exclusive stadium guides, host city travel tips, real-time safety alerts, hotel deals, and expert planning strategies—everything you need delivered weekly to your inbox.</p>
           
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubscribe} data-readdy-form className="flex flex-col sm:flex-row gap-3">
@@ -81,7 +81,7 @@ export function Footer() {
                 disabled={isSubmitting || !email}
                 className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
               >
-                {isSubmitting ? 'Subscribing...' : 'Get Updates'}
+                {isSubmitting ? 'Subscribing...' : 'Get Free Updates'}
               </button>
             </form>
             
