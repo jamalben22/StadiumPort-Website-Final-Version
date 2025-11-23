@@ -206,9 +206,9 @@ export default function HomePage() {
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const descriptionText = 'Expert guides for all 16 World Cup 2026 stadiums and host cities across USA, Canada & Mexico. Get transport tips, hotel recommendations, and matchday advice.';
+    const descriptionText = 'Explore every World Cup 2026 stadium and host city across the USA, Canada, and Mexico. Get expert travel tips, venue guides, safety information, match-day planning, and insider strategies from MetLife Stadium’s Final to the historic atmosphere of Estadio Azteca.';
     setPageMeta({
-      title: 'World Cup 2026 Guide: Complete Stadium, City & Travel Planning',
+      title: 'Your Complete World Cup 2026 Travel Hub',
       description: descriptionText,
       url: `${siteUrl}/`
     });
