@@ -1,4 +1,5 @@
 import { BrowserRouter } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import React, { Suspense } from 'react'
 import { AppRoutes } from './router'
 import { useEffect } from 'react'
@@ -212,6 +213,7 @@ function App() {
           <AppRoutes />
         </Suspense>
       </ErrorBoundary>
+      <Analytics />
     </BrowserRouter>
   )
 }
