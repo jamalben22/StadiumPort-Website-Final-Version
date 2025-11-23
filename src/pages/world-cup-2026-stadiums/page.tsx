@@ -49,8 +49,8 @@ export default function VenuesPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     setPageMeta({
-      title: 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues',
-      description: 'Complete guide to all 16 World Cup 2026 stadiums including MetLife, SoFi, Estadio Azteca. Get transport routes, capacity, location, matchday tips for every venue.',
+      title: 'Explore All 16 World Cup 2026 Stadiums',
+      description: 'Select any venue below for comprehensive stadium guides—detailed seating maps, best transportation options, top nearby hotels, parking information, local attractions, food & drink options, security tips, and expert matchday advice.',
       url: `${siteUrl}/world-cup-2026-stadiums`
     })
 
@@ -68,7 +68,7 @@ export default function VenuesPage() {
       ogTitle.setAttribute('property', 'og:title');
       document.head.appendChild(ogTitle);
     }
-    ogTitle.setAttribute('content', 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues');
+    ogTitle.setAttribute('content', 'Explore All 16 World Cup 2026 Stadiums');
 
     let ogDesc = document.querySelector('meta[property="og:description"]') as HTMLMetaElement | null;
     if (!ogDesc) {
@@ -76,7 +76,7 @@ export default function VenuesPage() {
       ogDesc.setAttribute('property', 'og:description');
       document.head.appendChild(ogDesc);
     }
-    ogDesc.setAttribute('content', 'Complete guide to all 16 World Cup 2026 stadiums including MetLife, SoFi, Estadio Azteca. Get transport routes, capacity, location, matchday tips for every venue.');
+    ogDesc.setAttribute('content', 'Select any venue below for comprehensive stadium guides—detailed seating maps, best transportation options, top nearby hotels, parking information, local attractions, food & drink options, security tips, and expert matchday advice.');
     let ogImage = document.querySelector('meta[property="og:image"]');
     if (!ogImage) {
       ogImage = document.createElement('meta');
@@ -99,7 +99,7 @@ export default function VenuesPage() {
       twitterTitle.setAttribute('name', 'twitter:title');
       document.head.appendChild(twitterTitle);
     }
-    twitterTitle.setAttribute('content', 'World Cup 2026 Stadiums: Complete Guide to All 16 Venues');
+    twitterTitle.setAttribute('content', 'Explore All 16 World Cup 2026 Stadiums');
 
     let twitterDesc = document.querySelector('meta[name="twitter:description"]') as HTMLMetaElement | null;
     if (!twitterDesc) {
@@ -107,7 +107,15 @@ export default function VenuesPage() {
       twitterDesc.setAttribute('name', 'twitter:description');
       document.head.appendChild(twitterDesc);
     }
-    twitterDesc.setAttribute('content', 'Complete guide to all 16 World Cup 2026 stadiums including MetLife, SoFi, Estadio Azteca. Get transport routes, capacity, location, matchday tips for every venue.');
+    twitterDesc.setAttribute('content', 'Select any venue below for comprehensive stadium guides—detailed seating maps, best transportation options, top nearby hotels, parking information, local attractions, food & drink options, security tips, and expert matchday advice.');
+
+    let twitterCard = document.querySelector('meta[name="twitter:card"]') as HTMLMetaElement | null;
+    if (!twitterCard) {
+      twitterCard = document.createElement('meta');
+      twitterCard.setAttribute('name', 'twitter:card');
+      document.head.appendChild(twitterCard);
+    }
+    twitterCard.setAttribute('content', 'summary_large_image');
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -646,9 +654,9 @@ export default function VenuesPage() {
 
   const itemListSchema = generateItemListSchema(itemListItems);
   const collectionPageSchema = generateCollectionPageSchema({
-    name: 'World Cup 2026 Stadiums & Venues Guide',
+    name: 'Explore All 16 World Cup 2026 Stadiums',
     description:
-      'Complete guide to all 16 World Cup 2026 stadiums across USA, Canada, and Mexico. Explore capacity, location, transport, hotels, and matchday tips for each venue.',
+      'Select any venue below for comprehensive stadium guides—detailed seating maps, best transportation options, top nearby hotels, parking information, local attractions, food & drink options, security tips, and expert matchday advice.',
     url: `${siteUrl}/world-cup-2026-stadiums`,
     image: `${siteUrl}/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp`,
     items: itemListItems,

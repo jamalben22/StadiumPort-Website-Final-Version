@@ -56,7 +56,7 @@ export default function CitiesPage() {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
       title: 'World Cup 2026 Host Cities: Complete Travel Guide to All 16 Cities',
-      description: 'Complete guide to all 16 World Cup 2026 host cities. Explore New York, Los Angeles, Miami, Mexico City, Toronto, Vancouver and more. Find hotels, attractions, and travel tips.',
+      description: 'Explore every World Cup 2026 host city across the USA, Canada, and Mexico with expert guides covering accommodations near stadiums, public transport, top neighborhoods, safety tips, fan zones, local culture, and essential match-day planning.',
       url: `${siteUrl}/world-cup-2026-host-cities`
     });
     const ogImageUrl = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
@@ -79,8 +79,8 @@ export default function CitiesPage() {
   ]);
 
   const cityGuideSchema = generateCityGuideSchema(
-    'World Cup 2026 Host Cities',
-    'Complete guide to all 16 World Cup 2026 host cities across USA, Canada, and Mexico with travel information, hotels, and attractions.',
+    'World Cup 2026 Host Cities: Complete Travel Guide to All 16 Cities',
+    'Explore every World Cup 2026 host city across the USA, Canada, and Mexico with expert guides covering accommodations near stadiums, public transport, top neighborhoods, safety tips, fan zones, local culture, and essential match-day planning.',
     `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities`
   );
 
