@@ -137,7 +137,21 @@ export const generateStadiumSchema = (stadiumName: string, cityName: string, cap
     "@type": "SportsEvent",
     "name": "FIFA World Cup 2026",
     "startDate": "2026-06-11",
-    "endDate": "2026-07-19"
+    "endDate": "2026-07-19",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "organizer": {
+      "@type": "Organization",
+      "name": "FIFA",
+      "url": "https://www.fifa.com"
+    },
+    "location": {
+      "@type": "Place",
+      "name": stadiumName,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": cityName
+      }
+    }
   }
 });
 
