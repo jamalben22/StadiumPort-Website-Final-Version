@@ -61,7 +61,15 @@ export function Header() {
     // Other pages
     { type: 'page', title: 'Deals & Offers', path: '/deals', description: 'Best deals for World Cup 2026' },
     { type: 'page', title: 'Luxury Travel', path: '/luxury-travel', description: 'Premium World Cup experiences' },
-    { type: 'page', title: 'Travel Routes', path: '/travel-routes', description: 'Multi-city travel itineraries' }
+    { type: 'page', title: 'Travel Routes', path: '/travel-routes', description: 'Multi-city travel itineraries' },
+
+    // Articles
+    { type: 'article', title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options in host cities' },
+    { type: 'article', title: 'Complete Planning Checklist', path: '/world-cup-2026-travel-tips/complete-planning-checklist', description: 'Step-by-step checklist for planning flights, stays, transport, and matchdays' },
+    { type: 'article', title: 'Visa Requirements Guide', path: '/world-cup-2026-travel-tips/visa-requirements-guide', description: 'Who needs visas or ESTA, timelines, and official resources' },
+    { type: 'article', title: 'Transportation Guide', path: '/world-cup-2026-travel-tips/transportation-guide', description: 'Getting around host cities: metro, buses, PATH, rail and airport transfers' },
+    { type: 'article', title: 'Budget Planning Tool', path: '/world-cup-2026-travel-tips/budget-planning-tool', description: 'Estimate total costs by city, match type, and trip length' },
+    { type: 'article', title: 'Safety & Security Tips', path: '/world-cup-2026-travel-tips/safety-security-tips', description: 'Tournament safety essentials: neighborhoods, crowd strategy, and emergency contacts' }
   ];
 
   const filteredResults = searchQuery.length > 0 
@@ -70,6 +78,90 @@ export function Header() {
         item.description.toLowerCase().includes(searchQuery.toLowerCase())
       ).slice(0, 8)
     : [];
+
+  const smartSuggestions = (() => {
+    if (!searchQuery) return [] as typeof searchData;
+    const q = searchQuery.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
+    if (q.length === 0) return [] as typeof searchData;
+    const aliasMap: Record<string, { title: string }[]> = {
+      nyc: [{ title: 'New York / New Jersey' }],
+      'new york': [{ title: 'New York / New Jersey' }],
+      jersey: [{ title: 'New York / New Jersey' }],
+      metlife: [{ title: 'New York / New Jersey' }],
+      la: [{ title: 'Los Angeles' }],
+      'los angeles': [{ title: 'Los Angeles' }],
+      sofi: [{ title: 'Los Angeles' }],
+      rose: [{ title: 'Los Angeles' }],
+      stadium: [{ title: 'MetLife Stadium' }, { title: 'SoFi Stadium' }],
+      hotel: [{ title: 'Accommodation' }],
+      accommodation: [{ title: 'Accommodation' }],
+      stay: [{ title: 'Accommodation' }],
+      deals: [{ title: 'Deals & Offers' }],
+      offer: [{ title: 'Deals & Offers' }],
+      transport: [{ title: 'Transportation' }],
+      transit: [{ title: 'Transportation' }],
+      tips: [{ title: 'Travel Tips' }],
+      guide: [{ title: 'Travel Tips' }],
+      safety: [{ title: 'Safety Guide' }],
+      wifi: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
+      sim: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
+      esim: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
+      checklist: [{ title: 'Complete Planning Checklist' }],
+      visa: [{ title: 'Visa Requirements Guide' }],
+      budget: [{ title: 'Budget Planning Tool' }],
+      money: [{ title: 'Budget Planning Tool' }],
+      transportguide: [{ title: 'Transportation Guide' }],
+      path: [{ title: 'Transportation Guide' }],
+      metro: [{ title: 'Transportation Guide' }],
+      security: [{ title: 'Safety & Security Tips' }]
+    };
+    const typeWeight: Record<string, number> = { city: 2.5, stadium: 2, guide: 1.5, page: 1 };
+    const exactBoost = 8;
+    const startsBoost = 5;
+    const includeBoost = 3;
+    const descBoost = 2;
+    const tokenBoost = 1;
+    const byTitle: Record<string, typeof searchData[number]> = {};
+    searchData.forEach(it => { byTitle[it.title.toLowerCase()] = it; });
+    const aliasItems: typeof searchData = [];
+    q.forEach(t => {
+      const aliases = aliasMap[t];
+      if (aliases) {
+        aliases.forEach(a => {
+          const match = byTitle[a.title.toLowerCase()];
+          if (match && !aliasItems.find(x => x.path === match.path)) aliasItems.push(match);
+        });
+      }
+    });
+    const scored = searchData.map(item => {
+      const title = item.title.toLowerCase();
+      const desc = item.description.toLowerCase();
+      let score = 0;
+      q.forEach(t => {
+        if (title === t) score += exactBoost;
+        else if (title.startsWith(t)) score += startsBoost;
+        else if (title.includes(t)) score += includeBoost;
+        if (desc.includes(t)) score += descBoost;
+        score += tokenBoost;
+      });
+      score *= typeWeight[item.type] || 1;
+      return { item, score };
+    });
+    const pool: typeof searchData = [];
+    scored.sort((a, b) => b.score - a.score).forEach(s => {
+      if (s.score > 0 && !pool.find(x => x.path === s.item.path)) pool.push(s.item);
+    });
+    aliasItems.forEach(ai => { if (!pool.find(x => x.path === ai.path)) pool.unshift(ai); });
+    const curated: typeof searchData = [
+      byTitle['new york / new jersey'],
+      byTitle['los angeles'],
+      byTitle['travel tips'],
+      byTitle['accommodation'],
+      byTitle['deals & offers']
+    ].filter(Boolean) as typeof searchData;
+    curated.forEach(ci => { if (!pool.find(x => x.path === ci.path)) pool.push(ci); });
+    return pool.slice(0, 8);
+  })();
 
   const handleSearchSelect = (path: string) => {
     setIsSearchOpen(false);
@@ -82,6 +174,7 @@ export function Header() {
       case 'city': return 'ri-map-pin-line';
       case 'stadium': return 'ri-building-line';
       case 'guide': return 'ri-book-open-line';
+      case 'article': return 'ri-article-line';
       default: return 'ri-pages-line';
     }
   };
@@ -91,6 +184,7 @@ export function Header() {
       case 'city': return 'text-emerald-500 bg-emerald-500/10';
       case 'stadium': return 'text-blue-500 bg-blue-500/10';
       case 'guide': return 'text-purple-500 bg-purple-500/10';
+      case 'article': return 'text-amber-600 bg-amber-500/10';
       default: return 'text-gold-500 bg-gold-500/10';
     }
   };
@@ -267,6 +361,7 @@ export function Header() {
                 onClick={() => setIsSearchOpen(true)}
                 className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
                 aria-label="Search"
+                title="No results? Suggest something"
               >
                 <i className="ri-search-line text-lg"></i>
               </button>
@@ -456,8 +551,39 @@ export function Header() {
                   <p className="text-sm text-slate-500 dark:text-slate-400">Search cities, stadiums, travel guides...</p>
                 </div>
               ) : filteredResults.length === 0 ? (
-                <div className="p-6 text-center">
-                  <p className="text-sm text-slate-500 dark:text-slate-400">No results found</p>
+                <div className="p-6">
+                  <div className="text-center mb-4">
+                    <p className="text-sm text-slate-500 dark:text-slate-400">Can’t find what you’re looking for? Here are some suggestions:</p>
+                  </div>
+                  {smartSuggestions.length > 0 ? (
+                    <div className="divide-y divide-slate-200 dark:divide-slate-800 rounded-xl border border-slate-200 dark:border-slate-800">
+                      {smartSuggestions.map((result, index) => (
+                        <button
+                          key={index}
+                          onClick={() => handleSearchSelect(result.path)}
+                          className="w-full px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs ${getTypeColor(result.type)}`}>
+                              <i className={`${getTypeIcon(result.type)}`}></i>
+                            </div>
+                            <div className="flex-1">
+                              <div className="text-sm font-medium text-slate-900 dark:text-white">
+                                {result.title}
+                              </div>
+                              <div className="text-xs text-slate-500 dark:text-slate-400">
+                                {result.description}
+                              </div>
+                            </div>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="text-center">
+                      <p className="text-sm text-slate-500 dark:text-slate-400">No results. <Link to="/contact" className="text-emerald-600 dark:text-emerald-400 hover:underline">Suggest something</Link>.</p>
+                    </div>
+                  )}
                 </div>
               ) : (
                 <div className="py-2">
