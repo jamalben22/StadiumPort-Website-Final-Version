@@ -704,11 +704,15 @@ export default function TravelTipsPage() {
   ];
 
   const categories = [
-    { id: 'all', name: 'All Tips', icon: 'ri-list-check' },
-    { id: 'accommodation', name: 'Accommodation', icon: 'ri-hotel-line' },
-    { id: 'transportation', name: 'Flights & Transport', icon: 'ri-flight-takeoff-line' },
-    { id: 'planning', name: 'Planning', icon: 'ri-calendar-line' },
-    { id: 'booking', name: 'Booking', icon: 'ri-bookmark-line' }
+    { id: 'all', name: 'All Travel Tips', icon: 'ri-list-check' },
+    { id: 'accommodation', name: 'Accommodations & Hotels', icon: 'ri-hotel-line' },
+    { id: 'transportation', name: 'Flights & Transportation', icon: 'ri-flight-takeoff-line' },
+    { id: 'planning', name: 'Trip Planning', icon: 'ri-calendar-line' },
+    { id: 'booking', name: 'Smart Booking Strategies', icon: 'ri-bookmark-line' },
+    { id: 'budgeting', name: 'Money & Budgeting', icon: 'ri-money-dollar-circle-line' },
+    { id: 'safety', name: 'Safety & Security', icon: 'ri-shield-check-line' },
+    { id: 'visa', name: 'Visa & Documentation', icon: 'ri-id-card-line' },
+    { id: 'culture', name: 'Local Culture & Customs', icon: 'ri-global-line' }
   ];
 
   const filteredTips = travelTips.filter(tip => {
@@ -862,14 +866,11 @@ export default function TravelTipsPage() {
             {/* Premium Title - Apple Typography */}
             <div className="mb-12">
               <h1 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-tight">
-                Travel Smarter
-                <span className="block text-emerald-600 dark:text-emerald-400 mt-1 md:mt-2">
-                  Save More
-                </span>
+                World Cup 2026 Travel Tips: Save Money & Plan Smarter
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-                Expert strategies from seasoned tournament travelers. Master the art of World Cup travel with proven techniques to maximize your experience across all 16 host cities.
+                Expert strategies from veteran World Cup travelers. Master budget optimization, booking timing, transportation hacks, accommodation deals, and insider tips to maximize your experience across all 16 host cities in USA, Canada, and Mexico.
               </p>
             </div>
 
@@ -880,8 +881,8 @@ export default function TravelTipsPage() {
               <div className="group relative text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-700">$1,500+</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Average Savings</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-700">$2,500+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Average Trip Savings</div>
                 </div>
               </div>
 
@@ -889,8 +890,8 @@ export default function TravelTipsPage() {
               <div className="group relative text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-all duration-700">47</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Expert Tips</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-all duration-700">75+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Expert Travel Tips</div>
                 </div>
               </div>
 
@@ -899,7 +900,7 @@ export default function TravelTipsPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
                   <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-700">16</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Cities Covered</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Host Cities Covered</div>
                 </div>
               </div>
 
@@ -907,8 +908,8 @@ export default function TravelTipsPage() {
               <div className="group relative text-center">
                 <div className="absolute inset-0 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-amber-200/50 dark:hover:border-amber-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-amber-500/10 dark:hover:shadow-amber-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-all duration-700">Proven</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Strategies</div>
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-all duration-700">100%</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Proven Strategies</div>
                 </div>
               </div>
 
@@ -921,11 +922,11 @@ export default function TravelTipsPage() {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 md:mb-20">
               <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
-                Complete World Cup 2026 Travel Guide Library
+                Your Complete World Cup 2026 Travel Tips Library
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-                Browse all 47 expert tips organized by category. From budget strategies to safety advice everything you need to plan your perfect World Cup journey.
+                Browse 75+ expert travel tips organized by category—from budget hacks and booking strategies to safety protocols and local transportation. Everything you need to plan your perfect World Cup 2026 journey across USA, Canada, and Mexico.
               </p>
             </div>
             <div className="grid lg:grid-cols-1 gap-8">
@@ -934,13 +935,13 @@ export default function TravelTipsPage() {
                   <div className="text-center mb-12 md:mb-16">
                     <div className="inline-flex items-center space-x-3 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-8 py-4 mb-6">
                       <i className="ri-filter-3-line text-emerald-600 text-lg"></i>
-                      <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering</span>
+                      <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering System</span>
                     </div>
                     <h3 className="font-space font-bold text-3xl md:text-4xl text-navy-900 dark:text-white mb-6 tracking-tight">
-                      Find What You Need
+                      Find Exactly What You Need Fast
                     </h3>
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-                      Browse by category to get the tips that matter.
+                      Filter by category to instantly access the tips that matter most for your World Cup 2026 planning.
                     </p>
                   </div>
                   <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
@@ -953,8 +954,7 @@ export default function TravelTipsPage() {
                               <i className="ri-bookmark-line text-white text-xl"></i>
                             </div>
                             <div>
-                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Categories</h4>
-                              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Choose your topic of interest</p>
+                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Browse by Category</h4>
                             </div>
                           </div>
                           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -983,15 +983,14 @@ export default function TravelTipsPage() {
                               <i className="ri-search-line text-white text-xl"></i>
                             </div>
                             <div>
-                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Results</h4>
-                              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">Matching your selection</p>
+                              <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Live Results</h4>
                             </div>
                           </div>
                           <div className="group relative bg-gradient-to-br from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 hover:scale-105 hover:shadow-xl">
                             <div className="text-center">
                               <div className="text-4xl md:text-5xl font-space font-bold text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
-                              <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">of {travelTips.length} tips match</div>
-                              <div className="text-sm text-slate-500 dark:text-slate-500">Updated in real-time</div>
+                              <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">Currently Displaying</div>
+                              <div className="text-sm text-slate-500 dark:text-slate-500">Real-Time Filtering</div>
                             </div>
                           </div>
                         </div>
@@ -1071,10 +1070,10 @@ export default function TravelTipsPage() {
                       <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                     </div>
                     <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
-                      Complete Your World Cup 2026 Planning
+                      Complete Your World Cup 2026 Travel Planning
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
-                      Ready to dive deeper? Explore our comprehensive guides for every aspect of your World Cup journey.
+                      Ready to build your perfect tournament experience? Explore our comprehensive guides covering every aspect of your World Cup 2026 journey across USA, Canada, and Mexico.
                     </p>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
@@ -1086,13 +1085,13 @@ export default function TravelTipsPage() {
                           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                           </div>
-                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Match Day Essentials</h3>
+                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Stadium & Match Day Guides</h3>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                          Get stadium-specific guides covering transport, parking, matchday tips, and what makes each venue special—from MetLife's Final to Estadio Azteca's legendary atmosphere.
+                          Get venue-specific intel for all 16 stadiums—seating charts, transportation access, parking options, security protocols, nearby hotels, and what makes each venue unique from MetLife Stadium's Final to Estadio Azteca's historic atmosphere.
                         </p>
                         <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
-                          <span>Discover All Stadiums</span>
+                          <span>Explore All 16 Stadiums</span>
                           <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
@@ -1105,13 +1104,13 @@ export default function TravelTipsPage() {
                           <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-purple-500/30 group-hover:shadow-purple-500/50 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                           </div>
-                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Destination Guides</h3>
+                          <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Complete Host City Guides  </h3>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                          Discover where to stay, what to do, local transportation, safety tips, and cultural experiences in every World Cup city from Vancouver to Mexico City.
+                          Discover the best neighborhoods, top accommodations, public transportation systems, must-see attractions, local dining scenes, safety protocols, and cultural experiences in every World Cup 2026 host city from Vancouver to Mexico City.
                         </p>
                         <a href="/world-cup-2026-host-cities" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
-                          <span>Explore Host Cities</span>
+                          <span>Browse All Host Cities</span>
                           <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
@@ -1122,8 +1121,8 @@ export default function TravelTipsPage() {
                       <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-emerald-500/30">
                         <i className="ri-tools-line text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white"></i>
                       </div>
-                      <h3 className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-900 dark:text-white mb-4 sm:mb-6 tracking-tight">Essential Planning Resources</h3>
-                      <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto font-light">Everything you need to plan your perfect World Cup trip:</p>
+                      <h3 className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-900 dark:text-white mb-4 sm:mb-6 tracking-tight">Essential Planning Tools & Resources</h3>
+                      <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto font-light">Everything you need to organize your perfect World Cup 2026 trip:</p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                       <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
@@ -1132,9 +1131,9 @@ export default function TravelTipsPage() {
                           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-blue-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-file-list-3-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Complete Planning Checklist</h4>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Ultimate Planning Checklist</h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Step-by-step preparation guide covering tickets, visas, accommodation, transport, and matchday essentials.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Complete step-by-step preparation timeline—tickets, visas, flights, accommodations, insurance, packing, and matchday essentials from 6 months out to kickoff.</p>
                         <a href="/world-cup-2026-travel-tips/complete-planning-checklist" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Get Checklist</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1146,11 +1145,11 @@ export default function TravelTipsPage() {
                           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-purple-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-passport-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Visa Requirements Guide</h4>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Visa & Entry Requirements  </h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Entry requirements, application processes, and processing times for USA, Canada, and Mexico.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Comprehensive entry requirements, application processes, processing times, and border crossing tips for USA, Canada, and Mexico.</p>
                         <a href="/world-cup-2026-travel-tips/visa-requirements-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
-                          <span>Check Requirements</span>
+                          <span>Check Visa Requirements</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
@@ -1160,9 +1159,9 @@ export default function TravelTipsPage() {
                           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-green-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-calculator-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Budget Planning Calculator</h4>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Trip Budget Calculator</h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Estimate your trip costs with our comprehensive budget breakdown by travel style.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Estimate your total costs with our detailed budget planner covering flights, hotels, tickets, food, transport, and activities—customized by travel style (budget/mid-range/luxury).</p>
                         <a href="/world-cup-2026-travel-tips/budget-planning-tool" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Calculate Your Budget</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1174,11 +1173,11 @@ export default function TravelTipsPage() {
                           <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-6 shadow-2xl shadow-orange-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-hotel-line text-white text-lg sm:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-lg sm:text-xl text-navy-900 dark:text-white tracking-tight">Accommodation Guide</h4>
+                          <h4 className="font-space font-bold text-lg sm:text-xl text-navy-900 dark:text-white tracking-tight">Accommodation Booking Strategy</h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed font-light">Find the best hotels, neighborhoods, and booking strategies for all 16 host cities.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed font-light">Find the best hotels near stadiums, fan-friendly neighborhoods, booking timing strategies, and money-saving tips for all 16 host cities.</p>
                         <a href="/world-cup-2026-travel-tips/accommodation-finder" className="inline-flex items-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center">
-                          <span>Find Hotels</span>
+                          <span>Find Best Hotels</span>
                           <i className="ri-arrow-right-line ml-1"></i>
                         </a>
                       </div>
@@ -1188,11 +1187,11 @@ export default function TravelTipsPage() {
                           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-red-500 via-red-600 to-red-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-red-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-subway-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Transportation Guide</h4>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Transportation Master Guide</h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Navigate public transit, rental cars, flights, and trains between World Cup cities.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Navigate airports, public transit systems, rental cars, intercity trains, and flights between World Cup cities—including USA-Canada-Mexico border crossings.</p>
                         <a href="/world-cup-2026-travel-tips/transportation-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
-                          <span>Plan Transport</span>
+                          <span>Plan Your Transport</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
@@ -1202,11 +1201,11 @@ export default function TravelTipsPage() {
                           <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-indigo-500/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-shield-check-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
-                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Safety & Security Tips</h4>
+                          <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Safety & Security Hub</h4>
                         </div>
-                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Stay safe across all three countries with city-specific advice and emergency contacts.</p>
+                        <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Stay safe across all three countries with city-specific safety protocols, emergency contacts, travel insurance recommendations, and what to avoid.</p>
                         <a href="/world-cup-2026-travel-tips/safety-security-tips" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
-                          <span>Read Safety Tips</span>
+                          <span>View Safety Guide</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
@@ -1218,7 +1217,7 @@ export default function TravelTipsPage() {
               <WorldClassFAQ 
                 faqs={faqData}
                 title="Frequently Asked Questions About World Cup 2026 Travel"
-                subtitle="Everything you need to know about planning your perfect World Cup 2026 journey, from booking flights to staying safe."
+                subtitle="Get answers to the most common questions about planning your World Cup 2026 trip—flights, accommodations, visas, tickets, budgets, transportation, safety, and travel tips for USA, Canada, and Mexico."
                 showCategories={true}
                 showSearch={true}
                 locationSpecific={true}
@@ -1443,10 +1442,10 @@ export default function TravelTipsPage() {
                     <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                   </div>
                   <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
-                    Complete Your World Cup 2026 Planning
+                    Complete Your World Cup 2026 Travel Planning
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
-                    Ready to dive deeper? Explore our comprehensive guides for every aspect of your World Cup journey.
+                    Ready to build your perfect tournament experience? Explore our comprehensive guides covering every aspect of your World Cup 2026 journey across USA, Canada, and Mexico.
                   </p>
                 </div>
 
@@ -1465,13 +1464,13 @@ export default function TravelTipsPage() {
                           <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                         </div>
                         <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                          Match Day Essentials
+                          Stadium & Match Day Guides
                         </h3>
                       </div>
                       
                       {/* Premium Description */}
                       <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                        Get stadium-specific guides covering transport, parking, matchday tips, and what makes each venue special—from MetLife's Final to Estadio Azteca's legendary atmosphere.
+                        Get venue-specific intel for all 16 stadiums—seating charts, transportation access, parking options, security protocols, nearby hotels, and what makes each venue unique from MetLife Stadium's Final to Estadio Azteca's historic atmosphere.
                       </p>
                       
                       {/* Luxury CTA Button */}
@@ -1479,7 +1478,7 @@ export default function TravelTipsPage() {
                         href="/world-cup-2026-stadiums" 
                         className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto"
                       >
-                        <span>Discover All Stadiums</span>
+                        <span>Explore All 16 Stadiums</span>
                         <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                       </a>
                     </div>
@@ -1498,13 +1497,13 @@ export default function TravelTipsPage() {
                           <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                         </div>
                         <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                          Destination Guides
+                          Complete Host City Guides  
                         </h3>
                       </div>
                       
                       {/* Premium Description */}
                       <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
-                        Discover where to stay, what to do, local transportation, safety tips, and cultural experiences in every World Cup city from Vancouver to Mexico City.
+                        Discover the best neighborhoods, top accommodations, public transportation systems, must-see attractions, local dining scenes, safety protocols, and cultural experiences in every World Cup 2026 host city from Vancouver to Mexico City.
                       </p>
                       
                       {/* Luxury CTA Button */}
@@ -1512,7 +1511,7 @@ export default function TravelTipsPage() {
                         href="/world-cup-2026-host-cities" 
                         className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 text-white shadow-2xl shadow-purple-500/30 hover:shadow-3xl hover:shadow-purple-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto"
                       >
-                        <span>Explore Host Cities</span>
+                        <span>Browse All Host Cities</span>
                         <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                       </a>
                     </div>
