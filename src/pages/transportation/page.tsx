@@ -62,8 +62,8 @@ export default function TransportationPage() {
     {
       id: 1,
       title: 'New York / New Jersey World Cup 2026: Your Complete Getting Around Guide',
-      excerpt: 'Comprehensive guide to booking flights, finding deals, and navigating airports in all 16 World Cup host cities.',
-      category: 'Flights',
+      excerpt: 'Navigate NY/NJ like a local: subway systems, PATH trains, NJ Transit, buses, taxis, ride-sharing to MetLife Stadium, parking options, and intercity connections to other World Cup cities.',
+      category: 'City Transportation Guide',
       author: 'Michael Rodriguez',
       readTime: '18 min read',
       image: 'https://readdy.ai/api/search-image?query=modern%20airport%20terminal%20with%20departure%20boards%2C%20travelers%20with%20luggage%2C%20clean%20contemporary%20design%2C%20international%20travel%20atmosphere%2C%20professional%20aviation%20setting&width=600&height=400&seq=trans1&orientation=landscape',
@@ -82,8 +82,8 @@ export default function TransportationPage() {
     {
       id: 2,
       title: 'Los Angeles World Cup 2026: Your Complete Transportation Guide to SoFi Stadium',
-      excerpt: 'Navigate efficient train systems connecting host cities, including booking tips, schedules, and comfort classes.',
-      category: 'Trains',
+      excerpt: 'Master LA transit to SoFi Stadium: Metro rail lines, LAX Flyaway, shuttle services, ride-sharing pickup zones, parking lots, traffic timing, and getting around Los Angeles during World Cup 2026.',
+      category: 'Stadium Access & Local Transit',
       author: 'Sarah Chen',
       readTime: '14 min read',
       image: 'https://readdy.ai/api/search-image?query=modern%20high-speed%20train%20at%20station%20platform%2C%20sleek%20design%2C%20comfortable%20passenger%20seating%2C%20efficient%20rail%20transportation%2C%20contemporary%20travel%20infrastructure&width=600&height=400&seq=trans2&orientation=landscape',
@@ -102,8 +102,8 @@ export default function TransportationPage() {
     {
       id: 3,
       title: 'Miami World Cup 2026: Your Complete Transportation Guide to Hard Rock Stadium',
-      excerpt: 'Affordable bus routes between host cities with comfort ratings, booking platforms, and money-saving strategies.',
-      category: 'Buses',
+      excerpt: 'Navigate Miami to Hard Rock Stadium: Metrorail, Metromover, Metrobus routes, shuttle services from South Beach, ride-sharing zones, parking options, traffic patterns, and getting around Miami during World Cup 2026.',
+      category: 'Stadium Access & Local Transit',
       author: 'David Thompson',
       readTime: '12 min read',
       image: 'https://readdy.ai/api/search-image?query=comfortable%20modern%20bus%20interior%20with%20reclining%20seats%2C%20clean%20design%2C%20budget%20travel%20option%2C%20efficient%20intercity%20transportation%2C%20passenger%20comfort&width=600&height=400&seq=trans3&orientation=landscape',
@@ -122,8 +122,8 @@ export default function TransportationPage() {
     {
       id: 4,
       title: 'Dallas World Cup 2026: Your Complete Transportation Guide to AT&T Stadium',
-      excerpt: 'Complete car rental comparison, insurance options, driving tips, and scenic routes between host cities.',
-      category: 'Car Rentals',
+      excerpt: 'Navigate Dallas-Fort Worth to AT&T Stadium: DART rail system, TRE commuter train, buses, ride-sharing, rental cars, highway routes, parking facilities, and getting around DFW Metroplex during World Cup 2026.',
+      category: 'Stadium Access & Local Transit',
       author: 'Emma Wilson',
       readTime: '16 min read',
       image: 'https://readdy.ai/api/search-image?query=modern%20car%20rental%20facility%20with%20various%20vehicles%2C%20professional%20service%20counter%2C%20clean%20automotive%20showroom%2C%20travel%20convenience%2C%20rental%20car%20selection&width=600&height=400&seq=trans4&orientation=landscape',
@@ -143,8 +143,8 @@ export default function TransportationPage() {
     {
       id: 5,
       title: 'Kansas City World Cup 2026: Your Complete Transportation Guide to Arrowhead Stadium',
-      excerpt: 'Compare taxis, rideshares, shuttles, and public transport from airports to city centers and stadiums.',
-      category: 'Airport Transfers',
+      excerpt: 'Navigate Kansas City to Arrowhead Stadium: RideKC bus routes, Metro Area Express, ride-sharing options, rental cars, parking lots, tailgating areas, and getting around Kansas City during World Cup 2026.',
+      category: 'Stadium Access & Local Transit',
       author: 'James Park',
       readTime: '10 min read',
       image: 'https://readdy.ai/api/search-image?query=airport%20shuttle%20service%20with%20professional%20driver%2C%20comfortable%20passenger%20seating%2C%20efficient%20transfer%20vehicle%2C%20travel%20convenience%2C%20airport%20transportation&width=600&height=400&seq=trans5&orientation=landscape',
@@ -164,8 +164,8 @@ export default function TransportationPage() {
     {
       id: 6,
       title: 'Houston World Cup 2026: Your Complete Transportation Guide to NRG Stadium',
-      excerpt: 'Master metro systems, buses, trams, and bike-sharing in each host city with apps, tickets, and insider tips.',
-      category: 'Local Transport',
+      excerpt: 'Navigate Houston to NRG Stadium: METRORail light rail, METRO buses, park-and-ride locations, ride-sharing pickup zones, rental cars, parking facilities, and getting around Houston during World Cup 2026.',
+      category: 'Stadium Access & Local Transit',
       author: 'Lisa Martinez',
       readTime: '13 min read',
       image: 'https://readdy.ai/api/search-image?query=modern%20metro%20station%20with%20clean%20platforms%2C%20digital%20information%20displays%2C%20efficient%20urban%20transportation%2C%20contemporary%20public%20transit%20design%2C%20passenger%20convenience&width=600&height=400&seq=trans6&orientation=landscape',
@@ -413,51 +413,56 @@ export default function TransportationPage() {
             
             {/* Premium Title - Apple Typography */}
             <div className="mb-12">
-              <h1 className="font-space font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-slate-900 dark:text-white mb-6 tracking-tight leading-tight">
-                Getting Around
+              <h1 className="font-space font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-slate-900 dark:text-white mb-4 tracking-tight leading-tight">
+                World Cup 2026 Transportation Guide: Travel Between Cities & Stadiums
               </h1>
+              <div className="text-center mb-4">
+                <span className="font-inter text-lg md:text-xl text-slate-700 dark:text-slate-300 font-medium">
+                  Getting Around World Cup 2026 in USA, Canada & Mexico
+                </span>
+              </div>
               <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
-                Navigate World Cup 2026 with confidence. Complete transportation guides for every host city.
+                Navigate all 16 host cities with confidence. Complete transportation guides covering flights, trains, buses, public transit, ride-sharing, rental cars, and stadium access—with route planning, cost comparisons, and money-saving strategies.
               </p>
             </div>
 
             {/* Apple-Level Premium Stats - Minimal Luxury Design */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 lg:gap-8 max-w-5xl mx-auto items-stretch">
               
               {/* Cities Card - Apple Emerald */}
-              <div className="group relative text-center">
+              <div className="group relative text-center h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Cities</div>
+                <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5 overflow-hidden">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-2 md:mb-3 leading-none group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs md:text-sm font-medium tracking-wide uppercase">Host Cities</div>
                 </div>
               </div>
 
               {/* Savings Card - Apple Purple */}
-              <div className="group relative text-center">
+              <div className="group relative text-center h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-violet-50 dark:from-purple-900/20 dark:to-violet-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">40%</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Max Savings</div>
+                <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-purple-200/50 dark:hover:border-purple-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-purple-500/10 dark:hover:shadow-purple-500/5 overflow-hidden">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-2 md:mb-3 leading-none group-hover:from-purple-600 group-hover:to-violet-600 dark:group-hover:from-purple-400 dark:group-hover:to-violet-400 transition-all duration-700">Save Up to 50%</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs md:text-sm font-medium tracking-wide uppercase">Smart Booking</div>
                 </div>
               </div>
 
               {/* Routes Card - Apple Blue */}
-              <div className="group relative text-center">
+              <div className="group relative text-center h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">200+</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Routes</div>
+                <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 overflow-hidden">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-2 md:mb-3 leading-none group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">300+</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs md:text-sm font-medium tracking-wide uppercase">Transit Routes</div>
                 </div>
               </div>
 
               {/* Support Card - Apple Orange */}
-              <div className="group relative text-center">
+              <div className="group relative text-center h-full">
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-900/20 dark:to-amber-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">24/7</div>
-                  <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Support</div>
+                <div className="relative h-full flex flex-col items-center justify-center p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-orange-200/50 dark:hover:border-orange-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-orange-500/10 dark:hover:shadow-orange-500/5 overflow-hidden">
+                  <div className="text-3xl sm:text-4xl md:text-5xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-2 md:mb-3 leading-none group-hover:from-orange-600 group-hover:to-amber-600 dark:group-hover:from-orange-400 dark:group-hover:to-amber-400 transition-all duration-700">24/7</div>
+                  <div className="text-slate-600 dark:text-slate-400 font-inter text-xs md:text-sm font-medium tracking-wide uppercase">Travel Support</div>
                 </div>
               </div>
 
@@ -471,11 +476,11 @@ export default function TransportationPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 md:mb-20">
             <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
-              Essential Transport Guides
+              Complete World Cup 2026 Transportation Resources
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
             <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
-              Everything you need to know about getting around for World Cup 2026.
+              Master every aspect of travel for World Cup 2026—from international flights and intercity connections to local public transit and stadium access. Comprehensive guides covering all transport options across USA, Canada, and Mexico.
             </p>
           </div>
 
@@ -509,12 +514,7 @@ export default function TransportationPage() {
                     </div>
                   </div>
                   
-                  {/* Apple-Level Premium Savings Badge - Top Right */}
-                  <div className="absolute top-4 right-4">
-                    <div className="bg-gradient-to-r from-emerald-500 to-teal-500 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-bold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:shadow-md hover:from-emerald-600 hover:to-teal-600 transition-all duration-300">
-                      {guide.savings}
-                    </div>
-                  </div>
+                  
                 </div>
 
                 {/* Premium Content Section - Apple Typography */}
@@ -527,24 +527,7 @@ export default function TransportationPage() {
                     {guide.excerpt}
                   </p>
                   
-                  {/* Apple-Level Premium Author & Read Time Card */}
-                  <div className="bg-slate-50/50 dark:bg-slate-800/30 rounded-2xl p-4 md:p-6 mb-6 md:mb-8 border border-slate-200/50 dark:border-slate-700/30 group-hover:bg-slate-50/70 dark:group-hover:bg-slate-800/50 transition-all duration-500">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
-                          <i className="ri-user-line text-white text-sm"></i>
-                        </div>
-                        <div>
-                          <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Author</div>
-                          <div className="font-semibold text-navy-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">{guide.author}</div>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Read Time</div>
-                        <div className="font-semibold text-emerald-600 group-hover:text-emerald-700 transition-colors duration-500">{guide.readTime}</div>
-                      </div>
-                    </div>
-                  </div>
+                  
                   
                   {/* Apple-Level Premium Button - Apple Style */}
                   <a 
