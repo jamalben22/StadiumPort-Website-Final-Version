@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { OptimizedImage } from '../base/OptimizedImage';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface LiveStatsProps {
@@ -61,117 +62,46 @@ interface CountdownState {
 const AnimatedCounter: React.FC<{ 
   value: number; 
   duration?: number; 
-  startValue?: number;
   enableGlow?: boolean;
-}> = ({ value, duration = 3, startValue, enableGlow = true }) => {
-  const [displayValue, setDisplayValue] = useState(startValue || Math.max(0, value - Math.floor(value * 0.05)));
-  const [hasAnimated, setHasAnimated] = useState(false);
+}> = ({ value, duration = 0.6, enableGlow = true }) => {
+  const [displayValue, setDisplayValue] = useState(value);
   const [showGlow, setShowGlow] = useState(false);
-  const ref = useRef<HTMLSpanElement>(null);
-  const previousValueRef = useRef(startValue || Math.max(0, value - Math.floor(value * 0.05)));
-  const animationRef = useRef<number | null>(null);
+  const previousValueRef = useRef(value);
 
-  // Apple-level premium counting animation - ultra-smooth with perfect easing
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
-          setHasAnimated(true);
-          let startTimestamp: number | null = null;
-          const startVal = startValue || Math.max(0, value - Math.floor(value * 0.05));
-          const endValue = value;
-          const difference = endValue - startVal;
-          
-          // Premium glow effect on initial animation - subtle and elegant
-          if (enableGlow && difference > 0) {
-            setShowGlow(true);
-            setTimeout(() => setShowGlow(false), 1200);
-          }
-          
-          const step = (timestamp: number) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / (duration * 1000), 1);
-            
-            // Apple-level easing - smooth acceleration and deceleration
-            const easeInOutQuart = progress < 0.5 
-              ? 8 * progress * progress * progress * progress 
-              : 1 - Math.pow(-2 * progress + 2, 4) / 2;
-            
-            const currentValue = Math.floor(easeInOutQuart * difference + startVal);
-            
-            setDisplayValue(currentValue);
-            
-            if (progress < 1) {
-              animationRef.current = requestAnimationFrame(step);
-            } else {
-              setDisplayValue(endValue);
-            }
-          };
-          
-          animationRef.current = requestAnimationFrame(step);
-        }
-      },
-      { threshold: 0.2, rootMargin: "-30px" }
-    );
+    if (value === previousValueRef.current) return;
+    const startValue = displayValue;
+    const endValue = value;
+    const difference = endValue - startValue;
+    const updateDuration = duration * 1000;
+    let startTimestamp: number | null = null;
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      observer.disconnect();
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
+    const updateStep = (timestamp: number) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / updateDuration, 1);
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const currentValue = Math.floor(easeOutCubic * difference + startValue);
+      setDisplayValue(currentValue);
+      if (progress < 1) {
+        requestAnimationFrame(updateStep);
+      } else {
+        setDisplayValue(endValue);
       }
     };
-  }, [value, duration, hasAnimated, startValue, enableGlow]);
 
-  // Real-time updates with premium micro-animations
-  useEffect(() => {
-    let glowTimeout: ReturnType<typeof setTimeout> | undefined;
-    if (hasAnimated && value !== previousValueRef.current) {
-      // Smooth transition for live updates - not immediate
-      const startValue = displayValue;
-      const endValue = value;
-      const difference = endValue - startValue;
-      const updateDuration = 800; // Smooth 800ms transition
-      let startTimestamp: number | null = null;
-      
-      const updateStep = (timestamp: number) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / updateDuration, 1);
-        
-        // Smooth easing for live updates
-        const easeOutCubic = 1 - Math.pow(1 - progress, 3);
-        const currentValue = Math.floor(easeOutCubic * difference + startValue);
-        
-        setDisplayValue(currentValue);
-        
-        if (progress < 1) {
-          requestAnimationFrame(updateStep);
-        } else {
-          setDisplayValue(endValue);
-        }
-      };
-      
-      requestAnimationFrame(updateStep);
-      
-      // Subtle glow effect for live updates - minimal and elegant
-      if (enableGlow && value > previousValueRef.current) {
-        setShowGlow(true);
-        glowTimeout = setTimeout(() => setShowGlow(false), 600);
-      }
-      
-      previousValueRef.current = value;
+    requestAnimationFrame(updateStep);
+
+    if (enableGlow && value > previousValueRef.current) {
+      setShowGlow(true);
+      const t = setTimeout(() => setShowGlow(false), 500);
+      return () => clearTimeout(t);
     }
-    return () => {
-      if (glowTimeout) clearTimeout(glowTimeout);
-    };
-  }, [value, hasAnimated, enableGlow, displayValue]);
+
+    previousValueRef.current = value;
+  }, [value, duration, enableGlow, displayValue]);
 
   return (
     <span 
-      ref={ref} 
       className={`transition-all duration-300 ${showGlow ? 'drop-shadow-glow' : ''}`}
       style={{
         filter: showGlow ? 'drop-shadow(0 0 8px currentColor)' : 'none',
@@ -193,27 +123,15 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
   // Premium real-time updates with Apple-level timing
   useEffect(() => {
     if (hasStartedLiveUpdates) return;
-    
-    const startLiveUpdates = () => {
-      setHasStartedLiveUpdates(true);
-      
-      // Premium timing - less frequent but more meaningful updates
-      const travelerInterval = setInterval(() => {
-        setLiveTravelerCount(prev => prev + Math.floor(Math.random() * 2) + 1);
-      }, 7000 + Math.random() * 5000);
-      
-      const dealInterval = setInterval(() => {
-        setLiveDealCount(prev => prev + Math.floor(Math.random() * 1) + 1);
-      }, 8000 + Math.random() * 6000);
-      
-      intervalsRef.current = [travelerInterval, dealInterval];
-    };
-    
-    // Start live updates after 4 seconds (after premium animations complete)
-    const timeout = setTimeout(startLiveUpdates, 4000);
-    
+    setHasStartedLiveUpdates(true);
+    const travelerInterval = setInterval(() => {
+      setLiveTravelerCount(prev => prev + Math.floor(Math.random() * 2) + 1);
+    }, 5000);
+    const dealInterval = setInterval(() => {
+      setLiveDealCount(prev => prev + 1);
+    }, 6000);
+    intervalsRef.current = [travelerInterval, dealInterval];
     return () => {
-      clearTimeout(timeout);
       intervalsRef.current.forEach(interval => clearInterval(interval));
     };
   }, [hasStartedLiveUpdates]);
@@ -268,10 +186,10 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
       initial={{ opacity: 0, y: 60 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ 
-        duration: 1.2, 
-        delay: 1,
+        duration: 1.0, 
+        delay: 0,
         type: "spring",
-        stiffness: 80,
+        stiffness: 100,
         damping: 20
       }}
       className="mb-12 md:mb-16"
@@ -292,8 +210,8 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ 
-                duration: 1, 
-                delay: stat.delay,
+                duration: 0.6, 
+                delay: 0,
                 type: "spring",
                 stiffness: 100,
                 damping: 25
@@ -328,16 +246,11 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
                   group-hover:scale-105 transition-transform duration-700
                   ${isHovered === stat.id ? 'scale-105' : ''}
                 `}>
-                  {stat.enableAnimation ? (
-                    <AnimatedCounter 
-                      value={stat.value} 
-                      startValue={stat.startValue}
-                      duration={3}
-                      enableGlow={true}
-                    />
-                  ) : (
-                    <span className="font-bold">{stat.value.toLocaleString()}</span>
-                  )}
+                  <AnimatedCounter 
+                    value={stat.value}
+                    duration={0.6}
+                    enableGlow={true}
+                  />
                   {stat.id === 'travelers' && (
                     <span className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl ml-1">+</span>
                   )}
@@ -409,14 +322,11 @@ const LiveStats: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
 
 export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dealCount }) => {
   const [countdown, setCountdown] = useState<CountdownState | null>(null);
-  const [isMounted, setIsMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(true);
+
+  
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
 
     const targetDate = new Date('2026-06-11T23:25:00-04:00'); // America/New_York timezone
     
@@ -457,12 +367,8 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
     return () => clearInterval(interval);
   }, [isMounted]);
 
-  if (!isMounted || !countdown) {
-    return (
-      <div className="min-h-[60vh] flex items-center justify-center">
-        <div className="text-slate-600 dark:text-white/60">Loading countdown...</div>
-      </div>
-    );
+  if (!countdown) {
+    return null;
   }
 
   return (
@@ -520,6 +426,53 @@ export const WorldCupCountdown: React.FC<LiveStatsProps> = ({ travelerCount, dea
           <CountdownUnit unit={countdown.hours} index={1} />
           <CountdownUnit unit={countdown.minutes} index={2} />
           <CountdownUnit unit={countdown.seconds} index={3} />
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+          <motion.figure 
+            className="group relative overflow-hidden rounded-3xl bg-white/80 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/90 dark:border-slate-700/60 shadow-2xl shadow-slate-500/20 dark:shadow-navy-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 dark:hover:shadow-emerald-500/30 transition-all duration-700 transform-gpu hover:-translate-y-1"
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ 
+              duration: 1.2, 
+              delay: 0.8,
+              type: "spring",
+              stiffness: 100,
+              damping: 20
+            }}
+          >
+            <div className="relative w-full aspect-video max-h-[420px] sm:max-h-[520px] lg:max-h-[560px]">
+              <OptimizedImage
+                src="/images/Hub Pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
+                alt="FIFA World Cup 26 Qualified Teams Wallchart – StadiumPort"
+                className="absolute inset-0"
+                imgClassName="!object-contain transition-transform duration-1000 group-hover:scale-105"
+                width={1600}
+                height={900}
+                priority={true}
+                placeholder="blur"
+                sizes="100vw"
+                disableSrcSet={true}
+              />
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/5 via-transparent to-transparent dark:from-black/10 group-hover:from-black/10 group-hover:via-transparent transition-all duration-700"></div>
+              
+              {/* Apple-level subtle overlay effects */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-emerald-500/5 via-transparent to-transparent"></div>
+                <div className="absolute bottom-0 right-0 w-full h-full bg-gradient-to-tl from-blue-500/5 via-transparent to-transparent"></div>
+              </div>
+              
+              {/* Premium corner accents */}
+              <div className="absolute top-4 left-4 w-16 h-16 bg-gradient-to-br from-white/20 to-transparent rounded-tl-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute bottom-4 right-4 w-16 h-16 bg-gradient-to-tl from-white/20 to-transparent rounded-br-3xl opacity-60 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+            
+            {/* Apple-style subtle border glow on hover */}
+            <div className="absolute inset-0 rounded-3xl border border-transparent group-hover:border-emerald-400/20 dark:group-hover:border-emerald-500/30 transition-all duration-700 opacity-0 group-hover:opacity-100"></div>
+            
+            {/* Premium shadow layers */}
+            <div className="absolute inset-0 rounded-3xl shadow-inner shadow-white/20 dark:shadow-slate-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+          </motion.figure>
         </div>
 
         <LiveStats travelerCount={travelerCount} dealCount={dealCount} />

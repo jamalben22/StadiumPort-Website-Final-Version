@@ -45,7 +45,7 @@ export default function EmergencyPlanningPage() {
       <section className={`editorial-hero ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} transition-all duration-700`}>
         <div className="editorial-hero-media">
           <OptimizedImage
-            src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+            src="/images/safety-guide/article mode/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World.webp"
             alt={`${title} – Guide`}
             className="editorial-hero-image-wrapper"
             imgClassName="editorial-hero-image"
@@ -54,6 +54,7 @@ export default function EmergencyPlanningPage() {
             priority={true}
             placeholder="empty"
             sizes="100vw"
+            disableSrcSet={true}
           />
           <div className="editorial-hero-overlay"></div>
         </div>
@@ -66,7 +67,7 @@ export default function EmergencyPlanningPage() {
             <nav aria-label="Breadcrumb" className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/guides" className="hover:underline">Guides</Link>
+              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <Link to={url} className="hover:underline">{title}</Link>
             </nav>

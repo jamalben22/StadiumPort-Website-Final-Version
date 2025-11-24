@@ -29,12 +29,24 @@ export default function GuidesArticlePage() {
   const [visible, setVisible] = useState(false)
   const title = TITLE_OVERRIDES[slug ?? ''] ?? toTitle(slug)
   const url = `/guides/${slug ?? ''}`
+  const safetyImagesDir = '/images/safety-guide/article mode'
+  const defaultSafetyHero = `${safetyImagesDir}/A_realistic_photo-style_image_showing_a_worried_football_fan_reviewing_suspiciou.webp`
+  const stadiumSafetyHero = `${safetyImagesDir}/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World.webp`
+  const emergencyResourcesHero = `${safetyImagesDir}/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp`
+  const soloTravelHero = `${safetyImagesDir}/A_realistic_high-detail_photo_of_a_solo_traveler_walking_confidently_through_a_world_cup_2026.webp`
+  const familySafetyHero = `${safetyImagesDir}/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near_stadium.webp`
+  const _slug = (slug || '')
+  const isStadiumSafety = _slug.includes('stadium-safety') || _slug === 'stadium-safety-at-world-cup-2026-security-rules-what-to-expect'
+  const isEmergencyContacts = _slug.includes('emergency-contacts') || _slug === 'world-cup-2026-emergency-contacts-resources-guide'
+  const isSoloTravel = _slug.includes('solo-travel-safety-guide-attending-world-cup-2026-alone')
+  const isFamilySafety = _slug.includes('family-safety-guide-taking-kids-to-world-cup-2026')
+  const heroImageSrc = isStadiumSafety ? stadiumSafetyHero : (isEmergencyContacts ? emergencyResourcesHero : (isSoloTravel ? soloTravelHero : (isFamilySafety ? familySafetyHero : defaultSafetyHero)))
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pageUrl = `${siteUrl}${url}`
     const pageTitle = `${title} – Guide | StadiumPort`
-    const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
+    const image = `${siteUrl}${heroImageSrc}`
     const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
     const entry = getEditorialEntry('article',(slug || ''))
     const tags = ['World Cup 2026', 'Guides']
@@ -63,15 +75,16 @@ export default function GuidesArticlePage() {
       <section className={`editorial-hero ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'} transition-all duration-700`}>
         <div className="editorial-hero-media">
           <OptimizedImage
-            src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+            src={heroImageSrc}
             alt={`${title} – Guide`}
             className="editorial-hero-image-wrapper"
-            imgClassName="editorial-hero-image"
+            imgClassName={isFamilySafety ? "editorial-hero-image object-[50%_65%]" : "editorial-hero-image object-top"}
             width={1600}
             height={900}
             priority={true}
             placeholder="empty"
             sizes="100vw"
+            disableSrcSet={true}
           />
           <div className="editorial-hero-overlay"></div>
         </div>
@@ -84,7 +97,7 @@ export default function GuidesArticlePage() {
             <nav aria-label="Breadcrumb" className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/guides" className="hover:underline">Guides</Link>
+              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <Link to={url} className="hover:underline">{title}</Link>
             </nav>

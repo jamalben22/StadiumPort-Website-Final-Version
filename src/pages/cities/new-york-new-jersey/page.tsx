@@ -457,221 +457,636 @@ export default function NewYorkCityArticlePage() {
         </div>
       </section>
 
-      {/* Main Content - Editorial presentation */}
-      <main id="main-content" className="editorial-article py-12" itemScope itemType="https://schema.org/Article">
-        {/* Introduction */}
-        <article className="editorial-body editorial-dropcap">
-          <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3" itemProp="about">
-            <i className="ri-trophy-line text-emerald-500" aria-hidden="true"></i>
-            The World's Biggest Game Comes to the World's Biggest Stage
-          </h2>
-          <p className="whitespace-pre-line">
-            {`When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades.`}
-            {` New York/New Jersey is one of the 16 host cities for the 2026 World Cup—`}
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>
-            {`. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`}
-          </p>
+      {/* Main Content - Premium Editorial presentation */}
+      <main id="main-content" className="editorial-article-premium py-16" itemScope itemType="https://schema.org/Article">
+        {/* Introduction - Premium Hero Section */}
+        <article className="editorial-body editorial-dropcap mb-16">
+          <div className="mb-12">
+            <h2 className="editorial-h2 animate-premium-fade mb-6 flex items-center gap-4" itemProp="about">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-trophy-line" aria-hidden="true"></i>
+              </div>
+              <span className="bg-gradient-to-r from-emerald-600 to-emerald-700 bg-clip-text text-transparent">
+                The World's Biggest Game Comes to the World's Biggest Stage
+              </span>
+            </h2>
+            <div className="text-premium-lead mb-8 leading-relaxed">
+              <p className="whitespace-pre-line">
+                {`When the final whistle blows on July 19, 2026, football history will be made just across the Hudson River from Manhattan. New York and New Jersey are hosting the FIFA World Cup Final—and seven other matches—making this region the epicenter of the beautiful game's most anticipated summer in decades.`}
+                {` New York/New Jersey is one of the 16 host cities for the 2026 World Cup—`}
+                <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline font-medium">explore the host cities hub</Link>
+                {`. Whether you're here to witness the crowning moment or soak up the electric atmosphere across multiple match days, the New York metropolitan area offers everything a football fan could dream of: world-class infrastructure, unbeatable energy, and a cultural experience that extends far beyond the pitch.`}
+              </p>
+            </div>
+          </div>
 
-          {/* Essential Links module */}
-          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
-            <div className="font-inter font-semibold text-slate-900 dark:text-slate-100 mb-2">🔗 Essential New York/New Jersey Links</div>
-            <div className="space-y-1 text-slate-800 dark:text-slate-200">
-              <div>
-                🏟️ <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">MetLife Stadium Guide</Link>
+          {/* Premium Essential Links Card - Optimized for All Screen Sizes */}
+          <div className="callout-premium mb-12 p-6 sm:p-8">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-8">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-links-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="editorial-h3 font-semibold text-slate-900 dark:text-slate-100 text-xl sm:text-2xl">Essential New York/New Jersey Links</h3>
+            </div>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+              {/* Stadium Guide Card */}
+              <div className="premium-link-card group">
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-slate-800/60">
+                  <div className="icon-premium-md flex items-center justify-center mt-0.5">
+                    <i className="ri-football-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">Stadium Guide</div>
+                    <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                      MetLife Stadium Guide
+                      <i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* All Host Cities Card */}
+              <div className="premium-link-card group">
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-slate-800/60">
+                  <div className="icon-premium-md flex items-center justify-center mt-0.5">
+                    <i className="ri-map-2-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">All Host Cities</div>
+                    <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200">
+                      Explore All 16 Cities
+                      <i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+
+              {/* Nearby Cities Card - Optimized for Mobile */}
+              <div className="premium-link-card group">
+                <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white/80 dark:hover:bg-slate-800/60">
+                  <div className="icon-premium-md flex items-center justify-center mt-0.5">
+                    <i className="ri-plane-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">Nearby Cities</div>
+                    <div className="flex flex-wrap gap-x-3 gap-y-1">
+                      <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors">
+                        Philadelphia
+                      </Link>
+                      <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors">
+                        Boston
+                      </Link>
+                      <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors">
+                        Toronto
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="section-divider-premium mb-16"></div>
+        </article>
+
+        {/* Why NY/NJ Won */}
+        <article className="editorial-body">
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-trophy-line text-amber-500" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Why New York/New Jersey Won the World Cup Final
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
+          </div>
+
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+              MetLife Stadium in East Rutherford, New Jersey, beat out Los Angeles and Dallas to host the ultimate match on July 19, 2026. The region will host eight total matches throughout the tournament, with projections of over $2 billion in economic impact and more than 1 million visitors expected.
+            </p>
+          </div>
+
+          <div className="callout-important mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-lightbulb-line text-amber-500" aria-hidden="true"></i>
               </div>
               <div>
-                🗺️ <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Cities</Link>
-              </div>
-              <div>
-                ✈️ <strong>Nearby Cities:</strong> <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Philadelphia</Link> | <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Boston</Link> | <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">The New York Advantage</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  This isn't just about a stadium—it's about the entire New York experience. The region has five airports servicing 181 countries, more hotels under construction than exist in other candidate cities combined, and MetLife Stadium's proven track record of hosting two million guests annually. FIFA knew what every traveler knows: there's no place on Earth quite like New York City.
+                </p>
               </div>
             </div>
           </div>
           <hr className="editorial-divider" />
         </article>
 
-        {/* Why NY/NJ Won */}
-        <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-medal-2-line text-emerald-500"></i>
-            Why New York/New Jersey Won the World Cup Final
-          </h3>
-          <p className="whitespace-pre-line">
-            {`MetLife Stadium in East Rutherford, New Jersey, beat out Los Angeles and Dallas to host the ultimate match on July 19, 2026. The region will host eight total matches throughout the tournament, with projections of over $2 billion in economic impact and more than 1 million visitors expected.
-
-This isn't just about a stadium—it's about the entire New York experience. The region has five airports servicing 181 countries, more hotels under construction than exist in other candidate cities combined, and MetLife Stadium's proven track record of hosting two million guests annually. FIFA knew what every traveler knows: there's no place on Earth quite like New York City.`}
-          </p>
-          <hr className="editorial-divider" />
-        </article>
-
         {/* Stadium info */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-4-line text-emerald-500"></i>
-            The Stadium: MetLife Stadium (New York New Jersey Stadium)
-          </h3>
-          <p className="whitespace-pre-line">
-            {`The Venue That Broke Records
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-building-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                The Stadium: MetLife Stadium (New York New Jersey Stadium)
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
+          </div>
 
-MetLife Stadium opened in 2010 with a construction cost of $1.6 billion, making it the most expensive stadium in U.S. history at completion. With a capacity of 82,500 seats for World Cup matches (including 10,005 club seats and approximately 218 luxury suites), it's the largest NFL stadium and the biggest World Cup venue in the United States.
+          <div className="grid lg:grid-cols-3 luxury-grid-gap mb-8">
+            <div className="lg:col-span-2">
+              <div className="prose prose-lg max-w-none">
+                <h4 className="editorial-h4 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">The Venue That Broke Records</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                  MetLife Stadium opened in 2010 with a construction cost of $1.6 billion, making it the most expensive stadium in U.S. history at completion. With a capacity of 82,500 seats for World Cup matches (including 10,005 club seats and approximately 218 luxury suites), it's the largest NFL stadium and the biggest World Cup venue in the United States.
+                </p>
+              </div>
+            </div>
+            
+            <div className="callout-premium p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-premium-sm flex items-center justify-center">
+                  <i className="ri-information-line text-emerald-600" aria-hidden="true"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">FIFA Name Policy</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
+                During the tournament, FIFA will refer to the venue as "New York New Jersey Stadium" due to sponsorship policies.
+              </p>
+            </div>
+          </div>
 
-During the tournament, FIFA will refer to the venue as "New York New Jersey Stadium" due to sponsorship policies. The stadium underwent significant renovations specifically for the World Cup. In January 2024, officials announced plans to remove 1,740 permanent seats to widen the field to meet FIFA regulations, replacing them with modular seating after the tournament.`}
-          </p>
+          <div className="callout-pro mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-tools-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">World Cup Renovations</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  The stadium underwent significant renovations specifically for the World Cup. In January 2024, officials announced plans to remove 1,740 permanent seats to widen the field to meet FIFA regulations, replacing them with modular seating after the tournament.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Match Schedule */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
-            Match Schedule at MetLife Stadium
-          </h3>
-          <p className="whitespace-pre-line">
-            {`Eight matches will be played here, beginning June 13 and culminating with the Final on July 19, 2026. The schedule includes:
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-calendar-todo-line text-purple-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Match Schedule at MetLife Stadium
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          </div>
 
-- Group Stage Matches: June 13, 16, 22, 26, 29
-- Round of 32: July 3
-- Round of 16: July 8
-- The Final: July 19, 2026
+          <div className="grid lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 mb-8">
+            <div>
+              <div className="prose prose-lg max-w-none">
+                <h4 className="editorial-h4 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Tournament Highlights</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                  Eight matches will be played here, beginning June 13 and culminating with the Final on July 19, 2026. This represents the most prestigious match lineup of any venue in the tournament.
+                </p>
+              </div>
 
-FIFA has confirmed the final will feature an elaborate halftime show modeled after the Super Bowl, with Times Square serving as a central hub for celebrations during the final weekend.`}
-          </p>
+              {/* Premium Match Timeline - Professional Card Design */}
+              <div className="premium-timeline-container mb-6">
+                <div className="space-y-4">
+                  {/* Group Stage */}
+                  <div className="premium-match-card group">
+                    <div className="flex items-center justify-center p-3 sm:p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col items-center justify-center gap-2 text-center">
+                          <div>
+                            <h5 className="font-semibold text-slate-900 dark:text-slate-100 text-base">Group Stage</h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">June 13, 16, 22, 26, 29</p>
+                          </div>
+                          <span className="badge-premium badge-confirmed text-xs whitespace-nowrap">5 Matches</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Round of 32 */}
+                  <div className="premium-match-card group">
+                    <div className="flex items-center justify-center p-3 sm:p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col items-center justify-center gap-2 text-center">
+                          <div>
+                            <h5 className="font-semibold text-slate-900 dark:text-slate-100 text-base">Round of 32</h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">July 3, 2026</p>
+                          </div>
+                          <span className="badge-premium badge-confirmed text-xs whitespace-nowrap">1 Match</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Round of 16 */}
+                  <div className="premium-match-card group">
+                    <div className="flex items-center justify-center p-3 sm:p-4 rounded-xl bg-white/60 dark:bg-slate-800/40 border border-white/80 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col items-center justify-center gap-2 text-center">
+                          <div>
+                            <h5 className="font-semibold text-slate-900 dark:text-slate-100 text-base">Round of 16</h5>
+                            <p className="text-sm text-slate-600 dark:text-slate-400">July 8, 2026</p>
+                          </div>
+                          <span className="badge-premium badge-confirmed text-xs whitespace-nowrap">1 Match</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* The Final - Premium Highlight */}
+                  <div className="premium-final-card group relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-amber-400/20 via-orange-400/20 to-red-400/20 dark:from-amber-400/10 dark:via-orange-400/10 dark:to-red-400/10"></div>
+                    <div className="relative flex items-center justify-center p-4 sm:p-5 rounded-xl bg-gradient-to-r from-amber-50 via-orange-50 to-red-50 dark:from-amber-900/20 dark:via-orange-900/20 dark:to-red-900/20 border-2 border-amber-300 dark:border-amber-600 transition-all duration-300 hover:shadow-xl hover:scale-[1.03]">
+                      <div className="flex-1 min-w-0">
+                        <div className="flex flex-col items-center justify-center gap-2 text-center">
+                          <div>
+                            <h5 className="font-bold text-slate-900 dark:text-slate-100 text-lg bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">The Final</h5>
+                            <p className="text-sm font-medium text-amber-700 dark:text-amber-300">July 19, 2026</p>
+                          </div>
+                          <span className="badge-premium bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs px-3 py-1 rounded-full font-semibold whitespace-nowrap shadow-md">FINAL</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="callout-premium p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-premium-md flex items-center justify-center">
+                  <i className="ri-vip-crown-line text-purple-600" aria-hidden="true"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">Final Weekend Spectacle</h5>
+              </div>
+              <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+                FIFA has confirmed the final will feature an elaborate halftime show modeled after the Super Bowl, with Times Square serving as a central hub for celebrations during the final weekend.
+              </p>
+              <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                <i className="ri-time-line"></i>
+                <span>History in the making</span>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* What Makes Stadium Special */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-star-line text-emerald-500"></i>
-            What Makes This Stadium Special
-          </h3>
-          <p className="whitespace-pre-line">
-            {`MetLife Stadium has hosted six Super Bowls, major soccer friendlies, and concerts featuring Taylor Swift, Beyoncé, and the Rolling Stones. The stadium hosted nine matches during the 2025 FIFA Club World Cup, including the final, and previously hosted the Copa América Centenario final in 2016—proving it can handle the world's biggest football moments.
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-star-line text-amber-500" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                What Makes This Stadium Special
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div>
+          </div>
 
-The stadium sits just 10 miles from Midtown Manhattan, making it genuinely accessible. Located in East Rutherford, New Jersey, MetLife Stadium is situated 10 miles west of New York City, connected by direct public transit that runs specifically for major events.`}
-          </p>
+          <div className="grid lg:grid-cols-3 luxury-grid-gap mb-8">
+            <div className="lg:col-span-2">
+              <div className="prose prose-lg max-w-none">
+                <h4 className="editorial-h4 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4">Legendary Events & Legacy</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                  MetLife Stadium has hosted six Super Bowls, major soccer friendlies, and concerts featuring Taylor Swift, Beyoncé, and the Rolling Stones. The stadium hosted nine matches during the 2025 FIFA Club World Cup, including the final, and previously hosted the Copa América Centenario final in 2016—proving it can handle the world's biggest football moments.
+                </p>
+              </div>
+            </div>
+
+            <div className="callout-premium p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="icon-premium-sm flex items-center justify-center">
+                  <i className="ri-map-pin-2-line text-amber-600" aria-hidden="true"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Prime Access</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-3">
+                The stadium sits just 10 miles from Midtown Manhattan, making it genuinely accessible.
+              </p>
+              <div className="flex items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
+                <i className="ri-subway-line"></i>
+                <span>Direct public transit</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="callout-pro mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-train-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Unmatched Connectivity</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                Located in East Rutherford, New Jersey, MetLife Stadium is situated 10 miles west of New York City, connected by direct public transit that runs specifically for major events. This accessibility makes it one of the most convenient major stadiums in the world.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Transportation */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-500"></i>
-            Getting There: Transportation Made Easy
-          </h3>
-          <p className="whitespace-pre-line">
-            {`From International Airports
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-subway-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Getting There: Transportation Made Easy
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+          </div>
 
-New York's three major airports make this one of the most accessible World Cup destinations globally:
+          <div className="premium-transport-grid mb-8">
+            <div className="transport-card-premium">
+              <div className="transport-icon">
+                <i className="ri-plane-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">International Airports</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                New York's three major airports make this one of the most accessible World Cup destinations globally.
+              </p>
+              <div className="space-y-3">
+                <div className="airport-item">
+                  <div className="airport-code">JFK</div>
+                  <div className="airport-details">
+                    <div className="font-medium">John F. Kennedy International</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">26 miles from stadium</div>
+                  </div>
+                </div>
+                <div className="airport-item">
+                  <div className="airport-code">EWR</div>
+                  <div className="airport-details">
+                    <div className="font-medium">Newark Liberty International</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">15-20 miles from stadium</div>
+                  </div>
+                </div>
+                <div className="airport-item">
+                  <div className="airport-code">LGA</div>
+                  <div className="airport-details">
+                    <div className="font-medium">LaGuardia</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">18 miles from stadium</div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-- John F. Kennedy International (JFK): The primary international gateway, about 26 miles from MetLife Stadium 
-- Newark Liberty International (EWR): The closest major airport, approximately 15-20 miles from the stadium 
-- LaGuardia (LGA): Mainly domestic flights, about 18 miles from the stadium 
+            <div className="transport-card-premium featured">
+              <div className="transport-icon">
+                <i className="ri-train-line text-green-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">NJ Transit Train</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                The fastest and most cost-effective route from Manhattan.
+              </p>
+              <div className="route-steps">
+                <div className="step">
+                  <div className="step-number">1</div>
+                  <div className="step-text">Penn Station NYC → Secaucus Junction</div>
+                </div>
+                <div className="step">
+                  <div className="step-number">2</div>
+                  <div className="step-text">Transfer to Meadowlands shuttle</div>
+                </div>
+                <div className="step">
+                  <div className="step-number">3</div>
+                  <div className="step-text">Arrive at MetLife Stadium</div>
+                </div>
+              </div>
+              <div className="route-time">
+                <i className="ri-time-line"></i>
+                <span>30 minutes total</span>
+              </div>
+            </div>
 
-All three airports connect to Manhattan via various options, where you can then catch direct transit to MetLife Stadium.
+            <div className="transport-card-premium">
+              <div className="transport-icon">
+                <i className="ri-bus-line text-orange-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Budget Bus Option</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Coach USA 351 Meadowlands Express from Port Authority.
+              </p>
+              <div className="bus-features">
+                <div className="feature-item">
+                  <i className="ri-door-open-line"></i>
+                  <span>Door-to-door service</span>
+                </div>
+                <div className="feature-item">
+                  <i className="ri-time-line"></i>
+                  <span>Starts 3 hours before event</span>
+                </div>
+                <div className="feature-item">
+                  <i className="ri-money-dollar-circle-line"></i>
+                  <span>Budget-friendly</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-Direct Stadium Access: The Smart Way
+          <div className="callout-pro mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-smartphone-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Pro Traveler Tip</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Book your NJ Transit tickets through their mobile app ahead of time. On match days, expect crowds but efficient service—New Yorkers know how to move people.
+                </p>
+              </div>
+            </div>
+          </div>
 
-The Best Option: NJ Transit Train
-
-The fastest and most cost-effective route is taking an NJ Transit train from Penn Station New York (located at 32nd Street between 7th and 8th Avenues) to Secaucus Junction, then transferring to a shuttle train directly to Meadowlands Rail Station. For large events, NJ Transit offers special train service from Secaucus Junction directly to Meadowlands Rail Station, just steps away from MetLife Stadium. 
-
-The entire journey takes roughly 30 minutes from Midtown Manhattan, and trains run frequently on match days. NJ Transit operates the Meadowlands Rail Service for events with anticipated attendance above 50,000, delivering guests directly to the front door of MetLife Stadium. 
-
-Budget-Friendly Bus Option 
-
-The Coach USA 351 Meadowlands Express provides door-to-door round-trip transportation from the Port Authority Bus Terminal in New York City to MetLife Sports Complex. Bus service begins three hours prior to event start time, making it perfect for pre-match atmosphere-building. 
-
-Pro Traveler Tip: Book your NJ Transit tickets through their mobile app ahead of time. On match days, expect crowds but efficient service—New Yorkers know how to move people.`}
-          </p>
-          <p className="mt-4">
-            Planning a multi-city trip? The Northeast Corridor makes it easy to add <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link> by Amtrak. For an international angle, <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> is a short flight from NYC.
-          </p>
+          <div className="multi-city-callout p-6 rounded-xl bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-slate-800 dark:to-slate-700">
+            <div className="flex items-center gap-3 mb-3">
+              <i className="ri-map-2-line text-blue-600"></i>
+              <h5 className="font-semibold text-slate-900 dark:text-slate-100">Multi-City Trip Planning</h5>
+            </div>
+            <p className="text-sm text-slate-700 dark:text-slate-300 mb-3">
+              The Northeast Corridor makes it easy to add other World Cup cities:
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="city-link">Philadelphia</Link>
+              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="city-link">Boston</Link>
+              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="city-link">Toronto</Link>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Where to Stay */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
-            Where to Stay: Neighborhood Guide for World Cup Visitors
-          </h3>
-          <p className="whitespace-pre-line">
-            {`The beauty of New York is choice. You can stay in the heart of Manhattan's buzz or opt for quieter Brooklyn brownstone neighborhoods—both offer excellent transit connections to MetLife Stadium. 
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-hotel-line text-indigo-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Where to Stay: Neighborhood Guide
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full"></div>
+          </div>
 
-Midtown Manhattan: Maximum Convenience 
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+              The beauty of New York is choice. You can stay in the heart of Manhattan's buzz or opt for quieter Brooklyn brownstone neighborhoods—both offer excellent transit connections to MetLife Stadium.
+            </p>
+          </div>
 
-Why Stay Here: Direct access to Penn Station means you're 30 minutes from kickoff. You're also in the center of everything NYC offers—Broadway, restaurants, Central Park, and more.`}
-          </p>
-
-          {/* PART 2/5 additions */}
-          <div className="mt-6 space-y-6">
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-user-line text-emerald-500"></i>
-                Hotel Strategy
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Lodging options near Penn Station include Moxy Times Square (boutique and budget-friendly), Refinery Hotel (mid-range), and Pendry Manhattan West (luxury), all less than half a mile from Penn Station.
- 
-This is where most international visitors gravitate, and for good reason. You'll pay premium prices during World Cup weeks, but the convenience and atmosphere are unmatched.`}
+          <div className="premium-hotel-grid mb-8">
+            <div className="hotel-card-premium">
+              <div className="hotel-card-header">
+                <div className="hotel-icon">
+                  <i className="ri-building-line text-blue-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Midtown Manhattan</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Maximum Convenience</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Direct access to Penn Station means you're 30 minutes from kickoff. You're also in the center of everything NYC offers—Broadway, restaurants, Central Park, and more.
               </p>
+              <div className="hotel-features">
+                <div className="feature-tag">
+                  <i className="ri-time-line"></i>
+                  <span>30 min to stadium</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-subway-line"></i>
+                  <span>Direct transit</span>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-calendar-check-line text-emerald-500"></i>
-                Book Early
-              </h4>
-              <p>
-                Hotels in this area will sell out quickly. Consider booking 6–12 months in advance for best rates and availability. Use comparison sites like
-                {' '}<a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>{' '}and{' '}
-                <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Hotels.com</a>{' '}to find the best deals, and don't overlook boutique properties that offer personality alongside location.
+            <div className="hotel-card-premium">
+              <div className="hotel-card-header">
+                <div className="hotel-icon">
+                  <i className="ri-store-2-line text-purple-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">SoHo & Greenwich Village</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Style Meets Access</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Cobblestone streets, independent boutiques, incredible restaurants, and that quintessential New York neighborhood feel.
               </p>
+              <div className="hotel-features">
+                <div className="feature-tag">
+                  <i className="ri-time-line"></i>
+                  <span>15-20 min to Penn</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-restaurant-line"></i>
+                  <span>World-class dining</span>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-store-2-line text-emerald-500"></i>
-                SoHo & Greenwich Village: Style Meets Access
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Why Stay Here: If you don't mind a short subway ride to Penn Station, consider staying in SoHo at properties like the Dominick, offering sleek accommodations with epic views and an upscale vibe.
- 
-These neighborhoods offer cobblestone streets, independent boutiques, incredible restaurants, and that quintessential New York neighborhood feel. You're still just 15–20 minutes from Penn Station via subway.
- 
-Perfect For: Travelers who want to experience authentic New York between matches, with world-class dining and nightlife at your doorstep.`}
+            <div className="hotel-card-premium">
+              <div className="hotel-card-header">
+                <div className="hotel-icon">
+                  <i className="ri-building-2-line text-green-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Brooklyn</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Local Vibes, Better Value</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Williamsburg, DUMBO, and Park Slope offer character, craft breweries, waterfront parks, and often better value than Manhattan.
               </p>
+              <div className="hotel-features">
+                <div className="feature-tag">
+                  <i className="ri-time-line"></i>
+                  <span>30-40 min to Penn</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-money-dollar-circle-line"></i>
+                  <span>Better value</span>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-building-2-line text-emerald-500"></i>
-                Brooklyn: Local Vibes, Better Value
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Why Stay Here: Hoboken and Jersey City in New Jersey, as well as Manhattan and Brooklyn in New York City, offer excellent bases for World Cup visitors, with Brooklyn providing a more laid-back alternative without losing excitement.
- 
-Neighborhoods like Williamsburg, DUMBO, and Park Slope offer character, craft breweries, waterfront parks, and often better value than Manhattan hotels. The subway connects you to Penn Station in 30–40 minutes.
- 
-Perfect For: Budget-conscious travelers, families wanting more space, and anyone who wants to see the "real" New York beyond tourist central.`}
+            <div className="hotel-card-premium featured">
+              <div className="hotel-card-header">
+                <div className="hotel-icon">
+                  <i className="ri-community-line text-amber-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Hoboken & Jersey City</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Closest to Stadium</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Shorter commutes to MetLife Stadium, waterfront views of Manhattan, and a thriving food scene. You're technically closer to the action.
               </p>
+              <div className="hotel-features">
+                <div className="feature-tag">
+                  <i className="ri-map-pin-line"></i>
+                  <span>Shortest commute</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-home-line"></i>
+                  <span>More rental options</span>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-community-line text-emerald-500"></i>
-                Hoboken & Jersey City: Closest to the Stadium
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Why Stay Here: Hoboken is a scenic, walkable city just across the Hudson River from Manhattan, offering a laid-back alternative with PATH train access to Midtown Manhattan or World Cup festivities in minutes.
- 
-These New Jersey cities offer shorter commutes to MetLife Stadium, waterfront views of Manhattan, and a thriving food scene. You're technically closer to the action than most Manhattan hotels.
- 
-Perfect For: Groups wanting apartment-style rentals, visitors attending multiple matches, and anyone prioritizing proximity to the stadium.
- 
-Rental Alert: Short-term rentals in New York City face strict regulations, so book through reputable platforms and verify legality. Jersey City and Hoboken have more flexible rental options.`}
-              </p>
+          <div className="callout-premium mb-8 p-8">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="icon-premium-md flex items-center justify-center">
+                <i className="ri-calendar-check-line text-indigo-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">Book Early Strategy</h4>
+            </div>
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
+              Hotels in prime areas will sell out quickly. Consider booking 6–12 months in advance for best rates and availability. Use comparison sites like
+              {' '}<a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline font-medium">Booking.com</a>{' '}and{' '}
+              <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:text-indigo-700 underline font-medium">Hotels.com</a>{' '}to find the best deals.
+            </p>
+            <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+              <i className="ri-information-line"></i>
+              <span>Don't overlook boutique properties that offer personality alongside location</span>
+            </div>
+          </div>
+
+          <div className="callout-warning mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-alert-line text-amber-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Rental Alert</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Short-term rentals in New York City face strict regulations, so book through reputable platforms and verify legality. Jersey City and Hoboken have more flexible rental options.
+                </p>
+              </div>
             </div>
           </div>
           <hr className="editorial-divider" />
@@ -679,71 +1094,143 @@ Rental Alert: Short-term rentals in New York City face strict regulations, so bo
 
         {/* Beyond the Match */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
-            Beyond the Match: What to Do in New York City
-          </h3>
-          <p className="whitespace-pre-line">
-            {`Let's be honest—you're coming for football, but you're staying in one of the world's greatest cities. Here's how to make the most of your non-match hours.`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-map-2-line text-rose-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Beyond the Match: What to Do in New York City
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full"></div>
+          </div>
 
-          <div className="mt-6 space-y-6">
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-landscape-line text-emerald-500"></i>
-                Iconic Attractions You Can't Miss
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Statue of Liberty & Ellis Island  
-Take the ferry from Battery Park and experience America's most iconic symbol up close. Book tickets in advance—this is one of the world's most visited monuments.
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+              Let's be honest—you're coming for football, but you're staying in one of the world's greatest cities. Here's how to make the most of your non-match hours.
+            </p>
+          </div>
 
-Central Park  
-843 acres of green space in the heart of Manhattan. Rent a bike, pack a picnic, or just wander. In July, you'll find free concerts and outdoor movies.
-
-Empire State Building & Top of the Rock  
-Two observation decks offering stunning 360-degree views of the city. Top of the Rock (at Rockefeller Center) offers better photo opportunities of the Empire State Building itself.
-
-Times Square & Broadway  
-Times Square will serve as a central hub for celebrations during the final weekend of the tournament. Catch a Broadway show—musicals like Hamilton or classics like Chicago are quintessentially New York experiences.
-
-9/11 Memorial & Museum  
-A powerful, moving tribute. Allow 2–3 hours for the full experience.`}
-              </p>
+          <div className="premium-attractions-grid mb-8">
+            <div className="attraction-card-premium">
+              <div className="attraction-icon">
+                <i className="ri-landmark-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Iconic Attractions</h4>
+              <div className="attraction-list">
+                <div className="attraction-item">
+                  <div className="item-marker"></div>
+                  <div>
+                    <div className="font-medium text-sm">Statue of Liberty & Ellis Island</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Book ferry tickets in advance</div>
+                  </div>
+                </div>
+                <div className="attraction-item">
+                  <div className="item-marker"></div>
+                  <div>
+                    <div className="font-medium text-sm">Central Park</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">843 acres of green space</div>
+                  </div>
+                </div>
+                <div className="attraction-item">
+                  <div className="item-marker"></div>
+                  <div>
+                    <div className="font-medium text-sm">Empire State Building</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">360-degree city views</div>
+                  </div>
+                </div>
+                <div className="attraction-item">
+                  <div className="item-marker"></div>
+                  <div>
+                    <div className="font-medium text-sm">Times Square & Broadway</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">World Cup celebration hub</div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-restaurant-2-line text-emerald-500"></i>
-                Food: A World of Flavors in Five Boroughs
-              </h4>
-              <p className="whitespace-pre-line">
-                {`New York's food scene is legendary because it's the most diverse on the planet. Here's where to eat like a local:
-
-Classic New York Experiences  
-- Pizza: Grab a slice from Joe's Pizza (multiple locations), or sit down for a coal-oven pie at Lombardi's (Little Italy) or Juliana's (Brooklyn)  
-- Bagels: Russ & Daughters (Lower East Side) or Ess-a-Bagel (Midtown) for the perfect New York bagel  
-- Pastrami: Katz's Delicatessen has been serving its legendary Pastrami on Rye since 1888  
-- Hot Dogs: Nathan's Famous at Coney Island (make a day trip of it)
-
-Neighborhood Food Tours  
-East 32nd Street between 5th and 6th Avenues features New York City's Koreatown, with authentic Korean fried chicken and kimchi stew. Manhattan's Chinatown (roughly between Broadway, Bowery, Grand and Worth Streets) was one of the first places in the United States to popularize Chinese cuisine, with Cantonese-style dishes and dim sum prominent.
-
-Splurge-Worthy Dinners  
-Le Bernardin in Midtown Manhattan continues to define luxury seafood dining, while Carbone in Greenwich Village offers theatrical Italian-American dining with its famous Spicy Rigatoni Vodka.
-
-Football Fan Gathering Spots  
-NYC has soccer bars for every nation. Bar 43, known as the "home of soccer in Queens," attracts numerous fan communities from the diverse Sunnyside neighborhood. Search for your national team's official supporters club—they'll have watch parties for matches you're not attending.`}
-              </p>
+            <div className="attraction-card-premium">
+              <div className="attraction-icon">
+                <i className="ri-restaurant-2-line text-orange-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Food Experiences</h4>
+              <div className="food-categories">
+                <div className="food-category">
+                  <div className="category-icon">
+                    <i className="ri-pizza-line"></i>
+                  </div>
+                  <div className="category-text">
+                    <div className="font-medium text-sm">Classic NYC Pizza</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Joe's, Lombardi's, Juliana's</div>
+                  </div>
+                </div>
+                <div className="food-category">
+                  <div className="category-icon">
+                    <i className="ri-bread-line"></i>
+                  </div>
+                  <div className="category-text">
+                    <div className="font-medium text-sm">Authentic Bagels</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Russ & Daughters, Ess-a-Bagel</div>
+                  </div>
+                </div>
+                <div className="food-category">
+                  <div className="category-icon">
+                    <i className="ri-donut-line"></i>
+                  </div>
+                  <div className="category-text">
+                    <div className="font-medium text-sm">Legendary Pastrami</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Katz's Delicatessen since 1888</div>
+                  </div>
+                </div>
+                <div className="food-category">
+                  <div className="category-icon">
+                    <i className="ri-global-line"></i>
+                  </div>
+                  <div className="category-text">
+                    <div className="font-medium text-sm">Global Cuisine</div>
+                    <div className="text-xs text-slate-600 dark:text-slate-400">Koreatown, Chinatown & more</div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-calendar-todo-line text-emerald-500"></i>
-                Match Day in NYC: Fan Zones & Atmosphere
-              </h4>
-              <p className="whitespace-pre-line">
-                {`Expect the city to transform during the World Cup. NYC will host FIFA Fan Festivals, sports bar screenings, and neighborhood celebrations throughout the tournament. Every match day will feel like a global street party, with fans from dozens of nations filling Manhattan's streets, subway cars, and parks.`}
-              </p>
+          <div className="callout-must-know mb-8 p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-football-line text-green-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Match Day Atmosphere</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Expect the city to transform during the World Cup. NYC will host FIFA Fan Festivals, sports bar screenings, and neighborhood celebrations throughout the tournament. Every match day will feel like a global street party, with fans from dozens of nations filling Manhattan's streets, subway cars, and parks.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="premium-food-spots mb-8">
+            <h4 className="editorial-h4 text-xl font-semibold text-slate-900 dark:text-slate-100 mb-6">Football Fan Gathering Spots</h4>
+            <div className="food-spot-grid">
+              <div className="food-spot-card">
+                <div className="spot-header">
+                  <i className="ri-beer-line text-amber-600"></i>
+                  <h5 className="font-semibold text-slate-900 dark:text-slate-100">Bar 43 Queens</h5>
+                </div>
+                <p className="text-sm text-slate-700 dark:text-slate-300">
+                  Known as the "home of soccer in Queens" - attracts numerous fan communities from the diverse Sunnyside neighborhood
+                </p>
+              </div>
+              <div className="food-spot-card">
+                <div className="spot-header">
+                  <i className="ri-team-line text-blue-600"></i>
+                  <h5 className="font-semibold text-slate-900 dark:text-slate-100">National Team Bars</h5>
+                </div>
+                <p className="text-sm text-slate-700 dark:text-slate-300">
+                  Search for your national team's official supporters club—they'll have watch parties for matches you're not attending
+                </p>
+              </div>
             </div>
           </div>
           <hr className="editorial-divider" />
@@ -763,267 +1250,1237 @@ NYC has soccer bars for every nation. Bar 43, known as the "home of soccer in Qu
 
         {/* Weather & What to Pack */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-sun-line text-emerald-500"></i>
-            Weather & What to Pack
-          </h3>
-          <h4 className="editorial-h4 animate-fade-up mb-2">July in New York: Hot, Humid, and Glorious</h4>
-          <p className="whitespace-pre-line mb-4">
-            {`July in New York experiences average temperatures around 24-26°C (75-78°F), with highs reaching 29-30°C (84-86°F). About 6-7 days each month see afternoon highs at 32°C (90°F) or higher, and humidity is high throughout the summer months.`}
-          </p>
-          <p className="whitespace-pre-line">
-            {`What This Means for You:  
-- Stay hydrated: MetLife Stadium allows factory-sealed water bottles or empty reusable bottles that you can fill inside
-- Dress light: Cotton t-shirts, shorts, breathable fabrics
-- Sun protection: Sunglasses, sunscreen, and a hat are essential
-- Rain gear: July sees occasional thunderstorms, so carry a compact umbrella
-- Layers: Air conditioning indoors can be aggressive—bring a light jacket for restaurants and transit`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-sun-line text-yellow-500" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Weather & What to Pack
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"></div>
+          </div>
+
+          <div className="weather-overview mb-8">
+            <div className="premium-temp-card">
+              <div className="temp-icon">
+                <i className="ri-temp-hot-line text-orange-500"></i>
+              </div>
+              <div className="temp-details">
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100">July in New York</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">Hot, Humid, and Glorious</p>
+                <div className="temp-range">
+                  <span className="temp-high">84-86°F</span>
+                  <span className="temp-separator">•</span>
+                  <span className="temp-low">75-78°F</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+              July in New York experiences average temperatures around 24-26°C (75-78°F), with highs reaching 29-30°C (84-86°F). About 6-7 days each month see afternoon highs at 32°C (90°F) or higher, and humidity is high throughout the summer months.
+            </p>
+          </div>
+
+          <div className="packing-grid mb-8">
+            <div className="packing-category">
+              <div className="category-header">
+                <div className="category-icon">
+                  <i className="ri-drop-line text-blue-600"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Stay Hydrated</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                MetLife Stadium allows factory-sealed water bottles or empty reusable bottles that you can fill inside
+              </p>
+            </div>
+
+            <div className="packing-category">
+              <div className="category-header">
+                <div className="category-icon">
+                  <i className="ri-t-shirt-line text-green-600"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Dress Light</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                Cotton t-shirts, shorts, breathable fabrics - perfect for hot summer days
+              </p>
+            </div>
+
+            <div className="packing-category">
+              <div className="category-header">
+                <div className="category-icon">
+                  <i className="ri-sun-line text-yellow-600"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Sun Protection</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                Sunglasses, sunscreen, and a hat are essential for outdoor stadium experience
+              </p>
+            </div>
+
+            <div className="packing-category">
+              <div className="category-header">
+                <div className="category-icon">
+                  <i className="ri-umbrella-line text-purple-600"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Rain Gear</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                July sees occasional thunderstorms, so carry a compact umbrella
+              </p>
+            </div>
+
+            <div className="packing-category">
+              <div className="category-header">
+                <div className="category-icon">
+                  <i className="ri-windy-line text-gray-600"></i>
+                </div>
+                <h5 className="font-semibold text-slate-900 dark:text-slate-100">Layers</h5>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                Air conditioning indoors can be aggressive—bring a light jacket for restaurants and transit
+              </p>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Stadium Bag Policy */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-briefcase-2-line text-emerald-500"></i>
-            Stadium Bag Policy
-          </h3>
-          <p className="whitespace-pre-line">
-            {`MetLife Stadium permits clear bags measuring 12 x 6 x 12 inches or less, and small purses or handbags (clutch type) measuring 4.5 x 6.5 inches or less—one bag per person. Backpacks and large tote bags are not permitted. Plan accordingly.`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-briefcase-2-line text-red-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Stadium Bag Policy
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-red-500 to-pink-500 rounded-full"></div>
+          </div>
+
+          <div className="bag-policy-grid mb-8">
+            <div className="policy-card allowed">
+              <div className="policy-icon">
+                <i className="ri-check-line text-green-600"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Permitted Items</h4>
+              <div className="policy-items">
+                <div className="policy-item">
+                  <div className="item-badge">Clear Bags</div>
+                  <div className="item-size">12" × 6" × 12" or less</div>
+                </div>
+                <div className="policy-item">
+                  <div className="item-badge">Small Purses</div>
+                  <div className="item-size">4.5" × 6.5" or less</div>
+                </div>
+                <div className="policy-note">One bag per person</div>
+              </div>
+            </div>
+
+            <div className="policy-card prohibited">
+              <div className="policy-icon">
+                <i className="ri-close-line text-red-600"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Not Permitted</h4>
+              <div className="policy-items">
+                <div className="policy-item">
+                  <div className="item-badge prohibited">Backpacks</div>
+                </div>
+                <div className="policy-item">
+                  <div className="item-badge prohibited">Large Tote Bags</div>
+                </div>
+                <div className="policy-item">
+                  <div className="item-badge prohibited">Duffel Bags</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="callout-warning p-6 sm:p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-alert-line text-red-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Important Security Notice</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  MetLife Stadium enforces strict bag policies for all events. Plan accordingly and arrive early to allow time for security screening. Clear bags are available for purchase at many retailers if needed.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Practical Tips for International Visitors */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-passport-line text-emerald-500"></i>
-            Practical Tips for International Visitors
-          </h3>
-          <h4 className="editorial-h4 animate-fade-up mb-2">Money Matters</h4>
-          <p className="whitespace-pre-line">
-            {`- Currency: US Dollar (USD)
-- Cards: Credit cards accepted everywhere; contactless payment widely available
-- Tipping: Expected 18-20% at restaurants, $1-2 per drink at bars, 15-20% for taxis and rideshares
-- ATMs: Widely available, but use bank-affiliated machines to avoid high fees`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-passport-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Practical Tips for International Visitors
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full"></div>
+          </div>
+
+          <div className="premium-tips-grid mb-8">
+            <div className="tip-card-premium">
+              <div className="tip-card-header">
+                <div className="tip-icon">
+                  <i className="ri-money-dollar-circle-line text-green-600" aria-hidden="true"></i>
+                </div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100">Money Matters</h4>
+              </div>
+              <div className="tip-content">
+                <div className="tip-item">
+                  <span className="tip-label">Currency:</span>
+                  <span className="tip-value">US Dollar (USD)</span>
+                </div>
+                <div className="tip-item">
+                  <span className="tip-label">Cards:</span>
+                  <span className="tip-value">Credit cards accepted everywhere; contactless payment widely available</span>
+                </div>
+                <div className="tip-item">
+                  <span className="tip-label">Tipping:</span>
+                  <span className="tip-value">Expected 18-20% at restaurants, $1-2 per drink at bars, 15-20% for taxis and rideshares</span>
+                </div>
+                <div className="tip-item">
+                  <span className="tip-label">ATMs:</span>
+                  <span className="tip-value">Widely available, but use bank-affiliated machines to avoid high fees</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="tip-card-premium">
+              <div className="tip-card-header">
+                <div className="tip-icon">
+                  <i className="ri-phone-line text-blue-600" aria-hidden="true"></i>
+                </div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100">Connectivity</h4>
+              </div>
+              <div className="tip-content">
+                <div className="tip-item">
+                  <span className="tip-label">Wi-Fi:</span>
+                  <span className="tip-value">Free in many public spaces, cafes, and all subway stations</span>
+                </div>
+                <div className="tip-item">
+                  <span className="tip-label">SIM Cards:</span>
+                  <span className="tip-value">Purchase at airports or major retailers for better rates</span>
+                </div>
+                <div className="tip-item">
+                  <span className="tip-label">Apps:</span>
+                  <span className="tip-value">Download NJ Transit, MTA, and rideshare apps before arrival</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="callout-important p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-alert-line text-amber-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Important Travel Note</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  New York is one of the most international cities in the world. You'll hear dozens of languages on any given subway ride—over 8 million people from every corner of the planet call this city home.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* PART 4/5: Safety & Getting Around */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-shield-check-line text-emerald-500"></i>
-            Safety & Getting Around
-          </h3>
-          <p className="whitespace-pre-line mb-4">
-            {`New York is one of the safest large cities in America. Basic street smarts apply: be aware of your surroundings, especially late at night, and keep valuables secure in crowded areas.`}
-          </p>
-          <h4 className="editorial-h4 animate-fade-up mb-2">Subway Strategy</h4>
-          <p className="whitespace-pre-line mb-4">
-            {`The NYC subway runs 24/7 and is the fastest way to navigate Manhattan and Brooklyn. Buy a 7-day unlimited MetroCard ($34) if you're staying a week—it pays for itself after 12 rides. Google Maps provides excellent real-time subway directions.`}
-          </p>
-          <h4 className="editorial-h4 animate-fade-up mb-2">Walking City</h4>
-          <p className="whitespace-pre-line mb-4">
-            {`Manhattan is incredibly walkable. Many attractions are just 20-30 minutes apart on foot, and you'll discover the city's personality between destinations.`}
-          </p>
-          <h4 className="editorial-h4 animate-fade-up mb-2">Rideshares & Taxis</h4>
-          <p className="whitespace-pre-line">
-            {`Uber and Lyft operate city-wide. Traditional yellow taxis are also plentiful in Manhattan. Expect surge pricing on match days and weekend evenings.`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-shield-check-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Safety & Getting Around
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full"></div>
+          </div>
+
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+              New York is one of the safest large cities in America. Basic street smarts apply: be aware of your surroundings, especially late at night, and keep valuables secure in crowded areas.
+            </p>
+          </div>
+
+          <div className="safety-grid-premium mb-8">
+            <div className="safety-card-premium">
+              <div className="safety-icon">
+                <i className="ri-subway-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Subway Strategy</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                The NYC subway runs 24/7 and is the fastest way to navigate Manhattan and Brooklyn.
+              </p>
+              <div className="safety-details">
+                <div className="detail-item">
+                  <i className="ri-money-dollar-circle-line"></i>
+                  <span>7-day unlimited MetroCard: $34</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-calculator-line"></i>
+                  <span>Pays for itself after 12 rides</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-map-pin-line"></i>
+                  <span>Google Maps integration</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="safety-card-premium">
+              <div className="safety-icon">
+                <i className="ri-walk-line text-green-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Walking City</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Manhattan is incredibly walkable. Many attractions are just 20-30 minutes apart on foot.
+              </p>
+              <div className="safety-details">
+                <div className="detail-item">
+                  <i className="ri-time-line"></i>
+                  <span>20-30 min between major attractions</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-compass-line"></i>
+                  <span>Discover the city's personality</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-heart-line"></i>
+                  <span>Best way to experience local culture</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="safety-card-premium">
+              <div className="safety-icon">
+                <i className="ri-taxi-line text-yellow-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Rideshares & Taxis</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Uber, Lyft, and traditional yellow taxis operate city-wide.
+              </p>
+              <div className="safety-details">
+                <div className="detail-item">
+                  <i className="ri-car-line"></i>
+                  <span>Available 24/7 city-wide</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-money-dollar-circle-line"></i>
+                  <span>Expect surge pricing on match days</span>
+                </div>
+                <div className="detail-item">
+                  <i className="ri-star-line"></i>
+                  <span>Yellow taxis plentiful in Manhattan</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="callout-pro p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-lightbulb-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Pro Navigation Tip</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Download offline maps before you arrive. NYC's subway system is extensive but well-organized—use the MTA app for real-time updates and service changes.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Language & Connectivity */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
-            Language & Connectivity
-          </h3>
-          <p className="whitespace-pre-line">
-            {`English is the primary language, but you'll hear dozens of languages on any given subway ride—New York is home to over 8 million people from every corner of the planet.
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-global-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Language & Connectivity
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+          </div>
 
-Free Wi-Fi is available in many public spaces, cafes, and all subway stations (in Manhattan). Consider purchasing a US SIM card or international data plan for navigation and communication.`}
-          </p>
+          {/* Premium Connectivity Cards - Enhanced Design */}
+          <div className="grid gap-6 mb-8">
+            {/* Language Diversity - Premium Card */}
+            <div className="premium-connectivity-card group">
+              <div className="flex items-start gap-6 p-6 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-purple-900/20 dark:via-slate-800/40 dark:to-blue-900/20 border border-purple-200/50 dark:border-purple-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-800/30 dark:to-blue-800/30 flex items-center justify-center border border-purple-200/50 dark:border-purple-600/30">
+                    <i className="ri-translate-2-line text-purple-600 dark:text-purple-400 text-2xl" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Language Diversity</h4>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        English is primary, but you'll hear dozens of languages on any subway ride. NYC is a true global melting pot where every continent is represented.
+                      </p>
+                    </div>
+                    <span className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-800/30 dark:to-blue-800/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+                      Global Hub
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="premium-stat-box">
+                      <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-1">8M+</div>
+                      <div className="text-sm text-slate-600 dark:text-slate-400">People from every continent</div>
+                    </div>
+                    <div className="premium-stat-box">
+                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">200+</div>
+                      <div className="text-sm text-slate-600 dark:text-slate-400">Languages spoken daily</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Connectivity Hub - Split Layout */}
+            <div className="grid lg:grid-cols-2 gap-6">
+              {/* Free Wi-Fi Access */}
+              <div className="premium-connectivity-card group">
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-green-900/20 dark:via-slate-800/40 dark:to-emerald-900/20 border border-green-200/50 dark:border-green-700/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-800/30 dark:to-emerald-800/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
+                      <i className="ri-wifi-line text-green-600 dark:text-green-400 text-xl" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Free Wi-Fi Network</h4>
+                      <span className="bg-green-100 dark:bg-green-800/30 text-green-700 dark:text-green-300 px-2 py-1 rounded-full text-xs font-semibold">
+                        Free
+                      </span>
+                    </div>
+                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                      Stay connected across the city with extensive free Wi-Fi coverage in public spaces, transit hubs, and popular venues.
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-green-50/50 dark:bg-green-900/20">
+                        <i className="ri-coffee-line text-green-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Cafes & Restaurants</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-green-50/50 dark:bg-green-900/20">
+                        <i className="ri-subway-line text-green-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">All subway stations</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-green-50/50 dark:bg-green-900/20">
+                        <i className="ri-park-line text-green-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Public parks & spaces</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mobile Connectivity */}
+              <div className="premium-connectivity-card group">
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-blue-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-blue-200/50 dark:border-blue-700/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
+                  <div className="flex-shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 flex items-center justify-center border border-blue-200/50 dark:border-blue-600/30">
+                      <i className="ri-sim-card-line text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between gap-2 mb-3">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Mobile Connectivity</h4>
+                      <span className="bg-blue-100 dark:bg-blue-800/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-semibold">
+                        5G Ready
+                      </span>
+                    </div>
+                    <p className="text-slate-700 dark:text-slate-300 text-sm leading-relaxed mb-4">
+                      Get the best rates and coverage with US SIM cards available at multiple convenient locations.
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
+                        <i className="ri-airport-line text-blue-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Airport kiosks</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
+                        <i className="ri-store-2-line text-blue-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Major retailers</span>
+                      </div>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
+                        <i className="ri-smartphone-line text-blue-600"></i>
+                        <span className="text-sm font-medium text-slate-700 dark:text-slate-300">International data plans</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Essential Apps - Premium Callout */}
+            <div className="premium-apps-callout group">
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-800/40 dark:via-slate-800/20 dark:to-blue-900/20 border border-slate-200/50 dark:border-slate-700/30 p-5 sm:p-8 transition-all duration-300 hover:shadow-xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/20 to-purple-100/20 dark:from-blue-900/10 dark:to-purple-900/10 rounded-full -translate-y-16 translate-x-16"></div>
+                <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-800/30 dark:to-blue-800/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
+                    <i className="ri-smartphone-line text-green-600 dark:text-green-400 text-2xl" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                    <div>
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Essential Apps for Your Journey</h4>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Download these must-have apps before you arrive for seamless navigation, communication, and match day experience.
+                      </p>
+                    </div>
+                    <span className="bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-800/30 dark:to-blue-800/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+                      Must Download
+                    </span>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+                    <div className="app-download-card group/item">
+                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-blue-50/50 dark:bg-blue-900/20 border border-blue-200/30 dark:border-blue-700/30 transition-all duration-200 hover:bg-blue-100/50 dark:hover:bg-blue-800/30">
+                        <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-800/30 flex items-center justify-center">
+                          <i className="ri-subway-line text-blue-600 text-lg"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">NJ Transit</div>
+                          <div className="text-xs text-slate-600 dark:text-slate-400">Train & bus schedules</div>
+                        </div>
+                        <i className="ri-download-line text-blue-600"></i>
+                      </div>
+                    </div>
+                    <div className="app-download-card group/item">
+                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-green-50/50 dark:bg-green-900/20 border border-green-200/30 dark:border-green-700/30 transition-all duration-200 hover:bg-green-100/50 dark:hover:bg-green-800/30">
+                        <div className="w-10 h-10 rounded-lg bg-green-100 dark:bg-green-800/30 flex items-center justify-center">
+                          <i className="ri-train-line text-green-600 text-lg"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">MTA</div>
+                          <div className="text-xs text-slate-600 dark:text-slate-400">NYC subway & buses</div>
+                        </div>
+                        <i className="ri-download-line text-green-600"></i>
+                      </div>
+                    </div>
+                    <div className="app-download-card group/item">
+                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-yellow-50/50 dark:bg-yellow-900/20 border border-yellow-200/30 dark:border-yellow-700/30 transition-all duration-200 hover:bg-yellow-100/50 dark:hover:bg-yellow-800/30">
+                        <div className="w-10 h-10 rounded-lg bg-yellow-100 dark:bg-yellow-800/30 flex items-center justify-center">
+                          <i className="ri-car-line text-yellow-600 text-lg"></i>
+                        </div>
+                        <div className="flex-1">
+                          <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">Rideshare Apps</div>
+                          <div className="text-xs text-slate-600 dark:text-slate-400">Uber, Lyft & more</div>
+                        </div>
+                        <i className="ri-download-line text-yellow-600"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ticket-2-line text-emerald-500"></i>
-            Ticket Information & Booking Strategy
-          </h3>
-          <h4 className="editorial-h4 animate-fade-up mb-2">How to Get World Cup Tickets</h4>
-          <p className="whitespace-pre-line mb-4">
-            {`Tickets for the 2026 World Cup are sold in three phases, with the first phase presale draw beginning September 10, 2025, open to people 18 and older with FIFA accounts and Visa cardholders. Prices for group stage match tickets begin at $60, with prices rising to $6,730 for Category 1 final tickets at MetLife Stadium.
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-ticket-2-line text-purple-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Ticket Information & Booking Strategy
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full"></div>
+          </div>
 
-Register at https://www.fifa.com/tickets  to enter the ticket lottery. If you miss the first phase, a second phase is expected in late October with the "Early Ticket Draw".
+          <div className="ticket-phases-grid mb-8">
+            <div className="phase-card-premium">
+              <div className="phase-header">
+                <div className="phase-icon">
+                  <i className="ri-calendar-line text-blue-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Phase 1: Presale Draw</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">September 10, 2025</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Open to people 18+ with FIFA accounts and Visa cardholders. Enter the ticket lottery at FIFA.com.
+              </p>
+              <div className="phase-details">
+                <div className="detail-row">
+                  <span className="detail-label">Group Stage:</span>
+                  <span className="detail-value">Starting at $60</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">Final (Cat 1):</span>
+                  <span className="detail-value">Up to $6,730</span>
+                </div>
+              </div>
+            </div>
 
-Pro Tip: Don't rely solely on the lottery. Look into hospitality packages, which bundle tickets with hotels and travel services. These cost more but guarantee access—worth considering for once-in-a-lifetime matches like the final.`}
-          </p>
-          <h4 className="editorial-h4 animate-fade-up mb-2">Alternative: Hospitality Packages</h4>
-          <p className="whitespace-pre-line">
-            {`MetLife Stadium offers hospitality packages featuring premium tickets, entertainment, food & beverage, available across all three host nations for single matches and venue series. These packages are sold through FIFA's official hospitality partner and include guaranteed tickets, premium seating, and VIP experiences.
+            <div className="phase-card-premium">
+              <div className="phase-header">
+                <div className="phase-icon">
+                  <i className="ri-calendar-2-line text-green-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Phase 2: Early Draw</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Late October 2025</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Second chance lottery for those who missed Phase 1. Limited availability expected.
+              </p>
+              <div className="phase-details">
+                <div className="detail-row">
+                  <span className="detail-label">Availability:</span>
+                  <span className="detail-value">Limited</span>
+                </div>
+                <div className="detail-row">
+                  <span className="detail-label">Competition:</span>
+                  <span className="detail-value">High demand</span>
+                </div>
+              </div>
+            </div>
+          </div>
 
-For the World Cup Final, expect premium packages to range from $3,000-$10,000+ per person. Book early through official channels only to avoid scams.`}
-          </p>
+          <div className="hospitality-card-premium mb-8">
+            <div className="hospitality-header">
+              <div className="hospitality-icon">
+                <i className="ri-vip-crown-line text-amber-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">Hospitality Packages</h4>
+                <p className="text-sm text-slate-600 dark:text-slate-400">Premium experience with guaranteed access</p>
+              </div>
+            </div>
+            <p className="text-slate-700 dark:text-slate-300 mb-4">
+              MetLife Stadium offers hospitality packages featuring premium tickets, entertainment, food & beverage. Sold through FIFA's official hospitality partner with guaranteed tickets and VIP experiences.
+            </p>
+            <div className="hospitality-features">
+              <div className="feature-item">
+                <i className="ri-check-line text-green-600"></i>
+                <span>Guaranteed tickets</span>
+              </div>
+              <div className="feature-item">
+                <i className="ri-check-line text-green-600"></i>
+                <span>Premium seating</span>
+              </div>
+              <div className="feature-item">
+                <i className="ri-check-line text-green-600"></i>
+                <span>VIP experiences</span>
+              </div>
+              <div className="feature-item">
+                <i className="ri-check-line text-green-600"></i>
+                <span>Food & beverage included</span>
+              </div>
+            </div>
+            <div className="price-range">
+              <span className="price-label">World Cup Final Packages:</span>
+              <span className="price-value">$3,000 - $10,000+ per person</span>
+            </div>
+          </div>
+
+          <div className="callout-warning p-8">
+            <div className="flex items-start gap-4">
+              <div className="icon-premium-md flex items-center justify-center mt-1">
+                <i className="ri-alert-line text-red-600" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Avoid Ticket Scams</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Book early through official channels only. FIFA's official hospitality partner is the only authorized seller of hospitality packages. Be wary of third-party sellers and always verify authenticity.
+                </p>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Why New York Will Make Your World Cup Unforgettable */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-sparkling-2-line text-emerald-500"></i>
-            Why New York Will Make Your World Cup Unforgettable
-          </h3>
-          <p className="whitespace-pre-line">
-            {`This isn't just about 90 minutes of football. It's about experiencing the world's most electrifying tournament in the world's most electrifying city. 
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-sparkling-2-line text-rose-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Why New York Will Make Your World Cup Unforgettable
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full"></div>
+          </div>
 
-More than 1.2 million visitors are expected to travel to the New York/New Jersey area for the World Cup—and they'll all be here for the same reason you are: to witness history. The energy will be contagious. The diversity will mirror the tournament itself. And the memories? Those last forever.
+          <div className="unforgettable-intro mb-8">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-xl leading-relaxed text-slate-700 dark:text-slate-300 mb-6 font-medium">
+                This isn't just about 90 minutes of football. It's about experiencing the world's most electrifying tournament in the world's most electrifying city.
+              </p>
+            </div>
+          </div>
 
-From the subway ride to the stadium where you're sitting next to fans from Brazil, Nigeria, and South Korea, to post-match celebrations in Times Square where 200,000 people from every nation on Earth are gathered—this is the World Cup experience amplified by New York's unmatched scale and diversity.
+          <div className="experience-cards-grid mb-8">
+            <div className="experience-card-premium">
+              <div className="experience-icon">
+                <i className="ri-team-line text-blue-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Global Gathering</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Over 1.2 million visitors expected—fans from every nation united by football.
+              </p>
+              <div className="experience-stats">
+                <div className="stat-highlight">
+                  <span className="stat-number">1.2M+</span>
+                  <span className="stat-desc">Expected visitors</span>
+                </div>
+                <div className="stat-highlight">
+                  <span className="stat-number">200+</span>
+                  <span className="stat-desc">Nations represented</span>
+                </div>
+              </div>
+            </div>
 
-You'll arrive a football fan. You'll leave with stories no other city could provide.`}
-          </p>
+            <div className="experience-card-premium">
+              <div className="experience-icon">
+                <i className="ri-subway-line text-green-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Subway Stories</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Ride with fans from Brazil, Nigeria, and South Korea—all sharing the same dream.
+              </p>
+              <div className="experience-quote">
+                <blockquote>
+                  "The diversity mirrors the tournament itself—every language, every culture, united by football."
+                </blockquote>
+              </div>
+            </div>
+
+            <div className="experience-card-premium">
+              <div className="experience-icon">
+                <i className="ri-time-square-line text-purple-600" aria-hidden="true"></i>
+              </div>
+              <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3">Times Square Celebrations</h4>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Post-match celebrations with 200,000 people from every nation on Earth.
+              </p>
+              <div className="experience-stats">
+                <div className="stat-highlight">
+                  <span className="stat-number">200K</span>
+                  <span className="stat-desc">People in Times Square</span>
+                </div>
+                <div className="stat-highlight">
+                  <span className="stat-number">24/7</span>
+                  <span className="stat-desc">Non-stop energy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="unforgettable-conclusion p-8">
+            <div className="conclusion-content">
+              <div className="conclusion-icon">
+                <i className="ri-heart-line text-rose-600" aria-hidden="true"></i>
+              </div>
+              <div className="conclusion-text">
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">The Promise</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg">
+                  You'll arrive a football fan. You'll leave with stories no other city could provide. This is the World Cup experience amplified by New York's unmatched scale and diversity.
+                </p>
+              </div>
+            </div>
+            <div className="conclusion-highlight">
+              <span className="highlight-text">The memories last forever.</span>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         {/* Start Planning CTA */}
         {/* Related Destinations */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
-            Plan Your East Coast World Cup Journey
-          </h3>
-          <p>
-            New York/New Jersey is the gateway to an unforgettable East Coast World Cup experience, with multiple host cities easily accessible by train, car, or short flights.
-          </p>
-          <div className="mt-6 space-y-6">
-            <div>
-              <h4 className="editorial-h4">Popular Combinations:</h4>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-route-line text-indigo-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Plan Your East Coast World Cup Journey
+              </h3>
             </div>
-            <div>
-              <h4 className="editorial-h4">Northeast Corridor</h4>
-              <p>
-                Experience the best of the East Coast: Start in New York/New Jersey (current), take the train to <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="underline">Philadelphia</Link> for history and cheesesteaks, then continue to <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="underline">Boston</Link> for New England charm.
+            <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full"></div>
+          </div>
+
+          <div className="prose prose-lg max-w-none mb-8">
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+              New York/New Jersey is the gateway to an unforgettable East Coast World Cup experience, with multiple host cities easily accessible by train, car, or short flights.
+            </p>
+          </div>
+
+          <div className="journey-routes-grid mb-8">
+            <div className="route-card-premium">
+              <div className="route-header">
+                <div className="route-icon">
+                  <i className="ri-train-line text-blue-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Northeast Corridor</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Classic East Coast Experience</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Experience the best of the East Coast: Start in New York/New Jersey, take the train to Philadelphia for history and cheesesteaks, then continue to Boston for New England charm.
               </p>
+              <div className="route-stops">
+                <div className="stop-item">
+                  <div className="stop-marker">1</div>
+                  <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="stop-name current">New York/New Jersey</Link>
+                </div>
+                <div className="stop-item">
+                  <div className="stop-marker">2</div>
+                  <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="stop-name">Philadelphia</Link>
+                </div>
+                <div className="stop-item">
+                  <div className="stop-marker">3</div>
+                  <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="stop-name">Boston</Link>
+                </div>
+              </div>
+              <div className="route-features">
+                <div className="feature-tag">
+                  <i className="ri-time-line"></i>
+                  <span>Easy train connections</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-map-pin-line"></i>
+                  <span>Historic cities</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="editorial-h4">Cross-Border Connection</h4>
-              <p>
-                Combine NY/NJ with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="underline">Toronto</Link> for an international experience, just a short flight or scenic drive away.
+
+            <div className="route-card-premium">
+              <div className="route-header">
+                <div className="route-icon">
+                  <i className="ri-earth-line text-green-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Cross-Border Connection</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">International Experience</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Combine NY/NJ with Toronto for an international experience, just a short flight or scenic drive away.
               </p>
+              <div className="route-stops">
+                <div className="stop-item">
+                  <div className="stop-marker">🇺🇸</div>
+                  <span className="stop-name">New York/New Jersey</span>
+                </div>
+                <div className="stop-item">
+                  <div className="stop-marker">🇨🇦</div>
+                  <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="stop-name">Toronto, Canada</Link>
+                </div>
+              </div>
+              <div className="route-features">
+                <div className="feature-tag">
+                  <i className="ri-plane-line"></i>
+                  <span>Short flight</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-global-line"></i>
+                  <span>International flair</span>
+                </div>
+              </div>
             </div>
-            <div>
-              <h4 className="editorial-h4">Eastern Seaboard</h4>
-              <p>
-                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="underline">Miami</Link> for completely different cultural vibes.
+
+            <div className="route-card-premium">
+              <div className="route-header">
+                <div className="route-icon">
+                  <i className="ri-sun-line text-orange-600" aria-hidden="true"></i>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-slate-900 dark:text-slate-100">Eastern Seaboard</h4>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">Southern Cultural Vibes</p>
+                </div>
+              </div>
+              <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
+                Extend your journey south to Atlanta or Miami for completely different cultural vibes.
               </p>
+              <div className="route-stops">
+                <div className="stop-item">
+                  <div className="stop-marker">🌆</div>
+                  <span className="stop-name">New York/New Jersey</span>
+                </div>
+                <div className="stop-item">
+                  <div className="stop-marker">🍑</div>
+                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="stop-name">Atlanta</Link>
+                </div>
+                <div className="stop-item">
+                  <div className="stop-marker">🏖️</div>
+                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="stop-name">Miami</Link>
+                </div>
+              </div>
+              <div className="route-features">
+                <div className="feature-tag">
+                  <i className="ri-flight-takeoff-line"></i>
+                  <span>Short flights</span>
+                </div>
+                <div className="feature-tag">
+                  <i className="ri-music-line"></i>
+                  <span>Diverse cultures</span>
+                </div>
+              </div>
             </div>
           </div>
-          <p className="mt-6">
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 hover:text-emerald-700 underline">Browse All World Cup 2026 Host Cities</Link>
-          </p>
+
+          <div className="journey-cta-premium p-8">
+            <div className="cta-content">
+              <div className="cta-icon">
+                <i className="ri-compass-line text-indigo-600" aria-hidden="true"></i>
+              </div>
+              <div className="cta-text">
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-2">Ready to Explore More?</h4>
+                <p className="text-slate-700 dark:text-slate-300 text-sm">
+                  Discover all 16 World Cup 2026 host cities and create your perfect tournament journey.
+                </p>
+              </div>
+            </div>
+            <Link to="/world-cup-2026-host-cities" className="cta-button-premium">
+              <i className="ri-map-2-line"></i>
+              Browse All Host Cities
+            </Link>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-flag-line text-emerald-500"></i>
-            Start Planning Your 2026 World Cup Trip to New York
-          </h3>
-          <p className="whitespace-pre-line">
-            {`The countdown is on. Hotels are booking up. Flights are being reserved. And the world is preparing to descend on the New York metropolitan area for the biggest sporting event on the planet.`}
-          </p>
+          <div className="premium-section-header mb-8">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="icon-premium-lg flex items-center justify-center">
+                <i className="ri-flag-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
+                Start Planning Your 2026 World Cup Trip to New York
+              </h3>
+            </div>
+            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full"></div>
+          </div>
+
+          <div className="planning-intro-premium p-6 sm:p-8 mb-8">
+            <div className="intro-content flex-col sm:flex-row">
+              <div className="intro-icon">
+                <i className="ri-time-line text-emerald-600" aria-hidden="true"></i>
+              </div>
+              <div className="intro-text">
+                <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">The Countdown Begins</h4>
+                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                  Hotels are booking up. Flights are being reserved. And the world is preparing to descend on the New York metropolitan area for the biggest sporting event on the planet.
+                </p>
+              </div>
+            </div>
+            <div className="countdown-timer sm:grid-cols-3">
+              <div className="timer-item">
+                <span className="timer-number">2026</span>
+                <span className="timer-label">World Cup Year</span>
+              </div>
+              <div className="timer-item">
+                <span className="timer-number">July</span>
+                <span className="timer-label">Final Month</span>
+              </div>
+              <div className="timer-item">
+                <span className="timer-number">16</span>
+                <span className="timer-label">Host Cities</span>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
 
-        {/* PART 5/5: Your Action Plan (exact text preserved) */}
+        {/* PART 5/5: Your Action Plan (Premium Redesign) */}
         <article className="editorial-body">
-          <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-check-double-line text-emerald-500"></i>
-            Your Action Plan
-          </h3>
-          <p className="whitespace-pre-line">
-            <span>
-              <strong>1. Register for FIFA tickets</strong> at{' '}
-              <a
-                href="https://www.fifa.com/tickets"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-600 hover:text-emerald-700 underline"
-              >
-                https://www.fifa.com/tickets
-              </a>
-            </span>
-            <br />
-            <span>
-              <strong>2. Book accommodations early</strong> via{' '}
-              <a
-                href="https://www.booking.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-600 hover:text-emerald-700 underline"
-              >
-                https://www.booking.com
-              </a>{' '}
-              or{' '}
-              <a
-                href="https://www.hotels.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-600 hover:text-emerald-700 underline"
-              >
-                https://www.hotels.com
-              </a>{' '}
-              —aim for 6-12 months in advance
-            </span>
-            <br />
-            <span>
-              <strong>3. Reserve flights</strong> through{' '}
-              <a
-                href="https://www.skyscanner.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-600 hover:text-emerald-700 underline"
-              >
-                https://www.skyscanner.com
-              </a>{' '}
-              or{' '}
-              <a
-                href="https://www.google.com/flights"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-emerald-600 hover:text-emerald-700 underline"
-              >
-                https://www.google.com/flights
-              </a>{' '}
-              to compare prices across airlines
-            </span>
-            <br />
-            <span>
-              <strong>4. Research neighborhoods</strong> and plan your non-match activities
-            </span>
-            <br />
-            <span>
-              <strong>5. Download the NJ Transit app</strong> for seamless stadium transportation
-            </span>
-            <br />
-            <span>
-              <strong>6. Join your national team's supporters group</strong> for watch parties and meetups
-            </span>
-            <br />
-            <br />
-            <span>
-              The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
-            </span>
-            <br />
-            <br />
-            <strong>
-              See you in July 2026. Come for the football. Stay for the experience of a lifetime.
-            </strong>
-          </p>
+          {/* Premium Header */}
+          <div className="premium-section-header mb-12">
+            <div className="flex items-center gap-6 mb-8">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 flex items-center justify-center border border-emerald-200/50 dark:border-emerald-600/30">
+                <i className="ri-check-double-line text-emerald-600 dark:text-emerald-400 text-2xl" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 className="text-4xl font-bold text-slate-900 dark:text-slate-100 font-display mb-2">
+                  Your Action Plan
+                </h3>
+                <p className="text-lg text-slate-600 dark:text-slate-400 font-medium">
+                  Six essential steps to secure your World Cup 2026 experience
+                </p>
+              </div>
+            </div>
+            <div className="h-1.5 w-32 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 rounded-full"></div>
+          </div>
+
+          {/* Premium Action Plan Timeline */}
+          <div className="mb-12">
+            <div className="space-y-6">
+              {/* Step 1 - FIFA Tickets */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-green-50 dark:from-emerald-900/20 dark:via-slate-800/40 dark:to-green-900/20 border border-emerald-200/50 dark:border-emerald-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 flex items-center justify-center border-2 border-emerald-200/50 dark:border-emerald-600/30">
+                      <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">1</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Register for FIFA tickets</h4>
+                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                          Secure your spot at the world's biggest tournament. Ticket registration opens in phases, so act quickly when sales begin.
+                        </p>
+                      </div>
+                      <span className="bg-gradient-to-r from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                        Priority #1
+                      </span>
+                    </div>
+                    <div className="mt-6">
+                      <a
+                        href="https://www.fifa.com/tickets"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-semibold transition-all duration-200 hover:shadow-lg group"
+                      >
+                        <i className="ri-external-link-line text-lg group-hover:scale-110 transition-transform"></i>
+                        <span>Get FIFA Tickets</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 2 - Accommodations */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-blue-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-blue-200/50 dark:border-blue-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 flex items-center justify-center border-2 border-blue-200/50 dark:border-blue-600/30">
+                      <span className="text-2xl font-bold text-blue-700 dark:text-blue-400">2</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Book accommodations early</h4>
+                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                          Aim for 6-12 months in advance to secure the best locations near transportation hubs.
+                        </p>
+                      </div>
+                      <span className="bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                        Book Now
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-3 sm:gap-4 mt-6">
+                      <a
+                        href="https://www.booking.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                      >
+                        <i className="ri-hotel-line text-lg"></i>
+                        <span>Booking.com</span>
+                      </a>
+                      <a
+                        href="https://www.hotels.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                      >
+                        <i className="ri-building-line text-lg"></i>
+                        <span>Hotels.com</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3 - Flights */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-pink-50 dark:from-purple-900/20 dark:via-slate-800/40 dark:to-pink-900/20 border border-purple-200/50 dark:border-purple-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-800/30 dark:to-pink-800/30 flex items-center justify-center border-2 border-purple-200/50 dark:border-purple-600/30">
+                      <span className="text-2xl font-bold text-purple-700 dark:text-purple-400">3</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Reserve flights</h4>
+                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                          Compare prices across airlines for the best deals. Consider flexible dates for better rates.
+                        </p>
+                      </div>
+                      <span className="bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-800/30 dark:to-pink-800/30 text-purple-700 dark:text-purple-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                        Compare
+                      </span>
+                    </div>
+                    <div className="flex flex-wrap gap-3 sm:gap-4 mt-6">
+                      <a
+                        href="https://www.skyscanner.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                      >
+                        <i className="ri-plane-line text-lg"></i>
+                        <span>Skyscanner</span>
+                      </a>
+                      <a
+                        href="https://www.google.com/flights"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                      >
+                        <i className="ri-search-line text-lg"></i>
+                        <span>Google Flights</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 4 - Research */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-orange-900/20 dark:via-slate-800/40 dark:to-amber-900/20 border border-orange-200/50 dark:border-orange-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-orange-100 to-amber-100 dark:from-orange-800/30 dark:to-amber-800/30 flex items-center justify-center border-2 border-orange-200/50 dark:border-orange-600/30">
+                      <span className="text-2xl font-bold text-orange-700 dark:text-orange-400">4</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="mb-4">
+                      <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Research neighborhoods</h4>
+                      <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                        Plan your non-match activities and explore the city's diverse areas. Each neighborhood offers unique experiences.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                      <div className="premium-stat-box">
+                        <div className="text-2xl font-bold text-orange-600 dark:text-orange-400 mb-1">5</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Boroughs to explore</div>
+                      </div>
+                      <div className="premium-stat-box">
+                        <div className="text-2xl font-bold text-amber-600 dark:text-amber-400 mb-1">100+</div>
+                        <div className="text-sm text-slate-600 dark:text-slate-400">Unique neighborhoods</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 5 - Transit App */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-teal-50 via-white to-cyan-50 dark:from-teal-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-teal-200/50 dark:border-teal-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-800/30 dark:to-cyan-800/30 flex items-center justify-center border-2 border-teal-200/50 dark:border-teal-600/30">
+                      <span className="text-2xl font-bold text-teal-700 dark:text-teal-400">5</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Download the NJ Transit app</h4>
+                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                          Essential for seamless stadium transportation on match days. Real-time updates and mobile ticketing.
+                        </p>
+                      </div>
+                      <span className="bg-gradient-to-r from-teal-100 to-cyan-100 dark:from-teal-800/30 dark:to-cyan-800/30 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                        Must Have
+                      </span>
+                    </div>
+                    <div className="mt-6">
+                      <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold">
+                        <i className="ri-train-line text-lg"></i>
+                        <span>NJ Transit App</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 6 - Supporters Group */}
+              <div className="group">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-red-50 via-white to-rose-50 dark:from-red-900/20 dark:via-slate-800/40 dark:to-rose-900/20 border border-red-200/50 dark:border-red-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                  <div className="flex-shrink-0">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-red-100 to-rose-100 dark:from-red-800/30 dark:to-rose-800/30 flex items-center justify-center border-2 border-red-200/50 dark:border-red-600/30">
+                      <span className="text-2xl font-bold text-red-700 dark:text-red-400">6</span>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 mb-4">
+                      <div>
+                        <h4 className="font-bold text-slate-900 dark:text-slate-100 text-xl mb-2">Join your national team's supporters group</h4>
+                        <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
+                          Connect with fellow fans for watch parties and meetups. Share the experience with your community.
+                        </p>
+                      </div>
+                      <span className="bg-gradient-to-r from-red-100 to-rose-100 dark:from-red-800/30 dark:to-rose-800/30 text-red-700 dark:text-red-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                        Community
+                      </span>
+                    </div>
+                    <div className="mt-6">
+                      <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-red-600 to-rose-600 text-white font-semibold">
+                        <i className="ri-group-line text-lg"></i>
+                        <span>Find Your Group</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Premium Final Message */}
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 dark:from-amber-900/20 dark:via-orange-900/20 dark:to-red-900/20 border border-amber-200/50 dark:border-amber-700/30 p-6 sm:p-10 backdrop-blur-sm">
+            <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-white/20 dark:from-slate-800/20 dark:via-transparent dark:to-slate-800/10 rounded-3xl"></div>
+            <div className="relative z-10">
+              <div className="flex flex-col md:flex-row items-start gap-6 md:gap-8">
+                <div className="flex-shrink-0">
+                  <div className="w-16 h-16 md:w-24 md:h-24 rounded-3xl bg-gradient-to-br from-amber-200 to-orange-200 dark:from-amber-700/30 dark:to-orange-700/30 flex items-center justify-center border-2 border-amber-300/50 dark:border-amber-600/30">
+                    <i className="ri-trophy-line text-amber-600 dark:text-amber-400 text-3xl" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <div className="mb-6">
+                    <h4 className="font-bold text-slate-900 dark:text-slate-100 text-2xl mb-4">The Final Destination</h4>
+                    <p className="text-slate-700 dark:text-slate-300 leading-relaxed text-lg mb-6">
+                      The 2026 FIFA World Cup Final will be played at MetLife Stadium in New Jersey. But the experience? That belongs to New York City—the only place big enough, diverse enough, and electric enough to host the world's biggest game.
+                    </p>
+                    <div className="bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-800/30 dark:to-orange-800/30 rounded-2xl p-6 border border-amber-200/50 dark:border-amber-700/30">
+                      <strong className="text-xl text-slate-900 dark:text-slate-100 leading-relaxed">
+                        See you in July 2026. Come for the football. Stay for the experience of a lifetime.
+                      </strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <hr className="editorial-divider" />
         </article>
       </main>
@@ -1038,7 +2495,7 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
 
       {/* Premium FAQ Section - New York/New Jersey World Cup 2026 */}
       <section className="py-20 bg-white dark:bg-navy-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[880px] mx-auto px-4 sm:px-6 lg:px-8">
           
           <WorldClassFAQ 
             faqs={[
@@ -1181,7 +2638,7 @@ You'll arrive a football fan. You'll leave with stories no other city could prov
         </div>
       </section>
 
-      <section className="max-w-3xl mx-auto px-6 pb-12">
+      <section className="max-w-[880px] mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
           <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
         </div>

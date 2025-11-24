@@ -27,7 +27,7 @@ export const safetyGuides = [
     readTime: '13 min read',
     featured: false,
     priority: 'Medium',
-    image: '/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp',
+    image: '/images/safety-guide/article mode/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp',
     href: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know'
   },
   {
@@ -492,7 +492,7 @@ export default function SafetyGuidePage() {
                   
                   <div className="mt-8">
                     <a
-                      href="/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know"
+                      href="/world-cup-2026-travel-tips"
                       className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-slate-900 disabled:dark:hover:bg-white px-6 py-3 text-sm"
                     >
                       Explore Guide
@@ -529,7 +529,7 @@ export default function SafetyGuidePage() {
                   
                   <div className="mt-8">
                     <a
-                      href="/safety-guide/digital-security-and-privacy-protection"
+                      href="/world-cup-2026-stadiums"
                       className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-slate-900 disabled:dark:hover:bg-white px-6 py-3 text-sm"
                     >
                       Explore Guide
@@ -566,7 +566,7 @@ export default function SafetyGuidePage() {
                   
                   <div className="mt-8">
                     <a
-                      href="/safety-guide/health-and-medical-preparedness"
+                      href="/budget-guides"
                       className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer focus-visible:focus disabled:opacity-50 disabled:cursor-not-allowed bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 text-white shadow-lg hover:shadow-xl hover:scale-105 disabled:hover:scale-100 disabled:hover:bg-slate-900 disabled:dark:hover:bg-white px-6 py-3 text-sm"
                     >
                       Explore Guide

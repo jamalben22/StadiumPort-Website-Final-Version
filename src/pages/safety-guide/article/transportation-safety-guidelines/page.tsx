@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../../../components/feature/Header';
+import { OptimizedImage } from '../../../../components/base/OptimizedImage';
 import { Footer } from '../../../../components/feature/Footer';
 import { Card } from '../../../../components/base/Card';
 import { Button } from '../../../../components/base/Button';
@@ -43,8 +44,18 @@ export default function TransportationSafetyGuideArticlePage() {
       <Header />
       <section class="editorial-hero">
         <div class="editorial-hero-media">
-          <div class="editorial-hero-image-wrapper">
-          </div>
+          <OptimizedImage
+            src={article.image || '/images/safety-guide/article mode/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp'}
+            alt={`${article.title} – Safety Guide`}
+            className="editorial-hero-image-wrapper"
+            imgClassName="editorial-hero-image"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="empty"
+            sizes="100vw"
+            disableSrcSet={true}
+          />
           <div class="editorial-hero-overlay"></div>
         </div>
         <div class="editorial-hero-content">
@@ -59,7 +70,7 @@ export default function TransportationSafetyGuideArticlePage() {
               </Link>
               <span class="mx-2">›</span>
               <Link class="hover:underline" to="/safety-guide">
-                Safety Guides
+                safety guide
               </Link>
               <span class="mx-2">›</span>
               <span class="text-slate-500 dark:text-slate-400">
