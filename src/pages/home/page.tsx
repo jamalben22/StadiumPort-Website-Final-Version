@@ -343,6 +343,8 @@ export default function HomePage() {
       <Header />
       <div className="h-16 lg:h-20"></div>
 
+      
+
       {/* World Cup Countdown Section */}
       <WorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
 
@@ -611,42 +613,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-600">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Start Your World Cup 2026 Journey Today</h2>
-          <p className="text-xl text-emerald-100 mb-8 max-w-2xl mx-auto">
-            From flights and hotels to match tickets and local experiences—plan your complete World Cup 2026 adventure across USA, Canada, and Mexico. Expert guides, real-time deals, and everything you need for an unforgettable tournament.
+      {/* CTA Section - Apple Luxury Simple Design */}
+      <section className="py-24 bg-white dark:bg-gray-900">
+        <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6 tracking-tight">
+            Your World Cup 2026 Journey
+            <span className="block text-gray-600 dark:text-gray-300 text-2xl md:text-3xl mt-3 font-light">
+              Starts Now
+            </span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            From flights and hotels to match tickets and local experiences—plan your complete World Cup 2026 adventure across USA, Canada, and Mexico with expert guides, real-time deals, and insider tips.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <Link to="/deals">
-              <Button
-                variant="premium"
-                size="lg"
-                className="bg-white text-emerald-600 hover:bg-slate-100 border-white/20 shadow-lg hover:shadow-xl whitespace-nowrap cursor-pointer"
-                icon="ri-calendar-check-line"
-                iconPosition="left"
-                glow={false}
-                animate={true}
-                effect="shimmer"
-              >
-                Plan Your Trip Now
-              </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link to="/travel-guides">
+              <button className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white bg-black dark:bg-white dark:text-black rounded-full hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+                Plan Your Trip
+              </button>
             </Link>
 
-            <Link to="/world-cup-2026-host-cities" className="group">
-              <button className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl">
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                <div className="absolute inset-0 rounded-3xl overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 skew-x-12"></div>
-                </div>
-
-                <div className="relative z-10 flex items-center justify-center space-x-2">
-                  <i className="ri-map-pin-line transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 text-white"></i>
-                  <span className="ultra-premium-text font-semibold text-white">Explore All 16 Cities</span>
-                </div>
+            <Link to="/accommodation">
+              <button className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black dark:text-white bg-transparent border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
+                Find Accommodation
               </button>
             </Link>
           </div>

@@ -16,13 +16,20 @@ function toTitleCase(slug?: string) {
 
 export default function SafetyGuideArticlePage() {
   const { slug } = useParams();
-  const title = "World Cup 2026 Travel Insurance: Complete Protection Guide";
+  const safetyOverviewSlug = 'world-cup-2026-safety-guide-everything-fans-need-to-know'
+  const title = (slug === safetyOverviewSlug)
+    ? 'World Cup 2026 Safety Guide: Everything Fans Need to Know'
+    : 'World Cup 2026 Travel Insurance: Complete Protection Guide';
+  const safetyImagesDir = '/images/safety-guide/article mode'
+  const overviewHeroLocal = `${safetyImagesDir}/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp`
+  const insuranceHeroLocal = `${safetyImagesDir}/A_realistic_high-detail_photo_of_travel_insurance_essentials_for_World_Cup_2026.webp`
+  const heroImageSrcLocal = (slug === safetyOverviewSlug) ? overviewHeroLocal : insuranceHeroLocal
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-    const pageUrl = `${siteUrl}/safety-guide/${slug ?? 'world-cup-2026-safety-guide-everything-fans-need-to-know'}`
+    const pageUrl = `${siteUrl}/safety-guide/${slug ?? safetyOverviewSlug}`
     const pageTitle = `${title} – Safety Guide | StadiumPort`
-    const image = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`
+    const image = `${siteUrl}${heroImageSrcLocal}`
     const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
     const tags = ['World Cup 2026', 'Safety Guide', 'Travel Insurance']
     const entry = getEditorialEntry('article',(slug || 'world-cup-2026-safety-guide-everything-fans-need-to-know'))
@@ -37,15 +44,16 @@ export default function SafetyGuideArticlePage() {
       <section className="editorial-hero">
         <div className="editorial-hero-media">
           <OptimizedImage
-            src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+            src={heroImageSrcLocal}
             alt={`${title} – Safety Guide`}
             className="editorial-hero-image-wrapper"
-            imgClassName="editorial-hero-image"
+            imgClassName={slug === safetyOverviewSlug ? "editorial-hero-image object-[50%_60%]" : "editorial-hero-image"}
             width={1600}
             height={900}
             priority={true}
             placeholder="empty"
             sizes="100vw"
+            disableSrcSet={true}
           />
           <div className="editorial-hero-overlay"></div>
           </div>
@@ -59,7 +67,7 @@ export default function SafetyGuideArticlePage() {
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/safety-guide" className="hover:underline">Safety Guide</Link>
+              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <Link to={`/safety-guide/${slug ?? 'world-cup-2026-safety-guide-everything-fans-need-to-know'}`} className="hover:underline">{title}</Link>
             </nav>

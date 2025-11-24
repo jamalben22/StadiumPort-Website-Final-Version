@@ -12,7 +12,7 @@ export default function GuidesPage() {
       <section className="editorial-hero">
         <div className="editorial-hero-media">
           <OptimizedImage
-            src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+            src="/images/safety-guide/article mode/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp"
             alt={`${title} – Safety Guide`}
             className="editorial-hero-image-wrapper"
             imgClassName="editorial-hero-image"
@@ -21,6 +21,7 @@ export default function GuidesPage() {
             priority={true}
             placeholder="empty"
             sizes="100vw"
+            disableSrcSet={true}
           />
           <div className="editorial-hero-overlay"></div>
         </div>
@@ -33,7 +34,7 @@ export default function GuidesPage() {
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/guides/health-and-medical-guide-for-world-cup-2026-travelers" className="hover:underline">Guides</Link>
+              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <span className="hover:underline">{title}</span>
             </nav>

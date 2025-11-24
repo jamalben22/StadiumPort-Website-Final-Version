@@ -51,7 +51,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
       <section className="editorial-hero">
         <div className="editorial-hero-media">
           <OptimizedImage
-            src="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+            src="/images/safety-guide/article mode/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp"
             alt={title}
             className="editorial-hero-image-wrapper"
             imgClassName="editorial-hero-image"
@@ -60,6 +60,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
             priority={true}
             placeholder="empty"
             sizes="100vw"
+            disableSrcSet={true}
           />
           <div className="editorial-hero-overlay"></div>
         </div>
@@ -77,7 +78,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                 </li>
                 <li><span aria-hidden>›</span></li>
                 <li>
-                  <Link to="/guides" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guides</Link>
+                  <Link to="/safety-guide" className="hover:underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">safety guide</Link>
                 </li>
                 <li><span aria-hidden>›</span></li>
                 <li className="text-white font-semibold">{title}</li>
