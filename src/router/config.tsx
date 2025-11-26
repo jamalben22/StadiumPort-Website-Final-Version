@@ -5,7 +5,6 @@ import type { RouteObject } from 'react-router-dom';
 
 // Critical homepage imports directly to avoid white screen on first paint
 import HomePage from '../pages/home/page';
-const PredictPage = lazy(() => import('../pages/predict/page'));
 const AboutPage = lazy(() => import('../pages/about/page'));
 const ContactPage = lazy(() => import('../pages/contact/page'));
 const CitiesPage = lazy(() => import('../pages/cities/page'));
@@ -421,10 +420,6 @@ const routes: RouteObject[] = [
   {
     path: '/affiliate-disclaimer',
     element: <AffiliateDisclaimerPage />
-  },
-  {
-    path: '/predict',
-    element: <PredictPage />
   },
   {
     path: '/editorial-policy',
