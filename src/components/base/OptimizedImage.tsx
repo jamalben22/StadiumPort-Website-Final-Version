@@ -143,7 +143,7 @@ export function OptimizedImage({
           src={src}
           alt={alt}
           loading={priority ? 'eager' : 'lazy'}
-          fetchPriority={priority ? 'high' : fetchpriority}
+          fetchpriority={priority ? 'high' : fetchpriority}
           decoding="async"
           width={width}
           height={height}

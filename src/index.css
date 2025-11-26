@@ -1206,9 +1206,9 @@ table {
   }
 
   /* Typography system */
-  .editorial-article .editorial-body {
-    @apply font-inter font-medium text-[#2c2c2c] dark:text-slate-200 text-[19px] md:text-[20px] leading-[1.75];
-  }
+.editorial-article .editorial-body {
+  @apply font-inter font-normal text-[#2c2c2c] dark:text-slate-200 text-[19px] md:text-[20px] leading-[1.75];
+}
 
   /* H1 and H2 headings use Playfair Display for elegant, magazine-quality feel */
   .editorial-article h1,
@@ -1227,9 +1227,361 @@ table {
     @apply font-display font-bold text-slate-900 dark:text-slate-50 text-[30px] md:text-[36px] lg:text-[42px] tracking-tight;
   }
 
+  .editorial-article-premium .editorial-h3 {
+    @apply font-display font-bold text-slate-900 dark:text-slate-50 text-3xl;
+  }
+
   .editorial-article h4,
   .editorial-article .editorial-h4 {
-    @apply font-display font-semibold text-slate-900 dark:text-slate-50 text-[24px] md:text-[28px] lg:text-[32px];
+    @apply font-inter font-semibold text-slate-900 dark:text-slate-50 text-[24px] md:text-[28px] lg:text-[32px];
+  }
+
+  /* Los Angeles page: unify H4 size/style to match NYC guide */
+  .la-page .editorial-h4,
+  .miami-page .editorial-h4,
+  .dallas-page .editorial-h4 {
+    @apply text-xl font-semibold text-slate-900 dark:text-slate-100 mb-4;
+  }
+
+  /* LA page: subtle color system for headings and structure (no text changes) */
+  .la-page .editorial-h2::after,
+  .la-page .editorial-h3::after,
+  .la-page .editorial-h4::after,
+  .miami-page .editorial-h2::after,
+  .miami-page .editorial-h3::after,
+  .miami-page .editorial-h4::after,
+  .dallas-page .editorial-h2::after,
+  .dallas-page .editorial-h3::after,
+  .dallas-page .editorial-h4::after {
+    content: '';
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin-top: 8px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #10b981, #14b8a6);
+  }
+
+  /* LA page: premium callouts with brand-tinted gradient and crisp borders */
+  .la-page .callout-premium,
+  .miami-page .callout-premium,
+  .dallas-page .callout-premium {
+    background: linear-gradient(135deg, rgba(240,253,244,0.92), rgba(236,253,245,0.86));
+    border-color: rgba(16,185,129,0.30);
+    box-shadow: 0 6px 24px rgba(16,185,129,0.12), 0 2px 6px rgba(0,0,0,0.06);
+  }
+  .la-page .dark .callout-premium,
+  .miami-page .dark .callout-premium,
+  .dallas-page .dark .callout-premium {
+    background: linear-gradient(135deg, rgba(6,78,59,0.92), rgba(5,150,105,0.20));
+    border-color: rgba(45,212,191,0.35);
+    box-shadow: 0 6px 24px rgba(45,212,191,0.18), 0 2px 6px rgba(0,0,0,0.18);
+  }
+
+  /* LA page: premium cards hover refinement */
+  .la-page .attraction-card-premium,
+  .la-page .transport-card-premium,
+  .la-page .hotel-card-premium,
+  .la-page .connectivity-card-premium,
+  .la-page .phase-card-premium,
+  .la-page .experience-card-premium,
+  .la-page .route-card-premium,
+  .miami-page .attraction-card-premium,
+  .miami-page .transport-card-premium,
+  .miami-page .hotel-card-premium,
+  .miami-page .connectivity-card-premium,
+  .miami-page .phase-card-premium,
+  .miami-page .experience-card-premium,
+  .miami-page .route-card-premium,
+  .dallas-page .attraction-card-premium,
+  .dallas-page .transport-card-premium,
+  .dallas-page .hotel-card-premium,
+  .dallas-page .connectivity-card-premium,
+  .dallas-page .phase-card-premium,
+  .dallas-page .experience-card-premium,
+  .dallas-page .route-card-premium {
+    border-color: rgba(16,185,129,0.22);
+  }
+  .la-page .attraction-card-premium:hover,
+  .la-page .transport-card-premium:hover,
+  .la-page .hotel-card-premium:hover,
+  .la-page .connectivity-card-premium:hover,
+  .la-page .phase-card-premium:hover,
+  .la-page .experience-card-premium:hover,
+  .la-page .route-card-premium:hover,
+  .miami-page .attraction-card-premium:hover,
+  .miami-page .transport-card-premium:hover,
+  .miami-page .hotel-card-premium:hover,
+  .miami-page .connectivity-card-premium:hover,
+  .miami-page .phase-card-premium:hover,
+  .miami-page .experience-card-premium:hover,
+  .miami-page .route-card-premium:hover,
+  .dallas-page .attraction-card-premium:hover,
+  .dallas-page .transport-card-premium:hover,
+  .dallas-page .hotel-card-premium:hover,
+  .dallas-page .connectivity-card-premium:hover,
+  .dallas-page .phase-card-premium:hover,
+  .dallas-page .experience-card-premium:hover,
+  .dallas-page .route-card-premium:hover {
+    box-shadow: 0 14px 36px rgba(16,185,129,0.16), 0 6px 14px rgba(0,0,0,0.06);
+    transform: translateY(-3px);
+  }
+
+  /* LA page: CTA/tip area enhancement */
+  .la-page .cta-content,
+  .miami-page .cta-content,
+  .dallas-page .cta-content {
+    @apply rounded-2xl p-5;
+    background: linear-gradient(135deg, rgba(224,231,255,0.85), rgba(219,234,254,0.75));
+    border: 1px solid rgba(99,102,241,0.30);
+  }
+  .la-page .cta-icon,
+  .miami-page .cta-icon,
+  .dallas-page .cta-icon {
+    @apply rounded-xl;
+    background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(79,70,229,0.12));
+  }
+
+  /* LA page: colored section divider */
+  .la-page .editorial-divider,
+  .miami-page .editorial-divider,
+  .dallas-page .editorial-divider {
+    height: 2px;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    background: linear-gradient(90deg, rgba(16,185,129,0), rgba(16,185,129,0.45), rgba(16,185,129,0));
+  }
+  .la-page.dark .editorial-divider,
+  .miami-page.dark .editorial-divider,
+  .dallas-page.dark .editorial-divider {
+    background: linear-gradient(90deg, rgba(45,212,191,0), rgba(45,212,191,0.50), rgba(45,212,191,0));
+  }
+
+  /* LA page: micro-typography refinement */
+  .la-page .text-premium-body,
+  .miami-page .text-premium-body,
+  .dallas-page .text-premium-body {
+    letter-spacing: 0.01em;
+    word-spacing: 0.03em;
+  }
+
+  /* Miami page spacing system (preserve text, enhance layout) */
+  .miami-page .editorial-body + .editorial-body {
+    margin-top: 1.5em;
+  }
+  .miami-page p {
+    margin-bottom: 1em;
+  }
+  .miami-page .editorial-article-premium {
+    padding-top: 4rem; /* py-16 equivalent */
+    padding-bottom: 4rem;
+  }
+
+  /* Standardized icon sizes and color (brand primary or theme accent) */
+  .miami-page .editorial-body i {
+    font-size: 24px;
+    color: var(--accent, #10b981);
+  }
+
+  /* Callout box styles */
+  .callout-pro-tip {
+    @apply rounded-xl border p-5;
+    background: #EFF6FF; /* blue-50 */
+    border-color: #BFDBFE; /* blue-200 */
+  }
+  .callout-pro-tip .callout-icon i { color: #2563EB; } /* blue-600 */
+
+  .callout-warning {
+    @apply rounded-xl border p-5;
+    background: #FEF9C3; /* yellow-100 */
+    border-color: #FDE68A; /* yellow-300 */
+  }
+  .callout-warning .callout-icon i { color: #CA8A04; } /* yellow-600 */
+
+  .callout-must-know {
+    @apply rounded-xl border p-5;
+    background: #ECFDF5; /* emerald-50 */
+    border-color: #A7F3D0; /* emerald-200 */
+  }
+  .callout-must-know .callout-icon i { color: #059669; } /* emerald-600 */
+
+  .callout-important {
+    @apply rounded-xl border p-5;
+    background: #FEE2E2; /* red-100 */
+    border-color: #FCA5A5; /* red-300 */
+  }
+  .callout-important .callout-icon i { color: #DC2626; } /* red-600 */
+
+  /* Comparison tables */
+  .comparison-table {
+    @apply overflow-x-auto my-6;
+  }
+  .comparison-table table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid rgba(148,163,184,0.35); /* slate-400/35 */
+    border-radius: 0.75rem;
+    overflow: hidden;
+    background: white;
+  }
+  .comparison-table thead th {
+    @apply text-left text-sm font-semibold;
+    padding: 0.75rem 1rem;
+    background: #F8FAFC; /* slate-50 */
+    color: #0F172A; /* slate-900 */
+    border-bottom: 1px solid rgba(148,163,184,0.35);
+  }
+  .comparison-table tbody td {
+    @apply text-sm;
+    padding: 0.75rem 1rem;
+    color: #334155; /* slate-700 */
+    border-bottom: 1px solid rgba(148,163,184,0.25);
+  }
+  .comparison-table tbody tr:nth-child(even) {
+    background: #F1F5F9; /* slate-100 */
+  }
+  .dark .comparison-table table { background: #0B1220; }
+  .dark .comparison-table thead th { background: #0F172A; color: #E2E8F0; border-color: rgba(148,163,184,0.35); }
+  .dark .comparison-table tbody td { color: #CBD5E1; border-color: rgba(148,163,184,0.25); }
+  .dark .comparison-table tbody tr:nth-child(even) { background: #0F172A; }
+
+  /* LA page: multi-color thematic system */
+  .la-page .theme-emerald, .miami-page .theme-emerald, .dallas-page .theme-emerald { --accent-start: #10b981; --accent-end: #34d399; --accent: #10b981; }
+  .la-page .theme-indigo, .miami-page .theme-indigo, .dallas-page .theme-indigo { --accent-start: #6366f1; --accent-end: #818cf8; --accent: #6366f1; }
+  .la-page .theme-rose, .miami-page .theme-rose, .dallas-page .theme-rose { --accent-start: #e11d48; --accent-end: #fb7185; --accent: #e11d48; }
+  .la-page .theme-amber, .miami-page .theme-amber, .dallas-page .theme-amber { --accent-start: #f59e0b; --accent-end: #fbbf24; --accent: #f59e0b; }
+  .la-page .theme-sky, .miami-page .theme-sky, .dallas-page .theme-sky { --accent-start: #0ea5e9; --accent-end: #38bdf8; --accent: #0ea5e9; }
+  .la-page .theme-purple, .miami-page .theme-purple, .dallas-page .theme-purple { --accent-start: #7c3aed; --accent-end: #a78bfa; --accent: #7c3aed; }
+  .la-page .theme-teal, .miami-page .theme-teal, .dallas-page .theme-teal { --accent-start: #14b8a6; --accent-end: #2dd4bf; --accent: #14b8a6; }
+  .la-page .theme-violet, .miami-page .theme-violet, .dallas-page .theme-violet { --accent-start: #8b5cf6; --accent-end: #c4b5fd; --accent: #8b5cf6; }
+  .la-page .theme-gold, .miami-page .theme-gold, .dallas-page .theme-gold { --accent-start: #f59e0b; --accent-end: #facc15; --accent: #f59e0b; }
+
+  .la-page [class*="theme-"] .editorial-h2::after,
+  .la-page [class*="theme-"] .editorial-h3::after,
+  .la-page [class*="theme-"] .editorial-h4::after,
+  .miami-page [class*="theme-"] .editorial-h2::after,
+  .miami-page [class*="theme-"] .editorial-h3::after,
+  .miami-page [class*="theme-"] .editorial-h4::after,
+  .dallas-page [class*="theme-"] .editorial-h2::after,
+  .dallas-page [class*="theme-"] .editorial-h3::after,
+  .dallas-page [class*="theme-"] .editorial-h4::after {
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+  }
+
+  .la-page [class*="theme-"] .editorial-divider,
+  .miami-page [class*="theme-"] .editorial-divider,
+  .dallas-page [class*="theme-"] .editorial-divider {
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  .la-page [class*="theme-"] .callout-premium,
+  .miami-page [class*="theme-"] .callout-premium,
+  .dallas-page [class*="theme-"] .callout-premium {
+    border-color: var(--accent);
+    position: relative;
+  }
+  .la-page [class*="theme-"] .callout-premium::before,
+  .miami-page [class*="theme-"] .callout-premium::before,
+  .dallas-page [class*="theme-"] .callout-premium::before {
+    content: '';
+    display: block;
+    height: 4px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--accent-start), var(--accent-end));
+    margin-bottom: 12px;
+  }
+
+  .la-page [class*="theme-"] .attraction-card-premium,
+  .la-page [class*="theme-"] .transport-card-premium,
+  .la-page [class*="theme-"] .hotel-card-premium,
+  .la-page [class*="theme-"] .connectivity-card-premium,
+  .la-page [class*="theme-"] .phase-card-premium,
+  .la-page [class*="theme-"] .experience-card-premium,
+  .la-page [class*="theme-"] .route-card-premium,
+  .miami-page [class*="theme-"] .attraction-card-premium,
+  .miami-page [class*="theme-"] .transport-card-premium,
+  .miami-page [class*="theme-"] .hotel-card-premium,
+  .miami-page [class*="theme-"] .connectivity-card-premium,
+  .miami-page [class*="theme-"] .phase-card-premium,
+  .miami-page [class*="theme-"] .experience-card-premium,
+  .miami-page [class*="theme-"] .route-card-premium,
+  .dallas-page [class*="theme-"] .attraction-card-premium,
+  .dallas-page [class*="theme-"] .transport-card-premium,
+  .dallas-page [class*="theme-"] .hotel-card-premium,
+  .dallas-page [class*="theme-"] .connectivity-card-premium,
+  .dallas-page [class*="theme-"] .phase-card-premium,
+  .dallas-page [class*="theme-"] .experience-card-premium,
+  .dallas-page [class*="theme-"] .route-card-premium {
+    border-color: var(--accent);
+  }
+
+  .la-page [class*="theme-"] .editorial-h4 i,
+  .la-page [class*="theme-"] .icon-premium-md i,
+  .la-page [class*="theme-"] .transport-icon i,
+  .la-page [class*="theme-"] .hotel-icon i,
+  .la-page [class*="theme-"] .attraction-icon i,
+  .la-page [class*="theme-"] .cta-icon i,
+  .miami-page [class*="theme-"] .editorial-h4 i,
+  .miami-page [class*="theme-"] .icon-premium-md i,
+  .miami-page [class*="theme-"] .transport-icon i,
+  .miami-page [class*="theme-"] .hotel-icon i,
+  .miami-page [class*="theme-"] .attraction-icon i,
+  .miami-page [class*="theme-"] .cta-icon i,
+  .dallas-page [class*="theme-"] .editorial-h4 i,
+  .dallas-page [class*="theme-"] .icon-premium-md i,
+  .dallas-page [class*="theme-"] .transport-icon i,
+  .dallas-page [class*="theme-"] .hotel-icon i,
+  .dallas-page [class*="theme-"] .attraction-icon i,
+  .dallas-page [class*="theme-"] .cta-icon i {
+    color: var(--accent) !important;
+  }
+
+  /* Dallas page spacing and icon standards */
+  .dallas-page .editorial-body + .editorial-body { margin-top: 1.5em; }
+  .dallas-page p { margin-bottom: 1em; }
+  .dallas-page .editorial-body i { font-size: 24px; color: var(--accent, #10b981); }
+
+  /* Premium SVG icons for H4 headings */
+  .editorial-h4 .h4-icon-svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    transition: transform 160ms ease, filter 160ms ease;
+  }
+  .editorial-h4 .h4-icon-svg:hover,
+  .editorial-h4 .h4-icon-svg:focus {
+    transform: translateY(-1px) scale(1.035);
+    filter: drop-shadow(0 4px 8px rgba(16,185,129,0.18));
+    outline: none;
+  }
+  .dark .editorial-h4 .h4-icon-svg:hover,
+  .dark .editorial-h4 .h4-icon-svg:focus {
+    filter: drop-shadow(0 4px 8px rgba(45,212,191,0.22));
+  }
+
+  /* General heading SVG icon class for H5/H6 and other inline icons */
+  .heading-icon-svg {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    transition: transform 160ms ease, filter 160ms ease;
+  }
+  .heading-icon-svg:hover,
+  .heading-icon-svg:focus {
+    transform: translateY(-1px) scale(1.035);
+    filter: drop-shadow(0 4px 8px rgba(16,185,129,0.18));
+    outline: none;
+  }
+  .heading-icon-svg:focus-visible {
+    outline: 2px solid #10b981;
+    outline-offset: 2px;
+  }
+  .dark .heading-icon-svg:hover,
+  .dark .heading-icon-svg:focus {
+    filter: drop-shadow(0 4px 8px rgba(45,212,191,0.22));
   }
 
   /* Paragraph rhythm */
@@ -1699,7 +2051,6 @@ table {
   }
 
 /* Premium Editorial Design System - Apple-Level Visual Upgrade */
-@layer components {
   /* Premium Callout Boxes */
   .callout-premium {
     @apply relative rounded-2xl border backdrop-blur-sm overflow-hidden;
@@ -2047,6 +2398,20 @@ table {
   .item-marker {
     @apply w-2 h-2 rounded-full mt-2 flex-shrink-0;
     background: linear-gradient(135deg, rgb(59,130,246), rgb(147,197,253));
+  }
+
+  /* Light mode visibility improvements for card content */
+  :root:not(.dark) .transport-card-premium,
+  :root:not(.dark) .transport-card-premium *,
+  :root:not(.dark) .attraction-card-premium,
+  :root:not(.dark) .attraction-card-premium * {
+    color: #0f172a; /* slate-900 for crisp contrast on white backgrounds */
+  }
+
+  /* Ensure editorial headings and body have strong contrast in light mode */
+  :root:not(.dark) .editorial-body,
+  :root:not(.dark) .editorial-body * {
+    color: #1f2937; /* slate-800 */
   }
 
   .food-categories {
@@ -3064,7 +3429,7 @@ table {
   }
 
   .text-premium-body {
-    @apply text-slate-600 dark:text-slate-400 leading-relaxed;
+    @apply text-slate-600 dark:text-slate-400 text-lg leading-relaxed;
     font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
   }
 
@@ -3188,7 +3553,6 @@ table {
     opacity: 1;
     transform: scale(1);
   }
-}
 
 /* Premium Timeline and Match Cards */
 @layer components {
