@@ -8,12 +8,21 @@ import { useLocation } from 'react-router-dom'
 import { getEditorialEntry } from './components/seo/EditorialCalendar'
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateBreadcrumbSchema, generateCityGuideSchema, generateCollectionPageSchema, generateItemListSchema } from './components/seo/SchemaOrg'
 import { formatTitle } from './components/seo/MetaUtils'
+import { LoadingSpinner } from './components/common/LoadingSpinner'
+import { ScrollToTop } from './components/common/ScrollToTop'
+import { MobileAffiliateBar } from './components/layout/MobileAffiliateBar'
+import { usePageTracking } from './hooks/usePageTracking'
 
 // Global declaration for __BASE_PATH__
 declare global {
   var __BASE_PATH__: string | undefined
 }
 
+
+function PageTracker() {
+  usePageTracking()
+  return null
+}
 
 function CanonicalManager() {
   const location = useLocation()
@@ -217,18 +226,21 @@ function App() {
   
   return (
     <BrowserRouter basename={basePath}>
+      <PageTracker />
       <CanonicalManager />
       <DateModifiedManager />
       <GlobalTitleManager />
       <GlobalStructuredData />
       <RouteStructuredData />
       <ErrorBoundary>
-        <Suspense fallback={<div id="route-fallback" className="min-h-screen flex items-center justify-center text-slate-700 dark:text-slate-200">Loading…</div>}>
+        <Suspense fallback={<LoadingSpinner />}>
           <AppRoutes />
         </Suspense>
       </ErrorBoundary>
       <Analytics />
       <SpeedInsightsRouting />
+      <ScrollToTop />
+      <MobileAffiliateBar />
     </BrowserRouter>
   )
 }

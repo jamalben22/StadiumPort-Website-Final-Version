@@ -5,6 +5,7 @@ import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { OptimizedImage } from '../../components/ui/OptimizedImage';
 
 const routeTypes = [
   'All Routes',
@@ -543,10 +544,11 @@ export default function TravelRoutesPage() {
             {filteredRoutes.map((route) => (
               <Card key={route.id} hover className="overflow-hidden group cursor-pointer">
                 <div className="relative">
-                  <img 
+                  <OptimizedImage 
                     src={route.image} 
                     alt={route.title}
                     className="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                    wrapperClassName="w-full h-64 block"
                   />
                   <div className="absolute top-3 right-3">
                     <span className={`${getDifficultyColor(route.difficulty)} text-white px-2 py-1 rounded-lg text-xs font-bold`}>

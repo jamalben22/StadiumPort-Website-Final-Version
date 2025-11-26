@@ -9,7 +9,7 @@ import { Button } from '../../components/base/Button';
 import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidget';
 import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
-import { setPageMeta } from '../../components/seo/MetaUtils';
+import { SEO } from '../../components/common/SEO';
 
 interface CitySection {
   title: string;
@@ -205,35 +205,6 @@ export default function HomePage() {
   };
 
   useEffect(() => {
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const descriptionText = 'Explore every World Cup 2026 stadium and host city across the USA, Canada, and Mexico. Get expert travel tips, venue guides, safety information, match-day planning, and insider strategies from MetLife Stadium’s Final to the historic atmosphere of Estadio Azteca.';
-    setPageMeta({
-      title: 'Your Complete World Cup 2026 Travel Hub',
-      description: descriptionText,
-      url: `${siteUrl}/`
-    });
-
-    // Social image
-    const ogImageUrl = `${siteUrl}/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp`;
-    const setMeta = (property: string, content: string) => {
-      let el = document.querySelector(`meta[property="${property}"]`) as HTMLMetaElement | null;
-      if (!el) {
-        el = document.createElement('meta');
-        el.setAttribute('property', property);
-        document.head.appendChild(el);
-      }
-      el.setAttribute('content', content);
-    };
-    setMeta('og:image', ogImageUrl);
-    setMeta('og:image:width', '1920');
-    setMeta('og:image:height', '1080');
-    setMeta('twitter:image', ogImageUrl);
-    setMeta('twitter:card', 'summary_large_image');
-    setMeta(
-      'twitter:image:alt',
-      'Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch.'
-    );
-
     // Animate counters
     const travelerInterval = setInterval(() => {
       setTravelerCount(prev => prev + Math.floor(Math.random() * 3));
@@ -327,6 +298,12 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
+      <SEO 
+        title="Ultimate World Cup 2026 Travel Guide"
+        description="Explore every World Cup 2026 stadium and host city across the USA, Canada, and Mexico. Get expert travel tips, venue guides, safety information, match-day planning, and insider strategies from MetLife Stadium’s Final to the historic atmosphere of Estadio Azteca."
+        image="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
+        url="/"
+      />
       <SchemaOrg schema={generateWebsiteSchema()} />
       <SchemaOrg schema={generateOrganizationSchema()} />
       {/* Structured data for homepage hero image */}
