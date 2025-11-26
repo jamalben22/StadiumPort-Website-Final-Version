@@ -30,6 +30,17 @@ async function processImage(srcPath) {
   if (!['.webp', '.jpg', '.jpeg', '.png'].includes(ext)) return { created: 0 };
 
   const baseName = path.basename(srcPath, ext);
+
+  // Skip files that are already variants (end with -640, -1024, -1600)
+  const isVariant = TARGETS.some(t => {
+    const suffixNoExt = t.suffix.replace('.webp', '');
+    return baseName.endsWith(suffixNoExt);
+  });
+  
+  if (isVariant) {
+    return { created: 0 };
+  }
+
   const dirName = path.dirname(srcPath);
   let created = 0;
 
