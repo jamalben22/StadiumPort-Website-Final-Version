@@ -1,7 +1,8 @@
 
 import { ButtonHTMLAttributes, ReactNode } from 'react';
+import { motion, HTMLMotionProps } from 'framer-motion';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag' | 'ref'> {
   variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'premium' | 'gold' | 'glass' | 'cosmic' | 'aurora' | 'diamond' | 'holographic' | 'quantum' | 'ethereal' | 'cyber' | 'matrix' | 'plasma' | 'stellar';
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'ultra';
   fullWidth?: boolean;
@@ -34,17 +35,17 @@ export function Button({
     transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden
     focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 
     disabled:cursor-not-allowed group font-inter ultra-premium-focus
-    ${animate ? 'hover:scale-105 active:scale-95 hover:-translate-y-1' : ''}
+    ${animate ? 'hover:-translate-y-1' : ''}
     ${fullWidth ? 'w-full' : ''}
     transform-gpu will-change-transform
   `;
 
   const variants = {
     primary: `
-      bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white 
-      hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30
-      shadow-premium hover:shadow-premium-lg border border-emerald-400/20
-      ${glow ? 'shadow-ultra-glow hover:shadow-ultra-glow' : ''}
+      bg-gradient-to-br from-[#FBBF24] via-[#f59e0b] to-[#d97706] text-slate-950 font-bold
+      hover:from-[#f59e0b] hover:via-[#d97706] hover:to-[#b45309] focus:ring-[#FBBF24]/30
+      shadow-premium hover:shadow-premium-lg border border-[#FBBF24]/20
+      ${glow ? 'shadow-[0_0_20px_rgba(251,191,36,0.6)] hover:shadow-[0_0_30px_rgba(251,191,36,0.8)]' : ''}
     `,
     secondary: `
       bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 text-slate-900 
@@ -54,9 +55,9 @@ export function Button({
       shadow-premium hover:shadow-premium-lg border border-slate-300/20 dark:border-navy-500/20
     `,
     outline: `
-      border-2 border-emerald-500 text-emerald-500 bg-transparent backdrop-blur-xl
-      hover:bg-emerald-500 hover:text-white hover:border-emerald-600 focus:ring-emerald-500/30
-      shadow-premium hover:shadow-premium-lg
+      border-2 border-[#FBBF24] text-[#FBBF24] bg-transparent backdrop-blur-xl
+      hover:bg-[#FBBF24] hover:text-slate-950 hover:border-[#FBBF24] focus:ring-[#FBBF24]/30
+      shadow-premium hover:shadow-premium-lg font-bold
     `,
     ghost: `
       text-slate-600 dark:text-slate-300 bg-transparent backdrop-blur-xl
@@ -181,10 +182,11 @@ export function Button({
   const buttonClasses = `${baseClasses} ${variants[variant]} ${sizes[size]} ${effects[effect]} ${className}`;
 
   return (
-    <button
+    <motion.button
       className={buttonClasses}
       disabled={disabled || loading}
-      {...props}
+      whileTap={{ scale: 0.95 }}
+      {...props as HTMLMotionProps<"button">}
     >
       {/* Ultra Premium Background Effects */}
       <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -315,6 +317,6 @@ export function Button({
           <div className="absolute inset-0 bg-gradient-radial from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-dimensional"></div>
         </div>
       )}
-    </button>
+    </motion.button>
   );
 }
