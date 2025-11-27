@@ -334,7 +334,8 @@ export function Header() {
                 { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
                 { path: '/travel-guides', label: 'Travel Guides' },
-                { path: '/deals', label: 'Deals' }
+                { path: '/deals', label: 'Deals' },
+                { path: '/predict', label: 'Predictor' }
               ].map((item) => (
                 <Link
                   key={item.path}
@@ -348,7 +349,7 @@ export function Header() {
                   {item.label}
                   {/* Minimal active indicator */}
                   {isActive(item.path) && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-slate-900 dark:bg-white"></div>
+                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_10px_rgba(251,191,36,0.5)]"></div>
                   )}
                 </Link>
               ))}
@@ -454,7 +455,8 @@ export function Header() {
                     { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                     { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
                     { path: '/travel-guides', label: 'Travel Guides' },
-                    { path: '/deals', label: 'Deals' }
+                    { path: '/deals', label: 'Deals' },
+                    { path: '/predict', label: 'Predictor' }
                   ].map((item, index) => (
                     <Link
                       key={item.path}

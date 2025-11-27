@@ -46,6 +46,7 @@ const AuthorsPage = lazy(() => import('../pages/about/authors/page'));
 const PrivacyPage = lazy(() => import('../pages/legal/privacy/page'));
 const TermsPage = lazy(() => import('../pages/legal/terms/page'));
 const AffiliateDisclaimerPage = lazy(() => import('../pages/legal/affiliate-disclaimer/page'));
+const PredictPage = lazy(() => import('../pages/PredictPage'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -60,6 +61,10 @@ const routes: RouteObject[] = [
   {
     path: '/contact',
     element: <ContactPage />
+  },
+  {
+    path: '/predict',
+    element: <PredictPage />
   },
   {
     path: '/world-cup-2026-host-cities',

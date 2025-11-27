@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
 /* Removed external CSS import. Inline luxury list styles are defined below to avoid PostCSS import resolution issues. */
 @tailwind base;
 @tailwind components;
@@ -19,8 +19,8 @@
   --ethereal-glow: 0 0 40px rgba(255, 255, 255, 0.1), 0 0 80px rgba(255, 255, 255, 0.05);
   --stellar-glow: 0 0 60px rgba(102, 126, 234, 0.4), 0 0 120px rgba(118, 75, 162, 0.2);
   /* Brand Accent — unified hue for icons, accents, highlights */
-  --brand-accent: #10b981; /* emerald-500 */
-  --brand-accent-soft: #34d399; /* emerald-400 for lighter accents */
+  --brand-accent: #FBBF24; /* Electric Gold */
+  --brand-accent-soft: #fbbf24; /* Electric Gold */
 }
 
 /* Luxury list markers: premium, monochrome, emoji-free markers via styling */
@@ -68,7 +68,7 @@
 
 /* Premium monochrome emoji styling for leading icons in paragraphs and list items */
 .emoji-black {
-  color: #0f172a; /* near-black for premium contrast */
+  color: #f8fafc; /* light for premium contrast on dark */
   font-weight: 700;
   display: inline-block;
   width: 1.1em; /* ensure consistent width/spacing */
@@ -91,22 +91,61 @@ html {
   width: 100%;
   max-width: 100vw;
   overflow-x: hidden;
+  background-color: #020617; /* slate-950 */
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+  color: #f8fafc;
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  overscroll-behavior-x: none;
+  background-color: #020617; /* Deepest blue/black base */
+}
+
+/* Mesh Gradient Background - Deep & Moving */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(30, 27, 75, 0.4), transparent 40%), 
+    radial-gradient(circle at 85% 30%, rgba(59, 7, 100, 0.4), transparent 40%), 
+    radial-gradient(circle at 50% 80%, rgba(161, 98, 7, 0.15), transparent 40%), /* Subtle Gold */
+    linear-gradient(135deg, #020617 0%, #0f172a 100%);
+  background-size: 200% 200%;
+  animation: meshFlow 20s ease-in-out infinite alternate;
+}
+
+@keyframes meshFlow {
+  0% { background-position: 0% 50%; transform: scale(1); }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; transform: scale(1.05); }
+}
+
+/* Noise Overlay */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
 }
 
 body.dark {
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  /* Dark mode brand accents (slightly cooler/lighter for glow over dark bg) */
-  --brand-accent: #10b981; /* keep consistent core accent */
-  --brand-accent-soft: #2dd4bf; /* emerald-300/teal blend for subtle UI elements */
+  /* Ensure dark mode matches the deep background */
+  background: transparent;
+  --brand-accent: #FBBF24;
+  --brand-accent-soft: #fbbf24;
 }
 
 /* Ultra Premium Scrollbar */
@@ -116,29 +155,41 @@ body.dark {
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00b87c, #2dd4bf);
+  background: linear-gradient(135deg, #FBBF24, #d97706); /* Gold gradient */
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #0d9488, #14b8a6);
-  box-shadow: var(--ultra-glow);
+  background: linear-gradient(135deg, #fbbf24, #b45309);
+  box-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
 }
 
 /* Ultra Premium Utility Classes */
 @layer utilities {
+  .glass-panel {
+    @apply bg-white/10 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .glass-panel-dark {
+    @apply bg-slate-900/40 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+
+  .text-gold {
+    @apply text-[#FBBF24];
+  }
+
   .gradient-text {
     @apply bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 bg-clip-text text-transparent;
   }
 
   .gradient-text-gold {
-    @apply bg-gradient-to-r from-gold-400 via-gold-500 to-gold-600 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-[#FBBF24] via-[#f59e0b] to-[#d97706] bg-clip-text text-transparent;
   }
 
   .gradient-text-aurora {

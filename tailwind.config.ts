@@ -11,12 +11,15 @@ export default {
       fontFamily: {
         'space': ['Space Grotesk', 'sans-serif'],
         'inter': ['Inter', 'sans-serif'],
-        'display': ['Playfair Display', 'serif'],
+        'montserrat': ['Montserrat', 'sans-serif'],
+        'display': ['Oswald', 'sans-serif'], // Updated to Oswald for aggressive sports style
+        'oswald': ['Oswald', 'sans-serif'],
         'mono': ['JetBrains Mono', 'monospace'],
         'luxury': ['Cormorant Garamond', 'serif'],
         'modern': ['Poppins', 'sans-serif'],
       },
       colors: {
+        primary: '#FBBF24', // Electric Gold
         navy: {
           50: '#f0f4f8',
           100: '#d9e2ec',
