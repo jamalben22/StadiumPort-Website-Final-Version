@@ -615,5 +615,22 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.pb-safe': { 'padding-bottom': 'env(safe-area-inset-bottom)' },
+        '.pt-safe': { 'padding-top': 'env(safe-area-inset-top)' },
+        '.pl-safe': { 'padding-left': 'env(safe-area-inset-left)' },
+        '.pr-safe': { 'padding-right': 'env(safe-area-inset-right)' },
+        '.mb-safe': { 'margin-bottom': 'env(safe-area-inset-bottom)' },
+        '.mt-safe': { 'margin-top': 'env(safe-area-inset-top)' },
+        '.ml-safe': { 'margin-left': 'env(safe-area-inset-left)' },
+        '.mr-safe': { 'margin-right': 'env(safe-area-inset-right)' },
+        '.h-safe-touch': { 'height': '44px' },
+        '.w-safe-touch': { 'width': '44px' },
+        '.min-h-safe-touch': { 'min-height': '44px' },
+        '.min-w-safe-touch': { 'min-width': '44px' },
+      })
+    }
+  ],
 }

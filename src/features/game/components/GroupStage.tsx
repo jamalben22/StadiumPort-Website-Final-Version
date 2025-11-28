@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -6,8 +6,7 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-  DragEndEvent,
-  DragStartEvent,
+  type DragEndEvent,
 } from '@dnd-kit/core';
 import {
   arrayMove,
@@ -19,9 +18,11 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { useGame } from '../context/GameContext';
 import { TEAMS } from '../lib/wc26-data';
-import { motion, AnimatePresence, PanInfo } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { soundManager } from '../utils/SoundManager';
+import { RulesCard } from './RulesCard';
 
-// --- Sortable Team Item Component ---
+// --- Sortable Team Item Component (Refactored for Official App Status System) ---
 interface SortableTeamItemProps {
   id: string;
   index: number;
@@ -47,96 +48,149 @@ const SortableTeamItem = ({ id, index }: SortableTeamItemProps) => {
 
   if (!team) return null;
 
+  // Logic-Based Styling
+  const getStatusStyles = (idx: number) => {
+    switch (idx) {
+      case 0: // 1st Place (Qualified)
+      case 1: // 2nd Place (Qualified)
+        return {
+          wrapper: "bg-slate-800 border-white/5 opacity-100",
+          accentBar: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]",
+          text: "text-white font-semibold",
+          rank: "text-white/90",
+          badge: {
+            text: "QUALIFIED",
+            style: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
+          }
+        };
+      case 2: // 3rd Place (Wildcard)
+        return {
+          wrapper: "bg-amber-900/10 border-amber-500/10",
+          accentBar: "bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.2)]",
+          text: "text-amber-50 font-medium",
+          rank: "text-amber-200/70",
+          badge: {
+            text: "POSSIBLE",
+            style: "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+          }
+        };
+      default: // 4th Place (Eliminated)
+        return {
+          wrapper: "bg-slate-900/30 border-white/5 opacity-50 grayscale",
+          accentBar: "bg-red-500/60",
+          text: "text-slate-400 font-medium",
+          rank: "text-slate-600",
+          badge: {
+            text: "ELIMINATED",
+            style: "bg-red-500/10 text-red-400 border border-red-500/20"
+          }
+        };
+    }
+  };
+
+  const status = getStatusStyles(index);
+
   return (
     <div
       ref={setNodeRef}
       style={style}
       {...attributes}
       {...listeners}
-      className="relative mb-3 touch-none group"
+      className={`
+        relative h-12 mb-2 rounded-lg flex items-center pl-0 pr-3 overflow-hidden
+        border transition-all duration-300 ease-out touch-none select-none group
+        ${isDragging ? 'opacity-95 scale-[1.03] shadow-2xl z-50 ring-1 ring-white/20 bg-slate-800 cursor-grabbing' : status.wrapper}
+      `}
     >
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-6 w-8 text-center hidden md:block">
-        <span className={`
-          font-display font-bold text-2xl
-          ${index < 2 
-            ? 'text-[#FBBF24] drop-shadow-[0_0_8px_rgba(251,191,36,0.8)]' 
-            : 'text-slate-600'}
-        `}>
-          {index + 1}
-        </span>
+      {/* Status Accent Bar (Left Edge) */}
+      <div className={`w-1 h-full mr-3 ${status.accentBar}`} />
+
+      {/* Grip Handle (Subtle, elegant dots) */}
+      <div className="mr-3 opacity-20 group-hover:opacity-50 transition-opacity duration-300 cursor-grab active:cursor-grabbing p-1">
+        <div className="grid grid-cols-2 gap-[2px]">
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+        </div>
       </div>
 
-      <motion.div
-        layoutId={id}
-        initial={false}
-        animate={{
-            scale: isDragging ? 1.02 : 1,
-            backgroundColor: isDragging ? '#1e293b' : 'rgba(30, 41, 59, 0.6)',
-            boxShadow: isDragging ? '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5)' : 'none',
-        }}
-        className={`
-            relative h-20 md:h-24 flex items-center gap-4 md:gap-6 px-4 md:px-6 rounded-xl border-2
-            transition-all duration-200 cursor-grab active:cursor-grabbing
-            ${isDragging 
-              ? 'border-[#FBBF24] ring-2 ring-[#FBBF24]/50 z-50' 
-              : 'border-white/5 hover:border-white/20 bg-slate-800/60'}
-        `}
-      >
-        <div className="flex items-center gap-4 md:gap-6 w-full h-full transition-transform active:scale-95">
-        {/* Grip Icon */}
-        <div className={`
-          text-slate-500 transition-opacity duration-200 hidden md:block
-          ${isDragging ? 'opacity-100 text-[#FBBF24]' : 'opacity-0 group-hover:opacity-100'}
-        `}>
-            <i className="ri-draggable text-2xl"></i>
-        </div>
+      {/* Rank Indicator */}
+      <div className={`
+        w-5 text-sm font-mono font-bold mr-3 text-center
+        ${status.rank}
+      `}>
+        {index + 1}
+      </div>
 
-        {/* Position Number (Mobile Only) */}
-        <div className="md:hidden font-display font-bold text-xl text-slate-500 w-6">
-            <span className={index < 2 ? 'text-[#FBBF24]' : ''}>{index + 1}</span>
-        </div>
+      {/* Flag */}
+      <div className="w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-white/10">
+        <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" />
+      </div>
 
-        {/* Flag */}
-        <div className="relative shrink-0">
-            <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full shadow-lg overflow-hidden border-2 ${index < 2 ? 'border-[#FBBF24] shadow-[0_0_15px_rgba(251,191,36,0.3)]' : 'border-slate-600'}`}>
-                <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" />
-            </div>
-        </div>
+      {/* Name */}
+      <div className={`flex-1 font-sans text-sm tracking-wide truncate ${status.text}`}>
+        {team.name}
+      </div>
 
-        {/* Name */}
-        <div className="flex-1 font-display font-black text-white text-xl md:text-3xl tracking-wide uppercase truncate">
-            {team.name}
-        </div>
-        
-        {/* Status Indicator */}
-        {index < 2 && (
-          <div className="flex flex-col items-end">
-             <div className="text-xs md:text-sm font-bold uppercase tracking-wider text-[#FBBF24] bg-[#FBBF24]/10 px-3 py-1 rounded border border-[#FBBF24]/20 shadow-[0_0_10px_rgba(251,191,36,0.2)]">
-                ADVANCE
-             </div>
-          </div>
-        )}
-        </div>
-      </motion.div>
+      {/* Spacer (Flex-1 above handles this) */}
+
+      {/* Status Badge */}
+      <div className={`
+        px-2.5 py-[3px] rounded-full text-[9px] font-bold tracking-widest uppercase shadow-sm
+        ${status.badge.style}
+      `}>
+        {status.badge.text}
+      </div>
     </div>
   );
 };
 
-// --- Group Card Component ---
-interface GroupCardProps {
+// --- Direct Grid Group Card ---
+interface DirectGroupCardProps {
   groupId: string;
   teams: string[];
-  onInteract: () => void;
 }
 
-const GroupCard = ({ groupId, teams, onInteract }: GroupCardProps) => {
-  const { updateGroupStandings } = useGame();
+const DirectGroupCard = ({ groupId, teams }: DirectGroupCardProps) => {
+  return (
+    <div className="flex flex-col h-full bg-slate-900/60 backdrop-blur-2xl rounded-2xl border border-white/10 overflow-hidden shadow-lg">
+      {/* Header */}
+      <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between bg-black/20">
+        <h3 className="font-sans font-semibold text-white tracking-tight">
+          Group {groupId}
+        </h3>
+        {/* Subtle Indicator */}
+        <div className="w-2 h-2 rounded-full bg-slate-700"></div>
+      </div>
+
+      {/* List */}
+      <div className="p-3 flex-1">
+        <SortableContext items={teams} strategy={verticalListSortingStrategy}>
+          {teams.map((teamId, index) => (
+            <SortableTeamItem key={teamId} id={teamId} index={index} />
+          ))}
+        </SortableContext>
+      </div>
+    </div>
+  );
+};
+
+// --- Main GroupStage Component (Direct Grid Dashboard) ---
+export const GroupStage = () => {
+  const { groupStandings, completedGroupIds, updateGroupStandings, markGroupCompleted, setCurrentStep } = useGame();
   
+  // Sort groups alphabetically
+  const groupIds = Object.keys(groupStandings).sort();
+
+  // Sensors for DnD
   const sensors = useSensors(
     useSensor(PointerSensor, {
-        activationConstraint: {
-            distance: 8,
-        }
+      activationConstraint: {
+        distance: 8,
+      },
     }),
     useSensor(KeyboardSensor, {
       coordinateGetter: sortableKeyboardCoordinates,
@@ -146,192 +200,75 @@ const GroupCard = ({ groupId, teams, onInteract }: GroupCardProps) => {
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
 
-    if (over && active.id !== over.id) {
-      const oldIndex = teams.indexOf(active.id as string);
-      const newIndex = teams.indexOf(over.id as string);
-      const newOrder = arrayMove(teams, oldIndex, newIndex);
-      updateGroupStandings(groupId, newOrder);
-      onInteract();
+    if (!over) return;
+
+    const activeId = active.id as string;
+    const overId = over.id as string;
+
+    if (activeId !== overId) {
+      // Find which group these teams belong to
+      // Since we assume dragging within the same group for now (as per "inside these grid boxes")
+      // We can find the group that contains the activeId.
+      const groupId = groupIds.find(gid => groupStandings[gid].includes(activeId));
+      
+      if (groupId) {
+         const currentTeams = groupStandings[groupId];
+         const oldIndex = currentTeams.indexOf(activeId);
+         const newIndex = currentTeams.indexOf(overId);
+         
+         // Only if valid indices
+         if (oldIndex !== -1 && newIndex !== -1) {
+             const newOrder = arrayMove(currentTeams, oldIndex, newIndex);
+             updateGroupStandings(groupId, newOrder);
+             
+             // Check if group is "complete" (user interacted with it)
+             // We can mark it as complete on any interaction, or just leave it to the user.
+             // The prompt removed the "Save" button, so we should probably auto-mark as complete
+             // OR rely on the user having done something. 
+             // Let's auto-mark on interaction for progress tracking, or maybe not?
+             // "Mission Status bar" needs to fill up.
+             // Let's mark as complete if not already.
+             if (!completedGroupIds.includes(groupId)) {
+                 markGroupCompleted(groupId);
+                 soundManager.play('success');
+                 
+                 // Removed Confetti as requested for "Official App" quality.
+                 // Interaction must be instant, silent (except for success tick), and serious.
+             }
+         }
+      }
     }
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <div className="text-center mb-6 md:mb-8">
-        <h3 className="text-5xl md:text-7xl font-display font-black text-transparent bg-clip-text bg-gradient-to-b from-[#FBBF24] to-[#d97706] tracking-tighter drop-shadow-[0_4px_0_rgba(0,0,0,0.5)]">
-            GROUP {groupId}
-        </h3>
-        <div className="text-sm md:text-base font-mono text-slate-400 mt-2 tracking-widest uppercase">
-          Top 2 Teams Advance
-        </div>
-      </div>
-      
-      <div className="bg-black/20 backdrop-blur-sm rounded-3xl p-4 md:p-8 border border-white/5 shadow-2xl">
-        <DndContext
-            sensors={sensors}
-            collisionDetection={closestCenter}
-            onDragEnd={handleDragEnd}
-        >
-            <SortableContext items={teams} strategy={verticalListSortingStrategy}>
-            <div className="flex flex-col">
-                {teams.map((teamId, index) => (
-                <SortableTeamItem key={teamId} id={teamId} index={index} />
-                ))}
-            </div>
-            </SortableContext>
-        </DndContext>
-      </div>
-    </div>
-  );
-};
+    <div className="w-full flex flex-col pb-8">
+       {/* Dashboard Header */}
+       <div className="text-center mb-8 pt-4">
+          <RulesCard variant="short" className="max-w-2xl mx-auto mb-8" />
+          <h2 className="text-3xl md:text-4xl font-sans font-bold text-white tracking-tight mb-2">
+            Tournament Dashboard
+          </h2>
+          <p className="text-slate-400 font-mono text-xs tracking-widest uppercase">
+            Initialize Groups • Drag to Reorder
+          </p>
+       </div>
 
-// --- Main GroupStage Component ---
-export const GroupStage = () => {
-  const { groupStandings, setCurrentStep } = useGame();
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
-
-  // Sort groups alphabetically
-  const groupIds = Object.keys(groupStandings).sort();
-  const currentGroupId = groupIds[currentGroupIndex];
-
-  const handleInteract = () => {
-    if (!hasInteracted) {
-      setHasInteracted(true);
-    }
-  };
-
-  const nextGroup = () => {
-    if (currentGroupIndex < groupIds.length - 1) {
-      setDirection(1);
-      setCurrentGroupIndex(prev => prev + 1);
-    }
-  };
-
-  const prevGroup = () => {
-    if (currentGroupIndex > 0) {
-      setDirection(-1);
-      setCurrentGroupIndex(prev => prev - 1);
-    }
-  };
-
-  const handleDragEnd = (event: any, info: PanInfo) => {
-    const threshold = 50;
-    if (info.offset.x < -threshold) {
-      nextGroup();
-    } else if (info.offset.x > threshold) {
-      prevGroup();
-    }
-  };
-
-  const handleNextStep = () => {
-    setCurrentStep(1);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const variants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8
-    }),
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1
-    },
-    exit: (direction: number) => ({
-      zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
-      opacity: 0,
-      scale: 0.8
-    })
-  };
-
-  return (
-    <div className="w-full max-w-7xl mx-auto px-4 py-4 md:py-8 space-y-4 md:space-y-8 relative h-[100dvh] flex flex-col">
-      
-      {/* Carousel Container */}
-      <div className="flex-1 relative flex items-center justify-center overflow-hidden">
-        
-        {/* Navigation Arrows (Desktop) */}
-        {currentGroupIndex > 0 && (
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={prevGroup}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white transition-colors"
-          >
-            <i className="ri-arrow-left-s-line text-4xl"></i>
-          </motion.button>
-        )}
-        
-        {currentGroupIndex < groupIds.length - 1 && (
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={nextGroup}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-16 h-16 items-center justify-center rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/10 text-white transition-colors"
-          >
-            <i className="ri-arrow-right-s-line text-4xl"></i>
-          </motion.button>
-        )}
-
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.div
-            key={currentGroupId}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-              scale: { duration: 0.2 }
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={handleDragEnd}
-            className="w-full touch-pan-y"
-          >
-            <GroupCard 
-              groupId={currentGroupId} 
-              teams={groupStandings[currentGroupId]} 
-              onInteract={handleInteract}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </div>
-
-      {/* Progress Indicator */}
-      <div className="flex flex-col items-center gap-4 z-20 pb-24">
-        <div className="flex gap-2">
-            {groupIds.map((id, idx) => (
-                <div 
-                    key={id}
-                    className={`h-2 rounded-full transition-all duration-300 ${
-                        idx === currentGroupIndex 
-                            ? 'w-8 bg-[#FBBF24]' 
-                            : idx < currentGroupIndex 
-                                ? 'w-2 bg-[#FBBF24]/50' 
-                                : 'w-2 bg-slate-700'
-                    }`}
+       {/* Direct Grid */}
+       <DndContext
+          sensors={sensors}
+          collisionDetection={closestCenter}
+          onDragEnd={handleDragEnd}
+       >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1400px] mx-auto w-full px-4 md:px-6">
+              {groupIds.map((groupId) => (
+                <DirectGroupCard
+                  key={groupId}
+                  groupId={groupId}
+                  teams={groupStandings[groupId]}
                 />
-            ))}
-        </div>
-        <div className="text-slate-400 font-mono text-sm uppercase tracking-widest">
-            {currentGroupIndex + 1}/{groupIds.length} Groups Sorted
-        </div>
-      </div>
-      
-      {/* Spacer for fixed bottom bar */}
-      <div className="h-12"></div>
+              ))}
+          </div>
+       </DndContext>
     </div>
   );
 };
-
-export default GroupStage;
