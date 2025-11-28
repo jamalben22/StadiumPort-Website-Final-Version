@@ -9,7 +9,6 @@ import { getEditorialEntry } from './components/seo/EditorialCalendar'
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateBreadcrumbSchema, generateCityGuideSchema, generateCollectionPageSchema, generateItemListSchema } from './components/seo/SchemaOrg'
 import { formatTitle } from './components/seo/MetaUtils'
 import { LoadingSpinner } from './components/common/LoadingSpinner'
-import { ScrollToTop } from './components/common/ScrollToTop'
 import { MobileAffiliateBar } from './components/layout/MobileAffiliateBar'
 import { usePageTracking } from './hooks/usePageTracking'
 
@@ -239,7 +238,6 @@ function App() {
       </ErrorBoundary>
       <Analytics />
       <SpeedInsightsRouting />
-      <ScrollToTop />
       <MobileAffiliateBar />
     </BrowserRouter>
   )

@@ -57,19 +57,16 @@ export const ThirdPlaceSelector = () => {
     }
   };
 
-  const handleNext = () => {
-    if (isComplete) {
-      playClickSound();
-      setCurrentStep(2);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="w-full h-[100dvh] overflow-y-auto px-4 py-8 space-y-8 pb-32 scrollbar-hide">
+    <div className="w-full px-4 py-8 space-y-8 pb-8">
       <div className="max-w-7xl mx-auto space-y-8">
       {/* Header Section */}
       <div className="text-center space-y-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+           <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest font-['Rajdhani']">
+             Step 2 of 5
+           </span>
+        </div>
         <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
           Select Squad
         </h2>
@@ -110,7 +107,7 @@ export const ThirdPlaceSelector = () => {
               whileHover={!isLockedOut ? { scale: isSelected ? 1.08 : 0.98 } : {}}
               whileTap={!isLockedOut ? { scale: 0.95 } : {}}
               className={`
-                relative cursor-pointer group h-64 md:h-80 rounded-xl overflow-hidden transition-all duration-300 ease-out
+                relative cursor-pointer group h-64 md:h-80 rounded-xl overflow-hidden transition-all duration-300 ease-out min-h-[44px] min-w-[44px]
                 ${isSelected 
                   ? 'z-10 ring-2 ring-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.3)] grayscale-0 brightness-110 scale-105' 
                   : isLockedOut
@@ -191,7 +188,7 @@ export const ThirdPlaceSelector = () => {
       </div>
 
       </div>
-      
+
       {/* Spacer */}
       <div className="h-32"></div>
     </div>
@@ -199,4 +196,3 @@ export const ThirdPlaceSelector = () => {
 };
 
 export default ThirdPlaceSelector;
-

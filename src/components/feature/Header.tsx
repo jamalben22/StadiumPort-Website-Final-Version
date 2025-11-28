@@ -405,7 +405,7 @@ export function Header() {
                   onKeyDown={(e) => {
                     if (e.key === 'ArrowRight' || e.key === 'End') setActiveTab('actions');
                   }}
-                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${
+                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium min-h-[44px] flex items-center justify-center ${
                     activeTab === 'explore'
                       ? 'text-slate-900 dark:text-white bg-white dark:bg-slate-800 shadow-sm'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
@@ -427,7 +427,7 @@ export function Header() {
                   onKeyDown={(e) => {
                     if (e.key === 'ArrowLeft' || e.key === 'Home') setActiveTab('explore');
                   }}
-                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium ${
+                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium min-h-[44px] flex items-center justify-center ${
                     activeTab === 'actions'
                       ? 'text-slate-900 dark:text-white bg-white dark:bg-slate-800 shadow-sm'
                       : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'

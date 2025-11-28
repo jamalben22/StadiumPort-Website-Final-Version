@@ -7,6 +7,7 @@ interface GameState {
   thirdPlacePicks: string[]; // Array of Team IDs selected as best 3rd place
   knockoutPicks: Record<string, string>; // Match ID -> Winner Team ID
   currentStep: number; // 0 = Groups, 1 = 3rd Place, 2 = Bracket, 3 = Result
+  completedGroupIds: string[]; // List of completed group IDs
 }
 
 // Define the shape of the context (State + Actions)
@@ -15,6 +16,7 @@ interface GameContextType extends GameState {
   setThirdPlacePicks: (teamIds: string[]) => void;
   setKnockoutPick: (matchId: string, winnerId: string) => void;
   setCurrentStep: (step: number) => void;
+  markGroupCompleted: (groupId: string) => void;
   resetGame: () => void;
 }
 
@@ -26,6 +28,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [thirdPlacePicks, setThirdPlacePicksState] = useState<string[]>([]);
   const [knockoutPicks, setKnockoutPicksState] = useState<Record<string, string>>({});
   const [currentStep, setCurrentStep] = useState<number>(0);
+  const [completedGroupIds, setCompletedGroupIds] = useState<string[]>([]);
 
   const updateGroupStandings = (groupId: string, teams: string[]) => {
     setGroupStandingsState((prev) => ({
@@ -45,11 +48,19 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     }));
   };
 
+  const markGroupCompleted = (groupId: string) => {
+    setCompletedGroupIds((prev) => {
+      if (prev.includes(groupId)) return prev;
+      return [...prev, groupId];
+    });
+  };
+
   const resetGame = () => {
     setGroupStandingsState(GROUPS);
     setThirdPlacePicksState([]);
     setKnockoutPicksState({});
     setCurrentStep(0);
+    setCompletedGroupIds([]);
   };
 
   const value: GameContextType = {
@@ -57,10 +68,12 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     thirdPlacePicks,
     knockoutPicks,
     currentStep,
+    completedGroupIds,
     updateGroupStandings,
     setThirdPlacePicks,
     setKnockoutPick,
     setCurrentStep,
+    markGroupCompleted,
     resetGame,
   };
 

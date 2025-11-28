@@ -1,9 +1,31 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Teko:wght@300;400;500;600;700&display=swap');
 /* Removed external CSS import. Inline luxury list styles are defined below to avoid PostCSS import resolution issues. */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  /* Global Scrollbar Hide */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
 
 /* Ultra Premium CSS Variables */
 :root {
@@ -101,6 +123,8 @@ body {
   position: relative;
   overflow-x: hidden;
   background-color: #020617; /* Deepest blue/black base */
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 /* Mesh Gradient Background - Deep & Moving */
@@ -551,11 +575,21 @@ body.dark {
     animation-duration: 5s;
   }
 
+  
   .btn-aurora {
     @apply px-8 py-4 rounded-3xl font-semibold text-white transition-all duration-500 relative overflow-hidden;
     background: linear-gradient(45deg, #00b87c, #2dd4bf, #0ea5e9);
     box-shadow: var(--aurora-glow);
     animation: aurora 6s ease-in-out infinite;
+  }
+
+  /* Utility to hide scrollbars */
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
   .btn-aurora:hover {
@@ -647,6 +681,10 @@ body.dark {
     transform: translateY(-2px) scale(1.02);
     animation-duration: 2s;
   }
+
+.clip-path-slant {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
 
   .btn-stellar {
     @apply px-8 py-4 rounded-3xl font-semibold text-white transition-all duration-500 relative overflow-hidden;

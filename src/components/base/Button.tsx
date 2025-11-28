@@ -35,6 +35,7 @@ export function Button({
     transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden
     focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 
     disabled:cursor-not-allowed group font-inter ultra-premium-focus
+    min-h-[44px] min-w-[44px]
     ${animate ? 'hover:-translate-y-1' : ''}
     ${fullWidth ? 'w-full' : ''}
     transform-gpu will-change-transform
