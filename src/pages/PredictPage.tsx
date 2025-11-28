@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, Suspense, lazy } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GameProvider, useGame } from '../features/game/context/GameContext';
 import { GameLayout } from '../features/game/components/GameLayout';
@@ -18,11 +18,11 @@ const BracketView = lazy(() => import('../features/game/components/BracketView')
 
 // Steps for the stepper
 const STEPS = [
-  { id: 0, label: 'Groups' },
-  { id: 1, label: '3rd Place' },
-  { id: 2, label: 'Bracket' },
-  { id: 3, label: 'Register' },
-  { id: 4, label: 'Result' },
+  { id: 0, label: 'Group Stage' },
+  { id: 1, label: 'Third Place' },
+  { id: 2, label: 'Knockout Rounds' },
+  { id: 3, label: 'Submit Details' },
+  { id: 4, label: 'Your Prediction' },
 ];
 
 const LoadingFallback = () => (
@@ -69,14 +69,33 @@ const pageTransition = {
 
 function PredictGameContent() {
   const navigate = useNavigate();
+  const { step } = useParams();
   const { currentStep, setCurrentStep, thirdPlacePicks, knockoutPicks, completedGroupIds, resetGame } = useGame();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [direction, setDirection] = useState(0);
   const [userName, setUserName] = useState("You");
+  const [userInfo, setUserInfo] = useState<{ name: string; email: string; country: string }>({ name: "", email: "", country: "" });
 
   // Bracket Mobile State
   const [bracketRoundIndex, setBracketRoundIndex] = useState(0);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  // Sync URL step param with game state
+  useEffect(() => {
+    if (!step) return;
+    
+    const stepMap: Record<string, number> = {
+      'group-stage': 0,
+      'third-place-qualifiers': 1,
+      'knockout-bracket': 2,
+      'submit': 3,
+      'results': 4
+    };
+
+    if (stepMap[step] !== undefined && stepMap[step] !== currentStep) {
+      setCurrentStep(stepMap[step]);
+    }
+  }, [step, setCurrentStep, currentStep]);
 
   // Scroll to top when step changes
   useEffect(() => {
@@ -137,17 +156,18 @@ function PredictGameContent() {
     if (currentStep === 3) setCurrentStep(2);
   };
 
-  const handleRegistrationComplete = (data: { name: string }) => {
+  const handleRegistrationComplete = (data: { name: string; email: string; country: string }) => {
+    setUserInfo(data);
     setUserName(data.name);
     setCurrentStep(4);
   };
 
   const getNextLabel = () => {
     if (currentStep === 2) {
-      if (isMobile && bracketRoundIndex < 4) return 'NEXT';
-      return 'CONTINUE';
+      if (isMobile && bracketRoundIndex < 4) return 'NEXT ROUND';
+      return 'CONFIRM BRACKET';
     }
-    return 'CONTINUE';
+    return 'PROCEED';
   };
 
   if (currentStep === 4) {
@@ -167,7 +187,9 @@ function PredictGameContent() {
          <ResultDashboard 
            champion={champion} 
            runnerUp={runnerUp}
-           userName={userName} 
+           userName={userName}
+           userEmail={userInfo.email}
+           userCountry={userInfo.country}
            onRestart={() => {
              resetGame();
              // setIsGameFinished(false); // Not defined in this scope, removing
@@ -185,8 +207,8 @@ function PredictGameContent() {
       <GameHeader onExit={() => navigate('/')} />
       
       <SEO 
-        title="Play WC26 Predictor - Win a Prize" 
-        description="Predict the full World Cup 2026 tournament bracket. Challenge your friends and win exclusive prizes!"
+        title="World Cup 2026 Prediction Game | Free Bracket Challenge & Prizes" 
+        description="Play the official World Cup 2026 Prediction Game! Predict group winners and the full tournament bracket. Compete for cash prizes and official merchandise. Free to enter."
       />
       
       {/* 2. The Content (Animates) - Fixed layout structure */}
@@ -198,16 +220,16 @@ function PredictGameContent() {
             <>
               {/* Stepper UI (Persistent) */}
               <div className="mb-8 md:mb-12">
-                <div className="flex items-center justify-between relative">
+                <div className="flex items-center justify-start gap-4 md:justify-between relative overflow-x-auto no-scrollbar px-2">
                   <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-slate-200 dark:bg-navy-700 -z-10"></div>
                   {STEPS.map((step) => {
                     const isCompleted = currentStep > step.id;
                     const isCurrent = currentStep === step.id;
                     
                     return (
-                      <div key={step.id} className="flex flex-col items-center">
+                      <div key={step.id} className="flex flex-col items-center min-w-[72px] md:min-w-0">
                         <div 
-                          className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 border-4 
+                          className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 border-4 
                             ${isCompleted 
                               ? 'bg-emerald-500 border-emerald-500 text-white' 
                               : isCurrent 
@@ -218,14 +240,14 @@ function PredictGameContent() {
                           {isCompleted ? <i className="ri-check-line"></i> : step.id + 1}
                         </div>
                         <span 
-                          className={`mt-2 text-xs font-medium uppercase tracking-wider transition-colors duration-300
+                          className={`mt-2 text-[10px] md:text-xs font-medium uppercase tracking-wider transition-colors duration-300 whitespace-nowrap
                             ${isCurrent 
                               ? 'text-[#FBBF24] font-bold' 
                               : isCompleted 
                                 ? 'text-emerald-500' 
                                 : 'text-slate-400'
-                            }`}
-                        >
+                            } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
+                          >
                           {step.label}
                         </span>
                       </div>

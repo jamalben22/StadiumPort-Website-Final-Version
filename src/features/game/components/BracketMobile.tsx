@@ -18,8 +18,18 @@ const ROUND_NAMES: Record<string, string> = {
   'R16': 'Round of 16',
   'QF': 'Quarter-Finals',
   'SF': 'Semi-Finals',
-  'F': 'Grand Final'
+  'F': 'FINAL'
 };
+
+const ROUND_THEME: Record<string, { color: string }> = {
+  'R32': { color: '#9CA3AF' },
+  'R16': { color: '#A78BFA' },
+  'QF': { color: '#22D3EE' },
+  'SF': { color: '#F472B6' },
+  'F': { color: '#FBBF24' }
+};
+
+const withAlpha = (hex: string, alphaHex: string) => (hex.length === 7 ? hex + alphaHex : hex);
 
 export const BracketMobile = ({
   matches,
@@ -44,6 +54,7 @@ export const BracketMobile = ({
   }, [currentRoundIndex]);
 
   const currentRoundId = ROUND_ORDER[currentRoundIndex];
+  const theme = ROUND_THEME[currentRoundId];
   const roundMatches = matches.filter(m => m.id.startsWith(currentRoundId));
   const progress = ((currentRoundIndex + 1) / ROUND_ORDER.length) * 100;
 
@@ -79,12 +90,33 @@ export const BracketMobile = ({
     <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-white overflow-x-hidden">
       {/* Liquid Gold Progress Header */}
       <div className="flex-none px-6 pt-6 pb-2 z-10 border-b border-white/5">
+        <div className="text-center space-y-6 mb-3">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+            <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+          </div>
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">Knockout Stage: From Round of 32 to World Cup Champion</h2>
+          <p className="text-slate-400 font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+          <p
+            className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-[0_0_12px_rgba(251,191,36,0.35)]"
+            style={{
+              background: 'linear-gradient(90deg, #FBBF24, #F59E0B)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }}
+          >
+            Tournament Bracket Progress:
+          </p>
+        </div>
         <div className="flex justify-between items-end mb-2">
-            <h2 className="text-2xl font-display font-bold text-white uppercase tracking-wider">
-            {ROUND_NAMES[currentRoundId]}
+            <h2
+              className="text-2xl font-display font-bold uppercase tracking-wider"
+              style={{ color: withAlpha(theme.color, 'CC') }}
+            >
+              {ROUND_NAMES[currentRoundId]}
             </h2>
             <div className="text-amber-500/80 font-mono text-xs font-bold tracking-widest mb-1">
-                LEVEL {currentRoundIndex + 1}/{ROUND_ORDER.length}
+                STAGE {currentRoundIndex + 1}/{ROUND_ORDER.length}
             </div>
         </div>
         
@@ -95,7 +127,12 @@ export const BracketMobile = ({
                 className="absolute top-0 left-0 h-full transition-all duration-700 ease-out rounded-full"
                 style={{ width: `${progress}%` }}
             >
-                <div className="w-full h-full bg-gradient-to-r from-amber-600 via-amber-300 to-amber-500 animate-pulse"></div>
+                <div
+                  className="w-full h-full animate-pulse"
+                  style={{
+                    background: `linear-gradient(90deg, ${withAlpha(theme.color, '80')}, ${withAlpha(theme.color, '60')}, ${withAlpha(theme.color, '99')})`
+                  }}
+                ></div>
             </div>
         </div>
       </div>

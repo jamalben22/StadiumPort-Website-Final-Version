@@ -12,7 +12,7 @@ export const GameHeader = ({ onExit }: GameHeaderProps) => {
     if (onExit) {
       onExit();
     } else {
-       if(window.confirm('Are you sure you want to quit? Your progress will be lost.')) {
+       if(window.confirm('Exit Prediction Game? Unsaved progress will be discarded.')) {
           navigate('/');
        }
     }
@@ -31,6 +31,7 @@ export const GameHeader = ({ onExit }: GameHeaderProps) => {
 
       <button 
         onClick={handleExit}
+        title="Return to StadiumPort World Cup 2026 Hub"
         className="pointer-events-auto group flex items-center justify-center w-10 h-10 rounded-full bg-[#1c1c1e]/60 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300"
       >
         <svg 

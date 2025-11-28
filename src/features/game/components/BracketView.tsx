@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import confetti from 'canvas-confetti';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useGame } from '../context/GameContext';
 import { generateBracketMatches, Match } from '../lib/bracket-logic';
 import { BracketMobile } from './BracketMobile';
 import { BracketDesktop } from './BracketDesktop';
+import { PredictionSummaryPopup } from './PredictionSummaryPopup';
+import { TEAMS } from '../lib/wc26-data';
+import { SEO } from '../../../components/common/SEO';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
 const CHAMPION_MATCH_ID = 'F-01';
 
@@ -29,9 +33,10 @@ interface BracketViewProps {
 }
 
 export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: BracketViewProps) => {
-  const { groupStandings, thirdPlacePicks, knockoutPicks, setKnockoutPick, currentStep, setCurrentStep } = useGame();
+  const { groupStandings, thirdPlacePicks, knockoutPicks, setKnockoutPick, updateKnockoutPicks, currentStep, setCurrentStep } = useGame();
   const [matches, setMatches] = useState<Match[]>([]);
   const isMobile = useMediaQuery('(max-width: 768px)');
+  const [showSummary, setShowSummary] = useState<string | null>(null);
 
   // Initialize Bracket Data
   useEffect(() => {
@@ -92,24 +97,71 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
   };
 
   const handlePickWinner = (matchId: string, winnerId: string) => {
-    setKnockoutPick(matchId, winnerId);
+    // If pick hasn't changed, do nothing
+    if (knockoutPicks[matchId] === winnerId) return;
+
+    // Identify downstream matches to clear
+    const matchesToClear: Record<string, string> = {};
+    let currentMatch = matches.find(m => m.id === matchId);
+    
+    while (currentMatch && currentMatch.nextMatchId) {
+      const nextId = currentMatch.nextMatchId;
+      // Only clear if it currently has a value
+      if (knockoutPicks[nextId]) {
+        matchesToClear[nextId] = "";
+      }
+      currentMatch = matches.find(m => m.id === nextId);
+    }
+
+    // Batch update: Set new winner, clear downstream
+    updateKnockoutPicks({
+      [matchId]: winnerId,
+      ...matchesToClear
+    });
 
     if (matchId === CHAMPION_MATCH_ID) {
-      confetti({
-        particleCount: 200,
-        spread: 160,
-        origin: { y: 0.6 },
-        colors: ['#FBBF24', '#3B82F6'],
-        scalar: 1.2,
-        zIndex: 2000
-      });
+      setShowSummary(winnerId);
     }
   };
 
   if (matches.length === 0) return null;
 
+  const runnerUpId = showSummary ? (getTeamForMatchSlot('F-01', 1) === showSummary ? getTeamForMatchSlot('F-01', 2) : getTeamForMatchSlot('F-01', 1)) : '';
+
   return (
+    <>
+      <SEO 
+        title="World Cup 2026 Knockout Bracket | Predict Every Match"
+        description="Predict the entire World Cup 2026 knockout stage! From the Round of 32 to the Final, pick the winners and crown your champion."
+        keywords={["World Cup 2026 knockout bracket", "bracket predictor", "round of 32", "world cup final prediction", "soccer bracket game"]}
+        url="/world-cup-2026-prediction-game/knockout-bracket"
+      />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "World Cup 2026 Knockout Bracket",
+        "description": "Interactive knockout stage bracket for World Cup 2026.",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game/knockout-bracket",
+        "isPartOf": {
+          "@type": "SportsEvent",
+          "name": "World Cup 2026 Prediction Game"
+        }
+      }} />
     <div className="w-full min-h-screen flex flex-col bg-transparent relative">
+        <AnimatePresence>
+          {showSummary && runnerUpId && (
+            <PredictionSummaryPopup 
+              winnerId={showSummary}
+              runnerUpId={runnerUpId}
+              onConfirm={() => {
+                setShowSummary(null);
+                setCurrentStep(3);
+              }}
+              onCancel={() => setShowSummary(null)}
+            />
+          )}
+        </AnimatePresence>
+
         {/* Render appropriate view based on device */}
         <div className="relative z-10 w-full flex-1">
             {isMobile ? (
@@ -131,6 +183,7 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
             )}
         </div>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Globe, Mail, User, ArrowRight, CheckCircle2, ChevronDown, Search, X } from 'lucide-react';
 import { COUNTRIES } from '../lib/countries';
+import { SEO } from '../../../components/common/SEO';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
 interface EmailRegistrationProps {
   onComplete: (data: { name: string; email: string; country: string }) => void;
@@ -12,7 +14,9 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    country: ''
+    country: '',
+    ageConfirmed: false,
+    acceptedTerms: false
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -50,6 +54,8 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
       newErrors.email = 'Email is invalid';
     }
     if (!formData.country.trim()) newErrors.country = 'Country is required';
+    if (!formData.ageConfirmed) newErrors.ageConfirmed = 'Age confirmation is required';
+    if (!formData.acceptedTerms) newErrors.acceptedTerms = 'You must accept the Official Rules and Privacy Policy';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -72,39 +78,75 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
   );
 
   return (
+    <>
+      <SEO 
+        title="Submit World Cup 2026 Predictions | Enter to Win"
+        description="Finalize your World Cup 2026 predictions! Submit your bracket to enter the contest and compete for global prizes."
+        keywords={["submit predictions", "world cup contest entry", "win world cup prizes", "soccer prediction game"]}
+        url="/world-cup-2026-prediction-game/submit"
+      />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Submit World Cup 2026 Predictions",
+        "description": "Submission page for the World Cup 2026 prediction game.",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game/submit",
+        "mainEntity": {
+          "@type": "Action",
+          "name": "Submit Prediction",
+          "target": "https://stadiumport.com/api/submit"
+        }
+      }} />
     <div className="w-full max-w-md mx-auto px-4">
+      {/* Step Chip (Background Page, outside card) */}
+      <div className="mb-6 flex justify-center">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+            Step 4 of 5: Submit Your Official Entry
+          </span>
+        </div>
+      </div>
+
+      {/* Page Title */}
+      <div className="text-center mb-6 md:mb-8">
+        <h2 className="text-3xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
+          Secure Your World Cup 2026 Prediction
+        </h2>
+        <p className="text-slate-400 font-mono text-xs md:text-sm uppercase tracking-widest mt-3 px-4 leading-relaxed">
+          You're one step away from competing for official prizes! Enter your details below to lock in your predictions and join thousands of fans worldwide.
+        </p>
+      </div>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
-        className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[32px] p-8 shadow-2xl relative overflow-visible"
+        className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[24px] md:rounded-[32px] p-5 md:p-7 shadow-2xl relative overflow-hidden"
       >
         {/* Background Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-emerald-500/20 blur-[60px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-emerald-500/20 blur-[50px] rounded-full pointer-events-none" />
 
         {/* Header */}
-        <div className="text-center mb-8 relative z-10">
+        <div className="text-center mb-6 relative z-10">
           <div className="w-12 h-12 mx-auto bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg mb-4 rotate-3">
             <CheckCircle2 className="w-6 h-6 text-white" />
           </div>
           <h2 className="text-3xl font-black font-['Teko'] text-white tracking-wide uppercase mb-1">
-            Almost There
+            Official Entry Form
           </h2>
-          <p className="text-white/60 font-['Rajdhani'] font-medium text-sm">
-            Save your prediction to enter the contest
-          </p>
+          
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5 relative z-10">
+        <form onSubmit={handleSubmit} className="space-y-3 md:space-y-4 relative z-10">
           
           {/* Name Field */}
-          <div className="space-y-1.5">
-            <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
-              Full Name
+          <div className="space-y-2 sm:space-y-1.5">
+            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+              Participant Full Name
             </label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
                 <User className="h-4 w-4 text-white/40 group-focus-within:text-emerald-400 transition-colors" />
               </div>
               <input
@@ -114,7 +156,8 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, name: e.target.value });
                   if (errors.name) setErrors({ ...errors, name: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl py-3.5 pl-11 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                autoComplete="name"
                 placeholder="Cristiano Ronaldo"
               />
             </div>
@@ -122,12 +165,12 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
           </div>
 
           {/* Email Field */}
-          <div className="space-y-1.5">
-            <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
-              Email Address
+          <div className="space-y-2 sm:space-y-1.5">
+            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+              Official Contact Email
             </label>
             <div className="relative group">
-              <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+              <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
                 <Mail className="h-4 w-4 text-white/40 group-focus-within:text-emerald-400 transition-colors" />
               </div>
               <input
@@ -137,7 +180,8 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, email: e.target.value });
                   if (errors.email) setErrors({ ...errors, email: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl py-3.5 pl-11 pr-4 text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                autoComplete="email"
                 placeholder="cr7@stadiumport.com"
               />
             </div>
@@ -146,22 +190,22 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 
           {/* Country Field (Custom Dropdown) */}
           <div className="space-y-1.5 relative" ref={dropdownRef}>
-            <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
-              Country
+            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+              Country of Residence
             </label>
             
             {/* Trigger Button */}
             <button
               type="button"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`w-full bg-white/5 border ${errors.country ? 'border-red-500/50' : isDropdownOpen ? 'border-emerald-500/50' : 'border-white/10'} rounded-2xl py-3.5 pl-4 pr-4 flex items-center justify-between text-left transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20 group hover:bg-white/10`}
+              className={`relative w-full bg-white/5 border ${errors.country ? 'border-red-500/50' : isDropdownOpen ? 'border-emerald-500/50' : 'border-white/10'} rounded-2xl h-12 md:h-auto py-0 md:py-3.5 pl-12 md:pl-11 pr-4 flex items-center justify-between text-left transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20 group hover:bg-white/10`}
             >
-              <div className="flex items-center gap-3 overflow-hidden">
+              <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
                 <Globe className={`h-4 w-4 shrink-0 transition-colors ${formData.country ? 'text-emerald-400' : 'text-white/40 group-hover:text-white/60'}`} />
-                <span className={`block truncate font-['Rajdhani'] font-medium ${formData.country ? 'text-white' : 'text-white/20'}`}>
-                  {formData.country || 'Select your country'}
-                </span>
               </div>
+              <span className={`block truncate font-['Rajdhani'] font-medium text-[15px] md:text-base leading-[1.25] ${formData.country ? 'text-white' : 'text-white/20'} flex-1 min-w-0`}>
+                {formData.country || 'Select your country'}
+              </span>
               <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-emerald-400' : ''}`} />
             </button>
 
@@ -188,7 +232,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search country..."
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-sm text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all font-['Rajdhani']"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-base text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all font-['Rajdhani']"
                       />
                       {searchQuery && (
                         <button 
@@ -239,18 +283,68 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             </AnimatePresence>
           </div>
 
+          {/* Compliance Section */}
+          <div className="space-y-4">
+            <div className="space-y-1.5">
+              <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+                Age Confirmation *
+              </label>
+              <button
+                type="button"
+                role="checkbox"
+                aria-checked={formData.ageConfirmed}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFormData({ ...formData, ageConfirmed: !formData.ageConfirmed }); if (errors.ageConfirmed) setErrors({ ...errors, ageConfirmed: '' }); } }}
+                onClick={() => {
+                  setFormData({ ...formData, ageConfirmed: !formData.ageConfirmed });
+                  if (errors.ageConfirmed) setErrors({ ...errors, ageConfirmed: '' });
+                }}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.ageConfirmed ? 'border-emerald-500/50 bg-emerald-500/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/30`}
+              >
+                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 18 years or older</span>
+                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.ageConfirmed ? 'bg-emerald-500' : 'bg-white/10 border border-white/20'}`}>
+                  <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.ageConfirmed ? 'translate-x-4' : ''}`}></span>
+                </div>
+              </button>
+              {errors.ageConfirmed && <p className="text-red-400 text-xs ml-1 font-['Rajdhani']">{errors.ageConfirmed}</p>}
+            </div>
+
+            <div className="space-y-1.5">
+              <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+                Terms & Conditions *
+              </label>
+              <button
+                type="button"
+                role="checkbox"
+                aria-checked={formData.acceptedTerms}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setFormData({ ...formData, acceptedTerms: !formData.acceptedTerms }); if (errors.acceptedTerms) setErrors({ ...errors, acceptedTerms: '' }); } }}
+                onClick={() => {
+                  setFormData({ ...formData, acceptedTerms: !formData.acceptedTerms });
+                  if (errors.acceptedTerms) setErrors({ ...errors, acceptedTerms: '' });
+                }}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.acceptedTerms ? 'border-emerald-500/50 bg-emerald-500/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/30`}
+              >
+                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I agree to the Official Rules and Privacy Policy</span>
+                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.acceptedTerms ? 'bg-emerald-500' : 'bg-white/10 border border-white/20'}`}>
+                  <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.acceptedTerms ? 'translate-x-4' : ''}`}></span>
+                </div>
+              </button>
+              {errors.acceptedTerms && <p className="text-red-400 text-xs ml-1 font-['Rajdhani']">{errors.acceptedTerms}</p>}
+            </div>
+          </div>
+
+          {/* Actions */}
           {/* Actions */}
           <div className="pt-4 space-y-3">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold py-4 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-lg"
+              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold py-3 md:py-4 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-base md:text-lg"
             >
               {isSubmitting ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
               ) : (
                 <>
-                  View My Prediction <ArrowRight className="w-5 h-5" />
+                  CONFIRM & LOCK MY PREDICTIONS <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                 </>
               )}
             </button>
@@ -259,13 +353,23 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
               type="button"
               onClick={onBack}
               disabled={isSubmitting}
-              className="w-full text-white/40 hover:text-white text-sm font-medium transition-colors font-['Rajdhani'] uppercase tracking-wide"
+              className="w-full text-white/40 hover:text-white text-sm font-medium transition-colors font-['Rajdhani'] uppercase tracking-wide py-3"
             >
-              Go Back
+              ← Back to Edit Predictions
             </button>
           </div>
         </form>
       </motion.div>
+      {/* Footnotes Outside Card for compact layout */}
+      <div className="mt-3 text-center">
+        <p className="text-white/70 text-xs font-['Rajdhani']">
+          <span className="text-white font-bold">Your Information is Secure</span> · All data is encrypted and used only for game administration and prize distribution. We never share your information with third parties.
+        </p>
+        <p className="text-white/60 text-[11px] font-['Rajdhani'] mt-1">
+          <span className="text-white font-bold">After Submission:</span> Automatic entry into prize drawings
+        </p>
+      </div>
     </div>
+    </>
   );
 };
