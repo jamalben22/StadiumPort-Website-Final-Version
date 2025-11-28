@@ -15,6 +15,7 @@ interface GameContextType extends GameState {
   updateGroupStandings: (groupId: string, teams: string[]) => void;
   setThirdPlacePicks: (teamIds: string[]) => void;
   setKnockoutPick: (matchId: string, winnerId: string) => void;
+  updateKnockoutPicks: (updates: Record<string, string>) => void; // New: Batch update
   setCurrentStep: (step: number) => void;
   markGroupCompleted: (groupId: string) => void;
   resetGame: () => void;
@@ -48,6 +49,26 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     }));
   };
 
+  const updateKnockoutPicks = (updates: Record<string, string>) => {
+    setKnockoutPicksState((prev) => {
+      // Merge updates. If value is empty string, we can interpret as delete?
+      // For now, simple merge is fine, but if we need to delete, we might need a different signal.
+      // Let's assume we overwrite. If we need to clear, we can pass null?
+      // But state is Record<string, string>.
+      // Let's say if value is empty string "", we delete the key.
+      
+      const next = { ...prev };
+      Object.entries(updates).forEach(([key, value]) => {
+        if (value === "") {
+          delete next[key];
+        } else {
+          next[key] = value;
+        }
+      });
+      return next;
+    });
+  };
+
   const markGroupCompleted = (groupId: string) => {
     setCompletedGroupIds((prev) => {
       if (prev.includes(groupId)) return prev;
@@ -72,6 +93,7 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     updateGroupStandings,
     setThirdPlacePicks,
     setKnockoutPick,
+    updateKnockoutPicks,
     setCurrentStep,
     markGroupCompleted,
     resetGame,

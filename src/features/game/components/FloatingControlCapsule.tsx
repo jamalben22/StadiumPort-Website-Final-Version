@@ -17,7 +17,7 @@ export const FloatingControlCapsule = ({
   onBack,
   canGoBack = false,
   isNextDisabled = false,
-  nextLabel = 'NEXT',
+  nextLabel = 'PROCEED',
   showDots = false,
   currentDot = 0,
   totalDots = 0,

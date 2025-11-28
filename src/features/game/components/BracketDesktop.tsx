@@ -10,6 +10,23 @@ interface BracketDesktopProps {
 }
 
 const ROUNDS = ['R32', 'R16', 'QF', 'SF', 'F'];
+const ROUND_LABELS: Record<string, string> = {
+  R32: 'Round of 32',
+  R16: 'Round of 16',
+  QF: 'Quarter-Finals',
+  SF: 'Semi-Finals',
+  F: 'FINAL'
+};
+
+const ROUND_THEME: Record<string, { color: string }> = {
+  R32: { color: '#9CA3AF' },
+  R16: { color: '#A78BFA' },
+  QF: { color: '#22D3EE' },
+  SF: { color: '#F472B6' },
+  F:  { color: '#FBBF24' }
+};
+
+const withAlpha = (hex: string, alphaHex: string) => (hex.length === 7 ? hex + alphaHex : hex);
 const MATCH_HEIGHT = 80; // Fixed height in px
 const GAP_Y = 24; // Vertical gap in px
 
@@ -77,8 +94,25 @@ export const BracketDesktop = ({
   }, [matches, matchesByRound]);
 
   return (
-    // Outer Container: No internal scroll, let body scroll. Added padding for breathing room.
     <div className="w-full relative bg-transparent py-20">
+      <div className="text-center space-y-6">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+        </div>
+        <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">Knockout Stage: From Round of 32 to World Cup Champion</h2>
+        <p className="text-slate-400 font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+        <p
+          className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-[0_0_12px_rgba(251,191,36,0.35)]"
+          style={{
+            background: 'linear-gradient(90deg, #FBBF24, #F59E0B)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent'
+          }}
+        >
+          Tournament Bracket Progress:
+        </p>
+      </div>
       <style>{`
         @keyframes beam-flow {
           0% { stroke-dashoffset: 24; }
@@ -96,6 +130,39 @@ export const BracketDesktop = ({
         style={{ height: Math.max(totalHeight + 100, 800) }} // Ensure min height, add padding
       >
       
+        {/* Round Titles Layer */}
+        <div className="absolute top-0 left-0 right-0 z-10 pointer-events-none">
+          <div className="relative w-full h-12 flex">
+            {ROUNDS.map((roundId, rIndex) => {
+              const theme = ROUND_THEME[roundId];
+              return (
+                <div
+                  key={`title-${roundId}`}
+                  className="flex items-end justify-center"
+                  style={{ left: `${rIndex * 20}%`, width: '20%', position: 'absolute', height: '100%' }}
+                >
+                  <div
+                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md"
+                    style={{
+                      border: `1px solid ${withAlpha(theme.color, '33')}`,
+                      background: `linear-gradient(90deg, ${withAlpha(theme.color, '1A')}, rgba(255,255,255,0.02))`,
+                      boxShadow: `0 0 24px ${withAlpha(theme.color, '22')}`
+                    }}
+                  >
+                    <span
+                      className="text-[11px] font-['Rajdhani'] font-bold uppercase tracking-[0.2em]"
+                      style={{ color: withAlpha(theme.color, 'CC') }}
+                    >
+                      {ROUND_LABELS[roundId]}
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+          <div className="h-px w-full bg-white/10" />
+        </div>
+
         {/* SVG Connectors Layer */}
         <svg 
             className="absolute inset-0 w-full h-full pointer-events-none z-0" 
@@ -190,7 +257,7 @@ export const BracketDesktop = ({
                         key={match.id}
                         className="absolute w-full px-2 flex items-center justify-center transition-all duration-500"
                         style={{
-                            top: `${topY + 50}px`, // +50 top padding
+                            top: `${topY + 70}px`, // +50 top padding + 20 for titles
                             height: `${MATCH_HEIGHT}px`
                         }}
                     >

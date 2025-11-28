@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
 import { Team } from '../lib/wc26-data';
-import { Trophy, Star, Shirt, Disc, Share2, Globe, User } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 interface ShareCardProps {
   champion: Team;
   runnerUp?: Team;
   userName: string;
+  userCountry?: string;
   stats?: {
     topScorer: string;
     bestPlayer: string;
@@ -14,316 +13,262 @@ interface ShareCardProps {
   className?: string;
 }
 
-const getTeamBackground = (team: Team) => {
-  const id = team.id;
-  const [p, s] = team.colors;
-  
-  // Argentina: Light blue/white gradient + sun symbol + particles
-  if (id === 'arg') {
-    return {
-      background: `radial-gradient(circle at 50% 30%, #74ACDF 0%, #FFFFFF 40%, #74ACDF 80%)`,
-      overlay: `
-        radial-gradient(circle at 50% 50%, rgba(255, 200, 0, 0.3) 0%, transparent 50%),
-        repeating-conic-gradient(from 0deg, rgba(255,255,255,0.1) 0deg, rgba(255,255,255,0.1) 10deg, transparent 10deg, transparent 20deg)
-      `,
-      particleColor: '#FFD700'
-    };
-  }
-  
-  // Brazil: Green/yellow gradient + diamond patterns + vibrant energy
-  if (id === 'bra') {
-    return {
-      background: `radial-gradient(circle at 50% 40%, #FEDF00 0%, #009B3A 70%, #002776 100%)`,
-      overlay: `
-        repeating-linear-gradient(45deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 20px, transparent 20px, transparent 40px),
-        radial-gradient(circle at 50% 50%, rgba(255,255,0,0.2) 0%, transparent 60%)
-      `,
-      particleColor: '#00FF00'
-    };
-  }
-  
-  // France: Blue/white/red vertical blend + elegant sheen
-  if (id === 'fra') {
-    return {
-      background: `linear-gradient(120deg, #002395 0%, #002395 30%, #FFFFFF 45%, #FFFFFF 55%, #ED2939 70%, #ED2939 100%)`,
-      overlay: `linear-gradient(to bottom, rgba(255,255,255,0.1), transparent)`,
-      particleColor: '#FFFFFF'
-    };
-  }
-  
-  // Germany: Black/red/gold horizontal bands + solid power
-  if (id === 'ger') {
-    return {
-      background: `linear-gradient(180deg, #000000 0%, #220000 30%, #DD0000 50%, #FFCE00 80%, #FFAA00 100%)`,
-      overlay: `radial-gradient(circle at top, rgba(255,255,255,0.1), transparent 70%)`,
-      particleColor: '#FFCE00'
-    };
-  }
+export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(({ champion, runnerUp, userName, userCountry, stats, className = '' }, ref) => {
+  const [primaryColor, secondaryColor] = champion.colors;
 
-  // Default Dynamic Generator (Premium Mesh)
-  return {
-    background: `
-      radial-gradient(at 0% 0%, ${p} 0px, transparent 50%),
-      radial-gradient(at 100% 0%, ${s} 0px, transparent 50%),
-      radial-gradient(at 100% 100%, ${p} 0px, transparent 50%),
-      radial-gradient(at 0% 100%, ${s} 0px, transparent 50%),
-      linear-gradient(135deg, #1a1a1a 0%, #000000 100%)
-    `,
-    overlay: `radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)`,
-    particleColor: s
-  };
-};
-
-export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(({ champion, runnerUp, userName, stats, className = '' }, ref) => {
-  const teamBg = getTeamBackground(champion);
+  // Helper to ensure contrast
+  const getContrastYIQ = (hexcolor: string) => {
+    hexcolor = hexcolor.replace("#", "");
+    var r = parseInt(hexcolor.substr(0,2),16);
+    var g = parseInt(hexcolor.substr(2,2),16);
+    var b = parseInt(hexcolor.substr(4,2),16);
+    var yiq = ((r*299)+(g*587)+(b*114))/1000;
+    return (yiq >= 128) ? 'black' : 'white';
+  }
   
-  // Generate random particles for the background
-  const particles = Array.from({ length: 20 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    size: Math.random() * 4 + 1,
-    duration: Math.random() * 10 + 5,
-    delay: Math.random() * 5
-  }));
+  const textColor = getContrastYIQ(primaryColor);
 
   return (
     <div 
       ref={ref}
-      // 9:16 Aspect Ratio Container
-      className={`relative w-[360px] h-[640px] rounded-[40px] overflow-hidden flex flex-col ${className}`}
-      style={{ 
-        boxShadow: `
-          0 50px 100px -20px rgba(0,0,0,0.5),
-          inset 0 0 0 1px rgba(255,255,255,0.2),
-          inset 0 0 40px rgba(255,255,255,0.05)
-        `
-      }}
+      // 9:16 Aspect Ratio (360x640) -> Exports to 1080x1920
+      className={`relative w-[360px] h-[640px] bg-[#050505] text-white overflow-hidden font-sans flex flex-col ${className}`}
     >
-      {/* --- LEGENDARY BACKGROUND LAYERS (APPLE MESH + FIFA VIBRANCY) --- */}
+      {/* --- GLOBAL BACKGROUND & TEXTURE --- */}
       
-      {/* 1. Base Background (Apple Mesh Gradient) */}
-      <div className="absolute inset-0 z-0 animate-gradient-slow" style={{ background: teamBg.background, backgroundSize: '200% 200%' }}>
-         {/* Dynamic Overlay (Rays, Patterns) */}
-        {teamBg.overlay && (
-          <div className="absolute inset-0 opacity-40 mix-blend-overlay" style={{ background: teamBg.overlay }} />
-        )}
-        
-        {/* Mesh Gradient Overlay for Organic Flow */}
-        <div className="absolute inset-0 opacity-50 mix-blend-soft-light" 
-             style={{ background: 'radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3), transparent 50%), radial-gradient(circle at 20% 80%, rgba(0,0,0,0.2), transparent 50%)' }} 
-        />
-      </div>
-      
-      {/* 2. Particle System (Floating Sparkles - Refined) */}
-      <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-        {particles.map((p) => (
-          <motion.div
-            key={p.id}
-            className="absolute rounded-full bg-white mix-blend-overlay shadow-[0_0_15px_rgba(255,255,255,0.9)]"
-            style={{ 
-              left: `${p.x}%`, 
-              top: `${p.y}%`, 
-              width: p.size, 
-              height: p.size,
-              backgroundColor: teamBg.particleColor 
-            }}
-            animate={{ 
-              y: [0, -100], 
-              opacity: [0, 0.6, 0] 
-            }}
-            transition={{ 
-              duration: p.duration, 
-              repeat: Infinity, 
-              delay: p.delay,
-              ease: "linear" 
-            }}
-          />
-        ))}
-      </div>
+      {/* 1. Base: Deep Premium Dark (Official Game Dark Mode) */}
+      <div className="absolute inset-0 bg-[#080808]" />
 
-      {/* 3. Premium Texture Overlays */}
-      {/* Noise for Apple Print Feel */}
-      <div className="absolute inset-0 z-0 opacity-[0.08] mix-blend-overlay pointer-events-none" 
+      {/* 2. Dynamic Team Lighting (Aurora/Spotlight Effect) */}
+      <div className="absolute inset-0 opacity-50 mix-blend-hard-light pointer-events-none transition-colors duration-700"
+           style={{
+             background: `
+               radial-gradient(circle at 0% 0%, ${primaryColor} 0%, transparent 55%),
+               radial-gradient(circle at 100% 80%, ${secondaryColor} 0%, transparent 50%)
+             `
+           }}
+      />
+
+      {/* 3. High-Tech Micro-Texture (Jersey/Carbon Feel) */}
+      <div className="absolute inset-0 opacity-[0.12] mix-blend-overlay"
            style={{ 
-             backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")',
-             backgroundRepeat: 'repeat',
+             backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='13' cy='13' r='1'/%3E%3C/g%3E%3C/svg%3E")`,
+             backgroundSize: '20px 20px'
            }} 
       />
-      {/* FIFA Hex/Grid Overlay */}
-      <div className="absolute inset-0 z-0 opacity-10 mix-blend-overlay pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] bg-repeat" />
+
+      {/* 4. Geometric Accent Lines (FIFA 26 Architectural Style) */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+         <div className="absolute top-0 right-0 w-[80%] h-[80%] border-[1px] border-white/10 rounded-full translate-x-1/2 -translate-y-1/4 blur-[1px]" />
+         <div className="absolute bottom-0 left-0 w-[80%] h-[80%] border-[1px] border-white/10 rounded-full -translate-x-1/2 translate-y-1/4 blur-[1px]" />
+      </div>
       
-      {/* 4. Holographic Foil Effect (Subtler, more Apple-like) */}
-      <div className="absolute inset-0 z-10 opacity-20 mix-blend-color-dodge pointer-events-none bg-gradient-to-tr from-transparent via-white/10 to-transparent" />
-      <motion.div 
-        className="absolute inset-0 z-10 opacity-10 mix-blend-overlay pointer-events-none bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12"
-        initial={{ x: '-150%' }}
-        animate={{ x: '150%' }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut", repeatDelay: 2 }}
-      />
-      
-      {/* 5. Vignette & Depth */}
-      <div className="absolute inset-0 z-10 pointer-events-none" 
-           style={{ background: 'radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4) 100%)' }} 
-      />
-      
-      {/* --- CONTENT STACK --- */}
-      
-      {/* HEADER: Glass Pill */}
-      <div className="relative z-20 pt-8 px-4 text-center shrink-0">
-        <div className="flex items-center justify-between mb-6">
-          {/* User Badge (Apple Glass) */}
-          <div className="flex items-center gap-2 bg-white/10 backdrop-blur-xl pl-1 pr-4 py-1.5 rounded-full border border-white/20 shadow-lg">
-             <div className="w-7 h-7 rounded-full bg-gradient-to-b from-white to-gray-300 flex items-center justify-center text-black shadow-inner">
-               <User className="w-3.5 h-3.5 text-black/80" />
-             </div>
-             <span className="text-white font-['Rajdhani'] font-bold text-sm tracking-wide uppercase truncate max-w-[120px]">
-               {userName}
+      {/* 5. WATERMARK: "STADIUMPORT" (Subtle, Premium, Repeating Pattern) */}
+      <div className="absolute inset-0 z-0 overflow-hidden opacity-[0.04] pointer-events-none select-none mix-blend-screen">
+        <div className="w-[200%] h-[200%] absolute -top-1/2 -left-1/2 flex flex-wrap content-center justify-center -rotate-[30deg] gap-x-12 gap-y-12">
+          {Array.from({ length: 40 }).map((_, i) => (
+             <span key={i} className="font-['Teko'] font-bold text-5xl text-white uppercase tracking-[0.2em] whitespace-nowrap">
+                FIFA
              </span>
-          </div>
-
-          {/* Official Badge */}
-          <div className="bg-white/10 backdrop-blur-xl px-3 py-1.5 rounded-full border border-white/20 shadow-lg">
-            <span className="text-[10px] font-['Rajdhani'] font-bold text-white/90 tracking-widest uppercase flex items-center gap-1">
-              <Globe className="w-3 h-3" /> Official
-            </span>
-          </div>
-        </div>
-
-        {/* Title Group */}
-        <div className="flex items-center justify-center gap-3 mb-2">
-          <div className="h-[1px] w-8 bg-gradient-to-r from-transparent to-white/50" />
-          <span className="font-['Teko'] font-bold text-3xl tracking-widest text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
-            WC PREDICTION
-          </span>
-          <div className="h-[1px] w-8 bg-gradient-to-l from-transparent to-white/50" />
+          ))}
         </div>
       </div>
-      
-      {/* HERO: Team Showcase (Apple Museum Style) */}
-      <div className="relative z-20 flex-1 flex flex-col items-center justify-center py-0">
-        
-        {/* Emblem (static, Museum Lighting) */}
-        <div 
-           className="relative mb-8 group"
-        >
-          {/* Soft Ambient Glow */}
-          <div className="absolute inset-0 bg-white/20 blur-[60px] rounded-full scale-125 mix-blend-overlay" />
-          
-          {/* Emblem Container */}
-          <div className="relative w-48 h-48 filter drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
-             <img src={champion.flagUrl} alt={champion.name} className="w-full h-full object-contain" />
-          </div>
-        </div>
-        
-        {/* Typography (Apple Pro + FIFA Bold) */}
-        <div className="flex flex-col items-center relative w-full px-4">
+
+      {/* 6. Vignette & Depth Polish */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/90 pointer-events-none" />
+
+
+      {/* --- 1. TOP HEADER: OFFICIAL COLLAB BAR --- */}
+      <div className="relative z-10 pt-8 pb-4 flex justify-center items-center">
+        <div className="flex items-center gap-3 w-full px-6">
+           {/* Left Tech Marker */}
+           <div className="h-[2px] flex-1 bg-gradient-to-r from-transparent to-white/40" />
            
-           <h1 className="font-['Teko'] text-[6rem] font-black uppercase leading-[0.8] tracking-tighter text-center z-10 w-full text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/70 drop-shadow-2xl">
-             {champion.name}
-           </h1>
-          
-          <div className="mt-4 flex flex-col items-center gap-2">
-             <div className="flex items-center gap-4">
-               <div className="h-[1px] w-12 bg-white/30" />
-               <span className="text-lg font-['Rajdhani'] font-bold tracking-[0.4em] text-[#FFD700] uppercase">
-                 2026 Champion
-               </span>
-               <div className="h-[1px] w-12 bg-white/30" />
-             </div>
-             
-             {/* Personalized User Name */}
-             <div className="flex items-center gap-2 opacity-80 mt-1">
-                <User className="w-3 h-3 text-white/60" />
-                <span className="text-xs font-['Rajdhani'] font-medium tracking-widest text-white/60 uppercase">
-                  Predicted by {userName}
-                </span>
-             </div>
-          </div>
-       </div>
-      </div>
-      
-      {/* STATS: Frosted Glass Grid */}
-      <div className="relative z-20 px-6 mb-6 shrink-0 grid grid-cols-[1fr_auto_1fr] gap-4 items-center">
-        
-        {/* Winner Box */}
-        <div className="bg-white/5 backdrop-blur-2xl rounded-2xl border border-white/10 p-3 flex flex-col items-center shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all hover:bg-white/10">
-          <span className="text-[9px] text-white/60 uppercase font-bold tracking-widest mb-1">Winner</span>
-          <div className="flex items-center gap-2">
-            <img src={champion.flagUrl} className="w-6 h-6 rounded-full object-cover shadow-sm" />
-            <span className="text-white font-['Teko'] font-bold text-2xl leading-none tracking-wide">{champion.fifaCode}</span>
-          </div>
-        </div>
-        
-        {/* VS Badge (Minimal) */}
-        <div className="flex flex-col items-center justify-center w-8 h-8 rounded-full bg-white/5 backdrop-blur-sm border border-white/10">
-           <span className="text-white/60 font-bold text-xs font-['Rajdhani']">VS</span>
-        </div>
-        
-        {/* Runner Up Box */}
-        <div className="bg-white/5 backdrop-blur-2xl rounded-2xl border border-white/10 p-3 flex flex-col items-center shadow-[0_8px_32px_rgba(0,0,0,0.2)] transition-all hover:bg-white/10">
-           <span className="text-[9px] text-white/60 uppercase font-bold tracking-widest mb-1">Finalist</span>
-           <div className="flex items-center gap-2">
-             {runnerUp ? (
-               <img src={runnerUp.flagUrl} className="w-6 h-6 rounded-full object-cover shadow-sm grayscale-[30%]" />
-             ) : (
-               <div className="w-6 h-6 rounded-full bg-white/10" />
-             )}
-             <span className="text-white/80 font-['Teko'] font-bold text-2xl leading-none tracking-wide">{runnerUp?.fifaCode || 'TBD'}</span>
-           </div>
-        </div>
-      </div>
-      
-      {/* PRIZE: Apple Wallet Style Pass */}
-      <div className="relative z-20 mx-4 mb-6 shrink-0">
-        <div className="relative rounded-[24px] overflow-hidden p-[1px] bg-gradient-to-b from-[#FFD700] to-[#B8860B] shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
-           <div className="bg-[#111] rounded-[23px] p-4 relative overflow-hidden">
-              {/* Inner Gold Glow */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-1/2 bg-[#FFD700]/20 blur-[40px] rounded-full" />
-              
-              <div className="relative z-10 flex items-center justify-between">
-                 <div className="flex flex-col items-start">
-                    <span className="text-[#FFD700] font-['Rajdhani'] font-bold text-xs uppercase tracking-wider mb-0.5">Grand Prize</span>
-                    <h2 className="font-['Teko'] font-black text-5xl text-white leading-[0.9] tracking-tight">
-                      $500 <span className="text-2xl text-white/50 font-medium align-top">$</span>
-                    </h2>
-                 </div>
-                 
-                 <div className="h-12 w-[1px] bg-white/10 mx-2" />
-                 
-                 <div className="flex flex-col items-end gap-1">
-                    <div className="bg-[#22c55e]/20 text-[#22c55e] border border-[#22c55e]/30 px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wide">
-                      Guaranteed
-                    </div>
-                    <div className="flex items-center gap-2 text-white/60 text-[10px] font-medium uppercase tracking-wider">
-                       <span>Jersey</span>
-                       <span className="w-1 h-1 rounded-full bg-white/20" />
-                       <span>Ball</span>
-                    </div>
-                 </div>
+           <div className="flex flex-col items-center">
+             <span className="font-['Teko'] font-bold text-3xl leading-none tracking-wide text-white uppercase drop-shadow-[0_2px_10px_rgba(255,255,255,0.2)]">
+                STADIUMPORT
+              </span>
+              <div className="flex items-center gap-2 mt-1">
+                 <div className="w-1 h-1 bg-[#FFD700] rounded-full" />
+                 <span className="font-['Rajdhani'] font-medium text-[9px] tracking-[0.3em] text-white/60 uppercase">
+                   Official World Cup 2026 Partner
+                 </span>
+                 <div className="w-1 h-1 bg-[#FFD700] rounded-full" />
               </div>
            </div>
+
+           {/* Right Tech Marker */}
+           <div className="h-[2px] flex-1 bg-gradient-to-l from-transparent to-white/40" />
         </div>
       </div>
-      
-      {/* FOOTER: Minimalist Brand */}
-      <div className="relative z-20 py-6 px-8 flex items-center justify-between mt-auto">
-         <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-white text-black rounded-xl flex items-center justify-center shadow-lg">
-              <span className="font-['Teko'] font-black text-lg leading-none mt-0.5">SP</span>
-            </div>
-            <div className="flex flex-col">
-               <span className="text-white font-['Rajdhani'] font-bold tracking-[0.2em] text-sm leading-none">
-                 STADIUMPORT
-               </span>
-            </div>
+
+      {/* --- 2. TITLE SECTION --- */}
+      <div className="relative z-10 mb-2">
+        <div className="mx-6 py-2 border-y border-white/10 bg-white/5 backdrop-blur-md flex justify-center relative overflow-hidden">
+          {/* Animated Shine */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] animate-[shimmer_2s_infinite]" />
+          <span className="font-['Rajdhani'] font-extrabold text-[11px] tracking-[0.25em] text-[#FFD700] uppercase relative z-10">
+            MY WORLD CUP 2026 PREDICTION
+          </span>
+        </div>
+      </div>
+
+      {/* --- 3. HERO SECTION - WINNER (Dynamic Tech Zone) --- */}
+      <div className="relative z-10 h-[160px] w-full mb-6 group">
+         {/* Main Dynamic Background */}
+         <div 
+           className="absolute inset-0 transition-all duration-700"
+           style={{ 
+             background: `linear-gradient(135deg, ${primaryColor} 0%, #000 100%)` 
+           }}
+         >
+            {/* Jersey Mesh Pattern */}
+            <div className="absolute inset-0 opacity-30 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-multiply" />
+            
+            {/* Speed Streaks Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
          </div>
          
-         <div className="opacity-50">
-            <Globe className="w-4 h-4 text-white" />
+         {/* Content Container - Kept empty as requested by previous deletes, but styled */}
+         <div className="relative z-10 h-full flex flex-col items-center justify-center">
+            {/* Center Line Decoration */}
+            <div className="w-[1px] h-full bg-white/10 absolute left-1/2 transform -translate-x-1/2" />
+         </div>
+
+         {/* Bottom Edge Tech Detail */}
+         <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent opacity-50" />
+      </div>
+
+      {/* --- 4. FINAL MATCH SECTION (Performance Stats Layout) --- */}
+      <div className="relative z-10 px-5 mb-6">
+         <div className="flex items-stretch justify-between gap-1">
+            
+            {/* Winner Card - Left */}
+            <div className="flex-1 bg-[#111] border border-white/10 rounded-l-lg p-3 relative overflow-hidden">
+               {/* Team Color Accent Bar */}
+               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-emerald-500" />
+               <div className="absolute right-0 top-0 w-8 h-8 bg-gradient-to-bl from-emerald-500/20 to-transparent" />
+               
+               <div className="flex flex-col items-start pl-2">
+                  <span className="text-[9px] font-['Rajdhani'] font-bold text-emerald-500 uppercase tracking-widest mb-2">Champion</span>
+                  <div className="flex items-center gap-3">
+                     <div className="relative p-[2px] rounded-md bg-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.45)]">
+                        <img 
+                          src={champion.flagUrl} 
+                          alt={`${champion.name} Flag`}
+                          className="w-14 h-10 rounded-[6px] object-cover ring-1 ring-emerald-400/40 saturate-[1.15] contrast-[1.1] brightness-[1.1]"
+                        />
+                        <div className="absolute inset-0 rounded-md pointer-events-none" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)' }} />
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            {/* VS - Center Tech Connector */}
+            <div className="w-8 flex items-center justify-center bg-[#1a1a1a] border-y border-white/10 relative">
+               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-10" />
+               <span className="font-['Rajdhani'] font-black text-sm text-white/30 italic -rotate-90">VS</span>
+            </div>
+
+            {/* Runner Up Card - Right */}
+            <div className="flex-1 bg-[#111] border border-white/10 rounded-r-lg p-3 relative overflow-hidden text-right">
+               {/* Team Color Accent Bar */}
+               <div className="absolute right-0 top-0 bottom-0 w-[3px] bg-red-500" />
+               <div className="absolute left-0 top-0 w-8 h-8 bg-gradient-to-br from-red-500/20 to-transparent" />
+               
+               <div className="flex flex-col items-end pr-2">
+                  <span className="text-[9px] font-['Rajdhani'] font-bold text-red-500 uppercase tracking-widest mb-2">Runner-Up</span>
+                  <div className="flex items-center justify-end gap-3 flex-row-reverse">
+                     {runnerUp ? (
+                       <div className="relative p-[2px] rounded-md bg-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.45)]">
+                         <img 
+                           src={runnerUp.flagUrl} 
+                           alt={`${runnerUp.name} Flag`}
+                           className="w-14 h-10 rounded-[6px] object-cover ring-1 ring-red-400/40 saturate-[1.1] contrast-[1.1] brightness-[1.05]"
+                         />
+                         <div className="absolute inset-0 rounded-md pointer-events-none" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.28)' }} />
+                       </div>
+                     ) : (
+                       <div className="w-14 h-10 rounded-[6px] bg-white/10 ring-1 ring-white/20 shadow-[0_8px_24px_rgba(0,0,0,0.35)]" />
+                     )}
+                  </div>
+               </div>
+            </div>
+
          </div>
       </div>
+
+      {/* --- 5. USER NAME SECTION (Player Jersey Style) --- */}
+      <div className="relative z-10 text-center mb-6">
+         <div className="inline-block relative">
+             <span className="block text-[9px] font-['Rajdhani'] font-bold text-white/40 uppercase tracking-[0.3em] mb-1">
+               Predicted By
+             </span>
+             <div className="relative px-8 py-2 bg-white/5 border border-white/10 skew-x-[-10deg]">
+                <span className="font-['Teko'] font-bold text-3xl text-white uppercase tracking-wider block skew-x-[10deg]">
+                  {userName}
+                </span>
+                {/* Corner Accents */}
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-white/30" />
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-white/30" />
+             </div>
+         </div>
+      </div>
+
+      {/* --- 6. QUOTE SECTION --- */}
+      <div className="relative z-10 px-10 text-center mb-6">
+          <div className="relative py-2">
+            <p className="font-['Rajdhani'] font-medium text-white/80 text-sm leading-relaxed uppercase tracking-wide">
+              <span className="text-white/30 mr-1">“</span>
+              Think you can beat this? <br/>
+              <span className="text-[#FFD700] font-bold">Make YOUR prediction!</span>
+              <span className="text-white/30 ml-1">”</span>
+            </p>
+         </div>
+      </div>
+
+      {/* --- 7. PRIZE SECTION (The "Drop" Pass) --- */}
+      <div className="relative z-10 px-5 mb-auto">
+         <div className="group relative rounded-2xl overflow-hidden bg-[#0b0b0c]/80 backdrop-blur-2xl border border-white/10 ring-1 ring-white/5 shadow-[0_18px_48px_rgba(0,0,0,0.55)]">
+            <div className="absolute inset-0 p-[1px] rounded-2xl bg-gradient-to-r from-transparent via-[#FFD700]/35 to-transparent opacity-60" />
+            
+            <div className="relative p-4 flex flex-col items-center">
+               <div className="absolute -top-24 -left-24 w-48 h-48 bg-[#FFD700]/10 blur-[60px] rounded-full" />
+               <div className="absolute inset-0 bg-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]" />
+               <div className="w-full flex justify-between items-center border-b border-white/10 pb-2 mb-3">
+                  <span className="font-['Teko'] font-bold text-xl uppercase tracking-wider" style={{ background: 'linear-gradient(90deg,#FFD700,#FFF4C1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                     Perfect Score Reward
+                  </span>
+                  <div className="flex gap-1">
+                     <div className="w-1.5 h-1.5 bg-white/30 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+                     <div className="w-1.5 h-1.5 bg-white/30 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+                     <div className="w-1.5 h-1.5 bg-white/30 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.2)]" />
+                  </div>
+               </div>
+               
+               <div className="w-full space-y-3">
+                  <div className="flex items-center justify-between group/item">
+                     <span className="text-xs font-['Rajdhani'] font-semibold text-white/70 uppercase tracking-wide group-hover/item:text-white transition-colors">Official WC26 Jersey</span>
+                     <div className="h-[1px] flex-1 mx-3 bg-white/15" />
+                     <div className="w-2 h-2 border border-white/40 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.15)]" />
+                  </div>
+                  <div className="flex items-center justify-between group/item">
+                     <span className="text-xs font-['Rajdhani'] font-semibold text-white/70 uppercase tracking-wide group-hover/item:text-white transition-colors">Official Match Ball</span>
+                     <div className="h-[1px] flex-1 mx-3 bg-white/15" />
+                     <div className="w-2 h-2 border border-white/40 rounded-full shadow-[0_0_8px_rgba(255,255,255,0.15)]" />
+                  </div>
+                  <div className="flex items-center justify-between group/item">
+                     <span className="text-xs font-['Rajdhani'] font-bold text-[#FFD700] uppercase tracking-wide">$500 USD Cash Prize</span>
+                     <div className="h-[1px] flex-1 mx-3 bg-[#FFD700]/25" />
+                     <div className="w-2 h-2 bg-[#FFD700] rounded-full shadow-[0_0_10px_#FFD700] ring-1 ring-[#FFD700]/50" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
       
+
     </div>
   );
 });

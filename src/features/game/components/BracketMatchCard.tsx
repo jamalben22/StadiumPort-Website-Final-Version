@@ -36,7 +36,7 @@ export const BracketMatchCard = ({
           e.stopPropagation();
           if (team) onPickWinner(matchId, team.id);
         }}
-        disabled={!team || isCompleted}
+        disabled={!team}
         className={`
           group relative flex items-center gap-4 w-full transition-all duration-300
           overflow-hidden flex-1
@@ -45,7 +45,7 @@ export const BracketMatchCard = ({
           ${isWinner 
             ? 'bg-gradient-to-r from-amber-500/80 to-amber-600/80 shadow-[0_0_20px_rgba(245,158,11,0.4)] z-10' 
             : isLoser 
-              ? 'opacity-40 grayscale' 
+              ? 'opacity-50 grayscale hover:opacity-80 hover:grayscale-0' 
               : 'hover:bg-white/5'
           }
           ${!team ? 'cursor-default' : 'cursor-pointer'}

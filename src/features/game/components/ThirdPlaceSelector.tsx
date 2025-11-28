@@ -2,6 +2,8 @@ import React from 'react';
 import { useGame } from '../context/GameContext';
 import { TEAMS } from '../lib/wc26-data';
 import { motion, AnimatePresence } from 'framer-motion';
+import { SEO } from '../../../components/common/SEO';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
 export const ThirdPlaceSelector = () => {
   const { groupStandings, thirdPlacePicks, setThirdPlacePicks, setCurrentStep } = useGame();
@@ -58,17 +60,36 @@ export const ThirdPlaceSelector = () => {
   };
 
   return (
+    <>
+      <SEO 
+        title="Select Best Third Place Teams | World Cup 2026 Prediction"
+        description="Choose the 8 best third-place teams to advance to the knockout rounds. The new 2026 World Cup format makes every match count!"
+        keywords={["third place qualifiers", "world cup 2026 format", "bracket challenge rules", "FIFA 2026 prediction"]}
+        url="/world-cup-2026-prediction-game/third-place-qualifiers"
+      />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Select Best Third Place Teams",
+        "description": "Interactive selection tool for World Cup 2026 third-place qualifiers.",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game/third-place-qualifiers",
+        "isPartOf": {
+          "@type": "SportsEvent",
+          "name": "World Cup 2026 Prediction Game"
+        }
+      }} />
     <div className="w-full px-4 py-8 space-y-8 pb-8">
       <div className="max-w-7xl mx-auto space-y-8">
       {/* Header Section */}
       <div className="text-center space-y-6">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
-           <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest font-['Rajdhani']">
-             Step 2 of 5
-           </span>
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+            Step 2 of 5: Select Best Third-Place Qualifiers
+          </span>
         </div>
         <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
-          Select Squad
+          Third-Place Qualifiers: Pick the 8 Teams Advancing to Round of 32
         </h2>
         
         {/* Progress Bar Counter */}
@@ -88,7 +109,7 @@ export const ThirdPlaceSelector = () => {
         </div>
         
         <p className="text-slate-400 font-mono text-sm uppercase tracking-widest">
-          {selectedCount} / 8 Candidates Selected
+          {selectedCount} / 8 Third-Place Teams Selected
         </p>
       </div>
 
@@ -138,7 +159,7 @@ export const ThirdPlaceSelector = () => {
                       ? 'bg-yellow-500 text-black border-yellow-400' 
                       : 'bg-black/60 text-slate-400 border-white/10'}
                   `}>
-                    GRP {groupId}
+                    GROUP {groupId}
                   </div>
                   
                   {isSelected && (
@@ -192,6 +213,7 @@ export const ThirdPlaceSelector = () => {
       {/* Spacer */}
       <div className="h-32"></div>
     </div>
+    </>
   );
 };
 

@@ -335,7 +335,7 @@ export function Header() {
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
                 { path: '/travel-guides', label: 'Travel Guides' },
                 { path: '/deals', label: 'Deals' },
-                { path: '/predict', label: 'Predictor' }
+                { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
               ].map((item) => (
                 <Link
                   key={item.path}
@@ -456,7 +456,7 @@ export function Header() {
                     { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
                     { path: '/travel-guides', label: 'Travel Guides' },
                     { path: '/deals', label: 'Deals' },
-                    { path: '/predict', label: 'Predictor' }
+                    { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
                   ].map((item, index) => (
                     <Link
                       key={item.path}

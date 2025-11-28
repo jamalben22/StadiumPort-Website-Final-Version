@@ -7,13 +7,17 @@ import { TripTicket } from './TripTicket';
 import { ActionIsland } from './ActionIsland';
 import { RulesCard } from './RulesCard';
 import { Team, TEAMS } from '../lib/wc26-data';
-import { Sparkles, CheckCircle2, RotateCcw, Trophy, LayoutGrid, Shield, Share2, Download } from 'lucide-react';
+import { Sparkles, CheckCircle2, RotateCcw, Trophy, LayoutGrid, Shield, Share2, Download, Mail, Globe, Home } from 'lucide-react';
 import { useGame } from '../context/GameContext';
+import { SEO } from '../../../components/common/SEO';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
 interface ResultDashboardProps {
   champion: Team;
   runnerUp?: Team;
   userName: string;
+  userEmail?: string;
+  userCountry?: string;
   stats?: {
     topScorer: string;
     bestPlayer: string;
@@ -24,10 +28,12 @@ interface ResultDashboardProps {
 // Helper: Get Team by ID
 const getTeam = (id: string) => TEAMS.find(t => t.id === id);
 
-export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runnerUp, userName, stats, onRestart }) => {
+export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runnerUp, userName, userEmail, userCountry, stats, onRestart }) => {
   const { groupStandings, knockoutPicks } = useGame();
   const [isGenerating, setIsGenerating] = useState(false);
   const exportRef = useRef<HTMLDivElement>(null);
+  const [entryId] = useState(() => `WC2026-${Math.random().toString(36).slice(2,8).toUpperCase()}`);
+  const [submittedAt] = useState(() => new Date());
 
   // Image Generation
   const handleSaveImage = async () => {
@@ -96,6 +102,34 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
     }
   };
 
+  const shareText = `I predict ${champion.name} will win the World Cup 2026! 🏆 #StadiumPort #WC26`;
+  const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://stadiumport.com';
+  const handleShareTwitter = () => {
+    const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
+    window.open(url, '_blank');
+  };
+  const handleShareFacebook = () => {
+    const url = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageUrl)}`;
+    window.open(url, '_blank');
+  };
+  const handleShareWhatsApp = () => {
+    const url = `https://api.whatsapp.com/send?text=${encodeURIComponent(`${shareText} ${pageUrl}`)}`;
+    window.open(url, '_blank');
+  };
+  const handleShareInstagram = () => {
+    handleSaveImage();
+  };
+  const handleCopyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(pageUrl);
+    } catch {}
+  };
+  const handleInviteFriends = () => {
+    const subject = 'Join me in the WC26 Prediction Game';
+    const body = `${shareText}\n\n${pageUrl}`;
+    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
+
   // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -122,8 +156,39 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
     }
   };
 
+  // Derive other Top-4 teams (losing semifinalists)
+  const sf1WinnerId = knockoutPicks['SF-01'];
+  const sf2WinnerId = knockoutPicks['SF-02'];
+  const sf1Candidates = [knockoutPicks['QF-01'], knockoutPicks['QF-02']].filter(Boolean) as string[];
+  const sf2Candidates = [knockoutPicks['QF-03'], knockoutPicks['QF-04']].filter(Boolean) as string[];
+  const sf1Loser = getTeam(sf1Candidates.find((id) => id !== sf1WinnerId) || '');
+  const sf2Loser = getTeam(sf2Candidates.find((id) => id !== sf2WinnerId) || '');
+
   return (
-    // Clean Container - Transparent to show GameLayout background
+    <>
+      <SEO 
+        title="My World Cup 2026 Prediction | StadiumPort"
+        description={`I predicted ${champion.name} will win the 2026 World Cup! Create your own prediction bracket and compete for official prizes.`}
+        keywords={["World Cup 2026 prediction", "bracket results", "soccer prediction card", "stadiumport prediction"]}
+        url="/world-cup-2026-prediction-game/results"
+        image={`https://stadiumport.com/share/wc26-${champion.id}.png`}
+      />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "World Cup 2026 Prediction Results",
+        "description": "User prediction results for the World Cup 2026 tournament.",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game/results",
+        "mainEntity": {
+          "@type": "SportsEvent",
+          "name": "World Cup 2026",
+          "competitor": {
+            "@type": "SportsTeam",
+            "name": champion.name
+          }
+        }
+      }} />
+    {/* Clean Container - Transparent to show GameLayout background */}
     <div className="w-full h-full overflow-y-auto custom-scrollbar relative z-10">
       
       <motion.div 
@@ -132,20 +197,38 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
         initial="hidden"
         animate="show"
       >
+        <div className="mb-6 flex justify-center">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+            <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+              Step 5 of 5: Your Prediction is Locked!
+            </span>
+          </div>
+        </div>
         
         {/* 1. Premium Header */}
         <motion.header variants={itemVariants} className="text-center mb-16 relative">
-           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-6">
-             <Sparkles className="w-3.5 h-3.5 text-[#FBBF24]" />
-             <span className="text-[11px] font-bold text-white/80 uppercase tracking-[0.2em] font-['Rajdhani']">Official Prediction Locked</span>
-           </div>
            <h1 className="text-6xl md:text-8xl font-black font-['Teko'] uppercase tracking-tight leading-[0.85] mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
-             {champion.name}
+             Official Entry Confirmed
            </h1>
            <p className="text-emerald-400 font-bold text-lg font-['Rajdhani'] tracking-widest uppercase">
-             World Cup 2026 Champion
+             Your World Cup 2026 predictions are submitted and verified. Good luck competing for official prizes!
            </p>
         </motion.header>
+        <div className="text-center mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 backdrop-blur-md">
+            <span className="text-[10px] font-bold text-white/60 uppercase tracking-widest font-['Rajdhani']">YOUR PREDICTED CHAMPION</span>
+          </div>
+          <div className="mt-4">
+            <div className="text-5xl md:text-7xl font-black font-['Teko'] uppercase tracking-tight leading-[0.9] text-white">{champion.name}</div>
+            <p className="text-emerald-400 font-bold text-sm md:text-base font-['Rajdhani'] tracking-widest uppercase mt-1">World Cup 2026 Winner</p>
+          </div>
+        </div>
+        <div className="text-center mb-8">
+          <h2 className="text-3xl md:text-5xl font-black font-['Teko'] uppercase tracking-tight text-[#FBBF24]">
+            Your Complete Bracket Summary
+          </h2>
+        </div>
 
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
@@ -154,7 +237,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
            <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-8 flex flex-col gap-6">
               <div className="flex items-center gap-4">
                  <div className="h-px flex-1 bg-white/10"></div>
-                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Group Winners</span>
+                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Group Stage Winners (Top of Each Group)</span>
                  <div className="h-px flex-1 bg-white/10"></div>
               </div>
               
@@ -167,7 +250,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
                           {winner && (
                              <>
                                 <img src={winner.flagUrl} alt={winner.name} className="w-8 h-6 object-cover rounded shadow-sm" />
-                                <span className="text-xs font-bold text-white font-['Teko'] tracking-wide">{winner.code}</span>
+                                <span className="text-[10px] text-white/70 font-['Rajdhani'] font-semibold">{winner.name}</span>
                              </>
                           )}
                        </div>
@@ -180,21 +263,45 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
            <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-4 flex flex-col gap-6">
                <div className="flex items-center gap-4">
                  <div className="h-px flex-1 bg-white/10"></div>
-                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Player Card</span>
+                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Official Participant Record</span>
                  <div className="h-px flex-1 bg-white/10"></div>
               </div>
 
-              <div className="bg-[#111]/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 flex flex-col items-center justify-center h-full relative overflow-hidden">
-                 <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent" />
-                 <div className="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-cyan-500 p-0.5 mb-4 shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    <div className="w-full h-full rounded-full bg-[#111] flex items-center justify-center text-2xl font-bold text-white font-['Teko']">
-                       {userName.charAt(0).toUpperCase()}
-                    </div>
-                 </div>
-                 <h3 className="text-2xl font-bold text-white font-['Teko'] uppercase tracking-wide mb-1">{userName}</h3>
-                 <div className="flex items-center gap-2 text-white/60 text-xs font-medium font-['Rajdhani']">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-400" /> Verified Prediction
-                 </div>
+            <div className="group relative bg-[#0b0b0c]/80 backdrop-blur-2xl border border-white/10 ring-1 ring-white/5 rounded-2xl p-6 flex flex-col items-center justify-center h-full overflow-hidden shadow-[0_18px_48px_rgba(0,0,0,0.55)]">
+                <div className="absolute inset-0 p-[1px] rounded-2xl bg-gradient-to-r from-transparent via-[#FFD700]/25 to-transparent opacity-60" />
+                <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#FFD700]/10 blur-[80px] rounded-full" />
+                <div className="absolute inset-0 bg-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]" />
+                <div className="w-full space-y-2 text-white/80 text-[12px] md:text-sm font-['Rajdhani'] font-medium">
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Entry ID:</span>
+                    <span className="font-bold">#{entryId}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Name:</span>
+                    <span className="font-bold truncate max-w-[220px]">{userName || '—'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Country:</span>
+                    <span className="font-bold truncate max-w-[220px]">{userCountry || '—'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Email:</span>
+                    <span className="font-bold truncate max-w-[220px]">{userEmail || '—'}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Submitted:</span>
+                    <span className="font-bold truncate max-w-[220px]">{submittedAt.toLocaleString()}</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-white/60">Status:</span>
+                    <span className="inline-flex items-center gap-2 font-bold text-emerald-400">
+                      <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Locked
+                    </span>
+                  </div>
+                  <p className="mt-2 text-[11px] md:text-xs text-yellow-300/80">
+                    ⚠️ Predictions are now locked and cannot be edited after June 11, 2026 kickoff.
+                  </p>
+                </div>
               </div>
            </motion.div>
 
@@ -202,7 +309,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
            <motion.div variants={itemVariants} className="md:col-span-12 flex flex-col gap-6 mt-4">
               <div className="flex items-center gap-4">
                  <div className="h-px flex-1 bg-white/10"></div>
-                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">The Final Four</span>
+                 <span className="text-white/40 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Your Final Four Predictions</span>
                  <div className="h-px flex-1 bg-white/10"></div>
               </div>
 
@@ -218,7 +325,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
                                 <img src={team.flagUrl} className="w-8 h-6 rounded object-cover" />
                                 <span className="text-white font-bold font-['Teko'] text-lg">{team.name}</span>
                              </div>
-                             <span className="text-xs text-white/30 font-['Rajdhani'] font-bold">FINALIST</span>
+                             <span className="text-xs text-white/30 font-['Rajdhani'] font-bold">CHAMPION</span>
                           </div>
                        ) : null;
                     })}
@@ -234,44 +341,107 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
                     </div>
                  </div>
 
-                 {/* Runner Up info implied or separate card? Let's just show Final Matchup Summary */}
-                 <div className="bg-white/5 border border-white/10 rounded-2xl p-6 h-full flex flex-col justify-center">
-                    <div className="text-center space-y-4">
-                       <div>
-                          <div className="text-[10px] text-white/40 font-bold font-['Rajdhani'] uppercase tracking-widest mb-1">FINAL MATCHUP</div>
-                          <div className="flex items-center justify-center gap-3">
-                             <span className="text-xl font-bold text-white font-['Teko']">{champion.code}</span>
-                             <span className="text-white/20 font-['Teko']">VS</span>
-                             <span className="text-xl font-bold text-white/60 font-['Teko']">{runnerUp?.code || 'TBD'}</span>
-                          </div>
-                       </div>
-                       <div className="w-full h-px bg-white/10" />
-                       <div className="flex justify-between items-center">
-                          <span className="text-xs text-white/60 font-['Rajdhani']">Total Matches</span>
-                          <span className="text-emerald-400 font-bold font-['Teko']">104</span>
-                       </div>
-                    </div>
-                 </div>
+                {/* Other Top-4 Teams (Losing Semifinalists) */}
+                <div className="space-y-3">
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+                     <div className="flex items-center gap-3">
+                        {sf1Loser ? (
+                          <>
+                            <img src={sf1Loser.flagUrl} className="w-8 h-6 rounded object-cover" />
+                            <span className="text-white font-bold font-['Teko'] text-lg">{sf1Loser.name}</span>
+                          </>
+                        ) : (
+                          <>
+                            <div className="w-8 h-6 rounded bg-white/10 ring-1 ring-white/20" />
+                            <span className="text-white/40 font-['Teko'] text-lg">TBD</span>
+                          </>
+                        )}
+                     </div>
+                     <span className="text-xs text-white/30 font-['Rajdhani'] font-bold">3rd PLACE</span>
+                  </div>
+                  <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between">
+                     <div className="flex items-center gap-3">
+                        {sf2Loser ? (
+                          <>
+                            <img src={sf2Loser.flagUrl} className="w-8 h-6 rounded object-cover" />
+                            <span className="text-white font-bold font-['Teko'] text-lg">{sf2Loser.name}</span>
+                          </>
+                        ) : (
+                          <>
+                            <div className="w-8 h-6 rounded bg-white/10 ring-1 ring-white/20" />
+                            <span className="text-white/40 font-['Teko'] text-lg">TBD</span>
+                          </>
+                        )}
+                     </div>
+                     <span className="text-xs text-white/30 font-['Rajdhani'] font-bold">4th PLACE</span>
+                  </div>
+                </div>
               </div>
            </motion.div>
 
-           {/* Section 3: Official Card (Visual Highlight) */}
-           <motion.div variants={itemVariants} className="md:col-span-12 mt-8 flex justify-center">
-              <div className="relative group cursor-pointer" onClick={handleSaveImage}>
-                 <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-purple-600 rounded-[32px] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
-                 <ShareCard 
-                    champion={champion} 
-                    runnerUp={runnerUp}
-                    userName={userName} 
-                    stats={stats}
-                    className="relative transform transition-transform duration-500 group-hover:scale-[1.01]"
-                 />
-                 <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <Download className="w-3 h-3 text-white" />
-                    <span className="text-[10px] font-bold text-white uppercase">Click to Save</span>
-                 </div>
+          {/* Section 3: Official Card (Visual Highlight) */}
+          <motion.div variants={itemVariants} className="md:col-span-12 mt-8 flex flex-col items-center">
+            <div className="mb-4 text-center">
+              <h3 className="text-[12px] md:text-sm font-['Rajdhani'] font-extrabold uppercase tracking-[0.25em] text-white/70">SHARE YOUR PREDICTION CARD</h3>
+            </div>
+            <div className="relative group cursor-pointer" onClick={handleSaveImage}>
+                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-purple-600 rounded-[32px] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-soft-light pointer-events-none" style={{ WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0.35), transparent 60%)', maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0.35), transparent 60%)' }} />
+                <ShareCard 
+                   champion={champion} 
+                   runnerUp={runnerUp}
+                   userName={userName} 
+                   userCountry={userCountry}
+                   stats={stats}
+                   className="relative transform transition-transform duration-500 group-hover:scale-[1.01]"
+                />
+                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
+                   <Download className="w-3 h-3 text-white" />
+                   <span className="text-[10px] font-bold text-white uppercase">Download Official Card</span>
+                </div>
               </div>
-           </motion.div>
+              <div className="my-8 w-full">
+                <div className="mx-auto max-w-xl h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+              </div>
+              <div className="mt-8 w-full max-w-xl">
+                <div className="relative group bg-white/6 border border-white/15 rounded-[28px] md:rounded-[32px] p-6 md:p-7 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#FFD700]/10 blur-[80px] rounded-full pointer-events-none" />
+                  <div className="text-center mb-4">
+                    <span className="text-[11px] font-['Rajdhani'] font-extrabold uppercase tracking-[0.3em] text-white/80">Important Dates</span>
+                    <div className="mx-auto mt-2 w-24 h-px bg-gradient-to-r from-white/20 via-white/40 to-white/20" />
+                  </div>
+                  <ul className="text-white/85 text-sm md:text-base font-['Rajdhani'] leading-relaxed space-y-1.5">
+                    <li>• Tournament Starts: June 11, 2026</li>
+                    <li>• Final Match: July 19, 2026</li>
+                    <li>• Winners Announced: Within 48 hours after Final</li>
+                  </ul>
+                  <div className="my-5 h-px bg-white/10" />
+                  <div className="mt-4 flex flex-col md:flex-row items-center justify-center gap-3">
+                    <button
+                      onClick={handleShare}
+                      className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(16,185,129,0.3)]"
+                    >
+                      <div className="flex items-center justify-center gap-3">
+                        <Share2 className="w-5 h-5 text-emerald-950" />
+                        <span className="text-emerald-950 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={onRestart}
+                      className="w-full md:w-auto group px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 active:scale-95"
+                    >
+                      <div className="flex items-center justify-center gap-3">
+                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 border border-white/20">
+                          <RotateCcw className="w-4 h-4 text-white/80" />
+                        </span>
+                        <span className="text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Initialize New Prediction</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
            {/* Section 5: Full Rules */}
            <motion.div variants={itemVariants} className="md:col-span-12 mt-8">
@@ -289,21 +459,35 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
            >
              <div className="flex items-center justify-center gap-3">
                <Share2 className="w-5 h-5 text-emerald-950" />
-               <span className="text-emerald-950 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Prediction</span>
+              <span className="text-emerald-950 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
              </div>
            </button>
 
-           {onRestart && (
-             <button
-               onClick={onRestart}
-               className="w-full md:w-auto group px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 active:scale-95"
-             >
-               <div className="flex items-center justify-center gap-3">
-                 <RotateCcw className="w-4 h-4 text-white/60 group-hover:text-white group-hover:-rotate-180 transition-all duration-500" />
-                 <span className="text-white/60 group-hover:text-white font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Start New Game</span>
-               </div>
-             </button>
-           )}
+            {onRestart && (
+              <button
+                onClick={onRestart}
+                className="w-full md:w-auto group px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 active:scale-95"
+              >
+                <div className="flex items-center justify-center gap-3">
+                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 border border-white/20">
+                    <RotateCcw className="w-4 h-4 text-white/80" />
+                  </span>
+                 <span className="text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Initialize New Prediction</span>
+                </div>
+              </button>
+            )}
+
+            <button
+              onClick={() => (window.location.href = '/')}
+              className="w-full md:w-auto group px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 active:scale-95"
+            >
+              <div className="flex items-center justify-center gap-3">
+                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white/10 border border-white/20">
+                  <Home className="w-4 h-4 text-white/80" />
+                </span>
+                <span className="text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">RETURN TO HOME</span>
+              </div>
+            </button>
 
         </motion.div>
 
@@ -321,7 +505,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
            />
         </div>
       </div>
-
     </div>
+    </>
   );
 };

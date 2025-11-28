@@ -63,7 +63,11 @@ const routes: RouteObject[] = [
     element: <ContactPage />
   },
   {
-    path: '/predict',
+    path: '/world-cup-2026-prediction-game',
+    element: <PredictPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-game/:step',
     element: <PredictPage />
   },
   {
