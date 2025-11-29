@@ -1,5 +1,5 @@
 import React from 'react';
-import { TEAMS } from '../lib/wc26-data';
+import { TEAM_MAP } from '../lib/wc26-data';
 
 interface BracketMatchCardProps {
   matchId: string;
@@ -12,7 +12,7 @@ interface BracketMatchCardProps {
   compact?: boolean;
 }
 
-export const BracketMatchCard = ({
+export const BracketMatchCard = React.memo(({
   matchId,
   team1Id,
   team2Id,
@@ -22,8 +22,8 @@ export const BracketMatchCard = ({
   showCode = true,
   compact = false
 }: BracketMatchCardProps) => {
-  const team1 = TEAMS.find(t => t.id === team1Id);
-  const team2 = TEAMS.find(t => t.id === team2Id);
+  const team1 = team1Id ? TEAM_MAP.get(team1Id) : undefined;
+  const team2 = team2Id ? TEAM_MAP.get(team2Id) : undefined;
   const isCompleted = !!winnerId;
 
   const TeamRow = ({ team, isTop }: { team: typeof team1, isTop: boolean }) => {
@@ -149,4 +149,4 @@ export const BracketMatchCard = ({
         <TeamRow team={team2} isTop={false} />
     </div>
   );
-};
+});

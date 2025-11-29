@@ -6,7 +6,7 @@ import { PrizeBento } from './PrizeBento';
 import { TripTicket } from './TripTicket';
 import { ActionIsland } from './ActionIsland';
 import { RulesCard } from './RulesCard';
-import { Team, TEAMS } from '../lib/wc26-data';
+import { Team, TEAM_MAP } from '../lib/wc26-data';
 import { Sparkles, CheckCircle2, RotateCcw, Trophy, LayoutGrid, Shield, Share2, Download, Mail, Globe, Home } from 'lucide-react';
 import { useGame } from '../context/GameContext';
 import { SEO } from '../../../components/common/SEO';
@@ -25,15 +25,15 @@ interface ResultDashboardProps {
   onRestart?: () => void;
 }
 
-// Helper: Get Team by ID
-const getTeam = (id: string) => TEAMS.find(t => t.id === id);
-
-export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runnerUp, userName, userEmail, userCountry, stats, onRestart }) => {
+export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ champion, runnerUp, userName, userEmail, userCountry, stats, onRestart }) => {
   const { groupStandings, knockoutPicks } = useGame();
   const [isGenerating, setIsGenerating] = useState(false);
   const exportRef = useRef<HTMLDivElement>(null);
   const [entryId] = useState(() => `WC2026-${Math.random().toString(36).slice(2,8).toUpperCase()}`);
   const [submittedAt] = useState(() => new Date());
+
+  // Helper: Get Team by ID (Optimized)
+  const getTeam = (id: string) => TEAM_MAP.get(id);
 
   // Image Generation
   const handleSaveImage = async () => {
@@ -508,4 +508,4 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = ({ champion, runn
     </div>
     </>
   );
-};
+});

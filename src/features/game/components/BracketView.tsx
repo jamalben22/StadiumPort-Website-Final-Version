@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useGame } from '../context/GameContext';
 import { generateBracketMatches, Match } from '../lib/bracket-logic';
+import { getTeamForMatchSlot } from '../lib/bracket-utils';
 import { BracketMobile } from './BracketMobile';
 import { BracketDesktop } from './BracketDesktop';
 import { PredictionSummaryPopup } from './PredictionSummaryPopup';
@@ -37,6 +38,12 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
   const [matches, setMatches] = useState<Match[]>([]);
   const isMobile = useMediaQuery('(max-width: 768px)');
   const [showSummary, setShowSummary] = useState<string | null>(null);
+  
+  // Keep a ref to picks for the event handler to avoid re-creating it
+  const picksRef = useRef(knockoutPicks);
+  useEffect(() => {
+    picksRef.current = knockoutPicks;
+  }, [knockoutPicks]);
 
   // Initialize Bracket Data
   useEffect(() => {
@@ -78,36 +85,46 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
     }
   }, [currentStep, groupStandings, thirdPlacePicks]);
 
-  // Helper to resolve teams dynamically
-  const getTeamForMatchSlot = (matchId: string, slot: 1 | 2): string | null => {
-    const match = matches.find(m => m.id === matchId);
-    if (!match) return null;
-
-    if (matchId.startsWith('R32')) {
-      return slot === 1 ? match.team1Id : match.team2Id;
-    }
-
-    const feedingMatches = matches.filter(m => m.nextMatchId === matchId);
-    feedingMatches.sort((a, b) => a.id.localeCompare(b.id));
-
-    if (feedingMatches.length < 2) return null;
-
-    const sourceMatch = slot === 1 ? feedingMatches[0] : feedingMatches[1];
-    return knockoutPicks[sourceMatch.id] || null;
-  };
-
-  const handlePickWinner = (matchId: string, winnerId: string) => {
+  const handlePickWinner = useCallback((matchId: string, winnerId: string) => {
+    // Access latest picks via ref
+    const currentPicks = picksRef.current;
+    
     // If pick hasn't changed, do nothing
-    if (knockoutPicks[matchId] === winnerId) return;
+    if (currentPicks[matchId] === winnerId) return;
 
     // Identify downstream matches to clear
     const matchesToClear: Record<string, string> = {};
+    
+    // We need to find the match in the matches array. 
+    // Since matches state is local and stable (only set once), we can use it from closure 
+    // OR we can use a ref for matches if we want to be super safe, but matches don't change after init.
+    // However, `matches` is in the dependency list of the effect that sets it.
+    // To be safe, let's assume we can access `matches` from closure, but we need to ensure `matches` 
+    // is included in useCallback dependencies if we use it. 
+    // BUT `matches` changes only on init.
+    
+    // Wait, we can't access `matches` inside useCallback if it's not in dependencies.
+    // And if we add it, handlePickWinner changes when matches changes (which is once).
+    // So that's fine.
+    
+    // Wait, `matches` state is initialized empty, then populated. 
+    // So handlePickWinner will update once when matches are populated.
+    
+    // To traverse, we need the match object.
+    // We can find it in the `matches` array.
+    // We can also optimize by creating a map of ID -> Match, but array find is fast enough for 64 items.
+    
+    // We need to find the match object from the array in the closure scope.
+    // Let's use a functional update or just access the state variable.
+    // Since we are inside the component, we can access `matches`.
+    
+    // Re-implement logic using current `matches` state
     let currentMatch = matches.find(m => m.id === matchId);
     
     while (currentMatch && currentMatch.nextMatchId) {
       const nextId = currentMatch.nextMatchId;
       // Only clear if it currently has a value
-      if (knockoutPicks[nextId]) {
+      if (currentPicks[nextId]) {
         matchesToClear[nextId] = "";
       }
       currentMatch = matches.find(m => m.id === nextId);
@@ -122,11 +139,11 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
     if (matchId === CHAMPION_MATCH_ID) {
       setShowSummary(winnerId);
     }
-  };
+  }, [matches, updateKnockoutPicks]); // matches is stable after init, updateKnockoutPicks is stable (now)
 
   if (matches.length === 0) return null;
 
-  const runnerUpId = showSummary ? (getTeamForMatchSlot('F-01', 1) === showSummary ? getTeamForMatchSlot('F-01', 2) : getTeamForMatchSlot('F-01', 1)) : '';
+  const runnerUpId = showSummary ? (getTeamForMatchSlot('F-01', 1, matches, knockoutPicks) === showSummary ? getTeamForMatchSlot('F-01', 2, matches, knockoutPicks) : getTeamForMatchSlot('F-01', 1, matches, knockoutPicks)) : '';
 
   return (
     <>
@@ -169,7 +186,6 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
                     matches={matches}
                     knockoutPicks={knockoutPicks}
                     onPickWinner={handlePickWinner}
-                    getTeamForMatchSlot={getTeamForMatchSlot}
                     onComplete={() => setCurrentStep(3)}
                     currentRoundIndex={bracketRoundIndex}
                 />
@@ -178,7 +194,6 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
                     matches={matches}
                     knockoutPicks={knockoutPicks}
                     onPickWinner={handlePickWinner}
-                    getTeamForMatchSlot={getTeamForMatchSlot}
                 />
             )}
         </div>

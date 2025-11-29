@@ -5,7 +5,7 @@ interface GameHeaderProps {
   onExit?: () => void;
 }
 
-export const GameHeader = ({ onExit }: GameHeaderProps) => {
+export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
   const navigate = useNavigate();
 
   const handleExit = () => {
@@ -50,4 +50,4 @@ export const GameHeader = ({ onExit }: GameHeaderProps) => {
       </button>
     </header>
   );
-};
+});

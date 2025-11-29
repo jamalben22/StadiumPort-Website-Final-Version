@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import {
   DndContext,
   closestCenter,
@@ -17,7 +17,7 @@ import {
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
 import { useGame } from '../context/GameContext';
-import { TEAMS } from '../lib/wc26-data';
+import { TEAMS, TEAM_MAP, GROUPS } from '../lib/wc26-data';
 import { motion } from 'framer-motion';
 import { soundManager } from '../utils/SoundManager';
 import { RulesCard } from './RulesCard';
@@ -39,7 +39,49 @@ const GROUP_ACCENTS: Record<string, string> = {
   L: '#14B8A6'
 };
 
+const SORTED_GROUP_IDS = Object.keys(GROUPS).sort();
+
 const withAlpha = (hex: string, alphaHex: string) => (hex.length === 7 ? hex + alphaHex : hex);
+
+// Logic-Based Styling - Extracted for performance
+const getStatusStyles = (idx: number) => {
+  switch (idx) {
+    case 0: // 1st Place (Qualified)
+    case 1: // 2nd Place (Qualified)
+      return {
+        wrapper: "bg-slate-800 border-white/5 opacity-100",
+        accentBar: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]",
+        text: "text-white font-semibold",
+        rank: "text-white/90",
+        badge: {
+          text: "QUALIFIED",
+          style: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
+        }
+      };
+    case 2: // 3rd Place
+      return {
+        wrapper: "bg-amber-900/10 border-amber-500/10",
+        accentBar: "bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.2)]",
+        text: "text-amber-50 font-medium",
+        rank: "text-amber-200/70",
+        badge: {
+          text: "THIRD PLACE",
+          style: "bg-amber-500/10 text-amber-400 border border-amber-500/20"
+        }
+      };
+    default: // 4th Place (Eliminated)
+      return {
+        wrapper: "bg-slate-900/30 border-white/5 opacity-50 grayscale",
+        accentBar: "bg-red-500/60",
+        text: "text-slate-400 font-medium",
+        rank: "text-slate-600",
+        badge: {
+          text: "ELIMINATED",
+          style: "bg-red-500/10 text-red-400 border border-red-500/20"
+        }
+      };
+  }
+};
 
 // --- Sortable Team Item Component (Refactored for Official App Status System) ---
 interface SortableTeamItemProps {
@@ -47,7 +89,7 @@ interface SortableTeamItemProps {
   index: number;
 }
 
-const SortableTeamItem = ({ id, index }: SortableTeamItemProps) => {
+const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
   const {
     attributes,
     listeners,
@@ -57,57 +99,17 @@ const SortableTeamItem = ({ id, index }: SortableTeamItemProps) => {
     isDragging,
   } = useSortable({ id });
 
-  const team = TEAMS.find((t) => t.id === id);
+  const team = TEAM_MAP.get(id);
 
-  const style = {
+  const style = useMemo(() => ({
     transform: CSS.Transform.toString(transform),
     transition,
     zIndex: isDragging ? 50 : 1,
-  };
+  }), [transform, transition, isDragging]);
+
+  const status = useMemo(() => getStatusStyles(index), [index]);
 
   if (!team) return null;
-
-  // Logic-Based Styling
-  const getStatusStyles = (idx: number) => {
-    switch (idx) {
-      case 0: // 1st Place (Qualified)
-      case 1: // 2nd Place (Qualified)
-        return {
-          wrapper: "bg-slate-800 border-white/5 opacity-100",
-          accentBar: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]",
-          text: "text-white font-semibold",
-          rank: "text-white/90",
-          badge: {
-            text: "QUALIFIED",
-            style: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
-          }
-        };
-      case 2: // 3rd Place
-        return {
-          wrapper: "bg-amber-900/10 border-amber-500/10",
-          accentBar: "bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.2)]",
-          text: "text-amber-50 font-medium",
-          rank: "text-amber-200/70",
-          badge: {
-            text: "THIRD PLACE",
-            style: "bg-amber-500/10 text-amber-400 border border-amber-500/20"
-          }
-        };
-      default: // 4th Place (Eliminated)
-        return {
-          wrapper: "bg-slate-900/30 border-white/5 opacity-50 grayscale",
-          accentBar: "bg-red-500/60",
-          text: "text-slate-400 font-medium",
-          rank: "text-slate-600",
-          badge: {
-            text: "ELIMINATED",
-            style: "bg-red-500/10 text-red-400 border border-red-500/20"
-          }
-        };
-    }
-  };
-
-  const status = getStatusStyles(index);
 
   return (
     <div
@@ -165,7 +167,7 @@ const SortableTeamItem = ({ id, index }: SortableTeamItemProps) => {
       </div>
     </div>
   );
-};
+});
 
 // --- Direct Grid Group Card ---
 interface DirectGroupCardProps {
@@ -173,18 +175,23 @@ interface DirectGroupCardProps {
   teams: string[];
 }
 
-const DirectGroupCard = ({ groupId, teams }: DirectGroupCardProps) => {
+const DirectGroupCard = React.memo(({ groupId, teams }: DirectGroupCardProps) => {
   const accent = GROUP_ACCENTS[groupId] || '#FBBF24';
+  
+  const headerBadgeStyle = useMemo(() => ({
+    border: `1px solid ${withAlpha(accent, '33')}`,
+    background: `linear-gradient(90deg, ${withAlpha(accent, '0F')}, rgba(255,255,255,0.02))`
+  }), [accent]);
+
+  const dotStyle = useMemo(() => ({ backgroundColor: accent }), [accent]);
+
   return (
     <div className="flex flex-col h-full bg-slate-900/60 backdrop-blur-2xl rounded-2xl border border-white/10 overflow-hidden shadow-lg">
       <div className="px-4 py-3 border-b border-white/5 flex items-center justify-between bg-transparent">
         <div className="relative">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
-            style={{
-              border: `1px solid ${withAlpha(accent, '33')}`,
-              background: `linear-gradient(90deg, ${withAlpha(accent, '0F')}, rgba(255,255,255,0.02))`
-            }}
+            style={headerBadgeStyle}
           >
             <span
               className="text-lg md:text-xl font-sans font-semibold uppercase tracking-[0.12em] text-white"
@@ -195,7 +202,7 @@ const DirectGroupCard = ({ groupId, teams }: DirectGroupCardProps) => {
         </div>
         <div
           className="w-2 h-2 rounded-full"
-          style={{ backgroundColor: accent }}
+          style={dotStyle}
         ></div>
       </div>
 
@@ -209,15 +216,12 @@ const DirectGroupCard = ({ groupId, teams }: DirectGroupCardProps) => {
       </div>
     </div>
   );
-};
+});
 
 // --- Main GroupStage Component (Direct Grid Dashboard) ---
 export const GroupStage = () => {
-  const { groupStandings, completedGroupIds, updateGroupStandings, markGroupCompleted, setCurrentStep } = useGame();
+  const { groupStandings, completedGroupIds, updateGroupStandings, markGroupCompleted } = useGame();
   
-  // Sort groups alphabetically
-  const groupIds = Object.keys(groupStandings).sort();
-
   // Sensors for DnD
   const sensors = useSensors(
     useSensor(PointerSensor, {
@@ -230,7 +234,7 @@ export const GroupStage = () => {
     })
   );
 
-  const handleDragEnd = (event: DragEndEvent) => {
+  const handleDragEnd = useCallback((event: DragEndEvent) => {
     const { active, over } = event;
 
     if (!over) return;
@@ -240,9 +244,7 @@ export const GroupStage = () => {
 
     if (activeId !== overId) {
       // Find which group these teams belong to
-      // Since we assume dragging within the same group for now (as per "inside these grid boxes")
-      // We can find the group that contains the activeId.
-      const groupId = groupIds.find(gid => groupStandings[gid].includes(activeId));
+      const groupId = SORTED_GROUP_IDS.find(gid => groupStandings[gid].includes(activeId));
       
       if (groupId) {
          const currentTeams = groupStandings[groupId];
@@ -254,24 +256,14 @@ export const GroupStage = () => {
              const newOrder = arrayMove(currentTeams, oldIndex, newIndex);
              updateGroupStandings(groupId, newOrder);
              
-             // Check if group is "complete" (user interacted with it)
-             // We can mark it as complete on any interaction, or just leave it to the user.
-             // The prompt removed the "Save" button, so we should probably auto-mark as complete
-             // OR rely on the user having done something. 
-             // Let's auto-mark on interaction for progress tracking, or maybe not?
-             // "Mission Status bar" needs to fill up.
-             // Let's mark as complete if not already.
              if (!completedGroupIds.includes(groupId)) {
                  markGroupCompleted(groupId);
                  soundManager.play('success');
-                 
-                 // Removed Confetti as requested for "Official App" quality.
-                 // Interaction must be instant, silent (except for success tick), and serious.
              }
          }
       }
     }
-  };
+  }, [groupStandings, updateGroupStandings, completedGroupIds, markGroupCompleted]);
 
   return (
     <>
@@ -385,7 +377,7 @@ export const GroupStage = () => {
          onDragEnd={handleDragEnd}
        >
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1400px] mx-auto w-full px-4 md:px-6">
-              {groupIds.map((groupId) => (
+              {SORTED_GROUP_IDS.map((groupId) => (
                 <DirectGroupCard
                   key={groupId}
                   groupId={groupId}

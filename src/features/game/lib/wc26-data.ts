@@ -78,6 +78,8 @@ export const TEAMS: Team[] = [
   { id: 'nzl', name: 'New Zealand', code: 'nz', fifaCode: 'NZL', flagUrl: 'https://flagcdn.com/w320/nz.png', region: 'OFC', rating: 72, colors: ['#000000', '#FFFFFF'] },
 ];
 
+export const TEAM_MAP = new Map(TEAMS.map(t => [t.id, t]));
+
 export const GROUPS: Record<string, string[]> = {
   A: ['mex', 'egy', 'pol', 'kor'],
   B: ['can', 'sui', 'cmr', 'ksa'],
