@@ -1,20 +1,20 @@
-import React, { useState, useRef, useEffect, Suspense, lazy } from 'react';
+import React, { useState, useRef, useEffect, Suspense, lazy, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GameProvider, useGame } from '../features/game/context/GameContext';
 import { GameLayout } from '../features/game/components/GameLayout';
 import { GameHeader } from '../features/game/components/GameHeader';
 import { FloatingControlCapsule } from '../features/game/components/FloatingControlCapsule';
-import { ResultDashboard } from '../features/game/components/ResultDashboard';
 import { TEAMS } from '../features/game/lib/wc26-data';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { SEO } from '../components/common/SEO';
-import { EmailRegistration } from '../features/game/components/EmailRegistration';
 
 // Lazy loaded components
 const GroupStage = lazy(() => import('../features/game/components/GroupStage').then(module => ({ default: module.GroupStage })));
 const ThirdPlaceSelector = lazy(() => import('../features/game/components/ThirdPlaceSelector').then(module => ({ default: module.ThirdPlaceSelector })));
 const BracketView = lazy(() => import('../features/game/components/BracketView').then(module => ({ default: module.BracketView })));
+const ResultDashboard = lazy(() => import('../features/game/components/ResultDashboard').then(module => ({ default: module.ResultDashboard })));
+const EmailRegistration = lazy(() => import('../features/game/components/EmailRegistration').then(module => ({ default: module.EmailRegistration })));
 
 // Steps for the stepper
 const STEPS = [
@@ -79,6 +79,8 @@ function PredictGameContent() {
   // Bracket Mobile State
   const [bracketRoundIndex, setBracketRoundIndex] = useState(0);
   const isMobile = useMediaQuery('(max-width: 768px)');
+
+  const handleExit = useCallback(() => navigate('/'), [navigate]);
 
   // Sync URL step param with game state
   useEffect(() => {
@@ -183,20 +185,22 @@ function PredictGameContent() {
 
     return (
       <GameLayout>
-         <GameHeader onExit={() => navigate('/')} />
-         <ResultDashboard 
-           champion={champion} 
-           runnerUp={runnerUp}
-           userName={userName}
-           userEmail={userInfo.email}
-           userCountry={userInfo.country}
-           onRestart={() => {
-             resetGame();
-             // setIsGameFinished(false); // Not defined in this scope, removing
-             // setShowRegistration(false); // Not defined in this scope, removing
-             setUserName("You");
-           }}
-         />
+         <GameHeader onExit={handleExit} />
+         <Suspense fallback={<LoadingFallback />}>
+           <ResultDashboard 
+             champion={champion} 
+             runnerUp={runnerUp}
+             userName={userName}
+             userEmail={userInfo.email}
+             userCountry={userInfo.country}
+             onRestart={() => {
+               resetGame();
+               // setIsGameFinished(false); // Not defined in this scope, removing
+               // setShowRegistration(false); // Not defined in this scope, removing
+               setUserName("You");
+             }}
+           />
+         </Suspense>
       </GameLayout>
     );
   }
@@ -204,7 +208,7 @@ function PredictGameContent() {
   return (
     <GameLayout>
       {/* 1. Header (Fixed, never unmounts) */}
-      <GameHeader onExit={() => navigate('/')} />
+      <GameHeader onExit={handleExit} />
       
       <SEO 
         title="World Cup 2026 Prediction Game | Free Bracket Challenge & Prizes" 
@@ -322,10 +326,12 @@ function PredictGameContent() {
                       style={{ willChange: 'transform, opacity' }}
                     >
                        <div className="min-h-[70vh] flex items-center justify-center">
-                        <EmailRegistration 
-                          onComplete={handleRegistrationComplete}
-                          onBack={() => setCurrentStep(2)}
-                        />
+                        <Suspense fallback={<LoadingFallback />}>
+                          <EmailRegistration 
+                            onComplete={handleRegistrationComplete}
+                            onBack={() => setCurrentStep(2)}
+                          />
+                        </Suspense>
                       </div>
                     </motion.div>
                   )}

@@ -31,25 +31,25 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [completedGroupIds, setCompletedGroupIds] = useState<string[]>([]);
 
-  const updateGroupStandings = (groupId: string, teams: string[]) => {
+  const updateGroupStandings = React.useCallback((groupId: string, teams: string[]) => {
     setGroupStandingsState((prev) => ({
       ...prev,
       [groupId]: teams,
     }));
-  };
+  }, []);
 
-  const setThirdPlacePicks = (teamIds: string[]) => {
+  const setThirdPlacePicks = React.useCallback((teamIds: string[]) => {
     setThirdPlacePicksState(teamIds);
-  };
+  }, []);
 
-  const setKnockoutPick = (matchId: string, winnerId: string) => {
+  const setKnockoutPick = React.useCallback((matchId: string, winnerId: string) => {
     setKnockoutPicksState((prev) => ({
       ...prev,
       [matchId]: winnerId,
     }));
-  };
+  }, []);
 
-  const updateKnockoutPicks = (updates: Record<string, string>) => {
+  const updateKnockoutPicks = React.useCallback((updates: Record<string, string>) => {
     setKnockoutPicksState((prev) => {
       // Merge updates. If value is empty string, we can interpret as delete?
       // For now, simple merge is fine, but if we need to delete, we might need a different signal.
@@ -67,24 +67,24 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
       });
       return next;
     });
-  };
+  }, []);
 
-  const markGroupCompleted = (groupId: string) => {
+  const markGroupCompleted = React.useCallback((groupId: string) => {
     setCompletedGroupIds((prev) => {
       if (prev.includes(groupId)) return prev;
       return [...prev, groupId];
     });
-  };
+  }, []);
 
-  const resetGame = () => {
+  const resetGame = React.useCallback(() => {
     setGroupStandingsState(GROUPS);
     setThirdPlacePicksState([]);
     setKnockoutPicksState({});
     setCurrentStep(0);
     setCompletedGroupIds([]);
-  };
+  }, []);
 
-  const value: GameContextType = {
+  const value: GameContextType = React.useMemo(() => ({
     groupStandings,
     thirdPlacePicks,
     knockoutPicks,
@@ -97,7 +97,13 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     setCurrentStep,
     markGroupCompleted,
     resetGame,
-  };
+  }), [
+    groupStandings,
+    thirdPlacePicks,
+    knockoutPicks,
+    currentStep,
+    completedGroupIds
+  ]);
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
 };

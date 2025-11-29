@@ -7,7 +7,7 @@ interface RulesCardProps {
   className?: string;
 }
 
-export const RulesCard: React.FC<RulesCardProps> = ({ variant, className = '' }) => {
+export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps) => {
   if (variant === 'short') {
     return (
       <motion.div 
@@ -293,4 +293,4 @@ export const RulesCard: React.FC<RulesCardProps> = ({ variant, className = '' })
       </div>
     </div>
   );
-};
+});

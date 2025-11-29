@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BracketMatchCard } from './BracketMatchCard';
 import { Match } from '../lib/bracket-logic';
+import { getTeamForMatchSlot } from '../lib/bracket-utils';
 
 interface BracketMobileProps {
   matches: Match[];
   knockoutPicks: Record<string, string>;
   onPickWinner: (matchId: string, winnerId: string) => void;
-  getTeamForMatchSlot: (matchId: string, slot: 1 | 2) => string | null;
   onComplete?: () => void;
   currentRoundIndex: number;
 }
@@ -31,11 +31,38 @@ const ROUND_THEME: Record<string, { color: string }> = {
 
 const withAlpha = (hex: string, alphaHex: string) => (hex.length === 7 ? hex + alphaHex : hex);
 
-export const BracketMobile = ({
+const containerVariants = {
+  enter: (dir: number) => ({
+    x: dir > 0 ? '100%' : '-100%',
+    opacity: 0,
+    position: 'absolute' as const,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    position: 'relative' as const,
+    transition: {
+      type: "spring",
+      stiffness: 300,
+      damping: 30,
+      mass: 1
+    }
+  },
+  exit: (dir: number) => ({
+    x: dir < 0 ? '100%' : '-100%',
+    opacity: 0,
+    position: 'absolute' as const,
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut"
+    }
+  })
+};
+
+export const BracketMobile = React.memo(({
   matches,
   knockoutPicks,
   onPickWinner,
-  getTeamForMatchSlot,
   onComplete,
   currentRoundIndex
 }: BracketMobileProps) => {
@@ -57,34 +84,6 @@ export const BracketMobile = ({
   const theme = ROUND_THEME[currentRoundId];
   const roundMatches = matches.filter(m => m.id.startsWith(currentRoundId));
   const progress = ((currentRoundIndex + 1) / ROUND_ORDER.length) * 100;
-
-  const containerVariants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? '100%' : '-100%',
-      opacity: 0,
-      position: 'absolute' as const,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      position: 'relative' as const,
-      transition: {
-        type: "spring",
-        stiffness: 300,
-        damping: 30,
-        mass: 1
-      }
-    },
-    exit: (dir: number) => ({
-      x: dir < 0 ? '100%' : '-100%',
-      opacity: 0,
-      position: 'absolute' as const,
-      transition: {
-        duration: 0.25,
-        ease: "easeInOut"
-      }
-    })
-  };
 
   return (
     <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-white overflow-x-hidden">
@@ -151,8 +150,8 @@ export const BracketMobile = ({
           >
             <div className="space-y-4 max-w-md mx-auto w-full">
               {roundMatches.map(match => {
-                const team1Id = getTeamForMatchSlot(match.id, 1);
-                const team2Id = getTeamForMatchSlot(match.id, 2);
+                const team1Id = getTeamForMatchSlot(match.id, 1, matches, knockoutPicks);
+                const team2Id = getTeamForMatchSlot(match.id, 2, matches, knockoutPicks);
                 const winnerId = knockoutPicks[match.id];
 
                 return (
@@ -182,4 +181,4 @@ export const BracketMobile = ({
       `}</style>
     </div>
   );
-};
+});

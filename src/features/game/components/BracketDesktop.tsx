@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { BracketMatchCard } from './BracketMatchCard';
 import { Match } from '../lib/bracket-logic';
+import { getTeamForMatchSlot } from '../lib/bracket-utils';
 
 interface BracketDesktopProps {
   matches: Match[];
   knockoutPicks: Record<string, string>;
   onPickWinner: (matchId: string, winnerId: string) => void;
-  getTeamForMatchSlot: (matchId: string, slot: 1 | 2) => string | null;
 }
 
 const ROUNDS = ['R32', 'R16', 'QF', 'SF', 'F'];
@@ -30,11 +30,10 @@ const withAlpha = (hex: string, alphaHex: string) => (hex.length === 7 ? hex + a
 const MATCH_HEIGHT = 80; // Fixed height in px
 const GAP_Y = 24; // Vertical gap in px
 
-export const BracketDesktop = ({
+export const BracketDesktop = React.memo(({
   matches,
   knockoutPicks,
-  onPickWinner,
-  getTeamForMatchSlot
+  onPickWinner
 }: BracketDesktopProps) => {
   
   // Group matches by round and sort by index
@@ -164,80 +163,12 @@ export const BracketDesktop = ({
         </div>
 
         {/* SVG Connectors Layer */}
-        <svg 
-            className="absolute inset-0 w-full h-full pointer-events-none z-0" 
-            viewBox={`0 0 100 ${Math.max(totalHeight + 100, 800)}`}
-            preserveAspectRatio="none"
-        >
-            <defs>
-              {/* Neon Glow Filter */}
-              <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-                <feMerge>
-                  <feMergeNode in="coloredBlur" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-
-              {/* Live Gradient: Gold to Transparent */}
-              <linearGradient id="gold-beam" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#FBBF24" stopOpacity="1" />
-                <stop offset="50%" stopColor="#D97706" stopOpacity="0.8" />
-                <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
-              </linearGradient>
-            </defs>
-
-            {ROUNDS.slice(0, 4).map((roundId, rIndex) => {
-            const currentMatches = matchesByRound[roundId] || [];
-            
-            return currentMatches.map((match) => {
-                const nextMatchId = match.nextMatchId;
-                if (!nextMatchId) return null;
-                
-                // Get positions
-                const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50; // +50 for top padding
-                const endY = (positions[nextMatchId] || 0) + (MATCH_HEIGHT / 2) + 50;
-
-                // X Coordinates (0-100 scale)
-                const startX = (rIndex * 20) + 19; 
-                const endX = ((rIndex + 1) * 20) + 1;
-                
-                // Control Points for Bezier
-                const cp1X = startX + (endX - startX) * 0.5;
-                const cp2X = endX - (endX - startX) * 0.5;
-
-                const pathData = `M ${startX} ${startY} C ${cp1X} ${startY}, ${cp2X} ${endY}, ${endX} ${endY}`;
-                
-                const isCompleted = !!knockoutPicks[match.id];
-                
-                return (
-                  <g key={`path-group-${match.id}`}>
-                    {/* 1. Base Track (Always visible, faint) */}
-                    <path
-                        d={pathData}
-                        fill="none"
-                        stroke="rgba(255, 255, 255, 0.05)"
-                        strokeWidth="1"
-                        vectorEffect="non-scaling-stroke"
-                    />
-
-                    {/* 2. Active Holographic Beam */}
-                    {isCompleted && (
-                      <path
-                          d={pathData}
-                          fill="none"
-                          stroke="#FBBF24" 
-                          strokeWidth="2"
-                          vectorEffect="non-scaling-stroke"
-                          className="beam-active"
-                          style={{ filter: 'url(#neon-glow)' }}
-                      />
-                    )}
-                  </g>
-                );
-            });
-            })}
-        </svg>
+        <BracketConnections 
+          matchesByRound={matchesByRound}
+          positions={positions}
+          knockoutPicks={knockoutPicks}
+          totalHeight={totalHeight}
+        />
 
         {/* Columns */}
         <div className="absolute inset-0 w-full h-full">
@@ -247,8 +178,8 @@ export const BracketDesktop = ({
             return (
                 <div key={roundId} className="absolute top-0 bottom-0" style={{ left: `${rIndex * 20}%`, width: '20%' }}>
                 {roundMatches.map((match) => {
-                    const team1Id = getTeamForMatchSlot(match.id, 1);
-                    const team2Id = getTeamForMatchSlot(match.id, 2);
+                    const team1Id = getTeamForMatchSlot(match.id, 1, matches, knockoutPicks);
+                    const team2Id = getTeamForMatchSlot(match.id, 2, matches, knockoutPicks);
                     const winnerId = knockoutPicks[match.id];
                     const topY = positions[match.id] || 0;
 
@@ -281,4 +212,83 @@ export const BracketDesktop = ({
       </div>
     </div>
   );
-};
+});
+
+const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPicks, totalHeight }: any) => {
+  return (
+    <svg 
+        className="absolute inset-0 w-full h-full pointer-events-none z-0" 
+        viewBox={`0 0 100 ${Math.max(totalHeight + 100, 800)}`}
+        preserveAspectRatio="none"
+    >
+        <defs>
+          {/* Neon Glow Filter */}
+          <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Live Gradient: Gold to Transparent */}
+          <linearGradient id="gold-beam" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FBBF24" stopOpacity="1" />
+            <stop offset="50%" stopColor="#D97706" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        {ROUNDS.slice(0, 4).map((roundId, rIndex) => {
+        const currentMatches = matchesByRound[roundId] || [];
+        
+        return currentMatches.map((match: Match) => {
+            const nextMatchId = match.nextMatchId;
+            if (!nextMatchId) return null;
+            
+            // Get positions
+            const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50; // +50 for top padding
+            const endY = (positions[nextMatchId] || 0) + (MATCH_HEIGHT / 2) + 50;
+
+            // X Coordinates (0-100 scale)
+            const startX = (rIndex * 20) + 19; 
+            const endX = ((rIndex + 1) * 20) + 1;
+            
+            // Control Points for Bezier
+            const cp1X = startX + (endX - startX) * 0.5;
+            const cp2X = endX - (endX - startX) * 0.5;
+
+            const pathData = `M ${startX} ${startY} C ${cp1X} ${startY}, ${cp2X} ${endY}, ${endX} ${endY}`;
+            
+            const isCompleted = !!knockoutPicks[match.id];
+            
+            return (
+              <g key={`path-group-${match.id}`}>
+                {/* 1. Base Track (Always visible, faint) */}
+                <path
+                    d={pathData}
+                    fill="none"
+                    stroke="rgba(255, 255, 255, 0.05)"
+                    strokeWidth="1"
+                    vectorEffect="non-scaling-stroke"
+                />
+
+                {/* 2. Active Holographic Beam */}
+                {isCompleted && (
+                  <path
+                      d={pathData}
+                      fill="none"
+                      stroke="#FBBF24" 
+                      strokeWidth="2"
+                      vectorEffect="non-scaling-stroke"
+                      className="beam-active"
+                      style={{ filter: 'url(#neon-glow)' }}
+                  />
+                )}
+              </g>
+            );
+        });
+        })}
+    </svg>
+  );
+});
