@@ -1,9 +1,9 @@
+import { useEffect, useState } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateImageObjectSchema } from '../../../components/seo/SchemaOrg';
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
 
@@ -17,53 +17,6 @@ const renderBoldText = (input: string) => {
     return part;
   });
 };
-
-const NeighborhoodTable = () => (
-  <div className="overflow-x-auto my-8 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm animate-fade-up">
-    <table className="w-full text-left text-sm border-collapse min-w-[600px]">
-      <thead className="bg-slate-50 dark:bg-slate-800/50 text-slate-900 dark:text-slate-100 font-semibold border-b border-slate-200 dark:border-slate-700">
-        <tr>
-          <th className="p-4 whitespace-nowrap">Neighborhood</th>
-          <th className="p-4">Vibe</th>
-          <th className="p-4">Stadium Access</th>
-          <th className="p-4">Best For</th>
-        </tr>
-      </thead>
-      <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900/40">
-        <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-          <td className="p-4 font-medium text-emerald-700 dark:text-emerald-400">West Hollywood</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Trendy, walkable, nightlife-focused</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Moderate (Metro/Uber)</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Central location & nightlife</td>
-        </tr>
-        <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-          <td className="p-4 font-medium text-emerald-700 dark:text-emerald-400">Santa Monica</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Beach, relaxed, scenic</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Far (45m+ transit)</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Vacation vibes & families</td>
-        </tr>
-        <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-          <td className="p-4 font-medium text-emerald-700 dark:text-emerald-400">Downtown LA</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Urban, artsy, connected</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Excellent (Direct Metro)</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Transit & culture</td>
-        </tr>
-        <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-          <td className="p-4 font-medium text-emerald-700 dark:text-emerald-400">Hollywood</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Touristy, energetic</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Good (Metro B → C)</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">First-timers & sightseeing</td>
-        </tr>
-        <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20 transition-colors">
-          <td className="p-4 font-medium text-emerald-700 dark:text-emerald-400">Beverly Hills</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Luxury, quiet, polished</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Poor (Car only)</td>
-          <td className="p-4 text-slate-600 dark:text-slate-300">Luxury & shopping</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-);
 
 const MatchScheduleTable = () => (
   <div className="overflow-x-auto my-6 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm">
@@ -107,41 +60,51 @@ const MatchScheduleTable = () => (
 );
 
 export default function LosAngelesArticlePage() {
-  const pageUrl = '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
-  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  
-  const [scrollPercent, setScrollPercent] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
   const [tocSections, setTocSections] = useState<Array<{ id: string; label: string; level: number }>>([]);
   const [activeId, setActiveId] = useState<string>('');
   const [isMobileTocOpen, setIsMobileTocOpen] = useState(false);
 
+  // Feature: Save Guide & Rating
+  const [isSaved, setIsSaved] = useState(false);
+  const [userRating, setUserRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [hasRated, setHasRated] = useState(false);
+  const currentPath = '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
+
   useEffect(() => {
-    const link = document.createElement('link')
-    link.rel = 'preload'
-    link.as = 'image'
-    link.href = '/images/cities/los-angeles-world-cup-2026.webp'
-    document.head.appendChild(link)
+    // Load saved state
+    const saved = localStorage.getItem('stadiumport_saved_guides');
+    if (saved) {
+      const guides = JSON.parse(saved);
+      setIsSaved(guides.includes(currentPath));
+    }
     
-    // Track scroll depth (engagement metric)
-    let maxScroll = 0;
-    const trackScroll = () => {
-      const pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-      const clamped = Math.max(0, Math.min(100, pct));
-      setScrollPercent(clamped);
-      if (clamped > maxScroll) {
-        maxScroll = clamped;
-        if (window.gtag && maxScroll % 25 === 0) {
-          window.gtag('event', 'scroll', {
-            percent_scrolled: maxScroll,
-            page: 'la_guide'
-          });
-        }
-      }
-    };
-    
-    window.addEventListener('scroll', trackScroll);
-    return () => window.removeEventListener('scroll', trackScroll);
+    // Load rating
+    const rating = localStorage.getItem(`stadiumport_rating_${currentPath}`);
+    if (rating) {
+      setUserRating(parseInt(rating));
+      setHasRated(true);
+    }
   }, []);
+
+  const toggleSave = () => {
+    const saved = localStorage.getItem('stadiumport_saved_guides');
+    let guides = saved ? JSON.parse(saved) : [];
+    if (isSaved) {
+      guides = guides.filter((g: string) => g !== currentPath);
+    } else {
+      guides.push(currentPath);
+    }
+    localStorage.setItem('stadiumport_saved_guides', JSON.stringify(guides));
+    setIsSaved(!isSaved);
+  };
+
+  const handleRate = (rating: number) => {
+    setUserRating(rating);
+    setHasRated(true);
+    localStorage.setItem(`stadiumport_rating_${currentPath}`, rating.toString());
+  };
 
   useEffect(() => {
     const nodes = Array.from(document.querySelectorAll('.editorial-body h2, .editorial-body h3')) as HTMLElement[];
@@ -173,13 +136,43 @@ export default function LosAngelesArticlePage() {
   }, []);
 
   useEffect(() => {
-    const title = 'Los Angeles – World Cup 2026 Guide';
-    const description = 'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.';
-    const fullUrl = `${siteUrl}${pageUrl}`;
-    const ogImage = `${siteUrl}/images/cities/los-angeles-world-cup-2026.webp`;
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = '/images/cities/los-angeles-world-cup-2026.webp'
+    document.head.appendChild(link)
+  }, [])
+
+  useEffect(() => {
+    const onScroll = () => {
+      const doc = document.documentElement
+      const scrollTop = doc.scrollTop || document.body.scrollTop
+      const scrollHeight = doc.scrollHeight - doc.clientHeight
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0
+      setScrollProgress(Math.min(100, Math.max(0, progress)))
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const pageUrl = '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide';
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+
+  useEffect(() => {
     const entry = getEditorialEntry('city','los-angeles')
-    setPageMeta({ title, description, url: fullUrl, image: ogImage, locale: 'en_US', publishedTime: entry?.isPublished ? entry.datePublished : undefined, modifiedTime: new Date().toISOString(), section: entry?.section || 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium', ...(entry?.keywords||[])] })
-  }, []);
+    setPageMeta({
+      title: 'Los Angeles – World Cup 2026 Guide',
+      description: 'Comprehensive Los Angeles travel guide for FIFA World Cup 2026: SoFi Stadium details, match schedule, transportation, and where to stay.',
+      url: `${siteUrl}${pageUrl}`,
+      image: `${siteUrl}/images/cities/los-angeles-world-cup-2026.webp`,
+      locale: 'en_US',
+      publishedTime: entry?.isPublished ? entry.datePublished : undefined,
+      modifiedTime: new Date().toISOString(),
+      section: entry?.section || 'Host Cities',
+      tags: ['World Cup 2026', 'Host Cities', 'Los Angeles', 'SoFi Stadium', ...(entry?.keywords||[])]
+    })
+  }, [])
 
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
@@ -192,9 +185,9 @@ export default function LosAngelesArticlePage() {
             { datePublished: (getEditorialEntry('city','los-angeles')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Los Angeles', 'SoFi Stadium'] }
           ),
           generateBreadcrumbSchema([
-            { name: 'Home', url: siteUrl },
-            { name: 'Host Cities', url: `${siteUrl}/world-cup-2026-host-cities` },
-            { name: 'Los Angeles', url: `${siteUrl}${pageUrl}` }
+            { name: 'Home', url: '/' },
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Los Angeles', url: pageUrl }
           ]),
           generateImageObjectSchema(
             '/images/cities/los-angeles-world-cup-2026.webp',
@@ -209,7 +202,7 @@ export default function LosAngelesArticlePage() {
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -254,10 +247,10 @@ export default function LosAngelesArticlePage() {
               <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
-              <span className="text-sm font-semibold tracking-wide">Sections</span>
+              <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -280,7 +273,7 @@ export default function LosAngelesArticlePage() {
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
                       <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
-                      <span className="text-sm font-medium">{label}</span>
+                      <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
                 ))}
@@ -290,66 +283,82 @@ export default function LosAngelesArticlePage() {
         </div>
       </div>
 
-      {/* Editorial Hero — cohesive with article style */}
-      <section className="editorial-hero">
-        <div className="editorial-hero-media">
+      {/* Editorial Hero — World Class Redesign */}
+      <section className="relative w-full h-[85vh] min-h-[600px] bg-slate-900 overflow-hidden group">
+        {/* Background Image with subtle zoom effect */}
+        <div className="absolute inset-0 w-full h-full">
           <OptimizedImage
             src="/images/cities/los-angeles-world-cup-2026.webp"
             alt="Los Angeles skyline"
-            className="editorial-hero-image-wrapper"
-            imgClassName="editorial-hero-image"
+            className="w-full h-full"
+            imgClassName="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
             width={1600}
             height={900}
             priority={true}
             placeholder="empty"
-            sizes="(max-width: 600px) 400px, 100vw"
+            sizes="100vw"
           />
-          <div className="editorial-hero-overlay"></div>
+          {/* Sophisticated gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent opacity-90" />
         </div>
 
-        <div className="editorial-hero-content">
-          <div className="editorial-hero-inner">
-            <div className="editorial-hero-eyebrow">
-            </div>
-            {/* Breadcrumbs */}
-            <nav aria-label="Breadcrumb navigation for Los Angeles" className="breadcrumb-ultra-premium mt-2">
-              <ol>
-                <li className="breadcrumb-item">
-                  <Link to="/" className="breadcrumb-link" title="Home">
-                    <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                    </svg>
-                    <span className="truncate">Home</span>
-                  </Link>
+        {/* Content Container - Bottom aligned */}
+        <div className="absolute inset-0 flex flex-col justify-end px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 z-10">
+          <div className="max-w-5xl mx-auto w-full">
+            {/* Breadcrumbs - Elegant & Minimal */}
+            <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+                <li>
+                  <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
-                <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                <li className="breadcrumb-item">
-                  <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
-                    <span className="truncate">Host Cities</span>
-                  </Link>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="hover:text-white transition-colors duration-300">Host Cities</Link>
                 </li>
-                <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Los Angeles" aria-current="page">
-                    <span className="truncate">Los Angeles</span>
-                  </span>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li>
+                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Los Angeles</span>
                 </li>
               </ol>
             </nav>
-            <h1 className="editorial-hero-title">Los Angeles World Cup 2026: Complete Travel Guide</h1>
-            <div className="editorial-hero-meta">
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-map-pin-line"></i>
+
+            {/* Title - Massive & Bold (Apple/Vogue style) */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
+              Los Angeles World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+            </h1>
+
+            {/* Meta Data - Clean Row */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <i className="ri-map-pin-line text-lg"></i>
+                </div>
                 <span>USA</span>
               </div>
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-building-line"></i>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <i className="ri-building-line text-lg"></i>
+                </div>
                 <span>SoFi Stadium</span>
               </div>
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-group-line"></i>
-                <span>70,240 capacity</span>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <i className="ri-group-line text-lg"></i>
+                </div>
+                <span>70,240 Capacity</span>
               </div>
+              
+              {/* Save Guide Button */}
+              <button 
+                onClick={toggleSave}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
+              >
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                  <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
+                </div>
+                <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
+              </button>
             </div>
           </div>
         </div>
@@ -359,6 +368,34 @@ export default function LosAngelesArticlePage() {
       <main id="main-content" className="editorial-article-premium la-page py-16">
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
+          
+          {/* [QUICK SUMMARY: 8 matches, USA Opener, SoFi Stadium, SoCal Hub] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• Los Angeles hosts <strong>8 matches</strong>—including USA Opener</li>
+               <li>• Venue: <strong>SoFi Stadium</strong> (Inglewood)</li>
+               <li>• Key Event: <strong>USA vs. TBD (June 12)</strong> & Quarterfinal</li>
+               <li>• Regional Hub: Southern California</li>
+             </ul>
+          </div>
+
+          <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
+            <i className="ri-trophy-line text-emerald-500"></i>Your Complete Travel Guide to the World's City
+          </h2>
+          
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+            Eight matches. Hollywood glamour. Endless summer. Welcome to the star of FIFA World Cup 2026.
+          </p>
+
+          {/* [ESTIMATED READ TIME] */}
+          <div className="flex items-center gap-2 text-sm text-slate-400 mb-8 font-medium">
+             <i className="ri-time-line"></i> <span>8 min read</span>
+             <span className="mx-2">•</span>
+             <span>Updated Nov 2025</span>
+          </div>
+
           <div className="text-premium-lead mb-8 leading-relaxed">
             <p className="whitespace-pre-line">
               As one of the <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">World Cup 2026 host cities</Link>, Los Angeles will welcome fans from around the globe with a mix of football energy and California sunshine.
@@ -370,6 +407,12 @@ export default function LosAngelesArticlePage() {
               <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
               {` on June 12, 2026`}
             </p>
+            
+            {/* [PULL QUOTE] */}
+            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+              "Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties."
+            </blockquote>
+
             <p className="whitespace-pre-line">
               {`Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties. When the U.S. opens their 2026 campaign on June 12 at the gleaming SoFi Stadium in Inglewood, the City of Angels will welcome the world with 39 consecutive days of football fever, eight must-see matches, and a soccer culture that pulses through every corner of this sprawling metropolis. This is where beach vibes collide with championship ambitions, where tacos fuel pregame rituals, and where 3.6 million Mexican-Americans help create the most electric football atmosphere in North America.`}
             </p>
@@ -379,7 +422,7 @@ export default function LosAngelesArticlePage() {
           </div>
 
           {/* Essential Links Module — Apple-level premium */}
-          <div className="callout-premium mb-12 p-6 sm:p-8">
+          <div className="callout-premium mb-12 p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-8">
               <div className="icon-premium-lg flex items-center justify-center">
                 <i className="ri-links-line text-emerald-600" aria-hidden="true"></i>
@@ -545,7 +588,7 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
 
         {/* Transportation */}
         <article className="editorial-body theme-indigo">
-          <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Train" viewBox="0 0 24 24">
               <defs>
                 <linearGradient id="gradLATrain" x1="0" x2="1" y1="0" y2="1">
@@ -560,149 +603,197 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
             </svg>
             Getting to SoFi: Transportation That Actually Works
           </h3>
-          <div className="callout-premium p-6 sm:p-8 mb-6 flex items-start gap-3">
-            <p className="text-premium-body whitespace-pre-line mb-0">
-              {`Here's the good news LA doesn't advertise enough: You absolutely don't need a car for World Cup matches. In fact, you probably shouldn't drive.`}
-            </p>
+
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+            Navigating the sprawl: A realistic guide to reaching Inglewood from across the Southland.
+          </p>
+
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-indigo-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-indigo-600 mb-2">Transport Strategy</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Best Option:</strong> Metro C Line + Free Shuttle</li>
+               <li>• <strong>Avoid:</strong> Driving (parking costs $100+)</li>
+               <li>• <strong>Rideshare:</strong> Use designated zones only</li>
+               <li>• <strong>Tip:</strong> Load TAP card on phone before arriving</li>
+             </ul>
           </div>
-          <div className="callout-premium p-6 sm:p-8 mb-6 flex items-start gap-3">
-            <p className="text-premium-body whitespace-pre-line mb-0">
-              Los Angeles is well-connected to other host cities like
-              {' '}<Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
-              {' '}and{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
-              , making multi-city itineraries easy via air or rail.
-            </p>
+
+          <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+            <OptimizedImage
+              src="/images/safety-guide/article mode/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp"
+              alt="Public Transportation to Stadium"
+              className="absolute inset-0"
+              imgClassName="w-full h-full object-cover"
+              width={1600}
+              height={900}
+              placeholder="empty"
+              sizes="(min-width: 1024px) 960px, 100vw"
+              disableSrcSet={true}
+            />
           </div>
-          
-          <div className="mt-6 space-y-6">
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Metro" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradLAMetro" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#10b981" />
-                      <stop offset="1" stopColor="#14b8a6" />
-                    </linearGradient>
-                  </defs>
-                  <rect x="3" y="6" width="18" height="10" rx="3" fill="url(#gradLAMetro)" />
-                  <circle cx="8" cy="17" r="2" fill="#0ea5e9" />
-                  <circle cx="16" cy="17" r="2" fill="#0ea5e9" />
-                  <rect x="7" y="8" width="10" height="4" rx="1.5" fill="#ffffff" />
-                </svg>
-                Metro: Your Best Bet
-              </h4>
-              <div className="transport-card-premium">
-                <p className="text-premium-body whitespace-pre-line">
-                  {`LA Metro rolls out a dedicated SoFi Stadium Shuttle connecting from the LAX/Metro Transit Center station. Here's how it works:
 
-1. Take the C Line (Green) or K Line (Crenshaw) to LAX/Metro Transit Center
-2. Board the free SoFi Shuttle at Bus Bay 8 (runs every 5-8 minutes on event days)
-3. Arrive at the stadium in approximately 10 minutes
-
-The system connects seamlessly from Downtown LA (Metro B Line to Willowbrook/Rosa Parks, transfer to C Line), Hollywood (same route), Santa Monica (Expo Line to Downtown, then transfer), and virtually anywhere on the Metro network. A regular adult fare costs just $1.75, valid for two hours of transfers. Load it on a TAP card (available at station machines) or use the TAP app on your smartphone.
-
-Pro Tip: Park-and-ride lots at various C Line stations offer free parking on weekends. Check Metro's real-time service updates via the Transit app to avoid delays.`}
+          <div className="space-y-8">
+            {/* Metro */}
+            <section className="relative">
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+              <div className="pl-0 md:pl-6">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                  <svg className="h4-icon-svg" role="img" aria-label="Metro" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradLAMetro" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#10b981" />
+                        <stop offset="1" stopColor="#14b8a6" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="3" y="6" width="18" height="10" rx="3" fill="url(#gradLAMetro)" />
+                    <circle cx="8" cy="17" r="2" fill="#0ea5e9" />
+                    <circle cx="16" cy="17" r="2" fill="#0ea5e9" />
+                    <rect x="7" y="8" width="10" height="4" rx="1.5" fill="#ffffff" />
+                  </svg>
+                  Metro: Your Best Bet (Highly Recommended)
+                </h4>
+                <p className="leading-relaxed mb-4">
+                  LA Metro rolls out a dedicated SoFi Stadium Shuttle connecting from the <strong>LAX/Metro Transit Center</strong> station. This is the official, most efficient way to reach the venue.
+                </p>
+                <div className="callout-pro-tip border-l-4 border-emerald-400 bg-emerald-50 dark:bg-emerald-900/10 p-5 rounded-r-lg mb-4">
+                  <h5 className="text-md font-bold text-emerald-900 dark:text-emerald-100 mb-2 flex items-center gap-2">
+                    <div className="callout-icon">
+                      <i className="ri-lightbulb-flash-line"></i>
+                    </div>
+                    How it Works
+                  </h5>
+                  <ol className="leading-relaxed space-y-2 list-decimal list-inside text-emerald-900/80 dark:text-emerald-200/80">
+                    <li>Take <strong>C Line (Green)</strong> or <strong>K Line (Crenshaw)</strong> to LAX/Metro Transit Center</li>
+                    <li>Board free SoFi Shuttle at Bus Bay 8 (every 5-8 mins)</li>
+                    <li>Arrive at stadium in ~10 minutes</li>
+                  </ol>
+                </div>
+                <p className="leading-relaxed">
+                  The system connects seamlessly from Downtown LA (Metro B Line to Willowbrook/Rosa Parks, transfer to C Line), Hollywood, and Santa Monica. Regular fare is just <strong>$1.75</strong> with 2-hour transfers.
                 </p>
               </div>
-            </div>
+            </section>
 
-            <div>
-              <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Bus" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradLABus" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#0ea5e9" />
-                      <stop offset="1" stopColor="#38bdf8" />
-                    </linearGradient>
-                  </defs>
-                  <rect x="3" y="8" width="18" height="8" rx="2" fill="url(#gradLABus)" />
-                  <circle cx="8" cy="17" r="2" fill="#14b8a6" />
-                  <circle cx="16" cy="17" r="2" fill="#14b8a6" />
-                </svg>
-                Alternative Options for Strategic Travelers
-              </h4>
-              <div className="transport-card-premium">
-                <p className="text-premium-body whitespace-pre-line">
-                  {`Municipal Transit: GTrans operates Line 7X Stadium Express from Harbor Gateway Transit Center for $4 roundtrip on event days. Torrance Transit also runs special service on select dates.
-
-Rideshare Reality: Uber and Lyft work, but expect surge pricing and pickup chaos post-match. Designated zones help organize the madness, though waiting 30-45 minutes isn't unusual after major events. Split the cost with friends or embrace the Metro—you'll save money and arrive happier.
-
-Driving & Parking: If you must drive, pre-purchase parking through the stadium's official provider. Zones (color-coded: Orange, Green, Purple) open 2-4 hours pre-match and cost significantly more than Metro fare. ADA parking available with valid permits.`}
+            {/* Rideshare */}
+            <section className="relative">
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-amber-200 dark:bg-amber-900 rounded-full"></div>
+              <div className="pl-0 md:pl-6">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-amber-800 dark:text-amber-400">
+                  <svg className="h4-icon-svg" role="img" aria-label="Taxi" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradLATaxi" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#f59e0b" />
+                        <stop offset="1" stopColor="#fbbf24" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="3" y="10" width="18" height="6" rx="2" fill="url(#gradLATaxi)" />
+                    <rect x="9" y="7" width="6" height="3" rx="1" fill="#f59e0b" />
+                    <circle cx="7" cy="17" r="2" fill="#0ea5e9" />
+                    <circle cx="17" cy="17" r="2" fill="#0ea5e9" />
+                  </svg>
+                  Rideshare/Taxi (Convenient but Pricey)
+                </h4>
+                <p className="leading-relaxed mb-4">
+                  Uber and Lyft work, but expect significant surge pricing and pickup chaos post-match. Designated zones help organize the madness, though waiting 30-45 minutes isn't unusual after major events.
                 </p>
+                <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-200 dark:border-navy-700">
+                   <p className="leading-relaxed text-sm">
+                     <strong>Smart Strategy:</strong> Split the cost with friends or take the Metro away from the stadium zone before requesting a ride to save money and time.
+                   </p>
+                </div>
               </div>
-            </div>
+            </section>
+
+            {/* Driving */}
+            <section className="relative">
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+              <div className="pl-0 md:pl-6">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                  <svg className="h4-icon-svg" role="img" aria-label="Car" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradLACar" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#6366f1" />
+                        <stop offset="1" stopColor="#818cf8" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="4" y="10" width="16" height="5" rx="2" fill="url(#gradLACar)" />
+                    <path d="M6 10 L9 7 H15 L18 10" fill="#6366f1" />
+                    <circle cx="8" cy="16" r="2" fill="#0ea5e9" />
+                    <circle cx="16" cy="16" r="2" fill="#0ea5e9" />
+                  </svg>
+                  Driving + Parking (Last Resort)
+                </h4>
+                <p className="leading-relaxed mb-4">
+                  If you must drive, pre-purchase parking through the stadium's official provider. Zones (Orange, Green, Purple) open 2-4 hours pre-match.
+                </p>
+                <ul className="leading-relaxed space-y-2 list-disc list-inside text-sm text-slate-700 dark:text-slate-300">
+                  <li><strong>Cost:</strong> Significantly higher than Metro ($50-100+)</li>
+                  <li><strong>Traffic:</strong> 405 Freeway is legendary for congestion; allow extra hours</li>
+                </ul>
+              </div>
+            </section>
+          </div>
+
+          {/* Transport options summary table */}
+          <div className="comparison-table overflow-x-auto -mx-4 md:mx-0 mt-8">
+            <table aria-label="Transport options comparison — Los Angeles" className="min-w-[720px] w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="text-left p-3">Option</th>
+                  <th className="text-left p-3">Approx. Cost</th>
+                  <th className="text-left p-3">Typical Time</th>
+                  <th className="text-left p-3">Pros</th>
+                  <th className="text-left p-3">Cons</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="p-3">Metro + Shuttle</td>
+                  <td className="p-3">~$3.50 roundtrip</td>
+                  <td className="p-3">60–90 mins</td>
+                  <td className="p-3">Cheapest; avoids traffic</td>
+                  <td className="p-3">Requires transfers</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Rideshare</td>
+                  <td className="p-3">$40–80+ each way</td>
+                  <td className="p-3">45–90 mins</td>
+                  <td className="p-3">Direct; comfort</td>
+                  <td className="p-3">Surge pricing; wait times</td>
+                </tr>
+                <tr>
+                  <td className="p-3">Driving</td>
+                  <td className="p-3">$50–100+ parking</td>
+                  <td className="p-3">Variable</td>
+                  <td className="p-3">Flexible schedule</td>
+                  <td className="p-3">Traffic jams; expensive</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <hr className="editorial-divider" />
         </article>
 
-        {/* Related Destinations */}
-        <article className="editorial-body theme-amber">
-          <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
-            <svg className="heading-icon-svg" role="img" aria-label="Route" viewBox="0 0 24 24">
-              <defs>
-                <linearGradient id="gradLARoute" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stopColor="#10b981" />
-                  <stop offset="1" stopColor="#14b8a6" />
-                </linearGradient>
-              </defs>
-              <path d="M4 18 c4 -6 6 -6 10 -2 s6 2 6 -4" fill="none" stroke="url(#gradLARoute)" strokeWidth="2.5" strokeLinecap="round" />
-              <circle cx="6" cy="18" r="2" fill="#0ea5e9" />
-              <circle cx="20" cy="8" r="2" fill="#0ea5e9" />
-            </svg>
-            Plan Your West Coast World Cup Journey
-          </h3>
-          <div className="space-y-6">
-              <div className="callout-premium p-6 sm:p-8 flex items-start gap-3">
-                <p className="text-premium-body">
-                  Los Angeles is perfectly positioned for an epic West Coast World Cup adventure. Many fans combine multiple cities for the ultimate 2026 experience.
-                </p>
-              </div>
-              <div className="flex items-center gap-3">
-                <p className="font-inter text-slate-900 dark:text-white font-semibold">Popular Combinations:</p>
-              </div>
-            <div className="attraction-item">
-              <div className="item-marker"></div>
-              <p className="text-premium-body">
-                <strong>Pacific Coast Circuit</strong>
-                {' '}Start in Los Angeles, head north to{' '}
-                <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>
-                {' '}for its tech culture and iconic landmarks, then continue to{' '}
-                <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>
-                {' '}for Pacific Northwest charm.
-              </p>
-            </div>
-            <div className="attraction-item">
-              <div className="item-marker"></div>
-              <p className="text-premium-body">
-                <strong>Southern California & Beyond</strong>
-                {' '}Combine LA's beaches and entertainment and, if time allows, venture to Las Vegas for world-class shows between matches.
-              </p>
-            </div>
-            <div className="attraction-item">
-              <div className="item-marker"></div>
-              <p className="text-premium-body">
-                <strong>Cross-Border Adventure</strong>
-                {' '}Connect Los Angeles with{' '}
-                <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
-                ,{' '}
-                <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Guadalajara</Link>
-                , or{' '}
-                <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>
-                {' '}for an incredible cultural contrast.
-              </p>
-            </div>
-              <div className="callout-premium p-6 sm:p-8 flex items-start gap-3">
-                <p className="text-premium-body">
-                  <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
-                </p>
-              </div>
-          </div>
-          <hr className="editorial-divider" />
-        </article>
+
 
         {/* Where to Stay */}
-        <article className="editorial-body theme-violet">
+        <article id="stay" className="editorial-body theme-violet">
+          {/* [SCROLL ANCHOR] */}
+          <div id="stay-anchor" className="scroll-mt-24"></div>
+
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-violet-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-violet-600 mb-2">Lodging Strategy</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>West Hollywood:</strong> Central & Walkable ($$-$$$)</li>
+               <li>• <strong>Santa Monica:</strong> Beach Vibes ($$$-$$$$)</li>
+               <li>• <strong>Downtown LA:</strong> Transit Hub ($$-$$$)</li>
+               <li>• <strong>Hollywood:</strong> First-Timers ($-$$)</li>
+             </ul>
+          </div>
+
           <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Hotel" viewBox="0 0 24 24">
               <defs>
@@ -717,142 +808,187 @@ Driving & Parking: If you must drive, pre-purchase parking through the stadium's
             </svg>
             Where to Stay: Neighborhoods for Every Football Fan
           </h3>
-          <p className="text-premium-body whitespace-pre-line mb-6">
-            {`Los Angeles sprawls across 1,302 square kilometers, making neighborhood choice critical. Here's your insider breakdown based on budget, vibe, and what you actually want to experience.`}
+          
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+            Los Angeles sprawls across 1,302 square kilometers, making neighborhood choice critical. Your location determines whether you spend your trip on the beach or on the 405 Freeway.
           </p>
 
-          <NeighborhoodTable />
+          <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+            <OptimizedImage
+              src="/images/cities/los-angeles-world-cup-2026.webp"
+              alt="Los Angeles Neighborhood Overview"
+              className="absolute inset-0"
+              imgClassName="w-full h-full object-cover"
+              width={1600}
+              height={900}
+              placeholder="empty"
+              sizes="(min-width: 1024px) 960px, 100vw"
+              disableSrcSet={true}
+            />
+          </div>
+
+          {/* [PULL QUOTE] */}
+          <blockquote className="my-8 pl-6 border-l-4 border-violet-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            "The Golden Rule of LA travel: Stay near where you plan to play. Traffic is not a myth; it's a lifestyle factor."
+          </blockquote>
           
-          <div className="mt-6 space-y-6">
-            <div className="hotel-card-premium">
-              <div className="hotel-card-header">
-                <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Map pin" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradLAMapPin" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#10b981" />
-                        <stop offset="1" stopColor="#14b8a6" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M12 3 C8.7 3 6 5.7 6 9 c0 5.25 6 12 6 12 s6-6.75 6-12 c0-3.3-2.7-6-6-6z" fill="url(#gradLAMapPin)" />
-                    <circle cx="12" cy="9" r="2.5" fill="#ffffff" />
-                  </svg>
-                  West Hollywood: The Central Command ($$-$$$)
-                </h4>
-              </div>
-              <p className="text-premium-body whitespace-pre-line">
-                {`Why Stay Here: Centrally located between Hollywood and Beverly Hills, WeHo puts you walking distance from incredible restaurants, bars, and LA's vibrant LGBTQ+ scene. It's the Goldilocks zone—close enough to everything without being stuck in one corner of the city.
-
-The Vibe: Trendy, walkable, energetic. Sunset Strip nightlife meets excellent coffee shops and the city's best boutique hotels. You'll spot celebrities at Chateau Marmont and find killer Korean BBQ in adjacent Koreatown.
-
-World Cup Bonus: Easy Metro access via Hollywood/Western or Vermont/Sunset stations (15 minutes to Downtown, connect to C Line for SoFi). Uber to the stadium runs $25-35 without surge.
-
-Book Smart: The Charlie West Hollywood offers spacious suites with personality. The Hollywood Roosevelt (technically Hollywood, but close enough) sits steps from Walk of Fame and delivers old-school glamour at surprisingly fair rates.`}
+          <div className="mt-8 space-y-8">
+            {/* West Hollywood */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Map pin" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradLAMapPin" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#10b981" />
+                      <stop offset="1" stopColor="#14b8a6" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M12 3 C8.7 3 6 5.7 6 9 c0 5.25 6 12 6 12 s6-6.75 6-12 c0-3.3-2.7-6-6-6z" fill="url(#gradLAMapPin)" />
+                  <circle cx="12" cy="9" r="2.5" fill="#ffffff" />
+                </svg>
+                West Hollywood: The Central Command ($$-$$$)
+              </h4>
+              <p className="leading-relaxed mb-3">
+                <strong>Why Stay Here:</strong> Centrally located between Hollywood and Beverly Hills, WeHo puts you walking distance from incredible restaurants, bars, and LA's vibrant LGBTQ+ scene. It's the Goldilocks zone—close enough to everything without being stuck in one corner of the city.
               </p>
+              <p className="leading-relaxed mb-3">
+                <strong>The Vibe:</strong> Trendy, walkable, energetic. Sunset Strip nightlife meets excellent coffee shops and the city's best boutique hotels. You'll spot celebrities at Chateau Marmont and find killer Korean BBQ in adjacent Koreatown.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>World Cup Bonus:</strong> Easy Metro access via Hollywood/Western or Vermont/Sunset stations (15 minutes to Downtown, connect to C Line for SoFi). Uber to the stadium runs $25-35 without surge.
+              </p>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+                <p className="leading-relaxed">
+                  <strong>Book Smart:</strong> <em>The Charlie West Hollywood</em> offers spacious suites with personality. <em>The Hollywood Roosevelt</em> (technically Hollywood, but close enough) sits steps from Walk of Fame and delivers old-school glamour at surprisingly fair rates.
+                </p>
+              </div>
             </div>
 
-            <div className="hotel-card-premium">
-              <div className="hotel-card-header">
-                <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
-                    <use href="#gradLASun" />
-                    <circle cx="12" cy="12" r="4" fill="url(#gradLASun)" />
-                  </svg>
-                  Santa Monica: Beach Town Bliss ($$$-$$$$)
-                </h4>
-              </div>
-              <p className="text-premium-body whitespace-pre-line">
-                {`Why Stay Here: If you're treating the World Cup as part of a larger California adventure, Santa Monica delivers quintessential SoCal vibes. The beach, the pier, the sunshine—it's what you pictured when you booked that flight.
-
-The Vibe: Laid-back beachside community with excellent restaurants, Third Street Promenade shopping, and sunset views that'll dominate your Instagram. Families love it; so do couples seeking romance with waves as soundtrack.
-
-World Cup Reality Check: You're 45 minutes from SoFi by Metro (Expo Line to Downtown, transfer to C Line), longer by car during rush hour. Factor travel time carefully—you don't want to miss kickoff because you lingered over brunch.
-
-Book Smart: Shore Hotel sits across from the sand with eco-conscious amenities and modern style. Casa Del Mar oozes Renaissance Revival luxury for those with budgets to match.`}
+            {/* Santa Monica */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
+                   <defs>
+                    <linearGradient id="gradLASun" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f59e0b" />
+                      <stop offset="1" stopColor="#fbbf24" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="12" cy="12" r="4" fill="url(#gradLASun)" />
+                  <path d="M12 2 v2 M12 20 v2 M2 12 h2 M20 12 h2 M4.9 4.9 l1.4 1.4 M17.7 17.7 l1.4 1.4 M4.9 19.1 l1.4 -1.4 M17.7 6.3 l1.4 -1.4" stroke="url(#gradLASun)" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                Santa Monica: Beach Town Bliss ($$$-$$$$)
+              </h4>
+              <p className="leading-relaxed mb-3">
+                <strong>Why Stay Here:</strong> If you're treating the World Cup as part of a larger California adventure, Santa Monica delivers quintessential SoCal vibes. The beach, the pier, the sunshine—it's what you pictured when you booked that flight.
               </p>
+              <p className="leading-relaxed mb-3">
+                <strong>The Vibe:</strong> Laid-back beachside community with excellent restaurants, Third Street Promenade shopping, and sunset views that'll dominate your Instagram. Families love it; so do couples seeking romance with waves as soundtrack.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>World Cup Reality Check:</strong> You're 45 minutes from SoFi by Metro (Expo Line to Downtown, transfer to C Line), longer by car during rush hour. Factor travel time carefully—you don't want to miss kickoff because you lingered over brunch.
+              </p>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+                <p className="leading-relaxed">
+                  <strong>Book Smart:</strong> <em>Shore Hotel</em> sits across from the sand with eco-conscious amenities and modern style. <em>Casa Del Mar</em> oozes Renaissance Revival luxury for those with budgets to match.
+                </p>
+              </div>
             </div>
 
-            <div className="hotel-card-premium">
-              <div className="hotel-card-header">
-                <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Building" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradLADowntown" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#6366f1" />
-                        <stop offset="1" stopColor="#818cf8" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="5" y="9" width="5" height="7" rx="1" fill="url(#gradLADowntown)" />
-                    <rect x="11" y="6" width="5" height="10" rx="1" fill="#0ea5e9" />
-                    <rect x="17" y="10" width="2" height="6" rx="1" fill="url(#gradLADowntown)" />
-                  </svg>
-                  Downtown LA: Arts, Culture & Connection ($$-$$$)
-                </h4>
-              </div>
-              <p className="text-premium-body whitespace-pre-line">
-                {`Why Stay Here: Downtown puts you at the Metro hub (Union Station), near arts attractions (The Broad, MOCA, Walt Disney Concert Hall), and in the middle of LA's best public transit connections. The Arts District specifically offers warehouse-chic dining and breweries.
-
-The Vibe: Urban, artistic, diverse. Less touristy than Hollywood, grittier than Westside, but culturally rich. Night Market brings Filipino street food, Grand Central Market serves world cuisine, and Little Tokyo neighbors the convention center.
-
-World Cup Advantage: Best Metro access in the city. C Line direct from several DTLA stations to SoFi. Multiple hotel options from business-class (InterContinental) to design-forward (Freehand Los Angeles with rooftop pool).
-
-Book Smart: Downtown LA Proper delivers boutique style in the historic district. Avoid Skid Row areas (east of Alameda Street) and stick to Arts District, Financial District, or near Grand Park.`}
+            {/* Downtown LA */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Building" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradLADowntown" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#6366f1" />
+                      <stop offset="1" stopColor="#818cf8" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="5" y="9" width="5" height="7" rx="1" fill="url(#gradLADowntown)" />
+                  <rect x="11" y="6" width="5" height="10" rx="1" fill="#0ea5e9" />
+                  <rect x="17" y="10" width="2" height="6" rx="1" fill="url(#gradLADowntown)" />
+                </svg>
+                Downtown LA: Arts, Culture & Connection ($$-$$$)
+              </h4>
+              <p className="leading-relaxed mb-3">
+                <strong>Why Stay Here:</strong> Downtown puts you at the Metro hub (Union Station), near arts attractions (The Broad, MOCA, Walt Disney Concert Hall), and in the middle of LA's best public transit connections. The Arts District specifically offers warehouse-chic dining and breweries.
               </p>
+              <p className="leading-relaxed mb-3">
+                <strong>The Vibe:</strong> Urban, artistic, diverse. Less touristy than Hollywood, grittier than Westside, but culturally rich. Night Market brings Filipino street food, Grand Central Market serves world cuisine, and Little Tokyo neighbors the convention center.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>World Cup Advantage:</strong> Best Metro access in the city. C Line direct from several DTLA stations to SoFi. Multiple hotel options from business-class (InterContinental) to design-forward (Freehand Los Angeles with rooftop pool).
+              </p>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+                <p className="leading-relaxed">
+                  <strong>Book Smart:</strong> <em>Downtown LA Proper</em> delivers boutique style in the historic district. Avoid Skid Row areas (east of Alameda Street) and stick to Arts District, Financial District, or near Grand Park.
+                </p>
+              </div>
             </div>
 
-            <div className="hotel-card-premium">
-              <div className="hotel-card-header">
-                <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Movie" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradLAMovie" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#0ea5e9" />
-                        <stop offset="1" stopColor="#38bdf8" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="5" y="8" width="14" height="8" rx="2" fill="url(#gradLAMovie)" />
-                    <circle cx="9" cy="12" r="1.5" fill="#ffffff" />
-                    <circle cx="15" cy="12" r="1.5" fill="#ffffff" />
-                  </svg>
-                  Hollywood: Tourist Central with Purpose ($-$$)
-                </h4>
-              </div>
-              <p className="text-premium-body whitespace-pre-line">
-                {`Why Stay Here: You came to LA, you want Hollywood Boulevard, Chinese Theatre, Watch of Fame, Griffith Observatory access. First-timers often regret skipping the classics.
-
-The Vibe: Touristy, yes. But also energetic, affordable (compared to beaches), and better than its reputation suggests. Hollywood & Highland area cleans up well; Hills neighborhoods offer canyon views.
-
-World Cup Value: Metro B Line (Red) connects directly to downtown transfers for SoFi access. Hostels exist for budget travelers; mid-range hotels cluster near Highland Avenue.
-
-Book Smart: Magic Castle Hotel delivers character without breaking the bank. The Hollywood Roosevelt offers poolside glamour where Marilyn Monroe once sunbathed.`}
+            {/* Hollywood */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Movie" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradLAMovie" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#0ea5e9" />
+                      <stop offset="1" stopColor="#38bdf8" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="5" y="8" width="14" height="8" rx="2" fill="url(#gradLAMovie)" />
+                  <circle cx="9" cy="12" r="1.5" fill="#ffffff" />
+                  <circle cx="15" cy="12" r="1.5" fill="#ffffff" />
+                </svg>
+                Hollywood: Tourist Central with Purpose ($-$$)
+              </h4>
+              <p className="leading-relaxed mb-3">
+                <strong>Why Stay Here:</strong> You came to LA, you want Hollywood Boulevard, Chinese Theatre, Watch of Fame, Griffith Observatory access. First-timers often regret skipping the classics.
               </p>
+              <p className="leading-relaxed mb-3">
+                <strong>The Vibe:</strong> Touristy, yes. But also energetic, affordable (compared to beaches), and better than its reputation suggests. Hollywood & Highland area cleans up well; Hills neighborhoods offer canyon views.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>World Cup Value:</strong> Metro B Line (Red) connects directly to downtown transfers for SoFi access. Hostels exist for budget travelers; mid-range hotels cluster near Highland Avenue.
+              </p>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+                <p className="leading-relaxed">
+                  <strong>Book Smart:</strong> <em>Magic Castle Hotel</em> delivers character without breaking the bank. <em>The Hollywood Roosevelt</em> offers poolside glamour where Marilyn Monroe once sunbathed.
+                </p>
+              </div>
             </div>
 
-            <div className="hotel-card-premium">
-              <div className="hotel-card-header">
-                <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Crown" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradLACrown" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#f59e0b" />
-                        <stop offset="1" stopColor="#fbbf24" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M4 16 h16 v2 H4z" fill="#0ea5e9" />
-                    <path d="M4 16 l3 -6 l5 4 l5 -4 l3 6z" fill="url(#gradLACrown)" />
-                  </svg>
-                  Beverly Hills: Luxury with Star Power ($$$$)
-                </h4>
-              </div>
-              <p className="text-premium-body whitespace-pre-line">
-                {`Why Stay Here: You want to see where movie stars shop, dine at Michelin-starred restaurants, and possibly spot a Ferrari or three on Rodeo Drive. Beverly Hills sells a fantasy, and sometimes fantasies are worth funding.
-
-The Vibe: Polished, manicured, expensive. Palm tree-lined streets, luxury boutiques, old Hollywood elegance. Not walkable to much beyond its own borders, but Uber makes anywhere accessible.
-
-World Cup Consideration: You're paying for prestige, not proximity. Budget 30-40 minutes to SoFi by car, slightly more by Metro (no direct line; requires transfers).
-
-Book Smart: Four Seasons Beverly Hills justifies the splurge with impeccable service and that "I made it" feeling. Alternatively, Airbnb offers homes that sleep groups in nearby neighborhoods like Culver City or Marina del Rey for better value.`}
+            {/* Beverly Hills */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Crown" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradLACrown" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f59e0b" />
+                      <stop offset="1" stopColor="#fbbf24" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M4 16 h16 v2 H4z" fill="#0ea5e9" />
+                  <path d="M4 16 l3 -6 l5 4 l5 -4 l3 6z" fill="url(#gradLACrown)" />
+                </svg>
+                Beverly Hills: Luxury with Star Power ($$$$)
+              </h4>
+              <p className="leading-relaxed mb-3">
+                <strong>Why Stay Here:</strong> You want to see where movie stars shop, dine at Michelin-starred restaurants, and possibly spot a Ferrari or three on Rodeo Drive. Beverly Hills sells a fantasy, and sometimes fantasies are worth funding.
               </p>
+              <p className="leading-relaxed mb-3">
+                <strong>The Vibe:</strong> Polished, manicured, expensive. Palm tree-lined streets, luxury boutiques, old Hollywood elegance. Not walkable to much beyond its own borders, but Uber makes anywhere accessible.
+              </p>
+              <p className="leading-relaxed mb-3">
+                <strong>World Cup Consideration:</strong> You're paying for prestige, not proximity. Budget 30-40 minutes to SoFi by car, slightly more by Metro (no direct line; requires transfers).
+              </p>
+              <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+                 <p className="leading-relaxed">
+                   <strong>Book Smart:</strong> <em>Four Seasons Beverly Hills</em> justifies the splurge with impeccable service and that "I made it" feeling. Alternatively, Airbnb offers homes that sleep groups in nearby neighborhoods like Culver City or Marina del Rey for better value.
+                 </p>
+              </div>
             </div>
           </div>
           <hr className="editorial-divider" />
@@ -860,12 +996,23 @@ Book Smart: Four Seasons Beverly Hills justifies the splurge with impeccable ser
 
         {/* LA Football Culture */}
         <article className="editorial-body theme-rose">
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-rose-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-rose-600 mb-2">Culture Check</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>El Tráfico:</strong> The fiercest rivalry in MLS</li>
+               <li>• <strong>Street Scene:</strong> Pickup games on Venice Beach</li>
+               <li>• <strong>Supporters:</strong> The 3252 (LAFC) & Riot Squad (Galaxy)</li>
+               <li>• <strong>History:</strong> Hosting big matches since '94</li>
+             </ul>
+          </div>
+
           <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Football" viewBox="0 0 24 24">
               <defs>
                 <linearGradient id="gradLAFootball" x1="0" x2="1" y1="0" y2="1">
-                  <stop offset="0" stopColor="#10b981" />
-                  <stop offset="1" stopColor="#14b8a6" />
+                  <stop offset="0" stopColor="#e11d48" />
+                  <stop offset="1" stopColor="#be123c" />
                 </linearGradient>
               </defs>
               <circle cx="12" cy="12" r="6" fill="url(#gradLAFootball)" />
@@ -874,6 +1021,26 @@ Book Smart: Four Seasons Beverly Hills justifies the splurge with impeccable ser
             </svg>
             Beyond the Pitch: What Makes LA Football Culture Special
           </h3>
+          
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+             From the glitz of the Galaxy to the grit of LAFC, this city doesn't just watch football—it lives it.
+          </p>
+
+          <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+            <OptimizedImage
+              src="/images/safety-guide/article mode/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World.webp"
+              alt="Fans arriving at the stadium"
+              className="absolute inset-0"
+              imgClassName="w-full h-full object-cover"
+              width={1600}
+              height={900}
+              placeholder="empty"
+              sizes="(min-width: 1024px) 960px, 100vw"
+              disableSrcSet={true}
+            />
+          </div>
+
           <div className="mt-6 space-y-6">
               <div className="callout-premium p-6 sm:p-8">
                 <div className="flex items-start gap-3 mb-2">
@@ -951,6 +1118,17 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
 
         {/* What to Do When You're Not at Matches */}
         <article className="editorial-body theme-teal">
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-teal-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-teal-600 mb-2">LA Bucket List</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Beaches:</strong> Santa Monica & Venice Boardwalk</li>
+               <li>• <strong>Views:</strong> Griffith Observatory at sunset</li>
+               <li>• <strong>Culture:</strong> LACMA & The Getty Center</li>
+               <li>• <strong>Eats:</strong> Late-night Tacos & K-Town BBQ</li>
+             </ul>
+          </div>
+
           <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Compass" viewBox="0 0 24 24">
               <defs>
@@ -965,6 +1143,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
             What to Do When You're Not at Matches
           </h3>
           
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+             You came for the football, but you'll stay for the endless summer, the Hollywood magic, and the best tacos north of the border.
+          </p>
+
           <div className="mt-6 space-y-6">
             <div className="attraction-card-premium">
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
@@ -1060,6 +1243,17 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
 
         {/* Practical Travel Tips */}
         <article className="editorial-body theme-sky">
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-sky-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-sky-600 mb-2">Travel Intel</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Weather:</strong> Perfect 80°F days, cool nights</li>
+               <li>• <strong>Safety:</strong> Stick to tourist zones; use common sense</li>
+               <li>• <strong>Connectivity:</strong> US SIM cards at LAX; WiFi widely available</li>
+               <li>• <strong>Money:</strong> Card is king; tipping 18-20% is standard</li>
+             </ul>
+          </div>
+
           <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Lightbulb" viewBox="0 0 24 24">
               <use href="#gradLASun" />
@@ -1069,6 +1263,11 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
             Practical Travel Tips for World Cup Visitors
           </h3>
           
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+             Navigating the sprawl requires strategy. Here's how to survive the 405, the June Gloom, and the sheer scale of the city.
+          </p>
+
           <div className="mt-6 space-y-6">
             <div className="callout-premium p-6 sm:p-8">
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
@@ -1173,6 +1372,17 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
 
         {/* World Cup Booking Strategy */}
         <article className="editorial-body theme-purple">
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-purple-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-purple-600 mb-2">Booking Strategy</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Hotels:</strong> Book 12+ months out if possible</li>
+               <li>• <strong>Flights:</strong> Look at BUR or LGB airports for easier access</li>
+               <li>• <strong>Location:</strong> Stay near your primary activity zone</li>
+               <li>• <strong>Insurance:</strong> Essential for big-ticket trips</li>
+             </ul>
+          </div>
+
           <h3 className="editorial-h3 font-display font-bold text-3xl animate-fade-up mb-4 flex items-center gap-3">
             <svg className="heading-icon-svg" role="img" aria-label="Calendar check" viewBox="0 0 24 24">
               <defs>
@@ -1188,6 +1398,11 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
             Your World Cup Booking Strategy
           </h3>
           
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+             The early bird gets the room rate. Waiting until 2026 to book your stay is a rookie mistake.
+          </p>
+
           <div className="mt-6 space-y-6">
             <div className="callout-premium p-6 sm:p-8">
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
@@ -1315,10 +1530,138 @@ Check trusted booking partners that specialize in major sporting events—they o
 
       </main>
 
-      <section className="max-w-3xl mx-auto px-6 pb-12">
-        <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+      <section className="max-w-4xl mx-auto px-6 pb-12">
+        
+        {/* Interactive Rating Section */}
+        <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="relative z-10">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
+            
+            <div className="flex items-center justify-center gap-2 mb-4">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <button
+                  key={star}
+                  onClick={() => handleRate(star)}
+                  onMouseEnter={() => setHoverRating(star)}
+                  onMouseLeave={() => setHoverRating(0)}
+                  className="p-1 focus:outline-none transition-transform hover:scale-110"
+                  aria-label={`Rate ${star} stars`}
+                >
+                  <i className={`text-3xl ri-star-${(hoverRating || userRating) >= star ? 'fill' : 'line'} ${(hoverRating || userRating) >= star ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'} transition-colors duration-200`}></i>
+                </button>
+              ))}
+            </div>
+            
+            <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+                <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
+              </p>
+            </div>
+          </div>
+          {/* Background decorative elements */}
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
         </div>
+
+        {/* Related Guides Recommendation Engine */}
+        <div className="mb-16">
+          <div className="flex items-center justify-between mb-8">
+            <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
+            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+              View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
+            </Link>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Recommendation 1: San Francisco (California Neighbor) */}
+            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="group block relative overflow-hidden rounded-2xl aspect-video md:aspect-[1.5/1]">
+              <OptimizedImage 
+                src="/images/cities/san-francisco-world-cup-2026.webp" 
+                alt="San Francisco World Cup Guide"
+                className="absolute inset-0 w-full h-full"
+                imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={600}
+                height={400}
+                placeholder="empty" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              <div className="absolute bottom-0 left-0 p-6 w-full">
+                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">California Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">San Francisco</h4>
+                <p className="text-slate-300 text-sm line-clamp-2">Levi's Stadium guide and Bay Area tech & wine culture.</p>
+              </div>
+            </Link>
+
+            {/* Recommendation 2: Seattle (West Coast Hub) */}
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="group block relative overflow-hidden rounded-2xl aspect-video md:aspect-[1.5/1]">
+               <OptimizedImage 
+                src="/images/cities/seattle-world-cup-2026.webp" 
+                alt="Seattle World Cup Guide"
+                className="absolute inset-0 w-full h-full"
+                imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                width={600}
+                height={400}
+                placeholder="empty"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+              <div className="absolute bottom-0 left-0 p-6 w-full">
+                <span className="inline-block px-2 py-1 rounded bg-teal-500/20 backdrop-blur-sm border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-wider mb-2">PNW Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">Seattle</h4>
+                <p className="text-slate-300 text-sm line-clamp-2">Lumen Field guide and Pacific Northwest adventures.</p>
+              </div>
+            </Link>
+          </div>
+        </div>
+
+        {/* Elite Tier Footer Meta Section */}
+        <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
+             {/* Decorative background glow */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            
+            {/* Share Section */}
+            <div className="flex items-center gap-4 relative z-10">
+              <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider font-space">Share Guide</span>
+              <div className="flex items-center gap-2">
+                <a href={`https://twitter.com/intent/tweet?text=Los%20Angeles%20World%20Cup%202026%20Guide&url=${siteUrl}${pageUrl}`} 
+                   target="_blank" rel="noopener noreferrer"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-black dark:hover:bg-black border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   aria-label="Share on X">
+                  <i className="ri-twitter-x-line text-lg group-hover:scale-110 transition-transform"></i>
+                </a>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}${pageUrl}`} 
+                   target="_blank" rel="noopener noreferrer"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#1877F2] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   aria-label="Share on Facebook">
+                  <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
+                </a>
+                <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   aria-label="Copy Link">
+                  <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
+                </button>
+              </div>
+            </div>
+
+            {/* Separator for mobile */}
+            <div className="w-full h-px bg-slate-200 dark:bg-slate-700 md:hidden"></div>
+
+            {/* Last Reviewed Section */}
+            <div className="flex items-center gap-3 relative z-10">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                <i className="ri-shield-check-fill text-xl"></i>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Verified & Updated</p>
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
+                   {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </p>
+              </div>
+            </div>
+          </div>
+        </aside>
       </section>
       <Footer />
     </div>

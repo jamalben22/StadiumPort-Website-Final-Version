@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
@@ -6,8 +6,117 @@ import { SchemaOrg, generateCityGuideSchema, generateBreadcrumbSchema, generateI
 import { OptimizedImage } from '../../../components/base/OptimizedImage';
 import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { getEditorialEntry } from '../../../components/seo/EditorialCalendar';
+import { 
+  MapPin, 
+  Calendar, 
+  Clock, 
+  Info, 
+  Ticket, 
+  Check, 
+  Star, 
+  ArrowRight, 
+  Share2, 
+  Building, 
+  Users, 
+  Train, 
+  Bus, 
+  Car, 
+  AlertTriangle, 
+  Trophy, 
+  ClipboardCheck, 
+  Briefcase, 
+  Plane, 
+  Leaf, 
+  Shield, 
+  Sun, 
+  Wallet,
+  Bookmark,
+  ChevronRight
+} from 'lucide-react';
+
+
 
 export default function MiamiCityGuide() {
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [tocSections, setTocSections] = useState<Array<{ id: string; label: string; level: number }>>([]);
+  const [activeId, setActiveId] = useState<string>('');
+  const [isMobileTocOpen, setIsMobileTocOpen] = useState(false);
+
+  // Feature: Save Guide & Rating
+  const [isSaved, setIsSaved] = useState(false);
+  const [userRating, setUserRating] = useState(0);
+  const [hoverRating, setHoverRating] = useState(0);
+  const [hasRated, setHasRated] = useState(false);
+  const currentPath = '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
+
+  useEffect(() => {
+    // Load saved state
+    const saved = localStorage.getItem('stadiumport_saved_guides');
+    if (saved) {
+      const guides = JSON.parse(saved);
+      setIsSaved(guides.includes(currentPath));
+    }
+    
+    // Load rating
+    const rating = localStorage.getItem(`stadiumport_rating_${currentPath}`);
+    if (rating) {
+      setUserRating(parseInt(rating));
+      setHasRated(true);
+    }
+  }, []);
+
+  const toggleSave = () => {
+    const saved = localStorage.getItem('stadiumport_saved_guides');
+    let guides = saved ? JSON.parse(saved) : [];
+    if (isSaved) {
+      guides = guides.filter((g: string) => g !== currentPath);
+    } else {
+      guides.push(currentPath);
+    }
+    localStorage.setItem('stadiumport_saved_guides', JSON.stringify(guides));
+    setIsSaved(!isSaved);
+  };
+
+  const handleRate = (rating: number) => {
+    setUserRating(rating);
+    setHasRated(true);
+    localStorage.setItem(`stadiumport_rating_${currentPath}`, rating.toString());
+  };
+
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll('.editorial-body h2, .editorial-body h3')) as HTMLElement[];
+    const used = new Set<string>();
+    const slug = (t: string) => t
+      .toLowerCase()
+      .replace(new RegExp('[^a-z0-9\\s-]', 'g'), '')
+      .trim()
+      .replace(new RegExp('\\s+', 'g'), '-')
+      .slice(0, 60);
+    const items = nodes.map((el, idx) => {
+      const text = (el.textContent || `Section ${idx + 1}`).trim();
+      let id = el.id || slug(text) || `section-${idx + 1}`;
+      while (used.has(id)) id = `${id}-${idx}`;
+      el.id = id;
+      el.style.scrollMarginTop = '120px';
+      used.add(id);
+      return { id, label: text, level: el.tagName === 'H2' ? 2 : 3 };
+    });
+    setTocSections(items);
+    if (items.length && !activeId) setActiveId(items[0].id);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio || 0) - (a.intersectionRatio || 0));
+        if (visible[0]?.target?.id) setActiveId(visible[0].target.id);
+      },
+      { root: null, rootMargin: '0px 0px -60% 0px', threshold: [0.1, 0.25, 0.5] }
+    );
+    nodes.forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const link = document.createElement('link')
     link.rel = 'preload'
@@ -15,198 +124,260 @@ export default function MiamiCityGuide() {
     link.href = '/images/cities/miami-world-cup-2026.webp'
     document.head.appendChild(link)
   }, [])
-  const pageUrl = '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
+
   useEffect(() => {
-    window.scrollTo(0, 0);
-    
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-    const ogImage = `${siteUrl}/images/cities/miami-world-cup-2026.webp`;
-    const fullUrl = `${siteUrl}/world-cup-2026-host-cities/miami-world-cup-2026-guide`;
+    const onScroll = () => {
+      const doc = document.documentElement
+      const scrollTop = doc.scrollTop || document.body.scrollTop
+      const scrollHeight = doc.scrollHeight - doc.clientHeight
+      const progress = scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0
+      setScrollProgress(Math.min(100, Math.max(0, progress)))
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+  const pageUrl = '/world-cup-2026-host-cities/miami-world-cup-2026-guide';
+
+  useEffect(() => {
     const entry = getEditorialEntry('city','miami')
-    setPageMeta({ 
-      title: 'Miami 2026 FIFA World Cup: Complete Travel Guide | StadiumPort', 
-      description: 'Complete Miami World Cup 2026 travel guide. 7 matches including Bronze Final at Hard Rock Stadium. Hotels, transportation, attractions, and insider tips for South Florida\'s soccer spectacle.', 
-      url: fullUrl, image: ogImage, locale: 'en_US', 
-      publishedTime: entry?.isPublished ? entry.datePublished : undefined, 
-      modifiedTime: new Date().toISOString(), section: 'Host Cities', 
-      tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium', ...(entry?.keywords||[])] 
+    setPageMeta({
+      title: 'Miami – World Cup 2026 Guide',
+      description: 'The ultimate guide to World Cup 2026 in Miami. Hard Rock Stadium info, match schedule, hotels, transportation, and local tips for fans.',
+      url: `${siteUrl}${pageUrl}`,
+      image: `${siteUrl}/images/cities/miami-world-cup-2026.webp`,
+      locale: 'en_US',
+      publishedTime: entry?.isPublished ? entry.datePublished : undefined,
+      modifiedTime: new Date().toISOString(),
+      section: entry?.section || 'Host Cities',
+      tags: ['World Cup 2026', 'Host Cities', 'Miami', 'Hard Rock Stadium', ...(entry?.keywords||[])]
     })
-  }, []);
-
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
-    { name: 'Host Cities', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities` },
-    { name: 'Miami', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami-world-cup-2026-guide` }
-  ]);
-
-  const cityGuideSchema = generateCityGuideSchema(
-    'Miami 2026 FIFA World Cup Travel Guide',
-    'Complete guide to Miami World Cup 2026 with 7 matches including Bronze Final. Travel tips, hotels, transportation, and attractions in South Florida.',
-    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/miami-world-cup-2026-guide`,
-    { datePublished: (getEditorialEntry('city','miami')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
-  );
+  }, [])
 
   return (
-    <>
-      <SchemaOrg schema={[breadcrumbSchema, cityGuideSchema, generateImageObjectSchema('/images/cities/miami-world-cup-2026.webp', { width: 1600, height: 900, caption: 'Miami skyline – World Cup 2026' })]} />
-      <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-        <Header />
-        
-        {/* Editorial Hero — cohesive with NYC article style */}
-        <section className="editorial-hero">
-          <div className="editorial-hero-media">
-            <OptimizedImage
-              src="/images/cities/miami-world-cup-2026.webp"
-              alt="Miami skyline at golden hour"
-              className="editorial-hero-image-wrapper"
-              imgClassName="editorial-hero-image hero-focus-miami"
-              width={1600}
-              height={900}
-              priority={true}
-              placeholder="empty"
-              sizes="100vw"
-            />
-            <div className="editorial-hero-overlay"></div>
-          </div>
+    <div className="min-h-screen w-full bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+      <SchemaOrg
+        schema={[
+          generateCityGuideSchema(
+            'Miami – World Cup 2026 Guide',
+            'The ultimate guide to World Cup 2026 in Miami. Hard Rock Stadium info, match schedule, hotels, transportation, and local tips for fans.',
+            `${siteUrl}${pageUrl}`,
+            { datePublished: (getEditorialEntry('city','miami')?.datePublished), dateModified: new Date().toISOString(), inLanguage: 'en-US', articleSection: 'Host Cities', keywords: ['World Cup 2026', 'Miami', 'Hard Rock Stadium'] }
+          ),
+          generateBreadcrumbSchema([
+            { name: 'Home', url: '/' },
+            { name: 'Host Cities', url: '/world-cup-2026-host-cities' },
+            { name: 'Miami', url: pageUrl }
+          ]),
+          generateImageObjectSchema(
+            '/images/cities/miami-world-cup-2026.webp',
+            { width: 1600, height: 900, caption: 'Miami skyline – World Cup 2026' }
+          )
+        ]}
+      />
 
-          <div className="editorial-hero-content">
-            <div className="editorial-hero-inner">
-            <div className="editorial-hero-eyebrow">
+      <Header />
+      <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+          <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
+            <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
+            <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
             </div>
-              <nav aria-label="Breadcrumb navigation for Miami" className="breadcrumb-ultra-premium mt-2">
-                <ol>
-                  <li className="breadcrumb-item">
-                    <Link to="/" className="breadcrumb-link" title="Home">
-                      <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                      </svg>
-                      <span className="truncate">Home</span>
-                    </Link>
-                  </li>
-                  <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                  <li className="breadcrumb-item">
-                    <Link to="/world-cup-2026-host-cities" className="breadcrumb-link" title="Host Cities">
-                      <span className="truncate">Host Cities</span>
-                    </Link>
-                  </li>
-                  <li className="breadcrumb-separator" aria-hidden="true">›</li>
-                <li className="breadcrumb-item">
-                  <span className="breadcrumb-current" title="Miami" aria-current="page">
-                    <span className="truncate">Miami</span>
-                  </span>
+          </div>
+          <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
+            <ul className="space-y-1">
+              {tocSections.map(({ id, label, level }) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const el = document.getElementById(id);
+                      el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
+                    className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
+                      activeId === id
+                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
+                    } ${level === 3 ? 'pl-6' : ''}`}
+                  >
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className="text-sm font-medium">{label}</span>
+                  </a>
                 </li>
-                </ol>
-              </nav>
-              <h1 className="editorial-hero-title">Miami World Cup 2026: Complete Travel Guide</h1>
-              <div className="editorial-hero-meta">
-                <div className="meta-item flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Map pin" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradPinM" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#10b981" />
-                        <stop offset="1" stopColor="#14b8a6" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M12 3 C8.7 3 6 5.7 6 9 c0 5.25 6 12 6 12 s6-6.75 6-12 c0-3.3-2.7-6-6-6z" fill="url(#gradPinM)" />
-                    <circle cx="12" cy="9" r="2.3" fill="#ffffff" />
-                  </svg>
-                  <span>USA</span>
-                </div>
-                <div className="meta-item flex items-center gap-2">
-                  <span>Hard Rock Stadium</span>
-                </div>
-                <div className="meta-item flex items-center gap-2">
-                  <span>65,326 Capacity</span>
-                </div>
+              ))}
+            </ul>
+          </div>
+          <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+          </div>
+        </nav>
+      </aside>
+
+      <div className="2xl:hidden fixed bottom-4 left-0 right-0 z-40 px-4">
+        <div className="mx-auto max-w-sm">
+          <button
+            aria-label="Open sections menu"
+            onClick={() => setIsMobileTocOpen(v => !v)}
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+          >
+            <div className="inline-flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+                <Check className="w-4 h-4" />
               </div>
+              <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
+            </div>
+            <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+            </div>
+            <ChevronRight className={`w-5 h-5 transition-transform ${isMobileTocOpen ? 'rotate-90' : ''}`} />
+          </button>
+
+          {isMobileTocOpen && (
+            <div className="mt-3 rounded-2xl bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl overflow-hidden">
+              <ul className="max-h-[50vh] overflow-auto">
+                {tocSections.map(({ id, label, level }) => (
+                  <li key={id}>
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(id);
+                        el?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        setIsMobileTocOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
+                        activeId === id
+                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
+                      } ${level === 3 ? 'pl-6' : ''}`}
+                    >
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Editorial Hero — World Class Redesign */}
+      <section className="relative w-full h-[85vh] min-h-[600px] bg-slate-900 overflow-hidden group">
+        {/* Background Image with subtle zoom effect */}
+        <div className="absolute inset-0 w-full h-full">
+          <OptimizedImage
+            src="/images/cities/miami-world-cup-2026.webp"
+            alt="Miami skyline"
+            className="w-full h-full"
+            imgClassName="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
+            width={1600}
+            height={900}
+            priority={true}
+            placeholder="empty"
+            sizes="100vw"
+          />
+          {/* Sophisticated gradient overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent opacity-90" />
+        </div>
+
+        {/* Content Container - Bottom aligned */}
+        <div className="absolute inset-0 flex flex-col justify-end px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 z-10">
+          <div className="max-w-5xl mx-auto w-full">
+            {/* Breadcrumbs - Elegant & Minimal */}
+            <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+                <li>
+                  <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
+                </li>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li>
+                  <Link to="/world-cup-2026-host-cities" className="hover:text-white transition-colors duration-300">Host Cities</Link>
+                </li>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li>
+                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Miami</span>
+                </li>
+              </ol>
+            </nav>
+
+            {/* Title - Massive & Bold (Apple/Vogue style) */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
+              Miami World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+            </h1>
+
+            {/* Meta Data - Clean Row */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span>USA</span>
+              </div>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <Building className="w-5 h-5" />
+                </div>
+                <span>Hard Rock Stadium</span>
+              </div>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                  <Users className="w-5 h-5" />
+                </div>
+                <span>65,326 Capacity</span>
+              </div>
+              
+              {/* Save Guide Button */}
+              <button 
+                onClick={toggleSave}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
+              >
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                  {isSaved ? <Bookmark className="w-5 h-5 fill-current" /> : <Bookmark className="w-5 h-5" />}
+                </div>
+                <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
+              </button>
             </div>
           </div>
-        </section>
-        <script dangerouslySetInnerHTML={{ __html: '' }} />
+        </div>
+      </section>
 
-        {/* Content Sections — Editorial presentation aligned to LA premium */}
-        <section id="main-content" className="editorial-article-premium miami-page py-16">
+      {/* Content Sections — Premium editorial presentation aligned with NYC/LA */}
+      <section id="main-content" className="editorial-article-premium miami-page py-16">
+        {/* Introduction */}
+        <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
+          {/* [QUICK SUMMARY: 7 matches, Bronze Final, Hard Rock Stadium] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• Miami hosts <strong>7 matches</strong> including the <strong>Bronze Final</strong></li>
+               <li>• Venue: <strong>Hard Rock Stadium</strong> (Miami Gardens)</li>
+               <li>• Key Dates: June 15 – July 18, 2026</li>
+               <li>• Hub for Americas: Gateway to Latin America & Caribbean</li>
+             </ul>
+          </div>
+
+          <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
+            <Trophy className="w-6 h-6 text-emerald-500" />Your Complete Travel Guide to South Florida's Soccer Spectacle
+          </h2>
           
-          {/* Introduction */}
-          <article className="editorial-body editorial-dropcap theme-emerald">
-            {/* Opening Architecture */}
-            <div className="mb-8">
-              <h2 className="text-2xl md:text-3xl font-serif font-bold text-slate-900 dark:text-slate-100 mb-4 leading-tight">
-                South Florida's Global Football Festival
-              </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 font-medium leading-relaxed mb-6">
-                Your definitive guide to seven high-stakes matches, the prestigious Bronze Final, and navigating Miami's electric fan culture during World Cup 2026.
-              </p>
-              
-              {/* Quick Summary Box */}
-              <div className="bg-emerald-50 dark:bg-emerald-900/20 border-l-4 border-emerald-500 p-6 rounded-r-lg mb-8">
-                <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-300 uppercase tracking-wider text-sm mb-3">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                  Quick Summary
-                </h4>
-                <ul className="space-y-2 text-slate-700 dark:text-slate-300">
-                  <li className="flex items-start gap-2"><span className="text-emerald-500 font-bold">•</span> <strong>7 Matches:</strong> Hosting one of the highest allocations including the Bronze Final.</li>
-                  <li className="flex items-start gap-2"><span className="text-emerald-500 font-bold">•</span> <strong>Venue:</strong> Hard Rock Stadium (Miami Gardens), 15 miles from downtown.</li>
-                  <li className="flex items-start gap-2"><span className="text-emerald-500 font-bold">•</span> <strong>Transport:</strong> Brightline + Shuttle is the recommended route.</li>
-                </ul>
-                <div className="mt-4 flex items-center gap-4 text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">
-                  <span className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg> 8 Min Read</span>
-                  <span className="flex items-center gap-1"><svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg> Updated Nov 2025</span>
-                </div>
-              </div>
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl md:text-2xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+            The Magic City is ready to shine. Sun, culture, and world-class football await in 2026.
+          </p>
 
-              {/* [TL;DR SECTION] */}
-              <div className="mb-8 p-5 bg-amber-50 dark:bg-amber-900/10 border-l-4 border-amber-500 rounded-r-lg">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="font-bold text-amber-800 dark:text-amber-400 uppercase tracking-wider text-xs">TL;DR</span>
-                  <span className="text-[10px] text-amber-600/60 font-mono">[EXTRACTED FROM CONCLUSION]</span>
-                </div>
-                <p className="text-sm text-slate-700 dark:text-slate-300 italic leading-relaxed">
-                  "Book early, plan transit thoughtfully, embrace the heat, and prepare for one of the most memorable World Cup experiences any host city can offer."
-                </p>
-              </div>
+          {/* [ESTIMATED READ TIME] */}
+          <div className="flex items-center gap-2 text-sm text-slate-400 mb-8 font-medium">
+             <Clock className="w-4 h-4" /> <span>8 min read</span>
+             <span className="mx-2">•</span>
+             <span>Updated Nov 2025</span>
+          </div>
 
-              {/* Table of Contents */}
-              <div className="mb-12 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-100 dark:border-navy-700">
-                <h4 className="font-serif font-bold text-lg text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-navy-600 pb-2">In This Guide</h4>
-                <nav className="grid md:grid-cols-2 gap-y-3 gap-x-8 text-sm">
-                  <a href="#stadium" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">01</span> The Stadium</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#schedule" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">02</span> Match Schedule</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#transport" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">03</span> Transportation</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#accommodation" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">04</span> Neighborhoods</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#attractions" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">05</span> Attractions</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#food" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">06</span> Food Scene</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#practical" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">07</span> Practical Info</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                  <a href="#booking" className="group flex items-center justify-between text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
-                    <span className="flex items-center gap-3"><span className="font-mono text-emerald-500/50 text-xs">08</span> Booking Strategy</span>
-                    <span className="opacity-0 group-hover:opacity-100 text-emerald-500 transition-opacity">→</span>
-                  </a>
-                </nav>
-              </div>
-            </div>
-
-            <p className="leading-relaxed mb-6">
+          <p className="leading-relaxed mb-6">
               When FIFA brings the beautiful game to Miami in summer 2026, nearly a million international fans will descend on South Florida for seven high-stakes matches—more than almost any other host city. Miami is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> for the 2026 World Cup. This isn't just another tournament stop. 
             </p>
             
@@ -226,80 +397,114 @@ export default function MiamiCityGuide() {
           </article>
 
           {/* Essential Links module - Enhanced */}
-          <div className="callout-premium p-6 sm:p-8 bg-slate-50 dark:bg-navy-800 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700 my-8">
-            <div className="font-serif font-bold text-xl text-slate-900 dark:text-slate-100 mb-4 flex items-center gap-2">
-              <span>🔗</span> Essential Resources
-            </div>
-            <div className="grid md:grid-cols-3 gap-4 text-slate-800 dark:text-slate-200">
-              <Link to="/world-cup-2026-stadiums/hard-rock-stadium" className="flex items-center gap-3 p-3 rounded-lg hover:bg-white dark:hover:bg-navy-700 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-navy-600 group">
-                <span className="text-2xl group-hover:scale-110 transition-transform">🏟️</span>
-                <div className="flex flex-col">
-                  <span className="font-bold text-sm text-emerald-700 dark:text-emerald-400">Stadium Guide</span>
-                  <span className="text-xs text-slate-500">Hard Rock Stadium</span>
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+              <Bookmark className="w-5 h-5" /> Essential Resources
+            </h4>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-xl">🏟️</span> 
+                <div>
+                  <strong>Stadium:</strong> <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 font-medium">Hard Rock Stadium Guide</Link>
+                  <span className="block text-sm text-slate-500 mt-1">Capacity: 65,326 • Surface: Natural Grass</span>
                 </div>
-              </Link>
-              <Link to="/world-cup-2026-host-cities" className="flex items-center gap-3 p-3 rounded-lg hover:bg-white dark:hover:bg-navy-700 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-navy-600 group">
-                <span className="text-2xl group-hover:scale-110 transition-transform">🗺️</span>
-                <div className="flex flex-col">
-                  <span className="font-bold text-sm text-emerald-700 dark:text-emerald-400">Host Cities</span>
-                  <span className="text-xs text-slate-500">Explore all 16 venues</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-xl">🗺️</span>
+                <div>
+                  <strong>All Host Cities:</strong> <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 font-medium">Explore All 16 Cities</Link>
                 </div>
-              </Link>
-              <div className="flex flex-col p-3 gap-1">
-                 <span className="font-bold text-sm flex items-center gap-2">✈️ Nearby Connections</span>
-                 <div className="text-xs flex flex-wrap gap-2">
-                    <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="hover:text-emerald-600 underline decoration-slate-300">Atlanta</Link>
-                    <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="hover:text-emerald-600 underline decoration-slate-300">Houston</Link>
-                    <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="hover:text-emerald-600 underline decoration-slate-300">Mexico City</Link>
-                 </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-xl">✈️</span>
+                <div>
+                   <strong>Nearby Connections:</strong><br/>
+                   <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Atlanta</Link> <span className="text-slate-300">|</span> <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Houston</Link> <span className="text-slate-300">|</span> <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                </div>
               </div>
             </div>
           </div>
 
             {/* [SCROLL ANCHOR: The Stadium] */}
             <article id="stadium" className="editorial-body theme-emerald">
-            {/* [INTERNAL LINK: Hard Rock Stadium Detailed Guide] */}
-            {/* [IMAGE PLACEHOLDER: Aerial view of Hard Rock Stadium showing canopy roof] */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
-                <svg className="w-6 h-6 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-              </div>
-              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
-                The Stadium: <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-600 hover:text-emerald-700 decoration-2 hover:underline">Hard Rock Stadium</Link>
-              </h2>
-            </div>
+            {/* [SCROLL ANCHOR] */}
+            <div id="stadium-anchor" className="scroll-mt-24"></div>
+
+            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
+              <svg className="heading-icon-svg" role="img" aria-label="Building" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradBuildingMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#10b981" />
+                    <stop offset="1" stopColor="#14b8a6" />
+                  </linearGradient>
+                </defs>
+                <rect x="5" y="7" width="14" height="10" rx="2" fill="url(#gradBuildingMIA)" />
+                <rect x="7" y="9" width="3" height="6" rx="0.8" fill="#ffffff" />
+                <rect x="12" y="9" width="3" height="6" rx="0.8" fill="#ffffff" />
+                <rect x="9" y="6" width="6" height="2" rx="1" fill="#14b8a6" />
+              </svg>
+              The Stadium: <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hard Rock Stadium</Link>
+            </h2>
             
-            {/* Stat Highlights */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg text-center border border-slate-100 dark:border-navy-700">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">65,326</div>
-                <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Capacity</div>
-              </div>
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg text-center border border-slate-100 dark:border-navy-700">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Grass</div>
-                <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Surface</div>
-              </div>
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg text-center border border-slate-100 dark:border-navy-700">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">Canopy</div>
-                <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">Protection</div>
-              </div>
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg text-center border border-slate-100 dark:border-navy-700">
-                <div className="text-2xl font-bold text-emerald-600 dark:text-emerald-400">15 mi</div>
-                <div className="text-xs uppercase tracking-wide text-slate-500 font-medium">From Downtown</div>
+            {/* [STAT HIGHLIGHT SECTION] */}
+            <div className="bg-slate-50 dark:bg-navy-800 rounded-2xl p-6 border border-slate-100 dark:border-navy-700 my-8">
+              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-2 border-b border-slate-200 dark:border-navy-600 pb-4">
+                <svg className="h4-icon-svg" role="img" aria-label="Star" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradStarMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#10b981" />
+                      <stop offset="1" stopColor="#14b8a6" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M12 3 l2.8 6 h6.2 l-5 3.6 1.9 6.4 -5.9 -3.8 -5.9 3.8 1.9 -6.4 -5 -3.6 h6.2 z" fill="url(#gradStarMIA)" />
+                </svg>
+                The Numbers That Matter
+              </h4>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                      <ul className="leading-relaxed space-y-4 list-none">
+                        <li className="flex items-start gap-3">
+                            <Users className="w-5 h-5 text-emerald-500 mt-1" />
+                            <span><strong>65,326 Capacity</strong> <span className="block text-sm text-slate-500">(Expandable for major events)</span></span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <Shield className="w-5 h-5 text-emerald-500 mt-1" />
+                            <span><strong>Canopy Protection</strong> <span className="block text-sm text-slate-500">Roof covers 92% of fans from sun/rain</span></span>
+                        </li>
+                      </ul>
+                  </div>
+                  <div className="space-y-4">
+                      <ul className="leading-relaxed space-y-4 list-none">
+                        <li className="flex items-start gap-3">
+                            <Leaf className="w-5 h-5 text-emerald-500 mt-1" />
+                            <span><strong>Natural Grass</strong> <span className="block text-sm text-slate-500">World-class surface for the tournament</span></span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                            <MapPin className="w-5 h-5 text-emerald-500 mt-1" />
+                            <span><strong>15 Miles from Downtown</strong> <span className="block text-sm text-slate-500">Located in Miami Gardens</span></span>
+                        </li>
+                      </ul>
+                  </div>
               </div>
             </div>
 
-            <p className="whitespace-pre-line leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
+            <p className="leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
               <span className="font-semibold text-slate-900 dark:text-white">📍 347 Don Shula Drive, Miami Gardens, FL 33056</span>
-              {`\n\nMiami's World Cup action unfolds at Hard Rock Stadium in Miami Gardens, temporarily rebranded as "Miami Stadium" for the tournament. Located at 347 Don Shula Drive, Miami Gardens, FL 33056, this isn't your typical American football venue awkwardly retrofitted for soccer. The stadium was originally built to FIFA specifications by Miami Dolphins founder Joe Robbie—himself a passionate soccer fan who once owned professional teams in the city.`}
+              <br /><br />
+              Miami's World Cup action unfolds at Hard Rock Stadium in Miami Gardens, temporarily rebranded as "Miami Stadium" for the tournament. Located at 347 Don Shula Drive, Miami Gardens, FL 33056, this isn't your typical American football venue awkwardly retrofitted for soccer. The stadium was originally built to FIFA specifications by Miami Dolphins founder Joe Robbie—himself a passionate soccer fan who once owned professional teams in the city.
             </p>
 
-            {/* Visual Placeholder */}
-            <div className="my-8 bg-slate-100 dark:bg-navy-900 rounded-xl overflow-hidden aspect-video flex items-center justify-center border-2 border-dashed border-slate-300 dark:border-navy-600">
-              <div className="text-center p-6">
-                <svg className="w-12 h-12 mx-auto text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-                <span className="text-sm text-slate-500 font-medium">[IMAGE PLACEHOLDER: Wide angle interior shot of Hard Rock Stadium during a match]</span>
-              </div>
+            <div className="my-8">
+              <OptimizedImage
+                src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026.webp"
+                alt="Wide angle interior shot of Hard Rock Stadium during a match"
+                className="rounded-xl shadow-lg w-full"
+                width={1600}
+                height={900}
+                placeholder="empty"
+              />
+              <p className="text-sm text-center text-slate-500 mt-2 italic">Hard Rock Stadium features a canopy roof that covers 92% of fans, protecting them from the Florida sun and rain.</p>
             </div>
 
             <p className="leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
@@ -312,207 +517,340 @@ export default function MiamiCityGuide() {
             <hr className="editorial-divider my-12 border-slate-200 dark:border-navy-700" />
           </article>
 
-          {/* [BREATHING ROOM] */}
+
           {/* [SCROLL ANCHOR: Match Schedule] */}
             <article id="schedule" className="editorial-body theme-amber">
-            {/* [CITATION: FIFA Official World Cup 2026 Schedule] */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-amber-100 dark:bg-amber-900/30 rounded-lg">
-                <svg className="w-6 h-6 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-              </div>
-              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
-                The Match Schedule: Seven Games You Don't Want to Miss
-              </h2>
+            <div id="schedule-anchor" className="scroll-mt-24"></div>
+
+            {/* [QUICK SUMMARY] */}
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+               <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Schedule at a Glance</h4>
+               <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                 <li>• <strong>4 Group Stage Matches</strong> (June 15–27)</li>
+                 <li>• <strong>3 Knockout Matches</strong> (Round of 32 to Bronze Final)</li>
+                 <li>• <strong>Bronze Final:</strong> Saturday, July 18, 2026</li>
+                 <li>• <strong>Total:</strong> 7 matches (Major allocation)</li>
+               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-navy-800 dark:to-navy-900 border border-amber-100 dark:border-navy-700 rounded-xl p-6 md:p-8 mb-8 shadow-sm">
-              <h3 className="font-bold text-lg text-amber-800 dark:text-amber-400 mb-4 uppercase tracking-wide">Tournament Timeline</h3>
-              <p className="text-slate-700 dark:text-slate-300 mb-6 italic">
-                Miami scored one of the most generous World Cup allocations with seven matches spanning four weeks, including knockout rounds that guarantee drama.
-              </p>
+            <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
+              <svg className="heading-icon-svg" role="img" aria-label="Calendar" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradCalendarMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#10b981" />
+                    <stop offset="1" stopColor="#14b8a6" />
+                  </linearGradient>
+                </defs>
+                <rect x="3" y="5" width="18" height="16" rx="2" fill="url(#gradCalendarMIA)" />
+                <rect x="3" y="5" width="18" height="4" rx="2" fill="#0ea5e9" />
+                <circle cx="8" cy="3.5" r="1" fill="#ffffff" />
+                <circle cx="16" cy="3.5" r="1" fill="#ffffff" />
+                <rect x="7" y="11" width="3" height="3" rx="0.8" fill="#ffffff" />
+                <rect x="12" y="11" width="3" height="3" rx="0.8" fill="#ffffff" />
+                <rect x="17" y="11" width="3" height="3" rx="0.8" fill="#ffffff" />
+              </svg>
+              The Match Schedule: Seven Games You Don't Want to Miss
+            </h2>
 
-              <div className="space-y-6">
-                {/* Group Stage */}
-                <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-navy-700 pb-2 mb-3">Group Stage</h4>
-                  <div className="grid gap-3">
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jun</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">15</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Group H Match</div>
-                         <div className="text-sm text-slate-500">Opening Miami Fixture</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jun</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">21</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Group H Match</div>
-                         <div className="text-sm text-slate-500">Sunday Match</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jun</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">24</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Group C Match</div>
-                         <div className="text-sm text-slate-500">Wednesday Night</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jun</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">27</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Group K Match</div>
-                         <div className="text-sm text-slate-500">Saturday Showdown</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Knockout Stage */}
-                <div>
-                  <h4 className="font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-navy-700 pb-2 mb-3">Knockout Stage</h4>
-                  <div className="grid gap-3">
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm border-l-4 border-amber-400">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jul</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">03</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Round of 32</div>
-                         <div className="text-sm text-slate-500">Group J Winner vs. Group H Runner-Up</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-3 bg-white dark:bg-navy-900 rounded-lg shadow-sm border-l-4 border-amber-500">
-                      <div className="bg-slate-100 dark:bg-navy-800 px-3 py-1 rounded text-center min-w-[60px]">
-                         <div className="text-xs uppercase text-slate-500">Jul</div>
-                         <div className="text-xl font-bold text-slate-900 dark:text-white">11</div>
-                      </div>
-                      <div>
-                         <div className="font-bold text-slate-900 dark:text-white">Quarter-Final</div>
-                         <div className="text-sm text-slate-500">Top 8 Teams</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 p-4 bg-gradient-to-r from-amber-100 to-orange-100 dark:from-amber-900/40 dark:to-orange-900/40 rounded-lg shadow-md border border-amber-200 dark:border-amber-700 transform hover:scale-[1.01] transition-transform">
-                      <div className="bg-white dark:bg-navy-900 px-4 py-2 rounded shadow-sm text-center min-w-[70px]">
-                         <div className="text-xs uppercase text-amber-600 font-bold">Jul</div>
-                         <div className="text-2xl font-black text-slate-900 dark:text-white">18</div>
-                      </div>
-                      <div>
-                         <div className="font-black text-lg text-slate-900 dark:text-white flex items-center gap-2">
-                           🏆 Bronze Final
-                         </div>
-                         <div className="text-sm text-slate-700 dark:text-slate-300 font-medium">Third-Place Match</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-              That final fixture—the Bronze Final on July 18—is particularly special. Only a handful of cities worldwide earn the privilege of hosting this prestigious match where two fallen semi-finalists battle for the podium. If you can only attend one match, the knockout rounds offer guaranteed intensity and world-class talent.
+            {/* [SUBTITLE/DECK] */}
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+              From the group stage opener to the prestigious Bronze Final: Your chronological guide to South Florida's summer of football.
             </p>
+
+            <p className="leading-relaxed mb-8">
+              Miami's seven-match allocation is a testament to Hard Rock Stadium's global status. Here's what's coming:
+            </p>
+
+            <div className="space-y-8">
+              <div className="bg-white dark:bg-navy-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-navy-700">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+                  <svg className="h4-icon-svg" role="img" aria-label="Group stage" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradGroupMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#10b981" />
+                        <stop offset="1" stopColor="#14b8a6" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="4" y="6" width="16" height="12" rx="2" fill="url(#gradGroupMIA)" />
+                    <rect x="6" y="8" width="12" height="2" rx="1" fill="#ffffff" />
+                    <rect x="6" y="11" width="8" height="2" rx="1" fill="#ffffff" />
+                  </svg>
+                  Group Stage (Four Matches)
+                </h4>
+                <ul className="space-y-3 list-none">
+                  <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
+                      <span className="font-mono text-emerald-500 font-bold">01</span>
+                      <span><strong>Monday, June 15, 2026</strong> – Group H Match (Opener)</span>
+                  </li>
+                  <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
+                      <span className="font-mono text-emerald-500 font-bold">02</span>
+                      <span><strong>Sunday, June 21, 2026</strong> – Group H Match</span>
+                  </li>
+                  <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
+                      <span className="font-mono text-emerald-500 font-bold">03</span>
+                      <span><strong>Wednesday, June 24, 2026</strong> – Group C Match</span>
+                  </li>
+                  <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
+                      <span className="font-mono text-emerald-500 font-bold">04</span>
+                      <span><strong>Saturday, June 27, 2026</strong> – Group K Match</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="bg-amber-50 dark:bg-amber-900/10 rounded-xl p-6 shadow-sm border border-amber-100 dark:border-amber-800/30">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-amber-700 dark:text-amber-400">
+                  <svg className="h4-icon-svg" role="img" aria-label="Trophy" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradTrophyMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#f59e0b" />
+                        <stop offset="1" stopColor="#fbbf24" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M7 6 h10 v3 a5 5 0 0 1 -5 5 v3 h-3 v-3 a5 5 0 0 1 -5 -5 V6z" fill="url(#gradTrophyMIA)" />
+                    <circle cx="12" cy="9" r="1.5" fill="#ffffff" />
+                  </svg>
+                  Knockout Stage (Three Matches)
+                </h4>
+                <ul className="space-y-3 list-none">
+                  <li className="flex items-start gap-3 p-3 bg-white dark:bg-navy-900 rounded-lg border border-amber-100 dark:border-amber-800/30">
+                      <span className="font-mono text-amber-500 font-bold">R32</span>
+                      <span><strong>Friday, July 3, 2026</strong> – Round of 32</span>
+                  </li>
+                  <li className="flex items-start gap-3 p-3 bg-white dark:bg-navy-900 rounded-lg border border-amber-100 dark:border-amber-800/30">
+                      <span className="font-mono text-amber-500 font-bold">QF</span>
+                      <span><strong>Saturday, July 11, 2026</strong> – Quarter-Final</span>
+                  </li>
+                  <li className="flex items-start gap-3 p-4 bg-gradient-to-r from-amber-100 to-white dark:from-amber-900/40 dark:to-navy-900 rounded-lg border-l-4 border-amber-500 shadow-sm">
+                      <span className="font-mono text-amber-600 dark:text-amber-400 font-bold text-lg">3rd</span>
+                      <span className="text-lg"><strong>Saturday, July 18, 2026</strong> – <span className="uppercase tracking-wider text-amber-700 dark:text-amber-400 font-bold">BRONZE FINAL</span></span>
+                  </li>
+                </ul>
+
+                <div className="mt-6 pl-4 border-l-2 border-amber-200 dark:border-amber-800">
+                  <p className="leading-relaxed italic text-slate-700 dark:text-slate-300">
+                    That Bronze Final on July 18 is particularly special. Only a handful of cities worldwide earn the privilege of hosting this prestigious match where two fallen semi-finalists battle for the podium. If you can only attend one match, the knockout rounds offer guaranteed intensity and world-class talent.
+                  </p>
+                </div>
+              </div>
+              
+              {/* [PULL QUOTE] */}
+              <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+                 "If you can only attend one match, make it this one."
+              </blockquote>
+            </div>
             <hr className="editorial-divider my-12 border-slate-200 dark:border-navy-700" />
           </article>
 
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Transportation] */}
-            <article id="transport" className="editorial-body theme-indigo">
-            {/* [CITATION: Miami-Dade Transit Authority] */}
-            {/* [IMAGE PLACEHOLDER: Modern Metromover car passing through downtown skyline] */}
-            {/* [INFOGRAPHIC: Visual comparison of transport times and costs vs driving] */}
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg">
-                <svg className="w-6 h-6 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-              </div>
-              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
-                Getting There: Transportation Made Easy
-              </h2>
+          <article id="transport" className="editorial-body theme-indigo">
+            <div id="transport-anchor" className="scroll-mt-24"></div>
+
+            {/* [QUICK SUMMARY] */}
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+               <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Transport Reality Check</h4>
+               <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                 <li>• <strong>Brightline + Shuttle:</strong> Best overall experience</li>
+                 <li>• <strong>Metrobus:</strong> $2.25 budget option (Route 297)</li>
+                 <li>• <strong>Rideshare:</strong> Convenient but expect surges</li>
+                 <li>• <strong>Driving:</strong> Requires pre-booked parking</li>
+               </ul>
             </div>
 
-            <p className="leading-relaxed text-slate-700 dark:text-slate-300 mb-6">
-              Hard Rock Stadium sits in Miami Gardens, about 15 miles north of downtown Miami and 20 miles from South Beach. While the suburban location means limited walkable accommodation, multiple transportation options connect you to the action.
+            <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
+              <svg className="heading-icon-svg" role="img" aria-label="Train" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradTrainMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#6366f1" />
+                    <stop offset="1" stopColor="#818cf8" />
+                  </linearGradient>
+                </defs>
+                <rect x="4" y="5" width="16" height="14" rx="2" fill="url(#gradTrainMIA)" />
+                <path d="M8 19l-2 3h12l-2-3" fill="#818cf8" />
+                <circle cx="8" cy="15" r="1.5" fill="#ffffff" />
+                <circle cx="16" cy="15" r="1.5" fill="#ffffff" />
+                <rect x="7" y="8" width="10" height="4" rx="1" fill="#ffffff" />
+              </svg>
+              Getting There: The Transportation Equation
+            </h2>
+
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+              Hard Rock Stadium sits in Miami Gardens, about 15 miles north of downtown. Here is your realistic guide to bridging the gap.
             </p>
 
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 mt-8">Your Best Options</h3>
-
-            <div className="space-y-6">
-              {/* Option 1 */}
-              <div className="bg-white dark:bg-navy-900 p-6 rounded-xl shadow-sm border-l-4 border-indigo-500">
-                <h4 className="font-bold text-lg text-indigo-700 dark:text-indigo-400 mb-2 flex items-center gap-2">
-                  1. Brightline + Stadium Shuttle <span className="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-full ml-2">Recommended</span>
-                </h4>
-                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
-                  The smoothest move for match day is taking Brightline—South Florida's sleek intercity rail—to Aventura Station, then hopping the free Hard Rock Stadium Connect shuttle. Shuttles depart 10 minutes after each train arrival and deliver you directly to the stadium gates. This combo avoids traffic nightmares and costs around $15-25 for the train (depending on origin station), plus zero for the shuttle.
-                </p>
-                <div className="bg-indigo-50 dark:bg-navy-800 p-4 rounded-lg text-sm text-slate-600 dark:text-slate-400">
-                  <strong className="text-indigo-900 dark:text-indigo-200 block mb-1">Insider Tip:</strong>
-                  Brightline connects Fort Lauderdale, Aventura, and Miami's central districts. If you're staying in Brickell, Downtown, or Wynwood, get to a Brightline station early. These trains will be packed on match days.
-                </div>
-              </div>
-
-              {/* Option 2 */}
-              <div className="bg-white dark:bg-navy-900 p-6 rounded-xl shadow-sm border-l-4 border-slate-300 dark:border-navy-600">
-                <h4 className="font-bold text-lg text-slate-800 dark:text-slate-200 mb-2">2. Metrobus Route 297 (Game Day Special)</h4>
-                <p className="text-slate-700 dark:text-slate-300 mb-4 leading-relaxed">
-                  On event days, Miami-Dade Transit operates Metrobus Route 297 from Earlington Heights Metrorail Station directly to the stadium. Fare is $2.25 each way—unbeatable value if you're already using the Metrorail system. Important caveat: buses fill up fast. Arrive at Earlington Heights at least 90 minutes before kickoff, or risk standing on the platform watching full buses pass.
-                </p>
-                <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  From most Miami neighborhoods, you'll need to take Metrorail to Earlington Heights first. The Orange Line connects Miami International Airport to downtown in about 15 minutes; the Green Line serves Dadeland South, Coconut Grove, and beyond. The entire system costs $2.25 per trip (daily cap of $5.65 with contactless payment).
-                </p>
-              </div>
+            <div className="my-8">
+              <OptimizedImage
+                src="/images/safety-guide/article mode/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp"
+                alt="Public transportation options for World Cup 2026 fans in Miami"
+                className="rounded-xl shadow-lg w-full"
+                width={1600}
+                height={900}
+                placeholder="empty"
+              />
             </div>
 
-            <div className="my-10 overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 shadow-sm">
-              <table className="w-full text-sm text-left" aria-label="Transport options comparison">
-                <thead className="bg-slate-50 dark:bg-navy-800 text-slate-700 dark:text-slate-300 uppercase font-bold tracking-wider text-xs">
+            <div className="space-y-12">
+              {/* Brightline + Shuttle */}
+              <section className="relative">
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+                <div className="pl-0 md:pl-6">
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                    <Train className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                    1. Brightline + Stadium Shuttle (Recommended)
+                  </h4>
+                  <p className="leading-relaxed mb-4">
+                    The smoothest move for match day is taking Brightline—South Florida's sleek intercity rail—to <strong>Aventura Station</strong>, then hopping the free Hard Rock Stadium Connect shuttle. Shuttles depart 10 minutes after each train arrival and deliver you directly to the stadium gates.
+                  </p>
+                  <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-200 dark:border-navy-700 mb-4">
+                    <ul className="leading-relaxed space-y-2 list-disc list-inside text-sm">
+                      <li><strong>Cost:</strong> $15-25 (Train) + Free Shuttle</li>
+                      <li><strong>Time:</strong> Reliable; avoids highway traffic</li>
+                      <li><strong>Pros:</strong> Premium comfort, WiFi, direct shuttle connection</li>
+                      <li><strong>Cons:</strong> Trains sell out fast; requires advance booking</li>
+                    </ul>
+                  </div>
+                  <div className="callout-pro-tip bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 p-5 rounded-lg">
+                    <h5 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2 flex items-center gap-2">
+                      <Info className="w-5 h-5" /> Insider Tip
+                    </h5>
+                    <p className="text-sm text-slate-700 dark:text-slate-300">
+                      Brightline connects Fort Lauderdale, Aventura, and Miami's central districts. If you're staying in Brickell, Downtown, or Wynwood, get to a Brightline station early.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Metrobus */}
+              <section className="relative">
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+                <div className="pl-0 md:pl-6">
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                    <Bus className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                    2. Metrobus Route 297 (Budget Choice)
+                  </h4>
+                  <p className="leading-relaxed mb-4">
+                    On event days, Miami-Dade Transit operates <strong>Metrobus Route 297</strong> from Earlington Heights Metrorail Station directly to the stadium. It's the most affordable way to reach the venue.
+                  </p>
+                  <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-200 dark:border-navy-700 mb-4">
+                     <ul className="leading-relaxed space-y-2 list-disc list-inside text-sm">
+                      <li><strong>Cost:</strong> $2.25 each way (Integrates with Metrorail)</li>
+                      <li><strong>Time:</strong> 90+ minutes from Downtown (Rail + Bus)</li>
+                      <li><strong>Pros:</strong> Unbeatable value</li>
+                      <li><strong>Cons:</strong> Buses fill quickly; standing room only likely</li>
+                    </ul>
+                  </div>
+                   <div className="callout-warning">
+                    <div className="callout-icon flex items-center gap-2 font-medium">
+                      <AlertTriangle className="w-4 h-4" /> <span>Important</span>
+                    </div>
+                    <p className="leading-relaxed mt-2 text-sm">
+                      Arrive at Earlington Heights at least 90 minutes before kickoff. If you cut it close, you risk watching full buses pass you by.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Rideshare/Taxi */}
+              <section className="relative">
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-amber-200 dark:bg-amber-900 rounded-full"></div>
+                <div className="pl-0 md:pl-6">
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-amber-800 dark:text-amber-400">
+                    <Car className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                    3. Rideshare/Taxi (Convenient)
+                  </h4>
+                  <p className="leading-relaxed mb-4">
+                    Uber and Lyft work, but expect <strong>surge pricing</strong>. A typical ride from downtown Miami runs $35-50+, but can double post-match.
+                  </p>
+                  <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-200 dark:border-navy-700 mb-4">
+                    <ul className="leading-relaxed space-y-2 list-disc list-inside text-sm">
+                      <li><strong>Cost:</strong> $35-100+ (High variance)</li>
+                      <li><strong>Time:</strong> 45-60 mins (traffic dependent)</li>
+                      <li><strong>Pros:</strong> Door-to-door service</li>
+                      <li><strong>Cons:</strong> Expensive surges; long wait times for pickup</li>
+                    </ul>
+                  </div>
+                  <div className="callout-warning">
+                     <div className="callout-icon flex items-center gap-2 font-medium">
+                        <AlertTriangle className="w-4 h-4" /> <span>Surge Warning</span>
+                     </div>
+                     <p className="leading-relaxed mt-2 text-sm">
+                        Designated rideshare pickup is at <strong>Lot 42</strong>—a 25-45 minute walk from stadium exits.
+                     </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* Driving */}
+              <section className="relative">
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+                <div className="pl-0 md:pl-6">
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                    <Car className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                    4. Driving + Parking (Flexible)
+                  </h4>
+                  <p className="leading-relaxed mb-4">
+                    Stadium parking exists but sells out quickly. Pre-purchase passes online weeks before your match.
+                  </p>
+                  <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-200 dark:border-navy-700 mb-4">
+                    <ul className="leading-relaxed space-y-2 list-disc list-inside text-sm">
+                      <li><strong>Cost:</strong> $40-60 (Standard) to $100+ (VIP)</li>
+                      <li><strong>Time:</strong> Flexible arrival; slow exit</li>
+                      <li><strong>Pros:</strong> Comfort of own vehicle</li>
+                      <li><strong>Cons:</strong> Brutal exit traffic (2+ hours)</li>
+                    </ul>
+                  </div>
+                  <div className="callout-pro-tip bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 p-5 rounded-lg">
+                    <h5 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2 flex items-center gap-2">
+                      <Info className="w-5 h-5" /> Money Saver
+                    </h5>
+                    <p className="text-sm text-slate-700 dark:text-slate-300">
+                      Some fans park at <strong>Aventura Mall</strong> (free) and Brightline to the stadium, or park at Metrorail stations with garages ($4.50/day) and take the Route 297 bus.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+            {/* Transport options summary table */}
+            <div className="comparison-table overflow-x-auto -mx-4 md:mx-0 mt-8">
+              <table aria-label="Transport options comparison — Miami" className="min-w-[720px] w-full text-sm">
+                <thead>
                   <tr>
-                    <th className="px-6 py-4">Option</th>
-                    <th className="px-6 py-4">Cost</th>
-                    <th className="px-6 py-4">Time</th>
-                    <th className="px-6 py-4">Pros</th>
-                    <th className="px-6 py-4">Cons</th>
+                    <th className="text-left p-3">Option</th>
+                    <th className="text-left p-3">Approx. Cost</th>
+                    <th className="text-left p-3">Typical Time</th>
+                    <th className="text-left p-3">Pros</th>
+                    <th className="text-left p-3">Cons</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-100 dark:divide-navy-700 bg-white dark:bg-navy-900">
-                  <tr className="hover:bg-slate-50 dark:hover:bg-navy-800 transition-colors">
-                    <td className="px-6 py-4 font-bold text-emerald-600">Brightline + Shuttle</td>
-                    <td className="px-6 py-4">$15–25</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-green-100 text-green-800">Fast</span></td>
-                    <td className="px-6 py-4">Avoids traffic; direct to gates</td>
-                    <td className="px-6 py-4">Trains fill on match days</td>
+                <tbody>
+                  <tr>
+                    <td className="p-3">Brightline + Shuttle</td>
+                    <td className="p-3">$15-25 + Free</td>
+                    <td className="p-3">45–60 minutes</td>
+                    <td className="p-3">Premium comfort; direct shuttle</td>
+                    <td className="p-3">Requires booking; strict schedule</td>
                   </tr>
-                  <tr className="hover:bg-slate-50 dark:hover:bg-navy-800 transition-colors">
-                    <td className="px-6 py-4 font-bold text-blue-600">Metrobus Route 297</td>
-                    <td className="px-6 py-4">$2.25</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-yellow-100 text-yellow-800">Moderate</span></td>
-                    <td className="px-6 py-4">Best value; integrates with Metrorail</td>
-                    <td className="px-6 py-4">Buses fill quickly; arrive early</td>
+                  <tr>
+                    <td className="p-3">Rideshare/Taxi</td>
+                    <td className="p-3">$35–50+ (surge higher)</td>
+                    <td className="p-3">45–60 minutes</td>
+                    <td className="p-3">Door-to-door convenience</td>
+                    <td className="p-3">Surge pricing; long waits</td>
                   </tr>
-                  <tr className="hover:bg-slate-50 dark:hover:bg-navy-800 transition-colors">
-                    <td className="px-6 py-4 font-bold text-slate-700 dark:text-slate-300">Rideshare/Taxi</td>
-                    <td className="px-6 py-4">$35–50+</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">Variable</span></td>
-                    <td className="px-6 py-4">Door-to-door convenience</td>
-                    <td className="px-6 py-4">Surge pricing; long waits</td>
+                  <tr>
+                    <td className="p-3">Driving + Parking</td>
+                    <td className="p-3">$40–60 (VIP $100+)</td>
+                    <td className="p-3">Variable</td>
+                    <td className="p-3">Flexible; tailgate option</td>
+                    <td className="p-3">Traffic; 2+ hour exit</td>
                   </tr>
-                  <tr className="hover:bg-slate-50 dark:hover:bg-navy-800 transition-colors">
-                    <td className="px-6 py-4 font-bold text-slate-700 dark:text-slate-300">Driving</td>
-                    <td className="px-6 py-4">$40–100+</td>
-                    <td className="px-6 py-4"><span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-red-100 text-red-800">Variable</span></td>
-                    <td className="px-6 py-4">Flexible; best for multi-city trips</td>
-                    <td className="px-6 py-4">Traffic; long exit times</td>
+                  <tr>
+                    <td className="p-3">Metrobus (Rt 297)</td>
+                    <td className="p-3">$2.25</td>
+                    <td className="p-3">90+ minutes</td>
+                    <td className="p-3">Unbeatable value</td>
+                    <td className="p-3">Standing room; longer travel</td>
                   </tr>
                 </tbody>
               </table>
@@ -520,566 +858,473 @@ export default function MiamiCityGuide() {
             <hr className="editorial-divider my-12 border-slate-200 dark:border-navy-700" />
           </article>
 
-          {/* Rideshare/Taxi Section */}
-          <article className="editorial-body theme-indigo">
-            {/* [SCROLL ANCHOR: Rideshare Logistics] */}
-            <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <svg className="h4-icon-svg w-8 h-8" role="img" aria-label="Taxi" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradTaxiM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#f59e0b" />
-                    <stop offset="1" stopColor="#fbbf24" />
-                  </linearGradient>
-                </defs>
-                <rect x="3" y="10" width="18" height="6" rx="2" fill="url(#gradTaxiM)" />
-                <rect x="9" y="7" width="6" height="3" rx="1" fill="#f59e0b" />
-                <circle cx="7" cy="17" r="2" fill="#0ea5e9" />
-                <circle cx="17" cy="17" r="2" fill="#0ea5e9" />
-              </svg>
-              3. Rideshare/Taxi
-            </h4>
-
-            {/* [STRUCTURE: Warning Callout with Visual Hierarchy] */}
-            <div className="callout-warning border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-900/10 p-6 rounded-r-xl mb-8 shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 mt-1 bg-amber-100 dark:bg-amber-800 p-2 rounded-full">
-                   <svg className="w-5 h-5 text-amber-600 dark:text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
-                </div>
-                <div className="space-y-4">
-                  <p className="leading-relaxed text-slate-800 dark:text-slate-200">
-                    Uber and Lyft work, but expect <strong className="text-amber-700 dark:text-amber-400 font-bold">surge pricing</strong> to bite hard after matches end. A typical ride from downtown Miami runs <strong className="bg-amber-100 dark:bg-amber-900/50 px-1 rounded text-amber-800 dark:text-amber-300">$35-50+</strong> each way depending on traffic and demand. Post-match, you could wait 45+ minutes and pay double. 
-                  </p>
-                  
-                  {/* [PULL QUOTE: Extracted for Emphasis] */}
-                  <blockquote className="border-l-2 border-amber-300 dark:border-amber-700 pl-4 italic text-slate-600 dark:text-slate-400 my-2">
-                    "Many fans book rideshare departures 30-40 minutes into the match to beat the exodus, then watch the final minutes on their phones during the ride. Smart? Maybe. Ideal? No."
-                  </blockquote>
-
-                  <p className="leading-relaxed text-slate-800 dark:text-slate-200">
-                    Designated rideshare pickup is at <strong>Lot 42 on NW 27th Avenue</strong>—a 25-45 minute walk from stadium exits when crowds surge. Some fans use the free rideshare shuttle to a nearby pickup point, which helps but requires advance reservation.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <hr className="editorial-divider my-10 border-slate-200 dark:border-navy-700" />
-          </article>
-
-          {/* Driving + Parking Section */}
-          <article className="editorial-body theme-indigo">
-            <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-slate-900 dark:text-white">
-              <svg className="h4-icon-svg w-8 h-8" role="img" aria-label="Car" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradCarM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#6366f1" />
-                    <stop offset="1" stopColor="#818cf8" />
-                  </linearGradient>
-                </defs>
-                <rect x="4" y="10" width="16" height="5" rx="2" fill="url(#gradCarM)" />
-                <path d="M6 10 L9 7 H15 L18 10" fill="#6366f1" />
-                <circle cx="8" cy="16" r="2" fill="#0ea5e9" />
-                <circle cx="16" cy="16" r="2" fill="#0ea5e9" />
-              </svg>
-              4. Driving + Parking
-            </h4>
-            
-            <div className="prose dark:prose-invert max-w-none mb-6">
-              <p className="leading-relaxed mb-4 text-slate-600 dark:text-slate-400">
-                If you're renting a car (which makes sense for exploring South Florida beyond the matches), <strong>stadium parking exists but sells out quickly</strong>. Pre-purchase passes online weeks before your match. Standard parking runs <strong>$40-60</strong>, with VIP lots reaching <strong>$100+</strong>. 
-              </p>
-              <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-medium text-sm bg-rose-50 dark:bg-rose-900/20 p-2 rounded w-fit mb-4">
-                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                 <span>Traffic in and out is brutal—allow 2+ hours post-match to escape the lot.</span>
-              </div>
-            </div>
-
-            {/* [STRUCTURE: Pro Tip Box] */}
-            <div className="callout-pro-tip bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 p-6 rounded-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 bg-indigo-100 dark:bg-indigo-800 text-indigo-600 dark:text-indigo-300 text-xs font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wide">
-                Money Saver
-              </div>
-              <div className="flex gap-4">
-                <div className="callout-icon bg-indigo-100 dark:bg-indigo-800 p-2 rounded-full h-fit text-indigo-600 dark:text-indigo-300">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-                </div>
-                <div>
-                  <h5 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2">Pro parking hack</h5>
-                  <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                    Some fans park at <strong>Aventura Mall</strong> (free) and Brightline to the stadium, or park at Metrorail stations with garages ($4.50/day) and take the Route 297 bus. Both options require advance scouting but save serious money.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <hr className="editorial-divider my-10 border-slate-200 dark:border-navy-700" />
-          </article>
-
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Neighborhoods] */}
             {/* [25% MILESTONE] */}
-            <article id="accommodation" className="editorial-body theme-violet">
-            {/* [IMAGE PLACEHOLDER: Art Deco hotels on Ocean Drive at twilight] */}
-            <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3 text-2xl md:text-3xl font-serif text-slate-900 dark:text-white">
-              <svg className="heading-icon-svg w-8 h-8" role="img" aria-label="Hotel" viewBox="0 0 24 24">
+        {/* Where to Stay: Neighborhood Playbook for World Cup Visitors */}
+        <article id="stay" className="editorial-body theme-emerald">
+          {/* [SCROLL ANCHOR] */}
+          <div id="stay-anchor" className="scroll-mt-24"></div>
+
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Lodging Strategy</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Downtown/Brickell:</strong> Best for transit & atmosphere</li>
+               <li>• <strong>South Beach:</strong> Best for beach & nightlife</li>
+               <li>• <strong>Miami Gardens:</strong> Best for stadium proximity</li>
+               <li>• <strong>Coral Gables:</strong> Best for upscale & cultural</li>
+             </ul>
+          </div>
+
+          <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
+            <svg className="heading-icon-svg" role="img" aria-label="Hotel" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="gradHotelMIA" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stopColor="#10b981" />
+                  <stop offset="1" stopColor="#14b8a6" />
+                </linearGradient>
+              </defs>
+              <rect x="4" y="7" width="16" height="10" rx="2" fill="url(#gradHotelMIA)" />
+              <rect x="6" y="9" width="4" height="6" rx="0.8" fill="#ffffff" />
+              <rect x="14" y="9" width="4" height="6" rx="0.8" fill="#ffffff" />
+            </svg>
+            Where to Stay: Neighborhood Playbook for World Cup Visitors
+          </h3>
+          
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+            Your accommodation choice determines whether you experience urban Miami culture, beach vibes, or prioritize stadium convenience. Here’s the strategic breakdown:
+          </p>
+
+          <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+            <OptimizedImage
+              src="/images/cities/miami-world-cup-2026.webp"
+              alt="Miami skyline at sunset"
+              className="absolute inset-0"
+              imgClassName="w-full h-full object-cover"
+              width={1600}
+              height={900}
+              placeholder="empty"
+              sizes="(min-width: 1024px) 960px, 100vw"
+            />
+          </div>
+
+          <p className="leading-relaxed mb-6">
+            Miami's geography is spread out. The stadium is inland, the beaches are on barrier islands, and the cultural center is downtown.
+          </p>
+
+          {/* [PULL QUOTE] */}
+          <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            "If you secure match tickets, reserve accommodation immediately. Downtown sells out fast."
+          </blockquote>
+
+          {/* Downtown Miami/Brickell */}
+          <div className="mb-6">
+            <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Building" viewBox="0 0 24 24">
                 <defs>
-                  <linearGradient id="gradHotelM" x1="0" x2="1" y1="0" y2="1">
+                  <linearGradient id="gradBuildingMIA2" x1="0" x2="1" y1="0" y2="1">
                     <stop offset="0" stopColor="#10b981" />
                     <stop offset="1" stopColor="#14b8a6" />
                   </linearGradient>
                 </defs>
-                <rect x="4" y="7" width="16" height="10" rx="2" fill="url(#gradHotelM)" />
-                <rect x="6" y="9" width="4" height="6" rx="0.8" fill="#ffffff" />
-                <rect x="14" y="9" width="4" height="6" rx="0.8" fill="#ffffff" />
+                 <path d="M4 21V7h16v14" fill="url(#gradBuildingMIA2)" />
+                 <rect x="8" y="10" width="2" height="2" fill="#ffffff" />
+                 <rect x="14" y="10" width="2" height="2" fill="#ffffff" />
+                 <rect x="8" y="14" width="2" height="2" fill="#ffffff" />
+                 <rect x="14" y="14" width="2" height="2" fill="#ffffff" />
               </svg>
-              Where to Stay: Neighborhood Playbook for World Cup Visitors
-            </h3>
-            
-            {/* [OPENING DECK] */}
-            <p className="leading-relaxed mb-8 text-lg text-slate-600 dark:text-slate-300 font-medium">
-              Miami's geography spreads across 30+ miles from north to south. Choosing the right base camp determines whether you maximize your trip or spend half of it stuck in traffic. Here's the honest breakdown:
+              Downtown Miami/Brickell (Best for Transit + Atmosphere)
+            </h4>
+            <p className="leading-relaxed mb-3">
+              <strong>Why stay here:</strong> You're at the hub of Miami's public transit network (Metrorail, Metromover, buses), walking distance to <strong>Bayfront Park</strong> (expected FIFA Fan Festival location), and surrounded by restaurants, rooftop bars, and nightlife. The energy here during the World Cup will be electric—international flags, outdoor viewing parties, fans from 50 nations mingling in the streets.
             </p>
+            <p className="leading-relaxed mb-3">
+              <strong>Getting to stadium:</strong> Metrorail to Earlington Heights → Route 297 bus (75-90 minutes total). Or Brightline from nearby stations if your hotel is within walking distance.
+            </p>
+            <p className="leading-relaxed mb-3">
+              <strong>Accommodation vibe:</strong> Mix of business hotels, modern high-rises, and boutique properties. Expect <strong>$275-400/night</strong> for mid-range options during the tournament. Luxury properties like <strong>Hotel AKA Miami Brickell</strong> offer sophistication and bay views; budget travelers should book early or consider hostels like <strong>Miami River Inn</strong> (between Downtown and Little Havana).
+            </p>
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+              <p className="leading-relaxed">
+                <strong>Book Early:</strong> Downtown sells out fast. If you secure match tickets in late 2025, reserve accommodation immediately. Consider booking refundable rates given ticket lottery uncertainty.
+              </p>
+            </div>
+          </div>
 
-            {/* [NEIGHBORHOOD CARD 1: Downtown/Brickell] */}
-            <section className="mb-8 p-6 bg-white dark:bg-navy-800 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700 relative overflow-hidden group hover:border-violet-200 dark:hover:border-violet-800 transition-all">
-              <div className="absolute top-0 right-0 bg-violet-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-bl-lg tracking-wider">
-                Best for Transit + Atmosphere
-              </div>
-              
-              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-xl text-slate-900 dark:text-white">
-                <svg className="h4-icon-svg w-6 h-6" role="img" aria-label="Building" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradBuildingM3" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#6366f1" />
-                      <stop offset="1" stopColor="#818cf8" />
-                    </linearGradient>
-                  </defs>
-                  <rect x="5" y="9" width="5" height="7" rx="1" fill="url(#gradBuildingM3)" />
-                  <rect x="11" y="6" width="5" height="10" rx="1" fill="#0ea5e9" />
-                  <rect x="17" y="10" width="2" height="6" rx="1" fill="url(#gradBuildingM3)" />
-                </svg>
-                Downtown Miami/Brickell
-              </h4>
+          <hr className="editorial-divider" />
+        </article>
 
-              <div className="space-y-4">
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-violet-100 dark:bg-violet-900/50 flex items-center justify-center text-violet-600 dark:text-violet-400 font-bold text-xs">?</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Why stay here:</strong>
-                     You're at the hub of Miami's public transit network (Metrorail, Metromover, buses), walking distance to <strong>Bayfront Park</strong> (expected FIFA Fan Festival location), and surrounded by restaurants, rooftop bars, and nightlife. The energy here during the World Cup will be electric—international flags, outdoor viewing parties, fans from 50 nations mingling in the streets.
-                   </p>
-                </div>
-                
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">➜</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Getting to stadium:</strong>
-                     Metrorail to Earlington Heights → Route 297 bus (75-90 minutes total). Or Brightline from nearby stations if your hotel is within walking distance.
-                   </p>
-                </div>
+        {/* South Beach */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+             <svg className="heading-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradSunMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#fbbf24" />
+                    <stop offset="1" stopColor="#f59e0b" />
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="5" fill="url(#gradSunMIA)" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+              </svg>
+            South Beach/Miami Beach (Best for Beach + Nightlife)
+          </h3>
+          <p className="leading-relaxed mb-3">
+            <strong>Why stay here:</strong> This is peak Miami—Art Deco architecture, sugar-sand beaches, poolside parties, and Ocean Drive's legendary people-watching. If you're turning the World Cup into a full Florida vacation, South Beach delivers the postcard experience. Just accept you'll commute to matches.
+          </p>
+          <p className="leading-relaxed mb-3">
+            <strong>Getting to stadium:</strong> Most complex option. Take <strong>Metrobus 150 Express</strong> or <strong>Beach Trolley</strong> to mainland transit, then connect to Metrorail/Brightline. Budget <strong>2+ hours each way</strong>. Many fans bite the bullet on rideshare for match days ($60-80 each way with surge pricing).
+          </p>
+          <p className="leading-relaxed mb-3">
+            <strong>Accommodation vibe:</strong> Everything from budget motels to five-star oceanfront resorts. <strong>Hotel Continental Miami Beach</strong> offers retro-chic rooms one block from the beach; <strong>Kimpton Angler's Hotel</strong> provides boutique luxury with rooftop pools. Expect <strong>$350-600/night</strong> for oceanfront mid-range during World Cup. Hostels like <strong>Freehand Miami</strong> in Mid-Beach offer dorm beds under $100.
+          </p>
+          <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700">
+             <p className="leading-relaxed">
+               <strong>Reality check:</strong> South Beach is gorgeous but geographically inconvenient for stadium access. Best suited for fans attending 1-2 matches who prioritize beach time over logistics.
+             </p>
+          </div>
+          <hr className="editorial-divider" />
+        </article>
 
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs">⌂</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Accommodation vibe:</strong>
-                     Mix of business hotels, modern high-rises, and boutique properties. Expect <strong>$275-400/night</strong> for mid-range options during the tournament. Luxury properties like <strong>Hotel AKA Miami Brickell</strong> offer sophistication and bay views; budget travelers should book early or consider hostels like <strong>Miami River Inn</strong> (between Downtown and Little Havana).
-                   </p>
-                </div>
+        {/* Miami Gardens */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+            <svg className="heading-icon-svg" role="img" aria-label="Map Pin" viewBox="0 0 24 24">
+               <defs>
+                 <linearGradient id="gradPinMIA" x1="0" x2="1" y1="0" y2="1">
+                   <stop offset="0" stopColor="#10b981" />
+                   <stop offset="1" stopColor="#14b8a6" />
+                 </linearGradient>
+               </defs>
+               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" fill="url(#gradPinMIA)" />
+               <circle cx="12" cy="9" r="2.5" fill="#ffffff" />
+            </svg>
+            Miami Gardens/Aventura (Best for Stadium Proximity)
+          </h3>
+          <p className="leading-relaxed mb-3">
+            <strong>Why stay here:</strong> Minimize commute stress. You're <strong>10-20 minutes from Hard Rock Stadium</strong> by car, or a short bus ride on non-game days. Aventura offers massive shopping (Aventura Mall) and easy Brightline access.
+          </p>
+          <p className="leading-relaxed mb-3">
+            <strong>Getting to stadium:</strong> Drive (15 minutes, pre-book parking), rideshare ($20-30), or local buses. This area is designed for cars, so public transit options thin out.
+          </p>
+          <p className="leading-relaxed mb-3">
+            <strong>Accommodation vibe:</strong> Practical, not glamorous. <strong>Stadium Hotel</strong> sits closest to the venue (literally visible from some rooms) with budget-friendly rates and sports bar. <strong>Aloft Miami Aventura</strong> delivers modern design near Aventura Mall. <strong>Miami Lakes Hotel</strong> offers full resort amenities including golf. Expect <strong>$180-320/night</strong> range.
+          </p>
+          <p className="leading-relaxed mb-3">
+             <strong>Best for:</strong> Hardcore fans attending multiple matches who prioritize stadium convenience over Miami's cultural scene. Also families, since accommodation tends to be more spacious and affordable than downtown.
+          </p>
+          <hr className="editorial-divider" />
+        </article>
 
-                <div className="mt-4 p-4 bg-violet-50 dark:bg-violet-900/10 rounded-lg border border-violet-100 dark:border-violet-800/30">
-                  <p className="leading-relaxed text-sm text-violet-800 dark:text-violet-300 font-medium">
-                    <span className="uppercase font-bold text-xs tracking-wider mr-2">Book Early:</span>
-                    Downtown sells out fast. If you secure match tickets in late 2025, reserve accommodation immediately. Consider booking refundable rates given ticket lottery uncertainty.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* [NEIGHBORHOOD CARD 2: South Beach] */}
-            <section className="mb-8 p-6 bg-white dark:bg-navy-800 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700 relative overflow-hidden group hover:border-amber-200 dark:hover:border-amber-800 transition-all">
-              <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-bl-lg tracking-wider">
-                Best for Beach + Nightlife
-              </div>
-              
-              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-xl text-slate-900 dark:text-white">
-                <svg className="h4-icon-svg w-6 h-6" role="img" aria-label="Sun" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradSunM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#f59e0b" />
-                      <stop offset="1" stopColor="#fbbf24" />
-                    </linearGradient>
-                  </defs>
-                  <circle cx="12" cy="12" r="4" fill="url(#gradSunM)" />
-                </svg>
-                South Beach/Miami Beach
-              </h4>
-
-              <div className="space-y-4">
-                 <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-amber-100 dark:bg-amber-900/50 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs">?</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Why stay here:</strong>
-                     This is peak Miami—Art Deco architecture, sugar-sand beaches, poolside parties, and Ocean Drive's legendary people-watching. If you're turning the World Cup into a full Florida vacation, South Beach delivers the postcard experience. Just accept you'll commute to matches.
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">➜</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Getting to stadium:</strong>
-                     Most complex option. Take <strong>Metrobus 150 Express</strong> or <strong>Beach Trolley</strong> to mainland transit, then connect to Metrorail/Brightline. Budget <strong>2+ hours each way</strong>. Many fans bite the bullet on rideshare for match days ($60-80 each way with surge pricing).
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs">⌂</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Accommodation vibe:</strong>
-                     Everything from budget motels to five-star oceanfront resorts. <strong>Hotel Continental Miami Beach</strong> offers retro-chic rooms one block from the beach; <strong>Kimpton Angler's Hotel</strong> provides boutique luxury with rooftop pools. Expect <strong>$350-600/night</strong> for oceanfront mid-range during World Cup. Hostels like <strong>Freehand Miami</strong> in Mid-Beach offer dorm beds under $100.
-                   </p>
-                </div>
-
-                {/* [REALITY CHECK] */}
-                <div className="mt-4 p-4 bg-slate-50 dark:bg-navy-900/50 rounded-lg border-l-4 border-slate-300 dark:border-slate-600">
-                  <p className="leading-relaxed text-sm text-slate-600 dark:text-slate-400 italic">
-                    <strong className="text-slate-800 dark:text-slate-200 not-italic">Reality check:</strong> South Beach is gorgeous but geographically inconvenient for stadium access. Best suited for fans attending 1-2 matches who prioritize beach time over logistics.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* [NEIGHBORHOOD CARD 3: Miami Gardens] */}
-            <section className="mb-8 p-6 bg-white dark:bg-navy-800 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700 relative overflow-hidden group hover:border-emerald-200 dark:hover:border-emerald-800 transition-all">
-              <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-bl-lg tracking-wider">
-                Best for Stadium Proximity
-              </div>
-              
-              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-xl text-slate-900 dark:text-white">
-                <svg className="h4-icon-svg w-6 h-6" role="img" aria-label="Map pin" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradPinM2" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#10b981" />
-                      <stop offset="1" stopColor="#14b8a6" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M12 3 C8.7 3 6 5.7 6 9 c0 5.25 6 12 6 12 s6-6.75 6-12 c0-3.3-2.7-6-6-6z" fill="url(#gradPinM2)" />
-                  <circle cx="12" cy="9" r="2.3" fill="#ffffff" />
-                </svg>
-                Miami Gardens/Aventura/North Miami
-              </h4>
-
-              <div className="space-y-4">
-                 <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">?</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Why stay here:</strong>
-                     Minimize commute stress. You're <strong>10-20 minutes from Hard Rock Stadium</strong> by car, or a short bus ride on non-game days. Aventura offers massive shopping (Aventura Mall) and easy Brightline access.
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">➜</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Getting to stadium:</strong>
-                     Drive (15 minutes, pre-book parking), rideshare ($20-30), or local buses. This area is designed for cars, so public transit options thin out.
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs">⌂</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Accommodation vibe:</strong>
-                     Practical, not glamorous. <strong>Stadium Hotel</strong> sits closest to the venue (literally visible from some rooms) with budget-friendly rates and sports bar. <strong>Aloft Miami Aventura</strong> delivers modern design near Aventura Mall. <strong>Miami Lakes Hotel</strong> offers full resort amenities including golf. Expect <strong>$180-320/night</strong> range.
-                   </p>
-                </div>
-
-                <div className="mt-4 p-4 bg-emerald-50 dark:bg-emerald-900/10 rounded-lg border border-emerald-100 dark:border-emerald-800/30">
-                  <p className="leading-relaxed text-sm text-emerald-800 dark:text-emerald-300 font-medium">
-                    <span className="uppercase font-bold text-xs tracking-wider mr-2">Who this suits:</span>
-                    Hardcore fans attending multiple matches who prioritize stadium convenience over Miami's cultural scene. Also families, since accommodation tends to be more spacious and affordable than downtown.
-                  </p>
-                </div>
-              </div>
-            </section>
-
-            {/* [NEIGHBORHOOD CARD 4: Coral Gables] */}
-            <section className="mb-6 p-6 bg-white dark:bg-navy-800 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700 relative overflow-hidden group hover:border-pink-200 dark:hover:border-pink-800 transition-all">
-              <div className="absolute top-0 right-0 bg-pink-500 text-white text-[10px] uppercase font-bold px-3 py-1 rounded-bl-lg tracking-wider">
-                Best for Upscale + Cultural
-              </div>
-              
-              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-3 text-xl text-slate-900 dark:text-white">
-                <svg className="h4-icon-svg w-6 h-6" role="img" aria-label="Leaf" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradLeafM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#10b981" />
-                      <stop offset="1" stopColor="#14b8a6" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M6 16 c6 -8 10 -8 12 -6 c0 6 -6 10 -12 6z" fill="url(#gradLeafM)" />
-                </svg>
-                Coral Gables/Coconut Grove
-              </h4>
-
-              <div className="space-y-4">
-                 <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-pink-100 dark:bg-pink-900/50 flex items-center justify-center text-pink-600 dark:text-pink-400 font-bold text-xs">?</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Why stay here:</strong>
-                     Escape the chaos. These elegant neighborhoods south of downtown offer tree-lined streets, boutique hotels, Mediterranean architecture, and attractions like <strong>Vizcaya Museum</strong>. More "refined vacation" than "spring break."
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs">➜</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Getting to stadium:</strong>
-                     Metrorail connects Coconut Grove to downtown (transfer to Route 297 bus). From Coral Gables, budget 60-90 minutes. Driving on match days: 30-45 minutes depending on traffic.
-                   </p>
-                </div>
-
-                <div className="flex gap-4 items-start">
-                   <div className="shrink-0 mt-1 w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs">⌂</div>
-                   <p className="leading-relaxed text-slate-600 dark:text-slate-400">
-                     <strong className="text-slate-900 dark:text-slate-100 block mb-1">Accommodation vibe:</strong>
-                     Historic inns, upscale hotels, fewer budget options. Expect <strong>$280-450/night</strong> during World Cup. Attracts couples and travelers who want sophistication between matches.
-                   </p>
-                </div>
-              </div>
-            </section>
-            <hr className="editorial-divider my-10 border-slate-200 dark:border-navy-700" />
-          </article>
+        {/* Coral Gables */}
+        <article className="editorial-body">
+          <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+             <svg className="heading-icon-svg" role="img" aria-label="Leaf" viewBox="0 0 24 24">
+               <defs>
+                 <linearGradient id="gradLeafMIA" x1="0" x2="1" y1="0" y2="1">
+                   <stop offset="0" stopColor="#ec4899" />
+                   <stop offset="1" stopColor="#db2777" />
+                 </linearGradient>
+               </defs>
+               <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-15 4.25" fill="url(#gradLeafMIA)" />
+             </svg>
+            Coral Gables/Coconut Grove (Best for Upscale + Cultural)
+          </h3>
+          <p className="leading-relaxed mb-3">
+            <strong>Why stay here:</strong> Escape the chaos. These elegant neighborhoods south of downtown offer tree-lined streets, boutique hotels, Mediterranean architecture, and attractions like <strong>Vizcaya Museum</strong>. More "refined vacation" than "spring break."
+          </p>
+          <p className="leading-relaxed mb-3">
+             <strong>Getting to stadium:</strong> Metrorail connects Coconut Grove to downtown (transfer to Route 297 bus). From Coral Gables, budget 60-90 minutes. Driving on match days: 30-45 minutes depending on traffic.
+          </p>
+          <p className="leading-relaxed mb-3">
+             <strong>Accommodation vibe:</strong> Historic inns, upscale hotels, fewer budget options. Expect <strong>$280-450/night</strong> during World Cup. Attracts couples and travelers who want sophistication between matches.
+          </p>
+          <hr className="editorial-divider" />
+        </article>
 
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Attractions] */}
             {/* [50% MILESTONE] */}
-            <article id="attractions" className="editorial-body theme-teal">
-            {/* [IMAGE PLACEHOLDER: Vibrant street art mural at Wynwood Walls] */}
-            <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3 text-2xl md:text-3xl font-serif text-slate-900 dark:text-white">
-              <svg className="heading-icon-svg w-8 h-8" role="img" aria-label="Compass" viewBox="0 0 24 24">
+
+          {/* Beyond the Matches: What to Do in Miami */}
+          <article id="culture" className="editorial-body theme-emerald">
+            {/* [QUICK SUMMARY] */}
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+              <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culture & Leisure</h4>
+              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                <li>• <strong>Arts:</strong> Wynwood Walls (Street Art)</li>
+                <li>• <strong>History:</strong> Art Deco District & Vizcaya</li>
+                <li>• <strong>Culture:</strong> Little Havana (Calle Ocho)</li>
+                <li>• <strong>Nature:</strong> Everglades National Park</li>
+              </ul>
+            </div>
+
+            <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
+              <svg className="heading-icon-svg" role="img" aria-label="Sparkles" viewBox="0 0 24 24">
                 <defs>
-                  <linearGradient id="gradCompassM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#10b981" />
-                    <stop offset="1" stopColor="#14b8a6" />
+                  <linearGradient id="gradSparkMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#0ea5e9" />
+                    <stop offset="1" stopColor="#38bdf8" />
                   </linearGradient>
                 </defs>
-                <circle cx="12" cy="12" r="9" fill="url(#gradCompassM)" />
-                <path d="M12 7 l3 5 l-5 3 l2 -8" fill="#ffffff" />
+                <path d="M6 12 l2 -4 l2 4 l-2 4z" fill="url(#gradSparkMIA)" />
+                <path d="M14 8 l2 -3 l2 3 l-2 3z" fill="#0ea5e9" />
+                <path d="M14 16 l2 -3 l2 3 l-2 3z" fill="#38bdf8" />
               </svg>
               Beyond the Matches: What to Do in Miami
             </h3>
             
-            <p className="leading-relaxed mb-8 text-lg text-slate-600 dark:text-slate-300 font-medium">
-              You didn't fly thousands of miles to only see 90 minutes of football. Miami delivers world-class experiences when you're not at the stadium:
+            {/* [SUBTITLE/DECK] */}
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+              You didn't fly thousands of miles to only see 90 minutes of football. Miami delivers world-class experiences when you're not at the stadium.
             </p>
 
-            {/* Must-Do Attractions - Editorial Grid */}
-            <div className="mb-8">
-              <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-2 text-xl text-teal-800 dark:text-teal-400 border-b border-teal-100 dark:border-teal-800 pb-2">
-                <svg className="h4-icon-svg w-6 h-6" role="img" aria-label="Star" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradStarM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#10b981" />
-                      <stop offset="1" stopColor="#14b8a6" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M12 3 l2.8 6 h6.2 l-5 3.6 1.9 6.4 -5.9 -3.8 -5.9 3.8 1.9 -6.4 -5 -3.6 h6.2 z" fill="url(#gradStarM)" />
-                </svg>
-                Must-Do Attractions
-              </h4>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                {/* [ATTRACTION CARD: Wynwood] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Wynwood Walls</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    The world's coolest outdoor street art museum—free, always open, constantly evolving. Over 35 large-scale murals by internationally renowned artists transform warehouse walls into living canvases. Surrounding Wynwood neighborhood pulses with galleries, craft breweries (Cervecería La Tropical), coffee shops (Panther Coffee), and trendy restaurants.
-                  </p>
-                  <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">⏱ 2-3 hours</span>
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Metromover/Rideshare</span>
-                  </div>
-                </div>
-
-                {/* [ATTRACTION CARD: Vizcaya] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Vizcaya Museum and Gardens</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    This jaw-dropping Italian Renaissance-style villa (built 1916) sits on Biscayne Bay with 10 acres of formal gardens that rival European estates. The museum houses original furnishings, art collections, and photography-worthy courtyards. <strong>Admission: $25</strong>. Perfect for a relaxed morning before evening matches.
-                  </p>
-                  <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Coconut Grove</span>
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Metrorail (Vizcaya Station)</span>
-                  </div>
-                </div>
-
-                {/* [ATTRACTION CARD: Little Havana] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Little Havana</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    Miami's Cuban heart beats along <strong>Calle Ocho (SW 8th Street)</strong>. Watch master cigar rollers at work, sip authentic café cubano, catch live salsa music at <strong>Ball & Chain</strong>, and play dominoes at <strong>Máximo Gómez Park</strong>. The neighborhood explodes with energy on <strong>Viernes Culturales</strong> (last Friday of each month)—street festivals with art, music, and food vendors.
-                  </p>
-                  <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Budget-Friendly</span>
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Cultural Hub</span>
-                  </div>
-                </div>
-
-                {/* [ATTRACTION CARD: Miami Beach] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Miami Beach & Art Deco District</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    Beyond tanning, Miami Beach offers architectural history. The <strong>Art Deco Historic District</strong> in South Beach contains over 800 preserved buildings from the 1920s-30s in pastel colors and geometric designs. Free self-guided walking tours via app, or book guided tours ($25-40). After your architecture fix, hit the sand: <strong>South Beach</strong> is iconic but crowded; <strong>North Beach</strong> and <strong>Mid-Beach</strong> offer calmer vibes.
-                  </p>
-                </div>
-                
-                {/* [ATTRACTION CARD: PAMM] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Pérez Art Museum Miami (PAMM)</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    Striking contemporary art museum on Biscayne Bay with rotating exhibitions and a permanent collection focused on international art of the 20th-21st centuries. <strong>Admission: $18</strong>. The outdoor hanging gardens and waterfront sculpture terrace alone justify a visit.
-                  </p>
-                  <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Downtown</span>
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Metromover</span>
-                  </div>
-                </div>
-
-                {/* [ATTRACTION CARD: Everglades] */}
-                <div className="bg-slate-50 dark:bg-navy-800 p-6 rounded-lg border border-slate-100 dark:border-navy-700 hover:shadow-md transition-shadow">
-                  <h5 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Everglades National Park</h5>
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-400 mb-4">
-                    If you have a free day between matches, rent a car and explore this UNESCO World Heritage Site 45 minutes southwest. Airboat tours ($30-60) deliver close encounters with alligators, while hiking trails and kayaking routes reveal one of Earth's most unique ecosystems. Many operators offer hotel pickup in Miami.
-                  </p>
-                  <div className="flex flex-wrap gap-2 text-xs font-medium text-slate-500 dark:text-slate-400">
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Day Trip</span>
-                    <span className="bg-white dark:bg-navy-900 px-2 py-1 rounded border border-slate-200 dark:border-navy-600">? Nature</span>
-                  </div>
-                </div>
-              </div>
-
-              {/* [STRUCTURE: Practical Tips Box] */}
-              <div className="mt-8 callout-pro-tip bg-teal-50 dark:bg-teal-900/20 border border-teal-100 dark:border-teal-800 p-6 rounded-xl">
-                <h5 className="editorial-h4 mb-4 flex items-center gap-2 text-teal-800 dark:text-teal-300">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  Practical Touring Tips
-                </h5>
-                <ul className="leading-relaxed space-y-3 list-none text-slate-700 dark:text-slate-300">
-                  <li className="flex items-start gap-2">
-                    <span className="text-teal-500 font-bold mt-1">✓</span>
-                    <span><strong>Miami gets HOT</strong> in June/July (85-92°F / 29-33°C with humidity). Hydrate constantly, wear sunscreen, seek shade midday.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-teal-500 font-bold mt-1">✓</span>
-                    <span><strong>Book popular attractions online</strong> to skip lines during World Cup crush.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-teal-500 font-bold mt-1">✓</span>
-                    <span><strong>The Metromover is FREE</strong> and covers downtown/Brickell—perfect for attraction-hopping in that zone.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-teal-500 font-bold mt-1">✓</span>
-                    <span><strong>Consider a Go Miami Card</strong> (all-inclusive pass) if hitting multiple paid attractions; can save 30-40% versus individual tickets.</span>
-                  </li>
-                </ul>
+            <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+              <OptimizedImage
+                src="/images/safety-guide/A_realistic_high-detail_photo_of_a_solo_traveler_at_a_World_Cup_2026_host_city.webp"
+                alt="Exploring Miami's diverse neighborhoods"
+                className="absolute inset-0"
+                imgClassName="w-full h-full object-cover"
+                width={1600}
+                height={900}
+                placeholder="empty"
+                sizes="(min-width: 1024px) 960px, 100vw"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                 <p className="text-white text-sm italic">From street art in Wynwood to historic Vizcaya, Miami offers endless exploration.</p>
               </div>
             </div>
-            <hr className="editorial-divider my-10 border-slate-200 dark:border-navy-700" />
+
+            <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Compass" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradCompassMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#10b981" />
+                    <stop offset="1" stopColor="#14b8a6" />
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="9" fill="url(#gradCompassMIA)" />
+                <path d="M12 7 l3 5 l-5 3 l2 -8" fill="#ffffff" />
+              </svg>
+              Must-See Attractions
+            </h4>
+
+            <div className="space-y-6">
+              {/* Wynwood Walls */}
+              <div>
+                <h5 className="text-md md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
+                  <svg className="heading-icon-svg" role="img" aria-label="Palette" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradPaletteMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#fb7185" />
+                        <stop offset="1" stopColor="#ec4899" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M12 4 a8 8 0 1 0 0 16 h1 a2.5 2.5 0 0 0 0 -5 h-1 a1.5 1.5 0 0 1 -1.5 -1.5 v-1 a1.5 1.5 0 0 1 1.5 -1.5 h1 a2.5 2.5 0 0 0 0 -5 z" fill="url(#gradPaletteMIA)" />
+                  </svg>
+                  Wynwood Walls
+                </h5>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  The world's coolest outdoor street art museum—free, always open, constantly evolving. Over 35 large-scale murals by internationally renowned artists transform warehouse walls into living canvases. Surrounding Wynwood neighborhood pulses with galleries, craft breweries (Cervecería La Tropical), and coffee shops (Panther Coffee).
+                </p>
+              </div>
+
+              {/* Vizcaya */}
+              <div>
+                <h5 className="text-md md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
+                  <svg className="heading-icon-svg" role="img" aria-label="Museum" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradMuseumMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#0ea5e9" />
+                        <stop offset="1" stopColor="#38bdf8" />
+                      </linearGradient>
+                    </defs>
+                    <rect x="3" y="8" width="18" height="10" rx="2" fill="url(#gradMuseumMIA)" />
+                    <rect x="6" y="5" width="12" height="4" rx="1.5" fill="#0ea5e9" />
+                  </svg>
+                  Vizcaya Museum and Gardens
+                </h5>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  This jaw-dropping Italian Renaissance-style villa (built 1916) sits on Biscayne Bay with 10 acres of formal gardens that rival European estates. The museum houses original furnishings and art collections. <strong>Admission: $25</strong>. Perfect for a relaxed morning before evening matches.
+                </p>
+              </div>
+
+              {/* Little Havana */}
+              <div>
+                <h5 className="text-md md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
+                  <svg className="heading-icon-svg" role="img" aria-label="Music" viewBox="0 0 24 24">
+                     <defs>
+                      <linearGradient id="gradMusicMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#e11d48" />
+                        <stop offset="1" stopColor="#fb7185" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M9 5 v10 a3 3 0 1 1 -2 2.8 V7 h8 v6 a3 3 0 1 1 -2 2.8 V5z" fill="url(#gradMusicMIA)" />
+                  </svg>
+                  Little Havana
+                </h5>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Miami's Cuban heart beats along <strong>Calle Ocho (SW 8th Street)</strong>. Watch master cigar rollers at work, sip authentic café cubano, catch live salsa music at <strong>Ball & Chain</strong>, and play dominoes at <strong>Máximo Gómez Park</strong>. The neighborhood explodes with energy on <strong>Viernes Culturales</strong> (last Friday of each month).
+                </p>
+              </div>
+
+              {/* Miami Beach */}
+              <div>
+                <h5 className="text-md md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
+                  <svg className="heading-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradSunMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#f59e0b" />
+                        <stop offset="1" stopColor="#fbbf24" />
+                      </linearGradient>
+                    </defs>
+                    <circle cx="12" cy="12" r="4" fill="url(#gradSunMIA)" />
+                    <path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
+                  </svg>
+                  Miami Beach & Art Deco District
+                </h5>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  Beyond tanning, the <strong>Art Deco Historic District</strong> in South Beach contains over 800 preserved buildings from the 1920s-30s in pastel colors and geometric designs. Free self-guided walking tours via app. After your architecture fix, hit the sand: <strong>South Beach</strong> is iconic; <strong>North Beach</strong> offers calmer vibes.
+                </p>
+              </div>
+
+              {/* Everglades */}
+              <div>
+                <h5 className="text-md md:text-lg font-semibold text-slate-900 dark:text-slate-50 mb-2 flex items-center gap-2">
+                  <svg className="heading-icon-svg" role="img" aria-label="Leaf" viewBox="0 0 24 24">
+                    <defs>
+                      <linearGradient id="gradLeafMIA" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stopColor="#10b981" />
+                        <stop offset="1" stopColor="#14b8a6" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M12 21 c-5 -5 -7 -10 -2 -15 c3 0 6 3 9 9 c-5 3 -10 4 -15 2" fill="url(#gradLeafMIA)" />
+                  </svg>
+                  Everglades National Park
+                </h5>
+                <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
+                  If you have a free day, explore this UNESCO World Heritage Site 45 minutes southwest. Airboat tours ($30-60) deliver close encounters with alligators, while hiking trails and kayaking routes reveal one of Earth's most unique ecosystems.
+                </p>
+              </div>
+            </div>
+            <hr className="editorial-divider" />
           </article>
 
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Food Scene] */}
-            <article id="food" className="editorial-body theme-rose">
-            {/* [IMAGE PLACEHOLDER: Platter of Cuban sandwiches and cortaditos at Versailles] */}
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+          <article id="food" className="editorial-body theme-emerald">
+            {/* [QUICK SUMMARY] */}
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+              <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culinary Highlights</h4>
+              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+                <li>• <strong>Cuban:</strong> Versailles & El Rey de las Fritas</li>
+                <li>• <strong>Seafood:</strong> Joe's Stone Crab & Garcia's</li>
+                <li>• <strong>Late Night:</strong> La Sandwicherie (5 AM)</li>
+                <li>• <strong>Vibe:</strong> Coyo Taco & 1-800-Lucky</li>
+              </ul>
+            </div>
+
+            <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
               <svg className="heading-icon-svg" role="img" aria-label="Food" viewBox="0 0 24 24">
                 <defs>
-                  <linearGradient id="gradFoodM" x1="0" x2="1" y1="0" y2="1">
+                  <linearGradient id="gradFoodMIA" x1="0" x2="1" y1="0" y2="1">
                     <stop offset="0" stopColor="#10b981" />
                     <stop offset="1" stopColor="#14b8a6" />
                   </linearGradient>
                 </defs>
                 <rect x="5" y="7" width="4" height="10" rx="1" fill="#f59e0b" />
-                <rect x="11" y="7" width="8" height="10" rx="2" fill="url(#gradFoodM)" />
+                <rect x="11" y="7" width="8" height="10" rx="2" fill="url(#gradFoodMIA)" />
               </svg>
-              Miami Food Scene: Fuel for Match Days
+              Food Scene: Taste the Culture
             </h3>
-            <p className="leading-relaxed mb-8">
-              Miami's culinary landscape mirrors its demographics—Cuban, Haitian, Colombian, Argentine, Peruvian influences collide with American and contemporary fusion.
+            
+            {/* [SUBTITLE/DECK] */}
+            <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+              Miami's culinary landscape mirrors its demographics—Cuban, Haitian, Colombian, Argentine, and Peruvian influences collide with American and contemporary fusion.
             </p>
 
-            <div className="grid md:grid-cols-3 gap-6 mb-8">
-              {/* Pre-Match Fueling */}
-              <div className="bg-white dark:bg-navy-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-sky-600 dark:text-sky-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  Pre-Match Fueling
-                </h4>
-                <ul className="space-y-4">
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Versailles Restaurant</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Little Havana</span>
-                    Iconic Cuban institution. Order the Cubano sandwich, ropa vieja, or pastelitos. Always busy; arrive off-peak.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Zak the Baker</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Wynwood</span>
-                    Artisan bakery with outstanding pastries, sandwiches, coffee. Grab breakfast before stadium-bound transit.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">La Sandwicherie</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">South Beach</span>
-                    Late-night legend serving fresh French sandwiches until 5 AM. Perfect post-nightlife fuel.
-                  </li>
-                </ul>
-              </div>
+            <div className="my-8 aspect-video bg-slate-100 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 relative overflow-hidden">
+              <OptimizedImage
+                src="/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp"
+                alt="Miami Dining Guide"
+                className="absolute inset-0"
+                imgClassName="w-full h-full object-cover"
+                width={1600}
+                height={900}
+                placeholder="empty"
+                sizes="(min-width: 1024px) 960px, 100vw"
+              />
+            </div>
 
-              {/* Post-Match Celebrating */}
-              <div className="bg-white dark:bg-navy-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-600 dark:text-indigo-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"/></svg>
-                  Post-Match Celebrating
-                </h4>
-                <ul className="space-y-4">
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Joe's Stone Crab</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">South Beach</span>
-                    Miami Beach institution (seasonal, but World Cup timing works). Reserve days ahead.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Coyo Taco</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Wynwood</span>
-                    Elevated street tacos in lively atmosphere. Great for group celebrations.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Garcia's Seafood Grille & Fish Market</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Miami River</span>
-                    Waterfront seafood with local vibe, away from tourist traps.
-                  </li>
-                </ul>
-              </div>
+            <p className="leading-relaxed mb-6">
+              Explore the flavors:
+            </p>
 
-              {/* Budget-Friendly */}
-              <div className="bg-white dark:bg-navy-900 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                  Budget-Friendly
-                </h4>
-                <ul className="space-y-4">
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">1-800-Lucky</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Wynwood</span>
-                    Asian-inspired food hall with multiple vendors, outdoor seating, reasonable prices.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">Fritanga Monimbo</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Little Havana</span>
-                    Authentic Nicaraguan cuisine, massive portions, under $15/person.
-                  </li>
-                  <li className="leading-relaxed text-sm text-slate-700 dark:text-slate-300">
-                    <strong className="block text-slate-900 dark:text-white text-base mb-1">El Rey de las Fritas</strong>
-                    <span className="text-xs font-mono text-slate-500 uppercase tracking-wide mb-2 block">Little Havana</span>
-                    Cuban fritas (burgers) and batidos (shakes). Total meal under $10.
-                  </li>
-                </ul>
-              </div>
+            {/* Pre-Match Fueling */}
+            <div className="mb-6">
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Fuel" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradFuelMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f59e0b" />
+                      <stop offset="1" stopColor="#fbbf24" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M12 5 c2 2 2 4 0 6 c-2 2 -2 4 0 6" fill="url(#gradFuelMIA)" />
+                </svg>
+                Pre-Match Fueling
+              </h4>
+              <ul className="leading-relaxed space-y-2 list-disc list-inside">
+                <li><strong>Versailles Restaurant</strong> (Little Havana): Iconic Cuban institution. Order the Cubano sandwich, ropa vieja, or pastelitos. Always busy; arrive off-peak.</li>
+                <li><strong>Zak the Baker</strong> (Wynwood): Artisan bakery with outstanding pastries, sandwiches, coffee. Grab breakfast before stadium-bound transit.</li>
+                <li><strong>La Sandwicherie</strong> (South Beach): Late-night legend serving fresh French sandwiches until 5 AM. Perfect post-nightlife fuel.</li>
+              </ul>
+            </div>
+
+            {/* Post-Match Celebrating */}
+            <div className="mb-6">
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Celebration" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradCelebMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#10b981" />
+                      <stop offset="1" stopColor="#14b8a6" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="6" y="7" width="3" height="10" rx="1" fill="#f59e0b" />
+                  <rect x="11" y="7" width="7" height="10" rx="2" fill="url(#gradCelebMIA)" />
+                </svg>
+                Post-Match Celebrating
+              </h4>
+              <ul className="leading-relaxed space-y-2 list-disc list-inside">
+                <li><strong>Joe's Stone Crab</strong> (South Beach): Miami Beach institution (seasonal, but World Cup timing works). Reserve days ahead.</li>
+                <li><strong>Coyo Taco</strong> (Wynwood): Elevated street tacos in lively atmosphere. Great for group celebrations.</li>
+                <li><strong>Garcia's Seafood Grille & Fish Market</strong> (Miami River): Waterfront seafood with local vibe, away from tourist traps.</li>
+              </ul>
+            </div>
+
+            {/* Budget-Friendly */}
+            <div>
+              <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+                <svg className="h4-icon-svg" role="img" aria-label="Budget" viewBox="0 0 24 24">
+                  <defs>
+                    <linearGradient id="gradBudgetMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#10b981" />
+                      <stop offset="1" stopColor="#14b8a6" />
+                    </linearGradient>
+                  </defs>
+                  <rect x="5" y="8" width="14" height="8" rx="2" fill="url(#gradBudgetMIA)" />
+                  <circle cx="16" cy="12" r="1.5" fill="#ffffff" />
+                </svg>
+                Budget-Friendly
+              </h4>
+              <ul className="leading-relaxed space-y-2 list-disc list-inside">
+                <li><strong>1-800-Lucky</strong> (Wynwood): Asian-inspired food hall with multiple vendors, outdoor seating, reasonable prices.</li>
+                <li><strong>Fritanga Monimbo</strong> (Little Havana): Authentic Nicaraguan cuisine, massive portions, under $15/person.</li>
+                <li><strong>El Rey de las Fritas</strong> (Little Havana): Cuban fritas (burgers) and batidos (shakes). Total meal under $10.</li>
+              </ul>
             </div>
             <hr className="editorial-divider" />
           </article>
@@ -1087,201 +1332,185 @@ export default function MiamiCityGuide() {
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Practical Info] */}
           {/* [75% MILESTONE] */}
-          <article id="practical" className="editorial-body theme-sky">
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Information" viewBox="0 0 24 24">
+        {/* Practical Information: What You Need to Know */}
+        <article id="tips" className="editorial-body theme-emerald">
+          {/* [SCROLL ANCHOR] */}
+          <div id="tips-anchor" className="scroll-mt-24"></div>
+
+          {/* [QUICK SUMMARY] */}
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+             <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
+               <li>• <strong>Airport:</strong> MIA (8 mi) or FLL (30 mi)</li>
+               <li>• <strong>Weather:</strong> Hot & humid (88-92°F); rain likely</li>
+               <li>• <strong>Transit:</strong> Metromover is free in Downtown</li>
+               <li>• <strong>Language:</strong> English & Spanish widely spoken</li>
+             </ul>
+          </div>
+
+          <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
+            <svg className="heading-icon-svg" role="img" aria-label="Information" viewBox="0 0 24 24">
+              <defs>
+                <linearGradient id="gradInfoMIA" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stopColor="#6366f1" />
+                  <stop offset="1" stopColor="#818cf8" />
+                </linearGradient>
+              </defs>
+              <circle cx="12" cy="12" r="9" fill="url(#gradInfoMIA)" />
+              <rect x="11" y="10" width="2" height="6" rx="1" fill="#ffffff" />
+              <rect x="11" y="7" width="2" height="2" rx="1" fill="#ffffff" />
+            </svg>
+            Practical Information: What You Need to Know
+          </h3>
+
+          {/* [SUBTITLE/DECK] */}
+          <p className="text-xl text-slate-500 dark:text-slate-400 font-light mb-8 leading-relaxed">
+             Navigating a new city requires insider knowledge. From airports to tipping culture, here is your survival guide.
+          </p>
+
+          {/* Getting to Miami */}
+          <div className="mb-6">
+            <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Plane" viewBox="0 0 24 24">
                 <defs>
-                  <linearGradient id="gradInfoM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#6366f1" />
-                    <stop offset="1" stopColor="#818cf8" />
-                  </linearGradient>
-                </defs>
-                <circle cx="12" cy="12" r="9" fill="url(#gradInfoM)" />
-                <rect x="11" y="10" width="2" height="6" rx="1" fill="#ffffff" />
-                <rect x="11" y="7" width="2" height="2" rx="1" fill="#ffffff" />
-              </svg>
-              Practical Information: What You Need to Know
-            </h3>
-
-            {/* Getting to Miami */}
-            <div className="mb-6">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Plane" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradPlaneM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#0ea5e9" />
-                      <stop offset="1" stopColor="#38bdf8" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M3 12 l8 -2 l0 -5 l2 5 l8 2 l-8 2 l-2 5 l0 -5z" fill="url(#gradPlaneM)" />
-                </svg>
-                Getting to Miami
-              </h4>
-              <p className="leading-relaxed mb-4">
-                <strong>Miami International Airport (MIA)</strong> sits 8 miles northwest of downtown—about <strong>15-20 minutes by car</strong>, <strong>15 minutes via Metrorail Orange Line</strong> ($2.25), or <strong>$25-30 taxi/rideshare</strong> to downtown. The airport handles 50+ million passengers annually with direct flights from every continent. Book flights early; prices spike as matches approach.
-              </p>
-              <p className="leading-relaxed">
-                <strong>Fort Lauderdale-Hollywood International Airport (FLL)</strong>, 30 miles north, sometimes offers cheaper flights. From FLL, take <strong>Brightline train</strong> to Miami (30 minutes, $15-20) or drive/rideshare (45-60 minutes, $50-70).
-              </p>
-              <p className="leading-relaxed">
-                Miami also serves as a gateway city for North American football travel, with strong flight and cultural connections to <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
-              </p>
-            </div>
-
-            {/* Weather & What to Pack */}
-            {/* [INFOGRAPHIC: Monthly temperature and humidity averages for June/July] */}
-            <div className="mb-6">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
-                  <use href="#gradSunM" />
-                  <circle cx="12" cy="12" r="4" fill="url(#gradSunM)" />
-                </svg>
-                Weather & What to Pack
-              </h4>
-              <p className="leading-relaxed mb-4">
-                Expect <strong>hot, humid, with afternoon thunderstorms</strong>. Daily highs 88-92°F (31-33°C), humidity 70-80%. Pack:
-              </p>
-              <p className="leading-relaxed mb-4">
-                Miami's tropical weather contrasts with cities like <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>—plan accordingly if you’re building a multi-city itinerary.
-              </p>
-              <ul className="leading-relaxed space-y-2 list-disc list-inside">
-                <li>Lightweight, breathable clothing</li>
-                <li>Sunscreen (SPF 50+), sunglasses, hat</li>
-                <li>Reusable water bottle (you'll need it)</li>
-                <li>Light rain jacket or poncho</li>
-                <li>Comfortable walking shoes (you'll be on your feet)</li>
-              </ul>
-            </div>
-
-            {/* Money & Costs */}
-            <div>
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Money" viewBox="0 0 24 24">
-                  <use href="#gradMoneyM" />
-                  <rect x="4" y="7" width="16" height="10" rx="2" fill="url(#gradMoneyM)" />
-                </svg>
-                Money & Costs
-              </h4>
-              <ul className="leading-relaxed space-y-2 list-disc list-inside">
-                <li><strong>Stadium parking:</strong> $40-60 pre-purchased</li>
-                <li><strong>Mid-range hotel (Downtown):</strong> $275-400/night during World Cup</li>
-                <li><strong>Meals:</strong> $15-25 (casual), $40-70 (mid-range), $100+ (high-end)</li>
-                <li><strong>Public transit:</strong> $2.25/trip, $5.65 daily cap</li>
-                <li><strong>Rideshare (downtown to stadium):</strong> $35-50 each way</li>
-              </ul>
-            </div>
-            <hr className="editorial-divider" />
-          </article>
-
-          {/* Safety & Connectivity Section */}
-          <article className="editorial-body theme-sky">
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Shield" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradShieldM" x1="0" x2="1" y1="0" y2="1">
+                  <linearGradient id="gradPlaneMIA" x1="0" x2="1" y1="0" y2="1">
                     <stop offset="0" stopColor="#0ea5e9" />
                     <stop offset="1" stopColor="#38bdf8" />
                   </linearGradient>
                 </defs>
-                <path d="M12 4 l8 3 v5 c0 5 -4 7 -8 9 c-4 -2 -8 -4 -8 -9 v-5z" fill="url(#gradShieldM)" />
-                <path d="M8 12 l3 3 l5 -5" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M3 12 l8 -2 l0 -5 l2 5 l8 2 l-8 2 l-2 5 l0 -5z" fill="url(#gradPlaneMIA)" />
               </svg>
-              Safety & Connectivity
-            </h3>
+              Getting to Miami
+            </h4>
+            <p className="leading-relaxed mb-3">
+              <strong>Miami International Airport (MIA)</strong> sits 8 miles northwest of downtown—about <strong>15-20 minutes by car</strong>, <strong>15 minutes via Metrorail Orange Line</strong> ($2.25), or <strong>$25-30 taxi/rideshare</strong>. Book flights early; prices spike as matches approach.
+            </p>
+            <p className="leading-relaxed">
+              <strong>Fort Lauderdale-Hollywood International Airport (FLL)</strong>, 30 miles north, sometimes offers cheaper flights. Take <strong>Brightline train</strong> to Miami (30 minutes) or drive/rideshare (45-60 minutes).
+            </p>
+          </div>
 
-            {/* Safety & Common Sense */}
-            <div className="mb-6">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Shield" viewBox="0 0 24 24">
-                  <use href="#gradShieldM" />
-                  <path d="M12 4 l8 3 v5 c0 5 -4 7 -8 9 c-4 -2 -8 -4 -8 -9 v-5z" fill="url(#gradShieldM)" />
-                </svg>
-                Safety & Common Sense
-              </h4>
-              <p className="leading-relaxed mb-4">
-                Miami is generally safe for tourists in popular areas (Downtown, Brickell, South Beach, Wynwood, Coral Gables). <strong>Standard urban precautions</strong> apply: <em>avoid isolated areas late at night</em>, secure valuables, use legitimate rideshare apps only. The World Cup brings <strong>heightened security</strong>; expect bag checks at attractions and transport hubs.
-              </p>
-            </div>
+          {/* Weather & What to Pack */}
+          <div className="mb-6">
+            <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Sun" viewBox="0 0 24 24">
+                 <defs>
+                  <linearGradient id="gradSunMIA2" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#f59e0b" />
+                    <stop offset="1" stopColor="#fbbf24" />
+                  </linearGradient>
+                </defs>
+                <circle cx="12" cy="12" r="4" fill="url(#gradSunMIA2)" />
+                <path d="M12 3 v3 M12 18 v3 M3 12 h3 M18 12 h3 M5 5 l2 2 M17 17 l2 2 M19 5 l-2 2 M7 17 l-2 2" stroke="#f59e0b" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              Weather & What to Pack
+            </h4>
+            <p className="leading-relaxed mb-3">
+              Expect <strong>hot, humid, with afternoon thunderstorms</strong>. Daily highs 88-92°F (31-33°C), humidity 70-80%.
+            </p>
+            <ul className="leading-relaxed space-y-2 list-disc list-inside">
+              <li>Lightweight, breathable clothing (linen/cotton)</li>
+              <li>Sunscreen (SPF 50+), sunglasses, hat</li>
+              <li>Reusable water bottle (stay hydrated)</li>
+              <li>Light rain jacket or poncho</li>
+            </ul>
+          </div>
 
-            {/* Phone & Connectivity */}
-            <div className="mb-6">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Wifi" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradWifiM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#6366f1" />
-                      <stop offset="1" stopColor="#818cf8" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M4 10 c4 -4 12 -4 16 0" fill="none" stroke="url(#gradWifiM)" strokeWidth="2" strokeLinecap="round" />
-                  <path d="M7 13 c3 -3 7 -3 10 0" fill="none" stroke="#818cf8" strokeWidth="2" strokeLinecap="round" />
-                  <circle cx="12" cy="17" r="1.8" fill="#0ea5e9" />
-                </svg>
-                Phone & Connectivity
-              </h4>
-              <p className="leading-relaxed mb-4">
-                <strong>Free WiFi</strong> available at: Metrorail/Metrobus, Miami International Airport, most hotels, cafes, and restaurants. Consider purchasing a US SIM card or activating international roaming if staying multiple days. <strong>5G coverage</strong> is excellent throughout metro Miami.
-              </p>
-            </div>
-
-            {/* Language */}
-            <div>
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Chat" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradChatM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#10b981" />
-                      <stop offset="1" stopColor="#14b8a6" />
-                    </linearGradient>
-                  </defs>
-                  <path d="M4 6 h16 v9 a2 2 0 0 1 -2 2 H9 l-4 3 v-3 a2 2 0 0 1 -1 -2z" fill="url(#gradChatM)" />
-                </svg>
-                Language
-              </h4>
-              <p className="leading-relaxed">
-                English is official, but <strong>Spanish dominates</strong> in many neighborhoods. <em>Bilingual signage is common.</em> Basic Spanish phrases help in Little Havana, Cuban restaurants, and with some service workers.
-              </p>
-            </div>
-            <hr className="editorial-divider" />
-          </article>
-
-          {/* FIFA Fan Festival & Match Day Atmosphere Section */}
-          {/* [BREATHING ROOM] */}
-          {/* [SCROLL ANCHOR: Fan Festival] */}
-          <article className="editorial-body theme-purple">
-            {/* [VIDEO: Atmosphere of past World Cup Fan Festivals or Miami soccer crowds] */}
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Football" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradFootballM" x1="0" x2="1" y1="0" y2="1">
+          {/* Money & Costs */}
+          <div className="mb-6">
+            <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Wallet" viewBox="0 0 24 24">
+                 <defs>
+                  <linearGradient id="gradWalletMIA" x1="0" x2="1" y1="0" y2="1">
                     <stop offset="0" stopColor="#10b981" />
                     <stop offset="1" stopColor="#14b8a6" />
                   </linearGradient>
                 </defs>
-                <circle cx="12" cy="12" r="6" fill="url(#gradFootballM)" />
-                <path d="M12 6 l2 3 l-2 2 l-2 -2 z" fill="#ffffff" />
-                <path d="M12 18 l2 -3 l-2 -2 l-2 2 z" fill="#ffffff" />
+                <rect x="5" y="8" width="14" height="8" rx="2" fill="url(#gradWalletMIA)" />
+                <circle cx="16" cy="12" r="1.5" fill="#ffffff" />
+              </svg>
+              Money & Costs
+            </h4>
+            <ul className="leading-relaxed space-y-2 list-disc list-inside">
+              <li><strong>Stadium parking:</strong> $40-60 pre-purchased</li>
+              <li><strong>Mid-range hotel:</strong> $275-400/night</li>
+              <li><strong>Meals:</strong> $15-25 (casual), $40-70 (mid-range)</li>
+              <li><strong>Public transit:</strong> $2.25/trip, $5.65 daily cap</li>
+            </ul>
+          </div>
+
+          {/* Safety & Connectivity */}
+          <div className="mb-6">
+            <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
+              <svg className="h4-icon-svg" role="img" aria-label="Shield" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradShieldMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#0ea5e9" />
+                    <stop offset="1" stopColor="#38bdf8" />
+                  </linearGradient>
+                </defs>
+                <path d="M12 3 c0 0 -8 4 -8 12 c0 4 8 6 8 6 s8 -2 8 -6 c0 -8 -8 -12 -8 -12z" fill="url(#gradShieldMIA)" />
+              </svg>
+              Safety & Connectivity
+            </h4>
+            <p className="leading-relaxed mb-3">
+              Miami is generally safe for tourists in popular areas. <strong>Standard urban precautions</strong> apply. The World Cup brings heightened security.
+            </p>
+            <p className="leading-relaxed">
+              <strong>Free WiFi</strong> is available at the airport and most hotels. <strong>5G coverage</strong> is excellent. English is official, but <strong>Spanish dominates</strong> in many neighborhoods.
+            </p>
+          </div>
+          <hr className="editorial-divider" />
+        </article>
+
+          {/* FIFA Fan Festival & Match Day Atmosphere Section */}
+          {/* [BREATHING ROOM] */}
+          {/* [SCROLL ANCHOR: Fan Festival] */}
+          <article id="fan-festival" className="editorial-body theme-amber">
+            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
+              <svg className="heading-icon-svg" role="img" aria-label="Fan Festival" viewBox="0 0 24 24">
+                <defs>
+                  <linearGradient id="gradFanMIA" x1="0" x2="1" y1="0" y2="1">
+                    <stop offset="0" stopColor="#f59e0b" />
+                    <stop offset="1" stopColor="#fbbf24" />
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="7" width="20" height="10" rx="2" fill="url(#gradFanMIA)" />
+                <path d="M12 17v4M8 21h8" stroke="#f59e0b" strokeWidth="2" strokeLinecap="round" />
               </svg>
               FIFA Fan Festival & Match Day Atmosphere
             </h3>
 
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
               While official details are still being finalized, FIFA typically establishes a massive <strong>Fan Festival</strong> in each host city—a free, family-friendly zone with giant screens, live music, food vendors, and sponsor activations. Miami's is expected at <strong>Bayfront Park</strong> in Downtown Miami, offering stunning Biscayne Bay views and central location.
-              {/* [STAT HIGHLIGHT: 10,000+ Fans at Bayfront Park] */}
             </p>
+
+            <div className="my-8">
+              <OptimizedImage
+                src="/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near_stadium.webp"
+                alt="Fans gathering for the FIFA Fan Festival in Miami"
+                className="rounded-xl shadow-lg w-full"
+                width={1600}
+                height={900}
+                placeholder="empty"
+              />
+              <p className="text-sm text-center text-slate-500 mt-2 italic">Join thousands of fans at Bayfront Park for the ultimate watch party experience.</p>
+            </div>
 
             {/* Why Fan Festivals Matter */}
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="TV" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradTVM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#6366f1" />
-                      <stop offset="1" stopColor="#818cf8" />
+                <svg className="h4-icon-svg" role="img" aria-label="Crowd" viewBox="0 0 24 24">
+                   <defs>
+                    <linearGradient id="gradCrowdMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f59e0b" />
+                      <stop offset="1" stopColor="#fbbf24" />
                     </linearGradient>
                   </defs>
-                  <rect x="3" y="6" width="18" height="12" rx="2" fill="url(#gradTVM)" />
-                  <rect x="10" y="18" width="4" height="2" rx="1" fill="#0ea5e9" />
+                  <circle cx="9" cy="7" r="4" fill="url(#gradCrowdMIA)" />
+                  <path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" fill="url(#gradCrowdMIA)" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" stroke="url(#gradCrowdMIA)" strokeWidth="2" strokeLinecap="round" />
+                  <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" stroke="url(#gradCrowdMIA)" strokeWidth="2" strokeLinecap="round" />
                 </svg>
                 Why Fan Festivals Matter
               </h4>
@@ -1293,10 +1522,16 @@ export default function MiamiCityGuide() {
             {/* Neighborhood Watch Parties */}
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Group" viewBox="0 0 24 24">
-                  <use href="#gradGroupM" />
-                  <circle cx="8" cy="12" r="3" fill="url(#gradGroupM)" />
-                  <circle cx="16" cy="12" r="3" fill="#0ea5e9" />
+                <svg className="h4-icon-svg" role="img" aria-label="Party" viewBox="0 0 24 24">
+                   <defs>
+                    <linearGradient id="gradPartyMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#10b981" />
+                      <stop offset="1" stopColor="#14b8a6" />
+                    </linearGradient>
+                  </defs>
+                  <path d="M3 21l18 -18" stroke="url(#gradPartyMIA)" strokeWidth="2" />
+                  <path d="M3 10l7 7" stroke="url(#gradPartyMIA)" strokeWidth="2" />
+                  <path d="M10 3l7 7" stroke="url(#gradPartyMIA)" strokeWidth="2" />
                 </svg>
                 Neighborhood Watch Parties
               </h4>
@@ -1314,14 +1549,14 @@ export default function MiamiCityGuide() {
             {/* Cultural Vibe */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Heart" viewBox="0 0 24 24">
-                  <defs>
-                    <linearGradient id="gradHeartM" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stopColor="#fb7185" />
-                      <stop offset="1" stopColor="#ec4899" />
+                <svg className="h4-icon-svg" role="img" aria-label="Culture" viewBox="0 0 24 24">
+                   <defs>
+                    <linearGradient id="gradCultureMIA" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stopColor="#f43f5e" />
+                      <stop offset="1" stopColor="#e11d48" />
                     </linearGradient>
                   </defs>
-                  <path d="M12 20 c-6 -4 -8 -7 -8 -10 a4 4 0 0 1 7 -2 a4 4 0 0 1 7 2 c0 3 -2 6 -8 10z" fill="url(#gradHeartM)" />
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="url(#gradCultureMIA)" />
                 </svg>
                 Cultural Vibe
               </h4>
@@ -1335,39 +1570,27 @@ export default function MiamiCityGuide() {
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Booking Strategy] */}
           <article id="booking" className="editorial-body theme-gold">
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Calendar check" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradCalCheckM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#10b981" />
-                    <stop offset="1" stopColor="#14b8a6" />
-                  </linearGradient>
-                </defs>
-                <rect x="3" y="5" width="18" height="16" rx="2" fill="url(#gradCalCheckM)" />
-                <rect x="3" y="5" width="18" height="4" rx="2" fill="#0ea5e9" />
-                <path d="M9 13 l2 2 l4 -4" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-              Booking Strategy: How to Plan Your World Cup Trip
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
+                <ClipboardCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+                Booking Strategy: How to Plan Your World Cup Trip
+              </h2>
+            </div>
 
             {/* Timeline for Success */}
-            {/* [TIMELINE GRAPHIC: Visual timeline of booking milestones] */}
+
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <svg className="h4-icon-svg" role="img" aria-label="Clock" viewBox="0 0 24 24">
-                  <use href="#gradClockM" />
-                  <circle cx="12" cy="12" r="9" fill="url(#gradClockM)" />
-                </svg>
+                <Clock className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                 Timeline for Success
               </h4>
 
               {/* Now (Late 2025) */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Calendar" viewBox="0 0 24 24">
-                    <use href="#gradCalendarM" />
-                    <rect x="5" y="8" width="14" height="10" rx="2" fill="url(#gradCalendarM)" />
-                  </svg>
+                  <Calendar className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   Now (Late 2025)
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1380,15 +1603,7 @@ export default function MiamiCityGuide() {
               {/* Upon Securing Tickets */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Ticket" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradTicketM" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#6366f1" />
-                        <stop offset="1" stopColor="#818cf8" />
-                      </linearGradient>
-                    </defs>
-                    <path d="M5 9 h14 v6 h-2 a2 2 0 1 1 0 -4 h-10 a2 2 0 1 0 0 4 h-2z" fill="url(#gradTicketM)" />
-                  </svg>
+                  <Ticket className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
                   Upon Securing Tickets (Late 2025/Early 2026)
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1402,16 +1617,7 @@ export default function MiamiCityGuide() {
               {/* 2-4 Weeks Before Departure */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <svg className="h4-icon-svg" role="img" aria-label="Suitcase" viewBox="0 0 24 24">
-                    <defs>
-                      <linearGradient id="gradSuitcaseM" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stopColor="#10b981" />
-                        <stop offset="1" stopColor="#14b8a6" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="6" y="9" width="12" height="8" rx="2" fill="url(#gradSuitcaseM)" />
-                    <rect x="9" y="7" width="6" height="2" rx="1" fill="#0ea5e9" />
-                  </svg>
+                  <Briefcase className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
                   2-4 Weeks Before Departure
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1428,18 +1634,9 @@ export default function MiamiCityGuide() {
             </p>
 
             {/* Affiliate Opportunity Moment */}
-            {/* [EXPERT INSIGHT CALLOUT] */}
           <div className="callout-pro-tip">
             <h4 className="editorial-h4 mb-3 flex items-center gap-2">
-              <svg className="h4-icon-svg" role="img" aria-label="Star" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradStarM2" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#10b981" />
-                    <stop offset="1" stopColor="#14b8a6" />
-                  </linearGradient>
-                </defs>
-                <path d="M12 3 l2.8 6 h6.2 l-5 3.6 1.9 6.4 -5.9 -3.8 -5.9 3.8 1.9 -6.4 -5 -3.6 h6.2 z" fill="url(#gradStarM2)" />
-              </svg>
+              <Star className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               Pro Booking Tip
             </h4>
             <p className="leading-relaxed">Once you know your travel dates, <strong>book hotels through trusted platforms</strong> offering World Cup packages or flexible cancellation policies. Properties near downtown Miami, Brightline stations, and Metrorail access book fastest. Comparison shopping across multiple booking engines often reveals 10-20% price differences for identical rooms—worth the 15 minutes research.</p>
@@ -1450,25 +1647,22 @@ export default function MiamiCityGuide() {
           {/* [BREATHING ROOM] */}
           {/* [SCROLL ANCHOR: Why Miami Wins] */}
           <article className="editorial-body">
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Trophy" viewBox="0 0 24 24">
-                <use href="#gradTrophyM" />
-                <path d="M7 6 h10 v3 a5 5 0 0 1 -5 5 v3 h-3 v-3 a5 5 0 0 1 -5 -5 V6z" fill="url(#gradTrophyM)" />
-              </svg>
-              Why Miami Wins the World Cup Host City Lottery
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-yellow-100 dark:bg-yellow-900/30 rounded-lg">
+                <Trophy className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+              </div>
+              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+                Why Miami Wins the World Cup Host City Lottery
+              </h2>
+            </div>
 
             <p className="leading-relaxed mb-4">
               Let's be honest: some World Cup host cities are purely functional—you watch matches, maybe see a museum, then move on. Miami is different. This city was built for celebration. The nightlife doesn't quit. The beaches deliver postcard perfection. The food scene rivals any global capital. And unlike some North American hosts where soccer is niche, Miami <strong>breathes</strong> football.
             </p>
 
-            {/* [PULL QUOTE] */}
-            <div className="my-12 relative">
-               <div className="absolute top-0 left-0 text-6xl text-emerald-200 dark:text-emerald-800 font-serif -mt-8 -ml-4 select-none">"</div>
-               <p className="relative z-10 text-2xl md:text-3xl font-serif font-bold text-slate-800 dark:text-slate-100 leading-tight text-center px-8">
-                 Unlike some North American hosts where soccer is niche, Miami <span className="text-emerald-600 dark:text-emerald-400">breathes</span> football.
-               </p>
-            </div>
+            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+              &ldquo;Unlike some North American hosts where soccer is niche, Miami <span className="text-emerald-600 dark:text-emerald-400">breathes</span> football.&rdquo;
+            </blockquote>
 
             <p className="leading-relaxed mb-4">
               The stadium itself reflects this DNA—<strong>purpose-built for the sport</strong>, repeatedly hosting international matches that prove South Florida understands the beautiful game. When 65,000 fans pack Hard Rock Stadium for a World Cup knockout match in July 2026, with <strong>South Florida's energy</strong> spilling into every neighborhood, you'll understand why FIFA chose this city.
@@ -1492,13 +1686,14 @@ export default function MiamiCityGuide() {
 
           {/* Related Destinations */}
           <article className="editorial-body">
-            <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Map pin" viewBox="0 0 24 24">
-                <use href="#gradPinM" />
-                <path d="M12 3 C8.7 3 6 5.7 6 9 c0 5.25 6 12 6 12 s6-6.75 6-12 c0-3.3-2.7-6-6-6z" fill="url(#gradPinM)" />
-              </svg>
-              Plan Your Tropical World Cup Adventure
-            </h2>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                <Plane className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              </div>
+              <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+                Plan Your Tropical World Cup Adventure
+              </h2>
+            </div>
             <div className="space-y-6">
               <p>
                 Miami's unique location and tropical climate make it an ideal base for exploring Southern host cities and international destinations.
@@ -1549,25 +1744,31 @@ export default function MiamiCityGuide() {
 
           {/* Final Checklist Section */}
           <article className="editorial-body">
-            <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <svg className="heading-icon-svg" role="img" aria-label="Checklist" viewBox="0 0 24 24">
-                <defs>
-                  <linearGradient id="gradChecklistM" x1="0" x2="1" y1="0" y2="1">
-                    <stop offset="0" stopColor="#10b981" />
-                    <stop offset="1" stopColor="#14b8a6" />
-                  </linearGradient>
-                </defs>
-                <rect x="4" y="6" width="16" height="12" rx="2" fill="url(#gradChecklistM)" />
-                <path d="M7 10 l2 2 l3 -3" fill="none" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                <rect x="7" y="13" width="8" height="2" rx="1" fill="#ffffff" />
-              </svg>
-              Final Checklist: Your Miami World Cup Essentials
-            </h3>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
+                <ClipboardCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              </div>
+              <h3 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
+                Final Checklist: Your Miami World Cup Essentials
+              </h3>
+            </div>
+
+            <div className="my-8">
+              <OptimizedImage
+                src="/images/safety-guide/A_realistic_high-detail_photo_of_a_solo_traveler_walking_confidently_through_a_world_cup_2026.webp"
+                alt="World Cup fan ready for the tournament"
+                className="rounded-xl shadow-lg w-full"
+                width={1600}
+                height={900}
+                placeholder="empty"
+              />
+              <p className="text-sm text-center text-slate-500 mt-2 italic">Double-check your essentials before heading to the Magic City.</p>
+            </div>
 
             <div className="grid gap-4 md:grid-cols-2">
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Match tickets secured through FIFA official channels
@@ -1576,7 +1777,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Hotel booked in Downtown/Brickell for transit access (or Miami Gardens for stadium proximity)
@@ -1585,7 +1786,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Flights confirmed to MIA (or FLL with Brightline backup)
@@ -1594,7 +1795,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Stadium parking pre-purchased OR transit plan mapped (Brightline + shuttle)
@@ -1603,7 +1804,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Attraction tickets purchased online (Vizcaya, PAMM, etc.)
@@ -1612,7 +1813,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Miami transit app downloaded (GO Miami-Dade)
@@ -1621,7 +1822,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Portable charger packed (your phone will die by halftime otherwise)
@@ -1630,7 +1831,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Sunscreen, hydration pack, comfortable shoes ready
@@ -1639,7 +1840,7 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
                   Restaurant reservations made for splurge meals
@@ -1648,11 +1849,11 @@ export default function MiamiCityGuide() {
 
               <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
                 <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"/></svg>
+                  <Check className="w-3.5 h-3.5" />
                 </div>
-                <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
-                  Clear stadium-compliant bag purchased (12" x 6" x 12" max)
-                </span>
+                  <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
+                  Clear stadium-compliant bag purchased (12″ × 6″ × 12″ max)
+                  </span>
               </div>
             </div>
 
@@ -1669,74 +1870,128 @@ export default function MiamiCityGuide() {
 
         </section>
 
-        <section className="max-w-3xl mx-auto px-6 pb-12">
-          <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-            <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+        <section className="max-w-4xl mx-auto px-6 pb-12">
+          {/* Interactive Rating Section */}
+          <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+            <div className="relative z-10">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
+              <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
+              <div className="flex items-center justify-center gap-2 mb-4">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <button
+                    key={star}
+                    onClick={() => handleRate(star)}
+                    onMouseEnter={() => setHoverRating(star)}
+                    onMouseLeave={() => setHoverRating(0)}
+                    className="p-1 focus:outline-none transition-transform hover:scale-110"
+                    aria-label={`Rate ${star} stars`}
+                  >
+                    <i className={`text-3xl ri-star-${(hoverRating || userRating) >= star ? 'fill' : 'line'} ${(hoverRating || userRating) >= star ? 'text-amber-400' : 'text-slate-300 dark:text-slate-600'} transition-colors duration-200`}></i>
+                  </button>
+                ))}
+              </div>
+              <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+                <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+                  <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
+                </p>
+              </div>
+            </div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
           </div>
+
+          {/* Related Guides Recommendation Engine */}
+          <div className="mb-16">
+            <div className="flex items-center justify-between mb-8">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
+              <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+                View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Recommendation 1: Houston (Texas Connection) */}
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="group block relative overflow-hidden rounded-2xl aspect-video md:aspect-[1.5/1]">
+                <OptimizedImage 
+                  src="/images/cities/houston-world-cup-2026.webp" 
+                  alt="Houston World Cup Guide"
+                  className="absolute inset-0 w-full h-full"
+                  imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={600}
+                  height={400}
+                  placeholder="empty" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Texas Neighbor</span>
+                  <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Houston</h4>
+                  <p className="text-slate-300 text-sm line-clamp-2">Complete guide to NRG Stadium and Space City's World Cup events.</p>
+                </div>
+              </Link>
+
+              {/* Recommendation 2: Los Angeles (West Coast Hub) */}
+              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="group block relative overflow-hidden rounded-2xl aspect-video md:aspect-[1.5/1]">
+                <OptimizedImage 
+                  src="/images/cities/los-angeles-world-cup-2026.webp" 
+                  alt="Los Angeles World Cup Guide"
+                  className="absolute inset-0 w-full h-full"
+                  imgClassName="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={600}
+                  height={400}
+                  placeholder="empty"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                <div className="absolute bottom-0 left-0 p-6 w-full">
+                  <span className="inline-block px-2 py-1 rounded bg-purple-500/20 backdrop-blur-sm border border-purple-500/30 text-purple-300 text-xs font-bold uppercase tracking-wider mb-2">Entertainment Hub</span>
+                  <h4 className="text-xl font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">Los Angeles</h4>
+                  <p className="text-slate-300 text-sm line-clamp-2">SoFi Stadium guide and Hollywood entertainment for fans.</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Elite Tier Footer Meta Section */}
+          <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="flex items-center gap-4 relative z-10">
+                <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider font-space">Share Guide</span>
+                <div className="flex items-center gap-2">
+                  <a href={`https://twitter.com/intent/tweet?text=Miami%20World%20Cup%202026%20Guide&url=${siteUrl}${pageUrl}`}
+                     target="_blank" rel="noopener noreferrer"
+                     className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-black dark:hover:bg-black border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                     aria-label="Share on X">
+                    <i className="ri-twitter-x-line text-lg group-hover:scale-110 transition-transform"></i>
+                  </a>
+                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${siteUrl}${pageUrl}`}
+                     target="_blank" rel="noopener noreferrer"
+                     className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#1877F2] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                     aria-label="Share on Facebook">
+                    <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
+                  </a>
+                  <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
+                     className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                     aria-label="Copy Link">
+                    <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="w-full h-px bg-slate-200 dark:bg-slate-700 md:hidden"></div>
+              <div className="flex items-center gap-3 relative z-10">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                  <i className="ri-shield-check-fill text-xl"></i>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 font-medium uppercase tracking-wide">Verified & Updated</p>
+                  <p className="text-sm font-bold text-slate-800 dark:text-slate-200">
+                    {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </aside>
         </section>
         <Footer />
       </div>
-    </>
   );
 }
-
-/**
- * =============================================================================
- * ENHANCEMENT KEY & DESIGN SPECIFICATIONS
- * =============================================================================
- * 
- * 1. ENHANCEMENT KEY
- * ------------------
- * - [QUICK SUMMARY]: Bulleted executive summary added at top for 30-second scan.
- * - [TL;DR]: Bottom-line conclusion moved up for immediate value.
- * - [STAT HIGHLIGHTS]: Key data points (Capacity, Surface, etc.) visualized in grids.
- * - [VISUAL PLACEHOLDERS]: Descriptive markers for image injection.
- * - [SCROLL ANCHORS]: Hidden IDs or markers for navigation.
- * - [MILESTONES]: Progress indicators to encourage completion.
- * - [BREATHING ROOM]: Explicit vertical spacing to reduce cognitive load.
- * - [INTERNAL LINK]: Markers for future cross-linking.
- * - [CITATION]: Markers for external authority references.
- * - [SCHEMA SUGGESTIONS]: JSON-LD enhancements for SEO.
- * 
- * 2. DESIGN SPECIFICATIONS
- * ------------------------
- * Typography:
- * - Headlines (H1, H2): Serif font (Merriweather/Playfair) for editorial authority.
- * - Body: Sans-serif (Inter/Roboto) for readability.
- * - Line Length: 60-75 characters for optimal reading speed.
- * - Font Size: 18px base for body text (mobile-first).
- * 
- * Color Palette (Miami Theme):
- * - Primary: Emerald Green (#10b981) - representing the field and tropical vibes.
- * - Secondary: Ocean Blue (#0ea5e9) - representing the coast.
- * - Accents: Amber/Gold (#f59e0b) - representing sun and energy.
- * - Backgrounds: Off-white/Slate-50 for reduced eye strain vs pure white.
- * 
- * Spacing & Layout:
- * - Grid: 12-column responsive grid.
- * - Vertical Rhythm: 8px baseline grid.
- * - White Space: Generous padding (py-16) between major sections.
- * 
- * 3. TECHNICAL IMPLEMENTATION NOTES
- * ---------------------------------
- * - Images: Use WebP format with lazy loading and explicit width/height to prevent layout shift (CLS).
- * - Accessibility: Ensure color contrast ratios > 4.5:1. All interactive elements must have focus states.
- * - Performance: Code split heavy components (like Maps).
- * - Dark Mode: Use `dark:` variants for all color classes.
- * 
- * 4. A/B TESTING VARIATIONS
- * -------------------------
- * - Headline A: "South Florida's Global Football Festival" (Current - Editorial)
- * - Headline B: "Miami World Cup 2026: The Ultimate Fan Guide" (Direct - SEO)
- * - Pull Quote A: "Miami... promises to transform the World Cup experience..." (Inspirational)
- * - Pull Quote B: "Brightline + Shuttle is the recommended route." (Practical)
- * 
- * 5. SEO SCHEMA STRATEGY
- * ----------------------
- * - Current: CityGuide, Breadcrumb, ImageObject.
- * - Recommended Additions: 
- *   - Event Schema for each match (Group Stage, Round of 32, QF, Bronze Final).
- *   - FAQPage Schema for the "Practical Information" section.
- *   - VideoObject Schema if embedding match highlights.
- * =============================================================================
- */

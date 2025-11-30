@@ -26,6 +26,18 @@ const NewYorkCityArticlePage = lazy(() => import('../pages/cities/new-york-new-j
 const LosAngelesArticlePage = lazy(() => import('../pages/cities/los-angeles/page'));
 const MiamiArticlePage = lazy(() => import('../pages/cities/miami/page'));
 const DallasArticlePage = lazy(() => import('../pages/cities/dallas/page'));
+const HoustonArticlePage = lazy(() => import('../pages/cities/houston/page'));
+const AtlantaArticlePage = lazy(() => import('../pages/cities/atlanta/page'));
+const PhiladelphiaArticlePage = lazy(() => import('../pages/cities/philadelphia/page'));
+const SeattleArticlePage = lazy(() => import('../pages/cities/seattle/page'));
+const KansasCityArticlePage = lazy(() => import('../pages/cities/kansas-city/page'));
+const SanFranciscoArticlePage = lazy(() => import('../pages/cities/san-francisco/page'));
+const BostonArticlePage = lazy(() => import('../pages/cities/boston/page'));
+const TorontoArticlePage = lazy(() => import('../pages/cities/toronto/page'));
+const VancouverArticlePage = lazy(() => import('../pages/cities/vancouver/page'));
+const MexicoCityArticlePage = lazy(() => import('../pages/cities/mexico-city/page'));
+const GuadalajaraArticlePage = lazy(() => import('../pages/cities/guadalajara/page'));
+const MonterreyArticlePage = lazy(() => import('../pages/cities/monterrey/page'));
 const TravelTipsPage = lazy(() => import('../pages/travel-tips/page'));
 const TravelTipsArticlePage = lazy(() => import('../pages/travel-tips/article/page'));
 const TravelRoutesPage = lazy(() => import('../pages/travel-routes/page'));
@@ -159,48 +171,96 @@ const routes: RouteObject[] = [
     element: <Navigate to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide',
+    element: <KansasCityArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/kansas-city',
     element: <Navigate to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/houston-world-cup-2026-guide',
+    element: <HoustonArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/houston',
     element: <Navigate to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide',
+    element: <AtlantaArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/atlanta',
     element: <Navigate to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide',
+    element: <PhiladelphiaArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/philadelphia',
     element: <Navigate to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide',
+    element: <SeattleArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/seattle',
     element: <Navigate to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide',
+    element: <SanFranciscoArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/san-francisco',
     element: <Navigate to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/boston-world-cup-2026-guide',
+    element: <BostonArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/boston',
     element: <Navigate to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide',
+    element: <TorontoArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/toronto',
     element: <Navigate to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide',
+    element: <VancouverArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/vancouver',
     element: <Navigate to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide',
+    element: <MexicoCityArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/mexico-city',
     element: <Navigate to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" replace />
   },
   {
+    path: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide',
+    element: <GuadalajaraArticlePage />
+  },
+  {
     path: '/world-cup-2026-host-cities/guadalajara',
     element: <Navigate to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" replace />
+  },
+  {
+    path: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide',
+    element: <MonterreyArticlePage />
   },
   {
     path: '/world-cup-2026-host-cities/monterrey',
