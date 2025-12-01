@@ -1,8 +1,24 @@
-
+﻿
 import { useState, useEffect } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'TransportationPageOriginal'
+// To restore:
+// 1. Delete the 'TransportationPage' component
+// 2. Rename 'TransportationPageOriginal' back to 'TransportationPage'
+// 3. Export it as default
+// ==========================================
+
+export default function TransportationPage() {
+  return <ComingSoon title="Transportation Guide Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 interface TransportSection {
   title: string;
@@ -28,7 +44,8 @@ interface TransportGuide {
   slugOverride?: string;
 }
 
-export default function TransportationPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function TransportationPageOriginal() {
   const [selectedType, setSelectedType] = useState('All Types');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGuide, setSelectedGuide] = useState<TransportGuide | null>(null);

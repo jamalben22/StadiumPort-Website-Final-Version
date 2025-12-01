@@ -1,9 +1,26 @@
-import { Header } from '../../components/feature/Header'
+﻿import { Header } from '../../components/feature/Header'
 import { Footer } from '../../components/feature/Footer'
 import { Link } from 'react-router-dom'
 import { OptimizedImage } from '../../components/base/OptimizedImage'
+import { ComingSoon } from '../../components/common/ComingSoon'
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'GuidesPageOriginal'
+// To restore:
+// 1. Delete the 'GuidesPage' component
+// 2. Rename 'GuidesPageOriginal' back to 'GuidesPage'
+// 3. Export it as default
+// ==========================================
 
 export default function GuidesPage() {
+  return <ComingSoon title="Travel Guides Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function GuidesPageOriginal() {
   const title = 'Health & Medical Guide for World Cup 2026 Travelers'
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">

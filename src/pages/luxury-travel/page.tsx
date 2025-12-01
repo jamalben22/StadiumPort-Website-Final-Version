@@ -1,10 +1,26 @@
-
+﻿
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'LuxuryTravelPageOriginal'
+// To restore:
+// 1. Delete the 'LuxuryTravelPage' component
+// 2. Rename 'LuxuryTravelPageOriginal' back to 'LuxuryTravelPage'
+// 3. Export it as default
+// ==========================================
+
+export default function LuxuryTravelPage() {
+  return <ComingSoon title="Luxury Travel Guide Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 interface LuxurySection {
   title: string;
@@ -30,7 +46,8 @@ interface LuxuryGuide {
   slugOverride?: string;
 }
 
-export default function LuxuryTravelPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function LuxuryTravelPageOriginal() {
   const [selectedCategory, setSelectedCategory] = useState('All Categories');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedGuide, setSelectedGuide] = useState<LuxuryGuide | null>(null);

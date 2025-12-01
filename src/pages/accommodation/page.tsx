@@ -5,6 +5,22 @@ import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'AccommodationPageOriginal'
+// To restore:
+// 1. Delete the 'AccommodationPage' component
+// 2. Rename 'AccommodationPageOriginal' back to 'AccommodationPage'
+// 3. Export it as default
+// ==========================================
+
+export default function AccommodationPage() {
+  return <ComingSoon title="Accommodation Guide Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 interface AccommodationSection {
   title: string;
@@ -29,7 +45,8 @@ interface AccommodationGuide {
   fullContent: FullContent;
 }
 
-export default function AccommodationPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function AccommodationPageOriginal() {
   const [gridReady, setGridReady] = useState(false)
   const gridRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {

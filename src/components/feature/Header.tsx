@@ -52,17 +52,8 @@ export function Header() {
     
     // Travel Guides
     { type: 'guide', title: 'Travel Tips', path: '/world-cup-2026-travel-tips', description: 'Essential travel advice for World Cup 2026' },
-    { type: 'guide', title: 'Budget Guides', path: '/budget-guides', description: 'Save money on your World Cup trip' },
-    { type: 'guide', title: 'Accommodation', path: '/accommodation', description: 'Best places to stay during the tournament' },
-    { type: 'guide', title: 'Transportation', path: '/transportation', description: 'Getting around host cities' },
     { type: 'guide', title: 'Safety Guide', path: '/safety-guide', description: 'Stay safe during your travels' },
-    { type: 'guide', title: 'Packing Lists', path: '/packing-lists', description: 'What to pack for your World Cup adventure' },
     
-    // Other pages
-    { type: 'page', title: 'Deals & Offers', path: '/deals', description: 'Best deals for World Cup 2026' },
-    { type: 'page', title: 'Luxury Travel', path: '/luxury-travel', description: 'Premium World Cup experiences' },
-    { type: 'page', title: 'Travel Routes', path: '/travel-routes', description: 'Multi-city travel itineraries' },
-
     // Articles
     { type: 'article', title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options in host cities' },
     { type: 'article', title: 'Complete Planning Checklist', path: '/world-cup-2026-travel-tips/complete-planning-checklist', description: 'Step-by-step checklist for planning flights, stays, transport, and matchdays' },
@@ -333,8 +324,6 @@ export function Header() {
               {[
                 { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
-                { path: '/travel-guides', label: 'Travel Guides' },
-                { path: '/deals', label: 'Deals' },
                 { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
               ].map((item) => (
                 <Link
@@ -454,8 +443,6 @@ export function Header() {
                   {[
                     { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                     { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
-                    { path: '/travel-guides', label: 'Travel Guides' },
-                    { path: '/deals', label: 'Deals' },
                     { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
                   ].map((item, index) => (
                     <Link
@@ -490,9 +477,9 @@ export function Header() {
                   >
                     <div className="font-medium">Search</div>
                   </button>
-                  <Link to="/deals" onClick={closeMenu}>
+                  <Link to="/world-cup-2026-travel-tips" onClick={closeMenu}>
                     <button className="w-full px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 text-left">
-                      <div className="font-medium">Start Planning</div>
+                      <div className="font-medium">Travel Tips</div>
                     </button>
                   </Link>
                 </div>
