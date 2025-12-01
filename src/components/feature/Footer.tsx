@@ -103,7 +103,7 @@ export function Footer() {
         </div>
 
         {/* Premium Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           {/* Apple-Style Premium Brand Section */}
           <div className="lg:col-span-1 animate-fade-up-delay-100">
             <div className="flex items-center mb-6">
@@ -145,9 +145,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/world-cup-2026-host-cities', label: 'All Host Cities' },
-                { to: '/world-cup-2026-stadiums', label: 'All Stadiums' },
-                { to: '/travel-routes', label: 'Multi-City Routes' },
-                { to: '/city-comparisons', label: 'City Comparisons' }
+                { to: '/world-cup-2026-stadiums', label: 'All Stadiums' }
               ].map((item) => (
                 <li key={item.to}>
                   <Link 
@@ -161,38 +159,12 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Minimal Plan Your Trip */}
-          <div>
-            <h3 className="font-medium mb-4 text-slate-200">Plan Your Trip</h3>
-            <ul className="space-y-2 text-sm">
-              {[
-                { to: '/travel-guides', label: 'Travel Guides' },
-                { to: '/budget-guides', label: 'Budget Travel' },
-                { to: '/luxury-travel', label: 'Luxury Experiences' },
-                { to: '/transportation', label: 'Getting Around' },
-                { to: '/accommodation', label: 'Where to Stay' }
-              ].map((item) => (
-                <li key={item.to}>
-                  <Link 
-                    to={item.to} 
-                    className="text-slate-400 hover:text-white transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Minimal Tools & Tips */}
           <div>
             <h3 className="font-medium mb-4 text-slate-200">Tools & Tips</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { to: '/deals', label: 'Today\'s Best Deals' },
-                { to: '/deal-alerts', label: 'Deal Alerts' },
                 { to: '/world-cup-2026-travel-tips', label: 'Travel Tips' },
-                { to: '/packing-lists', label: 'Packing Lists' },
                 { to: '/safety-guide', label: 'Safety Guide' }
               ].map((item) => (
                 <li key={item.to}>

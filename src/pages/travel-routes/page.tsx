@@ -6,6 +6,22 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { OptimizedImage } from '../../components/ui/OptimizedImage';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'TravelRoutesPageOriginal'
+// To restore:
+// 1. Delete the 'TravelRoutesPage' component
+// 2. Rename 'TravelRoutesPageOriginal' back to 'TravelRoutesPage'
+// 3. Export it as default
+// ==========================================
+
+export default function TravelRoutesPage() {
+  return <ComingSoon title="Travel Routes Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 const routeTypes = [
   'All Routes',
@@ -385,7 +401,8 @@ const travelRoutes = [
   }
 ];
 
-export default function TravelRoutesPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function TravelRoutesPageOriginal() {
   const [selectedType, setSelectedType] = useState('All Routes');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRoute, setSelectedRoute] = useState<typeof travelRoutes[0] | null>(null);

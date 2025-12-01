@@ -5,8 +5,25 @@ import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'PackingListsPageOriginal'
+// To restore:
+// 1. Delete the 'PackingListsPage' component
+// 2. Rename 'PackingListsPageOriginal' back to 'PackingListsPage'
+// 3. Export it as default
+// ==========================================
 
 export default function PackingListsPage() {
+  return <ComingSoon title="Packing Lists Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function PackingListsPageOriginal() {
   const [selectedList, setSelectedList] = useState<string | null>(null);
   const [checkedItems, setCheckedItems] = useState<{[key: string]: boolean}>({});
 

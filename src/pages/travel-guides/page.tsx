@@ -1,4 +1,4 @@
-
+﻿
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
@@ -6,8 +6,25 @@ import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateTravelGuideSchema, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
+import { ComingSoon } from '../../components/common/ComingSoon';
+import { setPageMeta } from '../../components/seo/MetaUtils';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'TravelGuidesPageOriginal'
+// To restore:
+// 1. Delete the 'TravelGuidesPage' component
+// 2. Rename 'TravelGuidesPageOriginal' back to 'TravelGuidesPage'
+// 3. Export it as default
+// ==========================================
 
 export default function TravelGuidesPage() {
+  return <ComingSoon title="Travel Guides Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function TravelGuidesPageOriginal() {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedArticle, setSelectedArticle] = useState(null);
@@ -710,4 +727,3 @@ export default function TravelGuidesPage() {
     </div>
   );
 }
-import { setPageMeta } from '../../components/seo/MetaUtils';

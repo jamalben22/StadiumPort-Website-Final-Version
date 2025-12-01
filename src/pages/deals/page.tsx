@@ -1,4 +1,4 @@
-
+﻿
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
@@ -7,8 +7,25 @@ import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
 import { SchemaOrg, generateBreadcrumbSchema } from '../../components/seo/SchemaOrg';
 import { setPageMeta } from '../../components/seo/MetaUtils';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'DealsPageOriginal'
+// To restore:
+// 1. Delete the 'DealsPage' component
+// 2. Rename 'DealsPageOriginal' back to 'DealsPage'
+// 3. Export it as default
+// ==========================================
 
 export default function DealsPage() {
+  return <ComingSoon title="Travel Deals Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function DealsPageOriginal() {
   const [gridReady, setGridReady] = useState(false)
   const gridRef = useRef<HTMLDivElement | null>(null)
   useEffect(() => {

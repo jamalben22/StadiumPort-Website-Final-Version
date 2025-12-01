@@ -1,9 +1,25 @@
-
+﻿
 import { useState, useEffect } from 'react';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'BudgetGuidesPageOriginal'
+// To restore:
+// 1. Delete the 'BudgetGuidesPage' component
+// 2. Rename 'BudgetGuidesPageOriginal' back to 'BudgetGuidesPage'
+// 3. Export it as default
+// ==========================================
+
+export default function BudgetGuidesPage() {
+  return <ComingSoon title="Budget Guides Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 interface BudgetSection {
   title: string;
@@ -33,7 +49,8 @@ interface BudgetGuide {
   fullContent: FullContent;
 }
 
-export default function BudgetGuidesPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function BudgetGuidesPageOriginal() {
   const [selectedBudget, setSelectedBudget] = useState('all');
   const [selectedCity, setSelectedCity] = useState('all');
   const [selectedGuide, setSelectedGuide] = useState<BudgetGuide | null>(null);

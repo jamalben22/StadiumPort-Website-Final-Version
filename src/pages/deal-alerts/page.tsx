@@ -1,10 +1,26 @@
-
+﻿
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'DealAlertsPageOriginal'
+// To restore:
+// 1. Delete the 'DealAlertsPage' component
+// 2. Rename 'DealAlertsPageOriginal' back to 'DealAlertsPage'
+// 3. Export it as default
+// ==========================================
+
+export default function DealAlertsPage() {
+  return <ComingSoon title="Deal Alerts Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 const alertTypes = [
   'Flight Price Drops',
@@ -89,7 +105,8 @@ const dealCategories = [
   }
 ];
 
-export default function DealAlertsPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function DealAlertsPageOriginal() {
   const [email, setEmail] = useState('');
   const [selectedAlerts, setSelectedAlerts] = useState<string[]>([]);
   const [isSubscribed, setIsSubscribed] = useState(false);

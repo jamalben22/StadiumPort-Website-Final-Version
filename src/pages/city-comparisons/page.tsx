@@ -1,10 +1,25 @@
-
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
 import { Footer } from '../../components/feature/Footer';
 import { Card } from '../../components/base/Card';
 import { Button } from '../../components/base/Button';
+import { ComingSoon } from '../../components/common/ComingSoon';
+
+// ==========================================
+// 🚨 INCOMPLETE PAGE PRESERVATION
+// The original content is preserved below as 'CityComparisonsPageOriginal'
+// To restore:
+// 1. Delete the 'CityComparisonsPage' component
+// 2. Rename 'CityComparisonsPageOriginal' back to 'CityComparisonsPage'
+// 3. Export it as default
+// ==========================================
+
+export default function CityComparisonsPage() {
+  return <ComingSoon title="City Comparisons Coming Soon" />;
+}
+
+// ⬇️ ORIGINAL CONTENT PRESERVED BELOW ⬇️
 
 const comparisonTypes = [
   'All Comparisons',
@@ -406,7 +421,8 @@ const cityComparisons = [
   }
 ];
 
-export default function CityComparisonsPage() {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function CityComparisonsPageOriginal() {
   const [selectedType, setSelectedType] = useState('All Comparisons');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedComparison, setSelectedComparison] = useState<typeof cityComparisons[0] | null>(null);
@@ -432,8 +448,10 @@ export default function CityComparisonsPage() {
     return matchesType && matchesSearch;
   });
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const featuredComparisons = cityComparisons.filter(comparison => comparison.featured);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const openComparisonModal = (comparison: typeof cityComparisons[0]) => {
     setSelectedComparison(comparison);
     setIsModalOpen(true);
