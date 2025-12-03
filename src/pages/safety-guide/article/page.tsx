@@ -28,7 +28,7 @@ export default function SafetyGuideArticlePage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pageUrl = `${siteUrl}/safety-guide/${slug ?? safetyOverviewSlug}`
-    const pageTitle = `${title} – Safety Guide | StadiumPort`
+    const pageTitle = `${title} – Safety Guide | Stadiumport`
     const image = `${siteUrl}${heroImageSrcLocal}`
     const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
     const tags = ['World Cup 2026', 'Safety Guide', 'Travel Insurance']
@@ -101,14 +101,14 @@ export default function SafetyGuideArticlePage() {
             This guide explains exactly what coverage you need, what policies actually deliver, and how to avoid expensive mistakes that leave you unprotected. Based on analysis from travel insurance experts, medical evacuation specialists, and lessons from Qatar 2022 attendees, here's how to protect your World Cup investment properly.
           </p>
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-question-line text-emerald-500"></i>
+            <i className="ri-question-line text-[#01b47d]"></i>
             Why World Cup 2026 Requires Specialized Insurance
           </h2>
           <p className="whitespace-pre-line">
             Standard travel insurance policies fail World Cup travelers in critical ways. Here's what makes this tournament different:
           </p>
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ticket-line text-emerald-500"></i>
+            <i className="ri-ticket-line text-[#01b47d]"></i>
             The FIFA Ticket Problem
           </h3>
           <p className="whitespace-pre-line">
@@ -124,7 +124,7 @@ export default function SafetyGuideArticlePage() {
             With individual match tickets ranging from $60 to $6,700+ and Final tickets averaging over $11,000 on secondary markets, the financial exposure is substantial. Most standard trip cancellation policies won't cover the full value of premium World Cup tickets purchased months in advance.
           </p>
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
+            <i className="ri-global-line text-[#01b47d]"></i>
             Multi-Country Complexity
           </h3>
           <p className="whitespace-pre-line">
@@ -143,7 +143,7 @@ export default function SafetyGuideArticlePage() {
             Security experts project over 7 million tourists will visit the 16 host cities during the 39-day tournament, creating unprecedented opportunities for opportunistic crime, pickpocketing, and robbery. Standard policies often exclude or severely limit coverage for theft in high-risk areas.
           </p>
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-first-aid-kit-line text-emerald-500"></i>
+            <i className="ri-first-aid-kit-line text-[#01b47d]"></i>
             The Medical Evacuation Reality
           </h3>
           <p className="whitespace-pre-line">
@@ -168,14 +168,14 @@ export default function SafetyGuideArticlePage() {
             Standard travel insurance typically includes $50,000-$100,000 in medical evacuation coverage. Insurance experts recommend minimum coverage of $150,000 per person for international travel, especially to destinations with limited healthcare facilities. For World Cup 2026's multi-country format, $250,000+ is prudent.
           </p>
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-file-list-3-line text-emerald-500"></i>
+            <i className="ri-file-list-3-line text-[#01b47d]"></i>
             Essential Coverage Components
           </h2>
           <p className="whitespace-pre-line">
             Effective World Cup travel insurance must include these five elements:
           </p>
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-line text-emerald-500"></i>
+            <i className="ri-calendar-line text-[#01b47d]"></i>
             1. Trip Cancellation and Interruption
           </h3>
           <p className="whitespace-pre-line">
@@ -206,7 +206,7 @@ export default function SafetyGuideArticlePage() {
              Minimum coverage equal to your total trip investment: tickets + flights + accommodations + ground transportation. For a family of four attending multiple matches, this easily reaches $15,000-$30,000.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-hospital-line text-emerald-500"></i>
+             <i className="ri-hospital-line text-[#01b47d]"></i>
              2. Emergency Medical Coverage
            </h3>
            <p className="whitespace-pre-line">
@@ -239,7 +239,7 @@ export default function SafetyGuideArticlePage() {
              Minimum $100,000 per person for travel within the U.S. and Canada. Minimum $150,000 per person if traveling to Mexico or crossing multiple borders. Families with pre-existing conditions should consider $250,000+ coverage.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-first-aid-kit-line text-emerald-500"></i>
+             <i className="ri-first-aid-kit-line text-[#01b47d]"></i>
              3. Medical Evacuation and Repatriation
            </h3>
            <p className="whitespace-pre-line">
@@ -275,7 +275,7 @@ export default function SafetyGuideArticlePage() {
              Some evacuation policies only cover transport to the "nearest adequate facility," not home. Premium policies allow transport to a "hospital of choice" or your primary residence, which can mean the difference between recovering in Monterrey versus your hometown.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-suitcase-line text-emerald-500"></i>
+             <i className="ri-suitcase-line text-[#01b47d]"></i>
              4. Baggage Loss and Delay
            </h3>
            <p className="whitespace-pre-line">
@@ -299,7 +299,7 @@ export default function SafetyGuideArticlePage() {
              Standard coverage ($1,500-$2,000) suffices for most travelers. Upgrade if carrying valuable camera equipment, electronics, or designer items—but verify specific item limits and consider separate valuables coverage.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-time-line text-emerald-500"></i>
+             <i className="ri-time-line text-[#01b47d]"></i>
              5. Travel Delay and Missed Connection
            </h3>
            <p className="whitespace-pre-line">
@@ -331,14 +331,14 @@ export default function SafetyGuideArticlePage() {
              This coverage becomes critical during peak World Cup travel when flights are overbooked and alternatives scarce. Look for policies with low delay thresholds (6 hours) and generous daily limits ($500-$1,000).
            </p>
            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-star-line text-emerald-500"></i>
+             <i className="ri-star-line text-[#01b47d]"></i>
              Top Travel Insurance Policies for World Cup 2026
            </h2>
            <p className="whitespace-pre-line">
              Based on coverage analysis, claims handling reputation, and cost-effectiveness, these providers offer the strongest protection for World Cup travelers:
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-shield-check-line text-emerald-500"></i>
+             <i className="ri-shield-check-line text-[#01b47d]"></i>
              For Comprehensive Protection: Seven Corners Trip Protection Choice
            </h3>
            <p className="whitespace-pre-line">
@@ -366,7 +366,7 @@ export default function SafetyGuideArticlePage() {
              <strong>Get a Quote:</strong> <a href="https://www.sevencorners.com" target="_blank" rel="noopener noreferrer">https://www.sevencorners.com</a>
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-wallet-line text-emerald-500"></i>
+             <i className="ri-wallet-line text-[#01b47d]"></i>
              For Budget-Conscious Travelers: Travel Insured International FlexiPAX
            </h3>
            <p className="whitespace-pre-line">
@@ -394,7 +394,7 @@ export default function SafetyGuideArticlePage() {
              <strong>Get a Quote:</strong> <a href="https://www.travelinsured.com" target="_blank" rel="noopener noreferrer">https://www.travelinsured.com</a> <mcreference link="https://www.travelinsured.com" index="0"></mcreference>
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-border-line text-emerald-500"></i>
+             <i className="ri-border-line text-[#01b47d]"></i>
              For U.S. Citizens Traveling to Mexico: GeoBlue Voyager
            </h3>
            <p className="whitespace-pre-line">
@@ -419,7 +419,7 @@ export default function SafetyGuideArticlePage() {
              <strong>Get a Quote:</strong> <a href="https://www.geo-blue.com" target="_blank" rel="noopener noreferrer">https://www.geo-blue.com</a>
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-crown-line text-emerald-500"></i>
+             <i className="ri-crown-line text-[#01b47d]"></i>
              For Premium Protection: Allianz Travel Insurance OneTrip Premier
            </h3>
            <p className="whitespace-pre-line">
@@ -444,7 +444,7 @@ export default function SafetyGuideArticlePage() {
              <strong>Get a Quote:</strong> <a href="https://www.allianztravelinsurance.com" target="_blank" rel="noopener noreferrer">https://www.allianztravelinsurance.com</a> <mcreference link="https://www.allianztravelinsurance.com" index="1"></mcreference>
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-repeat-line text-emerald-500"></i>
+             <i className="ri-repeat-line text-[#01b47d]"></i>
              For Frequent Travelers: Annual Multi-Trip Policies
            </h3>
            <p className="whitespace-pre-line">
@@ -474,11 +474,11 @@ export default function SafetyGuideArticlePage() {
              Annual plans typically cost $400-$800 and quickly pay for themselves if taking 2+ insured trips.
            </p>
            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-alert-line text-emerald-500"></i>
+             <i className="ri-alert-line text-[#01b47d]"></i>
              Special Considerations and Add-On Coverage
            </h2>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-checkbox-circle-line text-emerald-500"></i>
+             <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
              Cancel For Any Reason (CFAR)
            </h3>
            <p className="whitespace-pre-line">
@@ -501,7 +501,7 @@ export default function SafetyGuideArticlePage() {
              Potentially, for World Cup 2026. If your team gets eliminated in group stage and you've booked knockout round tickets, CFAR lets you cancel remaining travel and recover most costs. Standard policies won't cover "change of heart" or "team elimination."
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-heart-pulse-line text-emerald-500"></i>
+             <i className="ri-heart-pulse-line text-[#01b47d]"></i>
              Pre-Existing Medical Conditions
            </h3>
            <p className="whitespace-pre-line">
@@ -524,7 +524,7 @@ export default function SafetyGuideArticlePage() {
              Consider medical-only policies like GeoBlue that don't exclude pre-existing conditions, or specialized providers like Covermore that offer pre-existing condition coverage for higher premiums.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-ski-line text-emerald-500"></i>
+             <i className="ri-ski-line text-[#01b47d]"></i>
              Adventure Sports and Activities
            </h3>
            <p className="whitespace-pre-line">
@@ -543,7 +543,7 @@ export default function SafetyGuideArticlePage() {
              Add adventure sports coverage rider (usually $20-50 additional premium) or purchase specialized policies from providers like World Nomads that automatically include adventure activities.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-car-line text-emerald-500"></i>
+             <i className="ri-car-line text-[#01b47d]"></i>
              Rental Car Damage
            </h3>
            <p className="whitespace-pre-line">
@@ -558,14 +558,14 @@ export default function SafetyGuideArticlePage() {
              Many premium credit cards provide primary rental car coverage when you decline rental company insurance and pay with the card. Check your card benefits before paying for duplicate coverage.
            </p>
            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-ban-line text-emerald-500"></i>
+             <i className="ri-ban-line text-[#01b47d]"></i>
              What Travel Insurance DOESN'T Cover
            </h2>
            <p className="whitespace-pre-line">
              Understanding exclusions prevents nasty claim denial surprises:
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-close-circle-line text-emerald-500"></i>
+             <i className="ri-close-circle-line text-[#01b47d]"></i>
              Not Covered by Standard Policies:
            </h3>
            <p className="whitespace-pre-line">
@@ -585,28 +585,28 @@ export default function SafetyGuideArticlePage() {
              Injuries or illness caused by intoxication are typically excluded. That friendly bar crawl after the match could void your medical coverage.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-criminal-line text-emerald-500"></i>
+             <i className="ri-criminal-line text-[#01b47d]"></i>
              Participation in Crimes:
            </h3>
            <p className="whitespace-pre-line">
              Coverage excludes incidents occurring while committing illegal acts. Buying tickets from street scalpers in Mexico, getting arrested, and injured? Not covered.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-bomb-line text-emerald-500"></i>
+             <i className="ri-bomb-line text-[#01b47d]"></i>
              War, Terrorism, and Pandemics:
            </h3>
            <p className="whitespace-pre-line">
              Standard policies exclude war acts and terrorism. Pandemic coverage depends on when you bought the policy relative to when diseases are declared widespread. COVID-19 claims largely depend on timing.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-camera-line text-emerald-500"></i>
+             <i className="ri-camera-line text-[#01b47d]"></i>
              High-Value Items:
            </h3>
            <p className="whitespace-pre-line">
              Jewelry, cash, and electronics typically have low sublimits ($250-$500 per item). That $2,000 camera requires scheduled valuables coverage.
            </p>
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-stethoscope-line text-emerald-500"></i>
+             <i className="ri-stethoscope-line text-[#01b47d]"></i>
              Routine Medical Care:
            </h3>
            <p className="whitespace-pre-line">
@@ -614,7 +614,7 @@ export default function SafetyGuideArticlePage() {
            </p>
            
            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-question-answer-line text-emerald-500"></i>
+             <i className="ri-question-answer-line text-[#01b47d]"></i>
              How to Choose the Right Policy
            </h2>
            <p className="whitespace-pre-line">
@@ -622,7 +622,7 @@ export default function SafetyGuideArticlePage() {
            </p>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-calculator-line text-emerald-500"></i>
+             <i className="ri-calculator-line text-[#01b47d]"></i>
              Step 1: Calculate Total Financial Exposure
            </h3>
            <p className="whitespace-pre-line">
@@ -641,7 +641,7 @@ export default function SafetyGuideArticlePage() {
            </p>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-heart-pulse-line text-emerald-500"></i>
+             <i className="ri-heart-pulse-line text-[#01b47d]"></i>
              Step 2: Determine Your Medical Risk Profile
            </h3>
            <p className="whitespace-pre-line">
@@ -664,7 +664,7 @@ export default function SafetyGuideArticlePage() {
            </ul>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-shield-line text-emerald-500"></i>
+             <i className="ri-shield-line text-[#01b47d]"></i>
              Step 3: Assess Your Risk Tolerance
            </h3>
            <p className="whitespace-pre-line">
@@ -696,7 +696,7 @@ export default function SafetyGuideArticlePage() {
            </ul>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-file-list-line text-emerald-500"></i>
+             <i className="ri-file-list-line text-[#01b47d]"></i>
              Step 4: Compare Specific Policy Terms
            </h3>
            <p className="whitespace-pre-line">
@@ -714,7 +714,7 @@ export default function SafetyGuideArticlePage() {
            </ul>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-time-line text-emerald-500"></i>
+             <i className="ri-time-line text-[#01b47d]"></i>
              Step 5: Purchase at the Right Time
            </h3>
            <p className="whitespace-pre-line">
@@ -734,7 +734,7 @@ export default function SafetyGuideArticlePage() {
            </p>
            
            <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-file-text-line text-emerald-500"></i>
+             <i className="ri-file-text-line text-[#01b47d]"></i>
              Filing Claims: What Actually Works
            </h2>
            <p className="whitespace-pre-line">
@@ -742,7 +742,7 @@ export default function SafetyGuideArticlePage() {
            </p>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-calendar-check-line text-emerald-500"></i>
+             <i className="ri-calendar-check-line text-[#01b47d]"></i>
              Before You Travel:
            </h3>
            <p className="whitespace-pre-line">
@@ -764,7 +764,7 @@ export default function SafetyGuideArticlePage() {
            </ul>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-flight-takeoff-line text-emerald-500"></i>
+             <i className="ri-flight-takeoff-line text-[#01b47d]"></i>
              During Your Trip:
            </h3>
            <p className="whitespace-pre-line">
@@ -796,7 +796,7 @@ export default function SafetyGuideArticlePage() {
            </ol>
            
            <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-             <i className="ri-history-line text-emerald-500"></i>
+             <i className="ri-history-line text-[#01b47d]"></i>
              After Returning:
            </h3>
            <p className="whitespace-pre-line">
@@ -1040,7 +1040,7 @@ export default function SafetyGuideArticlePage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
 

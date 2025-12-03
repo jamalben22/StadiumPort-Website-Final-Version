@@ -21,7 +21,7 @@ export function SanFranciscoCityGuide() {
         const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
         const pageUrl = `${siteUrl}/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/san-francisco-world-cup-2026.webp`;
-        const title = 'San Francisco Bay Area World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'San Francisco Bay Area World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = "Comprehensive San Francisco Bay Area travel guide for FIFA World Cup 2026: Levi's Stadium details, match schedule, transportation, and where to stay.";
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
@@ -166,7 +166,7 @@ export function SanFranciscoCityGuide() {
         {/* The Stadium: Levi's Stadium (San Francisco Bay Area Stadium) */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Levi's Stadium (San Francisco Bay Area Stadium)
           </h3>
           <div className="mt-6 space-y-6">
@@ -199,7 +199,7 @@ export function SanFranciscoCityGuide() {
         {/* The Match Schedule: Six Games Including Knockout Drama */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             The Match Schedule: Six Games Including Knockout Drama
           </h3>
           <div className="mt-6 space-y-6">
@@ -238,7 +238,7 @@ export function SanFranciscoCityGuide() {
         {/* Getting to Levi's Stadium: The Silicon Valley Commute */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-500"></i>
+            <i className="ri-train-line text-[#01b47d]"></i>
             Getting to Levi's Stadium: The Silicon Valley Commute
           </h3>
           <div className="mt-6 space-y-6">
@@ -259,7 +259,7 @@ export function SanFranciscoCityGuide() {
               <p><strong>Time:</strong> 90-120 minutes door-to-stadium</p>
               <p><strong>Frequency:</strong> BART every 8-12 minutes; VTA every 15 minutes</p>
               <p><strong>Hours:</strong> BART operates 5 AM-midnight weekdays, 6 AM-midnight weekends; VTA light rail runs similar hours</p>
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
                 <p className="m-0">Download the <strong>Clipper card app</strong> or purchase physical Clipper cards at BART stations—it works across BART, VTA, Muni, Caltrain, and AC Transit. The unified payment system is the Bay Area's secret weapon for visitors.</p>
               </div>
               <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
@@ -283,7 +283,7 @@ export function SanFranciscoCityGuide() {
               <p><strong>Time:</strong> 45-70 minutes depending on traffic</p>
               <p><strong>Pickup location:</strong> Designated rideshare areas at Levi's Stadium (expect 30-60 minute waits after matches)</p>
               <p>Many fans split rideshares to justify costs—4 passengers dividing $150 = $37.50 each, comparable to premium transit with door-to-door service.</p>
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
                 <p className="m-0"><strong>Smart hack:</strong> Take BART/Caltrain TO the match (save money, avoid traffic), then split rideshare home when tired and willing to pay for convenience.</p>
               </div>
             </div>
@@ -307,7 +307,7 @@ export function SanFranciscoCityGuide() {
         {/* Where to Stay: San Francisco vs. Silicon Valley Strategy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: San Francisco vs. Silicon Valley Strategy
           </h3>
           <div className="mt-6 space-y-6">
@@ -357,7 +357,7 @@ export function SanFranciscoCityGuide() {
         {/* Beyond the Matches: What to Do in San Francisco */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Beyond the Matches: What to Do in San Francisco
           </h3>
           <div className="mt-6 space-y-6">
@@ -370,7 +370,7 @@ export function SanFranciscoCityGuide() {
             <p>
               The 1.7-mile suspension bridge painted "International Orange" (not red) opened in 1937 and remains the most photographed bridge worldwide. <strong>Walk across</strong> from San Francisco side (45 minutes one-way, free), bike to <strong>Sausalito</strong> then ferry back (<strong>$40</strong> bike rental), or drive to <strong>Vista Point</strong> north side for postcard views.
             </p>
-            <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
+            <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
               <p className="m-0"><strong>Pro tip:</strong> Visit morning for clearest skies; fog typically rolls in afternoon. The bridge is <strong>5-10°F colder</strong> than downtown—bring layers even on sunny days.</p>
             </div>
             <h4 className="editorial-h4 animate-fade-up mb-2">Alcatraz Island</h4>
@@ -420,7 +420,7 @@ export function SanFranciscoCityGuide() {
         {/* San Francisco Food Scene: Fuel for Match Days */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d]"></i>
             San Francisco Food Scene: Fuel for Match Days
           </h3>
           <div className="mt-6 space-y-6">
@@ -460,7 +460,7 @@ export function SanFranciscoCityGuide() {
         {/* Practical Information: What You Need to Know */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-emerald-500"></i>
+            <i className="ri-information-line text-[#01b47d]"></i>
             Practical Information: What You Need to Know
           </h3>
           <div className="mt-6 space-y-6">
@@ -520,7 +520,7 @@ export function SanFranciscoCityGuide() {
         {/* FIFA Fan Festival & Match Day Atmosphere */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-500"></i>
+            <i className="ri-community-line text-[#01b47d]"></i>
             FIFA Fan Festival &amp; Match Day Atmosphere
           </h3>
           <div className="mt-6 space-y-6">
@@ -554,7 +554,7 @@ export function SanFranciscoCityGuide() {
         {/* Booking Strategy: How to Plan Your Bay Area World Cup Trip */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Booking Strategy: How to Plan Your Bay Area World Cup Trip
           </h3>
           <div className="mt-6 space-y-6">
@@ -589,7 +589,7 @@ export function SanFranciscoCityGuide() {
         {/* 2–4 Weeks Before Travel */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-500"></i>
+            <i className="ri-time-line text-[#01b47d]"></i>
             2–4 Weeks Before Travel
           </h3>
           <div className="mt-6 space-y-6">
@@ -601,7 +601,7 @@ export function SanFranciscoCityGuide() {
               <li>Download transit apps: <strong>Clipper</strong>, <strong>Transit</strong> (real-time Bay Area transit), <strong>Google Maps</strong></li>
             </ul>
 
-            <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4 dark:border-indigo-900 dark:bg-indigo-950/40">
+            <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
               <p className="m-0"><strong>Affiliate booking moment:</strong> When comparing hotel prices, check <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Expedia</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hotels.com</a>, and <strong>direct hotel websites</strong>—rates vary <strong>15–25%</strong> for identical rooms. Properties near <strong>Powell</strong> or <strong>Montgomery BART</strong> stations deliver best access to both San Francisco attractions and stadium transit. Membership programs (<strong>Hotels.com rewards</strong>, <strong>Expedia points</strong>) offer additional savings for multi-night stays.</p>
             </div>
           </div>
@@ -610,7 +610,7 @@ export function SanFranciscoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-user-line text-emerald-500"></i>
+            <i className="ri-map-pin-user-line text-[#01b47d]"></i>
             Plan Your Pacific Coast World Cup Adventure
           </h3>
           <div className="mt-6 space-y-6">
@@ -642,7 +642,7 @@ export function SanFranciscoCityGuide() {
         {/* Why the Bay Area Wins the World Cup Experience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             Why the Bay Area Wins the World Cup Experience
           </h3>
           <div className="mt-6 space-y-6">
@@ -677,7 +677,7 @@ export function SanFranciscoCityGuide() {
         {/* Final Checklist: Your Bay Area World Cup Essentials */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-checkbox-circle-line text-emerald-500"></i>
+            <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
             Final Checklist: Your Bay Area World Cup Essentials
           </h3>
           <div className="mt-6 space-y-6">
@@ -707,7 +707,7 @@ export function SanFranciscoCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

@@ -1,4 +1,4 @@
-# StadiumPort Dallas Page Enhancement Documentation
+# Stadiumport Dallas Page Enhancement Documentation
 
 ## 1. Enhancement Key
 *A guide to the structural and visual additions made to the page.*

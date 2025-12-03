@@ -44,7 +44,7 @@ export function MexicoCityGuide() {
       {(() => {
         const pageUrl = `${siteUrl}/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/mexico-city-world-cup-2026.webp`;
-        const title = 'Mexico City World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'Mexico City World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Showcase Mexico City’s vibrant skyline, deep culture, and historic status as a global football capital hosting World Cup matches at Estadio Azteca.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -121,7 +121,7 @@ export function MexicoCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">Estadio Azteca</Link>
+                <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-[#008f63] dark:text-[#01b47d]">Estadio Azteca</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -137,11 +137,11 @@ export function MexicoCityGuide() {
         {/* The Only Stadium to Host Three World Cup Opening Matches */}
         <article className="editorial-body editorial-dropcap">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Only Stadium to Host Three World Cup Opening Matches
           </h3>
           <p>
-            On June 11, 2026, football history will repeat itself in the most spectacular way possible. <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. Mexico City is one of the 16 host cities for World Cup 2026—{' '}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
+            On June 11, 2026, football history will repeat itself in the most spectacular way possible. <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link>—El Coloso de Santa Úrsula—will welcome the world for the opening match of the FIFA World Cup 2026, becoming the only stadium on Earth to host an opening match for the third time. Mexico City is one of the 16 host cities for World Cup 2026—{' '}<Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">explore the host cities hub</Link>. After witnessing Pelé's 1970 triumph and Maradona's controversial brilliance in 1986, the Azteca prepares to add another chapter to the greatest stadium story ever told.
           </p>
           <p>
             Mexico City will host five matches total during the tournament: three group stage games, one round of 32 match, and one round of 16 match. The stadium is undergoing its most extensive renovation in decades—a two-year, $180 million transformation that will increase capacity to 90,000 spectators while adding 2,000 square meters of LED screens, new hospitality areas covering over 7,000 square meters, and completely modernized facilities. The renovated Azteca reopens March 28, 2026, just 75 days before kickoff.
@@ -167,7 +167,7 @@ export function MexicoCityGuide() {
         {/* The Legend of El Azteca */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-community-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Legend of El Azteca
           </h3>
           <p>
@@ -182,7 +182,7 @@ export function MexicoCityGuide() {
         {/* Getting to Estadio Azteca: Your Transport Strategy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to Estadio Azteca: Your Transport Strategy
           </h3>
           <p>
@@ -201,7 +201,7 @@ export function MexicoCityGuide() {
             <strong>Pro tip</strong>: Download the "Mi Transporte" or "Moovit" app before arriving. Both show real-time Metro and light rail arrivals, helping you navigate the system like a local.
           </p>
           <p className="mt-4">
-            Planning a multi-city World Cup itinerary? Combine matches in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>. For a cross-border experience, add <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link> to your trip.
+            Planning a multi-city World Cup itinerary? Combine matches in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link>. For a cross-border experience, add <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Los Angeles</Link> to your trip.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -209,7 +209,7 @@ export function MexicoCityGuide() {
         {/* Where to Stay: Finding Your Mexico City Base */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Finding Your Mexico City Base
           </h3>
           <p>
@@ -240,7 +240,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-cloud-rain-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-cloud-rain-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             June Weather: What to Expect and Pack
           </h3>
           <p>
@@ -260,7 +260,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-map-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Beyond the Pitch: Mexico City Demands Exploration
           </h3>
           <p>
@@ -271,7 +271,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ancient-gate-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ancient-gate-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Chapultepec Park & Castle (Non-Negotiable)
           </h3>
           <p>
@@ -288,7 +288,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-government-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-government-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Zócalo & Historic Center (Where It All Began)
           </h3>
           <p>
@@ -305,7 +305,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ancient-pavilion-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ancient-pavilion-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Teotihuacan (The City Where Gods Were Born)
           </h3>
           <p>
@@ -325,7 +325,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-sailboat-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-sailboat-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Xochimilco (Floating Gardens & Weekend Fiesta)
           </h3>
           <p>
@@ -363,7 +363,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-routes-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-routes-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting Around Like a Chilango (Mexico City Local)
           </h3>
           <p>
@@ -413,7 +413,7 @@ export function MexicoCityGuide() {
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Fan Festival & World Cup Atmosphere
           </h3>
           <p>
@@ -428,7 +428,7 @@ export function MexicoCityGuide() {
         {/* Related Destinations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-route-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Plan Your Mexico World Cup Adventure
           </h3>
           <p>
@@ -490,7 +490,7 @@ export function MexicoCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

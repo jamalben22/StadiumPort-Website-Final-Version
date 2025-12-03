@@ -145,11 +145,11 @@ export default function VancouverArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function VancouverArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function VancouverArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function VancouverArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function VancouverArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function VancouverArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function VancouverArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Vancouver</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Vancouver</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Vancouver World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Vancouver World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Canada</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>BC Place</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>54,500 Capacity</span>
@@ -298,10 +298,10 @@ export default function VancouverArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -317,8 +317,8 @@ export default function VancouverArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Vancouver hosts <strong>7 matches</strong> (June–July 2026)</li>
                <li>• Venue: <strong>BC Place</strong> (Downtown)</li>
@@ -328,7 +328,7 @@ export default function VancouverArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>Seven Matches Under the World's Largest Retractable Roof
+            <i className="ri-building-line text-[#01b47d]"></i>Seven Matches Under the World's Largest Retractable Roof
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -344,15 +344,15 @@ export default function VancouverArticlePage() {
           </div>
 
           <p className="whitespace-pre-line">
-            {`On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at `}<Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link>{` Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the `}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{` for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.`}
+            {`On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at `}<Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link>{` Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the `}<Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>{` for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.`}
           </p>
           <p className="whitespace-pre-line">
             {`Vancouver will host five group stage matches, including two Team Canada matches, one round of 32 match, and one round of 16 match, with the action running from mid-June through early July. BC Place holds 54,500 seats surrounded by more than 50 suites and hospitality lounges, creating an intimate yet electric atmosphere that will showcase Canada's Pacific coast to billions of viewers worldwide.`}
           </p>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Vancouver Links
             </h4>
             <div className="space-y-3">
@@ -383,7 +383,7 @@ export default function VancouverArticlePage() {
         {/* The Stadium That Defies Expectations */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-community-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Stadium That Defies Expectations
           </h2>
           <p>
@@ -401,7 +401,7 @@ export default function VancouverArticlePage() {
         {/* Getting to BC Place */}
         <article id="transport" className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to BC Place: Easier Than You'd Think
           </h2>
           <p>
@@ -422,7 +422,7 @@ export default function VancouverArticlePage() {
         {/* Where to Stay */}
         <article id="stay" className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Your Pacific Coast Home Base
           </h2>
           <p>
@@ -543,7 +543,7 @@ export default function VancouverArticlePage() {
         {/* Getting Around Like a Vancouverite */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting Around Like a Vancouverite
           </h2>
           <p>
@@ -555,11 +555,11 @@ export default function VancouverArticlePage() {
           </p>
           <p>
             Vancouver is just a few hours from{' '}
-            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
           </p>
 
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3 mt-8">
-            <i className="ri-ship-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ship-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Water Taxis
           </h2>
           <p>
@@ -567,7 +567,7 @@ export default function VancouverArticlePage() {
           </p>
 
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3 mt-8">
-            <i className="ri-walk-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-walk-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Walking
           </h2>
           <p>
@@ -579,7 +579,7 @@ export default function VancouverArticlePage() {
         {/* Practical Info */}
         <article id="tips" className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-indigo-400 dark:text-indigo-300 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Practical Vancouver Intelligence
           </h2>
           <p>
@@ -596,7 +596,7 @@ export default function VancouverArticlePage() {
           </p>
 
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3 mt-8">
-            <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             World Cup Specific Information
           </h2>
           <p>
@@ -611,7 +611,7 @@ export default function VancouverArticlePage() {
           <p>
             Combine{' '}
             <span className="font-semibold">Vancouver</span> with{' '}
-            <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
+            <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -627,8 +627,8 @@ export default function VancouverArticlePage() {
           </p>
           <p>
             Many visitors create a Pacific Coast tour: <span className="font-semibold">Vancouver</span>,{' '}
-            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
-            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
           </p>
           <p>
             The city wears its environmental consciousness proudly—you'll notice extensive bike infrastructure, aggressive recycling programs, and a genuine commitment to sustainability that shapes everything from restaurant sourcing to transit policy. This isn't performative; it's how Vancouver operates.
@@ -648,7 +648,7 @@ export default function VancouverArticlePage() {
         {/* Related Destinations */}
         <article id="tour-planning" className="editorial-body theme-emerald">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Plan Your Pacific & Canadian World Cup Journey
           </h2>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 text-xl leading-relaxed">
@@ -659,32 +659,32 @@ export default function VancouverArticlePage() {
               <strong>Pacific Northwest Perfection</strong>
               <br />
               Experience the best cross-border pairing: <span className="font-semibold">Vancouver</span> for mountain-meets-ocean beauty, then just 3 hours south to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
             </p>
             <p>
               <strong>Coast to Coast Canada</strong>
               <br />
               Explore both Canadian host cities: Start in <span className="font-semibold">Vancouver</span> on the Pacific, then fly across the country to{' '}
-              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
+              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
             </p>
             <p>
               <strong>Ultimate West Coast Circuit</strong>
               <br />
               Create the definitive Pacific Coast adventure: <span className="font-semibold">Vancouver</span> to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
               — four incredible cities, stunning coastal scenery, and diverse cultures all along the Pacific Ocean.
             </p>
             <p>
               <strong>Mountain Cities Connection</strong>
               <br />
               Vancouver's mountain setting pairs beautifully with other scenic destinations. Combine with{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
-              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
+              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
             </p>
             <p>
-              <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -696,7 +696,7 @@ export default function VancouverArticlePage() {
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -717,21 +717,21 @@ export default function VancouverArticlePage() {
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -750,8 +750,8 @@ export default function VancouverArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Pacific Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Seattle</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Pacific Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Seattle</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Pacific Northwest sister city just 3 hours south.</p>
               </div>
             </Link>
@@ -781,7 +781,7 @@ export default function VancouverArticlePage() {
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -800,7 +800,7 @@ export default function VancouverArticlePage() {
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -812,7 +812,7 @@ export default function VancouverArticlePage() {
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

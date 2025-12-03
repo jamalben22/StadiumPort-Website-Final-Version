@@ -95,8 +95,8 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
               Compare prices from top airlines
             </p>
           </div>
-          <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
-            <i className="ri-flight-takeoff-line text-emerald-600 text-xl"></i>
+          <div className="w-12 h-12 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg flex items-center justify-center">
+            <i className="ri-flight-takeoff-line text-[#01b47d] text-xl"></i>
           </div>
         </div>
 
@@ -107,7 +107,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
             <input
               type="text"
               value={from}
-              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-[#01b47d] focus:border-[#01b47d]"
               readOnly
             />
           </div>
@@ -116,7 +116,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
             <input
               type="text"
               value={to}
-              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-[#01b47d] focus:border-[#01b47d]"
               readOnly
             />
           </div>
@@ -126,7 +126,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 py-2 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-[#01b47d] focus:border-[#01b47d]"
             />
           </div>
           <div>
@@ -134,7 +134,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
             <select
               value={passengers}
               onChange={(e) => setPassengers(Number(e.target.value))}
-              className="w-full px-3 py-2 pr-8 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
+              className="w-full px-3 py-2 pr-8 border border-slate-300 dark:border-navy-600 rounded-lg bg-white dark:bg-navy-700 text-slate-900 dark:text-white text-sm focus:ring-2 focus:ring-[#01b47d] focus:border-[#01b47d]"
             >
               {[1, 2, 3, 4, 5, 6].map(num => (
                 <option key={num} value={num}>{num} {num === 1 ? 'Passenger' : 'Passengers'}</option>
@@ -148,7 +148,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
           {flightOptions.map((flight, index) => (
             <div
               key={index}
-              className="flex items-center justify-between p-4 border border-slate-200 dark:border-navy-700 rounded-lg hover:border-emerald-300 dark:hover:border-emerald-600 transition-colors duration-200"
+              className="flex items-center justify-between p-4 border border-slate-200 dark:border-navy-700 rounded-lg hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors duration-200"
             >
               <div className="flex items-center space-x-4">
                 <img
@@ -178,7 +178,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
                   target="_blank"
                   rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="flight"
-                  className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105"
+                  className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-[#01b47d] hover:bg-[#008f63] text-white shadow-sm hover:shadow-lg hover:scale-105"
                   onClick={() => handleSelectFlight(flight)}
                 >
                   {isLoading ? (
@@ -203,7 +203,7 @@ export function FlightCompareWidget({ from = 'New York', to = 'Los Angeles', cla
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
             data-affiliate-type="flight"
-            className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-6 py-3 text-base border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105"
+            className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-6 py-3 text-base border-2 border-[#01b47d] text-[#01b47d] hover:bg-[#008f63] hover:text-white shadow-sm hover:shadow-lg hover:scale-105"
             onClick={handleViewAllFlights}
           >
             <i className="ri-search-line mr-2"></i>

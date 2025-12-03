@@ -145,11 +145,11 @@ export default function BostonArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function BostonArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function BostonArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function BostonArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function BostonArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function BostonArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function BostonArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Boston</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Boston</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Boston World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Boston World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>Gillette Stadium</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>64,628 Capacity</span>
@@ -298,10 +298,10 @@ export default function BostonArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -317,8 +317,8 @@ export default function BostonArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY: 7 matches, Quarter-final host, Gillette Stadium venue, Historic Hub] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Boston hosts <strong>7 matches</strong> spanning four weeks</li>
                <li>• Venue: <strong>Gillette Stadium</strong> (Foxborough)</li>
@@ -328,7 +328,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>Boston World Cup 2026: Complete Travel Guide
+            <i className="ri-trophy-line text-[#01b47d]"></i>Boston World Cup 2026: Complete Travel Guide
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -344,25 +344,25 @@ export default function BostonArticlePage() {
           </div>
 
           <p className="whitespace-pre-line">
-            {`When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for `}<strong>seven matches</strong>{` spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a `}<strong>quarter-final</strong>{` on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS. Boston is one of the `}<Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{` welcoming fans to World Cup 2026.
+            {`When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for `}<strong>seven matches</strong>{` spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a `}<strong>quarter-final</strong>{` on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS. Boston is one of the `}<Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>{` welcoming fans to World Cup 2026.
             
             But 2026 is different. Boston hosts more than just matches—the city becomes the epicenter of a once-in-a-lifetime sports trifecta. `}<strong>Sail Boston</strong>{` (July 11-16), the largest maritime celebration ever to visit the United States, arrives days after the quarter-final. `}<strong>America 250</strong>{` commemorations celebrating the nation's founding run throughout summer. Add seven World Cup matches to the mix, and Boston delivers the perfect storm of international football, nautical spectacle, and patriotic celebration.`}
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "Boston delivers the perfect storm of international football, nautical spectacle, and patriotic celebration."
           </blockquote>
 
           <p className="whitespace-pre-line">
-            {`Whether you're watching matches at `}<Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link>{` 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
+            {`Whether you're watching matches at `}<Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Gillette Stadium</Link>{` 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
             
             This guide delivers the real intel: stadium access via commuter rail, neighborhood strategies, revolutionary history tours, and what to do when you're not watching 65,000 fans roar inside the home of the six-time Super Bowl champion Patriots.`}
           </p>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Boston Links
             </h4>
             <div className="space-y-3">
@@ -396,7 +396,7 @@ export default function BostonArticlePage() {
           <div id="stadium-anchor" className="scroll-mt-24"></div>
 
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Stadium: Gillette Stadium (Boston Stadium)
           </h3>
 
@@ -417,11 +417,11 @@ export default function BostonArticlePage() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-group-fill text-emerald-500 mt-1"></i>
+                            <i className="ri-group-fill text-[#01b47d] mt-1"></i>
                             <span><strong>64,628 seats</strong> <span className="block text-sm text-slate-500">for NFL/soccer configuration (expandable to 68,756 for special events)</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-football-line text-emerald-500 mt-1"></i>
+                            <i className="ri-football-line text-[#01b47d] mt-1"></i>
                             <span><strong>Natural grass</strong> <span className="block text-sm text-slate-500">will replace artificial turf specifically for World Cup</span></span>
                         </li>
                       </ul>
@@ -429,11 +429,11 @@ export default function BostonArticlePage() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-sun-line text-emerald-500 mt-1"></i>
+                            <i className="ri-sun-line text-[#01b47d] mt-1"></i>
                             <span><strong>Open-air design</strong> <span className="block text-sm text-slate-500">with partial roof coverage</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-calendar-event-line text-emerald-500 mt-1"></i>
+                            <i className="ri-calendar-event-line text-[#01b47d] mt-1"></i>
                             <span><strong>Opened July 2002</strong> <span className="block text-sm text-slate-500">with $325 million private financing (no taxpayer money)</span></span>
                         </li>
                       </ul>
@@ -442,7 +442,7 @@ export default function BostonArticlePage() {
               <div className="mt-4">
                   <ul className="leading-relaxed space-y-4 list-none">
                     <li className="flex items-start gap-3">
-                        <i className="ri-pencil-ruler-2-line text-emerald-500 mt-1"></i>
+                        <i className="ri-pencil-ruler-2-line text-[#01b47d] mt-1"></i>
                         <span><strong>Designed by HOK Sport</strong> <span className="block text-sm text-slate-500">(now Populous), modeled after Baltimore's M&T Bank Stadium</span></span>
                     </li>
                   </ul>
@@ -476,8 +476,8 @@ export default function BostonArticlePage() {
           <div id="schedule-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Schedule at a Glance</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Schedule at a Glance</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>5 Group Stage Matches</strong></li>
                <li>• <strong>2 Knockout Matches</strong> (Round of 32 & Quarter-Final)</li>
@@ -487,7 +487,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-calendar-event-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Match Schedule: Seven Games Including a Quarter-Final
           </h3>
 
@@ -497,28 +497,28 @@ export default function BostonArticlePage() {
 
           <div className="space-y-8">
             <div className="bg-white dark:bg-navy-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-navy-700">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                 Group Stage (Five Matches)
               </h4>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">01</span>
+                    <span className="font-mono text-[#01b47d] font-bold">01</span>
                     <span><strong>Friday, June 13, 2026</strong> – Group Stage (Boston's tournament opener)</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">02</span>
+                    <span className="font-mono text-[#01b47d] font-bold">02</span>
                     <span><strong>Tuesday, June 16, 2026</strong> – Group Stage</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">03</span>
+                    <span className="font-mono text-[#01b47d] font-bold">03</span>
                     <span><strong>Friday, June 19, 2026</strong> – Group Stage</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">04</span>
+                    <span className="font-mono text-[#01b47d] font-bold">04</span>
                     <span><strong>Tuesday, June 23, 2026</strong> – Group Stage</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">05</span>
+                    <span className="font-mono text-[#01b47d] font-bold">05</span>
                     <span><strong>Friday, June 26, 2026</strong> – Group Stage</span>
                 </li>
               </ul>
@@ -547,7 +547,7 @@ export default function BostonArticlePage() {
             </div>
 
             {/* [PULL QUOTE] */}
-            <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                "If you can only attend one match, aim for this one—the intensity, talent level, and stakes dwarf group stage encounters."
             </blockquote>
 
@@ -569,8 +569,8 @@ export default function BostonArticlePage() {
           <div id="transport-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Transport Reality Check</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Reality Check</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Commuter Rail:</strong> Best option ($20 round-trip)</li>
                <li>• <strong>Driving:</strong> Requires pre-booked parking ($40-60)</li>
@@ -580,7 +580,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to Gillette Stadium: The Commuter Rail Advantage
           </h3>
 
@@ -594,9 +594,9 @@ export default function BostonArticlePage() {
           <div className="space-y-12">
             {/* MBTA Commuter Rail */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   1. MBTA Commuter Rail Event Trains (Recommended for Most Visitors)
                 </h4>
                 <p className="leading-relaxed whitespace-pre-line mb-4">
@@ -628,16 +628,16 @@ export default function BostonArticlePage() {
                     The MBTA expects to transport up to 20,000 fans per match via expanded commuter rail service, with new permanent platforms completed by April 2026. Event trains typically arrive about an hour before events and depart 30 minutes after they end, with Boston trains stopping at South Station, Back Bay, and Dedham Corporate Center.
                 </p>
                 <p className="leading-relaxed mt-4">
-                    Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
+                    Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
                 </p>
               </div>
             </section>
 
             {/* Weekday Commuter Rail */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-blue-200 dark:bg-blue-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-blue-800 dark:text-blue-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   2. Weekday Commuter Rail (If Match Falls Tuesday-Friday)
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -669,9 +669,9 @@ export default function BostonArticlePage() {
 
             {/* Driving + Parking */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   4. Driving + Pre-Booked Parking
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -697,8 +697,8 @@ export default function BostonArticlePage() {
           <div id="stay-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Lodging Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Lodging Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Downtown/Back Bay:</strong> Best for full experience</li>
                <li>• <strong>Foxborough:</strong> Best for stadium proximity</li>
@@ -707,7 +707,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Downtown Boston vs. Suburban Strategy
           </h3>
           
@@ -790,8 +790,8 @@ export default function BostonArticlePage() {
         {/* Beyond the Matches: What to Do in Boston */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culture & Leisure</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culture & Leisure</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>History:</strong> Freedom Trail, Faneuil Hall</li>
                <li>• <strong>Sports:</strong> Fenway Park</li>
@@ -801,7 +801,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Beyond the Matches: What to Do in Boston
           </h3>
           
@@ -903,8 +903,8 @@ export default function BostonArticlePage() {
         {/* Boston Food Scene: Fuel for Match Days */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culinary Highlights</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culinary Highlights</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Seafood:</strong> Union Oyster House, Neptune Oyster</li>
                <li>• <strong>Italian:</strong> North End (Mike's Pastry vs. Modern)</li>
@@ -914,7 +914,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Boston Food Scene: Fuel for Match Days
           </h3>
           
@@ -981,8 +981,8 @@ export default function BostonArticlePage() {
           <div id="tips-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Essential Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Airport:</strong> Logan (BOS) - 3 miles from downtown</li>
                <li>• <strong>Weather:</strong> Warm/Humid (75-85°F)</li>
@@ -992,7 +992,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-information-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Practical Information: What You Need to Know
           </h3>
           
@@ -1012,7 +1012,7 @@ export default function BostonArticlePage() {
               <li><strong>Rideshare:</strong> $20-35 to downtown from designated pickup zones</li>
             </ul>
             <p className="leading-relaxed">
-              Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
+              Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
             </p>
           </div>
 
@@ -1101,7 +1101,7 @@ export default function BostonArticlePage() {
         {/* FIFA Fan Festival & Match Day Atmosphere */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             FIFA Fan Festival & Match Day Atmosphere
           </h3>
           
@@ -1140,7 +1140,7 @@ export default function BostonArticlePage() {
         {/* Sail Boston & America 250: The Perfect Storm */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ship-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ship-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Sail Boston & America 250: The Perfect Storm
           </h3>
             <p className="leading-relaxed mb-4">
@@ -1175,13 +1175,13 @@ export default function BostonArticlePage() {
         {/* Booking Strategy: How to Plan Your Boston World Cup Trip */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-calendar-check-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Booking Strategy: How to Plan Your Boston World Cup Trip
           </h3>
           
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Booking Timeline</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Booking Timeline</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Late 2025:</strong> Apply for Ticket Lottery</li>
                <li>• <strong>Tickets Confirmed:</strong> Book Hotel Immediately</li>
@@ -1236,7 +1236,7 @@ export default function BostonArticlePage() {
         {/* Why Boston Wins the World Cup Experience */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-trophy-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Why Boston Wins the World Cup Experience
           </h3>
             <p className="leading-relaxed mb-3">
@@ -1260,7 +1260,7 @@ export default function BostonArticlePage() {
         {/* Final Checklist: Your Boston World Cup Essentials */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-check-double-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-check-double-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Final Checklist: Your Boston World Cup Essentials
           </h3>
             <ul className="leading-relaxed space-y-2 list-disc list-inside mb-4">
@@ -1282,7 +1282,7 @@ export default function BostonArticlePage() {
             <p className="leading-relaxed mb-3">
               Whether you're here for the quarter-final, Revolutionary War history, championship sports energy, or all three, Boston delivers what few cities can: <strong>world-class football wrapped in 400 years of American history, served with championship attitude and New England pride.</strong>
             </p>
-            <p className="leading-relaxed font-bold text-lg text-emerald-800 dark:text-emerald-400">
+            <p className="leading-relaxed font-bold text-lg text-[#008f63] dark:text-[#01b47d]">
               Welcome to the City of Champions. The Revolution starts here—again.
             </p>
           <hr className="editorial-divider" />
@@ -1294,8 +1294,8 @@ export default function BostonArticlePage() {
           <div id="tour-planning-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Regional Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Regional Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>East Coast Tour:</strong> NYC, Philly, Boston</li>
                <li>• <strong>Cross-Border:</strong> Toronto nearby</li>
@@ -1304,7 +1304,7 @@ export default function BostonArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-route-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Plan Your East Coast World Cup Tour
           </h3>
           <p className="leading-relaxed mb-6">
@@ -1313,32 +1313,32 @@ export default function BostonArticlePage() {
           
           <div className="space-y-8">
             {/* Northeast Corridor Classic */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">01.</span> Northeast Corridor Classic
+                <span className="text-[#01b47d]">01.</span> Northeast Corridor Classic
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Experience the historic heart of America: Start in Boston (current), take the train south to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> for the ultimate city experience, then continue to <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> for Revolutionary history and authentic cheesesteaks.
+                Experience the historic heart of America: Start in Boston (current), take the train south to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> for the ultimate city experience, then continue to <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link> for Revolutionary history and authentic cheesesteaks.
               </p>
             </div>
 
             {/* New England to Canada */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">02.</span> New England to Canada
+                <span className="text-[#01b47d]">02.</span> New England to Canada
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Combine Boston's colonial charm with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for an international adventure, just a short flight away across the border.
+                Combine Boston's colonial charm with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link> for an international adventure, just a short flight away across the border.
               </p>
             </div>
 
             {/* Full East Coast Experience */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">03.</span> Full East Coast Experience
+                <span className="text-[#01b47d]">03.</span> Full East Coast Experience
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for completely different climates and cultures while staying on the East Coast.
+                Extend your journey south to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> or <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link> for completely different climates and cultures while staying on the East Coast.
               </p>
             </div>
           </div>
@@ -1347,7 +1347,7 @@ export default function BostonArticlePage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

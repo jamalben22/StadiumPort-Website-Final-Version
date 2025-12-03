@@ -259,12 +259,12 @@ export default function CityDetailPage() {
           {/* Introduction Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Space City Takes Center Stage on Football's Biggest Stage
             </h2>
             <div className="editorial-dropcap">
               <p className="leading-relaxed mb-6">
-                Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas. Houston is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026.
+                Everything's bigger in Texas—including the welcome Houston is about to roll out for the 2026 FIFA World Cup. From June 14 through July 4, <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> will host seven matches in what promises to be one of the tournament's most electric atmospheres. This isn't Houston's first rodeo with major events (Super Bowls, Final Fours, and the Copa América have all called this place home), but hosting the World Cup brings something different: the entire planet showing up at once, bringing every imaginable language, culture, and football tradition straight to the heart of Texas. Houston is one of the <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">16 host cities</Link> for World Cup 2026.
               </p>
               <p className="leading-relaxed mb-6">
                 If you've never been to Houston, prepare to have your assumptions shattered. This is America's most diverse city, where you'll hear more languages spoken than anywhere else in the U.S., where authentic food from every continent sits on every street corner, and where the term "Southern hospitality" gets supercharged by Texan pride and international flair. Match that energy with NRG Stadium's retractable roof that can open or close in just seven minutes, air conditioning that makes 100-degree days irrelevant, and you've got the perfect recipe for an unforgettable World Cup experience.
@@ -287,7 +287,7 @@ export default function CityDetailPage() {
             </div>
             {/* Regional planning cross-links */}
             <p className="leading-relaxed mt-4">
-              Houston pairs perfectly with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas adventure. Connect Houston with <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> for a true Southern experience, and leverage the Gulf connection to <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> for an international flavor.
+              Houston pairs perfectly with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link> for a Texas adventure. Connect Houston with <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> for a true Southern experience, and leverage the Gulf connection to <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link> for an international flavor.
             </p>
             <hr className="editorial-divider" />
           </article>
@@ -295,14 +295,14 @@ export default function CityDetailPage() {
           {/* The Stadium: NRG Stadium (Houston Stadium for FIFA 2026) */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-building-line text-emerald-500"></i>
+              <i className="ri-building-line text-[#01b47d]"></i>
               The Stadium: NRG Stadium (Houston Stadium for FIFA 2026)
             </h2>
 
             <div className="space-y-8">
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500"></i>
+                  <i className="ri-star-line text-[#01b47d]"></i>
                   Texas-Sized Venue, World-Class Experience
                 </h3>
                 <div>
@@ -314,14 +314,14 @@ export default function CityDetailPage() {
                     During the World Cup, FIFA will refer to the venue as "Houston Stadium" due to sponsorship guidelines. The stadium has undergone specific upgrades for the tournament, including new chillers, LED lights, upgrades to parking lots and adding in a grass field, which is expected to be installed after the 2026 Rodeo season.
                   </p>
                   <p className="leading-relaxed mt-4">
-                    Planning a multi-city trip? Houston pairs well with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Texas itinerary, and connects naturally to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for a broader Southern circuit.
+                    Planning a multi-city trip? Houston pairs well with <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link> for a Texas itinerary, and connects naturally to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> and <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link> for a broader Southern circuit.
                   </p>
                 </div>
               </div>
 
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-calendar-event-line text-emerald-500"></i>
+                  <i className="ri-calendar-event-line text-[#01b47d]"></i>
                   Match Schedule at NRG Stadium
                 </h3>
                 <div>
@@ -330,20 +330,20 @@ export default function CityDetailPage() {
                   </p>
                   <div className="space-y-2 mb-6">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-calendar-check-line text-emerald-500"></i>
+                      <i className="ri-calendar-check-line text-[#01b47d]"></i>
                       Match Dates:
                     </h4>
                     <div className="space-y-2">
                       <div className="flex items-center gap-2">
-                        <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                        <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                         <span><strong>Group Stage</strong>: June 14, 17, 20, 23, 26</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                        <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                         <span><strong>Round of 32</strong>: June 29</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                        <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                         <span><strong>Round of 16</strong>: July 4, 2026</span>
                       </div>
                     </div>
@@ -357,7 +357,7 @@ export default function CityDetailPage() {
 
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500"></i>
+                  <i className="ri-star-line text-[#01b47d]"></i>
                   What Makes This Stadium Special
                 </h3>
                 <div>
@@ -381,14 +381,14 @@ export default function CityDetailPage() {
           {/* Transportation Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-plane-line text-emerald-500"></i>
+              <i className="ri-plane-line text-[#01b47d]"></i>
               Getting There: Transportation Made Easy
             </h2>
             
             <div className="space-y-8">
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-plane-line text-emerald-500"></i>
+                  <i className="ri-plane-line text-[#01b47d]"></i>
                   From the Airports
                 </h3>
                 <div>
@@ -399,7 +399,7 @@ export default function CityDetailPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-plane-line text-emerald-500"></i>
+                        <i className="ri-plane-line text-[#01b47d]"></i>
                         George Bush Intercontinental Airport (IAH)
                       </h4>
                       <p>
@@ -409,7 +409,7 @@ export default function CityDetailPage() {
                     
                     <div className="space-y-2">
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-plane-line text-emerald-500"></i>
+                        <i className="ri-plane-line text-[#01b47d]"></i>
                         William P. Hobby Airport (HOU)
                       </h4>
                       <p>
@@ -422,13 +422,13 @@ export default function CityDetailPage() {
 
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-subway-line text-emerald-500"></i>
+                  <i className="ri-subway-line text-[#01b47d]"></i>
                   Getting to NRG Stadium from Downtown
                 </h3>
                 <div>
                   <div className="mb-6">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-train-line text-emerald-500"></i>
+                      <i className="ri-train-line text-[#01b47d]"></i>
                       METRORail (The Best Budget Option)
                     </h4>
                     <p className="mb-4">
@@ -441,7 +441,7 @@ export default function CityDetailPage() {
                   
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <i className="ri-plane-line text-emerald-500 text-xl mt-1"></i>
+                      <i className="ri-plane-line text-[#01b47d] text-xl mt-1"></i>
                       <div>
                         <h4 className="editorial-h4 mb-2">From IAH Airport to NRG Stadium</h4>
                         <p>
@@ -451,7 +451,7 @@ export default function CityDetailPage() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <i className="ri-plane-line text-emerald-500 text-xl mt-1"></i>
+                      <i className="ri-plane-line text-[#01b47d] text-xl mt-1"></i>
                       <div>
                         <h4 className="editorial-h4 mb-2">From Hobby Airport to NRG Stadium</h4>
                         <p>
@@ -461,7 +461,7 @@ export default function CityDetailPage() {
                     </div>
                     
                     <div className="flex items-start gap-3">
-                      <i className="ri-taxi-line text-emerald-500 text-xl mt-1"></i>
+                      <i className="ri-taxi-line text-[#01b47d] text-xl mt-1"></i>
                       <div>
                         <h4 className="editorial-h4 mb-2">Rideshares and Taxis</h4>
                         <p>
@@ -473,7 +473,7 @@ export default function CityDetailPage() {
                   
                   <div className="mt-6">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-lightbulb-line text-emerald-500"></i>
+                      <i className="ri-lightbulb-line text-[#01b47d]"></i>
                       Pro Traveler Tip
                     </h4>
                     <p>
@@ -489,7 +489,7 @@ export default function CityDetailPage() {
           {/* Accommodation Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-hotel-line text-emerald-500"></i>
+              <i className="ri-hotel-line text-[#01b47d]"></i>
               Where to Stay: Neighborhood Guide for World Cup Visitors
             </h2>
             
@@ -503,7 +503,7 @@ export default function CityDetailPage() {
               {/* Downtown Houston */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-building-2-line text-emerald-500"></i>
+                  <i className="ri-building-2-line text-[#01b47d]"></i>
                   Downtown Houston: Maximum Convenience
                 </h3>
                 <div className="space-y-4">
@@ -527,11 +527,11 @@ export default function CityDetailPage() {
                   </div>
                   <div className="mt-2">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-bookmark-line text-emerald-500"></i>
+                      <i className="ri-bookmark-line text-[#01b47d]"></i>
                       Book Smart
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 mb-2">
-                      Expect premium pricing during World Cup weeks. Reservations should be made 6-12 months in advance. Use <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 dark:text-blue-400 hover:underline">https://www.hotels.com</a> to compare rates and find package deals.
+                      Expect premium pricing during World Cup weeks. Reservations should be made 6-12 months in advance. Use <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] dark:text-[#01b47d] hover:underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] dark:text-[#01b47d] hover:underline">https://www.hotels.com</a> to compare rates and find package deals.
                     </p>
                   </div>
                 </div>
@@ -540,7 +540,7 @@ export default function CityDetailPage() {
               {/* Midtown */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-community-line text-emerald-500"></i>
+                  <i className="ri-community-line text-[#01b47d]"></i>
                   Midtown: Trendy and Transit-Connected
                 </h3>
                 <div className="space-y-4">
@@ -568,7 +568,7 @@ export default function CityDetailPage() {
               {/* The Galleria/Uptown */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-shopping-bag-line text-emerald-500"></i>
+                  <i className="ri-shopping-bag-line text-[#01b47d]"></i>
                   The Galleria/Uptown: Shop, Dine, Luxuriate
                 </h3>
                 <div className="space-y-4">
@@ -592,7 +592,7 @@ export default function CityDetailPage() {
                   </div>
                   <div className="mt-2">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-car-line text-emerald-500"></i>
+                      <i className="ri-car-line text-[#01b47d]"></i>
                       Getting to Matches
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200">
@@ -605,7 +605,7 @@ export default function CityDetailPage() {
               {/* Heights/Montrose */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-leaf-line text-emerald-500"></i>
+                  <i className="ri-leaf-line text-[#01b47d]"></i>
                   Heights/Montrose: Local Flavor, Character-Filled
                 </h3>
                 <div className="space-y-4">
@@ -629,7 +629,7 @@ export default function CityDetailPage() {
                   </div>
                   <div className="mt-2">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-subway-line text-emerald-500"></i>
+                      <i className="ri-subway-line text-[#01b47d]"></i>
                       Transit Note
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200">
@@ -642,7 +642,7 @@ export default function CityDetailPage() {
               {/* Near NRG Stadium */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-hospital-line text-emerald-500"></i>
+                  <i className="ri-hospital-line text-[#01b47d]"></i>
                   Near NRG Stadium: Medical Center Area
                 </h3>
                 <div className="space-y-4">
@@ -667,7 +667,7 @@ export default function CityDetailPage() {
           {/* Attractions Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-compass-line text-emerald-500"></i>
+              <i className="ri-compass-line text-[#01b47d]"></i>
               Beyond the Match: What to Do in Houston
             </h2>
             
@@ -681,7 +681,7 @@ export default function CityDetailPage() {
               {/* Space Center Houston */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-rocket-line text-emerald-500"></i>
+                  <i className="ri-rocket-line text-[#01b47d]"></i>
                   Space Center Houston: NASA's Crown Jewel
                 </h3>
                 <div className="space-y-4">
@@ -695,7 +695,7 @@ export default function CityDetailPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-map-pin-line text-emerald-500"></i>
+                        <i className="ri-map-pin-line text-[#01b47d]"></i>
                         Logistics
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-bold">
@@ -705,7 +705,7 @@ export default function CityDetailPage() {
                     
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-lightbulb-line text-emerald-500"></i>
+                        <i className="ri-lightbulb-line text-[#01b47d]"></i>
                         Pro Tip
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -719,7 +719,7 @@ export default function CityDetailPage() {
               {/* Museum District */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-gallery-line text-emerald-500"></i>
+                  <i className="ri-gallery-line text-[#01b47d]"></i>
                   The Museum District: World-Class Culture
                 </h3>
                 <div className="space-y-4">
@@ -732,7 +732,7 @@ export default function CityDetailPage() {
                   
                   <div className="mt-4">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-time-line text-emerald-500"></i>
+                      <i className="ri-time-line text-[#01b47d]"></i>
                       Budget Time
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200">
@@ -745,7 +745,7 @@ export default function CityDetailPage() {
               {/* Buffalo Bayou Park */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-tree-line text-emerald-500"></i>
+                  <i className="ri-tree-line text-[#01b47d]"></i>
                   Buffalo Bayou Park: Houston's Green Heart
                 </h3>
                 <div className="space-y-4">
@@ -755,7 +755,7 @@ export default function CityDetailPage() {
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-run-line text-emerald-500"></i>
+                        <i className="ri-run-line text-[#01b47d]"></i>
                         Activities
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -765,7 +765,7 @@ export default function CityDetailPage() {
                     
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-camera-line text-emerald-500"></i>
+                        <i className="ri-camera-line text-[#01b47d]"></i>
                         Best Views
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -775,7 +775,7 @@ export default function CityDetailPage() {
                   </div>
                   <div className="mt-4">
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-time-line text-emerald-500"></i>
+                      <i className="ri-time-line text-[#01b47d]"></i>
                       When to Go
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -788,7 +788,7 @@ export default function CityDetailPage() {
               {/* Day Trip to Galveston */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-ship-line text-emerald-500"></i>
+                  <i className="ri-ship-line text-[#01b47d]"></i>
                   Day Trip to Galveston
                 </h3>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -802,7 +802,7 @@ export default function CityDetailPage() {
           {/* Food Scene Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-restaurant-line text-emerald-500"></i>
+              <i className="ri-restaurant-line text-[#01b47d]"></i>
               Food: From Food Trucks to Michelin-Level Excellence
             </h2>
             
@@ -816,7 +816,7 @@ export default function CityDetailPage() {
               {/* BBQ Section */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-2">
-                  <i className="ri-fire-line text-emerald-500"></i>
+                  <i className="ri-fire-line text-[#01b47d]"></i>
                   BBQ: The Texas Way
                 </h3>
 
@@ -837,7 +837,7 @@ export default function CityDetailPage() {
 
                 <div className="mt-4">
                   <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                    <i className="ri-restaurant-2-line text-emerald-500"></i>
+                    <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                     What to Order
                   </h4>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Start with brisket—it's the benchmark of Texas BBQ. Add jalapeño-cheese sausage, pork ribs, and sides like mac and cheese or jalapeño creamed corn.</p>
@@ -847,7 +847,7 @@ export default function CityDetailPage() {
               {/* Tex-Mex Section */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-heart-line text-emerald-500"></i>
+                  <i className="ri-heart-line text-[#01b47d]"></i>
                   Tex-Mex: Houston's Soul Food
                 </h3>
                 
@@ -874,7 +874,7 @@ export default function CityDetailPage() {
 
                 <div className="mt-4">
                   <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                    <i className="ri-restaurant-2-line text-emerald-500"></i>
+                    <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                     What to Order
                   </h4>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Beef fajitas (cooked over mesquite), cheese enchiladas with chili con carne, tableside guacamole, and a frozen margarita. Queso (melted cheese dip) is mandatory.</p>
@@ -884,7 +884,7 @@ export default function CityDetailPage() {
               {/* Beyond BBQ and Tex-Mex */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-global-line text-emerald-500"></i>
+                  <i className="ri-global-line text-[#01b47d]"></i>
                   Beyond BBQ and Tex-Mex
                 </h3>
                 
@@ -897,14 +897,14 @@ export default function CityDetailPage() {
                 <div className="grid md:grid-cols-2 gap-6 mb-6">
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Vietnamese</h4>
                         <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston has one of the largest Vietnamese populations outside Vietnam. Head to Midtown or the Bellaire Chinatown area for phenomenal phở and bánh mì.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Indian</h4>
                         <p className="text-slate-700 dark:text-slate-200 leading-relaxed">The Hillcroft area southwest of downtown is Houston's Little India, packed with authentic restaurants and grocery stores.</p>
@@ -913,14 +913,14 @@ export default function CityDetailPage() {
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">Soul Food/Southern</h4>
                         <p className="text-slate-700 dark:text-slate-200 leading-relaxed">This Sassy Soul Café and Lucille's offer fried chicken, shrimp and grits, and collard greens that'll make you understand Southern comfort food.</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                    <div className="w-3 h-3 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-3 h-3 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                       <div>
                         <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-1">International Food Trucks</h4>
                         <p className="text-slate-700 dark:text-slate-200 leading-relaxed">From Nigerian to Peruvian to Korean, Houston's food truck scene brings the world to street corners across the city.</p>
@@ -931,7 +931,7 @@ export default function CityDetailPage() {
 
                 <div className="mt-4">
                   <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                    <i className="ri-lightbulb-line text-emerald-500"></i>
+                    <i className="ri-lightbulb-line text-[#01b47d]"></i>
                     Foodie Strategy
                   </h4>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Eat breakfast tacos from a neighborhood truck, lunch at a BBQ joint, and dinner at a Tex-Mex institution. Repeat for seven days and you'll barely scratch the surface.</p>
@@ -944,7 +944,7 @@ export default function CityDetailPage() {
           {/* Weather & Packing Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-sun-line text-emerald-500"></i>
+              <i className="ri-sun-line text-[#01b47d]"></i>
               Weather & What to Pack
             </h2>
 
@@ -952,7 +952,7 @@ export default function CityDetailPage() {
               {/* June and July Weather */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-temp-hot-line text-emerald-500"></i>
+                  <i className="ri-temp-hot-line text-[#01b47d]"></i>
                   June and July in Houston: Embrace the Heat
                 </h3>
                 
@@ -968,7 +968,7 @@ export default function CityDetailPage() {
                 <div className="grid md:grid-cols-2 gap-6 mt-6">
                   <div>
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-calendar-line text-emerald-500"></i>
+                      <i className="ri-calendar-line text-[#01b47d]"></i>
                       June Weather
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -977,7 +977,7 @@ export default function CityDetailPage() {
                   </div>
                   <div>
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-calendar-line text-emerald-500"></i>
+                      <i className="ri-calendar-line text-[#01b47d]"></i>
                       July Weather
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -990,7 +990,7 @@ export default function CityDetailPage() {
               {/* What This Means for You */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-suitcase-line text-emerald-500"></i>
+                  <i className="ri-suitcase-line text-[#01b47d]"></i>
                   What This Means for You
                 </h3>
                 
@@ -998,21 +998,21 @@ export default function CityDetailPage() {
                   <div className="space-y-4">
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-shirt-line text-emerald-500"></i>
+                        <i className="ri-shirt-line text-[#01b47d]"></i>
                         Clothing
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Shorts and t-shirts are standard. Dress codes are relaxed in Houston—even nice restaurants rarely require more than "smart casual."</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-sun-cloudy-line text-emerald-500"></i>
+                        <i className="ri-sun-cloudy-line text-[#01b47d]"></i>
                         Sun Protection
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Sunglasses, sunscreen (SPF 30+), and a hat are essential for any outdoor time. The sun is intense.</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-umbrella-line text-emerald-500"></i>
+                        <i className="ri-umbrella-line text-[#01b47d]"></i>
                         Rain Gear
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Pack a compact umbrella or light rain jacket for afternoon thunderstorms, especially in June.</p>
@@ -1021,14 +1021,14 @@ export default function CityDetailPage() {
                   <div className="space-y-4">
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-t-shirt-air-line text-emerald-500"></i>
+                        <i className="ri-t-shirt-air-line text-[#01b47d]"></i>
                         Layers
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Bring one light jacket or long-sleeve shirt. Indoor air conditioning can be aggressive, and the contrast from 95°F outside to 68°F inside is jarring.</p>
                     </div>
                     <div>
                       <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                        <i className="ri-drop-line text-emerald-500"></i>
+                        <i className="ri-drop-line text-[#01b47d]"></i>
                         Hydration
                       </h4>
                       <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Drink water constantly. Houston humidity causes you to sweat more than you realize. Carry a refillable water bottle.</p>
@@ -1038,7 +1038,7 @@ export default function CityDetailPage() {
 
                 <div className="mt-6">
                   <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                    <i className="ri-shield-check-line text-emerald-500"></i>
+                    <i className="ri-shield-check-line text-[#01b47d]"></i>
                     Stadium Policies
                   </h4>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Check NRG Stadium's official bag policy before you go—clear bags are typically required for security. Plan accordingly and travel light on match days.</p>
@@ -1051,40 +1051,40 @@ export default function CityDetailPage() {
           {/* Practical Tips Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-compass-line text-emerald-500"></i>
+              <i className="ri-compass-line text-[#01b47d]"></i>
               Practical Tips for International Visitors
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-2">
-                  <i className="ri-money-dollar-circle-line text-emerald-500"></i>
+                  <i className="ri-money-dollar-circle-line text-[#01b47d]"></i>
                   Money Matters
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Currency:</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">US Dollar (USD)</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Cards:</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">Credit cards accepted everywhere; contactless payment widely available</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Tipping:</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">18-20% at restaurants, $1-2 per drink at bars, 15-20% for taxis and rideshares</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-[#01b47d] rounded-full mt-2 flex-shrink-0"></div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">ATMs:</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">Widely available; use bank-affiliated machines to avoid excessive fees</span>
@@ -1092,7 +1092,7 @@ export default function CityDetailPage() {
                   </div>
                   <div>
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-bus-line text-emerald-500"></i>
+                      <i className="ri-bus-line text-[#01b47d]"></i>
                       Public Transit
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1104,7 +1104,7 @@ export default function CityDetailPage() {
 
               <div>
                  <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-2">
-                   <i className="ri-shield-check-line text-emerald-500"></i>
+                   <i className="ri-shield-check-line text-[#01b47d]"></i>
                    Safety & Getting Around
                  </h3>
                  <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
@@ -1114,7 +1114,7 @@ export default function CityDetailPage() {
                  <div className="space-y-4">
                    <div>
                      <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                       <i className="ri-car-line text-emerald-500"></i>
+                       <i className="ri-car-line text-[#01b47d]"></i>
                        Driving in Houston
                      </h4>
                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1126,7 +1126,7 @@ export default function CityDetailPage() {
 
                    <div>
                      <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                       <i className="ri-walk-line text-emerald-500"></i>
+                       <i className="ri-walk-line text-[#01b47d]"></i>
                        Walking
                      </h4>
                      <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1142,14 +1142,14 @@ export default function CityDetailPage() {
           {/* Language & Connectivity Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-global-line text-emerald-500"></i>
+              <i className="ri-global-line text-[#01b47d]"></i>
               Language & Connectivity
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-translate-2 text-emerald-500"></i>
+                  <i className="ri-translate-2 text-[#01b47d]"></i>
                   Language Diversity
                 </h3>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1159,7 +1159,7 @@ export default function CityDetailPage() {
 
               <div>
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-wifi-line text-emerald-500"></i>
+                  <i className="ri-wifi-line text-[#01b47d]"></i>
                   Connectivity
                 </h3>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1171,7 +1171,7 @@ export default function CityDetailPage() {
             {/* Heat Management */}
             <div className="mt-8">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-temp-cold-line text-emerald-500"></i>
+                <i className="ri-temp-cold-line text-[#01b47d]"></i>
                 Heat Management
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1184,7 +1184,7 @@ export default function CityDetailPage() {
           {/* Ticket Information Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-ticket-line text-emerald-500"></i>
+              <i className="ri-ticket-line text-[#01b47d]"></i>
               Ticket Information & Booking Strategy
             </h2>
 
@@ -1192,13 +1192,13 @@ export default function CityDetailPage() {
               {/* How to Get Tickets */}
               <div className="space-y-4">
                 <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-2">
-                  <i className="ri-shopping-cart-line text-emerald-500"></i>
+                  <i className="ri-shopping-cart-line text-[#01b47d]"></i>
                   How to Get World Cup Tickets
                 </h3>
                 
                 <div className="space-y-4 mb-6">
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                    Tickets for the 2026 World Cup are sold in four phases. The first application to purchase general tickets went live Sept. 10 and closed Sept. 19. Subsequent phases will be announced on <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a>.
+                    Tickets for the 2026 World Cup are sold in four phases. The first application to purchase general tickets went live Sept. 10 and closed Sept. 19. Subsequent phases will be announced on <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a>.
                   </p>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
                     FIFA World Cup tickets at NRG Stadium in Houston will start at $60, with prices increasing for premium seating and knockout rounds.
@@ -1208,7 +1208,7 @@ export default function CityDetailPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-vip-crown-line text-emerald-500"></i>
+                      <i className="ri-vip-crown-line text-[#01b47d]"></i>
                       Hospitality Packages
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1218,7 +1218,7 @@ export default function CityDetailPage() {
                   
                   <div>
                     <h4 className="editorial-h4 mb-2 flex items-center gap-2">
-                      <i className="ri-gift-line text-emerald-500"></i>
+                      <i className="ri-gift-line text-[#01b47d]"></i>
                       Verizon Promotion
                     </h4>
                     <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1231,7 +1231,7 @@ export default function CityDetailPage() {
               {/* Alternative Premium Experiences */}
               <div className="space-y-2">
                 <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-vip-diamond-line text-emerald-500"></i>
+                  <i className="ri-vip-diamond-line text-[#01b47d]"></i>
                   Alternative: Hospitality & Premium Experiences
                 </h3>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -1245,7 +1245,7 @@ export default function CityDetailPage() {
           {/* Why Houston Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-heart-line text-emerald-500"></i>
+              <i className="ri-heart-line text-[#01b47d]"></i>
               Why Houston Will Make Your World Cup Unforgettable
             </h2>
 
@@ -1271,7 +1271,7 @@ export default function CityDetailPage() {
           {/* Start Planning Section */}
           <article className="editorial-body">
             <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-              <i className="ri-calendar-check-line text-emerald-500"></i>
+              <i className="ri-calendar-check-line text-[#01b47d]"></i>
               Start Planning Your 2026 World Cup Trip to Houston
             </h2>
 
@@ -1282,37 +1282,37 @@ export default function CityDetailPage() {
 
               <div className="space-y-2">
                 <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-2">
-                  <i className="ri-task-line text-emerald-500"></i>
+                  <i className="ri-task-line text-[#01b47d]"></i>
                   Your Action Plan
                 </h3>
                 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Register for FIFA tickets</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future phases</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a> for future phases</span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Book accommodations early</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.hotels.com</a>—6-12 months in advance recommended</span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.hotels.com</a>—6-12 months in advance recommended</span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Research flights</span>
-                      <span className="text-slate-700 dark:text-slate-200 ml-1">to Houston (IAH or HOU) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.google.com/flights</a></span>
+                      <span className="text-slate-700 dark:text-slate-200 ml-1">to Houston (IAH or HOU) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.google.com/flights</a></span>
                     </div>
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Download the METRO app</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">for public transit and plan your stadium transportation</span>
@@ -1320,7 +1320,7 @@ export default function CityDetailPage() {
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Make restaurant reservations</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">for Houston's top spots—places like The Original Ninfa's and Goode Company fill up during big events</span>
@@ -1328,7 +1328,7 @@ export default function CityDetailPage() {
                   </div>
                   
                   <div className="flex items-start gap-3">
-                    <div className="w-6 h-6 bg-emerald-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
+                    <div className="w-6 h-6 bg-[#01b47d] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-0.5">✔</div>
                     <div>
                       <span className="font-semibold text-slate-900 dark:text-slate-100">Plan rest-day activities</span>
                       <span className="text-slate-700 dark:text-slate-200 ml-1">Space Center Houston, Museum District, Buffalo Bayou Park</span>
@@ -1340,7 +1340,7 @@ export default function CityDetailPage() {
               {/* Related Destinations */}
               <div className="mt-8">
                 <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                  <i className="ri-road-map-line text-emerald-500"></i>
+                  <i className="ri-road-map-line text-[#01b47d]"></i>
                   Plan Your Southern States World Cup Journey
                 </h3>
                 <p className="leading-relaxed mb-4">
@@ -1350,24 +1350,24 @@ export default function CityDetailPage() {
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Texas Takeover</h4>
                     <p>
-                      Experience both Texas host cities: Houston (current, no link) for international cuisine and space exploration, then <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for Cowboys culture and urban energy.
+                      Experience both Texas host cities: Houston (current, no link) for international cuisine and space exploration, then <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link> for Cowboys culture and urban energy.
                     </p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Southern Hospitality Tour</h4>
                     <p>
-                      Create a Southern states circuit: Houston (current) to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, experiencing three distinct Southern personalities and climates.
+                      Create a Southern states circuit: Houston (current) to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> to <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>, experiencing three distinct Southern personalities and climates.
                     </p>
                   </div>
                   <div className="space-y-2">
                     <h4 className="editorial-h4">Gulf & Beyond</h4>
                     <p>
-                      Connect Houston's Gulf Coast location with <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link> for tropical vibes, or head to Mexican host cities like <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> for an international flavor.
+                      Connect Houston's Gulf Coast location with <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link> for tropical vibes, or head to Mexican host cities like <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link> and <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link> for an international flavor.
                     </p>
                   </div>
                 </div>
                 <p className="mt-6">
-                  <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+                  <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
                 </p>
               </div>
 
@@ -1895,7 +1895,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
           <p className="text-slate-600 dark:text-slate-400 mb-8">The city you're looking for doesn't exist or is coming soon.</p>
           <Link
             to="/world-cup-2026-host-cities"
-            className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-emerald-500 hover:bg-emerald-600 text-white"
+            className="inline-flex items-center justify-center font-semibold rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-6 py-3 text-base bg-[#01b47d] hover:bg-[#008f63] text-white"
           >
             <i className="ri-arrow-left-line mr-2"></i>
             Back to Host Cities
@@ -1980,7 +1980,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
                 </div>
               </div>
 
-              <div className="inline-flex items-center space-x-3 bg-emerald-500/90 backdrop-blur-sm border border-emerald-400/30 rounded-full px-8 py-4 mb-8">
+              <div className="inline-flex items-center space-x-3 bg-[#01b47d]/90 backdrop-blur-sm border border-[#01b47d]/30 rounded-full px-8 py-4 mb-8">
                 <i className="ri-football-line text-white text-xl"></i>
                 <span className="text-white font-bold text-lg">{city.matches}</span>
               </div>
@@ -2024,7 +2024,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-6">
-                    <div className="w-16 h-16 bg-emerald-500 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[#01b47d] rounded-2xl flex items-center justify-center">
                       <i className="ri-building-line text-white text-2xl"></i>
                     </div>
                     <div>
@@ -2071,7 +2071,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-6">
-                    <div className="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-[#01b47d] rounded-2xl flex items-center justify-center">
                       <i className="ri-bus-line text-white text-2xl"></i>
                     </div>
                     <div>
@@ -2316,7 +2316,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
           <div className="text-center mt-20">
             <Link
               to="/world-cup-2026-host-cities"
-              className="inline-flex items-center justify-center font-bold rounded-3xl transition-all duration-300 whitespace-nowrap cursor-pointer px-12 py-6 text-xl bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-2xl hover:shadow-3xl transform hover:scale-105"
+              className="inline-flex items-center justify-center font-bold rounded-3xl transition-all duration-300 whitespace-nowrap cursor-pointer px-12 py-6 text-xl bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#008f63] text-white shadow-2xl hover:shadow-3xl transform hover:scale-105"
             >
               <i className="ri-arrow-left-line mr-4 text-2xl"></i>
               Explore {city.name}
@@ -2328,7 +2328,7 @@ From thunderous crowds at AT&T Stadium to world-class museums, from Deep Ellum's
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

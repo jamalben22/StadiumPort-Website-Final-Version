@@ -50,12 +50,12 @@ const getStatusStyles = (idx: number) => {
     case 1: // 2nd Place (Qualified)
       return {
         wrapper: "bg-slate-800 border-white/5 opacity-100",
-        accentBar: "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]",
+        accentBar: "bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.4)]",
         text: "text-white font-semibold",
         rank: "text-white/90",
         badge: {
           text: "QUALIFIED",
-          style: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
+          style: "bg-[#01b47d]/10 text-[#01b47d] border border-[#01b47d]/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
         }
       };
     case 2: // 3rd Place
@@ -281,7 +281,7 @@ export const GroupStage = () => {
         "url": "https://stadiumport.com/world-cup-2026-prediction-game",
         "organizer": {
           "@type": "Organization",
-          "name": "StadiumPort",
+          "name": "Stadiumport",
           "url": "https://stadiumport.com"
         },
         "eventStatus": "https://schema.org/EventScheduled",
@@ -296,7 +296,7 @@ export const GroupStage = () => {
       <div className="w-full px-4 md:px-6 lg:px-8 pt-24 pb-32 md:pt-28">
        <div className="mb-6 flex justify-center">
          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
-           <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
            <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
              Step 1 of 5: Group Stage Predictions
            </span>
@@ -317,7 +317,7 @@ export const GroupStage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
           <div className="relative group bg-white/6 border border-white/15 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-            <div className="absolute -top-24 -left-24 w-52 h-52 bg-cyan-400/10 blur-[80px] rounded-full pointer-events-none" />
+            <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#01b47d]/10 blur-[80px] rounded-full pointer-events-none" />
             <h4 className="text-center text-white font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
             <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-white/20 via-white/40 to-white/20" />
             <div className="space-y-2">

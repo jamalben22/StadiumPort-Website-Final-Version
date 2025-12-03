@@ -27,7 +27,7 @@ export function MobileAffiliateBar() {
           transition={{ type: "spring", stiffness: 260, damping: 20 }}
           className="fixed bottom-4 left-4 right-4 z-50 md:hidden"
         >
-          <div className="relative flex items-center justify-between gap-3 p-4 pr-3 rounded-2xl bg-white/90 dark:bg-navy-900/90 backdrop-blur-md border border-white/20 dark:border-navy-700 shadow-xl shadow-emerald-900/10">
+          <div className="relative flex items-center justify-between gap-3 p-4 pr-3 rounded-2xl bg-white/90 dark:bg-navy-900/90 backdrop-blur-md border border-white/20 dark:border-navy-700 shadow-xl shadow-[#008f63]/10">
             
             {/* Close Button - positioned absolute top-right of the card */}
             <button 
@@ -40,8 +40,8 @@ export function MobileAffiliateBar() {
 
             {/* Icon & Text */}
             <div className="flex items-center gap-3 flex-1 min-w-0">
-              <div className="w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center flex-shrink-0">
-                <i className="ri-hotel-bed-line text-emerald-600 dark:text-emerald-400 text-lg"></i>
+              <div className="w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 flex items-center justify-center flex-shrink-0">
+                <i className="ri-hotel-bed-line text-[#01b47d] dark:text-[#01b47d] text-lg"></i>
               </div>
               <div className="flex flex-col">
                 <span className="font-space font-bold text-slate-900 dark:text-white text-sm leading-tight">
@@ -58,7 +58,7 @@ export function MobileAffiliateBar() {
               <Button 
                 size="sm" 
                 variant="primary" 
-                className="whitespace-nowrap bg-emerald-600 hover:bg-emerald-700 text-xs px-3 py-2 h-auto"
+                className="whitespace-nowrap bg-[#01b47d] hover:bg-[#008f63] text-xs px-3 py-2 h-auto"
               >
                 Check Deals
               </Button>

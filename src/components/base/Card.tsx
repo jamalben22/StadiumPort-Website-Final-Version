@@ -36,12 +36,12 @@ export function Card({
     default: `
       bg-white/90 dark:bg-navy-800/90 
       ${border ? 'border border-slate-200/50 dark:border-navy-700/50' : ''}
-      ${hover ? 'hover:border-emerald-500/40 dark:hover:border-emerald-500/40 hover:bg-white/95 dark:hover:bg-navy-800/95' : ''}
+      ${hover ? 'hover:border-[#008f63]/40 dark:hover:border-[#008f63]/40 hover:bg-white/95 dark:hover:bg-navy-800/95' : ''}
     `,
     premium: `
       bg-white/85 dark:bg-navy-800/85 
       ${border ? 'border border-white/30 dark:border-navy-700/30' : ''}
-      ${hover ? 'hover:bg-white/95 dark:hover:bg-navy-800/95 hover:border-emerald-500/40' : ''}
+      ${hover ? 'hover:bg-white/95 dark:hover:bg-navy-800/95 hover:border-[#008f63]/40' : ''}
     `,
     glass: `
       bg-white/10 dark:bg-navy-900/10 
@@ -49,10 +49,10 @@ export function Card({
       ${hover ? 'hover:bg-white/20 dark:hover:bg-navy-900/20 hover:border-white/40' : ''}
     `,
     gradient: `
-      bg-gradient-to-br from-white/90 via-slate-50/90 to-emerald-50/90
-      dark:from-navy-800/90 dark:via-navy-700/90 dark:to-emerald-900/30
-      ${border ? 'border border-emerald-200/50 dark:border-emerald-700/30' : ''}
-      ${hover ? 'hover:from-emerald-50/95 hover:to-gold-50/95 dark:hover:from-emerald-900/40 dark:hover:to-gold-900/30' : ''}
+      bg-gradient-to-br from-white/90 via-slate-50/90 to-[#01b47d]/5
+      dark:from-navy-800/90 dark:via-navy-700/90 dark:to-[#008f63]/30
+      ${border ? 'border border-[#01b47d]/20 dark:border-[#008f63]/30' : ''}
+      ${hover ? 'hover:from-[#01b47d]/5 hover:to-gold-50/95 dark:hover:from-[#008f63]/40 dark:hover:to-gold-900/30' : ''}
     `,
     minimal: `
       bg-transparent
@@ -60,17 +60,17 @@ export function Card({
       ${hover ? 'hover:bg-slate-50/80 dark:hover:bg-navy-800/50' : ''}
     `,
     cosmic: `
-      bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-blue-500/20
-      dark:from-purple-900/30 dark:via-pink-900/30 dark:to-blue-900/30
+      bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-[#01b47d]/20
+      dark:from-purple-900/30 dark:via-pink-900/30 dark:to-[#008f63]/30
       ${border ? 'border border-purple-400/30 dark:border-purple-600/30' : ''}
-      ${hover ? 'hover:from-purple-500/30 hover:via-pink-500/30 hover:to-blue-500/30' : ''}
+      ${hover ? 'hover:from-purple-500/30 hover:via-pink-500/30 hover:to-[#01b47d]/30' : ''}
       animate-cosmic
     `,
     aurora: `
-      bg-gradient-to-br from-emerald-400/20 via-cyan-400/20 to-blue-500/20
-      dark:from-emerald-900/30 dark:via-cyan-900/30 dark:to-blue-900/30
-      ${border ? 'border border-cyan-400/30 dark:border-cyan-600/30' : ''}
-      ${hover ? 'hover:from-emerald-400/30 hover:via-cyan-400/30 hover:to-blue-500/30' : ''}
+      bg-gradient-to-br from-[#01b47d]/20 via-[#01b47d]/20 to-[#01b47d]/20
+      dark:from-[#008f63]/30 dark:via-[#008f63]/30 dark:to-[#008f63]/30
+      ${border ? 'border border-[#01b47d]/30 dark:border-[#01b47d]/30' : ''}
+      ${hover ? 'hover:from-[#01b47d]/30 hover:via-[#01b47d]/30 hover:to-[#01b47d]/30' : ''}
       animate-aurora
     `,
     diamond: `
@@ -81,17 +81,17 @@ export function Card({
       animate-crystalline
     `,
     holographic: `
-      bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-cyan-500/20
-      dark:from-pink-900/30 dark:via-purple-900/30 dark:to-cyan-900/30
+      bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-[#01b47d]/20
+      dark:from-pink-900/30 dark:via-purple-900/30 dark:to-[#008f63]/30
       ${border ? 'border border-pink-400/30 dark:border-pink-600/30' : ''}
-      ${hover ? 'hover:from-pink-500/30 hover:via-purple-500/30 hover:to-cyan-500/30' : ''}
+      ${hover ? 'hover:from-pink-500/30 hover:via-purple-500/30 hover:to-[#01b47d]/30' : ''}
       animate-holographic
     `,
     quantum: `
-      bg-gradient-to-br from-emerald-500/20 via-blue-500/20 to-violet-500/20
-      dark:from-emerald-900/30 dark:via-blue-900/30 dark:to-violet-900/30
+      bg-gradient-to-br from-[#01b47d]/20 via-[#01b47d]/20 to-violet-500/20
+      dark:from-[#008f63]/30 dark:via-[#008f63]/30 dark:to-violet-900/30
       ${border ? 'border border-violet-400/30 dark:border-violet-600/30' : ''}
-      ${hover ? 'hover:from-emerald-500/30 hover:via-blue-500/30 hover:to-violet-500/30' : ''}
+      ${hover ? 'hover:from-[#01b47d]/30 hover:via-[#01b47d]/30 hover:to-violet-500/30' : ''}
       animate-quantum
     `,
     ethereal: `
@@ -102,10 +102,10 @@ export function Card({
       animate-ethereal
     `,
     cyber: `
-      bg-gradient-to-br from-cyan-400/20 via-pink-400/20 to-yellow-400/20
-      dark:from-cyan-900/30 dark:via-pink-900/30 dark:to-yellow-900/30
-      ${border ? 'border border-cyan-400/50 dark:border-cyan-600/50' : ''}
-      ${hover ? 'hover:from-cyan-400/30 hover:via-pink-400/30 hover:to-yellow-400/30' : ''}
+      bg-gradient-to-br from-[#01b47d]/20 via-pink-400/20 to-yellow-400/20
+      dark:from-[#008f63]/30 dark:via-pink-900/30 dark:to-yellow-900/30
+      ${border ? 'border border-[#01b47d]/50 dark:border-[#01b47d]/50' : ''}
+      ${hover ? 'hover:from-[#01b47d]/30 hover:via-pink-400/30 hover:to-yellow-400/30' : ''}
       animate-cyber-glow
     `,
     matrix: `
@@ -116,17 +116,17 @@ export function Card({
       animate-matrix
     `,
     plasma: `
-      bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-blue-500/20
-      dark:from-pink-900/30 dark:via-purple-900/30 dark:to-blue-900/30
+      bg-gradient-to-br from-pink-500/20 via-purple-500/20 to-[#01b47d]/20
+      dark:from-pink-900/30 dark:via-purple-900/30 dark:to-[#008f63]/30
       ${border ? 'border border-purple-400/30 dark:border-purple-600/30' : ''}
-      ${hover ? 'hover:from-pink-500/30 hover:via-purple-500/30 hover:to-blue-500/30' : ''}
+      ${hover ? 'hover:from-pink-500/30 hover:via-purple-500/30 hover:to-[#01b47d]/30' : ''}
       animate-plasma
     `,
     stellar: `
-      bg-gradient-to-br from-indigo-500/20 via-purple-500/20 to-black/20
-      dark:from-indigo-900/30 dark:via-purple-900/30 dark:to-black/50
-      ${border ? 'border border-indigo-400/30 dark:border-indigo-600/30' : ''}
-      ${hover ? 'hover:from-indigo-500/30 hover:via-purple-500/30 hover:to-black/30' : ''}
+      bg-gradient-to-br from-[#01b47d]/20 via-purple-500/20 to-black/20
+      dark:from-[#008f63]/30 dark:via-purple-900/30 dark:to-black/50
+      ${border ? 'border border-[#01b47d]/30 dark:border-[#01b47d]/30' : ''}
+      ${hover ? 'hover:from-[#01b47d]/30 hover:via-purple-500/30 hover:to-black/30' : ''}
       animate-stellar
     `
   };
@@ -238,7 +238,7 @@ export function Card({
 
       {/* Premium Gradient Overlay */}
       {variant === 'premium' && (
-        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-white/20 via-transparent to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-white/20 via-transparent to-[#01b47d]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
       )}
 
       {/* Glass Reflection Effect */}
@@ -249,7 +249,7 @@ export function Card({
       {/* Ultra Premium Shimmer Effect */}
       {effect === 'shimmer' && animate && hover && (
         <div className="absolute inset-0 rounded-4xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-400/60 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1200"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#01b47d]/60 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1200"></div>
           <div className="absolute bottom-0 right-0 w-1 h-full bg-gradient-to-t from-transparent via-gold-400/60 to-transparent translate-y-[100%] group-hover:translate-y-[-100%] transition-transform duration-1200" style={{ transitionDelay: '0.2s' }}></div>
         </div>
       )}
@@ -264,23 +264,23 @@ export function Card({
       {/* Dimensional Portal Effect */}
       {effect === 'dimensional' && (
         <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
-          <div className="absolute inset-0 bg-gradient-radial from-emerald-400/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-dimensional"></div>
+          <div className="absolute inset-0 bg-gradient-radial from-[#01b47d]/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-dimensional"></div>
         </div>
       )}
 
       {/* Magnetic Field Effect */}
       {effect === 'magnetic' && (
         <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-magnetic"></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[#01b47d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-magnetic"></div>
           <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-gold-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-magnetic" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-1/4 left-3/4 w-1 h-1 bg-cyan-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-magnetic" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/4 left-3/4 w-1 h-1 bg-[#01b47d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-magnetic" style={{ animationDelay: '1s' }}></div>
         </div>
       )}
 
       {/* Liquid Flow Effect */}
       {effect === 'liquid' && (
         <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
-          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-emerald-400/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-liquid-flow"></div>
+          <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#01b47d]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-liquid-flow"></div>
         </div>
       )}
 
@@ -293,7 +293,7 @@ export function Card({
 
       {/* Glow Effect */}
       {glow && (
-        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-emerald-500/10 to-gold-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl pointer-events-none animate-pulse-glow"></div>
+        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-[#01b47d]/10 to-gold-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl pointer-events-none animate-pulse-glow"></div>
       )}
 
       {/* Content */}
@@ -305,15 +305,15 @@ export function Card({
 
       {/* Parallax Effect */}
       {effect === 'parallax' && (
-        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-white/5 via-transparent to-emerald-500/5 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none transform group-hover:scale-105"></div>
+        <div className="absolute inset-0 rounded-4xl bg-gradient-to-br from-white/5 via-transparent to-[#01b47d]/5 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none transform group-hover:scale-105"></div>
       )}
 
       {/* Ultra Premium Floating Particles */}
       {variant === 'quantum' && (
         <div className="absolute inset-0 rounded-4xl overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 left-1/3 w-1 h-1 bg-violet-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-float"></div>
-          <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-1/3 left-2/3 w-1 h-1 bg-emerald-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-[#01b47d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/3 left-2/3 w-1 h-1 bg-[#01b47d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
       )}
     </div>

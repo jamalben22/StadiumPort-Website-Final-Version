@@ -362,8 +362,8 @@ export default function EmergencyPlanningPage() {
           <h3 className="editorial-h3 mb-4 flex items-center gap-3"><i className="ri-timer-line"></i> Recommended Timeline</h3>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 p-4 rounded-lg">
-              <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">3 Hours Before Kickoff:</h4>
+            <div className="bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63] p-4 rounded-lg">
+              <h4 className="font-semibold text-[#008f63] dark:text-[#01b47d] mb-2">3 Hours Before Kickoff:</h4>
               <p className="text-sm whitespace-pre-line">
                 Ideal for families, fans with limited mobility, or anyone who wants to avoid stress. Benefits include:
               </p>
@@ -840,7 +840,7 @@ export default function EmergencyPlanningPage() {
             <li>Service animals permitted (with documentation)</li>
           </ul>
 
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 p-4 rounded-lg mb-4">
+          <div className="bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63] p-4 rounded-lg mb-4">
             <p className="whitespace-pre-line text-sm">
               <strong>Contact Accessibility Services:</strong> Each stadium has dedicated accessibility coordinators. Contact them weeks before your match to arrange necessary accommodations.
             </p>
@@ -927,8 +927,8 @@ export default function EmergencyPlanningPage() {
           <h3 className="editorial-h3 mb-4 flex items-center gap-3"><i className="ri-lightbulb-line"></i> What This Means for You:</h3>
 
           <div className="space-y-4 mb-6">
-            <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 rounded-r-lg">
-              <h4 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Expect the Process:</h4>
+            <div className="bg-[#01b47d]/5 dark:bg-[#008f63]/20 border-l-4 border-[#01b47d] p-4 rounded-r-lg">
+              <h4 className="font-semibold text-[#008f63] dark:text-[#01b47d] mb-2">Expect the Process:</h4>
               <p className="text-sm whitespace-pre-line">Security screening takes time. Don't fight it. Plan for it.</p>
             </div>
 

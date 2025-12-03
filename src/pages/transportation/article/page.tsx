@@ -169,7 +169,7 @@ export default function TransportationArticlePage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pageUrl = `${siteUrl}/transportation/${slug}`
-    const pageTitle = `${title} – Transportation | StadiumPort`
+    const pageTitle = `${title} – Transportation | Stadiumport`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
     const entry = getEditorialEntry('article', (slug || ''))
     const publishedTime = entry?.isPublished ? entry.datePublished : undefined
@@ -3513,7 +3513,7 @@ Welcome to Vancouver. Welcome to Beautiful British Columbia. Welcome to the Worl
               <p>Start with public transit as your primary plan. Layer in ride-share as your backup. Budget for the occasional splurge on convenience. And remember: the journey from Times Square to the World Cup Final whistle is part of the adventure. Embrace the organized chaos, chat with fellow fans from around the world on the train platform, and arrive ready to witness soccer history.</p>
               <p>See you at MetLife Stadium.</p>
               <hr className="editorial-divider" />
-              <p><em>This guide reflects transportation information current as of November 2025. All fares, schedules, and services are subject to change. Verify details through official sources—NJ Transit (<a href="https://www.njtransit.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">njtransit.com</a>), MTA (<a href="https://www.mta.info" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">mta.info</a>), and FIFA World Cup 2026 (<a href="https://www.fifa.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">fifa.com</a>)—closer to your travel dates. World Cup-specific transportation programs may be announced in spring 2026.</em></p>
+              <p><em>This guide reflects transportation information current as of November 2025. All fares, schedules, and services are subject to change. Verify details through official sources—NJ Transit (<a href="https://www.njtransit.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">njtransit.com</a>), MTA (<a href="https://www.mta.info" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">mta.info</a>), and FIFA World Cup 2026 (<a href="https://www.fifa.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">fifa.com</a>)—closer to your travel dates. World Cup-specific transportation programs may be announced in spring 2026.</em></p>
             </div>
           ) : slug === 'los-angeles-world-cup-2026-your-complete-transportation-guide-to-sofi-stadium' ? (
             <div className="space-y-8">
@@ -3543,7 +3543,7 @@ Welcome to Vancouver. Welcome to Beautiful British Columbia. Welcome to the Worl
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -3977,7 +3977,7 @@ Compare this to:
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -4198,7 +4198,7 @@ See you at SoFi Stadium (officially "Los Angeles Stadium" during the tournament)
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -4690,7 +4690,7 @@ Miami-Dade Transit's automatic fare capping ensures you never pay more than $5.6
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -4925,7 +4925,7 @@ See you at "Miami Stadium" (Hard Rock Stadium during the tournament). When those
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -5376,7 +5376,7 @@ With nine matches spanning June 11 - July 19, 2026, Dallas-Arlington offers the 
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                 }}
               >
@@ -6255,7 +6255,7 @@ See you at "Kansas City Stadium" (Arrowhead during the tournament). The heart of
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -6736,7 +6736,7 @@ Compare to ride-share for same trips: $350-500+
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -6912,7 +6912,7 @@ See you in Space City.
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -7366,7 +7366,7 @@ Compare to rideshare for all trips: 2,500-4,000 pesos ($137-220 USD)
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -7424,7 +7424,7 @@ Bienvenidos a Monterrey. Welcome to El Gigante de Acero. Welcome to the World Cu
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -7905,7 +7905,7 @@ Compare to ride-share for same trips: $350-500+
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -8084,7 +8084,7 @@ See you in Space City.
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -8513,7 +8513,7 @@ MARTA offers various pass options through Breeze Cards (check [itsmarta.com](htt
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -8678,7 +8678,7 @@ See you in the ATL.
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -9120,7 +9120,7 @@ Compare to rideshare for all trips: 2,000-4,000 pesos ($110-220 USD)
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -9178,7 +9178,7 @@ Bienvenidos a Guadalajara. Welcome to Chivas country. Welcome to the World Cup.
                     <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
                   ),
                   a: ({ node, ...props }) => (
-                    <a className="text-emerald-600 hover:text-emerald-700 underline" target="_blank" rel="noopener noreferrer" {...props} />
+                    <a className="text-[#01b47d] hover:text-[#008f63] underline" target="_blank" rel="noopener noreferrer" {...props} />
                   ),
                   code: ({ node, ...props }) => (
                     <code className="text-sm" {...props} />
@@ -10445,7 +10445,7 @@ See you in the Emerald City.
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

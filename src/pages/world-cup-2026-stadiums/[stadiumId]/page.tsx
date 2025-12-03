@@ -335,7 +335,7 @@ export default function StadiumDetailPage() {
           </p>
           <Link 
             to="/world-cup-2026-stadiums" 
-            className="inline-flex items-center px-6 py-3 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-[#01b47d] text-white rounded-lg hover:bg-[#008f63] transition-colors"
           >
             <i className="ri-arrow-left-line mr-2"></i>
             Back to Venues
@@ -601,7 +601,7 @@ export default function StadiumDetailPage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
 

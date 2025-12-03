@@ -172,8 +172,8 @@ export function Header() {
 
   const getTypeColor = (type: string) => {
     switch (type) {
-      case 'city': return 'text-emerald-500 bg-emerald-500/10';
-      case 'stadium': return 'text-blue-500 bg-blue-500/10';
+      case 'city': return 'text-[#01b47d] bg-[#01b47d]/10';
+      case 'stadium': return 'text-[#01b47d] bg-[#01b47d]/10';
       case 'guide': return 'text-purple-500 bg-purple-500/10';
       case 'article': return 'text-amber-600 bg-amber-500/10';
       default: return 'text-gold-500 bg-gold-500/10';
@@ -278,7 +278,7 @@ export function Header() {
                   {/* Light Mode Logo */}
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
-                    alt="StadiumPort Logo"
+                    alt="Stadiumport Logo"
                     width={2400}
                     height={600}
                     className={`h-12 w-auto object-contain transition-all duration-500 ease-out ${
@@ -288,7 +288,7 @@ export function Header() {
                   {/* Dark Mode Logo */}
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
-                    alt="StadiumPort Logo"
+                    alt="Stadiumport Logo"
                     width={2400}
                     height={600}
                     className={`absolute top-0 left-0 h-12 w-auto object-contain transition-all duration-500 ease-out ${
@@ -299,7 +299,7 @@ export function Header() {
                 <div className="lg:hidden relative">
                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px.svg"
-                    alt="StadiumPort Logo"
+                    alt="Stadiumport Logo"
                     width={180}
                     height={180}
                     className={`h-8 w-auto object-contain transition-all duration-500 ease-out ${
@@ -308,7 +308,7 @@ export function Header() {
                   />
                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
-                    alt="StadiumPort Logo"
+                    alt="Stadiumport Logo"
                     width={180}
                     height={180}
                     className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-500 ease-out ${
@@ -324,6 +324,7 @@ export function Header() {
               {[
                 { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
+                { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
                 { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
               ].map((item) => (
                 <Link
@@ -443,6 +444,7 @@ export function Header() {
                   {[
                     { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                     { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
+                    { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
                     { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
                   ].map((item, index) => (
                     <Link
@@ -570,7 +572,7 @@ export function Header() {
                     </div>
                   ) : (
                     <div className="text-center">
-                      <p className="text-sm text-slate-500 dark:text-slate-400">No results. <Link to="/contact" className="text-emerald-600 dark:text-emerald-400 hover:underline">Suggest something</Link>.</p>
+                      <p className="text-sm text-slate-500 dark:text-slate-400">No results. <Link to="/contact" className="text-[#01b47d] dark:text-[#01b47d] hover:underline">Suggest something</Link>.</p>
                     </div>
                   )}
                 </div>

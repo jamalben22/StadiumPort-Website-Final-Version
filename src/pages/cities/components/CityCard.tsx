@@ -97,15 +97,15 @@ export default function CityCard({ city }: CityCardProps) {
         <div className="mb-6">
           <h4 className="font-bold text-navy-900 dark:text-white text-sm mb-4 uppercase tracking-wide">Hotel Price Ranges</h4>
           <div className="grid grid-cols-3 gap-3">
-            <div className="text-center p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/20 dark:to-emerald-800/20 rounded-xl border border-emerald-200 dark:border-emerald-700">
-              <div className="text-lg font-bold text-emerald-700 dark:text-emerald-400">{city.priceFrom}</div>
-              <div className="text-xs text-emerald-600 dark:text-emerald-500 font-semibold">Budget</div>
+            <div className="text-center p-4 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/10 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-xl border border-[#01b47d]/20 dark:border-[#008f63]">
+              <div className="text-lg font-bold text-[#008f63] dark:text-[#01b47d]">{city.priceFrom}</div>
+              <div className="text-xs text-[#01b47d] dark:text-[#01b47d] font-semibold">Budget</div>
             </div>
-            <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl border border-blue-200 dark:border-blue-700">
-              <div className="text-lg font-bold text-blue-700 dark:text-blue-400">
+            <div className="text-center p-4 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/10 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-xl border border-[#01b47d]/20 dark:border-[#008f63]">
+              <div className="text-lg font-bold text-[#008f63] dark:text-[#01b47d]">
                 ${Math.round(parseInt(city.priceFrom.replace('$', '')) * 1.8)}
               </div>
-              <div className="text-xs text-blue-600 dark:text-blue-500 font-semibold">Mid-Tier</div>
+              <div className="text-xs text-[#01b47d] dark:text-[#01b47d] font-semibold">Mid-Tier</div>
             </div>
             <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl border border-purple-200 dark:border-purple-700">
               <div className="text-lg font-bold text-purple-700 dark:text-purple-400">
@@ -120,7 +120,7 @@ export default function CityCard({ city }: CityCardProps) {
         <div className="mb-7">
           <div className="flex items-center justify-between p-4 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="w-10 h-10 bg-[#01b47d] rounded-full flex items-center justify-center">
                 <i className="ri-hotel-line text-white text-lg"></i>
               </div>
               <div>
@@ -128,7 +128,7 @@ export default function CityCard({ city }: CityCardProps) {
                 <div className="text-sm text-slate-500 dark:text-slate-400">Hotels Available</div>
               </div>
             </div>
-            <div className="text-blue-500">
+            <div className="text-[#01b47d]">
               <i className="ri-arrow-right-line text-xl"></i>
             </div>
           </div>
@@ -137,7 +137,7 @@ export default function CityCard({ city }: CityCardProps) {
         {/* Action Button */}
         <Link
           to={getCityRoute(city.name)}
-          className="w-full inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 whitespace-nowrap cursor-pointer px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
+          className="w-full inline-flex items-center justify-center font-bold rounded-2xl transition-all duration-300 whitespace-nowrap cursor-pointer px-8 py-4 text-base bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#008f63] text-white shadow-xl hover:shadow-2xl hover:scale-[1.02] group"
         >
           <i className="ri-book-open-line mr-3 text-lg"></i>
           Explore {city.name}

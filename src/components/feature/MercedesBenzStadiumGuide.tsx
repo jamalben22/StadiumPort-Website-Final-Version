@@ -155,11 +155,11 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
       
       {/* TOC Sidebar - Desktop */}
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -175,11 +175,11 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border border-[#01b47d]/30 dark:border-[#01b47d]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -187,8 +187,8 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -199,16 +199,16 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -226,11 +226,11 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -266,7 +266,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -276,32 +276,32 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Mercedes-Benz Stadium</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Mercedes-Benz Stadium</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Mercedes-Benz Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">World Cup 2026 Guide</span>
+              Mercedes-Benz Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">World Cup 2026 Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Atlanta, Georgia</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-trophy-line text-lg"></i>
                 </div>
                 <span>Semifinal Host</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>75,000 Capacity</span>
@@ -310,10 +310,10 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -330,8 +330,8 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Hosts <strong>8 matches</strong> (Semifinal Host)</li>
                <li>• Venue: <strong>Mercedes-Benz Stadium</strong> (Atlanta)</li>
@@ -341,7 +341,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             The Capital of the South Hosts a Semifinal
           </h2>
           
@@ -361,7 +361,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
             Watch 75,000 voices reverberate off the circular halo board—the largest video screen in professional sports. Welcome to Mercedes-Benz Stadium, a venue that didn't just raise the bar for American stadium design when it opened in 2017; it obliterated it entirely. As one of 11 US host cities, Atlanta will welcome eight World Cup matches in 2026, including a semifinal—making this architectural marvel the stage where footballing dreams will either flourish or shatter. For the tournament, FIFA regulations require the stadium to be called "Atlanta Stadium", but locals will always know it by its revolutionary spirit.
           </p>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
-            Located in <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>, Mercedes-Benz Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
+            Located in <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>, Mercedes-Benz Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -369,44 +369,44 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Stadium Overview & Fast Facts */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             Stadium Overview & Fast Facts
           </h3>
 
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <i className="ri-price-tag-3-line text-emerald-500 text-xl"></i>
+                <i className="ri-price-tag-3-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Official Name:</strong> Mercedes-Benz Stadium (Atlanta Stadium during World Cup)</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-map-pin-line text-emerald-500 text-xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Location:</strong> Downtown Atlanta, Georgia (1 AMB Drive NW)</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-calendar-2-line text-emerald-500 text-xl"></i>
+                <i className="ri-calendar-2-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Opened:</strong> August 2017</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-group-line text-emerald-500 text-xl"></i>
+                <i className="ri-group-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Capacity:</strong> 75,000 (expandable to 83,000)</p>
               </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <i className="ri-shield-line text-emerald-500 text-xl"></i>
+                <i className="ri-shield-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Primary Tenants:</strong> Atlanta Falcons (NFL), Atlanta United FC (MLS)</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-pencil-ruler-2-line text-emerald-500 text-xl"></i>
+                <i className="ri-pencil-ruler-2-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Architect:</strong> HOK (with tvsdesign, Goode Van Slyke Architecture, Stanley Beaman & Sears)</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-sun-line text-emerald-500 text-xl"></i>
+                <i className="ri-sun-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Surface:</strong> Natural grass will be installed for World Cup matches (replacing standard artificial turf)</p>
               </div>
               <div className="flex items-start gap-3">
-                <i className="ri-home-gear-line text-emerald-500 text-xl"></i>
+                <i className="ri-home-gear-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Roof Type:</strong> Retractable eight-panel "petal" roof (opens in 8 minutes, closes in 7)</p>
               </div>
             </div>
@@ -415,13 +415,13 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
           <div className="grid md:grid-cols-2 gap-8 mt-8">
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <i className="ri-tv-2-line text-emerald-500 text-xl"></i>
+                <i className="ri-tv-2-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Signature Feature:</strong> 360-degree "Halo Board" video screen—58 feet high, 1,075 feet around</p>
               </div>
             </div>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <i className="ri-leaf-line text-emerald-500 text-xl"></i>
+                <i className="ri-leaf-line text-[#01b47d] text-xl"></i>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Sustainability:</strong> First professional sports stadium in North America to achieve LEED Platinum certification with 88 points—the highest score ever for a sports venue</p>
               </div>
             </div>
@@ -433,7 +433,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* History & Legacy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-history-line text-emerald-500"></i>
+            <i className="ri-history-line text-[#01b47d]"></i>
             History & Legacy
           </h3>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -453,7 +453,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Stadium Architecture & Experience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-brush-line text-emerald-500"></i>
+            <i className="ri-brush-line text-[#01b47d]"></i>
             Stadium Architecture & Experience
           </h3>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -476,7 +476,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* What Matches to Expect */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             What Matches to Expect
           </h3>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -496,14 +496,14 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Getting to the Stadium */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Getting to the Stadium
           </h3>
 
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500 text-3xl"></i>
+                <i className="ri-train-line text-[#01b47d] text-3xl"></i>
                 By MARTA (Metro)
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -514,7 +514,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
               </p>
               <div className="mt-6">
                 <p className="text-slate-900 dark:text-slate-50 font-semibold mb-3 flex items-center gap-2">
-                  <i className="ri-time-line text-emerald-500"></i>
+                  <i className="ri-time-line text-[#01b47d]"></i>
                   <span>Journey Times:</span>
                 </p>
                 <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 space-y-2">
@@ -532,7 +532,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-car-line text-emerald-500 text-3xl"></i>
+                <i className="ri-car-line text-[#01b47d] text-3xl"></i>
                 By Car & Parking
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -545,7 +545,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500 text-3xl"></i>
+                <i className="ri-taxi-line text-[#01b47d] text-3xl"></i>
                 By Rideshare/Taxi
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -555,7 +555,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-walk-line text-emerald-500 text-3xl"></i>
+                <i className="ri-walk-line text-[#01b47d] text-3xl"></i>
                 Walking & Biking
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -569,14 +569,14 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Where to Stay */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-bed-line text-emerald-500"></i>
+            <i className="ri-hotel-bed-line text-[#01b47d]"></i>
             Where to Stay
           </h3>
 
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
+                <i className="ri-money-dollar-circle-line text-[#01b47d] text-3xl"></i>
                 Budget Options ($80-150/night)
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -586,7 +586,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-bank-card-line text-emerald-500 text-3xl"></i>
+                <i className="ri-bank-card-line text-[#01b47d] text-3xl"></i>
                 Mid-Range ($150-250/night)
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -602,7 +602,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-vip-crown-line text-emerald-500 text-3xl"></i>
+                <i className="ri-vip-crown-line text-[#01b47d] text-3xl"></i>
                 Luxury ($250-500+/night)
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -625,14 +625,14 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Matchday Tips & Insider Advice */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-lightbulb-flash-line text-emerald-500"></i>
+            <i className="ri-lightbulb-flash-line text-[#01b47d]"></i>
             Matchday Tips & Insider Advice
           </h3>
 
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-time-line text-emerald-500 text-3xl"></i>
+                <i className="ri-time-line text-[#01b47d] text-3xl"></i>
                 Arrive Early
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -642,7 +642,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-briefcase-line text-emerald-500 text-3xl"></i>
+                <i className="ri-briefcase-line text-[#01b47d] text-3xl"></i>
                 Bag Policy
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -655,7 +655,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-restaurant-line text-emerald-500 text-3xl"></i>
+                <i className="ri-restaurant-line text-[#01b47d] text-3xl"></i>
                 Food & Drink Inside
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -671,7 +671,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500 text-3xl"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d] text-3xl"></i>
                 What to Bring
               </h4>
               <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 space-y-2">
@@ -686,7 +686,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-close-circle-line text-emerald-500 text-3xl"></i>
+                <i className="ri-close-circle-line text-[#01b47d] text-3xl"></i>
                 What NOT to Do
               </h4>
               <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 space-y-2">
@@ -698,7 +698,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500 text-3xl"></i>
+                <i className="ri-train-line text-[#01b47d] text-3xl"></i>
                 Post-Match Transport
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -712,14 +712,14 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Things to Do Nearby */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Things to Do Nearby
           </h3>
 
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
                 Pre-Match (Within 15 Minutes Walk)
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -732,7 +732,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-restaurant-2-line text-emerald-500 text-3xl"></i>
+                <i className="ri-restaurant-2-line text-[#01b47d] text-3xl"></i>
                 Fan Zones & Bars
               </h4>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -742,7 +742,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
 
             <div>
               <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-                <i className="ri-community-line text-emerald-500 text-3xl"></i>
+                <i className="ri-community-line text-[#01b47d] text-3xl"></i>
                 Post-Match Exploration
               </h4>
               <div className="space-y-4">
@@ -767,7 +767,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Day Trips */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Day Trips
           </h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -779,21 +779,21 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Beyond the Stadium: Explore Atlanta */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Stadium: Explore Atlanta
           </h3>
           <div className="space-y-4 text-slate-700 dark:text-slate-200 leading-relaxed">
             <p>
-              Explore our complete <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta World Cup 2026 Guide</Link> for essential travel info, neighborhoods, transport, and top experiences.
+              Explore our complete <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Atlanta World Cup 2026 Guide</Link> for essential travel info, neighborhoods, transport, and top experiences.
             </p>
             <p>
               Catching multiple matches in the South? Visit
-              {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
-              {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or
-              {' '}<Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+              {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+              {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston, or
+              {' '}<Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
             </p>
             <p>
-              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+              <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -802,7 +802,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
         {/* Final Verdict & Key Takeaway */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-award-line text-emerald-500"></i>
+            <i className="ri-award-line text-[#01b47d]"></i>
             Final Verdict & Key Takeaway
           </h3>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -845,7 +845,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
                     ></i>
                   </button>
                 ))}
-                {hasRated && <span className="ml-3 text-emerald-500 font-medium animate-fade-in">Thanks for voting!</span>}
+                {hasRated && <span className="ml-3 text-[#01b47d] font-medium animate-fade-in">Thanks for voting!</span>}
               </div>
             </div>
             <div className="flex flex-col justify-center">
@@ -864,7 +864,7 @@ export const MercedesBenzStadiumGuide = ({ onClose, showHeader = false, hideHero
                        alert('Link copied to clipboard!');
                     }
                   }}
-                  className="flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#01b47d] text-white rounded-lg hover:bg-[#008f63] transition-colors"
                 >
                   <i className="ri-share-line"></i>
                   <span>Share</span>

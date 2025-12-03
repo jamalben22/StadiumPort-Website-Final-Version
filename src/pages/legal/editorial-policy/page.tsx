@@ -19,7 +19,7 @@ export default function EditorialPolicyPage() {
         
         <div className="prose prose-slate dark:prose-invert max-w-none">
           <div className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-8">
-            StadiumPort is built on accuracy, transparency, and trust. Our mission is to provide the most reliable and actionable information for fans traveling to the FIFA World Cup 2026 across the United States, Canada, and Mexico. Every guide, city page, stadium profile, and travel resource follows a strict editorial process designed to ensure clarity, usefulness, and factual integrity.
+            Stadiumport is built on accuracy, transparency, and trust. Our mission is to provide the most reliable and actionable information for fans traveling to the FIFA World Cup 2026 across the United States, Canada, and Mexico. Every guide, city page, stadium profile, and travel resource follows a strict editorial process designed to ensure clarity, usefulness, and factual integrity.
           </div>
 
           <hr className="my-8 border-slate-200 dark:border-slate-700" />
@@ -54,7 +54,7 @@ export default function EditorialPolicyPage() {
 
           <h3 className="text-xl font-semibold mb-3 text-slate-800 dark:text-slate-200">3. Clear, Helpful, Traveler-Focused Content</h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
-            StadiumPort content is designed for real travelers. Guides are structured to provide:
+            Stadiumport content is designed for real travelers. Guides are structured to provide:
           </p>
           <ul className="list-disc pl-6 mb-6 text-slate-700 dark:text-slate-200">
             <li>Simple navigation</li>
@@ -81,7 +81,7 @@ export default function EditorialPolicyPage() {
             <li>Final approval and publication</li>
           </ol>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">
-            This ensures every guide meets StadiumPort's professional standards.
+            This ensures every guide meets Stadiumport's professional standards.
           </p>
 
           <hr className="my-8 border-slate-200 dark:border-slate-700" />
@@ -98,7 +98,7 @@ export default function EditorialPolicyPage() {
 
           <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-slate-100">Our Responsibility to Readers</h2>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-            StadiumPort exists to help fans travel confidently, comfortably, and affordably. We aim to remove confusion, prevent planning mistakes, and provide the most trusted World Cup 2026 guidance available online.
+            Stadiumport exists to help fans travel confidently, comfortably, and affordably. We aim to remove confusion, prevent planning mistakes, and provide the most trusted World Cup 2026 guidance available online.
           </p>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4 font-semibold">
             Your trust is our priority.

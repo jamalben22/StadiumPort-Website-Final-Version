@@ -43,11 +43,11 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             <div className="p-6 flex items-center justify-between">
               <div className="flex items-center gap-4 text-slate-700 dark:text-slate-200">
                 <div className="inline-flex items-center gap-2">
-                  <i className="ri-map-pin-line text-emerald-500"></i>
+                  <i className="ri-map-pin-line text-[#01b47d]"></i>
                   <span>Downtown Vancouver, British Columbia</span>
                 </div>
                 <div className="hidden sm:inline-flex items-center gap-2">
-                  <i className="ri-group-line text-sky-500"></i>
+                  <i className="ri-group-line text-[#01b47d]"></i>
                   <span>Capacity: 54,000 (World Cup configuration)</span>
                 </div>
               </div>
@@ -119,13 +119,13 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Introduction — exact text preserved */}
             <article className="editorial-body editorial-dropcap">
               <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-landscape-line text-emerald-500"></i>
+                <i className="ri-landscape-line text-[#01b47d]"></i>
                 Where Mountains Meet Ocean Meet the Pitch
               </h2>
               
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-                There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
-                <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+                There's something magical about watching world-class football under a retractable roof that opens to reveal snow-capped mountains and Pacific skies. Located in the beating heart of <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Vancouver</Link>, BC Place isn't just another tournament venue—it's where Canada's World Cup dream becomes reality. <strong>BC Place is one of the </strong>
+                <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
                 {`, welcoming 54,000 fans in a stadium that's hosted everything from Olympic glory to the Women's World Cup Final. This architectural marvel combines cutting-edge technology with West Coast soul, offering international fans an experience that's quintessentially Canadian: sophisticated, stunning, and accessible. When the world descends on Vancouver in June and July 2026, BC Place will prove why it's one of North America's most electrifying football venues.`}
               </p>
               <hr className="editorial-divider" />
@@ -134,42 +134,42 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Stadium Overview & Fast Facts */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-information-line text-emerald-500"></i>
+                <i className="ri-information-line text-[#01b47d]"></i>
                 Stadium Overview & Fast Facts
               </h3>
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-building-2-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                       <p className="leading-relaxed">BC Place Stadium</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-map-pin-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                       <p className="leading-relaxed">Downtown Vancouver, British Columbia (777 Pacific Boulevard)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-calendar-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                       <p className="leading-relaxed">June 19, 1983</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-group-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                       <p className="leading-relaxed">54,000 (World Cup configuration)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-user-star-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenants</span>
                       <p className="leading-relaxed">Vancouver Whitecaps FC (MLS), BC Lions (CFL)</p>
                     </div>
@@ -178,35 +178,35 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-pencil-ruler-2-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Original Architect</span>
                       <p className="leading-relaxed">Studio Phillips Barratt, Ltd.</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-pencil-ruler-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-pencil-ruler-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Renovation Architects (2010-2011)</span>
                       <p className="leading-relaxed">Stantec Architecture Ltd., Geiger Engineers</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-football-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-football-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                       <p className="leading-relaxed">Natural grass (installed for World Cup, FIFA specification)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-sun-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                       <p className="leading-relaxed">Cable-supported retractable roof (world's largest of its kind)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-arrow-up-down-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-arrow-up-down-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Opening</span>
                       <p className="leading-relaxed">100m x 85m (7,500 square metres of open sky)</p>
                     </div>
@@ -215,19 +215,19 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
               </div>
               <div className="mt-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500"></i>Notable Features
+                  <i className="ri-star-line text-[#01b47d]"></i>Notable Features
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Second-largest centre-hung HD video board in North America</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>36-foot LED exterior facade lighting</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Fully retractable in 20 minutes</span>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* History & Legacy */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-time-line text-emerald-500"></i>
+                <i className="ri-time-line text-[#01b47d]"></i>
                 History & Legacy
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -258,7 +258,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Stadium Architecture & Experience */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-building-3-line text-emerald-500"></i>
+                <i className="ri-building-3-line text-[#01b47d]"></i>
                 Stadium Architecture & Experience
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -281,7 +281,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* What Matches to Expect */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 What Matches to Expect
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -295,7 +295,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                   {`Matches are scheduled for 12:00, 15:00, 18:00, and 21:00 Pacific Time, with evening kickoffs likely offering the most spectacular visual experience as the roof opens to twilight skies. This will be only the second time Canada has hosted men's World Cup matches on home soil, making these fixtures genuinely historic moments.`}
                 </p>
                 <p>
-                  Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also explore <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada, and on the West Coast, <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi's Stadium</Link>.
+                  Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Lumen Field</Link> in Seattle. Also explore <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada, and on the West Coast, <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Levi's Stadium</Link>.
                 </p>
               </div>
               <hr className="editorial-divider" />
@@ -304,7 +304,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Getting to the Stadium */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 Getting to the Stadium
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -319,7 +319,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>By Bike:</strong> {`Complimentary secure bike parking provided by The Bicycle Valet operates at Gate C from gates opening until 30 minutes post-match.`}</p>
 
-<p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
+<p><em>{`Airport Transfer Tip: Consider booking private airport transfers through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">booking.com</a>{`  or pre-arranging car rentals to explore Vancouver and surrounding areas between matches—the Sea-to-Sky Highway to Whistler is one of the world's most scenic drives.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -327,7 +327,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Where to Stay */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-500"></i>
+                <i className="ri-hotel-line text-[#01b47d]"></i>
                 Where to Stay
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -341,7 +341,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
 
                 <p><strong>Luxury Experiences:</strong> {`JW Marriott Parq Vancouver and the DOUGLAS, Autograph Collection combine five-star service with proximity to BC Place (literally adjacent to the stadium). Fairmont Hotel Vancouver and Rosewood Hotel Georgia deliver historic grandeur with modern luxury in the downtown core.`}</p>
 
-<p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>{`  or `}<a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>{` for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
+<p><em>{`Booking Strategy: Vancouver's peak summer tourism season coincides with the World Cup. Secure accommodation 6-12 months ahead through `}<a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">booking.com</a>{`  or `}<a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Expedia</a>{` for best selection and rates. Consider Airbnb options in neighborhoods like Mount Pleasant or Main Street—just 10-15 minutes by transit but offering authentic local flavor at lower prices.`}</em></p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -349,7 +349,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Matchday Tips & Insider Advice */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-lightbulb-line text-emerald-500"></i>
+                <i className="ri-lightbulb-line text-[#01b47d]"></i>
                 Matchday Tips & Insider Advice
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -367,7 +367,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* What to Bring */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-suitcase-line text-emerald-500"></i>
+                <i className="ri-suitcase-line text-[#01b47d]"></i>
                 What to Bring
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -381,7 +381,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* What NOT to Do */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-close-circle-line text-emerald-500"></i>
+                <i className="ri-close-circle-line text-[#01b47d]"></i>
                 What NOT to Do
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -393,7 +393,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Post-Match Transport */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-navigation-line text-emerald-500"></i>
+                <i className="ri-navigation-line text-[#01b47d]"></i>
                 Post-Match Transport
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -405,7 +405,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Things to Do Nearby */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-500"></i>
+                <i className="ri-compass-3-line text-[#01b47d]"></i>
                 Things to Do Nearby
               </h3>
               <div className="space-y-8">
@@ -451,7 +451,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* PART 4: New Section Title 1 */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-football-line text-emerald-500"></i>
+                <i className="ri-football-line text-[#01b47d]"></i>
                 PART 4: New Section Title 1
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -463,7 +463,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* PART 5: New Section Title 2 */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-trophy-line text-emerald-500"></i>
+                <i className="ri-trophy-line text-[#01b47d]"></i>
                 PART 5: New Section Title 2
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -475,7 +475,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Beyond the Stadium: Explore Vancouver */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-500"></i>
+                <i className="ri-compass-3-line text-[#01b47d]"></i>
                 Beyond the Stadium: Explore Vancouver
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -485,7 +485,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div>
                   <p className="font-semibold">Discover Vancouver:</p>
                   <p>
-                    Explore our complete <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Vancouver World Cup 2026 Guide</Link> for everything you need:
+                    Explore our complete <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Vancouver World Cup 2026 Guide</Link> for everything you need:
                   </p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>Hotels near BC Place and downtown</li>
@@ -498,11 +498,11 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
                 <div>
                   <p className="font-semibold">Other Stadiums Nearby:</p>
                   <p>
-                    Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lumen Field</Link> in Seattle. Also check out <Link to="/world-cup-2026-stadiums/bmo-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada.
+                    Just 3 hours south, catch matches at <Link to="/world-cup-2026-stadiums/lumen-field" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Lumen Field</Link> in Seattle. Also check out <Link to="/world-cup-2026-stadiums/bmo-field" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">BMO Field</Link> in Toronto for coast-to-coast Canada.
                   </p>
                 </div>
                 <p>
-                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                  <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
                 </p>
               </div>
               <hr className="editorial-divider" />
@@ -511,7 +511,7 @@ export const BCPlaceStadiumGuide: React.FC<BCPlaceStadiumGuideProps> = ({ showHe
             {/* Final Verdict & Key Takeaway */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-check-double-line text-emerald-500"></i>
+                <i className="ri-check-double-line text-[#01b47d]"></i>
                 Final Verdict & Key Takeaway
               </h3>
               <div className="space-y-6 text-slate-700 dark:text-slate-200 leading-relaxed">

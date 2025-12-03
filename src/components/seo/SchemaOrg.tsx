@@ -24,7 +24,7 @@ export function SchemaOrg({ schema }: SchemaOrgProps) {
 export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "StadiumPort",
+  "name": "Stadiumport",
   "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "potentialAction": {
@@ -37,7 +37,7 @@ export const generateWebsiteSchema = () => ({
   },
   "publisher": {
     "@type": "Organization",
-    "name": "StadiumPort",
+    "name": "Stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });
@@ -45,7 +45,7 @@ export const generateWebsiteSchema = () => ({
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "StadiumPort",
+  "name": "Stadiumport",
   "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "logo": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/logo.png`,
@@ -81,7 +81,7 @@ export const generateTravelGuideSchema = (
   ...(extras?.keywords && extras.keywords.length ? { keywords: extras.keywords } : {}),
   "publisher": {
     "@type": "Organization",
-    "name": "StadiumPort",
+    "name": "Stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   },
   "about": {
@@ -118,7 +118,7 @@ export const generateCityGuideSchema = (
   },
   "publisher": {
     "@type": "Organization",
-    "name": "StadiumPort",
+    "name": "Stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });

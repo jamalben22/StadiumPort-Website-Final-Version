@@ -143,7 +143,7 @@ export function WorldClassFAQ({
       {/* Skip to FAQ content link for accessibility */}
       <a 
         href="#faq-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-emerald-500 text-white px-4 py-2 rounded-lg z-50"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#01b47d] text-white px-4 py-2 rounded-lg z-50"
       >
         Skip to FAQ content
       </a>
@@ -151,10 +151,10 @@ export function WorldClassFAQ({
       <div id="faq-content" className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
-          <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl md:rounded-3xl mb-6 md:mb-8 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+          <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] rounded-2xl md:rounded-3xl mb-6 md:mb-8 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
             <i className="ri-question-line text-2xl md:text-3xl lg:text-4xl text-white"></i>
           </div>
-          <h2 className="font-space font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+          <h2 className="font-space font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-navy-900 via-[#01b47d] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
             {title}
           </h2>
           {subtitle && (
@@ -177,7 +177,7 @@ export function WorldClassFAQ({
                 placeholder="Ask anything about World Cup 2026... (Press '/' to search)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="block w-full pl-12 md:pl-14 pr-10 md:pr-12 py-3 md:py-4 text-base md:text-lg text-slate-900 dark:text-white bg-white/90 dark:bg-navy-800/90 backdrop-blur-xl border-2 border-slate-200 dark:border-navy-700 rounded-xl md:rounded-2xl focus:ring-4 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all duration-300 placeholder-slate-400 dark:placeholder-slate-300"
+                className="block w-full pl-12 md:pl-14 pr-10 md:pr-12 py-3 md:py-4 text-base md:text-lg text-slate-900 dark:text-white bg-white/90 dark:bg-navy-800/90 backdrop-blur-xl border-2 border-slate-200 dark:border-navy-700 rounded-xl md:rounded-2xl focus:ring-4 focus:ring-[#01b47d]/20 focus:border-[#01b47d] transition-all duration-300 placeholder-slate-400 dark:placeholder-slate-300"
               />
               {searchQuery && (
                 <button
@@ -198,7 +198,7 @@ export function WorldClassFAQ({
                     onClick={() => setSelectedCategory(category)}
                     className={`px-3 py-2 md:px-4 rounded-lg md:rounded-xl text-xs md:text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
-                        ? 'bg-emerald-500 text-white shadow-lg shadow-emerald-500/25'
+                        ? 'bg-[#01b47d] text-white shadow-lg shadow-[#01b47d]/25'
                         : 'bg-white/60 dark:bg-navy-800/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-navy-800'
                     }`}
                   >
@@ -252,13 +252,13 @@ export function WorldClassFAQ({
                     shadow-2xl
                     hover:border-white/50 dark:hover:border-navy-600/50
                     hover:bg-white/80 dark:hover:bg-navy-900/80
-                    hover:shadow-3xl hover:shadow-emerald-500/10
+                    hover:shadow-3xl hover:shadow-[#01b47d]/10
                     transition-all duration-700 ease-out
                     transform hover:-translate-y-1
                   `}>
                     {/* Premium Background Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-2xl md:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute top-0 right-0 w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                     
                     {/* Question Header */}
                     <button
@@ -272,7 +272,7 @@ export function WorldClassFAQ({
                         text-left
                         group-hover:scale-[1.02]
                         transition-transform duration-500 ease-out
-                        focus:outline-none focus:ring-4 focus:ring-emerald-500/30 focus:ring-offset-2
+                        focus:outline-none focus:ring-4 focus:ring-[#01b47d]/30 focus:ring-offset-2
                         rounded-2xl md:rounded-3xl
                       "
                       aria-expanded={isOpen}
@@ -281,7 +281,7 @@ export function WorldClassFAQ({
                     >
                       <div className="flex-1 pr-4 md:pr-8">
                         <div className="flex items-start space-x-3 md:space-x-4">
-                          <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-lg md:rounded-xl flex items-center justify-center">
+                          <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-lg md:rounded-xl flex items-center justify-center">
                             <Hash className="h-3 w-3 md:h-4 md:w-4 text-white" />
                           </div>
                           <div className="flex-1">
@@ -289,7 +289,7 @@ export function WorldClassFAQ({
                               font-space font-bold text-lg md:text-xl lg:text-2xl xl:text-3xl
                               text-navy-900 dark:text-white
                               leading-tight
-                              group-hover:text-emerald-600 dark:group-hover:text-emerald-400
+                              group-hover:text-[#008f63] dark:group-hover:text-[#008f63]
                               transition-colors duration-500
                               mb-1 md:mb-2
                             ">
@@ -297,7 +297,7 @@ export function WorldClassFAQ({
                             </h3>
                             {faq.category && (
                               <div className="flex items-center space-x-2 md:space-x-4 text-xs md:text-sm text-slate-500 dark:text-slate-400">
-                                <span className="px-2 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 rounded-md md:rounded-lg text-xs font-medium">
+                                <span className="px-2 py-1 bg-[#01b47d]/10 dark:bg-[#01b47d]/30 text-[#01b47d] dark:text-[#01b47d] rounded-md md:rounded-lg text-xs font-medium">
                                   {faq.category}
                                 </span>
                               </div>
@@ -314,12 +314,12 @@ export function WorldClassFAQ({
                           flex-shrink-0 w-10 h-10 md:w-12 md:h-12 lg:w-14 lg:h-14
                           flex items-center justify-center
                           rounded-xl md:rounded-2xl
-                          bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700
+                          bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d]
                           text-white
-                          group-hover:from-emerald-600 group-hover:via-emerald-700 group-hover:to-emerald-800
+                          group-hover:from-[#01b47d] group-hover:via-[#01b47d] group-hover:to-[#01b47d]
                           transition-all duration-500 ease-out
                           transform group-hover:scale-110 group-hover:rotate-3
-                          shadow-xl md:shadow-2xl shadow-emerald-500/30
+                          shadow-xl md:shadow-2xl shadow-[#01b47d]/30
                         "
                       >
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 md:w-6 md:h-6 lg:w-7 lg:h-7">

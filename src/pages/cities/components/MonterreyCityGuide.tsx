@@ -140,7 +140,7 @@ export function MonterreyCityGuide() {
         <article className="editorial-body editorial-dropcap">
           <p>
               When the 2026 FIFA World Cup kicks off, Monterrey will welcome the world to one of Mexico's most dynamic cities—where modern ambition meets raw football passion against a backdrop of jagged mountains. Monterrey is one of the{' '}
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. This industrial powerhouse in northeastern Mexico isn't just hosting four World Cup matches; it's ready to show international fans why it claims the most loyal football crowds in the country.
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. This industrial powerhouse in northeastern Mexico isn't just hosting four World Cup matches; it's ready to show international fans why it claims the most loyal football crowds in the country.
             </p>
             {/* Essential Links module */}
             <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-5 dark:bg-navy-800 dark:border-navy-700">
@@ -162,8 +162,8 @@ export function MonterreyCityGuide() {
             </p>
             <p className="mt-2">
               Combine with{' '}
-              <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}and{' '}
-              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for a complete Mexican experience—culture in Guadalajara, the capital’s energy in Mexico City, and mountain-backed modernity in Monterrey.
+              <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link>{' '}for a complete Mexican experience—culture in Guadalajara, the capital’s energy in Mexico City, and mountain-backed modernity in Monterrey.
             </p>
             <p>
               If you're planning to catch a World Cup match in Monterrey, you're in for something special. This isn't a tourist resort; it's a real Mexican city with serious football heritage, incredible carne asada, and a stadium that rivals anything in North America.
@@ -174,7 +174,7 @@ export function MonterreyCityGuide() {
         {/* The Stadium */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] text-3xl"></i>
             The Stadium: <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Estadio BBVA</Link> – Where Steel Meets Football
           </h3>
             <p><strong>Official World Cup Name:</strong> Estadio Monterrey</p>
@@ -196,7 +196,7 @@ export function MonterreyCityGuide() {
               For the 2026 World Cup, the stadium will feature upgraded pitch technology including an underground ventilation system to maintain grass quality despite Monterrey's summer heat. FIFA has confirmed four matches here: three Group Stage encounters and one Round of 32 match scheduled across June 14, 20, 24, and 29, 2026.
             </p>
             <p>
-              <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-semibold">
+              <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="inline-flex items-center text-[#01b47d] dark:text-[#01b47d] font-semibold">
                 <i className="ri-external-link-line mr-2"></i>
                 Explore the detailed Estadio BBVA stadium guide
               </Link>
@@ -207,7 +207,7 @@ export function MonterreyCityGuide() {
         {/* Getting to the Stadium */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-routes-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-routes-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to the Stadium
           </h3>
             <p>
@@ -230,8 +230,8 @@ export function MonterreyCityGuide() {
             </p>
             <p>
               Regional planning: Monterrey is closest to Texas cities like{' '}
-              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}and{' '}
-              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, making cross-border itineraries straightforward.
+              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>{' '}and{' '}
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>, making cross-border itineraries straightforward.
             </p>
           <hr className="editorial-divider" />
         </article>
@@ -239,7 +239,7 @@ export function MonterreyCityGuide() {
         {/* Where to Stay */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] text-3xl"></i>
             Where to Stay: Neighborhoods That Put You in the Action
           </h3>
             <p>
@@ -251,7 +251,7 @@ export function MonterreyCityGuide() {
         {/* Centro/Monterrey Centro */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+            <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
             Centro/Monterrey Centro – For Culture Vultures and Budget Travelers
           </h3>
             <p>
@@ -275,7 +275,7 @@ export function MonterreyCityGuide() {
         {/* San Pedro Garza García */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-2-line text-indigo-400 dark:text-indigo-300 text-3xl"></i>
+            <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             San Pedro Garza García – For Luxury and Safety
           </h3>
             <p>
@@ -323,7 +323,7 @@ export function MonterreyCityGuide() {
         {/* Near Fundidora Park – For Families and Convenience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-leaf-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Near Fundidora Park – For Families and Convenience
           </h3>
             <p>
@@ -350,7 +350,7 @@ export function MonterreyCityGuide() {
         {/* Getting Around Monterrey: Navigate Like a Local */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-routes-line text-emerald-500 text-3xl"></i>
+            <i className="ri-routes-line text-[#01b47d] text-3xl"></i>
             Getting Around Monterrey: Navigate Like a Local
           </h3>
             <p>
@@ -397,7 +397,7 @@ export function MonterreyCityGuide() {
         {/* Match Day in Monterrey: What to Expect */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-500 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] text-3xl"></i>
             Match Day in Monterrey: What to Expect
           </h3>
             <h4 className="editorial-h4 animate-fade-up mb-2">The Clásico Regio: Understanding Local Football Culture</h4>
@@ -436,7 +436,7 @@ export function MonterreyCityGuide() {
         {/* Where Fans Gather: Sports Bars and Watch Parties */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-tv-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-tv-2-line text-[#01b47d] text-3xl"></i>
             Where Fans Gather: Sports Bars and Watch Parties
           </h3>
             <p><strong>Boston's Pizza Galerías Monterrey:</strong> Lively pub atmosphere with HD screens and decent food—perfect for watching other World Cup matches</p>
@@ -449,7 +449,7 @@ export function MonterreyCityGuide() {
         {/* Beyond Football: Monterrey's Can't-Miss Experiences */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
             Beyond Football: Monterrey's Can't-Miss Experiences
           </h3>
             <h4 className="editorial-h4 animate-fade-up mb-2">Macroplaza: Mexico's Grand Public Square</h4>
@@ -506,7 +506,7 @@ export function MonterreyCityGuide() {
         {/* Practical Intel: What You Need to Know */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-emerald-500 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] text-3xl"></i>
             Practical Intel: What You Need to Know
           </h3>
             <h4 className="editorial-h4 animate-fade-up mb-2">Weather in June</h4>
@@ -558,7 +558,7 @@ export function MonterreyCityGuide() {
         {/* Money Matters */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-wallet-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-wallet-3-line text-[#01b47d] text-3xl"></i>
             Money Matters
           </h3>
             <p>- Currency: Mexican Peso (MXN)</p>
@@ -571,7 +571,7 @@ export function MonterreyCityGuide() {
         {/* Related Destinations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-road-map-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Plan Your Cross-Border World Cup Journey
           </h3>
           <p>
@@ -580,21 +580,21 @@ export function MonterreyCityGuide() {
           <p className="mt-4 font-semibold">Popular Combinations:</p>
           <p className="mt-2">
             <strong>Texas to Mexico</strong>{' '}Create the perfect cross-border experience: Start in{' '}
-            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>{' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico at Monterrey (current, no link) — just a few hours' drive — before continuing to{' '}
-            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}and{' '}
-            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>{' '}or{' '}
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>, then cross into Mexico at Monterrey (current, no link) — just a few hours' drive — before continuing to{' '}
+            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link>{' '}and{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>.
           </p>
           <p className="mt-2">
             <strong>Complete Mexico Tour</strong>{' '}Experience all three Mexican host cities: Monterrey (current) for mountains and modernity,{' '}
-            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>{' '}for culture and tradition, then{' '}
-            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>{' '}for the ultimate metropolitan experience.
+            <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link>{' '}for culture and tradition, then{' '}
+            <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>{' '}for the ultimate metropolitan experience.
           </p>
           <p className="mt-2">
             <strong>Border Region Circuit</strong>{' '}Focus on the border region: Combine Monterrey (current) with nearby Texas cities{' '}
-            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>,{' '}
-            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, and{' '}
-            <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>{' '}for an efficient multi-city tour with minimal travel time.
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>, and{' '}
+            <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Kansas City</Link>{' '}for an efficient multi-city tour with minimal travel time.
           </p>
           <p className="mt-4">
             <Link to="/world-cup-2026-host-cities" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
@@ -605,7 +605,7 @@ export function MonterreyCityGuide() {
         {/* Book Your Monterrey World Cup Adventure */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-flag-line text-emerald-500 text-3xl"></i>
+            <i className="ri-flag-line text-[#01b47d] text-3xl"></i>
             Book Your Monterrey World Cup Adventure
           </h3>
             <p>
@@ -629,7 +629,7 @@ export function MonterreyCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

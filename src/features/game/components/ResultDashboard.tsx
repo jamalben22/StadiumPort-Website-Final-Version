@@ -86,7 +86,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
         if (navigator.share) {
             await navigator.share({
                 title: 'My WC26 Prediction',
-                text: `I predict ${champion.name} will win the World Cup 2026! 🏆 #StadiumPort #WC26`,
+                text: `I predict ${champion.name} will win the World Cup 2026! 🏆 #Stadiumport #WC26`,
                 files: [file]
             });
         } else {
@@ -102,7 +102,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
     }
   };
 
-  const shareText = `I predict ${champion.name} will win the World Cup 2026! 🏆 #StadiumPort #WC26`;
+  const shareText = `I predict ${champion.name} will win the World Cup 2026! 🏆 #Stadiumport #WC26`;
   const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://stadiumport.com';
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;
@@ -167,7 +167,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
   return (
     <>
       <SEO 
-        title="My World Cup 2026 Prediction | StadiumPort"
+        title="My World Cup 2026 Prediction | Stadiumport"
         description={`I predicted ${champion.name} will win the 2026 World Cup! Create your own prediction bracket and compete for official prizes.`}
         keywords={["World Cup 2026 prediction", "bracket results", "soccer prediction card", "stadiumport prediction"]}
         url="/world-cup-2026-prediction-game/results"
@@ -199,7 +199,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
       >
         <div className="mb-6 flex justify-center">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
             <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
               Step 5 of 5: Your Prediction is Locked!
             </span>
@@ -211,7 +211,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
            <h1 className="text-6xl md:text-8xl font-black font-['Teko'] uppercase tracking-tight leading-[0.85] mb-2 text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/50">
              Official Entry Confirmed
            </h1>
-           <p className="text-emerald-400 font-bold text-lg font-['Rajdhani'] tracking-widest uppercase">
+           <p className="text-[#01b47d] font-bold text-lg font-['Rajdhani'] tracking-widest uppercase">
              Your World Cup 2026 predictions are submitted and verified. Good luck competing for official prizes!
            </p>
         </motion.header>
@@ -221,7 +221,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
           </div>
           <div className="mt-4">
             <div className="text-5xl md:text-7xl font-black font-['Teko'] uppercase tracking-tight leading-[0.9] text-white">{champion.name}</div>
-            <p className="text-emerald-400 font-bold text-sm md:text-base font-['Rajdhani'] tracking-widest uppercase mt-1">World Cup 2026 Winner</p>
+            <p className="text-[#01b47d] font-bold text-sm md:text-base font-['Rajdhani'] tracking-widest uppercase mt-1">World Cup 2026 Winner</p>
           </div>
         </div>
         <div className="text-center mb-8">
@@ -294,7 +294,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-white/60">Status:</span>
-                    <span className="inline-flex items-center gap-2 font-bold text-emerald-400">
+                    <span className="inline-flex items-center gap-2 font-bold text-[#01b47d]">
                       <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Locked
                     </span>
                   </div>
@@ -332,11 +332,11 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
                  </div>
 
                  {/* The Final */}
-                 <div className="bg-gradient-to-b from-emerald-900/20 to-[#111] border border-emerald-500/30 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden h-full min-h-[160px]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-emerald-500/10 to-transparent pointer-events-none" />
-                    <Trophy className="w-8 h-8 text-emerald-400 mb-3" />
+                 <div className="bg-gradient-to-b from-[#008f63]/20 to-[#111] border border-[#01b47d]/30 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden h-full min-h-[160px]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#01b47d]/10 to-transparent pointer-events-none" />
+                    <Trophy className="w-8 h-8 text-[#01b47d] mb-3" />
                     <div className="text-center">
-                       <div className="text-xs text-emerald-400 font-bold tracking-widest font-['Rajdhani'] mb-1">WORLD CHAMPION</div>
+                       <div className="text-xs text-[#01b47d] font-bold tracking-widest font-['Rajdhani'] mb-1">WORLD CHAMPION</div>
                        <div className="text-4xl font-black text-white font-['Teko'] uppercase">{champion.name}</div>
                     </div>
                  </div>
@@ -385,7 +385,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
               <h3 className="text-[12px] md:text-sm font-['Rajdhani'] font-extrabold uppercase tracking-[0.25em] text-white/70">SHARE YOUR PREDICTION CARD</h3>
             </div>
             <div className="relative group cursor-pointer" onClick={handleSaveImage}>
-                <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 via-cyan-500 to-purple-600 rounded-[32px] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-purple-600 rounded-[32px] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-b from-white/8 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 mix-blend-soft-light pointer-events-none" style={{ WebkitMaskImage: 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0.35), transparent 60%)', maskImage: 'linear-gradient(to bottom, rgba(255,255,255,1), rgba(255,255,255,0.35), transparent 60%)' }} />
                 <ShareCard 
                    champion={champion} 
@@ -420,11 +420,11 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
                   <div className="mt-4 flex flex-col md:flex-row items-center justify-center gap-3">
                     <button
                       onClick={handleShare}
-                      className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(16,185,129,0.3)]"
+                      className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-[#01b47d] hover:bg-[#008f63] transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(1,180,125,0.3)]"
                     >
                       <div className="flex items-center justify-center gap-3">
-                        <Share2 className="w-5 h-5 text-emerald-950" />
-                        <span className="text-emerald-950 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
+                        <Share2 className="w-5 h-5 text-white" />
+                        <span className="text-white font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
                       </div>
                     </button>
                     <button
@@ -455,11 +455,11 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
            
            <button
              onClick={handleShare}
-             className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(16,185,129,0.3)]"
+             className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-[#01b47d] hover:bg-[#008f63] transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(1,180,125,0.3)]"
            >
              <div className="flex items-center justify-center gap-3">
-               <Share2 className="w-5 h-5 text-emerald-950" />
-              <span className="text-emerald-950 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
+               <Share2 className="w-5 h-5 text-white" />
+              <span className="text-white font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
              </div>
            </button>
 

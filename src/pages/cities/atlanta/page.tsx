@@ -145,11 +145,11 @@ export default function AtlantaArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function AtlantaArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function AtlantaArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function AtlantaArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function AtlantaArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function AtlantaArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function AtlantaArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Atlanta</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Atlanta</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Atlanta World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Atlanta World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>Mercedes-Benz Stadium</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>71,000 capacity</span>
@@ -298,10 +298,10 @@ export default function AtlantaArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -317,8 +317,8 @@ export default function AtlantaArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Host to <strong>8 matches</strong> including a Semifinal</li>
                <li>• Venue: <strong>Mercedes-Benz Stadium</strong></li>
@@ -328,7 +328,7 @@ export default function AtlantaArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>The Capital of the South Hosts a Semifinal
+            <i className="ri-trophy-line text-[#01b47d]"></i>The Capital of the South Hosts a Semifinal
           </h2>
           
           {/* [ESTIMATED READ TIME] */}
@@ -341,10 +341,10 @@ export default function AtlantaArticlePage() {
           <p>
             Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football.
             {' '}Atlanta is one of the{' '}
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>
             {' '}for the 2026 World Cup.
             {' '}From June 15 through July 15, 2026,{' '}
-            <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link>
+            <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mercedes-Benz Stadium</Link>
             {' '}will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
           </p>
           <p>
@@ -374,13 +374,13 @@ export default function AtlantaArticlePage() {
           
           <p className="leading-relaxed mt-4">
             Atlanta connects easily with{' '}
-            <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+            <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
             {' '}for a complete Southern experience. Combine Atlanta with{' '}
-            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
             {' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
             {' '}for a Gulf to Atlantic journey. Atlanta also serves as the Southern gateway to East Coast cities like{' '}
-            <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+            <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link>
             .
           </p>
           <hr className="editorial-divider" />
@@ -389,7 +389,7 @@ export default function AtlantaArticlePage() {
         {/* The Stadium */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Mercedes-Benz Stadium (Atlanta Stadium for FIFA 2026)
           </h2>
 
@@ -397,7 +397,7 @@ export default function AtlantaArticlePage() {
             {/* Architectural Marvel */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 An Architectural Marvel Built for Football
               </h3>
               <div>
@@ -413,7 +413,7 @@ export default function AtlantaArticlePage() {
             {/* Roof */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-sun-line text-emerald-500"></i>
+                <i className="ri-sun-line text-[#01b47d]"></i>
                 The Roof That Broke the Mold
               </h3>
               <div>
@@ -429,7 +429,7 @@ export default function AtlantaArticlePage() {
             {/* Match Schedule */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 Match Schedule at Mercedes-Benz Stadium
               </h3>
               <div>
@@ -449,7 +449,7 @@ export default function AtlantaArticlePage() {
             {/* What Makes Special */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-award-line text-emerald-500"></i>
+                <i className="ri-award-line text-[#01b47d]"></i>
                 What Makes This Stadium Special
               </h3>
               <div>
@@ -464,11 +464,11 @@ export default function AtlantaArticlePage() {
                 </p>
                 <p className="leading-relaxed mt-4">
                   Planning a regional trip? Pair Atlanta with{' '}
-                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                   {' '}or{' '}
-                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
                   {' '}for a Gulf-to-Atlantic journey, and add{' '}
-                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
                   {' '}for tropical contrast.
                 </p>
               </div>
@@ -480,7 +480,7 @@ export default function AtlantaArticlePage() {
         {/* Getting There */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Getting There: Transportation Made Easy
           </h2>
 
@@ -488,7 +488,7 @@ export default function AtlantaArticlePage() {
             {/* From Airport */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 From Hartsfield-Jackson Atlanta International Airport
               </h3>
               <div>
@@ -501,7 +501,7 @@ export default function AtlantaArticlePage() {
             {/* MARTA Rail */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 MARTA Rail (The Smart Choice)
               </h3>
               <div>
@@ -519,7 +519,7 @@ export default function AtlantaArticlePage() {
 
             {/* Pro Tip - International Terminal Transfer (editorial inline) */}
             <div className="flex items-start gap-3">
-              <i className="ri-lightbulb-line text-emerald-500 text-xl mt-1"></i>
+              <i className="ri-lightbulb-line text-[#01b47d] text-xl mt-1"></i>
               <div>
                 <p>
                   <strong>Pro Tip</strong>: If arriving at the International Terminal, you'll need to take the free shuttle to the Domestic Terminal to access MARTA. Allow an extra 45-60 minutes for this transfer.
@@ -530,7 +530,7 @@ export default function AtlantaArticlePage() {
             {/* Rideshares and Taxis */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares and Taxis
               </h3>
               <div>
@@ -543,7 +543,7 @@ export default function AtlantaArticlePage() {
             {/* Match Day Access */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-football-line text-emerald-500"></i>
+                <i className="ri-football-line text-[#01b47d]"></i>
                 Getting to Mercedes-Benz Stadium on Match Days
               </h3>
               <div className="space-y-4">
@@ -575,7 +575,7 @@ export default function AtlantaArticlePage() {
         {/* Where to Stay */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h2>
 
@@ -665,7 +665,7 @@ export default function AtlantaArticlePage() {
         {/* Beyond the Match */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Beyond the Match: What to Do in Atlanta
           </h2>
 
@@ -775,7 +775,7 @@ export default function AtlantaArticlePage() {
         {/* Food */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-line text-emerald-500"></i>
+            <i className="ri-restaurant-line text-[#01b47d]"></i>
             Food: From Soul Food to Southern Innovation
           </h2>
 
@@ -830,7 +830,7 @@ export default function AtlantaArticlePage() {
         {/* Beyond Southern Food */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-store-2-line text-emerald-500"></i>
+            <i className="ri-store-2-line text-[#01b47d]"></i>
             Beyond Southern Food
           </h2>
 
@@ -854,7 +854,7 @@ export default function AtlantaArticlePage() {
         {/* Weather & Packing */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-sun-cloudy-line text-emerald-500"></i>
+            <i className="ri-sun-cloudy-line text-[#01b47d]"></i>
             Weather &amp; What to Pack
           </h2>
 
@@ -927,7 +927,7 @@ export default function AtlantaArticlePage() {
         {/* Practical Tips for International Visitors */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
+            <i className="ri-global-line text-[#01b47d]"></i>
             Practical Tips for International Visitors
           </h2>
 
@@ -978,7 +978,7 @@ export default function AtlantaArticlePage() {
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-ticket-line text-emerald-500"></i>
+            <i className="ri-ticket-line text-[#01b47d]"></i>
             Ticket Information &amp; Booking Strategy
           </h2>
 
@@ -1002,7 +1002,7 @@ export default function AtlantaArticlePage() {
         {/* Why Atlanta */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-earth-line text-emerald-500"></i>
+            <i className="ri-earth-line text-[#01b47d]"></i>
             Why Atlanta Will Make Your World Cup Unforgettable
           </h2>
 
@@ -1026,7 +1026,7 @@ export default function AtlantaArticlePage() {
         {/* Start Planning */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Start Planning Your 2026 World Cup Trip to Atlanta
           </h2>
 
@@ -1070,7 +1070,7 @@ export default function AtlantaArticlePage() {
       {/* Related Destinations */}
       <article className="editorial-body">
         <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-          <i className="ri-road-map-line text-emerald-500"></i>
+          <i className="ri-road-map-line text-[#01b47d]"></i>
           Plan Your Southern World Cup Adventure
         </h3>
         <p className="leading-relaxed mb-4">
@@ -1084,9 +1084,9 @@ export default function AtlantaArticlePage() {
             <p className="font-bold">Southern Sweep</p>
             <p>
               Experience the full spectrum of the American South: Atlanta (current) for urban Southern charm,{" "}
-              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
               {" "}for Gulf Coast energy, and{" "}
-              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
               {" "}for tropical paradise.
             </p>
           </div>
@@ -1094,11 +1094,11 @@ export default function AtlantaArticlePage() {
             <p className="font-bold">Coast to Coast Southern</p>
             <p>
               Create an Atlantic to Gulf journey: Start in{" "}
-              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
               , head to Atlanta (current), then continue to{" "}
-              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
               {" "}or{" "}
-              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
               {" "}for a complete Southern experience.
             </p>
           </div>
@@ -1106,17 +1106,17 @@ export default function AtlantaArticlePage() {
             <p className="font-bold">Southern to East Coast</p>
             <p>
               Connect Atlanta with Eastern cities like{" "}
-              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link>
               ,{" "}
-              <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+              <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link>
               , or{" "}
-              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>
               {" "}for a journey from Southern hospitality to historic Northeastern culture.
             </p>
           </div>
         </div>
         <p className="mt-6">
-          <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+          <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
         </p>
       </article>
 
@@ -1130,7 +1130,7 @@ export default function AtlantaArticlePage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

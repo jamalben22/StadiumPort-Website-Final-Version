@@ -145,11 +145,11 @@ export default function SanFranciscoArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function SanFranciscoArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function SanFranciscoArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function SanFranciscoArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function SanFranciscoArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function SanFranciscoArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function SanFranciscoArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">San Francisco Bay Area</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">San Francisco Bay Area</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              San Francisco Bay Area World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              San Francisco Bay Area World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>Levi's Stadium</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>68,500 capacity</span>
@@ -298,10 +298,10 @@ export default function SanFranciscoArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -317,8 +317,8 @@ export default function SanFranciscoArticlePage() {
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>6 matches</strong> total (5 group, 1 knockout)</li>
                <li>• Venue: <strong>Levi's Stadium</strong> (Santa Clara)</li>
@@ -328,7 +328,7 @@ export default function SanFranciscoArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             San Francisco Bay Area World Cup 2026: Complete Travel Guide
           </h2>
           
@@ -360,8 +360,8 @@ export default function SanFranciscoArticlePage() {
           </div>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Resources
             </h4>
             <div className="space-y-3">
@@ -392,7 +392,7 @@ export default function SanFranciscoArticlePage() {
         {/* The Stadium: Levi's Stadium */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Levi's Stadium (San Francisco Bay Area Stadium)
           </h3>
           
@@ -404,7 +404,7 @@ export default function SanFranciscoArticlePage() {
             {/* [STAT HIGHLIGHT SECTION] */}
             <div className="bg-slate-50 dark:bg-navy-800 rounded-2xl p-6 border border-slate-100 dark:border-navy-700 my-8">
               <h4 className="editorial-h4 animate-fade-up mb-6 flex items-center gap-2 border-b border-slate-200 dark:border-navy-600 pb-4">
-                <i className="ri-bar-chart-horizontal-line text-emerald-500"></i>
+                <i className="ri-bar-chart-horizontal-line text-[#01b47d]"></i>
                 The Stadium Specs
               </h4>
               
@@ -433,7 +433,7 @@ export default function SanFranciscoArticlePage() {
         {/* The Match Schedule */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             The Match Schedule: Six Games Including Knockout Drama
           </h3>
           
@@ -476,8 +476,8 @@ export default function SanFranciscoArticlePage() {
         {/* Getting to Levi's Stadium */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Transport Reality Check</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Reality Check</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Distance:</strong> 40 miles from SF (not walkable)</li>
                <li>• <strong>BART + VTA:</strong> Reliable but takes 90-120 mins</li>
@@ -487,7 +487,7 @@ export default function SanFranciscoArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-500"></i>
+            <i className="ri-train-line text-[#01b47d]"></i>
             Getting to Levi's Stadium: The Silicon Valley Commute
           </h3>
           
@@ -511,7 +511,7 @@ export default function SanFranciscoArticlePage() {
               <p><strong>Time:</strong> 90-120 minutes door-to-stadium</p>
               <p><strong>Frequency:</strong> BART every 8-12 minutes; VTA every 15 minutes</p>
               <p><strong>Hours:</strong> BART operates 5 AM-midnight weekdays, 6 AM-midnight weekends; VTA light rail runs similar hours</p>
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40 my-4">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40 my-4">
                 <p className="m-0">Download the <strong>Clipper card app</strong> or purchase physical Clipper cards at BART stations—it works across BART, VTA, Muni, Caltrain, and AC Transit. The unified payment system is the Bay Area's secret weapon for visitors.</p>
               </div>
               <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-950/40">
@@ -535,7 +535,7 @@ export default function SanFranciscoArticlePage() {
               <p><strong>Time:</strong> 45-70 minutes depending on traffic</p>
               <p><strong>Pickup location:</strong> Designated rideshare areas at Levi's Stadium (expect 30-60 minute waits after matches)</p>
               <p>Many fans split rideshares to justify costs—4 passengers dividing $150 = $37.50 each, comparable to premium transit with door-to-door service.</p>
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40 my-4">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40 my-4">
                 <p className="m-0"><strong>Smart hack:</strong> Take BART/Caltrain TO the match (save money, avoid traffic), then split rideshare home when tired and willing to pay for convenience.</p>
               </div>
             </div>
@@ -559,8 +559,8 @@ export default function SanFranciscoArticlePage() {
         {/* Where to Stay */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Lodging Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Lodging Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>San Francisco:</strong> Best for culture & fan experience</li>
                <li>• <strong>Santa Clara/San Jose:</strong> Best for stadium proximity</li>
@@ -569,7 +569,7 @@ export default function SanFranciscoArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: San Francisco vs. Silicon Valley Strategy
           </h3>
           
@@ -625,7 +625,7 @@ export default function SanFranciscoArticlePage() {
         {/* Beyond the Matches */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Beyond the Matches: What to Do in San Francisco
           </h3>
           
@@ -639,7 +639,7 @@ export default function SanFranciscoArticlePage() {
             <p>
               The 1.7-mile suspension bridge painted "International Orange" (not red) opened in 1937 and remains the most photographed bridge worldwide. <strong>Walk across</strong> from San Francisco side (45 minutes one-way, free), bike to <strong>Sausalito</strong> then ferry back (<strong>$40</strong> bike rental), or drive to <strong>Vista Point</strong> north side for postcard views.
             </p>
-            <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
+            <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
               <p className="m-0"><strong>Pro tip:</strong> Visit morning for clearest skies; fog typically rolls in afternoon. The bridge is <strong>5-10°F colder</strong> than downtown—bring layers even on sunny days.</p>
             </div>
             
@@ -696,7 +696,7 @@ export default function SanFranciscoArticlePage() {
         {/* Food Scene */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d]"></i>
             San Francisco Food Scene: Fuel for Match Days
           </h3>
           
@@ -737,8 +737,8 @@ export default function SanFranciscoArticlePage() {
         {/* Practical Information */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Essential Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Airports:</strong> SFO (Global) or SJC (Near Stadium)</li>
                <li>• <strong>Weather:</strong> Cool Summer (60-70°F), Foggy</li>
@@ -748,7 +748,7 @@ export default function SanFranciscoArticlePage() {
           </div>
 
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-emerald-500"></i>
+            <i className="ri-information-line text-[#01b47d]"></i>
             Practical Information: What You Need to Know
           </h3>
           
@@ -814,7 +814,7 @@ export default function SanFranciscoArticlePage() {
         {/* Fan Festival */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-500"></i>
+            <i className="ri-community-line text-[#01b47d]"></i>
             FIFA Fan Festival &amp; Match Day Atmosphere
           </h3>
           
@@ -849,7 +849,7 @@ export default function SanFranciscoArticlePage() {
         {/* Booking Strategy */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Booking Strategy: How to Plan Your Bay Area World Cup Trip
           </h3>
           
@@ -885,7 +885,7 @@ export default function SanFranciscoArticlePage() {
         {/* 2–4 Weeks Before Travel */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-500"></i>
+            <i className="ri-time-line text-[#01b47d]"></i>
             2–4 Weeks Before Travel
           </h3>
           
@@ -898,7 +898,7 @@ export default function SanFranciscoArticlePage() {
               <li>Download transit apps: <strong>Clipper</strong>, <strong>Transit</strong> (real-time Bay Area transit), <strong>Google Maps</strong></li>
             </ul>
 
-            <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-4 dark:border-indigo-900 dark:bg-indigo-950/40">
+            <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
               <p className="m-0"><strong>Affiliate booking moment:</strong> When comparing hotel prices, check <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Expedia</a>, <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Hotels.com</a>, and <strong>direct hotel websites</strong>—rates vary <strong>15–25%</strong> for identical rooms. Properties near <strong>Powell</strong> or <strong>Montgomery BART</strong> stations deliver best access to both San Francisco attractions and stadium transit. Membership programs (<strong>Hotels.com rewards</strong>, <strong>Expedia points</strong>) offer additional savings for multi-night stays.</p>
             </div>
           </div>
@@ -907,7 +907,7 @@ export default function SanFranciscoArticlePage() {
 
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-user-line text-emerald-500"></i>
+            <i className="ri-map-pin-user-line text-[#01b47d]"></i>
             Plan Your Pacific Coast World Cup Adventure
           </h3>
           
@@ -940,7 +940,7 @@ export default function SanFranciscoArticlePage() {
         {/* Why the Bay Area Wins */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             Why the Bay Area Wins the World Cup Experience
           </h3>
           
@@ -976,7 +976,7 @@ export default function SanFranciscoArticlePage() {
         {/* Final Checklist */}
         <article className="editorial-body theme-emerald">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-checkbox-circle-line text-emerald-500"></i>
+            <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
             Final Checklist: Your Bay Area World Cup Essentials
           </h3>
           
@@ -1011,7 +1011,7 @@ export default function SanFranciscoArticlePage() {
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -1032,21 +1032,21 @@ export default function SanFranciscoArticlePage() {
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -1065,8 +1065,8 @@ export default function SanFranciscoArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">West Coast Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Los Angeles</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">West Coast Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Los Angeles</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">SoFi Stadium guide and Hollywood adventures.</p>
               </div>
             </Link>
@@ -1084,8 +1084,8 @@ export default function SanFranciscoArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">Pacific Northwest</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Seattle</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Pacific Northwest</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Seattle</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Lumen Field guide and coffee culture.</p>
               </div>
             </Link>
@@ -1096,7 +1096,7 @@ export default function SanFranciscoArticlePage() {
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -1115,7 +1115,7 @@ export default function SanFranciscoArticlePage() {
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${currentPath}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -1127,7 +1127,7 @@ export default function SanFranciscoArticlePage() {
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

@@ -44,11 +44,11 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             <div className="p-6 flex items-center justify-between">
               <div className="flex items-center gap-4 text-slate-700 dark:text-slate-200">
                 <div className="inline-flex items-center gap-2">
-                  <i className="ri-team-line text-emerald-500"></i>
+                  <i className="ri-team-line text-[#01b47d]"></i>
                   <span>Club Deportivo Guadalajara (Chivas)</span>
                 </div>
                 <div className="hidden sm:inline-flex items-center gap-2">
-                  <i className="ri-user-star-line text-sky-500"></i>
+                  <i className="ri-user-star-line text-[#01b47d]"></i>
                   <span>Capacity: 49,850 (standard) / 48,071 (World Cup)</span>
                 </div>
               </div>
@@ -89,9 +89,9 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {!hideHero && (
             <nav className="editorial-breadcrumbs">
               <ol className="flex items-center gap-2 text-sm">
-                <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+                <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
                 <li className="text-slate-400">›</li>
-                <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+                <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
                 <li className="text-slate-400">›</li>
                 <li className="text-slate-700 dark:text-slate-200">Estadio Akron</li>
               </ol>
@@ -103,11 +103,11 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             {/* Intro paragraph (below header) */}
             <article className="editorial-body editorial-dropcap">
               <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-landscape-line text-emerald-500"></i>
+                <i className="ri-landscape-line text-[#01b47d]"></i>
                 Where Architecture Meets Landscape Meets the Pitch
               </h2>
               <p>
-                Located in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>, Estadio Akron is the modern home of Chivas and a showcase of Mexican football culture. Estadio Akron is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the full Stadiums hub</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link>, Estadio Akron is the modern home of Chivas and a showcase of Mexican football culture. Estadio Akron is one of the 16 stadiums hosting World Cup 2026—{' '}<Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">explore the full Stadiums hub</Link>.
               </p>
               <p>
                 Rising from the Guadalajara suburbs like a modern Mesoamerican temple, Estadio Akron doesn't just host football matches—it makes a statement. This architectural marvel, draped in 70,000 square meters of living grass that cascades down its volcano-inspired slopes, will welcome four World Cup 2026 fixtures, including a Mexico group stage clash that promises to ignite the passionate Tapatío spirit. For international fans, this is your chance to experience one of North America's most visually striking venues while immersing yourself in mariachi melodies, tequila sunsets, and the red-and-white fervor of Chivas country.
@@ -118,35 +118,35 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Stadium Overview & Fast Facts */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-              <i className="ri-information-line text-sky-400"></i>
+              <i className="ri-information-line text-[#01b47d]"></i>
               Stadium Overview & Fast Facts
             </h3>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-building-2-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-building-2-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                     <p className="leading-relaxed">Estadio Akron (FIFA designation: Estadio Guadalajara during World Cup 2026)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-map-pin-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-map-pin-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                     <p className="leading-relaxed">Zapopan, Jalisco (western Guadalajara metropolitan area)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-calendar-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-calendar-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                     <p className="leading-relaxed">July 30, 2010</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-group-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-group-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                     <p className="leading-relaxed">49,850 (standard) / 48,071 (World Cup configuration)</p>
                   </div>
@@ -155,28 +155,28 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div className="space-y-4">
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-user-star-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-user-star-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenant</span>
                     <p className="leading-relaxed">Club Deportivo Guadalajara (Chivas) – Liga MX</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-pencil-ruler-2-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-pencil-ruler-2-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect/Design Firm</span>
                     <p className="leading-relaxed">VFO Architects (volcano concept with artistic direction by Jean Marie Massaud and Daniel Pouzet)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-grass-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-grass-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                     <p className="leading-relaxed">Natural grass (replaced artificial turf in 2012)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-sun-line text-sky-400 text-3xl mr-2"></i>
+                    <i className="ri-sun-line text-[#01b47d] text-3xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                     <p className="leading-relaxed">Open-air with suspended white ring canopy supported by 16 columns</p>
                   </div>
@@ -185,24 +185,24 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             </div>
             <div className="mt-8">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-sky-400"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Notable Features
               </h4>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                   <span>Grass-covered exterior resembling a volcano</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                   <span>Steep double-tiered bowl</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                   <span>Dedicated Chivas museum (Palco del Campeonísimo)</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <i className="ri-checkbox-circle-line text-sky-400"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                   <span>Over 4,800 parking spaces plus subterranean garage</span>
                 </div>
               </div>
@@ -231,7 +231,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Stadium Architecture & Experience */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-building-3-line text-sky-400"></i>
+              <i className="ri-building-3-line text-[#01b47d]"></i>
               Stadium Architecture & Experience
             </h3>
             <p>
@@ -252,7 +252,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* What Matches to Expect */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-calendar-event-line text-emerald-400"></i>
+              <i className="ri-calendar-event-line text-[#01b47d]"></i>
               What Matches to Expect
             </h3>
             <p>
@@ -276,14 +276,14 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Related Stadiums (after What Matches to Expect) */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-links-line text-emerald-500"></i>
+              <i className="ri-links-line text-[#01b47d]"></i>
               Related Stadiums
             </h3>
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
               Attending multiple matches? Consider{' '}
-              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
-              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey, or{' '}
-              <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
+              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio BBVA</Link> in Monterrey, or{' '}
+              <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
             </p>
             <hr className="editorial-divider" />
           </article>
@@ -291,14 +291,14 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Getting to the Stadium */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-road-map-line text-emerald-400"></i>
+              <i className="ri-road-map-line text-[#01b47d]"></i>
               Getting to the Stadium
             </h3>
 
             <div className="space-y-6">
               <div>
                 <h4 className="editorial-h4 flex items-center gap-2">
-                  <i className="ri-bus-line text-sky-500"></i>
+                  <i className="ri-bus-line text-[#01b47d]"></i>
                   By Bus
                 </h4>
                 <p>
@@ -311,7 +311,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
 
               <div>
                 <h4 className="editorial-h4 flex items-center gap-2">
-                  <i className="ri-train-line text-indigo-500"></i>
+                  <i className="ri-train-line text-[#01b47d]"></i>
                   By Metro/Train
                 </h4>
                 <p>
@@ -350,7 +350,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
 
               <div>
                 <h4 className="editorial-h4 flex items-center gap-2">
-                  <i className="ri-walk-line text-emerald-500"></i>
+                  <i className="ri-walk-line text-[#01b47d]"></i>
                   Walking/Biking
                 </h4>
                 <p>
@@ -367,7 +367,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Where to Stay */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-hotel-line text-sky-400"></i>
+              <i className="ri-hotel-line text-[#01b47d]"></i>
               Where to Stay
             </h3>
             <div className="space-y-6">
@@ -387,10 +387,10 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Budget Options (Under $50 USD/night)</h4>
                 <p>
-                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Hostelworld for best rates.
+                  <strong>Hostal de Pablo y Lucha</strong> (Centro Histórico): Family-run hostel offering clean private rooms and dorms ($11-38/night). Authentic Mexican hospitality, walking distance to major sights. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> or Hostelworld for best rates.
                 </p>
                 <p>
-                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> .
+                  <strong>Hotel Dali Ejecutivo</strong> (Centro): Simple, reliable lodging near Guadalajara Cathedral ($30-45/night). Positive reviews for helpful staff and proximity to sightseeing. Search availability on Expedia or <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> .
                 </p>
                 <p>
                   <strong>Casa Ixaya by Barrio Mexico</strong> (Near Ciudad del Sol): Budget-friendly with modern amenities, though farther from tourist zones ($35-50/night).
@@ -400,7 +400,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               <div>
                 <h4 className="editorial-h4">Mid-Range Picks ($50-150 USD/night)</h4>
                 <p>
-                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or Airbnb.
+                  <strong>La Mansión Boutique</strong> (Chapalita): Colonial-style property in leafy neighborhood with excellent dining nearby ($80-120/night). Two-night minimum on weekends, but the location near Glorieta Chapalita park is ideal for stadium access. Book on <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> or Airbnb.
                 </p>
                 <p>
                   <strong>Hotel Indigo Guadalajara Expo by IHG</strong> (Zona Expo): Luxury-lite hotel featuring in-room massages, deli, and proximity to Expo Guadalajara ($90-140/night). Convenient for business travelers and families.
@@ -416,11 +416,11 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Where to Stay – Additional Picks */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-hotel-line text-sky-400"></i>
+              <i className="ri-hotel-line text-[#01b47d]"></i>
               Where to Stay (Continued)
             </h3>
             <p>
-              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or directly with the hotel.
+              <strong>Villa Ganz</strong> (Zona Rosa): Ten-suite boutique property in quiet colonial building filled with antiques and local art ($100-150/night). Walking distance to museums and galleries, 15 minutes to stadium by Uber. Book via <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> or directly with the hotel.
             </p>
             <h4 className="editorial-h4">Luxury Options ($150+ USD/night)</h4>
             <p>
@@ -449,14 +449,14 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             </h3>
             <div className="space-y-6">
               <div>
-                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-time-line text-indigo-500"></i> Arrive Early (2-3 Hours Before Kick-Off)</h4>
+                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-time-line text-[#01b47d]"></i> Arrive Early (2-3 Hours Before Kick-Off)</h4>
                 <p>
                   Security lines swell quickly, and Circuito JVC traffic reaches gridlock levels. Arriving early lets you explore the pre-match plaza, grab food from vendors outside (tacos, tortas ahogadas, elotes), and soak in the mariachi-infused atmosphere that defines Guadalajara football culture. For the Mexico match on June 18, expect even bigger crowds—plan for 3+ hours pre-kick-off.
                 </p>
               </div>
 
               <div>
-                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-door-open-line text-sky-500"></i> Best Gates/Entrances</h4>
+                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-door-open-line text-[#01b47d]"></i> Best Gates/Entrances</h4>
                 <p>
                   The main atrium on the stadium's east side handles the heaviest traffic. For faster entry, use secondary gates on the north or south sides, particularly if your seats are in those sections. Follow staff directions, as FIFA may implement tournament-specific entry procedures.
                 </p>
@@ -476,7 +476,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               </div>
 
               <div>
-                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-backpack-line text-emerald-500"></i> What to Bring</h4>
+                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-backpack-line text-[#01b47d]"></i> What to Bring</h4>
                 <ul className="list-disc pl-6 space-y-2">
                   <li><strong>Photo ID/Passport:</strong> Required for entry at FIFA events</li>
                   <li><strong>Bag Policy:</strong> Domestic Liga MX matches prohibit backpacks, umbrellas, and liquid containers over 100ml. World Cup policies will be similar—expect small clear bags only. Check FIFA's official guidelines closer to the tournament.</li>
@@ -495,7 +495,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
               </div>
 
               <div>
-                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-roadster-line text-indigo-500"></i> Post-Match Transport</h4>
+                <h4 className="editorial-h4 flex items-center gap-2"><i className="ri-roadster-line text-[#01b47d]"></i> Post-Match Transport</h4>
                 <p>
                   Exiting Estadio Akron tests patience. Stadium operations adjust egress routes on Circuito JVC, but expect 60-90 minutes to reach main roads. If using rideshare, walk 10-15 minutes away from the stadium before requesting pickup—you'll avoid surge pricing spikes and congestion bottlenecks.
                 </p>
@@ -513,7 +513,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Things to Do Nearby */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-map-pin-line text-emerald-400"></i>
+              <i className="ri-map-pin-line text-[#01b47d]"></i>
               Things to Do Nearby
             </h3>
             <div className="space-y-6">
@@ -584,7 +584,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Beyond the Stadium: Explore Guadalajara */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-compass-3-line text-emerald-500"></i>
+              <i className="ri-compass-3-line text-[#01b47d]"></i>
               Beyond the Stadium: Explore Guadalajara
             </h3>
             <p>
@@ -592,7 +592,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             </p>
             <p>
               Explore our complete{' '}
-              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara World Cup 2026 Guide</Link>{' '}for comprehensive information:
+              <Link to="/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Guadalajara World Cup 2026 Guide</Link>{' '}for comprehensive information:
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>Hotels near Estadio Akron</li>
@@ -604,11 +604,11 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
             <p>
               <strong>Other Mexican Stadiums:</strong>{' '}
               Visit the iconic{' '}
-              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City or modern{' '}
-              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link>{' '}in Monterrey.
+              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City or modern{' '}
+              <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio BBVA</Link>{' '}in Monterrey.
             </p>
             <p>
-              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+              <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
             </p>
             <hr className="editorial-divider" />
           </article>
@@ -616,7 +616,7 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Final Verdict & Key Takeaway */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-flag-line text-emerald-500"></i>
+              <i className="ri-flag-line text-[#01b47d]"></i>
               Final Verdict & Key Takeaway
             </h3>
             <p>
@@ -634,11 +634,11 @@ export const EstadioAkronGuide: React.FC<EstadioAkronGuideProps> = ({ showHeader
           {/* Call to Action */}
           <article className="editorial-body">
             <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-              <i className="ri-megaphone-line text-indigo-500"></i>
+              <i className="ri-megaphone-line text-[#01b47d]"></i>
               Call to Action
             </h3>
             <p>
-            Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://booking.com/" data-discover="true">https://booking.com/</a>  or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.expedia.com" data-discover="true">Expedia</a> with flexible cancellation policies. Secure airport transfers or rental cars through <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.viator.com" data-discover="true">Viator</a> or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.getyourguide.com" data-discover="true">GetYourGuide</a> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
+            Guadalajara's hotel inventory will vanish fast for World Cup 2026, especially properties in Zapopan with easy stadium access. Book accommodations now through <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://booking.com/" data-discover="true">https://booking.com/</a>  or <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.expedia.com" data-discover="true">Expedia</a> with flexible cancellation policies. Secure airport transfers or rental cars through <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.viator.com" data-discover="true">Viator</a> or <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.getyourguide.com" data-discover="true">GetYourGuide</a> to avoid last-minute price surges. And most importantly, embrace the Tapatío spirit—Guadalajara's warmth, tequila, and football passion will turn your World Cup journey into a lifelong memory.
             </p>
             <p>
               <strong>¡Vamos a Guadalajara!</strong>

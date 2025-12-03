@@ -86,7 +86,7 @@ export default function NewYorkCityArticlePage() {
     setMeta('twitter:image:alt', 'New York New Jersey World Cup 2026 Guide - MetLife Stadium Final Venue');
     
     // Additional SEO meta tags for #1 ranking
-    setMeta('article:author', 'StadiumPort');
+    setMeta('article:author', 'Stadiumport');
     setMeta('article:published_time', '2025-11-11T09:00:00Z');
     setMeta('article:modified_time', new Date().toISOString());
     setMeta('article:section', 'Sports');
@@ -95,7 +95,7 @@ export default function NewYorkCityArticlePage() {
     // Advanced social media optimization
     setMeta('og:article:published_time', '2025-11-11T09:00:00Z');
     setMeta('og:article:modified_time', new Date().toISOString());
-    setMeta('og:article:author', 'StadiumPort');
+    setMeta('og:article:author', 'Stadiumport');
     setMeta('og:article:section', 'Sports');
     setMeta('og:article:tag', 'World Cup 2026, New York, New Jersey, MetLife Stadium, FIFA World Cup');
     
@@ -103,7 +103,7 @@ export default function NewYorkCityArticlePage() {
     setMeta('pinterest-rich-pin', 'true');
     
     // LinkedIn optimization
-    setMeta('linkedin:author', 'StadiumPort');
+    setMeta('linkedin:author', 'Stadiumport');
     
     // WhatsApp optimization
     setMeta('og:image:secure_url', ogImageUrl);
@@ -278,7 +278,7 @@ export default function NewYorkCityArticlePage() {
             "author": {
               "@type": "Organization",
               "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#organization',
-              "name": "StadiumPort",
+              "name": "Stadiumport",
               "url": import.meta.env.VITE_SITE_URL || 'https://stadiumport.com',
               "logo": {
                 "@type": "ImageObject",
@@ -291,7 +291,7 @@ export default function NewYorkCityArticlePage() {
             "publisher": {
               "@type": "Organization",
               "@id": (import.meta.env.VITE_SITE_URL || 'https://stadiumport.com') + '/#organization',
-              "name": "StadiumPort",
+              "name": "Stadiumport",
               "url": import.meta.env.VITE_SITE_URL || 'https://stadiumport.com',
               "logo": {
                 "@type": "ImageObject",
@@ -433,17 +433,17 @@ export default function NewYorkCityArticlePage() {
 
 
       {/* Skip to main content for accessibility */}
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-emerald-600 text-white px-4 py-2 rounded-lg z-50">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#01b47d] text-white px-4 py-2 rounded-lg z-50">
         Skip to main content
       </a>
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -459,11 +459,11 @@ export default function NewYorkCityArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -471,8 +471,8 @@ export default function NewYorkCityArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -482,16 +482,16 @@ export default function NewYorkCityArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollPercent}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -509,11 +509,11 @@ export default function NewYorkCityArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -528,7 +528,7 @@ export default function NewYorkCityArticlePage() {
         const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
         const pageUrl = `${siteUrl}/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/new-york-new-jersey-world-cup-2026.webp`;
-        const title = 'New York / New Jersey World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'New York / New Jersey World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Explore New York & New Jersey for World Cup 2026. Find match schedules, hotels, transportation, and travel tips for MetLife Stadium and host city events.';
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
@@ -580,7 +580,7 @@ export default function NewYorkCityArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -590,32 +590,32 @@ export default function NewYorkCityArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">New York / New Jersey</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">New York / New Jersey</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              New York / New Jersey World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              New York / New Jersey World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>MetLife Stadium (East Rutherford)</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>82,500 Capacity</span>
@@ -624,10 +624,10 @@ export default function NewYorkCityArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -642,8 +642,8 @@ export default function NewYorkCityArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY: 8 matches, Final host, MetLife Stadium venue, NYC Hub] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• NY/NJ hosts <strong>8 matches</strong>—including the Final</li>
                <li>• Venue: <strong>MetLife Stadium</strong> (East Rutherford)</li>
@@ -653,7 +653,7 @@ export default function NewYorkCityArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>The World's Biggest Game Comes to the World's Biggest Stage
+            <i className="ri-trophy-line text-[#01b47d]"></i>The World's Biggest Game Comes to the World's Biggest Stage
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -675,7 +675,7 @@ export default function NewYorkCityArticlePage() {
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "There's no place on Earth quite like New York City."
           </blockquote>
 
@@ -687,8 +687,8 @@ export default function NewYorkCityArticlePage() {
           </p>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Resources
             </h4>
             <div className="space-y-3">
@@ -759,11 +759,11 @@ export default function NewYorkCityArticlePage() {
                 <div className="space-y-4">
                     <ul className="leading-relaxed space-y-4 list-none">
                       <li className="flex items-start gap-3">
-                          <i className="ri-flight-takeoff-line text-emerald-500 mt-1"></i>
+                          <i className="ri-flight-takeoff-line text-[#01b47d] mt-1"></i>
                           <span><strong>Unmatched Connectivity</strong> <span className="block text-sm text-slate-500">5 airports servicing 181 countries—easier access for global fans</span></span>
                       </li>
                       <li className="flex items-start gap-3">
-                          <i className="ri-hotel-bed-line text-emerald-500 mt-1"></i>
+                          <i className="ri-hotel-bed-line text-[#01b47d] mt-1"></i>
                           <span><strong>Accommodation Capacity</strong> <span className="block text-sm text-slate-500">More hotels under construction than other candidates combined</span></span>
                       </li>
                     </ul>
@@ -771,11 +771,11 @@ export default function NewYorkCityArticlePage() {
                 <div className="space-y-4">
                     <ul className="leading-relaxed space-y-4 list-none">
                       <li className="flex items-start gap-3">
-                          <i className="ri-money-dollar-circle-line text-emerald-500 mt-1"></i>
+                          <i className="ri-money-dollar-circle-line text-[#01b47d] mt-1"></i>
                           <span><strong>$2 Billion Impact</strong> <span className="block text-sm text-slate-500">Projected economic impact from 8 matches and 1M+ visitors</span></span>
                       </li>
                       <li className="flex items-start gap-3">
-                          <i className="ri-history-line text-emerald-500 mt-1"></i>
+                          <i className="ri-history-line text-[#01b47d] mt-1"></i>
                           <span><strong>Proven Track Record</strong> <span className="block text-sm text-slate-500">Hosts 2 million guests annually; home to 2 NFL teams</span></span>
                       </li>
                     </ul>
@@ -831,7 +831,7 @@ export default function NewYorkCityArticlePage() {
             </div>
             
             {/* [PULL QUOTE] */}
-            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                "The largest NFL stadium and the biggest World Cup venue in the United States."
             </blockquote>
 
@@ -854,11 +854,11 @@ export default function NewYorkCityArticlePage() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-group-fill text-emerald-500 mt-1"></i>
+                            <i className="ri-group-fill text-[#01b47d] mt-1"></i>
                             <span><strong>82,500 Capacity</strong> <span className="block text-sm text-slate-500">(Largest in the tournament)</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-money-dollar-circle-line text-emerald-500 mt-1"></i>
+                            <i className="ri-money-dollar-circle-line text-[#01b47d] mt-1"></i>
                             <span><strong>$1.6 Billion Cost</strong> <span className="block text-sm text-slate-500">Most expensive stadium in history at opening</span></span>
                         </li>
                       </ul>
@@ -866,11 +866,11 @@ export default function NewYorkCityArticlePage() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-football-line text-emerald-500 mt-1"></i>
+                            <i className="ri-football-line text-[#01b47d] mt-1"></i>
                             <span><strong>Natural Grass</strong> <span className="block text-sm text-slate-500">Modular system installed specifically for World Cup matches</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-map-pin-time-line text-emerald-500 mt-1"></i>
+                            <i className="ri-map-pin-time-line text-[#01b47d] mt-1"></i>
                             <span><strong>10 Miles from NYC</strong> <span className="block text-sm text-slate-500">Direct rail connection from Penn Station</span></span>
                         </li>
                       </ul>
@@ -903,8 +903,8 @@ export default function NewYorkCityArticlePage() {
           <div id="schedule-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Schedule at a Glance</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Schedule at a Glance</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>5 Group Stage Matches</strong> (June 13–29)</li>
                <li>• <strong>Round of 32:</strong> July 3, 2026</li>
@@ -943,7 +943,7 @@ export default function NewYorkCityArticlePage() {
 
           <div className="space-y-8">
             <div className="bg-white dark:bg-navy-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-navy-700">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                 <svg className="h4-icon-svg" role="img" aria-label="Group stage" viewBox="0 0 24 24">
                   <defs>
                     <linearGradient id="gradGroupNY" x1="0" x2="1" y1="0" y2="1">
@@ -959,23 +959,23 @@ export default function NewYorkCityArticlePage() {
               </h4>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">01</span>
+                    <span className="font-mono text-[#01b47d] font-bold">01</span>
                     <span><strong>Saturday, June 13, 2026</strong> – Group Stage Match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">02</span>
+                    <span className="font-mono text-[#01b47d] font-bold">02</span>
                     <span><strong>Tuesday, June 16, 2026</strong> – Group Stage Match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">03</span>
+                    <span className="font-mono text-[#01b47d] font-bold">03</span>
                     <span><strong>Monday, June 22, 2026</strong> – Group Stage Match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">04</span>
+                    <span className="font-mono text-[#01b47d] font-bold">04</span>
                     <span><strong>Friday, June 26, 2026</strong> – Group Stage Match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">05</span>
+                    <span className="font-mono text-[#01b47d] font-bold">05</span>
                     <span><strong>Monday, June 29, 2026</strong> – Group Stage Match</span>
                 </li>
               </ul>
@@ -1018,7 +1018,7 @@ export default function NewYorkCityArticlePage() {
             </div>
 
             {/* [PULL QUOTE] */}
-            <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                "History in the making."
             </blockquote>
 
@@ -1089,7 +1089,7 @@ export default function NewYorkCityArticlePage() {
           <div className="callout-pro mb-8 p-8">
             <div className="flex items-start gap-4">
               <div className="icon-premium-md flex items-center justify-center mt-1">
-                <i className="ri-train-line text-blue-600" aria-hidden="true"></i>
+                <i className="ri-train-line text-[#01b47d]" aria-hidden="true"></i>
               </div>
               <div>
                 <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">Unmatched Connectivity</h4>
@@ -1108,8 +1108,8 @@ export default function NewYorkCityArticlePage() {
           <div id="transport-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-blue-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-blue-600 mb-2">Transport Reality Check</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Reality Check</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Location:</strong> East Rutherford, NJ (10 miles from NYC)</li>
                <li>• <strong>Best Route:</strong> NJ Transit Train from Penn Station</li>
@@ -1137,16 +1137,16 @@ export default function NewYorkCityArticlePage() {
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-blue-500 italic text-lg md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-lg md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
              "While 'New York' is the host, the stadium is distinctly in New Jersey. Direct public transit makes it accessible, but your route requires planning."
           </blockquote>
 
           <div className="space-y-12">
             {/* NJ Transit */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-blue-200 dark:bg-blue-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-blue-800 dark:text-blue-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Ticket" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradTicket" x1="0" x2="1" y1="0" y2="1">
@@ -1287,9 +1287,9 @@ export default function NewYorkCityArticlePage() {
                The Northeast Corridor makes it easy to add other World Cup cities.
              </p>
              <div className="flex flex-wrap gap-3 text-sm">
-                <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-blue-600 hover:underline">Philadelphia</Link>
-                <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-blue-600 hover:underline">Boston</Link>
-                <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-blue-600 hover:underline">Toronto</Link>
+                <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#01b47d] hover:underline">Philadelphia</Link>
+                <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#01b47d] hover:underline">Boston</Link>
+                <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#01b47d] hover:underline">Toronto</Link>
              </div>
           </div>
           <hr className="editorial-divider" />
@@ -1301,8 +1301,8 @@ export default function NewYorkCityArticlePage() {
           <div id="stay-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-indigo-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-indigo-600 mb-2">Lodging Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Lodging Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Midtown:</strong> Maximum convenience (Penn Station)</li>
                <li>• <strong>SoHo/Village:</strong> Style & dining (15-20 min to Penn)</li>
@@ -1331,7 +1331,7 @@ export default function NewYorkCityArticlePage() {
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-indigo-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "You can stay in the heart of Manhattan's buzz or opt for quieter Brooklyn brownstone neighborhoods."
           </blockquote>
 
@@ -1453,7 +1453,7 @@ export default function NewYorkCityArticlePage() {
           <div className="callout-premium mb-8 p-8">
              <div className="flex items-center gap-3 mb-4">
                <div className="icon-premium-md flex items-center justify-center">
-                 <i className="ri-calendar-check-line text-indigo-600" aria-hidden="true"></i>
+                 <i className="ri-calendar-check-line text-[#01b47d]" aria-hidden="true"></i>
                </div>
                <h4 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">Book Early Strategy</h4>
              </div>
@@ -1742,7 +1742,7 @@ export default function NewYorkCityArticlePage() {
         {/* PART 3/5: Pickup games & Fan gatherings */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-500"></i>
+            <i className="ri-football-line text-[#01b47d]"></i>
             Matchday Pickup Games & Fan Gatherings
           </h3>
           <p className="whitespace-pre-line">
@@ -1757,8 +1757,8 @@ export default function NewYorkCityArticlePage() {
           <div id="tips-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Essential Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Airports:</strong> JFK, LGA, EWR (Newark)</li>
                <li>• <strong>Weather:</strong> Hot & Humid (July Avg 85°F)</li>
@@ -1921,22 +1921,22 @@ export default function NewYorkCityArticlePage() {
           <div className="premium-section-header mb-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="icon-premium-lg flex items-center justify-center">
-                <i className="ri-global-line text-blue-600" aria-hidden="true"></i>
+                <i className="ri-global-line text-[#01b47d]" aria-hidden="true"></i>
               </div>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
                 Language & Connectivity
               </h3>
             </div>
-            <div className="h-1 w-24 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full"></div>
+            <div className="h-1 w-24 bg-gradient-to-r from-[#01b47d] to-[#01b47d] rounded-full"></div>
           </div>
 
           {/* Premium Connectivity Cards - Enhanced Design */}
           <div id="connectivity" style={{scrollMarginTop: '120px'}} className="grid gap-6 mb-8">
             {/* Language Diversity - Premium Card */}
             <div className="premium-connectivity-card group">
-              <div className="flex items-start gap-6 p-6 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-blue-50 dark:from-purple-900/20 dark:via-slate-800/40 dark:to-blue-900/20 border border-purple-200/50 dark:border-purple-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+              <div className="flex items-start gap-6 p-6 rounded-2xl bg-gradient-to-br from-purple-50 via-white to-[#01b47d]/5 dark:from-purple-900/20 dark:via-slate-800/40 dark:to-[#008f63]/20 border border-purple-200/50 dark:border-purple-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-800/30 dark:to-blue-800/30 flex items-center justify-center border border-purple-200/50 dark:border-purple-600/30">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-100 to-[#01b47d]/10 dark:from-purple-800/30 dark:to-[#008f63]/30 flex items-center justify-center border border-purple-200/50 dark:border-purple-600/30">
                     <i className="ri-translate-2-line text-purple-600 dark:text-purple-400 text-2xl" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -1948,7 +1948,7 @@ export default function NewYorkCityArticlePage() {
                         English is primary, but you'll hear dozens of languages on any subway ride. NYC is a true global melting pot where every continent is represented.
                       </p>
                     </div>
-                    <span className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-800/30 dark:to-blue-800/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+                    <span className="bg-gradient-to-r from-purple-100 to-[#01b47d]/10 dark:from-purple-800/30 dark:to-[#008f63]/30 text-purple-700 dark:text-purple-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
                       Global Hub
                     </span>
                   </div>
@@ -1958,7 +1958,7 @@ export default function NewYorkCityArticlePage() {
                       <div className="text-sm text-slate-600 dark:text-slate-400">People from every continent</div>
                     </div>
                     <div className="premium-stat-box">
-                      <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">200+</div>
+                      <div className="text-2xl font-bold text-[#01b47d] dark:text-[#01b47d] mb-1">200+</div>
                       <div className="text-sm text-slate-600 dark:text-slate-400">Languages spoken daily</div>
                     </div>
                   </div>
@@ -1970,9 +1970,9 @@ export default function NewYorkCityArticlePage() {
             <div className="grid lg:grid-cols-2 gap-6">
               {/* Free Wi-Fi Access */}
               <div className="premium-connectivity-card group">
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-green-50 via-white to-emerald-50 dark:from-green-900/20 dark:via-slate-800/40 dark:to-emerald-900/20 border border-green-200/50 dark:border-green-700/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-green-50 via-white to-[#01b47d]/5 dark:from-green-900/20 dark:via-slate-800/40 dark:to-[#008f63]/20 border border-green-200/50 dark:border-green-700/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-100 to-emerald-100 dark:from-green-800/30 dark:to-emerald-800/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-100 to-[#01b47d]/10 dark:from-green-800/30 dark:to-[#008f63]/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
                       <i className="ri-wifi-line text-green-600 dark:text-green-400 text-xl" aria-hidden="true"></i>
                     </div>
                   </div>
@@ -2006,16 +2006,16 @@ export default function NewYorkCityArticlePage() {
 
               {/* Mobile Connectivity */}
               <div className="premium-connectivity-card group">
-                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-blue-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-blue-200/50 dark:border-blue-700/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
+                <div className="flex items-start gap-4 p-6 rounded-2xl bg-gradient-to-br from-[#01b47d]/5 via-white to-[#01b47d]/5 dark:from-[#008f63]/20 dark:via-slate-800/40 dark:to-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]/30 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] h-full">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 flex items-center justify-center border border-blue-200/50 dark:border-blue-600/30">
-                      <i className="ri-sim-card-line text-blue-600 dark:text-blue-400 text-xl" aria-hidden="true"></i>
+                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#008f63]/30 dark:to-[#008f63]/30 flex items-center justify-center border border-[#01b47d]/20 dark:border-[#01b47d]/30">
+                      <i className="ri-sim-card-line text-[#01b47d] dark:text-[#01b47d] text-xl" aria-hidden="true"></i>
                     </div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-start justify-between gap-2 mb-3">
                       <h4 className="font-bold text-slate-900 dark:text-slate-100 text-lg">Mobile Connectivity</h4>
-                      <span className="bg-blue-100 dark:bg-blue-800/30 text-blue-700 dark:text-blue-300 px-2 py-1 rounded-full text-xs font-semibold">
+                      <span className="bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#008f63] dark:text-[#01b47d] px-2 py-1 rounded-full text-xs font-semibold">
                         5G Ready
                       </span>
                     </div>
@@ -2023,16 +2023,16 @@ export default function NewYorkCityArticlePage() {
                       Get the best rates and coverage with US SIM cards available at multiple convenient locations.
                     </p>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
-                        <i className="ri-airport-line text-blue-600"></i>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-[#01b47d]/5 dark:bg-[#008f63]/20">
+                        <i className="ri-airport-line text-[#01b47d]"></i>
                         <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Airport kiosks</span>
                       </div>
-                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
-                        <i className="ri-store-2-line text-blue-600"></i>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-[#01b47d]/5 dark:bg-[#008f63]/20">
+                        <i className="ri-store-2-line text-[#01b47d]"></i>
                         <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Major retailers</span>
                       </div>
-                      <div className="flex items-center gap-3 p-2 rounded-lg bg-blue-50/50 dark:bg-blue-900/20">
-                        <i className="ri-smartphone-line text-blue-600"></i>
+                      <div className="flex items-center gap-3 p-2 rounded-lg bg-[#01b47d]/5 dark:bg-[#008f63]/20">
+                        <i className="ri-smartphone-line text-[#01b47d]"></i>
                         <span className="text-sm font-medium text-slate-700 dark:text-slate-300">International data plans</span>
                       </div>
                     </div>
@@ -2044,11 +2044,11 @@ export default function NewYorkCityArticlePage() {
 
           {/* Essential Apps - Premium Callout */}
             <div className="premium-apps-callout group">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-blue-50 dark:from-slate-800/40 dark:via-slate-800/20 dark:to-blue-900/20 border border-slate-200/50 dark:border-slate-700/30 p-5 sm:p-8 transition-all duration-300 hover:shadow-xl">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100/20 to-purple-100/20 dark:from-blue-900/10 dark:to-purple-900/10 rounded-full -translate-y-16 translate-x-16"></div>
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-50 via-white to-[#01b47d]/5 dark:from-slate-800/40 dark:via-slate-800/20 dark:to-[#008f63]/20 border border-slate-200/50 dark:border-slate-700/30 p-5 sm:p-8 transition-all duration-300 hover:shadow-xl">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#01b47d]/10 to-purple-100/20 dark:from-[#008f63]/10 dark:to-purple-900/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="relative flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-blue-100 dark:from-green-800/30 dark:to-blue-800/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-green-100 to-[#01b47d]/10 dark:from-green-800/30 dark:to-[#008f63]/30 flex items-center justify-center border border-green-200/50 dark:border-green-600/30">
                     <i className="ri-smartphone-line text-green-600 dark:text-green-400 text-2xl" aria-hidden="true"></i>
                   </div>
                 </div>
@@ -2060,21 +2060,21 @@ export default function NewYorkCityArticlePage() {
                         Download these must-have apps before you arrive for seamless navigation, communication, and match day experience.
                       </p>
                     </div>
-                    <span className="bg-gradient-to-r from-green-100 to-blue-100 dark:from-green-800/30 dark:to-blue-800/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+                    <span className="bg-gradient-to-r from-green-100 to-[#01b47d]/10 dark:from-green-800/30 dark:to-[#008f63]/30 text-green-700 dark:text-green-300 px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
                       Must Download
                     </span>
                   </div>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
                     <div className="app-download-card group/item">
-                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-blue-50/50 dark:bg-blue-900/20 border border-blue-200/30 dark:border-blue-700/30 transition-all duration-200 hover:bg-blue-100/50 dark:hover:bg-blue-800/30">
-                        <div className="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-800/30 flex items-center justify-center">
-                          <i className="ri-subway-line text-blue-600 text-lg"></i>
+                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-xl bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]/30 transition-all duration-200 hover:bg-[#008f63]/10 dark:hover:bg-[#008f63]/30">
+                        <div className="w-10 h-10 rounded-lg bg-[#01b47d]/10 dark:bg-[#008f63]/30 flex items-center justify-center">
+                          <i className="ri-subway-line text-[#01b47d] text-lg"></i>
                         </div>
                         <div className="flex-1">
                           <div className="font-semibold text-slate-900 dark:text-slate-100 text-sm">NJ Transit</div>
                           <div className="text-xs text-slate-600 dark:text-slate-400">Train & bus schedules</div>
                         </div>
-                        <i className="ri-download-line text-blue-600"></i>
+                        <i className="ri-download-line text-[#01b47d]"></i>
                       </div>
                     </div>
                     <div className="app-download-card group/item">
@@ -2316,8 +2316,8 @@ export default function NewYorkCityArticlePage() {
         <article id="east-coast-journey" className="editorial-body theme-indigo">
           <div id="east-coast-journey-anchor" className="scroll-mt-24"></div>
 
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-indigo-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-indigo-600 mb-2">Regional Hub</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Regional Hub</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>North:</strong> Boston (Train: 4h)</li>
                <li>• <strong>South:</strong> Philadelphia (Train: 1.5h)</li>
@@ -2347,14 +2347,14 @@ export default function NewYorkCityArticlePage() {
 
           <div className="space-y-6">
             {/* Route 1: Northeast Corridor */}
-            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+                <div className="p-3 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg text-[#01b47d] dark:text-[#01b47d]">
                   <i className="ri-train-line text-xl"></i>
                 </div>
                 <div>
                   <h4 className="font-bold text-slate-900 dark:text-slate-100">Northeast Corridor</h4>
-                  <p className="text-xs font-medium text-blue-600 dark:text-blue-400 uppercase tracking-wide">Classic East Coast Experience</p>
+                  <p className="text-xs font-medium text-[#01b47d] dark:text-[#01b47d] uppercase tracking-wide">Classic East Coast Experience</p>
                 </div>
               </div>
               <p className="text-sm text-slate-700 dark:text-slate-300 mb-4">
@@ -2363,9 +2363,9 @@ export default function NewYorkCityArticlePage() {
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300">NY/NJ</span>
                 <i className="ri-arrow-right-line text-slate-400"></i>
-                <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:border-indigo-500">Philadelphia</Link>
+                <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-[#01b47d] dark:text-[#01b47d] hover:border-[#008f63]">Philadelphia</Link>
                 <i className="ri-arrow-right-line text-slate-400"></i>
-                <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:border-indigo-500">Boston</Link>
+                <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-[#01b47d] dark:text-[#01b47d] hover:border-[#008f63]">Boston</Link>
               </div>
               <div className="flex gap-4 text-xs text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1"><i className="ri-time-line"></i> Easy train connections</span>
@@ -2374,7 +2374,7 @@ export default function NewYorkCityArticlePage() {
             </div>
 
             {/* Route 2: Cross-Border */}
-            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600 dark:text-green-400">
                   <i className="ri-earth-line text-xl"></i>
@@ -2390,7 +2390,7 @@ export default function NewYorkCityArticlePage() {
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300">🇺🇸 NY/NJ</span>
                 <i className="ri-arrow-right-line text-slate-400"></i>
-                <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:border-indigo-500">🇨🇦 Toronto</Link>
+                <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-[#01b47d] dark:text-[#01b47d] hover:border-[#008f63]">🇨🇦 Toronto</Link>
               </div>
               <div className="flex gap-4 text-xs text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1"><i className="ri-plane-line"></i> Short flight</span>
@@ -2399,7 +2399,7 @@ export default function NewYorkCityArticlePage() {
             </div>
 
             {/* Route 3: Eastern Seaboard */}
-            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-indigo-400 dark:hover:border-indigo-500 transition-colors">
+            <div className="p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <div className="flex items-center gap-4 mb-4">
                 <div className="p-3 bg-orange-100 dark:bg-orange-900/30 rounded-lg text-orange-600 dark:text-orange-400">
                   <i className="ri-sun-line text-xl"></i>
@@ -2415,9 +2415,9 @@ export default function NewYorkCityArticlePage() {
               <div className="flex items-center gap-2 mb-4">
                 <span className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300">NY/NJ</span>
                 <i className="ri-arrow-right-line text-slate-400"></i>
-                <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:border-indigo-500">Atlanta</Link>
+                <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-[#01b47d] dark:text-[#01b47d] hover:border-[#008f63]">Atlanta</Link>
                 <i className="ri-arrow-right-line text-slate-400"></i>
-                <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-indigo-600 dark:text-indigo-400 hover:border-indigo-500">Miami</Link>
+                <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="px-3 py-1 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-full text-xs font-semibold text-[#01b47d] dark:text-[#01b47d] hover:border-[#008f63]">Miami</Link>
               </div>
               <div className="flex gap-4 text-xs text-slate-500 dark:text-slate-400">
                 <span className="flex items-center gap-1"><i className="ri-flight-takeoff-line"></i> Short flights</span>
@@ -2426,12 +2426,12 @@ export default function NewYorkCityArticlePage() {
             </div>
           </div>
 
-          <div className="mt-8 p-6 bg-indigo-50 dark:bg-indigo-900/20 rounded-xl border border-indigo-100 dark:border-indigo-800/30 text-center">
-             <h4 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2">Ready to Explore More?</h4>
-             <p className="text-indigo-800 dark:text-indigo-200 text-sm mb-4">
+          <div className="mt-8 p-6 bg-[#01b47d]/5 dark:bg-[#008f63]/20 rounded-xl border border-[#01b47d]/10 dark:border-[#008f63]/30 text-center">
+             <h4 className="font-bold text-[#008f63] dark:text-[#01b47d]/10 mb-2">Ready to Explore More?</h4>
+             <p className="text-[#008f63] dark:text-[#01b47d]/20 text-sm mb-4">
                Discover all 16 World Cup 2026 host cities and create your perfect tournament journey.
              </p>
-             <Link to="/world-cup-2026-host-cities" className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-medium rounded-full hover:bg-indigo-700 transition-all shadow-lg hover:shadow-xl">
+             <Link to="/world-cup-2026-host-cities" className="inline-flex items-center gap-2 px-6 py-3 bg-[#01b47d] text-white font-medium rounded-full hover:bg-[#008f63] transition-all shadow-lg hover:shadow-xl">
                <i className="ri-map-2-line"></i>
                <span>Browse All Host Cities</span>
              </Link>
@@ -2443,19 +2443,19 @@ export default function NewYorkCityArticlePage() {
           <div className="premium-section-header mb-8">
             <div className="flex items-center gap-4 mb-6">
               <div className="icon-premium-lg flex items-center justify-center">
-                <i className="ri-flag-line text-emerald-600" aria-hidden="true"></i>
+                <i className="ri-flag-line text-[#01b47d]" aria-hidden="true"></i>
               </div>
               <h3 className="text-3xl font-bold text-slate-900 dark:text-slate-100 font-display">
                 Start Planning Your 2026 World Cup Trip to New York
               </h3>
             </div>
-            <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-green-500 rounded-full"></div>
+            <div className="h-1 w-24 bg-gradient-to-r from-[#01b47d] to-green-500 rounded-full"></div>
           </div>
 
           <div className="planning-intro-premium p-6 sm:p-8 mb-8">
             <div className="intro-content flex-col sm:flex-row">
               <div className="intro-icon">
-                <i className="ri-time-line text-emerald-600" aria-hidden="true"></i>
+                <i className="ri-time-line text-[#01b47d]" aria-hidden="true"></i>
               </div>
               <div className="intro-text">
                 <h4 className="font-semibold text-slate-900 dark:text-slate-100 mb-3 text-lg">The Countdown Begins</h4>
@@ -2487,8 +2487,8 @@ export default function NewYorkCityArticlePage() {
           {/* Premium Header */}
           <div className="premium-section-header mb-12">
             <div className="flex items-center gap-6 mb-8">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 flex items-center justify-center border border-emerald-200/50 dark:border-emerald-600/30">
-                <i className="ri-check-double-line text-emerald-600 dark:text-emerald-400 text-2xl" aria-hidden="true"></i>
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#01b47d]/10 to-green-100 dark:from-[#008f63]/30 dark:to-green-800/30 flex items-center justify-center border border-[#01b47d]/20 dark:border-[#01b47d]/30">
+                <i className="ri-check-double-line text-[#01b47d] dark:text-[#01b47d] text-2xl" aria-hidden="true"></i>
               </div>
               <div>
                 <h3 className="text-4xl font-bold text-slate-900 dark:text-slate-100 font-display mb-2">
@@ -2499,7 +2499,7 @@ export default function NewYorkCityArticlePage() {
                 </p>
               </div>
             </div>
-            <div className="h-1.5 w-32 bg-gradient-to-r from-emerald-500 via-green-500 to-teal-500 rounded-full"></div>
+            <div className="h-1.5 w-32 bg-gradient-to-r from-[#01b47d] via-green-500 to-[#01b47d] rounded-full"></div>
           </div>
 
           {/* Premium Action Plan Timeline */}
@@ -2507,10 +2507,10 @@ export default function NewYorkCityArticlePage() {
             <div className="space-y-6">
               {/* Step 1 - FIFA Tickets */}
               <div className="group">
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-emerald-50 via-white to-green-50 dark:from-emerald-900/20 dark:via-slate-800/40 dark:to-green-900/20 border border-emerald-200/50 dark:border-emerald-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#01b47d]/5 via-white to-green-50 dark:from-[#008f63]/20 dark:via-slate-800/40 dark:to-green-900/20 border border-[#01b47d]/20 dark:border-[#008f63]/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 flex items-center justify-center border-2 border-emerald-200/50 dark:border-emerald-600/30">
-                      <span className="text-2xl font-bold text-emerald-700 dark:text-emerald-400">1</span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#01b47d]/10 to-green-100 dark:from-[#008f63]/30 dark:to-green-800/30 flex items-center justify-center border-2 border-[#01b47d]/20 dark:border-[#01b47d]/30">
+                      <span className="text-2xl font-bold text-[#008f63] dark:text-[#01b47d]">1</span>
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -2521,7 +2521,7 @@ export default function NewYorkCityArticlePage() {
                           Secure your spot at the world's biggest tournament. Ticket registration opens in phases, so act quickly when sales begin.
                         </p>
                       </div>
-                      <span className="bg-gradient-to-r from-emerald-100 to-green-100 dark:from-emerald-800/30 dark:to-green-800/30 text-emerald-700 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                      <span className="bg-gradient-to-r from-[#01b47d]/10 to-green-100 dark:from-[#008f63]/30 dark:to-green-800/30 text-[#008f63] dark:text-[#01b47d] px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
                         Priority #1
                       </span>
                     </div>
@@ -2530,7 +2530,7 @@ export default function NewYorkCityArticlePage() {
                         href="https://www.fifa.com/tickets"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-600 to-green-600 hover:from-emerald-700 hover:to-green-700 text-white font-semibold transition-all duration-200 hover:shadow-lg group"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#01b47d] to-green-600 hover:from-[#008f63] hover:to-green-700 text-white font-semibold transition-all duration-200 hover:shadow-lg group"
                       >
                         <i className="ri-external-link-line text-lg group-hover:scale-110 transition-transform"></i>
                         <span>Get FIFA Tickets</span>
@@ -2542,10 +2542,10 @@ export default function NewYorkCityArticlePage() {
 
               {/* Step 2 - Accommodations */}
               <div className="group">
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-cyan-50 dark:from-blue-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-blue-200/50 dark:border-blue-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#01b47d]/5 via-white to-[#01b47d]/5 dark:from-[#008f63]/20 dark:via-slate-800/40 dark:to-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 flex items-center justify-center border-2 border-blue-200/50 dark:border-blue-600/30">
-                      <span className="text-2xl font-bold text-blue-700 dark:text-blue-400">2</span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#008f63]/30 dark:to-[#008f63]/30 flex items-center justify-center border-2 border-[#01b47d]/20 dark:border-[#01b47d]/30">
+                      <span className="text-2xl font-bold text-[#008f63] dark:text-[#01b47d]">2</span>
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -2556,7 +2556,7 @@ export default function NewYorkCityArticlePage() {
                           Aim for 6-12 months in advance to secure the best locations near transportation hubs.
                         </p>
                       </div>
-                      <span className="bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-800/30 dark:to-cyan-800/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                      <span className="bg-gradient-to-r from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#008f63]/30 dark:to-[#008f63]/30 text-[#008f63] dark:text-[#01b47d] px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
                         Book Now
                       </span>
                     </div>
@@ -2565,7 +2565,7 @@ export default function NewYorkCityArticlePage() {
                         href="https://www.booking.com"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#008f63] hover:to-[#008f63] text-white font-semibold transition-all duration-200 hover:shadow-lg"
                       >
                         <i className="ri-hotel-line text-lg"></i>
                         <span>Booking.com</span>
@@ -2618,7 +2618,7 @@ export default function NewYorkCityArticlePage() {
                         href="https://www.google.com/flights"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
+                        className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#01b47d] to-purple-600 hover:from-[#008f63] hover:to-purple-700 text-white font-semibold transition-all duration-200 hover:shadow-lg"
                       >
                         <i className="ri-search-line text-lg"></i>
                         <span>Google Flights</span>
@@ -2659,10 +2659,10 @@ export default function NewYorkCityArticlePage() {
 
               {/* Step 5 - Transit App */}
               <div className="group">
-                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-teal-50 via-white to-cyan-50 dark:from-teal-900/20 dark:via-slate-800/40 dark:to-cyan-900/20 border border-teal-200/50 dark:border-teal-700/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-[#01b47d]/5 via-white to-[#01b47d]/5 dark:from-[#008f63]/20 dark:via-slate-800/40 dark:to-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]/30 transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
                   <div className="flex-shrink-0">
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-teal-100 to-cyan-100 dark:from-teal-800/30 dark:to-cyan-800/30 flex items-center justify-center border-2 border-teal-200/50 dark:border-teal-600/30">
-                      <span className="text-2xl font-bold text-teal-700 dark:text-teal-400">5</span>
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#008f63]/30 dark:to-[#008f63]/30 flex items-center justify-center border-2 border-[#01b47d]/20 dark:border-[#01b47d]/30">
+                      <span className="text-2xl font-bold text-[#008f63] dark:text-[#01b47d]">5</span>
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
@@ -2673,12 +2673,12 @@ export default function NewYorkCityArticlePage() {
                           Essential for seamless stadium transportation on match days. Real-time updates and mobile ticketing.
                         </p>
                       </div>
-                      <span className="bg-gradient-to-r from-teal-100 to-cyan-100 dark:from-teal-800/30 dark:to-cyan-800/30 text-teal-700 dark:text-teal-300 px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
+                      <span className="bg-gradient-to-r from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#008f63]/30 dark:to-[#008f63]/30 text-[#008f63] dark:text-[#01b47d] px-4 py-2 rounded-full text-sm font-semibold whitespace-nowrap">
                         Must Have
                       </span>
                     </div>
                     <div className="mt-6">
-                      <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-semibold">
+                      <div className="inline-flex items-center gap-3 px-6 py-3 rounded-xl bg-gradient-to-r from-[#01b47d] to-[#01b47d] text-white font-semibold">
                         <i className="ri-train-line text-lg"></i>
                         <span>NJ Transit App</span>
                       </div>
@@ -2751,7 +2751,7 @@ export default function NewYorkCityArticlePage() {
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -2772,21 +2772,21 @@ export default function NewYorkCityArticlePage() {
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -2805,8 +2805,8 @@ export default function NewYorkCityArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Northeast Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Philadelphia</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Northeast Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Philadelphia</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Lincoln Financial Field guide and historic city attractions.</p>
               </div>
             </Link>
@@ -2824,8 +2824,8 @@ export default function NewYorkCityArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-blue-500/20 backdrop-blur-sm border border-blue-500/30 text-blue-300 text-xs font-bold uppercase tracking-wider mb-2">New England Hub</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-blue-300 transition-colors">Boston</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">New England Hub</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Boston</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Gillette Stadium guide and revolutionary history tours.</p>
               </div>
             </Link>
@@ -2836,7 +2836,7 @@ export default function NewYorkCityArticlePage() {
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -2855,7 +2855,7 @@ export default function NewYorkCityArticlePage() {
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -2867,7 +2867,7 @@ export default function NewYorkCityArticlePage() {
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>
@@ -2883,8 +2883,8 @@ export default function NewYorkCityArticlePage() {
       
       <div aria-hidden="true" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative h-px w-full">
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-emerald-300/30 to-transparent dark:via-emerald-300/25"></div>
-          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-emerald-300/30 dark:bg-emerald-300/25"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#01b47d]/30 to-transparent dark:via-[#01b47d]/25"></div>
+          <div className="absolute left-1/2 -translate-x-1/2 -top-[3px] h-2 w-2 rotate-45 rounded-sm bg-[#01b47d]/30 dark:bg-[#01b47d]/25"></div>
         </div>
       </div>
       

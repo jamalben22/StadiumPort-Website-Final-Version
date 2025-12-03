@@ -59,6 +59,19 @@ const PrivacyPage = lazy(() => import('../pages/legal/privacy/page'));
 const TermsPage = lazy(() => import('../pages/legal/terms/page'));
 const AffiliateDisclaimerPage = lazy(() => import('../pages/legal/affiliate-disclaimer/page'));
 const PredictPage = lazy(() => import('../pages/PredictPage'));
+const DrawHubPage = lazy(() => import('../pages/draw-hub/page'));
+const GroupAPage = lazy(() => import('../pages/groups/group-a/page'));
+const GroupBPage = lazy(() => import('../pages/groups/group-b/page'));
+const GroupCPage = lazy(() => import('../pages/groups/group-c/page'));
+const GroupDPage = lazy(() => import('../pages/groups/group-d/page'));
+const GroupEPage = lazy(() => import('../pages/groups/group-e/page'));
+const GroupFPage = lazy(() => import('../pages/groups/group-f/page'));
+const GroupGPage = lazy(() => import('../pages/groups/group-g/page'));
+const GroupHPage = lazy(() => import('../pages/groups/group-h/page'));
+const GroupIPage = lazy(() => import('../pages/groups/group-i/page'));
+const GroupJPage = lazy(() => import('../pages/groups/group-j/page'));
+const GroupKPage = lazy(() => import('../pages/groups/group-k/page'));
+const GroupLPage = lazy(() => import('../pages/groups/group-l/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 
 const routes: RouteObject[] = [
@@ -81,6 +94,90 @@ const routes: RouteObject[] = [
   {
     path: '/world-cup-2026-prediction-game/:step',
     element: <PredictPage />
+  },
+  {
+    path: '/2026-world-cup-draw-travel-hub',
+    element: <DrawHubPage />
+  },
+  {
+    path: '/draw-travel-hub',
+    element: <Navigate to="/2026-world-cup-draw-travel-hub" replace />
+  },
+  {
+    path: '/2026-world-cup-group-a-travel-guide',
+    element: <GroupAPage />
+  },
+  {
+    path: '/groups/group-a',
+    element: <Navigate to="/2026-world-cup-group-a-travel-guide" replace />
+  },
+  {
+    path: '/2026-world-cup-group-b-travel-guide',
+    element: <GroupBPage />
+  },
+  {
+    path: '/groups/group-b',
+    element: <Navigate to="/2026-world-cup-group-b-travel-guide" replace />
+  },
+  {
+    path: '/2026-world-cup-group-c-travel-guide',
+    element: <GroupCPage />
+  },
+  {
+    path: '/groups/group-c',
+    element: <Navigate to="/2026-world-cup-group-c-travel-guide" replace />
+  },
+  {
+    path: '/groups/group-d',
+    element: <GroupDPage />
+  },
+  {
+    path: '/groups/group-e',
+    element: <GroupEPage />
+  },
+  {
+    path: '/groups/group-f',
+    element: <GroupFPage />
+  },
+  {
+    path: '/groups/group-g',
+    element: <GroupGPage />
+  },
+  {
+    path: '/groups/group-h',
+    element: <GroupHPage />
+  },
+  {
+    path: '/groups/group-i',
+    element: <GroupIPage />
+  },
+  {
+    path: '/groups/group-j',
+    element: <GroupJPage />
+  },
+  {
+    path: '/groups/group-k',
+    element: <GroupKPage />
+  },
+  {
+    path: '/groups/group-l',
+    element: <GroupLPage />
+  },
+  {
+    path: '/group-l-travel-guide',
+    element: <Navigate to="/groups/group-l" replace />
+  },
+  {
+    path: '/group-k-travel-guide',
+    element: <Navigate to="/groups/group-k" replace />
+  },
+  {
+    path: '/group-j-travel-guide',
+    element: <Navigate to="/groups/group-j" replace />
+  },
+  {
+    path: '/group-i-travel-guide',
+    element: <Navigate to="/groups/group-i" replace />
   },
   {
     path: '/world-cup-2026-host-cities',

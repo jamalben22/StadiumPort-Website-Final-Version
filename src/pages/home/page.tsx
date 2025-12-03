@@ -105,7 +105,7 @@ const VrboWidget = memo(() => {
   const VRBO_URL_GENERAL = import.meta.env.VITE_VRBO_URL_GENERAL || 'https://vrbo.tpo.li/Sj3x6Mp4';
   return (
     <div className="mt-8 mx-auto max-w-[900px]">
-      <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-2xl p-6 sm:p-8 border border-white/40 shadow-2xl shadow-emerald-500/10">
+      <div className="relative overflow-hidden rounded-3xl bg-white/90 backdrop-blur-2xl p-6 sm:p-8 border border-white/40 shadow-2xl shadow-[#01b47d]/10">
         <div className="absolute top-4 left-4 z-20 sm:top-4 sm:left-auto sm:right-4 max-w-[calc(100%-2rem)]">
           <a
             href={VRBO_URL_GENERAL}
@@ -128,8 +128,8 @@ const VrboWidget = memo(() => {
           </a>
         </div>
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tl from-teal-400/15 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/15 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-purple-400/10 to-transparent rounded-full blur-2xl"></div>
         </div>
         <div className="relative z-10">
@@ -142,7 +142,7 @@ const VrboWidget = memo(() => {
               href={VRBO_URL_NYNJ}
               target="_blank"
               rel="nofollow noopener sponsored"
-              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
+              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] text-white hover:from-[#01b47d] hover:via-[#008f63] hover:to-[#008f63] focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20"
               aria-label="Check Availability in New York / New Jersey"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -155,7 +155,7 @@ const VrboWidget = memo(() => {
               href={VRBO_URL_LA}
               target="_blank"
               rel="nofollow noopener sponsored"
-              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-emerald-500 via-emerald-600 to-teal-600 text-white hover:from-emerald-600 hover:via-emerald-700 hover:to-teal-700 focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg border border-emerald-400/20"
+              className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] text-white hover:from-[#01b47d] hover:via-[#008f63] hover:to-[#008f63] focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20"
               aria-label="Check Availability in Los Angeles"
             >
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -169,7 +169,7 @@ const VrboWidget = memo(() => {
             href={VRBO_URL_GENERAL}
             target="_blank"
             rel="nofollow noopener sponsored"
-            className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20"
+            className="relative inline-flex w-full items-center justify-center font-semibold rounded-3xl transition-all duration-700 cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 group font-inter hover:scale-[1.02] active:scale-95 transform-gpu will-change-transform px-4 py-3 text-sm md:px-6 md:py-4 md:text-base lg:text-lg bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] text-white hover:from-[#01b47d] hover:via-[#008f63] hover:to-[#008f63] focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20"
             aria-label="Browse all Vrbo stays"
           >
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
@@ -311,7 +311,7 @@ export default function HomePage() {
         schema={generateImageObjectSchema('/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp', {
           width: 1920,
           height: 1080,
-          caption: 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – StadiumPort',
+          caption: 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – Stadiumport',
           description:
             'Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch.'
         })}
@@ -343,7 +343,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
             {/* New York / New Jersey Card */}
             <div
-              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20"
             >
               <div className="relative aspect-video overflow-hidden">
                 <OptimizedImage
@@ -361,14 +361,14 @@ export default function HomePage() {
 
                 {/* Stadium Info Glass */}
                 <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
-                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-500 hover:-translate-y-0.5">
                     <div className="relative flex items-center justify-between">
                       <div className="flex items-center flex-1 min-w-0">
-                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-xl flex items-center justify-center mr-3 shadow-md shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
                           <i className="ri-map-pin-line text-white text-sm"></i>
                         </div>
                         <div className="min-w-0 flex-1">
-                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                             {featuredCities[0].stadium.split(',')[0]}
                           </div>
                           <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
@@ -377,7 +377,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="text-right ml-3 flex-shrink-0">
-                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                           {featuredCities[0].capacity.replace(/,/g, '').toLocaleString()}
                         </div>
                         <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">Capacity</div>
@@ -390,7 +390,7 @@ export default function HomePage() {
                 <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
                   <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
                     <div className="order-1">
-                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">6 Matches</div>
+                      <div className="bg-[#01b47d]/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-[#01b47d]/30 shadow-sm shadow-[#01b47d]/20 hover:bg-[#008f63]/85 hover:shadow-md transition-all duration-300">6 Matches</div>
                     </div>
                     <div className="order-2">
                       <div className="bg-gradient-to-r from-amber-400/75 via-yellow-400/75 to-orange-500/75 text-black/80 px-2 py-1 rounded-lg text-[11px] font-bold backdrop-blur-sm shadow-sm ring-1 ring-white/15 flex items-center gap-1 hover:shadow-md transition-all duration-300">
@@ -403,7 +403,7 @@ export default function HomePage() {
 
               {/* Content */}
               <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-[#01b47d] group-hover:to-purple-600 dark:group-hover:from-[#01b47d] dark:group-hover:to-purple-400 transition-all duration-700">
                   {featuredCities[0].name}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
@@ -426,7 +426,7 @@ export default function HomePage() {
 
             {/* Los Angeles Card */}
             <div
-              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+              className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20"
             >
               <div className="relative aspect-video overflow-hidden">
                 <OptimizedImage
@@ -444,14 +444,14 @@ export default function HomePage() {
 
                 {/* Stadium Info Glass */}
                 <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
-                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                  <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-500 hover:-translate-y-0.5">
                     <div className="relative flex items-center justify-between">
                       <div className="flex items-center flex-1 min-w-0">
-                        <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                        <div className="w-8 h-8 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-xl flex items-center justify-center mr-3 shadow-md shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
                           <i className="ri-map-pin-line text-white text-sm"></i>
                         </div>
                         <div className="min-w-0 flex-1">
-                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                          <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                             {featuredCities[1].stadium.split(',')[0]}
                           </div>
                           <div className="text-slate-500 dark:text-slate-400 text-xs font-medium truncate">
@@ -460,7 +460,7 @@ export default function HomePage() {
                         </div>
                       </div>
                       <div className="text-right ml-3 flex-shrink-0">
-                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                        <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                           {featuredCities[1].capacity.replace(/,/g, '').toLocaleString()}
                         </div>
                         <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">Capacity</div>
@@ -473,7 +473,7 @@ export default function HomePage() {
                 <div className="absolute top-3 right-3 md:top-4 md:right-4 z-10">
                   <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
                     <div className="order-1">
-                      <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">9 Matches</div>
+                      <div className="bg-[#01b47d]/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-[#01b47d]/30 shadow-sm shadow-[#01b47d]/20 hover:bg-[#008f63]/85 hover:shadow-md transition-all duration-300">9 Matches</div>
                     </div>
                   </div>
                 </div>
@@ -481,7 +481,7 @@ export default function HomePage() {
 
               {/* Content */}
               <div className="p-8 md:p-10 flex flex-col flex-1">
-                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-[#01b47d] group-hover:to-purple-600 dark:group-hover:from-[#01b47d] dark:group-hover:to-purple-400 transition-all duration-700">
                   {featuredCities[1].name}
                 </h3>
                 <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg leading-relaxed mb-6 md:mb-8 line-clamp-4 group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
@@ -508,7 +508,7 @@ export default function HomePage() {
             <Link to="/world-cup-2026-host-cities" className="group" aria-label="Discover all 16 host cities">
               <button
                 aria-label="Discover all 16 host cities"
-                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-teal-500 via-teal-600 to-emerald-600 text-white hover:from-teal-600 hover:via-teal-700 hover:to-emerald-700 focus:ring-teal-500/30 shadow-premium hover:shadow-premium-lg border border-teal-400/20 backdrop-blur-xl"
+                className="relative inline-flex items-center justify-center font-semibold rounded-3xl transition-all duration-700 whitespace-nowrap cursor-pointer overflow-hidden focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed group font-inter ultra-premium-focus hover:scale-105 active:scale-95 hover:-translate-y-1 transform-gpu will-change-transform px-10 py-5 text-lg bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] text-white hover:from-[#01b47d] hover:via-[#008f63] hover:to-[#008f63] focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20 backdrop-blur-xl"
               >
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-transparent to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 <div className="absolute inset-0 rounded-3xl overflow-hidden">
@@ -561,7 +561,7 @@ export default function HomePage() {
                 className="relative rounded-3xl border border-slate-200/60 dark:border-slate-800/60 bg-white/70 dark:bg-slate-900/40 backdrop-blur-xl p-8 text-center"
               >
                 <div className="mb-6 flex justify-center">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center shadow-sm">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center shadow-sm">
                     <i className={`${indicator.icon} text-lg`}></i>
                   </div>
                 </div>
@@ -591,7 +591,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Apple Luxury Simple Design */}
-      <section className="py-24 bg-white dark:bg-gray-900">
+      <section className="py-24 bg-white dark:bg-navy-900">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6 tracking-tight">
             Your World Cup 2026 Journey

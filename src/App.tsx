@@ -142,10 +142,10 @@ function DateModifiedManager() {
       ...(entry?.datePublished ? { datePublished: entry.datePublished } : {}),
       ...(entry?.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
       ...(entry?.section ? { articleSection: entry.section } : {}),
-      "author": { "@type": "Organization", "name": "StadiumPort Team", "url": siteUrl },
+      "author": { "@type": "Organization", "name": "Stadiumport Team", "url": siteUrl },
       "publisher": {
         "@type": "Organization",
-        "name": "StadiumPort",
+        "name": "Stadiumport",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",

@@ -42,7 +42,7 @@ const GameBackground = React.memo(() => (
 
     {/* Blob 2: Bottom Right (Cyan/Blue) */}
     <motion.div 
-      className="fixed -bottom-[20%] -right-[20%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tl from-cyan-500 via-blue-600 to-transparent blur-[150px] opacity-40 pointer-events-none z-0 transform-gpu"
+      className="fixed -bottom-[20%] -right-[20%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-tl from-[#01b47d] via-[#01b47d] to-transparent blur-[150px] opacity-40 pointer-events-none z-0 transform-gpu"
       animate={{ 
           x: [0, -60, 0],
           y: [0, -40, 0],
@@ -90,7 +90,7 @@ export const GameLayout = ({ children, className }: GameLayoutProps) => {
   const navigate = useNavigate();
 
   return (
-    <div className="relative w-full h-[100dvh] bg-[#1e1b4b] text-white selection:bg-cyan-500/30 overflow-hidden flex flex-col">
+    <div className="relative w-full h-[100dvh] bg-[#1e1b4b] text-white selection:bg-[#01b47d]/30 overflow-hidden flex flex-col">
       {/* Enforce Dark Mode & Fonts Scoped Style */}
       <style>{`
         :root {

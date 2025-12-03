@@ -140,7 +140,7 @@ function DealAlertsPageOriginal() {
 
   const getCategoryColor = (color: string) => {
     const colors = {
-      blue: 'from-blue-500 to-blue-600',
+      blue: 'from-[#01b47d] to-[#01b47d]',
       purple: 'from-purple-500 to-purple-600',
       green: 'from-green-500 to-green-600',
       amber: 'from-amber-500 to-amber-600'
@@ -159,12 +159,12 @@ function DealAlertsPageOriginal() {
       <Header />
 
       {/* Hero Section */}
-      <main id="main-content" className="pt-24 pb-16 bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-navy-800 dark:to-navy-700">
+      <main id="main-content" className="pt-24 pb-16 bg-gradient-to-r from-[#01b47d]/5 to-[#01b47d]/5 dark:from-navy-800 dark:to-navy-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-navy-900 dark:text-white mb-6">
               World Cup 2026
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">
                 Deal Alerts
               </span>
             </h1>
@@ -293,7 +293,7 @@ function DealAlertsPageOriginal() {
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     placeholder="Enter your email address"
-                    className="w-full px-4 py-3 border border-slate-300 dark:border-navy-600 rounded-xl bg-white dark:bg-navy-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 dark:border-navy-600 rounded-xl bg-white dark:bg-navy-700 text-slate-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-[#01b47d] focus:border-transparent"
                     required
                   />
                 </div>
@@ -309,7 +309,7 @@ function DealAlertsPageOriginal() {
                           type="checkbox"
                           checked={selectedAlerts.includes(type)}
                           onChange={() => handleAlertToggle(type)}
-                          className="w-5 h-5 text-emerald-500 border-slate-300 rounded focus:ring-emerald-500"
+                          className="w-5 h-5 text-[#01b47d] border-slate-300 rounded focus:ring-[#01b47d]"
                         />
                         <span className="text-slate-700 dark:text-slate-300">{type}</span>
                       </label>
@@ -321,7 +321,7 @@ function DealAlertsPageOriginal() {
                   <input
                     type="checkbox"
                     id="terms"
-                    className="w-5 h-5 text-emerald-500 border-slate-300 rounded focus:ring-emerald-500"
+                    className="w-5 h-5 text-[#01b47d] border-slate-300 rounded focus:ring-[#01b47d]"
                     required
                   />
                   <label htmlFor="terms" className="text-sm text-slate-600 dark:text-slate-300">

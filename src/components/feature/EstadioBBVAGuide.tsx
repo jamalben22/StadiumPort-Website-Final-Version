@@ -156,11 +156,11 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
       
       {/* TOC Sidebar - Desktop */}
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -176,11 +176,11 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border border-[#01b47d]/30 dark:border-[#01b47d]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -188,8 +188,8 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -200,16 +200,16 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -227,11 +227,11 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -267,7 +267,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -277,32 +277,32 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Estadio BBVA</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Estadio BBVA</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Estadio BBVA: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">World Cup 2026 Guide</span>
+              Estadio BBVA: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">World Cup 2026 Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Monterrey, Mexico</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-trophy-line text-lg"></i>
                 </div>
                 <span>4 Matches</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>~53,500 Capacity</span>
@@ -311,10 +311,10 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -331,8 +331,8 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Hosts <strong>4 matches</strong> (3 Group, 1 Round of 32)</li>
                <li>• Venue: <strong>Estadio BBVA</strong> (Monterrey)</li>
@@ -342,7 +342,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-book-open-line text-emerald-500"></i>
+            <i className="ri-book-open-line text-[#01b47d]"></i>
             Estadio BBVA: Your Complete Guide to Monterrey's World Cup 2026 Venue
           </h2>
           
@@ -359,7 +359,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           </div>
 
           <p>
-            Located in <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>, Estadio BBVA is one of the most technologically advanced stadiums in Latin America. Estadio BBVA is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>.
+            Located in <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link>, Estadio BBVA is one of the most technologically advanced stadiums in Latin America. Estadio BBVA is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>.
           </p>
           <p>
             Rising from the edge of Monterrey like a metallic fortress, Estadio BBVA—nicknamed "El Gigante de Acero" (The Steel Giant)—represents a new generation of Latin American football architecture. When this architectural marvel hosts four World Cup 2026 matches, international fans will discover why Mexico's industrial capital built a stadium that honors its brewing and steel-making heritage while delivering one of the most intimate viewing experiences in world football. With the majestic Cerro de la Silla mountain framing the north stand and seats positioned just nine meters from the pitch, this venue promises an atmosphere unlike any other in the tournament.
@@ -369,7 +369,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] text-3xl"></i>
             Stadium Overview & Fast Facts
           </h3>
           
@@ -377,7 +377,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-building-2-line text-emerald-500"></i>
+                  <i className="ri-building-2-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Official Name</span>
                   <p>Estadio BBVA (FIFA designation: Estadio Monterrey)</p>
                 </div>
@@ -385,7 +385,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-map-pin-line text-emerald-500"></i>
+                  <i className="ri-map-pin-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Location</span>
                   <p>Guadalupe, Greater Monterrey, Nuevo León, Mexico</p>
                 </div>
@@ -393,7 +393,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-group-line text-emerald-500"></i>
+                  <i className="ri-group-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Capacity</span>
                   <p>~53,500 (World Cup configuration)</p>
                 </div>
@@ -401,7 +401,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-calendar-line text-emerald-500"></i>
+                  <i className="ri-calendar-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Opened</span>
                   <p>August 2, 2015</p>
                 </div>
@@ -411,7 +411,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-home-line text-emerald-500"></i>
+                  <i className="ri-home-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Home Team</span>
                   <p>C.F. Monterrey (Rayados)</p>
                 </div>
@@ -419,7 +419,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-pencil-ruler-2-line text-emerald-500"></i>
+                  <i className="ri-pencil-ruler-2-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Architect</span>
                   <p>Populous / VFO Arquitectos</p>
                 </div>
@@ -427,7 +427,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-grass-line text-emerald-500"></i>
+                  <i className="ri-grass-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Playing Surface</span>
                   <p>Hybrid turf (97% natural, 3% synthetic)</p>
                 </div>
@@ -435,7 +435,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-leaf-line text-emerald-500"></i>
+                  <i className="ri-leaf-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Sustainability</span>
                   <p>LEED Silver Certified</p>
                 </div>
@@ -457,7 +457,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-500 text-3xl"></i>
+            <i className="ri-time-line text-[#01b47d] text-3xl"></i>
             History & Legacy
           </h3>
           <p>Estadio BBVA replaced the beloved Estadio Tecnológico, ending C.F. Monterrey's 63-year tenure at their historic home. Constructed between August 2011 and July 2015, the $200 million project represented the most expensive stadium investment in Mexican football history at the time. FEMSA, the beverage and retail giant that owns both the club and the facility, envisioned a venue that would elevate the entire Latin American stadium experience.</p>
@@ -469,7 +469,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-pencil-ruler-2-line text-[#01b47d] text-3xl"></i>
             Stadium Architecture & Experience
           </h3>
           <p>Designed by Kansas City-based Populous—the firm behind iconic venues like Yankee Stadium and London's Olympic Stadium—Estadio BBVA is purposefully sculptural. The design draws profound inspiration from Monterrey's industrial identity: the self-supported tripodal structure is clad in rolled steel trusses and aluminum sheeting, paying homage to the steel mills that once defined the city's economy. The asymmetric sweeping shape evokes the silhouette of brewing stills, celebrating Monterrey's rich brewing tradition (the city is home to brands like Tecate and Dos Equis).</p>
@@ -482,7 +482,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-500 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] text-3xl"></i>
             What Matches to Expect
           </h3>
           <p>Estadio BBVA will host four World Cup 2026 fixtures: three group stage matches scheduled for June 14, 20, and 24, plus one Round of 32 knockout match on June 29. While specific matchups remain to be confirmed, the venue's 53,500 capacity and dramatic mountain backdrop position it perfectly for memorable afternoon and evening fixtures.</p>
@@ -493,28 +493,28 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-links-line text-emerald-500 text-3xl"></i>
+            <i className="ri-links-line text-[#01b47d] text-3xl"></i>
             Related Stadiums
           </h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             Planning a Mexico or cross-border circuit? Visit{' '}
-            <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
-            <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
-            <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
+            <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link> in Mexico City,{' '}
+            <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Akron</Link> in Guadalajara, and{' '}
+            <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas.
           </p>
           <hr className="editorial-divider" />
         </article>
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-map-2-line text-[#01b47d] text-3xl"></i>
             Getting to the Stadium
           </h3>
           
           <div className="space-y-6">
             <div>
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 By Metro/Train
               </h4>
               <p>The Metrorrey system provides the most economical route to Estadio BBVA. Take <strong>Line 1 (Yellow Line)</strong> eastbound to <strong>Exposición Station</strong>, the line's final stop. From Exposición, the stadium is approximately a 20-minute walk (roughly 2 kilometers). You'll cross the Rio La Silla bridge and pass Expo Ganadera and the Domo Care arena before arriving at the venue.</p>
@@ -524,7 +524,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
             <div>
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-bus-line text-emerald-500"></i>
+                <i className="ri-bus-line text-[#01b47d]"></i>
                 By Bus
               </h4>
               <p>Multiple bus routes serve the stadium directly. From downtown's Avenida Juárez, routes <strong>214</strong>, <strong>223</strong>, and <strong>TME</strong> stop at <strong>Pablo Livas (Estadio BBVA)</strong>, just 3-5 minutes' walk from the gates. Other convenient routes include <strong>093</strong>, <strong>185</strong>, and several in the <strong>070</strong> and <strong>108</strong> series.</p>
@@ -533,7 +533,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
             <div>
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-car-line text-emerald-500"></i>
+                <i className="ri-car-line text-[#01b47d]"></i>
                 By Car
               </h4>
               <p>From downtown Monterrey, follow <strong>Avenida Constitución</strong> east, which becomes <strong>Carretera Miguel Alemán (Highway 54D)</strong>. Continue east for approximately 10 kilometers, following signs for Guadalupe and Estadio BBVA. Journey time ranges from 15-25 minutes depending on traffic, though allow 45+ minutes on matchdays.</p>
@@ -543,7 +543,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
             <div>
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 By Rideshare/Taxi
               </h4>
               <p>Uber and Didi operate throughout Monterrey. Designated drop-off zones are clearly marked around the stadium perimeter—follow staff directions and look for signage. From downtown, expect fares around MXN $100-200 (USD $5-11), though surge pricing on matchdays can double or triple rates.</p>
@@ -552,7 +552,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
             <div>
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-walk-line text-emerald-500"></i>
+                <i className="ri-walk-line text-[#01b47d]"></i>
                 Walking/Biking
               </h4>
               <p>Walking from downtown Monterrey to the stadium (approximately 10km) is feasible but not recommended given distances and summer heat. Cycling is possible via dedicated bike lanes along major routes, though secure bike parking at the stadium is limited.</p>
@@ -572,7 +572,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] text-3xl"></i>
             Where to Stay
           </h3>
           
@@ -589,7 +589,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-bed-line text-emerald-500 text-3xl"></i>
+            <i className="ri-hotel-bed-line text-[#01b47d] text-3xl"></i>
             Accommodation Options
           </h3>
           
@@ -625,7 +625,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-lightbulb-flash-line text-emerald-500 text-3xl"></i>
+            <i className="ri-lightbulb-flash-line text-[#01b47d] text-3xl"></i>
             Matchday Tips & Insider Advice
           </h3>
           <p><strong>Arrive Early:</strong> Gates typically open 2-3 hours before kickoff for World Cup matches. Aim to arrive at least 90 minutes early to clear security, find your seat, and soak in the pre-match atmosphere. Monterrey summer heat can be intense—hydrate before entering.</p>
@@ -651,7 +651,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-map-pin-2-line text-[#01b47d] text-3xl"></i>
             Things to Do Nearby
           </h3>
           
@@ -687,13 +687,13 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
             Beyond the Stadium: Explore Monterrey
           </h3>
           <p>Monterrey's mountain backdrop and modern energy create a unique World Cup 2026 destination.</p>
           <p>
             Explore our complete{' '}
-            <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey World Cup 2026 Guide</Link>{' '}for everything you need:
+            <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Monterrey World Cup 2026 Guide</Link>{' '}for everything you need:
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li>Hotels near Estadio BBVA</li>
@@ -705,19 +705,19 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           <p className="mt-4">
             <strong>Other Stadiums:</strong>{' '}
             Completing a Mexico tour? Visit{' '}
-            <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City and{' '}
-            <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link>{' '}in Guadalajara. Close to Texas? Check out{' '}
-            <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link>{' '}in Dallas.
+            <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link>{' '}in Mexico City and{' '}
+            <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Akron</Link>{' '}in Guadalajara. Close to Texas? Check out{' '}
+            <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link>{' '}in Dallas.
           </p>
           <p className="mt-2">
-            <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+            <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
           </p>
           <hr className="editorial-divider" />
         </article>
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
+            <i className="ri-lightbulb-line text-[#01b47d] text-3xl"></i>
             Final Verdict & Key Takeaway
           </h3>
           <p className="mb-6">Estadio BBVA is where industrial heritage meets cutting-edge design, where intimate sightlines amplify every moment, and where the majestic Sierra Madre mountains remind you that football, at its best, connects us to something larger than the game itself. This isn't just another modern stadium—it's a temple to Mexican football culture, built for fans who live and breathe the sport.</p>
@@ -726,7 +726,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             <div className="space-y-6">
               <div className="space-y-2">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-heart-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-heart-line text-[#01b47d] text-3xl"></i>
                   Who will love it most:
                 </h4>
                 <p>Anyone who values atmosphere over amenities, proximity over prestige, and raw passion over corporate polish. Estadio BBVA rewards the true believer.</p>
@@ -734,7 +734,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
               
               <div className="space-y-2">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-star-line text-[#01b47d] text-3xl"></i>
                   Don't miss:
                 </h4>
                 <p>Arriving early enough to stand at the north end, gaze up at Cerro de la Silla framed by the stadium's steel canopy, and understand why they call this place The Steel Giant. That view alone is worth the journey.</p>
@@ -743,7 +743,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             
             <div className="space-y-2">
               <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                <i className="ri-calendar-check-line text-emerald-500 text-3xl"></i>
+                <i className="ri-calendar-check-line text-[#01b47d] text-3xl"></i>
                 Book now:
               </h4>
               <p>Monterrey accommodations fill fast. Secure your hotel, flights, and match tickets early through official FIFA channels. The combination of limited capacity and Mexico's passionate football culture means this venue will sell out quickly. Start planning your 2026 adventure today—Estadio BBVA awaits.</p>
@@ -782,7 +782,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
           </div>
           
           {hasRated && (
-            <p className="text-emerald-600 font-medium animate-fade-up mb-6">Thanks for your feedback!</p>
+            <p className="text-[#01b47d] font-medium animate-fade-up mb-6">Thanks for your feedback!</p>
           )}
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 border-t border-slate-100 dark:border-slate-700 pt-6">
@@ -790,7 +790,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
             <div className="flex gap-3">
               <button 
                 onClick={() => navigator.share?.({ title: 'Estadio BBVA Guide', url: window.location.href }).catch(() => {})}
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-share-line"></i>
               </button>
@@ -798,7 +798,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
                 href={`https://twitter.com/intent/tweet?text=Check out this Estadio BBVA guide for World Cup 2026!&url=${encodeURIComponent('https://stadiumport.com' + pageUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-blue-400 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-twitter-x-line"></i>
               </a>
@@ -806,13 +806,13 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://stadiumport.com' + pageUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-blue-600 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-facebook-line"></i>
               </a>
               <a 
                 href={`mailto:?subject=Estadio BBVA Guide&body=Check out this guide: ${'https://stadiumport.com' + pageUrl}`}
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-red-500 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-mail-line"></i>
               </a>
@@ -823,7 +823,7 @@ export const EstadioBBVAGuide = ({ onClose, showHeader = false, hideHero = false
         {/* Recommended Guides */}
         <div className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
           <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8 flex items-center gap-3">
-            <i className="ri-compass-discover-line text-emerald-500"></i>
+            <i className="ri-compass-discover-line text-[#01b47d]"></i>
             You Might Also Like
           </h3>
           <div className="grid md:grid-cols-3 gap-6">

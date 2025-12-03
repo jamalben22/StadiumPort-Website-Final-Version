@@ -58,7 +58,7 @@ export const PrizeBento = () => {
           
           <div className="mt-auto space-y-3">
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
-              <Shirt className="w-5 h-5 text-emerald-400" />
+              <Shirt className="w-5 h-5 text-[#01b47d]" />
               <span className="text-sm text-white/80 font-['Rajdhani']">National Team Jersey</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">

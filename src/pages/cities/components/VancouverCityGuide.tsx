@@ -44,7 +44,7 @@ export function VancouverCityGuide() {
       {(() => {
         const pageUrl = `${siteUrl}/world-cup-2026-host-cities/vancouver-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/vancouver-world-cup-2026.webp`;
-        const title = 'Vancouver World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'Vancouver World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Capture Vancouver’s breathtaking skyline between ocean and mountains, celebrating its eco-friendly urban charm and BC Place Stadium.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -136,12 +136,12 @@ export function VancouverCityGuide() {
         {/* Seven Matches Under the World's Largest Retractable Roof */}
         <article className="editorial-body editorial-dropcap">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Seven Matches Under the World's Largest Retractable Roof
           </h3>
           <p>
             On June 13, 2026, Vancouver kicks off its FIFA World Cup journey with the first of seven matches at <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BC Place</Link> Stadium—and this city is about to remind the world why it's called "The Jewel of the Pacific." Vancouver is one of the{' '}
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.
+            <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>{' '}for World Cup 2026. The venue features a retractable roof revealing over 7,500 square metres of open sky, making it the only World Cup stadium where you might watch football under actual blue sky one moment and complete weather protection the next. Welcome to Vancouver, where nature and innovation create something spectacular.
           </p>
           <p>
             Vancouver will host five group stage matches, including two Team Canada matches, one round of 32 match, and one round of 16 match, with the action running from mid-June through early July. BC Place holds 54,500 seats surrounded by more than 50 suites and hospitality lounges, creating an intimate yet electric atmosphere that will showcase Canada's Pacific coast to billions of viewers worldwide.
@@ -167,7 +167,7 @@ export function VancouverCityGuide() {
         {/* The Stadium That Defies Expectations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-community-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Stadium That Defies Expectations
           </h3>
           <p>
@@ -185,7 +185,7 @@ export function VancouverCityGuide() {
         {/* Getting to BC Place: Easier Than You'd Think */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to BC Place: Easier Than You'd Think
           </h3>
           <p>
@@ -206,7 +206,7 @@ export function VancouverCityGuide() {
         {/* Where to Stay: Your Pacific Coast Home Base */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Your Pacific Coast Home Base
           </h3>
           <p>
@@ -245,7 +245,7 @@ export function VancouverCityGuide() {
         {/* PART 2/5: Packing & Beyond Football */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-suitcase-line text-indigo-400 dark:text-indigo-300 text-3xl"></i>
+            <i className="ri-suitcase-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Pack strategically
           </h3>
           <p>
@@ -319,7 +319,7 @@ export function VancouverCityGuide() {
         {/* Getting Around Like a Vancouverite */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting Around Like a Vancouverite
           </h3>
           <p>
@@ -331,7 +331,7 @@ export function VancouverCityGuide() {
           </p>
           <p>
             Vancouver is just a few hours from{' '}
-            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>, making a cross-border trip incredibly easy for World Cup fans. Many travelers pair the two for a perfect Pacific Northwest experience.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -339,7 +339,7 @@ export function VancouverCityGuide() {
         {/* PART 3/5: Water Taxis */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ship-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ship-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Water Taxis
           </h3>
           <p>
@@ -351,7 +351,7 @@ export function VancouverCityGuide() {
         {/* PART 3/5: Walking */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-walk-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-walk-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Walking
           </h3>
           <p>
@@ -363,7 +363,7 @@ export function VancouverCityGuide() {
         {/* PART 3/5: Practical Vancouver Intelligence */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-indigo-400 dark:text-indigo-300 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Practical Vancouver Intelligence
           </h3>
           <p>
@@ -384,7 +384,7 @@ export function VancouverCityGuide() {
         {/* PART 4/5: World Cup Specific Information */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             World Cup Specific Information
           </h3>
           <p>
@@ -399,7 +399,7 @@ export function VancouverCityGuide() {
           <p>
             Combine{' '}
             <span className="font-semibold">Vancouver</span> with{' '}
-            <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
+            <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}to experience Canada coast-to-coast during World Cup 2026—two distinct cities, one unforgettable national journey.
           </p>
         </article>
         <hr className="editorial-divider" />
@@ -407,7 +407,7 @@ export function VancouverCityGuide() {
         {/* Related Destinations */}
         <article className="editorial-body" id="related-destinations">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Plan Your Pacific & Canadian World Cup Journey
           </h3>
           <div className="space-y-6 text-slate-700 dark:text-slate-200 text-xl leading-relaxed">
@@ -418,32 +418,32 @@ export function VancouverCityGuide() {
               <strong>Pacific Northwest Perfection</strong>
               <br />
               Experience the best cross-border pairing: <span className="font-semibold">Vancouver</span> for mountain-meets-ocean beauty, then just 3 hours south to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for coffee culture and American Pacific Northwest charm. This is one of the easiest and most scenic World Cup city combinations.
             </p>
             <p>
               <strong>Coast to Coast Canada</strong>
               <br />
               Explore both Canadian host cities: Start in <span className="font-semibold">Vancouver</span> on the Pacific, then fly across the country to{' '}
-              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
+              <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>{' '}on the Atlantic for a complete Canadian World Cup experience showcasing two distinct Canadian personalities.
             </p>
             <p>
               <strong>Ultimate West Coast Circuit</strong>
               <br />
               Create the definitive Pacific Coast adventure: <span className="font-semibold">Vancouver</span> to{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
-              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}to{' '}
+              <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>{' '}
               — four incredible cities, stunning coastal scenery, and diverse cultures all along the Pacific Ocean.
             </p>
             <p>
               <strong>Mountain Cities Connection</strong>
               <br />
               Vancouver's mountain setting pairs beautifully with other scenic destinations. Combine with{' '}
-              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
-              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
+              <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>{' '}for more Pacific Northwest beauty, or venture to{' '}
+              <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Monterrey</Link>{' '}for another mountain-city experience.
             </p>
             <p>
-              <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
         </article>
@@ -460,8 +460,8 @@ export function VancouverCityGuide() {
           </p>
           <p>
             Many visitors create a Pacific Coast tour: <span className="font-semibold">Vancouver</span>,{' '}
-            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
-            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
+            <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Seattle</Link>,{' '}
+            <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">San Francisco Bay Area</Link>{' '}— a classic West Coast circuit that pairs perfectly with match schedules and travel logistics.
           </p>
           <p>
             The city wears its environmental consciousness proudly—you'll notice extensive bike infrastructure, aggressive recycling programs, and a genuine commitment to sustainability that shapes everything from restaurant sourcing to transit policy. This isn't performative; it's how Vancouver operates.
@@ -480,7 +480,7 @@ export function VancouverCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

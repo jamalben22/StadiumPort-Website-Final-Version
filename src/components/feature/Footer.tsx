@@ -20,17 +20,15 @@ export function Footer() {
     setIsSubmitting(true);
     
     try {
-      const formData = new FormData();
-      formData.append('email', email);
-      
-      const response = await fetch('https://readdy.ai/api/form/d3v62f155ieogu7sirug', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
-        body: new URLSearchParams({
-          email: email
-        }),
         headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify({
+          type: 'newsletter-signup',
+          data: { email }
+        }),
       });
 
       if (response.ok) {
@@ -90,7 +88,7 @@ export function Footer() {
             {/* Status Messages */}
             {submitStatus === 'success' && (
               <div className="mt-3 p-2 rounded-lg bg-slate-800 text-slate-300 text-sm">
-                Successfully subscribed! Welcome to StadiumPort.
+                Successfully subscribed! Welcome to Stadiumport.
               </div>
             )}
             
@@ -109,7 +107,7 @@ export function Footer() {
             <div className="flex items-center mb-6">
               <img 
                 src="/images/Logos/Footer Logo 400 x 100 px.svg"
-                alt="StadiumPort Logo"
+                alt="Stadiumport Logo"
                 width={400}
                 height={100}
                 className="h-8 w-auto object-contain"
@@ -165,12 +163,13 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/world-cup-2026-travel-tips', label: 'Travel Tips' },
-                { to: '/safety-guide', label: 'Safety Guide' }
+                { to: '/safety-guide', label: 'Safety Guide' },
+                { to: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' }
               ].map((item) => (
                 <li key={item.to}>
                   <Link 
                     to={item.to} 
-                    className="text-slate-400 hover:text-white transition-colors duration-200"
+                    className="text-slate-300 hover:text-white transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -205,7 +204,7 @@ export function Footer() {
               ))}
             </div>
             <div className="text-sm text-slate-600">
-              © {currentYear} StadiumPort. All rights reserved.
+              © {currentYear} Stadiumport. All rights reserved.
             </div>
           </div>
         </div>

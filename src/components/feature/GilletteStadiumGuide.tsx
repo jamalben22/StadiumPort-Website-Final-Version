@@ -26,9 +26,9 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
       {!hideHero && (
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
           <ol className="flex items-center gap-2 text-sm">
-            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
             <li className="text-slate-400">›</li>
-            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
             <li className="text-slate-400">›</li>
             <li className="text-slate-700 dark:text-slate-200">Gillette Stadium</li>
           </ol>
@@ -50,24 +50,24 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               placeholder="blur"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
-                <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
+                <div className="w-3 h-3 bg-gradient-to-r from-[#01b47d] to-[#01b47d] rounded-full animate-pulse"></div>
+                <span className="text-[#01b47d] font-medium text-sm uppercase tracking-wider">FIFA World Cup 2026</span>
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">Gillette Stadium</h1>
 
               <div className="flex items-center gap-6 mb-6">
                 <div className="flex items-center gap-2 text-slate-300">
-                  <i className="ri-group-line text-xl text-blue-400"></i>
+                  <i className="ri-group-line text-xl text-[#01b47d]"></i>
                   <span className="font-semibold">64,628 capacity (70,000 WC config)</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
-                  <i className="ri-map-pin-line text-xl text-emerald-400"></i>
+                  <i className="ri-map-pin-line text-xl text-[#01b47d]"></i>
                   <span>Foxborough, Massachusetts</span>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
                 </button>
                 <button
                   onClick={handleGotItClick}
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#01b47d] hover:bg-[#008f63] text-white rounded-lg transition-colors"
                 >
                   <i className="ri-check-line"></i>
                   Got it
@@ -145,7 +145,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, Gillette Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Set in Foxborough, approximately 22 miles southwest of Boston, this modern arena combines efficiency with fan-first design, delivering a top-tier matchday experience and stadium operations that rival the best in North America. Hosting seven matches—including a quarterfinal—it represents a stadium that actually works, surrounded by infrastructure designed for massive crowds and a proven record of sellouts since 2002.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>, Gillette Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>. Set in Foxborough, approximately 22 miles southwest of Boston, this modern arena combines efficiency with fan-first design, delivering a top-tier matchday experience and stadium operations that rival the best in North America. Hosting seven matches—including a quarterfinal—it represents a stadium that actually works, surrounded by infrastructure designed for massive crowds and a proven record of sellouts since 2002.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -153,24 +153,24 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Stadium Overview & Fast Facts */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-building-line text-emerald-500 text-3xl"></i>
+                <i className="ri-building-line text-[#01b47d] text-3xl"></i>
                 Stadium Overview & Fast Facts
               </h3>
 
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                    <p className="leading-relaxed"><i className="ri-building-2-line text-emerald-500 text-3xl"></i> Official Name: Gillette Stadium (Boston Stadium during World Cup 2026)</p>
-                    <p className="leading-relaxed"><i className="ri-map-pin-line text-emerald-500 text-3xl"></i> Location: Foxborough, Massachusetts (22 miles southwest of Boston, 18 miles northeast of Providence, Rhode Island)</p>
-                    <p className="leading-relaxed"><i className="ri-calendar-line text-emerald-500 text-3xl"></i> Opened: May 11, 2002</p>
-                    <p className="leading-relaxed"><i className="ri-group-line text-emerald-500 text-3xl"></i> Capacity: 64,628 (standard) / up to 70,000 (World Cup configuration)</p>
+                    <p className="leading-relaxed"><i className="ri-building-2-line text-[#01b47d] text-3xl"></i> Official Name: Gillette Stadium (Boston Stadium during World Cup 2026)</p>
+                    <p className="leading-relaxed"><i className="ri-map-pin-line text-[#01b47d] text-3xl"></i> Location: Foxborough, Massachusetts (22 miles southwest of Boston, 18 miles northeast of Providence, Rhode Island)</p>
+                    <p className="leading-relaxed"><i className="ri-calendar-line text-[#01b47d] text-3xl"></i> Opened: May 11, 2002</p>
+                    <p className="leading-relaxed"><i className="ri-group-line text-[#01b47d] text-3xl"></i> Capacity: 64,628 (standard) / up to 70,000 (World Cup configuration)</p>
                 </div>
                 <div className="space-y-4">
-                    <p className="leading-relaxed"><i className="ri-team-line text-emerald-500 text-3xl"></i> Primary Tenants: New England Patriots (NFL), New England Revolution (MLS)</p>
-                    <p className="leading-relaxed"><i className="ri-briefcase-line text-emerald-500 text-3xl"></i> Owner/Operator: Kraft Sports Group</p>
-                    <p className="leading-relaxed"><i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl"></i> Architect/Design Firm: HOK Sport (now Populous)</p>
-                    <p className="leading-relaxed"><i className="ri-grass-line text-emerald-500 text-3xl"></i> Surface Type: FieldTurf (artificial)</p>
-                    <p className="leading-relaxed"><i className="ri-sun-line text-emerald-500 text-3xl"></i> Roof Type: Open-air</p>
-                    <p className="leading-relaxed"><i className="ri-star-line text-emerald-500 text-3xl"></i> Notable Features: 218-foot lighthouse observation deck, largest outdoor curved-radius video board in North America (22,000 sq ft), 360-degree stadium connectivity, completely cashless venue</p>
+                    <p className="leading-relaxed"><i className="ri-team-line text-[#01b47d] text-3xl"></i> Primary Tenants: New England Patriots (NFL), New England Revolution (MLS)</p>
+                    <p className="leading-relaxed"><i className="ri-briefcase-line text-[#01b47d] text-3xl"></i> Owner/Operator: Kraft Sports Group</p>
+                    <p className="leading-relaxed"><i className="ri-pencil-ruler-2-line text-[#01b47d] text-3xl"></i> Architect/Design Firm: HOK Sport (now Populous)</p>
+                    <p className="leading-relaxed"><i className="ri-grass-line text-[#01b47d] text-3xl"></i> Surface Type: FieldTurf (artificial)</p>
+                    <p className="leading-relaxed"><i className="ri-sun-line text-[#01b47d] text-3xl"></i> Roof Type: Open-air</p>
+                    <p className="leading-relaxed"><i className="ri-star-line text-[#01b47d] text-3xl"></i> Notable Features: 218-foot lighthouse observation deck, largest outdoor curved-radius video board in North America (22,000 sq ft), 360-degree stadium connectivity, completely cashless venue</p>
                 </div>
               </div>
               <hr className="editorial-divider" />
@@ -179,7 +179,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* History & Legacy: From Foxboro Dreams to World Cup Reality */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-time-line text-emerald-500 text-3xl"></i>
+                <i className="ri-time-line text-[#01b47d] text-3xl"></i>
                 History & Legacy: From Foxboro Dreams to World Cup Reality
               </h3>
               <p className="leading-relaxed mb-6">
@@ -200,7 +200,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Stadium Architecture & Experience: New England Pride in Steel and Concrete */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-building-4-line text-emerald-500 text-3xl"></i>
+                <i className="ri-building-4-line text-[#01b47d] text-3xl"></i>
                 Stadium Architecture & Experience: New England Pride in Steel and Concrete
               </h3>
               <p className="leading-relaxed mb-6">
@@ -224,7 +224,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* What Matches to Expect: Seven Games, One Quarterfinal */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-calendar-2-line text-emerald-500 text-3xl"></i>
+                <i className="ri-calendar-2-line text-[#01b47d] text-3xl"></i>
                 What Matches to Expect: Seven Games, One Quarterfinal
               </h3>
               <p className="leading-relaxed mb-6">
@@ -242,7 +242,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Getting to the Stadium: Your Transport Playbook */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-route-line text-emerald-500 text-3xl"></i>
+                <i className="ri-route-line text-[#01b47d] text-3xl"></i>
                 Getting to the Stadium: Your Transport Playbook
               </h3>
               <p className="leading-relaxed mb-6">
@@ -285,7 +285,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Where to Stay: From Budget Beds to Luxury Lodgings */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-500 text-3xl"></i>
+                <i className="ri-hotel-line text-[#01b47d] text-3xl"></i>
                 Where to Stay: From Budget Beds to Luxury Lodgings
               </h3>
               <p className="leading-relaxed mb-6">
@@ -293,7 +293,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               </p>
               <h4 className="editorial-h4 mt-6">On-Site (Premium)</h4>
               <p className="leading-relaxed mb-6">
-<strong>Renaissance Boston Patriot Place Hotel</strong> and <strong>Hilton Garden Inn Foxborough Patriot Place</strong> sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a>  or <a href="https://hotels.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">hotels.com</a>  to secure rates before prices spike.
+<strong>Renaissance Boston Patriot Place Hotel</strong> and <strong>Hilton Garden Inn Foxborough Patriot Place</strong> sit directly adjacent to the stadium within Patriot Place. You can literally walk to your seat in five minutes. Both offer indoor pools, on-site dining, and pet-friendly rooms. Expect premium pricing during the tournament, but the convenience is unmatched. <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">booking.com</a>  or <a href="https://hotels.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">hotels.com</a>  to secure rates before prices spike.
               </p>
               <h4 className="editorial-h4 mt-6">Nearby Foxborough/Mansfield (Mid-Range)</h4>
               <p className="leading-relaxed mb-6">
@@ -325,7 +325,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Matchday Tips & Insider Advice */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
+                <i className="ri-lightbulb-line text-[#01b47d] text-3xl"></i>
                 Matchday Tips & Insider Advice
               </h3>
               <p className="leading-relaxed mb-4"><strong>Arrive Early</strong>: Gates open 2-3 hours before kickoff. Security screening takes time, especially with FIFA-mandated protocols. Aim to arrive 90 minutes early to explore the stadium, grab food, and soak in pre-match atmosphere.</p>
@@ -343,14 +343,14 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Things to Do Nearby: More Than Just Matchday */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+                <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
                 Things to Do Nearby: More Than Just Matchday
               </h3>
               <h4 className="editorial-h4 mt-6">Patriot Place (Adjacent)</h4>
               <p className="leading-relaxed mb-4">This open-air shopping and entertainment complex surrounds the stadium with 1.3 million square feet of retail, dining, and activities. Pre-match atmosphere thrives here with 19 restaurants and bars including Six String Grill & Stage (live country music), Scorpion Bar (Mexican with rooftop views), Davio's Northern Italian Steakhouse, and Bar Louie.</p>
               <p className="leading-relaxed mb-6"><strong>The Hall at Patriot Place</strong> houses the Patriots Hall of Fame ($15 entry)—even non-NFL fans appreciate the interactive exhibits and Tom Brady huddle experience. Bass Pro Shops, Cinema de Lux, and Splitsville Luxury Lanes bowling provide non-football entertainment. Parking is free at Patriot Place (separate from stadium lots).</p>
               <h4 className="editorial-h4 mt-6">Boston (30-40 minutes)</h4>
-<p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through <a href="https://viator.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">viator.com</a> or <a href="https://getyourguide.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">getyourguide.com</a> to maximize limited time.</p>
+<p className="leading-relaxed mb-6">One of America's most walkable, historic cities deserves exploration. The Freedom Trail connects 16 Revolutionary War sites through downtown. Fenway Park (Red Sox) offers tours. The North End serves authentic Italian cuisine. Harvard and MIT campuses in Cambridge showcase academic America. Book walking tours through <a href="https://viator.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">viator.com</a> or <a href="https://getyourguide.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">getyourguide.com</a> to maximize limited time.</p>
               <h4 className="editorial-h4 mt-6">Providence (25-30 minutes)</h4>
               <p className="leading-relaxed mb-6">Rhode Island's capital surprises visitors with Federal Hill's Italian restaurants, WaterFire evening art installations along riverwalks, and RISD Museum. Tony's Colonial Food (cash-only diner) is legendary.</p>
               <h4 className="editorial-h4 mt-6">Craft Beer Trail</h4>
@@ -358,7 +358,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               <h4 className="editorial-h4 mt-6">Cape Cod (60-75 minutes)</h4>
               <p className="leading-relaxed">If extending your stay, Cape Cod's beaches, seafood shacks, and charming towns offer classic New England coastal experiences. Provincetown at the tip combines beaches with vibrant arts and LGBTQ+ culture.</p>
               <p className="leading-relaxed mt-4">
-                Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia. Cross-border? Consider <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BMO Field</Link> in Toronto.
+                Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia. Cross-border? Consider <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">BMO Field</Link> in Toronto.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -366,7 +366,7 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
             {/* Final Verdict: A Stadium That Delivers */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-award-line text-emerald-500 text-3xl"></i>
+                <i className="ri-award-line text-[#01b47d] text-3xl"></i>
                 Final Verdict: A Stadium That Delivers
               </h3>
               <p className="leading-relaxed mb-6">
@@ -378,13 +378,13 @@ export const GilletteStadiumGuide: React.FC<GilletteStadiumGuideProps> = ({ show
               <p className="leading-relaxed mb-6">
                 The quarterfinal on July 9 could be the match of your life—imagine witnessing the last eight teams battling with a World Cup semifinal at stake, in a stadium that knows how to host championship moments. For international visitors, this is your gateway to understanding American sports culture while experiencing the beauty and history of New England.
               </p>
-              <div className="p-6 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
+              <div className="p-6 rounded-xl bg-[#01b47d]/10 dark:bg-slate-800/70 border-l-4 border-[#01b47d] mb-6">
                 <p className="leading-relaxed">
                   <strong>One unforgettable thing not to miss:</strong> Climb the lighthouse observation deck before kickoff. The 360-degree views of the stadium bowl, the surrounding forests (stunning in summer green), and the entire Patriot Place complex provide perspective on how this venue sits in its landscape—uniquely New England, uniquely American, and for seven special days in 2026, uniquely global.
                 </p>
               </div>
               <p className="leading-relaxed">
-Book your accommodation early through <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
+Book your accommodation early through <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">booking.com</a> , secure train tickets as soon as they go on sale, and prepare for World Cup football in one of the tournament's most underrated venues. Boston Stadium awaits.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -392,14 +392,14 @@ Book your accommodation early through <a href="https://booking.com/" target="_bl
             {/* Beyond the Stadium: Explore Boston */}
             <section className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Beyond the Stadium: Explore Boston
               </h3>
               <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
                 <p>Boston's rich history and New England charm create an unforgettable World Cup 2026 experience.</p>
                 <div>
                   <h4 className="editorial-h4 mb-2">Discover Boston</h4>
-                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston World Cup 2026 Guide</Link> for everything you need:</p>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Boston World Cup 2026 Guide</Link> for everything you need:</p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Where to stay near Gillette Stadium</li>
                     <li>Getting to the stadium from Boston</li>
@@ -410,9 +410,9 @@ Book your accommodation early through <a href="https://booking.com/" target="_bl
                 </div>
                 <div>
                   <h4 className="editorial-h4 mb-2">Other Northeast Stadiums</h4>
-                  <p>Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia.</p>
+                  <p>Planning a Northeast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/lincoln-financial-field-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Lincoln Financial Field</Link> in Philadelphia.</p>
                 </div>
-                <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+                <p><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               </div>
               <hr className="editorial-divider" />
             </section>

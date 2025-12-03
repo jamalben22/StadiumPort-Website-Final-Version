@@ -20,7 +20,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "StadiumPort",
+        "name": "Stadiumport",
         "logo": {
           "@type": "ImageObject",
           "url": "https://stadiumport.com/logo.png"
@@ -182,7 +182,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               <h6 className="font-semibold text-slate-900 dark:text-white mb-3">Safety Features:</h6>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start space-x-3">
-                  <i className="ri-gps-line text-blue-500 mt-1"></i>
+                  <i className="ri-gps-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Real-time GPS tracking allows you to share trip details with friends/family</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -198,7 +198,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">In-app emergency assistance button</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-history-line text-indigo-500 mt-1"></i>
+                  <i className="ri-history-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Trip history and receipts automatically saved</span>
                 </li>
               </ul>
@@ -243,7 +243,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               <h6 className="font-semibold text-slate-900 dark:text-white mb-3">Available Services:</h6>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start space-x-3">
-                  <i className="ri-car-line text-blue-500 mt-1"></i>
+                  <i className="ri-car-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300"><strong>Uber</strong> (Toronto, Vancouver, and most major cities)</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -266,7 +266,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Generally lower crime rates mean lower incident frequency</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-snowflake-line text-blue-500 mt-1"></i>
+                  <i className="ri-snowflake-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Cold weather considerations if traveling during shoulder seasons</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -315,7 +315,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   </div>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="w-8 h-8 bg-[#01b47d] rounded-lg flex items-center justify-center flex-shrink-0">
                     <span className="text-white text-xs font-bold">CB</span>
                   </div>
                   <div>
@@ -390,7 +390,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Walk 5-10 minutes away from stadium before requesting ride (reduces surge zone impact)</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-time-line text-blue-500 mt-1"></i>
+                  <i className="ri-time-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Wait 30-60 minutes after match ends (surge subsides as demand drops)</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -402,7 +402,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Consider pre-booking through GO Airport Shuttle or similar services</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-subway-line text-indigo-500 mt-1"></i>
+                  <i className="ri-subway-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Use public transit if safe and available</span>
                 </li>
               </ul>
@@ -532,7 +532,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                     <span className="text-red-800 dark:text-red-200">Never display valuables or phones</span>
                   </div>
                   <div className="flex items-start space-x-2">
-                    <i className="ri-backpack-line text-blue-500 mt-1"></i>
+                    <i className="ri-backpack-line text-[#01b47d] mt-1"></i>
                     <span className="text-red-800 dark:text-red-200">Keep bags in front, zipped closed</span>
                   </div>
                   <div className="flex items-start space-x-2">
@@ -649,7 +649,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               </ul>
 
               <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                <i className="ri-shield-check-line text-blue-500 mr-3"></i>
+                <i className="ri-shield-check-line text-[#01b47d] mr-3"></i>
                 Rental Car Safety Protocols
               </h4>
 
@@ -685,7 +685,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Cross-Border Travel: U.S., Canada, and Mexico</h3>
 
               <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                <i className="ri-passport-line text-blue-500 mr-3"></i>
+                <i className="ri-passport-line text-[#01b47d] mr-3"></i>
                 Documentation Requirements
               </h4>
 
@@ -773,7 +773,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Use NEXUS (Canada-U.S.) or SENTRI (Mexico-U.S.) trusted traveler programs if eligible</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-time-line text-blue-500 mt-1"></i>
+                  <i className="ri-time-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Cross during off-peak hours (early morning or late evening)</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -785,13 +785,13 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Build 4-6 extra hours into travel schedules crossing borders</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-plane-line text-indigo-500 mt-1"></i>
+                  <i className="ri-plane-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Consider flying rather than driving across borders</span>
                 </li>
               </ul>
 
               <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                <i className="ri-plane-line text-blue-500 mr-3"></i>
+                <i className="ri-plane-line text-[#01b47d] mr-3"></i>
                 Air Travel Between Countries
               </h4>
 
@@ -805,27 +805,27 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                 </p>
               </div>
 
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800 mb-6">
-                <h6 className="font-bold text-blue-900 dark:text-blue-100 mb-3 flex items-center">
+              <div className="bg-[#01b47d]/5 dark:bg-[#008f63]/20 rounded-xl p-6 border border-[#01b47d]/20 dark:border-[#008f63] mb-6">
+                <h6 className="font-bold text-[#008f63] dark:text-[#01b47d]/10 mb-3 flex items-center">
                   <i className="ri-plane-line mr-2"></i>
                   Major Airports
                 </h6>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
-                    <span className="font-semibold text-blue-900 dark:text-blue-100 mb-2 block">U.S.:</span>
-                    <ul className="space-y-1 text-sm text-blue-800 dark:text-blue-200">
+                    <span className="font-semibold text-[#008f63] dark:text-[#01b47d]/10 mb-2 block">U.S.:</span>
+                    <ul className="space-y-1 text-sm text-[#008f63] dark:text-[#01b47d]/20">
                       <li>ATL, DFW, IAH, LAX, MIA, JFK/EWR, SEA</li>
                     </ul>
                   </div>
                   <div>
-                    <span className="font-semibold text-blue-900 dark:text-blue-100 mb-2 block">Canada:</span>
-                    <ul className="space-y-1 text-sm text-blue-800 dark:text-blue-200">
+                    <span className="font-semibold text-[#008f63] dark:text-[#01b47d]/10 mb-2 block">Canada:</span>
+                    <ul className="space-y-1 text-sm text-[#008f63] dark:text-[#01b47d]/20">
                       <li>YYZ (Toronto), YVR (Vancouver)</li>
                     </ul>
                   </div>
                   <div>
-                    <span className="font-semibold text-blue-900 dark:text-blue-100 mb-2 block">Mexico:</span>
-                    <ul className="space-y-1 text-sm text-blue-800 dark:text-blue-200">
+                    <span className="font-semibold text-[#008f63] dark:text-[#01b47d]/10 mb-2 block">Mexico:</span>
+                    <ul className="space-y-1 text-sm text-[#008f63] dark:text-[#01b47d]/20">
                       <li>MEX (Mexico City), GDL (Guadalajara), MTY (Monterrey)</li>
                     </ul>
                   </div>
@@ -843,7 +843,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Prices will only increase as tournament approaches</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-search-line text-blue-500 mt-1"></i>
+                  <i className="ri-search-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Use flight comparison tools: <code className="bg-slate-100 dark:bg-slate-800 px-1 rounded">https://www.google.com/flights</code>, <code className="bg-slate-100 dark:bg-slate-800 px-1 rounded">https://www.skyscanner.com</code>, <code className="bg-slate-100 dark:bg-slate-800 px-1 rounded">https://www.kayak.com</code></span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -932,7 +932,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Regional travel (nearby cities within 4-6 hours)</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-money-dollar-circle-line text-blue-500 mt-1"></i>
+                  <i className="ri-money-dollar-circle-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Budget-conscious travelers with time flexibility</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -954,7 +954,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               </ul>
 
               <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center">
-                <i className="ri-shuttle-line text-blue-500 mr-3"></i>
+                <i className="ri-shuttle-line text-[#01b47d] mr-3"></i>
                 GO Airport Shuttle: Pre-Booked Reliability
               </h4>
 
@@ -979,7 +979,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">Guaranteed availability without surge pricing</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-user-star-line text-blue-500 mt-1"></i>
+                  <i className="ri-user-star-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">Professional drivers, direct door-to-door service</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -1066,7 +1066,7 @@ export default function DigitalSecurityPrivacyProtectionPage() {
                   <span className="text-slate-700 dark:text-slate-300">First-time World Cup attendees</span>
                 </li>
                 <li className="flex items-start space-x-3">
-                  <i className="ri-earth-line text-blue-500 mt-1"></i>
+                  <i className="ri-earth-line text-[#01b47d] mt-1"></i>
                   <span className="text-slate-700 dark:text-slate-300">International travelers unfamiliar with North America</span>
                 </li>
                 <li className="flex items-start space-x-3">
@@ -1249,19 +1249,19 @@ export default function DigitalSecurityPrivacyProtectionPage() {
             </p>
             <ul className="space-y-2">
               <li className="flex items-start space-x-2">
-                <i className="ri-traffic-light-line mt-1 text-blue-600"></i>
+                <i className="ri-traffic-light-line mt-1 text-[#01b47d]"></i>
                 <span>Road congestion from thousands of vehicles converging</span>
               </li>
               <li className="flex items-start space-x-2">
-                <i className="ri-subway-line mt-1 text-blue-600"></i>
+                <i className="ri-subway-line mt-1 text-[#01b47d]"></i>
                 <span>Public transit at capacity</span>
               </li>
               <li className="flex items-start space-x-2">
-                <i className="ri-money-dollar-circle-line mt-1 text-blue-600"></i>
+                <i className="ri-money-dollar-circle-line mt-1 text-[#01b47d]"></i>
                 <span>Rideshare surge pricing and longer wait times</span>
               </li>
               <li className="flex items-start space-x-2">
-                <i className="ri-shield-line mt-1 text-blue-600"></i>
+                <i className="ri-shield-line mt-1 text-[#01b47d]"></i>
                 <span>Security perimeters creating detours</span>
               </li>
             </ul>
@@ -1675,15 +1675,15 @@ export default function DigitalSecurityPrivacyProtectionPage() {
               <h6 className="editorial-h4 mb-4">Flight Booking:</h6>
               <ul className="space-y-2">
                 <li className="flex items-start space-x-2">
-                  <i className="ri-external-link-line mt-1 text-blue-600"></i>
+                  <i className="ri-external-link-line mt-1 text-[#01b47d]"></i>
                   <span><code className="text-sm">https://www.google.com/flights</code> - Best for price comparison and flexible date searching</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <i className="ri-external-link-line mt-1 text-blue-600"></i>
+                  <i className="ri-external-link-line mt-1 text-[#01b47d]"></i>
                   <span><code className="text-sm">https://www.skyscanner.com</code> - Multi-airline comparison</span>
                 </li>
                 <li className="flex items-start space-x-2">
-                  <i className="ri-external-link-line mt-1 text-blue-600"></i>
+                  <i className="ri-external-link-line mt-1 text-[#01b47d]"></i>
                   <span><code className="text-sm">https://www.kayak.com</code> - Comprehensive search across airlines and dates</span>
                 </li>
               </ul>

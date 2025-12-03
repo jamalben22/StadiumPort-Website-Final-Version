@@ -26,9 +26,9 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
       {!hideHero && (
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
           <ol className="flex items-center gap-2 text-sm">
-            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
             <li className="text-slate-400">›</li>
-            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
             <li className="text-slate-400">›</li>
             <li className="text-slate-700 dark:text-slate-200">Lincoln Financial Field</li>
           </ol>
@@ -50,13 +50,13 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               placeholder="blur"
               sizes="100vw"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
 
             {/* Preview Content */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
-                <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
+                <div className="w-3 h-3 bg-gradient-to-r from-[#01b47d] to-[#01b47d] rounded-full animate-pulse"></div>
+                <span className="text-[#01b47d] font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
               </div>
 
               <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
@@ -65,11 +65,11 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
               <div className="flex items-center gap-6 mb-6">
                 <div className="flex items-center gap-2 text-slate-300">
-                  <i className="ri-group-line text-xl text-blue-400"></i>
+                  <i className="ri-group-line text-xl text-[#01b47d]"></i>
                   <span className="font-semibold">67,594 capacity</span>
                 </div>
                 <div className="flex items-center gap-2 text-slate-300">
-                  <i className="ri-map-pin-line text-xl text-emerald-400"></i>
+                  <i className="ri-map-pin-line text-xl text-[#01b47d]"></i>
                   <span>Philadelphia, Pennsylvania</span>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                 </button>
                 <button
                   onClick={handleGotItClick}
-                  className="inline-flex items-center gap-2 px-5 py-3 bg-emerald-500 hover:bg-emerald-600 text-white rounded-lg transition-colors"
+                  className="inline-flex items-center gap-2 px-5 py-3 bg-[#01b47d] hover:bg-[#008f63] text-white rounded-lg transition-colors"
                 >
                   <i className="ri-check-line"></i>
                   Got it
@@ -148,7 +148,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Introduction Section */}
             <article className="editorial-body editorial-dropcap">
               <p className="leading-relaxed mb-6">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>, Lincoln Financial Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. When it hosts six matches — including a knockout round clash on July 4th, America's 250th birthday — the city will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link>, Lincoln Financial Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>. When it hosts six matches — including a knockout round clash on July 4th, America's 250th birthday — the city will deliver one of the tournament's most electrifying backdrops. This isn't just another modern NFL stadium pressed into service for soccer. The Linc, as locals affectionately call it, has earned its World Cup stripes through years of hosting international matches, from Copa América to the Women's World Cup. With over half a million visitors expected to descend on Philly for these six matches, this stadium in the birthplace of American independence promises a matchday experience steeped in history, passion, and that unmistakable Philadelphia edge.
               </p>
               <p className="leading-relaxed">
                 The stadium's design itself speaks to the city's character. Inspired by the diverse neighborhoods of Philadelphia, its asymmetrical seating provides unique viewing experiences throughout the stadium, while the aggressive canopy profile evokes an eagle's wing, instantly identifiable to global audiences. This is where architecture, sports culture, and American history collide — and where your World Cup 2026 journey could reach its crescendo.
@@ -159,7 +159,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Stadium Overview & Fast Facts */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-building-line text-emerald-500 text-3xl"></i>
+                <i className="ri-building-line text-[#01b47d] text-3xl"></i>
                 Stadium Overview & Fast Facts
               </h3>
 
@@ -167,35 +167,35 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-building-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-building-2-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                       <p className="leading-relaxed">Lincoln Financial Field (temporarily "Philadelphia Stadium" during World Cup)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-flag-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-flag-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Nickname</span>
                       <p className="leading-relaxed">The Linc</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-map-pin-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-map-pin-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                       <p className="leading-relaxed">South Philadelphia, Sports Complex (1 Lincoln Financial Field Way)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-calendar-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-calendar-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Opened</span>
                       <p className="leading-relaxed">August 3, 2003</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-group-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-group-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Capacity</span>
                       <p className="leading-relaxed">67,594 (expandable to approximately 69,000 for major events)</p>
                     </div>
@@ -205,35 +205,35 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-user-star-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-user-star-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Primary Tenant</span>
                       <p className="leading-relaxed">Philadelphia Eagles (NFL), Temple Owls (NCAA Football)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-pencil-ruler-2-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-pencil-ruler-2-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect</span>
                       <p className="leading-relaxed">NBBJ (designed by Dan Meis, FAIA)</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-money-dollar-circle-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Construction Cost</span>
                       <p className="leading-relaxed">$512 million</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-sun-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                       <p className="leading-relaxed">Natural grass</p>
                     </div>
                   </div>
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-sun-line text-emerald-500 text-3xl mr-2"></i>
+                      <i className="ri-sun-line text-[#01b47d] text-3xl mr-2"></i>
                       <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                       <p className="leading-relaxed">Open-air with partial canopy coverage</p>
                     </div>
@@ -243,24 +243,24 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
               <div className="mt-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500"></i>
+                  <i className="ri-star-line text-[#01b47d]"></i>
                   Notable Features
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Powers on 100% clean energy with 11,000 solar panels and 14 wind turbines</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Recognized in 2013 as one of the "greenest" stadiums in the NFL, with renewable energy installations accounting for 30% of the facility's electricity</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Three open corner plazas providing skyline views</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Wing-shaped canopies directing noise back toward the field</span>
                   </div>
                 </div>
@@ -271,12 +271,12 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Beyond the Stadium: Explore Philadelphia */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
                 Beyond the Stadium: Explore Philadelphia
               </h3>
               <p className="leading-relaxed mb-4">Philadelphia's revolutionary history and vibrant culture make it a must-visit World Cup 2026 destination.</p>
-              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
-                <p className="leading-relaxed"><strong>Discover Philadelphia:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia World Cup 2026 Guide</Link> for comprehensive information:</p>
+              <div className="p-4 rounded-xl bg-[#01b47d]/10 dark:bg-slate-800/70 border-l-4 border-[#01b47d] mb-6">
+                <p className="leading-relaxed"><strong>Discover Philadelphia:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Philadelphia World Cup 2026 Guide</Link> for comprehensive information:</p>
                 <ul className="list-disc list-inside mt-3 space-y-1">
                   <li>Hotels near Lincoln Financial Field</li>
                   <li>Transportation to the stadium</li>
@@ -285,15 +285,15 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Match day planning essentials</li>
                 </ul>
               </div>
-              <p className="leading-relaxed mb-4"><strong>Other East Coast Stadiums:</strong> Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> in Boston.</p>
-              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+              <p className="leading-relaxed mb-4"><strong>Other East Coast Stadiums:</strong> Catching multiple matches in the region? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Gillette Stadium</Link> in Boston.</p>
+              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               <hr className="editorial-divider" />
             </article>
 
             {/* History & Legacy */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-time-line text-emerald-500 text-3xl"></i>
+                <i className="ri-time-line text-[#01b47d] text-3xl"></i>
                 History & Legacy
               </h3>
               <div>
@@ -316,7 +316,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Stadium Architecture & Experience */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-pantone-line text-emerald-500 text-3xl"></i>
+                <i className="ri-pantone-line text-[#01b47d] text-3xl"></i>
                 Stadium Architecture & Experience
               </h3>
               <div>
@@ -342,7 +342,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* What Matches to Expect */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-trophy-line text-emerald-500 text-3xl"></i>
+                <i className="ri-trophy-line text-[#01b47d] text-3xl"></i>
                 What Matches to Expect
               </h3>
               <div>
@@ -372,14 +372,14 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Getting to the Stadium */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-map-2-line text-emerald-500 text-3xl"></i>
+                <i className="ri-map-2-line text-[#01b47d] text-3xl"></i>
                 Getting to the Stadium
               </h3>
 
               {/* By Metro */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-train-line text-emerald-500"></i>
+                  <i className="ri-train-line text-[#01b47d]"></i>
                   By Metro (SEPTA Broad Street Line) — Recommended
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -402,7 +402,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* By Bus */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-bus-line text-emerald-500"></i>
+                  <i className="ri-bus-line text-[#01b47d]"></i>
                   By Bus
                 </h4>
                 <p className="leading-relaxed">
@@ -413,7 +413,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* By Car */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-car-line text-emerald-500"></i>
+                  <i className="ri-car-line text-[#01b47d]"></i>
                   By Car — Not Recommended on Match Days
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -433,7 +433,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* By Rideshare/Taxi */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-taxi-line text-emerald-500"></i>
+                  <i className="ri-taxi-line text-[#01b47d]"></i>
                   By Rideshare/Taxi
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -449,7 +449,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* From the Airport */}
               <div>
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-plane-line text-emerald-500"></i>
+                  <i className="ri-plane-line text-[#01b47d]"></i>
                   From the Airport
                 </h4>
                 <div className="space-y-2">
@@ -468,7 +468,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* Where to Stay */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-500 text-3xl"></i>
+                <i className="ri-hotel-line text-[#01b47d] text-3xl"></i>
                 Where to Stay
               </h3>
               <div>
@@ -477,7 +477,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-map-pin-2-line text-emerald-500"></i>
+                  <i className="ri-map-pin-2-line text-[#01b47d]"></i>
                   Best Neighborhoods for World Cup Visitors
                 </h4>
 
@@ -499,7 +499,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
 
                 {/* PART 3/4: Accommodation Options */}
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
-                  <i className="ri-wallet-3-line text-emerald-500"></i>
+                  <i className="ri-wallet-3-line text-[#01b47d]"></i>
                   Budget Options ($80-150/night)
                 </h4>
                 <ul className="list-disc list-inside space-y-2 ml-6">
@@ -509,11 +509,11 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Extended Stay America locations (practical for longer visits)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  Consider booking through <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Hotels.com</a> for deals on budget chains with free cancellation options.
+                  Consider booking through <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Hotels.com</a> for deals on budget chains with free cancellation options.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
-                  <i className="ri-bank-card-line text-emerald-500"></i>
+                  <i className="ri-bank-card-line text-[#01b47d]"></i>
                   Mid-Range ($150-300/night)
                 </h4>
                 <ul className="list-disc list-inside space-y-2 ml-6">
@@ -523,11 +523,11 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Kimpton Hotel Palomar Philadelphia (stylish boutique in Rittenhouse)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  Search <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.expedia.com" data-discover="true">https://www.expedia.com</a>  for package deals combining hotel + airport transfers, often saving 15-20% versus booking separately.
+                  Search <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.expedia.com" data-discover="true">https://www.expedia.com</a>  for package deals combining hotel + airport transfers, often saving 15-20% versus booking separately.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
-                  <i className="ri-gem-line text-emerald-500"></i>
+                  <i className="ri-gem-line text-[#01b47d]"></i>
                   Luxury ($300+/night)
                 </h4>
                 <ul className="list-disc list-inside space-y-2 ml-6">
@@ -537,11 +537,11 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <li>Sofitel Philadelphia at Rittenhouse Square (French luxury meets Philly charm)</li>
                 </ul>
                 <p className="leading-relaxed mt-4">
-                  For luxury travelers, consider <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.virtuoso.com" data-discover="true">https://www.virtuoso.com</a>  or <a className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline" href="https://www.mrandmrssmith.com" data-discover="true">https://www.mrandmrssmith.com</a>  for boutique hotels with exclusive perks.
+                  For luxury travelers, consider <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.virtuoso.com" data-discover="true">https://www.virtuoso.com</a>  or <a className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline" href="https://www.mrandmrssmith.com" data-discover="true">https://www.mrandmrssmith.com</a>  for boutique hotels with exclusive perks.
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
-                  <i className="ri-community-line text-emerald-500"></i>
+                  <i className="ri-community-line text-[#01b47d]"></i>
                   South Philadelphia — For Die-Hard Fans
                 </h4>
                 <p className="leading-relaxed">
@@ -549,7 +549,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                 </p>
 
                 <h4 className="editorial-h4 animate-fade-up mt-8 mb-4 flex items-center gap-2">
-                  <i className="ri-calendar-check-line text-emerald-500"></i>
+                  <i className="ri-calendar-check-line text-[#01b47d]"></i>
                   Booking Strategy
                 </h4>
                 <p className="leading-relaxed">
@@ -562,14 +562,14 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* PART 3/4: Matchday Tips & Insider Advice */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
+                <i className="ri-lightbulb-line text-[#01b47d] text-3xl"></i>
                 Matchday Tips & Insider Advice
               </h3>
 
               {/* Arrive Early (But Not Too Early) */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-time-line text-emerald-500"></i>
+                  <i className="ri-time-line text-[#01b47d]"></i>
                   Arrive Early (But Not Too Early)
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -583,7 +583,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Bag Policy — Strictly Enforced */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-shield-check-line text-emerald-500"></i>
+                  <i className="ri-shield-check-line text-[#01b47d]"></i>
                   Bag Policy — Strictly Enforced
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -612,7 +612,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* What to Bring */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-shopping-bag-3-line text-emerald-500"></i>
+                  <i className="ri-shopping-bag-3-line text-[#01b47d]"></i>
                   What to Bring
                 </h4>
                 <ul className="list-disc list-inside space-y-2 ml-6">
@@ -629,7 +629,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Weather Preparation */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-sun-line text-emerald-500"></i>
+                  <i className="ri-sun-line text-[#01b47d]"></i>
                   Weather Preparation
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -643,7 +643,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Food & Drink Inside */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-restaurant-2-line text-emerald-500"></i>
+                  <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                   Food & Drink Inside
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -666,7 +666,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Best Gates/Entry Points */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-door-open-line text-emerald-500"></i>
+                  <i className="ri-door-open-line text-[#01b47d]"></i>
                   Best Gates/Entry Points
                 </h4>
                 <p className="leading-relaxed">
@@ -677,7 +677,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Post-Match Exit Strategy */}
               <div>
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-route-line text-emerald-500"></i>
+                  <i className="ri-route-line text-[#01b47d]"></i>
                   Post-Match Exit Strategy
                 </h4>
                 <p className="leading-relaxed mb-4">
@@ -701,14 +701,14 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* PART 4/4: Things to Do Nearby */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
                 Things to Do Nearby
               </h3>
 
               {/* Xfinity Live! — Pre & Post-Match Central */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-store-2-line text-emerald-500"></i>
+                  <i className="ri-store-2-line text-[#01b47d]"></i>
                   Xfinity Live! — Pre & Post-Match Central
                 </h4>
                 <p>
@@ -724,7 +724,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Chickie's & Pete's */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-restaurant-line text-emerald-500"></i>
+                  <i className="ri-restaurant-line text-[#01b47d]"></i>
                   Chickie's & Pete's
                 </h4>
                 <p>
@@ -737,7 +737,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Live! Casino & Hotel Philadelphia */}
               <div className="mb-8">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-hotel-line text-emerald-500"></i>
+                  <i className="ri-hotel-line text-[#01b47d]"></i>
                   Live! Casino & Hotel Philadelphia
                 </h4>
                 <p>
@@ -750,7 +750,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
               {/* Center City Philadelphia */}
               <div>
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-building-line text-emerald-500"></i>
+                  <i className="ri-building-line text-[#01b47d]"></i>
                   Center City Philadelphia (20-30 Minutes via Metro)
                 </h4>
                 <p>
@@ -769,7 +769,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   Since Rocky's first triumphant run in 1976, the 72 stone steps of the Philadelphia Museum of Art have become an international destination for travelers who jog up the stairs and pump their fists with spectacular views of Benjamin Franklin Parkway and the city skyline. The bronze Rocky statue at the bottom provides the perfect photo opportunity.
                 </p>
                 <p><strong>Distance:</strong> 20 minutes via SEPTA Broad Street Line to City Hall, then 10-minute walk or quick bus ride</p>
-                <p className="leading-relaxed mt-4">Planning an East Coast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> near Boston. For a southeastern option, consider <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.</p>
+                <p className="leading-relaxed mt-4">Planning an East Coast circuit? Check out <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link> in NY/NJ or <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Gillette Stadium</Link> near Boston. For a southeastern option, consider <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.</p>
               </div>
               <hr className="editorial-divider" />
             </article>
@@ -777,7 +777,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
             {/* PART 4/4: Final Verdict & Key Takeaway */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-checkbox-circle-line text-emerald-500 text-3xl"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d] text-3xl"></i>
                 Final Verdict & Key Takeaway
               </h3>
               <div>
@@ -794,7 +794,7 @@ export const LincolnFinancialFieldGuide: React.FC<LincolnFinancialFieldGuideProp
                   <strong>The one unforgettable thing you shouldn't miss?</strong> Being in this stadium on July 4, 2026, as America celebrates its semiquincentennial and a World Cup knockout match simultaneously. If you can secure tickets to that fixture specifically, it will be the matchday experience of a lifetime.
                 </p>
                 <p className="leading-relaxed mb-6">
-              <strong>Take action now:</strong> Book your accommodation immediately when match schedules are announced. Philadelphia hotels will sell out fast, and prices will skyrocket. Browse options on <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> , <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a> , or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a>  now to bookmark properties in Center City or Rittenhouse Square. Research SEPTA routes, purchase a clear stadium bag, and start planning your historical Philadelphia itinerary around the match days.
+              <strong>Take action now:</strong> Book your accommodation immediately when match schedules are announced. Philadelphia hotels will sell out fast, and prices will skyrocket. Browse options on <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> , <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Expedia.com</a> , or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Airbnb.com</a>  now to bookmark properties in Center City or Rittenhouse Square. Research SEPTA routes, purchase a clear stadium bag, and start planning your historical Philadelphia itinerary around the match days.
                 </p>
                 <p className="leading-relaxed">
                   The 2026 World Cup comes to America only once. Make sure Philadelphia — and Lincoln Financial Field — are part of your journey.

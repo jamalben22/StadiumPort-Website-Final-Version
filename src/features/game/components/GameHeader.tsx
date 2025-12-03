@@ -24,14 +24,14 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
          {/* Logo / Brand */}
          <img 
            src="/images/Logos/Mobile Header Logo 180 x 180 px.svg" 
-           alt="StadiumPort" 
+           alt="Stadiumport" 
            className="h-8 w-auto object-contain invert" 
          />
       </div>
 
       <button 
         onClick={handleExit}
-        title="Return to StadiumPort World Cup 2026 Hub"
+        title="Return to Stadiumport World Cup 2026 Hub"
         className="pointer-events-auto group flex items-center justify-center w-10 h-10 rounded-full bg-[#1c1c1e]/60 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300"
       >
         <svg 

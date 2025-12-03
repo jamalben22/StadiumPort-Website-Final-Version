@@ -145,11 +145,11 @@ export default function DallasArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function DallasArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function DallasArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function DallasArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function DallasArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function DallasArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function DallasArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Dallas</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Dallas</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Dallas World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Dallas World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>AT&T Stadium (Arlington)</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>80,000 Capacity</span>
@@ -298,10 +298,10 @@ export default function DallasArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -319,8 +319,8 @@ export default function DallasArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY: 9 matches, Semi-final host, AT&T Stadium venue, Regional hub] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Dallas hosts <strong>9 matches</strong>—the most of any city</li>
                <li>• Venue: <strong>AT&T Stadium</strong> (Arlington)</li>
@@ -330,7 +330,7 @@ export default function DallasArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>Your Complete Travel Guide to America's Team Stadium
+            <i className="ri-trophy-line text-[#01b47d]"></i>Your Complete Travel Guide to America's Team Stadium
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -352,7 +352,7 @@ This isn't Dallas's first World Cup rodeo. In 1994, the Cotton Bowl hosted quart
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "North Texas becomes the beating heart of the world's biggest sporting event for five intense weeks in summer 2026."
           </blockquote>
 
@@ -364,8 +364,8 @@ This isn't Dallas's first World Cup rodeo. In 1994, the Cotton Bowl hosted quart
           </p>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Resources
             </h4>
             <div className="space-y-3">
@@ -440,7 +440,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             </div>
             
             {/* [PULL QUOTE] */}
-            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                "He didn't build a football stadium. He built an entertainment cathedral."
             </blockquote>
 
@@ -464,15 +464,15 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-group-fill text-emerald-500 mt-1"></i>
+                            <i className="ri-group-fill text-[#01b47d] mt-1"></i>
                             <span><strong>80,000 seated capacity</strong> <span className="block text-sm text-slate-500">(expandable to 105,000+ with standing room)</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-sun-line text-emerald-500 mt-1"></i>
+                            <i className="ri-sun-line text-[#01b47d] mt-1"></i>
                             <span><strong>Retractable roof</strong> <span className="block text-sm text-slate-500">opens/closes in ~12 minutes—crucial for June/July Texas heat</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-temp-cold-line text-emerald-500 mt-1"></i>
+                            <i className="ri-temp-cold-line text-[#01b47d] mt-1"></i>
                             <span><strong>Climate control</strong> <span className="block text-sm text-slate-500">throughout the indoor stadium (yes, you'll have air conditioning at a football match)</span></span>
                         </li>
                       </ul>
@@ -480,11 +480,11 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <i className="ri-tv-line text-emerald-500 mt-1"></i>
+                            <i className="ri-tv-line text-[#01b47d] mt-1"></i>
                             <span><strong>World's largest video board</strong> <span className="block text-sm text-slate-500">160 feet wide by 72 feet tall, suspended ~90 feet above the field</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <i className="ri-football-line text-emerald-500 mt-1"></i>
+                            <i className="ri-football-line text-[#01b47d] mt-1"></i>
                             <span><strong>Natural grass</strong> <span className="block text-sm text-slate-500">will replace the usual synthetic turf specifically for World Cup matches</span></span>
                         </li>
                       </ul>
@@ -520,8 +520,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="schedule-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Schedule at a Glance</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Schedule at a Glance</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>5 Group Stage Matches</strong> (June 14–27)</li>
                <li>• <strong>4 Knockout Matches</strong> (Round of 32 to Semi-Final)</li>
@@ -575,7 +575,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
           <div className="space-y-8">
             <div className="bg-white dark:bg-navy-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-navy-700">
-              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+              <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                 <svg className="h4-icon-svg" role="img" aria-label="Group stage" viewBox="0 0 24 24">
                   <defs>
                     <linearGradient id="gradGroupDAL" x1="0" x2="1" y1="0" y2="1">
@@ -591,23 +591,23 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
               </h4>
               <ul className="space-y-3 list-none">
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">01</span>
+                    <span className="font-mono text-[#01b47d] font-bold">01</span>
                     <span><strong>Sunday, June 14, 2026</strong> – Tournament Group Stage opener</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">02</span>
+                    <span className="font-mono text-[#01b47d] font-bold">02</span>
                     <span><strong>Wednesday, June 17, 2026</strong> – Group Stage match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">03</span>
+                    <span className="font-mono text-[#01b47d] font-bold">03</span>
                     <span><strong>Monday, June 22, 2026</strong> – Group Stage match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">04</span>
+                    <span className="font-mono text-[#01b47d] font-bold">04</span>
                     <span><strong>Thursday, June 25, 2026</strong> – Group Stage match</span>
                 </li>
                 <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                    <span className="font-mono text-emerald-500 font-bold">05</span>
+                    <span className="font-mono text-[#01b47d] font-bold">05</span>
                     <span><strong>Saturday, June 27, 2026</strong> – Group Stage match (final round)</span>
                 </li>
               </ul>
@@ -654,7 +654,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             </div>
 
             {/* [PULL QUOTE] */}
-            <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                "If you can only attend one match, make it this one."
             </blockquote>
 
@@ -687,8 +687,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="transport-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Transport Reality Check</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Reality Check</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>No direct rail</strong> to stadium door (requires shuttle transfer)</li>
                <li>• <strong>DART + TRE:</strong> Most economical but complex</li>
@@ -722,12 +722,12 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-lg md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-lg md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
              "Arlington is one of the largest U.S. cities without a comprehensive public rail system... That doesn’t make stadium access impossible—it just requires planning."
           </blockquote>
 
           <p className="leading-relaxed mb-6">
-            Dallas connects easily to <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> for a Texas double-header, and many fans combine Dallas with <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link> for a Central US experience. It also serves as a gateway to Mexican host cities like <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>.
+            Dallas connects easily to <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link> for a Texas double-header, and many fans combine Dallas with <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Kansas City</Link> for a Central US experience. It also serves as a gateway to Mexican host cities like <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>.
           </p>
 
           {/* [VISUAL: Regional Transit Map Placeholder] */}
@@ -739,9 +739,9 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div className="space-y-12">
             {/* DART + TRE Combo */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Train" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradTrain" x1="0" x2="1" y1="0" y2="1">
@@ -842,9 +842,9 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
             {/* Driving + Parking */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Car" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradCar" x1="0" x2="1" y1="0" y2="1">
@@ -878,9 +878,9 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
             {/* Walkable Stay */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-teal-200 dark:bg-teal-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-teal-800 dark:text-teal-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Walk" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradWalkDAL" x1="0" x2="1" y1="0" y2="1">
@@ -966,8 +966,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="stay-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Lodging Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Lodging Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Downtown:</strong> Best for culture & transit access</li>
                <li>• <strong>Arlington:</strong> Walkable to stadium (book ASAP)</li>
@@ -1015,7 +1015,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "Your accommodation choice determines whether you experience urban Dallas culture or prioritize stadium convenience."
           </blockquote>
 
@@ -1181,8 +1181,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         {/* Beyond the Matches: What to Do in Dallas */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culture & Leisure</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culture & Leisure</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>History:</strong> JFK Sixth Floor Museum</li>
                <li>• <strong>Arts:</strong> Largest urban arts district in US</li>
@@ -1403,8 +1403,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         {/* Food Scene: Fuel Your World Cup */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culinary Highlights</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culinary Highlights</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>BBQ:</strong> Pecan Lodge & Terry Black's</li>
                <li>• <strong>Tex-Mex:</strong> Mi Cocina (Sunset Margaritas)</li>
@@ -1544,8 +1544,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="tips-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Essential Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Airport:</strong> DFW (Global) or Love Field (Domestic)</li>
                <li>• <strong>Weather:</strong> 95°F+ Heat (Hydrate!)</li>
@@ -1867,8 +1867,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         {/* Booking Strategy: How to Maximize Your Dallas World Cup Experience */}
         <article className="editorial-body theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Booking Timeline</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Booking Timeline</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Late 2025:</strong> Apply for Ticket Lottery</li>
                <li>• <strong>Tickets Confirmed:</strong> Book Hotel Immediately</li>
@@ -1928,9 +1928,9 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             </ul>
           </div>
 
-          <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 dark:bg-emerald-900/20 dark:border-emerald-800 mb-6">
+          <div className="p-4 rounded-xl bg-[#01b47d]/5 border border-[#01b47d]/20 dark:bg-[#008f63]/20 dark:border-[#008f63] mb-6">
             <p className="leading-relaxed">
-              <strong>Pro strategy:</strong> Dallas's nine matches mean you could attend group stage and return for knockout rounds—split your trip with side adventures to Austin (3 hours), San Antonio (4 hours), or even <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> (4 hours) between match days. Texas is huge; use the downtime to explore.
+              <strong>Pro strategy:</strong> Dallas's nine matches mean you could attend group stage and return for knockout rounds—split your trip with side adventures to Austin (3 hours), San Antonio (4 hours), or even <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link> (4 hours) between match days. Texas is huge; use the downtime to explore.
             </p>
           </div>
 
@@ -1948,8 +1948,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="tour-planning-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Regional Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Regional Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Hub City:</strong> Central location for multi-city trips</li>
                <li>• <strong>Texas Two-Step:</strong> Easy pairing with Houston</li>
@@ -1982,45 +1982,45 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
           <div className="space-y-8">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="p-2 rounded-lg bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-route-line text-xl"></i>
               </div>
               <h4 className="editorial-h4 m-0">Popular Combinations</h4>
             </div>
 
             {/* Texas Two-Step */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">01.</span> Texas Two-Step
+                <span className="text-[#01b47d]">01.</span> Texas Two-Step
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Experience the best of the Lone Star State: Combine Dallas (current) with <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> for a complete Texas World Cup experience, featuring two distinct Texas personalities and world-class stadiums.
+                Experience the best of the Lone Star State: Combine Dallas (current) with <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link> for a complete Texas World Cup experience, featuring two distinct Texas personalities and world-class stadiums.
               </p>
             </div>
 
             {/* Central Heartland */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">02.</span> Central Heartland
+                <span className="text-[#01b47d]">02.</span> Central Heartland
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Connect Dallas with <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link> for an authentic American heartland experience, with BBQ rivalry and genuine Midwestern hospitality.
+                Connect Dallas with <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Kansas City</Link> for an authentic American heartland experience, with BBQ rivalry and genuine Midwestern hospitality.
               </p>
             </div>
 
             {/* Cross-Border Southern Circuit */}
-            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+            <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
               <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                <span className="text-emerald-500">03.</span> Cross-Border Southern Circuit
+                <span className="text-[#01b47d]">03.</span> Cross-Border Southern Circuit
               </h4>
               <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                Create an international adventure: Dallas (current) to <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, then cross into Mexico for <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link> — experiencing three countries' cultures in one amazing trip.
+                Create an international adventure: Dallas (current) to <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>, then cross into Mexico for <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link> and <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link> — experiencing three countries' cultures in one amazing trip.
               </p>
             </div>
           </div>
           
           <div className="mt-8 flex justify-center">
-            <Link to="/world-cup-2026-host-cities" className="inline-flex items-center gap-2 px-6 py-3 bg-emerald-600 text-white font-medium rounded-full hover:bg-emerald-700 transition-all shadow-lg hover:shadow-xl">
+            <Link to="/world-cup-2026-host-cities" className="inline-flex items-center gap-2 px-6 py-3 bg-[#01b47d] text-white font-medium rounded-full hover:bg-[#008f63] transition-all shadow-lg hover:shadow-xl">
               <span>Browse All World Cup 2026 Host Cities</span>
               <i className="ri-arrow-right-line"></i>
             </Link>
@@ -2034,8 +2034,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="why-dallas-wins-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">The Winning Hand</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">The Winning Hand</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Nine Matches:</strong> Most of any host city</li>
                <li>• <strong>Five Weeks:</strong> Sustained tournament energy</li>
@@ -2070,15 +2070,15 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           {/* [STAT HIGHLIGHT] */}
           <div className="my-8 grid grid-cols-1 md:grid-cols-3 gap-4">
              <div className="p-4 bg-slate-50 dark:bg-navy-800 rounded-lg text-center border border-slate-200 dark:border-navy-700">
-                <div className="text-3xl font-bold text-emerald-600 mb-1">9</div>
+                <div className="text-3xl font-bold text-[#01b47d] mb-1">9</div>
                 <div className="text-xs uppercase tracking-wide text-slate-500">Matches Hosted</div>
              </div>
              <div className="p-4 bg-slate-50 dark:bg-navy-800 rounded-lg text-center border border-slate-200 dark:border-navy-700">
-                <div className="text-3xl font-bold text-emerald-600 mb-1">5</div>
+                <div className="text-3xl font-bold text-[#01b47d] mb-1">5</div>
                 <div className="text-xs uppercase tracking-wide text-slate-500">Weeks of Action</div>
              </div>
              <div className="p-4 bg-slate-50 dark:bg-navy-800 rounded-lg text-center border border-slate-200 dark:border-navy-700">
-                <div className="text-3xl font-bold text-emerald-600 mb-1">80k+</div>
+                <div className="text-3xl font-bold text-[#01b47d] mb-1">80k+</div>
                 <div className="text-xs uppercase tracking-wide text-slate-500">Capacity per Match</div>
              </div>
           </div>
@@ -2092,7 +2092,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           </p>
           
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "You'll eat barbecue with Argentine fans, watch matches in air-conditioned comfort, and experience Texas hospitality that treats strangers like neighbors."
           </blockquote>
 
@@ -2100,7 +2100,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             Beyond logistics, Dallas delivers culture. This is <strong>real America</strong>—not coastal elite perception, but heartland values mixed with global sophistication. You'll eat barbecue with Argentine fans, watch matches in air-conditioned comfort, two-step at honky-tonks with Brazilian supporters, and experience Texas hospitality that treats strangers like neighbors.
           </p>
           
-          <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-purple-50 to-indigo-50 border border-purple-200 dark:from-purple-900/20 dark:to-indigo-900/20 dark:border-purple-800 shadow-sm">
+          <div className="mt-8 p-6 rounded-xl bg-gradient-to-br from-purple-50 to-[#01b47d]/5 border border-purple-200 dark:from-purple-900/20 dark:to-[#008f63]/20 dark:border-purple-800 shadow-sm">
             <div className="flex items-start gap-4">
                <div className="p-3 bg-purple-100 dark:bg-purple-800 rounded-full text-purple-600 dark:text-purple-300">
                  <i className="ri-trophy-line text-2xl"></i>
@@ -2122,8 +2122,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <div id="checklist-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Readiness Tracker</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Readiness Tracker</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Tickets:</strong> Official FIFA channels only</li>
                <li>• <strong>Logistics:</strong> Hotel & Flight confirmed</li>
@@ -2152,56 +2152,56 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
              From tickets to sunscreen, ensure you are match-ready with this essential inventory.
           </p>
 
-          <div className="p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl border border-emerald-100 dark:border-emerald-800/30">
+          <div className="p-6 bg-[#01b47d]/5 dark:bg-[#008f63]/20 rounded-xl border border-[#01b47d]/10 dark:border-[#008f63]/30">
             <ul className="leading-relaxed space-y-3 list-none">
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Match tickets</strong> secured through FIFA official channels</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Hotel booked</strong> (Downtown for culture, Arlington for stadium proximity)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Flights confirmed</strong> to DFW (or DAL if available)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Transportation plan finalized</strong> (DART+TRE combo, rideshare budget, or parking pre-purchased)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>GoPass app downloaded</strong> for DART/TRE mobile tickets</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Attraction tickets purchased online</strong> (Sixth Floor Museum, Reunion Tower, museums)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Restaurant reservations made</strong> for upscale dining</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Stadium-compliant clear bag purchased</strong> (12" x 6" x 12" max)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Sun protection packed</strong> (hat, sunglasses, SPF 50+ sunscreen)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Portable phone charger</strong> (Texas heat drains batteries fast)</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-emerald-600 dark:text-emerald-400 mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
+                <span className="text-[#01b47d] dark:text-[#01b47d] mt-1"><i className="ri-checkbox-circle-fill text-xl"></i></span>
                 <span><strong>Cowboy boots optional</strong> (but when in Rome...)</span>
               </li>
             </ul>
           </div>
           
-          <p className="leading-relaxed mt-8 text-lg font-medium text-slate-800 dark:text-slate-200 border-l-4 border-emerald-500 pl-4 italic">
+          <p className="leading-relaxed mt-8 text-lg font-medium text-slate-800 dark:text-slate-200 border-l-4 border-[#01b47d] pl-4 italic">
             The 2026 FIFA World Cup in Dallas isn't just another tournament stop—it's the <strong>most</strong> of any city's World Cup experience. Nine matches mean you can build an entire summer vacation around knockout drama, explore Texas between games, and witness the semi-final that determines who reaches football's ultimate stage.
           </p>
           <hr className="editorial-divider" />
@@ -2228,7 +2228,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
           <p className="leading-relaxed text-lg text-slate-700 dark:text-slate-300 mb-6">
             Whether you're there for the Longhorn cattle drive and barbecue, the Arts District museums and culture, or simply 80,000 fans roaring inside Jerry World, Dallas delivers what it promises: <strong>everything bigger</strong>.
           </p>
-          <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-br from-emerald-50 to-blue-50 dark:from-emerald-900/20 dark:to-blue-900/20 rounded-2xl border border-emerald-100 dark:border-emerald-800/30 text-center">
+          <div className="flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-2xl border border-[#01b47d]/10 dark:border-[#008f63]/30 text-center">
             <p className="text-2xl md:text-3xl font-bold text-slate-900 dark:text-slate-100 mb-2">
               <strong>Y'all ready for kickoff?</strong>
             </p>
@@ -2245,7 +2245,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -2266,21 +2266,21 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -2299,8 +2299,8 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Texas Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Houston</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Texas Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Houston</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Complete guide to NRG Stadium and Space City's World Cup events.</p>
               </div>
             </Link>
@@ -2330,7 +2330,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -2349,7 +2349,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -2361,7 +2361,7 @@ Located at 1 AT&T Way, Arlington, TX 76011, the stadium sits midway between Dall
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

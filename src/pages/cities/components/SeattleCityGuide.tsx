@@ -21,7 +21,7 @@ export function SeattleCityGuide() {
         const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
         const pageUrl = `${siteUrl}/world-cup-2026-host-cities/seattle-world-cup-2026-guide`;
         const ogImage = `${siteUrl}/images/cities/seattle-world-cup-2026.webp`;
-        const title = 'Seattle World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'Seattle World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Comprehensive Seattle travel guide for FIFA World Cup 2026: Lumen Field details, match schedule, transportation, and where to stay.';
         // eslint-disable-next-line react-hooks/rules-of-hooks
         useEffect(() => {
@@ -164,7 +164,7 @@ export function SeattleCityGuide() {
         {/* The Stadium: Lumen Field (Seattle Stadium) */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-building-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             The Stadium: Lumen Field (Seattle Stadium)
           </h2>
           <div className="space-y-6">
@@ -197,7 +197,7 @@ export function SeattleCityGuide() {
         {/* The Match Schedule */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-calendar-event-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-calendar-event-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             The Match Schedule: Six Games Including Knockout Drama
           </h2>
           <div className="space-y-6">
@@ -236,7 +236,7 @@ export function SeattleCityGuide() {
         {/* Getting to Lumen Field: Seattle's Transit Advantage */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-train-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Getting to Lumen Field: Seattle's Transit Advantage
           </h2>
           <div className="space-y-6">
@@ -263,7 +263,7 @@ export function SeattleCityGuide() {
               <p className="leading-relaxed">
                 The Link connects <strong>SeaTac Airport</strong> directly to downtown and the stadium via dedicated airport station with covered walkway (free electric shuttle carts available if you have heavy luggage). No traffic variables, no surge pricing, predictable timing. Download the <strong>OneBusAway app</strong> for real-time arrivals.
               </p>
-              <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900 dark:bg-emerald-950/40">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
                 <p className="m-0 leading-relaxed"><strong>Pro tip:</strong> Purchase an <strong>ORCA card</strong> at any Link station or download the <strong>Transit GO Ticket app</strong> for mobile ticketing. Saves time versus buying paper tickets at machines.</p>
               </div>
             </div>
@@ -320,7 +320,7 @@ export function SeattleCityGuide() {
               </p>
               <p className="leading-relaxed"><strong>Cost:</strong> $40-60 for standard lots (pre-purchase online), $100+ for VIP proximity</p>
               <p className="leading-relaxed"><strong>Reality:</strong> Post-match exodus takes 60-90 minutes to clear lots and access highways</p>
-              <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900 dark:bg-emerald-950/40">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
                 <p className="m-0 leading-relaxed"><strong>Smart parking hack:</strong> Park at <strong>Northgate Station</strong> or other suburban Link stations with free/cheap parking ($4.50/day), then take light rail to stadium. Saves money and post-match stress.</p>
               </div>
             </div>
@@ -331,7 +331,7 @@ export function SeattleCityGuide() {
         {/* Where to Stay: Neighborhood Playbook for Seattle */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-hotel-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Where to Stay: Neighborhood Playbook for Seattle
           </h2>
           <div className="space-y-6">
@@ -376,7 +376,7 @@ export function SeattleCityGuide() {
         {/* Beyond the Matches: What to Do in Seattle */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-map-2-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-map-2-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Beyond the Matches: What to Do in Seattle
           </h2>
           <div className="space-y-6">
@@ -389,7 +389,7 @@ export function SeattleCityGuide() {
               The soul of Seattle since 1907. Yes, tourists flock here—because it's genuinely spectacular. Watch fishmongers <strong>throw salmon</strong> at Pike Place Fish Market, explore <strong>500+ vendors</strong> selling everything from tulips to handmade crafts, grab <strong>clam chowder</strong> at Pike Place Chowder (lines form early), and visit the <strong>original Starbucks</strong> (more historical curiosity than coffee experience). The Market is multi-level—lower floors house quirky shops, vintage posters, and hidden restaurants most tourists miss.
             </p>
             <p className="leading-relaxed"><strong>Free, always open.</strong> Located downtown; Link to Westlake Station, walk 5 minutes downhill.</p>
-            <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4 dark:border-emerald-900 dark:bg-emerald-950/40">
+            <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
               <p className="m-0 leading-relaxed"><strong>Pro tip:</strong> Visit at <strong>8 AM when vendors set up</strong> to avoid peak crowds. Weekday mornings offer authentic market experience without cruise ship hordes.</p>
             </div>
             <h4 className="editorial-h4">Space Needle &amp; Seattle Center</h4>
@@ -438,7 +438,7 @@ export function SeattleCityGuide() {
         {/* Seattle Food Scene: Fuel for Match Days */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-restaurant-2-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Seattle Food Scene: Fuel for Match Days
           </h2>
           <div className="space-y-6">
@@ -485,7 +485,7 @@ export function SeattleCityGuide() {
         {/* Practical Information: What You Need to Know */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-information-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Practical Information: What You Need to Know
           </h2>
           <div className="space-y-6">
@@ -541,7 +541,7 @@ export function SeattleCityGuide() {
         {/* Language & Culture */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-earth-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-earth-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Language & Culture
           </h2>
           <div className="space-y-6">
@@ -561,7 +561,7 @@ export function SeattleCityGuide() {
         {/* FIFA Fan Festival & Match Day Atmosphere */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-football-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             FIFA Fan Festival &amp; Match Day Atmosphere
           </h2>
           <div className="space-y-6">
@@ -595,7 +595,7 @@ export function SeattleCityGuide() {
         {/* Plan Your Pacific Northwest World Cup Journey */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-map-pin-user-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-map-pin-user-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Plan Your Pacific Northwest World Cup Journey
           </h2>
           <div className="space-y-6">
@@ -627,7 +627,7 @@ export function SeattleCityGuide() {
         {/* Booking Strategy: How to Plan Your Seattle World Cup Trip */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-calendar-check-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-calendar-check-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Booking Strategy: How to Plan Your Seattle World Cup Trip
           </h2>
           <div className="space-y-6">
@@ -667,7 +667,7 @@ export function SeattleCityGuide() {
         {/* Why Seattle Wins the World Cup Experience */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-trophy-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-trophy-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Why Seattle Wins the World Cup Experience
           </h2>
           <div className="space-y-6">
@@ -693,7 +693,7 @@ export function SeattleCityGuide() {
         {/* Final Checklist: Your Seattle World Cup Essentials */}
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-check-double-line text-emerald-600 dark:text-emerald-400 text-4xl"></i>
+            <i className="ri-check-double-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
             Final Checklist: Your Seattle World Cup Essentials
           </h2>
           <div className="space-y-6">
@@ -727,7 +727,7 @@ export function SeattleCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

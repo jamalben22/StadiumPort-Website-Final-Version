@@ -45,7 +45,7 @@ export default function GuidesArticlePage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pageUrl = `${siteUrl}${url}`
-    const pageTitle = `${title} – Guide | StadiumPort`
+    const pageTitle = `${title} – Guide | Stadiumport`
     const image = `${siteUrl}${heroImageSrc}`
     const desc = 'Comprehensive World Cup guide template with editorial hero, breadcrumb navigation, and structured content blocks.'
     const entry = getEditorialEntry('article',(slug || ''))
@@ -833,14 +833,14 @@ export default function GuidesArticlePage() {
               <hr className="my-8 border-gray-300" />
 
               <h2 className="editorial-h2">Related World Cup 2026 Safety Guides</h2>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Main Safety Hub</a>:</strong> Comprehensive overview of all safety considerations</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Travel Insurance Guide</a>:</strong> Detailed coverage comparison and claim filing</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Stadium Security Guide</a>:</strong> Security procedures and entry requirements</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Health and Medical Guide</a>:</strong> Medical preparation and heat safety</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Transportation Safety</a>:</strong> Moving safely between host cities</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Scam Prevention Guide</a>:</strong> Avoid ticket fraud and travel scams</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Solo Travel Safety</a>:</strong> Attending World Cup 2026 alone</p>
-              <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Family Safety Guide</a>:</strong> Taking kids to World Cup 2026</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Main Safety Hub</a>:</strong> Comprehensive overview of all safety considerations</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Travel Insurance Guide</a>:</strong> Detailed coverage comparison and claim filing</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Stadium Security Guide</a>:</strong> Security procedures and entry requirements</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Health and Medical Guide</a>:</strong> Medical preparation and heat safety</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Transportation Safety</a>:</strong> Moving safely between host cities</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Scam Prevention Guide</a>:</strong> Avoid ticket fraud and travel scams</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Solo Travel Safety</a>:</strong> Attending World Cup 2026 alone</p>
+              <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Family Safety Guide</a>:</strong> Taking kids to World Cup 2026</p>
 
               <hr className="my-8 border-gray-300" />
 
@@ -1498,7 +1498,7 @@ export default function GuidesArticlePage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

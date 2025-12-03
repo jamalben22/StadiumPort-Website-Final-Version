@@ -102,7 +102,7 @@ export default function TravelGuideArticlePage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pageUrl = `${siteUrl}/travel-guides/${slug}`
-    const pageTitle = `${title} – Travel Guides | StadiumPort`
+    const pageTitle = `${title} – Travel Guides | Stadiumport`
     const image = guide?.image?.startsWith('http') ? guide.image : `${siteUrl}${guide?.image || '/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp'}`
     const cityMatch = (title || '').match(/New York|Los Angeles|Miami|Dallas|Toronto|Vancouver|Mexico City|Guadalajara|Kansas City|Boston|Philadelphia|Houston|Seattle|San Francisco/i)
     const tags = ['World Cup 2026', 'Travel Guides']
@@ -158,7 +158,7 @@ export default function TravelGuideArticlePage() {
             <h1 className="editorial-hero-title">{title}</h1>
             <div className="editorial-hero-meta">
               <div className="meta-item flex items-center gap-2"><i className="ri-bookmark-line"></i><span>{guide?.category || 'Travel Guide'}</span></div>
-              <div className="meta-item flex items-center gap-2"><i className="ri-user-line"></i><span>{guide?.author || 'StadiumPort'}</span></div>
+              <div className="meta-item flex items-center gap-2"><i className="ri-user-line"></i><span>{guide?.author || 'Stadiumport'}</span></div>
               <div className="meta-item flex items-center gap-2"><i className="ri-time-line"></i><span>{guide?.readTime || 'Read time: TBD'}</span></div>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function TravelGuideArticlePage() {
       <main id="main-content" className="editorial-article py-12">
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-emerald-500"></i>
+            <i className="ri-information-line text-[#01b47d]"></i>
             Content Coming Soon
           </h2>
           <p className="whitespace-pre-line">Detailed travel guide content will be available soon.</p>
@@ -178,7 +178,7 @@ export default function TravelGuideArticlePage() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, Suspense, lazy, useCallback } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GameProvider, useGame } from '../features/game/context/GameContext';
 import { GameLayout } from '../features/game/components/GameLayout';
@@ -70,6 +70,7 @@ const pageTransition = {
 function PredictGameContent() {
   const navigate = useNavigate();
   const { step } = useParams();
+  const [searchParams] = useSearchParams();
   const { currentStep, setCurrentStep, thirdPlacePicks, knockoutPicks, completedGroupIds, resetGame } = useGame();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [direction, setDirection] = useState(0);
@@ -91,7 +92,8 @@ function PredictGameContent() {
       'third-place-qualifiers': 1,
       'knockout-bracket': 2,
       'submit': 3,
-      'results': 4
+      'results': 4,
+      'success': 4
     };
 
     if (stepMap[step] !== undefined && stepMap[step] !== currentStep) {
@@ -235,7 +237,7 @@ function PredictGameContent() {
                         <div 
                           className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 border-4 
                             ${isCompleted 
-                              ? 'bg-emerald-500 border-emerald-500 text-white' 
+                              ? 'bg-[#01b47d] border-[#01b47d] text-white' 
                               : isCurrent 
                                 ? 'bg-white dark:bg-navy-800 border-[#FBBF24] text-[#FBBF24] shadow-[0_0_15px_rgba(251,191,36,0.5)]' 
                                 : 'bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-600 text-slate-400'
@@ -248,7 +250,7 @@ function PredictGameContent() {
                             ${isCurrent 
                               ? 'text-[#FBBF24] font-bold' 
                               : isCompleted 
-                                ? 'text-emerald-500' 
+                                ? 'text-[#01b47d]' 
                                 : 'text-slate-400'
                             } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
                           >

@@ -328,7 +328,7 @@ export default function TravelTipsPage() {
   }, [isModalOpen]);
 
   useEffect(() => {
-    const pageTitle = 'World Cup 2026 Travel Tips – Expert Advice | StadiumPort';
+    const pageTitle = 'World Cup 2026 Travel Tips – Expert Advice | Stadiumport';
     const descriptionText = 'Comprehensive World Cup 2026 travel tips: flights, hotels, itineraries, safety, and more across 16 host cities.';
     const siteUrl = (import.meta.env.VITE_SITE_URL as string) || window.location.origin;
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips`;
@@ -845,9 +845,9 @@ export default function TravelTipsPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
           
           {/* Floating Glass Elements - Premium Apple Style */}
-          <div className="absolute top-6 left-4 w-8 h-8 xs:top-8 xs:left-6 xs:w-12 xs:h-12 sm:top-12 sm:left-8 sm:w-20 sm:h-20 md:top-16 md:left-10 md:w-28 md:h-28 lg:top-20 lg:left-12 lg:w-40 lg:h-40 xl:w-64 xl:h-64 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-6 left-4 w-8 h-8 xs:top-8 xs:left-6 xs:w-12 xs:h-12 sm:top-12 sm:left-8 sm:w-20 sm:h-20 md:top-16 md:left-10 md:w-28 md:h-28 lg:top-20 lg:left-12 lg:w-40 lg:h-40 xl:w-64 xl:h-64 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 animate-float"></div>
           <div className="absolute bottom-6 right-4 w-12 h-12 xs:bottom-8 xs:right-6 xs:w-16 xs:h-16 sm:bottom-12 sm:right-8 sm:w-24 sm:h-24 md:bottom-16 md:right-10 md:w-32 md:h-32 lg:bottom-20 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-8 h-8 xs:top-1/4 xs:left-1/2 xs:w-12 xs:h-12 sm:top-1/3 sm:left-1/2 sm:w-16 sm:h-16 md:top-1/2 md:left-1/2 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-48 xl:h-48 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+          <div className="absolute top-1/3 left-1/2 w-8 h-8 xs:top-1/4 xs:left-1/2 xs:w-12 xs:h-12 sm:top-1/3 sm:left-1/2 sm:w-16 sm:h-16 md:top-1/2 md:left-1/2 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-48 xl:h-48 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 lg:py-48">
@@ -855,7 +855,7 @@ export default function TravelTipsPage() {
             {/* Premium Breadcrumb - Minimal Luxury */}
             <div className="mb-8">
               <nav className="flex items-center justify-center space-x-2 text-sm">
-                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-[#008f63] dark:hover:text-[#008f63] transition-colors duration-300 font-medium">
                   Home
                 </Link>
                 <span className="text-slate-300 dark:text-slate-600">›</span>
@@ -868,7 +868,7 @@ export default function TravelTipsPage() {
               <h1 className="font-space font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-slate-900 dark:text-white mb-4 md:mb-6 tracking-tight leading-tight">
                 World Cup 2026 Travel Tips: Save Money & Plan Smarter
               </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#01b47d] to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
                 Expert strategies from veteran World Cup travelers. Master budget optimization, booking timing, transportation hacks, accommodation deals, and insider tips to maximize your experience across all 16 host cities in USA, Canada, and Mexico.
               </p>
@@ -879,9 +879,9 @@ export default function TravelTipsPage() {
               
               {/* Savings Card - Apple Emerald */}
               <div className="group relative text-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-all duration-700">$2,500+</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#01b47d]/10 dark:hover:shadow-[#01b47d]/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-all duration-700">$2,500+</div>
                   <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Average Trip Savings</div>
                 </div>
               </div>
@@ -897,9 +897,9 @@ export default function TravelTipsPage() {
 
               {/* Cities Card - Apple Blue */}
               <div className="group relative text-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
-                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-all duration-700">16</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-4 md:p-6 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-2xl border border-white/30 dark:border-navy-800/30 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#01b47d]/10 dark:hover:shadow-[#01b47d]/5 min-h-[120px] md:min-h-[140px] flex flex-col justify-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-space font-bold text-slate-900 dark:text-white mb-1 md:mb-2 group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-all duration-700">16</div>
                   <div className="text-slate-600 dark:text-slate-400 font-inter text-xs sm:text-sm font-medium tracking-wide uppercase leading-tight">Host Cities Covered</div>
                 </div>
               </div>
@@ -924,7 +924,7 @@ export default function TravelTipsPage() {
               <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
                 Your Complete World Cup 2026 Travel Tips Library
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#01b47d] to-purple-500 mx-auto mb-8 rounded-full"></div>
               <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
                 Browse 75+ expert travel tips organized by category—from budget hacks and booking strategies to safety protocols and local transportation. Everything you need to plan your perfect World Cup 2026 journey across USA, Canada, and Mexico.
               </p>
@@ -934,7 +934,7 @@ export default function TravelTipsPage() {
                 <div className="mb-16 md:mb-20">
                   <div className="text-center mb-12 md:mb-16">
                     <div className="inline-flex items-center space-x-3 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-8 py-4 mb-6">
-                      <i className="ri-filter-3-line text-emerald-600 text-lg"></i>
+                      <i className="ri-filter-3-line text-[#01b47d] text-lg"></i>
                       <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering System</span>
                     </div>
                     <h3 className="font-space font-bold text-3xl md:text-4xl text-navy-900 dark:text-white mb-6 tracking-tight">
@@ -944,13 +944,13 @@ export default function TravelTipsPage() {
                       Filter by category to instantly access the tips that matter most for your World Cup 2026 planning.
                     </p>
                   </div>
-                  <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-50/30 dark:from-[#008f63]/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="relative z-10">
                       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
                         <div className="lg:col-span-2 space-y-8">
                           <div className="flex items-center space-x-4 mb-8">
-                            <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                            <div className="w-12 h-12 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-2xl flex items-center justify-center shadow-lg shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500">
                               <i className="ri-bookmark-line text-white text-xl"></i>
                             </div>
                             <div>
@@ -964,13 +964,13 @@ export default function TravelTipsPage() {
                                   onClick={() => setSelectedCategory(category.id)}
                                   className={`${
                                     selectedCategory === category.id
-                                      ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/30 scale-105'
-                                      : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-105 hover:shadow-lg'
+                                      ? 'bg-gradient-to-r from-[#01b47d] to-[#01b47d] text-white shadow-2xl shadow-[#01b47d]/30 scale-105'
+                                      : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-[#008f63] dark:hover:border-[#008f63] hover:scale-105 hover:shadow-lg'
                                   } w-full px-6 py-4 rounded-2xl text-sm font-semibold transition-all duration-500 cursor-pointer relative overflow-hidden`}
                                 >
                                   <div className="relative z-10">{category.name}</div>
                                   {selectedCategory === category.id && (
-                                    <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl"></div>
+                                    <div className="absolute inset-0 bg-gradient-to-r from-[#01b47d]/20 to-[#01b47d]/20 rounded-2xl"></div>
                                   )}
                                 </button>
                               </div>
@@ -986,9 +986,9 @@ export default function TravelTipsPage() {
                               <h4 className="font-space font-bold text-xl md:text-2xl text-navy-900 dark:text-white">Live Results</h4>
                             </div>
                           </div>
-                          <div className="group relative bg-gradient-to-br from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                          <div className="group relative bg-gradient-to-br from-[#01b47d]/5 to-gold-50 dark:from-[#008f63]/20 dark:to-gold-900/20 rounded-2xl p-8 border border-[#01b47d]/20 dark:border-[#008f63]/50 hover:border-[#008f63] dark:hover:border-[#008f63] transition-all duration-500 hover:scale-105 hover:shadow-xl">
                             <div className="text-center">
-                              <div className="text-4xl md:text-5xl font-space font-bold text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
+                              <div className="text-4xl md:text-5xl font-space font-bold text-[#01b47d] mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
                               <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">Currently Displaying</div>
                               <div className="text-sm text-slate-500 dark:text-slate-500">Real-Time Filtering</div>
                             </div>
@@ -1000,8 +1000,8 @@ export default function TravelTipsPage() {
                 </div>
                 <div className="grid gap-8 md:gap-10">
                   {filteredTips.map((tip, index) => (
-                    <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20">
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-50/30 dark:from-[#008f63]/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                       <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
                         <div className="relative lg:col-span-1">
                           <div className="relative overflow-hidden rounded-2xl">
@@ -1015,7 +1015,7 @@ export default function TravelTipsPage() {
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-2xl"></div>
                           </div>
-                          <div className="absolute top-6 right-6 bg-emerald-500/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-emerald-400/30 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                          <div className="absolute top-6 right-6 bg-[#01b47d]/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-[#01b47d]/30 shadow-lg shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500">
                             {tip.savings}
                           </div>
                         </div>
@@ -1033,7 +1033,7 @@ export default function TravelTipsPage() {
                               <span>{tip.difficulty}</span>
                             </span>
                           </div>
-                          <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                          <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-[#01b47d] group-hover:to-purple-600 dark:group-hover:from-[#01b47d] dark:group-hover:to-purple-400 transition-all duration-700">
                             {tip.title}
                           </h3>
                           <p className="text-slate-600 dark:text-slate-400 font-inter text-base md:text-lg mb-8 leading-relaxed font-light group-hover:text-slate-700 dark:group-hover:text-slate-300 transition-colors duration-700">
@@ -1042,7 +1042,7 @@ export default function TravelTipsPage() {
                           <div className="space-y-4 mb-8">
                             {tip.tips.slice(0, 3).map((tipItem, idx) => (
                               <div key={idx} className="flex items-start space-x-3">
-                                <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-emerald-500/20">
+                                <div className="w-6 h-6 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-[#01b47d]/20">
                                   <i className="ri-check-line text-white text-xs"></i>
                                 </div>
                                 <span className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">{tipItem}</span>
@@ -1051,7 +1051,7 @@ export default function TravelTipsPage() {
                           </div>
                           <a
                             href={`/world-cup-2026-travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`}
-                            className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
+                            className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#008f63] text-white shadow-2xl shadow-[#01b47d]/30 hover:shadow-3xl hover:shadow-[#01b47d]/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
                           >
                             <span>Get This Strategy</span>
                             <i className="ri-arrow-right-line ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1066,10 +1066,10 @@ export default function TravelTipsPage() {
             <div className="mt-16">
               <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
                   <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                    <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                    <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
                       <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                     </div>
-                    <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                    <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-[#008f63] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
                       Complete Your World Cup 2026 Travel Planning
                     </h2>
                     <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
@@ -1077,12 +1077,12 @@ export default function TravelTipsPage() {
                     </p>
                   </div>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
-                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
-                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                       <div className="relative z-10">
                         <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
-                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:shadow-[#01b47d]/50 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                           </div>
                           <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">Stadium & Match Day Guides</h3>
@@ -1090,14 +1090,14 @@ export default function TravelTipsPage() {
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg mb-8 sm:mb-10 leading-relaxed font-light">
                           Get venue-specific intel for all 16 stadiums—seating charts, transportation access, parking options, security protocols, nearby hotels, and what makes each venue unique from MetLife Stadium's Final to Estadio Azteca's historic atmosphere.
                         </p>
-                        <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
+                        <a href="/world-cup-2026-stadiums" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#008f63] text-white shadow-2xl shadow-[#01b47d]/30 hover:shadow-3xl hover:shadow-[#01b47d]/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto">
                           <span>Explore All 16 Stadiums</span>
                           <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
                     </div>
                     <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
-                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-[#01b47d]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                       <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
                       <div className="relative z-10">
                         <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
@@ -1118,23 +1118,23 @@ export default function TravelTipsPage() {
                   </div>
                   <div className="mb-12 sm:mb-16 md:mb-20">
                     <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-                      <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-emerald-500/30">
+                      <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-[#01b47d]/30">
                         <i className="ri-tools-line text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-900 dark:text-white mb-4 sm:mb-6 tracking-tight">Essential Planning Tools & Resources</h3>
                       <p className="text-slate-600 dark:text-slate-400 font-inter text-base sm:text-lg md:text-xl lg:text-2xl max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-4xl mx-auto font-light">Everything you need to organize your perfect World Cup 2026 trip:</p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
-                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-2xl group-hover:from-blue-400/25 transition-all duration-700"></div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-2xl group-hover:from-[#01b47d]/25 transition-all duration-700"></div>
                         <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
-                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-blue-500/30 group-hover:scale-110 transition-all duration-500">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-file-list-3-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
                           <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Ultimate Planning Checklist</h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Complete step-by-step preparation timeline—tickets, visas, flights, accommodations, insurance, packing, and matchday essentials from 6 months out to kickoff.</p>
-                        <a href="/world-cup-2026-travel-tips/complete-planning-checklist" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                        <a href="/world-cup-2026-travel-tips/complete-planning-checklist" className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Get Checklist</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
@@ -1148,7 +1148,7 @@ export default function TravelTipsPage() {
                           <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Visa & Entry Requirements  </h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Comprehensive entry requirements, application processes, processing times, and border crossing tips for USA, Canada, and Mexico.</p>
-                        <a href="/world-cup-2026-travel-tips/visa-requirements-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                        <a href="/world-cup-2026-travel-tips/visa-requirements-guide" className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Check Visa Requirements</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
@@ -1162,7 +1162,7 @@ export default function TravelTipsPage() {
                           <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Trip Budget Calculator</h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Estimate your total costs with our detailed budget planner covering flights, hotels, tickets, food, transport, and activities—customized by travel style (budget/mid-range/luxury).</p>
-                        <a href="/world-cup-2026-travel-tips/budget-planning-tool" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                        <a href="/world-cup-2026-travel-tips/budget-planning-tool" className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Calculate Your Budget</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
@@ -1176,7 +1176,7 @@ export default function TravelTipsPage() {
                           <h4 className="font-space font-bold text-lg sm:text-xl text-navy-900 dark:text-white tracking-tight">Accommodation Booking Strategy</h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed font-light">Find the best hotels near stadiums, fan-friendly neighborhoods, booking timing strategies, and money-saving tips for all 16 host cities.</p>
-                        <a href="/world-cup-2026-travel-tips/accommodation-finder" className="inline-flex items-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center">
+                        <a href="/world-cup-2026-travel-tips/accommodation-finder" className="inline-flex items-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center">
                           <span>Find Best Hotels</span>
                           <i className="ri-arrow-right-line ml-1"></i>
                         </a>
@@ -1190,21 +1190,21 @@ export default function TravelTipsPage() {
                           <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Transportation Master Guide</h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Navigate airports, public transit systems, rental cars, intercity trains, and flights between World Cup cities—including USA-Canada-Mexico border crossings.</p>
-                        <a href="/world-cup-2026-travel-tips/transportation-guide" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                        <a href="/world-cup-2026-travel-tips/transportation-guide" className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>Plan Your Transport</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
                       </div>
-                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:shadow-indigo-500/30 transition-all duration-700 hover:-translate-y-3">
-                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-400/15 to-transparent rounded-full blur-2xl group-hover:from-indigo-400/25 transition-all duration-700"></div>
+                      <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-2xl group-hover:from-[#01b47d]/25 transition-all duration-700"></div>
                         <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
-                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-indigo-500/30 group-hover:scale-110 transition-all duration-500">
+                          <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:scale-110 transition-all duration-500">
                             <i className="ri-shield-check-line text-white text-base sm:text-lg md:text-xl"></i>
                           </div>
                           <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">Safety & Security Hub</h4>
                         </div>
                         <p className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base mb-3 sm:mb-4 md:mb-6 leading-relaxed font-light">Stay safe across all three countries with city-specific safety protocols, emergency contacts, travel insurance recommendations, and what to avoid.</p>
-                        <a href="/world-cup-2026-travel-tips/safety-security-tips" className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
+                        <a href="/world-cup-2026-travel-tips/safety-security-tips" className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto">
                           <span>View Safety Guide</span>
                           <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
                         </a>
@@ -1236,9 +1236,9 @@ export default function TravelTipsPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
           
           {/* Floating Glass Elements - Premium Apple Style */}
-          <div className="absolute top-10 left-6 w-24 h-24 xs:top-12 xs:left-8 xs:w-32 xs:h-32 sm:top-16 sm:left-10 sm:w-48 sm:h-48 md:top-20 md:left-12 md:w-56 md:h-56 lg:top-24 lg:left-16 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 animate-float"></div>
+          <div className="absolute top-10 left-6 w-24 h-24 xs:top-12 xs:left-8 xs:w-32 xs:h-32 sm:top-16 sm:left-10 sm:w-48 sm:h-48 md:top-20 md:left-12 md:w-56 md:h-56 lg:top-24 lg:left-16 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 animate-float"></div>
           <div className="absolute bottom-10 right-6 w-32 h-32 xs:bottom-12 xs:right-8 xs:w-40 xs:h-40 sm:bottom-16 sm:right-10 sm:w-56 sm:h-56 md:bottom-20 md:right-12 md:w-64 md:h-64 lg:bottom-24 lg:right-16 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-20 h-20 xs:top-1/2 xs:left-1/2 xs:w-28 xs:h-28 sm:top-1/2 sm:left-1/2 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-blue-500/5 dark:bg-blue-500/10 backdrop-blur-3xl rounded-full border border-blue-500/10 dark:border-blue-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+          <div className="absolute top-1/3 left-1/2 w-20 h-20 xs:top-1/2 xs:left-1/2 xs:w-28 xs:h-28 sm:top-1/2 sm:left-1/2 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1246,7 +1246,7 @@ export default function TravelTipsPage() {
             <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 tracking-tight">
               Complete World Cup 2026 Travel Guide Library
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-purple-500 mx-auto mb-8 rounded-full"></div>
+            <div className="w-24 h-1 bg-gradient-to-r from-[#01b47d] to-purple-500 mx-auto mb-8 rounded-full"></div>
             <p className="text-slate-600 dark:text-slate-400 font-inter text-xl md:text-2xl max-w-3xl mx-auto leading-relaxed font-light">
               Browse all 47 expert tips organized by category. From budget strategies to safety advice everything you need to plan your perfect World Cup journey.
             </p>
@@ -1257,7 +1257,7 @@ export default function TravelTipsPage() {
               <div className="mb-16 md:mb-20">
                 <div className="text-center mb-12 md:mb-16">
                   <div className="inline-flex items-center space-x-3 bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl border border-white/20 dark:border-navy-700/50 rounded-full px-8 py-4 mb-6">
-                    <i className="ri-filter-3-line text-emerald-600 text-lg"></i>
+                    <i className="ri-filter-3-line text-[#01b47d] text-lg"></i>
                     <span className="text-slate-700 dark:text-slate-300 font-medium text-lg">Smart Filtering</span>
                   </div>
                   <h3 className="font-space font-bold text-3xl md:text-4xl text-navy-900 dark:text-white mb-6 tracking-tight">
@@ -1269,16 +1269,16 @@ export default function TravelTipsPage() {
                 </div>
 
                 {/* Apple-Level Premium Glass Card */}
-                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-8 md:p-12 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-2 border border-white/40 dark:border-navy-800/40">
                   {/* Premium Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-50/30 dark:from-[#008f63]/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   
                   <div className="relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12 items-start">
                       {/* Categories Section - Apple Premium */}
                       <div className="lg:col-span-2 space-y-8">
                         <div className="flex items-center space-x-4 mb-8">
-                          <div className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                          <div className="w-12 h-12 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-2xl flex items-center justify-center shadow-lg shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500">
                             <i className="ri-bookmark-line text-white text-xl"></i>
                           </div>
                           <div>
@@ -1295,13 +1295,13 @@ export default function TravelTipsPage() {
                                 onClick={() => setSelectedCategory(category.id)}
                                 className={`w-full px-6 py-4 rounded-2xl text-sm font-semibold transition-all duration-500 cursor-pointer relative overflow-hidden ${
                                   selectedCategory === category.id
-                                    ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 text-white shadow-2xl shadow-emerald-500/30 scale-105'
-                                    : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-105 hover:shadow-lg'
+                                    ? 'bg-gradient-to-r from-[#01b47d] to-[#01b47d] text-white shadow-2xl shadow-[#01b47d]/30 scale-105'
+                                    : 'bg-white/60 dark:bg-navy-700/60 text-slate-600 dark:text-slate-400 hover:bg-white/80 dark:hover:bg-navy-700/80 border border-slate-200/50 dark:border-navy-600/50 hover:border-[#008f63] dark:hover:border-[#008f63] hover:scale-105 hover:shadow-lg'
                                 }`}
                               >
                                 <div className="relative z-10">{category.name}</div>
                                 {selectedCategory === category.id && (
-                                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 rounded-2xl"></div>
+                                  <div className="absolute inset-0 bg-gradient-to-r from-[#01b47d]/20 to-[#01b47d]/20 rounded-2xl"></div>
                                 )}
                               </button>
                             </div>
@@ -1322,9 +1322,9 @@ export default function TravelTipsPage() {
                         </div>
                         
                         {/* Premium Stats Card */}
-                        <div className="group relative bg-gradient-to-br from-emerald-50 to-gold-50 dark:from-emerald-900/20 dark:to-gold-900/20 rounded-2xl p-8 border border-emerald-200/50 dark:border-emerald-800/50 hover:border-emerald-300 dark:hover:border-emerald-700 transition-all duration-500 hover:scale-105 hover:shadow-xl">
+                        <div className="group relative bg-gradient-to-br from-[#01b47d]/5 to-gold-50 dark:from-[#008f63]/20 dark:to-gold-900/20 rounded-2xl p-8 border border-[#01b47d]/20 dark:border-[#008f63]/50 hover:border-[#008f63] dark:hover:border-[#008f63] transition-all duration-500 hover:scale-105 hover:shadow-xl">
                           <div className="text-center">
-                            <div className="text-4xl md:text-5xl font-space font-bold text-emerald-600 mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
+                            <div className="text-4xl md:text-5xl font-space font-bold text-[#01b47d] mb-3 group-hover:scale-110 transition-transform duration-500">{filteredTips.length}</div>
                             <div className="text-base text-slate-600 dark:text-slate-400 font-medium mb-2">of {travelTips.length} tips match</div>
                             <div className="text-sm text-slate-500 dark:text-slate-500">Updated in real-time</div>
                           </div>
@@ -1338,9 +1338,9 @@ export default function TravelTipsPage() {
               {/* Apple-Level Premium Tips Grid */}
               <div className="grid gap-8 md:gap-10">
                 {filteredTips.map((tip, index) => (
-                  <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20">
+                  <div key={tip.id} className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20">
                     {/* Premium Background Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-50/30 dark:from-[#008f63]/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     
                     <div className="relative z-10 grid grid-cols-1 lg:grid-cols-3 gap-8 p-8">
                       {/* Premium Image Section */}
@@ -1358,7 +1358,7 @@ export default function TravelTipsPage() {
                         </div>
                         
                         {/* Premium Savings Badge - Apple Style */}
-                        <div className="absolute top-6 right-6 bg-emerald-500/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-emerald-400/30 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500">
+                        <div className="absolute top-6 right-6 bg-[#01b47d]/90 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-bold border border-[#01b47d]/30 shadow-lg shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500">
                           {tip.savings}
                         </div>
                       </div>
@@ -1381,7 +1381,7 @@ export default function TravelTipsPage() {
                         </div>
                         
                         {/* Premium Title - Apple Typography */}
-                        <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                        <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-[#01b47d] group-hover:to-purple-600 dark:group-hover:from-[#01b47d] dark:group-hover:to-purple-400 transition-all duration-700">
                           {tip.title}
                         </h3>
                         
@@ -1394,7 +1394,7 @@ export default function TravelTipsPage() {
                         <div className="space-y-4 mb-8">
                           {tip.tips.slice(0, 3).map((tipItem, idx) => (
                             <div key={idx} className="flex items-start space-x-3">
-                              <div className="w-6 h-6 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-emerald-500/20">
+                              <div className="w-6 h-6 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 shadow-md shadow-[#01b47d]/20">
                                 <i className="ri-check-line text-white text-xs"></i>
                               </div>
                               <span className="text-slate-600 dark:text-slate-400 text-base leading-relaxed">{tipItem}</span>
@@ -1405,7 +1405,7 @@ export default function TravelTipsPage() {
                         {/* Premium CTA Button - Apple Style */}
                         <a
                           href={`/world-cup-2026-travel-tips/${tip.slugOverride ?? slugifyTip(tip.title)}`}
-                          className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
+                          className="inline-flex items-center justify-center font-space font-semibold rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#008f63] text-white shadow-2xl shadow-[#01b47d]/30 hover:shadow-3xl hover:shadow-[#01b47d]/50 hover:scale-105 px-8 py-4 text-lg group-hover:translate-x-2"
                         >
                           <span>Get This Strategy</span>
                           <i className="ri-arrow-right-line ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1425,23 +1425,23 @@ export default function TravelTipsPage() {
             <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 border border-slate-200/30 dark:border-navy-700/30 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10">
               {/* Ultra-Premium Background Elements */}
               <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+                <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 via-transparent to-transparent rounded-full blur-3xl"></div>
                 <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-                <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+                <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
               </div>
               
               {/* Floating Glass Elements */}
               <div className="absolute top-8 right-8 w-32 h-32 bg-white/5 dark:bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-white/10 rotate-12"></div>
-              <div className="absolute bottom-12 left-12 w-24 h-24 bg-emerald-500/10 dark:bg-emerald-500/20 backdrop-blur-xl rounded-2xl border border-emerald-500/20 dark:border-emerald-500/30 -rotate-12"></div>
+              <div className="absolute bottom-12 left-12 w-24 h-24 bg-[#01b47d]/10 dark:bg-[#01b47d]/20 backdrop-blur-xl rounded-2xl border border-[#01b47d]/20 dark:border-[#01b47d]/30 -rotate-12"></div>
               <div className="absolute top-1/3 left-8 w-16 h-16 bg-purple-500/10 dark:bg-purple-500/20 backdrop-blur-xl rounded-2xl border border-purple-500/20 dark:border-purple-500/30 rotate-45"></div>
               
               <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
                 {/* Apple-Level Premium Header */}
                 <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                  <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
                     <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                   </div>
-                  <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                  <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-[#008f63] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
                     Complete Your World Cup 2026 Travel Planning
                   </h2>
                   <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
@@ -1452,15 +1452,15 @@ export default function TravelTipsPage() {
                 {/* Apple-Level Luxury Feature Cards Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                   {/* Match Day Essentials - Apple-Level Luxury Card */}
-                  <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                  <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
                     {/* Premium Background Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                     
                     <div className="relative z-10">
                       {/* Premium Icon with Animation */}
                       <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
-                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:shadow-[#01b47d]/50 group-hover:scale-110 transition-all duration-500">
                           <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                         </div>
                         <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
@@ -1476,7 +1476,7 @@ export default function TravelTipsPage() {
                       {/* Luxury CTA Button */}
                       <a 
                         href="/world-cup-2026-stadiums" 
-                        className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#008f63] text-white shadow-2xl shadow-[#01b47d]/30 hover:shadow-3xl hover:shadow-[#01b47d]/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg group-hover:translate-x-2 w-full sm:w-auto"
                       >
                         <span>Explore All 16 Stadiums</span>
                         <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1487,7 +1487,7 @@ export default function TravelTipsPage() {
                   {/* Destination Guides - Apple-Level Luxury Card */}
                   <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
                     {/* Premium Background Glow */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-[#01b47d]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                     <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
                     
                     <div className="relative z-10">
@@ -1523,7 +1523,7 @@ export default function TravelTipsPage() {
                 {/* Premium Luxury Toolkit - Icon Grid */}
                 <div className="mb-12 sm:mb-16 md:mb-20">
                   <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-16">
-                    <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-emerald-500/30">
+                    <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 lg:w-20 lg:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-xl sm:rounded-2xl md:rounded-3xl mb-4 sm:mb-6 shadow-2xl shadow-[#01b47d]/30">
                       <i className="ri-tools-line text-xl sm:text-2xl md:text-3xl lg:text-3xl text-white"></i>
                     </div>
                     <h3 className="font-space font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-900 dark:text-white mb-4 sm:mb-6 tracking-tight">
@@ -1536,11 +1536,11 @@ export default function TravelTipsPage() {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {/* Planning Checklist - Premium Tool */}
-                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-2xl group-hover:from-blue-400/25 transition-all duration-700"></div>
+                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-2xl group-hover:from-[#01b47d]/25 transition-all duration-700"></div>
                       
                       <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-blue-500/30 group-hover:scale-110 transition-all duration-500">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:scale-110 transition-all duration-500">
                           <i className="ri-file-list-3-line text-white text-base sm:text-lg md:text-xl"></i>
                         </div>
                         <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">
@@ -1552,7 +1552,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/complete-planning-checklist" 
-                        className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
                       >
                         <span>Get Checklist</span>
                         <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1576,7 +1576,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/visa-requirements-guide" 
-                        className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
                       >
                         <span>Check Requirements</span>
                         <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1600,7 +1600,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/budget-planning-tool" 
-                        className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
                       >
                         <span>Calculate Your Budget</span>
                         <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1624,7 +1624,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/accommodation-finder" 
-                        className="inline-flex items-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center"
+                        className="inline-flex items-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-300 group-hover:translate-x-1 text-sm sm:text-base w-full sm:w-auto justify-center"
                       >
                         <span>Find Hotels</span>
                         <i className="ri-arrow-right-line ml-1"></i>
@@ -1648,7 +1648,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/transportation-guide" 
-                        className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
                       >
                         <span>Plan Transport</span>
                         <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
@@ -1656,11 +1656,11 @@ export default function TravelTipsPage() {
                     </div>
 
                     {/* Safety & Security - Premium Tool */}
-                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-indigo-500/20 hover:shadow-3xl hover:shadow-indigo-500/30 transition-all duration-700 hover:-translate-y-3">
-                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-indigo-400/15 to-transparent rounded-full blur-2xl group-hover:from-indigo-400/25 transition-all duration-700"></div>
+                    <div className="group relative bg-white/90 dark:bg-navy-800/90 backdrop-blur-2xl rounded-xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 md:p-8 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
+                      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-2xl group-hover:from-[#01b47d]/25 transition-all duration-700"></div>
                       
                       <div className="flex flex-col sm:flex-row sm:items-center mb-3 sm:mb-4 md:mb-6">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-indigo-500 via-indigo-600 to-indigo-700 rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-indigo-500/30 group-hover:scale-110 transition-all duration-500">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-lg sm:rounded-xl md:rounded-2xl flex items-center justify-center mb-3 sm:mb-0 sm:mr-4 md:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:scale-110 transition-all duration-500">
                           <i className="ri-shield-check-line text-white text-base sm:text-lg md:text-xl"></i>
                         </div>
                         <h4 className="font-space font-bold text-base sm:text-lg md:text-xl text-navy-900 dark:text-white tracking-tight">
@@ -1672,7 +1672,7 @@ export default function TravelTipsPage() {
                       </p>
                       <a 
                         href="/world-cup-2026-travel-tips/safety-security-tips" 
-                        className="inline-flex items-center justify-center font-space font-semibold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 dark:hover:text-emerald-300 transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
+                        className="inline-flex items-center justify-center font-space font-semibold text-[#01b47d] hover:text-[#008f63] dark:text-[#01b47d] dark:hover:text-[#008f63] transition-all duration-500 group-hover:translate-x-2 text-sm md:text-base w-full sm:w-auto"
                       >
                         <span>Read Safety Tips</span>
                         <i className="ri-arrow-right-line ml-2 group-hover:translate-x-2 transition-transform duration-500"></i>
