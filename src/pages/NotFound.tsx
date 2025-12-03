@@ -13,10 +13,10 @@ export default function NotFound() {
         <div className="max-w-2xl mx-auto">
           {/* 404 Number */}
           <div className="relative mb-8">
-            <h1 className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500">
+            <h1 className="text-8xl md:text-9xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">
               404
             </h1>
-            <div className="absolute inset-0 text-8xl md:text-9xl font-bold text-emerald-500/20 blur-sm">
+            <div className="absolute inset-0 text-8xl md:text-9xl font-bold text-[#01b47d]/20 blur-sm">
               404
             </div>
           </div>
@@ -54,14 +54,14 @@ export default function NotFound() {
               to="/travel-guides" 
               className="p-4 bg-white dark:bg-navy-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 group"
             >
-              <i className="ri-book-open-line text-2xl text-emerald-500 mb-2 block group-hover:scale-110 transition-transform"></i>
+              <i className="ri-book-open-line text-2xl text-[#01b47d] mb-2 block group-hover:scale-110 transition-transform"></i>
               <div className="text-sm font-medium text-navy-900 dark:text-white">Travel Guides</div>
             </Link>
             <Link 
               to="/venues" 
               className="p-4 bg-white dark:bg-navy-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 group"
             >
-              <i className="ri-building-line text-2xl text-blue-500 mb-2 block group-hover:scale-110 transition-transform"></i>
+              <i className="ri-building-line text-2xl text-[#01b47d] mb-2 block group-hover:scale-110 transition-transform"></i>
               <div className="text-sm font-medium text-navy-900 dark:text-white">Venues</div>
             </Link>
             <Link 
@@ -81,7 +81,7 @@ export default function NotFound() {
           </div>
           
           {/* Search Suggestion */}
-          <div className="mt-12 p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-xl">
+          <div className="mt-12 p-6 bg-[#01b47d]/5 dark:bg-[#008f63]/20 rounded-xl">
             <h3 className="text-lg font-semibold text-navy-900 dark:text-white mb-2">
               Looking for something specific?
             </h3>
@@ -91,8 +91,8 @@ export default function NotFound() {
             <div className="relative max-w-md mx-auto">
               <input
                 type="text"
-                placeholder="Search StadiumPort..."
-                className="w-full pl-10 pr-4 py-3 border border-emerald-200 dark:border-emerald-700 rounded-xl bg-white dark:bg-navy-800 text-navy-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                placeholder="Search Stadiumport..."
+                className="w-full pl-10 pr-4 py-3 border border-[#01b47d]/20 dark:border-[#008f63] rounded-xl bg-white dark:bg-navy-800 text-navy-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-[#01b47d] focus:border-transparent"
               />
               <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
             </div>

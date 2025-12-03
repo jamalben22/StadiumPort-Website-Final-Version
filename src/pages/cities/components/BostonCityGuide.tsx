@@ -42,7 +42,7 @@ export function BostonCityGuide() {
       {(() => {
         const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/boston-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/boston-world-cup-2026.webp`;
-        const title = 'Boston World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'Boston World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = "Highlight Boston’s mix of history and sports passion, showcasing its skyline and Gillette Stadium’s nearby location in Foxborough.";
 
         // useEffect is safe in client components
@@ -123,7 +123,7 @@ export function BostonCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline"><span>Gillette Stadium</span></Link>
+                <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline"><span>Gillette Stadium</span></Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -140,13 +140,13 @@ export function BostonCityGuide() {
         <article className="editorial-body editorial-dropcap">
 
           <p>
-            When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for <strong>seven matches</strong> spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a <strong>quarter-final</strong> on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS. Boston is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> welcoming fans to World Cup 2026.
+            When the 2026 FIFA World Cup kicks off in Boston, the city that launched a revolution will welcome the world for <strong>seven matches</strong> spanning four weeks—including five group stage encounters, a Round of 32 showdown, and a <strong>quarter-final</strong> on July 9 that guarantees elite football drama. This isn't Boston's first World Cup rodeo. In 1994, the then-Foxboro Stadium hosted six matches including quarterfinal action, helping plant American soccer culture that eventually blossomed into MLS. Boston is one of the <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link> welcoming fans to World Cup 2026.
           </p>
           <p>
             But 2026 is different. Boston hosts more than just matches—the city becomes the epicenter of a once-in-a-lifetime sports trifecta. <strong>Sail Boston</strong> (July 11-16), the largest maritime celebration ever to visit the United States, arrives days after the quarter-final. <strong>America 250</strong> commemorations celebrating the nation's founding run throughout summer. Add seven World Cup matches to the mix, and Boston delivers the perfect storm of international football, nautical spectacle, and patriotic celebration.
           </p>
           <p>
-            Whether you're watching matches at <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Gillette Stadium</Link> 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
+            Whether you're watching matches at <Link to="/world-cup-2026-stadiums/gillette-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Gillette Stadium</Link> 25 miles southwest or exploring Revolutionary War history along the Freedom Trail, Boston promises a World Cup experience wrapped in red-brick charm, championship pedigree (17 titles across major sports since 2000), and that unmistakable New England pride.
           </p>
           <p>
             This guide delivers the real intel: stadium access via commuter rail, neighborhood strategies, revolutionary history tours, and what to do when you're not watching 65,000 fans roar inside the home of the six-time Super Bowl champion Patriots.
@@ -172,7 +172,7 @@ export function BostonCityGuide() {
         {/* The Stadium: Gillette Stadium (Boston Stadium) */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Stadium: Gillette Stadium (Boston Stadium)
           </h3>
             <p>
@@ -203,7 +203,7 @@ export function BostonCityGuide() {
         {/* The Match Schedule: Seven Games Including a Quarter-Final */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-calendar-event-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             The Match Schedule: Seven Games Including a Quarter-Final
           </h3>
             <p>
@@ -238,7 +238,7 @@ export function BostonCityGuide() {
         {/* Getting to Gillette Stadium: The Commuter Rail Advantage */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to Gillette Stadium: The Commuter Rail Advantage
           </h3>
             <p>
@@ -270,7 +270,7 @@ export function BostonCityGuide() {
                 The MBTA expects to transport up to 20,000 fans per match via expanded commuter rail service, with new permanent platforms completed by April 2026. Event trains typically arrive about an hour before events and depart 30 minutes after they end, with Boston trains stopping at South Station, Back Bay, and Dedham Corporate Center.
               </p>
               <p>
-Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
+Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link> via Amtrak and short flights.
               </p>
             </div>
 
@@ -286,7 +286,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
               <p>
                 Uber and Lyft work from downtown Boston or surrounding areas, but expect <strong>$50-80 each way</strong> with surge pricing doubling post-match rates. Designated rideshare pickup is at <strong>Lot 15</strong> near CVS Health Gate—expect 30-60 minute waits after final whistle as 65,000 people simultaneously request rides.
               </p>
-              <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 dark:border-blue-900 dark:bg-blue-950/40">
+              <div className="rounded-lg border border-[#01b47d]/20 bg-[#01b47d]/5 p-4 dark:border-[#008f63] dark:bg-[#008f63]/40">
                 <p className="m-0"><strong>Smart hack:</strong> Take commuter rail TO the match (cheap, reliable), then split rideshare home with fellow fans when you're tired and willing to pay for door-to-door convenience.</p>
               </div>
             </div>
@@ -307,7 +307,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
         {/* Where to Stay: Downtown Boston vs. Suburban Strategy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Downtown Boston vs. Suburban Strategy
           </h3>
             <p>
@@ -348,7 +348,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
         {/* Beyond the Matches: What to Do in Boston */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Beyond the Matches: What to Do in Boston
           </h3>
             <p>
@@ -401,7 +401,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
         {/* Boston Food Scene: Fuel for Match Days */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Boston Food Scene: Fuel for Match Days
           </h3>
             <p>
@@ -447,7 +447,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
         {/* Practical Information: What You Need to Know */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Practical Information: What You Need to Know
           </h3>
             <div>
@@ -463,7 +463,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
                 <li><strong>Rideshare:</strong> $20-35 to downtown from designated pickup zones</li>
               </ul>
               <p>
-                Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
+                Many visitors combine Boston with <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link> for a cross-border experience—direct flights connect BOS and YYZ in under 2 hours.
               </p>
             </div>
 
@@ -534,7 +534,7 @@ Planning a multi-city trip? Boston connects easily to <Link to="/world-cup-2026-
         {/* Related Destinations Section */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-route-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Plan Your East Coast World Cup Tour
           </h3>
           <p>
@@ -563,7 +563,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
               </p>
             </div>
             <div>
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Browse All World Cup 2026 Host Cities</Link>
             </div>
           </div>
         </article>
@@ -572,7 +572,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
         {/* FIFA Fan Festival & Match Day Atmosphere */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             FIFA Fan Festival & Match Day Atmosphere
           </h3>
             <p>
@@ -607,7 +607,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
         {/* Sail Boston & America 250: The Perfect Storm */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-ship-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-ship-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Sail Boston & America 250: The Perfect Storm
           </h3>
             <p>
@@ -642,7 +642,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
         {/* Booking Strategy: How to Plan Your Boston World Cup Trip */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-calendar-check-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Booking Strategy: How to Plan Your Boston World Cup Trip
           </h3>
             <div>
@@ -679,7 +679,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
         {/* Why Boston Wins the World Cup Experience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-trophy-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Why Boston Wins the World Cup Experience
           </h3>
             <p>
@@ -703,7 +703,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
         {/* Final Checklist: Your Boston World Cup Essentials */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-check-double-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-check-double-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Final Checklist: Your Boston World Cup Essentials
           </h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -731,7 +731,7 @@ Experience the historic heart of America: Start in Boston (current), take the tr
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

@@ -179,7 +179,7 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           className="group flex items-center justify-between p-4 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700 border border-slate-700 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-blue-900/50 rounded-lg text-blue-400 group-hover:text-white transition-colors">
+            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-white transition-colors">
               <i className="ri-hotel-bed-line text-2xl"></i>
             </div>
             <div>
@@ -198,7 +198,7 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           className="group flex items-center justify-between p-4 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700 border border-slate-700 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-sky-900/50 rounded-lg text-sky-400 group-hover:text-white transition-colors">
+            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-white transition-colors">
               <i className="ri-plane-line text-2xl"></i>
             </div>
             <div>

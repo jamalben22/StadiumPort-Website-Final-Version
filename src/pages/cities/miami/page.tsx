@@ -180,11 +180,11 @@ export default function MiamiCityGuide() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -200,11 +200,11 @@ export default function MiamiCityGuide() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -212,8 +212,8 @@ export default function MiamiCityGuide() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -223,16 +223,16 @@ export default function MiamiCityGuide() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <Check className="w-4 h-4" />
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <ChevronRight className={`w-5 h-5 transition-transform ${isMobileTocOpen ? 'rotate-90' : ''}`} />
           </button>
@@ -250,11 +250,11 @@ export default function MiamiCityGuide() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -289,7 +289,7 @@ export default function MiamiCityGuide() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -299,32 +299,32 @@ export default function MiamiCityGuide() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Miami</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Miami</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Miami World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Miami World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <Building className="w-5 h-5" />
                 </div>
                 <span>Hard Rock Stadium</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <Users className="w-5 h-5" />
                 </div>
                 <span>65,326 Capacity</span>
@@ -333,10 +333,10 @@ export default function MiamiCityGuide() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   {isSaved ? <Bookmark className="w-5 h-5 fill-current" /> : <Bookmark className="w-5 h-5" />}
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -351,8 +351,8 @@ export default function MiamiCityGuide() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY: 7 matches, Bronze Final, Hard Rock Stadium] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Miami hosts <strong>7 matches</strong> including the <strong>Bronze Final</strong></li>
                <li>• Venue: <strong>Hard Rock Stadium</strong> (Miami Gardens)</li>
@@ -362,7 +362,7 @@ export default function MiamiCityGuide() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <Trophy className="w-6 h-6 text-emerald-500" />Your Complete Travel Guide to South Florida's Soccer Spectacle
+            <Trophy className="w-6 h-6 text-[#01b47d]" />Your Complete Travel Guide to South Florida's Soccer Spectacle
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -378,10 +378,10 @@ export default function MiamiCityGuide() {
           </div>
 
           <p className="leading-relaxed mb-6">
-              When FIFA brings the beautiful game to Miami in summer 2026, nearly a million international fans will descend on South Florida for seven high-stakes matches—more than almost any other host city. Miami is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> for the 2026 World Cup. This isn't just another tournament stop. 
+              When FIFA brings the beautiful game to Miami in summer 2026, nearly a million international fans will descend on South Florida for seven high-stakes matches—more than almost any other host city. Miami is one of the <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link> for the 2026 World Cup. This isn't just another tournament stop. 
             </p>
             
-            <div className="my-10 pl-6 border-l-4 border-emerald-500 italic text-xl md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <div className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-xl md:text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
               "Miami... promises to transform the World Cup experience into a month-long carnival where every neighborhood becomes a fan zone."
             </div>
 
@@ -397,8 +397,8 @@ export default function MiamiCityGuide() {
           </article>
 
           {/* Essential Links module - Enhanced */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <Bookmark className="w-5 h-5" /> Essential Resources
             </h4>
             <div className="space-y-3">
@@ -465,11 +465,11 @@ export default function MiamiCityGuide() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <Users className="w-5 h-5 text-emerald-500 mt-1" />
+                            <Users className="w-5 h-5 text-[#01b47d] mt-1" />
                             <span><strong>65,326 Capacity</strong> <span className="block text-sm text-slate-500">(Expandable for major events)</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <Shield className="w-5 h-5 text-emerald-500 mt-1" />
+                            <Shield className="w-5 h-5 text-[#01b47d] mt-1" />
                             <span><strong>Canopy Protection</strong> <span className="block text-sm text-slate-500">Roof covers 92% of fans from sun/rain</span></span>
                         </li>
                       </ul>
@@ -477,11 +477,11 @@ export default function MiamiCityGuide() {
                   <div className="space-y-4">
                       <ul className="leading-relaxed space-y-4 list-none">
                         <li className="flex items-start gap-3">
-                            <Leaf className="w-5 h-5 text-emerald-500 mt-1" />
+                            <Leaf className="w-5 h-5 text-[#01b47d] mt-1" />
                             <span><strong>Natural Grass</strong> <span className="block text-sm text-slate-500">World-class surface for the tournament</span></span>
                         </li>
                         <li className="flex items-start gap-3">
-                            <MapPin className="w-5 h-5 text-emerald-500 mt-1" />
+                            <MapPin className="w-5 h-5 text-[#01b47d] mt-1" />
                             <span><strong>15 Miles from Downtown</strong> <span className="block text-sm text-slate-500">Located in Miami Gardens</span></span>
                         </li>
                       </ul>
@@ -523,8 +523,8 @@ export default function MiamiCityGuide() {
             <div id="schedule-anchor" className="scroll-mt-24"></div>
 
             {/* [QUICK SUMMARY] */}
-            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-               <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Schedule at a Glance</h4>
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+               <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Schedule at a Glance</h4>
                <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                  <li>• <strong>4 Group Stage Matches</strong> (June 15–27)</li>
                  <li>• <strong>3 Knockout Matches</strong> (Round of 32 to Bronze Final)</li>
@@ -563,7 +563,7 @@ export default function MiamiCityGuide() {
 
             <div className="space-y-8">
               <div className="bg-white dark:bg-navy-900 rounded-xl p-6 shadow-sm border border-slate-100 dark:border-navy-700">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-700 dark:text-emerald-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Group stage" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradGroupMIA" x1="0" x2="1" y1="0" y2="1">
@@ -579,19 +579,19 @@ export default function MiamiCityGuide() {
                 </h4>
                 <ul className="space-y-3 list-none">
                   <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                      <span className="font-mono text-emerald-500 font-bold">01</span>
+                      <span className="font-mono text-[#01b47d] font-bold">01</span>
                       <span><strong>Monday, June 15, 2026</strong> – Group H Match (Opener)</span>
                   </li>
                   <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                      <span className="font-mono text-emerald-500 font-bold">02</span>
+                      <span className="font-mono text-[#01b47d] font-bold">02</span>
                       <span><strong>Sunday, June 21, 2026</strong> – Group H Match</span>
                   </li>
                   <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                      <span className="font-mono text-emerald-500 font-bold">03</span>
+                      <span className="font-mono text-[#01b47d] font-bold">03</span>
                       <span><strong>Wednesday, June 24, 2026</strong> – Group C Match</span>
                   </li>
                   <li className="flex items-start gap-3 p-3 hover:bg-slate-50 dark:hover:bg-navy-800 rounded-lg transition-colors">
-                      <span className="font-mono text-emerald-500 font-bold">04</span>
+                      <span className="font-mono text-[#01b47d] font-bold">04</span>
                       <span><strong>Saturday, June 27, 2026</strong> – Group K Match</span>
                   </li>
                 </ul>
@@ -634,7 +634,7 @@ export default function MiamiCityGuide() {
               </div>
               
               {/* [PULL QUOTE] */}
-              <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+              <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
                  "If you can only attend one match, make it this one."
               </blockquote>
             </div>
@@ -647,8 +647,8 @@ export default function MiamiCityGuide() {
             <div id="transport-anchor" className="scroll-mt-24"></div>
 
             {/* [QUICK SUMMARY] */}
-            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-               <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Transport Reality Check</h4>
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+               <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Reality Check</h4>
                <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                  <li>• <strong>Brightline + Shuttle:</strong> Best overall experience</li>
                  <li>• <strong>Metrobus:</strong> $2.25 budget option (Route 297)</li>
@@ -692,10 +692,10 @@ export default function MiamiCityGuide() {
             <div className="space-y-12">
               {/* Brightline + Shuttle */}
               <section className="relative">
-                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
                 <div className="pl-0 md:pl-6">
-                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
-                    <Train className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
+                    <Train className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
                     1. Brightline + Stadium Shuttle (Recommended)
                   </h4>
                   <p className="leading-relaxed mb-4">
@@ -709,8 +709,8 @@ export default function MiamiCityGuide() {
                       <li><strong>Cons:</strong> Trains sell out fast; requires advance booking</li>
                     </ul>
                   </div>
-                  <div className="callout-pro-tip bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 p-5 rounded-lg">
-                    <h5 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2 flex items-center gap-2">
+                  <div className="callout-pro-tip bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/10 dark:border-[#008f63] p-5 rounded-lg">
+                    <h5 className="font-bold text-[#008f63] dark:text-[#01b47d]/10 mb-2 flex items-center gap-2">
                       <Info className="w-5 h-5" /> Insider Tip
                     </h5>
                     <p className="text-sm text-slate-700 dark:text-slate-300">
@@ -722,10 +722,10 @@ export default function MiamiCityGuide() {
 
               {/* Metrobus */}
               <section className="relative">
-                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
                 <div className="pl-0 md:pl-6">
-                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
-                    <Bus className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
+                    <Bus className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
                     2. Metrobus Route 297 (Budget Choice)
                   </h4>
                   <p className="leading-relaxed mb-4">
@@ -782,10 +782,10 @@ export default function MiamiCityGuide() {
 
               {/* Driving */}
               <section className="relative">
-                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
                 <div className="pl-0 md:pl-6">
-                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
-                    <Car className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+                  <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
+                    <Car className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
                     4. Driving + Parking (Flexible)
                   </h4>
                   <p className="leading-relaxed mb-4">
@@ -799,8 +799,8 @@ export default function MiamiCityGuide() {
                       <li><strong>Cons:</strong> Brutal exit traffic (2+ hours)</li>
                     </ul>
                   </div>
-                  <div className="callout-pro-tip bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-800 p-5 rounded-lg">
-                    <h5 className="font-bold text-indigo-900 dark:text-indigo-100 mb-2 flex items-center gap-2">
+                  <div className="callout-pro-tip bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/10 dark:border-[#008f63] p-5 rounded-lg">
+                    <h5 className="font-bold text-[#008f63] dark:text-[#01b47d]/10 mb-2 flex items-center gap-2">
                       <Info className="w-5 h-5" /> Money Saver
                     </h5>
                     <p className="text-sm text-slate-700 dark:text-slate-300">
@@ -867,8 +867,8 @@ export default function MiamiCityGuide() {
           <div id="stay-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Lodging Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Lodging Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Downtown/Brickell:</strong> Best for transit & atmosphere</li>
                <li>• <strong>South Beach:</strong> Best for beach & nightlife</li>
@@ -915,7 +915,7 @@ export default function MiamiCityGuide() {
           </p>
 
           {/* [PULL QUOTE] */}
-          <blockquote className="my-8 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-8 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "If you secure match tickets, reserve accommodation immediately. Downtown sells out fast."
           </blockquote>
 
@@ -1051,8 +1051,8 @@ export default function MiamiCityGuide() {
           {/* Beyond the Matches: What to Do in Miami */}
           <article id="culture" className="editorial-body theme-emerald">
             {/* [QUICK SUMMARY] */}
-            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culture & Leisure</h4>
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+              <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culture & Leisure</h4>
               <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                 <li>• <strong>Arts:</strong> Wynwood Walls (Street Art)</li>
                 <li>• <strong>History:</strong> Art Deco District & Vizcaya</li>
@@ -1216,8 +1216,8 @@ export default function MiamiCityGuide() {
           {/* [SCROLL ANCHOR: Food Scene] */}
           <article id="food" className="editorial-body theme-emerald">
             {/* [QUICK SUMMARY] */}
-            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-              <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Culinary Highlights</h4>
+            <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+              <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Culinary Highlights</h4>
               <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                 <li>• <strong>Cuban:</strong> Versailles & El Rey de las Fritas</li>
                 <li>• <strong>Seafood:</strong> Joe's Stone Crab & Garcia's</li>
@@ -1338,8 +1338,8 @@ export default function MiamiCityGuide() {
           <div id="tips-anchor" className="scroll-mt-24"></div>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Essential Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Essential Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Airport:</strong> MIA (8 mi) or FLL (30 mi)</li>
                <li>• <strong>Weather:</strong> Hot & humid (88-92°F); rain likely</li>
@@ -1571,8 +1571,8 @@ export default function MiamiCityGuide() {
           {/* [SCROLL ANCHOR: Booking Strategy] */}
           <article id="booking" className="editorial-body theme-gold">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
-                <ClipboardCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              <div className="p-2 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg">
+                <ClipboardCheck className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
               </div>
               <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
                 Booking Strategy: How to Plan Your World Cup Trip
@@ -1583,14 +1583,14 @@ export default function MiamiCityGuide() {
 
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <Clock className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                <Clock className="w-5 h-5 text-[#01b47d] dark:text-[#01b47d]" />
                 Timeline for Success
               </h4>
 
               {/* Now (Late 2025) */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <Calendar className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <Calendar className="w-5 h-5 text-[#01b47d] dark:text-[#01b47d]" />
                   Now (Late 2025)
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1603,7 +1603,7 @@ export default function MiamiCityGuide() {
               {/* Upon Securing Tickets */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <Ticket className="w-5 h-5 text-indigo-600 dark:text-indigo-400" />
+                  <Ticket className="w-5 h-5 text-[#01b47d] dark:text-[#01b47d]" />
                   Upon Securing Tickets (Late 2025/Early 2026)
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1617,7 +1617,7 @@ export default function MiamiCityGuide() {
               {/* 2-4 Weeks Before Departure */}
               <div className="mb-6">
                 <h5 className="editorial-h4 mb-3 flex items-center gap-2">
-                  <Briefcase className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+                  <Briefcase className="w-5 h-5 text-[#01b47d] dark:text-[#01b47d]" />
                   2-4 Weeks Before Departure
                 </h5>
                 <ul className="leading-relaxed space-y-2 list-disc list-inside">
@@ -1630,13 +1630,13 @@ export default function MiamiCityGuide() {
             </div>
 
             <p className="leading-relaxed mb-6">
-              Travel planning tip: Combine Miami with <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link> or <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link> for a Southern Gulf experience with distinct regional flavors and matchday atmospheres.
+              Travel planning tip: Combine Miami with <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link> or <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link> for a Southern Gulf experience with distinct regional flavors and matchday atmospheres.
             </p>
 
             {/* Affiliate Opportunity Moment */}
           <div className="callout-pro-tip">
             <h4 className="editorial-h4 mb-3 flex items-center gap-2">
-              <Star className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
+              <Star className="w-5 h-5 text-[#01b47d] dark:text-[#01b47d]" />
               Pro Booking Tip
             </h4>
             <p className="leading-relaxed">Once you know your travel dates, <strong>book hotels through trusted platforms</strong> offering World Cup packages or flexible cancellation policies. Properties near downtown Miami, Brightline stations, and Metrorail access book fastest. Comparison shopping across multiple booking engines often reveals 10-20% price differences for identical rooms—worth the 15 minutes research.</p>
@@ -1660,8 +1660,8 @@ export default function MiamiCityGuide() {
               Let's be honest: some World Cup host cities are purely functional—you watch matches, maybe see a museum, then move on. Miami is different. This city was built for celebration. The nightlife doesn't quit. The beaches deliver postcard perfection. The food scene rivals any global capital. And unlike some North American hosts where soccer is niche, Miami <strong>breathes</strong> football.
             </p>
 
-            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
-              &ldquo;Unlike some North American hosts where soccer is niche, Miami <span className="text-emerald-600 dark:text-emerald-400">breathes</span> football.&rdquo;
+            <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+              &ldquo;Unlike some North American hosts where soccer is niche, Miami <span className="text-[#01b47d] dark:text-[#01b47d]">breathes</span> football.&rdquo;
             </blockquote>
 
             <p className="leading-relaxed mb-4">
@@ -1676,7 +1676,7 @@ export default function MiamiCityGuide() {
               The <strong>logistics require planning</strong>—this isn't a compact European city where you walk everywhere—but the payoff is enormous. Where else can you watch world-class football in the morning, snorkel the reef by afternoon, dance salsa in Little Havana at sunset, then watch another match under the lights?
             </p>
 
-            <div className="bg-gradient-to-r from-emerald-600 to-blue-600 text-white rounded-xl p-6 text-center">
+            <div className="bg-gradient-to-r from-[#01b47d] to-[#01b47d] text-white rounded-xl p-6 text-center">
               <p className="text-lg font-semibold leading-relaxed">
                 <strong>Book early, plan transit thoughtfully, embrace the heat, and prepare for one of the most memorable World Cup experiences any host city can offer.</strong>
               </p>
@@ -1687,8 +1687,8 @@ export default function MiamiCityGuide() {
           {/* Related Destinations */}
           <article className="editorial-body">
             <div className="flex items-center gap-3 mb-8">
-              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                <Plane className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              <div className="p-2 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg">
+                <Plane className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
               </div>
               <h2 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
                 Plan Your Tropical World Cup Adventure
@@ -1704,11 +1704,11 @@ export default function MiamiCityGuide() {
                   <h4 className="editorial-h4">Southern States Circuit</h4>
                   <p>
                     Experience the diverse American South: Start in Miami (current, no link), head to{' '}
-                    <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                    <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>
                     {' '}for Southern charm, then continue to{' '}
-                    <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                    <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
                     {' '}or{' '}
-                    <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                    <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                     {' '}for a taste of Texas.
                   </p>
                 </div>
@@ -1716,11 +1716,11 @@ export default function MiamiCityGuide() {
                   <h4 className="editorial-h4">Latin American Gateway</h4>
                   <p>
                     Miami's strong cultural ties to Latin America make it perfect for combining with Mexican host cities like{' '}
-                    <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>
+                    <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>
                     ,{' '}
-                    <Link to="/world-cup-2026-host-cities/guadalajara" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Guadalajara</Link>
+                    <Link to="/world-cup-2026-host-cities/guadalajara" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Guadalajara</Link>
                     , or{' '}
-                    <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Monterrey</Link>
+                    <Link to="/world-cup-2026-host-cities/monterrey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Monterrey</Link>
                     .
                   </p>
                 </div>
@@ -1728,15 +1728,15 @@ export default function MiamiCityGuide() {
                   <h4 className="editorial-h4">Coastal Contrast</h4>
                   <p>
                     Experience both coasts by connecting Miami with West Coast cities like{' '}
-                    <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+                    <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Los Angeles</Link>
                     {' '}or{' '}
-                    <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
+                    <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">San Francisco Bay Area</Link>
                     {' '}for a complete American World Cup tour.
                   </p>
                 </div>
               </div>
               <p>
-                <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+                <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
               </p>
             </div>
             <hr className="editorial-divider" />
@@ -1745,8 +1745,8 @@ export default function MiamiCityGuide() {
           {/* Final Checklist Section */}
           <article className="editorial-body">
             <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg">
-                <ClipboardCheck className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
+              <div className="p-2 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg">
+                <ClipboardCheck className="w-6 h-6 text-[#01b47d] dark:text-[#01b47d]" />
               </div>
               <h3 className="text-3xl font-serif font-bold text-slate-900 dark:text-white">
                 Final Checklist: Your Miami World Cup Essentials
@@ -1766,8 +1766,8 @@ export default function MiamiCityGuide() {
             </div>
 
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1775,8 +1775,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1784,8 +1784,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1793,8 +1793,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1802,8 +1802,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1811,8 +1811,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1820,8 +1820,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1829,8 +1829,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1838,8 +1838,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1847,8 +1847,8 @@ export default function MiamiCityGuide() {
                 </span>
               </div>
 
-              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-emerald-500/30 transition-colors">
-                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-emerald-100 dark:bg-emerald-900/50 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
+              <div className="bg-slate-50 dark:bg-navy-800 p-4 rounded-lg border border-slate-100 dark:border-navy-700 flex items-start gap-3 group hover:border-[#008f63]/30 transition-colors">
+                <div className="shrink-0 mt-0.5 w-5 h-5 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/50 flex items-center justify-center text-[#01b47d] dark:text-[#01b47d]">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                   <span className="text-slate-700 dark:text-slate-200 leading-snug text-sm font-medium">
@@ -1873,7 +1873,7 @@ export default function MiamiCityGuide() {
         <section className="max-w-4xl mx-auto px-6 pb-12">
           {/* Interactive Rating Section */}
           <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             <div className="relative z-10">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
               <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -1892,20 +1892,20 @@ export default function MiamiCityGuide() {
                 ))}
               </div>
               <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-                <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+                <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                   <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
                 </p>
               </div>
             </div>
-            <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+            <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
           </div>
 
           {/* Related Guides Recommendation Engine */}
           <div className="mb-16">
             <div className="flex items-center justify-between mb-8">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+              <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
                 View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
               </Link>
             </div>
@@ -1923,8 +1923,8 @@ export default function MiamiCityGuide() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
                 <div className="absolute bottom-0 left-0 p-6 w-full">
-                  <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Texas Neighbor</span>
-                  <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Houston</h4>
+                  <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Texas Neighbor</span>
+                  <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Houston</h4>
                   <p className="text-slate-300 text-sm line-clamp-2">Complete guide to NRG Stadium and Space City's World Cup events.</p>
                 </div>
               </Link>
@@ -1953,7 +1953,7 @@ export default function MiamiCityGuide() {
           {/* Elite Tier Footer Meta Section */}
           <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
             <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
               <div className="flex items-center gap-4 relative z-10">
                 <span className="text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider font-space">Share Guide</span>
                 <div className="flex items-center gap-2">
@@ -1970,7 +1970,7 @@ export default function MiamiCityGuide() {
                     <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                   </a>
                   <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                     className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                     className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                      aria-label="Copy Link">
                     <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                   </button>
@@ -1978,7 +1978,7 @@ export default function MiamiCityGuide() {
               </div>
               <div className="w-full h-px bg-slate-200 dark:bg-slate-700 md:hidden"></div>
               <div className="flex items-center gap-3 relative z-10">
-                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                   <i className="ri-shield-check-fill text-xl"></i>
                 </div>
                 <div>

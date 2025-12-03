@@ -146,17 +146,17 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(({ champion,
             {/* Winner Card - Left */}
             <div className="flex-1 bg-[#111] border border-white/10 rounded-l-lg p-3 relative overflow-hidden">
                {/* Team Color Accent Bar */}
-               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-emerald-500" />
-               <div className="absolute right-0 top-0 w-8 h-8 bg-gradient-to-bl from-emerald-500/20 to-transparent" />
+               <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-[#01b47d]" />
+               <div className="absolute right-0 top-0 w-8 h-8 bg-gradient-to-bl from-[#01b47d]/20 to-transparent" />
                
                <div className="flex flex-col items-start pl-2">
-                  <span className="text-[9px] font-['Rajdhani'] font-bold text-emerald-500 uppercase tracking-widest mb-2">Champion</span>
+                  <span className="text-[9px] font-['Rajdhani'] font-bold text-[#01b47d] uppercase tracking-widest mb-2">Champion</span>
                   <div className="flex items-center gap-3">
                      <div className="relative p-[2px] rounded-md bg-white/10 shadow-[0_8px_24px_rgba(0,0,0,0.45)]">
                         <img 
                           src={champion.flagUrl} 
                           alt={`${champion.name} Flag`}
-                          className="w-14 h-10 rounded-[6px] object-cover ring-1 ring-emerald-400/40 saturate-[1.15] contrast-[1.1] brightness-[1.1]"
+                          className="w-14 h-10 rounded-[6px] object-cover ring-1 ring-[#01b47d]/40 saturate-[1.15] contrast-[1.1] brightness-[1.1]"
                         />
                         <div className="absolute inset-0 rounded-md pointer-events-none" style={{ boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.35)' }} />
                      </div>

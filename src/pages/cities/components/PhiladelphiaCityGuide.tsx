@@ -10,7 +10,7 @@ export function PhiladelphiaCityGuide() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const pageUrl = `${siteUrl}/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide`;
-    const title = 'Philadelphia World Cup 2026: Complete Travel Guide | StadiumPort';
+    const title = 'Philadelphia World Cup 2026: Complete Travel Guide | Stadiumport';
     const description = 'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.';
     const image = `${siteUrl}/images/cities/philadelphia-world-cup-2026.webp`;
     setPageMeta({ title, description, url: pageUrl, image, locale: 'en_US', publishedTime: '2025-11-16T09:00:00Z', modifiedTime: new Date().toISOString(), section: 'Host Cities', tags: ['World Cup 2026', 'Host Cities', 'Philadelphia', 'Lincoln Financial Field'] })
@@ -114,7 +114,7 @@ export function PhiladelphiaCityGuide() {
         <article className="editorial-body editorial-dropcap">
           <div>
             <p className="leading-relaxed mb-6">
-              On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link>. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. Philadelphia is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> for World Cup 2026. This isn't just a football match; it's a historic moment that will never be repeated.
+              On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Lincoln Financial Field</Link>. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. Philadelphia is one of the <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link> for World Cup 2026. This isn't just a football match; it's a historic moment that will never be repeated.
             </p>
             <p className="leading-relaxed">
               Between June 14 and July 4, Lincoln Financial Field will host six World Cup matches drawing over half a million visitors to the City of Brotherly Love. If you've never visited Philadelphia, prepare for a city where cobblestone streets meet world-class museums, where Revolutionary War history sits beside cutting-edge culinary innovation, and where the most iconic sandwich in America (yes, the cheesesteak) is debated with religious fervor. Philadelphia combines accessibility, walkability, affordability, and authenticity in ways that coastal metropolises can't match. You'll experience American history at its source while watching the world's game played at its highest level.
@@ -142,7 +142,7 @@ export function PhiladelphiaCityGuide() {
         {/* Stadium Section */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Lincoln Financial Field (Philadelphia Stadium for FIFA 2026)
           </h2>
 
@@ -150,7 +150,7 @@ export function PhiladelphiaCityGuide() {
             {/* An Eagles' Nest Designed for Glory */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-eagle-line text-emerald-500"></i>
+                <i className="ri-eagle-line text-[#01b47d]"></i>
                 An Eagles' Nest Designed for Glory
               </h3>
               <div>
@@ -166,7 +166,7 @@ export function PhiladelphiaCityGuide() {
             {/* One of the "Greenest" Stadiums in the World */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-leaf-line text-emerald-500"></i>
+                <i className="ri-leaf-line text-[#01b47d]"></i>
                 One of the "Greenest" Stadiums in the World
               </h3>
               <div>
@@ -179,7 +179,7 @@ export function PhiladelphiaCityGuide() {
             {/* Match Schedule at Lincoln Financial Field */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 Match Schedule at Lincoln Financial Field
               </h3>
               <div>
@@ -197,7 +197,7 @@ export function PhiladelphiaCityGuide() {
             {/* What Makes This Stadium Special */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 What Makes This Stadium Special
               </h3>
               <div>
@@ -216,7 +216,7 @@ export function PhiladelphiaCityGuide() {
         {/* Transportation Section */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-roadster-line text-emerald-500"></i>
+            <i className="ri-roadster-line text-[#01b47d]"></i>
             Getting There: Transportation Made Easy
           </h2>
 
@@ -224,7 +224,7 @@ export function PhiladelphiaCityGuide() {
             {/* SEPTA Broad Street Line (Subway) */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 SEPTA Broad Street Line (Subway)
               </h3>
               <div className="space-y-4">
@@ -244,7 +244,7 @@ export function PhiladelphiaCityGuide() {
             {/* Rideshares */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares
               </h3>
               <div>
@@ -257,7 +257,7 @@ export function PhiladelphiaCityGuide() {
             {/* From Philadelphia International Airport (PHL) */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 From Philadelphia International Airport (PHL)
               </h3>
               <div>
@@ -265,7 +265,7 @@ export function PhiladelphiaCityGuide() {
                   Philadelphia International Airport is located approximately 12 miles southwest of Center City and is one of America's major East Coast hubs, serving over 100 airlines with connections to destinations worldwide.
                 </p>
                 <p className="leading-relaxed">
-Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
+Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
                 </p>
               </div>
             </div>
@@ -273,7 +273,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* SEPTA Airport Line */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 SEPTA Airport Line (The Best Option)
               </h3>
               <div className="space-y-4">
@@ -290,7 +290,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                   <strong>Stops in Center City</strong>: The Airport Line stops at Jefferson Station (near Reading Terminal Market and Convention Center), Suburban Station (downtown business district), and 30th Street Station (major Amtrak hub and University City). All three stops put you within walking distance or short ride to most downtown hotels.
                 </p>
                 <p className="leading-relaxed">
-                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
+                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
                 </p>
               </div>
             </div>
@@ -298,7 +298,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Rideshares and Taxis */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares and Taxis
               </h3>
               <div>
@@ -311,7 +311,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Getting to Lincoln Financial Field on Match Days */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-roadster-line text-emerald-500"></i>
+                <i className="ri-roadster-line text-[#01b47d]"></i>
                 Getting to Lincoln Financial Field on Match Days
               </h3>
               <div>
@@ -327,7 +327,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Where to Stay */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h2>
 
@@ -339,7 +339,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Center City: Maximum Convenience */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Center City: Maximum Convenience
               </h3>
               <p>
@@ -362,7 +362,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Rittenhouse Square: Upscale Elegance */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Rittenhouse Square: Upscale Elegance
               </h3>
               <p>
@@ -382,7 +382,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Old City: Colonial Charm Meets Modern Cool */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Old City: Colonial Charm Meets Modern Cool
               </h3>
               <p>
@@ -402,7 +402,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* University City: Budget-Friendly Near Penn & Drexel */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 University City: Budget-Friendly Near Penn & Drexel
               </h3>
               <p>
@@ -425,7 +425,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Beyond the Match */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Match: What to Do in Philadelphia
           </h2>
           <div className="space-y-6">
@@ -433,7 +433,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
               Philadelphia's attractions span Revolutionary War history, world-class museums, and authentic neighborhood experiences that reveal the city's character.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Independence National Historical Park: The Birthplace of America
             </h3>
 
@@ -470,7 +470,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Museum of the American Revolution */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Museum of the American Revolution
               </h3>
               <p>
@@ -484,7 +484,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Reading Terminal Market */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-restaurant-2-line text-emerald-500"></i>
+                <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                 Reading Terminal Market: Philadelphia's Culinary Heart
               </h3>
               <p>
@@ -516,7 +516,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Philadelphia Museum of Art */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-image-line text-emerald-500"></i>
+                <i className="ri-image-line text-[#01b47d]"></i>
                 Philadelphia Museum of Art: The Rocky Steps
               </h3>
               <p>
@@ -533,7 +533,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Eastern State Penitentiary */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-government-line text-emerald-500"></i>
+                <i className="ri-government-line text-[#01b47d]"></i>
                 Eastern State Penitentiary: Gothic Prison History
               </h3>
               <p>
@@ -547,7 +547,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Elfreth's Alley */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-home-2-line text-emerald-500"></i>
+                <i className="ri-home-2-line text-[#01b47d]"></i>
                 Elfreth's Alley: America's Oldest Residential Street
               </h3>
               <p>
@@ -563,7 +563,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Food: Beyond the Cheesesteak */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d]"></i>
             Food: Beyond the Cheesesteak (But Also, Definitely Cheesesteaks)
           </h2>
           <div className="space-y-6">
@@ -571,7 +571,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
               Philadelphia's food scene extends far beyond its most famous sandwich, though we'll start there because it's mandatory.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               The Cheesesteak Debate: A Philadelphia Obsession
             </h3>
             <p>
@@ -588,7 +588,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Top Cheesesteak Destinations */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Top Cheesesteak Destinations
               </h3>
               <div className="space-y-3">
@@ -622,7 +622,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             {/* Beyond the Cheesesteak: Philly's Diverse Food Scene */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Beyond the Cheesesteak: Philly's Diverse Food Scene
               </h3>
               <div className="space-y-3">
@@ -640,12 +640,12 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Weather & What to Pack */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-sun-cloudy-line text-emerald-500"></i>
+            <i className="ri-sun-cloudy-line text-[#01b47d]"></i>
             Weather &amp; What to Pack
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-sun-line text-emerald-500"></i>
+              <i className="ri-sun-line text-[#01b47d]"></i>
               June and July in Philadelphia: Warm with Occasional Rain
             </h3>
             <p>
@@ -669,7 +669,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             </div>
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-suitcase-line text-emerald-500"></i>
+                <i className="ri-suitcase-line text-[#01b47d]"></i>
                 What to Pack
               </h3>
               <p><strong>Clothing</strong>: Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Philadelphia is casual—shorts and t-shirts work for most activities. Even upscale restaurants rarely require more than "smart casual."</p>
@@ -685,7 +685,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Stadium Policies */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-shopping-bag-3-line text-emerald-500"></i>
+            <i className="ri-shopping-bag-3-line text-[#01b47d]"></i>
             Stadium Policies
           </h2>
           <div className="space-y-6">
@@ -699,12 +699,12 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Practical Tips for International Visitors */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
+            <i className="ri-global-line text-[#01b47d]"></i>
             Practical Tips for International Visitors
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-bank-card-line text-emerald-500"></i>
+              <i className="ri-bank-card-line text-[#01b47d]"></i>
               Money Matters
             </h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -716,7 +716,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             </ul>
 
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-shield-check-line text-emerald-500"></i>
+              <i className="ri-shield-check-line text-[#01b47d]"></i>
               Safety &amp; Getting Around
             </h3>
             <p>
@@ -727,7 +727,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             <p><strong>Biking</strong>: Indego bike share offers stations throughout Center City and surrounding neighborhoods. Perfect for exploring the Schuylkill River Trail or connecting neighborhoods.</p>
 
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-chat-4-line text-emerald-500"></i>
+              <i className="ri-chat-4-line text-[#01b47d]"></i>
               Language &amp; Connectivity
             </h3>
             <p>
@@ -743,19 +743,19 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-ticket-2-line text-emerald-500"></i>
+            <i className="ri-ticket-2-line text-[#01b47d]"></i>
             Ticket Information &amp; Booking Strategy
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-ticket-line text-emerald-500"></i>
+              <i className="ri-ticket-line text-[#01b47d]"></i>
               How to Get World Cup Tickets
             </h3>
             <p>
               Tickets for the 2026 FIFA World Cup are sold in multiple phases. The first presale draw began September 10, 2025, exclusively for Visa cardholders. Group stage tickets start at $60, with prices increasing for knockout rounds.
             </p>
             <p>
-              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
+              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a> for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
             </p>
             <div className="space-y-2">
               <h4 className="editorial-h4">July 4th Premium</h4>
@@ -776,7 +776,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* FIFA Fan Festival at Lemon Hill */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-500"></i>
+            <i className="ri-community-line text-[#01b47d]"></i>
             FIFA Fan Festival at Lemon Hill
           </h2>
           <div className="space-y-6">
@@ -790,7 +790,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Why Philadelphia Will Make Your World Cup Unforgettable */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-award-line text-emerald-500"></i>
+            <i className="ri-award-line text-[#01b47d]"></i>
             Why Philadelphia Will Make Your World Cup Unforgettable
           </h2>
           <div className="space-y-6">
@@ -813,7 +813,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Related Destinations */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-map-pin-line text-emerald-500"></i>
+            <i className="ri-map-pin-line text-[#01b47d]"></i>
             Plan Your Historic Cities World Cup Journey
           </h2>
           <div className="space-y-6">
@@ -822,7 +822,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
             </p>
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-route-line text-emerald-500"></i>
+                <i className="ri-route-line text-[#01b47d]"></i>
                 Popular Combinations
               </h3>
               <div className="space-y-2">
@@ -830,9 +830,9 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <p>
                   Discover America's founding cities: Start in Philadelphia (current, no link), take the train north to
                   {' '}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link>
                   {' '}for the big city experience, then continue to{' '}
-                  <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+                  <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>
                   {' '}to complete your Revolutionary history tour.
                 </p>
               </div>
@@ -840,7 +840,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <h4 className="editorial-h4">Mid-Atlantic to South</h4>
                 <p>
                   Connect Philadelphia with{' '}
-                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>
                   {' '}to experience both Mid-Atlantic and Southern hospitality, with different architectural styles and culinary traditions.
                 </p>
               </div>
@@ -848,13 +848,13 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
                 <h4 className="editorial-h4">Cross-Border Northeast</h4>
                 <p>
                   Extend your trip north to{' '}
-                  <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>
+                  <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link>
                   {' '}for an international perspective, easily accessible from Philadelphia.
                 </p>
               </div>
             </div>
             <p>
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -863,7 +863,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
         {/* Start Planning Your 2026 World Cup Trip to Philadelphia */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Start Planning Your 2026 World Cup Trip to Philadelphia
           </h2>
           <div className="space-y-6">
@@ -871,13 +871,13 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
               The countdown is on. Hotels are booking up. Flights are being reserved. And Philadelphia is preparing to show the world why this city matters.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-check-double-line text-emerald-500"></i>
+              <i className="ri-check-double-line text-[#01b47d]"></i>
               Your Action Plan
             </h3>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Register for FIFA tickets</strong> at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future phases</li>
-              <li><strong>Book accommodations early</strong> via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.hotels.com</a> —6-12 months in advance is essential, especially for July 4th</li>
-              <li><strong>Research flights</strong> to Philadelphia (PHL) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.google.com/flights</a> </li>
+              <li><strong>Register for FIFA tickets</strong> at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a> for future phases</li>
+              <li><strong>Book accommodations early</strong> via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.hotels.com</a> —6-12 months in advance is essential, especially for July 4th</li>
+              <li><strong>Research flights</strong> to Philadelphia (PHL) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.google.com/flights</a> </li>
               <li><strong>Purchase a SEPTA Key card</strong> immediately upon arrival for seamless transit</li>
               <li><strong>Plan Independence Hall tour</strong> in advance—book the $1 tickets online weeks before your visit</li>
               <li><strong>Embrace the July 4th experience</strong>—this collision of American independence and World Cup football will never happen again</li>
@@ -894,7 +894,7 @@ Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cu
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

@@ -15,10 +15,10 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
         animate={{ opacity: 1, y: 0 }}
         className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-6 mb-8 relative overflow-hidden ${className}`}
       >
-        <div className="absolute top-0 left-0 w-1 h-full bg-emerald-500" />
+        <div className="absolute top-0 left-0 w-1 h-full bg-[#01b47d]" />
         <div className="flex items-start gap-4">
-          <div className="p-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 shrink-0">
-            <Trophy className="w-5 h-5 text-emerald-400" />
+          <div className="p-3 rounded-xl bg-[#01b47d]/10 border border-[#01b47d]/20 shrink-0">
+            <Trophy className="w-5 h-5 text-[#01b47d]" />
           </div>
           <div>
             <h3 className="text-lg font-bold text-white font-['Teko'] tracking-wide uppercase mb-2">
@@ -32,7 +32,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                 "Winners announced after the Final on July 19, 2026"
               ].map((rule, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-white/80 font-['Rajdhani'] font-medium leading-tight">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500/80 mt-0.5 shrink-0" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#01b47d]/80 mt-0.5 shrink-0" />
                   <span>{rule}</span>
                 </li>
               ))}
@@ -53,7 +53,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
       "@type": "Place",
-      "name": "Online (StadiumPort)",
+      "name": "Online (Stadiumport)",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "USA"
@@ -61,7 +61,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
     },
     "organizer": {
       "@type": "Organization",
-      "name": "StadiumPort",
+      "name": "Stadiumport",
       "url": "https://stadiumport.com"
     },
     "offers": {
@@ -82,7 +82,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
         "name": "Is the World Cup 2026 Prediction Game free to play?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, the StadiumPort World Cup 2026 Prediction Game is 100% free to join and play for football fans worldwide."
+          "text": "Yes, the Stadiumport World Cup 2026 Prediction Game is 100% free to join and play for football fans worldwide."
         }
       },
        {
@@ -130,21 +130,21 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
             </h3>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">01</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">01</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Complete Prediction Journey</span> <br />
                   Predict every tournament stage: Group Stage <span className="text-white font-bold">→</span> Round of 32 <span className="text-white font-bold">→</span> Round of 16 <span className="text-white font-bold">→</span> Quarter-Finals <span className="text-white font-bold">→</span> Semi-Finals <span className="text-white font-bold">→</span> Final & Champion
                 </p>
               </li>
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">02</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">02</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Point System</span> <br />
                   Earn <span className="text-white font-bold">1 point</span> for each <span className="text-white font-bold">correct prediction</span>. Final scores calculated after the World Cup 2026 Final on July 19, 2026.
                 </p>
               </li>
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">03</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">03</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Fair Play Policy</span> <br />
                   One entry per person. In case of tied scores, winners determined by: (1) Correct champion pick <span className="text-white font-bold">→</span> (2) Correct runner-up <span className="text-white font-bold">→</span> (3) Random verified draw.
@@ -172,7 +172,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                 <div className="flex items-center gap-2 text-white/90 text-sm font-['Rajdhani']">
                   <Disc className="w-4 h-4 text-white/40" /> Official World cup 2026 Adidas Ball
                 </div>
-                <div className="flex items-center gap-2 text-emerald-400 font-bold text-sm font-['Rajdhani']">
+                <div className="flex items-center gap-2 text-[#01b47d] font-bold text-sm font-['Rajdhani']">
                   <DollarSign className="w-4 h-4" /> $500 USD Cash Prize
                 </div>
               </div>
@@ -198,12 +198,12 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
           {/* Tie-Break & Fair Play */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest font-['Rajdhani'] flex items-center gap-2">
-              <Shield className="w-4 h-4 text-emerald-500" />
+              <Shield className="w-4 h-4 text-[#01b47d]" />
               Official Rules & Fair Play
             </h3>
             <ul className="space-y-4">
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">A</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">A</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Tie-Breaking Protocol</span> <br />
                   Equal points resolved by: <br />
@@ -213,7 +213,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                 </p>
               </li>
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">B</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">B</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Anti-Cheating & Security</span> <br />
                   - Strictly ONE entry per person (verified by email + IP) <br />
@@ -223,13 +223,13 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                 </p>
               </li>
               <li className="flex gap-4">
-                <span className="text-emerald-500 font-['Teko'] text-xl">C</span>
+                <span className="text-[#01b47d] font-['Teko'] text-xl">C</span>
                 <p className="text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-white font-bold">Eligibility Requirements</span> <br />
                   - Open worldwide to participants 18+ years old <br />
                   - Valid email address required for entry <br />
                   - Winners must complete identity verification (KYC) before prize distribution <br />
-                  - Employees of StadiumPort and immediate family members ineligible <br />
+                  - Employees of Stadiumport and immediate family members ineligible <br />
                   - Void where prohibited by law
                 </p>
               </li>
@@ -239,7 +239,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
           {/* FAQ */}
           <div className="space-y-6">
             <h3 className="text-sm font-bold text-white/40 uppercase tracking-widest font-['Rajdhani'] flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-emerald-500" />
+              <HelpCircle className="w-4 h-4 text-[#01b47d]" />
               Frequently Asked Questions
             </h3>
             <ul className="space-y-4">

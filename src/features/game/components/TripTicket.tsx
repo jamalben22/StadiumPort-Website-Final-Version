@@ -26,7 +26,7 @@ export const TripTicket: React.FC<TripTicketProps> = ({
         {/* Header */}
         <div className="flex justify-between items-start">
           <div className="bg-black/30 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
-            <MapPin className="w-3 h-3 text-emerald-400" />
+            <MapPin className="w-3 h-3 text-[#01b47d]" />
             <span className="text-[10px] font-bold text-white uppercase tracking-wider">Final Destination</span>
           </div>
           <div className="bg-white/10 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-white/80">
@@ -37,7 +37,7 @@ export const TripTicket: React.FC<TripTicketProps> = ({
         {/* Main Text */}
         <div className="mt-4">
           <h3 className="text-2xl font-black text-white leading-tight drop-shadow-lg">
-            Watch <span className="text-emerald-400">{teamName}</span> play the Final in {hostCity}!
+            Watch <span className="text-[#01b47d]">{teamName}</span> play the Final in {hostCity}!
           </h3>
           <p className="text-white/70 text-sm mt-1 font-medium">
             July 19, 2026 • MetLife Stadium

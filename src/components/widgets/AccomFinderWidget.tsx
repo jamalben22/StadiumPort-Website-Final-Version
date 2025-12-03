@@ -109,8 +109,8 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
               Hotels, hostels & apartments in {city}
             </p>
           </div>
-          <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-lg flex items-center justify-center">
-            <i className="ri-hotel-line text-emerald-600 text-xl"></i>
+          <div className="w-12 h-12 bg-[#01b47d]/10 dark:bg-[#008f63]/30 rounded-lg flex items-center justify-center">
+            <i className="ri-hotel-line text-[#01b47d] text-xl"></i>
           </div>
         </div>
 
@@ -134,8 +134,8 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                     onClick={() => setBudgetFilter(option.value as any)}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer border hover:scale-105 ${
                       budgetFilter === option.value
-                        ? 'bg-emerald-500 text-white border-emerald-500 shadow-lg'
-                        : 'bg-white dark:bg-navy-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-navy-600 hover:border-emerald-300 dark:hover:border-emerald-600'
+                        ? 'bg-[#01b47d] text-white border-[#01b47d] shadow-lg'
+                        : 'bg-white dark:bg-navy-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-navy-600 hover:border-[#008f63] dark:hover:border-[#008f63]'
                     }`}
                   >
                     {option.label}
@@ -161,8 +161,8 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                     onClick={() => setTypeFilter(option.value as any)}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer border flex items-center justify-center space-x-2 hover:scale-105 ${
                       typeFilter === option.value
-                        ? 'bg-emerald-500 text-white border-emerald-500 shadow-lg'
-                        : 'bg-white dark:bg-navy-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-navy-600 hover:border-emerald-300 dark:hover:border-emerald-600'
+                        ? 'bg-[#01b47d] text-white border-[#01b47d] shadow-lg'
+                        : 'bg-white dark:bg-navy-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-navy-600 hover:border-[#008f63] dark:hover:border-[#008f63]'
                     }`}
                   >
                     <i className={`${option.icon} text-lg`}></i>
@@ -179,7 +179,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
           {filteredAccommodations.map((acc, index) => (
             <div
               key={index}
-              className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 border border-slate-200 dark:border-navy-700 rounded-lg hover:border-emerald-300 dark:hover:border-emerald-600 hover:scale-105 transition-all duration-200 space-y-4 sm:space-y-0"
+              className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 border border-slate-200 dark:border-navy-700 rounded-lg hover:border-[#008f63] dark:hover:border-[#008f63] hover:scale-105 transition-all duration-200 space-y-4 sm:space-y-0"
             >
               <div className="flex flex-col sm:flex-row sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 flex-1">
                 <img
@@ -189,7 +189,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                 />
                 <div className="flex-1 space-y-2">
                   <div className="flex items-center space-x-2">
-                    <i className={`${getTypeIcon(acc.type)} text-emerald-500 text-sm`}></i>
+                    <i className={`${getTypeIcon(acc.type)} text-[#01b47d] text-sm`}></i>
                     <div className="font-medium text-slate-900 dark:text-white font-inter text-base sm:text-sm">
                       {acc.name}
                     </div>
@@ -201,7 +201,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                       <span className="text-xs">({acc.reviews} reviews)</span>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <i className="ri-map-pin-line text-emerald-500 text-xs"></i>
+                      <i className="ri-map-pin-line text-[#01b47d] text-xs"></i>
                       <span>{acc.distance}</span>
                     </div>
                   </div>
@@ -235,7 +235,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
                   target="_blank"
                   rel="nofollow sponsored noopener noreferrer"
                   data-affiliate-type="hotel"
-                  className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-emerald-500 hover:bg-emerald-600 text-white shadow-sm hover:shadow-lg hover:scale-105 flex-shrink-0"
+                  className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer px-3 py-2 text-sm bg-[#01b47d] hover:bg-[#008f63] text-white shadow-sm hover:shadow-lg hover:scale-105 flex-shrink-0"
                   onClick={() => handleViewDetails(acc)}
                 >
                   {isLoading ? (
@@ -260,7 +260,7 @@ export function AccomFinderWidget({ city = 'Los Angeles', className = '' }: Acco
             target="_blank"
             rel="nofollow sponsored noopener noreferrer"
             data-affiliate-type="hotel"
-            className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-3 text-sm sm:text-base border-2 border-emerald-500 text-emerald-500 hover:bg-emerald-500 hover:text-white shadow-sm hover:shadow-lg hover:scale-105"
+            className="affiliate-btn inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 whitespace-nowrap cursor-pointer w-full px-4 py-3 text-sm sm:text-base border-2 border-[#01b47d] text-[#01b47d] hover:bg-[#008f63] hover:text-white shadow-sm hover:shadow-lg hover:scale-105"
             onClick={handleViewAllAccommodations}
           >
             <i className="ri-search-line mr-2 text-sm sm:text-base"></i>

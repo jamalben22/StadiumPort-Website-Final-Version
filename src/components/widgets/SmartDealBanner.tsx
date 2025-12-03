@@ -138,7 +138,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
-                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 backdrop-blur-sm text-sm transition-all duration-300"
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-slate-300 focus:outline-none focus:ring-2 focus:ring-[#01b47d] focus:border-[#01b47d] backdrop-blur-sm text-sm transition-all duration-300"
                     required
                   />
                 </div>
@@ -148,7 +148,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
                   size="sm"
                   fullWidth
                   disabled={isLoading}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 whitespace-nowrap"
+                  className="bg-[#01b47d] hover:bg-[#008f63] text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#01b47d]/25 whitespace-nowrap"
                 >
                   {isLoading ? (
                     <>
@@ -165,7 +165,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
               </form>
             ) : (
               <div className="text-center py-4">
-                <div className="w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
+                <div className="w-12 h-12 bg-[#01b47d] rounded-full flex items-center justify-center mx-auto mb-3 animate-pulse">
                   <i className="ri-check-line text-white text-xl"></i>
                 </div>
                 <h4 className="font-space font-semibold text-lg text-white mb-1">You're subscribed!</h4>
@@ -181,7 +181,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
   // Limited Time Deal Widget
   return (
     <div className={`relative max-w-sm mx-auto ${className}`}>
-      <div className="bg-gradient-to-br from-navy-900/95 via-navy-800/95 to-emerald-900/95 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl overflow-hidden">
+      <div className="bg-gradient-to-br from-navy-900/95 via-navy-800/95 to-[#008f63]/95 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl overflow-hidden">
         {/* Glass morphism overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl pointer-events-none"></div>
         
@@ -206,7 +206,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
           {/* Countdown Timer */}
           <div className="text-center mb-4">
             <div className="text-slate-400 text-xs mb-1">ENDS IN</div>
-            <div className="font-mono text-2xl font-bold text-emerald-400 tracking-wider shadow-lg">
+            <div className="font-mono text-2xl font-bold text-[#01b47d] tracking-wider shadow-lg">
               {timeLeft}
             </div>
           </div>
@@ -224,7 +224,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
               <div className="flex items-center space-x-3">
                 <div className="text-slate-400 text-sm line-through">${deal.originalPrice}</div>
                 <div className="font-space font-bold text-xl text-gold-400">${deal.salePrice}</div>
-                <div className="bg-emerald-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                <div className="bg-[#01b47d] text-white px-2 py-1 rounded-full text-xs font-semibold">
                   {deal.discount}% OFF
                 </div>
               </div>
@@ -237,7 +237,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
             size="sm"
             fullWidth
             onClick={() => handleDealClick(deal.affiliateUrl)}
-            className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:scale-105 whitespace-nowrap affiliate-cta"
+            className="bg-[#01b47d] hover:bg-[#008f63] text-white font-semibold py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-[#01b47d]/25 hover:scale-105 whitespace-nowrap affiliate-cta"
             data-affiliate-type="deal"
           >
             <i className="ri-price-tag-3-line mr-2"></i>

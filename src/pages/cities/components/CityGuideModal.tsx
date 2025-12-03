@@ -22,7 +22,7 @@ export default function CityGuideModal({ city, onClose }: CityGuideModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-75 backdrop-blur-sm">
       <div className="relative w-full max-w-3xl max-h-[90vh] bg-white dark:bg-navy-900 rounded-3xl shadow-2xl overflow-hidden flex flex-col">
         {/* Modal Header */}
-        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white">
+        <div className="flex items-center justify-between p-6 bg-gradient-to-r from-[#01b47d] to-[#01b47d] text-white">
           <h2 className="font-space font-bold text-2xl">Explore {city.name}</h2>
           <button onClick={onClose} className="text-white hover:text-gray-200">
             <i className="ri-close-line text-3xl"></i>

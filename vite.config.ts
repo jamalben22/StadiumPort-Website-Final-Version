@@ -3,6 +3,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
+import { apiMiddleware } from './scripts/vite-api-middleware'
 
 const base = process.env.BASE_PATH || '/'
 const isPreview = process.env.IS_PREVIEW  ? true : false;
@@ -12,7 +13,14 @@ export default defineConfig({
    __BASE_PATH__: JSON.stringify(base),
    __IS_PREVIEW__: JSON.stringify(isPreview)
   },
-  plugins: [react(),
+  plugins: [
+    {
+      name: 'api-middleware',
+      configureServer(server) {
+        server.middlewares.use(apiMiddleware);
+      },
+    },
+    react(),
     AutoImport({
       imports: [
         {

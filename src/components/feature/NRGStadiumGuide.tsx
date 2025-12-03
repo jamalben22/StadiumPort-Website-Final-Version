@@ -156,11 +156,11 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
       
       {/* TOC Sidebar - Desktop */}
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -176,11 +176,11 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border border-[#01b47d]/30 dark:border-[#01b47d]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -188,8 +188,8 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -200,16 +200,16 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -227,11 +227,11 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -267,7 +267,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -277,32 +277,32 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">NRG Stadium</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">NRG Stadium</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              NRG Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">World Cup 2026 Guide</span>
+              NRG Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">World Cup 2026 Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Houston, Texas</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-trophy-line text-lg"></i>
                 </div>
                 <span>7 Matches</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>72,220 Capacity</span>
@@ -311,10 +311,10 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -331,8 +331,8 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Hosts <strong>7 matches</strong> (5 Group, 2 Knockout)</li>
                <li>• Venue: <strong>NRG Stadium</strong> (Houston)</li>
@@ -342,7 +342,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             NRG Stadium: Your Complete Guide to World Cup 2026 in Houston
           </h2>
           
@@ -359,11 +359,11 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
 
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-            Located in <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
+            Located in <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>, NRG Stadium is Houston's premier sports and entertainment venue.
           </p>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
             <strong>NRG Stadium is one of the </strong>
-            <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+            <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
             {`, welcoming fans from across the globe to Texas.`}
           </p>
           <p className="whitespace-pre-line">
@@ -374,7 +374,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             Stadium Overview & Fast Facts
           </h3>
           
@@ -382,7 +382,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-building-2-line text-emerald-500"></i>
+                  <i className="ri-building-2-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Official Name</span>
                   <p>NRG Stadium (will be branded "Houston Stadium" for FIFA World Cup 2026)</p>
                 </div>
@@ -390,7 +390,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-map-pin-line text-emerald-500"></i>
+                  <i className="ri-map-pin-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Location</span>
                   <p>South Houston, NRG Park complex (off Loop 610 South)</p>
                 </div>
@@ -398,7 +398,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-calendar-line text-emerald-500"></i>
+                  <i className="ri-calendar-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Opened</span>
                   <p>August 24, 2002</p>
                 </div>
@@ -406,7 +406,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-group-line text-emerald-500"></i>
+                  <i className="ri-group-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Capacity</span>
                   <p>72,220 (standard); expandable for major events</p>
                 </div>
@@ -416,7 +416,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-team-line text-emerald-500"></i>
+                  <i className="ri-team-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Primary Tenants</span>
                   <p>Houston Texans (NFL), Houston Livestock Show and Rodeo, Texas Bowl</p>
                 </div>
@@ -424,7 +424,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-pencil-ruler-2-line text-emerald-500"></i>
+                  <i className="ri-pencil-ruler-2-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Architect</span>
                   <p>Populous (formerly HOK Sport)</p>
                 </div>
@@ -432,7 +432,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-grass-line text-emerald-500"></i>
+                  <i className="ri-grass-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Surface Type</span>
                   <p>Artificial turf (Matrix Turf with Helix Technology)</p>
                 </div>
@@ -440,7 +440,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-umbrella-line text-emerald-500"></i>
+                  <i className="ri-umbrella-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Roof Type</span>
                   <p>Retractable fabric roof (opens/closes in 7 minutes)</p>
                 </div>
@@ -450,24 +450,24 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
           <div className="mt-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Notable Features
             </h4>
             <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-200">
               <div className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>First NFL stadium with retractable roof</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Massive 14,549 sq ft video boards</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Climate-controlled comfort</span>
               </div>
               <div className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>State-of-the-art high-density WiFi system</span>
               </div>
             </div>
@@ -477,7 +477,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-500"></i>
+            <i className="ri-time-line text-[#01b47d]"></i>
             History & Legacy
           </h3>
           <div className="prose dark:prose-invert max-w-none">
@@ -491,7 +491,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-4-line text-emerald-500"></i>
+            <i className="ri-building-4-line text-[#01b47d]"></i>
             Stadium Architecture & Experience
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -506,7 +506,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             What Matches to Expect
           </h3>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston will host seven FIFA World Cup 2026 matches at NRG Stadium: five group stage fixtures (June 14, 17, 20, 23, and 26) plus two knockout rounds—a Round of 32 match on June 29 and a Round of 16 clash on July 4. The July 4th Independence Day knockout match promises to be particularly electric, combining America's biggest holiday with World Cup drama.</p>
@@ -517,12 +517,12 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Getting to the Stadium
           </h3>
 
           <h4 className="editorial-h4 animate-fade-up flex items-center gap-2">
-            <i className="ri-train-line text-emerald-500"></i>
+            <i className="ri-train-line text-[#01b47d]"></i>
             By Metro Rail (Recommended)
           </h4>
           <p className="leading-relaxed mb-4">The METRORail Red Line provides direct access to NRG Park via the Stadium Park/Astrodome station, located just steps from the stadium entrance. Trains run approximately every 12 minutes during regular service, with increased frequency during major events. The journey from downtown Houston's Preston Station takes approximately 28 minutes.</p>
@@ -531,13 +531,13 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           <p className="leading-relaxed">For World Cup matches, arrive at least 90 minutes early. Trains will be packed post-match, so consider exploring nearby restaurants or bars for an hour after the final whistle to let crowds disperse.</p>
 
           <h4 className="editorial-h4 animate-fade-up flex items-center gap-2 mt-6">
-            <i className="ri-bus-line text-emerald-500"></i>
+            <i className="ri-bus-line text-[#01b47d]"></i>
             By Bus
           </h4>
           <p className="leading-relaxed">Three METRO bus routes serve NRG Park: Routes 11, 14, and 84, providing connections from various Houston neighborhoods. Bus service is less frequent than rail, so check ridemetro.org for current schedules and route maps.</p>
 
           <h4 className="editorial-h4 animate-fade-up flex items-center gap-2 mt-6">
-            <i className="ri-car-line text-emerald-500"></i>
+            <i className="ri-car-line text-[#01b47d]"></i>
             By Car & Parking
           </h4>
           <p className="leading-relaxed mb-4">Driving? Prepare for significant matchday traffic. NRG Park offers over 26,000 parking spaces across multiple color-coded lots, with parking passes ranging from $27 to over $150 depending on proximity to the stadium. Lots open 2.5 hours before kickoff, and prepaid parking passes are strongly recommended as cash parking is not available for major events.</p>
@@ -555,7 +555,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </ul>
 
           <h4 className="editorial-h4 animate-fade-up flex items-center gap-2 mt-6">
-            <i className="ri-taxi-line text-emerald-500"></i>
+            <i className="ri-taxi-line text-[#01b47d]"></i>
             By Rideshare/Taxi
           </h4>
           <p className="leading-relaxed">Official rideshare drop-off and pickup zones are located in the Yellow Lot 37 on Maine Street at Gate 16. Expect surge pricing during peak arrival and departure times—budget $25-40 from downtown, $40-60 from IAH, or $20-30 from Hobby Airport. Allow extra time for post-match traffic congestion.</p>
@@ -565,7 +565,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -577,7 +577,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6"><strong>Montrose:</strong> Houston's eclectic arts district combines trendy restaurants, craft cocktail bars, and vintage shops with a bohemian atmosphere. Slightly farther from the stadium but offers authentic local flavor and excellent dining.</p>
 
             <h4 className="editorial-h4 animate-fade-up mb-2">Budget Options</h4>
-            <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Chain hotels near the Medical Center and South Main corridor offer competitive rates (typically $100-150/night outside tournament weeks). Consider booking accommodations early through platforms like <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-sky-600 dark:text-sky-400 underline">booking.com</a> or Expedia, as over 90% of Houston's hotels were already booked by late 2025 for the World Cup period.</p>
+            <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Chain hotels near the Medical Center and South Main corridor offer competitive rates (typically $100-150/night outside tournament weeks). Consider booking accommodations early through platforms like <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] dark:text-[#01b47d] underline">booking.com</a> or Expedia, as over 90% of Houston's hotels were already booked by late 2025 for the World Cup period.</p>
 
             <h4 className="editorial-h4 animate-fade-up mb-2">Mid-Range Picks</h4>
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">Downtown Houston hotels—including newer properties like the Home2Suites and Tru by Hilton added specifically for World Cup capacity—provide modern amenities and transit convenience. Expect $200-300/night during the tournament.</p>
@@ -592,49 +592,49 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-lightbulb-line text-emerald-500"></i>
+            <i className="ri-lightbulb-line text-[#01b47d]"></i>
             Matchday Tips & Insider Advice
           </h3>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-            <i className="ri-time-line text-emerald-500"></i>
+            <i className="ri-time-line text-[#01b47d]"></i>
             Arrive early
           </h4>
           <p className="leading-relaxed">Security screening for World Cup matches will be extensive. Plan to arrive at least 90 minutes before kickoff to clear security, explore the stadium, grab food, and soak in the pre-match atmosphere.</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-shopping-bag-3-line text-emerald-500"></i>
+            <i className="ri-shopping-bag-3-line text-[#01b47d]"></i>
             What to bring &amp; Bag policy
           </h4>
           <p className="leading-relaxed mb-2"><strong>What to bring:</strong> Valid government-issued ID (required for entry), phone/camera (for memories), sunscreen (even indoors—UV can penetrate the roof fabric), and a portable phone charger.</p>
           <p className="leading-relaxed"><strong>Bag policy:</strong> Expect FIFA's standard restrictions—small clear bags only, with specific size limitations.</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-prohibited-line text-emerald-500"></i>
+            <i className="ri-prohibited-line text-[#01b47d]"></i>
             What NOT to bring
           </h4>
           <p className="leading-relaxed">Large bags, backpacks, outside food/beverages, noisemakers, laser pointers, or any prohibited items. Check FIFA's official guidelines before traveling.</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-restaurant-line text-emerald-500"></i>
+            <i className="ri-restaurant-line text-[#01b47d]"></i>
             Food &amp; drink inside
           </h4>
           <p className="leading-relaxed">Stadium concessions will feature typical American stadium fare (burgers, hot dogs, nachos, pizza) alongside international options. Prices will be premium ($10-15 for meals, $8-12 for beer). The connected climate control means you can comfortably enjoy hot food despite outdoor temperatures exceeding 95°F (35°C).</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-sun-line text-emerald-500"></i>
+            <i className="ri-sun-line text-[#01b47d]"></i>
             Beat the heat
           </h4>
           <p className="leading-relaxed">Houston in June-July is brutally hot and humid. NRG's air conditioning is essential—expect comfortable 72°F (22°C) temperatures inside regardless of outdoor conditions. Dress in breathable fabrics and stay hydrated.</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-train-line text-emerald-500"></i>
+            <i className="ri-train-line text-[#01b47d]"></i>
             Post-match transport
           </h4>
           <p className="leading-relaxed">The METRORail operates special event service with increased frequency during Texans games and will likely extend this for World Cup matches. Still, expect packed trains. Exit strategy: Consider lingering at one of the stadium's bars or exploring nearby restaurants for 45-60 minutes to avoid the rush.</p>
 
           <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-            <i className="ri-wifi-line text-emerald-500"></i>
+            <i className="ri-wifi-line text-[#01b47d]"></i>
             Mobile connectivity
           </h4>
           <p className="leading-relaxed">The stadium features a state-of-the-art high-density WiFi system designed to handle simultaneous connections from all 72,000+ guests—perfect for sharing match moments on social media or checking live scores from other venues.</p>
@@ -644,7 +644,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-user-line text-emerald-500"></i>
+            <i className="ri-map-pin-user-line text-[#01b47d]"></i>
             Things to Do Nearby
           </h3>
 
@@ -675,7 +675,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h2 className="editorial-h2">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Stadium: Explore Houston
           </h2>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston's diversity and Gulf Coast energy make it an exceptional World Cup 2026 destination.</p>
@@ -683,7 +683,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div>
               <p className="font-semibold">Discover Houston:</p>
               <p>
-                Explore our complete <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston World Cup 2026 Guide</Link> for comprehensive information:
+                Explore our complete <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Houston World Cup 2026 Guide</Link> for comprehensive information:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Hotels near NRG Stadium</li>
@@ -696,11 +696,11 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div>
               <p className="font-semibold">Other Southern Stadiums:</p>
               <p>
-                Planning a Texas tour? Visit <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas. Also check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
+                Planning a Texas tour? Visit <Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas. Also check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes-Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Hard Rock Stadium</Link> in Miami.
               </p>
             </div>
             <p>
-              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+              <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -708,29 +708,29 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-flag-line text-emerald-500"></i>
+            <i className="ri-flag-line text-[#01b47d]"></i>
             Final Verdict & Key Takeaway
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert prose-strong:text-slate-900 dark:prose-strong:text-slate-100">
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed mb-6">NRG Stadium represents the perfect synthesis of Texas ambition and world-class sports infrastructure—a venue that delivers NFL-caliber comfort and intimacy while accommodating World Cup-sized crowds. The retractable roof technology means you'll experience matches in climate-controlled perfection, a crucial advantage during Houston's sweltering summer. The city's remarkable diversity, exceptional dining scene, and southern hospitality create a welcoming atmosphere for international visitors, while the fan-friendly stadium configuration ensures every seat offers compelling views of the action.</p>
 
             <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-              <i className="ri-user-star-line text-emerald-500"></i>
+              <i className="ri-user-star-line text-[#01b47d]"></i>
               This stadium is perfect for:
             </h4>
             <p className="leading-relaxed">Fans who appreciate architectural innovation, anyone wanting guaranteed comfort (no weather worries!), and travelers seeking excellent transport connections via METRORail. The knockout round fixtures on June 29 and especially July 4 promise unforgettable atmospheres.</p>
 
             <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Don't miss:
             </h4>
             <p className="leading-relaxed">The experience of walking into NRG Stadium through those glass-facade concourses as the building glows against Houston's skyline. Arrive early, grab some Tex-Mex from a nearby food truck, ride the Metro with singing supporters from dozens of nations, and prepare for seven minutes of pure World Cup magic.</p>
 
             <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2 mt-4">
-              <i className="ri-calendar-check-line text-emerald-500"></i>
+              <i className="ri-calendar-check-line text-[#01b47d]"></i>
               Book now:
             </h4>
-            <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">booking.com</a> or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia</a>, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
+            <p className="leading-relaxed">With over 90% of Houston hotels already reserved for the tournament and estimates of over 500,000 visitors arriving for the matches, early planning is essential. Secure your <a href="https://booking.com/" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">booking.com</a> or <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Expedia</a>, explore Airbnb options in Montrose or Museum District, and consider booking airport transfers in advance through trusted shuttle services to avoid July 4th weekend surcharges.</p>
 
             <p className="text-slate-700 dark:text-slate-200 leading-relaxed">Houston is ready to welcome the world. Are you ready to experience World Cup 2026 in Texas style?</p>
           </div>
@@ -760,7 +760,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                     ></i>
                   </button>
                 ))}
-                {hasRated && <span className="ml-3 text-emerald-500 font-medium animate-fade-in">Thanks for voting!</span>}
+                {hasRated && <span className="ml-3 text-[#01b47d] font-medium animate-fade-in">Thanks for voting!</span>}
               </div>
             </div>
             <div className="flex flex-col justify-center">
@@ -779,7 +779,7 @@ export const NRGStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                        alert('Link copied to clipboard!');
                     }
                   }}
-                  className="flex items-center gap-2 px-4 py-2 bg-emerald-500 text-white rounded-lg hover:bg-emerald-600 transition-colors"
+                  className="flex items-center gap-2 px-4 py-2 bg-[#01b47d] text-white rounded-lg hover:bg-[#008f63] transition-colors"
                 >
                   <i className="ri-share-line"></i>
                   <span>Share</span>

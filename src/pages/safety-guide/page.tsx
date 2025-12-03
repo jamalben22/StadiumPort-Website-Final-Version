@@ -234,10 +234,10 @@ export default function SafetyGuidePage() {
           <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-amber-500/5 dark:bg-amber-500/10 backdrop-blur-3xl rounded-full border border-amber-500/10 dark:border-amber-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
           {/* Additional floating elements for emergency section */}
           <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-br from-red-100/20 to-orange-100/20 dark:from-red-500/10 dark:to-orange-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-sky-100/20 dark:from-blue-500/10 dark:to-sky-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
           {/* Additional floating elements for dedicated article guides section */}
-          <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-br from-emerald-100/20 to-teal-100/20 dark:from-emerald-500/10 dark:to-teal-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/2 left-10 w-96 h-96 bg-gradient-to-br from-blue-100/20 to-sky-100/20 dark:from-blue-500/10 dark:to-sky-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/2 left-10 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
           {/* Additional floating elements for explore more safety guides section */}
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-slate-100/30 to-white/30 dark:from-slate-800/20 dark:to-navy-800/20 rounded-full blur-3xl"></div>
           <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-slate-50/30 to-slate-100/30 dark:from-navy-900/20 dark:to-slate-900/20 rounded-full blur-3xl"></div>
@@ -248,7 +248,7 @@ export default function SafetyGuidePage() {
             <div className="text-center">
               <div className="mb-8">
                 <nav className="flex items-center justify-center space-x-2 text-sm">
-                  <a className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium" href="/">Home</a>
+                  <a className="text-slate-500 dark:text-slate-400 hover:text-[#008f63] dark:hover:text-[#008f63] transition-colors duration-300 font-medium" href="/">Home</a>
                   <span className="text-slate-300 dark:text-slate-600">›</span>
                   <span className="text-slate-900 dark:text-white font-medium">Safety Guide</span>
                 </nav>
@@ -278,16 +278,16 @@ export default function SafetyGuidePage() {
                   </div>
                 </div>
                 <div className="group relative text-center h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-[#01b47d]/5 dark:from-green-900/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-green-200/50 dark:hover:border-green-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-green-500/10 dark:hover:shadow-green-500/5 h-full">
-                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-green-600 group-hover:to-emerald-600 dark:group-hover:from-green-400 dark:group-hover:to-emerald-400 transition-all duration-700">3</div>
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-green-600 group-hover:to-[#01b47d] dark:group-hover:from-green-400 dark:group-hover:to-[#01b47d] transition-all duration-700">3</div>
                     <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Host Countries</div>
                   </div>
                 </div>
                 <div className="group relative text-center h-full">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5 h-full">
-                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">9+</div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#01b47d]/10 dark:hover:shadow-[#01b47d]/5 h-full">
+                    <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-[#01b47d] group-hover:to-[#01b47d] dark:group-hover:from-[#01b47d] dark:group-hover:to-[#01b47d] transition-all duration-700">9+</div>
                     <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Safety Tips</div>
                   </div>
                 </div>
@@ -348,7 +348,7 @@ export default function SafetyGuidePage() {
                 {/* Safety Insight */}
                 <div className="bg-gradient-to-br from-slate-50 to-slate-100 dark:from-navy-800 dark:to-navy-700 rounded-2xl p-6 md:p-8 border border-slate-200/50 dark:border-navy-700/50">
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-[#01b47d] to-[#01b47d] flex items-center justify-center">
                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>

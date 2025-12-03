@@ -24,9 +24,9 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
       {!hideHero && (
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
           <ol className="flex items-center gap-2 text-sm">
-            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
             <li className="text-slate-400">›</li>
-            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
             <li className="text-slate-400">›</li>
             <li className="text-slate-700 dark:text-slate-200">BMO Field</li>
           </ol>
@@ -48,7 +48,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 placeholder="blur"
                 sizes="100vw"
               />
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
 
             {/* Preview Content removed to match established stadium page patterns */}
           </div>
@@ -102,11 +102,11 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Canada's Soccer Cathedral Prepares for Its Biggest Moment */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Canada's Soccer Cathedral Prepares for Its Biggest Moment
               </h3>
               <div>
-                <p className="leading-relaxed mb-6"><span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link>, BMO Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. On June 12, 2026, history will be made when Canada's men's national team takes the pitch for the country's first-ever men's FIFA World Cup match on home soil. This lakefront venue—Canada's original soccer-specific stadium—has spent nearly two decades building toward this moment, evolving from a modest 20,000-seat arena into a crown jewel ready to welcome the world's greatest tournament.</p>
+                <p className="leading-relaxed mb-6"><span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link>, BMO Field is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>. On June 12, 2026, history will be made when Canada's men's national team takes the pitch for the country's first-ever men's FIFA World Cup match on home soil. This lakefront venue—Canada's original soccer-specific stadium—has spent nearly two decades building toward this moment, evolving from a modest 20,000-seat arena into a crown jewel ready to welcome the world's greatest tournament.</p>
                 <p className="leading-relaxed">
                   BMO Field will host six World Cup matches total, including five group stage fixtures and one knockout round game, with a temporarily expanded capacity reaching 45,736 seats. The stadium sits on Exhibition Place, where Toronto's sporting heritage runs deep, offering international fans an intimate yet electric atmosphere that European visitors will recognize—this is no cavernous NFL bowl, but a purpose-built football stadium where every seat brings you close to the action. Toronto joins Vancouver as Canada's two host cities for the tournament, which will be jointly staged across 16 venues in the United States, Mexico, and Canada.
                 </p>
@@ -117,30 +117,30 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Stadium Overview & Fast Facts */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-information-line text-sky-400 dark:text-sky-300 text-4xl"></i>
+                <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Stadium Overview & Fast Facts
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3">
-                  <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-map-pin-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Official Name:</strong> BMO Field (will be "Toronto Stadium" during World Cup per FIFA naming protocols)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-map-2-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-map-2-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Location:</strong> Exhibition Place, Old Toronto, Ontario
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-calendar-line text-blue-400 dark:text-sky-300 text-xl"></i>
+                  <i className="ri-calendar-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Opened:</strong> April 28, 2007
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-group-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-group-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Capacity:</strong> 45,736 (World Cup 2026) / 30,000 (standard)
                   </p>
@@ -152,25 +152,25 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-community-line text-blue-400 dark:text-sky-300 text-xl"></i>
+                  <i className="ri-community-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Original Architect:</strong> Brisbin Brook Beynon Architects
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-building-line text-blue-400 dark:text-sky-300 text-xl"></i>
+                  <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Expansion Architect:</strong> Gensler (2014-2016)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Surface Type:</strong> Natural grass (Kentucky Bluegrass)
                   </p>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-umbrella-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-umbrella-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <p className="leading-relaxed">
                     <strong>Roof Type:</strong> Partial canopy cover (east, west, and south stands)
                   </p>
@@ -208,7 +208,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Stadium Architecture & Experience */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-building-4-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+                <i className="ri-building-4-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Stadium Architecture & Experience
               </h3>
               <div>
@@ -231,7 +231,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* What Matches to Expect */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 What Matches to Expect
               </h3>
               <div>
@@ -248,7 +248,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Getting to the Stadium */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-map-2-line text-blue-400 dark:text-sky-300 text-4xl"></i>
+                <i className="ri-map-2-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Getting to the Stadium
               </h3>
               <p className="leading-relaxed">
@@ -258,7 +258,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
               {/* Transport Options */}
               <div className="mt-6 grid md:grid-cols-2 gap-4">
                 <div className="flex items-start gap-3">
-                  <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <div className="space-y-2 leading-relaxed">
                     <p>
                       <strong>By GO Train (Recommended):</strong>  Exhibition GO Station sits directly adjacent to BMO Field, just one stop west of Union Station on the Lakeshore West line. The journey takes 7 minutes and costs $3-5. Trains run every 20 minutes normally, with increased service on event days. Exit the station and you're a 2-minute walk from the north entrance. This is your fastest, most reliable option from downtown or Pearson Airport (via Union Station).
@@ -266,7 +266,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-train-line text-sky-400 dark:text-sky-300 text-xl"></i>
+                  <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <div className="space-y-2 leading-relaxed">
                     <p>
                       <strong>By TTC Streetcar:</strong>  From Union Station, take the 509 Harbourfront streetcar toward Fleet Loop, then transfer to the 509/511 replacement bus toward Lake Shore and Bathurst. Walk south on Nova Scotia Avenue to reach the stadium. From Bathurst Station on Line 2 (Bloor), board the 511 streetcar using the same transfer. Journey time: 25-35 minutes from downtown.
@@ -274,7 +274,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-bus-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-bus-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <div className="space-y-2 leading-relaxed">
                     <p>
                       <strong>By TTC Bus:</strong>  From Dufferin Station on Line 2, take the 29 bus south directly to Exhibition, with service operating every few minutes on event days. This route deposits you at the north end of Exhibition Place, a 5-minute walk to BMO Field.
@@ -282,7 +282,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-subway-line text-blue-400 dark:text-sky-300 text-xl"></i>
+                  <i className="ri-subway-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <div className="space-y-2 leading-relaxed">
                     <p>
                       <strong>Future Transit:</strong>  Toronto's under-construction Ontario Line subway will eventually connect Exhibition GO Station directly to the city's northeast, reducing travel time from Don Mills & Eglinton to under 30 minutes. This won't be complete for the 2026 World Cup, but demonstrates the stadium's long-term transit connectivity.
@@ -298,7 +298,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-taxi-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                  <i className="ri-taxi-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                   <div className="space-y-2 leading-relaxed">
                     <p>
                       <strong>By Rideshare/Taxi:</strong>  Drop-off zones are located along Princes' Boulevard and near Gate 1. During World Cup, expect surge pricing and potential road closures. Budget $20-35 from downtown hotels, more from the airport.
@@ -312,7 +312,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Where to Stay */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300"></i>
+                <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d]"></i>
                 Where to Stay
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -384,7 +384,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Post-Match Exit */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-walk-line text-emerald-400 dark:text-emerald-300"></i>
+                <i className="ri-walk-line text-[#01b47d] dark:text-[#01b47d]"></i>
                 Post-Match Exit
               </h3>
               <div>
@@ -398,7 +398,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Things to Do Nearby */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-map-pin-2-line text-sky-400 dark:text-sky-300"></i>
+                <i className="ri-map-pin-2-line text-[#01b47d] dark:text-[#01b47d]"></i>
                 Things to Do Nearby
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
@@ -438,7 +438,7 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 </p>
               </div>
               <p className="leading-relaxed mt-4">
-                Planning matches across North America? Consider <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver or <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey.
+                Planning matches across North America? Consider <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">BC Place</Link> in Vancouver or <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link> in New York/New Jersey.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -446,14 +446,14 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
             {/* Beyond the Stadium: Explore Toronto */}
             <section className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-4xl"></i>
+                <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-4xl"></i>
                 Beyond the Stadium: Explore Toronto
               </h3>
               <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
                 <p>Toronto's world-class attractions and multicultural vibrancy make it a premier World Cup 2026 destination.</p>
                 <div>
                   <h4 className="editorial-h4 mb-2">Discover Toronto</h4>
-                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto World Cup 2026 Guide</Link> for essential information:</p>
+                  <p>Explore our complete <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Toronto World Cup 2026 Guide</Link> for essential information:</p>
                   <ul className="list-disc pl-6 space-y-1">
                     <li>Hotels near BMO Field and downtown</li>
                     <li>Toronto's efficient public transit system</li>
@@ -464,16 +464,16 @@ export const BMOFieldGuide: React.FC<BMOFieldGuideProps> = ({ showHeader = false
                 </div>
                 <div>
                   <h4 className="editorial-h4 mb-2">Other Canadian Stadium</h4>
-                    <p>Visiting both Canadian host cities? Check out <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">BC Place</Link> in Vancouver.</p>
+                    <p>Visiting both Canadian host cities? Check out <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">BC Place</Link> in Vancouver.</p>
                 </div>
-                <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+                <p><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               </div>
               <hr className="editorial-divider" />
             </section>
 
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                <i className="ri-check-double-line text-emerald-400 dark:text-emerald-300"></i>
+                <i className="ri-check-double-line text-[#01b47d] dark:text-[#01b47d]"></i>
                 Final Verdict & Key Takeaway
               </h3>
               <div className="space-y-4">

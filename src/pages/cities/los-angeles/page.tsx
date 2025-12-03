@@ -30,27 +30,27 @@ const MatchScheduleTable = () => (
       </thead>
       <tbody className="divide-y divide-slate-100 dark:divide-slate-800 bg-white dark:bg-slate-900/40">
         <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
-          <td className="p-3 font-medium text-emerald-700 dark:text-emerald-400">June 12</td>
+          <td className="p-3 font-medium text-[#008f63] dark:text-[#01b47d]">June 12</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Group Stage</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">USA Opening Match</td>
         </tr>
         <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
-          <td className="p-3 font-medium text-emerald-700 dark:text-emerald-400">June 15, 18, 21</td>
+          <td className="p-3 font-medium text-[#008f63] dark:text-[#01b47d]">June 15, 18, 21</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Group Stage</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Group matches</td>
         </tr>
         <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
-          <td className="p-3 font-medium text-emerald-700 dark:text-emerald-400">June 25</td>
+          <td className="p-3 font-medium text-[#008f63] dark:text-[#01b47d]">June 25</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Group Stage</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">USA Third Match</td>
         </tr>
         <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
-          <td className="p-3 font-medium text-emerald-700 dark:text-emerald-400">June 28 & July 2</td>
+          <td className="p-3 font-medium text-[#008f63] dark:text-[#01b47d]">June 28 & July 2</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Round of 32</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Knockout fixtures</td>
         </tr>
         <tr className="hover:bg-slate-50/50 dark:hover:bg-slate-800/20">
-          <td className="p-3 font-medium text-emerald-700 dark:text-emerald-400">July 10</td>
+          <td className="p-3 font-medium text-[#008f63] dark:text-[#01b47d]">July 10</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Quarterfinal</td>
           <td className="p-3 text-slate-600 dark:text-slate-300">Semifinal berth at stake</td>
         </tr>
@@ -198,11 +198,11 @@ export default function LosAngelesArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -218,11 +218,11 @@ export default function LosAngelesArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -230,8 +230,8 @@ export default function LosAngelesArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -241,16 +241,16 @@ export default function LosAngelesArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -268,11 +268,11 @@ export default function LosAngelesArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -307,7 +307,7 @@ export default function LosAngelesArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -317,32 +317,32 @@ export default function LosAngelesArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Los Angeles</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Los Angeles</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Los Angeles World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Los Angeles World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>SoFi Stadium</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>70,240 Capacity</span>
@@ -351,10 +351,10 @@ export default function LosAngelesArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -370,8 +370,8 @@ export default function LosAngelesArticlePage() {
         <article className="editorial-body editorial-dropcap">
           
           {/* [QUICK SUMMARY: 8 matches, USA Opener, SoFi Stadium, SoCal Hub] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Los Angeles hosts <strong>8 matches</strong>—including USA Opener</li>
                <li>• Venue: <strong>SoFi Stadium</strong> (Inglewood)</li>
@@ -381,7 +381,7 @@ export default function LosAngelesArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>Your Complete Travel Guide to the World's City
+            <i className="ri-trophy-line text-[#01b47d]"></i>Your Complete Travel Guide to the World's City
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -398,18 +398,18 @@ export default function LosAngelesArticlePage() {
 
           <div className="text-premium-lead mb-8 leading-relaxed">
             <p className="whitespace-pre-line">
-              As one of the <Link to="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">World Cup 2026 host cities</Link>, Los Angeles will welcome fans from around the globe with a mix of football energy and California sunshine.
+              As one of the <Link to="/world-cup-2026-host-cities" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">World Cup 2026 host cities</Link>, Los Angeles will welcome fans from around the globe with a mix of football energy and California sunshine.
             </p>
           </div>
           <div className="text-premium-lead mb-8 leading-relaxed">
             <p className="whitespace-pre-line">
               {`Get ready for the opening kick: The U.S. Men's National Team launches their World Cup journey at `}
-              <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
+              <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">SoFi Stadium</Link>
               {` on June 12, 2026`}
             </p>
             
             {/* [PULL QUOTE] */}
-            <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+            <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
               "Los Angeles isn't just hosting the World Cup—it's throwing the party to end all parties."
             </blockquote>
 
@@ -422,10 +422,10 @@ export default function LosAngelesArticlePage() {
           </div>
 
           {/* Essential Links Module — Apple-level premium */}
-          <div className="callout-premium mb-12 p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
+          <div className="callout-premium mb-12 p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
             <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-8">
               <div className="icon-premium-lg flex items-center justify-center">
-                <i className="ri-links-line text-emerald-600" aria-hidden="true"></i>
+                <i className="ri-links-line text-[#01b47d]" aria-hidden="true"></i>
               </div>
               <h3 className="editorial-h3 font-semibold text-slate-900 dark:text-slate-100 text-xl sm:text-2xl">Essential Los Angeles Links</h3>
             </div>
@@ -434,11 +434,11 @@ export default function LosAngelesArticlePage() {
               <div className="premium-link-card group">
                 <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/90 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white dark:hover:bg-slate-800/60">
                   <div className="icon-premium-md flex items-center justify-center mt-0.5">
-                    <i className="ri-football-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                    <i className="ri-football-line text-[#01b47d] text-lg" aria-hidden="true"></i>
                   </div>
                   <div className="flex-1">
                     <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">Stadium Guide</div>
-                    <a className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200" href="/world-cup-2026-stadiums/sofi-stadium" data-discover="true">SoFi Stadium Guide<i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i></a>
+                    <a className="text-[#008f63] dark:text-[#01b47d] hover:text-[#008f63] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200" href="/world-cup-2026-stadiums/sofi-stadium" data-discover="true">SoFi Stadium Guide<i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i></a>
                   </div>
                 </div>
               </div>
@@ -446,11 +446,11 @@ export default function LosAngelesArticlePage() {
               <div className="premium-link-card group">
                 <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/90 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white dark:hover:bg-slate-800/60">
                   <div className="icon-premium-md flex items-center justify-center mt-0.5">
-                    <i className="ri-map-2-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                    <i className="ri-map-2-line text-[#01b47d] text-lg" aria-hidden="true"></i>
                   </div>
                   <div className="flex-1">
                     <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">All Host Cities</div>
-                    <a className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200" href="/world-cup-2026-host-cities" data-discover="true">Explore All 16 Cities<i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i></a>
+                    <a className="text-[#008f63] dark:text-[#01b47d] hover:text-[#008f63] font-medium text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all duration-200" href="/world-cup-2026-host-cities" data-discover="true">Explore All 16 Cities<i className="ri-arrow-right-line text-xs transition-transform group-hover:translate-x-0.5"></i></a>
                   </div>
                 </div>
               </div>
@@ -458,14 +458,14 @@ export default function LosAngelesArticlePage() {
               <div className="premium-link-card group">
                 <div className="flex items-start gap-3 sm:gap-4 p-4 sm:p-5 rounded-xl bg-white/90 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700/50 transition-all duration-300 hover:shadow-lg hover:scale-[1.02] hover:bg-white dark:hover:bg-slate-800/60">
                   <div className="icon-premium-md flex items-center justify-center mt-0.5">
-                    <i className="ri-plane-line text-emerald-600 text-lg" aria-hidden="true"></i>
+                    <i className="ri-plane-line text-[#01b47d] text-lg" aria-hidden="true"></i>
                   </div>
                   <div className="flex-1">
                     <div className="font-semibold text-slate-900 dark:text-slate-100 mb-2 text-base">Nearby Cities</div>
                     <div className="flex flex-wrap gap-x-3 gap-y-1">
-                      <a className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" data-discover="true">San Francisco Bay Area</a>
-                      <a className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" data-discover="true">Seattle</a>
-                      <a className="text-emerald-700 dark:text-emerald-400 hover:text-emerald-600 font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" data-discover="true">Vancouver</a>
+                      <a className="text-[#008f63] dark:text-[#01b47d] hover:text-[#008f63] font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" data-discover="true">San Francisco Bay Area</a>
+                      <a className="text-[#008f63] dark:text-[#01b47d] hover:text-[#008f63] font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" data-discover="true">Seattle</a>
+                      <a className="text-[#008f63] dark:text-[#01b47d] hover:text-[#008f63] font-medium text-sm hover:underline transition-colors" href="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" data-discover="true">Vancouver</a>
                     </div>
                   </div>
                 </div>
@@ -610,8 +610,8 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
           </p>
 
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-indigo-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-indigo-600 mb-2">Transport Strategy</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Transport Strategy</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Best Option:</strong> Metro C Line + Free Shuttle</li>
                <li>• <strong>Avoid:</strong> Driving (parking costs $100+)</li>
@@ -637,9 +637,9 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
           <div className="space-y-8">
             {/* Metro */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-emerald-200 dark:bg-emerald-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-emerald-800 dark:text-emerald-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Metro" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradLAMetro" x1="0" x2="1" y1="0" y2="1">
@@ -657,14 +657,14 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
                 <p className="leading-relaxed mb-4">
                   LA Metro rolls out a dedicated SoFi Stadium Shuttle connecting from the <strong>LAX/Metro Transit Center</strong> station. This is the official, most efficient way to reach the venue.
                 </p>
-                <div className="callout-pro-tip border-l-4 border-emerald-400 bg-emerald-50 dark:bg-emerald-900/10 p-5 rounded-r-lg mb-4">
-                  <h5 className="text-md font-bold text-emerald-900 dark:text-emerald-100 mb-2 flex items-center gap-2">
+                <div className="callout-pro-tip border-l-4 border-[#01b47d] bg-[#01b47d]/5 dark:bg-[#008f63]/10 p-5 rounded-r-lg mb-4">
+                  <h5 className="text-md font-bold text-[#008f63] dark:text-[#01b47d]/10 mb-2 flex items-center gap-2">
                     <div className="callout-icon">
                       <i className="ri-lightbulb-flash-line"></i>
                     </div>
                     How it Works
                   </h5>
-                  <ol className="leading-relaxed space-y-2 list-decimal list-inside text-emerald-900/80 dark:text-emerald-200/80">
+                  <ol className="leading-relaxed space-y-2 list-decimal list-inside text-[#008f63]/80 dark:text-[#01b47d]/20">
                     <li>Take <strong>C Line (Green)</strong> or <strong>K Line (Crenshaw)</strong> to LAX/Metro Transit Center</li>
                     <li>Board free SoFi Shuttle at Bus Bay 8 (every 5-8 mins)</li>
                     <li>Arrive at stadium in ~10 minutes</li>
@@ -708,9 +708,9 @@ For the World Cup, SoFi undergoes a fascinating transformation. FIFA's strict re
 
             {/* Driving */}
             <section className="relative">
-              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-indigo-200 dark:bg-indigo-900 rounded-full"></div>
+              <div className="hidden md:block absolute left-0 top-0 bottom-0 w-1 bg-[#01b47d]/20 dark:bg-[#008f63] rounded-full"></div>
               <div className="pl-0 md:pl-6">
-                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-indigo-800 dark:text-indigo-400">
+                <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2 text-[#008f63] dark:text-[#01b47d]">
                   <svg className="h4-icon-svg" role="img" aria-label="Car" viewBox="0 0 24 24">
                     <defs>
                       <linearGradient id="gradLACar" x1="0" x2="1" y1="0" y2="1">
@@ -1119,8 +1119,8 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
         {/* What to Do When You're Not at Matches */}
         <article className="editorial-body theme-teal">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-teal-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-teal-600 mb-2">LA Bucket List</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">LA Bucket List</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Beaches:</strong> Santa Monica & Venice Boardwalk</li>
                <li>• <strong>Views:</strong> Griffith Observatory at sunset</li>
@@ -1244,8 +1244,8 @@ During the World Cup, expect official FIFA Fan Festivals at **Exposition Park** 
         {/* Practical Travel Tips */}
         <article className="editorial-body theme-sky">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-sky-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-sky-600 mb-2">Travel Intel</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Travel Intel</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• <strong>Weather:</strong> Perfect 80°F days, cool nights</li>
                <li>• <strong>Safety:</strong> Stick to tourist zones; use common sense</li>
@@ -1453,7 +1453,7 @@ Costs add up fast in LA. Budget $15-25 for casual meals, $40-80 for mid-range di
             <div className="callout-premium p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-4">
                 <div className="icon-premium-md flex items-center justify-center">
-                  <i className="ri-medal-line text-emerald-600" aria-hidden="true"></i>
+                  <i className="ri-medal-line text-[#01b47d]" aria-hidden="true"></i>
                 </div>
                 <h5 className="font-semibold text-slate-900 dark:text-slate-100 text-lg">The Affiliate Advantage</h5>
               </div>
@@ -1534,7 +1534,7 @@ Check trusted booking partners that specialize in major sporting events—they o
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -1555,21 +1555,21 @@ Check trusted booking partners that specialize in major sporting events—they o
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -1588,8 +1588,8 @@ Check trusted booking partners that specialize in major sporting events—they o
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">California Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">San Francisco</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">California Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">San Francisco</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Levi's Stadium guide and Bay Area tech & wine culture.</p>
               </div>
             </Link>
@@ -1607,8 +1607,8 @@ Check trusted booking partners that specialize in major sporting events—they o
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-teal-500/20 backdrop-blur-sm border border-teal-500/30 text-teal-300 text-xs font-bold uppercase tracking-wider mb-2">PNW Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-teal-300 transition-colors">Seattle</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">PNW Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Seattle</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Lumen Field guide and Pacific Northwest adventures.</p>
               </div>
             </Link>
@@ -1619,7 +1619,7 @@ Check trusted booking partners that specialize in major sporting events—they o
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -1638,7 +1638,7 @@ Check trusted booking partners that specialize in major sporting events—they o
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -1650,7 +1650,7 @@ Check trusted booking partners that specialize in major sporting events—they o
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

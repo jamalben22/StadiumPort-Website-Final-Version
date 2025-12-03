@@ -23,11 +23,11 @@ export function LoadingSpinner({
   };
 
   const variants = {
-    primary: 'border-emerald-500 border-t-transparent',
+    primary: 'border-[#01b47d] border-t-transparent',
     secondary: 'border-slate-400 border-t-transparent',
     gold: 'border-gold-400 border-t-transparent',
     white: 'border-white border-t-transparent',
-    premium: 'border-gradient-to-r from-emerald-500 to-gold-400 border-t-transparent'
+    premium: 'border-gradient-to-r from-[#01b47d] to-gold-400 border-t-transparent'
   };
 
   const textSizes = {
@@ -46,7 +46,7 @@ export function LoadingSpinner({
         <div className={`${sizes[size]} border-4 ${variants[variant]} rounded-full animate-spin`}></div>
         
         {/* Middle Ring */}
-        <div className={`absolute inset-1 ${sizes[size === 'xs' ? 'xs' : size === 'sm' ? 'xs' : 'sm']} border-2 border-emerald-300 border-t-transparent rounded-full animate-spin`} 
+        <div className={`absolute inset-1 ${sizes[size === 'xs' ? 'xs' : size === 'sm' ? 'xs' : 'sm']} border-2 border-[#01b47d] border-t-transparent rounded-full animate-spin`} 
              style={{ animationDirection: 'reverse', animationDuration: '1.5s' }}></div>
         
         {/* Inner Ring */}
@@ -54,7 +54,7 @@ export function LoadingSpinner({
              style={{ animationDuration: '0.8s' }}></div>
         
         {/* Center Glow */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-emerald-500/20 to-gold-400/20 animate-pulse"></div>
+        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#01b47d]/20 to-gold-400/20 animate-pulse"></div>
       </div>
 
       {/* Premium Loading Text */}
@@ -64,9 +64,9 @@ export function LoadingSpinner({
             {text}
           </p>
           <div className="flex justify-center mt-2 space-x-1">
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce"></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-[#01b47d] rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-[#01b47d] rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+            <div className="w-2 h-2 bg-[#01b47d] rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           </div>
         </div>
       )}

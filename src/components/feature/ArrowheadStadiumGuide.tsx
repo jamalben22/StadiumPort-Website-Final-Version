@@ -56,10 +56,10 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 </nav>
                 <h1 className="editorial-hero-title">Arrowhead Stadium</h1>
                 <p className="editorial-hero-meta">
-                  <i className="ri-map-pin-2-line text-emerald-400"></i>
+                  <i className="ri-map-pin-2-line text-[#01b47d]"></i>
                   Kansas City, Missouri
                   <span className="mx-3 text-slate-400">•</span>
-                  <i className="ri-group-line text-emerald-400"></i>
+                  <i className="ri-group-line text-[#01b47d]"></i>
                   76,416 Capacity
                 </p>
               </div>
@@ -71,7 +71,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Introduction Section */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-volume-up-line text-emerald-500"></i>
+                <i className="ri-volume-up-line text-[#01b47d]"></i>
                 The World's Loudest Stadium Welcomes the World's Game
               </h2>
               <p className="editorial-dropcap">
@@ -84,7 +84,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 For international visitors, Arrowhead offers something no other World Cup venue can: a genuine slice of Americana wrapped around world-class football facilities. This is where you'll experience the heartland of American sports passion, complete with legendary Kansas City barbecue, Midwestern hospitality, and a sound level that has literally registered on seismographs.
               </p>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                Located in <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City</Link>, Arrowhead Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
+                Located in <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Kansas City</Link>, Arrowhead Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -92,7 +92,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Stadium Overview */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-building-line text-emerald-500"></i>
+                <i className="ri-building-line text-[#01b47d]"></i>
                 Stadium Overview & Fast Facts
               </h2>
               
@@ -100,7 +100,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-building-2-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-building-2-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Official Name</span>
                       <p className="text-slate-900 dark:text-white font-semibold">GEHA Field at Arrowhead Stadium</p>
                     </div>
@@ -108,7 +108,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-map-pin-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-map-pin-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Location</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Kansas City, Missouri (Truman Sports Complex)</p>
                     </div>
@@ -116,7 +116,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-group-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-group-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Capacity</span>
                       <p className="text-slate-900 dark:text-white font-semibold">76,416 (World Cup configuration)</p>
                     </div>
@@ -124,7 +124,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-calendar-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-calendar-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Opened</span>
                       <p className="text-slate-900 dark:text-white font-semibold">August 12, 1972</p>
                     </div>
@@ -133,7 +133,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 py-2">
-                    <i className="ri-grass-line text-emerald-500 text-xl"></i>
+                    <i className="ri-grass-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="font-semibold">Playing Surface</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Natural Grass</p>
@@ -142,7 +142,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-home-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-home-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Home Team</span>
                       <p className="text-slate-900 dark:text-white font-semibold">Kansas City Chiefs</p>
                     </div>
@@ -150,7 +150,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-volume-up-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-volume-up-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Noise Record</span>
                       <p className="text-slate-900 dark:text-white font-semibold">142.2 decibels (2014)</p>
                     </div>
@@ -158,7 +158,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="flex items-center gap-3 py-2">
                     <div>
-                      <i className="ri-car-line text-emerald-500 text-xl mr-2"></i>
+                      <i className="ri-car-line text-[#01b47d] text-xl mr-2"></i>
                       <span className="font-semibold">Parking</span>
                       <p className="text-slate-900 dark:text-white font-semibold">27,000+ spaces</p>
                     </div>
@@ -168,32 +168,32 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
 
               <div className="mt-8">
                 <h3 className="editorial-h3">
-                  <i className="ri-star-line text-emerald-500"></i>
+                  <i className="ri-star-line text-[#01b47d]"></i>
                   Notable Features
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>World's loudest outdoor stadium</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Iconic arrowhead-shaped design</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Massive tailgating culture</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Natural grass playing surface</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Open-air bowl design</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                     <span>Historic American football venue</span>
                   </div>
                 </div>
@@ -204,7 +204,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* History & Legacy */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-time-line text-emerald-500"></i>
+                <i className="ri-time-line text-[#01b47d]"></i>
                 History & Legacy
               </h2>
               
@@ -231,7 +231,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Architecture & Experience */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-building-4-line text-emerald-500"></i>
+                <i className="ri-building-4-line text-[#01b47d]"></i>
                 Stadium Architecture & Experience
               </h2>
               
@@ -258,7 +258,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* What Matches to Expect */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-football-line text-emerald-500"></i>
+                <i className="ri-football-line text-[#01b47d]"></i>
                 What Matches to Expect
               </h2>
               
@@ -281,14 +281,14 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Related Stadiums (after What Matches to Expect) */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-links-line text-emerald-500"></i>
+                <i className="ri-links-line text-[#01b47d]"></i>
                 Related Stadiums
               </h2>
               <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                 Planning matches across the Central and Southern US? Consider
-                {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
-                {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or
-                {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
+                {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+                {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston, or
+                {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
               </p>
               <hr className="editorial-divider" />
             </article>
@@ -296,14 +296,14 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Getting to the Stadium */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-map-2-line text-emerald-500"></i>
+                <i className="ri-map-2-line text-[#01b47d]"></i>
                 Getting to the Stadium
               </h2>
               
               {/* By Public Transportation */}
               <div className="mb-8 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-bus-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-bus-line text-[#01b47d] text-2xl"></i>
                   By Public Transportation
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -320,7 +320,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* By Rideshare/Taxi */}
               <div className="mb-8 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-taxi-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-taxi-line text-[#01b47d] text-2xl"></i>
                   By Rideshare/Taxi
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -337,7 +337,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* By Bike */}
               <div className="mb-8 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-bike-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-bike-line text-[#01b47d] text-2xl"></i>
                   By Bike
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -351,7 +351,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* From Airports */}
               <div className="space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-plane-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-plane-line text-[#01b47d] text-2xl"></i>
                   From Kansas City International Airport (MCI)
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -373,7 +373,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Where to Stay */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-hotel-line text-emerald-500"></i>
+                <i className="ri-hotel-line text-[#01b47d]"></i>
                 Where to Stay
               </h2>
               
@@ -384,7 +384,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Downtown Kansas City */}
               <div className="mb-8 space-y-4">
                 <h3 className="editorial-h3">
-                  <i className="ri-building-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-building-line text-[#01b47d] text-2xl"></i>
                   Downtown Kansas City (Best Overall Experience)
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -394,7 +394,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 <div className="space-y-4">
                   <div className="space-y-1">
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-star-line text-emerald-500"></i>
+                      <i className="ri-star-line text-[#01b47d]"></i>
                       The Fontaine (Luxury)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">Autograph Collection hotel in the Power & Light District. Rooftop bar, upscale dining, walking distance to entertainment. $280-400/night during World Cup.</p>
@@ -402,7 +402,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="space-y-1">
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-star-line text-emerald-500"></i>
+                      <i className="ri-star-line text-[#01b47d]"></i>
                       Hotel Phillips (Historic Luxury)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">1931 Art Deco landmark with modern amenities. Downtown location, elegant rooms, historic character. $220-320/night.</p>
@@ -410,7 +410,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div className="space-y-1">
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-building-2-line text-emerald-500"></i>
+                      <i className="ri-building-2-line text-[#01b47d]"></i>
                       Marriott Downtown (Mid-Range)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">Reliable chain hotel in the heart of downtown. Connected to convention center, multiple dining options. $180-280/night.</p>
@@ -421,7 +421,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Crown Center */}
               <div className="mb-8 space-y-4">
                 <h3 className="editorial-h3">
-                  <i className="ri-shopping-cart-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-shopping-cart-line text-[#01b47d] text-2xl"></i>
                   Crown Center (Family-Friendly)
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -444,7 +444,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Country Club Plaza */}
               <div className="mb-8 space-y-4">
                 <h3 className="editorial-h3">
-                  <i className="ri-store-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-store-line text-[#01b47d] text-2xl"></i>
                   Country Club Plaza (Upscale Shopping District)
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -467,7 +467,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Near Stadium */}
               <div className="space-y-4">
                 <h3 className="editorial-h3">
-                  <i className="ri-map-pin-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-map-pin-line text-[#01b47d] text-2xl"></i>
                   Near Stadium (Convenience Over Atmosphere)
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300">
@@ -492,31 +492,31 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Matchday Tips & Insider Advice */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-lightbulb-line text-emerald-500"></i>
+                <i className="ri-lightbulb-line text-[#01b47d]"></i>
                 Matchday Tips & Insider Advice
               </h2>
 
               {/* What to Bring */}
               <div className="mb-6 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-suitcase-line text-emerald-500"></i>
+                  <i className="ri-suitcase-line text-[#01b47d]"></i>
                   What to Bring
                 </h3>
                 <ul className="text-slate-700 dark:text-slate-300 space-y-2">
                   <li className="flex items-start gap-2">
-                    <i className="ri-sun-line text-emerald-500 mt-1"></i>
+                    <i className="ri-sun-line text-[#01b47d] mt-1"></i>
                     <span>Sunscreen and hat (summer sun can be intense, limited shade in upper sections)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <i className="ri-drop-line text-emerald-500 mt-1"></i>
+                    <i className="ri-drop-line text-[#01b47d] mt-1"></i>
                     <span>Water bottle (empty, to fill inside) - Kansas City summers are hot and humid</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <i className="ri-shirt-line text-emerald-500 mt-1"></i>
+                    <i className="ri-shirt-line text-[#01b47d] mt-1"></i>
                     <span>Layers for evening matches (temperatures can drop significantly after sunset)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <i className="ri-id-card-line text-emerald-500 mt-1"></i>
+                    <i className="ri-id-card-line text-[#01b47d] mt-1"></i>
                     <span>Photo ID (required for alcohol purchases if you appear under 40)</span>
                   </li>
                 </ul>
@@ -525,7 +525,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Food & Drink */}
               <div className="mb-6 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-restaurant-2-line text-emerald-500"></i>
+                  <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                   Food & Drink Inside
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
@@ -539,7 +539,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Best Gates */}
               <div className="mb-6 space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-door-open-line text-emerald-500"></i>
+                  <i className="ri-door-open-line text-[#01b47d]"></i>
                   Best Gates/Entrances
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
@@ -550,7 +550,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Post-Match Transport */}
               <div className="space-y-2">
                 <h3 className="editorial-h3">
-                  <i className="ri-car-line text-emerald-500"></i>
+                  <i className="ri-car-line text-[#01b47d]"></i>
                   Post-Match Transport
                 </h3>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-4">
@@ -569,7 +569,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Atmosphere & Culture */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-heart-line text-emerald-500"></i>
+                <i className="ri-heart-line text-[#01b47d]"></i>
                 Atmosphere & Culture
               </h2>
               
@@ -584,14 +584,14 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Things to Do Nearby */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-compass-line text-emerald-500"></i>
+                <i className="ri-compass-line text-[#01b47d]"></i>
                 Things to Do Nearby
               </h2>
 
               {/* Pre-Match BBQ Pilgrimage */}
               <div className="mb-8 space-y-4">
                 <h3 className="editorial-h3">
-                  <i className="ri-restaurant-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-restaurant-line text-[#01b47d] text-2xl"></i>
                   Pre-Match BBQ Pilgrimage
                 </h3>
                 <div>
@@ -603,14 +603,14 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Nearby Attractions */}
               <div className="mb-8">
                 <h3 className="editorial-h3">
-                  <i className="ri-map-2-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-map-2-line text-[#01b47d] text-2xl"></i>
                   Nearby Attractions (within 30 minutes)
                 </h3>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-building-3-line text-emerald-500"></i>
+                      <i className="ri-building-3-line text-[#01b47d]"></i>
                       National WWI Museum and Memorial (Downtown)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -620,7 +620,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div>
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-trophy-line text-emerald-500"></i>
+                      <i className="ri-trophy-line text-[#01b47d]"></i>
                       Negro Leagues Baseball Museum (18th & Vine District)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -630,7 +630,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div>
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-goblet-line text-emerald-500"></i>
+                      <i className="ri-goblet-line text-[#01b47d]"></i>
                       Boulevard Brewing Company (Southwest Boulevard)
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -640,7 +640,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div>
                     <h4 className="editorial-h4 flex items-center gap-2">
-                      <i className="ri-shopping-bag-line text-emerald-500"></i>
+                      <i className="ri-shopping-bag-line text-[#01b47d]"></i>
                       Country Club Plaza
                     </h4>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -653,7 +653,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Downtown Pre-Match Options */}
               <div className="mb-8">
                 <h3 className="editorial-h3">
-                  <i className="ri-building-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-building-line text-[#01b47d] text-2xl"></i>
                   Downtown Pre-Match Options
                 </h3>
                 
@@ -677,7 +677,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Essential Kansas City BBQ Experiences */}
               <div className="mb-8">
                 <h3 className="editorial-h3">
-                  <i className="ri-fire-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-fire-line text-[#01b47d] text-2xl"></i>
                   Essential Kansas City BBQ Experiences
                 </h3>
                 
@@ -715,7 +715,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
               {/* Post-Match Celebrations */}
               <div>
                 <h3 className="editorial-h3">
-                  <i className="ri-music-line text-emerald-500 text-2xl"></i>
+                  <i className="ri-music-line text-[#01b47d] text-2xl"></i>
                   Post-Match Celebrations
                 </h3>
                 
@@ -741,21 +741,21 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Beyond the Stadium: Explore Kansas City */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-compass-3-line text-emerald-500"></i>
+                <i className="ri-compass-3-line text-[#01b47d]"></i>
                 Beyond the Stadium: Explore Kansas City
               </h2>
               <div className="prose prose-lg max-w-none dark:prose-invert">
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  Explore our complete <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Kansas City World Cup 2026 Guide</Link> for transport, neighborhoods, and essential tips.
+                  Explore our complete <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Kansas City World Cup 2026 Guide</Link> for transport, neighborhoods, and essential tips.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
                   Catching more matches nearby? Consider
-                  {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
-                  {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, and
-                  {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
+                  {' '}<Link to="/world-cup-2026-stadiums/att-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">AT&amp;T Stadium</Link> in Dallas,
+                  {' '}<Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston, and
+                  {' '}<Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta.
                 </p>
                 <p className="text-slate-700 dark:text-slate-300 leading-relaxed">
-                  <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+                  <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
                 </p>
               </div>
               <hr className="editorial-divider" />
@@ -764,7 +764,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
             {/* Final Verdict & Key Takeaway */}
             <article className="editorial-body">
               <h2 className="editorial-h2">
-                <i className="ri-trophy-line text-emerald-500"></i>
+                <i className="ri-trophy-line text-[#01b47d]"></i>
                 Final Verdict & Key Takeaway
               </h2>
               
@@ -776,7 +776,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                 <div className="grid md:grid-cols-2 gap-6 mb-8">
                   <div>
                     <h3 className="editorial-h3">
-                      <i className="ri-thumb-up-line text-emerald-500"></i>
+                      <i className="ri-thumb-up-line text-[#01b47d]"></i>
                       Who will love it most:
                     </h3>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -786,7 +786,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
                   
                   <div>
                     <h3 className="editorial-h3">
-                      <i className="ri-star-line text-emerald-500"></i>
+                      <i className="ri-star-line text-[#01b47d]"></i>
                       Don't miss:
                     </h3>
                     <p className="text-slate-700 dark:text-slate-300">
@@ -797,7 +797,7 @@ export const ArrowheadStadiumGuide: React.FC<ArrowheadStadiumGuideProps> = ({ sh
 
                 <div>
                   <h3 className="editorial-h3">
-                    <i className="ri-calendar-check-line text-emerald-500"></i>
+                    <i className="ri-calendar-check-line text-[#01b47d]"></i>
                     Book early:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-300 leading-relaxed">

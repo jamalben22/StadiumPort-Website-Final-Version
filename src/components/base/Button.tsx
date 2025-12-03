@@ -43,40 +43,40 @@ export function Button({
 
   const variants = {
     primary: `
-      bg-gradient-to-br from-[#FBBF24] via-[#f59e0b] to-[#d97706] text-slate-950 font-bold
-      hover:from-[#f59e0b] hover:via-[#d97706] hover:to-[#b45309] focus:ring-[#FBBF24]/30
-      shadow-premium hover:shadow-premium-lg border border-[#FBBF24]/20
-      ${glow ? 'shadow-[0_0_20px_rgba(251,191,36,0.6)] hover:shadow-[0_0_30px_rgba(251,191,36,0.8)]' : ''}
+      bg-[#01b47d] text-white font-bold
+      hover:bg-[#008f63] focus:ring-[#01b47d]/30
+      shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20
+      ${glow ? 'shadow-[0_0_20px_rgba(1,180,125,0.6)] hover:shadow-[0_0_30px_rgba(1,180,125,0.8)]' : ''}
     `,
     secondary: `
-      bg-gradient-to-br from-slate-100 via-slate-200 to-slate-300 text-slate-900 
-      hover:from-slate-200 hover:via-slate-300 hover:to-slate-400 focus:ring-slate-500/30
-      dark:from-navy-700 dark:via-navy-600 dark:to-navy-500 dark:text-white 
-      dark:hover:from-navy-600 dark:hover:via-navy-500 dark:hover:to-navy-400
-      shadow-premium hover:shadow-premium-lg border border-slate-300/20 dark:border-navy-500/20
+      bg-[#01b47d] text-white 
+      hover:bg-[#008f63] focus:ring-[#01b47d]/30
+      dark:bg-[#01b47d] dark:text-white 
+      dark:hover:bg-[#008f63]
+      shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20
     `,
     outline: `
-      border-2 border-[#FBBF24] text-[#FBBF24] bg-transparent backdrop-blur-xl
-      hover:bg-[#FBBF24] hover:text-slate-950 hover:border-[#FBBF24] focus:ring-[#FBBF24]/30
+      border-2 border-[#01b47d] text-[#01b47d] bg-transparent backdrop-blur-xl
+      hover:bg-[#008f63] hover:text-white hover:border-[#008f63] focus:ring-[#01b47d]/30
       shadow-premium hover:shadow-premium-lg font-bold
     `,
     ghost: `
-      text-slate-600 dark:text-slate-300 bg-transparent backdrop-blur-xl
-      hover:bg-slate-100/80 dark:hover:bg-navy-700/80 focus:ring-slate-500/30
-      border border-transparent hover:border-slate-200 dark:hover:border-navy-600
+      text-[#01b47d] dark:text-[#01b47d] bg-transparent backdrop-blur-xl
+      hover:bg-[#008f63]/10 dark:hover:bg-[#008f63]/20 focus:ring-[#01b47d]/30
+      border border-transparent hover:border-[#008f63]/20
     `,
     premium: `
-      bg-gradient-to-br from-emerald-400 via-emerald-500 via-emerald-600 to-teal-700 text-white
-      hover:from-emerald-500 hover:via-emerald-600 hover:via-emerald-700 hover:to-teal-800
-      focus:ring-emerald-500/30 shadow-premium hover:shadow-premium-lg
-      border border-emerald-300/30 backdrop-blur-xl
+      bg-[#01b47d] text-white
+      hover:bg-[#008f63]
+      focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg
+      border border-[#01b47d]/30 backdrop-blur-xl
       ${glow ? 'shadow-ultra-glow hover:shadow-ultra-glow' : ''}
     `,
     gold: `
-      bg-gradient-to-br from-gold-300 via-gold-400 via-gold-500 to-gold-600 text-navy-900
-      hover:from-gold-400 hover:via-gold-500 hover:via-gold-600 hover:to-gold-700
-      focus:ring-gold-500/30 shadow-premium hover:shadow-premium-lg
-      border border-gold-300/30 font-bold backdrop-blur-xl
+      bg-[#01b47d] text-white
+      hover:bg-[#008f63]
+      focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg
+      border border-[#01b47d]/30 font-bold backdrop-blur-xl
       ${glow ? 'shadow-gold-glow-lg hover:shadow-gold-glow-xl' : ''}
     `,
     glass: `
@@ -87,15 +87,15 @@ export function Button({
     cosmic: `
       text-white focus:ring-purple-500/30 shadow-cosmic hover:shadow-cosmic
       border border-purple-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-purple-500 via-pink-500 to-blue-500
-      hover:from-purple-600 hover:via-pink-600 hover:to-blue-600
+      bg-gradient-to-br from-purple-500 via-pink-500 to-[#01b47d]
+      hover:from-purple-600 hover:via-pink-600 hover:to-[#01b47d]
       animate-cosmic
     `,
     aurora: `
-      text-white focus:ring-cyan-500/30 shadow-aurora hover:shadow-aurora
-      border border-cyan-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-emerald-400 via-cyan-400 to-blue-500
-      hover:from-emerald-500 hover:via-cyan-500 hover:to-blue-600
+      text-white focus:ring-[#01b47d]/30 shadow-aurora hover:shadow-aurora
+      border border-[#01b47d]/30 backdrop-blur-xl font-bold
+      bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d]
+      hover:from-[#01b47d] hover:via-[#01b47d] hover:to-[#01b47d]
       animate-aurora
     `,
     diamond: `
@@ -108,15 +108,15 @@ export function Button({
     holographic: `
       text-white focus:ring-pink-500/30 shadow-holographic hover:shadow-holographic
       border border-pink-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-pink-500 via-purple-500 to-cyan-500
-      hover:from-pink-600 hover:via-purple-600 hover:to-cyan-600
+      bg-gradient-to-br from-pink-500 via-purple-500 to-[#01b47d]
+      hover:from-pink-600 hover:via-purple-600 hover:to-[#01b47d]
       animate-holographic
     `,
     quantum: `
       text-white focus:ring-violet-500/30 shadow-quantum hover:shadow-quantum
       border border-violet-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-emerald-500 via-blue-500 to-violet-500
-      hover:from-emerald-600 hover:via-blue-600 hover:to-violet-600
+      bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-violet-500
+      hover:from-[#01b47d] hover:via-[#01b47d] hover:to-violet-600
       animate-quantum
     `,
     ethereal: `
@@ -127,10 +127,10 @@ export function Button({
       animate-ethereal
     `,
     cyber: `
-      text-black focus:ring-cyan-500/30 shadow-cyber hover:shadow-cyber
-      border border-cyan-400/50 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-cyan-400 via-pink-400 to-yellow-400
-      hover:from-cyan-500 hover:via-pink-500 hover:to-yellow-500
+      text-black focus:ring-[#01b47d]/30 shadow-cyber hover:shadow-cyber
+      border border-[#01b47d]/50 backdrop-blur-xl font-bold
+      bg-gradient-to-br from-[#01b47d] via-pink-400 to-yellow-400
+      hover:from-[#01b47d] hover:via-pink-500 hover:to-yellow-500
       animate-cyber-glow
     `,
     matrix: `
@@ -143,15 +143,15 @@ export function Button({
     plasma: `
       text-white focus:ring-purple-500/30 shadow-plasma hover:shadow-plasma
       border border-purple-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-pink-500 via-purple-500 to-blue-500
-      hover:from-pink-600 hover:via-purple-600 hover:to-blue-600
+      bg-gradient-to-br from-pink-500 via-purple-500 to-[#01b47d]
+      hover:from-pink-600 hover:via-purple-600 hover:to-[#01b47d]
       animate-plasma
     `,
     stellar: `
-      text-white focus:ring-indigo-500/30 shadow-stellar hover:shadow-stellar
-      border border-indigo-400/30 backdrop-blur-xl font-bold
-      bg-gradient-to-br from-indigo-500 via-purple-500 to-black
-      hover:from-indigo-600 hover:via-purple-600 hover:to-gray-900
+      text-white focus:ring-[#01b47d]/30 shadow-stellar hover:shadow-stellar
+      border border-[#01b47d]/30 backdrop-blur-xl font-bold
+      bg-gradient-to-br from-[#01b47d] via-purple-500 to-black
+      hover:from-[#01b47d] hover:via-purple-600 hover:to-gray-900
       animate-stellar
     `
   };
@@ -201,7 +201,7 @@ export function Button({
 
       {/* Ultra Premium Glow Effect */}
       {glow && (
-        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-400/0 via-emerald-400/30 to-emerald-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl animate-pulse-glow"></div>
+        <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-[#01b47d]/0 via-[#01b47d]/30 to-[#01b47d]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 blur-xl animate-pulse-glow"></div>
       )}
 
       {/* Quantum Particle Effect */}
@@ -209,14 +209,14 @@ export function Button({
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
           <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-quantum"></div>
           <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-violet-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700 animate-quantum" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-blue-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-quantum" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-[#01b47d] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-600 animate-quantum" style={{ animationDelay: '1s' }}></div>
         </div>
       )}
 
       {/* Holographic Prism Effect */}
       {variant === 'holographic' && (
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-prismatic"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-[#01b47d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-prismatic"></div>
         </div>
       )}
 
@@ -230,7 +230,7 @@ export function Button({
       {/* Aurora Borealis Effect */}
       {variant === 'aurora' && (
         <div className="absolute inset-0 rounded-3xl overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 via-cyan-400/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-aurora"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#01b47d]/20 via-[#01b47d]/20 to-[#01b47d]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 animate-aurora"></div>
         </div>
       )}
 

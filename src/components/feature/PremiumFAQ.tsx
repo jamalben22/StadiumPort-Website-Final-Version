@@ -41,10 +41,10 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
       }} />
       {/* Apple-Level Luxury Header */}
       <div className="text-center mb-16 md:mb-20">
-        <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-3xl mb-8 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+        <div className="inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] rounded-3xl mb-8 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
           <i className="ri-question-line text-3xl md:text-4xl text-white"></i>
         </div>
-        <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+        <h2 className="font-space font-bold text-4xl md:text-5xl lg:text-6xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-[#01b47d] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
           {title}
         </h2>
         {subtitle && (
@@ -73,16 +73,16 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
                 backdrop-blur-2xl
                 border border-white/40 dark:border-navy-700/40
                 rounded-3xl
-                hover:border-emerald-400/50 dark:hover:border-emerald-500/50
+                hover:border-[#008f63]/50 dark:hover:border-[#008f63]/50
                 hover:bg-white dark:hover:bg-navy-800
-                hover:shadow-3xl hover:shadow-emerald-500/20
+                hover:shadow-3xl hover:shadow-[#01b47d]/20
                 transition-all duration-700 ease-out
                 cursor-pointer
                 transform hover:-translate-y-1
               ">
                 {/* Premium Background Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                 
                 <button
                   onClick={() => toggleItem(faq.id)}
@@ -102,7 +102,7 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
                       font-space font-bold text-xl md:text-2xl lg:text-3xl
                       text-navy-900 dark:text-white
                       leading-tight
-                      group-hover:text-emerald-600 dark:group-hover:text-emerald-400
+                      group-hover:text-[#008f63] dark:group-hover:text-[#008f63]
                       transition-colors duration-500
                     ">
                       {faq.question}
@@ -114,12 +114,12 @@ export function PremiumFAQ({ faqs, title = "Frequently Asked Questions", subtitl
                     flex-shrink-0 w-12 h-12 md:w-14 md:h-14
                     flex items-center justify-center
                     rounded-2xl
-                    bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700
+                    bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d]
                     text-white
-                    group-hover:from-emerald-600 group-hover:via-emerald-700 group-hover:to-emerald-800
+                    group-hover:from-[#01b47d] group-hover:via-[#01b47d] group-hover:to-[#01b47d]
                     transition-all duration-500 ease-out
                     transform group-hover:scale-110 group-hover:rotate-3
-                    shadow-2xl shadow-emerald-500/30
+                    shadow-2xl shadow-[#01b47d]/30
                   ">
                     <motion.div
                       animate={{ rotate: isOpen ? 45 : 0 }}

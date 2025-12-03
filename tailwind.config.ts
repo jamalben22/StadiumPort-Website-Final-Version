@@ -19,7 +19,8 @@ export default {
         'modern': ['Poppins', 'sans-serif'],
       },
       colors: {
-        primary: '#FBBF24', // Electric Gold
+        primary: '#01b47d', // Updated to Brand Color
+        brand: '#01b47d', // Brand Color
         navy: {
           50: '#f0f4f8',
           100: '#d9e2ec',

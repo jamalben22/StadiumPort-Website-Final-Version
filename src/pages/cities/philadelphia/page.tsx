@@ -109,7 +109,7 @@ export default function PhiladelphiaArticlePage() {
   useEffect(() => {
     const entry = getEditorialEntry('city','philadelphia')
     setPageMeta({
-      title: 'Philadelphia World Cup 2026: Complete Travel Guide | StadiumPort',
+      title: 'Philadelphia World Cup 2026: Complete Travel Guide | Stadiumport',
       description: 'Comprehensive Philadelphia travel guide for FIFA World Cup 2026: Lincoln Financial Field details, match schedule, transportation, and where to stay.',
       url: `${siteUrl}${currentPath}`,
       image: `${siteUrl}/images/cities/philadelphia-world-cup-2026.webp`,
@@ -145,11 +145,11 @@ export default function PhiladelphiaArticlePage() {
 
       <Header />
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -165,11 +165,11 @@ export default function PhiladelphiaArticlePage() {
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border border-[#01b47d]/20 dark:border-[#008f63]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -177,8 +177,8 @@ export default function PhiladelphiaArticlePage() {
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -188,16 +188,16 @@ export default function PhiladelphiaArticlePage() {
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -215,11 +215,11 @@ export default function PhiladelphiaArticlePage() {
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/5 dark:bg-[#008f63]/20 text-[#008f63] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -254,7 +254,7 @@ export default function PhiladelphiaArticlePage() {
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -264,32 +264,32 @@ export default function PhiladelphiaArticlePage() {
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Philadelphia</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Philadelphia</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold (Apple/Vogue style) */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Philadelphia World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">Complete Travel Guide</span>
+              Philadelphia World Cup 2026: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]/20">Complete Travel Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>USA</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-building-line text-lg"></i>
                 </div>
                 <span>Lincoln Financial Field</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>69,796 capacity</span>
@@ -298,10 +298,10 @@ export default function PhiladelphiaArticlePage() {
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -317,8 +317,8 @@ export default function PhiladelphiaArticlePage() {
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Philadelphia hosts <strong>6 matches</strong></li>
                <li>• Venue: <strong>Lincoln Financial Field</strong></li>
@@ -328,7 +328,7 @@ export default function PhiladelphiaArticlePage() {
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>Philadelphia World Cup 2026: Complete Travel Guide
+            <i className="ri-trophy-line text-[#01b47d]"></i>Philadelphia World Cup 2026: Complete Travel Guide
           </h2>
           
           {/* [SUBTITLE/DECK] */}
@@ -344,7 +344,7 @@ export default function PhiladelphiaArticlePage() {
           </div>
 
           <p className="whitespace-pre-line">
-            On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Lincoln Financial Field</Link>. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. Philadelphia is one of the <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link> for World Cup 2026. This isn't just a football match; it's a historic moment that will never be repeated.
+            On July 4, 2026—exactly 250 years after the Declaration of Independence was signed in this very city—Philadelphia will host a FIFA World Cup Round of 16 knockout match at <Link to="/world-cup-2026-stadiums/lincoln-financial-field" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Lincoln Financial Field</Link>. Let that sink in: America's Semiquincentennial, the birthplace of democracy, and the world's most watched sporting event, all colliding on the same day. Philadelphia is one of the <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link> for World Cup 2026. This isn't just a football match; it's a historic moment that will never be repeated.
           </p>
 
           <p className="whitespace-pre-line mt-4">
@@ -352,8 +352,8 @@ export default function PhiladelphiaArticlePage() {
           </p>
 
           {/* [KEY TAKEAWAY / ESSENTIAL LINKS] */}
-          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-emerald-50 to-white dark:from-navy-900 dark:to-navy-800 border border-emerald-100 dark:border-navy-700 shadow-lg rounded-2xl">
-            <h4 className="flex items-center gap-2 font-bold text-emerald-800 dark:text-emerald-400 mb-4">
+          <div className="callout-premium p-6 sm:p-8 mt-8 bg-gradient-to-br from-[#01b47d]/5 to-white dark:from-navy-900 dark:to-navy-800 border border-[#01b47d]/10 dark:border-navy-700 shadow-lg rounded-2xl">
+            <h4 className="flex items-center gap-2 font-bold text-[#008f63] dark:text-[#01b47d] mb-4">
               <i className="ri-bookmark-line"></i> Essential Philadelphia Links
             </h4>
             <div className="space-y-3">
@@ -387,7 +387,7 @@ export default function PhiladelphiaArticlePage() {
           <div id="stadium-anchor" className="scroll-mt-24"></div>
 
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Lincoln Financial Field (Philadelphia Stadium for FIFA 2026)
           </h2>
 
@@ -395,7 +395,7 @@ export default function PhiladelphiaArticlePage() {
             {/* An Eagles' Nest Designed for Glory */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-eagle-line text-emerald-500"></i>
+                <i className="ri-eagle-line text-[#01b47d]"></i>
                 An Eagles' Nest Designed for Glory
               </h3>
               <div>
@@ -411,7 +411,7 @@ export default function PhiladelphiaArticlePage() {
             {/* One of the "Greenest" Stadiums in the World */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-leaf-line text-emerald-500"></i>
+                <i className="ri-leaf-line text-[#01b47d]"></i>
                 One of the "Greenest" Stadiums in the World
               </h3>
               <div>
@@ -424,7 +424,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Match Schedule at Lincoln Financial Field */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 Match Schedule at Lincoln Financial Field
               </h3>
               <div>
@@ -442,7 +442,7 @@ export default function PhiladelphiaArticlePage() {
             {/* What Makes This Stadium Special */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 What Makes This Stadium Special
               </h3>
               <div>
@@ -464,7 +464,7 @@ export default function PhiladelphiaArticlePage() {
           <div id="transport-anchor" className="scroll-mt-24"></div>
 
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-roadster-line text-emerald-500"></i>
+            <i className="ri-roadster-line text-[#01b47d]"></i>
             Getting There: Transportation Made Easy
           </h2>
 
@@ -472,7 +472,7 @@ export default function PhiladelphiaArticlePage() {
             {/* SEPTA Broad Street Line (Subway) */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 SEPTA Broad Street Line (Subway)
               </h3>
               <div className="space-y-4">
@@ -492,7 +492,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Rideshares */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares
               </h3>
               <div>
@@ -505,7 +505,7 @@ export default function PhiladelphiaArticlePage() {
             {/* From Philadelphia International Airport (PHL) */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 From Philadelphia International Airport (PHL)
               </h3>
               <div>
@@ -513,7 +513,7 @@ export default function PhiladelphiaArticlePage() {
                   Philadelphia International Airport is located approximately 12 miles southwest of Center City and is one of America's major East Coast hubs, serving over 100 airlines with connections to destinations worldwide.
                 </p>
                 <p className="leading-relaxed">
-                  Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
+                  Philadelphia sits squarely on the Northeast Corridor between <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> and <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>, making multi-city World Cup trips easy by Amtrak or regional rail.
                 </p>
               </div>
             </div>
@@ -521,7 +521,7 @@ export default function PhiladelphiaArticlePage() {
             {/* SEPTA Airport Line */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 SEPTA Airport Line (The Best Option)
               </h3>
               <div className="space-y-4">
@@ -538,7 +538,7 @@ export default function PhiladelphiaArticlePage() {
                   <strong>Stops in Center City</strong>: The Airport Line stops at Jefferson Station (near Reading Terminal Market and Convention Center), Suburban Station (downtown business district), and 30th Street Station (major Amtrak hub and University City). All three stops put you within walking distance or short ride to most downtown hotels.
                 </p>
                 <p className="leading-relaxed">
-                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
+                  Many fans also travel from Philadelphia to <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> to catch additional matches, pairing Mid-Atlantic energy with Southern hospitality.
                 </p>
               </div>
             </div>
@@ -546,7 +546,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Rideshares and Taxis */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares and Taxis
               </h3>
               <div>
@@ -559,7 +559,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Getting to Lincoln Financial Field on Match Days */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-roadster-line text-emerald-500"></i>
+                <i className="ri-roadster-line text-[#01b47d]"></i>
                 Getting to Lincoln Financial Field on Match Days
               </h3>
               <div>
@@ -578,7 +578,7 @@ export default function PhiladelphiaArticlePage() {
           <div id="stay-anchor" className="scroll-mt-24"></div>
 
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h2>
 
@@ -590,7 +590,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Center City: Maximum Convenience */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Center City: Maximum Convenience
               </h3>
               <p>
@@ -606,14 +606,14 @@ export default function PhiladelphiaArticlePage() {
                 <strong>Transit to Stadium</strong>: Walk to any Broad Street Line station (City Hall, Walnut-Locust, Lombard-South) and ride directly to NRG Station. Journey time: 15-20 minutes.
               </p>
               <p>
-                <strong>Book Early</strong>: Center City hotels will see premium World Cup pricing, especially around July 4th. Reserve 6-12 months in advance through <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Hotels.com</a> to lock in rates.
+                <strong>Book Early</strong>: Center City hotels will see premium World Cup pricing, especially around July 4th. Reserve 6-12 months in advance through <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Hotels.com</a> to lock in rates.
               </p>
             </div>
 
             {/* Rittenhouse Square: Upscale Elegance */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Rittenhouse Square: Upscale Elegance
               </h3>
               <p>
@@ -633,7 +633,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Old City: Colonial Charm Meets Modern Cool */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Old City: Colonial Charm Meets Modern Cool
               </h3>
               <p>
@@ -653,7 +653,7 @@ export default function PhiladelphiaArticlePage() {
             {/* University City: Budget-Friendly Near Penn & Drexel */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 University City: Budget-Friendly Near Penn & Drexel
               </h3>
               <p>
@@ -676,7 +676,7 @@ export default function PhiladelphiaArticlePage() {
         {/* Beyond the Match */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Match: What to Do in Philadelphia
           </h2>
           <div className="space-y-6">
@@ -684,7 +684,7 @@ export default function PhiladelphiaArticlePage() {
               Philadelphia's attractions span Revolutionary War history, world-class museums, and authentic neighborhood experiences that reveal the city's character.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Independence National Historical Park: The Birthplace of America
             </h3>
 
@@ -721,7 +721,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Museum of the American Revolution */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Museum of the American Revolution
               </h3>
               <p>
@@ -735,7 +735,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Reading Terminal Market */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-restaurant-2-line text-emerald-500"></i>
+                <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                 Reading Terminal Market: Philadelphia's Culinary Heart
               </h3>
               <p>
@@ -767,7 +767,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Philadelphia Museum of Art */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-image-line text-emerald-500"></i>
+                <i className="ri-image-line text-[#01b47d]"></i>
                 Philadelphia Museum of Art: The Rocky Steps
               </h3>
               <p>
@@ -784,7 +784,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Eastern State Penitentiary */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-government-line text-emerald-500"></i>
+                <i className="ri-government-line text-[#01b47d]"></i>
                 Eastern State Penitentiary: Gothic Prison History
               </h3>
               <p>
@@ -798,7 +798,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Elfreth's Alley */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-home-2-line text-emerald-500"></i>
+                <i className="ri-home-2-line text-[#01b47d]"></i>
                 Elfreth's Alley: America's Oldest Residential Street
               </h3>
               <p>
@@ -814,7 +814,7 @@ export default function PhiladelphiaArticlePage() {
         {/* Food: Beyond the Cheesesteak */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d]"></i>
             Food: Beyond the Cheesesteak (But Also, Definitely Cheesesteaks)
           </h2>
           <div className="space-y-6">
@@ -822,7 +822,7 @@ export default function PhiladelphiaArticlePage() {
               Philadelphia's food scene extends far beyond its most famous sandwich, though we'll start there because it's mandatory.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               The Cheesesteak Debate: A Philadelphia Obsession
             </h3>
             <p>
@@ -839,7 +839,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Top Cheesesteak Destinations */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Top Cheesesteak Destinations
               </h3>
               <div className="space-y-3">
@@ -873,7 +873,7 @@ export default function PhiladelphiaArticlePage() {
             {/* Beyond the Cheesesteak: Philly's Diverse Food Scene */}
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 Beyond the Cheesesteak: Philly's Diverse Food Scene
               </h3>
               <div className="space-y-3">
@@ -891,12 +891,12 @@ export default function PhiladelphiaArticlePage() {
         {/* Weather & What to Pack */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-sun-cloudy-line text-emerald-500"></i>
+            <i className="ri-sun-cloudy-line text-[#01b47d]"></i>
             Weather &amp; What to Pack
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-sun-line text-emerald-500"></i>
+              <i className="ri-sun-line text-[#01b47d]"></i>
               June and July in Philadelphia: Warm with Occasional Rain
             </h3>
             <p>
@@ -920,7 +920,7 @@ export default function PhiladelphiaArticlePage() {
             </div>
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-suitcase-line text-emerald-500"></i>
+                <i className="ri-suitcase-line text-[#01b47d]"></i>
                 What to Pack
               </h3>
               <p><strong>Clothing</strong>: Light, breathable fabrics (cotton, linen, moisture-wicking synthetics). Philadelphia is casual—shorts and t-shirts work for most activities. Even upscale restaurants rarely require more than "smart casual."</p>
@@ -936,7 +936,7 @@ export default function PhiladelphiaArticlePage() {
         {/* Stadium Policies */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-shopping-bag-3-line text-emerald-500"></i>
+            <i className="ri-shopping-bag-3-line text-[#01b47d]"></i>
             Stadium Policies
           </h2>
           <div className="space-y-6">
@@ -953,12 +953,12 @@ export default function PhiladelphiaArticlePage() {
           <div id="tips-anchor" className="scroll-mt-24"></div>
           
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
+            <i className="ri-global-line text-[#01b47d]"></i>
             Practical Tips for International Visitors
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-bank-card-line text-emerald-500"></i>
+              <i className="ri-bank-card-line text-[#01b47d]"></i>
               Money Matters
             </h3>
             <ul className="list-disc pl-6 space-y-2">
@@ -970,7 +970,7 @@ export default function PhiladelphiaArticlePage() {
             </ul>
 
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-shield-check-line text-emerald-500"></i>
+              <i className="ri-shield-check-line text-[#01b47d]"></i>
               Safety &amp; Getting Around
             </h3>
             <p>
@@ -981,7 +981,7 @@ export default function PhiladelphiaArticlePage() {
             <p><strong>Biking</strong>: Indego bike share offers stations throughout Center City and surrounding neighborhoods. Perfect for exploring the Schuylkill River Trail or connecting neighborhoods.</p>
 
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-chat-4-line text-emerald-500"></i>
+              <i className="ri-chat-4-line text-[#01b47d]"></i>
               Language &amp; Connectivity
             </h3>
             <p>
@@ -997,19 +997,19 @@ export default function PhiladelphiaArticlePage() {
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-ticket-2-line text-emerald-500"></i>
+            <i className="ri-ticket-2-line text-[#01b47d]"></i>
             Ticket Information &amp; Booking Strategy
           </h2>
           <div className="space-y-6">
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-ticket-line text-emerald-500"></i>
+              <i className="ri-ticket-line text-[#01b47d]"></i>
               How to Get World Cup Tickets
             </h3>
             <p>
               Tickets for the 2026 FIFA World Cup are sold in multiple phases. The first presale draw began September 10, 2025, exclusively for Visa cardholders. Group stage tickets start at $60, with prices increasing for knockout rounds.
             </p>
             <p>
-              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
+              Register at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a> for future ticket phases. The teams playing in Philadelphia's group stage matches won't be known until the Final Draw on December 5, 2025, when matchups, dates, locations, and kickoff times are assigned.
             </p>
             <div className="space-y-2">
               <h4 className="editorial-h4">July 4th Premium</h4>
@@ -1030,7 +1030,7 @@ export default function PhiladelphiaArticlePage() {
         {/* FIFA Fan Festival at Lemon Hill */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-community-line text-emerald-500"></i>
+            <i className="ri-community-line text-[#01b47d]"></i>
             FIFA Fan Festival at Lemon Hill
           </h2>
           <div className="space-y-6">
@@ -1044,7 +1044,7 @@ export default function PhiladelphiaArticlePage() {
         {/* Why Philadelphia Will Make Your World Cup Unforgettable */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-award-line text-emerald-500"></i>
+            <i className="ri-award-line text-[#01b47d]"></i>
             Why Philadelphia Will Make Your World Cup Unforgettable
           </h2>
           <div className="space-y-6">
@@ -1070,7 +1070,7 @@ export default function PhiladelphiaArticlePage() {
           <div id="tour-planning-anchor" className="scroll-mt-24"></div>
 
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-map-pin-line text-emerald-500"></i>
+            <i className="ri-map-pin-line text-[#01b47d]"></i>
             Plan Your Historic Cities World Cup Journey
           </h2>
           <div className="space-y-6">
@@ -1079,42 +1079,42 @@ export default function PhiladelphiaArticlePage() {
             </p>
             <div className="space-y-4">
               <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-                <i className="ri-route-line text-emerald-500"></i>
+                <i className="ri-route-line text-[#01b47d]"></i>
                 Popular Combinations
               </h3>
               
               {/* Northeast Heritage Trail */}
-              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
                 <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                   <span className="text-emerald-500">01.</span> Northeast Heritage Trail
+                   <span className="text-[#01b47d]">01.</span> Northeast Heritage Trail
                 </h4>
                 <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                  Discover America's founding cities: Start in Philadelphia (current), take the train north to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link> for the big city experience, then continue to <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link> to complete your Revolutionary history tour.
+                  Discover America's founding cities: Start in Philadelphia (current), take the train north to <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link> for the big city experience, then continue to <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link> to complete your Revolutionary history tour.
                 </p>
               </div>
 
               {/* Mid-Atlantic to South */}
-              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
                 <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                   <span className="text-emerald-500">02.</span> Mid-Atlantic to South
+                   <span className="text-[#01b47d]">02.</span> Mid-Atlantic to South
                 </h4>
                 <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                  Connect Philadelphia with <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link> to experience both Mid-Atlantic and Southern hospitality, with different architectural styles and culinary traditions.
+                  Connect Philadelphia with <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link> to experience both Mid-Atlantic and Southern hospitality, with different architectural styles and culinary traditions.
                 </p>
               </div>
 
               {/* Cross-Border Northeast */}
-              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors">
+              <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/30 dark:border-slate-700 hover:border-[#008f63] dark:hover:border-[#008f63] transition-colors">
                 <h4 className="font-bold text-lg text-slate-900 dark:text-slate-100 mb-2 flex items-center gap-2">
-                   <span className="text-emerald-500">03.</span> Cross-Border Northeast
+                   <span className="text-[#01b47d]">03.</span> Cross-Border Northeast
                 </h4>
                 <p className="leading-relaxed text-slate-700 dark:text-slate-300">
-                  Extend your trip north to <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-medium text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Toronto</Link> for an international perspective, easily accessible from Philadelphia.
+                  Extend your trip north to <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-medium text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Toronto</Link> for an international perspective, easily accessible from Philadelphia.
                 </p>
               </div>
             </div>
             <p className="mt-6">
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -1123,7 +1123,7 @@ export default function PhiladelphiaArticlePage() {
         {/* Start Planning Your 2026 World Cup Trip to Philadelphia */}
         <article className="editorial-body theme-emerald">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Start Planning Your 2026 World Cup Trip to Philadelphia
           </h2>
           <div className="space-y-6">
@@ -1131,13 +1131,13 @@ export default function PhiladelphiaArticlePage() {
               The countdown is on. Hotels are booking up. Flights are being reserved. And Philadelphia is preparing to show the world why this city matters.
             </p>
             <h3 className="editorial-h3 animate-fade-up flex items-center gap-2">
-              <i className="ri-check-double-line text-emerald-500"></i>
+              <i className="ri-check-double-line text-[#01b47d]"></i>
               Your Action Plan
             </h3>
             <ol className="list-decimal pl-6 space-y-2">
-              <li><strong>Register for FIFA tickets</strong> at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.fifa.com/tickets</a> for future phases</li>
-              <li><strong>Book accommodations early</strong> via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.hotels.com</a> —6-12 months in advance is essential, especially for July 4th</li>
-              <li><strong>Research flights</strong> to Philadelphia (PHL) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">https://www.google.com/flights</a> </li>
+              <li><strong>Register for FIFA tickets</strong> at <a href="https://www.fifa.com/tickets" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.fifa.com/tickets</a> for future phases</li>
+              <li><strong>Book accommodations early</strong> via <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.booking.com</a> or <a href="https://www.hotels.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.hotels.com</a> —6-12 months in advance is essential, especially for July 4th</li>
+              <li><strong>Research flights</strong> to Philadelphia (PHL) through <a href="https://www.skyscanner.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.skyscanner.com</a> or <a href="https://www.google.com/flights" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">https://www.google.com/flights</a> </li>
               <li><strong>Purchase a SEPTA Key card</strong> immediately upon arrival for seamless transit</li>
               <li><strong>Plan Independence Hall tour</strong> in advance—book the $1 tickets online weeks before your visit</li>
               <li><strong>Embrace the July 4th experience</strong>—this collision of American independence and World Cup football will never happen again</li>
@@ -1156,7 +1156,7 @@ export default function PhiladelphiaArticlePage() {
         
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -1177,21 +1177,21 @@ export default function PhiladelphiaArticlePage() {
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-host-cities" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all cities <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -1210,8 +1210,8 @@ export default function PhiladelphiaArticlePage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Northeast Neighbor</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">New York / New Jersey</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Northeast Neighbor</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">New York / New Jersey</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Complete guide to MetLife Stadium and the World Cup Final host city.</p>
               </div>
             </Link>
@@ -1241,7 +1241,7 @@ export default function PhiladelphiaArticlePage() {
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -1260,7 +1260,7 @@ export default function PhiladelphiaArticlePage() {
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${currentPath}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -1272,7 +1272,7 @@ export default function PhiladelphiaArticlePage() {
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#008f63]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

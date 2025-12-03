@@ -20,6 +20,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   
   // Dropdown State
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -66,16 +67,98 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 
     setIsSubmitting(true);
     
-    // Simulate API call / delay for UX
-    await new Promise(resolve => setTimeout(resolve, 800));
-    
-    setIsSubmitting(false);
-    onComplete(formData);
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'predictor-signup',
+          data: {
+            name: formData.name,
+            email: formData.email,
+            country: formData.country,
+            ageConfirmed: formData.ageConfirmed,
+            termsAccepted: formData.acceptedTerms
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      setIsSuccess(true);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setErrors(prev => ({ ...prev, submit: 'Something went wrong. Please try again.' }));
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const filteredCountries = COUNTRIES.filter(country => 
     country.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  if (isSuccess) {
+    return (
+      <>
+        <SEO 
+          title="Verify Your Email | StadiumPort Predictor Game"
+          description="Please verify your email to complete your World Cup 2026 prediction entry."
+          url="/world-cup-2026-prediction-game/submit"
+        />
+        <div className="w-full max-w-md mx-auto px-4">
+          <div className="mb-6 flex justify-center">
+            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+              <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+                Step 4 of 5: Verify Email
+              </span>
+            </div>
+          </div>
+
+          <div className="text-center mb-6 md:mb-8">
+            <h2 className="text-3xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
+              Check Your Inbox
+            </h2>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-2xl relative overflow-hidden text-center"
+          >
+            {/* Background Ambient Glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#01b47d]/20 blur-[60px] rounded-full pointer-events-none" />
+
+            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#01b47d] to-[#008f63] rounded-full flex items-center justify-center shadow-lg mb-8 relative z-10 animate-pulse">
+              <Mail className="w-10 h-10 text-white" />
+            </div>
+
+            <h3 className="text-2xl font-bold text-white mb-4 font-['Teko'] uppercase tracking-wide">
+              Verification Link Sent!
+            </h3>
+            
+            <p className="text-slate-300 mb-6 leading-relaxed font-['Rajdhani'] text-lg">
+              Thank you! Please check your email to verify your address and complete your signup.
+            </p>
+            
+            <div className="bg-white/5 rounded-xl p-4 mb-8 border border-white/10">
+              <p className="text-white/60 text-sm uppercase tracking-wider font-['Rajdhani'] mb-1">Sent to:</p>
+              <p className="text-[#01b47d] font-bold font-['Rajdhani'] text-lg">{formData.email}</p>
+            </div>
+
+            <p className="text-white/40 text-xs font-['Rajdhani']">
+              Don't see it? Check your spam folder or try again in a few minutes.
+            </p>
+          </motion.div>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -101,7 +184,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
       {/* Step Chip (Background Page, outside card) */}
       <div className="mb-6 flex justify-center">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
           <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
             Step 4 of 5: Submit Your Official Entry
           </span>
@@ -124,11 +207,11 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
         className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[24px] md:rounded-[32px] p-5 md:p-7 shadow-2xl relative overflow-hidden"
       >
         {/* Background Ambient Glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-emerald-500/20 blur-[50px] rounded-full pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-24 bg-[#01b47d]/20 blur-[50px] rounded-full pointer-events-none" />
 
         {/* Header */}
         <div className="text-center mb-6 relative z-10">
-          <div className="w-12 h-12 mx-auto bg-gradient-to-br from-emerald-400 to-cyan-500 rounded-2xl flex items-center justify-center shadow-lg mb-4 rotate-3">
+          <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-2xl flex items-center justify-center shadow-lg mb-4 rotate-3">
             <CheckCircle2 className="w-6 h-6 text-white" />
           </div>
           <h2 className="text-3xl font-black font-['Teko'] text-white tracking-wide uppercase mb-1">
@@ -147,7 +230,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             </label>
             <div className="relative group">
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <User className="h-4 w-4 text-white/40 group-focus-within:text-emerald-400 transition-colors" />
+                <User className="h-4 w-4 text-white/40 group-focus-within:text-[#01b47d] transition-colors" />
               </div>
               <input
                 type="text"
@@ -156,7 +239,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, name: e.target.value });
                   if (errors.name) setErrors({ ...errors, name: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
                 autoComplete="name"
                 placeholder="Cristiano Ronaldo"
               />
@@ -171,7 +254,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             </label>
             <div className="relative group">
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <Mail className="h-4 w-4 text-white/40 group-focus-within:text-emerald-400 transition-colors" />
+                <Mail className="h-4 w-4 text-white/40 group-focus-within:text-[#01b47d] transition-colors" />
               </div>
               <input
                 type="email"
@@ -180,7 +263,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, email: e.target.value });
                   if (errors.email) setErrors({ ...errors, email: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-emerald-500/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
                 autoComplete="email"
                 placeholder="cr7@stadiumport.com"
               />
@@ -198,15 +281,15 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             <button
               type="button"
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className={`relative w-full bg-white/5 border ${errors.country ? 'border-red-500/50' : isDropdownOpen ? 'border-emerald-500/50' : 'border-white/10'} rounded-2xl h-12 md:h-auto py-0 md:py-3.5 pl-12 md:pl-11 pr-4 flex items-center justify-between text-left transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500/20 group hover:bg-white/10`}
+              className={`relative w-full bg-white/5 border ${errors.country ? 'border-red-500/50' : isDropdownOpen ? 'border-[#01b47d]/50' : 'border-white/10'} rounded-2xl h-12 md:h-auto py-0 md:py-3.5 pl-12 md:pl-11 pr-4 flex items-center justify-between text-left transition-all focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 group hover:bg-white/10`}
             >
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <Globe className={`h-4 w-4 shrink-0 transition-colors ${formData.country ? 'text-emerald-400' : 'text-white/40 group-hover:text-white/60'}`} />
+                <Globe className={`h-4 w-4 shrink-0 transition-colors ${formData.country ? 'text-[#01b47d]' : 'text-white/40 group-hover:text-white/60'}`} />
               </div>
               <span className={`block truncate font-['Rajdhani'] font-medium text-[15px] md:text-base leading-[1.25] ${formData.country ? 'text-white' : 'text-white/20'} flex-1 min-w-0`}>
                 {formData.country || 'Select your country'}
               </span>
-              <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-emerald-400' : ''}`} />
+              <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-[#01b47d]' : ''}`} />
             </button>
 
             {/* Error Message */}
@@ -232,7 +315,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search country..."
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-base text-white placeholder:text-white/20 focus:outline-none focus:border-emerald-500/50 focus:bg-white/10 transition-all font-['Rajdhani']"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-base text-white placeholder:text-white/20 focus:outline-none focus:border-[#01b47d]/50 focus:bg-white/10 transition-all font-['Rajdhani']"
                       />
                       {searchQuery && (
                         <button 
@@ -261,13 +344,13 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                             }}
                             className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-['Rajdhani'] font-medium transition-all flex items-center justify-between group ${
                               formData.country === country 
-                                ? 'bg-emerald-500/10 text-emerald-400' 
+                                ? 'bg-[#01b47d]/10 text-[#01b47d]' 
                                 : 'text-white/70 hover:bg-white/5 hover:text-white'
                             }`}
                           >
                             <span>{country}</span>
                             {formData.country === country && (
-                              <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400" />
+                              <CheckCircle2 className="h-3.5 w-3.5 text-[#01b47d]" />
                             )}
                           </button>
                         ))}
@@ -298,10 +381,10 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, ageConfirmed: !formData.ageConfirmed });
                   if (errors.ageConfirmed) setErrors({ ...errors, ageConfirmed: '' });
                 }}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.ageConfirmed ? 'border-emerald-500/50 bg-emerald-500/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/30`}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.ageConfirmed ? 'border-[#01b47d]/50 bg-[#01b47d]/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-[#01b47d]/30`}
               >
                 <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 18 years or older</span>
-                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.ageConfirmed ? 'bg-emerald-500' : 'bg-white/10 border border-white/20'}`}>
+                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.ageConfirmed ? 'bg-[#01b47d]' : 'bg-white/10 border border-white/20'}`}>
                   <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.ageConfirmed ? 'translate-x-4' : ''}`}></span>
                 </div>
               </button>
@@ -321,10 +404,10 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, acceptedTerms: !formData.acceptedTerms });
                   if (errors.acceptedTerms) setErrors({ ...errors, acceptedTerms: '' });
                 }}
-                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.acceptedTerms ? 'border-emerald-500/50 bg-emerald-500/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500/30`}
+                className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.acceptedTerms ? 'border-[#01b47d]/50 bg-[#01b47d]/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-[#01b47d]/30`}
               >
                 <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I agree to the Official Rules and Privacy Policy</span>
-                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.acceptedTerms ? 'bg-emerald-500' : 'bg-white/10 border border-white/20'}`}>
+                <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.acceptedTerms ? 'bg-[#01b47d]' : 'bg-white/10 border border-white/20'}`}>
                   <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.acceptedTerms ? 'translate-x-4' : ''}`}></span>
                 </div>
               </button>
@@ -333,12 +416,16 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
           </div>
 
           {/* Actions */}
-          {/* Actions */}
           <div className="pt-4 space-y-3">
+            {errors.submit && (
+              <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-3 text-center">
+                <p className="text-red-400 text-sm font-['Rajdhani']">{errors.submit}</p>
+              </div>
+            )}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold py-3 md:py-4 rounded-2xl shadow-lg shadow-emerald-500/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-base md:text-lg"
+              className="w-full bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#01b47d] text-white font-bold py-3 md:py-4 rounded-2xl shadow-lg shadow-[#01b47d]/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-base md:text-lg"
             >
               {isSubmitting ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />

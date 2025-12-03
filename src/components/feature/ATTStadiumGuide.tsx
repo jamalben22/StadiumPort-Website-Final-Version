@@ -157,11 +157,11 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
       
       {/* TOC Sidebar - Desktop */}
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -177,11 +177,11 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border border-[#01b47d]/30 dark:border-[#01b47d]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -189,8 +189,8 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -201,16 +201,16 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -228,11 +228,11 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -268,7 +268,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -278,32 +278,32 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">AT&T Stadium</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">AT&T Stadium</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              AT&T Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">World Cup 2026 Guide</span>
+              AT&T Stadium: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">World Cup 2026 Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Arlington, Texas</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-trophy-line text-lg"></i>
                 </div>
                 <span>Most Matches Host (9)</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>80,000 Capacity</span>
@@ -312,10 +312,10 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -332,8 +332,8 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Hosts <strong>9 matches</strong> (Most of any venue)</li>
                <li>• Venue: <strong>AT&T Stadium</strong> (Arlington)</li>
@@ -343,7 +343,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             The Colossal Crown Jewel Hosting the Most World Cup 2026 Matches
           </h2>
           
@@ -360,20 +360,20 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
 
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
-            When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Located in <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>, AT&T Stadium is one of the world's largest and most impressive venues. <strong>AT&T Stadium is one of the </strong>
-            <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
+            When FIFA officials sought a venue capable of delivering American football's grandeur at football's greatest tournament, they found their answer in Arlington, Texas. Located in <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>, AT&T Stadium is one of the world's largest and most impressive venues. <strong>AT&T Stadium is one of the </strong>
+            <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>
             {`, and will host nine matches—more than any other venue in the tournament, including a semifinal showdown that will determine one of the finalists.`}
           </p>
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
             For international fans, this $1.15 billion architectural marvel represents everything audacious about American sports culture: a retractable roof spanning 1,225 feet, a center-hung video board once the world's largest, and seating for 80,000 that can expand beyond 100,000. This is where Super Bowls are decided, where college football championships unfold, and where the beautiful game will write new North American history.
           </p>
           
-          <blockquote className="my-10 pl-6 border-l-4 border-emerald-500 italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
+          <blockquote className="my-10 pl-6 border-l-4 border-[#01b47d] italic text-2xl text-slate-700 dark:text-slate-300 font-serif leading-relaxed">
             "This is where Super Bowls are decided... and where the beautiful game will write new North American history."
           </blockquote>
 
           <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-4">
-            Planning to see multiple matches across the region? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City, and <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey for a cross-border experience.
+            Planning to see multiple matches across the region? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston, <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City, and <Link to="/world-cup-2026-stadiums/estadio-bbva-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio BBVA</Link> in Monterrey for a cross-border experience.
           </p>
           <hr className="editorial-divider" />
         </article>
@@ -381,103 +381,103 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Stadium Overview & Fast Facts */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] text-3xl"></i>
             Stadium Overview & Fast Facts
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             <div className="space-y-2">
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-building-2-line text-emerald-500 text-2xl"></i>
+                <i className="ri-building-2-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Official Name:</strong> AT&T Stadium</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-star-line text-emerald-500 text-2xl"></i>
+                <i className="ri-star-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Nickname:</strong> Jerry World</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-map-pin-line text-emerald-500 text-2xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Location:</strong> Arlington, Texas (Dallas-Fort Worth metroplex)</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-map-2-line text-emerald-500 text-2xl"></i>
+                <i className="ri-map-2-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Address:</strong> 1 AT&T Way, Arlington, TX 76011</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-calendar-line text-emerald-500 text-2xl"></i>
+                <i className="ri-calendar-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Opened:</strong> May 27, 2009</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-group-line text-emerald-500 text-2xl"></i>
+                <i className="ri-group-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Capacity:</strong> 80,000 (expandable to 105,000+ with standing room)</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-trophy-line text-emerald-500 text-2xl"></i>
+                <i className="ri-trophy-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>World Cup Capacity:</strong> Approximately 92,000</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-shield-star-line text-emerald-500 text-2xl"></i>
+                <i className="ri-shield-star-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Primary Tenant:</strong> Dallas Cowboys (NFL)</p>
               </div>
             </div>
             <div className="space-y-2">
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-music-2-line text-emerald-500 text-2xl"></i>
+                <i className="ri-music-2-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Secondary Uses:</strong> Cotton Bowl Classic, Big 12 Championship, concerts, special events</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-pencil-ruler-2-line text-emerald-500 text-2xl"></i>
+                <i className="ri-pencil-ruler-2-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Architect:</strong> HKS, Inc. (Lead architect: Bryan Trubey)</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-tools-line text-emerald-500 text-2xl"></i>
+                <i className="ri-tools-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Structural Engineer:</strong> Walter P Moore</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-briefcase-2-line text-emerald-500 text-2xl"></i>
+                <i className="ri-briefcase-2-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>General Contractor:</strong> Manhattan Construction Company</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-money-dollar-circle-line text-emerald-500 text-2xl"></i>
+                <i className="ri-money-dollar-circle-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Construction Cost:</strong> $1.15 billion</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-leaf-line text-emerald-500 text-2xl"></i>
+                <i className="ri-leaf-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Surface Type:</strong> Artificial turf (Matrix Turf); natural grass will be installed for World Cup 2026</p>
               </div>
               <div className="flex items-start gap-3 py-2">
-                <i className="ri-arrow-up-down-line text-emerald-500 text-2xl"></i>
+                <i className="ri-arrow-up-down-line text-[#01b47d] text-2xl"></i>
                 <p className="leading-relaxed"><strong>Roof Type:</strong> Retractable (opens/closes in approximately 12 minutes)</p>
               </div>
             </div>
           </div>
           <div className="mt-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-star-line text-emerald-500"></i>
+              <i className="ri-star-line text-[#01b47d]"></i>
               Notable Features
             </h4>
             <ul className="space-y-2">
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Center-hung video board: 160 feet wide × 72 feet tall (previously world's largest)</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>292-foot arched box trusses (longest single-span roof structure in the world)</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Retractable glass end zone doors (180 feet wide × 120 feet tall)</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Playing field sits 50 feet below street level</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>300+ luxury suites across five levels</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                 <span>Over 3,000 LCD displays throughout the facility</span>
               </li>
             </ul>
@@ -488,7 +488,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* History & Legacy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-book-open-line text-emerald-500 text-3xl"></i>
+            <i className="ri-book-open-line text-[#01b47d] text-3xl"></i>
             History & Legacy
           </h3>
           <div>
@@ -508,7 +508,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Stadium Architecture & Experience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-building-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-building-2-line text-[#01b47d] text-3xl"></i>
             Stadium Architecture & Experience
           </h3>
           <div>
@@ -534,7 +534,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* What Matches to Expect */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-calendar-line text-emerald-500 text-3xl"></i>
+            <i className="ri-calendar-line text-[#01b47d] text-3xl"></i>
             What Matches to Expect
           </h3>
           <div>
@@ -554,7 +554,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Getting to the Stadium */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-map-2-line text-[#01b47d] text-3xl"></i>
             Getting to the Stadium
           </h3>
           <div className="mb-8">
@@ -562,7 +562,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-train-line text-emerald-500"></i>
+              <i className="ri-train-line text-[#01b47d]"></i>
               By Public Transit (World Cup Special Service)
             </h4>
             <p className="leading-relaxed">
@@ -577,7 +577,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-taxi-line text-emerald-500"></i>
+              <i className="ri-taxi-line text-[#01b47d]"></i>
               By Rideshare/Taxi
             </h4>
             <p className="leading-relaxed">Uber and Lyft are the most practical options for most visitors:</p>
@@ -590,7 +590,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-roadster-line text-emerald-500"></i>
+              <i className="ri-roadster-line text-[#01b47d]"></i>
               By Car
             </h4>
             <p className="leading-relaxed">If driving, AT&T Stadium has extensive parking, though expect matchday premiums:</p>
@@ -604,7 +604,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
           </div>
           <div>
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-bus-line text-emerald-500"></i>
+              <i className="ri-bus-line text-[#01b47d]"></i>
               By Private Transfer/Shuttle
             </h4>
             <p className="leading-relaxed">Many Arlington hotels offer matchday shuttles. Downtown Arlington bars and restaurants including J. Gilligan's Bar & Grill and Grease Monkey run shuttles for approximately $15-20 per person. Book early through platforms like Viator or GetYourGuide for guaranteed transfers from Dallas/Fort Worth airports.</p>
@@ -615,13 +615,13 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Where to Stay */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] text-3xl"></i>
             Where to Stay
           </h3>
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Entertainment District (Walking Distance to Stadium)
               </h4>
               <p className="leading-relaxed mb-4">This is prime territory for World Cup fans wanting to be steps from the action:</p>
@@ -633,7 +633,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-building-line text-emerald-500"></i>
+                <i className="ri-building-line text-[#01b47d]"></i>
                 Arlington Central (1-3 miles from stadium)
               </h4>
               <ul className="list-disc ml-6">
@@ -644,7 +644,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 Near DFW Airport (10 miles from stadium)
               </h4>
               <p className="leading-relaxed mb-4">Practical for international visitors with early flights or those wanting free airport shuttles:</p>
@@ -656,7 +656,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-building-4-line text-emerald-500"></i>
+                <i className="ri-building-4-line text-[#01b47d]"></i>
                 Downtown Dallas (20 miles from stadium)
               </h4>
               <p className="leading-relaxed mb-4">For visitors wanting urban nightlife and culture between matches:</p>
@@ -668,7 +668,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-lightbulb-line text-emerald-500"></i>
+                <i className="ri-lightbulb-line text-[#01b47d]"></i>
                 Booking Strategy
               </h4>
               <p className="leading-relaxed">Use platforms like Booking.com, Expedia, or Airbnb to compare rates. Book at least 6-9 months in advance for World Cup dates. Consider vacation rentals in Arlington for groups wanting multiple bedrooms at better value than hotel suites.</p>
@@ -680,101 +680,101 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Matchday Tips & Insider Advice */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
+            <i className="ri-lightbulb-line text-[#01b47d] text-3xl"></i>
             Matchday Tips & Insider Advice
           </h3>
           <div className="space-y-6">
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-time-line text-emerald-500"></i>
+                <i className="ri-time-line text-[#01b47d]"></i>
                 Arrival Time
               </h4>
               <p className="leading-relaxed">Security and entry procedures will be extensive for World Cup matches. Plan to arrive 2.5-3 hours before kickoff. Gates typically open 2 hours pre-match, giving you time to explore the massive facility, grab food, and soak in pre-match atmosphere.</p>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-shield-check-line text-emerald-500"></i>
+                <i className="ri-shield-check-line text-[#01b47d]"></i>
                 Bag Policy
               </h4>
               <p className="leading-relaxed">AT&T Stadium enforces strict NFL bag policies. Allowed bags must be clear plastic, vinyl, or PVC and not exceed 12" × 6" × 12", or small clutch purses (4.5" × 6.5"). Leave backpacks and large bags at your hotel.</p>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-suitcase-line text-emerald-500"></i>
+                <i className="ri-suitcase-line text-[#01b47d]"></i>
                 What to Bring
               </h4>
               <ul className="space-y-2 ml-6">
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Mobile ticket on your phone (all tickets are mobile)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Valid photo ID (passport for international visitors)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Light jacket or sweater (stadium air conditioning can be aggressive)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Sunglasses if roof is open</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Portable phone charger</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Cash for vendors outside stadium</span>
                 </li>
               </ul>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-sun-line text-emerald-500"></i>
+                <i className="ri-sun-line text-[#01b47d]"></i>
                 Weather Considerations
               </h4>
               <p className="leading-relaxed">June/July in North Texas means heat—often 95°F+ (35°C+). The retractable roof and climate control mean comfort inside, but dress for extreme heat when arriving. Sunscreen and hydration essential if tailgating or exploring outdoor plazas.</p>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-restaurant-2-line text-emerald-500"></i>
+                <i className="ri-restaurant-2-line text-[#01b47d]"></i>
                 Food & Drink Inside
               </h4>
               <p className="leading-relaxed">The stadium offers extensive concessions from BBQ and Tex-Mex to pizza and burgers. Prices are premium ($12-18 for entrees, $10-15 for beer). Notable spots:</p>
               <ul className="space-y-2 ml-6">
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Club Audi for upscale dining (club ticket holders)</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Silver Mine Subs for quick bites</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                  <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                   <span>Multiple Tex-Mex and taco stands throughout concourses</span>
                 </li>
               </ul>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-whiskey-line text-emerald-500"></i>
+                <i className="ri-whiskey-line text-[#01b47d]"></i>
                 Alcohol
               </h4>
               <p className="leading-relaxed">Beer and cocktails available throughout (prices $12-16). Texas allows alcohol sales at sporting events, though FIFA may have specific policies for World Cup matches.</p>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-door-open-line text-emerald-500"></i>
+                <i className="ri-door-open-line text-[#01b47d]"></i>
                 Best Gates
               </h4>
               <p className="leading-relaxed">Gates A and E on the east side typically have shorter security lines. Premium ticket holders have dedicated entrances on the west side.</p>
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-route-line text-emerald-500"></i>
+                <i className="ri-route-line text-[#01b47d]"></i>
                 Post-Match Exit Strategy
               </h4>
               <p className="leading-relaxed">Don't rush. Wait 15-20 minutes after final whistle for crowds to thin. If using rideshare, walk toward Texas Live! entertainment complex for better pickup locations and shorter waits. Public transit shuttles will run for 60-90 minutes post-match.</p>
@@ -786,13 +786,13 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Things to Do Nearby */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
             Things to Do Nearby
           </h3>
           <div className="space-y-8">
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-restaurant-line text-emerald-500"></i>
+                <i className="ri-restaurant-line text-[#01b47d]"></i>
                 Pre-Match (Within Walking Distance):
               </h4>
               <p className="leading-relaxed mb-4"><strong>Texas Live!</strong> (adjacent): This sprawling entertainment complex is Arlington's pre-match headquarters. The Live! Arena features a 100-foot LED screen for watching other World Cup matches, while Troy's restaurant (owned by Cowboys legend Troy Aikman) offers elevated sports bar fare and craft cocktails. Arlington Backyard is an outdoor concert venue with stadium views.</p>
@@ -801,7 +801,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-user-smile-line text-emerald-500"></i>
+                <i className="ri-user-smile-line text-[#01b47d]"></i>
                 Family Attractions:
               </h4>
               <ul className="list-disc ml-6">
@@ -812,7 +812,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-building-line text-emerald-500"></i>
+                <i className="ri-building-line text-[#01b47d]"></i>
                 Culture & Sightseeing (20-30 minutes away):
               </h4>
               <ul className="list-disc ml-6">
@@ -829,7 +829,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Post-Match Celebrations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-party-popper-line text-emerald-500 text-3xl"></i>
+            <i className="ri-party-popper-line text-[#01b47d] text-3xl"></i>
             Post-Match Celebrations
           </h3>
           <p className="leading-relaxed">
@@ -841,7 +841,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Beyond the Stadium: Explore Dallas */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
             Beyond the Stadium: Explore Dallas
           </h3>
           <div className="space-y-6">
@@ -851,7 +851,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div>
               <p className="font-semibold">Discover Dallas:</p>
               <p>
-                Explore our complete <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas World Cup 2026 Guide</Link> for essential information:
+                Explore our complete <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Dallas World Cup 2026 Guide</Link> for essential information:
               </p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Hotels near AT&T Stadium in Arlington</li>
@@ -864,11 +864,11 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             <div>
               <p className="font-semibold">Other Texas & Central Stadiums:</p>
               <p>
-                Catching multiple matches in Texas? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston. Also visit <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City.
+                Catching multiple matches in Texas? Check out <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston. Also visit <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Arrowhead Stadium</Link> in Kansas City.
               </p>
             </div>
             <p>
-              <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
+              <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link>
             </p>
           </div>
           <hr className="editorial-divider" />
@@ -877,7 +877,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         {/* Final Verdict & Key Takeaway */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-medal-line text-emerald-500 text-3xl"></i>
+            <i className="ri-medal-line text-[#01b47d] text-3xl"></i>
             Final Verdict & Key Takeaway
           </h3>
           <div>
@@ -902,7 +902,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
         {/* Interactive Rating Section */}
         <div className="mb-16 p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-white dark:from-slate-800 dark:to-slate-900 border border-slate-200 dark:border-slate-700 shadow-xl text-center relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-400 via-teal-500 to-emerald-600"></div>
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
           <div className="relative z-10">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2 font-space">Rate this Guide</h3>
             <p className="text-slate-600 dark:text-slate-400 mb-6">How helpful was this guide for your World Cup planning?</p>
@@ -923,21 +923,21 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
             </div>
             
             <div className={`transition-all duration-500 ${hasRated ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-              <p className="text-emerald-600 dark:text-emerald-400 font-medium">
+              <p className="text-[#01b47d] dark:text-[#01b47d] font-medium">
                 <i className="ri-checkbox-circle-fill align-bottom mr-1"></i> Thanks for your feedback!
               </p>
             </div>
           </div>
           {/* Background decorative elements */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-emerald-500/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-blue-500/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-[#01b47d]/5 rounded-full blur-3xl"></div>
         </div>
 
         {/* Related Guides Recommendation Engine */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-8">
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white font-space">You Might Also Like</h3>
-            <Link to="/world-cup-2026-stadiums" className="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 font-medium flex items-center gap-1 group">
+            <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] hover:text-[#008f63] font-medium flex items-center gap-1 group">
               View all stadiums <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
             </Link>
           </div>
@@ -956,8 +956,8 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
               <div className="absolute bottom-0 left-0 p-6 w-full">
-                <span className="inline-block px-2 py-1 rounded bg-emerald-500/20 backdrop-blur-sm border border-emerald-500/30 text-emerald-300 text-xs font-bold uppercase tracking-wider mb-2">Host City Guide</span>
-                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-emerald-300 transition-colors">Dallas</h4>
+                <span className="inline-block px-2 py-1 rounded bg-[#01b47d]/20 backdrop-blur-sm border border-[#01b47d]/30 text-[#01b47d] text-xs font-bold uppercase tracking-wider mb-2">Host City Guide</span>
+                <h4 className="text-xl font-bold text-white mb-1 group-hover:text-[#008f63] transition-colors">Dallas</h4>
                 <p className="text-slate-300 text-sm line-clamp-2">Complete Dallas travel guide for FIFA World Cup 2026: Match schedule, transportation, and planning tips.</p>
               </div>
             </Link>
@@ -987,7 +987,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
         <aside className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-2xl bg-slate-50/50 dark:bg-slate-900/50 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 shadow-lg relative overflow-hidden">
              {/* Decorative background glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#01b47d]/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
             
             {/* Share Section */}
             <div className="flex items-center gap-4 relative z-10">
@@ -1006,7 +1006,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
                   <i className="ri-facebook-circle-fill text-lg group-hover:scale-110 transition-transform"></i>
                 </a>
                 <button onClick={() => navigator.clipboard.writeText(`${siteUrl}${pageUrl}`)}
-                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-emerald-500 border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
+                   className="p-3 rounded-xl bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-white hover:bg-[#008f63] border border-slate-200 dark:border-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg shadow-sm group"
                    aria-label="Copy Link">
                   <i className="ri-link-m text-lg group-hover:scale-110 transition-transform"></i>
                 </button>
@@ -1018,7 +1018,7 @@ export const ATTStadiumGuide = ({ onClose, showHeader = false, hideHero = false 
 
             {/* Last Reviewed Section */}
             <div className="flex items-center gap-3 relative z-10">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400">
+              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-[#01b47d]/10 dark:bg-[#01b47d]/30 text-[#01b47d] dark:text-[#01b47d]">
                 <i className="ri-shield-check-fill text-xl"></i>
               </div>
               <div>

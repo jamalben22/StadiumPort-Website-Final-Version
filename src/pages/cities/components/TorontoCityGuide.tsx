@@ -43,7 +43,7 @@ export function TorontoCityGuide() {
       {(() => {
         const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/toronto-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/toronto-world-cup-2026.webp`;
-        const title = 'Toronto World Cup 2026: Complete Travel Guide | StadiumPort';
+        const title = 'Toronto World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Emphasize Toronto’s multicultural energy, waterfront beauty, and the excitement surrounding BMO Field’s World Cup matches.';
 
         // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -121,7 +121,7 @@ export function TorontoCityGuide() {
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-building-line"></i>
-                <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-emerald-700 dark:text-emerald-400">BMO Field</Link>
+                <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500 text-[#008f63] dark:text-[#01b47d]">BMO Field</Link>
               </div>
               <div className="meta-item flex items-center gap-2">
                 <i className="ri-group-line"></i>
@@ -137,12 +137,12 @@ export function TorontoCityGuide() {
         {/* Making History at BMO Field */}
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Making History at BMO Field
           </h2>
             <p>
               Toronto isn't just hosting the 2026 FIFA World Cup—it's hosting <strong>history</strong>. Toronto is one of the 16 host cities for the 2026 World Cup—
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">explore the host cities hub</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">explore the host cities hub</Link>
               . On June 12, 2026, Canada's Men's National Team will play their very first FIFA World Cup match on home soil, and you'll want to be there when it happens. Picture this: 45,736 fans packed into Toronto Stadium (
               <Link to="/world-cup-2026-stadiums/bmo-field" className="underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">BMO Field</Link>
               ) at Exhibition Place, the energy electric as the Maple Leaf flag waves across a sea of red. This isn't just another match—it's a national milestone, and Toronto is the stage.
@@ -188,7 +188,7 @@ export function TorontoCityGuide() {
         {/* Getting to BMO Field: Easier Than You Think */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting to BMO Field: Easier Than You Think
           </h2>
             <p>
@@ -209,7 +209,7 @@ export function TorontoCityGuide() {
         {/* Where to Stay: Your Tournament Home Base */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-hotel-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Where to Stay: Your Tournament Home Base
           </h2>
             <p>
@@ -251,7 +251,7 @@ export function TorontoCityGuide() {
         {/* Beyond the Stadium: Why You'll Want Extra Days */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-map-pin-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Beyond the Stadium: Why You'll Want Extra Days
           </h2>
             <p>
@@ -267,7 +267,7 @@ export function TorontoCityGuide() {
         {/* CN Tower & Rogers Centre */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-2-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             CN Tower & Rogers Centre
           </h2>
             <p>
@@ -282,7 +282,7 @@ export function TorontoCityGuide() {
         {/* St. Lawrence Market */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-store-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-store-3-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             St. Lawrence Market
           </h2>
             <p>
@@ -294,7 +294,7 @@ export function TorontoCityGuide() {
         {/* Neighborhood Hopping: Where the Real Toronto Lives */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-community-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-community-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Neighborhood Hopping: Where the Real Toronto Lives
           </h2>
             <div>
@@ -357,7 +357,7 @@ export function TorontoCityGuide() {
         {/* Getting Around Like a Local */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-bus-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-bus-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Getting Around Like a Local
           </h2>
             <p>
@@ -378,7 +378,7 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
         {/* Tournament Practicalities */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-information-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Tournament Practicalities
           </h2>
             <p>
@@ -390,7 +390,7 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
         {/* Fan Festival */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-group-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+            <i className="ri-group-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Fan Festival
           </h2>
             <p>
@@ -402,7 +402,7 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
         {/* Safety & Practicalities */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-shield-check-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+            <i className="ri-shield-check-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
             Safety & Practicalities
           </h2>
             <p>
@@ -435,7 +435,7 @@ Planning a multi-city itinerary? Cross-border connections are straightforward—
         {/* Related Destinations */}
         <article className="editorial-body">
           <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Plan Your Canadian World Cup Journey
           </h2>
           <p>
@@ -473,7 +473,7 @@ Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026
       {/* Book your Toronto experience now */}
       <article className="editorial-body">
         <h2 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-          <i className="ri-flag-line text-indigo-500 dark:text-indigo-300 text-3xl"></i>
+          <i className="ri-flag-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
           Book your Toronto experience now
         </h2>
         <p>
@@ -485,7 +485,7 @@ Toronto connects easily with US East Coast cities like <Link to="/world-cup-2026
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

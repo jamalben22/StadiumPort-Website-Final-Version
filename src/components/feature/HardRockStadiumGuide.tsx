@@ -26,9 +26,9 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
       {!hideHero && (
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
           <ol className="flex items-center gap-2 text-sm">
-            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
             <li className="text-slate-400">›</li>
-            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
             <li className="text-slate-400">›</li>
             <li className="text-slate-700 dark:text-slate-200">Hard Rock Stadium</li>
           </ol>
@@ -40,8 +40,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
         <div className="relative">
           {/* Hero (gradient as placeholder to avoid external fetch issues) */}
           <div className="relative h-[520px] overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-sky-500/60 via-emerald-500/50 to-indigo-600/60 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800"></div>
-            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+            <div className="w-full h-full bg-gradient-to-br from-[#01b47d]/60 via-[#01b47d]/50 to-[#01b47d]/60 dark:from-slate-800 dark:via-slate-700 dark:to-slate-800"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
 
             {/* Overlay content for collapsed preview */}
             <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -56,13 +56,13 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     </p>
                   </div>
                   <div className="flex items-center gap-3 shrink-0">
-                    <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 dark:bg-emerald-900/30 dark:text-emerald-300 dark:border-emerald-800">
+                    <div className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-[#01b47d]/10 text-[#01b47d] border border-[#01b47d]/30 dark:bg-[#01b47d]/30 dark:text-[#01b47d] dark:border-[#01b47d]">
                       <i className="ri-team-line"></i>
                       <span className="font-medium">World Cup Capacity: 67,518</span>
                     </div>
                     <button
                       onClick={toggleExpanded}
-                      className="inline-flex items-center px-4 py-2 rounded-xl bg-emerald-500 text-white hover:bg-emerald-600 transition-colors"
+                      className="inline-flex items-center px-4 py-2 rounded-xl bg-[#01b47d] text-white hover:bg-[#008f63] transition-colors"
                     >
                       <i className="ri-book-open-line mr-2"></i>
                       Read Full Guide
@@ -94,7 +94,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 sizes="100vw"
                 priority={true}
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
             </div>
 
             <div className="relative max-w-7xl mx-auto px-6 text-center">
@@ -102,10 +102,10 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 <span className="text-2xl">🌴</span>
                 <span className="text-white font-inter font-medium">Hard Rock Stadium • 67,518 Capacity</span>
                 <span className="text-gold-400">•</span>
-                <span className="text-emerald-300 font-semibold">World Cup Venue</span>
+                <span className="text-[#01b47d] font-semibold">World Cup Venue</span>
               </div>
               
-              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-emerald-200 bg-clip-text text-transparent">
+              <h1 className="font-space font-bold text-6xl md:text-7xl mb-6 bg-gradient-to-r from-white via-slate-100 to-[#01b47d] bg-clip-text text-transparent">
                 Hard Rock Stadium
                 <br />
                 <span className="text-gold-400">FIFA World Cup 2026</span>
@@ -116,9 +116,9 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               </p>
 
               {/* Stadium Info Badge */}
-              <div className="inline-flex items-center gap-2 bg-emerald-500/20 backdrop-blur-sm rounded-full px-6 py-3 border border-emerald-400/30">
-                <i className="ri-map-pin-line text-emerald-300"></i>
-                <span className="text-emerald-200 font-inter font-medium">Miami Gardens, Florida • USA</span>
+              <div className="inline-flex items-center gap-2 bg-[#01b47d]/20 backdrop-blur-sm rounded-full px-6 py-3 border border-[#01b47d]/30">
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
+                <span className="text-[#01b47d] font-inter font-medium">Miami Gardens, Florida • USA</span>
               </div>
             </div>
           </section>
@@ -133,7 +133,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 Where Miami's Sunshine Meets Football's Biggest Stage
               </h3>
               <p className="leading-relaxed mb-6">
-                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>, Hard Rock Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. The stadium will host seven matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
+                <span className="editorial-first-letter">L</span>ocated in <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>, Hard Rock Stadium is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>. Picture this: a futuristic canopy shading 65,000 roaring fans from the Florida sun, palm trees swaying beyond the stadium walls, and the electric energy of a World Cup quarterfinal under the Miami night sky. The stadium will host seven matches, including four group stage games, a Round of 32 clash, a quarterfinal, and the prestigious third-place playoff — making it one of the tournament's most active venues.
               </p>
               <p className="leading-relaxed mb-6">
                 This isn't just another football stadium. Since opening in 1987, this Miami Gardens landmark has hosted six Super Bowls, the 2024 Copa América final, WrestleMania, and Formula 1's Miami Grand Prix. But what makes it truly special for World Cup 2026 is how it blends cutting-edge design with Miami's irresistible culture — where you can watch elite football in world-class comfort, then dance salsa in Little Havana or soak up South Beach vibes within 30 minutes.
@@ -149,27 +149,27 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Stadium Overview & Fast Facts */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-information-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <i className="ri-information-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Stadium Overview & Fast Facts
               </h3>
               <div className="grid md:grid-cols-2 gap-4">
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-map-pin-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <i className="ri-map-pin-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Official Name</span>
                     <p className="leading-relaxed">Hard Rock Stadium (FIFA World Cup name: "Miami Stadium")</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-map-2-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <i className="ri-map-2-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Location</span>
                     <p className="leading-relaxed">Miami Gardens, Florida (northern Miami suburb)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-road-map-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <i className="ri-road-map-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Address</span>
                     <p className="leading-relaxed">347 Don Shula Drive, Miami Gardens, FL 33056</p>
                   </div>
@@ -183,14 +183,14 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-team-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <i className="ri-team-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">World Cup Capacity</span>
                     <p className="leading-relaxed">67,518</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-user-3-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <i className="ri-user-3-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Standard Capacity</span>
                     <p className="leading-relaxed">64,767</p>
                   </div>
@@ -204,28 +204,28 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Architect</span>
                     <p className="leading-relaxed">HOK (original); HOK with Arquitectonica (2015-16 renovation)</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Structural Engineer</span>
                     <p className="leading-relaxed">Thornton Tomasetti</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-grid-line text-emerald-400 dark:text-emerald-300 text-xl mr-2"></i>
+                    <i className="ri-grid-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Surface Type</span>
                     <p className="leading-relaxed">Natural grass</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 py-2">
                   <div>
-                    <i className="ri-umbrella-line text-sky-400 dark:text-sky-300 text-xl mr-2"></i>
+                    <i className="ri-umbrella-line text-[#01b47d] dark:text-[#01b47d] text-xl mr-2"></i>
                     <span className="text-slate-700 dark:text-slate-200 leading-relaxed">Roof Type</span>
                     <p className="leading-relaxed">Open-air canopy covering seating areas (field exposed)</p>
                   </div>
@@ -275,7 +275,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Stadium Architecture & Experience */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-building-4-line text-blue-400 dark:text-sky-300 text-3xl"></i>
+                <i className="ri-building-4-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Stadium Architecture & Experience
               </h3>
               <div className="max-w-none">
@@ -303,7 +303,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* What Matches to Expect */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-football-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <i className="ri-football-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 What Matches to Expect
               </h3>
               <div className="max-w-none">
@@ -316,7 +316,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Knockout Stages & Final Phases */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-4 flex items-center gap-3">
-                <i className="ri-trophy-line text-emerald-500 dark:text-emerald-300 text-2xl"></i>
+                <i className="ri-trophy-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                 The knockout stages bring higher stakes.
               </h3>
               <div className="max-w-none">
@@ -338,7 +338,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Getting to the Stadium */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-4 flex items-center gap-3">
-                <i className="ri-route-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <i className="ri-route-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Getting to the Stadium
               </h3>
               <div className="max-w-none">
@@ -350,7 +350,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* By Metro & Bus (Most Economical) */}
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-bus-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                  <i className="ri-bus-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                   By Metro & Bus (Most Economical)
                 </h3>
                 <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -361,8 +361,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     Route 297 is your friend. This special event service operates two hours before and after major games, connecting with Metrorail at Earlington Heights, Brownsville, and Dr. Martin Luther King Jr. stations. Fare is just $2.25 each way — incredible value. Download the Miami-Dade Transit app for real-time updates.
                   </p>
                 </div>
-                <div className="mt-4 p-4 rounded-xl bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-200 dark:border-emerald-800">
-                  <p className="text-emerald-800 dark:text-emerald-200">
+                <div className="mt-4 p-4 rounded-xl bg-[#01b47d]/10 dark:bg-[#01b47d]/30 border border-[#01b47d]/30 dark:border-[#01b47d]">
+                  <p className="text-[#01b47d] dark:text-[#01b47d]">
                     <strong>Pro tip:</strong> Take Route 297 from Earlington Heights MetroMover Station early, as buses may run full by the time they reach subsequent stops.
                   </p>
                 </div>
@@ -371,7 +371,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* By Brightline Train (Fast & Comfortable) */}
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-train-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                  <i className="ri-train-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                   By Brightline Train (Fast & Comfortable)
                 </h3>
                 <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -408,7 +408,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* By Rideshare (Convenient but Surge Pricing) */}
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-taxi-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                  <i className="ri-taxi-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                   By Rideshare (Convenient but Surge Pricing)
                 </h3>
                 <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -416,8 +416,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     Uber and Lyft are everywhere in Miami. The ride from downtown hotels typically takes 30-40 minutes depending on traffic. Expect $35-50 each way normally, but surge pricing on World Cup matchdays could double or triple that.
                   </p>
                 </div>
-                <div className="mt-4 p-4 rounded-xl bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800">
-                  <p className="text-sky-900 dark:text-sky-200">
+                <div className="mt-4 p-4 rounded-xl bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]">
+                  <p className="text-[#008f63] dark:text-[#01b47d]/20">
                     <strong>Important:</strong> Post-match rideshare pickup can be chaotic. Recent matchday experiences report "disaster" trying to leave, with unofficial drivers trying to hussle rides. Stay patient, use designated pickup zones, and consider walking 10-15 minutes away from the stadium to escape congestion.
                   </p>
                 </div>
@@ -426,7 +426,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Budget Alternative: Park & Ride */}
               <div className="mt-8">
                 <h3 className="text-2xl font-semibold text-slate-900 dark:text-slate-50 mb-4 flex items-center gap-3">
-                  <i className="ri-parking-box-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                  <i className="ri-parking-box-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                   Budget Alternative: Park & Ride
                 </h3>
                 <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -457,7 +457,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Where to Stay */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-hotel-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <i className="ri-hotel-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Where to Stay
               </h3>
               <div className="max-w-none">
@@ -469,7 +469,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Near the Stadium (Convenience First) */}
               <div className="mt-6">
                 <h3 className="editorial-h3 mb-4 flex items-center gap-3">
-                  <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-2xl"></i>
+                  <i className="ri-map-pin-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Near the Stadium (Convenience First)
                 </h3>
                 <div className="max-w-none">
@@ -497,7 +497,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Downtown Miami & Brickell (Best Balance) */}
               <div className="mt-8">
                 <h3 className="editorial-h3 mb-4 flex items-center gap-3">
-                  <i className="ri-building-2-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
+                  <i className="ri-building-2-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Downtown Miami & Brickell (Best Balance)
                 </h3>
                 <div className="max-w-none">
@@ -543,7 +543,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Hollywood & Fort Lauderdale (Value Alternative) */}
               <div className="mt-8">
                 <h3 className="editorial-h3 mb-4 flex items-center gap-3">
-                  <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
+                  <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Hollywood & Fort Lauderdale (Value Alternative)
                 </h3>
                 <div className="max-w-none">
@@ -565,7 +565,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Booking Strategy */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-calendar-check-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                <i className="ri-calendar-check-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Booking Strategy
               </h3>
               <div className="max-w-none">
@@ -591,7 +591,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Arrive Early (Seriously) */}
               <div className="mt-2">
                 <h3 className="editorial-h3 mb-3 flex items-center gap-3">
-                  <i className="ri-time-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
+                  <i className="ri-time-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Arrive Early (Seriously)
                 </h3>
                 <div className="max-w-none">
@@ -604,7 +604,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* What to Bring (Bag Policy is Strict) */}
               <div className="mt-8">
                 <h3 className="editorial-h3 mb-3 flex items-center gap-3">
-                  <i className="ri-shopping-bag-4-line text-sky-400 dark:text-sky-300 text-2xl"></i>
+                  <i className="ri-shopping-bag-4-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   What to Bring (Bag Policy is Strict)
                 </h3>
                 <div className="max-w-none">
@@ -637,7 +637,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Food & Drink Inside */}
               <div className="mt-8">
                 <h3 className="editorial-h3 mb-3 flex items-center gap-3">
-                  <i className="ri-restaurant-2-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
+                  <i className="ri-restaurant-2-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Food & Drink Inside
                 </h3>
                 <div className="max-w-none">
@@ -655,8 +655,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                     Beer selection is exceptional. Over 50 craft beers available at two taprooms. Prices are stadium-standard ($10-14 for beer, $5-8 for food items), but quality justifies the cost.
                   </p>
                 </div>
-                <div className="mt-4 p-4 rounded-xl bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800">
-                  <p className="text-sky-900 dark:text-sky-200">
+                <div className="mt-4 p-4 rounded-xl bg-[#01b47d]/5 dark:bg-[#008f63]/20 border border-[#01b47d]/20 dark:border-[#008f63]">
+                  <p className="text-[#008f63] dark:text-[#01b47d]/20">
                     <strong>Pro tip:</strong> The stadium is completely cashless — convert cash to prepaid VISA gift cards at team stores if needed.
                   </p>
                 </div>
@@ -689,7 +689,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Post-Match Exit Strategy */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-walk-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <i className="ri-walk-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Post-Match Exit Strategy
               </h3>
               <div className="max-w-none">
@@ -726,14 +726,14 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* Things to Do Nearby */}
               <article className="editorial-body">
                 <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                  <i className="ri-map-pin-line text-sky-400 dark:text-sky-300 text-3xl"></i>
+                  <i className="ri-map-pin-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                   Things to Do Nearby
                 </h3>
 
               {/* Pre-Match: Fan Zones & Tailgating */}
               <div className="mt-2">
                 <h3 className="editorial-h3 mb-3 flex items-center gap-3">
-                  <i className="ri-flag-line text-emerald-400 dark:text-emerald-300 text-2xl"></i>
+                  <i className="ri-flag-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   Pre-Match: Fan Zones & Tailgating
                 </h3>
                 <div className="max-w-none">
@@ -759,7 +759,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   </p>
                 </div>
               </div>
-              <p className="leading-relaxed mt-4">Exploring other southern venues? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta, <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston, or <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link> in Mexico City.</p>
+              <p className="leading-relaxed mt-4">Exploring other southern venues? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta, <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston, or <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link> in Mexico City.</p>
               </article>
 
             {/* Divider */}
@@ -768,12 +768,12 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Beyond the Stadium: Explore Miami */}
             <article className="editorial-body">
               <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-                <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
                 Beyond the Stadium: Explore Miami
               </h3>
               <p className="leading-relaxed mb-4">Miami's tropical paradise atmosphere and vibrant culture create an electric World Cup 2026 experience.</p>
-              <div className="p-4 rounded-xl bg-emerald-50 dark:bg-slate-800/70 border-l-4 border-emerald-500 mb-6">
-                <p className="leading-relaxed"><strong>Discover Miami:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami World Cup 2026 Guide</Link> for essential travel information:</p>
+              <div className="p-4 rounded-xl bg-[#01b47d]/10 dark:bg-slate-800/70 border-l-4 border-[#01b47d] mb-6">
+                <p className="leading-relaxed"><strong>Discover Miami:</strong> Explore our complete <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Miami World Cup 2026 Guide</Link> for essential travel information:</p>
                 <ul className="list-disc list-inside mt-3 space-y-1">
                   <li>Hotels near Hard Rock Stadium</li>
                   <li>Best beaches and neighborhoods</li>
@@ -782,8 +782,8 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                   <li>Transportation and match day tips</li>
                 </ul>
               </div>
-              <p className="leading-relaxed mb-4"><strong>Other Southern Stadiums:</strong> Visiting multiple cities in the South? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">NRG Stadium</Link> in Houston.</p>
-              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+              <p className="leading-relaxed mb-4"><strong>Other Southern Stadiums:</strong> Visiting multiple cities in the South? Check out <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mercedes‑Benz Stadium</Link> in Atlanta or <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">NRG Stadium</Link> in Houston.</p>
+              <p className="leading-relaxed"><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
               <hr className="editorial-divider" />
             </article>
 
@@ -808,7 +808,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               {/* South Beach & Art Deco District (40 minutes) */}
               <div className="mt-8">
                 <h3 className="editorial-h3 mb-3 flex items-center gap-3">
-                  <i className="ri-building-3-line text-sky-400 dark:text-sky-300 text-2xl"></i>
+                  <i className="ri-building-3-line text-[#01b47d] dark:text-[#01b47d] text-2xl"></i>
                   South Beach & Art Deco District (40 minutes)
                 </h3>
                 <div className="max-w-none">
@@ -825,7 +825,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Nature Escapes */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-leaf-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <i className="ri-leaf-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Nature Escapes
               </h3>
               <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -850,7 +850,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
               <div className="space-y-6">
                 <div>
                   <h3 className="editorial-h3 mb-2 flex items-center gap-2">
-                    <i className="ri-beer-line text-emerald-400 dark:text-emerald-300 text-xl"></i>
+                    <i className="ri-beer-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                     Wynwood Breweries:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -859,7 +859,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 </div>
                 <div>
                   <h3 className="editorial-h3 mb-2 flex items-center gap-2">
-                    <i className="ri-building-line text-sky-400 dark:text-sky-300 text-xl"></i>
+                    <i className="ri-building-line text-[#01b47d] dark:text-[#01b47d] text-xl"></i>
                     Brickell Lounges:
                   </h3>
                   <p className="text-slate-700 dark:text-slate-200 leading-relaxed">
@@ -884,7 +884,7 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
             {/* Tours & Activities */}
             <article className="editorial-body">
               <h3 className="editorial-h3 mb-6 flex items-center gap-3">
-                <i className="ri-compass-3-line text-emerald-400 dark:text-emerald-300 text-3xl"></i>
+                <i className="ri-compass-3-line text-[#01b47d] dark:text-[#01b47d] text-3xl"></i>
                 Tours & Activities
               </h3>
               <ul className="list-disc pl-6 text-slate-700 dark:text-slate-200 leading-relaxed space-y-2">
@@ -920,9 +920,9 @@ export const HardRockStadiumGuide: React.FC<HardRockStadiumGuideProps> = ({ show
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed font-semibold mb-6">
                   Book early, pack light (remember that clear bag policy!), embrace the heat, and get ready for World Cup magic where the sunshine never quits.
                 </p>
-                <div className="mt-4 p-5 rounded-2xl bg-gradient-to-r from-emerald-50 to-sky-50 dark:from-emerald-900/20 dark:to-sky-900/20 border border-emerald-200 dark:border-emerald-800">
+                <div className="mt-4 p-5 rounded-2xl bg-gradient-to-r from-[#01b47d] to-[#01b47d]/5 dark:from-[#01b47d]/20 dark:to-[#008f63]/20 border border-[#01b47d]/30 dark:border-[#01b47d]">
                   <p className="text-slate-800 dark:text-slate-200 italic">
-                    Ready to secure your Miami World Cup experience? Book accommodations through <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>, <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a>, or <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a> to lock in rates before the rush. Airport transfers and car rentals through major providers ensure smooth arrival — Miami rewards advance planning.
+                    Ready to secure your Miami World Cup experience? Book accommodations through <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Booking.com</a>, <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Expedia.com</a>, or <a href="https://airbnb.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#008f63] underline">Airbnb.com</a> to lock in rates before the rush. Airport transfers and car rentals through major providers ensure smooth arrival — Miami rewards advance planning.
                   </p>
                 </div>
               </div>

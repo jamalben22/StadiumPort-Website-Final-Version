@@ -20,9 +20,9 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
       {!hideHero && (
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 editorial-breadcrumbs">
           <ol className="flex items-center gap-2 text-sm">
-            <li><Link to="/" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Home</Link></li>
+            <li><Link to="/" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Home</Link></li>
             <li className="text-slate-400">›</li>
-            <li><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Stadiums</Link></li>
+            <li><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Stadiums</Link></li>
             <li className="text-slate-400">›</li>
             <li className="text-slate-700 dark:text-slate-200">SoFi Stadium</li>
           </ol>
@@ -43,23 +43,23 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
             sizes="100vw"
             priority={true}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-emerald-900/70"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-900/90 via-navy-800/80 to-[#01b47d]/70"></div>
 
           <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-3 h-3 bg-gradient-to-r from-emerald-400 to-sky-400 rounded-full animate-pulse"></div>
-              <span className="text-emerald-400 font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
+              <div className="w-3 h-3 bg-gradient-to-r from-[#01b47d] to-[#01b47d] rounded-full animate-pulse"></div>
+              <span className="text-[#01b47d] font-medium text-sm uppercase tracking-wider">2026 FIFA World Cup</span>
             </div>
 
             <h1 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">SoFi Stadium</h1>
 
             <ul className="flex flex-wrap items-center gap-6 mb-6 text-white/90">
               <li className="flex items-center gap-2">
-                <i className="ri-group-line text-xl text-emerald-300"></i>
+                <i className="ri-group-line text-xl text-[#01b47d]"></i>
                 <span className="font-semibold">70,000+ capacity</span>
               </li>
               <li className="flex items-center gap-2">
-                <i className="ri-map-pin-line text-xl text-emerald-300"></i>
+                <i className="ri-map-pin-line text-xl text-[#01b47d]"></i>
                 <span>Inglewood, California (Hollywood Park district), 3 miles from LAX Airport</span>
               </li>
             </ul>
@@ -72,7 +72,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Intro */}
         <section className="editorial-body editorial-dropcap">
           <p className="editorial-intro text-slate-700 dark:text-slate-200">
-            Located in <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>, SoFi Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, bringing world-class matches to Southern California. When the United States Men's National Team walks onto the pitch here on June 12, 2026, they'll be christening one of the world's most technologically advanced sporting cathedrals under the eyes of 70,000 roaring fans. This isn't just another World Cup venue—it's a $5 billion architectural marvel that has redefined what a stadium can be. With its translucent roof hovering like a spacecraft over Inglewood, its record-breaking Infinity Screen suspended above the field, and its unique indoor-outdoor design, SoFi represents the cutting edge of stadium innovation. For the eight World Cup matches set to unfold here, including America's tournament opener and a quarterfinal showdown, this venue promises an experience unlike any other in the competition.
+            Located in <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Los Angeles</Link>, SoFi Stadium is one of the <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">16 stadiums hosting World Cup 2026</Link>, bringing world-class matches to Southern California. When the United States Men's National Team walks onto the pitch here on June 12, 2026, they'll be christening one of the world's most technologically advanced sporting cathedrals under the eyes of 70,000 roaring fans. This isn't just another World Cup venue—it's a $5 billion architectural marvel that has redefined what a stadium can be. With its translucent roof hovering like a spacecraft over Inglewood, its record-breaking Infinity Screen suspended above the field, and its unique indoor-outdoor design, SoFi represents the cutting edge of stadium innovation. For the eight World Cup matches set to unfold here, including America's tournament opener and a quarterfinal showdown, this venue promises an experience unlike any other in the competition.
           </p>
         </section>
         <div className="editorial-divider"></div>
@@ -80,14 +80,14 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Stadium Overview & Fast Facts */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-400"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             Stadium Overview & Fast Facts
           </h3>
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <i className="ri-building-2-line text-emerald-400 text-xl"></i>
+                    <i className="ri-building-2-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Official Name</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Stadium (FIFA designation) / SoFi Stadium</p>
@@ -95,7 +95,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-map-pin-line text-emerald-400 text-xl"></i>
+                    <i className="ri-map-pin-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Location</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Inglewood, California (Hollywood Park district), 3 miles from LAX Airport</p>
@@ -103,7 +103,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-calendar-line text-emerald-400 text-xl"></i>
+                    <i className="ri-calendar-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Opened</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">September 2020</p>
@@ -111,7 +111,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-group-line text-emerald-400 text-xl"></i>
+                    <i className="ri-group-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">World Cup Capacity</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">70,000+ (standard: 70,240; expandable to 100,000)</p>
@@ -121,7 +121,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <i className="ri-team-line text-emerald-400 text-xl"></i>
+                    <i className="ri-team-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Primary Tenants</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Rams (NFL), Los Angeles Chargers (NFL), LA Bowl (college football)</p>
@@ -129,7 +129,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-magic-line text-emerald-400 text-xl"></i>
+                    <i className="ri-magic-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Architect/Design Firm</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">HKS Architects</p>
@@ -137,7 +137,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-hammer-line text-emerald-400 text-xl"></i>
+                    <i className="ri-hammer-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Construction Team</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Turner-AECOM/Hunt joint venture</p>
@@ -145,7 +145,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   </div>
 
                   <div className="flex items-start gap-3">
-                    <i className="ri-user-star-line text-emerald-400 text-xl"></i>
+                    <i className="ri-user-star-line text-[#01b47d] text-xl"></i>
                     <div>
                       <span className="text-slate-600 dark:text-slate-300">Owner/Developer</span>
                       <p className="text-slate-900 dark:text-slate-100 font-semibold">Stan Kroenke (Rams owner)</p>
@@ -156,21 +156,21 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
 
               <div className="grid md:grid-cols-3 gap-6 mt-6">
                 <div className="flex items-start gap-3">
-                  <i className="ri-leaf-line text-emerald-400 text-xl"></i>
+                  <i className="ri-leaf-line text-[#01b47d] text-xl"></i>
                   <div>
                     <span className="text-slate-600 dark:text-slate-300">Surface Type</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">Natural grass (to be installed for World Cup; typically artificial turf)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-cloudy-line text-emerald-400 text-xl"></i>
+                  <i className="ri-cloudy-line text-[#01b47d] text-xl"></i>
                   <div>
                     <span className="text-slate-600 dark:text-slate-300">Roof Type</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">Translucent cable-net ETFE canopy (open-air sides)</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <i className="ri-ruler-line text-emerald-400 text-xl"></i>
+                  <i className="ri-ruler-line text-[#01b47d] text-xl"></i>
                   <div>
                     <span className="text-slate-600 dark:text-slate-300">Total Area</span>
                     <p className="text-slate-900 dark:text-slate-100 font-semibold">3.1 million square feet—the NFL's largest stadium</p>
@@ -179,17 +179,17 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
               </div>
               <div className="mt-8">
                 <h4 className="editorial-h4 mb-4 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-400"></i>
+                  <i className="ri-star-line text-[#01b47d]"></i>
                   Notable Features
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-200">
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>Infinity Screen by Samsung: dual-sided 360° 4K video board (80 million pixels, 260-speaker system)</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>World's largest cable-net roof structure (19.5 acres, 302 ETFE panels)</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>Built 100 feet below grade with seismic moat protection</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>27,000 embedded LED pucks in roof visible from aircraft</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>260+ luxury suites, 13,000+ premium seats</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>Cashless venue with Evolv AI security screening</span></div>
-                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-emerald-400"></i><span>YouTube Theater (6,000 seats) and American Airlines Plaza under same canopy</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>Infinity Screen by Samsung: dual-sided 360° 4K video board (80 million pixels, 260-speaker system)</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>World's largest cable-net roof structure (19.5 acres, 302 ETFE panels)</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>Built 100 feet below grade with seismic moat protection</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>27,000 embedded LED pucks in roof visible from aircraft</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>260+ luxury suites, 13,000+ premium seats</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>Cashless venue with Evolv AI security screening</span></div>
+                  <div className="flex items-start gap-2"><i className="ri-checkbox-circle-line text-[#01b47d]"></i><span>YouTube Theater (6,000 seats) and American Airlines Plaza under same canopy</span></div>
                 </div>
               </div>
         </section>
@@ -198,7 +198,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* History & Legacy */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-400"></i>
+            <i className="ri-time-line text-[#01b47d]"></i>
             History & Legacy
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -221,7 +221,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Stadium Architecture & Experience */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-layout-grid-line text-emerald-400"></i>
+            <i className="ri-layout-grid-line text-[#01b47d]"></i>
             Stadium Architecture & Experience
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -238,7 +238,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                   But the showstopper is the Infinity Screen—a 120-yard-long, double-sided 4K video board that hangs from the roof like a hovering spacecraft, displaying 80 million pixels from 260 built-in speakers. It's the first center-hung, dual-sided display in any stadium, allowing fans in every section to follow replays, stats, and atmosphere shots without craning their necks.
                 </p>
                 <p className="text-slate-700 dark:text-slate-200 leading-relaxed mt-6">
-                  Along with <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">MetLife Stadium</Link>, SoFi ranks among the largest venues in the tournament. Tech-forward fans also compare its experience to <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the Bay Area.
+                  Along with <Link to="/world-cup-2026-stadiums/metlife-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">MetLife Stadium</Link>, SoFi ranks among the largest venues in the tournament. Tech-forward fans also compare its experience to <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Levi&apos;s Stadium</Link> in the Bay Area.
                 </p>
           </div>
         </section>
@@ -247,7 +247,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Premium Seating & Accessibility */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-vip-crown-line text-emerald-400"></i>
+            <i className="ri-vip-crown-line text-[#01b47d]"></i>
             Premium Seating & Accessibility
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -261,7 +261,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* What Matches to Expect */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-400"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             What Matches to Expect
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert">
@@ -293,7 +293,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Getting to the Stadium */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-train-line text-emerald-400"></i>
+            <i className="ri-train-line text-[#01b47d]"></i>
             Getting to the Stadium
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-8">
@@ -361,7 +361,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Where to Stay */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-400"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-8">
@@ -412,7 +412,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Matchday Tips & Insider Advice */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-lightbulb-line text-emerald-400"></i>
+            <i className="ri-lightbulb-line text-[#01b47d]"></i>
             Matchday Tips &amp; Insider Advice
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-8">
@@ -506,7 +506,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Things to Do Nearby */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-400"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Things to Do Nearby
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-8">
@@ -545,7 +545,7 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Post-Match Celebration Areas */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-400"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Post-Match Celebration Areas
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
@@ -554,10 +554,10 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
                 <p className="text-slate-700 dark:text-slate-200"><strong>Santa Monica</strong> – Third Street Promenade and Main Street packed with bars, restaurants, live music.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Downtown LA</strong> (9 miles) – Full urban nightlife: rooftop bars, clubs, live music venues, late-night eats.</p>
                 <div className="mt-4 rounded-lg border border-amber-300/40 bg-amber-50 p-4 text-amber-900 dark:border-amber-600/40 dark:bg-amber-900/20 dark:text-amber-200">
-                  <em>Book tours and activities via <a href="https://www.viator.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Viator</a> or <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">GetYourGuide</a> for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
+                  <em>Book tours and activities via <a href="https://www.viator.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Viator</a> or <a href="https://www.getyourguide.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">GetYourGuide</a> for discounted World Cup packages, including stadium tours (when available between matches), Hollywood tours, and beach activities.</em>
                 </div>
                 <p className="text-slate-700 dark:text-slate-200">
-                  Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Azteca</Link>.
+                  Fans attending multiple matches might also visit <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Levi&apos;s Stadium</Link> or <Link to="/world-cup-2026-stadiums/estadio-azteca-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Azteca</Link>.
                 </p>
           </div>
         </section>
@@ -566,14 +566,14 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Beyond the Stadium: Explore Los Angeles */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-400"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Stadium: Explore Los Angeles
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
             <p>World Cup 2026 in Los Angeles extends far beyond match day at SoFi Stadium. The city offers incredible experiences for every visitor.</p>
             <div>
               <h4 className="editorial-h4 mb-2">Discover Los Angeles</h4>
-              <p>Explore our complete <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles World Cup 2026 Guide</Link> for comprehensive information on:</p>
+              <p>Explore our complete <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Los Angeles World Cup 2026 Guide</Link> for comprehensive information on:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Where to stay near SoFi Stadium</li>
                 <li>Best restaurants and nightlife</li>
@@ -584,9 +584,9 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
             </div>
             <div>
               <h4 className="editorial-h4 mb-2">Other California Stadium</h4>
-              <p>If you&apos;re catching multiple matches in California, check out <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Levi&apos;s Stadium</Link> in the San Francisco Bay Area.</p>
+              <p>If you&apos;re catching multiple matches in California, check out <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Levi&apos;s Stadium</Link> in the San Francisco Bay Area.</p>
             </div>
-            <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+            <p><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
           </div>
         </section>
         <div className="editorial-divider"></div>
@@ -594,14 +594,14 @@ export const SoFiStadiumGuide: React.FC<SoFiStadiumGuideProps> = ({ showHeader =
         {/* Final Verdict & Key Takeaway */}
         <section className="editorial-body">
           <h3 className="editorial-h3 mb-8 flex items-center gap-3">
-            <i className="ri-award-line text-emerald-400"></i>
+            <i className="ri-award-line text-[#01b47d]"></i>
             Final Verdict & Key Takeaway
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
                 <p className="text-slate-700 dark:text-slate-200">SoFi Stadium isn't just a World Cup venue—it's a $5 billion statement about the future of live sports. From the moment you descend into the seating bowl 100 feet below ground, to the first time you gaze up at the hovering Infinity Screen, to the way California sunshine filters through the translucent roof, you'll understand why this is considered one of the world's most remarkable stadiums.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>Who will love it most?</strong> Tech-forward fans who appreciate architectural innovation, NFL supporters experiencing World Cup atmosphere for the first time, and anyone seeking a quintessentially LA blend of sports, entertainment, and spectacle. If you crave intimacy over opulence, consider other venues—but for sheer "wow factor," SoFi delivers.</p>
                 <p className="text-slate-700 dark:text-slate-200"><strong>The one unforgettable thing you shouldn't miss?</strong> Arrive early, walk through American Airlines Plaza as the sun sets, and watch the LED-embedded roof come alive with animations visible from aircraft overhead. It's the closest thing to attending a match inside a spacecraft.</p>
-                <p className="text-slate-700 dark:text-slate-200"><strong>World Cup 2026 will sell out fast.</strong> Book your accommodation through trusted platforms like <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Expedia.com</a>, or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-emerald-600 hover:text-emerald-700 underline">Airbnb.com</a> now—Inglewood and LAX-area hotels will reach capacity months in advance. Pre-arrange transport (whether Metro TAP cards or parking passes) to avoid matchday stress. This is a once-in-a-lifetime tournament on American soil.</p>
+                <p className="text-slate-700 dark:text-slate-200"><strong>World Cup 2026 will sell out fast.</strong> Book your accommodation through trusted platforms like <a href="https://www.booking.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#009466] underline">Booking.com</a>, <a href="https://www.expedia.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#009466] underline">Expedia.com</a>, or <a href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" className="text-[#01b47d] hover:text-[#009466] underline">Airbnb.com</a> now—Inglewood and LAX-area hotels will reach capacity months in advance. Pre-arrange transport (whether Metro TAP cards or parking passes) to avoid matchday stress. This is a once-in-a-lifetime tournament on American soil.</p>
                 <p className="text-slate-900 dark:text-slate-100 font-semibold">Los Angeles Stadium awaits. Book early. Arrive ready. Experience history.</p>
           </div>
         </section>

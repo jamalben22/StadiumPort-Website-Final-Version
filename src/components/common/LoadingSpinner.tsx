@@ -6,7 +6,7 @@ export function LoadingSpinner() {
       <div className="relative flex flex-col items-center">
         {/* Outer rotating ring */}
         <motion.div
-          className="w-16 h-16 rounded-full border-4 border-emerald-500/20 border-t-emerald-500"
+          className="w-16 h-16 rounded-full border-4 border-[#01b47d]/20 border-t-emerald-500"
           animate={{ rotate: 360 }}
           transition={{
             duration: 1,
@@ -17,7 +17,7 @@ export function LoadingSpinner() {
         
         {/* Inner pulsing globe icon */}
         <motion.div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-emerald-600 dark:text-emerald-400"
+          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[#01b47d] dark:text-[#01b47d]"
           animate={{ 
             scale: [1, 1.2, 1],
             opacity: [0.8, 1, 0.8]

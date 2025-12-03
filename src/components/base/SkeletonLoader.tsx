@@ -29,7 +29,7 @@ export function SkeletonLoader({
     avatar: 'w-12 h-12 rounded-full',
     image: 'h-64 rounded-2xl',
     button: 'h-12 rounded-2xl',
-    premium: 'h-32 rounded-3xl bg-gradient-to-br from-slate-200 via-emerald-100 to-gold-100 dark:from-navy-800 dark:via-emerald-900/20 dark:to-gold-900/20'
+    premium: 'h-32 rounded-3xl bg-gradient-to-br from-slate-200 via-[#01b47d]/10 to-gold-100 dark:from-navy-800 dark:via-[#008f63]/20 dark:to-gold-900/20'
   };
 
   const skeletonClasses = `${baseClasses} ${variants[variant]} ${className}`;
@@ -80,7 +80,7 @@ export function SkeletonLoader({
         
         {/* Premium Glow Effect */}
         {variant === 'premium' && (
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-gold-400/5 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-gold-400/5 animate-pulse"></div>
         )}
       </div>
       
@@ -89,7 +89,7 @@ export function SkeletonLoader({
         <div className="mt-4 space-y-3">
           <div className="h-4 bg-gradient-to-r from-slate-200 to-slate-300 dark:from-navy-700 dark:to-navy-600 rounded-lg w-3/4 animate-pulse"></div>
           <div className="h-4 bg-gradient-to-r from-slate-200 to-slate-300 dark:from-navy-700 dark:to-navy-600 rounded-lg w-1/2 animate-pulse"></div>
-          <div className="h-8 bg-gradient-to-r from-emerald-200 to-emerald-300 dark:from-emerald-800 dark:to-emerald-700 rounded-xl w-24 animate-pulse"></div>
+          <div className="h-8 bg-gradient-to-r from-[#01b47d]/20 to-[#01b47d] dark:from-[#008f63] dark:to-[#008f63] rounded-xl w-24 animate-pulse"></div>
         </div>
       )}
     </div>

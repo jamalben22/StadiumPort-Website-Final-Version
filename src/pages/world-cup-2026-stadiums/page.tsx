@@ -680,7 +680,7 @@ export default function VenuesPage() {
           {/* Floating Glass Elements - Premium Apple Style */}
           <div className="absolute top-8 right-4 w-16 h-16 xs:top-10 xs:right-6 xs:w-20 xs:h-20 sm:top-16 sm:right-8 sm:w-32 sm:h-32 md:top-20 md:right-10 md:w-40 md:h-40 lg:top-24 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-72 bg-gold-500/5 dark:bg-gold-500/10 backdrop-blur-3xl rounded-full border border-gold-500/10 dark:border-gold-500/20 animate-float"></div>
           <div className="absolute bottom-8 left-4 w-20 h-20 xs:bottom-10 xs:left-6 xs:w-24 xs:h-24 sm:bottom-16 sm:left-8 sm:w-40 sm:h-40 md:bottom-20 md:left-10 md:w-48 md:h-48 lg:bottom-24 lg:left-12 lg:w-56 lg:h-56 xl:w-80 xl:h-80 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-16 h-16 xs:top-1/2 xs:left-1/2 xs:w-20 xs:h-20 sm:top-1/2 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-56 xl:h-56 bg-emerald-500/5 dark:bg-emerald-500/10 backdrop-blur-3xl rounded-full border border-emerald-500/10 dark:border-emerald-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+          <div className="absolute top-1/3 left-1/2 w-16 h-16 xs:top-1/2 xs:left-1/2 xs:w-20 xs:h-20 sm:top-1/2 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-56 xl:h-56 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -688,7 +688,7 @@ export default function VenuesPage() {
             {/* Premium Breadcrumb - Minimal Luxury */}
             <div className="mb-8">
               <nav className="flex items-center justify-center space-x-2 text-sm">
-                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-300 font-medium">
+                <Link to="/" className="text-slate-500 dark:text-slate-400 hover:text-[#008f63] dark:hover:text-[#008f63] transition-colors duration-300 font-medium">
                   Home
                 </Link>
                 <span className="text-slate-300 dark:text-slate-600">›</span>
@@ -721,9 +721,9 @@ export default function VenuesPage() {
 
               {/* Venues Card - Apple Emerald */}
               <div className="group relative text-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-emerald-200/50 dark:hover:border-emerald-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-emerald-500/10 dark:hover:shadow-emerald-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-emerald-600 group-hover:to-teal-600 dark:group-hover:from-emerald-400 dark:group-hover:to-teal-400 transition-all duration-700">16</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#01b47d]/10 dark:hover:shadow-[#01b47d]/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-[#01b47d] group-hover:to-[#01b47d] dark:group-hover:from-[#01b47d] dark:group-hover:to-[#01b47d] transition-all duration-700">16</div>
                   <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">World-Class Venues</div>
                 </div>
               </div>
@@ -739,9 +739,9 @@ export default function VenuesPage() {
 
               {/* Capacity Card - Apple Blue */}
               <div className="group relative text-center">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-sky-50 dark:from-blue-900/20 dark:to-sky-900/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-blue-200/50 dark:hover:border-blue-500/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-500/5">
-                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-blue-600 group-hover:to-sky-600 dark:group-hover:from-blue-400 dark:group-hover:to-sky-400 transition-all duration-700">1.2M+</div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 to-[#01b47d]/5 dark:from-[#008f63]/20 dark:to-[#008f63]/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="relative p-6 md:p-8 bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl border border-white/30 dark:border-navy-800/30 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20 transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-[#01b47d]/10 dark:hover:shadow-[#01b47d]/5">
+                  <div className="text-4xl sm:text-5xl md:text-6xl font-space font-bold bg-gradient-to-br from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent mb-3 md:mb-4 group-hover:from-[#01b47d] group-hover:to-[#01b47d] dark:group-hover:from-[#01b47d] dark:group-hover:to-[#01b47d] transition-all duration-700">1.2M+</div>
                   <div className="text-slate-600 dark:text-slate-400 font-inter text-sm md:text-base font-medium tracking-wide uppercase">Total Stadium Capacity</div>
                 </div>
               </div>
@@ -767,10 +767,10 @@ export default function VenuesPage() {
             {venues.map((venue, index) => (
               <div
                 key={venue.id}
-                className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-emerald-200/50 dark:hover:border-emerald-500/20"
+                className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-3xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-700 hover:-translate-y-3 overflow-hidden border border-white/40 dark:border-navy-800/40 hover:border-[#008f63]/20 dark:hover:border-[#008f63]/20"
               >
                 {/* Premium Background Glow */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/30 via-transparent to-purple-50/30 dark:from-emerald-900/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-50/30 dark:from-[#008f63]/10 dark:via-transparent dark:to-purple-900/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 
                 <div className="relative h-64 md:h-72 overflow-hidden">
                   <OptimizedImage
@@ -792,18 +792,18 @@ export default function VenuesPage() {
                   
                   {/* Apple-Level Premium Stadium Info - Ultra Minimal Glass */}
                   <div className="absolute bottom-4 left-4 right-4 md:bottom-5 md:left-5 md:right-5">
-                    <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/10 transition-all duration-500 hover:-translate-y-0.5">
+                    <div className="group relative bg-white/60 dark:bg-navy-800/60 backdrop-blur-xl rounded-2xl p-3 md:p-4 border border-white/20 dark:border-navy-700/20 shadow-lg shadow-slate-500/10 dark:shadow-navy-500/10 hover:bg-white/70 dark:hover:bg-navy-800/70 hover:shadow-xl hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/10 transition-all duration-500 hover:-translate-y-0.5">
                       {/* Premium Minimal Layout */}
                       <div className="relative flex items-center justify-between">
                         {/* Stadium Icon - Minimal Apple Style */}
                         <div className="flex items-center flex-1 min-w-0">
-                          <div className="w-8 h-8 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl flex items-center justify-center mr-3 shadow-md shadow-emerald-500/20 group-hover:shadow-emerald-500/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
+                          <div className="w-8 h-8 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-xl flex items-center justify-center mr-3 shadow-md shadow-[#01b47d]/20 group-hover:shadow-[#01b47d]/30 group-hover:scale-105 transition-all duration-500 flex-shrink-0">
                             <i className="ri-map-pin-line text-white text-sm"></i>
                           </div>
                           
                           {/* Stadium Info - Compact Apple Typography */}
                           <div className="min-w-0 flex-1">
-                            <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                            <div className="font-space font-semibold text-sm md:text-base text-slate-900 dark:text-white truncate group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                               {venue.city === 'Vancouver' ? 'Vancouver, BC' : venue.city === 'Toronto' ? 'Toronto, ON' : venue.city === 'East Rutherford, NJ' ? 'New York / New Jersey' : venue.city}
                             </div>
                           </div>
@@ -811,7 +811,7 @@ export default function VenuesPage() {
                         
                         {/* Capacity - Apple Minimal Style */}
                         <div className="text-right ml-3 flex-shrink-0">
-                          <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-500">
+                          <div className="font-space font-bold text-sm md:text-base text-slate-900 dark:text-white group-hover:text-[#008f63] dark:group-hover:text-[#008f63] transition-colors duration-500">
                             {venue.capacity.toLocaleString()}
                           </div>
                           <div className="text-slate-500 dark:text-slate-400 text-xs uppercase tracking-wide">
@@ -828,7 +828,7 @@ export default function VenuesPage() {
                     <div className="flex flex-col items-end space-y-1.5 md:space-y-2">
                       {/* Matches Count - Apple-Level Premium (Order 1 - like host cities) */}
                       <div className="order-1">
-                        <div className="bg-emerald-500/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-emerald-400/30 shadow-sm shadow-emerald-500/20 hover:bg-emerald-500/85 hover:shadow-md transition-all duration-300">
+                        <div className="bg-[#01b47d]/75 backdrop-blur-sm text-white px-2.5 py-1 rounded-lg text-xs font-semibold border border-[#01b47d]/30 shadow-sm shadow-[#01b47d]/20 hover:bg-[#008f63]/85 hover:shadow-md transition-all duration-300">
                           {venue.matches} Matches
                         </div>
                       </div>
@@ -868,7 +868,7 @@ export default function VenuesPage() {
 
                 {/* Premium Content Section - Apple Typography - Matching Host Cities */}
                 <div className="p-8 md:p-10 flex flex-col flex-1">
-                  <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-emerald-600 group-hover:to-purple-600 dark:group-hover:from-emerald-400 dark:group-hover:to-purple-400 transition-all duration-700">
+                  <h3 className="font-space font-bold text-2xl md:text-3xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 bg-clip-text text-transparent group-hover:from-[#01b47d] group-hover:to-purple-600 dark:group-hover:from-[#01b47d] dark:group-hover:to-purple-400 transition-all duration-700">
                     {venue.name}
                   </h3>
                   
@@ -881,7 +881,7 @@ export default function VenuesPage() {
                     variant="primary" 
                     size="sm" 
                     fullWidth 
-                    className="mt-auto whitespace-nowrap cursor-pointer font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-base bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700 text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
+                    className="mt-auto whitespace-nowrap cursor-pointer font-bold rounded-2xl transition-all duration-300 px-8 py-4 text-base bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#008f63] text-white shadow-xl hover:shadow-2xl group-hover:scale-105 transform"
                     onClick={() => handleReadFullGuide(venue)}
                   >
                     <i className="ri-book-open-line mr-3 text-lg"></i>
@@ -897,9 +897,9 @@ export default function VenuesPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Ultra-Premium Background Elements */}
             <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-emerald-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
+              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 via-transparent to-transparent rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
+              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
             </div>
             
             {/* Floating Glass Elements */}
@@ -908,17 +908,17 @@ export default function VenuesPage() {
             <div className="relative z-10 p-6 sm:p-8 md:p-16 lg:p-20">
               {/* Apple-Level Premium Header */}
               <div className="text-center mb-12 sm:mb-16 md:mb-20">
-                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-emerald-500/30 backdrop-blur-xl border border-white/20">
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl mb-6 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
                   <i className="ri-compass-3-line text-2xl sm:text-3xl md:text-4xl text-white"></i>
                 </div>
-                <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-emerald-700 to-emerald-600 bg-clip-text text-transparent tracking-tight">
+                <h2 className="font-space font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-navy-900 dark:text-white mb-6 bg-gradient-to-r from-navy-900 via-[#008f63] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
                   Experience More Than Just the Match
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 font-inter text-lg sm:text-xl md:text-2xl max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mx-auto leading-relaxed font-light">
                   World Cup 2026 extends far beyond the 90 minutes—each host city offers world-class attractions, diverse dining scenes, rich culture, vibrant nightlife, and unforgettable local experiences before and after kickoff.
                 </p>
                 <p className="mt-6 font-inter text-slate-600 dark:text-slate-400 text-base sm:text-lg max-w-2xl sm:max-w-3xl mx-auto leading-relaxed">
-                  <a href="/world-cup-2026-host-cities" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Host Cities →</a>
+                  <a href="/world-cup-2026-host-cities" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Explore All 16 Host Cities →</a>
                   {' '}to discover accommodations near stadiums, public transportation guides, safety tips, fan zones, top neighborhoods, and what makes each destination unique.
                 </p>
 
@@ -928,19 +928,19 @@ export default function VenuesPage() {
               {/* Apple-Level Luxury Feature Cards Grid */}
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 mb-12 sm:mb-16 md:mb-20">
                 {/* Mexico City - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-emerald-500/20 hover:shadow-3xl hover:shadow-emerald-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-emerald-400/15 to-transparent rounded-full blur-3xl group-hover:from-emerald-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}
                     <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-emerald-500/30 group-hover:shadow-emerald-500/50 group-hover:scale-110 transition-all duration-500">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:shadow-[#01b47d]/50 group-hover:scale-110 transition-all duration-500">
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
+                        <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Mexico City</Link>
                         {', Mexico'}
                       </h3>
                     </div>
@@ -955,7 +955,7 @@ export default function VenuesPage() {
                 {/* Los Angeles - Apple-Level Luxury Card */}
                 <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-[#01b47d]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                   <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
@@ -965,7 +965,7 @@ export default function VenuesPage() {
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
+                        <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Los Angeles</Link>
                         {', USA'}
                       </h3>
                     </div>
@@ -993,7 +993,7 @@ export default function VenuesPage() {
                         <i className="ri-football-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
+                        <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">Toronto</Link>
                         {', Canada'}
                       </h3>
                     </div>
@@ -1006,19 +1006,19 @@ export default function VenuesPage() {
                 </div>
 
                 {/* New York/New Jersey - Apple-Level Luxury Card */}
-                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-blue-500/20 hover:shadow-3xl hover:shadow-blue-500/30 transition-all duration-700 hover:-translate-y-3">
+                <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl group-hover:from-blue-400/25 group-hover:scale-110 transition-all duration-700"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}
                     <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
-                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-blue-500 via-blue-600 to-blue-700 rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-blue-500/30 group-hover:shadow-blue-500/50 group-hover:scale-110 transition-all duration-500">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#008f63] rounded-2xl sm:rounded-3xl flex items-center justify-center mb-4 sm:mb-0 sm:mr-6 shadow-2xl shadow-[#01b47d]/30 group-hover:shadow-[#01b47d]/50 group-hover:scale-110 transition-all duration-500">
                         <i className="ri-building-line text-2xl sm:text-3xl text-white"></i>
                       </div>
                       <h3 className="font-space font-bold text-2xl sm:text-3xl text-navy-900 dark:text-white tracking-tight">
-                        <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-emerald-700 dark:text-emerald-400 underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>
+                        <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="font-semibold text-[#008f63] dark:text-[#01b47d] underline underline-offset-4 decoration-emerald-300 hover:decoration-emerald-500">New York/New Jersey</Link>
                         {', USA'}
                       </h3>
                     </div>
@@ -1032,7 +1032,7 @@ export default function VenuesPage() {
               </div>
 
               <div className="mt-4 sm:mt-6 md:mt-8 text-center">
-                <a href="/world-cup-2026-host-cities" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-emerald-500 via-emerald-600 to-emerald-700 text-white shadow-2xl shadow-emerald-500/30 hover:shadow-3xl hover:shadow-emerald-500/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg">
+                <a href="/world-cup-2026-host-cities" className="inline-flex items-center justify-center font-space font-semibold rounded-xl sm:rounded-2xl transition-all duration-500 cursor-pointer bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#008f63] text-white shadow-2xl shadow-[#01b47d]/30 hover:shadow-3xl hover:shadow-[#01b47d]/50 hover:scale-105 px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-base sm:text-lg">
                   <span>View All 16 Host Cities</span>
                   <i className="ri-arrow-right-line ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-500"></i>
                 </a>

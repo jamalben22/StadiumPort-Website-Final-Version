@@ -118,16 +118,16 @@ export function KansasCityCityGuide() {
         {/* Introduction */}
         <article className="editorial-body editorial-dropcap">
           <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             The Heart of America Hosts the Heart of the Game
           </h2>
           <p>
             Kansas City might be the smallest host city for the 2026 FIFA World Cup, but don't let that fool you—this is where American football passion meets Midwest hospitality in the most electric way possible.
             {' '}Kansas City is one of the{' '}
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>
             {' '}for World Cup 2026.
             {' '}From June 16 through July 11,{' '}
-            <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Arrowhead Stadium</Link>
+            <Link to="/world-cup-2026-stadiums/arrowhead-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Arrowhead Stadium</Link>
             {' '}(known worldwide as one of the loudest venues in sports) will host six World Cup matches, including a quarterfinal. If you've never experienced Kansas City, prepare for authentic BBQ that'll ruin you for life, genuine friendliness that feels almost surreal, and a stadium atmosphere that literally holds world records for decibel levels.
           </p>
           <p>
@@ -156,13 +156,13 @@ export function KansasCityCityGuide() {
           {/* Regional planning cross-links */}
           <p className="leading-relaxed mt-4">
             Pair Kansas City with{' '}
-            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
             {' '}for a central states circuit. Connect the Midwest with the South by adding{' '}
-            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
             {' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+            <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>
             . For contrast and travel planning, combine Kansas City with a coastal city like{' '}
-            <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+            <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Los Angeles</Link>
             .
           </p>
           <hr className="editorial-divider" />
@@ -171,14 +171,14 @@ export function KansasCityCityGuide() {
         {/* Stadium Section */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Arrowhead Stadium, Kansas City, MO (Kansas City Stadium for FIFA 2026)
           </h3>
           <div className="space-y-8">
             {/* Loudest Venue */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-volume-up-line text-emerald-500"></i>
+                <i className="ri-volume-up-line text-[#01b47d]"></i>
                 One of the World's Loudest Venues
               </h4>
               <div className="space-y-4">
@@ -196,7 +196,7 @@ export function KansasCityCityGuide() {
             {/* Match Schedule */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 Match Schedule at Arrowhead Stadium, Kansas City, MO
               </h4>
               <div className="space-y-3">
@@ -217,7 +217,7 @@ export function KansasCityCityGuide() {
             {/* What Makes This Stadium Special */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 What Makes This Stadium Special
               </h4>
               <div className="space-y-4">
@@ -242,14 +242,14 @@ export function KansasCityCityGuide() {
         {/* Transportation Section */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-roadster-line text-emerald-500"></i>
+            <i className="ri-roadster-line text-[#01b47d]"></i>
             Getting There: Transportation Made Easy
           </h3>
           <div className="space-y-8">
             {/* From the Airport */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 From the Airport
               </h4>
               <div className="space-y-4">
@@ -264,13 +264,13 @@ export function KansasCityCityGuide() {
             {/* Airport to Downtown Transportation */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-map-pin-line text-emerald-500"></i>
+                <i className="ri-map-pin-line text-[#01b47d]"></i>
                 Airport to Downtown Transportation
               </h4>
               <div className="space-y-6">
                 <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/70 dark:border-slate-700">
                   <h4 className="editorial-h4 mb-3 flex items-center gap-2">
-                    <i className="ri-bus-line text-emerald-500"></i>
+                    <i className="ri-bus-line text-[#01b47d]"></i>
                     RideKC Bus Line 229 (Free!)
                   </h4>
                   <p>
@@ -283,7 +283,7 @@ export function KansasCityCityGuide() {
 
                 <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 dark:bg-slate-800/70 dark:border-slate-700">
                   <h4 className="editorial-h4 mb-3 flex items-center gap-2">
-                    <i className="ri-taxi-line text-emerald-500"></i>
+                    <i className="ri-taxi-line text-[#01b47d]"></i>
                     Taxi and Rideshare
                   </h4>
                   <p>
@@ -302,7 +302,7 @@ export function KansasCityCityGuide() {
             {/* Getting to Arrowhead Stadium on Match Days */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-roadster-line text-emerald-500"></i>
+                <i className="ri-roadster-line text-[#01b47d]"></i>
                 Getting to Arrowhead Stadium, Kansas City, MO on Match Days
               </h4>
               <div className="space-y-4">
@@ -311,11 +311,11 @@ export function KansasCityCityGuide() {
                 </p>
                 <p className="leading-relaxed mt-4">
                   Planning a broader trip? Build a heartland-to-south route: start in Kansas City, then head to{' '}
-                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                   {' '}and{' '}
-                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
                   {', '}or pivot east to{' '}
-                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                  <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>
                   {' '}for a diverse American experience.
                 </p>
               </div>
@@ -327,14 +327,14 @@ export function KansasCityCityGuide() {
         {/* Matchday Logistics */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-calendar-event-line text-emerald-500"></i>
+            <i className="ri-calendar-event-line text-[#01b47d]"></i>
             Matchday Logistics: Rideshare, Parking, Streetcar
           </h3>
           <div className="space-y-8">
             {/* Rideshare Strategy */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshare Strategy
               </h4>
               <p>
@@ -344,7 +344,7 @@ export function KansasCityCityGuide() {
             {/* Parking */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-parking-box-line text-emerald-500"></i>
+                <i className="ri-parking-box-line text-[#01b47d]"></i>
                 Parking
               </h4>
               <p>
@@ -354,7 +354,7 @@ export function KansasCityCityGuide() {
             {/* KC Streetcar */}
             <div>
               <h4 className="editorial-h4 animate-fade-up mb-3 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 Kansas City Streetcar (Bonus)
               </h4>
               <p>
@@ -368,7 +368,7 @@ export function KansasCityCityGuide() {
         {/* Where to Stay */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h3>
 
@@ -447,7 +447,7 @@ export function KansasCityCityGuide() {
         {/* Beyond the Match */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500"></i>
+            <i className="ri-compass-3-line text-[#01b47d]"></i>
             Beyond the Match: What to Do in Kansas City
           </h3>
 
@@ -459,7 +459,7 @@ export function KansasCityCityGuide() {
             {/* WWI Museum */}
             <div className="space-y-3">
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-museum-line text-emerald-500"></i>
+                <i className="ri-museum-line text-[#01b47d]"></i>
                 National WWI Museum and Memorial
               </h4>
               <p>
@@ -476,7 +476,7 @@ export function KansasCityCityGuide() {
             {/* Nelson-Atkins Museum */}
             <div className="space-y-3">
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-landscape-line text-emerald-500"></i>
+                <i className="ri-landscape-line text-[#01b47d]"></i>
                 The Nelson-Atkins Museum of Art
               </h4>
               <p>
@@ -496,7 +496,7 @@ export function KansasCityCityGuide() {
             {/* Union Station */}
             <div className="space-y-3">
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-building-2-line text-emerald-500"></i>
+                <i className="ri-building-2-line text-[#01b47d]"></i>
                 Union Station: Living History
               </h4>
               <p>
@@ -513,7 +513,7 @@ export function KansasCityCityGuide() {
             {/* 18th & Vine Historic Jazz District */}
             <div className="space-y-3">
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-music-2-line text-emerald-500"></i>
+                <i className="ri-music-2-line text-[#01b47d]"></i>
                 18th &amp; Vine Historic Jazz District
               </h4>
               <p>
@@ -530,7 +530,7 @@ export function KansasCityCityGuide() {
             {/* Kansas City Fountains */}
             <div className="space-y-3">
               <h4 className="editorial-h4 flex items-center gap-2">
-                <i className="ri-water-flash-line text-emerald-500"></i>
+                <i className="ri-water-flash-line text-[#01b47d]"></i>
                 Kansas City Fountains
               </h4>
               <p>
@@ -547,7 +547,7 @@ export function KansasCityCityGuide() {
         {/* Food */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-restaurant-2-line text-emerald-500"></i>
+            <i className="ri-restaurant-2-line text-[#01b47d]"></i>
             Food: Welcome to BBQ Paradise
           </h3>
           <div className="space-y-6">
@@ -653,7 +653,7 @@ export function KansasCityCityGuide() {
         {/* Weather & What to Pack */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-sun-line text-emerald-500"></i>
+            <i className="ri-sun-line text-[#01b47d]"></i>
             Weather &amp; What to Pack
           </h3>
           <div className="space-y-6">
@@ -711,7 +711,7 @@ export function KansasCityCityGuide() {
         {/* Practical Tips for International Visitors */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-passport-line text-emerald-500"></i>
+            <i className="ri-passport-line text-[#01b47d]"></i>
             Practical Tips for International Visitors
           </h3>
           <div className="space-y-6">
@@ -768,7 +768,7 @@ export function KansasCityCityGuide() {
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-ticket-2-line text-emerald-500"></i>
+            <i className="ri-ticket-2-line text-[#01b47d]"></i>
             Ticket Information &amp; Booking Strategy
           </h3>
           <div className="space-y-6">
@@ -796,7 +796,7 @@ export function KansasCityCityGuide() {
         {/* Why KC Will Make It Unforgettable */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-heart-2-line text-emerald-500"></i>
+            <i className="ri-heart-2-line text-[#01b47d]"></i>
             Why Kansas City Will Make Your World Cup Unforgettable
           </h3>
           <div className="space-y-6">
@@ -819,7 +819,7 @@ export function KansasCityCityGuide() {
         {/* Related Destinations */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-road-map-line text-emerald-500"></i>
+            <i className="ri-road-map-line text-[#01b47d]"></i>
             Plan Your Heartland World Cup Experience
           </h3>
           <p className="leading-relaxed mb-4">
@@ -833,7 +833,7 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Central States Circuit</p>
               <p>
                 Experience authentic American heartland: Kansas City (current) for BBQ and Midwest charm, then head to{' '}
-                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                 {' '}for Texas energy and culture.
               </p>
             </div>
@@ -841,11 +841,11 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Heartland to South</p>
               <p>
                 Connect the Midwest with the South: Kansas City (current) to{' '}
-                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                 {' '}to{' '}
-                <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
                 {' '}or{' '}
-                <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Atlanta</Link>
+                <Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Atlanta</Link>
                 {' '}for a diverse American experience.
               </p>
             </div>
@@ -853,24 +853,24 @@ export function KansasCityCityGuide() {
               <p className="font-inter font-semibold">Coast to Heartland</p>
               <p>
                 Combine Kansas City with coastal cities like{' '}
-                <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Los Angeles</Link>
+                <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Los Angeles</Link>
                 ,{' '}
-                <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">San Francisco Bay Area</Link>
+                <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">San Francisco Bay Area</Link>
                 , or{' '}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link>
                 {' '}to experience the full diversity of American culture from the heartland to the coasts.
               </p>
             </div>
           </div>
           <p className="mt-6">
-            <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+            <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
           </p>
         </article>
 
         {/* Start Planning */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-            <i className="ri-road-map-line text-emerald-500"></i>
+            <i className="ri-road-map-line text-[#01b47d]"></i>
             Start Planning Your 2026 World Cup Trip to Kansas City
           </h3>
           <div className="space-y-6">
@@ -916,7 +916,7 @@ export function KansasCityCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

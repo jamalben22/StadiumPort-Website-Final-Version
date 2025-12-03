@@ -158,11 +158,11 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
       
       {/* TOC Sidebar - Desktop */}
       <aside className="hidden 2xl:block fixed right-6 top-28 w-72 z-40">
-        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 hover:-translate-y-0.5 will-change-transform">
+        <nav aria-label="Page table of contents" className="group relative overflow-hidden rounded-3xl bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl border border-white/80 dark:border-slate-700/50 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 transition-all duration-500 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 hover:-translate-y-0.5 will-change-transform">
           <div className="px-5 pt-5 pb-3 sticky top-0 z-10 bg-white/85 dark:bg-slate-800/60 backdrop-blur-2xl">
             <div className="text-xs font-semibold tracking-widest bg-gradient-to-r from-slate-700 to-slate-500 dark:from-slate-200 dark:to-slate-400 bg-clip-text text-transparent">ON THIS PAGE</div>
             <div className="mt-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
           </div>
           <div className="px-3 pb-4 max-h-[70vh] overflow-y-auto overscroll-contain">
@@ -178,11 +178,11 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                     }}
                     className={`flex items-center gap-3 px-3 py-2.5 rounded-2xl transition-all duration-300 ${
                       activeId === id
-                        ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border border-emerald-200/60 dark:border-emerald-700/40 shadow-sm'
+                        ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border border-[#01b47d]/30 dark:border-[#01b47d]/40 shadow-sm'
                         : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                     } ${level === 3 ? 'pl-6' : ''}`}
                   >
-                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                    <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                     <span className="text-sm font-medium">{label}</span>
                   </a>
                 </li>
@@ -190,8 +190,8 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             </ul>
           </div>
           <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-emerald-400/10 to-transparent rounded-full blur-2xl"></div>
-            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-blue-400/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
+            <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-gradient-to-tl from-[#01b47d]/10 to-transparent rounded-full blur-2xl"></div>
           </div>
         </nav>
       </aside>
@@ -202,16 +202,16 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           <button
             aria-label="Open sections menu"
             onClick={() => setIsMobileTocOpen(v => !v)}
-            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-emerald-500/20 dark:hover:shadow-emerald-500/20 transition-all duration-300"
+            className="w-full pointer-events-auto inline-flex items-center justify-between gap-3 rounded-2xl px-4 py-3 bg-white/85 dark:bg-slate-800/70 backdrop-blur-xl border border-white/70 dark:border-slate-700/60 shadow-2xl shadow-slate-500/10 dark:shadow-navy-500/10 hover:shadow-[#01b47d]/20 dark:hover:shadow-[#01b47d]/20 transition-all duration-300"
           >
             <div className="inline-flex items-center gap-2">
-              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-400 text-white flex items-center justify-center">
+              <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-[#01b47d] to-[#01b47d] text-white flex items-center justify-center">
                 <i className="ri-list-check"></i>
               </div>
               <span className="text-sm font-semibold tracking-wide text-black dark:text-white">Sections</span>
             </div>
             <div className="flex-1 mx-3 h-1 rounded-full bg-slate-200 dark:bg-slate-700/60">
-              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500"></div>
+              <div style={{ width: `${scrollProgress}%` }} className="h-1 rounded-full bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-[#01b47d]"></div>
             </div>
             <i className={`ri-arrow-up-s-line transition-transform ${isMobileTocOpen ? 'rotate-180' : ''}`}></i>
           </button>
@@ -229,11 +229,11 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                       }}
                       className={`w-full text-left px-4 py-3 flex items-center gap-3 transition-colors ${
                         activeId === id
-                          ? 'bg-emerald-50/80 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-300 border-l-4 border-emerald-400'
+                          ? 'bg-[#01b47d]/10 dark:bg-[#01b47d]/20 text-[#01b47d] dark:text-[#01b47d] border-l-4 border-[#01b47d]'
                           : 'hover:bg-slate-100/60 dark:hover:bg-slate-800/40'
                       } ${level === 3 ? 'pl-6' : ''}`}
                     >
-                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-emerald-500' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
+                      <span className={`inline-flex items-center justify-center w-2 h-2 rounded-full ${activeId === id ? 'bg-[#01b47d]' : 'bg-slate-300 dark:bg-slate-600'}`}></span>
                       <span className="text-sm font-medium text-black dark:text-slate-300">{label}</span>
                     </button>
                   </li>
@@ -269,7 +269,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           <div className="max-w-5xl mx-auto w-full">
             {/* Breadcrumbs - Elegant & Minimal */}
             <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
-              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-emerald-400">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
                 <li>
                   <Link to="/" className="hover:text-white transition-colors duration-300">Home</Link>
                 </li>
@@ -279,32 +279,32 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 </li>
                 <li className="text-slate-600" aria-hidden="true">/</li>
                 <li>
-                  <span className="text-white border-b border-emerald-500/50 pb-0.5" aria-current="page">Estadio Azteca</span>
+                  <span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">Estadio Azteca</span>
                 </li>
               </ol>
             </nav>
 
             {/* Title - Massive & Bold */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
-              Estadio Azteca: <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">World Cup 2026 Guide</span>
+              Estadio Azteca: <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#01b47d]">World Cup 2026 Guide</span>
             </h1>
 
             {/* Meta Data - Clean Row */}
             <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-map-pin-line text-lg"></i>
                 </div>
                 <span>Mexico City</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-trophy-line text-lg"></i>
                 </div>
                 <span>3x World Cup Host</span>
               </div>
               <div className="flex items-center gap-3 group/meta">
-                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-emerald-400 group-hover/meta:bg-emerald-500/20 transition-colors">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
                   <i className="ri-group-line text-lg"></i>
                 </div>
                 <span>87,523 Capacity</span>
@@ -313,10 +313,10 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Save Guide Button */}
               <button 
                 onClick={toggleSave}
-                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-emerald-400' : 'text-slate-300 hover:text-white'}`}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
                 aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
               >
-                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-emerald-500/20 ring-1 ring-emerald-500/50' : 'bg-white/5 group-hover/save:bg-emerald-500/20'}`}>
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
                   <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
                 <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
@@ -333,8 +333,8 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Introduction */}
         <article id="intro" className="editorial-body editorial-dropcap theme-emerald">
           {/* [QUICK SUMMARY] */}
-          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-emerald-500">
-             <h4 className="font-bold text-sm uppercase tracking-wider text-emerald-600 mb-2">Quick Summary</h4>
+          <div className="mb-8 p-6 bg-slate-50 dark:bg-navy-800 rounded-xl border-l-4 border-[#01b47d]">
+             <h4 className="font-bold text-sm uppercase tracking-wider text-[#01b47d] mb-2">Quick Summary</h4>
              <ul className="space-y-1 text-sm text-slate-700 dark:text-slate-300">
                <li>• Hosts <strong>5 matches</strong>, including Opening Match</li>
                <li>• Venue: <strong>Estadio Azteca</strong> (Mexico City)</li>
@@ -344,7 +344,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           </div>
 
           <h2 className="editorial-h2 animate-fade-up mb-2 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500"></i>
+            <i className="ri-trophy-line text-[#01b47d]"></i>
             The Cathedral Where World Cup History Repeats
           </h2>
           
@@ -361,14 +361,14 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           </div>
 
           <p>
-            Located in <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City</Link>, Estadio Azteca is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">World Cup 2026</Link>. Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
+            Located in <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mexico City</Link>, Estadio Azteca is one of the 16 stadiums hosting <Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">World Cup 2026</Link>. Stand at the foot of Mexico City's colossal stadium, and you'll understand why they call it "El Coloso de Santa Úrsula." Rising from volcanic rock at 2,200 meters above sea level, Estadio Azteca isn't just the largest stadium in Latin America—it's the only venue on Earth where both Pelé and Diego Maradona lifted the World Cup trophy. In 2026, this legendary colossus will make history once again, becoming the first stadium ever to host three FIFA World Cups. As the opening match kicks off on June 11, 2026, with Mexico taking center stage, you'll witness footballing royalty welcoming the world's greatest tournament home for an unprecedented third time.
           </p>
           <hr className="editorial-divider" />
         </article>
 
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500 text-3xl"></i>
+            <i className="ri-building-line text-[#01b47d] text-3xl"></i>
             Stadium Overview & Fast Facts
           </h3>
           
@@ -376,7 +376,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-building-2-line text-emerald-500"></i>
+                  <i className="ri-building-2-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Official Name</span>
                   <p>Estadio Azteca (commercially known as Estadio Banorte; FIFA designation: Estadio Ciudad de México for World Cup 2026)</p>
                 </div>
@@ -384,7 +384,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-map-pin-line text-emerald-500"></i>
+                  <i className="ri-map-pin-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Location</span>
                   <p>Coyoacán borough, southern Mexico City (Santa Úrsula Coapa neighborhood)</p>
                 </div>
@@ -392,7 +392,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-group-line text-emerald-500"></i>
+                  <i className="ri-group-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Capacity</span>
                   <p>87,523 (reduced from original 114,600 for safety and comfort)</p>
                 </div>
@@ -400,7 +400,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-calendar-line text-emerald-500"></i>
+                  <i className="ri-calendar-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Opened</span>
                   <p>May 29, 1966 (renovated 2016-2018 for 2026 World Cup)</p>
                 </div>
@@ -410,7 +410,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-home-line text-emerald-500"></i>
+                  <i className="ri-home-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Home Teams</span>
                   <p>Club América, Mexico National Team</p>
                 </div>
@@ -418,7 +418,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-mountain-line text-emerald-500"></i>
+                  <i className="ri-mountain-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Altitude</span>
                   <p>2,240 meters (7,349 feet) above sea level</p>
                 </div>
@@ -426,7 +426,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-grass-line text-emerald-500"></i>
+                  <i className="ri-grass-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">Playing Surface</span>
                   <p>Natural grass (Bermuda hybrid)</p>
                 </div>
@@ -434,7 +434,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="flex items-center gap-3">
                 <div>
-                  <i className="ri-trophy-line text-emerald-500"></i>
+                  <i className="ri-trophy-line text-[#01b47d]"></i>
                   <span className="ml-2 font-semibold">World Cup Legacy</span>
                   <p>Only stadium to host 3 World Cups (1970, 1986, 2026)</p>
                 </div>
@@ -447,14 +447,14 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Beyond the Stadium: Explore Mexico City */}
         <section className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-compass-3-line text-emerald-500 text-3xl"></i>
+            <i className="ri-compass-3-line text-[#01b47d] text-3xl"></i>
             Beyond the Stadium: Explore Mexico City
           </h3>
           <div className="prose prose-lg max-w-none dark:prose-invert space-y-6">
             <p>Mexico City offers an incredible cultural experience that extends far beyond the historic Estadio Azteca.</p>
             <div>
               <h4 className="editorial-h4 mb-2">Discover Mexico City</h4>
-              <p>Explore our complete <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mexico City World Cup 2026 Guide</Link> for comprehensive travel information:</p>
+              <p>Explore our complete <Link to="/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Mexico City World Cup 2026 Guide</Link> for comprehensive travel information:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>Where to stay near Estadio Azteca</li>
                 <li>Transportation in Mexico City</li>
@@ -465,10 +465,10 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             </div>
             <div>
               <h4 className="editorial-h4 mb-2">Other Mexican Stadiums</h4>
-              <p>Attending multiple matches in Mexico? Check out <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio Akron</Link> in Guadalajara or <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Estadio BBVA</Link> in Monterrey.</p>
+              <p>Attending multiple matches in Mexico? Check out <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio Akron</Link> in Guadalajara or <Link to="/world-cup-2026-stadiums/estadio-bbva" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">Estadio BBVA</Link> in Monterrey.</p>
             </div>
-            <p><Link to="/world-cup-2026-stadiums" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
-            <p className="text-slate-700 dark:text-slate-200">For iconic venue comparison, also see <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">SoFi Stadium</Link>.</p>
+            <p><Link to="/world-cup-2026-stadiums" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">View All World Cup 2026 Stadiums</Link></p>
+            <p className="text-slate-700 dark:text-slate-200">For iconic venue comparison, also see <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-[#01b47d] dark:text-[#01b47d] underline hover:no-underline">SoFi Stadium</Link>.</p>
           </div>
           <hr className="editorial-divider" />
         </section>
@@ -476,7 +476,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* 2026 World Cup Matches */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-football-line text-emerald-500 text-3xl"></i>
+            <i className="ri-football-line text-[#01b47d] text-3xl"></i>
             2026 World Cup Matches at Azteca
           </h3>
           
@@ -497,14 +497,14 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Getting to the Stadium */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500 text-3xl"></i>
+            <i className="ri-map-2-line text-[#01b47d] text-3xl"></i>
             Getting to the Stadium
           </h3>
           
           {/* By Metro + Light Rail */}
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-train-line text-emerald-500 text-3xl"></i>
+              <i className="ri-train-line text-[#01b47d] text-3xl"></i>
               By Metro + Light Rail (Recommended)
             </h4>
             <div>
@@ -531,7 +531,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           {/* By Bus */}
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-bus-line text-emerald-500 text-3xl"></i>
+              <i className="ri-bus-line text-[#01b47d] text-3xl"></i>
               By Bus
             </h4>
             <p>
@@ -542,7 +542,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           {/* By Car */}
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-car-line text-emerald-500 text-3xl"></i>
+              <i className="ri-car-line text-[#01b47d] text-3xl"></i>
               By Car
             </h4>
             <div>
@@ -561,7 +561,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           {/* By Rideshare/Taxi */}
           <div className="mb-8">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-taxi-line text-emerald-500 text-3xl"></i>
+              <i className="ri-taxi-line text-[#01b47d] text-3xl"></i>
               By Rideshare/Taxi
             </h4>
             <p>
@@ -574,7 +574,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Seating Guide */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-layout-grid-line text-emerald-500 text-3xl"></i>
+            <i className="ri-layout-grid-line text-[#01b47d] text-3xl"></i>
             Seating Guide & Stadium Layout
           </h3>
           
@@ -583,7 +583,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Premium Seating */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-vip-crown-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-vip-crown-line text-[#01b47d] text-3xl"></i>
                   Premium Seating (Palcos & Suites)
                 </h4>
                 <p>
@@ -597,7 +597,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Mid-Tier Seating */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-eye-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-eye-line text-[#01b47d] text-3xl"></i>
                   Mid-Tier Seating (Preferente)
                 </h4>
                 <p>
@@ -613,7 +613,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* General Admission */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-group-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-group-line text-[#01b47d] text-3xl"></i>
                   General Admission (General)
                 </h4>
                 <p>
@@ -627,7 +627,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Behind Goals */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-football-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-football-line text-[#01b47d] text-3xl"></i>
                   Behind Goals (Cabeceras)
                 </h4>
                 <p>
@@ -644,7 +644,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           <div className="space-y-6">
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-sun-line text-emerald-500 text-3xl"></i>
+                <i className="ri-sun-line text-[#01b47d] text-3xl"></i>
                 Sun & Weather
               </h4>
               <p>
@@ -654,7 +654,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-volume-up-line text-emerald-500 text-3xl"></i>
+                <i className="ri-volume-up-line text-[#01b47d] text-3xl"></i>
                 Atmosphere Zones
               </h4>
               <p>
@@ -664,7 +664,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             
             <div className="mb-6">
               <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-wheelchair-line text-emerald-500 text-3xl"></i>
+                <i className="ri-wheelchair-line text-[#01b47d] text-3xl"></i>
                 Accessibility
               </h4>
               <p>
@@ -678,7 +678,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Food, Drinks & Amenities */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-restaurant-line text-emerald-500 text-3xl"></i>
+            <i className="ri-restaurant-line text-[#01b47d] text-3xl"></i>
             Food, Drinks & Stadium Amenities
           </h3>
           
@@ -687,26 +687,26 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Food Options */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-restaurant-2-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-restaurant-2-line text-[#01b47d] text-3xl"></i>
                   Food & Dining
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                     <div>
                       <p className="font-semibold">Traditional Mexican</p>
                       <p>Tacos, quesadillas, tortas, elote (street corn), and regional specialties throughout concourses</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                     <div>
                       <p className="font-semibold">Premium Dining</p>
                       <p>Full-service restaurants in VIP areas, including Palco Azteca Restaurant with panoramic views</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <i className="ri-checkbox-circle-line text-emerald-500 mt-1"></i>
+                    <i className="ri-checkbox-circle-line text-[#01b47d] mt-1"></i>
                     <div>
                       <p className="font-semibold">International Options</p>
                       <p>Pizza, burgers, hot dogs, and Asian fusion available in main concourses</p>
@@ -718,20 +718,20 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Beverages */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-cup-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-cup-line text-[#01b47d] text-3xl"></i>
                   Beverages
                 </h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <i className="ri-beer-line text-emerald-500"></i>
+                    <i className="ri-beer-line text-[#01b47d]"></i>
                     <span>Local beers: Corona, Dos Equis, Tecate, Modelo</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-glass-line text-emerald-500"></i>
+                    <i className="ri-glass-line text-[#01b47d]"></i>
                     <span>Soft drinks, fresh juices, agua frescas</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-drop-line text-emerald-500"></i>
+                    <i className="ri-drop-line text-[#01b47d]"></i>
                     <span>Bottled water (essential at altitude)</span>
                   </div>
                 </div>
@@ -742,24 +742,24 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Stadium Amenities */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-store-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-store-line text-[#01b47d] text-3xl"></i>
                   Stadium Amenities
                 </h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <i className="ri-shirt-line text-emerald-500"></i>
+                    <i className="ri-shirt-line text-[#01b47d]"></i>
                     <span>Official merchandise stores (multiple locations)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-bank-card-line text-emerald-500"></i>
+                    <i className="ri-bank-card-line text-[#01b47d]"></i>
                     <span>ATMs and currency exchange</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-first-aid-kit-line text-emerald-500"></i>
+                    <i className="ri-first-aid-kit-line text-[#01b47d]"></i>
                     <span>Medical stations and first aid</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-wifi-line text-emerald-500"></i>
+                    <i className="ri-wifi-line text-[#01b47d]"></i>
                     <span>Free WiFi throughout stadium</span>
                   </div>
                 </div>
@@ -768,35 +768,35 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* What to Bring */}
               <div className="mb-6">
                 <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-                  <i className="ri-suitcase-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-suitcase-line text-[#01b47d] text-3xl"></i>
                   What to Bring
                 </h4>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Valid photo ID (passport for international visitors)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Tickets (digital on phone or printed confirmation)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Small amount of cash (vendors prefer cash)</span>
                     </div>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Sunscreen and hat (high altitude UV)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Light jacket (evenings can be cool)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <i className="ri-checkbox-circle-line text-emerald-500"></i>
+                      <i className="ri-checkbox-circle-line text-[#01b47d]"></i>
                       <span>Portable phone charger</span>
                     </div>
                   </div>
@@ -808,25 +808,25 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           {/* Pricing Guide */}
           <div className="mt-2">
             <h4 className="editorial-h4 animate-fade-up mb-4 flex items-center gap-2">
-              <i className="ri-money-dollar-circle-line text-emerald-500 text-3xl"></i>
+              <i className="ri-money-dollar-circle-line text-[#01b47d] text-3xl"></i>
               Typical Stadium Pricing (World Cup 2026)
             </h4>
             <div className="grid md:grid-cols-4 gap-4">
               <div className="text-center p-3 bg-slate-50 dark:bg-navy-900/50 rounded-lg">
                 <p className="text-slate-500 text-sm">Beer</p>
-                <p className="font-bold text-emerald-600">$8-12 USD</p>
+                <p className="font-bold text-[#01b47d]">$8-12 USD</p>
               </div>
               <div className="text-center p-3 bg-slate-50 dark:bg-navy-900/50 rounded-lg">
                 <p className="text-slate-500 text-sm">Tacos (3)</p>
-                <p className="font-bold text-emerald-600">$6-10 USD</p>
+                <p className="font-bold text-[#01b47d]">$6-10 USD</p>
               </div>
               <div className="text-center p-3 bg-slate-50 dark:bg-navy-900/50 rounded-lg">
                 <p className="text-slate-500 text-sm">Soft Drink</p>
-                <p className="font-bold text-emerald-600">$4-6 USD</p>
+                <p className="font-bold text-[#01b47d]">$4-6 USD</p>
               </div>
               <div className="text-center p-3 bg-slate-50 dark:bg-navy-900/50 rounded-lg">
                 <p className="text-slate-500 text-sm">Jersey</p>
-                <p className="font-bold text-emerald-600">$80-120 USD</p>
+                <p className="font-bold text-[#01b47d]">$80-120 USD</p>
               </div>
             </div>
           </div>
@@ -836,7 +836,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Pre & Post-Match Experience */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-time-line text-emerald-500 text-3xl"></i>
+            <i className="ri-time-line text-[#01b47d] text-3xl"></i>
             Pre & Post-Match Experience
           </h3>
           
@@ -845,7 +845,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Pre-Match */}
               <div className="space-y-3">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-play-circle-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-play-circle-line text-[#01b47d] text-3xl"></i>
                   Pre-Match (Arrive 2-3 Hours Early)
                 </h4>
                 <p>
@@ -853,15 +853,15 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <i className="ri-music-line text-emerald-500"></i>
+                    <i className="ri-music-line text-[#01b47d]"></i>
                     <span>Live mariachi performances near main entrances</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-restaurant-line text-emerald-500"></i>
+                    <i className="ri-restaurant-line text-[#01b47d]"></i>
                     <span>Street food vendors throughout the plaza</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-camera-line text-emerald-500"></i>
+                    <i className="ri-camera-line text-[#01b47d]"></i>
                     <span>Photo opportunities with stadium backdrop</span>
                   </div>
                 </div>
@@ -870,7 +870,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Stadium Museum */}
               <div className="space-y-3">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-museum-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-museum-line text-[#01b47d] text-3xl"></i>
                   Estadio Azteca Museum
                 </h4>
                 <p className="mb-3">
@@ -887,7 +887,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Post-Match */}
               <div className="space-y-3">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-stop-circle-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-stop-circle-line text-[#01b47d] text-3xl"></i>
                   Post-Match (Allow Extra Time)
                 </h4>
                 <p>
@@ -895,15 +895,15 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <i className="ri-time-line text-emerald-500"></i>
+                    <i className="ri-time-line text-[#01b47d]"></i>
                     <span>Stay hydrated while waiting in exit queues</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-group-line text-emerald-500"></i>
+                    <i className="ri-group-line text-[#01b47d]"></i>
                     <span>Stick with your group in crowded areas</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-phone-line text-emerald-500"></i>
+                    <i className="ri-phone-line text-[#01b47d]"></i>
                     <span>Download offline maps in case of poor signal</span>
                   </div>
                 </div>
@@ -912,20 +912,20 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               {/* Nearby Attractions */}
               <div className="space-y-2">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-map-pin-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-map-pin-line text-[#01b47d] text-3xl"></i>
                   Nearby Attractions
                 </h4>
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <i className="ri-building-line text-emerald-500"></i>
+                    <i className="ri-building-line text-[#01b47d]"></i>
                     <span>Xochimilco floating gardens (15 minutes)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-ancient-gate-line text-emerald-500"></i>
+                    <i className="ri-ancient-gate-line text-[#01b47d]"></i>
                     <span>Coyoacán historic center (20 minutes)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <i className="ri-shopping-bag-line text-emerald-500"></i>
+                    <i className="ri-shopping-bag-line text-[#01b47d]"></i>
                     <span>Plaza Cuicuilco shopping center (10 minutes)</span>
                   </div>
                 </div>
@@ -938,7 +938,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Final Verdict */}
         <article className="editorial-body">
           <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-            <i className="ri-trophy-line text-emerald-500 text-3xl"></i>
+            <i className="ri-trophy-line text-[#01b47d] text-3xl"></i>
             Final Verdict & Key Takeaway
           </h3>
           
@@ -950,7 +950,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             <div className="space-y-6">
               <div className="space-y-2">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-heart-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-heart-line text-[#01b47d] text-3xl"></i>
                   Who will love it most:
                 </h4>
                 <p>
@@ -960,7 +960,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
               
               <div className="space-y-2">
                 <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                  <i className="ri-star-line text-emerald-500 text-3xl"></i>
+                  <i className="ri-star-line text-[#01b47d] text-3xl"></i>
                   Don't miss:
                 </h4>
                 <p>
@@ -971,7 +971,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             
             <div className="space-y-2">
               <h4 className="editorial-h4 animate-fade-up mb-2 flex items-center gap-2">
-                <i className="ri-lightbulb-line text-emerald-500 text-3xl"></i>
+                <i className="ri-lightbulb-line text-[#01b47d] text-3xl"></i>
                 Final advice:
               </h4>
               <p className="mb-4">
@@ -984,7 +984,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           </div>
 
           <div className="text-center">
-            <p className="text-2xl font-bold mb-4 text-emerald-800 dark:text-emerald-200">
+            <p className="text-2xl font-bold mb-4 text-[#01b47d] dark:text-[#01b47d]">
               Viva Azteca. Viva México. Viva el Mundial.
             </p>
           </div>
@@ -1017,7 +1017,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
           </div>
           
           {hasRated && (
-            <p className="text-emerald-600 font-medium animate-fade-up mb-6">Thanks for your feedback!</p>
+            <p className="text-[#01b47d] font-medium animate-fade-up mb-6">Thanks for your feedback!</p>
           )}
 
           <div className="flex flex-col sm:flex-row justify-center items-center gap-4 border-t border-slate-100 dark:border-slate-700 pt-6">
@@ -1025,7 +1025,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
             <div className="flex gap-3">
               <button 
                 onClick={() => navigator.share?.({ title: 'Estadio Azteca Guide', url: window.location.href }).catch(() => {})}
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-emerald-500 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-share-line"></i>
               </button>
@@ -1033,7 +1033,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 href={`https://twitter.com/intent/tweet?text=Check out this Estadio Azteca guide for World Cup 2026!&url=${encodeURIComponent('https://stadiumport.com' + pageUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-blue-400 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-twitter-x-line"></i>
               </a>
@@ -1041,7 +1041,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
                 href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent('https://stadiumport.com' + pageUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-blue-600 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-slate-100 dark:bg-navy-700 hover:bg-[#008f63] hover:text-white transition-colors"
               >
                 <i className="ri-facebook-line"></i>
               </a>
@@ -1058,7 +1058,7 @@ export const EstadioAztecaGuide = ({ onClose, showHeader = false, hideHero = fal
         {/* Recommended Guides */}
         <div className="mt-16 pt-12 border-t border-slate-200 dark:border-slate-700">
           <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-8 flex items-center gap-3">
-            <i className="ri-compass-discover-line text-emerald-500"></i>
+            <i className="ri-compass-discover-line text-[#01b47d]"></i>
             You Might Also Like
           </h3>
           <div className="grid md:grid-cols-3 gap-6">

@@ -670,14 +670,14 @@ export default function LocalScamsSpotAndAvoidContent() {
       <hr className="my-8 border-gray-300" />
 
       <h3 className="editorial-h3">Related World Cup 2026 Safety Guides</h3>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Main Safety Hub</a>:</strong> Comprehensive overview of all safety considerations</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Health and Medical Guide</a>:</strong> Detailed heat safety protocols and medical preparation</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Travel Insurance Guide</a>:</strong> Family coverage options and buying strategies</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Stadium Security Guide</a>:</strong> What to expect at venue entry with children</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Transportation Safety</a>:</strong> Moving safely with children between host cities</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Emergency Resources</a>:</strong> Critical contacts for all host cities</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Solo Travel Safety</a>:</strong> For parents attending without children</p>
-      <p className="whitespace-pre-line">- <strong><a href="#" className="text-blue-600 hover:underline">Scam Prevention Guide</a>:</strong> Avoid ticket fraud and travel scams</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Main Safety Hub</a>:</strong> Comprehensive overview of all safety considerations</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Health and Medical Guide</a>:</strong> Detailed heat safety protocols and medical preparation</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Travel Insurance Guide</a>:</strong> Family coverage options and buying strategies</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Stadium Security Guide</a>:</strong> What to expect at venue entry with children</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Transportation Safety</a>:</strong> Moving safely with children between host cities</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Emergency Resources</a>:</strong> Critical contacts for all host cities</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Solo Travel Safety</a>:</strong> For parents attending without children</p>
+      <p className="whitespace-pre-line">- <strong><a href="#" className="text-[#01b47d] hover:underline">Scam Prevention Guide</a>:</strong> Avoid ticket fraud and travel scams</p>
 
       <hr className="my-8 border-gray-300" />
 

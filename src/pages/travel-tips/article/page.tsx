@@ -462,7 +462,7 @@ export default function TravelTipsArticlePage() {
   useEffect(() => {
     const siteUrl = (import.meta.env.VITE_SITE_URL as string) || window.location.origin;
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips/${slug ?? ''}`;
-    const pageTitle = `${displayTitle} – Travel Tips | StadiumPort`;
+    const pageTitle = `${displayTitle} – Travel Tips | Stadiumport`;
     const image = `${siteUrl}${heroSrc(slug)}`;
     const tags = ['World Cup 2026', 'Travel Tips']
     if (slug?.includes('packing')) tags.push('Packing')
@@ -7045,7 +7045,7 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
               {/* Introduction */}
               <article className="editorial-body editorial-dropcap">
                 <h2 className="editorial-h2 animate-fade-up mb-4 flex items-center gap-3">
-                  <i className="ri-lightbulb-line text-emerald-500"></i>
+                  <i className="ri-lightbulb-line text-[#01b47d]"></i>
                   {title}
                 </h2>
                 <p className="whitespace-pre-line">{tip?.intro || 'Detailed travel tip content coming soon.'}</p>
@@ -7055,7 +7055,7 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
               {tip?.sections.map((s, idx) => (
                 <article key={idx} className="editorial-body">
                   <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-3">
-                    <i className="ri-check-line text-emerald-500"></i>
+                    <i className="ri-check-line text-[#01b47d]"></i>
                     {s.h}
                   </h3>
                   <p className="whitespace-pre-line">{s.p}</p>
@@ -7069,7 +7069,7 @@ The 2026 World Cup spans three countries, two languages, and countless unforgett
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />

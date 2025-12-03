@@ -107,14 +107,14 @@ export function AtlantaCityGuide() {
         {/* Opening Section */}
         <article className="editorial-body">
           <div className="editorial-dropcap">
-            <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3"><i className="ri-trophy-line text-emerald-500"></i>The Capital of the South Hosts a Semifinal</h2>
+            <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3"><i className="ri-trophy-line text-[#01b47d]"></i>The Capital of the South Hosts a Semifinal</h2>
             <p>
               Thirty years after the eyes of the world turned to Atlanta for the 1996 Olympic Games, the city is back on the global stage—and this time, it's bringing football.
               {' '}Atlanta is one of the{' '}
-              <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">16 host cities</Link>
+              <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">16 host cities</Link>
               {' '}for the 2026 World Cup.
               {' '}From June 15 through July 15, 2026,{' '}
-              <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Mercedes-Benz Stadium</Link>
+              <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Mercedes-Benz Stadium</Link>
               {' '}will host eight FIFA World Cup matches, including one of only two semifinals. That's right: one of the last four teams standing will battle for a spot in the Final right here in Georgia's capital, making Atlanta a cornerstone of the tournament's most dramatic moments.
             </p>
             <p>
@@ -144,13 +144,13 @@ export function AtlantaCityGuide() {
           {/* Regional planning cross-links */}
           <p className="leading-relaxed mt-4">
             Atlanta connects easily with{' '}
-            <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+            <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
             {' '}for a complete Southern experience. Combine Atlanta with{' '}
-            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+            <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
             {' '}or{' '}
-            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+            <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
             {' '}for a Gulf to Atlantic journey. Atlanta also serves as the Southern gateway to East Coast cities like{' '}
-            <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+            <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link>
             .
           </p>
           <hr className="editorial-divider" />
@@ -159,7 +159,7 @@ export function AtlantaCityGuide() {
         {/* The Stadium */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-building-line text-emerald-500"></i>
+            <i className="ri-building-line text-[#01b47d]"></i>
             The Stadium: Mercedes-Benz Stadium (Atlanta Stadium for FIFA 2026)
           </h2>
 
@@ -167,7 +167,7 @@ export function AtlantaCityGuide() {
             {/* Architectural Marvel */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-star-line text-emerald-500"></i>
+                <i className="ri-star-line text-[#01b47d]"></i>
                 An Architectural Marvel Built for Football
               </h3>
               <div>
@@ -183,7 +183,7 @@ export function AtlantaCityGuide() {
             {/* Roof */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-sun-line text-emerald-500"></i>
+                <i className="ri-sun-line text-[#01b47d]"></i>
                 The Roof That Broke the Mold
               </h3>
               <div>
@@ -199,7 +199,7 @@ export function AtlantaCityGuide() {
             {/* Match Schedule */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-calendar-event-line text-emerald-500"></i>
+                <i className="ri-calendar-event-line text-[#01b47d]"></i>
                 Match Schedule at Mercedes-Benz Stadium
               </h3>
               <div>
@@ -219,7 +219,7 @@ export function AtlantaCityGuide() {
             {/* What Makes Special */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-award-line text-emerald-500"></i>
+                <i className="ri-award-line text-[#01b47d]"></i>
                 What Makes This Stadium Special
               </h3>
               <div>
@@ -234,11 +234,11 @@ export function AtlantaCityGuide() {
                 </p>
                 <p className="leading-relaxed mt-4">
                   Planning a regional trip? Pair Atlanta with{' '}
-                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+                  <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
                   {' '}or{' '}
-                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+                  <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
                   {' '}for a Gulf-to-Atlantic journey, and add{' '}
-                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+                  <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
                   {' '}for tropical contrast.
                 </p>
               </div>
@@ -250,7 +250,7 @@ export function AtlantaCityGuide() {
         {/* Getting There */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-route-line text-emerald-500"></i>
+            <i className="ri-route-line text-[#01b47d]"></i>
             Getting There: Transportation Made Easy
           </h2>
 
@@ -258,7 +258,7 @@ export function AtlantaCityGuide() {
             {/* From Airport */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-plane-line text-emerald-500"></i>
+                <i className="ri-plane-line text-[#01b47d]"></i>
                 From Hartsfield-Jackson Atlanta International Airport
               </h3>
               <div>
@@ -271,7 +271,7 @@ export function AtlantaCityGuide() {
             {/* MARTA Rail */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-train-line text-emerald-500"></i>
+                <i className="ri-train-line text-[#01b47d]"></i>
                 MARTA Rail (The Smart Choice)
               </h3>
               <div>
@@ -289,7 +289,7 @@ export function AtlantaCityGuide() {
 
             {/* Pro Tip - International Terminal Transfer (editorial inline) */}
             <div className="flex items-start gap-3">
-              <i className="ri-lightbulb-line text-emerald-500 text-xl mt-1"></i>
+              <i className="ri-lightbulb-line text-[#01b47d] text-xl mt-1"></i>
               <div>
                 <p>
                   <strong>Pro Tip</strong>: If arriving at the International Terminal, you'll need to take the free shuttle to the Domestic Terminal to access MARTA. Allow an extra 45-60 minutes for this transfer.
@@ -300,7 +300,7 @@ export function AtlantaCityGuide() {
             {/* Rideshares and Taxis */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-taxi-line text-emerald-500"></i>
+                <i className="ri-taxi-line text-[#01b47d]"></i>
                 Rideshares and Taxis
               </h3>
               <div>
@@ -313,7 +313,7 @@ export function AtlantaCityGuide() {
             {/* Match Day Access */}
             <div>
               <h3 className="editorial-h3 animate-fade-up mb-4 flex items-center gap-2">
-                <i className="ri-football-line text-emerald-500"></i>
+                <i className="ri-football-line text-[#01b47d]"></i>
                 Getting to Mercedes-Benz Stadium on Match Days
               </h3>
               <div className="space-y-4">
@@ -345,7 +345,7 @@ export function AtlantaCityGuide() {
         {/* Where to Stay */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-hotel-line text-emerald-500"></i>
+            <i className="ri-hotel-line text-[#01b47d]"></i>
             Where to Stay: Neighborhood Guide for World Cup Visitors
           </h2>
 
@@ -435,7 +435,7 @@ export function AtlantaCityGuide() {
         {/* Beyond the Match */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-map-2-line text-emerald-500"></i>
+            <i className="ri-map-2-line text-[#01b47d]"></i>
             Beyond the Match: What to Do in Atlanta
           </h2>
 
@@ -545,7 +545,7 @@ export function AtlantaCityGuide() {
         {/* Food */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-restaurant-line text-emerald-500"></i>
+            <i className="ri-restaurant-line text-[#01b47d]"></i>
             Food: From Soul Food to Southern Innovation
           </h2>
 
@@ -600,7 +600,7 @@ export function AtlantaCityGuide() {
         {/* Beyond Southern Food */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-store-2-line text-emerald-500"></i>
+            <i className="ri-store-2-line text-[#01b47d]"></i>
             Beyond Southern Food
           </h2>
 
@@ -624,7 +624,7 @@ export function AtlantaCityGuide() {
         {/* Weather & Packing */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-sun-cloudy-line text-emerald-500"></i>
+            <i className="ri-sun-cloudy-line text-[#01b47d]"></i>
             Weather &amp; What to Pack
           </h2>
 
@@ -697,7 +697,7 @@ export function AtlantaCityGuide() {
         {/* Practical Tips for International Visitors */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-global-line text-emerald-500"></i>
+            <i className="ri-global-line text-[#01b47d]"></i>
             Practical Tips for International Visitors
           </h2>
 
@@ -748,7 +748,7 @@ export function AtlantaCityGuide() {
         {/* Ticket Information & Booking Strategy */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-ticket-line text-emerald-500"></i>
+            <i className="ri-ticket-line text-[#01b47d]"></i>
             Ticket Information &amp; Booking Strategy
           </h2>
 
@@ -772,7 +772,7 @@ export function AtlantaCityGuide() {
         {/* Why Atlanta */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-earth-line text-emerald-500"></i>
+            <i className="ri-earth-line text-[#01b47d]"></i>
             Why Atlanta Will Make Your World Cup Unforgettable
           </h2>
 
@@ -796,7 +796,7 @@ export function AtlantaCityGuide() {
         {/* Start Planning */}
         <article className="editorial-body">
           <h2 className="editorial-h2 animate-fade-up mb-8 flex items-center gap-3">
-            <i className="ri-calendar-check-line text-emerald-500"></i>
+            <i className="ri-calendar-check-line text-[#01b47d]"></i>
             Start Planning Your 2026 World Cup Trip to Atlanta
           </h2>
 
@@ -840,7 +840,7 @@ export function AtlantaCityGuide() {
       {/* Related Destinations */}
       <article className="editorial-body">
         <h3 className="editorial-h3 animate-fade-up mb-6 flex items-center gap-3">
-          <i className="ri-road-map-line text-emerald-500"></i>
+          <i className="ri-road-map-line text-[#01b47d]"></i>
           Plan Your Southern World Cup Adventure
         </h3>
         <p className="leading-relaxed mb-4">
@@ -854,9 +854,9 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Southern Sweep</p>
             <p>
               Experience the full spectrum of the American South: Atlanta (current) for urban Southern charm,{" "}
-              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
               {" "}for Gulf Coast energy, and{" "}
-              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
               {" "}for tropical paradise.
             </p>
           </div>
@@ -864,11 +864,11 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Coast to Coast Southern</p>
             <p>
               Create an Atlantic to Gulf journey: Start in{" "}
-              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Miami</Link>
+              <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Miami</Link>
               , head to Atlanta (current), then continue to{" "}
-              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Houston</Link>
+              <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Houston</Link>
               {" "}or{" "}
-              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Dallas</Link>
+              <Link to="/world-cup-2026-host-cities/dallas-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Dallas</Link>
               {" "}for a complete Southern experience.
             </p>
           </div>
@@ -876,17 +876,17 @@ export function AtlantaCityGuide() {
             <p className="font-bold">Southern to East Coast</p>
             <p>
               Connect Atlanta with Eastern cities like{" "}
-              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Philadelphia</Link>
+              <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Philadelphia</Link>
               ,{" "}
-<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">New York/New Jersey</Link>
+<Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">New York/New Jersey</Link>
               , or{" "}
-              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Boston</Link>
+              <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Boston</Link>
               {" "}for a journey from Southern hospitality to historic Northeastern culture.
             </p>
           </div>
         </div>
         <p className="mt-6">
-          <Link to="/world-cup-2026-host-cities" className="text-emerald-700 dark:text-emerald-400 underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
+          <Link to="/world-cup-2026-host-cities" className="text-[#008f63] dark:text-[#01b47d] underline hover:no-underline">Browse All World Cup 2026 Host Cities</Link>
         </p>
       </article>
 
@@ -900,7 +900,7 @@ export function AtlantaCityGuide() {
 
       <section className="max-w-3xl mx-auto px-6 pb-12">
         <div className="mt-8 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/40 p-4">
-          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by StadiumPort Team</div>
+          <div className="text-sm text-slate-600 dark:text-slate-300">Last reviewed: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} by Stadiumport Team</div>
         </div>
       </section>
       <Footer />
