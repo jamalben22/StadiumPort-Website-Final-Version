@@ -1,23 +1,37 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { MapPin, Calendar, Info, ArrowRight, Plane, Utensils, Ticket, Sun, Music, Wind, Building2, Coffee } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { 
+  MapPin, Calendar, Users, Train, Plane, Sun, Mountain, Info, 
+  ArrowRight, Star, Clock, Wallet, Heart, Camera, Bus, Car, 
+  ShieldCheck, Droplets, Utensils, AlertTriangle, Zap, Globe, 
+  DollarSign, Thermometer, Umbrella, Coffee, Ticket, Building2, Briefcase, Music, Wind, Smartphone
+} from 'lucide-react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
+import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
-const GroupJPage: React.FC = () => {
+export default function GroupJPage() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/groups/group-j';
+
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900 font-sans text-slate-900 dark:text-white">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       <Helmet>
-        <title>Group J World Cup 2026: Kansas City, Dallas & San Francisco | Stadiumport</title>
-        <meta name="description" content="The complete guide to Group J. Experience the loudest stadium in the world in Kansas City, the grandeur of Dallas, and the innovation of San Francisco." />
-        <meta name="keywords" content="Group J World Cup 2026, Kansas City host city, Dallas World Cup, San Francisco Bay Area World Cup, Arrowhead Stadium, AT&T Stadium, Levi's Stadium" />
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <title>Group J World Cup 2026 Travel Guide: Kansas City, Dallas & San Francisco | Stadiumport</title>
+        <meta name="description" content="The definitive travel guide for Group J (The American Frontier). Master the logistics of Kansas City, Dallas, and San Francisco. Stadium guides, heat survival, and rental car strategies." />
+        <meta name="keywords" content="World Cup 2026 Group J, Kansas City World Cup travel, Dallas World Cup guide, San Francisco World Cup, Arrowhead Stadium, AT&T Stadium, Levi's Stadium" />
+        <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
+      </Helmet>
+
+      <SchemaOrg
+        schema={[
+          {
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Group J World Cup 2026 Travel Guide",
-            "description": "The complete guide to Group J. Experience the loudest stadium in the world in Kansas City, the grandeur of Dallas, and the innovation of San Francisco.",
+            "headline": "World Cup 2026 Group J Travel Guide: The American Frontier",
+            "description": "The definitive travel guide for Group J. Experience the loudest stadium in the world in Kansas City, the grandeur of Dallas, and the innovation of San Francisco.",
             "author": {
               "@type": "Organization",
               "name": "Stadiumport"
@@ -27,319 +41,505 @@ const GroupJPage: React.FC = () => {
               "name": "Stadiumport",
               "logo": {
                 "@type": "ImageObject",
-                "url": "https://stadiumport.com/logo.png"
+                "url": `${siteUrl}/images/Logos/stadiumport-logo.png`
               }
             },
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://stadiumport.com/groups/group-j"
+              "@id": `${siteUrl}${pageUrl}`
             }
-          })}
-        </script>
-      </Helmet>
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Do I need a car for Group J cities?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, for Kansas City and Dallas, a rental car is virtually essential. Public transit is limited and stadiums are far from downtown. For San Francisco, you can manage without one using Caltrain and VTA to reach the stadium."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How hot will it be in Dallas and Kansas City?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Extremely hot. Expect highs of 90°F-100°F (32°C-38°C) in June/July. Hydration and staying indoors during peak sun hours is critical. AT&T Stadium (Dallas) is air-conditioned; Arrowhead (KC) is open-air."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Levi's Stadium located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "It is in Santa Clara, not San Francisco proper. It's about 45 miles south of the city (1 hour drive or 1.5 hours by public transit). Plan your accommodation accordingly."
+                }
+              }
+            ]
+          }
+        ]}
+      />
 
       <Header />
 
-      {/* Hero Section */}
-      <header className="relative bg-slate-900 text-white pt-32 pb-24 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/80 to-white dark:to-navy-900"></div>
-        
-        <div className="relative max-w-5xl mx-auto">
-          <div className="inline-flex items-center gap-2 py-1 px-4 rounded-full bg-amber-500/20 text-amber-400 text-sm font-bold mb-6 border border-amber-500/30 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-            GROUP J GUIDE
-          </div>
-          <h1 className="text-4xl md:text-7xl font-serif font-bold mb-8 leading-tight tracking-tight">
-            The American <br className="hidden md:block" />
-            Frontier
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-300 max-w-2xl font-light leading-relaxed">
-            A journey of scale and sound. From the loudest stadium in the world in the Midwest to the tech capital of the West Coast.
-          </p>
-        </div>
-      </header>
-
-      {/* Quick Stats Grid */}
-      <div className="relative z-10 max-w-5xl mx-auto -mt-12 px-6 mb-24">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl">
-            <div className="flex items-center gap-3 mb-2 text-amber-400">
-              <MapPin className="w-5 h-5" />
-              <span className="text-sm font-bold tracking-wider uppercase">Host Cities</span>
-            </div>
-            <div className="text-2xl font-semibold text-white">Kansas City • Dallas • San Francisco</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl">
-            <div className="flex items-center gap-3 mb-2 text-amber-400">
-              <Ticket className="w-5 h-5" />
-              <span className="text-sm font-bold tracking-wider uppercase">Key Venues</span>
-            </div>
-            <div className="text-2xl font-semibold text-white">Arrowhead • AT&T • Levi's</div>
-          </div>
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl">
-            <div className="flex items-center gap-3 mb-2 text-amber-400">
-              <Plane className="w-5 h-5" />
-              <span className="text-sm font-bold tracking-wider uppercase">Travel Focus</span>
-            </div>
-            <div className="text-2xl font-semibold text-white">Midwest & West Coast</div>
-          </div>
-        </div>
-      </div>
-
-      <div className="max-w-5xl mx-auto px-6 pb-24">
-        
-        {/* Overview */}
-        <section className="mb-24">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-8">The Group Experience</h2>
-          <div className="prose prose-lg text-slate-600 max-w-none">
-            <p className="lead text-xl md:text-2xl text-slate-800 font-light mb-8">
-              Group J offers a definitive American experience, spanning the vast central plains to the Pacific Ocean. This is a group defined by impressive infrastructure, passionate local fanbases, and diverse cultural landscapes.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <Music className="w-5 h-5 text-amber-500" />
-                  Heartland & Heritage
-                </h3>
-                <p>
-                  Kansas City and Dallas represent the heart of American sports culture. Expect massive tailgates, world-class barbecue, and stadiums that are cathedrals to the sport. The atmosphere here is raw, loud, and incredibly welcoming.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                  <Wind className="w-5 h-5 text-amber-500" />
-                  West Coast Innovation
-                </h3>
-                <p>
-                  San Francisco brings a different energy—sophisticated, coastal, and tech-forward. Levi's Stadium offers a modern, high-tech spectator experience in the heart of Silicon Valley, surrounded by California's famous wine country.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Host Cities */}
-        <section className="mb-24">
-          <div className="flex items-center justify-between mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Host Cities</h2>
-            <div className="h-px flex-1 bg-slate-200 ml-8"></div>
-          </div>
+      <main className="relative pt-20">
+        {/* Hero Section - Cinematic & Emotional */}
+        <div className="relative bg-slate-900 text-white py-24 px-6 md:px-12 overflow-hidden">
+          {/* Background with Gradient Overlay */}
+          <div className="absolute inset-0 opacity-30 bg-[url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-amber-900/90 via-slate-900/95 to-slate-900"></div>
           
-          <div className="grid grid-cols-1 gap-8">
-            {/* Kansas City */}
-            <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1636467050623-3b22c874d451?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Kansas City" 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-amber-600 font-bold text-sm tracking-wider uppercase mb-3">
-                    <MapPin className="w-4 h-4" />
-                    Missouri / Kansas
-                  </div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Kansas City</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    Home to the "loudest stadium in the world" (Arrowhead). KC is a hidden gem of fountains, jazz, and the undisputed capital of American barbecue.
-                  </p>
-                  <div className="grid grid-cols-2 gap-6 mb-8">
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Stadium</div>
-                      <div className="font-semibold text-slate-900">Arrowhead Stadium</div>
-                    </div>
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Capacity</div>
-                      <div className="font-semibold text-slate-900">76,416</div>
-                    </div>
-                  </div>
-                  <Link to="/cities/kansas-city" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors group-hover:translate-x-1 duration-300">
-                    Explore Kansas City Guide <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
+          <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 font-medium text-sm mb-6 backdrop-blur-sm">
+                <Star className="w-4 h-4 fill-amber-400" />
+                <span>The American Frontier Group</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                Group J: <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">
+                  Scale & Sound
+                </span>
+              </h1>
+              
+              <p className="text-xl text-slate-300 mb-8 leading-relaxed max-w-2xl">
+                From the deafening roar of Arrowhead to the tech-driven innovation of Silicon Valley. This group spans half a continent and features the most impressive stadiums in the tournament.
+              </p>
+
+              <div className="flex flex-wrap gap-4">
+                <a href="#strategy" className="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] flex items-center gap-2">
+                  Start Planning <ArrowRight className="w-5 h-5" />
+                </a>
+                <a href="#booking" className="bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold transition-all backdrop-blur-sm flex items-center gap-2">
+                  Book Rentals <Car className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
-            {/* Dallas */}
-            <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1545195276-595d94c09093?q=80&w=2070&auto=format&fit=crop" 
-                    alt="Dallas" 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-amber-600 font-bold text-sm tracking-wider uppercase mb-3">
-                    <MapPin className="w-4 h-4" />
-                    Texas
-                  </div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">Dallas</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    A city that does everything big. AT&T Stadium is a marvel of engineering. Beyond the game, explore the Arts District and the legendary Deep Ellum music scene.
-                  </p>
-                  <div className="grid grid-cols-2 gap-6 mb-8">
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Stadium</div>
-                      <div className="font-semibold text-slate-900">AT&T Stadium</div>
-                    </div>
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Capacity</div>
-                      <div className="font-semibold text-slate-900">92,967</div>
-                    </div>
-                  </div>
-                  <Link to="/cities/dallas" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors group-hover:translate-x-1 duration-300">
-                    Explore Dallas Guide <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            {/* San Francisco */}
-            <div className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-slate-100">
-              <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-                <div className="md:col-span-5 relative h-64 md:h-auto overflow-hidden">
-                  <div className="absolute inset-0 bg-slate-900/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
-                  <img 
-                    src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=2089&auto=format&fit=crop" 
-                    alt="San Francisco" 
-                    className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                  />
-                </div>
-                <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex items-center gap-2 text-amber-600 font-bold text-sm tracking-wider uppercase mb-3">
-                    <MapPin className="w-4 h-4" />
-                    California
-                  </div>
-                  <h3 className="text-3xl font-bold text-slate-900 mb-4">San Francisco Bay</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    The cultural jewel of the West Coast. From the Golden Gate Bridge to Napa Valley vineyards, the Bay Area offers a sophisticated backdrop to the tournament.
-                  </p>
-                  <div className="grid grid-cols-2 gap-6 mb-8">
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Stadium</div>
-                      <div className="font-semibold text-slate-900">Levi's Stadium</div>
-                    </div>
-                    <div>
-                      <div className="text-slate-400 text-xs uppercase tracking-wider font-bold mb-1">Capacity</div>
-                      <div className="font-semibold text-slate-900">68,500</div>
-                    </div>
-                  </div>
-                  <Link to="/cities/san-francisco" className="inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 transition-colors group-hover:translate-x-1 duration-300">
-                    Explore San Francisco Guide <ArrowRight className="w-4 h-4 ml-2" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </section>
-
-        {/* Travel & Logistics */}
-        <section className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-24">
-          <div className="lg:col-span-2">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Travel & Mobility</h2>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-              <div className="flex items-start gap-4 mb-8">
-                <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0">
-                  <Plane className="w-6 h-6 text-amber-600" />
+            {/* Hero Stats Card */}
+            <div className="hidden lg:block">
+              <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 grid grid-cols-2 gap-8">
+                <div>
+                  <div className="text-amber-400 mb-2"><Users className="w-8 h-8" /></div>
+                  <div className="text-2xl font-bold">142.2 dB</div>
+                  <div className="text-sm text-slate-400">World Record Noise (KC)</div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Strategic Flying</h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    Distances in Group J are substantial. Kansas City to San Francisco is a 4-hour flight. Dallas is the central hub (American Airlines) connecting both.
-                  </p>
-                  <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="bg-slate-50 p-4 rounded-lg">
-                      <div className="text-sm font-bold text-slate-900 mb-1">Primary Hubs</div>
-                      <div className="text-sm text-slate-600">DFW (Dallas), SFO (San Francisco), MCI (Kansas City)</div>
-                    </div>
-                    <div className="bg-slate-50 p-4 rounded-lg">
-                      <div className="text-sm font-bold text-slate-900 mb-1">Flight Times</div>
-                      <div className="text-sm text-slate-600">DAL-SFO: ~4h | KC-DAL: ~1.5h</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-amber-50 flex items-center justify-center flex-shrink-0">
-                  <Building2 className="w-6 h-6 text-amber-600" />
+                  <div className="text-amber-400 mb-2"><Building2 className="w-8 h-8" /></div>
+                  <div className="text-2xl font-bold">92,967</div>
+                  <div className="text-sm text-slate-400">Largest Venue (Dallas)</div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">Where to Stay</h3>
-                  <p className="text-slate-600 leading-relaxed mb-4">
-                    <strong className="text-slate-900">Kansas City:</strong> Stay near Power & Light District for nightlife and streetcar access.<br/>
-                    <strong className="text-slate-900">Dallas:</strong> Uptown or Downtown for walkability; Arlington is car-dependent.<br/>
-                    <strong className="text-slate-900">San Francisco:</strong> Union Square or Embarcadero for city vibes; Santa Clara is 45 mins south.
-                  </p>
+                  <div className="text-amber-400 mb-2"><Thermometer className="w-8 h-8" /></div>
+                  <div className="text-2xl font-bold">100°F+</div>
+                  <div className="text-sm text-slate-400">Summer Highs</div>
+                </div>
+                <div>
+                  <div className="text-amber-400 mb-2"><Globe className="w-8 h-8" /></div>
+                  <div className="text-2xl font-bold">1,500mi</div>
+                  <div className="text-sm text-slate-400">Max Travel Distance</div>
                 </div>
               </div>
-            </div>
-          </div>
-
-          <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Local Flavor</h2>
-            <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
-                <Utensils className="w-5 h-5 text-amber-400" />
-                Culinary Highlights
-              </h3>
-              <ul className="space-y-6">
-                <li className="flex gap-4">
-                  <span className="text-4xl font-serif text-amber-500/50">01</span>
-                  <div>
-                    <strong className="block text-lg text-amber-400 mb-1">KC BBQ</strong>
-                    <p className="text-slate-400 text-sm leading-relaxed">Burnt ends and ribs. Visit Joe's Kansas City or Arthur Bryant's for the real deal.</p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-4xl font-serif text-amber-500/50">02</span>
-                  <div>
-                    <strong className="block text-lg text-amber-400 mb-1">Tex-Mex</strong>
-                    <p className="text-slate-400 text-sm leading-relaxed">Dallas is famous for it. Try brisket tacos and authentic margaritas.</p>
-                  </div>
-                </li>
-                <li className="flex gap-4">
-                  <span className="text-4xl font-serif text-amber-500/50">03</span>
-                  <div>
-                    <strong className="block text-lg text-amber-400 mb-1">Mission Burritos</strong>
-                    <p className="text-slate-400 text-sm leading-relaxed">San Francisco's staple. Massive, flavorful, and perfect for matchday fuel.</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA */}
-        <div className="bg-gradient-to-r from-amber-500 to-orange-600 rounded-3xl p-12 text-center text-white shadow-2xl relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready for the Journey?</h2>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Group J spans some of the most exciting cities in the US. Start planning your itinerary now to secure the best flights and hotels.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/planning" className="inline-flex items-center justify-center px-8 py-4 bg-white text-amber-600 font-bold rounded-full hover:bg-slate-100 transition-all shadow-lg">
-                Start Planning Trip
-              </Link>
-              <Link to="/tickets" className="inline-flex items-center justify-center px-8 py-4 bg-amber-700 text-white font-bold rounded-full hover:bg-amber-800 transition-all shadow-lg border border-amber-600">
-                Ticket Info
-              </Link>
             </div>
           </div>
         </div>
-      </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-16 grid lg:grid-cols-12 gap-12">
+          
+          {/* Main Content Column */}
+          <div className="lg:col-span-8">
+            
+            {/* Intro Text */}
+            <section className="mb-16">
+              <div className="prose prose-lg md:prose-xl dark:prose-invert max-w-none">
+                <p className="lead text-2xl font-medium text-slate-800 dark:text-slate-200 leading-relaxed mb-6">
+                  Group J defines the American philosophy: <strong className="text-amber-600 dark:text-amber-400">Go big or go home.</strong>
+                </p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  You will experience the extremes of the host nation here. The raw, passionate energy of the Midwest in Kansas City, the sheer opulence of Dallas's "Jerry World," and the sophisticated, coastal tech-hub of San Francisco. Be warned: these cities are far apart. Your logistical planning here is not about trains—it's about flights and rental cars.
+                </p>
+              </div>
+            </section>
+
+            {/* Strategic Overview Table */}
+            <section id="strategy" className="mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                <Info className="w-8 h-8 text-amber-500" /> Strategic Overview
+              </h2>
+              <div className="bg-white dark:bg-navy-800 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 overflow-hidden">
+                <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-navy-700">
+                  <div className="p-8">
+                    <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-4 flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5" /> The Advantages
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-emerald-100 dark:bg-emerald-900/30 p-1 rounded text-emerald-600 dark:text-emerald-400">
+                          <Music className="w-4 h-4" />
+                        </div>
+                        <span><strong>Atmosphere:</strong> Kansas City fans are legendary. Arrowhead Stadium holds the Guinness World Record for crowd noise.</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-emerald-100 dark:bg-emerald-900/30 p-1 rounded text-emerald-600 dark:text-emerald-400">
+                          <Utensils className="w-4 h-4" />
+                        </div>
+                        <span><strong>Food Culture:</strong> You are in the BBQ capitals of the world (KC & Dallas) and the fine-dining hub of the West (SF).</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-emerald-100 dark:bg-emerald-900/30 p-1 rounded text-emerald-600 dark:text-emerald-400">
+                          <Building2 className="w-4 h-4" />
+                        </div>
+                        <span><strong>Infrastructure:</strong> AT&T Stadium and Levi's Stadium are modern marvels with massive screens and premium amenities.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="p-8 bg-slate-50 dark:bg-navy-900/50">
+                    <h3 className="text-lg font-bold text-rose-500 mb-4 flex items-center gap-2">
+                      <AlertTriangle className="w-5 h-5" /> The Challenges
+                    </h3>
+                    <ul className="space-y-4">
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-rose-100 dark:bg-rose-900/30 p-1 rounded text-rose-500">
+                          <Thermometer className="w-4 h-4" />
+                        </div>
+                        <span><strong>Extreme Heat:</strong> Dallas and KC summers are brutal. Tailgating can be dangerous if you aren't hydrated.</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-rose-100 dark:bg-rose-900/30 p-1 rounded text-rose-500">
+                          <Plane className="w-4 h-4" />
+                        </div>
+                        <span><strong>Distance:</strong> San Francisco is a 4-hour flight from Dallas. You cannot drive between all these cities reasonably.</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-slate-600 dark:text-slate-300">
+                        <div className="mt-1 bg-rose-100 dark:bg-rose-900/30 p-1 rounded text-rose-500">
+                          <Car className="w-4 h-4" />
+                        </div>
+                        <span><strong>Transit Deserts:</strong> Outside of SF, public transit is poor. You will likely need to rent a car or budget heavily for Uber.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Host City Matrix */}
+            <section id="cities" className="mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">Host City Matrix</h2>
+              <div className="grid gap-6">
+                
+                {/* Kansas City */}
+                <div className="group bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="w-full md:w-48 h-32 rounded-xl bg-slate-200 dark:bg-navy-900 overflow-hidden flex-shrink-0 relative">
+                      <div className="absolute inset-0 bg-amber-900/20 group-hover:bg-transparent transition-colors"></div>
+                      <OptimizedImage src="/images/cities/kansas-city-world-cup-2026.webp" alt="Kansas City" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Kansas City</h3>
+                        <span className="bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 text-xs font-bold px-3 py-1 rounded-full">LOUDEST VENUE</span>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm">
+                        The heart of the Midwest. Famous for jazz, fountains, and BBQ. Arrowhead Stadium is an intimidating fortress for visiting teams.
+                      </p>
+                      <div className="flex flex-wrap gap-3 text-sm mb-4">
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Building2 className="w-4 h-4" /> Power & Light District
+                        </span>
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Plane className="w-4 h-4" /> MCI (Kansas City Intl)
+                        </span>
+                      </div>
+                      <div className="flex gap-3">
+                        <Link to="/cities/kansas-city" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
+                          Full Guide <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
+                          Rent Car <Car className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dallas */}
+                <div className="group bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="w-full md:w-48 h-32 rounded-xl bg-slate-200 dark:bg-navy-900 overflow-hidden flex-shrink-0 relative">
+                       <OptimizedImage src="/images/cities/dallas-world-cup-2026.webp" alt="Dallas" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Dallas</h3>
+                        <span className="bg-slate-100 dark:bg-navy-900 text-slate-600 dark:text-slate-400 text-xs font-bold px-3 py-1 rounded-full">LARGEST VENUE</span>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm">
+                        Everything is bigger in Texas. AT&T Stadium (Arlington) is world-famous. Stay in Dallas proper for culture, or Arlington for convenience.
+                      </p>
+                      <div className="flex flex-wrap gap-3 text-sm mb-4">
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Building2 className="w-4 h-4" /> Deep Ellum / Arlington
+                        </span>
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Plane className="w-4 h-4" /> DFW / DAL
+                        </span>
+                      </div>
+                      <div className="flex gap-3">
+                        <Link to="/cities/dallas" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
+                          Full Guide <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
+                          Rent Car <Car className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* San Francisco */}
+                <div className="group bg-white dark:bg-navy-800 rounded-2xl p-6 shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="w-full md:w-48 h-32 rounded-xl bg-slate-200 dark:bg-navy-900 overflow-hidden flex-shrink-0 relative">
+                       <OptimizedImage src="/images/cities/san-francisco-world-cup-2026.webp" alt="San Francisco" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start mb-2">
+                        <h3 className="text-2xl font-bold text-slate-900 dark:text-white">San Francisco</h3>
+                        <span className="bg-slate-100 dark:bg-navy-900 text-slate-600 dark:text-slate-400 text-xs font-bold px-3 py-1 rounded-full">TECH HUB</span>
+                      </div>
+                      <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm">
+                        The Bay Area brings innovation and natural beauty. Levi's Stadium is in Santa Clara, close to tech giants. Don't miss the Golden Gate Bridge.
+                      </p>
+                      <div className="flex flex-wrap gap-3 text-sm mb-4">
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Building2 className="w-4 h-4" /> Union Square / Santa Clara
+                        </span>
+                        <span className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400">
+                          <Plane className="w-4 h-4" /> SFO / SJC / OAK
+                        </span>
+                      </div>
+                      <div className="flex gap-3">
+                        <Link to="/cities/san-francisco" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
+                          Full Guide <ArrowRight className="w-4 h-4" />
+                        </Link>
+                        <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
+                          Book Hotels <Building2 className="w-4 h-4" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </section>
+
+            {/* Trip Planning Toolkit - Affiliate Section */}
+            <section id="booking" className="mb-16">
+              <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
+                <Ticket className="w-8 h-8 text-amber-500" /> Trip Planning Toolkit
+              </h2>
+              <div className="grid md:grid-cols-3 gap-6">
+                {/* Car Rental Card */}
+                <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="group bg-white dark:bg-navy-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all block">
+                  <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <Car className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Rent a Car</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                    Essential for Dallas and Kansas City. Book early to avoid price surges during match weeks.
+                  </p>
+                  <div className="text-amber-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Check Rates <ArrowRight className="w-4 h-4" />
+                  </div>
+                </a>
+
+                {/* Flights Card */}
+                <a href="https://expedia.com/flights" target="_blank" rel="noopener noreferrer" className="group bg-white dark:bg-navy-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all block">
+                  <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <Plane className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Book Flights</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                    Long distances between SF and Dallas/KC mean flying is the only viable option for this group.
+                  </p>
+                  <div className="text-amber-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Search Routes <ArrowRight className="w-4 h-4" />
+                  </div>
+                </a>
+
+                {/* Hotels Card */}
+                <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="group bg-white dark:bg-navy-800 p-6 rounded-2xl shadow-sm border border-slate-200 dark:border-navy-700 hover:border-amber-500 transition-all block">
+                  <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4 group-hover:scale-110 transition-transform">
+                    <Building2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Find Hotels</h3>
+                  <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">
+                    SF is expensive; Dallas/KC offer better value. Look for hotels with pools to beat the heat.
+                  </p>
+                  <div className="text-amber-600 font-bold text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
+                    Search Deals <ArrowRight className="w-4 h-4" />
+                  </div>
+                </a>
+              </div>
+            </section>
+
+            {/* Insider Knowledge */}
+            <section className="mb-16">
+              <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-2xl p-8 text-white relative overflow-hidden">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                  <Star className="w-32 h-32" />
+                </div>
+                <h3 className="text-2xl font-bold mb-6 relative z-10 flex items-center gap-2">
+                  <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" /> Insider Tips: What FIFA Won't Tell You
+                </h3>
+                <div className="grid gap-6 relative z-10">
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 font-bold text-amber-400">1</div>
+                    <div>
+                      <h4 className="font-bold mb-1">The Arrowhead Tailgate</h4>
+                      <p className="text-slate-300 text-sm">In Kansas City, the party starts 4 hours before kickoff in the parking lot. If you don't have a car, make friends. It is the best tailgating scene in America, period.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 font-bold text-amber-400">2</div>
+                    <div>
+                      <h4 className="font-bold mb-1">Dallas Traffic is Real</h4>
+                      <p className="text-slate-300 text-sm">Arlington (AT&T Stadium) is in the middle of nowhere. There is NO train station. Uber prices surge 400% after games. Rent a car and buy a parking pass in advance.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center flex-shrink-0 font-bold text-amber-400">3</div>
+                    <div>
+                      <h4 className="font-bold mb-1">San Francisco Microclimates</h4>
+                      <p className="text-slate-300 text-sm">It might be 60°F and foggy in SF, but 90°F and sunny at Levi's Stadium (Santa Clara). Dress in layers. "The coldest winter I ever spent was a summer in San Francisco" is a real thing.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* FAQ Section */}
+            <section className="mb-12">
+               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Group J FAQ</h2>
+               <div className="space-y-4">
+                 <div className="bg-white dark:bg-navy-800 rounded-xl p-6 border border-slate-100 dark:border-navy-700">
+                   <h3 className="font-bold text-slate-900 dark:text-white mb-2">Which airport should I fly into for Levi's Stadium?</h3>
+                   <p className="text-slate-600 dark:text-slate-300 text-sm">San Jose (SJC) is closest (10 mins). San Francisco (SFO) is 45 mins away. Oakland (OAK) is 45-60 mins away. SJC is the most convenient for match days.</p>
+                 </div>
+                 <div className="bg-white dark:bg-navy-800 rounded-xl p-6 border border-slate-100 dark:border-navy-700">
+                   <h3 className="font-bold text-slate-900 dark:text-white mb-2">Is it safe to walk in these cities?</h3>
+                   <p className="text-slate-600 dark:text-slate-300 text-sm">Generally yes, but use caution in parts of downtown San Francisco (Tenderloin) and Dallas at night. Kansas City's Power & Light district is very safe and walkable.</p>
+                 </div>
+               </div>
+            </section>
+
+          </div>
+
+          {/* Sidebar */}
+          <div className="lg:col-span-4 space-y-6">
+            
+            {/* Quick Booking Links */}
+            <div className="bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg border border-slate-100 dark:border-navy-700">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <Globe className="w-5 h-5 text-amber-500" /> Quick Booking
+              </h3>
+              <div className="space-y-3">
+                <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="block p-3 rounded-lg bg-slate-50 dark:bg-navy-900 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-bold text-slate-900 dark:text-white text-sm">Rental Cars</span>
+                    <ArrowRight className="w-4 h-4 text-amber-500" />
+                  </div>
+                  <p className="text-xs text-slate-500">Crucial for Dallas/KC</p>
+                </a>
+                <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="block p-3 rounded-lg bg-slate-50 dark:bg-navy-900 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="font-bold text-slate-900 dark:text-white text-sm">Domestic Flights</span>
+                    <ArrowRight className="w-4 h-4 text-amber-500" />
+                  </div>
+                  <p className="text-xs text-slate-500">Flights to SFO / DFW / MCI</p>
+                </a>
+              </div>
+            </div>
+            
+            {/* Frontier Survival Kit */}
+            <div className="bg-white dark:bg-navy-800 p-6 rounded-xl shadow-lg border border-slate-100 dark:border-navy-700 sticky top-24">
+              <h3 className="text-lg font-bold mb-4 flex items-center gap-2">
+                <Briefcase className="w-5 h-5 text-amber-500" /> Frontier Survival Kit
+              </h3>
+              <div className="space-y-4">
+                <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="block group">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="bg-slate-100 dark:bg-navy-900 p-2 rounded-lg group-hover:bg-amber-50 dark:group-hover:bg-amber-900/20 transition-colors">
+                      <Zap className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-slate-900 dark:text-white">Cooling Towel</p>
+                      <p className="text-xs text-slate-500">Lifesaver for 100°F heat</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="block group">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="bg-slate-100 dark:bg-navy-900 p-2 rounded-lg group-hover:bg-amber-50 dark:group-hover:bg-amber-900/20 transition-colors">
+                      <Smartphone className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-slate-900 dark:text-white">Portable Neck Fan</p>
+                      <p className="text-xs text-slate-500">Stay cool in stadium queues</p>
+                    </div>
+                  </div>
+                </a>
+                <a href="https://amazon.com" target="_blank" rel="noopener noreferrer" className="block group">
+                  <div className="flex items-center gap-3 mb-1">
+                    <div className="bg-slate-100 dark:bg-navy-900 p-2 rounded-lg group-hover:bg-amber-50 dark:group-hover:bg-amber-900/20 transition-colors">
+                      <Music className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                    </div>
+                    <div>
+                      <p className="font-bold text-sm text-slate-900 dark:text-white">Noise Cancelling Buds</p>
+                      <p className="text-xs text-slate-500">For flights & loud crowds</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              
+              <div className="mt-6 pt-6 border-t border-slate-100 dark:border-navy-700">
+                <div className="bg-amber-50 dark:bg-amber-900/20 rounded-lg p-4">
+                  <p className="text-xs font-bold text-amber-800 dark:text-amber-300 mb-1 uppercase tracking-wide">Pro Tip</p>
+                  <p className="text-sm text-amber-900 dark:text-amber-100">
+                    In Kansas City, book a "Burnt Ends" BBQ tour. It's the local specialty. In Dallas, visit the Fort Worth Stockyards for a true cowboy experience.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
       <Footer />
     </div>
   );
-};
+}
 
-export default GroupJPage;
+function CheckCircle2(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m9 12 2 2 4-4" />
+    </svg>
+  )
+}
