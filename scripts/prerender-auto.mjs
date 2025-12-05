@@ -59,7 +59,7 @@ function seed() {
     '/world-cup-2026-stadiums',
     '/travel-guides',
     '/guides',
-    '/safety-guide',
+    '/world-cup-2026-safety-guide',
     '/luxury-travel',
     '/budget-guides',
     '/packing-lists',

@@ -27,7 +27,7 @@ export default function SafetyGuideArticlePage() {
 
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-    const pageUrl = `${siteUrl}/safety-guide/${slug ?? safetyOverviewSlug}`
+    const pageUrl = `${siteUrl}/world-cup-2026-safety-guide/${slug ?? safetyOverviewSlug}`
     const pageTitle = `${title} – Safety Guide | Stadiumport`
     const image = `${siteUrl}${heroImageSrcLocal}`
     const desc = 'Premium safety guide template: editorial hero, cohesive typography, and structured sections. Content coming soon.'
@@ -67,9 +67,9 @@ export default function SafetyGuideArticlePage() {
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
+              <Link to="/world-cup-2026-safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
-              <Link to={`/safety-guide/${slug ?? 'world-cup-2026-safety-guide-everything-fans-need-to-know'}`} className="hover:underline">{title}</Link>
+              <Link to={`/world-cup-2026-safety-guide/${slug ?? 'world-cup-2026-safety-guide-everything-fans-need-to-know'}`} className="hover:underline">{title}</Link>
             </nav>
             <h1 className="editorial-hero-title">{title}</h1>
             <div className="editorial-hero-meta">

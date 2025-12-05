@@ -445,12 +445,20 @@ const routes: RouteObject[] = [
     element: <Navigate to="/guides/transportation-safety-getting-around-world-cup-2026-host-cities" replace />
   },
   {
+    path: '/world-cup-2026-safety-guide/:slug',
+    element: <SafetyGuideArticlePage />
+  },
+  {
     path: '/safety-guide/:slug',
     element: <SafetyGuideArticlePage />
   },
   {
-    path: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know',
+    path: '/world-cup-2026-safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know',
     element: <TransportationSafetyGuideArticlePage />
+  },
+  {
+    path: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know',
+    element: <Navigate to="/world-cup-2026-safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know" replace />
   },
   {
     path: '/travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi',
@@ -489,8 +497,12 @@ const routes: RouteObject[] = [
     element: <PackingListsPage />
   },
   {
-    path: '/safety-guide',
+    path: '/world-cup-2026-safety-guide',
     element: <SafetyGuidePage />
+  },
+  {
+    path: '/safety-guide',
+    element: <Navigate to="/world-cup-2026-safety-guide" replace />
   },
   {
     path: '/luxury-travel',

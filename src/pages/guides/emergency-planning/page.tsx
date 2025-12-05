@@ -67,7 +67,7 @@ export default function EmergencyPlanningPage() {
             <nav aria-label="Breadcrumb" className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
+              <Link to="/world-cup-2026-safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <Link to={url} className="hover:underline">{title}</Link>
             </nav>

@@ -55,7 +55,7 @@ export function Header() {
     
     // Travel Guides
     { type: 'guide', title: 'Travel Tips', path: '/world-cup-2026-travel-tips', description: 'Essential travel advice for World Cup 2026' },
-    { type: 'guide', title: 'Safety Guide', path: '/safety-guide', description: 'Stay safe during your travels' },
+    { type: 'guide', title: 'Safety Guide', path: '/world-cup-2026-safety-guide', description: 'Stay safe during your travels' },
     
     // Articles
     { type: 'article', title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options in host cities' },

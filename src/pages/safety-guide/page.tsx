@@ -28,7 +28,7 @@ export const safetyGuides = [
     featured: false,
     priority: 'Medium',
     image: '/images/safety-guide/article mode/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp',
-    href: '/safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know'
+    href: '/world-cup-2026-safety-guide/world-cup-2026-safety-guide-everything-fans-need-to-know'
   },
   {
     id: 8,
@@ -139,7 +139,7 @@ export default function SafetyGuidePage() {
     setPageMeta({
       title: 'World Cup 2026 Safety Guide: Complete Protection for All 16 Host Cities',
       description: 'Essential safety tips, emergency contacts, health guidance, and city-specific precautions for all 16 World Cup host cities.',
-      url: `${siteUrl}/safety-guide`
+      url: `${siteUrl}/world-cup-2026-safety-guide`
     });
     
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -150,7 +150,7 @@ export default function SafetyGuidePage() {
     // Add canonical URL
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/safety-guide`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-safety-guide`);
     }
   }, []);
 
@@ -392,7 +392,7 @@ export default function SafetyGuidePage() {
               const priority = (item as any).priority || 'Medium';
               const image = (item as any).image;
               const slug = (item as any).slug || slugify(title);
-              const href = isAdditionalGuide ? `/safety-guide/${slug}` : `/guides/${slug}`;
+              const href = isAdditionalGuide ? `/world-cup-2026-safety-guide/${slug}` : `/guides/${slug}`;
               const key = isAdditionalGuide ? `dedicated-${(item as any).id || index}` : slug;
               
               return (
