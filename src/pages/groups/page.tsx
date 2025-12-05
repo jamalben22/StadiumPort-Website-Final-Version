@@ -26,21 +26,21 @@ const itemVariants = {
 const groupData: Record<string, { name: string; code: string; isWinner?: boolean }[]> = {
   'A': [
     { name: 'Mexico', code: 'MEX' },
-    { name: 'South Korea', code: 'KOR' },
     { name: 'South Africa', code: 'RSA' },
+    { name: 'South Korea', code: 'KOR' },
     { name: 'PO D', code: 'POD', isWinner: true }
   ],
   'B': [
     { name: 'Canada', code: 'CAN' },
+    { name: 'PO A', code: 'POA', isWinner: true },
     { name: 'Qatar', code: 'QAT' },
-    { name: 'Switzerland', code: 'SUI' },
-    { name: 'PO A', code: 'POA', isWinner: true }
+    { name: 'Switzerland', code: 'SUI' }
   ],
   'C': [
     { name: 'Brazil', code: 'BRA' },
     { name: 'Morocco', code: 'MAR' },
-    { name: 'Scotland', code: 'SCO' },
-    { name: 'Haiti', code: 'HAI' }
+    { name: 'Haiti', code: 'HAI' },
+    { name: 'Scotland', code: 'SCO' }
   ],
   'D': [
     { name: 'USA', code: 'USA' },
@@ -50,15 +50,15 @@ const groupData: Record<string, { name: string; code: string; isWinner?: boolean
   ],
   'E': [
     { name: 'Germany', code: 'GER' },
+    { name: 'Curaçao', code: 'CUW' },
     { name: 'Ivory Coast', code: 'CIV' },
-    { name: 'Ecuador', code: 'ECU' },
-    { name: 'Curaçao', code: 'CUW' }
+    { name: 'Ecuador', code: 'ECU' }
   ],
   'F': [
     { name: 'Netherlands', code: 'NED' },
     { name: 'Japan', code: 'JPN' },
-    { name: 'Tunisia', code: 'TUN' },
-    { name: 'PO B', code: 'POB', isWinner: true }
+    { name: 'PO B', code: 'POB', isWinner: true },
+    { name: 'Tunisia', code: 'TUN' }
   ],
   'G': [
     { name: 'Belgium', code: 'BEL' },
@@ -68,15 +68,15 @@ const groupData: Record<string, { name: string; code: string; isWinner?: boolean
   ],
   'H': [
     { name: 'Spain', code: 'ESP' },
+    { name: 'Cape Verde', code: 'CPV' },
     { name: 'Saudi Arabia', code: 'KSA' },
-    { name: 'Uruguay', code: 'URU' },
-    { name: 'Cape Verde', code: 'CPV' }
+    { name: 'Uruguay', code: 'URU' }
   ],
   'I': [
     { name: 'France', code: 'FRA' },
     { name: 'Senegal', code: 'SEN' },
-    { name: 'Norway', code: 'NOR' },
-    { name: 'PO 2', code: 'PO2', isWinner: true }
+    { name: 'PO 2', code: 'PO2', isWinner: true },
+    { name: 'Norway', code: 'NOR' }
   ],
   'J': [
     { name: 'Argentina', code: 'ARG' },
@@ -86,15 +86,15 @@ const groupData: Record<string, { name: string; code: string; isWinner?: boolean
   ],
   'K': [
     { name: 'Portugal', code: 'POR' },
+    { name: 'PO 1', code: 'PO1', isWinner: true },
     { name: 'Uzbekistan', code: 'UZB' },
-    { name: 'Colombia', code: 'COL' },
-    { name: 'PO 1', code: 'PO1', isWinner: true }
+    { name: 'Colombia', code: 'COL' }
   ],
   'L': [
     { name: 'England', code: 'ENG' },
     { name: 'Croatia', code: 'CRO' },
-    { name: 'Panama', code: 'PAN' },
-    { name: 'Ghana', code: 'GHA' }
+    { name: 'Ghana', code: 'GHA' },
+    { name: 'Panama', code: 'PAN' }
   ]
 };
 
@@ -322,11 +322,7 @@ export default function GroupsSchedulePage() {
                           <div key={idx} className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
                              <div className="w-12 h-8 rounded shadow-sm overflow-hidden bg-slate-100 dark:bg-slate-800 flex items-center justify-center relative">
                                 {teamInfo.isWinner ? (
-                                  <img 
-                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/2026_FIFA_World_Cup_logo.svg/1200px-2026_FIFA_World_Cup_logo.svg.png" 
-                                    alt="FIFA" 
-                                    className="w-full h-full object-contain p-1"
-                                  />
+                                  <span className="text-lg font-bold text-slate-400">?</span>
                                 ) : teamData?.flagUrl ? (
                                   <img 
                                     src={teamData.flagUrl} 
