@@ -83,21 +83,29 @@ export const TEAMS: Team[] = [
 
   // OFC (Oceania)
   { id: 'nzl', name: 'New Zealand', code: 'nz', fifaCode: 'NZL', flagUrl: 'https://flagcdn.com/w320/nz.png', region: 'OFC', rating: 86, colors: ['#000000', '#FFFFFF'] },
+
+  // Placeholders
+  { id: 'poa', name: 'PO A', code: 'poa', fifaCode: 'POA', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
+  { id: 'pob', name: 'PO B', code: 'pob', fifaCode: 'POB', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
+  { id: 'poc', name: 'PO C', code: 'poc', fifaCode: 'POC', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
+  { id: 'pod', name: 'PO D', code: 'pod', fifaCode: 'POD', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
+  { id: 'po1', name: 'PO 1', code: 'po1', fifaCode: 'PO1', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
+  { id: 'po2', name: 'PO 2', code: 'po2', fifaCode: 'PO2', flagUrl: '', region: 'UEFA', rating: 50, colors: ['#94a3b8', '#cbd5e1'] },
 ];
 
 export const TEAM_MAP = new Map(TEAMS.map(t => [t.id, t]));
 
 export const GROUPS: Record<string, string[]> = {
-  A: ['mex', 'egy', 'pol', 'kor'],
-  B: ['can', 'sui', 'cmr', 'ksa'],
-  C: ['usa', 'den', 'sen', 'pan'],
-  D: ['bra', 'ukr', 'tun', 'jam'],
-  E: ['fra', 'chi', 'irn', 'nzl'],
-  F: ['arg', 'swe', 'alg', 'crc'],
-  G: ['eng', 'nga', 'ecu', 'qat'],
-  H: ['esp', 'tur', 'gha', 'aus'],
-  I: ['por', 'uru', 'civ', 'jpn'],
-  J: ['ita', 'col', 'srb', 'mar'],
-  K: ['ger', 'cro', 'per', 'uzb'],
-  L: ['ned', 'bel', 'aut', 'mli']
+  A: ['mex', 'rsa', 'kor', 'pod'],
+  B: ['can', 'poa', 'qat', 'sui'],
+  C: ['bra', 'mar', 'hai', 'sco'],
+  D: ['usa', 'par', 'aus', 'poc'],
+  E: ['ger', 'cuw', 'civ', 'ecu'],
+  F: ['ned', 'jpn', 'pob', 'tun'],
+  G: ['bel', 'egy', 'irn', 'nzl'],
+  H: ['esp', 'cpv', 'ksa', 'uru'],
+  I: ['fra', 'sen', 'po2', 'nor'],
+  J: ['arg', 'alg', 'aut', 'jor'],
+  K: ['por', 'po1', 'uzb', 'col'],
+  L: ['eng', 'cro', 'gha', 'pan']
 };
