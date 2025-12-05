@@ -51,6 +51,30 @@ const GroupKPage: React.FC = () => {
           },
           {
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group K",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

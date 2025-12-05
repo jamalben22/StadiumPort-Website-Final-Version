@@ -29,6 +29,30 @@ export default function GroupJPage() {
         schema={[
           {
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group J",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "Article",
             "headline": "World Cup 2026 Group J Travel Guide: The American Frontier",
             "description": "The definitive travel guide for Group J. Experience the loudest stadium in the world in Kansas City, the grandeur of Dallas, and the innovation of San Francisco.",

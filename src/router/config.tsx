@@ -60,6 +60,7 @@ const TermsPage = lazy(() => import('../pages/legal/terms/page'));
 const AffiliateDisclaimerPage = lazy(() => import('../pages/legal/affiliate-disclaimer/page'));
 const PredictPage = lazy(() => import('../pages/PredictPage'));
 const DrawHubPage = lazy(() => import('../pages/draw-hub/page'));
+const GroupsSchedulePage = lazy(() => import('../pages/groups/page'));
 const GroupAPage = lazy(() => import('../pages/groups/group-a/page'));
 const GroupBPage = lazy(() => import('../pages/groups/group-b/page'));
 const GroupCPage = lazy(() => import('../pages/groups/group-c/page'));
@@ -104,6 +105,14 @@ const routes: RouteObject[] = [
     element: <Navigate to="/2026-world-cup-draw-travel-hub" replace />
   },
   {
+    path: '/world-cup-2026-groups',
+    element: <GroupsSchedulePage />
+  },
+  {
+    path: '/groups',
+    element: <Navigate to="/world-cup-2026-groups" replace />
+  },
+  {
     path: '/2026-world-cup-group-a-travel-guide',
     element: <GroupAPage />
   },
@@ -128,16 +137,28 @@ const routes: RouteObject[] = [
     element: <Navigate to="/2026-world-cup-group-c-travel-guide" replace />
   },
   {
-    path: '/groups/group-d',
+    path: '/2026-world-cup-group-d-travel-guide',
     element: <GroupDPage />
   },
   {
-    path: '/groups/group-e',
+    path: '/groups/group-d',
+    element: <Navigate to="/2026-world-cup-group-d-travel-guide" replace />
+  },
+  {
+    path: '/2026-world-cup-group-e-travel-guide',
     element: <GroupEPage />
   },
   {
-    path: '/groups/group-f',
+    path: '/groups/group-e',
+    element: <Navigate to="/2026-world-cup-group-e-travel-guide" replace />
+  },
+  {
+    path: '/2026-world-cup-group-f-travel-guide',
     element: <GroupFPage />
+  },
+  {
+    path: '/groups/group-f',
+    element: <Navigate to="/2026-world-cup-group-f-travel-guide" replace />
   },
   {
     path: '/groups/group-g',

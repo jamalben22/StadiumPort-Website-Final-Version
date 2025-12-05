@@ -124,6 +124,30 @@ export default function GroupHPage() {
                 "acceptedAnswer": { "@type": "Answer", "text": "Miami is significantly more expensive for hotels and dining than the others. Atlanta and Houston are mid-range, while Guadalajara offers the best value for budget travelers." }
               }
             ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group H",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
           }
         ]}
       />

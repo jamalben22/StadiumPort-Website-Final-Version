@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
@@ -6,10 +5,16 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 import { 
-  Clock, Calendar, User, ChevronDown, ChevronUp, MapPin, 
-  Train, Plane, DollarSign, Shield, Sun, Umbrella, 
-  ShoppingBag, Info, AlertTriangle, CheckCircle, ArrowRight,
-  Building, Globe, Wallet
+  ChevronDown, 
+  Clock, 
+  Calendar, 
+  MapPin, 
+  ArrowRight, 
+  Plane, 
+  Train, 
+  CreditCard, 
+  AlertTriangle, 
+  ExternalLink
 } from 'lucide-react';
 
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
@@ -19,15 +24,15 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
       >
-        <span className="text-lg md:text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors pr-8">
+        <span className="text-lg md:text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors pr-8 tracking-tight">
           {question}
         </span>
-        <div className={`w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-emerald-500 border-emerald-500 text-white' : 'group-hover:border-emerald-500 text-slate-400'}`}>
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-emerald-500 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-emerald-500/10 group-hover:text-emerald-600'}`}>
+          <ChevronDown className="w-4 h-4" />
         </div>
       </button>
       <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
         <div className="text-slate-600 dark:text-slate-300 leading-relaxed text-base md:text-lg max-w-3xl">
           {answer}
@@ -40,19 +45,31 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
 export default function GroupCPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
   const pageUrl = '/groups/group-c';
-  const [activeSection, setActiveSection] = useState('');
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [activeSection, setActiveSection] = useState('intro');
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+        if (element && element.offsetTop <= scrollPosition) {
           setActiveSection(section);
-          break;
         }
       }
     };
@@ -61,18 +78,8 @@ export default function GroupCPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900 font-sans text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
       <Helmet>
         <title>World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami | Stadiumport</title>
         <meta name="description" content="The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy." />
@@ -106,6 +113,30 @@ export default function GroupCPage() {
           },
           {
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group C Guide",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {
@@ -131,585 +162,548 @@ export default function GroupCPage() {
 
       <Header />
 
-      <main className="relative">
+      <main>
         {/* Hero Section */}
-        <div className="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/90 to-slate-900"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-900/40 via-transparent to-transparent"></div>
+        <section className="relative min-h-[80vh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-[#FAFAFA] to-[#FAFAFA] dark:from-emerald-900/20 dark:via-[#0A0A0A] dark:to-[#0A0A0A]" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] dark:from-[#0A0A0A] to-transparent" />
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
+                <MapPin className="w-3 h-3" />
                 Ultimate Travel Guide
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
-                World Cup 2026 Group C: <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">The Atlantic Corridor</span>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
+                World Cup 2026 <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group C Strategy</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12 font-light">
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
                 Five powerhouses. One coast. From the history of Boston to the nightlife of Miami, Group C is the tournament's most diverse cultural journey.
               </p>
-
-              {/* Meta */}
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400 border-t border-slate-800 pt-8">
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
+                <Link to="/planner" className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm tracking-wide hover:scale-105 transition-transform shadow-xl shadow-slate-900/10">
+                  Start Your Journey
+                </Link>
+                <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                  Explore Strategy
+                </button>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-emerald-500" />
-                  <span>Updated: June 2025</span>
+                  <Calendar className="w-4 h-4 text-emerald-500" /> 
+                  Updated: June 2025
                 </div>
-                <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-emerald-500" />
-                  <span>14 min read</span>
+                  <Clock className="w-4 h-4 text-emerald-500" /> 
+                  14 min read
                 </div>
-                <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
-                  <User className="w-4 h-4 text-emerald-500" />
-                  <span>By Stadiumport Strategy Team</span>
+                  <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
+                  By Stadiumport Strategy Team
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
+            <ChevronDown className="w-5 h-5 text-emerald-500" />
+          </div>
+        </section>
 
-        {/* Progress Bar */}
-        <div className="sticky top-[72px] z-40 h-1 bg-slate-100 dark:bg-slate-800 w-full">
-          <div 
-            className="h-full bg-emerald-500 transition-all duration-150"
-            style={{ width: `${['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'].indexOf(activeSection) / 7 * 100}%` }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="container mx-auto max-w-7xl px-6 pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
             
-            {/* Sidebar Navigation */}
-            <div className="hidden lg:block lg:col-span-3 relative">
-              <div className="sticky top-32 space-y-12">
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Contents</h4>
-                  <nav className="space-y-1 relative border-l border-slate-200 dark:border-slate-800 ml-3">
-                    {[
-                      { id: 'intro', label: 'Introduction' },
-                      { id: 'strategy', label: 'Travel Strategy' },
-                      { id: 'accommodation', label: 'Accommodation' },
-                      { id: 'budget', label: 'Budget Breakdown' },
-                      { id: 'visas', label: 'Entry Requirements' },
-                      { id: 'insider', label: 'Insider Secrets' },
-                      { id: 'packing', label: 'Packing Essentials' },
-                      { id: 'faq', label: 'FAQ' }
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className={`block w-full text-left pl-6 py-2 text-sm transition-all relative ${
-                          activeSection === item.id 
-                            ? 'text-emerald-600 dark:text-emerald-400 font-bold' 
-                            : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                        }`}
-                      >
-                        {activeSection === item.id && (
-                          <span className="absolute left-[-1px] top-0 bottom-0 w-0.5 bg-emerald-600 dark:bg-emerald-400"></span>
-                        )}
-                        {item.label}
-                      </button>
-                    ))}
-                  </nav>
-                </div>
+            {/* Minimalist Sticky Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3 relative">
+              <div className="sticky top-32">
+                <nav className="space-y-1 border-l border-slate-200 dark:border-slate-800 ml-2">
+                  {[
+                    { id: 'intro', label: 'Introduction' },
+                    { id: 'strategy', label: 'Travel Strategy' },
+                    { id: 'accommodation', label: 'Accommodation' },
+                    { id: 'budget', label: 'Budget Breakdown' },
+                    { id: 'visas', label: 'Visa Requirements' },
+                    { id: 'insider', label: 'Insider Tips' },
+                    { id: 'packing', label: 'Packing Essentials' },
+                    { id: 'faq', label: 'FAQ' }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`group flex items-center w-full pl-6 py-2.5 text-sm font-medium transition-all duration-300 border-l-2 -ml-[2px] ${
+                        activeSection === item.id 
+                          ? 'border-emerald-600 dark:border-emerald-400 text-emerald-600 dark:text-emerald-400' 
+                          : 'border-transparent text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
                 
-                {/* Sidebar Ad / CTA */}
-                <div className="bg-slate-50 dark:bg-navy-800 rounded-2xl p-6 border border-slate-100 dark:border-navy-700">
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Need a Flight?</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">Check Skyscanner for the best deals between East Coast cities.</p>
-                  <a href="https://skyscanner.com" target="_blank" rel="noopener noreferrer" className="block w-full py-2 px-4 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-lg text-center text-sm font-bold text-slate-700 dark:text-slate-300 hover:border-emerald-500 transition-colors">
-                    Check Flights
-                  </a>
+                <div className="mt-12 p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2 text-base">Planning a Trip?</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Get our free checklist for Group C travel.</p>
+                  <Link to="/planner" className="flex items-center justify-center w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold rounded-xl hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-slate-900/10">
+                    Start Planner
+                  </Link>
                 </div>
               </div>
-            </div>
+            </aside>
 
             {/* Main Content */}
-            <div className="lg:col-span-9">
+            <div className="lg:col-span-9 space-y-24">
               
               {/* Introduction */}
-              <div id="intro" className="prose prose-lg dark:prose-invert max-w-none mb-20">
-                <p className="lead text-2xl md:text-3xl font-medium text-slate-900 dark:text-white leading-relaxed mb-8">
-                  Group C offers the highest density of world-class stadiums and the easiest regional travel in the tournament—if you stay North.
-                </p>
-                <p className="text-slate-600 dark:text-slate-300 leading-8 mb-8">
-                  The group is split into two distinct zones: the <strong className="text-slate-900 dark:text-white">"Northeast Corridor"</strong> (<Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold decoration-2 hover:underline underline-offset-4">Boston</Link>, <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold decoration-2 hover:underline underline-offset-4">NY/NJ</Link>, <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold decoration-2 hover:underline underline-offset-4">Philadelphia</Link>) and the <strong className="text-slate-900 dark:text-white">"Southern Heat"</strong> (<Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold decoration-2 hover:underline underline-offset-4">Atlanta</Link>, <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold decoration-2 hover:underline underline-offset-4">Miami</Link>). Your experience depends entirely on how you bridge this gap.
-                </p>
+              <section id="intro" className="max-w-3xl">
+                <div className="prose prose-xl dark:prose-invert max-w-none">
+                  <p className="text-2xl md:text-3xl leading-relaxed font-light text-slate-900 dark:text-white mb-10">
+                    Group C offers the highest density of world-class stadiums and the easiest regional travel in the tournament—if you stay North.
+                  </p>
+                  <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
+                    The group is split into two distinct zones: the <strong className="text-slate-900 dark:text-white">"Northeast Corridor"</strong> (<Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Boston</Link>, <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">NY/NJ</Link>, <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Philadelphia</Link>) and the <strong className="text-slate-900 dark:text-white">"Southern Heat"</strong> (<Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Atlanta</Link>, <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Miami</Link>).
+                  </p>
+                </div>
                 
-                <div className="bg-gradient-to-r from-slate-50 to-white dark:from-navy-800 dark:to-navy-900 p-8 rounded-2xl border-l-4 border-emerald-500 shadow-sm">
-                  <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-4 mt-0">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400">🚀</span>
+                <div className="bg-white dark:bg-slate-900 p-10 rounded-[2rem] shadow-xl shadow-slate-200/40 dark:shadow-none border border-slate-100 dark:border-slate-800 mt-12">
+                  <h3 className="text-lg font-bold text-emerald-600 dark:text-emerald-400 mb-6 flex items-center gap-3 tracking-tight uppercase">
+                    <Train className="w-5 h-5" />
                     The Group C "Power Route"
                   </h3>
-                  <p className="text-slate-700 dark:text-slate-300 mb-0 text-lg">
-                    <strong className="text-slate-900 dark:text-white">Boston 🚄 NYC 🚄 Philadelphia ✈️ Atlanta ✈️ Miami</strong><br/>
-                    Use the Amtrak Acela for the first three cities. It's faster than flying downtown-to-downtown. Then, fly from PHL to ATL to switch climates.
+                  <p className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
+                    Boston 🚄 NYC 🚄 Philadelphia ✈️ Atlanta ✈️ Miami
+                  </p>
+                  <p className="text-base text-slate-500 dark:text-slate-400">
+                    Use the Amtrak Acela for the first three cities. It's faster than flying. Then, fly from Philly to Atlanta to switch climates.
                   </p>
                 </div>
-              </div>
+              </section>
 
               {/* Section 1: Multi-City Travel Strategy */}
-              <section id="strategy" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">1</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Multi-City Travel Strategy</h2>
+              <section id="strategy" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
+                </div>
+                
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+                  Group C has the best public transit infrastructure in the US (Northeast) mixed with cities where a car is almost mandatory (Atlanta, Miami).
+                </p>
+                
+                <div className="mb-16">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">The "Northeast Corridor" (Train Supremacy)</h3>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-3xl">
+                    Do not fly between Boston, NYC, and Philadelphia. The airports (Logan, JFK/LGA, PHL) are congested and far from the stadiums.
+                  </p>
+                  
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+                      <Train className="w-8 h-8 text-emerald-500 mb-6" />
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Amtrak Acela</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">High-speed business class. Boston to NYC in 3h 45m.</p>
+                      <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full">$100-200 USD</span>
+                    </div>
+                    <div className="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+                      <Train className="w-8 h-8 text-emerald-500 mb-6" />
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Northeast Regional</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Slightly slower, much cheaper. Book 3 weeks ahead.</p>
+                      <span className="inline-block px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full">$30-80 USD</span>
+                    </div>
+                    <div className="bg-slate-50 dark:bg-slate-800/50 p-8 rounded-3xl border border-transparent dark:border-slate-800 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-8 h-8 text-slate-400 mb-6 flex items-center justify-center font-bold border-2 border-slate-300 rounded-full text-[10px]">BUS</div>
+                      <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Bus (Megabus)</h4>
+                      <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Extremely cheap but stuck in I-95 traffic. Only for tight budgets.</p>
+                      <span className="inline-block px-3 py-1 bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 text-xs font-bold rounded-full">$15-30 USD</span>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="prose prose-lg dark:prose-invert max-w-none">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8 mb-10">
-                    Group C has the best public transit infrastructure in the US (Northeast) mixed with cities where a car is almost mandatory (Atlanta, Miami).
+                <div className="mb-16">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">The "Southern Jump" (Atlanta & Miami)</h3>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-3xl">
+                    Once you leave Philly, distances explode. You must fly. Driving from Philadelphia to Miami takes 18+ hours.
                   </p>
                   
-                  <div className="bg-white dark:bg-navy-800 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-navy-700 mb-12">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
-                      <Train className="w-6 h-6 text-emerald-500" />
-                      The "Northeast Corridor" (Train Supremacy)
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6">
-                      Do not fly between Boston, NYC, and Philadelphia. The airports (Logan, JFK/LGA, PHL) are congested and far from the stadiums.
-                    </p>
-                    <ul className="space-y-4">
-                      <li className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0"></div>
-                        <div>
-                          <strong className="text-slate-900 dark:text-white">Amtrak Acela/Regional:</strong> Connects South Station (Boston), Moynihan Hall (NYC), and 30th St Station (Philly).
-                          <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                            <div className="bg-slate-50 dark:bg-navy-900/50 p-3 rounded-lg border border-slate-100 dark:border-navy-700 text-sm">
-                              <span className="block font-bold text-slate-700 dark:text-slate-300">Boston to NYC</span>
-                              <span className="text-emerald-600 dark:text-emerald-400">3h 45m ($50-$150)</span>
-                            </div>
-                            <div className="bg-slate-50 dark:bg-navy-900/50 p-3 rounded-lg border border-slate-100 dark:border-navy-700 text-sm">
-                              <span className="block font-bold text-slate-700 dark:text-slate-300">NYC to Philadelphia</span>
-                              <span className="text-emerald-600 dark:text-emerald-400">1h 20m ($30-$100)</span>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2.5 flex-shrink-0"></div>
-                        <span className="text-slate-600 dark:text-slate-300">
-                          <strong className="text-slate-900 dark:text-white">Bus (Megabus/Bolt):</strong> Extremely cheap ($15-$30) but stuck in I-95 traffic. Only for tight budgets.
-                        </span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
-                    <Plane className="w-6 h-6 text-emerald-500" />
-                    The "Southern Jump"
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-300 mb-8">
-                    Once you leave Philly, distances explode.
-                  </p>
-                  
-                  <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 mb-8 shadow-sm">
-                    <table className="min-w-full text-sm text-left">
-                      <thead className="bg-slate-50 dark:bg-navy-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider text-xs">
-                        <tr>
-                          <th className="p-5 border-b dark:border-navy-700">Route</th>
-                          <th className="p-5 border-b dark:border-navy-700">Mode</th>
-                          <th className="p-5 border-b dark:border-navy-700">Time</th>
-                          <th className="p-5 border-b dark:border-navy-700">Est. Price</th>
+                  <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="border-b border-slate-100 dark:border-slate-800">
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Route</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Flight Time</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Booking Window</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Est. Price</th>
                         </tr>
                       </thead>
-                      <tbody className="bg-white dark:bg-navy-800 divide-y divide-slate-100 dark:divide-navy-700">
-                        <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                          <td className="p-5 font-medium text-slate-900 dark:text-white">Philadelphia (PHL) → Atlanta (ATL)</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">Flight</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">2h 15m</td>
-                          <td className="p-5 font-bold text-emerald-600 dark:text-emerald-400">$120 - $250</td>
+                      <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Philadelphia (PHL) → Atlanta (ATL)</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">2h 15m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">3 Months Out</td>
+                          <td className="p-6 font-bold text-emerald-600 dark:text-emerald-400 text-base">$120 - $250</td>
                         </tr>
-                        <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                          <td className="p-5 font-medium text-slate-900 dark:text-white">Atlanta (ATL) → Miami (MIA)</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">Flight</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">1h 55m</td>
-                          <td className="p-5 font-bold text-emerald-600 dark:text-emerald-400">$100 - $200</td>
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Atlanta (ATL) → Miami (MIA)</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">1h 55m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">2 Months Out</td>
+                          <td className="p-6 font-bold text-emerald-600 dark:text-emerald-400 text-base">$100 - $180</td>
                         </tr>
-                        <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                          <td className="p-5 font-medium text-slate-900 dark:text-white">NYC (JFK) → Miami (MIA)</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">Flight</td>
-                          <td className="p-5 text-slate-600 dark:text-slate-400">3h 10m</td>
-                          <td className="p-5 font-bold text-emerald-600 dark:text-emerald-400">$180 - $350</td>
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">NYC (JFK) → Miami (MIA)</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">3h 10m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">3 Months Out</td>
+                          <td className="p-6 font-bold text-emerald-600 dark:text-emerald-400 text-base">$150 - $300</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
 
-                  <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-800/30 p-6 rounded-xl mb-10">
-                    <h4 className="font-bold text-amber-800 dark:text-amber-400 mt-0 mb-3 flex items-center gap-2 text-lg">
-                      <AlertTriangle className="w-5 h-5" /> Traffic Warning
-                    </h4>
-                    <p className="text-sm text-amber-900/80 dark:text-amber-100/80 mb-0 leading-relaxed">
-                      Atlanta and Miami have some of the worst traffic in the US. In Atlanta, use the <strong>MARTA train</strong> to get to Mercedes-Benz Stadium. In Miami, the stadium is far from South Beach—plan for 60+ minute Uber rides.
-                    </p>
-                  </div>
-
-                  {/* Affiliate Block: Transport */}
-                  <div className="p-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-navy-800 dark:to-navy-900 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                  {/* Affiliate Block: Flights */}
+                  <div className="mt-12 p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
                       <div>
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">🚆 Book Your Northeast Corridor Tickets</h4>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm">Amtrak prices rise as seats fill up. Book your Boston-NYC-Philly legs early.</p>
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                          <Plane className="w-5 h-5 text-emerald-500" />
+                          Secure Your East Coast Flights
+                        </h4>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm">Flight prices for June 2026 are expected to surge by 40%.</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <a href="https://amtrak.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:-translate-y-0.5 hover:shadow-lg">
-                        Search Amtrak Schedules <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <a href="https://skyscanner.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-emerald-500/30 hover:-translate-y-1 text-sm">
+                        Check Skyscanner Deals <ArrowRight className="w-4 h-4" />
                       </a>
-                      <a href="https://skyscanner.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-600 hover:border-emerald-500 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded-xl transition-all hover:shadow-md">
-                        Find Flights to Miami <Plane className="w-5 h-5 group-hover:-rotate-45 transition-transform" />
+                      <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-emerald-500 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded-xl transition-all hover:bg-white dark:hover:bg-slate-700 text-sm">
+                        Compare on Expedia <ExternalLink className="w-4 h-4" />
                       </a>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 text-center">We may earn a commission on bookings made through these links.</p>
+                    <p className="text-[10px] text-slate-400 mt-4 text-center uppercase tracking-widest font-medium">We may earn a commission on bookings made through these links.</p>
                   </div>
                 </div>
               </section>
 
               {/* Section 2: Accommodation Strategy */}
-              <section id="accommodation" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">2</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Accommodation Strategy</h2>
+              <section id="accommodation" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
                 </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8">
-                    Group C contains the two most expensive hotel markets in the US (NYC and Boston). You need a strategy to avoid bankruptcy.
-                  </p>
-                </div>
+                
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+                  NYC is the budget killer. Boston is historic and pricey. Miami requires strategic positioning to avoid traffic. Here is where to stay.
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {/* NYC/NJ */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">New York / NJ</h3>
-                      <MapPin className="w-6 h-6 text-emerald-500" />
+                  {/* NYC */}
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">New York / NJ</h3>
+                      <span className="px-3 py-1 bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Extreme Cost</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Highest Cost • Book 9 Months Out
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Book 10 Months Out</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Midtown Manhattan (Train access to stadium)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Best Area:</strong> Midtown Manhattan (For tourism/train access)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Budget Alt:</strong> Long Island City (Queens) or Secaucus (NJ)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Stadium Access:</strong> Secaucus, NJ (Train to MetLife is 10 mins)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Staying near the stadium (East Rutherford) is boring. Stay in the city and commute.
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Warning:</strong> Staying in Manhattan means a 45-60 min commute to the stadium.</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search NYC Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search NYC Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
 
                   {/* Boston */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Boston</h3>
-                      <MapPin className="w-6 h-6 text-emerald-500" />
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Boston</h3>
+                      <span className="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">High Demand</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Very High Cost • Book 8 Months Out
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Book 8 Months Out</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Back Bay or Seaport
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Best Area:</strong> Back Bay / Copley (Central, safe, upscale)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Budget Alt:</strong> Cambridge (Red Line access)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Budget Alt:</strong> Cambridge (Red Line subway access)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Gillette Stadium is 45 mins from Boston. The "Event Train" from South Station is the only sane way to get there.
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Note:</strong> Stadium is in Foxborough (30 miles out). Take the event train from South Station.</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search Boston Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search Boston Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
 
                   {/* Philadelphia */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Philadelphia</h3>
-                      <MapPin className="w-6 h-6 text-emerald-500" />
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Philadelphia</h3>
+                      <span className="px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Good Value</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/20 text-emerald-600 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Moderate Cost • Best Value
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Book 6 Months Out</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Center City (Broad St Line to stadium)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Best Area:</strong> Center City (Walkable, historic, food scene)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Budget Alt:</strong> University City
-                      </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Do not stay near the airport; it's isolated. Center City is vibrant and walkable.
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Stadium Access:</strong> Broad Street Line (Subway) goes direct to stadium complex.</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search Philly Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search Philly Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
 
-                  {/* Atlanta */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-emerald-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Atlanta</h3>
-                      <MapPin className="w-6 h-6 text-emerald-500" />
+                  {/* Miami */}
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 dark:hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Miami</h3>
+                      <span className="px-3 py-1 bg-orange-50 dark:bg-orange-500/10 text-orange-600 dark:text-orange-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Logistics Trap</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Moderate Cost • Book 6 Months Out
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Strategy Required</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Downtown/Midtown (Walkable to stadium)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>The Dilemma:</strong> Hard Rock Stadium is in Miami Gardens (far north). South Beach is far south.</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Budget Alt:</strong> Buckhead (MARTA access)
-                      </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Avoid driving to the stadium. Parking is expensive and traffic is gridlock.
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
+                        <span><strong>Recommendation:</strong> Stay in Fort Lauderdale or Hollywood for easier stadium access.</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search Atlanta Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search Miami Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
                 </div>
               </section>
 
               {/* Section 3: Budget Breakdown */}
-              <section id="budget" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">3</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Group C Budget Breakdown</h2>
-                </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8">
-                    Estimates are per person for a 12-day trip covering 3 group matches. Does not include international arrival flights.
-                  </p>
+              <section id="budget" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group C Budget Breakdown</h2>
                 </div>
                 
-                <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-navy-700 mb-12 shadow-sm">
-                  <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-navy-700">
-                    {/* Economy */}
-                    <div className="bg-white dark:bg-navy-800 p-8 text-center">
-                      <div className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Economy Strategy</div>
-                      <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-2">$3,200</div>
-                      <p className="text-sm text-slate-500 mb-0 px-4">Hostels in Queens/Philly, bus travel, street food, Cat 3 tickets.</p>
-                    </div>
-                    
-                    {/* Mid-Range */}
-                    <div className="bg-emerald-50/50 dark:bg-emerald-900/10 p-8 text-center relative">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500"></div>
-                      <div className="text-sm font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-4">Mid-Range Strategy</div>
-                      <div className="text-4xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-2">$5,800</div>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-0 px-4">3-star hotels (NJ/Cambridge), Amtrak Regional, pub dining, Cat 2 tickets.</p>
-                    </div>
-                    
-                    {/* Premium */}
-                    <div className="bg-white dark:bg-navy-800 p-8 text-center">
-                      <div className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Premium Experience</div>
-                      <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-2">$10,500+</div>
-                      <p className="text-sm text-slate-500 mb-0 px-4">Manhattan/Seaport hotels, Acela First Class, VIP hospitality.</p>
-                    </div>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose">
+                  Estimates are per person for a 12-day trip covering 3 group matches. Does not include international arrival flights.
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-16">
+                  {/* Economy */}
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Economy Strategy</div>
+                    <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$3,200</div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Hostels, buses between cities, grocery meals, cheapest match tickets.</p>
+                  </div>
+                  
+                  {/* Mid-Range */}
+                  <div className="p-8 rounded-3xl border border-emerald-100 dark:border-emerald-900 bg-emerald-50 dark:bg-emerald-900/10 relative overflow-hidden transform md:-translate-y-4 shadow-xl shadow-emerald-900/5">
+                    <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl uppercase tracking-widest">Recommended</div>
+                    <div className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest mb-4">Mid-Range Strategy</div>
+                    <div className="text-4xl font-bold text-emerald-600 dark:text-emerald-400 mb-4 tracking-tighter">$5,500</div>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">3-star hotels (or shared Airbnbs), Amtrak Regional, casual dining, Cat 2 tickets.</p>
+                  </div>
+                  
+                  {/* Premium */}
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Premium Experience</div>
+                    <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$9,500+</div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Manhattan/South Beach hotels, Acela First Class, Cat 1 tickets, fine dining.</p>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 mb-10">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                    <DollarSign className="w-6 h-6 text-emerald-500" />
+                <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3 tracking-tight">
+                    <CreditCard className="w-6 h-6 text-emerald-500" />
                     Money-Saving Hacks for Group C
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">The "Jersey" Trick:</strong> Staying in Secaucus or Hoboken (NJ) is 40% cheaper than Manhattan but only a 15-minute train ride away.
-                      </span>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs flex-shrink-0">1</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">Stay in Jersey, Party in NYC:</strong> Hotels in Secaucus or Weehawken are 40% cheaper than Manhattan and offer quick train/ferry access.
+                      </p>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">Eat in Philly:</strong> Philadelphia has the best food-to-price ratio on the East Coast. Save your fine dining budget for here, not NYC.
-                      </span>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs flex-shrink-0">2</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">Amtrak Early Bird:</strong> Amtrak prices work like airline tickets. Book 3+ weeks out for "Saver" fares ($30 vs $150 walk-up).
+                      </p>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-emerald-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">Avoid Miami South Beach Hotels:</strong> Stay on the mainland (Brickell or Downtown) to save money and be closer to the airport/stadium routes.
-                      </span>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-xs flex-shrink-0">3</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">Philly Food:</strong> Philadelphia has one of the best food scenes in America at half the price of NYC. Save your appetite for Reading Terminal Market.
+                      </p>
                     </li>
                   </ul>
-                </div>
-
-                {/* Affiliate: eSIM */}
-                <div className="flex items-center gap-6 bg-slate-50 dark:bg-navy-800 p-6 rounded-2xl border border-slate-200 dark:border-navy-700 hover:border-emerald-500 transition-colors group">
-                  <div className="w-16 h-16 rounded-full bg-white dark:bg-navy-900 flex items-center justify-center text-3xl shadow-sm group-hover:scale-110 transition-transform">📱</div>
-                  <div className="flex-1">
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-1">US Data Connectivity</h4>
-                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-2">Don't rely on spotty stadium WiFi. Get a US eSIM for $4.50.</p>
-                    <a href="#" className="inline-flex items-center text-emerald-600 font-bold text-sm hover:underline">
-                      View Airalo Plans <ArrowRight className="w-4 h-4 ml-1" />
-                    </a>
+                  
+                  {/* eSIM Affiliate */}
+                  <div className="mt-10 flex items-center gap-6 p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700">
+                    <div className="w-12 h-12 rounded-xl bg-white dark:bg-slate-700 flex items-center justify-center text-2xl shadow-sm">📱</div>
+                    <div className="flex-1">
+                      <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">Stay Connected</h4>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">Get an Airalo eSIM for instant data across the USA.</p>
+                    </div>
+                    <a href="#" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
                   </div>
                 </div>
               </section>
 
               {/* Section 4: Visa & Entry Requirements */}
-              <section id="visas" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">4</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">US Entry Requirements</h2>
-                </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8">
-                    Group C takes place entirely within the United States.
-                  </p>
+              <section id="visas" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
                 </div>
                 
-                <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-100 dark:border-blue-800/30 p-8 rounded-2xl">
-                  <h3 className="flex items-center gap-3 text-2xl font-bold text-blue-900 dark:text-blue-400 mt-0 mb-6">
-                    <img src="https://flagcdn.com/us.svg" className="w-8 h-6 object-cover rounded shadow-sm" alt="USA" />
-                    Standard US Entry Rules
-                  </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5 flex-shrink-0"></div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        <strong className="text-blue-900 dark:text-blue-300">ESTA (Visa Waiver):</strong> Citizens of 41 countries (UK, EU, Japan, Aus, etc.) must apply for an ESTA at least 72 hours before flight. Cost: $21. Validity: 2 years.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5 flex-shrink-0"></div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        <strong className="text-blue-900 dark:text-blue-300">B1/B2 Visa:</strong> If you are not from a VWP country, you need a physical visa. <strong className="text-red-600 dark:text-red-400">APPLY NOW.</strong> Interview wait times in countries like Colombia, India, and Mexico can exceed 300 days.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-3">
-                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2.5 flex-shrink-0"></div>
-                      <span className="text-slate-700 dark:text-slate-300">
-                        <strong className="text-blue-900 dark:text-blue-300">Social Media Check:</strong> US Customs may ask for your social media handles. Be prepared.
-                      </span>
-                    </li>
-                  </ul>
+                <div className="grid md:grid-cols-1 gap-8">
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                    <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                      <img src="https://flagcdn.com/us.svg" className="w-8 h-auto object-cover rounded shadow-sm" alt="USA" />
+                      Entering USA
+                    </h3>
+                    <ul className="space-y-6">
+                      <li className="text-sm text-slate-600 dark:text-slate-300">
+                        <strong className="block text-slate-900 dark:text-white mb-1 font-bold">ESTA</strong>
+                        Required for Visa Waiver Program countries (UK, EU, Australia, etc.). Cost: $21 USD. Approval: Up to 72 hours. Valid for 2 years.
+                      </li>
+                      <li className="text-sm text-slate-600 dark:text-slate-300">
+                        <strong className="block text-slate-900 dark:text-white mb-1 font-bold">B1/B2 Visa</strong>
+                        Required if not ESTA eligible. Wait times for interviews can be 6+ months in some countries. Apply immediately if you need one.
+                      </li>
+                      <li className="text-sm text-slate-600 dark:text-slate-300">
+                        <strong className="block text-red-600 dark:text-red-400 mb-1 font-bold">Important</strong>
+                        Even if you are just visiting, ensure your passport is valid for at least 6 months beyond your planned departure date.
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </section>
 
               {/* Section 5: Insider Tips */}
-              <section id="insider" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">5</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Insider Knowledge: Group C Secrets</h2>
+              <section id="insider" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
                 </div>
-
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">🚇</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The "MetLife Miracle"</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Getting out of MetLife Stadium after a match is a nightmare. <strong className="text-slate-900 dark:text-white">Tip:</strong> Do not wait for the train immediately. Walk to the "Rideshare Lot" but don't order an Uber there. Walk further out to the redding center to escape the surge pricing zone.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-xl mb-6">⚠️</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">MetLife is in a Swamp</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      The "New York" stadium is actually in East Rutherford, NJ. There is nothing to do there. Do not book a hotel "near the stadium" unless you plan to stare at highways. Stay in Manhattan.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">☔</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">Miami Roof Warning</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Hard Rock Stadium has a roof, but it only covers 90% of seats. The lower rows can still get soaked in a tropical downpour. Check your seat view before buying.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-xl mb-6">❄️</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">The AC Factor</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      It will be 35°C (95°F) outside in Miami and Atlanta, but 18°C (65°F) inside buildings. Americans love aggressive air conditioning. Bring a light sweater even in summer.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">🧀</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The Philly Cheesesteak Rule</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Geno's and Pat's are tourist traps. For a real Philly cheesesteak, go to <strong className="text-slate-900 dark:text-white">Angelo's Pizzeria</strong> or <strong className="text-slate-900 dark:text-white">John's Roast Pork</strong>. Trust us.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-xl mb-6">🚆</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">MARTA Smarts</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      In Atlanta, the MARTA train goes directly from the Airport (ATL) to downtown and Mercedes-Benz Stadium. It's faster and cheaper than Uber.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">🌡️</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The Climate Shock</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Flying from Boston (18°C/65°F) to Miami (32°C/90°F) in June is a shock to the system. Hydrate on the plane. The humidity in Miami and Atlanta is oppressive.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/10 flex items-center justify-center text-xl mb-6">🥯</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Bagel & Pizza Rules</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      In NYC/NJ, bagels are for breakfast, pizza is by the slice. Do not eat chain pizza here. Ask a local for their "spot."
                     </p>
                   </div>
                 </div>
               </section>
 
               {/* Section 6: Essential Gear */}
-              <section id="packing" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-400 text-xl font-bold">6</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Group C Packing Essentials</h2>
+              <section id="packing" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group C Packing Essentials</h2>
                 </div>
-
+                
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">👟</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Walking Shoes</h4>
-                    <p className="text-xs text-slate-500 mb-4">NYC/Boston = 20k steps/day.</p>
-                    <a href="#" className="text-emerald-600 text-xs font-bold uppercase tracking-wider hover:text-emerald-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👟</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Walking Shoes</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">NYC/Boston = 20k steps/day.</p>
+                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">❄️</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Cooling Towel</h4>
-                    <p className="text-xs text-slate-500 mb-4">Lifesaver in Atlanta/Miami.</p>
-                    <a href="#" className="text-emerald-600 text-xs font-bold uppercase tracking-wider hover:text-emerald-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">☂️</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Compact Umbrella</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Summer storms are sudden.</p>
+                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">👜</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Anti-Theft Bag</h4>
-                    <p className="text-xs text-slate-500 mb-4">Pickpockets love NYC subways.</p>
-                    <a href="#" className="text-emerald-600 text-xs font-bold uppercase tracking-wider hover:text-emerald-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👕</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Linen/Light Fabrics</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">For the Miami humidity.</p>
+                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">🧢</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Sun Hat</h4>
-                    <p className="text-xs text-slate-500 mb-4">Hard Rock Stadium sun is intense.</p>
-                    <a href="#" className="text-emerald-600 text-xs font-bold uppercase tracking-wider hover:text-emerald-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long travel days.</p>
+                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
                   </div>
                 </div>
               </section>
 
               {/* Section 7: FAQ */}
-              <section id="faq" className="mb-24 scroll-mt-32">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-1">
+              <section id="faq" className="scroll-mt-32">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 tracking-tight">Frequently Asked Questions</h2>
+                <div className="space-y-2">
                   <AccordionItem 
-                    question="How far is MetLife Stadium from New York City?"
-                    answer="It is about 8 miles, but traffic can make it a 60-minute drive. The train from Penn Station (via Secaucus) takes about 35-45 minutes and is the most reliable option."
+                    question="Should I rent a car for Group C?"
+                    answer={<>For the Northeast (Boston, NYC, Philly), <strong>absolutely not</strong>. Parking is expensive and traffic is a nightmare. Use trains. For Atlanta and Miami, a car is helpful, but Uber/Lyft is often less stressful if you are just going to stadiums and tourist spots.</>}
                     isOpen={openFaqIndex === 0}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
                   />
                   <AccordionItem 
-                    question="Is it safe to take the subway in NYC and Philly?"
-                    answer="Generally, yes, especially during match days when thousands of fans are traveling. Stay alert, keep valuables hidden, and avoid empty train cars late at night."
+                    question="Which city has the best stadium atmosphere?"
+                    answer={<><strong>Philadelphia</strong> fans are legendary for their intensity. <strong>Atlanta's</strong> Mercedes-Benz Stadium is an architectural marvel with incredible acoustics. Both will be electric.</>}
                     isOpen={openFaqIndex === 1}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
                   />
                   <AccordionItem 
-                    question="Can I do Boston, NYC, and Philly by car?"
-                    answer={<span>You <em>can</em>, but you shouldn't. Parking in these cities costs $40-$60 per night. The I-95 corridor is notoriously congested. The train is faster, stress-free, and drops you in the city center.</span>}
+                    question="How far apart are the cities?"
+                    answer={<>Boston to NYC is 4 hours by train. NYC to Philly is 1.5 hours. But Philly to Atlanta is a 2-hour flight, and Atlanta to Miami is another 2-hour flight. Plan accordingly.</>}
                     isOpen={openFaqIndex === 2}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
                   />
                   <AccordionItem 
-                    question="What is the dress code for hospitality areas?"
-                    answer="In Miami and NYC, VIP suites often have a 'smart casual' dress code. Jerseys are usually fine, but avoid flip-flops or beachwear in premium sections."
+                    question="Is Miami safe for tourists?"
+                    answer={<>South Beach and major tourist areas are generally safe. However, exercise caution in some mainland neighborhoods. Stick to well-lit areas and use rideshare apps at night.</>}
                     isOpen={openFaqIndex === 3}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
                   />
@@ -717,21 +711,21 @@ export default function GroupCPage() {
               </section>
 
               {/* Final CTA */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-                
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready to Conquer the East Coast?</h2>
-                <p className="text-slate-300 mb-10 text-lg max-w-2xl mx-auto leading-relaxed relative z-10">
-                  From the Liberty Bell to South Beach, Group C is an unforgettable road trip. Secure your logistics now.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                  <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-emerald-500/25">
-                    Explore Host Cities <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <Link to="/planner" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20">
-                    Start My Trip Plan
-                  </Link>
+              <div className="relative overflow-hidden rounded-[3rem] bg-slate-900 text-white p-12 md:p-20 text-center shadow-2xl shadow-slate-900/20">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/20 via-slate-900 to-slate-900"></div>
+                <div className="relative z-10 max-w-3xl mx-auto">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready to Tackle the East Coast?</h2>
+                  <p className="text-slate-300 mb-12 text-lg leading-relaxed font-light">
+                    From the historic north to the tropical south, Group C is a journey of contrasts. Start planning your logistics now.
+                  </p>
+                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-emerald-500/30 text-base">
+                      Explore All Host Cities
+                    </Link>
+                    <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
+                      Start My Trip Plan
+                    </Link>
+                  </div>
                 </div>
               </div>
 

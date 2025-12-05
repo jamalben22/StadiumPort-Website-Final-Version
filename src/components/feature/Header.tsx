@@ -49,6 +49,9 @@ export function Header() {
     { type: 'stadium', title: 'Mercedes-Benz Stadium', path: '/world-cup-2026-stadiums', description: 'Atlanta - Architectural marvel' },
     { type: 'stadium', title: 'AT&T Stadium', path: '/world-cup-2026-stadiums', description: 'Dallas - The Star' },
     { type: 'stadium', title: 'Arrowhead Stadium', path: '/world-cup-2026-stadiums', description: 'Kansas City - Loudest stadium' },
+
+    // Groups
+    { type: 'page', title: 'Groups', path: '/world-cup-2026-groups', description: 'World Cup 2026 Groups, Teams & Schedule' },
     
     // Travel Guides
     { type: 'guide', title: 'Travel Tips', path: '/world-cup-2026-travel-tips', description: 'Essential travel advice for World Cup 2026' },
@@ -324,6 +327,7 @@ export function Header() {
               {[
                 { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                 { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
+                { path: '/world-cup-2026-groups', label: 'Groups' },
                 { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
                 { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
               ].map((item) => (
@@ -444,6 +448,7 @@ export function Header() {
                   {[
                     { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
                     { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
+                    { path: '/world-cup-2026-groups', label: 'Groups' },
                     { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
                     { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
                   ].map((item, index) => (

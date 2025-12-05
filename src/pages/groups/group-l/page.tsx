@@ -37,6 +37,30 @@ export default function GroupLPage() {
           },
           {
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": `${import.meta.env.VITE_SITE_URL}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${import.meta.env.VITE_SITE_URL}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group L",
+                "item": `${import.meta.env.VITE_SITE_URL}/groups/group-l`
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {

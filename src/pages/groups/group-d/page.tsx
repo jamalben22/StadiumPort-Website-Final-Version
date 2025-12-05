@@ -5,10 +5,19 @@ import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 import { 
-  Clock, Calendar, User, ChevronDown, ChevronUp, MapPin, 
-  Plane, Car, DollarSign, Sun, Umbrella, 
-  ShoppingBag, Info, AlertTriangle, CheckCircle, ArrowRight,
-  Lightbulb, Battery, Glasses, Shirt
+  ChevronDown, 
+  Clock, 
+  Calendar, 
+  MapPin, 
+  ArrowRight, 
+  Plane, 
+  Car, 
+  CreditCard, 
+  AlertTriangle, 
+  ExternalLink,
+  Sun,
+  CloudRain,
+  Camera
 } from 'lucide-react';
 
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
@@ -18,15 +27,15 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
       >
-        <span className="text-lg md:text-xl font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pr-8">
+        <span className="text-lg md:text-xl font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors pr-8 tracking-tight">
           {question}
         </span>
-        <div className={`w-8 h-8 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center flex-shrink-0 transition-colors ${isOpen ? 'bg-amber-500 border-amber-500 text-white' : 'group-hover:border-amber-500 text-slate-400'}`}>
-          {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-amber-500 text-white rotate-180' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:bg-amber-500/10 group-hover:text-amber-600'}`}>
+          <ChevronDown className="w-4 h-4" />
         </div>
       </button>
       <div 
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
+        className={`overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? 'max-h-96 opacity-100 pb-6' : 'max-h-0 opacity-0'}`}
       >
         <div className="text-slate-600 dark:text-slate-300 leading-relaxed text-base md:text-lg max-w-3xl">
           {answer}
@@ -38,20 +47,32 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
 
 export default function GroupDPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/groups/group-d';
+  const pageUrl = '/2026-world-cup-group-d-travel-guide';
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeSection, setActiveSection] = useState('intro');
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 120;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'strategy', 'accommodation', 'budget', 'insider', 'packing', 'faq'];
-      const scrollPosition = window.scrollY + 100;
+      const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+      const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
         const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition && (element.offsetTop + element.offsetHeight) > scrollPosition) {
+        if (element && element.offsetTop <= scrollPosition) {
           setActiveSection(section);
-          break;
         }
       }
     };
@@ -60,18 +81,8 @@ export default function GroupDPage() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      window.scrollTo({
-        top: element.offsetTop - 80,
-        behavior: 'smooth'
-      });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900 font-sans text-slate-900 dark:text-slate-100">
+    <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-amber-500/30">
       <Helmet>
         <title>World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles | Stadiumport</title>
         <meta name="description" content="The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics." />
@@ -105,6 +116,30 @@ export default function GroupDPage() {
           },
           {
             "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group D Guide",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
             "@type": "FAQPage",
             "mainEntity": [
               {
@@ -122,14 +157,6 @@ export default function GroupDPage() {
                   "@type": "Answer",
                   "text": "Stay in San Jose or Santa Clara for match days. San Francisco is 45 miles (60-90 mins) away. The commute from SF to the stadium on a weeknight is brutal."
                 }
-              },
-              {
-                "@type": "Question",
-                "name": "Is Group D expensive?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Seattle, SF, and LA are three of the most expensive cities in the US. Expect hotels to average $350-$500/night during the tournament. Early booking is mandatory."
-                }
               }
             ]
           }
@@ -138,487 +165,476 @@ export default function GroupDPage() {
 
       <Header />
 
-      <main className="relative">
+      <main>
         {/* Hero Section */}
-        <div className="relative bg-slate-900 pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449034446853-66c86144b0ad?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-900/90 to-slate-900"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-900/40 via-transparent to-transparent"></div>
+        <section className="relative min-h-[80vh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-amber-500/10 via-[#FAFAFA] to-[#FAFAFA] dark:from-amber-900/20 dark:via-[#0A0A0A] dark:to-[#0A0A0A]" />
+          <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#FAFAFA] dark:from-[#0A0A0A] to-transparent" />
           
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-400 text-xs font-bold tracking-widest uppercase mb-8 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-amber-700 dark:text-amber-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
+                <MapPin className="w-3 h-3" />
                 Ultimate Travel Guide
               </div>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-8 leading-tight">
-                World Cup 2026 Group D: <br className="hidden md:block" />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-300">The Golden Coast</span>
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
+                World Cup 2026 <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-500 dark:from-amber-400 dark:to-orange-300">Group D Strategy</span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-3xl mx-auto mb-12 font-light">
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
                 Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three cultural capitals of the American West into one cinematic journey.
               </p>
-
-              {/* Meta */}
-              <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-slate-400 border-t border-slate-800 pt-8">
+              
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
+                <Link to="/planner" className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-sm tracking-wide hover:scale-105 transition-transform shadow-xl shadow-slate-900/10">
+                  Start Your Journey
+                </Link>
+                <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
+                  Explore Strategy
+                </button>
+              </div>
+              
+              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
                 <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4 text-amber-500" />
-                  <span>Updated: June 2025</span>
+                  <Calendar className="w-4 h-4 text-amber-500" /> 
+                  Updated: June 2025
                 </div>
-                <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-amber-500" />
-                  <span>15 min read</span>
+                  <Clock className="w-4 h-4 text-amber-500" /> 
+                  15 min read
                 </div>
-                <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
-                  <User className="w-4 h-4 text-amber-500" />
-                  <span>By Stadiumport Strategy Team</span>
+                  <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
+                  By Stadiumport Strategy Team
                 </div>
               </div>
             </div>
           </div>
-        </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
+            <ChevronDown className="w-5 h-5 text-amber-500" />
+          </div>
+        </section>
 
-        {/* Progress Bar */}
-        <div className="sticky top-[72px] z-40 h-1 bg-slate-100 dark:bg-slate-800 w-full">
-          <div 
-            className="h-full bg-amber-500 transition-all duration-150"
-            style={{ width: `${['intro', 'strategy', 'accommodation', 'budget', 'insider', 'packing', 'faq'].indexOf(activeSection) / 6 * 100}%` }}
-          ></div>
-        </div>
-
-        <div className="container mx-auto px-4 py-16 lg:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        <div className="container mx-auto max-w-7xl px-6 pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
             
-            {/* Sidebar Navigation */}
-            <div className="hidden lg:block lg:col-span-3 relative">
-              <div className="sticky top-32 space-y-12">
-                <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-6">Contents</h4>
-                  <nav className="space-y-1 relative border-l border-slate-200 dark:border-slate-800 ml-3">
-                    {[
-                      { id: 'intro', label: 'Introduction' },
-                      { id: 'strategy', label: 'West Coast Logistics' },
-                      { id: 'accommodation', label: 'Accommodation' },
-                      { id: 'budget', label: 'Budget Breakdown' },
-                      { id: 'insider', label: 'Insider Secrets' },
-                      { id: 'packing', label: 'Packing Essentials' },
-                      { id: 'faq', label: 'FAQ' }
-                    ].map((item) => (
-                      <button
-                        key={item.id}
-                        onClick={() => scrollToSection(item.id)}
-                        className={`block w-full text-left pl-6 py-2 text-sm transition-all relative ${
-                          activeSection === item.id 
-                            ? 'text-amber-600 dark:text-amber-400 font-bold' 
-                            : 'text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200'
-                        }`}
-                      >
-                        {activeSection === item.id && (
-                          <span className="absolute left-[-1px] top-0 bottom-0 w-0.5 bg-amber-600 dark:bg-amber-400"></span>
-                        )}
-                        {item.label}
-                      </button>
-                    ))}
-                  </nav>
-                </div>
+            {/* Minimalist Sticky Sidebar */}
+            <aside className="hidden lg:block lg:col-span-3 relative">
+              <div className="sticky top-32">
+                <nav className="space-y-1 border-l border-slate-200 dark:border-slate-800 ml-2">
+                  {[
+                    { id: 'intro', label: 'Introduction' },
+                    { id: 'strategy', label: 'West Coast Logistics' },
+                    { id: 'accommodation', label: 'Accommodation' },
+                    { id: 'budget', label: 'Budget Breakdown' },
+                    { id: 'visas', label: 'Visa Requirements' },
+                    { id: 'insider', label: 'Insider Tips' },
+                    { id: 'packing', label: 'Packing Essentials' },
+                    { id: 'faq', label: 'FAQ' }
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => scrollToSection(item.id)}
+                      className={`group flex items-center w-full pl-6 py-2.5 text-sm font-medium transition-all duration-300 border-l-2 -ml-[2px] ${
+                        activeSection === item.id 
+                          ? 'border-amber-600 dark:border-amber-400 text-amber-600 dark:text-amber-400' 
+                          : 'border-transparent text-slate-400 hover:text-slate-900 dark:hover:text-white hover:border-slate-300 dark:hover:border-slate-700'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                </nav>
                 
-                {/* Sidebar Ad / CTA */}
-                <div className="bg-slate-50 dark:bg-navy-800 rounded-2xl p-6 border border-slate-100 dark:border-navy-700">
-                  <h4 className="font-bold text-slate-900 dark:text-white mb-2">Need a Car?</h4>
-                  <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">Driving Highway 1? Get a convertible for the full experience.</p>
-                  <a href="https://rentalcars.com" target="_blank" rel="noopener noreferrer" className="block w-full py-2 px-4 bg-white dark:bg-navy-900 border border-slate-200 dark:border-navy-600 rounded-lg text-center text-sm font-bold text-slate-700 dark:text-slate-300 hover:border-amber-500 transition-colors">
-                    Check Rentals
-                  </a>
+                <div className="mt-12 p-6 rounded-2xl bg-slate-50 dark:bg-white/5 border border-slate-100 dark:border-white/5">
+                  <h4 className="font-bold text-slate-900 dark:text-white mb-2 text-base">Planning a Trip?</h4>
+                  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Get our free checklist for Group D travel.</p>
+                  <Link to="/planner" className="flex items-center justify-center w-full py-3 bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-xs font-bold rounded-xl hover:scale-[1.02] transition-transform duration-300 shadow-lg shadow-slate-900/10">
+                    Start Planner
+                  </Link>
                 </div>
               </div>
-            </div>
+            </aside>
 
             {/* Main Content */}
-            <div className="lg:col-span-9">
+            <div className="lg:col-span-9 space-y-24">
               
               {/* Introduction */}
-              <div id="intro" className="prose prose-lg dark:prose-invert max-w-none mb-20">
-                <p className="lead text-2xl md:text-3xl font-medium text-slate-900 dark:text-white leading-relaxed mb-8">
-                  Group D is the "Bucket List" group. It offers the most beautiful landscapes and the most modern stadiums, but it punishes the unprepared traveler with brutal traffic and deceptive distances.
-                </p>
-                <p className="text-slate-600 dark:text-slate-300 leading-8 mb-8">
-                  The route covers the <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold decoration-2 hover:underline underline-offset-4">Pacific Northwest (Seattle)</Link>, the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold decoration-2 hover:underline underline-offset-4">Bay Area (SF/Santa Clara)</Link>, and <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold decoration-2 hover:underline underline-offset-4">Southern California (Los Angeles)</Link>. These regions operate like separate countries with unique climates, transit systems, and vibes.
-                </p>
+              <section id="intro" className="max-w-3xl">
+                <div className="prose prose-xl dark:prose-invert max-w-none">
+                  <p className="text-2xl md:text-3xl leading-relaxed font-light text-slate-900 dark:text-white mb-10">
+                    Group D is the "Bucket List" group. It offers the most beautiful landscapes and the most modern stadiums, but it punishes the unprepared traveler with brutal traffic and deceptive distances.
+                  </p>
+                  <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
+                    The route covers the <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Pacific Northwest (Seattle)</Link>, the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Bay Area (SF/Santa Clara)</Link>, and <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Southern California (Los Angeles)</Link>. These regions operate like separate countries with unique climates, transit systems, and vibes.
+                  </p>
+                </div>
                 
-                <div className="bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 p-8 rounded-2xl border-l-4 border-amber-500 shadow-sm">
-                  <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-4 mt-0">
-                    <span className="flex items-center justify-center w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-900/50 text-amber-600 dark:text-amber-400">🚀</span>
+                <div className="bg-white dark:bg-slate-900 p-10 rounded-[2rem] shadow-xl shadow-slate-200/40 dark:shadow-none border border-slate-100 dark:border-slate-800 mt-12">
+                  <h3 className="text-lg font-bold text-amber-600 dark:text-amber-400 mb-6 flex items-center gap-3 tracking-tight uppercase">
+                    <Plane className="w-5 h-5" />
                     The Group D "Golden Strategy"
                   </h3>
-                  <p className="text-slate-700 dark:text-slate-300 mb-0 text-lg">
-                    <strong className="text-slate-900 dark:text-white">Fly the Gap, Drive the Coast.</strong><br/>
-                    Do <strong className="text-red-600 dark:text-red-400">NOT</strong> attempt to drive Seattle to SF for a match (13 hours). Fly between cities (Alaska Airlines is king here). Only rent a car for the SF-to-LA leg via Highway 1 if you have 3+ spare days to enjoy the views.
+                  <p className="text-2xl md:text-4xl font-bold text-slate-900 dark:text-white leading-tight mb-6">
+                    Fly the Gap, Drive the Coast.
+                  </p>
+                  <p className="text-base text-slate-500 dark:text-slate-400">
+                    Do <strong className="text-slate-900 dark:text-white">NOT</strong> attempt to drive Seattle to SF for a match (13+ hours). Fly between cities. Only rent a car for the SF-to-LA leg via Highway 1 if you have 3+ spare days to enjoy the views.
                   </p>
                 </div>
-              </div>
+              </section>
 
               {/* Section 1: Multi-City Travel Strategy */}
-              <section id="strategy" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 text-xl font-bold">1</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">West Coast Logistics</h2>
+              <section id="strategy" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">West Coast Logistics</h2>
                 </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8 mb-10">
-                    The West Coast is massive. European fans often underestimate the scale. Seattle to Los Angeles is the same distance as London to Rome.
+                
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+                  The West Coast is massive. European fans often underestimate the scale. Seattle to Los Angeles is the same distance as London to Rome.
+                </p>
+                
+                <div className="mb-16">
+                  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">The Air Corridor (Primary Mode)</h3>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-3xl">
+                    This is one of the busiest air corridors in the world. Flights are frequent, reliable, and relatively short.
                   </p>
                   
-                  <div className="bg-white dark:bg-navy-800 rounded-2xl p-8 shadow-sm border border-slate-100 dark:border-navy-700 mb-12">
-                    <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
-                      <Plane className="w-6 h-6 text-amber-500" />
-                      The Air Corridor (Primary Mode)
-                    </h3>
-                    <p className="text-slate-600 dark:text-slate-300 mb-6">
-                      This is one of the busiest air corridors in the world. Flights are frequent, reliable, and relatively short.
-                    </p>
-                    
-                    <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-navy-700 mb-8 shadow-sm">
-                      <table className="min-w-full text-sm text-left">
-                        <thead className="bg-slate-50 dark:bg-navy-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider text-xs">
-                          <tr>
-                            <th className="p-5 border-b dark:border-navy-700">Route</th>
-                            <th className="p-5 border-b dark:border-navy-700">Flight Time</th>
-                            <th className="p-5 border-b dark:border-navy-700">Best Airport</th>
-                            <th className="p-5 border-b dark:border-navy-700">Est. Price</th>
-                          </tr>
-                        </thead>
-                        <tbody className="bg-white dark:bg-navy-800 divide-y divide-slate-100 dark:divide-navy-700">
-                          <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                            <td className="p-5 font-medium text-slate-900 dark:text-white">Seattle (SEA) → San Francisco</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">2h 05m</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">SFO or SJC (San Jose)</td>
-                            <td className="p-5 font-bold text-amber-600 dark:text-amber-400">$120 - $200</td>
-                          </tr>
-                          <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                            <td className="p-5 font-medium text-slate-900 dark:text-white">San Francisco → Los Angeles</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">1h 20m</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">BUR (Burbank) or LAX</td>
-                            <td className="p-5 font-bold text-amber-600 dark:text-amber-400">$80 - $150</td>
-                          </tr>
-                          <tr className="hover:bg-slate-50 dark:hover:bg-navy-700/50 transition-colors">
-                            <td className="p-5 font-medium text-slate-900 dark:text-white">Seattle (SEA) → Los Angeles</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">2h 45m</td>
-                            <td className="p-5 text-slate-600 dark:text-slate-400">LAX or SNA (Orange Co)</td>
-                            <td className="p-5 font-bold text-amber-600 dark:text-amber-400">$150 - $250</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
+                  <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900">
+                    <table className="w-full text-left border-collapse">
+                      <thead>
+                        <tr className="border-b border-slate-100 dark:border-slate-800">
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Route</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Flight Time</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Best Airport</th>
+                          <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Est. Price</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Seattle (SEA) → Bay Area</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">2h 05m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">SJC (San Jose)</td>
+                          <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-base">$120 - $200</td>
+                        </tr>
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Bay Area → Los Angeles</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">1h 20m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">BUR (Burbank)</td>
+                          <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-base">$80 - $150</td>
+                        </tr>
+                        <tr>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Seattle (SEA) → Los Angeles</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">2h 45m</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">LAX or SNA</td>
+                          <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-base">$150 - $250</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
 
-                  <div className="bg-amber-50 dark:bg-amber-900/10 border border-amber-100 dark:border-amber-800/30 p-6 rounded-xl mb-10">
-                    <h4 className="font-bold text-amber-800 dark:text-amber-400 mt-0 mb-3 flex items-center gap-2 text-lg">
-                      <Lightbulb className="w-5 h-5" /> Pro Tip: The Airport Cheat Codes
-                    </h4>
-                    <ul className="text-sm text-amber-900/80 dark:text-amber-100/80 mb-0 leading-relaxed space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                        <span><strong className="text-amber-900 dark:text-amber-200">In LA:</strong> Fly into <strong>Burbank (BUR)</strong> instead of LAX. It's closer to Hollywood/Downtown, has zero lines, and you'll be curbside in 5 minutes.</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                        <span><strong className="text-amber-900 dark:text-amber-200">In Bay Area:</strong> Fly into <strong>San Jose (SJC)</strong> if you are going straight to the match. Levi's Stadium is minutes away. SFO is for tourists staying in the city.</span>
-                      </li>
-                    </ul>
-                  </div>
-
-                  {/* Affiliate Block: Transport */}
-                  <div className="p-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-navy-800 dark:to-navy-900 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-6">
+                  {/* Affiliate Block: Flights */}
+                  <div className="mt-12 p-10 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                    <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
                       <div>
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">✈️ Lock In Your West Coast Flights</h4>
-                        <p className="text-slate-600 dark:text-slate-300 text-sm">Prices for SEA-LAX routes spike 3 weeks before travel. Book now.</p>
+                        <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+                          <Plane className="w-5 h-5 text-amber-500" />
+                          Secure Your West Coast Flights
+                        </h4>
+                        <p className="text-slate-500 dark:text-slate-400 text-sm">Flight prices for June 2026 are expected to surge by 40%.</p>
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <a href="https://skyscanner.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-6 rounded-xl transition-all transform hover:-translate-y-0.5 hover:shadow-lg">
-                        Compare Flights (Skyscanner) <Plane className="w-5 h-5 group-hover:-rotate-45 transition-transform" />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <a href="https://skyscanner.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-6 rounded-xl transition-all shadow-lg hover:shadow-amber-500/30 hover:-translate-y-1 text-sm">
+                        Check Skyscanner Deals <ArrowRight className="w-4 h-4" />
                       </a>
-                      <a href="https://rentalcars.com" target="_blank" rel="noopener noreferrer" className="group flex items-center justify-center gap-3 bg-white dark:bg-navy-800 border border-slate-200 dark:border-navy-600 hover:border-amber-500 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded-xl transition-all hover:shadow-md">
-                        Rent a Convertible for Hwy 1 <Car className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      <a href="https://expedia.com" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-3 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:border-amber-500 text-slate-700 dark:text-slate-200 font-bold py-4 px-6 rounded-xl transition-all hover:bg-white dark:hover:bg-slate-700 text-sm">
+                        Compare on Expedia <ExternalLink className="w-4 h-4" />
                       </a>
                     </div>
-                    <p className="text-xs text-slate-400 mt-4 text-center">We may earn a commission on bookings made through these links.</p>
+                    <p className="text-[10px] text-slate-400 mt-4 text-center uppercase tracking-widest font-medium">We may earn a commission on bookings made through these links.</p>
                   </div>
                 </div>
               </section>
 
               {/* Section 2: Accommodation Strategy */}
-              <section id="accommodation" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 text-xl font-bold">2</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Accommodation Strategy</h2>
+              <section id="accommodation" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
                 </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8">
-                    Group D features the "Tech Tax." San Francisco and Seattle have high baseline hotel costs. LA is spread out, so location is everything.
-                  </p>
-                </div>
+                
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+                  Group D cities are notoriously expensive. Location is everything—staying in the wrong neighborhood can mean a 2-hour commute to the match.
+                </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Seattle */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-amber-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-amber-600 dark:text-amber-500">Seattle</h3>
-                      <MapPin className="w-6 h-6 text-amber-500" />
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Seattle</h3>
+                      <span className="px-3 py-1 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Most Walkable</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      High Cost • Book 6 Months Out
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Book 6 Months Out</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Pioneer Square / SoDo (Walk to Lumen Field)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Best Area:</strong> Pioneer Square / Downtown (Walk to Lumen Field)</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Budget Alt:</strong> SeaTac Airport Zone (Light rail directly to stadium)
-                      </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Downtown Seattle has steep hills. Check if your hotel is uphill from the train station if you have heavy bags.
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Budget Alt:</strong> SeaTac Airport Area (Link Light Rail takes you direct to stadium)</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-amber-600 dark:text-amber-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search Seattle Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-amber-600 font-bold text-xs hover:text-amber-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search Seattle Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
 
                   {/* Bay Area */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-amber-500/30 transition-all duration-300">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-amber-600 dark:text-amber-500">SF Bay Area</h3>
-                      <MapPin className="w-6 h-6 text-amber-500" />
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">SF Bay Area</h3>
+                      <span className="px-3 py-1 bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Logistics Trap</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Very High Cost • Strategic Choice
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Strategy Required</p>
                     <ul className="space-y-4 mb-8">
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> San Jose / Santa Clara (Near Levi's Stadium)
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>The Split:</strong> Stadium is in Santa Clara (Silicon Valley), not San Francisco.</span>
                       </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Tourist Pick:</strong> Union Square / Fisherman's Wharf (SF City)
-                      </li>
-                      <li className="text-sm text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> If you stay in SF, you face a 90-minute commute to the stadium. Decide: Tourism or Football convenience?
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Recommendation:</strong> Stay in San Jose/Santa Clara for match days. Stay in SF for tourism days.</span>
                       </li>
                     </ul>
-                    <a href="https://booking.com" className="inline-flex items-center text-amber-600 dark:text-amber-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                      Search Bay Area Hotels <ArrowRight className="w-4 h-4 ml-2" />
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-amber-600 font-bold text-xs hover:text-amber-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search Bay Area Hotels <ArrowRight className="w-3 h-3" />
                     </a>
                   </div>
 
                   {/* Los Angeles */}
-                  <div className="group bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 hover:shadow-xl hover:border-amber-500/30 transition-all duration-300 md:col-span-2">
-                    <div className="flex justify-between items-start mb-4">
-                      <h3 className="text-2xl font-bold text-amber-600 dark:text-amber-500">Los Angeles</h3>
-                      <MapPin className="w-6 h-6 text-amber-500" />
+                  <div className="group p-8 bg-white dark:bg-slate-900 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-amber-500/30 dark:hover:border-amber-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="flex justify-between items-start mb-6">
+                      <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Los Angeles</h3>
+                      <span className="px-3 py-1 bg-purple-50 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Extreme Traffic</span>
                     </div>
-                    <div className="inline-block px-3 py-1 rounded-full bg-amber-50 dark:bg-amber-900/20 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider mb-6">
-                      Varies • Traffic is Key
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <ul className="space-y-4">
-                        <li className="text-sm text-slate-600 dark:text-slate-300">
-                          <strong className="text-slate-900 dark:text-white block mb-1">Best Area:</strong> Culver City or South Bay (Manhattan Beach) - Close to SoFi.
-                        </li>
-                        <li className="text-sm text-slate-600 dark:text-slate-300">
-                          <strong className="text-slate-900 dark:text-white block mb-1">Tourist Pick:</strong> West Hollywood / Santa Monica.
-                        </li>
-                      </ul>
-                      <ul className="space-y-4">
-                        <li className="text-sm text-slate-600 dark:text-slate-300">
-                          <strong className="text-slate-900 dark:text-white block mb-1">Warning:</strong> Do NOT stay in "Downtown LA" thinking it's central. It's far from the beach and traffic to SoFi can be heavy. Also, avoid staying <em>at</em> LAX unless flying out early.
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="mt-8">
-                      <a href="https://booking.com" className="inline-flex items-center text-amber-600 dark:text-amber-400 font-bold text-sm hover:underline decoration-2 underline-offset-4">
-                        Search LA Hotels <ArrowRight className="w-4 h-4 ml-2" />
-                      </a>
-                    </div>
+                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-6">Book 10 Months Out</p>
+                    <ul className="space-y-4 mb-8">
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Best Area:</strong> Culver City / Marina Del Rey (Close to SoFi Stadium)</span>
+                      </li>
+                      <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+                        <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                        <span><strong>Avoid:</strong> Staying in Downtown LA (DTLA) if you want beach vibes. It's far from the ocean.</span>
+                      </li>
+                    </ul>
+                    <a href="https://booking.com" className="inline-flex items-center gap-2 text-amber-600 font-bold text-xs hover:text-amber-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+                      Search LA Hotels <ArrowRight className="w-3 h-3" />
+                    </a>
                   </div>
                 </div>
               </section>
 
               {/* Section 3: Budget Breakdown */}
-              <section id="budget" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 text-xl font-bold">3</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Group D Budget Breakdown</h2>
-                </div>
-
-                <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
-                  <p className="text-slate-600 dark:text-slate-300 text-lg leading-8">
-                    Estimates are per person for a 12-day trip covering 3 group matches.
-                  </p>
+              <section id="budget" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group D Budget Breakdown</h2>
                 </div>
                 
-                <div className="overflow-hidden rounded-2xl border border-slate-200 dark:border-navy-700 mb-12 shadow-sm">
-                  <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-navy-700">
-                    {/* Economy */}
-                    <div className="bg-white dark:bg-navy-800 p-8 text-center">
-                      <div className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Economy Strategy</div>
-                      <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-2">$3,800</div>
-                      <p className="text-sm text-slate-500 mb-0 px-4">Hostels/Motels, public transit only, street tacos, Cat 3 tickets.</p>
-                    </div>
-                    
-                    {/* Mid-Range */}
-                    <div className="bg-amber-50/50 dark:bg-amber-900/10 p-8 text-center relative">
-                      <div className="absolute top-0 left-0 w-full h-1 bg-amber-500"></div>
-                      <div className="text-sm font-bold text-amber-600 dark:text-amber-400 uppercase tracking-widest mb-4">Mid-Range Strategy</div>
-                      <div className="text-4xl font-extrabold text-amber-600 dark:text-amber-400 mb-2">$6,500</div>
-                      <p className="text-sm text-slate-600 dark:text-slate-400 mb-0 px-4">3-star hotels, Uber/Lyft mix, casual dining, Cat 2 tickets.</p>
-                    </div>
-                    
-                    {/* Premium */}
-                    <div className="bg-white dark:bg-navy-800 p-8 text-center">
-                      <div className="text-sm font-bold text-slate-500 uppercase tracking-widest mb-4">Premium Experience</div>
-                      <div className="text-4xl font-extrabold text-slate-900 dark:text-white mb-2">$12,000+</div>
-                      <p className="text-sm text-slate-500 mb-0 px-4">Beachfront hotels, rental car, fine dining (Nobu/Providence), VIP hospitality.</p>
-                    </div>
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose">
+                  Estimates are per person for a 12-day trip covering 3 group matches. Does not include international arrival flights.
+                </p>
+                
+                <div className="grid md:grid-cols-3 gap-6 mb-16">
+                  {/* Economy */}
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Economy Strategy</div>
+                    <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$3,800</div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Hostels, public transit only (no Ubers), street food, cheapest match tickets.</p>
+                  </div>
+                  
+                  {/* Mid-Range */}
+                  <div className="p-8 rounded-3xl border border-amber-100 dark:border-amber-900 bg-amber-50 dark:bg-amber-900/10 relative overflow-hidden transform md:-translate-y-4 shadow-xl shadow-amber-900/5">
+                    <div className="absolute top-0 right-0 bg-amber-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl uppercase tracking-widest">Recommended</div>
+                    <div className="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-widest mb-4">Mid-Range Strategy</div>
+                    <div className="text-4xl font-bold text-amber-600 dark:text-amber-400 mb-4 tracking-tighter">$6,200</div>
+                    <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">3-star hotels, mix of Uber/Transit, domestic flights, Cat 2 tickets.</p>
+                  </div>
+                  
+                  {/* Premium */}
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 hover:scale-[1.02] transition-transform duration-300">
+                    <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Premium Experience</div>
+                    <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$11,000+</div>
+                    <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Santa Monica beachfront, VIP stadium access, rental convertible, fine dining.</p>
                   </div>
                 </div>
 
-                <div className="bg-white dark:bg-navy-800 rounded-2xl p-8 border border-slate-200 dark:border-navy-700 mb-10">
-                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                    <DollarSign className="w-6 h-6 text-amber-500" />
+                <div className="bg-white dark:bg-slate-900 rounded-[2.5rem] p-10 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3 tracking-tight">
+                    <CreditCard className="w-6 h-6 text-amber-500" />
                     Money-Saving Hacks for Group D
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">The "CalTrain" Trick (SF):</strong> Instead of a $100 Uber to Levi's Stadium, take the CalTrain from SF to Mountain View, then the VTA Light Rail. It costs ~$15.
-                      </span>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs flex-shrink-0">1</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">Burbank (BUR) over LAX:</strong> Flights into Burbank are often cheaper and save you $50+ in Uber fares because it's closer to the action.
+                      </p>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">Eat Asian Food:</strong> Seattle and the Bay Area have the best Asian food in the hemisphere. Dim Sum, Ramen, and Pho are often cheaper and better than "New American" bistros.
-                      </span>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs flex-shrink-0">2</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">In-N-Out Burger:</strong> The West Coast's legendary burger chain is not just delicious; it's incredibly cheap ($5 for a meal). A budget savior.
+                      </p>
                     </li>
-                    <li className="flex items-start gap-3">
-                      <CheckCircle className="w-5 h-5 text-amber-500 mt-0.5 flex-shrink-0" />
-                      <span className="text-slate-600 dark:text-slate-300">
-                        <strong className="text-slate-900 dark:text-white">Free Views:</strong> Skip the Space Needle ($35+). Go to Kerry Park for the iconic skyline view for free. Skip the Hollywood Sign tour. Hike to it for free.
-                      </span>
+                    <li className="flex items-start gap-4">
+                      <div className="w-8 h-8 rounded-full bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center text-amber-600 dark:text-amber-400 font-bold text-xs flex-shrink-0">3</div>
+                      <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                        <strong className="text-slate-900 dark:text-white font-bold">Caltrain in SF:</strong> Taking an Uber from SF to Levi's Stadium can cost $150+ on game day. Caltrain is $10.
+                      </p>
                     </li>
                   </ul>
                 </div>
               </section>
 
-              {/* Section 4: Insider Tips */}
-              <section id="insider" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 text-xl font-bold">4</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Insider Knowledge: West Coast Secrets</h2>
+              {/* Section 4: Visa & Entry Requirements */}
+              <section id="visas" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
                 </div>
+                
+                <div className="grid md:grid-cols-1 gap-8">
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                    <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                      <img src="https://flagcdn.com/us.svg" className="w-8 h-auto object-cover rounded shadow-sm" alt="USA" />
+                      Entering USA
+                    </h3>
+                    <ul className="space-y-6">
+                      <li className="text-sm text-slate-600 dark:text-slate-300">
+                        <strong className="block text-slate-900 dark:text-white mb-1 font-bold">ESTA</strong>
+                        Required for Visa Waiver Program countries. Apply at least 72 hours in advance.
+                      </li>
+                      <li className="text-sm text-slate-600 dark:text-slate-300">
+                        <strong className="block text-slate-900 dark:text-white mb-1 font-bold">Strict Customs</strong>
+                        California has strict agriculture laws. Do not bring fresh fruit, meat, or seeds into the state, even from other parts of the US.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
 
+              {/* Section 5: Insider Tips */}
+              <section id="insider" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
+                </div>
+                
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">❄️</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The "Mark Twain" Rule</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      "The coldest winter I ever spent was a summer in San Francisco." Do not pack just shorts. SF in June/July is foggy and cold (15°C/60°F) due to "Karl the Fog." Bring a hoodie.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-xl mb-6">🌫️</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">June Gloom is Real</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      Los Angeles in June is often cloudy and cool in the mornings ("June Gloom"). Don't expect perfect beach weather until the afternoon.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">☀️</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The Levi's Sun Trap</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Levi's Stadium (Santa Clara) has a design flaw: the east side gets blasted by direct sun. It can be 35°C (95°F). Bring a hat, sunglasses, and sunscreen if you are not in a suite.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-500/10 flex items-center justify-center text-xl mb-6">☀️</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">The Levi's Stadium Sun</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      Levi's Stadium has a notorious design flaw: the East side gets blasted by intense sun. Bring a hat and sunglasses, or pay extra for the shaded West side.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">🚗</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The "405" Reality</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      In LA, distance is measured in time, not miles. "10 miles" can mean 1 hour. Always pad your travel time by 50% on match days.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 flex items-center justify-center text-xl mb-6">☕</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Seattle Coffee Culture</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      Skip the big chains. Seattle has the best independent coffee in America. Look for "roasteries" in Capitol Hill or Pioneer Square.
                     </p>
                   </div>
                   
-                  <div className="bg-white dark:bg-navy-800 p-8 rounded-2xl border border-slate-200 dark:border-navy-700 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-navy-700 flex items-center justify-center mb-4 text-xl">🚢</div>
-                    <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3">The Seattle Ferry Commute</h3>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      For a magical experience, stay in Bainbridge Island or Bremerton and take the ferry to downtown Seattle for the match. The stadium is a short walk from the ferry terminal.
+                  <div className="bg-white dark:bg-slate-900 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                    <div className="w-10 h-10 rounded-xl bg-red-50 dark:bg-red-500/10 flex items-center justify-center text-xl mb-6">🚗</div>
+                    <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">The 405 Freeway</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                      In LA, "10 miles" can take 90 minutes. Always check Google Maps/Waze before leaving. Traffic is a geological force here.
                     </p>
                   </div>
                 </div>
               </section>
 
-              {/* Section 5: Essential Gear */}
-              <section id="packing" className="mb-24 scroll-mt-32">
-                <div className="flex items-center gap-4 mb-8">
-                  <span className="flex items-center justify-center w-12 h-12 rounded-xl bg-amber-100 text-amber-600 dark:bg-amber-900/50 dark:text-amber-400 text-xl font-bold">5</span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Group D Packing Essentials</h2>
+              {/* Section 6: Essential Gear */}
+              <section id="packing" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group D Packing Essentials</h2>
                 </div>
-
+                
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">🧥</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Windbreaker</h4>
-                    <p className="text-xs text-slate-500 mb-4">Mandatory for SF & Seattle nights.</p>
-                    <a href="#" className="text-amber-600 text-xs font-bold uppercase tracking-wider hover:text-amber-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧥</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Light Jacket</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">SF summers are cold.</p>
+                    <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">🕶️</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Polarized Shades</h4>
-                    <p className="text-xs text-slate-500 mb-4">The California sun glare is real.</p>
-                    <a href="#" className="text-amber-600 text-xs font-bold uppercase tracking-wider hover:text-amber-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🕶️</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Sunglasses</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Essential for CA.</p>
+                    <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">🔋</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Power Bank</h4>
-                    <p className="text-xs text-slate-500 mb-4">Long travel days drain batteries.</p>
-                    <a href="#" className="text-amber-600 text-xs font-bold uppercase tracking-wider hover:text-amber-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long travel days.</p>
+                    <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="text-center p-6 bg-white dark:bg-navy-800 rounded-2xl border border-slate-200 dark:border-navy-700 hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                    <div className="text-4xl mb-4">🧴</div>
-                    <h4 className="font-bold text-slate-900 dark:text-white mb-2">Sunscreen</h4>
-                    <p className="text-xs text-slate-500 mb-4">Levi's Stadium offers zero shade.</p>
-                    <a href="#" className="text-amber-600 text-xs font-bold uppercase tracking-wider hover:text-amber-500">Shop Now</a>
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-900 hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
+                    <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧴</div>
+                    <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Sunscreen</h4>
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Burn time: 15 mins.</p>
+                    <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
                   </div>
                 </div>
               </section>
 
-              {/* Section 6: FAQ */}
-              <section id="faq" className="mb-24 scroll-mt-32">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-10">Frequently Asked Questions</h2>
-                <div className="space-y-1">
+              {/* Section 7: FAQ */}
+              <section id="faq" className="scroll-mt-32">
+                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 tracking-tight">Frequently Asked Questions</h2>
+                <div className="space-y-2">
                   <AccordionItem 
-                    question="Is it better to drive or fly between cities?"
-                    answer={<span><strong className="text-slate-900 dark:text-white">Fly.</strong> Driving from Seattle to SF takes 13+ hours. SF to LA takes 6-7 hours on the boring I-5, or 10+ hours on the scenic Hwy 1. Unless you are making a road trip vacation out of it, fly.</span>}
+                    question="Can I take a train from Seattle to LA?"
+                    answer={<>Technically yes, the Amtrak Coast Starlight exists. But it takes <strong>35 hours</strong>. Unless you are a train enthusiast, fly.</>}
                     isOpen={openFaqIndex === 0}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
                   />
                   <AccordionItem 
-                    question="Is public transport safe in these cities?"
-                    answer="Yes, but with caveats. Seattle's Light Rail is generally safe and clean. SF's BART is efficient but can be gritty; stay alert. LA's Metro is improving but ride-share is often preferred at night."
+                    question="Is San Francisco safe?"
+                    answer={<>Like any major city, it has issues. Avoid the Tenderloin neighborhood and parts of SoMa late at night. Tourist areas like Fisherman's Wharf and Union Square are heavily patrolled, but stay alert.</>}
                     isOpen={openFaqIndex === 1}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
                   />
                   <AccordionItem 
-                    question="Can I visit Vancouver while in Seattle?"
-                    answer="Absolutely. Vancouver (Canada) is a 3-hour drive or a beautiful 4-hour train ride (Amtrak Cascades) from Seattle. Remember you will need your passport to cross the border."
+                    question="Do I need a car in Seattle?"
+                    answer={<>No. The Link Light Rail connects the airport, downtown, and the stadium perfectly. Parking in Seattle is expensive and unnecessary.</>}
                     isOpen={openFaqIndex === 2}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
                   />
                   <AccordionItem 
-                    question="What is the dress code for LA nightlife?"
-                    answer='LA is "upscale casual." You can wear designer sneakers to almost any club, but shorts are usually a no-go for men at night.'
+                    question="What is the 'Golden Gate' weather rule?"
+                    answer={<>"The coldest winter I ever spent was a summer in San Francisco." Mark Twain might not have said it, but it's true. It can be 55°F (12°C) and foggy in August. Bring layers.</>}
                     isOpen={openFaqIndex === 3}
                     onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
                   />
@@ -626,21 +642,21 @@ export default function GroupDPage() {
               </section>
 
               {/* Final CTA */}
-              <div className="bg-gradient-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 md:p-16 text-center relative overflow-hidden shadow-2xl">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
-                
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 relative z-10">Ready for the Golden Coast?</h2>
-                <p className="text-slate-300 mb-10 text-lg max-w-2xl mx-auto leading-relaxed relative z-10">
-                  From the Space Needle to the Hollywood Sign, Group D is the adventure of a lifetime. Secure your logistics now.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                  <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center gap-2 bg-amber-500 hover:bg-amber-600 text-white font-bold py-4 px-8 rounded-xl transition-all transform hover:scale-105 shadow-lg hover:shadow-amber-500/25">
-                    Explore Host Cities <ArrowRight className="w-5 h-5" />
-                  </Link>
-                  <Link to="/planner" className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all border border-white/20">
-                    Start My Trip Plan
-                  </Link>
+              <div className="relative overflow-hidden rounded-[3rem] bg-slate-900 text-white p-12 md:p-20 text-center shadow-2xl shadow-slate-900/20">
+                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-amber-500/20 via-slate-900 to-slate-900"></div>
+                <div className="relative z-10 max-w-3xl mx-auto">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready for the West Coast?</h2>
+                  <p className="text-slate-300 mb-12 text-lg leading-relaxed font-light">
+                    From the Space Needle to the Hollywood Sign, Group D is a movie waiting to happen. Don't get stuck in traffic—plan ahead.
+                  </p>
+                  <div className="flex flex-col sm:flex-row justify-center gap-4">
+                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-amber-500/30 text-base">
+                      Explore All Host Cities
+                    </Link>
+                    <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
+                      Start My Trip Plan
+                    </Link>
+                  </div>
                 </div>
               </div>
 
