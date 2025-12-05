@@ -124,6 +124,30 @@ export default function GroupGPage() {
                 "acceptedAnswer": { "@type": "Answer", "text": "Vancouver and Seattle will be mild (65-75°F / 18-24°C) and potentially rainy. Los Angeles will be sunny and warm (75-85°F / 24-29°C). Pack layers." }
               }
             ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": siteUrl
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Groups",
+                "item": `${siteUrl}/world-cup-2026-groups`
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Group G",
+                "item": `${siteUrl}${pageUrl}`
+              }
+            ]
           }
         ]}
       />

@@ -48,16 +48,16 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-slate-900 text-white">
-      <div className="absolute top-0 left-0 w-full h-px bg-slate-800"></div>
+    <footer className="bg-[var(--footer-bg-light)] dark:bg-[var(--footer-bg-dark)] text-slate-900 dark:text-white transition-colors duration-500">
+      <div className="absolute top-0 left-0 w-full h-px bg-slate-200 dark:bg-slate-800"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Minimal Newsletter Section */}
         <div className="text-center mb-16">
-          <h3 className="font-space font-semibold text-2xl md:text-3xl mb-4 text-white">
+          <h3 className="font-space font-semibold text-2xl md:text-3xl mb-4 text-slate-900 dark:text-white">
             Don't Miss Your World Cup 2026 Journey
           </h3>
-          <p className="font-inter text-slate-400 mb-8 max-w-2xl mx-auto">Get exclusive stadium guides, host city travel tips, real-time safety alerts, hotel deals, and expert planning strategies—everything you need delivered weekly to your inbox.</p>
+          <p className="font-inter text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">Get exclusive stadium guides, host city travel tips, real-time safety alerts, hotel deals, and expert planning strategies—everything you need delivered weekly to your inbox.</p>
           
           <div className="max-w-md mx-auto">
             <form onSubmit={handleSubscribe} data-readdy-form className="flex flex-col sm:flex-row gap-3">
@@ -69,7 +69,7 @@ export function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Your email address"
-                  className="w-full pl-12 pr-4 py-3 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-slate-600"
+                  className="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-slate-600 transition-colors duration-300"
                   required
                   disabled={isSubmitting}
                 />
@@ -77,7 +77,7 @@ export function Footer() {
               <button 
                 type="submit"
                 disabled={isSubmitting || !email}
-                className="px-6 py-3 bg-slate-700 hover:bg-slate-600 text-white rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
+                className="px-6 py-3 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
               >
                 {isSubmitting ? 'Subscribing...' : 'Get Free Updates'}
               </button>
@@ -110,10 +110,10 @@ export function Footer() {
                 alt="Stadiumport Logo"
                 width={400}
                 height={100}
-                className="h-8 w-auto object-contain"
+                className="h-8 w-auto object-contain dark:invert-0 invert"
               />
             </div>
-            <p className="text-slate-300 mb-8 text-sm leading-relaxed font-inter">
+            <p className="text-slate-600 dark:text-slate-300 mb-8 text-sm leading-relaxed font-inter">
               Your trusted guide to World Cup 2026 across the USA, Mexico, and Canada. Expert travel advice for all 16 host cities, from kickoff to final whistle.
             </p>
             
@@ -128,10 +128,10 @@ export function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
-                  className="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 flex items-center justify-center transition-colors duration-200"
+                  className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center justify-center transition-colors duration-200"
                   aria-label={social.label}
                 >
-                  <i className={`${social.icon} text-slate-400 hover:text-white text-sm`}></i>
+                  <i className={`${social.icon} text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm`}></i>
                 </a>
               ))}
             </div>
@@ -139,16 +139,17 @@ export function Footer() {
 
           {/* Minimal Destinations */}
           <div>
-            <h3 className="font-medium mb-4 text-slate-200">Destinations</h3>
+            <h3 className="font-medium mb-4 text-slate-900 dark:text-slate-200">Destinations</h3>
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/world-cup-2026-host-cities', label: 'All Host Cities' },
-                { to: '/world-cup-2026-stadiums', label: 'All Stadiums' }
+                { to: '/world-cup-2026-stadiums', label: 'All Stadiums' },
+                { to: '/world-cup-2026-groups', label: 'All Groups' }
               ].map((item) => (
                 <li key={item.to}>
                   <Link 
                     to={item.to} 
-                    className="text-slate-300 hover:text-white transition-colors duration-200"
+                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -159,7 +160,7 @@ export function Footer() {
 
           {/* Minimal Tools & Tips */}
           <div>
-            <h3 className="font-medium mb-4 text-slate-200">Tools & Tips</h3>
+            <h3 className="font-medium mb-4 text-slate-900 dark:text-slate-200">Tools & Tips</h3>
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/world-cup-2026-travel-tips', label: 'Travel Tips' },
@@ -169,7 +170,7 @@ export function Footer() {
                 <li key={item.to}>
                   <Link 
                     to={item.to} 
-                    className="text-slate-300 hover:text-white transition-colors duration-200"
+                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -182,9 +183,9 @@ export function Footer() {
 
 
         {/* Minimal Bottom Section */}
-        <div className="border-t border-slate-800 pt-8">
+        <div className="border-t border-slate-200 dark:border-slate-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-400 mb-4 md:mb-0">
+            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400 mb-4 md:mb-0">
               {[
                 { to: '/about', label: 'About Us' },
                 { to: '/contact', label: 'Contact Us' },
@@ -197,7 +198,7 @@ export function Footer() {
                   <Link 
                     key={item.to}
                     to={item.to} 
-                    className="text-slate-300 hover:text-white transition-colors duration-200"
+                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
                   >
                   {item.label}
                 </Link>

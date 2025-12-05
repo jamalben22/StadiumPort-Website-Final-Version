@@ -1,5 +1,4 @@
-
-import { useNavigate, type NavigateFunction } from 'react-router-dom'
+import { useNavigate, useLocation, type NavigateFunction } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom'
 import { useEffect } from 'react'
 import routes from './config'
@@ -20,7 +19,13 @@ export const navigatePromise = new Promise<NavigateFunction>((resolve) => {
 export function AppRoutes() {
   try {
     const element = useRoutes(routes)
-    const navigate = useNavigate() // Always call useNavigate at the top level
+    const navigate = useNavigate()
+    const location = useLocation()
+
+    // Scroll to top instantly whenever the path changes
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [location.pathname])
     
     // Set up navigation in useEffect
     useEffect(() => {
