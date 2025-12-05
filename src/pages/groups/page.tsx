@@ -252,12 +252,15 @@ export default function GroupsSchedulePage() {
                 </motion.p>
 
                 <div className="flex flex-wrap justify-center gap-4">
-                  <a href="#groups-grid" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2">
-                    View All Groups <ArrowRight size={18} />
-                  </a>
-                  <a href="#faq-section" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold transition-all backdrop-blur-md border border-white/10">
-                    Tournament FAQs
-                  </a>
+                  <Link to="/world-cup-2026-travel-tips" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2">
+                    Travel Tips <ArrowRight size={18} />
+                  </Link>
+                  <Link to="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
+                     Predictor Game <Trophy size={18} />
+                  </Link>
+                  <Link to="/world-cup-2026-safety-guide" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold transition-all backdrop-blur-md border border-white/10">
+                    Safety Guide
+                  </Link>
                 </div>
             </div>
         </section>

@@ -69,7 +69,7 @@ export default function TransportationSafetyGuideArticlePage() {
                 Home
               </Link>
               <span class="mx-2">›</span>
-              <Link class="hover:underline" to="/safety-guide">
+              <Link class="hover:underline" to="/world-cup-2026-safety-guide">
                 safety guide
               </Link>
               <span class="mx-2">›</span>

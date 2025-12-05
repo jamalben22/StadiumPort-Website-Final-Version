@@ -164,7 +164,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               {[
                 { to: '/world-cup-2026-travel-tips', label: 'Travel Tips' },
-                { to: '/safety-guide', label: 'Safety Guide' },
+                { to: '/world-cup-2026-safety-guide', label: 'Safety Guide' },
                 { to: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' }
               ].map((item) => (
                 <li key={item.to}>

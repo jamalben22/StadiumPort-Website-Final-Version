@@ -57,7 +57,7 @@ function seed() {
     '/world-cup-2026-stadiums',
     '/travel-guides',
     '/guides',
-    '/safety-guide',
+    '/world-cup-2026-safety-guide',
     '/luxury-travel',
     '/budget-guides',
     '/packing-lists',
@@ -129,7 +129,7 @@ function buildSitemapXml(urls, siteUrl) {
     let priority = 0.6
     if (u === '/') priority = 1.0
     else if (u.startsWith('/world-cup-2026-host-cities/') || u.startsWith('/world-cup-2026-stadiums/')) priority = 0.8
-    else if (['/world-cup-2026-host-cities','/world-cup-2026-stadiums','/travel-guides','/guides','/safety-guide','/luxury-travel','/budget-guides','/packing-lists','/travel-routes','/world-cup-2026-travel-tips','/city-comparisons'].includes(u)) priority = 0.7
+    else if (['/world-cup-2026-host-cities','/world-cup-2026-stadiums','/travel-guides','/guides','/world-cup-2026-safety-guide','/luxury-travel','/budget-guides','/packing-lists','/travel-routes','/world-cup-2026-travel-tips','/city-comparisons'].includes(u)) priority = 0.7
     lines.push('<url>')
     lines.push(`<loc>${xmlEscape(loc)}</loc>`)
     lines.push(`<lastmod>${now}</lastmod>`)

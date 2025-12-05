@@ -1,4 +1,4 @@
-﻿import { Header } from '../../components/feature/Header'
+import { Header } from '../../components/feature/Header'
 import { Footer } from '../../components/feature/Footer'
 import { Link } from 'react-router-dom'
 import { OptimizedImage } from '../../components/base/OptimizedImage'
@@ -51,7 +51,7 @@ function GuidesPageOriginal() {
             <nav className="mt-2 text-sm text-slate-700 dark:text-slate-300">
               <Link to="/" className="hover:underline">Home</Link>
               <span className="mx-2">›</span>
-              <Link to="/safety-guide" className="hover:underline">safety guide</Link>
+              <Link to="/world-cup-2026-safety-guide" className="hover:underline">safety guide</Link>
               <span className="mx-2">›</span>
               <span className="hover:underline">{title}</span>
             </nav>

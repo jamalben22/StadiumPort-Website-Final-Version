@@ -50,7 +50,7 @@ const routes = [
   // Core guide hubs
   '/travel-guides',
   '/guides',
-  '/safety-guide',
+  '/world-cup-2026-safety-guide',
   '/luxury-travel',
   '/budget-guides',
   '/packing-lists',
@@ -62,12 +62,12 @@ const routes = [
 // Optional: include article slugs discovered by search agent
 const extraArticles = [
   // Safety Guide
-  '/safety-guide/world-cup-2026-scams-how-to-avoid-ticket-travel-fraud',
-  '/safety-guide/stadium-safety-at-world-cup-2026-security-rules-what-to-expect',
-  '/safety-guide/transportation-safety-getting-around-world-cup-2026-host-cities',
-  '/safety-guide/world-cup-2026-emergency-contacts-resources-guide',
-  '/safety-guide/solo-travel-safety-guide-attending-world-cup-2026-alone',
-  '/safety-guide/family-safety-guide-taking-kids-to-world-cup-2026',
+  '/world-cup-2026-safety-guide/world-cup-2026-scams-how-to-avoid-ticket-travel-fraud',
+  '/world-cup-2026-safety-guide/stadium-safety-at-world-cup-2026-security-rules-what-to-expect',
+  '/world-cup-2026-safety-guide/transportation-safety-getting-around-world-cup-2026-host-cities',
+  '/world-cup-2026-safety-guide/world-cup-2026-emergency-contacts-resources-guide',
+  '/world-cup-2026-safety-guide/solo-travel-safety-guide-attending-world-cup-2026-alone',
+  '/world-cup-2026-safety-guide/family-safety-guide-taking-kids-to-world-cup-2026',
   // Travel Tips
   '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-wifi',
   '/world-cup-2026-travel-tips/best-time-to-book-world-cup-2026-tickets-flights-and-hotels',
