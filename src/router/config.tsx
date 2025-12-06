@@ -161,8 +161,12 @@ const routes: RouteObject[] = [
     element: <Navigate to="/2026-world-cup-group-f-travel-guide" replace />
   },
   {
-    path: '/groups/group-g',
+    path: '/2026-world-cup-group-g-travel-guide',
     element: <GroupGPage />
+  },
+  {
+    path: '/groups/group-g',
+    element: <Navigate to="/2026-world-cup-group-g-travel-guide" replace />
   },
   {
     path: '/groups/group-h',
