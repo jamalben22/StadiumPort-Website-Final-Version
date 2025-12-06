@@ -178,6 +178,13 @@ const sendEmail = async (options: any) => {
   const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
   const SENDER_NAME = process.env.SENDER_NAME || 'Stadiumport';
   
+  // Check for SMTP credentials
+  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    console.warn('⚠️ SMTP credentials missing. Email sending skipped (Mock Mode).');
+    console.log('Would have sent email to:', options.to);
+    return { success: true, messageId: 'mock-id-' + Date.now() };
+  }
+
   try {
     const info = await transporter.sendMail({
       from: `"${SENDER_NAME}" <${SENDER_EMAIL}>`,

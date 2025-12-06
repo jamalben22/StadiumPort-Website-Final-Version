@@ -19,6 +19,9 @@ export default defineConfig({
       configureServer(server) {
         server.middlewares.use(apiMiddleware);
       },
+      configurePreviewServer(server) {
+        server.middlewares.use(apiMiddleware);
+      },
     },
     react(),
     AutoImport({
