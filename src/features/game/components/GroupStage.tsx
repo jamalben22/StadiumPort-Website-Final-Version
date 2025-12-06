@@ -18,7 +18,6 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { useGame } from '../context/GameContext';
 import { TEAMS, TEAM_MAP, GROUPS } from '../lib/wc26-data';
-import { motion } from 'framer-motion';
 import { soundManager } from '../utils/SoundManager';
 import { RulesCard } from './RulesCard';
 import { SEO } from '../../../components/common/SEO';
@@ -105,6 +104,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
     transform: CSS.Transform.toString(transform),
     transition,
     zIndex: isDragging ? 50 : 1,
+    willChange: isDragging ? 'transform, opacity' : 'transform',
   }), [transform, transition, isDragging]);
 
   const status = useMemo(() => getStatusStyles(index), [index]);

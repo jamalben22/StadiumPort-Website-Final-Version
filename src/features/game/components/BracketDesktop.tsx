@@ -215,36 +215,16 @@ export const BracketDesktop = React.memo(({
 });
 
 const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPicks, totalHeight }: any) => {
-  return (
-    <svg 
-        className="absolute inset-0 w-full h-full pointer-events-none z-0" 
-        viewBox={`0 0 100 ${Math.max(totalHeight + 100, 800)}`}
-        preserveAspectRatio="none"
-    >
-        <defs>
-          {/* Neon Glow Filter */}
-          <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-
-          {/* Live Gradient: Gold to Transparent */}
-          <linearGradient id="gold-beam" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FBBF24" stopOpacity="1" />
-            <stop offset="50%" stopColor="#D97706" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-
-        {ROUNDS.slice(0, 4).map((roundId, rIndex) => {
+  
+  const connectionPaths = useMemo(() => {
+    const paths: JSX.Element[] = [];
+    
+    ROUNDS.slice(0, 4).forEach((roundId, rIndex) => {
         const currentMatches = matchesByRound[roundId] || [];
         
-        return currentMatches.map((match: Match) => {
+        currentMatches.forEach((match: Match) => {
             const nextMatchId = match.nextMatchId;
-            if (!nextMatchId) return null;
+            if (!nextMatchId) return;
             
             // Get positions
             const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50; // +50 for top padding
@@ -262,7 +242,7 @@ const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPick
             
             const isCompleted = !!knockoutPicks[match.id];
             
-            return (
+            paths.push(
               <g key={`path-group-${match.id}`}>
                 {/* 1. Base Track (Always visible, faint) */}
                 <path
@@ -288,7 +268,36 @@ const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPick
               </g>
             );
         });
-        })}
+    });
+    return paths;
+  }, [matchesByRound, positions, knockoutPicks]);
+
+  return (
+    <svg 
+        className="absolute inset-0 w-full h-full pointer-events-none z-0" 
+        viewBox={`0 0 100 ${Math.max(totalHeight + 100, 800)}`}
+        preserveAspectRatio="none"
+        style={{ willChange: 'transform' }}
+    >
+        <defs>
+          {/* Neon Glow Filter */}
+          <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
+            <feMerge>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+
+          {/* Live Gradient: Gold to Transparent */}
+          <linearGradient id="gold-beam" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#FBBF24" stopOpacity="1" />
+            <stop offset="50%" stopColor="#D97706" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
+          </linearGradient>
+        </defs>
+
+        {connectionPaths}
     </svg>
   );
 });
