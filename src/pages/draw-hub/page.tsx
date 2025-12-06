@@ -204,7 +204,7 @@ const groupsData = [
       '💵 Estimated base cost: $1,200-1,600 for all group matches',
       '⭐ Best base camp: Houston (central between all four cities)'
     ],
-    link: '/groups/group-h'
+    link: '/2026-world-cup-group-h-travel-guide'
   },
   {
     id: 'I',
@@ -228,7 +228,7 @@ const groupsData = [
       '💵 Estimated base cost: $1,300-1,700 for all group matches',
       '⭐ Best base camp: New York City (ultimate connectivity)'
     ],
-    link: '/groups/group-i'
+    link: '/2026-world-cup-group-i-travel-guide'
   },
   {
     id: 'J',
@@ -251,7 +251,7 @@ const groupsData = [
       '💵 Estimated base cost: $1,400-1,900 for all group matches',
       '⭐ Best base camp: Dallas (central hub, lower hotel costs than SF or Atlanta)'
     ],
-    link: '/groups/group-j'
+    link: '/2026-world-cup-group-j-travel-guide'
   },
   {
     id: 'K',

@@ -14,7 +14,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 export default function GroupJPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/groups/group-j';
+  const pageUrl = '/2026-world-cup-group-j-travel-guide';
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">

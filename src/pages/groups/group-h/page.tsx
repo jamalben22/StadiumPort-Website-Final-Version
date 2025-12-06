@@ -38,7 +38,7 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
 
 export default function GroupHPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/groups/group-h';
+  const pageUrl = '/2026-world-cup-group-h-travel-guide';
   const [activeSection, setActiveSection] = useState('intro');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
