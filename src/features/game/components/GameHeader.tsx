@@ -23,9 +23,9 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
       <div className="flex items-center gap-3 pointer-events-auto">
          {/* Logo / Brand */}
          <img 
-           src="/images/Logos/Mobile Header Logo 180 x 180 px.svg" 
+           src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg" 
            alt="Stadiumport" 
-           className="h-8 w-auto object-contain invert" 
+           className="h-8 w-auto object-contain" 
          />
       </div>
 
