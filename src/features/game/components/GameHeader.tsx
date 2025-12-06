@@ -21,12 +21,12 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
   return (
     <header className="absolute top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-4 pointer-events-none bg-gradient-to-b from-black/80 to-transparent">
       <div className="flex items-center gap-3 pointer-events-auto">
-         {/* Logo / Brand */}
-         <img 
-           src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg" 
-           alt="Stadiumport" 
-           className="h-8 w-auto object-contain" 
-         />
+        {/* Logo / Brand */}
+        <img 
+          src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg" 
+          alt="Stadiumport" 
+          className="h-8 w-auto object-contain" 
+        />
       </div>
 
       <button 
