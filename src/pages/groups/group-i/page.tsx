@@ -14,7 +14,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 export default function GroupIPage() {
   const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/world-cup-2026-groups/group-i';
+  const pageUrl = '/2026-world-cup-group-i-travel-guide';
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
