@@ -193,21 +193,22 @@ const routes: RouteObject[] = [
     element: <Navigate to="/2026-world-cup-group-j-travel-guide" replace />
   },
   {
-    path: '/groups/group-k',
+    path: '/2026-world-cup-group-k-travel-guide',
     element: <GroupKPage />
   },
   {
-    path: '/groups/group-l',
+    path: '/groups/group-k',
+    element: <Navigate to="/2026-world-cup-group-k-travel-guide" replace />
+  },
+  {
+    path: '/2026-world-cup-group-l-travel-guide',
     element: <GroupLPage />
   },
   {
-    path: '/group-l-travel-guide',
-    element: <Navigate to="/groups/group-l" replace />
+    path: '/groups/group-l',
+    element: <Navigate to="/2026-world-cup-group-l-travel-guide" replace />
   },
-  {
-    path: '/group-k-travel-guide',
-    element: <Navigate to="/groups/group-k" replace />
-  },
+
   {
     path: '/group-j-travel-guide',
     element: <Navigate to="/groups/group-j" replace />

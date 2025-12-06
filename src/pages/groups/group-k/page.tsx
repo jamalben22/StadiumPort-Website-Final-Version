@@ -9,7 +9,7 @@ import { OptimizedImage } from '../../../components/base/OptimizedImage';
 
 const GroupKPage: React.FC = () => {
   const siteUrl = 'https://stadiumport.com';
-  const pageUrl = '/groups/group-k';
+  const pageUrl = '/2026-world-cup-group-k-travel-guide';
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-navy-900 font-sans text-slate-900 dark:text-white selection:bg-rose-500 selection:text-white">
