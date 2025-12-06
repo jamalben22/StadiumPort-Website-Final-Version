@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, User, ArrowRight, CheckCircle2, ChevronDown, Search, X } from 'lucide-react';
+import { Globe, User, ArrowRight, CheckCircle2, ChevronDown, Search, X, Mail } from 'lucide-react';
 import { COUNTRIES } from '../lib/countries';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
