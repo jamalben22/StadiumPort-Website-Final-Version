@@ -41,10 +41,10 @@ export const transporter = nodemailer.createTransport({
   tls: {
     // Do not fail on invalid certs (common fix for some hosting providers like Hostinger)
     rejectUnauthorized: false,
-    ciphers: 'SSLv3'
+    // Removed explicit ciphers to allow auto-negotiation (fixes potential SSLv3 issues)
   },
   // Timeouts to prevent Vercel function freezing
-  connectionTimeout: 5000, // 5 seconds
+  connectionTimeout: 10000, // 10 seconds (relaxed)
   greetingTimeout: 5000,   // 5 seconds
   socketTimeout: 10000,    // 10 seconds
   logger: true,
@@ -61,30 +61,33 @@ export interface EmailOptions {
 
 export const sendEmail = async (options: EmailOptions) => {
   console.log('📧 [Email Service] Initiating send to:', options.to);
-  console.log('🔧 [Email Service] Config:', {
-    host: SMTP_HOST,
-    port: SMTP_PORT,
-    secure: SMTP_PORT === 465,
-    auth_user: SMTP_USER ? 'Set' : 'Missing',
-    auth_pass: SMTP_PASS ? 'Set' : 'Missing'
-  });
-
+  
   if (!SMTP_USER || !SMTP_PASS) {
     console.error('❌ [Email Service] CRITICAL: Credentials missing.');
     throw new Error('SMTP Credentials missing');
   }
 
+  // Wrap sendMail in a promise race to enforce a strict timeout 
+  // that is shorter than Vercel's default 10s function limit (for safety)
+  const sendPromise = transporter.sendMail({
+    from: `"${SENDER_NAME}" <${SENDER_EMAIL}>`,
+    to: options.to,
+    replyTo: options.replyTo || SENDER_EMAIL,
+    subject: options.subject,
+    text: options.text,
+    html: options.html,
+  });
+
+  const timeoutPromise = new Promise((_, reject) => 
+    setTimeout(() => reject(new Error('Email sending timed out after 8 seconds')), 8000)
+  );
+
   try {
-    // Skipping verify to save time on serverless execution
-    const info = await transporter.sendMail({
-      from: `"${SENDER_NAME}" <${SENDER_EMAIL}>`, // sender address
-      to: options.to, // list of receivers
-      replyTo: options.replyTo || SENDER_EMAIL,
-      subject: options.subject, // Subject line
-      text: options.text, // plain text body
-      html: options.html, // html body
-    });
+    // @ts-ignore
+    const info = await Promise.race([sendPromise, timeoutPromise]);
+    // @ts-ignore
     console.log('✅ [Email Service] Success! Message ID:', info.messageId);
+    // @ts-ignore
     return { success: true, messageId: info.messageId };
   } catch (error) {
     console.error('❌ [Email Service] Send Failed:', error);

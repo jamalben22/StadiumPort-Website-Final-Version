@@ -36,9 +36,10 @@ export default async function handler(req, res) {
 
       console.log(`📝 Processing signup for: ${email}`);
 
-      // 1. Send Admin Notification
-      console.log('📤 Sending Admin Notification...');
-      await sendEmail({
+      // Parallelize email sending to prevent timeout
+      console.log('📤 Sending emails in parallel...');
+      
+      const adminEmailPromise = sendEmail({
         to: SENDER_EMAIL,
         subject: `New Predictor Game Signup: ${name}`,
         html: `
@@ -51,9 +52,7 @@ export default async function handler(req, res) {
         replyTo: email,
       });
 
-      // 2. Send Welcome Email to User (Instant)
-      console.log('📤 Sending Welcome Email...');
-      await sendEmail({
+      const userEmailPromise = sendEmail({
         to: email,
         subject: 'Welcome to Stadiumport Predictor Game!',
         html: getStadiumPortEmailHtml({
@@ -69,6 +68,8 @@ export default async function handler(req, res) {
         }),
       });
 
+      await Promise.all([adminEmailPromise, userEmailPromise]);
+
       console.log('✅ Signup emails sent successfully.');
 
       return res.status(200).json({ 
@@ -80,8 +81,7 @@ export default async function handler(req, res) {
       const { name, email, subject, message } = data;
       const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
-      // Admin Notification
-      await sendEmail({
+      const adminEmailPromise = sendEmail({
         to: SENDER_EMAIL,
         subject: `New Contact Form Submission: ${subject}`,
         html: `
@@ -95,8 +95,7 @@ export default async function handler(req, res) {
         replyTo: email,
       });
 
-      // User Auto-response
-      await sendEmail({
+      const userEmailPromise = sendEmail({
         to: email,
         subject: 'We received your message - Stadiumport',
         html: getStadiumPortEmailHtml({
@@ -106,21 +105,21 @@ export default async function handler(req, res) {
         }),
       });
 
+      await Promise.all([adminEmailPromise, userEmailPromise]);
+
       return res.status(200).json({ success: true });
 
     } else if (type === 'newsletter') {
       const { email } = data;
       const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
-      // Admin Notification
-      await sendEmail({
+      const adminEmailPromise = sendEmail({
         to: SENDER_EMAIL,
         subject: 'New Newsletter Subscriber',
         html: `<p>New subscriber: ${email}</p>`,
       });
 
-      // User Welcome
-      await sendEmail({
+      const userEmailPromise = sendEmail({
         to: email,
         subject: 'Welcome to Stadiumport!',
         html: getStadiumPortEmailHtml({
@@ -129,6 +128,8 @@ export default async function handler(req, res) {
           siteUrl: SITE_URL
         }),
       });
+
+      await Promise.all([adminEmailPromise, userEmailPromise]);
 
       return res.status(200).json({ success: true });
     }
