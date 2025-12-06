@@ -1,13 +1,5 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-Disallow: /thank-you
-Disallow: /search
-Disallow: /*?*
-
-# Allow specific parameters if needed (example)
-# Allow: /*?utm_source=
 
 Sitemap: https://stadiumport.com/sitemap.xml
