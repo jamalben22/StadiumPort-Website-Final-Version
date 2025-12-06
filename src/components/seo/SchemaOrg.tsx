@@ -203,7 +203,70 @@ export const generateItemListSchema = (
           "image": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + item.image,
         }
       : {}),
-  })),
+  }))
+});
+
+// Article Schema
+export const generateArticleSchema = (
+  headline: string,
+  description: string,
+  image: string | string[],
+  publishedAt: string,
+  modifiedAt: string,
+  authorName: string = "Stadiumport Team",
+  url: string
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": headline,
+  "description": description,
+  "image": image,
+  "datePublished": publishedAt,
+  "dateModified": modifiedAt,
+  "author": {
+    "@type": "Person",
+    "name": authorName
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stadiumport",
+    "logo": {
+      "@type": "ImageObject",
+      "url": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + "/images/Logos/favicon/android-chrome-512x512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": url
+  }
+});
+
+// FAQ Schema
+export const generateFAQSchema = (faqs: Array<{ question: string; answer: string }>) => ({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer
+    }
+  }))
+});
+
+// SportsTeam Schema
+export const generateSportsTeamSchema = (name: string, logo: string, url: string, sport: string = "Soccer") => ({
+  "@context": "https://schema.org",
+  "@type": "SportsTeam",
+  "name": name,
+  "sport": sport,
+  "logo": logo,
+  "url": url,
+  "memberOf": {
+    "@type": "SportsOrganization",
+    "name": "FIFA"
+  }
 });
 
 // CollectionPage schema that references the ItemList
