@@ -17,7 +17,7 @@ export default function GroupLPage() {
         <title>Group L World Cup 2026 Travel Guide: Toronto, NY, Boston, Philly & Dallas | StadiumPort</title>
         <meta name="description" content="The definitive travel guide for World Cup 2026 Group L. Master the logistics of following your team across Toronto, New York, Boston, Philadelphia, and Dallas. Flight strategies, budget breakdowns, and visa tips." />
         <meta name="keywords" content="Group L World Cup 2026, Toronto World Cup travel, Dallas World Cup travel, New York World Cup guide, Boston World Cup guide, Philadelphia World Cup, multi-city World Cup itinerary" />
-        <link rel="canonical" href={`${import.meta.env.VITE_SITE_URL}/groups/group-l`} />
+        <link rel="canonical" href={`${import.meta.env.VITE_SITE_URL}/2026-world-cup-group-l-travel-guide`} />
       </Helmet>
 
       <SchemaOrg 
@@ -33,7 +33,7 @@ export default function GroupLPage() {
               "name": "StadiumPort",
               "logo": { "@type": "ImageObject", "url": "https://stadiumport.com/logo.png" }
             },
-            "mainEntityOfPage": { "@type": "WebPage", "@id": `${import.meta.env.VITE_SITE_URL}/groups/group-l` }
+            "mainEntityOfPage": { "@type": "WebPage", "@id": `${import.meta.env.VITE_SITE_URL}/2026-world-cup-group-l-travel-guide` }
           },
           {
             "@context": "https://schema.org",
@@ -55,7 +55,7 @@ export default function GroupLPage() {
                 "@type": "ListItem",
                 "position": 3,
                 "name": "Group L",
-                "item": `${import.meta.env.VITE_SITE_URL}/groups/group-l`
+                "item": `${import.meta.env.VITE_SITE_URL}/2026-world-cup-group-l-travel-guide`
               }
             ]
           },
