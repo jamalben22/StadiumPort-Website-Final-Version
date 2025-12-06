@@ -73,41 +73,9 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
     }
   };
   
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is the World Cup 2026 Prediction Game free to play?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, the Stadiumport World Cup 2026 Prediction Game is 100% free to join and play for football fans worldwide."
-        }
-      },
-       {
-        "@type": "Question",
-        "name": "How are winners determined?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Winners are based on total points earned from correct predictions. 1 point is awarded for every correct group and knockout match prediction."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What happens if there is a tie?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "In the event of a tie, the winner is determined by: 1. Correct Champion Prediction, 2. Correct Runner-up Prediction, 3. Random Draw."
-        }
-      }
-    ]
-  };
-
   return (
     <div className={`bg-[#111] border border-white/10 rounded-[32px] p-8 relative overflow-hidden group ${className}`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Ambient Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
