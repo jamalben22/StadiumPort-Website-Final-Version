@@ -1,0 +1,9 @@
+TECHNICAL SEO AUDIT REPORT
+==========================
+Date: 2025-12-06T11:26:54.405Z
+
+ISSUES FOUND:
+1. WARNING: Found 60 raw <img> tags. Should use <OptimizedImage> or <img loading="lazy">.
+
+SUMMARY:
+- Total Issues: 1

@@ -299,8 +299,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <SEO 
-        title="Ultimate World Cup 2026 Travel Guide"
-        description="Explore every World Cup 2026 stadium and host city across the USA, Canada, and Mexico. Get expert travel tips, venue guides, safety information, match-day planning, and insider strategies from MetLife Stadium’s Final to the historic atmosphere of Estadio Azteca."
+        title="World Cup 2026 Travel Guide | Host Cities, Stadiums & Tickets"
+        description="The ultimate guide to FIFA World Cup 2026. Explore all 16 host cities, stadium guides, match schedules, travel tips, and safety advice for USA, Canada, and Mexico."
         image="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
         url="/"
       />
