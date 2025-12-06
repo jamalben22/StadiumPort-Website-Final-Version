@@ -1,7 +1,7 @@
 
 import jwt from 'jsonwebtoken';
-import { sendEmail, getSiteUrl } from './_utils/email';
-import { getStadiumPortEmailHtml } from './_utils/template';
+import { sendEmail, getSiteUrl } from './_utils/email.js';
+import { getStadiumPortEmailHtml } from './_utils/template.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'stadiumport-secure-secret-key-2026';
 
