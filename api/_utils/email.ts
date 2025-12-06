@@ -38,8 +38,17 @@ export const transporter = nodemailer.createTransport({
     user: SMTP_USER,
     pass: SMTP_PASS,
   },
-  logger: true, // Log to console
-  debug: true,  // Include debug info
+  tls: {
+    // Do not fail on invalid certs (common fix for some hosting providers like Hostinger)
+    rejectUnauthorized: false,
+    ciphers: 'SSLv3'
+  },
+  // Timeouts to prevent Vercel function freezing
+  connectionTimeout: 5000, // 5 seconds
+  greetingTimeout: 5000,   // 5 seconds
+  socketTimeout: 10000,    // 10 seconds
+  logger: true,
+  debug: true,
 });
 
 export interface EmailOptions {
@@ -51,21 +60,22 @@ export interface EmailOptions {
 }
 
 export const sendEmail = async (options: EmailOptions) => {
-  console.log('📧 Sending email to:', options.to);
-  console.log('🔧 SMTP Config Check:', {
+  console.log('📧 [Email Service] Initiating send to:', options.to);
+  console.log('🔧 [Email Service] Config:', {
     host: SMTP_HOST,
     port: SMTP_PORT,
-    userSet: !!SMTP_USER,
-    passSet: !!SMTP_PASS ? 'YES (Hidden)' : 'NO',
-    secure: SMTP_PORT === 465
+    secure: SMTP_PORT === 465,
+    auth_user: SMTP_USER ? 'Set' : 'Missing',
+    auth_pass: SMTP_PASS ? 'Set' : 'Missing'
   });
 
   if (!SMTP_USER || !SMTP_PASS) {
-    console.error('❌ CRITICAL: SMTP Credentials missing in environment variables.');
+    console.error('❌ [Email Service] CRITICAL: Credentials missing.');
     throw new Error('SMTP Credentials missing');
   }
 
   try {
+    // Skipping verify to save time on serverless execution
     const info = await transporter.sendMail({
       from: `"${SENDER_NAME}" <${SENDER_EMAIL}>`, // sender address
       to: options.to, // list of receivers
@@ -74,10 +84,10 @@ export const sendEmail = async (options: EmailOptions) => {
       text: options.text, // plain text body
       html: options.html, // html body
     });
-    console.log('✅ Message sent: %s', info.messageId);
+    console.log('✅ [Email Service] Success! Message ID:', info.messageId);
     return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error('❌ SMTP SEND ERROR:', error);
+    console.error('❌ [Email Service] Send Failed:', error);
     throw error;
   }
 };
