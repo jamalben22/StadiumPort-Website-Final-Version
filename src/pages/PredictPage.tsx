@@ -275,6 +275,30 @@ function PredictGameContent() {
               "@type": "Answer",
               "text": "Absolutely. Once you complete your prediction, you can download a high-quality image of your bracket or share it directly to Instagram, X (Twitter), and Facebook."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the World Cup 2026 Prediction Game free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, the Stadiumport World Cup 2026 Prediction Game is 100% free to join and play for football fans worldwide."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How are winners determined?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Winners are based on total points earned from correct predictions. 1 point is awarded for every correct group and knockout match prediction."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What happens if there is a tie?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In the event of a tie, the winner is determined by: 1. Correct Champion Prediction, 2. Correct Runner-up Prediction, 3. Random Draw."
+            }
           }
         ]
       }} />
