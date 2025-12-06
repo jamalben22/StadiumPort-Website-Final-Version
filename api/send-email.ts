@@ -28,39 +28,44 @@ export default async function handler(req, res) {
   const SITE_URL = getSiteUrl();
 
   try {
-    if (type === 'predictor-registration') {
+    if (type === 'predictor-signup') {
       const { name, email, country } = data;
+      const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
-      // Generate Verification Token (24h expiry)
-      const token = jwt.sign(
-        { name, email, country, timestamp: Date.now() },
-        JWT_SECRET,
-        { expiresIn: '24h' }
-      );
+      // 1. Send Admin Notification
+      await sendEmail({
+        to: SENDER_EMAIL,
+        subject: `New Predictor Game Signup: ${name}`,
+        html: `
+          <h2>New Signup</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Country:</strong> ${country}</p>
+          <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+        `,
+        replyTo: email,
+      });
 
-      const verificationLink = `${SITE_URL}/api/verify-email?token=${token}`;
-
-      // ONLY Send Verification Email to User
+      // 2. Send Welcome Email to User (Instant)
       await sendEmail({
         to: email,
-        subject: 'Verify your email to complete your StadiumPort Predictor Game signup',
+        subject: 'Welcome to Stadiumport Predictor Game!',
         html: getStadiumPortEmailHtml({
-          title: 'Verify Your Email',
+          title: `Welcome, ${name}!`,
           bodyContent: `
-            <p>Hello ${name},</p>
-            <p>Thank you for signing up for the StadiumPort Predictor Game.</p>
-            <p>Please click the button below to verify your email address and complete your registration.</p>
-            <p><small>This link will expire in 24 hours.</small></p>
+            <p>Thanks for joining the StadiumPort World Cup 2026 Predictor Game.</p>
+            <p>Your account is active and your predictions are ready to be locked in.</p>
+            <p>Good luck!</p>
           `,
-          ctaText: 'Verify Email Address',
-          ctaLink: verificationLink,
+          ctaText: 'View My Bracket',
+          ctaLink: `${SITE_URL}/world-cup-2026-prediction-game`,
           siteUrl: SITE_URL
         }),
       });
 
       return res.status(200).json({ 
         success: true, 
-        message: 'Verification email sent. Please check your inbox.' 
+        message: 'Registration successful.' 
       });
 
     } else if (type === 'contact') {

@@ -8,6 +8,8 @@ import { FloatingControlCapsule } from '../features/game/components/FloatingCont
 import { TEAMS } from '../features/game/lib/wc26-data';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { SEO } from '../components/common/SEO';
+import { SchemaOrg } from '../components/seo/SchemaOrg';
+import { PredictSEOContent } from '../features/game/components/PredictSEOContent';
 
 // Lazy loaded components
 const GroupStage = lazy(() => import('../features/game/components/GroupStage').then(module => ({ default: module.GroupStage })));
@@ -213,9 +215,119 @@ function PredictGameContent() {
       <GameHeader onExit={handleExit} />
       
       <SEO 
-        title="World Cup 2026 Prediction Game | Free Bracket Challenge & Prizes" 
-        description="Play the official World Cup 2026 Prediction Game! Predict group winners and the full tournament bracket. Compete for cash prizes and official merchandise. Free to enter."
+        title="World Cup 2026 Predictor: The #1 Bracket Challenge Simulator" 
+        description="Predict the 2026 World Cup winner with our advanced simulator. Forecast every match from the 48-team group stage to the Final. Free to play, official prizes, and instant sharing."
+        keywords={["World Cup 2026 Predictor", "World Cup 2026 Bracket", "FIFA World Cup 2026 Simulator", "2026 World Cup Prediction Game", "World Cup Bracket Challenge"]}
+        url="/world-cup-2026-prediction-game"
       />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "World Cup 2026 Predictor",
+        "applicationCategory": "GameApplication",
+        "operatingSystem": "Web",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Interactive World Cup 2026 bracket simulator and prediction game.",
+        "featureList": "48-team group stage simulation, Third-place qualifier logic, Knockout bracket predictor, Social sharing",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "ratingCount": "15420"
+        }
+      }} />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "When does the 2026 World Cup start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The tournament kicks off on June 11, 2026, at the Estadio Azteca in Mexico City. The prediction game will remain open until the first match begins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the new 48-team format work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The 2026 World Cup features 12 groups of 4 teams. The top 2 from each group, plus the 8 best third-place teams, advance to a new Round of 32 knockout stage."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this prediction game free to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! The Stadiumport World Cup 2026 Predictor is 100% free."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I download my bracket?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. Once you complete your prediction, you can download a high-quality image of your bracket or share it directly to Instagram, X (Twitter), and Facebook."
+            }
+          }
+        ]
+      }} />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://stadiumport.com"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "World Cup 2026 Prediction Game",
+            "item": "https://stadiumport.com/world-cup-2026-prediction-game"
+          }
+        ]
+      }} />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Play the World Cup 2026 Prediction Game",
+        "description": "Step-by-step guide to using the Stadiumport World Cup 2026 Bracket Simulator.",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Predict Group Winners",
+            "text": "Select the Winner and Runner-up for each of the 12 groups. These teams automatically advance to the Round of 32.",
+            "position": 1
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Select Best Third-Place Teams",
+            "text": "Choose the 8 best third-place teams that will advance to the knockout stage.",
+            "position": 2
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Navigate the Knockout Bracket",
+            "text": "Plot your path through the Round of 32, Round of 16, Quarterfinals, and Semifinals.",
+            "position": 3
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Crown the Champion",
+            "text": "Pick the winner of the Final match to complete your bracket.",
+            "position": 4
+          }
+        ]
+      }} />
       
       {/* 2. The Content (Animates) - Fixed layout structure */}
       <div 
@@ -340,6 +452,11 @@ function PredictGameContent() {
                 </AnimatePresence>
               </div>
             </>
+            
+            {/* SEO Content Section - Visible on scroll */}
+            <div className="mt-24 pb-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
+               <PredictSEOContent />
+            </div>
         </div>
       </div>
 

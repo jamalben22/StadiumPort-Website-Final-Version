@@ -1,54 +1,45 @@
 {
-  "buildCommand": "npm run vercel-build",
-  "outputDirectory": "dist",
+  "cleanUrls": true,
+  "trailingSlash": false,
   "headers": [
     {
-      "source": "/(.*)\\.(js|css|mjs|map|png|jpg|jpeg|webp|svg|ico|gif|woff2|woff)",
+      "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2037 23:55:55 GMT" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Expires", "value": "Thu, 31 Dec 2037 23:55:55 GMT" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/images/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=2592000" }
-      ]
-    },
-    {
-      "source": "/(.*)\\.(html)",
-      "headers": [
-        { "key": "Cache-Control", "value": "no-cache" },
-        { "key": "Expires", "value": "0" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     }
-  ],
-  "redirects": [
-    { "source": "/world-cup-2026-host-cities/los-angeles", "destination": "/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/new-york-new-jersey", "destination": "/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/miami", "destination": "/world-cup-2026-host-cities/miami-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/dallas", "destination": "/world-cup-2026-host-cities/dallas-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/kansas-city", "destination": "/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/houston", "destination": "/world-cup-2026-host-cities/houston-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/atlanta", "destination": "/world-cup-2026-host-cities/atlanta-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/philadelphia", "destination": "/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/seattle", "destination": "/world-cup-2026-host-cities/seattle-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/san-francisco", "destination": "/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/boston", "destination": "/world-cup-2026-host-cities/boston-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/toronto", "destination": "/world-cup-2026-host-cities/toronto-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/vancouver", "destination": "/world-cup-2026-host-cities/vancouver-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/mexico-city", "destination": "/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/guadalajara", "destination": "/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide", "permanent": true },
-    { "source": "/world-cup-2026-host-cities/monterrey", "destination": "/world-cup-2026-host-cities/monterrey-world-cup-2026-guide", "permanent": true }
-  ],
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html", "has": [{ "type": "header", "key": "Accept", "value": ".*text/html.*" }] }
   ]
 }

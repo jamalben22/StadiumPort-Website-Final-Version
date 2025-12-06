@@ -148,10 +148,10 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
 
       {/* Flag */}
       <div className="w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-white/10 flex items-center justify-center bg-slate-700">
-        {team.id.startsWith('po') ? (
-          <span className="text-xs font-bold text-slate-400">?</span>
-        ) : team.flagUrl ? (
+        {team.flagUrl ? (
           <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" />
+        ) : team.id.startsWith('po') ? (
+          <span className="text-xs font-bold text-slate-400">?</span>
         ) : (
           <span className="text-[10px] font-bold text-slate-400 tracking-tighter">{team.fifaCode}</span>
         )}

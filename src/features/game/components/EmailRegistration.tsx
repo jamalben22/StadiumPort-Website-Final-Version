@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, Mail, User, ArrowRight, CheckCircle2, ChevronDown, Search, X } from 'lucide-react';
+import { Globe, User, ArrowRight, CheckCircle2, ChevronDown, Search, X } from 'lucide-react';
 import { COUNTRIES } from '../lib/countries';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
@@ -20,7 +20,6 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
   
   // Dropdown State
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -89,7 +88,13 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
         throw new Error('Network response was not ok');
       }
 
-      setIsSuccess(true);
+      // Instant success - no verification needed
+      onComplete({
+        name: formData.name,
+        email: formData.email,
+        country: formData.country
+      });
+      
     } catch (error) {
       console.error('Error submitting form:', error);
       setErrors(prev => ({ ...prev, submit: 'Something went wrong. Please try again.' }));
@@ -101,64 +106,6 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
   const filteredCountries = COUNTRIES.filter(country => 
     country.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  if (isSuccess) {
-    return (
-      <>
-        <SEO 
-          title="Verify Your Email | StadiumPort Predictor Game"
-          description="Please verify your email to complete your World Cup 2026 prediction entry."
-          url="/world-cup-2026-prediction-game/submit"
-        />
-        <div className="w-full max-w-md mx-auto px-4">
-          <div className="mb-6 flex justify-center">
-            <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
-              <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-              <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
-                Step 4 of 5: Verify Email
-              </span>
-            </div>
-          </div>
-
-          <div className="text-center mb-6 md:mb-8">
-            <h2 className="text-3xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
-              Check Your Inbox
-            </h2>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[24px] md:rounded-[32px] p-8 md:p-10 shadow-2xl relative overflow-hidden text-center"
-          >
-            {/* Background Ambient Glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-[#01b47d]/20 blur-[60px] rounded-full pointer-events-none" />
-
-            <div className="w-20 h-20 mx-auto bg-gradient-to-br from-[#01b47d] to-[#008f63] rounded-full flex items-center justify-center shadow-lg mb-8 relative z-10 animate-pulse">
-              <Mail className="w-10 h-10 text-white" />
-            </div>
-
-            <h3 className="text-2xl font-bold text-white mb-4 font-['Teko'] uppercase tracking-wide">
-              Verification Link Sent!
-            </h3>
-            
-            <p className="text-slate-300 mb-6 leading-relaxed font-['Rajdhani'] text-lg">
-              Thank you! Please check your email to verify your address and complete your signup.
-            </p>
-            
-            <div className="bg-white/5 rounded-xl p-4 mb-8 border border-white/10">
-              <p className="text-white/60 text-sm uppercase tracking-wider font-['Rajdhani'] mb-1">Sent to:</p>
-              <p className="text-[#01b47d] font-bold font-['Rajdhani'] text-lg">{formData.email}</p>
-            </div>
-
-            <p className="text-white/40 text-xs font-['Rajdhani']">
-              Don't see it? Check your spam folder or try again in a few minutes.
-            </p>
-          </motion.div>
-        </div>
-      </>
-    );
-  }
 
   return (
     <>

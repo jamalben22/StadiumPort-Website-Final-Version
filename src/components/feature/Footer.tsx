@@ -48,7 +48,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-[var(--footer-bg-light)] dark:bg-[var(--footer-bg-dark)] text-slate-900 dark:text-white transition-colors duration-500">
+    <footer className="bg-[var(--footer-bg-light)] dark:bg-[var(--footer-bg-dark)] text-slate-900 dark:text-white duration-500 transition-colors">
       <div className="absolute top-0 left-0 w-full h-px bg-slate-200 dark:bg-slate-800"></div>
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">

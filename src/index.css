@@ -43,6 +43,10 @@
   /* Brand Accent — unified hue for icons, accents, highlights */
   --brand-accent: #FBBF24; /* Electric Gold */
   --brand-accent-soft: #fbbf24; /* Electric Gold */
+
+  /* Footer Colors */
+  --footer-bg-light: #EDEDED;
+  --footer-bg-dark: #000000;
 }
 
 /* Luxury list markers: premium, monochrome, emoji-free markers via styling */
