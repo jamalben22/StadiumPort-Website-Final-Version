@@ -181,7 +181,7 @@ const groupsData = [
       '💵 Estimated base cost: $1,100-1,500 for all group matches',
       '⭐ Best base camp: Seattle (central location with easy access north and south)'
     ],
-    link: '/groups/group-g'
+    link: '/2026-world-cup-group-g-travel-guide'
   },
   {
     id: 'H',
