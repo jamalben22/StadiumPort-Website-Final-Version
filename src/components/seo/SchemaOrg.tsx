@@ -46,9 +46,15 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Stadiumport",
-  "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
+  "alternateName": ["StadiumPort", "StadiumPort.com"],
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
-  "logo": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/logo.png`,
+  "logo": {
+    "@type": "ImageObject",
+    "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg`,
+    "width": 2400,
+    "height": 600,
+    "caption": "Stadiumport Logo"
+  },
   "sameAs": [
     "https://twitter.com/stadiumport",
     "https://facebook.com/stadiumport",
@@ -58,8 +64,9 @@ export const generateOrganizationSchema = () => ({
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "contactType": "customer service",
-    "availableLanguage": "English"
+    "email": "info@stadiumport.com",
+    "contactType": "customer support",
+    "availableLanguage": ["English", "Spanish", "French"]
   }
 });
 
@@ -409,3 +416,58 @@ export const generateGlobalSportsEventSchema = (opts: {
     }
   };
 };
+
+export const generateVideoObjectSchema = (
+  name: string,
+  description: string,
+  thumbnailUrl: string,
+  uploadDate: string,
+  contentUrl?: string,
+  embedUrl?: string
+) => ({
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": name,
+  "description": description,
+  "thumbnailUrl": thumbnailUrl,
+  "uploadDate": uploadDate,
+  ...(contentUrl ? { "contentUrl": contentUrl } : {}),
+  ...(embedUrl ? { "embedUrl": embedUrl } : {}),
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stadiumport",
+    "logo": {
+      "@type": "ImageObject",
+      "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg`
+    }
+  }
+});
+
+export const generateReviewSchema = (
+  itemName: string,
+  reviewBody: string,
+  authorName: string,
+  ratingValue: number,
+  bestRating: number = 5
+) => ({
+  "@context": "https://schema.org",
+  "@type": "Review",
+  "itemReviewed": {
+    "@type": "Thing",
+    "name": itemName
+  },
+  "reviewRating": {
+    "@type": "Rating",
+    "ratingValue": ratingValue,
+    "bestRating": bestRating
+  },
+  "author": {
+    "@type": "Person",
+    "name": authorName
+  },
+  "reviewBody": reviewBody,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Stadiumport"
+  }
+});

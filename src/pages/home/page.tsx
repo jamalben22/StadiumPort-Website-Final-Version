@@ -299,8 +299,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900">
       <SEO 
-        title="World Cup 2026 Travel Guide | Host Cities, Stadiums & Tickets"
-        description="The ultimate guide to FIFA World Cup 2026. Explore all 16 host cities, stadium guides, match schedules, travel tips, and safety advice for USA, Canada, and Mexico."
+        title="World Cup 2026 Travel Guide | Host Cities, Stadiums & Tickets | Stadiumport"
+        description="Complete guide to FIFA World Cup 2026. Explore 16 host cities, stadium guides, match schedules, and travel tips across USA, Canada, and Mexico. Plan your trip now."
         image="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
         url="/"
       />
@@ -311,9 +311,9 @@ export default function HomePage() {
         schema={generateImageObjectSchema('/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp', {
           width: 1920,
           height: 1080,
-          caption: 'World Cup 2026 Stadiums & Cities – Cinematic Night Hero – Stadiumport',
+          caption: 'FIFA World Cup 2026 Host Cities & Stadiums Guide - Stadiumport',
           description:
-            'Cinematic night view of World Cup 2026 stadium with three giant flags — USA, Mexico, and Canada — suspended in the middle above the pitch.'
+            'Breathtaking night view of a World Cup 2026 stadium featuring massive USA, Mexico, and Canada flags suspended over the pitch, symbolizing the three host nations.'
         })}
       />
       
