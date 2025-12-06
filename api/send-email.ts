@@ -26,13 +26,18 @@ export default async function handler(req, res) {
 
   const { type, data } = req.body;
   const SITE_URL = getSiteUrl();
+  
+  console.log(`🚀 API Request Received: ${type}`);
 
   try {
     if (type === 'predictor-signup') {
       const { name, email, country } = data;
       const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
+      console.log(`📝 Processing signup for: ${email}`);
+
       // 1. Send Admin Notification
+      console.log('📤 Sending Admin Notification...');
       await sendEmail({
         to: SENDER_EMAIL,
         subject: `New Predictor Game Signup: ${name}`,
@@ -47,6 +52,7 @@ export default async function handler(req, res) {
       });
 
       // 2. Send Welcome Email to User (Instant)
+      console.log('📤 Sending Welcome Email...');
       await sendEmail({
         to: email,
         subject: 'Welcome to Stadiumport Predictor Game!',
@@ -62,6 +68,8 @@ export default async function handler(req, res) {
           siteUrl: SITE_URL
         }),
       });
+
+      console.log('✅ Signup emails sent successfully.');
 
       return res.status(200).json({ 
         success: true, 
@@ -128,7 +136,17 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid request type' });
 
   } catch (error) {
-    console.error('API Error:', error);
-    return res.status(500).json({ error: 'Failed to process request' });
+    console.error('❌ API Error Handler Caught:', error);
+    
+    // Extract error message safely
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorStack = error instanceof Error ? error.stack : '';
+
+    // Return detailed error for debugging (since we need to fix this)
+    return res.status(500).json({ 
+      error: 'Failed to process request',
+      details: errorMessage,
+      // stack: errorStack // Optional: uncomment for deep debugging, but risky to expose
+    });
   }
 }
