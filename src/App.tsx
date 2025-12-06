@@ -29,7 +29,15 @@ function CanonicalManager() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
     const pathname = location.pathname || '/'
-    const fullUrl = siteUrl.replace(/\/$/, '') + pathname
+    
+    // SEO Optimization: Consolidate Prediction Game steps to the main URL
+    // This prevents duplicate content issues for /group-stage, /knockout-bracket, etc.
+    let canonicalPath = pathname;
+    if (pathname.startsWith('/world-cup-2026-prediction-game')) {
+      canonicalPath = '/world-cup-2026-prediction-game';
+    }
+
+    const fullUrl = siteUrl.replace(/\/$/, '') + canonicalPath
 
     let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!canonical) {

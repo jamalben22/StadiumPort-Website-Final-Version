@@ -57,6 +57,7 @@ const routes = [
   '/travel-routes',
   '/world-cup-2026-travel-tips',
   '/city-comparisons',
+  '/world-cup-2026-prediction-game',
 ]
 
 // Optional: include article slugs discovered by search agent
