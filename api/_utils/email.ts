@@ -38,6 +38,8 @@ export const transporter = nodemailer.createTransport({
     user: SMTP_USER,
     pass: SMTP_PASS,
   },
+  logger: true, // Log to console
+  debug: true,  // Include debug info
 });
 
 export interface EmailOptions {
@@ -49,12 +51,18 @@ export interface EmailOptions {
 }
 
 export const sendEmail = async (options: EmailOptions) => {
-  // Mock Mode: If credentials are missing, log and return success
+  console.log('📧 Sending email to:', options.to);
+  console.log('🔧 SMTP Config Check:', {
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    userSet: !!SMTP_USER,
+    passSet: !!SMTP_PASS ? 'YES (Hidden)' : 'NO',
+    secure: SMTP_PORT === 465
+  });
+
   if (!SMTP_USER || !SMTP_PASS) {
-    console.warn('⚠️ SMTP credentials missing. Email sending skipped (Mock Mode).');
-    console.log('Would have sent email to:', options.to);
-    console.log('Subject:', options.subject);
-    return { success: true, messageId: `mock-id-${Date.now()}` };
+    console.error('❌ CRITICAL: SMTP Credentials missing in environment variables.');
+    throw new Error('SMTP Credentials missing');
   }
 
   try {
@@ -66,15 +74,10 @@ export const sendEmail = async (options: EmailOptions) => {
       text: options.text, // plain text body
       html: options.html, // html body
     });
-    console.log('Message sent: %s', info.messageId);
+    console.log('✅ Message sent: %s', info.messageId);
     return { success: true, messageId: info.messageId };
   } catch (error) {
-    console.error('Error sending email:', error);
-    // In production, we might not want to throw to the client if email fails, 
-    // but for now, let's keep it consistent with the mock success.
-    // However, if we really want to avoid "Something went wrong", we could return false 
-    // or a specific error code, but usually throwing is fine if it's a real error.
-    // The main issue was missing credentials.
+    console.error('❌ SMTP SEND ERROR:', error);
     throw error;
   }
 };
