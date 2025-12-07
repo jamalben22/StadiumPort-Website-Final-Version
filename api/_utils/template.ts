@@ -65,21 +65,17 @@ export const getStadiumPortEmailHtml = (options: EmailTemplateOptions): string =
                     <!-- Container -->
                     <table role="presentation" style="width:94%;max-width:600px;border:none;border-spacing:0;text-align:left;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#000000;background-color:#ffffff;margin-top:40px;margin-bottom:40px;box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
                         
-                        <!-- Header / Logo -->
+                        <!-- Header / Logo (CSS Only - No Images) -->
                         <tr>
-                            <td style="padding:30px 40px;background-color:#ffffff;text-align:center;">
+                            <td align="center" style="padding:40px 0 30px 0;background-color:#020617;background-image:linear-gradient(135deg, #020617 0%, #0f172a 100%);border-bottom:3px solid #FBBF24;">
                                 <a href="${baseUrl}" style="text-decoration:none;">
-                                    <img src="${baseUrl}/images/Logos/email/stadiumport-email-logo.png" alt="StadiumPort" width="200" style="width:200px;max-width:100%;height:auto;border:none;text-decoration:none;color:#000000;font-weight:bold;font-size:24px;letter-spacing:1px;">
+                                    <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:#FBBF24;letter-spacing:2px;text-transform:uppercase;">STADIUMPORT</span>
+                                    <span style="display:block;margin-top:8px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:#94a3b8;letter-spacing:1px;">WORLD CUP 2026 TRAVEL HUB</span>
                                 </a>
                             </td>
                         </tr>
 
-                        <!-- Hero Section (Optional Image) -->
-                        <tr>
-                            <td style="padding:0;">
-                                <img src="${baseUrl}/images/Logos/email/stadiumport-email-banner.jpg" alt="Stadium Experience" width="600" style="width:100%;max-width:600px;height:auto;border:none;display:block;">
-                            </td>
-                        </tr>
+                        <!-- Hero Section (Removed Image, replaced with spacing/gradient if needed) -->
 
                         <!-- Main Content -->
                         <tr>
