@@ -77,7 +77,7 @@ function PredictGameContent() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [direction, setDirection] = useState(0);
   const [userName, setUserName] = useState("You");
-  const [userInfo, setUserInfo] = useState<{ name: string; email: string; country: string }>({ name: "", email: "", country: "" });
+  const [userInfo, setUserInfo] = useState<{ name: string; email: string; country: string; uniqueId?: string }>({ name: "", email: "", country: "", uniqueId: "" });
 
   // Bracket Mobile State
   const [bracketRoundIndex, setBracketRoundIndex] = useState(0);
@@ -162,7 +162,7 @@ function PredictGameContent() {
     if (currentStep === 3) setCurrentStep(2);
   };
 
-  const handleRegistrationComplete = (data: { name: string; email: string; country: string }) => {
+  const handleRegistrationComplete = (data: { name: string; email: string; country: string; uniqueId: string }) => {
     setUserInfo(data);
     setUserName(data.name);
     setCurrentStep(4);
@@ -197,6 +197,7 @@ function PredictGameContent() {
              userName={userName}
              userEmail={userInfo.email}
              userCountry={userInfo.country}
+             uniqueId={userInfo.uniqueId}
              onRestart={() => {
                resetGame();
                // setIsGameFinished(false); // Not defined in this scope, removing

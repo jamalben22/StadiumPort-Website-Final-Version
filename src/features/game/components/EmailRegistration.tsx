@@ -4,13 +4,16 @@ import { Globe, User, ArrowRight, CheckCircle2, ChevronDown, Search, X, Mail } f
 import { COUNTRIES } from '../lib/countries';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
+import { generateUniqueID } from '../utils/idGenerator';
+import { useGame } from '../context/GameContext';
 
 interface EmailRegistrationProps {
-  onComplete: (data: { name: string; email: string; country: string }) => void;
+  onComplete: (data: { name: string; email: string; country: string; uniqueId: string }) => void;
   onBack: () => void;
 }
 
 export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete, onBack }) => {
+  const { groupStandings, thirdPlacePicks, knockoutPicks } = useGame();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -67,6 +70,9 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
     setIsSubmitting(true);
     
     try {
+      // Generate Unique ID
+      const uniqueId = generateUniqueID();
+
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -79,7 +85,13 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             email: formData.email,
             country: formData.country,
             ageConfirmed: formData.ageConfirmed,
-            termsAccepted: formData.acceptedTerms
+            termsAccepted: formData.acceptedTerms,
+            uniqueId,
+            predictions: {
+              groupStandings,
+              thirdPlacePicks,
+              knockoutPicks
+            }
           },
         }),
       });
@@ -92,7 +104,8 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
       onComplete({
         name: formData.name,
         email: formData.email,
-        country: formData.country
+        country: formData.country,
+        uniqueId
       });
       
     } catch (error) {
