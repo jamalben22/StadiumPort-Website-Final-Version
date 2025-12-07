@@ -246,7 +246,7 @@ function App() {
       </ErrorBoundary>
       <Analytics />
       <SpeedInsightsRouting />
-      <MobileAffiliateBar />
+      <AffiliateBarRoutingGate />
     </BrowserRouter>
   )
 }
@@ -362,6 +362,12 @@ function RouteStructuredData() {
     schemas.push(generateItemListSchema(items))
   }
   return <SchemaOrg schema={schemas} />
+}
+
+function AffiliateBarRoutingGate() {
+  const location = useLocation()
+  const hide = location.pathname.startsWith('/world-cup-2026-prediction-game')
+  return hide ? null : <MobileAffiliateBar />
 }
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error?: Error }> {

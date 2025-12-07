@@ -1,5 +1,6 @@
 
 import jwt from 'jsonwebtoken';
+import { supabase } from './_utils/supabase.js';
 import { sendEmail, getSiteUrl } from './_utils/email.js';
 import { getStadiumPortEmailHtml } from './_utils/template.js';
 
@@ -31,39 +32,68 @@ export default async function handler(req, res) {
 
   try {
     if (type === 'predictor-signup') {
-      const { name, email, country } = data;
+      const { name, email, country, uniqueId, predictions } = data;
       const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
-      console.log(`📝 Processing signup for: ${email}`);
+      console.log(`📝 Processing signup for: ${email} with ID: ${uniqueId}`);
+
+      // 1. Store in Supabase if available
+      if (supabase) {
+        try {
+          const { error } = await supabase
+            .from('predictions')
+            .upsert({ 
+              unique_id: uniqueId,
+              name,
+              email,
+              country,
+              predictions: predictions || {},
+              created_at: new Date().toISOString()
+            }, { onConflict: 'unique_id' });
+
+          if (error) {
+            console.error('Supabase error:', error);
+          } else {
+            console.log('✅ Prediction stored in Supabase');
+          }
+        } catch (dbError) {
+          console.error('Database operation failed:', dbError);
+        }
+      }
 
       // Parallelize email sending to prevent timeout
       console.log('📤 Sending emails in parallel...');
       
       const adminEmailPromise = sendEmail({
         to: SENDER_EMAIL,
-        subject: `New Predictor Game Signup: ${name}`,
+        subject: `New Prediction! ID: ${uniqueId} (${name})`,
         html: `
-          <h2>New Signup</h2>
+          <h2>New World Cup Prediction</h2>
+          <p><strong>Unique ID:</strong> ${uniqueId}</p>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Country:</strong> ${country}</p>
           <p><strong>Time:</strong> ${new Date().toLocaleString()}</p>
+          <p><a href="${SITE_URL}/admin/predictions?search=${uniqueId}">View Full Prediction</a></p>
         `,
         replyTo: email,
       });
 
       const userEmailPromise = sendEmail({
         to: email,
-        subject: 'Welcome to Stadiumport Predictor Game!',
+        subject: 'Your World Cup 2026 Prediction ID',
         html: getStadiumPortEmailHtml({
-          title: `Welcome, ${name}!`,
+          title: `Prediction Saved!`,
           bodyContent: `
+            <div style="background-color: #f0fdf4; border: 1px solid #10b981; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
+              <p style="margin: 0; font-size: 14px; color: #065f46;">Your Unique Prediction ID</p>
+              <p style="margin: 10px 0 0 0; font-size: 24px; font-weight: bold; color: #059669; letter-spacing: 1px;">${uniqueId}</p>
+            </div>
             <p>Thanks for joining the StadiumPort World Cup 2026 Predictor Game.</p>
-            <p>Your account is active and your predictions are ready to be locked in.</p>
-            <p>Good luck!</p>
+            <p>Your prediction has been securely recorded. You can view your bracket anytime using your unique ID.</p>
           `,
-          ctaText: 'View My Bracket',
-          ctaLink: `${SITE_URL}/world-cup-2026-prediction-game`,
+          ctaText: 'View My Prediction',
+          ctaLink: `${SITE_URL}/my-prediction?id=${uniqueId}`,
           siteUrl: SITE_URL
         }),
       });

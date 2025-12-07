@@ -74,6 +74,8 @@ const GroupJPage = lazy(() => import('../pages/groups/group-j/page'));
 const GroupKPage = lazy(() => import('../pages/groups/group-k/page'));
 const GroupLPage = lazy(() => import('../pages/groups/group-l/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
+const AdminPredictionsPage = lazy(() => import('../pages/admin/predictions/page'));
+const MyPredictionPage = lazy(() => import('../pages/my-prediction/page'));
 
 const routes: RouteObject[] = [
   {
@@ -644,6 +646,14 @@ const routes: RouteObject[] = [
   {
     path: '/about/authors',
     element: <AuthorsPage />
+  },
+  {
+    path: '/admin/predictions',
+    element: <AdminPredictionsPage />
+  },
+  {
+    path: '/my-prediction',
+    element: <MyPredictionPage />
   },
   {
     path: '*',
