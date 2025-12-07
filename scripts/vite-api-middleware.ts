@@ -98,10 +98,10 @@ const getPremiumEmailHtml = (options: {
   const header = `
     <table role="presentation" style="width:100%;border:none;border-spacing:0;">
       <tr>
-        <td align="center" style="padding:40px 0 30px 0;background-color:${bgDark};">
+        <td align="center" style="padding:40px 0 30px 0;background-color:${bgDark};background-image:linear-gradient(135deg, ${bgDark} 0%, #0f172a 100%);border-bottom:3px solid ${brandGold};">
           <a href="${siteUrl}" style="text-decoration:none;">
-             <!-- Fallback Text Logo if Image Fails -->
              <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:${brandGold};letter-spacing:2px;text-transform:uppercase;">STADIUMPORT</span>
+             <span style="display:block;margin-top:8px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:${textMuted};letter-spacing:1px;">WORLD CUP 2026 TRAVEL HUB</span>
           </a>
         </td>
       </tr>
