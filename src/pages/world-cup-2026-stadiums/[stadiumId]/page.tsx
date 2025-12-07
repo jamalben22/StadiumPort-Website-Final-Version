@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { MetLifeStadiumGuide } from '../../../components/feature/MetLifeStadiumGuide';
 import { EstadioAztecaGuide } from '../../../components/feature/EstadioAztecaGuide';
 import { ArrowheadStadiumGuide } from '../../../components/feature/ArrowheadStadiumGuide';
@@ -241,6 +241,28 @@ export default function StadiumDetailPage() {
     'lincoln-financial-field': 'philadelphia'
   };
   const hostCitySlug = effectiveId ? citySlugByStadiumId[effectiveId] : undefined;
+
+  // Save State
+  const [isSaved, setIsSaved] = useState(false);
+
+  useEffect(() => {
+    if (effectiveId) {
+      const saved = localStorage.getItem(`${effectiveId}_guide_saved`);
+      if (saved) setIsSaved(true);
+    }
+  }, [effectiveId]);
+
+  const toggleSave = () => {
+    const newState = !isSaved;
+    setIsSaved(newState);
+    if (effectiveId) {
+      if (newState) {
+        localStorage.setItem(`${effectiveId}_guide_saved`, 'true');
+      } else {
+        localStorage.removeItem(`${effectiveId}_guide_saved`);
+      }
+    }
+  };
 
   // Stadium slug -> image mapping for social previews
   const stadiumImages: Record<string, string> = {
@@ -530,65 +552,75 @@ export default function StadiumDetailPage() {
         ]}
       />
 
-      {/* Editorial Hero — cohesive with NYC guide styling */}
-      <section className="editorial-hero">
-        <div className="editorial-hero-media">
+      {/* Editorial Hero — World Class Redesign */}
+      <section className="relative w-full h-[85vh] min-h-[600px] bg-slate-900 overflow-hidden group">
+        {/* Background Image */}
+        <div className="absolute inset-0 w-full h-full">
           <OptimizedImage
             src={heroImage}
             alt={altText}
-            className="editorial-hero-image-wrapper"
-            imgClassName="editorial-hero-image"
+            className="w-full h-full"
+            imgClassName="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
             width={1600}
             height={900}
             priority={true}
             placeholder="empty"
             sizes="100vw"
           />
-          <div className="editorial-hero-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent opacity-90" />
         </div>
-        <div className="editorial-hero-content">
-          <div className="editorial-hero-inner">
-            <ol className="flex items-center gap-2 mb-4">
-              <li className="breadcrumb-item">
-                <Link className="breadcrumb-link" title="Home" to="/">
-                  <svg className="breadcrumb-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                  </svg>
-                  <span className="truncate">Home</span>
-                </Link>
-              </li>
-              <li className="breadcrumb-separator" aria-hidden="true">›</li>
-              <li className="breadcrumb-item">
-                <Link className="breadcrumb-link" title="Stadiums" to="/world-cup-2026-stadiums">
-                  <span className="truncate">Stadiums</span>
-                </Link>
-              </li>
-              <li className="breadcrumb-separator" aria-hidden="true">›</li>
-              <li className="breadcrumb-item">
-                <span className="breadcrumb-current" title={`${stadium.name}`} aria-current="page">
-                  <span className="truncate">{stadium.name}</span>
-                </span>
-              </li>
-            </ol>
-            <h1 className="editorial-hero-title">{effectiveId === 'estadio-azteca' ? 'Estadio Azteca Guide: World Cup 2026 Stadium & Tickets' : effectiveId === 'metlife-stadium' ? 'MetLife Stadium Guide: World Cup 2026 Final Venue | NY/NJ' : effectiveId === 'att-stadium' ? 'AT&T Stadium Guide: World Cup 2026 Venue | Dallas Cowboys' : effectiveId === 'arrowhead-stadium' ? 'Arrowhead Stadium Guide: World Cup 2026 Venue | Kansas City' : effectiveId === 'estadio-bbva' ? 'Estadio BBVA Guide: World Cup 2026 Stadium | Monterrey Mexico' : effectiveId === 'nrg-stadium' ? 'NRG Stadium Guide: World Cup 2026 Venue | Houston Texans' : effectiveId === 'mercedes-benz-stadium' ? 'Mercedes-Benz Stadium Guide: World Cup 2026 Venue | Atlanta' : effectiveId === 'lumen-field' ? 'Lumen Field Guide: World Cup 2026 Venue | Seattle Sounders' : effectiveId === 'sofi-stadium' ? 'SoFi Stadium Guide: World Cup 2026 Venue | Los Angeles' : effectiveId === 'levis-stadium' ? 'Levi\'s Stadium Guide: World Cup 2026 Venue | San Francisco Bay' : effectiveId === 'lincoln-financial-field' ? 'Lincoln Financial Field Guide: World Cup 2026 | Philadelphia' : effectiveId === 'gillette-stadium' ? 'Gillette Stadium Guide: World Cup 2026 Venue | Boston Patriots' : effectiveId === 'hard-rock-stadium' ? 'Hard Rock Stadium Guide: World Cup 2026 Venue | Miami Florida' : effectiveId === 'bmo-field' ? 'BMO Field Guide: World Cup 2026 Venue | Toronto Canada' : effectiveId === 'bc-place-stadium' ? 'BC Place Stadium Guide: World Cup 2026 Venue | Vancouver Canada' : effectiveId === 'estadio-akron' ? 'Estadio Akron Guide: World Cup 2026 Stadium | Guadalajara Mexico' : stadium.name}</h1>
-            <div className="editorial-hero-meta">
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-map-pin-line"></i>
+
+        {/* Content Container */}
+        <div className="absolute inset-0 flex flex-col justify-end px-6 py-12 md:px-12 md:py-16 lg:px-20 lg:py-24 z-10">
+          <div className="max-w-5xl mx-auto w-full">
+            {/* Breadcrumbs */}
+            <nav aria-label="Breadcrumb" className="mb-6 animate-fade-up">
+              <ol className="flex flex-wrap items-center gap-3 text-xs md:text-sm font-medium tracking-widest uppercase text-[#01b47d]">
+                <li><Link to="/" className="hover:text-white transition-colors duration-300">Home</Link></li>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li><Link to="/world-cup-2026-stadiums" className="hover:text-white transition-colors duration-300">Stadiums</Link></li>
+                <li className="text-slate-600" aria-hidden="true">/</li>
+                <li><span className="text-white border-b border-[#01b47d]/50 pb-0.5" aria-current="page">{stadium.name}</span></li>
+              </ol>
+            </nav>
+
+            {/* Title */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 tracking-tight max-w-4xl drop-shadow-sm animate-fade-up [animation-delay:200ms]">
+              {effectiveId === 'estadio-azteca' ? 'Estadio Azteca Guide: World Cup 2026 Stadium & Tickets' : effectiveId === 'metlife-stadium' ? 'MetLife Stadium Guide: World Cup 2026 Final Venue | NY/NJ' : effectiveId === 'att-stadium' ? 'AT&T Stadium Guide: World Cup 2026 Venue | Dallas Cowboys' : effectiveId === 'arrowhead-stadium' ? 'Arrowhead Stadium Guide: World Cup 2026 Venue | Kansas City' : effectiveId === 'estadio-bbva' ? 'Estadio BBVA Guide: World Cup 2026 Stadium | Monterrey Mexico' : effectiveId === 'nrg-stadium' ? 'NRG Stadium Guide: World Cup 2026 Venue | Houston Texans' : effectiveId === 'mercedes-benz-stadium' ? 'Mercedes-Benz Stadium Guide: World Cup 2026 Venue | Atlanta' : effectiveId === 'lumen-field' ? 'Lumen Field Guide: World Cup 2026 Venue | Seattle Sounders' : effectiveId === 'sofi-stadium' ? 'SoFi Stadium Guide: World Cup 2026 Venue | Los Angeles' : effectiveId === 'levis-stadium' ? "Levi's Stadium Guide: World Cup 2026 Venue | San Francisco Bay" : effectiveId === 'lincoln-financial-field' ? 'Lincoln Financial Field Guide: World Cup 2026 | Philadelphia' : effectiveId === 'gillette-stadium' ? 'Gillette Stadium Guide: World Cup 2026 Venue | Boston Patriots' : effectiveId === 'hard-rock-stadium' ? 'Hard Rock Stadium Guide: World Cup 2026 Venue | Miami Florida' : effectiveId === 'bmo-field' ? 'BMO Field Guide: World Cup 2026 Venue | Toronto Canada' : effectiveId === 'bc-place-stadium' ? 'BC Place Stadium Guide: World Cup 2026 Venue | Vancouver Canada' : effectiveId === 'estadio-akron' ? 'Estadio Akron Guide: World Cup 2026 Stadium | Guadalajara Mexico' : stadium.name}
+            </h1>
+
+            {/* Meta Data */}
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4 text-slate-300 text-sm md:text-base font-medium animate-fade-up [animation-delay:400ms]">
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
+                  <i className="ri-map-pin-line text-lg"></i>
+                </div>
                 <span>{stadium.city}, {stadium.country}</span>
               </div>
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-calendar-event-line"></i>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
+                  <i className="ri-calendar-event-line text-lg"></i>
+                </div>
                 <span>{stadium.matches} matches</span>
               </div>
-              <div className="meta-item flex items-center gap-2">
-                <i className="ri-group-line"></i>
+              <div className="flex items-center gap-3 group/meta">
+                <div className="p-2 rounded-full bg-white/5 backdrop-blur-sm text-[#01b47d] group-hover/meta:bg-[#01b47d]/20 transition-colors">
+                  <i className="ri-group-line text-lg"></i>
+                </div>
                 <span>{stadium.capacity.toLocaleString()} capacity</span>
               </div>
-              {hostCitySlug && (
-                <div className="mt-6">
-
+              
+              {/* Save Guide Button */}
+              <button 
+                onClick={toggleSave}
+                className={`flex items-center gap-3 group/save transition-all duration-300 ${isSaved ? 'text-[#01b47d]' : 'text-slate-300 hover:text-white'}`}
+                aria-label={isSaved ? "Remove from saved guides" : "Save this guide"}
+              >
+                <div className={`p-2 rounded-full backdrop-blur-sm transition-all duration-300 ${isSaved ? 'bg-[#01b47d]/20 ring-1 ring-[#01b47d]/50' : 'bg-white/5 group-hover/save:bg-[#01b47d]/20'}`}>
+                  <i className={`${isSaved ? 'ri-bookmark-fill' : 'ri-bookmark-line'} text-lg`}></i>
                 </div>
-              )}
+                <span className="font-medium">{isSaved ? 'Saved' : 'Save Guide'}</span>
+              </button>
             </div>
           </div>
         </div>
