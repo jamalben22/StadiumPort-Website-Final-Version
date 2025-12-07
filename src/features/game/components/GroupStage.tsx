@@ -105,6 +105,12 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
     transition,
     zIndex: isDragging ? 50 : 1,
     willChange: isDragging ? 'transform, opacity' : 'transform',
+    // GPU Acceleration Enforcers
+    backfaceVisibility: 'hidden' as const,
+    WebkitBackfaceVisibility: 'hidden' as const,
+    perspective: 1000,
+    WebkitPerspective: 1000,
+    translateZ: 0,
   }), [transform, transition, isDragging]);
 
   const status = useMemo(() => getStatusStyles(index), [index]);
@@ -232,7 +238,7 @@ export const GroupStage = () => {
   const sensors = useSensors(
     useSensor(PointerSensor, {
       activationConstraint: {
-        distance: 8,
+        distance: 5, // Optimized for 60fps feel (Apple-like responsiveness)
       },
     }),
     useSensor(KeyboardSensor, {

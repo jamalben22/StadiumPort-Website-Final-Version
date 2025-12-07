@@ -120,6 +120,7 @@ export const BracketDesktop = React.memo(({
         .beam-active {
           stroke-dasharray: 12 12;
           animation: beam-flow 1s linear infinite;
+          will-change: stroke-dashoffset;
         }
       `}</style>
       
@@ -189,7 +190,10 @@ export const BracketDesktop = React.memo(({
                         className="absolute w-full px-2 flex items-center justify-center transition-all duration-500"
                         style={{
                             top: `${topY + 70}px`, // +50 top padding + 20 for titles
-                            height: `${MATCH_HEIGHT}px`
+                            height: `${MATCH_HEIGHT}px`,
+                            // CSS-based Virtual Rendering
+                            contentVisibility: 'auto',
+                            containIntrinsicSize: `${MATCH_HEIGHT}px`,
                         }}
                     >
                         <BracketMatchCard
@@ -216,7 +220,9 @@ export const BracketDesktop = React.memo(({
 
 const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPicks, totalHeight }: any) => {
   
-  const connectionPaths = useMemo(() => {
+  // 1. Static Paths (Layout only) - Memoized on [matchesByRound, positions]
+  // This layer NEVER re-renders when picks change, saving huge performance
+  const staticPaths = useMemo(() => {
     const paths: JSX.Element[] = [];
     
     ROUNDS.slice(0, 4).forEach((roundId, rIndex) => {
@@ -226,46 +232,68 @@ const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPick
             const nextMatchId = match.nextMatchId;
             if (!nextMatchId) return;
             
-            // Get positions
-            const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50; // +50 for top padding
+            const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50;
             const endY = (positions[nextMatchId] || 0) + (MATCH_HEIGHT / 2) + 50;
 
-            // X Coordinates (0-100 scale)
             const startX = (rIndex * 20) + 19; 
             const endX = ((rIndex + 1) * 20) + 1;
             
-            // Control Points for Bezier
             const cp1X = startX + (endX - startX) * 0.5;
             const cp2X = endX - (endX - startX) * 0.5;
 
             const pathData = `M ${startX} ${startY} C ${cp1X} ${startY}, ${cp2X} ${endY}, ${endX} ${endY}`;
             
-            const isCompleted = !!knockoutPicks[match.id];
+            paths.push(
+              <path
+                  key={`static-${match.id}`}
+                  d={pathData}
+                  fill="none"
+                  stroke="rgba(255, 255, 255, 0.05)"
+                  strokeWidth="1"
+                  vectorEffect="non-scaling-stroke"
+              />
+            );
+        });
+    });
+    return paths;
+  }, [matchesByRound, positions]);
+
+  // 2. Active Paths (Picks) - Memoized on [knockoutPicks, matchesByRound, positions]
+  // This layer only updates when picks change
+  const activePaths = useMemo(() => {
+    const paths: JSX.Element[] = [];
+
+    ROUNDS.slice(0, 4).forEach((roundId, rIndex) => {
+        const currentMatches = matchesByRound[roundId] || [];
+        
+        currentMatches.forEach((match: Match) => {
+            if (!knockoutPicks[match.id]) return;
+
+            const nextMatchId = match.nextMatchId;
+            if (!nextMatchId) return;
+            
+            const startY = (positions[match.id] || 0) + (MATCH_HEIGHT / 2) + 50;
+            const endY = (positions[nextMatchId] || 0) + (MATCH_HEIGHT / 2) + 50;
+
+            const startX = (rIndex * 20) + 19; 
+            const endX = ((rIndex + 1) * 20) + 1;
+            
+            const cp1X = startX + (endX - startX) * 0.5;
+            const cp2X = endX - (endX - startX) * 0.5;
+
+            const pathData = `M ${startX} ${startY} C ${cp1X} ${startY}, ${cp2X} ${endY}, ${endX} ${endY}`;
             
             paths.push(
-              <g key={`path-group-${match.id}`}>
-                {/* 1. Base Track (Always visible, faint) */}
                 <path
+                    key={`active-${match.id}`}
                     d={pathData}
                     fill="none"
-                    stroke="rgba(255, 255, 255, 0.05)"
-                    strokeWidth="1"
+                    stroke="#FBBF24" 
+                    strokeWidth="2"
                     vectorEffect="non-scaling-stroke"
+                    className="beam-active"
+                    style={{ filter: 'url(#neon-glow)' }}
                 />
-
-                {/* 2. Active Holographic Beam */}
-                {isCompleted && (
-                  <path
-                      d={pathData}
-                      fill="none"
-                      stroke="#FBBF24" 
-                      strokeWidth="2"
-                      vectorEffect="non-scaling-stroke"
-                      className="beam-active"
-                      style={{ filter: 'url(#neon-glow)' }}
-                  />
-                )}
-              </g>
             );
         });
     });
@@ -280,7 +308,6 @@ const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPick
         style={{ willChange: 'transform' }}
     >
         <defs>
-          {/* Neon Glow Filter */}
           <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="2" result="coloredBlur" />
             <feMerge>
@@ -288,16 +315,10 @@ const BracketConnections = React.memo(({ matchesByRound, positions, knockoutPick
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-
-          {/* Live Gradient: Gold to Transparent */}
-          <linearGradient id="gold-beam" gradientUnits="userSpaceOnUse" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FBBF24" stopOpacity="1" />
-            <stop offset="50%" stopColor="#D97706" stopOpacity="0.8" />
-            <stop offset="100%" stopColor="#FBBF24" stopOpacity="0" />
-          </linearGradient>
         </defs>
-
-        {connectionPaths}
+        
+        {staticPaths}
+        {activePaths}
     </svg>
   );
 });

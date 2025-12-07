@@ -36,6 +36,7 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
           <img 
           src={team.flagUrl} 
           alt={team.name} 
+          loading="lazy"
           className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
         />
         {/* Gradient overlay */}
@@ -113,12 +114,24 @@ export const ThirdPlaceSelector = React.memo(() => {
   const selectedCount = thirdPlacePicks.length;
   const isComplete = selectedCount === 8;
 
+  // Sound Optimization: Reuse AudioContext
+  const audioCtxRef = React.useRef<AudioContext | null>(null);
+
   const playClickSound = useCallback(() => {
     try {
       const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
       if (!AudioContext) return;
       
-      const ctx = new AudioContext();
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new AudioContext();
+      }
+      
+      const ctx = audioCtxRef.current;
+      // Resume if suspended (browser policy)
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+
       const osc = ctx.createOscillator();
       const gain = ctx.createGain();
       

@@ -155,8 +155,8 @@ export const BracketMobile = React.memo(({
                 const winnerId = knockoutPicks[match.id];
 
                 return (
+                  <div key={match.id} style={{ contentVisibility: 'auto', containIntrinsicSize: '100px' }}>
                   <BracketMatchCard
-                      key={match.id}
                       matchId={match.id}
                       team1Id={team1Id}
                       team2Id={team2Id}
@@ -165,6 +165,7 @@ export const BracketMobile = React.memo(({
                       className="py-2"
                       showCode={false}
                   />
+                  </div>
                 );
               })}
             </div>
