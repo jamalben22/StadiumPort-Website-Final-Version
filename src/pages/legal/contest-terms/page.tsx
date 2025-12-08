@@ -1,173 +1,336 @@
-
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { setPageMeta } from '../../../components/seo/MetaUtils';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { SchemaOrg, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { motion } from 'framer-motion';
+import { 
+  Trophy, 
+  Gavel, 
+  Globe2, 
+  AlertTriangle, 
+  Calendar, 
+  CheckCircle2, 
+  Gift,
+  Mail,
+  ShieldCheck,
+  FileText
+} from 'lucide-react';
 
 export default function ContestTermsPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'World Cup 2026 Prediction Contest - Official Terms & Conditions',
+      title: 'Contest Terms & Conditions – Stadiumport',
       description: 'Official rules, eligibility requirements, and prize details for the StadiumPort World Cup 2026 Prediction Contest.',
       url: `${siteUrl}/world-cup-2026-prediction-contest-terms`
     });
   }, []);
 
-  const content = `
-**Last Updated**: November 28, 2025 
-**Contest Period**: November 28, 2025 - July 19, 2026 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Contest Terms', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-prediction-contest-terms` }
+  ]);
 
-## 1. Eligibility 
+  const highlights = [
+    {
+      icon: Trophy,
+      title: "Win Big",
+      description: "Grand Prize: $500 Cash + Official Jersey + Match Ball. Total prize pool over $2,250 USD."
+    },
+    {
+      icon: Globe2,
+      title: "Global Entry",
+      description: "Open worldwide to legal residents aged 13+ (void where prohibited by law)."
+    },
+    {
+      icon: CheckCircle2,
+      title: "Free to Play",
+      description: "No purchase necessary. One entry per person. Fair play strictly enforced."
+    },
+    {
+      icon: Calendar,
+      title: "Timeline",
+      description: "Contest runs Nov 28, 2025 – July 19, 2026. Predictions lock June 11, 2026."
+    }
+  ];
 
-- Open worldwide to legal residents aged 13 or older 
-- Participants aged 13-17 must have parental/guardian consent 
-- Void in countries where prohibited by law (North Korea, Iran, Syria, Cuba, Crimea) 
-- Employees of Stadiumport, their immediate family, and affiliates are ineligible 
-- One entry per person (verified by email + IP address) 
-
-## 2. How To Enter 
-
-- Register at [stadiumport.com/world-cup-2026-prediction-game](https://stadiumport.com/world-cup-2026-prediction-game)
-- Complete predictions for all tournament stages 
-- Predictions may be edited unlimited times until June 11, 2026, 11:00 AM ET 
-- No purchase necessary to enter or win 
-
-## 3. Scoring & Winner Selection 
-
-- 1 point awarded for each correct prediction 
-- Winner = highest total score after Final on July 19, 2026 
-- Tie-breaking: (1) Correct champion → (2) Correct runner-up → (3) Random draw 
-- Winners announced within 48 hours of Final via email + public announcement 
-
-## 4. Prizes 
-
-**1st Place:** 
-- Official World Cup 2026 Winner Jersey (retail value: ~$150) 
-- Official World Cup 2026 Adidas Ball (retail value: ~$200) 
-- $500 USD Cash (via PayPal or bank transfer) 
-- **Total Approximate Retail Value (ARV): $850 USD** 
-
-**2nd-5th Place (Each):** 
-- Official World Cup 2026 Winner Jersey (ARV: ~$150) 
-- Official World Cup 2026 Adidas Ball (ARV: ~$200) 
-- **Total ARV per winner: $350 USD** 
-
-**Total Prize Pool ARV: $2,250 USD** 
-
-## 5. Prize Claiming & Delivery 
-
-- Winners must respond within 7 days of email notification 
-- Identity verification (government ID) required before prize distribution 
-- Physical prizes ship within 30 days via DHL/FedEx (free international shipping) 
-- Cash prizes delivered via PayPal or international wire transfer 
-- Winners responsible for any import duties, customs fees, or local taxes 
-- Unclaimed prizes forfeit after 30 days; alternate winner selected 
-
-## 6. Prize Substitution 
-
-- Stadiumport reserves right to substitute prizes of equal or greater value if original prizes become unavailable 
-- Jersey size/team preference honored when possible 
-- Cash prize amount guaranteed ($500 USD for 1st place) 
-
-## 7. Disqualification & Anti-Cheating 
-
-Immediate disqualification for: 
-- Multiple accounts or duplicate entries 
-- Bot usage, scripts, or automated predictions 
-- Sharing accounts or coordinating entries 
-- False identity or fraudulent information 
-- Attempting to manipulate scoring system 
-
-Banned users forfeit all prizes and future participation. 
-
-## 8. Data Collection & Use 
-
-- Email, name, country, and predictions collected 
-- Data used for contest administration, winner verification, and prize delivery 
-- Winners' first name + country may be publicly announced 
-- See our Contest Privacy Policy for full details 
-
-## 9. Limitation Of Liability 
-
-- Stadiumport not responsible for: technical failures, lost/delayed shipments, customs issues, prize damage during shipping, ISP/network problems, or force majeure events 
-- Participants release Stadiumport from all liability related to prize acceptance/use 
-- Maximum liability limited to prize retail value 
-
-## 10. Disputes & Governing Law 
-
-- All decisions by Stadiumport are final 
-- Disputes resolved through binding arbitration 
-- Governed by United States law 
-- Class action waiver applies 
-
-## 11. Modifications 
-
-Stadiumport reserves right to: 
-- Cancel, modify, or suspend contest for fraud, technical issues, or force majeure 
-- Adjust scoring in case of official FIFA match result changes 
-- Update these terms with 7 days notice (posted on this page) 
-
-## 12. Taxes 
-
-- Winners responsible for all applicable taxes in their jurisdiction 
-- US winners receiving $500+ in prizes will receive IRS Form 1099-MISC 
-
-## 13. Publicity 
-
-By entering, winners grant Stadiumport rights to use name, country, and winning predictions for promotional purposes without compensation. 
-
-## 14. Contact 
-
-Questions? Email: [info@stadiumport.com](mailto:info@stadiumport.com) 
-
-**NO PURCHASE NECESSARY. VOID WHERE PROHIBITED.**
-`;
+  const sections = [
+    "Eligibility",
+    "How To Enter",
+    "Scoring & Winners",
+    "Prizes",
+    "Prize Claiming",
+    "Disqualification",
+    "Data Use",
+    "Liability",
+    "Contact"
+  ];
 
   return (
-    <div className="min-h-screen bg-[#fbfbfd] dark:bg-[#000000] flex flex-col font-sans transition-colors duration-300 text-[#1d1d1f] dark:text-[#f5f5f7]">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+      <SchemaOrg schema={[
+        breadcrumbSchema,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Contest Terms & Conditions",
+          "url": `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-prediction-contest-terms`
+        }
+      ]} />
       <Header />
-      
-      <main className="flex-grow pt-32 pb-24 px-6 md:px-12 lg:px-24">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="max-w-[800px] mx-auto"
-        >
+
+      <main className="pt-32 pb-20 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          
           {/* Hero Section */}
-          <div className="mb-16">
-            <h1 className="text-4xl md:text-[48px] font-semibold tracking-tight text-[#1d1d1f] dark:text-[#f5f5f7] mb-4 leading-tight">
-              Official Terms & Conditions
+          <div className="text-center mb-20 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                Official Rules
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+              Contest <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Terms & Conditions</span>
             </h1>
-            <p className="text-xl md:text-2xl text-[#86868b] dark:text-[#86868b] font-medium leading-relaxed">
-              World Cup 2026 Prediction Contest
+            
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Official rules for the World Cup 2026 Prediction Contest. Fair play, clear prizes, and global fun.
             </p>
           </div>
 
-          <div className="h-px w-full bg-[#d2d2d7] dark:bg-[#424245] mb-12" />
+          {/* Key Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 animate-fade-up [animation-delay:200ms]">
+            {highlights.map((item, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
 
-          {/* Content Section */}
-          <article className="prose prose-lg max-w-none
-            prose-headings:font-semibold prose-headings:tracking-tight prose-headings:text-[#1d1d1f] dark:prose-headings:text-[#f5f5f7]
-            prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-            prose-p:text-[#1d1d1f] dark:prose-p:text-[#f5f5f7] prose-p:leading-relaxed prose-p:text-[17px] prose-p:font-normal
-            prose-li:text-[#1d1d1f] dark:prose-li:text-[#f5f5f7] prose-li:text-[17px]
-            prose-strong:text-[#1d1d1f] dark:prose-strong:text-[#f5f5f7] prose-strong:font-semibold
-            prose-a:text-[#0066cc] dark:prose-a:text-[#2997ff] prose-a:no-underline hover:prose-a:underline
-            prose-hr:border-[#d2d2d7] dark:prose-hr:border-[#424245]
-            [&>ul]:list-disc [&>ul]:pl-5
-          ">
-            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-              {content}
-            </ReactMarkdown>
-          </article>
-        </motion.div>
+          {/* Main Content Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 animate-fade-up [animation-delay:400ms]">
+            
+            {/* Table of Contents / Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 sticky top-32">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-indigo-500" /> Contents
+                </h3>
+                <nav className="space-y-3">
+                  {sections.map((item, i) => (
+                    <a 
+                      key={i}
+                      href={`#section-${i + 1}`}
+                      className="block text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    >
+                      {i + 1}. {item}
+                    </a>
+                  ))}
+                </nav>
+                <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
+                   <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">NO PURCHASE NECESSARY. VOID WHERE PROHIBITED.</p>
+                   <p className="text-xs text-slate-500 dark:text-slate-400">Last Updated: November 28, 2025</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Terms Details */}
+            <div className="lg:col-span-2 space-y-16">
+              
+              <section id="section-1">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">1</div>
+                  Eligibility
+                </h2>
+                <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8">
+                   <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+                      <li className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                        <span>Open worldwide to legal residents aged <strong>13 or older</strong>.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 mt-0.5 shrink-0" />
+                        <span>Participants aged 13-17 must have parental/guardian consent.</span>
+                      </li>
+                      <li className="flex items-start gap-3">
+                        <AlertTriangle className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
+                        <span>Void in countries where prohibited by law (North Korea, Iran, Syria, Cuba, Crimea).</span>
+                      </li>
+                       <li className="flex items-start gap-3">
+                        <AlertTriangle className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
+                        <span>Employees of Stadiumport and their immediate families are ineligible.</span>
+                      </li>
+                   </ul>
+                </div>
+              </section>
+
+              <section id="section-2">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">2</div>
+                  How To Enter
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  Register at <a href="/world-cup-2026-prediction-game" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">stadiumport.com/prediction-game</a> and complete predictions for all tournament stages.
+                </p>
+                <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-500/20 rounded-2xl p-6">
+                  <p className="text-indigo-900 dark:text-indigo-200 font-medium text-sm">
+                    <strong>Deadline:</strong> Predictions may be edited unlimited times until June 11, 2026, 11:00 AM ET. No purchase necessary.
+                  </p>
+                </div>
+              </section>
+
+              <section id="section-3">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">3</div>
+                  Scoring & Winner Selection
+                </h2>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-400 leading-relaxed list-disc list-inside marker:text-indigo-500">
+                  <li><strong>1 point</strong> awarded for each correct prediction.</li>
+                  <li>Winner determined by highest total score after the Final on July 19, 2026.</li>
+                  <li><strong>Tie-Breaker:</strong> (1) Correct Champion → (2) Correct Runner-up → (3) Random Draw.</li>
+                  <li>Winners announced within 48 hours via email.</li>
+                </ul>
+              </section>
+
+              <section id="section-4">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">4</div>
+                  Prizes
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-3xl p-8 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
+                    <div className="relative z-10">
+                      <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/20 mb-4 text-xs font-bold uppercase tracking-wider">
+                         <Trophy className="w-3 h-3" /> Grand Prize (1st Place)
+                      </div>
+                      <div className="text-3xl font-bold mb-1">$850 USD Value</div>
+                      <ul className="space-y-2 text-indigo-100 text-sm mt-4">
+                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4" /> $500 USD Cash</li>
+                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4" /> Official Winner Jersey</li>
+                         <li className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4" /> Official Adidas Match Ball</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8">
+                     <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 dark:bg-white/10 mb-4 text-xs font-bold text-slate-600 dark:text-slate-300 uppercase tracking-wider">
+                         Runners Up (2nd-5th)
+                      </div>
+                      <div className="text-2xl font-bold text-slate-900 dark:text-white mb-1">$350 USD Value</div>
+                      <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm mt-4">
+                         <li className="flex items-center gap-2"><Gift className="w-4 h-4 text-indigo-500" /> Official Winner Jersey</li>
+                         <li className="flex items-center gap-2"><Gift className="w-4 h-4 text-indigo-500" /> Official Adidas Match Ball</li>
+                      </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-5">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">5</div>
+                  Prize Claiming & Delivery
+                </h2>
+                <div className="space-y-4 text-slate-600 dark:text-slate-400">
+                   <p>Winners must respond within <strong>7 days</strong> of notification. Identity verification required.</p>
+                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                         <h4 className="font-bold text-slate-900 dark:text-white mb-1">Physical Prizes</h4>
+                         <p className="text-sm">Shipped within 30 days via DHL/FedEx (Free international shipping).</p>
+                      </div>
+                      <div className="p-4 bg-slate-50 dark:bg-white/5 rounded-xl border border-slate-100 dark:border-white/5">
+                         <h4 className="font-bold text-slate-900 dark:text-white mb-1">Cash Prizes</h4>
+                         <p className="text-sm">Delivered via PayPal or Wire Transfer.</p>
+                      </div>
+                   </div>
+                </div>
+              </section>
+
+              <section id="section-6">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">6</div>
+                  Disqualification & Anti-Cheating
+                </h2>
+                <div className="bg-red-50 dark:bg-red-900/10 border border-red-100 dark:border-red-900/30 rounded-2xl p-6">
+                   <div className="flex items-start gap-4">
+                      <ShieldCheck className="w-6 h-6 text-red-600 dark:text-red-400 shrink-0" />
+                      <div>
+                         <h3 className="font-bold text-red-700 dark:text-red-400 mb-2">Zero Tolerance Policy</h3>
+                         <p className="text-sm text-red-800 dark:text-red-300 mb-2">Immediate disqualification for:</p>
+                         <ul className="text-sm text-red-800 dark:text-red-300 list-disc list-inside">
+                            <li>Multiple accounts or duplicate entries</li>
+                            <li>Bot usage or automated scripts</li>
+                            <li>False identity or fraudulent info</li>
+                         </ul>
+                      </div>
+                   </div>
+                </div>
+              </section>
+
+              <section id="section-7">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">7</div>
+                  Data Collection & Use
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  We collect email, name, and country for administration and verification. Winner's first name and country may be publicly announced.
+                </p>
+                <a href="/world-cup-2026-prediction-contest-privacy-policy" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline flex items-center gap-2">
+                   View Contest Privacy Policy <Globe2 className="w-4 h-4" />
+                </a>
+              </section>
+
+              <section id="section-8">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">8</div>
+                  Limitation of Liability
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                  Stadiumport is not responsible for technical failures, shipping issues, or force majeure events. By entering, participants release Stadiumport from liability related to prize acceptance. Disputes resolved via binding arbitration under US law.
+                </p>
+              </section>
+
+              <section id="section-9">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">9</div>
+                  Contact
+                </h2>
+                <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 flex items-center gap-4">
+                   <div className="w-12 h-12 bg-white dark:bg-white/10 rounded-full flex items-center justify-center text-indigo-600 dark:text-indigo-400 shadow-sm">
+                      <Mail className="w-6 h-6" />
+                   </div>
+                   <div>
+                      <p className="text-slate-900 dark:text-white font-bold mb-1">Have questions about the contest?</p>
+                      <a href="mailto:info@stadiumport.com" className="text-indigo-600 dark:text-indigo-400 font-semibold hover:underline">
+                         info@stadiumport.com
+                      </a>
+                   </div>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+        </div>
       </main>
-
       <Footer />
     </div>
   );

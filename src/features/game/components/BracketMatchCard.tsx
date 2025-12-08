@@ -66,7 +66,7 @@ const TeamRow = React.memo(({
            {/* Shine Effect */}
            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 translate-x-[-100%] animate-shimmer" />
            {/* Noise Texture */}
-           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+           <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
          </>
       )}
 
@@ -168,7 +168,7 @@ export const BracketMatchCard = React.memo(({
         <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent z-20" />
         
         {/* Card Noise Overlay */}
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
+        <div className="absolute inset-0 bg-[url('/assets/noise.svg')] opacity-[0.03] pointer-events-none" />
         
         <TeamRow 
           team={team1} 

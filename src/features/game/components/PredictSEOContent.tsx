@@ -1,140 +1,214 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  Trophy, 
+  Share2, 
+  Zap, 
+  Layout, 
+  MapPin, 
+  HelpCircle,
+  CheckCircle2,
+  Calendar,
+  Users,
+  ChevronRight,
+  ArrowRight
+} from 'lucide-react';
 
 export const PredictSEOContent = () => {
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-slate-300">
-      <div className="prose prose-invert prose-lg max-w-none">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 font-inter">
+      
+      {/* Hero / Title Section */}
+      <div className="text-center mb-20">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-8 backdrop-blur-sm">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+          </span>
+          <span className="text-xs font-semibold text-indigo-300 uppercase tracking-widest">
+            Interactive Simulator
+          </span>
+        </div>
         
-        {/* H1 - Primary Keyword Target */}
-        <h1 className="text-4xl md:text-5xl font-['Teko'] font-bold text-white mb-8 tracking-wide uppercase">
-          World Cup 2026 Predictor: The Ultimate Bracket Challenge Simulator
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
+          World Cup 2026 Predictor: <br />
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">The Ultimate Bracket Challenge</span>
         </h1>
-
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="col-span-2 space-y-6">
-            <p className="lead text-xl text-slate-200">
-              Welcome to the most advanced <strong>World Cup 2026 Predictor</strong> on the web. Experience the thrill of the tournament before kickoff by simulating every match from the Group Stage to the Final. Our interactive <strong>World Cup 2026 Bracket Challenge</strong> lets you forecast the destiny of all 48 teams competing in the USA, Canada, and Mexico.
-            </p>
-            <p>
-              Whether you're a seasoned tactical analyst or a passionate fan supporting your nation, our <strong>FIFA World Cup 2026 Simulator</strong> provides the perfect platform to test your football knowledge. Compete with friends, share your predictions on social media, and see if you have what it takes to predict the next World Champion.
-            </p>
-          </div>
-          <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-sm">
-            <h3 className="text-xl font-['Teko'] font-bold text-[#FBBF24] mb-4 uppercase">Why Use Our Predictor?</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
-                <i className="ri-check-double-line text-[#01b47d] mt-1"></i>
-                <span><strong>Full 48-Team Format:</strong> Updated for the new 12-group structure.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <i className="ri-check-double-line text-[#01b47d] mt-1"></i>
-                <span><strong>Real-Time Simulation:</strong> Instant bracket updates based on your picks.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <i className="ri-check-double-line text-[#01b47d] mt-1"></i>
-                <span><strong>Shareable Results:</strong> Generate custom prediction cards for Instagram & Twitter.</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <i className="ri-check-double-line text-[#01b47d] mt-1"></i>
-                <span><strong>Official Prizes:</strong> Top predictors win authentic jerseys and gear.</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* H2 - Secondary Keywords & Semantic Relevance */}
-        <h2 className="text-3xl font-['Teko'] font-bold text-white mt-12 mb-6 uppercase flex items-center gap-3">
-          <i className="ri-football-line text-[#01b47d]"></i>
-          How to Play the World Cup 2026 Prediction Game
-        </h2>
         
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          <div>
-             <h3 className="text-xl font-bold text-white mb-3">Step 1: Predict Group Winners</h3>
-             <p className="text-slate-400 mb-4">
-               Start by analyzing the 12 groups. For the first time in history, the World Cup features 48 teams. Select the Winner and Runner-up for each group. These teams automatically advance to the Round of 32.
-             </p>
-             <h3 className="text-xl font-bold text-white mb-3">Step 2: Select Best Third-Place Teams</h3>
-             <p className="text-slate-400 mb-4">
-               The new format allows the 8 best third-place teams to advance. Choose carefully—these underdogs often cause the biggest upsets in the tournament.
-             </p>
-          </div>
-          <div>
-             <h3 className="text-xl font-bold text-white mb-3">Step 3: Navigate the Knockout Bracket</h3>
-             <p className="text-slate-400 mb-4">
-               This is where legends are made. Plot your path through the Round of 32, Round of 16, Quarterfinals, and Semifinals. Will favorites like France, Brazil, or Argentina dominate, or will we see a Cinderella story?
-             </p>
-             <h3 className="text-xl font-bold text-white mb-3">Step 4: Crown the Champion</h3>
-             <p className="text-slate-400 mb-4">
-               Pick the winner of the Final on July 19, 2026, at MetLife Stadium. Lock in your prediction and share your bracket with the world!
-             </p>
-          </div>
-        </div>
-
-        {/* Semantic Cluster: Tournament Format Details */}
-        <div className="mb-12">
-          <h2 className="text-3xl font-['Teko'] font-bold text-white mb-6 uppercase flex items-center gap-3">
-            <i className="ri-map-pin-line text-[#01b47d]"></i>
-            The New 48-Team World Cup Format Explained
-          </h2>
-          <p className="text-slate-300 mb-4">
-            The 2026 World Cup in the USA, Canada, and Mexico introduces a historic expansion to 48 teams. This change revolutionizes the bracket structure and prediction strategies.
-          </p>
-          
-          <h3 className="text-xl font-bold text-white mb-2">Group Stage (12 Groups of 4)</h3>
-          <p className="text-slate-400 mb-4">
-            Unlike previous tournaments, there are now 12 groups (A through L). Each team plays three matches. The top two teams from each group advance automatically.
-          </p>
-
-          <h3 className="text-xl font-bold text-white mb-2">The "Best Third-Place" Rule</h3>
-          <p className="text-slate-400 mb-4">
-            This is the most critical factor for your bracket. The 8 best third-place teams (based on points, then goal difference) qualify for the Round of 32. Identifying these survivors is key to a perfect prediction.
-          </p>
-
-          <h3 className="text-xl font-bold text-white mb-2">Knockout Phase Expansion</h3>
-          <p className="text-slate-400 mb-4">
-            An entire new round has been added: the Round of 32. This means teams must win five knockout matches to lift the trophy. The path to glory is longer and more grueling than ever before.
-          </p>
-        </div>
-
-        {/* Semantic Cluster: Host Cities & Stadiums */}
-        <div className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 rounded-2xl p-8 border border-white/5 my-12">
-           <h2 className="text-3xl font-['Teko'] font-bold text-white mb-6 uppercase">Plan Your World Cup Journey</h2>
-           <p className="mb-6">
-             Your prediction is just the beginning. Stadiumport is your ultimate guide to the tournament. Explore our comprehensive guides for all 16 host cities and stadiums:
-           </p>
-           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Link to="/world-cup-2026-stadiums/metlife-stadium" className="text-[#01b47d] hover:text-[#FBBF24] transition-colors">New York/NJ Stadium Guide</Link>
-              <Link to="/world-cup-2026-stadiums/att-stadium" className="text-[#01b47d] hover:text-[#FBBF24] transition-colors">Dallas Stadium Guide</Link>
-              <Link to="/world-cup-2026-stadiums/sofi-stadium" className="text-[#01b47d] hover:text-[#FBBF24] transition-colors">Los Angeles Stadium Guide</Link>
-              <Link to="/world-cup-2026-stadiums/estadio-azteca" className="text-[#01b47d] hover:text-[#FBBF24] transition-colors">Mexico City Stadium Guide</Link>
-           </div>
-        </div>
-
-        {/* H2 - FAQ Section (Schema Markup Target) */}
-        <h2 className="text-3xl font-['Teko'] font-bold text-white mt-12 mb-8 uppercase">Frequently Asked Questions</h2>
-        
-        <div className="space-y-6">
-          <div className="border-b border-white/10 pb-6">
-            <h3 className="text-xl font-bold text-white mb-2">When does the 2026 World Cup start?</h3>
-            <p className="text-slate-400">The tournament kicks off on June 11, 2026, at the Estadio Azteca in Mexico City. The prediction game will remain open until the first match begins.</p>
-          </div>
-          <div className="border-b border-white/10 pb-6">
-            <h3 className="text-xl font-bold text-white mb-2">How does the new 48-team format work?</h3>
-            <p className="text-slate-400">The 2026 World Cup features 12 groups of 4 teams. The top 2 from each group, plus the 8 best third-place teams, advance to a new Round of 32 knockout stage.</p>
-          </div>
-          <div className="border-b border-white/10 pb-6">
-            <h3 className="text-xl font-bold text-white mb-2">Is this prediction game free to play?</h3>
-            <p className="text-slate-400">Yes! The Stadiumport World Cup 2026 Predictor is 100% free.</p>
-          </div>
-          <div className="pb-6">
-             <h3 className="text-xl font-bold text-white mb-2">Can I download my bracket?</h3>
-             <p className="text-slate-400">Absolutely. Once you complete your prediction, you can download a high-quality image of your bracket or share it directly to Instagram, X (Twitter), and Facebook.</p>
-          </div>
-        </div>
-
+        <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
+          Experience the thrill of the tournament before kickoff. Forecast the destiny of all 48 teams in the USA, Canada, and Mexico with the most advanced simulator on the web.
+        </p>
       </div>
+
+      {/* Features Grid */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+        {[
+          { icon: Layout, title: "Full 48-Team Format", desc: "Updated for the new 12-group structure." },
+          { icon: Zap, title: "Real-Time Simulation", desc: "Instant bracket updates based on your picks." },
+          { icon: Share2, title: "Shareable Results", desc: "Generate custom prediction cards for social media." },
+          { icon: Trophy, title: "Official Prizes", desc: "Top predictors win authentic jerseys and gear." }
+        ].map((item, i) => (
+          <motion.div 
+            key={i}
+            whileHover={{ y: -5 }}
+            className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:bg-white/10 transition-colors backdrop-blur-sm"
+          >
+            <div className="w-12 h-12 bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-400">
+              <item.icon className="w-6 h-6" />
+            </div>
+            <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
+            <p className="text-slate-400 text-sm leading-relaxed">{item.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* How to Play Section */}
+      <div className="mb-24">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4">How to Play</h2>
+          <p className="text-slate-400">Four simple steps to glory.</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 relative">
+           {/* Connecting Line (Desktop) */}
+           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo-500/30 to-transparent -translate-x-1/2"></div>
+
+           {[
+             { title: "Predict Group Winners", desc: "Select Winner and Runner-up for all 12 groups. These 24 teams advance automatically." },
+             { title: "Select Third-Place Teams", desc: "Choose the 8 best third-place teams to complete the Round of 32 field." },
+             { title: "Navigate the Bracket", desc: "Plot your path through the Knockout Stages. From Round of 32 to the Final." },
+             { title: "Crown the Champion", desc: "Pick the winner of the Final on July 19, 2026 at MetLife Stadium." }
+           ].map((step, i) => (
+             <div key={i} className={`relative flex items-start gap-6 ${i % 2 === 0 ? 'md:flex-row-reverse md:text-right' : ''}`}>
+                {/* Number Badge */}
+                <div className={`absolute top-0 md:top-1 ${i % 2 === 0 ? 'right-0 md:right-auto md:left-1/2 md:translate-x-[-50%]' : 'left-0 md:left-1/2 md:translate-x-[-50%]'} w-8 h-8 rounded-full bg-indigo-600 border-4 border-slate-900 z-10 flex items-center justify-center text-xs font-bold text-white`}>
+                  {i + 1}
+                </div>
+                
+                <div className={`flex-1 pt-1 ${i % 2 === 0 ? 'mr-12 md:mr-0 md:pr-12' : 'ml-12 md:ml-0 md:pl-12'}`}>
+                  <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                  <p className="text-slate-400 leading-relaxed">{step.desc}</p>
+                </div>
+             </div>
+           ))}
+        </div>
+      </div>
+
+      {/* New Format Explained */}
+      <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl border border-white/10 p-8 md:p-12 mb-24 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-white mb-6">The New 48-Team Format</h2>
+            <p className="text-slate-300 text-lg mb-8 leading-relaxed">
+              The 2026 World Cup revolutionizes the bracket structure. Understanding these changes is key to a perfect prediction.
+            </p>
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <Users className="w-5 h-5 text-indigo-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">12 Groups of 4</h3>
+                  <p className="text-slate-400 text-sm">Top 2 advance automatically.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <CheckCircle2 className="w-5 h-5 text-indigo-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">"Best Third-Place" Rule</h3>
+                  <p className="text-slate-400 text-sm">Top 8 third-place teams qualify for R32.</p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
+                  <Trophy className="w-5 h-5 text-indigo-400" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-white">Round of 32</h3>
+                  <p className="text-slate-400 text-sm">A new knockout round added. 5 wins to glory.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white/5 rounded-2xl p-6 border border-white/5">
+             <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+                <span className="text-slate-400">Teams</span>
+                <span className="text-white font-bold">48</span>
+             </div>
+             <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+                <span className="text-slate-400">Matches</span>
+                <span className="text-white font-bold">104</span>
+             </div>
+             <div className="flex items-center justify-between mb-4 border-b border-white/10 pb-4">
+                <span className="text-slate-400">Knockout Rounds</span>
+                <span className="text-white font-bold">5</span>
+             </div>
+             <div className="flex items-center justify-between">
+                <span className="text-slate-400">Duration</span>
+                <span className="text-white font-bold">39 Days</span>
+             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Host Cities CTA */}
+      <div className="text-center mb-24">
+        <h2 className="text-3xl font-bold text-white mb-6">Plan Your World Cup Journey</h2>
+        <p className="text-slate-400 max-w-2xl mx-auto mb-10">
+          Your prediction is just the beginning. Explore our comprehensive guides for all 16 host cities and stadiums.
+        </p>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link 
+            to="/world-cup-2026-stadiums/metlife-stadium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
+          >
+            <MapPin className="w-4 h-4 text-indigo-400" /> NY/NJ Guide
+          </Link>
+          <Link 
+            to="/world-cup-2026-stadiums/att-stadium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
+          >
+            <MapPin className="w-4 h-4 text-indigo-400" /> Dallas Guide
+          </Link>
+          <Link 
+            to="/world-cup-2026-stadiums/sofi-stadium"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
+          >
+            <MapPin className="w-4 h-4 text-indigo-400" /> LA Guide
+          </Link>
+          <Link 
+            to="/world-cup-2026-stadiums/estadio-azteca"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
+          >
+            <MapPin className="w-4 h-4 text-indigo-400" /> Mexico City Guide
+          </Link>
+        </div>
+      </div>
+
+      {/* FAQ */}
+      <div>
+        <h2 className="text-3xl font-bold text-white mb-10 text-center flex items-center justify-center gap-3">
+          <HelpCircle className="w-8 h-8 text-indigo-500" /> Frequently Asked Questions
+        </h2>
+        <div className="grid md:grid-cols-2 gap-6">
+          {[
+            { q: "When does the 2026 World Cup start?", a: "June 11, 2026, at Estadio Azteca in Mexico City. Predictions close before kickoff." },
+            { q: "How does the 48-team format work?", a: "12 groups of 4. Top 2 + 8 best 3rd place teams advance to Round of 32." },
+            { q: "Is this prediction game free?", a: "Yes! 100% free to play. No purchase necessary." },
+            { q: "Can I download my bracket?", a: "Absolutely. Generate a high-quality image to share on social media." }
+          ].map((faq, i) => (
+            <div key={i} className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors">
+              <h3 className="font-bold text-white mb-2">{faq.q}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 };

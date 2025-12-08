@@ -40,6 +40,12 @@ const GuadalajaraArticlePage = lazy(() => import('../pages/cities/guadalajara/pa
 const MonterreyArticlePage = lazy(() => import('../pages/cities/monterrey/page'));
 const TravelTipsPage = lazy(() => import('../pages/travel-tips/page'));
 const TravelTipsArticlePage = lazy(() => import('../pages/travel-tips/article/page'));
+const TravelTipsBudgetGuidePage = lazy(() => import('../pages/travel-tips/article/BudgetGuideArticle'));
+const TravelTipsBestTimePage = lazy(() => import('../pages/travel-tips/article/BestTimeBookArticle'));
+const TravelTipsHostCityPage = lazy(() => import('../pages/travel-tips/article/HostCityGuideArticle'));
+const TravelTipsAccommodationGuidePage = lazy(() => import('../pages/travel-tips/article/AccommodationGuideArticle'));
+const TravelTipsFlightBookingPage = lazy(() => import('../pages/travel-tips/article/FlightBookingGuideArticle'));
+const TravelTipsItineraryPlanningPage = lazy(() => import('../pages/travel-tips/article/ItineraryPlanningArticle'));
 const TravelRoutesPage = lazy(() => import('../pages/travel-routes/page'));
 const TravelRoutesArticlePage = lazy(() => import('../pages/travel-routes/article/page'));
 const TransportationArticlePage = lazy(() => import('../pages/transportation/article/page'));
@@ -493,6 +499,62 @@ const routes: RouteObject[] = [
   {
     path: '/world-cup-2026-travel-tips',
     element: <TravelTipsPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-budget-guide-complete-cost-breakdown-&-savings-startegies',
+    element: <TravelTipsBudgetGuidePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/complete-cost-breakdown-and-savings-strategies',
+    element: <TravelTipsBudgetGuidePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/best-time-to-book-world-cup-2026-tickets-flights-and-hotels',
+    element: <TravelTipsBestTimePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/multi-city-tournament-planning',
+    element: <TravelTipsBestTimePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-host-city-guide-which-cities-should-you-visit',
+    element: <TravelTipsHostCityPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/dynamic-pricing-mastery',
+    element: <TravelTipsHostCityPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/which-cities-should-you-visit',
+    element: <TravelTipsHostCityPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-accommodation-guide-where-to-stay-for-every-budget',
+    element: <TravelTipsAccommodationGuidePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/where-to-stay-for-every-budget',
+    element: <TravelTipsAccommodationGuidePage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-flight-booking-guide-routes-airlines-and-strategies',
+    element: <TravelTipsFlightBookingPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-flight-booking-guide-routes-airlines-strategies',
+    element: <TravelTipsFlightBookingPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/rideshare-pickup-zone-strategy',
+    element: <TravelTipsFlightBookingPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/world-cup-2026-itinerary-planning-1-2-or-3-week-sample-itineraries',
+    element: <TravelTipsItineraryPlanningPage />
+  },
+  {
+    path: '/world-cup-2026-travel-tips/1-2-or-3-week-sample-itineraries',
+    element: <TravelTipsItineraryPlanningPage />
   },
   {
     path: '/world-cup-2026-travel-tips/:slug',

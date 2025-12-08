@@ -10,6 +10,7 @@ import { useMediaQuery } from '../hooks/useMediaQuery';
 import { SEO } from '../components/common/SEO';
 import { SchemaOrg } from '../components/seo/SchemaOrg';
 import { PredictSEOContent } from '../features/game/components/PredictSEOContent';
+import { ScrollScrubber } from '../features/game/components/ScrollScrubber';
 
 // Lazy loaded components
 const GroupStage = lazy(() => import('../features/game/components/GroupStage').then(module => ({ default: module.GroupStage })));
@@ -396,31 +397,31 @@ function PredictGameContent() {
               {/* Stepper UI (Persistent) */}
               <div className="mb-8 md:mb-12">
                 <div className="flex items-center justify-start gap-4 md:justify-between relative overflow-x-auto no-scrollbar px-2">
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-slate-200 dark:bg-navy-700 -z-10"></div>
+                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-white/10 -z-10 rounded-full"></div>
                   {STEPS.map((step) => {
                     const isCompleted = currentStep > step.id;
                     const isCurrent = currentStep === step.id;
                     
                     return (
                       <div key={step.id} className="flex flex-col items-center min-w-[72px] md:min-w-0">
-                        <div 
-                          className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm transition-all duration-300 border-4 
-                            ${isCompleted 
-                              ? 'bg-[#01b47d] border-[#01b47d] text-white' 
-                              : isCurrent 
-                                ? 'bg-white dark:bg-navy-800 border-[#FBBF24] text-[#FBBF24] shadow-[0_0_15px_rgba(251,191,36,0.5)]' 
-                                : 'bg-white dark:bg-navy-800 border-slate-200 dark:border-navy-600 text-slate-400'
-                            }`}
+                        <motion.div 
+                          initial={false}
+                          animate={{
+                             scale: isCurrent ? 1.1 : 1,
+                             backgroundColor: isCompleted ? '#10b981' : isCurrent ? '#6366f1' : '#1e293b',
+                             borderColor: isCompleted ? '#10b981' : isCurrent ? '#818cf8' : '#334155'
+                          }}
+                          className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm border-4 transition-all duration-300 shadow-lg ${isCurrent ? 'shadow-indigo-500/30' : ''}`}
                         >
-                          {isCompleted ? <i className="ri-check-line"></i> : step.id + 1}
-                        </div>
+                          {isCompleted ? <i className="ri-check-line text-white"></i> : <span className={isCurrent ? 'text-white' : 'text-slate-400'}>{step.id + 1}</span>}
+                        </motion.div>
                         <span 
-                          className={`mt-2 text-[10px] md:text-xs font-medium uppercase tracking-wider transition-colors duration-300 whitespace-nowrap
+                          className={`mt-3 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors duration-300 whitespace-nowrap font-inter
                             ${isCurrent 
-                              ? 'text-[#FBBF24] font-bold' 
+                              ? 'text-indigo-400' 
                               : isCompleted 
-                                ? 'text-[#01b47d]' 
-                                : 'text-slate-400'
+                                ? 'text-emerald-400' 
+                                : 'text-slate-500'
                             } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
                           >
                           {step.label}
@@ -511,7 +512,7 @@ function PredictGameContent() {
             </>
             
             {/* SEO Content Section - Visible on scroll */}
-            <div className="mt-24 pb-10 opacity-80 hover:opacity-100 transition-opacity duration-500">
+            <div className="mt-24 pb-10">
                <PredictSEOContent />
             </div>
         </div>
@@ -531,6 +532,9 @@ function PredictGameContent() {
           totalDots={5}
         />
       )}
+
+      {/* 4. Premium Scroll Scrubber */}
+      <ScrollScrubber containerRef={scrollContainerRef} />
 
     </GameLayout>
   );
