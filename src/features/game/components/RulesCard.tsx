@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Trophy, AlertCircle, CheckCircle2, Shirt, Disc, DollarSign, Shield, HelpCircle, Globe } from 'lucide-react';
 
@@ -194,7 +195,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                 <span className="text-[#01b47d] font-['Teko'] text-xl">C</span>
                 <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   <span className="text-slate-900 dark:text-white font-bold">Eligibility Requirements</span> <br />
-                  - Open worldwide to participants 18+ years old <br />
+                  - Open worldwide to participants 13+ years old <br />
                   - Valid email address required for entry <br />
                   - Winners must complete identity verification (KYC) before prize distribution <br />
                   - Employees of Stadiumport and immediate family members ineligible <br />
@@ -238,13 +239,13 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
               <li className="flex gap-4">
                 <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   Q: What if I don't receive confirmation email? <br />
-                  A: Check spam/junk folder. Contact support@stadiumport.com within 24 hours if issues persist.
+                  A: Check spam/junk folder. Contact info@stadiumport.com within 24 hours if issues persist.
                 </p>
               </li>
               <li className="flex gap-4">
                 <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
                   Q: Can I play from any country? <br />
-                  A: Yes, open globally to participants 18+. Some restrictions may apply based on local gambling laws.
+                  A: Yes, open globally to participants 13+. Some restrictions may apply based on local gambling laws.
                 </p>
               </li>
             </ul>
@@ -254,7 +255,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
         <div className="mt-8 pt-8 border-t border-slate-200 dark:border-white/5 text-center">
            <p className="text-slate-500 dark:text-white/60 text-[11px] md:text-xs font-['Rajdhani'] font-medium leading-relaxed text-center">
              <span className="text-slate-900 dark:text-white">Official World Cup 2026 Prediction Challenge</span> · <span className="text-slate-900 dark:text-white font-bold uppercase tracking-widest">STADIUMPORT</span> <br />
-             Terms apply · Privacy Policy · Contact Support <br />
+             <Link to="/world-cup-2026-prediction-contest-terms" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Terms apply</Link> · <Link to="/world-cup-2026-prediction-contest-privacy" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Privacy Policy</Link> · <Link to="/world-cup-2026-prediction-contest-support" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Contact Support</Link> <br />
              Updated: Nov 28, 2025 · Opens: Nov 28, 2025 · Predictions lock: Jun 11, 2026
            </p>
         </div>

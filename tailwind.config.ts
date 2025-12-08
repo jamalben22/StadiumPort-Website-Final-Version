@@ -1,4 +1,6 @@
 
+import typography from '@tailwindcss/typography';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -617,6 +619,7 @@ export default {
     },
   },
   plugins: [
+    typography,
     function({ addUtilities }) {
       addUtilities({
         '.pb-safe': { 'padding-bottom': 'env(safe-area-inset-bottom)' },

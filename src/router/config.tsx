@@ -56,7 +56,10 @@ const CityComparisonsArticlePage = lazy(() => import('../pages/city-comparisons/
 const EditorialPolicyPage = lazy(() => import('../pages/legal/editorial-policy/page'));
 const AuthorsPage = lazy(() => import('../pages/about/authors/page'));
 const PrivacyPage = lazy(() => import('../pages/legal/privacy/page'));
+const ContestPrivacyPage = lazy(() => import('../pages/legal/contest-privacy/page'));
 const TermsPage = lazy(() => import('../pages/legal/terms/page'));
+const ContestTermsPage = lazy(() => import('../pages/legal/contest-terms/page'));
+const ContestSupportPage = lazy(() => import('../pages/legal/contest-support/page'));
 const AffiliateDisclaimerPage = lazy(() => import('../pages/legal/affiliate-disclaimer/page'));
 const PredictPage = lazy(() => import('../pages/PredictPage'));
 const DrawHubPage = lazy(() => import('../pages/draw-hub/page'));
@@ -624,12 +627,24 @@ const routes: RouteObject[] = [
     element: <PrivacyPage />
   },
   {
+    path: '/world-cup-2026-prediction-contest-privacy',
+    element: <ContestPrivacyPage />
+  },
+  {
     path: '/legal/terms',
     element: <TermsPage />
   },
   {
     path: '/terms',
     element: <TermsPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-contest-terms',
+    element: <ContestTermsPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-contest-support',
+    element: <ContestSupportPage />
   },
   {
     path: '/legal/affiliate-disclaimer',
