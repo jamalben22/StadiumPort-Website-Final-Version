@@ -216,29 +216,61 @@ function PredictGameContent() {
       <GameHeader onExit={handleExit} />
       
       <SEO 
-        title="World Cup 2026 Predictor: The #1 Bracket Challenge Simulator" 
-        description="Predict the 2026 World Cup winner with our advanced simulator. Forecast every match from the 48-team group stage to the Final. Free to play, official prizes, and instant sharing."
-        keywords={["World Cup 2026 Predictor", "World Cup 2026 Bracket", "FIFA World Cup 2026 Simulator", "2026 World Cup Prediction Game", "World Cup Bracket Challenge"]}
+        title="Free World Cup 2026 Predictor Contest | Win Jerseys, Match Ball & Cash (13+)" 
+        description="Free worldwide for ages 13+. Win official jerseys, match ball & $500 cash. Open to all countries. Parental consent required for minors. Void where prohibited."
+        keywords={["World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes", "Win World Cup prizes internationally"]}
         url="/world-cup-2026-prediction-game"
       />
       <SchemaOrg schema={{
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
+        "@type": "WebApplication",
         "name": "World Cup 2026 Predictor",
         "applicationCategory": "GameApplication",
-        "operatingSystem": "Web",
+        "operatingSystem": "Any",
         "url": "https://stadiumport.com/world-cup-2026-prediction-game",
         "offers": {
           "@type": "Offer",
           "price": "0",
           "priceCurrency": "USD"
         },
-        "description": "Interactive World Cup 2026 bracket simulator and prediction game.",
+        "description": "Interactive World Cup 2026 bracket simulator and prediction game. Free to play worldwide for ages 13+.",
         "featureList": "48-team group stage simulation, Third-place qualifier logic, Knockout bracket predictor, Social sharing",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "ratingCount": "15420"
+        "browserRequirements": "Requires JavaScript. Works on modern browsers.",
+        "softwareVersion": "2.0",
+        "audience": {
+          "@type": "PeopleAudience",
+          "suggestedMinAge": "13"
+        }
+      }} />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "World Cup 2026 Predictor Challenge",
+        "description": "Global World Cup 2026 prediction contest open to participants worldwide aged 13 or older. Participants aged 13-17 must have parental or guardian permission. All physical prizes ship internationally to any country. Prize winners under 18 must have a parent or guardian claim the prize on their behalf. Void where prohibited by law.",
+        "startDate": "2024-06-11T09:00:00Z",
+        "endDate": "2026-06-11T09:00:00Z",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://stadiumport.com/world-cup-2026-prediction-game"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "StadiumPort",
+          "url": "https://stadiumport.com"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-06-11T09:00:00Z"
+        },
+        "performer": {
+          "@type": "Organization",
+          "name": "StadiumPort"
         }
       }} />
       <SchemaOrg schema={{
@@ -247,58 +279,58 @@ function PredictGameContent() {
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "When does the 2026 World Cup start?",
+            "name": "How do I win the World Cup 2026 Predictor Contest?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The tournament kicks off on June 11, 2026, at the Estadio Azteca in Mexico City. The prediction game will remain open until the first match begins."
+              "text": "Earn points for every correct prediction: 1 point for group winners, 2 points for Round of 32, up to 10 points for the Champion. The user with the highest total score on July 19, 2026 wins the Grand Prize."
             }
           },
           {
             "@type": "Question",
-            "name": "How does the new 48-team format work?",
+            "name": "What are the prizes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "The 2026 World Cup features 12 groups of 4 teams. The top 2 from each group, plus the 8 best third-place teams, advance to a new Round of 32 knockout stage."
+              "text": "Grand Prize: Authentic World Cup 2026 Jersey of your choice, Official Match Ball, and $500 Cash. Runner-up prizes include gift cards and team merchandise."
             }
           },
           {
             "@type": "Question",
-            "name": "Is this prediction game free to play?",
+            "name": "Is the contest free to enter?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes! The Stadiumport World Cup 2026 Predictor is 100% free."
+              "text": "Yes, the StadiumPort Predictor is 100% free to play. No purchase necessary to enter or win."
             }
           },
           {
             "@type": "Question",
-            "name": "Can I download my bracket?",
+            "name": "Who can play?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Absolutely. Once you complete your prediction, you can download a high-quality image of your bracket or share it directly to Instagram, X (Twitter), and Facebook."
+              "text": "Anyone worldwide aged 13+ (parental consent required for minors)."
             }
           },
           {
             "@type": "Question",
-            "name": "Is the World Cup 2026 Prediction Game free to play?",
+            "name": "Who can win prizes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, the Stadiumport World Cup 2026 Prediction Game is 100% free to join and play for football fans worldwide."
+              "text": "Anyone worldwide aged 13+ can win. We ship prizes internationally to all countries."
             }
           },
           {
             "@type": "Question",
-            "name": "How are winners determined?",
+            "name": "Do you ship prizes internationally?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Winners are based on total points earned from correct predictions. 1 point is awarded for every correct group and knockout match prediction."
+              "text": "Yes! We ship all physical prizes (jerseys, official match ball) to winners anywhere in the world at no cost to the winner. Cash prizes are sent via PayPal or international wire transfer."
             }
           },
           {
             "@type": "Question",
-            "name": "What happens if there is a tie?",
+            "name": "What if I'm under 18 and win?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In the event of a tie, the winner is determined by: 1. Correct Champion Prediction, 2. Correct Runner-up Prediction, 3. Random Draw."
+              "text": "Parent/guardian must claim prize on your behalf."
             }
           }
         ]
@@ -316,7 +348,7 @@ function PredictGameContent() {
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "World Cup 2026 Prediction Game",
+            "name": "World Cup 2026 Predictor",
             "item": "https://stadiumport.com/world-cup-2026-prediction-game"
           }
         ]
@@ -325,30 +357,30 @@ function PredictGameContent() {
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "How to Play the World Cup 2026 Prediction Game",
-        "description": "Step-by-step guide to using the Stadiumport World Cup 2026 Bracket Simulator.",
+        "description": "Step-by-step guide to creating your winning World Cup 2026 bracket.",
         "step": [
           {
             "@type": "HowToStep",
             "name": "Predict Group Winners",
-            "text": "Select the Winner and Runner-up for each of the 12 groups. These teams automatically advance to the Round of 32.",
+            "text": "Select the Winner and Runner-up for each of the 12 groups. These 24 teams automatically advance to the Round of 32.",
             "position": 1
           },
           {
             "@type": "HowToStep",
-            "name": "Select Best Third-Place Teams",
-            "text": "Choose the 8 best third-place teams that will advance to the knockout stage.",
+            "name": "Select Third-Place Qualifiers",
+            "text": "Choose the 8 best third-place teams from the remaining pool to complete the Round of 32.",
             "position": 2
           },
           {
             "@type": "HowToStep",
-            "name": "Navigate the Knockout Bracket",
-            "text": "Plot your path through the Round of 32, Round of 16, Quarterfinals, and Semifinals.",
+            "name": "Navigate Knockout Bracket",
+            "text": "Predict the winner of every match from the Round of 32 to the Final on July 19, 2026.",
             "position": 3
           },
           {
             "@type": "HowToStep",
-            "name": "Crown the Champion",
-            "text": "Pick the winner of the Final match to complete your bracket.",
+            "name": "Submit Prediction",
+            "text": "Enter your name and email to lock in your bracket and enter the contest for a chance to win prizes.",
             "position": 4
           }
         ]
