@@ -1,246 +1,300 @@
-import { useEffect, Children } from 'react';
-import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { SchemaOrg, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { motion } from 'framer-motion';
+import { 
+  Shield, 
+  Lock, 
+  Eye, 
+  Cookie, 
+  Globe2, 
+  Server, 
+  FileText,
+  CheckCircle2,
+  XCircle,
+  Mail
+} from 'lucide-react';
 
 export default function PrivacyPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Privacy Policy',
+      title: 'Privacy Policy – Stadiumport',
       description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
       url: `${siteUrl}/legal/privacy`
     });
   }, []);
 
-  const content = `## **Privacy Policy** 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Legal', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/terms` },
+    { name: 'Privacy Policy', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/privacy` }
+  ]);
 
- **Effective Date:** January 15, 2025  
- **Last Updated:** January 15, 2025 
-
- At **Stadiumport**, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data when you visit our website. 
-
- --- 
-
- ### **1. Information We Collect** 
-
- **Information You Provide:** 
- - **Email Address:** When you subscribe to our newsletter or contact us 
- - **Name:** If provided voluntarily through contact forms 
- - **Messages:** Any information you include in contact form submissions 
-
- **Information Collected Automatically:** 
- - **Usage Data:** Pages visited, time spent on site, referring websites 
- - **Device Information:** Browser type, operating system, IP address 
- - **Cookies:** Small text files stored on your device (see Cookie Policy) 
-
- We do **NOT** collect: 
- - ❌ Payment information (we don't process transactions) 
- - ❌ Sensitive personal data (health, religion, etc.) 
- - ❌ Children's information (our site is for adults 18+) 
-
- --- 
-
- ### **2. How We Use Your Information** 
-
- We use collected information to: 
-
- ✅ **Send Email Updates:** World Cup 2026 guides, hotel deals, travel tips (only if you subscribe)  
- ✅ **Improve Our Website:** Understand what content is most helpful  
- ✅ **Respond to Inquiries:** Answer questions via our contact form  
- ✅ **Analyze Traffic:** Monitor site performance and user behavior  
-
- We will **NEVER:** 
- - ❌ Sell your email to third parties 
- - ❌ Send you spam 
- - ❌ Share your data without consent (except as legally required) 
-
- --- 
-
- ### **3. Cookies and Tracking** 
-
- We currently use **minimal tracking**. In the future, we may implement: 
- - Google Analytics (site traffic analysis) 
- - Facebook Pixel (advertising optimization) 
- - Affiliate tracking cookies (commission attribution) 
-
- **You Control Cookies:** 
- - Most browsers allow you to refuse cookies 
- - You can delete cookies at any time 
- - Blocking cookies may limit site functionality 
-
- For detailed information, see our **Cookie Policy**. 
-
- --- 
-
- ### **4. Third-Party Services** 
-
- **Affiliate Partners:** 
- When you click our links to book hotels, flights, or experiences, you'll be redirected to third-party websites (Booking.com, Expedia, etc.). These partners have their own privacy policies governing data collection. We don't control their practices. 
-
- **Email Service:** 
- We use email service providers to send newsletters. Your email is stored securely by these providers and used only for our communications. 
-
- --- 
-
- ### **5. Your Rights** 
-
- Depending on your location, you may have these rights: 
-
- **All Users:** 
- - ✅ **Unsubscribe:** Every email includes an unsubscribe link 
- - ✅ **Contact Us:** Request information about data we hold 
- - ✅ **Opt-Out:** Stop receiving communications anytime 
-
- **EU Residents (GDPR):** 
- - ✅ **Access:** Request a copy of your personal data 
- - ✅ **Correction:** Update inaccurate information 
- - ✅ **Deletion:** Request we erase your data ("right to be forgotten") 
- - ✅ **Portability:** Receive your data in a common format 
- - ✅ **Object:** Stop us from processing your data for certain purposes 
-
- **California Residents (CCPA):** 
- - ✅ **Know:** What personal information we collect 
- - ✅ **Delete:** Request deletion of your data 
- - ✅ **Opt-Out:** Stop "sale" of personal information (note: we don't sell data) 
- - ✅ **Non-Discrimination:** Exercise rights without penalty 
-
- **To exercise your rights, contact us at:** [your email - create legal@stadiumport.com] 
-
- --- 
-
- ### **6. Data Security** 
-
- We implement reasonable security measures to protect your information: 
- - Secure hosting infrastructure 
- - Encrypted data transmission (HTTPS) 
- - Limited access to personal data 
- - Regular security updates 
-
- However, **no internet transmission is 100% secure**. We cannot guarantee absolute security. 
-
- --- 
-
- ### **7. International Data Transfers** 
-
- Our website is accessible globally. If you're outside the United States, your information may be transferred to and stored on servers in the US or other countries. By using our site, you consent to this transfer. 
-
- --- 
-
- ### **8. Children's Privacy** 
-
- Stadiumport is not intended for children under 18. We do not knowingly collect information from minors. If you believe a child has provided us data, contact us immediately for deletion. 
-
- --- 
-
- ### **9. Changes to This Policy** 
-
- We may update this Privacy Policy as our practices evolve. Changes will be posted on this page with a new "Last Updated" date. Continued use of our site after changes constitutes acceptance. 
-
- --- 
-
- ### **10. Contact Us** 
-
- Questions about this Privacy Policy? 
-
- **Stadiumport**  
- Email: [your email]  
- Website: stadiumport.com 
-
- --- 
-
- *This Privacy Policy is effective as of January 15, 2025.* 
-
- --- 
-
----`;
-
-  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
-  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
-  const withMonochromeEmoji = (children: React.ReactNode) => {
-    const arr = Children.toArray(children);
-    const out: React.ReactNode[] = [];
-    arr.forEach((child, i) => {
-      if (typeof child === 'string') {
-        // Only replace when the emoji is at the start of the string segment (start of line)
-        const match = child.match(/^\s*(✅|❌|✓|✕)\s*/);
-        if (match) {
-          const icon = match[1];
-          const symbol = icon === '❌' || icon === '✕' ? '✕' : '✓';
-          out.push(
-            <span key={`emoji-${i}`} className="emoji-black" aria-hidden="false">
-              {symbol}
-            </span>
-          );
-          const rest = child.slice(match[0].length);
-          if (rest) out.push(rest);
-        } else {
-          out.push(child);
-        }
-      } else {
-        out.push(child);
-      }
-    });
-    return out;
-  };
+  const highlights = [
+    {
+      icon: Eye,
+      title: "Data Collection",
+      description: "We collect minimal data: email addresses (if provided) and anonymous usage stats to improve the site."
+    },
+    {
+      icon: Lock,
+      title: "Security",
+      description: "We use secure, encrypted connections (HTTPS) and trusted third-party providers for email services."
+    },
+    {
+      icon: Cookie,
+      title: "Cookies",
+      description: "We use minimal tracking cookies for analytics. You have full control to block or delete them."
+    },
+    {
+      icon: Globe2,
+      title: "Your Rights",
+      description: "You can access, correct, or delete your personal data at any time. We respect GDPR and CCPA rights."
+    }
+  ];
 
   return (
-     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-       <Header />
-       <main id="main-content" className="pt-20">
-         <section className="relative py-28 bg-white dark:bg-navy-900">
-          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="relative z-10 p-6 md:p-10">
-              <div className="mx-auto max-w-2xl">
-                <div className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter">
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    components={{
-                      h2: ({ node, ...props }) => (
-                        <h2
-                          className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
-                          {...props}
-                        />
-                      ),
-                      h3: ({ node, ...props }) => (
-                        <h3
-                          className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
-                          {...props}
-                        />
-                      ),
-                      p: ({ node, children, ...props }) => (
-                        <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </p>
-                      ),
-                      ul: ({ node, ...props }) => (
-                        <ul className="lux-ul space-y-2" {...props} />
-                      ),
-                      ol: ({ node, ...props }) => (
-                        <ol className="lux-ol space-y-2" {...props} />
-                      ),
-                      li: ({ node, children, ...props }) => (
-                        <li className="text-slate-700 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </li>
-                      ),
-                      strong: ({ node, ...props }) => (
-                        <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
-                      ),
-                      hr: () => (
-                        <hr className="my-12 border-t border-slate-200" />
-                      ),
-                    }}
-                  >
-                    {content}
-                  </ReactMarkdown>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+      <SchemaOrg schema={[
+        breadcrumbSchema,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Privacy Policy",
+          "url": `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/privacy`
+        }
+      ]} />
+      <Header />
+
+      <main className="pt-32 pb-20 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                Last Updated: January 15, 2025
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+              Privacy <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Policy</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              At Stadiumport, we respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data.
+            </p>
+          </div>
+
+          {/* Key Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 animate-fade-up [animation-delay:200ms]">
+            {highlights.map((item, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400">
+                  <item.icon className="w-6 h-6" />
                 </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Main Content Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 animate-fade-up [animation-delay:400ms]">
+            
+            {/* Table of Contents / Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 sticky top-32">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-indigo-500" /> Contents
+                </h3>
+                <nav className="space-y-3">
+                  {[
+                    "Information We Collect",
+                    "How We Use Information",
+                    "Cookies & Tracking",
+                    "Third-Party Services",
+                    "Your Rights",
+                    "Data Security",
+                    "Contact Us"
+                  ].map((item, i) => (
+                    <a 
+                      key={i}
+                      href={`#section-${i + 1}`}
+                      className="block text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    >
+                      {i + 1}. {item}
+                    </a>
+                  ))}
+                </nav>
               </div>
             </div>
+
+            {/* Policy Details */}
+            <div className="lg:col-span-2 space-y-16">
+              
+              <section id="section-1">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">1</div>
+                  Information We Collect
+                </h2>
+                <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 space-y-6">
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-3">Information You Provide</h3>
+                    <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <span><strong>Email Address:</strong> When you subscribe to our newsletter or contact us</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <span><strong>Name:</strong> If provided voluntarily through contact forms</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-3">What We Do NOT Collect</h3>
+                    <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                      <li className="flex items-start gap-2">
+                        <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                        <span>Payment information (we don't process transactions)</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                        <span>Sensitive personal data (health, religion, etc.)</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-2">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">2</div>
+                  How We Use Your Information
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                  We use collected information to send email updates (only if subscribed), improve our website content, respond to your inquiries, and analyze site traffic patterns.
+                </p>
+                <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-500/20 rounded-2xl p-6">
+                  <p className="text-indigo-900 dark:text-indigo-200 font-medium flex items-center gap-3">
+                    <Shield className="w-5 h-5" />
+                    We will NEVER sell your email to third parties or send you spam.
+                  </p>
+                </div>
+              </section>
+
+              <section id="section-3">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">3</div>
+                  Cookies & Tracking
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  We currently use minimal tracking. In the future, we may implement Google Analytics or Facebook Pixel for site optimization.
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <strong>You Control Cookies:</strong> Most browsers allow you to refuse cookies. You can delete them at any time, though blocking cookies may limit some site functionality.
+                </p>
+              </section>
+
+              <section id="section-4">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">4</div>
+                  Third-Party Services
+                </h2>
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">Affiliate Partners</h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                      When you click our links to book hotels, flights, or experiences, you'll be redirected to third-party websites (Booking.com, Expedia, etc.). These partners have their own privacy policies governing data collection.
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">Email Service</h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                      We use trusted email service providers to send newsletters. Your email is stored securely by these providers and used only for our communications.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-5">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">5</div>
+                  Your Rights
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-slate-50 dark:bg-white/5 rounded-2xl p-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">All Users</h3>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li>• Unsubscribe anytime</li>
+                      <li>• Request data info</li>
+                      <li>• Opt-out of comms</li>
+                    </ul>
+                  </div>
+                  <div className="bg-slate-50 dark:bg-white/5 rounded-2xl p-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2">GDPR & CCPA</h3>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li>• Right to access</li>
+                      <li>• Right to correction</li>
+                      <li>• Right to deletion</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-6">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">6</div>
+                  Data Security
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                  We implement reasonable security measures including secure hosting infrastructure, encrypted data transmission (HTTPS), and limited access to personal data.
+                </p>
+                <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6 flex items-center gap-4">
+                  <Server className="w-8 h-8 text-indigo-500" />
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white">Secure Infrastructure</h3>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Your connection to Stadiumport is always encrypted.</p>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-7">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">7</div>
+                  Contact Us
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                  Questions about this Privacy Policy?
+                </p>
+                <a 
+                  href="mailto:info@stadiumport.com" 
+                  className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:underline"
+                >
+                  <Mail className="w-5 h-5" /> info@stadiumport.com
+                </a>
+              </section>
+
+            </div>
           </div>
-        </section>
+
+        </div>
       </main>
       <Footer />
     </div>

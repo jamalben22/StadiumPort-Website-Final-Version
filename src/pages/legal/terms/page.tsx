@@ -1,335 +1,388 @@
-
-import { useEffect, Children } from 'react';
-import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { SchemaOrg, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { motion } from 'framer-motion';
+import { 
+  FileCheck, 
+  Scale, 
+  Copyright, 
+  AlertTriangle, 
+  ExternalLink, 
+  ShieldAlert, 
+  Mail, 
+  Gavel,
+  CheckCircle2,
+  XCircle,
+  FileText
+} from 'lucide-react';
 
 export default function TermsPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Terms of Service',
+      title: 'Terms of Service – Stadiumport',
       description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
       url: `${siteUrl}/legal/terms`
     });
   }, []);
 
-  const content = `## **Terms of Service** 
-
- **Effective Date:** January 15, 2025  
- **Last Updated:** January 15, 2025 
-
- Welcome to **Stadiumport**! By accessing or using our website, you agree to these Terms of Service. Please read them carefully. 
-
- --- 
-
- ### **1. Acceptance of Terms** 
-
- By using stadiumport.com (the "Website"), you agree to: 
- - These Terms of Service 
- - Our Privacy Policy 
- - Our Affiliate Disclaimer 
- - All applicable laws and regulations 
-
- **If you disagree with any terms, please do not use our Website.** 
-
- --- 
-
- ### **2. About Stadiumport** 
-
- **Stadiumport** provides: 
- - ✅ Travel guides for 2026 FIFA World Cup stadiums and host cities 
- - ✅ Information about transport, accommodation, and matchday experiences 
- - ✅ Affiliate links to third-party booking services 
- - ✅ Free newsletter with World Cup travel tips 
-
- **We do NOT:** 
- - ❌ Sell tickets to World Cup matches 
- - ❌ Process payments or bookings directly 
- - ❌ Operate as a travel agency or tour operator 
- - ❌ Guarantee availability of hotels, flights, or experiences 
-
- --- 
-
- ### **3. User Responsibilities** 
-
- **You Agree To:** 
- - ✅ Provide accurate information when subscribing or contacting us 
- - ✅ Use the Website for lawful purposes only 
- - ✅ Not attempt to hack, disrupt, or damage our systems 
- - ✅ Not copy, reproduce, or distribute our content without permission 
- - ✅ Not use automated systems (bots, scrapers) to access our site 
-
- **You Acknowledge:** 
- - Travel planning is your responsibility 
- - You must verify all information before booking 
- - Stadiumport is not liable for your travel decisions 
-
- --- 
-
- ### **4. Intellectual Property** 
-
- **Our Content:** 
- All content on Stadiumport—including text, images, logos, graphics, and design—is owned by Stadiumport or licensed to us. This content is protected by copyright, trademark, and other intellectual property laws. 
-
- **You May:** 
- - ✅ View and print content for personal, non-commercial use 
- - ✅ Share links to our pages on social media 
-
- **You May NOT:** 
- - ❌ Copy our stadium guides and republish them 
- - ❌ Use our content for commercial purposes without permission 
- - ❌ Remove copyright notices or attributions 
- - ❌ Create derivative works from our content 
-
- **To request permission for content use, contact us at:** legal@stadiumport.com 
-
- --- 
-
- ### **5. Accuracy of Information** 
-
- We strive for accuracy but **cannot guarantee** that all information is: 
- - Current and up-to-date 
- - Complete and error-free 
- - Suitable for your specific needs 
-
- **Information May Change:** 
- - Stadium capacities and configurations 
- - Transport routes and schedules 
- - Hotel availability and pricing 
- - Match schedules and locations 
- - Travel restrictions and visa requirements 
-
- **You Must:** 
- - ✅ Verify critical information with official sources (FIFA, stadium operators, governments) 
- - ✅ Check travel advisories before booking 
- - ✅ Confirm bookings directly with service providers 
-
- --- 
-
- ### **6. Third-Party Links and Services** 
-
- **Affiliate Links:** 
- Our Website contains links to third-party websites (hotels, airlines, tour operators). When you click these links: 
- - You leave our Website and enter third-party sites 
- - These companies have their own terms, policies, and practices 
- - We earn commissions on qualifying purchases at **no extra cost to you** 
- - We are **NOT responsible** for third-party content, services, or issues 
-
- **Examples:** 
- - Booking.com 
- - Expedia 
- - Airbnb 
- - GetYourGuide 
- - Car rental companies 
- - Airlines 
-
- **Issues with bookings must be resolved directly with these companies.** 
-
- See our **Affiliate Disclaimer** for details. 
-
- --- 
-
- ### **7. Disclaimer of Warranties** 
-
- **THE WEBSITE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND.** 
-
- We disclaim all warranties, express or implied, including: 
- - ❌ Merchantability 
- - ❌ Fitness for a particular purpose 
- - ❌ Non-infringement 
- - ❌ Accuracy or reliability of information 
- - ❌ Uninterrupted or error-free operation 
-
- **Translation:** We provide information to help you, but we can't promise it's perfect. Use at your own risk. 
-
- --- 
-
- ### **8. Limitation of Liability** 
-
- **TO THE MAXIMUM EXTENT PERMITTED BY LAW:** 
-
- Stadiumport and its owners, employees, and partners **SHALL NOT BE LIABLE** for any: 
- - Lost profits, revenue, or business opportunities 
- - Travel disruptions, cancellations, or delays 
- - Personal injury or property damage 
- - Incorrect information or outdated content 
- - Third-party actions or omissions 
- - Technical issues or data loss 
-
- **This applies even if we've been advised of the possibility of such damages.** 
-
- **Your Sole Remedy:** If you're dissatisfied with our Website, stop using it. 
-
- --- 
-
- ### **9. Indemnification** 
-
- You agree to **indemnify and hold harmless** Stadiumport from any claims, damages, losses, or expenses (including legal fees) arising from: 
- - Your use of the Website 
- - Your violation of these Terms 
- - Your violation of any third-party rights 
- - Your travel decisions based on our content 
-
- **Translation:** If you do something that gets us sued, you're responsible. 
-
- --- 
-
- ### **10. User-Generated Content** 
-
- If we add features allowing user comments or reviews in the future: 
- - You grant us a license to use your submissions 
- - You're responsible for your own content 
- - We may moderate or remove inappropriate content 
- - You cannot post illegal, offensive, or infringing material 
-
- --- 
-
- ### **11. Email Communications** 
-
- **Newsletter Subscription:** 
- - By subscribing, you consent to receive emails from us 
- - We'll send World Cup guides, travel tips, and affiliate offers 
- - You can unsubscribe anytime using the link in every email 
- - We comply with CAN-SPAM Act and anti-spam laws 
-
- **We Will NOT:** 
- - ❌ Spam you with excessive emails 
- - ❌ Sell your email to third parties 
- - ❌ Send you unrelated marketing 
-
- --- 
-
- ### **12. Governing Law** 
-
- These Terms are governed by the laws of the **United States** and the State of **Delaware**, without regard to conflict of law principles. 
-
- Any disputes shall be resolved in the courts located in **Delaware**.
-
- --- 
-
- ### **13. Changes to Terms** 
-
- We may modify these Terms at any time. Changes will be posted on this page with a new "Last Updated" date. Continued use after changes constitutes acceptance. 
-
- **We recommend reviewing these Terms periodically.** 
-
- --- 
-
- ### **14. Severability** 
-
- If any provision of these Terms is found unenforceable, the remaining provisions remain in full effect. 
-
- --- 
-
- ### **15. Entire Agreement** 
-
- These Terms, together with our Privacy Policy and Affiliate Disclaimer, constitute the entire agreement between you and Stadiumport. 
-
- --- 
-
- ### **16. Contact Us** 
-
- Questions about these Terms? 
-
- **Stadiumport**  
- Email: legal@stadiumport.com  
- Website: stadiumport.com 
-
- --- 
-
- *These Terms of Service are effective as of January 15, 2025.* 
-
- --- 
-
- ---`;
-
-  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
-  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
-  const withMonochromeEmoji = (children: React.ReactNode) => {
-    const arr = Children.toArray(children);
-    const out: React.ReactNode[] = [];
-    arr.forEach((child, i) => {
-      if (typeof child === 'string') {
-        // Only replace when the emoji is at the start of the string segment (start of line)
-        const match = child.match(/^\s*(✅|❌|✓|✕)\s*/);
-        if (match) {
-          const icon = match[1];
-          const symbol = icon === '❌' || icon === '✕' ? '✕' : '✓';
-          out.push(
-            <span key={`emoji-${i}`} className="emoji-black" aria-hidden="false">
-              {symbol}
-            </span>
-          );
-          const rest = child.slice(match[0].length);
-          if (rest) out.push(rest);
-        } else {
-          out.push(child);
-        }
-      } else {
-        out.push(child);
-      }
-    });
-    return out;
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Legal', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/terms` },
+    { name: 'Terms of Service', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/terms` }
+  ]);
+
+  const highlights = [
+    {
+      icon: FileCheck,
+      title: "Agreement",
+      description: "By using Stadiumport, you agree to these terms, our Privacy Policy, and Affiliate Disclaimer."
+    },
+    {
+      icon: Scale,
+      title: "Responsibility",
+      description: "You are responsible for your own travel decisions. We provide information, not guarantees."
+    },
+    {
+      icon: Copyright,
+      title: "Content Rights",
+      description: "Our content is protected. You can share links, but you cannot copy or republish our guides."
+    },
+    {
+      icon: AlertTriangle,
+      title: "Disclaimers",
+      description: "We strive for accuracy but cannot guarantee it. Always verify with official sources."
+    }
+  ];
+
+  const sections = [
+    "Acceptance of Terms",
+    "About Stadiumport",
+    "User Responsibilities",
+    "Intellectual Property",
+    "Accuracy of Information",
+    "Third-Party Links",
+    "Disclaimer of Warranties",
+    "Limitation of Liability",
+    "Indemnification",
+    "User-Generated Content",
+    "Email Communications",
+    "Governing Law",
+    "Changes to Terms",
+    "Contact Us"
+  ];
 
   return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
-        <Header />
-        <main id="main-content" className="pt-20">
-          <section className="relative py-28 bg-white dark:bg-navy-900">
-          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="relative z-10 p-6 md:p-10">
-              <div className="mx-auto max-w-2xl">
-                <div className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter">
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    components={{
-                      h2: ({ node, ...props }) => (
-                        <h2
-                          className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
-                          {...props}
-                        />
-                      ),
-                      h3: ({ node, ...props }) => (
-                        <h3
-                          className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
-                          {...props}
-                        />
-                      ),
-                      p: ({ node, children, ...props }) => (
-                        <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </p>
-                      ),
-                      ul: ({ node, ...props }) => (
-                        <ul className="lux-ul space-y-2" {...props} />
-                      ),
-                      ol: ({ node, ...props }) => (
-                        <ol className="lux-ol space-y-2" {...props} />
-                      ),
-                      li: ({ node, children, ...props }) => (
-                        <li className="text-slate-700 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </li>
-                      ),
-                      strong: ({ node, ...props }) => (
-                        <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
-                      ),
-                      hr: () => (
-                        <hr className="my-12 border-t border-slate-200" />
-                      ),
-                    }}
-                  >
-                    {content}
-                  </ReactMarkdown>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+      <SchemaOrg schema={[
+        breadcrumbSchema,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Terms of Service",
+          "url": `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/terms`
+        }
+      ]} />
+      <Header />
+
+      <main className="pt-32 pb-20 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                Last Updated: January 15, 2025
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+              Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Service</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Welcome to Stadiumport. Please read these terms carefully before using our website, as they govern your access and use of our services.
+            </p>
+          </div>
+
+          {/* Key Highlights Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20 animate-fade-up [animation-delay:200ms]">
+            {highlights.map((item, index) => (
+              <motion.div 
+                key={index}
+                whileHover={{ y: -5 }}
+                className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 hover:shadow-lg transition-all"
+              >
+                <div className="w-12 h-12 bg-indigo-50 dark:bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400">
+                  <item.icon className="w-6 h-6" />
                 </div>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Main Content Area */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 animate-fade-up [animation-delay:400ms]">
+            
+            {/* Table of Contents / Sidebar */}
+            <div className="lg:col-span-1">
+              <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 sticky top-32">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <FileText className="w-5 h-5 text-indigo-500" /> Contents
+                </h3>
+                <nav className="space-y-3">
+                  {sections.map((item, i) => (
+                    <a 
+                      key={i}
+                      href={`#section-${i + 1}`}
+                      className="block text-sm text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
+                    >
+                      {i + 1}. {item}
+                    </a>
+                  ))}
+                </nav>
               </div>
             </div>
+
+            {/* Terms Details */}
+            <div className="lg:col-span-2 space-y-16">
+              
+              <section id="section-1">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">1</div>
+                  Acceptance of Terms
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  By using stadiumport.com (the "Website"), you agree to these Terms of Service, our Privacy Policy, our Affiliate Disclaimer, and all applicable laws. <strong className="text-slate-900 dark:text-white">If you disagree with any terms, please do not use our Website.</strong>
+                </p>
+              </section>
+
+              <section id="section-2">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">2</div>
+                  About Stadiumport
+                </h2>
+                <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 space-y-6">
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-3">What We Provide</h3>
+                    <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <span>Travel guides for 2026 FIFA World Cup</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <span>Transport and accommodation information</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-green-500 mt-0.5 shrink-0" />
+                        <span>Affiliate links to booking services</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-3">What We Do NOT Do</h3>
+                    <ul className="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+                      <li className="flex items-start gap-2">
+                        <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                        <span>Sell tickets to matches</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                        <span>Process payments directly</span>
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <XCircle className="w-4 h-4 text-red-500 mt-0.5 shrink-0" />
+                        <span>Operate as a travel agency</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-3">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">3</div>
+                  User Responsibilities
+                </h2>
+                <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-500/20 rounded-2xl p-6 mb-6">
+                  <p className="text-indigo-900 dark:text-indigo-200 font-medium">
+                    You acknowledge that travel planning is your responsibility. You must verify all information before booking. Stadiumport is not liable for your travel decisions.
+                  </p>
+                </div>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  You agree to use the Website for lawful purposes only, not to disrupt our systems, and not to use automated bots or scrapers.
+                </p>
+              </section>
+
+              <section id="section-4">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">4</div>
+                  Intellectual Property
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                  All content on Stadiumport (text, images, design) is owned by us or licensed to us.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="bg-slate-50 dark:bg-white/5 rounded-2xl p-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                      <CheckCircle2 className="w-4 h-4 text-green-500" /> Permitted
+                    </h3>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li>• Personal, non-commercial use</li>
+                      <li>• Sharing links on social media</li>
+                    </ul>
+                  </div>
+                  <div className="bg-slate-50 dark:bg-white/5 rounded-2xl p-6">
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-2">
+                      <XCircle className="w-4 h-4 text-red-500" /> Prohibited
+                    </h3>
+                    <ul className="text-sm text-slate-600 dark:text-slate-400 space-y-2">
+                      <li>• Republishing our guides</li>
+                      <li>• Commercial use without permission</li>
+                      <li>• Removing copyright notices</li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-5">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">5</div>
+                  Accuracy of Information
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  We strive for accuracy but <strong>cannot guarantee</strong> that all information is current or error-free. Stadium capacities, transport routes, and pricing can change.
+                </p>
+                <div className="flex items-start gap-4 p-4 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-700/30 rounded-xl">
+                  <AlertTriangle className="w-6 h-6 text-yellow-600 dark:text-yellow-500 shrink-0" />
+                  <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                    <strong>Critical:</strong> Always verify critical information (visas, entry requirements, match times) with official sources like FIFA or government websites.
+                  </p>
+                </div>
+              </section>
+
+              <section id="section-6">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">6</div>
+                  Third-Party Links
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                  Our website contains affiliate links to third-party services (Booking.com, Expedia, etc.). When you click these links, you leave our site. We are not responsible for third-party content or services.
+                </p>
+                <div className="flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400">
+                  <ExternalLink className="w-4 h-4" />
+                  Issues with bookings must be resolved directly with the service provider.
+                </div>
+              </section>
+
+              <section id="section-7">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">7</div>
+                  Disclaimer of Warranties
+                </h2>
+                <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl p-6">
+                  <p className="text-slate-700 dark:text-slate-300 font-medium text-sm uppercase tracking-wider mb-2">The Website is provided "AS IS"</p>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    We disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose, and non-infringement. We do not guarantee uninterrupted or error-free operation.
+                  </p>
+                </div>
+              </section>
+
+              <section id="section-8">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">8</div>
+                  Limitation of Liability
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                  To the maximum extent permitted by law, Stadiumport shall not be liable for any lost profits, travel disruptions, personal injury, or incorrect information. This applies even if we have been advised of the possibility of such damages.
+                </p>
+                <p className="text-slate-900 dark:text-white font-medium">
+                  Your sole remedy for dissatisfaction is to stop using the Website.
+                </p>
+              </section>
+
+              <section id="section-9">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">9</div>
+                  Indemnification
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  You agree to indemnify and hold harmless Stadiumport from any claims, damages, or expenses arising from your use of the Website, your violation of these Terms, or your travel decisions based on our content.
+                </p>
+              </section>
+
+              <section id="section-10">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">10</div>
+                  User-Generated Content & Email
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
+                  If you post comments or reviews, you grant us license to use them. You are responsible for your content.
+                </p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  By subscribing to our newsletter, you consent to receive emails. You can unsubscribe anytime. We comply with anti-spam laws.
+                </p>
+              </section>
+
+              <section id="section-11">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">11</div>
+                  Governing Law & Changes
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <Gavel className="w-6 h-6 text-indigo-500 shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-slate-900 dark:text-white">Governing Law</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        These Terms are governed by the laws of the United States and the State of Delaware. Disputes shall be resolved in Delaware courts.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <ShieldAlert className="w-6 h-6 text-indigo-500 shrink-0 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-slate-900 dark:text-white">Changes to Terms</h3>
+                      <p className="text-sm text-slate-600 dark:text-slate-400">
+                        We may modify these Terms at any time. Continued use constitutes acceptance.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section id="section-12">
+                <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">12</div>
+                  Contact Us
+                </h2>
+                <p className="text-slate-600 dark:text-slate-400 mb-6">
+                  Questions about these Terms?
+                </p>
+                <a 
+                  href="mailto:info@stadiumport.com" 
+                  className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:underline"
+                >
+                  <Mail className="w-5 h-5" /> info@stadiumport.com
+                </a>
+              </section>
+
+            </div>
           </div>
-        </section>
+
+        </div>
       </main>
       <Footer />
     </div>

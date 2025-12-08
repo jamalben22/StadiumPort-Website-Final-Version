@@ -1,7 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Trophy, AlertCircle, CheckCircle2, Shirt, Disc, DollarSign, Shield, HelpCircle, Globe } from 'lucide-react';
+import { 
+  Trophy, 
+  AlertCircle, 
+  CheckCircle2, 
+  Shirt, 
+  Disc, 
+  DollarSign, 
+  Shield, 
+  HelpCircle, 
+  Globe,
+  Clock,
+  Award,
+  BookOpen
+} from 'lucide-react';
 
 interface RulesCardProps {
   variant: 'short' | 'full';
@@ -14,26 +27,26 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className={`bg-slate-50 dark:bg-white/5 backdrop-blur-md border border-slate-200 dark:border-white/10 rounded-2xl p-6 mb-8 relative overflow-hidden ${className}`}
+        className={`bg-white/5 backdrop-blur-md border border-white/10 rounded-3xl p-8 mb-8 relative overflow-hidden ${className}`}
       >
-        <div className="absolute top-0 left-0 w-1 h-full bg-[#01b47d]" />
-        <div className="flex items-start gap-4">
-          <div className="p-3 rounded-xl bg-[#01b47d]/10 border border-[#01b47d]/20 shrink-0">
-            <Trophy className="w-5 h-5 text-[#01b47d]" />
+        <div className="absolute top-0 left-0 w-1 h-full bg-indigo-500" />
+        <div className="flex items-start gap-6">
+          <div className="p-4 rounded-2xl bg-indigo-500/20 text-indigo-400 shrink-0">
+            <Trophy className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white font-['Teko'] tracking-wide uppercase mb-2">
+            <h3 className="text-xl font-bold text-white mb-4 font-inter">
               How to Play & Win
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {[ 
                 "Predict the entire World Cup 2026 tournament from Group Stage through the Final",
                 "Earn 1 point for every correct prediction",
                 "Top 5 players win exclusive World Cup 2026 prizes",
                 "Winners announced after the Final on July 19, 2026"
               ].map((rule, i) => (
-                <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-white/80 font-['Rajdhani'] font-medium leading-tight">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#01b47d]/80 mt-0.5 shrink-0" />
+                <li key={i} className="flex items-start gap-3 text-sm text-slate-300 font-inter leading-relaxed">
+                  <CheckCircle2 className="w-4 h-4 text-indigo-400 mt-0.5 shrink-0" />
                   <span>{rule}</span>
                 </li>
               ))}
@@ -75,188 +88,202 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
   };
   
   return (
-    <div className={`bg-white dark:bg-[#111] border border-slate-200 dark:border-white/10 rounded-[32px] p-8 relative overflow-hidden group ${className}`}>
+    <div className={`bg-gradient-to-br from-slate-900 to-slate-800 border border-white/10 rounded-[32px] p-8 md:p-12 relative overflow-hidden group ${className} font-inter`}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
 
       {/* Ambient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/5 dark:from-black/40 to-transparent opacity-0 group-hover:opacity-40 transition-opacity duration-500 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none" />
       
       <div className="relative z-10">
-        <div className="flex items-center gap-3 mb-8">
-          <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-white/5 flex items-center justify-center border border-slate-200 dark:border-white/10">
-            <AlertCircle className="w-5 h-5 text-slate-900 dark:text-white" />
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-6 backdrop-blur-sm">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+            </span>
+            <span className="text-xs font-semibold text-indigo-300 uppercase tracking-widest">
+              Official Rules
+            </span>
           </div>
-          <h2 className="text-3xl font-black font-['Teko'] text-slate-900 dark:text-white uppercase tracking-wide">
-            Official World Cup 2026 Prediction Game Rules
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            World Cup 2026 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Prediction Game</span> Rules
           </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Everything you need to know about scoring, prizes, and fair play.
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {/* How to Play */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold text-slate-400 dark:text-white/40 uppercase tracking-widest font-['Rajdhani']">
-              How to Play & Win
-            </h3>
-            <ul className="space-y-4">
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+              <BookOpen className="w-5 h-5 text-indigo-400" />
+              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                How to Play & Win
+              </h3>
+            </div>
+            
+            <ul className="space-y-6">
               <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">01</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Complete Prediction Journey</span> <br />
-                  Predict every tournament stage: Group Stage <span className="text-slate-900 dark:text-white font-bold">→</span> Round of 32 <span className="text-slate-900 dark:text-white font-bold">→</span> Round of 16 <span className="text-slate-900 dark:text-white font-bold">→</span> Quarter-Finals <span className="text-slate-900 dark:text-white font-bold">→</span> Semi-Finals <span className="text-slate-900 dark:text-white font-bold">→</span> Final & Champion
-                </p>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-indigo-400 font-bold text-xl">01</span>
+                  <div className="w-px h-full bg-indigo-500/30"></div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-2">Complete Prediction Journey</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Predict every tournament stage: Group Stage → Round of 32 → Round of 16 → Quarter-Finals → Semi-Finals → Final & Champion.
+                  </p>
+                </div>
               </li>
               <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">02</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Point System</span> <br />
-                  Earn <span className="text-slate-900 dark:text-white font-bold">1 point</span> for each <span className="text-slate-900 dark:text-white font-bold">correct prediction</span>. Final scores calculated after the World Cup 2026 Final on July 19, 2026.
-                </p>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-indigo-400 font-bold text-xl">02</span>
+                  <div className="w-px h-full bg-indigo-500/30"></div>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-2">Point System</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    Earn <span className="text-white font-semibold">1 point</span> for each correct prediction. Final scores calculated after the Final on July 19, 2026.
+                  </p>
+                </div>
               </li>
               <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">03</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Fair Play Policy</span> <br />
-                  One entry per person. In case of tied scores, winners determined by: (1) Correct champion pick <span className="text-slate-900 dark:text-white font-bold">→</span> (2) Correct runner-up <span className="text-slate-900 dark:text-white font-bold">→</span> (3) Random verified draw.
-                </p>
+                <div className="flex flex-col items-center gap-1">
+                  <span className="text-indigo-400 font-bold text-xl">03</span>
+                </div>
+                <div>
+                  <h4 className="text-white font-bold mb-2">Fair Play Policy</h4>
+                  <p className="text-slate-400 text-sm leading-relaxed">
+                    One entry per person. Ties broken by: (1) Correct Champion → (2) Correct Runner-up → (3) Random verified draw.
+                  </p>
+                </div>
               </li>
             </ul>
           </div>
 
           {/* Prizes */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold text-slate-400 dark:text-white/40 uppercase tracking-widest font-['Rajdhani']">
-              Prize Pool & Rewards
-            </h3>
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+              <Award className="w-5 h-5 text-indigo-400" />
+              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                Prize Pool & Rewards
+              </h3>
+            </div>
             
             {/* 1st Place */}
-            <div className="bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[#FBBF24] font-bold font-['Teko'] text-xl uppercase">1st Place Champion</span>
-                <Trophy className="w-4 h-4 text-[#FBBF24]" />
+            <div className="bg-gradient-to-br from-indigo-600/20 to-purple-600/20 border border-indigo-500/30 rounded-2xl p-6 relative overflow-hidden group hover:border-indigo-500/50 transition-colors">
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <Trophy className="w-16 h-16 text-indigo-400" />
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-slate-700 dark:text-white/90 text-sm font-['Rajdhani']">
-                  <Shirt className="w-4 h-4 text-slate-400 dark:text-white/40" /> Official World Cup 2026 Winner Jersey
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="text-indigo-300 font-bold text-lg uppercase tracking-wide">1st Place Champion</span>
+                  <Trophy className="w-5 h-5 text-amber-400" />
                 </div>
-                <div className="flex items-center gap-2 text-slate-700 dark:text-white/90 text-sm font-['Rajdhani']">
-                  <Disc className="w-4 h-4 text-slate-400 dark:text-white/40" /> Official World cup 2026 Adidas Ball
-                </div>
-                <div className="flex items-center gap-2 text-[#01b47d] font-bold text-sm font-['Rajdhani']">
-                  <DollarSign className="w-4 h-4" /> $500 USD Cash Prize
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-slate-200 text-sm font-medium">
+                    <div className="p-1.5 rounded-lg bg-white/10"><Shirt className="w-4 h-4 text-indigo-300" /></div>
+                    Official World Cup 2026 Winner Jersey
+                  </div>
+                  <div className="flex items-center gap-3 text-slate-200 text-sm font-medium">
+                    <div className="p-1.5 rounded-lg bg-white/10"><Disc className="w-4 h-4 text-indigo-300" /></div>
+                    Official Adidas Match Ball
+                  </div>
+                  <div className="flex items-center gap-3 text-white font-bold text-sm bg-indigo-500/20 p-2 rounded-lg border border-indigo-500/30">
+                    <DollarSign className="w-4 h-4 text-green-400" /> $500 USD Cash Prize
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* 2nd-5th */}
-            <div className="bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 opacity-80">
-               <div className="flex items-center justify-between mb-3">
-                <span className="text-slate-900 dark:text-white font-bold font-['Teko'] text-xl uppercase">2nd - 5th Place</span>
-                <span className="text-xs text-slate-400 dark:text-white/40 font-['Rajdhani']">Runners Up</span>
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+               <div className="flex items-center justify-between mb-4">
+                <span className="text-white font-bold text-lg">2nd - 5th Place</span>
+                <span className="text-xs text-slate-400 uppercase tracking-wider bg-white/10 px-2 py-1 rounded">Runners Up</span>
               </div>
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-slate-600 dark:text-white/70 text-sm font-['Rajdhani']">
-                  <Shirt className="w-4 h-4 text-slate-400 dark:text-white/40" /> Official World Cup 2026 Winner Jersey
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-slate-400 text-sm">
+                  <div className="p-1.5 rounded-lg bg-white/5"><Shirt className="w-4 h-4" /></div>
+                  Official World Cup 2026 Winner Jersey
                 </div>
-                <div className="flex items-center gap-2 text-slate-600 dark:text-white/70 text-sm font-['Rajdhani']">
-                  <Disc className="w-4 h-4 text-slate-400 dark:text-white/40" /> Official World cup 2026 Adidas Ball
+                <div className="flex items-center gap-3 text-slate-400 text-sm">
+                  <div className="p-1.5 rounded-lg bg-white/5"><Disc className="w-4 h-4" /></div>
+                  Official Adidas Match Ball
                 </div>
               </div>
             </div>
           </div>
 
           {/* Tie-Break & Fair Play */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold text-slate-400 dark:text-white/40 uppercase tracking-widest font-['Rajdhani'] flex items-center gap-2">
-              <Shield className="w-4 h-4 text-[#01b47d]" />
-              Official Rules & Fair Play
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">A</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Tie-Breaking Protocol</span> <br />
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+              <Shield className="w-5 h-5 text-indigo-400" />
+              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                Official Rules & Fair Play
+              </h3>
+            </div>
+            
+            <div className="bg-white/5 rounded-2xl p-6 border border-white/5 space-y-6">
+              <div>
+                <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                  <AlertCircle className="w-4 h-4 text-indigo-400" /> Tie-Breaking Protocol
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed pl-6 border-l border-white/10">
                   Equal points resolved by: <br />
-                  1. Correct World Cup 2026 Champion prediction <br />
-                  2. Correct Runner-Up prediction  <br />
-                  3. Verified random draw.
+                  1. Correct Champion <br />
+                  2. Correct Runner-Up <br />
+                  3. Verified random draw
                 </p>
-              </li>
-              <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">B</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Anti-Cheating & Security</span> <br />
-                  - Strictly ONE entry per person (verified by email + IP) <br />
-                  - Multiple accounts = immediate disqualification + permanent ban <br />
-                  - Bot usage, scripts, or automated submissions = disqualification <br />
-                  - All entries monitored for suspicious activity
+              </div>
+              <div>
+                <h4 className="text-white font-bold mb-2 flex items-center gap-2">
+                  <Shield className="w-4 h-4 text-indigo-400" /> Anti-Cheating
+                </h4>
+                <p className="text-slate-400 text-sm leading-relaxed pl-6 border-l border-white/10">
+                  Strictly ONE entry per person. Multiple accounts, bots, or scripts result in immediate disqualification.
                 </p>
-              </li>
-              <li className="flex gap-4">
-                <span className="text-[#01b47d] font-['Teko'] text-xl">C</span>
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  <span className="text-slate-900 dark:text-white font-bold">Eligibility Requirements</span> <br />
-                  - Open worldwide to participants 13+ years old <br />
-                  - Valid email address required for entry <br />
-                  - Winners must complete identity verification (KYC) before prize distribution <br />
-                  - Employees of Stadiumport and immediate family members ineligible <br />
-                  - Void where prohibited by law
-                </p>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
 
           {/* FAQ */}
-          <div className="space-y-6">
-            <h3 className="text-sm font-bold text-slate-400 dark:text-white/40 uppercase tracking-widest font-['Rajdhani'] flex items-center gap-2">
-              <HelpCircle className="w-4 h-4 text-[#01b47d]" />
-              Frequently Asked Questions
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: Is it free to play? <br />
-                  A: Yes! 100% free to enter. No purchase necessary to participate or win prizes.
-                </p>
-              </li>
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: Can I change my predictions? <br />
-                  A: Yes! Edit your bracket unlimited times until kickoff of the opening match on June 11, 2026 at 11:00 AM ET (Mexico vs. TBD).
-                </p>
-              </li>
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: When are winners announced? <br />
-                  A: Winners will be contacted via email and publicly announced on this page within 48 hours after the World Cup 2026 Final (July 19, 2026).
-                </p>
-              </li>
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: How do I receive my prizes? <br />
-                  A: Winners must complete identity verification (government ID) within 7 days of announcement. Physical prizes ship within 30 days. Cash prizes via PayPal/bank transfer.
-                </p>
-              </li>
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: What if I don't receive confirmation email? <br />
-                  A: Check spam/junk folder. Contact info@stadiumport.com within 24 hours if issues persist.
-                </p>
-              </li>
-              <li className="flex gap-4">
-                <p className="text-slate-600 dark:text-white/80 text-sm font-['Rajdhani'] font-medium leading-relaxed">
-                  Q: Can I play from any country? <br />
-                  A: Yes, open globally to participants 13+. Some restrictions may apply based on local gambling laws.
-                </p>
-              </li>
-            </ul>
+          <div className="space-y-8">
+            <div className="flex items-center gap-3 pb-4 border-b border-white/10">
+              <HelpCircle className="w-5 h-5 text-indigo-400" />
+              <h3 className="text-sm font-bold text-slate-400 uppercase tracking-widest">
+                Common Questions
+              </h3>
+            </div>
+            
+            <div className="space-y-4">
+              {[
+                { q: "Is it free to play?", a: "Yes! 100% free. No purchase necessary." },
+                { q: "Can I change predictions?", a: "Yes, unlimited edits until June 11, 2026." },
+                { q: "When are winners announced?", a: "Within 48 hours after the Final (July 19, 2026)." },
+                { q: "Can I play from any country?", a: "Yes, open globally to participants 13+." }
+              ].map((item, i) => (
+                <div key={i} className="bg-white/5 rounded-xl p-4 hover:bg-white/10 transition-colors">
+                  <p className="text-white font-bold text-sm mb-1">{item.q}</p>
+                  <p className="text-slate-400 text-sm">{item.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-slate-200 dark:border-white/5 text-center">
-           <p className="text-slate-500 dark:text-white/60 text-[11px] md:text-xs font-['Rajdhani'] font-medium leading-relaxed text-center">
-             <span className="text-slate-900 dark:text-white">Official World Cup 2026 Prediction Challenge</span> · <span className="text-slate-900 dark:text-white font-bold uppercase tracking-widest">STADIUMPORT</span> <br />
-             <Link to="/world-cup-2026-prediction-contest-terms" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Terms apply</Link> · <Link to="/world-cup-2026-prediction-contest-privacy" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Privacy Policy</Link> · <Link to="/world-cup-2026-prediction-contest-support" className="hover:text-slate-900 dark:hover:text-white underline decoration-slate-300 dark:decoration-white/30 underline-offset-2 transition-colors">Contact Support</Link> <br />
-             Updated: Nov 28, 2025 · Opens: Nov 28, 2025 · Predictions lock: Jun 11, 2026
+        <div className="mt-12 pt-8 border-t border-white/10 text-center">
+           <p className="text-slate-500 text-xs font-medium leading-relaxed">
+             <span className="text-slate-300">Official World Cup 2026 Prediction Challenge</span> · <span className="text-white font-bold uppercase tracking-widest">STADIUMPORT</span> <br />
+             <div className="flex flex-wrap justify-center gap-4 mt-4">
+               <Link to="/world-cup-2026-prediction-contest-terms" className="text-indigo-400 hover:text-indigo-300 transition-colors">Terms & Conditions</Link>
+               <Link to="/world-cup-2026-prediction-contest-privacy" className="text-indigo-400 hover:text-indigo-300 transition-colors">Privacy Policy</Link>
+               <Link to="/world-cup-2026-prediction-contest-support" className="text-indigo-400 hover:text-indigo-300 transition-colors">Support</Link>
+             </div>
+             <div className="mt-4 text-slate-600">
+               Updated: Nov 28, 2025 · Opens: Nov 28, 2025 · Predictions lock: Jun 11, 2026
+             </div>
            </p>
         </div>
       </div>

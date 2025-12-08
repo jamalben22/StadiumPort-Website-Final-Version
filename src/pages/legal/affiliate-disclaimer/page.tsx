@@ -1,296 +1,238 @@
-
-import { useEffect, Children } from 'react';
-import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { useEffect } from 'react';
 import { Header } from '../../../components/feature/Header';
 import { Footer } from '../../../components/feature/Footer';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
+import { SchemaOrg, generateBreadcrumbSchema } from '../../../components/seo/SchemaOrg';
+import { setPageMeta } from '../../../components/seo/MetaUtils';
+import { motion } from 'framer-motion';
+import { 
+  DollarSign, 
+  Link, 
+  ShieldCheck, 
+  HeartHandshake, 
+  Plane, 
+  Hotel, 
+  Map, 
+  Car,
+  ExternalLink,
+  Info,
+  CheckCircle2,
+  XCircle
+} from 'lucide-react';
 
 export default function AffiliateDisclaimerPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Affiliate Disclaimer',
+      title: 'Affiliate Disclaimer – Stadiumport',
       description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
       url: `${siteUrl}/legal/affiliate-disclaimer`
     });
   }, []);
 
-  const content = `## **Affiliate Disclaimer** 
-
- **Last Updated:** January 15, 2025 
-
- --- 
-
- ### **We're Honest About How We Make Money** 
-
- Stadiumport is a free resource funded by affiliate commissions. When you book hotels, flights, tours, or other travel services through our links, we may earn a commission at no additional cost to you. 
-
- **This page explains exactly how it works.** 
-
- --- 
-
- ### **What Are Affiliate Links?** 
-
- Affiliate links are special URLs that track when someone clicks from our site to a partner's website and makes a purchase. If you complete a booking, we receive a small percentage as a commission. 
-
- **Example:** 
- 1. You read our New York City guide 
- 2. You click our Booking.com hotel link 
- 3. You book a hotel for $200/night 
- 4. Booking.com pays us ~$6-12 commission 
- 5. **You still pay $200** (no extra charge) 
-
- --- 
-
- ### **Our Affiliate Partners** 
-
- We partner with trusted travel services, including: 
-
- **Accommodation:** 
- - Booking.com 
- - Expedia 
- - Hotels.com 
- - Airbnb 
- - Vrbo 
-
- **Flights:** 
- - Skyscanner 
- - Google Flights (affiliate programs) 
- - Airline direct booking links 
-
- **Experiences & Tours:** 
- - GetYourGuide 
- - Viator 
- - TourRadar 
-
- **Transportation:** 
- - Rental car companies 
- - Airport transfer services 
- - Train and bus booking platforms 
-
- **Other Services:** 
- - Travel insurance providers 
- - SIM cards and eSIM services 
- - Luggage and travel gear 
-
- *This list may expand as we add partners who serve World Cup travelers.* 
-
- --- 
-
- ### **Our Promise: Honesty First** 
-
- **We Never:** 
- - ❌ Recommend services solely because they pay higher commissions 
- - ❌ Hide better options to push affiliate partners 
- - ❌ Lie about prices or availability 
- - ❌ Create fake reviews or endorsements 
-
- **We Always:** 
- - ✅ Recommend what we'd actually use ourselves 
- - ✅ Disclose when links are affiliate links 
- - ✅ Provide honest pros and cons 
- - ✅ Put your travel experience above our commissions 
-
- **Our Reputation Matters More Than Any Commission.** 
-
- If a hotel sucks, we'll tell you—even if they pay us. If a better non-affiliate option exists, we'll mention it. 
-
- --- 
-
- ### **Your Cost: Zero** 
-
- **Important:** Affiliate links cost you nothing extra. Prices are identical whether you: 
- - Click our affiliate link, or 
- - Go directly to the website yourself 
-
- Sometimes, our affiliate partnerships provide **exclusive discounts** or perks unavailable elsewhere. When that's the case, we'll highlight it. 
-
- --- 
-
- ### **Why We Use Affiliate Links** 
-
- Creating comprehensive World Cup guides requires: 
- - Extensive research and fact-checking 
- - Regular content updates 
- - Website hosting and maintenance 
- - Time and expertise 
-
- Affiliate commissions allow us to: 
- - ✅ Keep all guides **100% free** 
- - ✅ Avoid intrusive advertising 
- - ✅ Maintain editorial independence 
- - ✅ Continue expanding our content 
-
- **Your bookings support our ability to help thousands of World Cup fans plan better trips.** 
-
- --- 
-
- ### **FTC Compliance** 
-
- This disclosure complies with: 
- - **Federal Trade Commission (FTC)** 16 CFR Part 255: "Guides Concerning the Use of Endorsements and Testimonials in Advertising" 
- - FTC guidelines on affiliate marketing transparency 
- - International advertising standards 
-
- The FTC requires websites to disclose affiliate relationships. We take this seriously and clearly mark affiliate content. 
-
- --- 
-
- ### **How We Mark Affiliate Links** 
-
- We disclose affiliate relationships through: 
- - This Affiliate Disclaimer page (linked in footer) 
- - Statements within content (e.g., "We may earn a commission...") 
- - Clear labeling on promotional content 
-
- **You'll always know when we might earn from your click.** 
-
- --- 
-
- ### **Non-Affiliate Recommendations** 
-
- Not every link on Stadiumport is an affiliate link. We also link to: 
- - Official FIFA and stadium websites (informational) 
- - Government visa and travel advisory sites (safety) 
- - Public transportation authorities (practical planning) 
- - Free resources and tools 
-
- These links earn us nothing. We include them because they're helpful. 
-
- --- 
-
- ### **Price Comparisons** 
-
- When possible, we encourage you to: 
- - ✅ Compare prices across multiple platforms 
- - ✅ Check directly with hotels or airlines 
- - ✅ Use our links if prices are competitive 
-
- **Smart travel planning benefits everyone.** 
-
- --- 
-
- ### **Questions or Concerns?** 
-
- If you have questions about our affiliate relationships or believe we've made a biased recommendation, please contact us: 
-
- **Email:** legal@stadiumport.com 
-
- We take feedback seriously and will address any concerns promptly. 
-
- --- 
-
- ### **Changes to This Disclosure** 
-
- We may update this Affiliate Disclaimer as we add new partners or change practices. Updates will be noted with a new "Last Updated" date. 
-
- --- 
-
- ### **Thank You for Your Support** 
-
- By using our affiliate links, you're supporting free, high-quality World Cup travel content. We genuinely appreciate it. 
-
- **Now go plan an amazing 2026 World Cup adventure!** 
-
- --- 
-
- **Stadiumport**  
- Email: legal@stadiumport.com  
- Website: stadiumport.com 
-
- --- 
-
- *This Affiliate Disclaimer is effective as of January 15, 2025.* 
-
- --- 
-
- ---`;
-
-  // Wrap leading emoji characters in paragraphs and list items with a monochrome, styled span
-  // This keeps content unchanged while ensuring premium black icons instead of colored emojis.
-  const withMonochromeEmoji = (children: React.ReactNode) => {
-    const arr = Children.toArray(children);
-    const out: React.ReactNode[] = [];
-    arr.forEach((child, i) => {
-      if (typeof child === 'string') {
-        // Only replace when the emoji is at the start of the string segment (start of line)
-        const match = child.match(/^\s*(✅|❌|✓|✕)\s*/);
-        if (match) {
-          const icon = match[1];
-          const symbol = icon === '❌' || icon === '✕' ? '✕' : '✓';
-          out.push(
-            <span key={`emoji-${i}`} className="emoji-black" aria-hidden="false">
-              {symbol}
-            </span>
-          );
-          const rest = child.slice(match[0].length);
-          if (rest) out.push(rest);
-        } else {
-          out.push(child);
-        }
-      } else {
-        out.push(child);
-      }
-    });
-    return out;
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Legal', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/terms` },
+    { name: 'Affiliate Disclaimer', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/affiliate-disclaimer` }
+  ]);
+
+  const partners = [
+    { icon: Hotel, title: "Hotels", items: ["Booking.com", "Expedia", "Hotels.com", "Airbnb"] },
+    { icon: Plane, title: "Flights", items: ["Skyscanner", "Google Flights", "Direct Airlines"] },
+    { icon: Map, title: "Tours", items: ["GetYourGuide", "Viator", "TourRadar"] },
+    { icon: Car, title: "Transport", items: ["Rental Cars", "Airport Transfers", "Train Services"] }
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+      <SchemaOrg schema={[
+        breadcrumbSchema,
+        {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Affiliate Disclaimer",
+          "url": `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/legal/affiliate-disclaimer`
+        }
+      ]} />
       <Header />
-      <main id="main-content" className="pt-20">
-        <section className="relative py-28 bg-white dark:bg-navy-900">
-          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="relative z-10 p-6 md:p-10">
-              <div className="mx-auto max-w-2xl">
-                <div className="prose prose-slate dark:prose-invert prose-lg xl:prose-xl max-w-none font-inter">
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    components={{
-                      h2: ({ node, ...props }) => (
-                        <h2
-                          className="text-4xl md:text-5xl font-semibold tracking-tight text-slate-900 mb-6"
-                          {...props}
-                        />
-                      ),
-                      h3: ({ node, ...props }) => (
-                        <h3
-                          className="text-2xl md:text-3xl font-semibold tracking-tight text-slate-900 mt-10 mb-4"
-                          {...props}
-                        />
-                      ),
-                      p: ({ node, children, ...props }) => (
-                        <p className="text-slate-700 leading-8 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </p>
-                      ),
-                      ul: ({ node, ...props }) => (
-                        <ul className="lux-ul space-y-2" {...props} />
-                      ),
-                      ol: ({ node, ...props }) => (
-                        <ol className="lux-ol space-y-2" {...props} />
-                      ),
-                      li: ({ node, children, ...props }) => (
-                        <li className="text-slate-700 dark:text-slate-300" {...props}>
-                          {withMonochromeEmoji(children)}
-                        </li>
-                      ),
-                      strong: ({ node, ...props }) => (
-                        <strong className="font-semibold text-slate-900 dark:text-white" {...props} />
-                      ),
-                      hr: () => (
-                        <hr className="my-12 border-t border-slate-200" />
-                      ),
-                    }}
-                  >
-                    {content}
-                  </ReactMarkdown>
+
+      <main className="pt-32 pb-20 px-4 md:px-6">
+        <div className="max-w-5xl mx-auto">
+          
+          {/* Hero Section */}
+          <div className="text-center mb-20 animate-fade-up">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+              </span>
+              <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
+                Transparency First
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
+              Affiliate <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Disclaimer</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
+              Stadiumport is a free resource funded by affiliate commissions. We believe in being 100% honest about how we make money.
+            </p>
+          </div>
+
+          {/* How It Works Card */}
+          <div className="mb-20 animate-fade-up [animation-delay:200ms]">
+            <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 md:p-12 shadow-xl shadow-slate-200/50 dark:shadow-none relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-96 h-96 bg-indigo-500/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+              
+              <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                  <div className="w-16 h-16 bg-indigo-50 dark:bg-indigo-500/20 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400">
+                    <Link className="w-8 h-8" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                    What Are Affiliate Links?
+                  </h2>
+                  <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+                    Affiliate links are special URLs that track when someone clicks from our site to a partner's website. If you complete a booking, we receive a small commission.
+                  </p>
+                  <div className="bg-slate-50 dark:bg-black/20 rounded-2xl p-6 border border-slate-100 dark:border-white/5">
+                    <h3 className="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                      <DollarSign className="w-5 h-5 text-indigo-500" /> The Cost to You: Zero
+                    </h3>
+                    <p className="text-slate-600 dark:text-slate-400 text-sm">
+                      Prices are identical whether you use our link or go directly. In fact, sometimes our partnerships unlock special discounts for you.
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 border border-slate-200 dark:border-white/5">
+                  <h3 className="font-bold text-slate-900 dark:text-white mb-6">Example Scenario</h3>
+                  <div className="space-y-6 relative">
+                    {/* Connecting Line */}
+                    <div className="absolute left-[15px] top-8 bottom-8 w-0.5 bg-slate-200 dark:bg-slate-700"></div>
+                    
+                    <div className="relative flex gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-indigo-500 flex items-center justify-center shrink-0 z-10 text-sm font-bold text-indigo-600 dark:text-indigo-400">1</div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">You read our NYC Guide</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">Find the perfect hotel recommendation</p>
+                      </div>
+                    </div>
+                    
+                    <div className="relative flex gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-indigo-500 flex items-center justify-center shrink-0 z-10 text-sm font-bold text-indigo-600 dark:text-indigo-400">2</div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">Click to Booking.com</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">Book your stay for $200</p>
+                      </div>
+                    </div>
+                    
+                    <div className="relative flex gap-4">
+                      <div className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border-2 border-indigo-500 flex items-center justify-center shrink-0 z-10 text-sm font-bold text-indigo-600 dark:text-indigo-400">3</div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">We earn a commission</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">~ $6-12 helps support our site</p>
+                      </div>
+                    </div>
+
+                     <div className="relative flex gap-4">
+                      <div className="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 border-2 border-green-500 flex items-center justify-center shrink-0 z-10 text-sm font-bold text-green-600 dark:text-green-400">4</div>
+                      <div>
+                        <p className="font-medium text-slate-900 dark:text-white">You pay $200</p>
+                        <p className="text-sm text-slate-500 dark:text-slate-400">No extra cost to you</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+
+          {/* Our Promise & Partners */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20 animate-fade-up [animation-delay:400ms]">
+            
+            <div className="lg:col-span-2 space-y-8">
+              <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <ShieldCheck className="w-8 h-8 text-indigo-500" />
+                  <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Our Promise: Honesty First</h2>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-red-50 dark:bg-red-900/10 rounded-2xl p-6">
+                    <h3 className="font-bold text-red-700 dark:text-red-400 mb-4 flex items-center gap-2">
+                      <XCircle className="w-5 h-5" /> We Never
+                    </h3>
+                    <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                      <li>• Recommend solely for commission</li>
+                      <li>• Hide better non-affiliate options</li>
+                      <li>• Create fake positive reviews</li>
+                    </ul>
+                  </div>
+                  
+                  <div className="bg-green-50 dark:bg-green-900/10 rounded-2xl p-6">
+                    <h3 className="font-bold text-green-700 dark:text-green-400 mb-4 flex items-center gap-2">
+                      <CheckCircle2 className="w-5 h-5" /> We Always
+                    </h3>
+                    <ul className="space-y-2 text-sm text-slate-700 dark:text-slate-300">
+                      <li>• Test recommendations personally</li>
+                      <li>• Disclose affiliate links clearly</li>
+                      <li>• Share honest pros and cons</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-500/20 rounded-3xl p-8">
+                <h3 className="font-bold text-indigo-900 dark:text-indigo-200 mb-4 flex items-center gap-2">
+                  <Info className="w-5 h-5" /> FTC Compliance
+                </h3>
+                <p className="text-indigo-800 dark:text-indigo-300 text-sm leading-relaxed">
+                  We comply with the Federal Trade Commission (FTC) guidelines concerning the use of endorsements and testimonials in advertising. We clearly label affiliate content so you always know when we might earn from your click.
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-1">
+              <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 h-full">
+                <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+                  <HeartHandshake className="w-5 h-5 text-indigo-500" /> Trusted Partners
+                </h3>
+                <div className="space-y-6">
+                  {partners.map((partner, i) => (
+                    <div key={i}>
+                      <h4 className="text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2 flex items-center gap-2">
+                        <partner.icon className="w-4 h-4" /> {partner.title}
+                      </h4>
+                      <div className="flex flex-wrap gap-2">
+                        {partner.items.map((item, j) => (
+                          <span key={j} className="text-sm font-medium bg-white dark:bg-black/20 px-3 py-1.5 rounded-lg border border-slate-200 dark:border-white/5 text-slate-700 dark:text-slate-300">
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Footer Note */}
+          <div className="text-center animate-fade-up [animation-delay:600ms]">
+            <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">
+              By using our affiliate links, you support free, high-quality World Cup travel content. We genuinely appreciate it.
+            </p>
+            <a 
+              href="mailto:info@stadiumport.com" 
+              className="inline-flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-bold hover:underline"
+            >
+              <ExternalLink className="w-4 h-4" /> Questions? Email info@stadiumport.com
+            </a>
+          </div>
+
+        </div>
       </main>
       <Footer />
     </div>

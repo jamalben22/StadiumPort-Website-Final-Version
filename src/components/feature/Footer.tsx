@@ -53,7 +53,7 @@ export function Footer() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         {/* Minimal Newsletter Section */}
-        <div className="text-center mb-16">
+        <div id="newsletter" className="text-center mb-16">
           <h3 className="font-space font-semibold text-2xl md:text-3xl mb-4 text-slate-900 dark:text-white">
             Don't Miss Your World Cup 2026 Journey
           </h3>
