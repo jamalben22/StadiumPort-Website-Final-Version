@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { toPng, toBlob } from 'html-to-image';
 import { ShareCard } from './ShareCard';
@@ -7,8 +7,9 @@ import { TripTicket } from './TripTicket';
 import { ActionIsland } from './ActionIsland';
 import { RulesCard } from './RulesCard';
 import { Team, TEAM_MAP } from '../lib/wc26-data';
-import { Sparkles, CheckCircle2, RotateCcw, Trophy, LayoutGrid, Shield, Share2, Download, Mail, Globe, Home } from 'lucide-react';
+import { Sparkles, CheckCircle2, RotateCcw, Trophy, LayoutGrid, Shield, Share2, Download, Mail, Globe, Home, ChevronRight } from 'lucide-react';
 import { useGame } from '../context/GameContext';
+import { generateBracketMatches, Match } from '../lib/bracket-logic';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
@@ -24,15 +25,70 @@ interface ResultDashboardProps {
     bestPlayer: string;
   };
   onRestart?: () => void;
+  headlineOverride?: string;
+  participantMinimal?: boolean;
+  disableSEO?: boolean;
 }
 
-export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ champion, runnerUp, userName, userEmail, userCountry, uniqueId, stats, onRestart }) => {
-  const { groupStandings, knockoutPicks } = useGame();
+export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ champion, runnerUp, userName, userEmail, userCountry, uniqueId, stats, onRestart, headlineOverride, participantMinimal, disableSEO }) => {
   const [isGenerating, setIsGenerating] = useState(false);
   const exportRef = useRef<HTMLDivElement>(null);
   // Use provided uniqueId or generate a fallback (though uniqueId should always be present after submission)
   const [entryId] = useState(() => uniqueId || `WC2026-${Math.random().toString(36).slice(2,8).toUpperCase()}`);
   const [submittedAt] = useState(() => new Date());
+  const firstName = (userName || '').trim().split(/\s+/)[0] || 'User';
+  
+  // Reconstruct Bracket Logic
+  const { groupStandings, knockoutPicks, thirdPlacePicks } = useGame();
+  
+  const bracketData = useMemo(() => {
+    // 1. Generate R32 Base
+    const { roundOf32 } = generateBracketMatches(groupStandings, thirdPlacePicks || []);
+    
+    // 2. Build R16
+    const r16Matches: Match[] = [];
+    for (let i = 1; i <= 8; i++) {
+        const id = `R16-${i.toString().padStart(2, '0')}`;
+        // Find R32 matches that feed into this R16 match
+        const feedingMatches = roundOf32.filter(m => m.nextMatchId === id);
+        // Determine teams based on picks
+        const team1Id = knockoutPicks[feedingMatches[0]?.id] || null;
+        const team2Id = knockoutPicks[feedingMatches[1]?.id] || null;
+        r16Matches.push({ id, team1Id, team2Id, nextMatchId: `QF-${Math.ceil(i/2).toString().padStart(2, '0')}` });
+    }
+
+    // 3. Build QF
+    const qfMatches: Match[] = [];
+    for (let i = 1; i <= 4; i++) {
+        const id = `QF-${i.toString().padStart(2, '0')}`;
+        const feedingMatches = r16Matches.filter(m => m.nextMatchId === id);
+        const team1Id = knockoutPicks[feedingMatches[0]?.id] || null;
+        const team2Id = knockoutPicks[feedingMatches[1]?.id] || null;
+        qfMatches.push({ id, team1Id, team2Id, nextMatchId: `SF-${Math.ceil(i/2).toString().padStart(2, '0')}` });
+    }
+
+    // 4. Build SF
+    const sfMatches: Match[] = [];
+    for (let i = 1; i <= 2; i++) {
+        const id = `SF-${i.toString().padStart(2, '0')}`;
+        const feedingMatches = qfMatches.filter(m => m.nextMatchId === id);
+        const team1Id = knockoutPicks[feedingMatches[0]?.id] || null;
+        const team2Id = knockoutPicks[feedingMatches[1]?.id] || null;
+        sfMatches.push({ id, team1Id, team2Id, nextMatchId: 'F-01' });
+    }
+    
+    // 5. Build Third Place (Losers of SF)
+    const sf1LoserId = sfMatches[0] ? (knockoutPicks[sfMatches[0].id] === sfMatches[0].team1Id ? sfMatches[0].team2Id : sfMatches[0].team1Id) : null;
+    const sf2LoserId = sfMatches[1] ? (knockoutPicks[sfMatches[1].id] === sfMatches[1].team1Id ? sfMatches[1].team2Id : sfMatches[1].team1Id) : null;
+    
+    return {
+        roundOf32,
+        roundOf16: r16Matches,
+        quarterFinals: qfMatches,
+        semiFinals: sfMatches,
+        thirdPlace: { team1Id: sf1LoserId, team2Id: sf2LoserId }
+    };
+  }, [groupStandings, thirdPlacePicks, knockoutPicks]);
 
   // Helper: Get Team by ID (Optimized)
   const getTeam = (id: string) => TEAM_MAP.get(id);
@@ -55,7 +111,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
       });
       
       const link = document.createElement('a');
-      link.download = `stadiumport-wc26-${champion.id}-prediction.png`;
+      link.download = `my-wc2026-prediction.png`;
       link.href = dataUrl;
       link.click();
     } catch (err) {
@@ -83,7 +139,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
 
         if (!blob) throw new Error('Failed to generate blob');
         
-        const file = new File([blob], `prediction-${champion.id}.png`, { type: "image/png" });
+        const file = new File([blob], `my-wc2026-prediction.png`, { type: "image/png" });
 
         if (navigator.share) {
             await navigator.share({
@@ -93,7 +149,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
             });
         } else {
             const link = document.createElement('a');
-            link.download = `stadiumport-wc26-${champion.id}-prediction.png`;
+            link.download = `my-wc2026-prediction.png`;
             link.href = URL.createObjectURL(blob);
             link.click();
         }
@@ -183,28 +239,32 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
 
   return (
     <>
-      <SEO 
-        title="My World Cup 2026 Prediction | Stadiumport"
-        description={`I predicted ${champion.name} will win the 2026 World Cup! Create your own prediction bracket and compete for official prizes.`}
-        keywords={["World Cup 2026 prediction", "bracket results", "soccer prediction card", "stadiumport prediction"]}
-        url="/world-cup-2026-prediction-game/results"
-        image={`https://stadiumport.com/share/wc26-${champion.id}.png`}
-      />
-      <SchemaOrg schema={{
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "World Cup 2026 Prediction Results",
-        "description": "User prediction results for the World Cup 2026 tournament.",
-        "url": "https://stadiumport.com/world-cup-2026-prediction-game/results",
-        "mainEntity": {
-          "@type": "SportsEvent",
-          "name": "World Cup 2026",
-          "competitor": {
-            "@type": "SportsTeam",
-            "name": champion.name
-          }
-        }
-      }} />
+      {!disableSEO && (
+        <>
+          <SEO 
+            title={`World Cup 2026 Official Entry | ${userName}`}
+            description={`Official prediction entry: ${userName} picks ${champion.name} as World Cup 2026 champion. View full bracket and share card.`}
+            keywords={["World Cup 2026 official entry", "prediction bracket", "soccer prediction card", "stadiumport prediction"]}
+            url="/world-cup-2026-prediction-game/entry"
+            image={`https://stadiumport.com/share/wc26-${champion.id}.png`}
+          />
+          <SchemaOrg schema={{
+            "@context": "https://schema.org",
+            "@type": "ProfilePage",
+            "name": "World Cup 2026 Official Prediction Entry",
+            "description": "Official prediction entry with champion pick and full bracket details.",
+            "url": "https://stadiumport.com/world-cup-2026-prediction-game/entry",
+            "mainEntity": {
+              "@type": "SportsEvent",
+              "name": "World Cup 2026",
+              "competitor": {
+                "@type": "SportsTeam",
+                "name": champion.name
+              }
+            }
+          }} />
+        </>
+      )}
     {/* Clean Container - Transparent to show GameLayout background */}
     <div className="w-full h-full overflow-y-auto custom-scrollbar relative z-10">
       
@@ -214,27 +274,59 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
         initial="hidden"
         animate="show"
       >
-        <div className="mb-6 flex justify-center">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-            <span className="text-[11px] font-bold text-slate-700 dark:text-white uppercase tracking-[0.22em] font-['Rajdhani']">
-              Step 5 of 5: Your Prediction is Locked!
-            </span>
-          </div>
-        </div>
+        
         
         {/* 1. Premium Header */}
         <motion.header variants={itemVariants} className="text-center mb-16 relative">
            <h1 className="text-6xl md:text-8xl font-black font-['Teko'] uppercase tracking-tight leading-[0.85] mb-2 text-slate-900 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-white dark:via-white dark:to-white/50">
-             Official Entry Confirmed
+             {(() => {
+               const text = headlineOverride || 'Official Entry Confirmed';
+               const poss = userName ? `${userName}'s` : '';
+               const idx = poss ? text.indexOf(poss) : -1;
+               if (idx >= 0) {
+                 return (
+                   <>
+                     {text.slice(0, idx)}
+                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] via-emerald-400 to-cyan-300 drop-shadow-[0_0_12px_rgba(16,185,129,0.3)]">
+                       {poss}
+                     </span>
+                     {text.slice(idx + poss.length)}
+                   </>
+                 );
+               }
+               return text;
+             })()}
            </h1>
            <p className="text-[#01b47d] font-bold text-lg font-['Rajdhani'] tracking-widest uppercase">
-             Your World Cup 2026 predictions are submitted and verified. Good luck competing for official prizes!
-           </p>
+              Official World Cup 2026 predictions Confirmed, Good luck competing for official prizes!
+            </p>
+            {participantMinimal && (
+              <div className="mx-auto mt-6 max-w-4xl">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Official Participant Record</span>
+                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                </div>
+                <div className="flex flex-wrap items-center justify-center gap-3 px-4 py-3 rounded-2xl bg-white/6 border border-white/12 ring-1 ring-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.06)]">
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10">
+                    <span className="text-[11px] text-white/70">Name</span>
+                    <span className="text-[12px] font-bold text-white">{userName || '—'}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10">
+                    <span className="text-[11px] text-white/70">Country</span>
+                    <span className="text-[12px] font-bold text-white">{userCountry || '—'}</span>
+                  </div>
+                  <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10">
+                    <span className="text-[11px] text-white/70">{firstName} ID</span>
+                    <span className="text-[12px] font-bold text-white">{entryId}</span>
+                  </div>
+                </div>
+              </div>
+            )}
         </motion.header>
         <div className="text-center mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md">
-            <span className="text-[10px] font-bold text-slate-500 dark:text-white/60 uppercase tracking-widest font-['Rajdhani']">YOUR PREDICTED CHAMPION</span>
+            <span className="text-[10px] font-bold text-slate-500 dark:text-white/60 uppercase tracking-widest font-['Rajdhani']">{firstName}'s PREDICTED CHAMPION</span>
           </div>
           <div className="mt-4">
             <div className="text-5xl md:text-7xl font-black font-['Teko'] uppercase tracking-tight leading-[0.9] text-slate-900 dark:text-white">{champion.name}</div>
@@ -243,179 +335,462 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
         </div>
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-5xl font-black font-['Teko'] uppercase tracking-tight text-[#FBBF24]">
-            Your Complete Bracket Summary
+            Complete Bracket Summary
           </h2>
         </div>
 
         {/* Main Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
 
-           {/* Section 1: Group Predictions Summary (Span 12 or 8) */}
-           <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-8 flex flex-col gap-6">
-              <div className="flex items-center gap-4">
+           {/* Section 1: Full Group Predictions (Span 12 or 8) */}
+           <motion.div variants={itemVariants} className={participantMinimal ? "md:col-span-12 flex flex-col items-center gap-6" : "md:col-span-12 lg:col-span-8 flex flex-col gap-6"}>
+              <div className="flex items-center justify-center gap-4 w-full max-w-4xl mx-auto">
                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
-                 <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Group Stage Winners (Top of Each Group)</span>
+                 <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Group Stage Predictions</span>
                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
               </div>
               
-              <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
-                 {Object.entries(groupStandings).map(([groupId, teamIds]) => {
-                    const winner = getTeam(teamIds[0]);
-                    return (
-                       <div key={groupId} className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-3 flex flex-col items-center gap-2 group hover:bg-slate-100 dark:hover:bg-white/20 transition-colors">
-                          <span className="text-[10px] text-slate-500 dark:text-white/60 font-bold font-['Rajdhani']">GRP {groupId}</span>
-                          {winner && (
-                             <>
-                                <img src={winner.flagUrl} alt={winner.name} className="w-8 h-6 object-cover rounded shadow-sm" />
-                                <span className="text-[10px] text-slate-700 dark:text-white/90 font-['Rajdhani'] font-semibold">{winner.name}</span>
-                             </>
-                          )}
-                       </div>
-                    );
-                 })}
-              </div>
+              {(() => {
+                const entries = Object.entries(groupStandings);
+                const rows: Array<Array<[string, string[]]>> = [];
+                for (let i = 0; i < entries.length; i += 3) rows.push(entries.slice(i, i + 3));
+                return (
+                  <div className="w-full max-w-6xl mx-auto space-y-4">
+                    {rows.map((row, rowIdx) => (
+                      <div key={rowIdx} className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {row.map(([groupId, teamIds]) => (
+                          <div key={groupId} className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-4 flex flex-col gap-3">
+                            <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
+                              <span className="text-xs font-bold text-slate-500 dark:text-white/60 font-['Rajdhani']">GROUP {groupId}</span>
+                            </div>
+                            <div className="space-y-2">
+                              {teamIds.map((teamId, index) => {
+                                const team = getTeam(teamId);
+                                if (!team) return null;
+                                return (
+                                  <div key={teamId} className="flex items-center justify-between">
+                                    <div className="flex items-center gap-2">
+                                      <span className={`text-[10px] font-bold w-4 ${index < 2 ? 'text-[#01b47d]' : 'text-slate-400'}`}>{index + 1}</span>
+                                      <div className="flex items-center gap-2">
+                                        {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+                                          <div className="w-5 h-4 rounded shadow-sm flex items-center justify-center bg-slate-700/50">
+                                            <span className="text-[6px] font-bold text-slate-400">FIFA</span>
+                                          </div>
+                                        ) : (
+                                          <img src={team.flagUrl} alt={team.name} className="w-5 h-4 object-cover rounded shadow-sm" />
+                                        )}
+                                        <span className={`text-xs font-['Rajdhani'] font-semibold ${index < 2 ? 'text-slate-900 dark:text-white' : 'text-slate-500 dark:text-white/50'}`}>{team.name}</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                );
+              })()}
            </motion.div>
 
-           {/* Section 4: User Info / Quick Stats (Span 4) */}
-           <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-4 flex flex-col gap-6">
+          {/* Section 4: User Info / Quick Stats (Span 4) */}
+          {!participantMinimal && (
+          <motion.div variants={itemVariants} className="md:col-span-12 lg:col-span-4 flex flex-col gap-6">
                <div className="flex items-center gap-4">
                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
                  <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Official Participant Record</span>
                  <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
               </div>
 
-            <div className="group relative bg-white dark:bg-[#0b0b0c]/90 backdrop-blur-2xl border border-slate-200 dark:border-white/20 ring-1 ring-slate-200 dark:ring-white/10 rounded-2xl p-6 flex flex-col items-center justify-center h-full overflow-hidden shadow-[0_18px_48px_rgba(0,0,0,0.1)] dark:shadow-[0_18px_48px_rgba(0,0,0,0.55)]">
-                <div className="absolute inset-0 p-[1px] rounded-2xl bg-gradient-to-r from-transparent via-[#FFD700]/25 to-transparent opacity-60" />
-                <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#FFD700]/10 blur-[80px] rounded-full" />
-                <div className="absolute inset-0 bg-white/5 [mask-image:linear-gradient(to_bottom,white,transparent)]" />
+            <div className="group relative bg-white/6 dark:bg-white/5 backdrop-blur-2xl ring-1 ring-white/10 rounded-3xl p-7 flex flex-col items-center justify-center h-full overflow-hidden shadow-[0_12px_40px_rgba(0,0,0,0.2)]">
+                <div className="absolute inset-0 pointer-events-none rounded-3xl ring-1 ring-white/10 bg-gradient-to-b from-white/12 via-white/6 to-transparent [mask-image:linear-gradient(to_bottom,rgba(255,255,255,0.9),rgba(255,255,255,0.3),transparent)] [background-position:top] [background-size:100%_60%]" />
+                <div className="absolute -top-24 -right-24 w-56 h-56 bg-white/8 dark:bg-white/10 blur-[100px] rounded-full" />
                 <div className="w-full space-y-4 text-slate-700 dark:text-white/90 text-[12px] md:text-sm font-['Rajdhani'] font-medium relative z-10">
                   
-                  {/* Prominent ID Display */}
-                  <div className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 flex flex-col items-center gap-2 mb-4">
-                    <span className="text-slate-500 dark:text-white/60 text-[10px] uppercase tracking-widest">Unique Entry ID</span>
-                    <div className="flex items-center gap-2">
-                        <span className="text-2xl md:text-3xl font-black text-[#FFD700] font-['Teko'] tracking-wide">{entryId}</span>
-                        <button 
-                            id="copy-id-btn"
-                            onClick={handleCopyId}
-                            className="p-1.5 hover:bg-slate-200 dark:hover:bg-white/20 rounded-lg transition-colors text-slate-400 dark:text-white/80 hover:text-slate-900 dark:hover:text-white"
-                            title="Copy ID"
-                        >
-                            <span className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider border border-slate-300 dark:border-white/30 px-2 py-1 rounded">Copy</span>
-                        </button>
-                    </div>
-                    <span className="text-[10px] text-slate-400 dark:text-white/50 italic">Save this ID to track your prediction</span>
-                  </div>
+                  
 
                   <div className="space-y-2">
-                    <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
-                        <span className="text-slate-500 dark:text-white/70">Name:</span>
-                        <span className="font-bold truncate max-w-[220px] text-slate-900 dark:text-white">{userName || '—'}</span>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                        <span className="text-white/70">Name:</span>
+                        <span className="font-bold truncate max-w-[220px] text-white">{userName || '—'}</span>
                     </div>
-                    <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
-                        <span className="text-slate-500 dark:text-white/70">Country:</span>
-                        <span className="font-bold truncate max-w-[220px] text-slate-900 dark:text-white">{userCountry || '—'}</span>
+                    <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                        <span className="text-white/70">Country:</span>
+                        <span className="font-bold truncate max-w-[220px] text-white">{userCountry || '—'}</span>
                     </div>
-                    <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
-                        <span className="text-slate-500 dark:text-white/70">Email:</span>
-                        <span className="font-bold truncate max-w-[220px] text-slate-900 dark:text-white">{userEmail || '—'}</span>
-                    </div>
-                    <div className="flex items-center justify-between border-b border-slate-200 dark:border-white/10 pb-2">
-                        <span className="text-slate-500 dark:text-white/70">Submitted:</span>
-                        <span className="font-bold truncate max-w-[220px] text-slate-900 dark:text-white">{submittedAt.toLocaleString()}</span>
-                    </div>
-                    <div className="flex items-center justify-between pt-1">
-                        <span className="text-slate-500 dark:text-white/70">Status:</span>
-                        <span className="inline-flex items-center gap-2 font-bold text-[#01b47d]">
-                        <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Locked
-                        </span>
-                    </div>
+                    {participantMinimal && (
+                      <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                        <span className="text-white/70">{firstName} ID:</span>
+                        <span className="font-bold truncate max-w-[220px] text-white">{entryId}</span>
+                      </div>
+                    )}
+                    {!participantMinimal && (
+                      <>
+                        <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                            <span className="text-white/70">Email:</span>
+                            <span className="font-bold truncate max-w-[220px] text-white">{userEmail || '—'}</span>
+                        </div>
+                        <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                            <span className="text-white/70">Submitted:</span>
+                            <span className="font-bold truncate max-w-[220px] text-white">{submittedAt.toLocaleString()}</span>
+                        </div>
+                        <div className="flex items-center justify-between pt-1">
+                            <span className="text-white/70">Status:</span>
+                            <span className="inline-flex items-center gap-2 font-bold text-[#01b47d]">
+                            <CheckCircle2 className="w-3.5 h-3.5" /> Verified & Locked
+                            </span>
+                        </div>
+                      </>
+                    )}
                   </div>
                 </div>
-                <p className="mt-2 text-[11px] md:text-xs text-yellow-600 dark:text-yellow-300/80">
-                  ⚠️ Predictions are now locked and cannot be edited after June 11, 2026 kickoff.
-                </p>
+                {!participantMinimal && (
+                  <p className="mt-3 text-[11px] md:text-xs text-white/60">
+                    ⚠️ Predictions are locked and cannot be edited.
+                  </p>
+                )}
               </div>
            </motion.div>
+          )}
 
-           {/* Section 2: Bracket Summary (Final 4 Path) */}
-           <motion.div variants={itemVariants} className="md:col-span-12 flex flex-col gap-6 mt-4">
-              <div className="flex items-center gap-4">
-                 <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
-                 <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Your Final Four Predictions</span>
-                 <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
-                 {/* Semi Finalists (Left) */}
-                 <div className="space-y-3">
-                    {['SF-01', 'SF-02'].map(matchId => {
-                       const winnerId = knockoutPicks[matchId];
-                       const team = getTeam(winnerId);
-                       return team ? (
-                          <div key={matchId} className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 flex items-center justify-between">
-                             <div className="flex items-center gap-3">
-                                <img src={team.flagUrl} className="w-8 h-6 rounded object-cover" />
-                                <span className="text-slate-900 dark:text-white font-bold font-['Teko'] text-lg">{team.name}</span>
+           {/* Section: Full Knockout Breakdown */}
+           <motion.div variants={itemVariants} className="md:col-span-12 flex flex-col gap-12 mt-8">
+              
+              {/* 1. Round of 32 */}
+              <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                     <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Round of 32 Predictions</span>
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                     {bracketData.roundOf32.map((match) => {
+                         const winnerId = knockoutPicks[match.id];
+                         const winner = getTeam(winnerId);
+                         const team1 = getTeam(match.team1Id || '');
+                         const team2 = getTeam(match.team2Id || '');
+                         
+                         return (
+                             <div key={match.id} className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-lg p-2 flex flex-col gap-1">
+                                 <div className={`flex items-center justify-between p-1 rounded ${winnerId === team1?.id ? 'bg-[#01b47d]/10' : ''}`}>
+                                     <div className="flex items-center gap-2">
+                                         {team1 ? (
+                                           ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team1.id) ? (
+                                             <div className="w-4 h-3 rounded-[1px] bg-slate-700/50 flex items-center justify-center">
+                                                <span className="text-[5px] font-bold text-slate-400">FIFA</span>
+                                             </div>
+                                           ) : (
+                                             <img src={team1.flagUrl} className="w-4 h-3 rounded-[1px]" />
+                                           )
+                                         ) : <div className="w-4 h-3 bg-slate-200 rounded-[1px]" />}
+                                        <span className={`text-[10px] font-['Rajdhani'] font-bold ${winnerId === team1?.id ? 'text-[#01b47d]' : 'text-slate-500 dark:text-white/50'}`}>{team1?.name || 'TBD'}</span>
+                                     </div>
+                                 </div>
+                                 <div className={`flex items-center justify-between p-1 rounded ${winnerId === team2?.id ? 'bg-[#01b47d]/10' : ''}`}>
+                                     <div className="flex items-center gap-2">
+                                         {team2 ? (
+                                           ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team2.id) ? (
+                                             <div className="w-4 h-3 rounded-[1px] bg-slate-700/50 flex items-center justify-center">
+                                                <span className="text-[5px] font-bold text-slate-400">FIFA</span>
+                                             </div>
+                                           ) : (
+                                             <img src={team2.flagUrl} className="w-4 h-3 rounded-[1px]" />
+                                           )
+                                         ) : <div className="w-4 h-3 bg-slate-200 rounded-[1px]" />}
+                                        <span className={`text-[10px] font-['Rajdhani'] font-bold ${winnerId === team2?.id ? 'text-[#01b47d]' : 'text-slate-500 dark:text-white/50'}`}>{team2?.name || 'TBD'}</span>
+                                     </div>
+                                 </div>
                              </div>
-                             <span className="text-xs text-slate-400 dark:text-white/50 font-['Rajdhani'] font-bold">CHAMPION</span>
-                          </div>
-                       ) : null;
-                    })}
-                 </div>
-
-                 {/* The Final */}
-                 <div className="bg-gradient-to-b from-[#008f63]/10 to-slate-50 dark:from-[#008f63]/20 dark:to-[#111] border border-[#01b47d]/30 rounded-2xl p-6 flex flex-col items-center justify-center relative overflow-hidden h-full min-h-[160px]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#01b47d]/10 to-transparent pointer-events-none" />
-                    <Trophy className="w-8 h-8 text-[#01b47d] mb-3" />
-                    <div className="text-center">
-                       <div className="text-xs text-[#01b47d] font-bold tracking-widest font-['Rajdhani'] mb-1">WORLD CHAMPION</div>
-                       <div className="text-4xl font-black text-slate-900 dark:text-white font-['Teko'] uppercase">{champion.name}</div>
-                    </div>
-                 </div>
-
-                {/* Other Top-4 Teams (Losing Semifinalists) */}
-                <div className="space-y-3">
-                  <div className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 flex items-center justify-between">
-                     <div className="flex items-center gap-3">
-                        {sf1Loser ? (
-                          <>
-                            <img src={sf1Loser.flagUrl} className="w-8 h-6 rounded object-cover" />
-                            <span className="text-slate-900 dark:text-white font-bold font-['Teko'] text-lg">{sf1Loser.name}</span>
-                          </>
-                        ) : (
-                          <>
-                            <div className="w-8 h-6 rounded bg-slate-200 dark:bg-white/10 ring-1 ring-slate-300 dark:ring-white/20" />
-                            <span className="text-slate-400 dark:text-white/40 font-['Teko'] text-lg">TBD</span>
-                          </>
-                        )}
-                     </div>
-                     <span className="text-xs text-slate-400 dark:text-white/50 font-['Rajdhani'] font-bold">3rd PLACE</span>
+                         );
+                     })}
                   </div>
-                  <div className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 flex items-center justify-between">
-                     <div className="flex items-center gap-3">
-                        {sf2Loser ? (
-                          <>
-                            <img src={sf2Loser.flagUrl} className="w-8 h-6 rounded object-cover" />
-                            <span className="text-slate-900 dark:text-white font-bold font-['Teko'] text-lg">{sf2Loser.name}</span>
-                          </>
-                        ) : (
-                          <>
-                            <div className="w-8 h-6 rounded bg-slate-200 dark:bg-white/10 ring-1 ring-slate-300 dark:ring-white/20" />
-                            <span className="text-slate-400 dark:text-white/40 font-['Teko'] text-lg">TBD</span>
-                          </>
-                        )}
-                     </div>
-                     <span className="text-xs text-slate-400 dark:text-white/50 font-['Rajdhani'] font-bold">4th PLACE</span>
-                  </div>
-                </div>
               </div>
+
+              {/* 2. Round of 16 */}
+              <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                     <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Round of 16 Predictions</span>
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                     {bracketData.roundOf16.map((match) => {
+                         const winnerId = knockoutPicks[match.id];
+                         const team1 = getTeam(match.team1Id || '');
+                         const team2 = getTeam(match.team2Id || '');
+                         
+                         return (
+                             <div key={match.id} className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-3 flex flex-col gap-2 relative overflow-hidden">
+                                 <div className={`flex items-center justify-between p-1.5 rounded-lg transition-colors ${winnerId === team1?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : ''}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team1 ? (
+                                            ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team1.id) ? (
+                                              <div className="w-6 h-4 rounded shadow-sm bg-slate-700/50 flex items-center justify-center">
+                                                 <span className="text-[6px] font-bold text-slate-400">FIFA</span>
+                                              </div>
+                                            ) : (
+                                              <img src={team1.flagUrl} className="w-6 h-4 rounded shadow-sm" />
+                                            )
+                                         ) : <div className="w-6 h-4 bg-slate-200 rounded" />}
+                                         <span className={`text-xs font-['Teko'] uppercase tracking-wide text-lg leading-none ${winnerId === team1?.id ? 'text-[#01b47d]' : 'text-slate-500 dark:text-white/50'}`}>{team1?.name || 'TBD'}</span>
+                                     </div>
+                                     {winnerId === team1?.id && <CheckCircle2 className="w-3 h-3 text-[#01b47d]" />}
+                                 </div>
+                                 <div className={`flex items-center justify-between p-1.5 rounded-lg transition-colors ${winnerId === team2?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : ''}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team2 ? (
+                                            ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team2.id) ? (
+                                              <div className="w-6 h-4 rounded shadow-sm bg-slate-700/50 flex items-center justify-center">
+                                                 <span className="text-[6px] font-bold text-slate-400">FIFA</span>
+                                              </div>
+                                            ) : (
+                                              <img src={team2.flagUrl} className="w-6 h-4 rounded shadow-sm" />
+                                            )
+                                         ) : <div className="w-6 h-4 bg-slate-200 rounded" />}
+                                         <span className={`text-xs font-['Teko'] uppercase tracking-wide text-lg leading-none ${winnerId === team2?.id ? 'text-[#01b47d]' : 'text-slate-500 dark:text-white/50'}`}>{team2?.name || 'TBD'}</span>
+                                     </div>
+                                     {winnerId === team2?.id && <CheckCircle2 className="w-3 h-3 text-[#01b47d]" />}
+                                 </div>
+                             </div>
+                         );
+                     })}
+                  </div>
+              </div>
+
+              {/* 3. Quarter Finals */}
+              <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                     <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Quarter-Final Predictions</span>
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                     {bracketData.quarterFinals.map((match) => {
+                         const winnerId = knockoutPicks[match.id];
+                         const team1 = getTeam(match.team1Id || '');
+                         const team2 = getTeam(match.team2Id || '');
+                         
+                         return (
+                             <div key={match.id} className="bg-white dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4 flex flex-col gap-3 shadow-sm">
+                                 <div className={`flex items-center justify-between ${winnerId === team1?.id ? 'opacity-100' : 'opacity-50'}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team1 ? (
+                                            ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team1.id) ? (
+                                              <div className="w-8 h-6 rounded shadow-sm bg-slate-700/50 flex items-center justify-center">
+                                                 <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                              </div>
+                                            ) : (
+                                              <img src={team1.flagUrl} className="w-8 h-6 rounded shadow-sm" />
+                                            )
+                                         ) : <div className="w-8 h-6 bg-slate-200 rounded" />}
+                                         <span className="font-['Teko'] text-xl uppercase leading-none text-slate-900 dark:text-white">{team1?.name || 'TBD'}</span>
+                                     </div>
+                                     {winnerId === team1?.id && <div className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</div>}
+                                 </div>
+                                 <div className="h-px bg-slate-100 dark:bg-white/10 w-full" />
+                                 <div className={`flex items-center justify-between ${winnerId === team2?.id ? 'opacity-100' : 'opacity-50'}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team2 ? (
+                                            ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team2.id) ? (
+                                              <div className="w-8 h-6 rounded shadow-sm bg-slate-700/50 flex items-center justify-center">
+                                                 <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                              </div>
+                                            ) : (
+                                              <img src={team2.flagUrl} className="w-8 h-6 rounded shadow-sm" />
+                                            )
+                                         ) : <div className="w-8 h-6 bg-slate-200 rounded" />}
+                                         <span className="font-['Teko'] text-xl uppercase leading-none text-slate-900 dark:text-white">{team2?.name || 'TBD'}</span>
+                                     </div>
+                                     {winnerId === team2?.id && <div className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</div>}
+                                 </div>
+                             </div>
+                         );
+                     })}
+                  </div>
+              </div>
+
+              {/* 4. Semi-Finals */}
+              <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                     <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Semi-Final Predictions</span>
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                     {bracketData.semiFinals.map((match) => {
+                         const winnerId = knockoutPicks[match.id];
+                         const team1 = getTeam(match.team1Id || '');
+                         const team2 = getTeam(match.team2Id || '');
+                         return (
+                             <div key={match.id} className="bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-xl p-4">
+                                 <div className={`flex items-center justify-between mb-3 ${winnerId === team1?.id ? 'opacity-100' : 'opacity-50'}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team1 && (
+                                           ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team1.id) ? (
+                                             <div className="w-6 h-4 rounded bg-slate-700/50 flex items-center justify-center">
+                                                <span className="text-[6px] font-bold text-slate-400">FIFA</span>
+                                             </div>
+                                           ) : (
+                                             <img src={team1.flagUrl} className="w-6 h-4 rounded" />
+                                           )
+                                         )}
+                                         <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{team1?.name}</span>
+                                     </div>
+                                     {winnerId === team1?.id && <CheckCircle2 className="w-4 h-4 text-[#01b47d]" />}
+                                 </div>
+                                 <div className={`flex items-center justify-between ${winnerId === team2?.id ? 'opacity-100' : 'opacity-50'}`}>
+                                     <div className="flex items-center gap-3">
+                                         {team2 && (
+                                           ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team2.id) ? (
+                                             <div className="w-6 h-4 rounded bg-slate-700/50 flex items-center justify-center">
+                                                <span className="text-[6px] font-bold text-slate-400">FIFA</span>
+                                             </div>
+                                           ) : (
+                                             <img src={team2.flagUrl} className="w-6 h-4 rounded" />
+                                           )
+                                         )}
+                                         <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{team2?.name}</span>
+                                     </div>
+                                     {winnerId === team2?.id && <CheckCircle2 className="w-4 h-4 text-[#01b47d]" />}
+                                 </div>
+                             </div>
+                         );
+                     })}
+                  </div>
+              </div>
+
+              {/* 5. Third Place Match */}
+              <div className="flex flex-col gap-4">
+                  <div className="flex items-center gap-4">
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                     <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">Third Place Match Prediction</span>
+                     <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                  </div>
+                  <div className="max-w-2xl mx-auto w-full">
+                       <div className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-xl p-4 flex flex-col justify-center h-full">
+                           <div className="flex flex-col gap-2">
+                              <div className="flex items-center justify-between p-3 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+                                  <div className="flex items-center gap-3">
+                                      {getTeam(bracketData.thirdPlace.team1Id || '') && (
+                                        ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(getTeam(bracketData.thirdPlace.team1Id || '')?.id || '') ? (
+                                          <div className="w-8 h-6 rounded bg-slate-700/50 flex items-center justify-center">
+                                             <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                          </div>
+                                        ) : (
+                                          <img src={getTeam(bracketData.thirdPlace.team1Id || '')?.flagUrl} className="w-8 h-6 rounded shadow-sm" />
+                                        )
+                                      )}
+                                      <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{getTeam(bracketData.thirdPlace.team1Id || '')?.name || 'TBD'}</span>
+                                  </div>
+                                  <span className="text-[10px] font-bold text-slate-400 bg-slate-200 dark:bg-white/10 px-2 py-0.5 rounded">SF L1</span>
+                              </div>
+                              <div className="flex items-center justify-between p-3 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+                                  <div className="flex items-center gap-3">
+                                      {getTeam(bracketData.thirdPlace.team2Id || '') && (
+                                        ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(getTeam(bracketData.thirdPlace.team2Id || '')?.id || '') ? (
+                                          <div className="w-8 h-6 rounded bg-slate-700/50 flex items-center justify-center">
+                                             <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                          </div>
+                                        ) : (
+                                          <img src={getTeam(bracketData.thirdPlace.team2Id || '')?.flagUrl} className="w-8 h-6 rounded shadow-sm" />
+                                        )
+                                      )}
+                                      <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{getTeam(bracketData.thirdPlace.team2Id || '')?.name || 'TBD'}</span>
+                                  </div>
+                                  <span className="text-[10px] font-bold text-slate-400 bg-slate-200 dark:bg-white/10 px-2 py-0.5 rounded">SF L2</span>
+                            </div>
+                            {/* Outcome: 3rd & 4th Places */}
+                            <div className="mt-3 flex items-center justify-center gap-3 text-xs font-['Rajdhani'] uppercase tracking-widest text-slate-500 dark:text-white/60">
+                              {(() => {
+                                const tpWinnerId = knockoutPicks['TP-01'];
+                                const t1 = getTeam(bracketData.thirdPlace.team1Id || '');
+                                const t2 = getTeam(bracketData.thirdPlace.team2Id || '');
+                                const tpLoserId = tpWinnerId && (tpWinnerId === t1?.id ? t2?.id : t1?.id);
+                                return (
+                                  <>
+                                    <span className="inline-flex items-center gap-2 bg-white/40 dark:bg-white/10 px-2.5 py-1 rounded">
+                                      <span className="text-[#01b47d] font-bold">3rd</span>
+                                      <span className="font-bold text-slate-700 dark:text-white">{getTeam(tpWinnerId || '')?.name || 'TBD'}</span>
+                                    </span>
+                                    <span className="text-white/30">•</span>
+                                    <span className="inline-flex items-center gap-2 bg-white/40 dark:bg-white/10 px-2.5 py-1 rounded">
+                                      <span className="text-slate-400 font-bold">4th</span>
+                                      <span className="font-bold text-slate-700 dark:text-white">{getTeam(tpLoserId || '')?.name || 'TBD'}</span>
+                                    </span>
+                                  </>
+                                );
+                              })()}
+                            </div>
+                        </div>
+                  </div>
+              </div>
+              </div>
+
+              {/* 6. World Cup Final */}
+               <div className="flex flex-col gap-4">
+                   <div className="flex items-center gap-4">
+                      <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                      <span className="text-slate-400 dark:text-white/60 text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani']">World Cup Final Prediction</span>
+                      <div className="h-px flex-1 bg-slate-200 dark:bg-white/20"></div>
+                   </div>
+                   <div className="max-w-2xl mx-auto w-full">
+                       <div className="bg-gradient-to-b from-slate-50 to-slate-100 dark:from-white/5 dark:to-white/10 border border-[#FBBF24]/30 rounded-xl p-4 flex flex-col justify-center h-full shadow-[0_0_30px_rgba(251,191,36,0.1)]">
+                           <div className="flex flex-col gap-2">
+                               {/* Champion (Winner) */}
+                               <div className="flex items-center justify-between p-3 rounded-lg bg-[#FBBF24]/10 border border-[#FBBF24]/20 relative overflow-hidden">
+                                   <div className="absolute inset-0 bg-gradient-to-r from-[#FBBF24]/10 via-transparent to-transparent opacity-50" />
+                                   <div className="flex items-center gap-3 relative z-10">
+                                       {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(champion.id) ? (
+                                         <div className="w-8 h-6 rounded bg-slate-700/50 flex items-center justify-center border border-[#FBBF24]/30">
+                                            <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                         </div>
+                                       ) : (
+                                         <img src={champion.flagUrl} className="w-8 h-6 rounded shadow-sm ring-1 ring-[#FBBF24]/40" />
+                                       )}
+                                       <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{champion.name}</span>
+                                   </div>
+                                   <div className="flex items-center gap-2 relative z-10">
+                                       <Trophy className="w-4 h-4 text-[#FBBF24]" />
+                                       <span className="text-[10px] font-bold text-[#FBBF24] bg-[#FBBF24]/10 px-2 py-0.5 rounded border border-[#FBBF24]/20">WINNER</span>
+                                   </div>
+                               </div>
+                               
+                               {/* Runner Up */}
+                               <div className="flex items-center justify-between p-3 rounded-lg bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/5">
+                                   <div className="flex items-center gap-3">
+                                       {runnerUp ? (
+                                           <>
+                                            {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(runnerUp.id) ? (
+                                                <div className="w-8 h-6 rounded bg-slate-700/50 flex items-center justify-center">
+                                                    <span className="text-[8px] font-bold text-slate-400">FIFA</span>
+                                                </div>
+                                            ) : (
+                                                <img src={runnerUp.flagUrl} className="w-8 h-6 rounded shadow-sm" />
+                                            )}
+                                            <span className="font-['Teko'] text-xl uppercase text-slate-900 dark:text-white">{runnerUp.name}</span>
+                                           </>
+                                       ) : (
+                                           <div className="flex items-center gap-3 opacity-50">
+                                               <div className="w-8 h-6 bg-slate-200 dark:bg-white/10 rounded"></div>
+                                               <span className="font-['Teko'] text-xl uppercase text-slate-400">TBD</span>
+                                           </div>
+                                       )}
+                                   </div>
+                                   <span className="text-[10px] font-bold text-slate-400 bg-slate-200 dark:bg-white/10 px-2 py-0.5 rounded">RUNNER-UP</span>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
            </motion.div>
 
           {/* Section 3: Official Card (Visual Highlight) */}
           <motion.div variants={itemVariants} className="md:col-span-12 mt-8 flex flex-col items-center">
             <div className="mb-4 text-center">
-              <h3 className="text-[12px] md:text-sm font-['Rajdhani'] font-extrabold uppercase tracking-[0.25em] text-slate-500 dark:text-white/70">SHARE YOUR PREDICTION CARD</h3>
+          <h3 className="text-[12px] md:text-sm font-['Rajdhani'] font-extrabold uppercase tracking-[0.25em] text-slate-500 dark:text-white/70">{participantMinimal ? `${userName} Prediction CARD` : 'SHARE YOUR PREDICTION CARD'}</h3>
             </div>
             <div className="relative group cursor-pointer" onClick={handleSaveImage}>
                 <div className="absolute -inset-1 bg-gradient-to-r from-[#01b47d] via-[#01b47d] to-purple-600 rounded-[32px] opacity-20 blur-xl group-hover:opacity-40 transition-opacity duration-500" />
@@ -425,54 +800,45 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
                    runnerUp={runnerUp}
                    userName={userName} 
                    userCountry={userCountry}
+                   uniqueId={entryId}
                    stats={stats}
                    className="relative transform transition-transform duration-500 group-hover:scale-[1.01]"
                 />
-                <div className="absolute bottom-4 right-4 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-2 border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
-                   <Download className="w-3 h-3 text-white" />
-                   <span className="text-[10px] font-bold text-white uppercase">Download Official Card</span>
-                </div>
+              
+            </div>
+            {!participantMinimal && (
+              <div className="mt-5 flex justify-center">
+                <button
+                  type="button"
+                  aria-label="Download My Prediction Card"
+                  onClick={handleSaveImage}
+                  className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-full bg-white/8 border border-white/15 ring-1 ring-white/10 backdrop-blur-xl text-white shadow-[0_8px_30px_rgba(255,255,255,0.06)] hover:bg-white/12 active:scale-[0.98] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
+                >
+                  <Download className="w-4 h-4 text-white/85" />
+                  <span className="text-[12px] font-inter font-medium uppercase tracking-[0.12em]">Download My Card</span>
+                </button>
               </div>
+            )}
+            {participantMinimal && (
+              <div className="mt-5 flex justify-center">
+                <button
+                  type="button"
+                  onClick={() => { window.location.href = '/world-cup-2026-prediction-game'; }}
+                  className="group relative inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#01b47d] hover:bg-emerald-500 text-white font-['Rajdhani'] uppercase tracking-widest shadow-lg shadow-emerald-500/25 ring-1 ring-emerald-400/20 transition-all active:scale-[0.98]"
+                  aria-label="Play the game for a chance to win big prizes"
+                  title="Play the game for a chance to win big prizes"
+                >
+                  <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-white/10 border border-white/10">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M12 2l2.39 4.84L20 7.27l-3.64 3.54.86 5.02L12 14.77 6.78 15.83l.86-5.02L4 7.27l5.61-.43L12 2z" />
+                    </svg>
+                  </span>
+                  <span>Play Now — Win Big Prizes</span>
+                </button>
+              </div>
+            )}
               <div className="my-8 w-full">
                 <div className="mx-auto max-w-xl h-px bg-gradient-to-r from-transparent via-slate-200 dark:via-white/20 to-transparent" />
-              </div>
-              <div className="mt-8 w-full max-w-xl">
-                <div className="relative group bg-slate-50 dark:bg-white/10 border border-slate-200 dark:border-white/20 rounded-[28px] md:rounded-[32px] p-6 md:p-7 backdrop-blur-2xl ring-1 ring-slate-200 dark:ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.1)] dark:shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
-                  <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#FFD700]/10 blur-[80px] rounded-full pointer-events-none" />
-                  <div className="text-center mb-4">
-                    <span className="text-[11px] font-['Rajdhani'] font-extrabold uppercase tracking-[0.3em] text-slate-700 dark:text-white/90">Important Dates</span>
-                    <div className="mx-auto mt-2 w-24 h-px bg-gradient-to-r from-slate-200 via-slate-400 to-slate-200 dark:from-white/20 dark:via-white/40 dark:to-white/20" />
-                  </div>
-                  <ul className="text-slate-600 dark:text-white/90 text-sm md:text-base font-['Rajdhani'] leading-relaxed space-y-1.5">
-                    <li>• Tournament Starts: June 11, 2026</li>
-                    <li>• Final Match: July 19, 2026</li>
-                    <li>• Winners Announced: Within 48 hours after Final</li>
-                  </ul>
-                  <div className="my-5 h-px bg-slate-200 dark:bg-white/20" />
-                  <div className="mt-4 flex flex-col md:flex-row items-center justify-center gap-3">
-                    <button
-                      onClick={handleShare}
-                      className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-[#01b47d] hover:bg-[#008f63] transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(1,180,125,0.3)]"
-                    >
-                      <div className="flex items-center justify-center gap-3">
-                        <Share2 className="w-5 h-5 text-white" />
-                        <span className="text-white font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={onRestart}
-                      className="w-full md:w-auto group px-8 py-4 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 active:scale-95"
-                    >
-                      <div className="flex items-center justify-center gap-3">
-                        <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 dark:bg-white/10 border border-slate-300 dark:border-white/20">
-                          <RotateCcw className="w-4 h-4 text-slate-600 dark:text-white/80" />
-                        </span>
-                        <span className="text-slate-600 dark:text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Initialize New Prediction</span>
-                      </div>
-                    </button>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
@@ -483,46 +849,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
 
         </div>
 
-        {/* Bottom Buttons */}
-        <motion.div variants={itemVariants} className="mt-20 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-6">
-           
-           <button
-             onClick={handleShare}
-             className="w-full md:w-auto group relative px-8 py-4 rounded-full bg-[#01b47d] hover:bg-[#008f63] transition-all duration-300 active:scale-95 shadow-[0_0_30px_rgba(1,180,125,0.3)]"
-           >
-             <div className="flex items-center justify-center gap-3">
-               <Share2 className="w-5 h-5 text-white" />
-              <span className="text-white font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Share Official Prediction</span>
-             </div>
-           </button>
-
-            {onRestart && (
-              <button
-                onClick={onRestart}
-                className="w-full md:w-auto group px-8 py-4 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 active:scale-95"
-              >
-                <div className="flex items-center justify-center gap-3">
-                  <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 dark:bg-white/10 border border-slate-300 dark:border-white/20">
-                    <RotateCcw className="w-4 h-4 text-slate-600 dark:text-white/80" />
-                  </span>
-                 <span className="text-slate-600 dark:text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">Initialize New Prediction</span>
-                </div>
-              </button>
-            )}
-
-            <button
-              onClick={() => (window.location.href = '/')}
-              className="w-full md:w-auto group px-8 py-4 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 hover:bg-slate-200 dark:hover:bg-white/10 transition-all duration-300 active:scale-95"
-            >
-              <div className="flex items-center justify-center gap-3">
-                <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 dark:bg-white/10 border border-slate-300 dark:border-white/20">
-                  <Home className="w-4 h-4 text-slate-600 dark:text-white/80" />
-                </span>
-                <span className="text-slate-600 dark:text-white/80 font-bold font-['Rajdhani'] uppercase tracking-widest text-sm">RETURN TO HOME</span>
-              </div>
-            </button>
-
-        </motion.div>
+        
 
       </motion.div>
 
@@ -533,6 +860,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
               champion={champion} 
               runnerUp={runnerUp}
               userName={userName} 
+              uniqueId={entryId}
               stats={stats}
               className="scale-100 shadow-none"
            />

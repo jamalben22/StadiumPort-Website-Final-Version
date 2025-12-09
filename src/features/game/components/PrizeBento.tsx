@@ -27,7 +27,7 @@ export const PrizeBento = () => {
           <div className="mt-auto space-y-3">
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
               <Banknote className="w-5 h-5 text-[#FBBF24]" />
-              <span className="text-sm text-white font-bold font-['Rajdhani']">$500 Cash Prize</span>
+              <span className="text-sm text-white font-bold font-['Rajdhani']">$1,000 Cash Prize</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
               <Shirt className="w-5 h-5 text-white/60" />

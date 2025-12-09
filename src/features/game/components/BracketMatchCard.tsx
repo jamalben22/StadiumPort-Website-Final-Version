@@ -73,15 +73,22 @@ const TeamRow = React.memo(({
       {team ? (
         <>
            {/* Flag */}
-           <img 
-             src={team.flagUrl} 
-             alt={team.name} 
-             loading="lazy"
-             className={`
-                 rounded-full flex-shrink-0 object-cover shadow-sm ring-1 ring-white/30
+           {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+             <div className={`
+                 rounded-full flex-shrink-0 bg-slate-700/50 flex items-center justify-center text-[8px] font-bold text-slate-400
                  ${compact ? 'w-6 h-6' : 'w-8 h-8'}
-             `} 
-           />
+             `}>FIFA</div>
+           ) : (
+             <img 
+               src={team.flagUrl} 
+               alt={team.name} 
+               loading="lazy"
+               className={`
+                   rounded-full flex-shrink-0 object-cover shadow-sm ring-1 ring-white/30
+                   ${compact ? 'w-6 h-6' : 'w-8 h-8'}
+               `} 
+             />
+           )}
             
             {/* Name & Code */}
             <div className={`flex items-center flex-1 min-w-0 z-10 relative ${compact ? 'gap-2' : 'gap-3'}`}>

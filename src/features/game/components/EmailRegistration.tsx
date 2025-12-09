@@ -343,7 +343,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                 }}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.ageConfirmed ? 'border-[#01b47d]/50 bg-[#01b47d]/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-[#01b47d]/30`}
               >
-                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 18 years or older</span>
+                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 13 years or older</span>
                 <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.ageConfirmed ? 'bg-[#01b47d]' : 'bg-white/10 border border-white/20'}`}>
                   <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.ageConfirmed ? 'translate-x-4' : ''}`}></span>
                 </div>

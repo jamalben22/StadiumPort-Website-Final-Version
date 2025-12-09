@@ -37,7 +37,7 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
   const { groupStandings, thirdPlacePicks, knockoutPicks, setKnockoutPick, updateKnockoutPicks, currentStep, setCurrentStep } = useGame();
   const [matches, setMatches] = useState<Match[]>([]);
   const isMobile = useMediaQuery('(max-width: 768px)');
-  const [showSummary, setShowSummary] = useState<string | null>(null);
+  const [showSummary, setShowSummary] = useState<string | null>(null); // deprecated (no popup)
   
   // Keep a ref to picks for the event handler to avoid re-creating it
   const picksRef = useRef(knockoutPicks);
@@ -141,9 +141,41 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
     }
   }, [matches, updateKnockoutPicks]); // matches is stable after init, updateKnockoutPicks is stable (now)
 
+
+  // Auto-invalidate TP-01 if upstream changes make the previous pick invalid
+  useEffect(() => {
+    const tpPick = knockoutPicks['TP-01'];
+    if (!tpPick) return;
+    if (!matches || matches.length === 0) return;
+
+    const sf1Winner = knockoutPicks['SF-01'];
+    const sf2Winner = knockoutPicks['SF-02'];
+
+    const sf1t1 = getTeamForMatchSlot('SF-01', 1, matches, knockoutPicks);
+    const sf1t2 = getTeamForMatchSlot('SF-01', 2, matches, knockoutPicks);
+    const sf2t1 = getTeamForMatchSlot('SF-02', 1, matches, knockoutPicks);
+    const sf2t2 = getTeamForMatchSlot('SF-02', 2, matches, knockoutPicks);
+
+    // If participants are not yet resolved, do nothing (avoid clearing on remount)
+    if (!sf1t1 || !sf1t2 || !sf2t1 || !sf2t2) return;
+
+    // If SF winners missing, TP-01 is invalid
+    if (!sf1Winner || !sf2Winner) {
+      updateKnockoutPicks({ 'TP-01': '' });
+      return;
+    }
+
+    const tpTeam1 = sf1Winner === sf1t1 ? sf1t2 : sf1t1;
+    const tpTeam2 = sf2Winner === sf2t1 ? sf2t2 : sf2t1;
+
+    if (tpPick !== tpTeam1 && tpPick !== tpTeam2) {
+      updateKnockoutPicks({ 'TP-01': '' });
+    }
+  }, [knockoutPicks, matches, updateKnockoutPicks]);
+
   if (matches.length === 0) return null;
 
-  const runnerUpId = showSummary ? (getTeamForMatchSlot('F-01', 1, matches, knockoutPicks) === showSummary ? getTeamForMatchSlot('F-01', 2, matches, knockoutPicks) : getTeamForMatchSlot('F-01', 1, matches, knockoutPicks)) : '';
+  const runnerUpId = '';
 
   return (
     <>
@@ -165,19 +197,16 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
         }
       }} />
     <div className="w-full min-h-screen flex flex-col bg-transparent relative">
-        <AnimatePresence>
-          {showSummary && runnerUpId && (
-            <PredictionSummaryPopup 
-              winnerId={showSummary}
-              runnerUpId={runnerUpId}
-              onConfirm={() => {
-                setShowSummary(null);
-                setCurrentStep(3);
-              }}
-              onCancel={() => setShowSummary(null)}
-            />
-          )}
-        </AnimatePresence>
+
+        {/* Sticky prompt to pick Third Place */}
+        {!!knockoutPicks['SF-01'] && !!knockoutPicks['SF-02'] && !knockoutPicks['TP-01'] && (
+          <div className="sticky top-2 z-30 mx-4 mb-2">
+            <div className="flex items-center justify-center gap-3 px-4 py-2 rounded-full bg-[#01b47d]/15 border border-[#01b47d]/30 backdrop-blur-md">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+              <span className="text-[11px] font-bold text-white uppercase tracking-[0.22em] font-['Rajdhani']">Select Third Place to finalize Top 3 & 4</span>
+            </div>
+          </div>
+        )}
 
         {/* Render appropriate view based on device */}
         <div className="relative z-10 w-full flex-1">
@@ -197,6 +226,9 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
                 />
             )}
         </div>
+
+        {/* Third Place Match (Losers of SF) */}
+        {/* Third Place now shown next to Final in desktop/mobile components */}
     </div>
     </>
   );

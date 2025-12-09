@@ -21,15 +21,7 @@ export const PredictSEOContent = () => {
       
       {/* Hero / Title Section */}
       <div className="text-center mb-20">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 mb-8 backdrop-blur-sm">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-          </span>
-          <span className="text-xs font-semibold text-indigo-300 uppercase tracking-widest">
-            Interactive Simulator
-          </span>
-        </div>
+        {/* removed badge */}
         
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight">
           World Cup 2026 Predictor: <br />

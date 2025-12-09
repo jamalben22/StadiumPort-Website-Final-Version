@@ -6,6 +6,7 @@ import { GameLayout } from '../features/game/components/GameLayout';
 import { GameHeader } from '../features/game/components/GameHeader';
 import { FloatingControlCapsule } from '../features/game/components/FloatingControlCapsule';
 import { TEAMS } from '../features/game/lib/wc26-data';
+import { supabase } from '../lib/supabase';
 import { useMediaQuery } from '../hooks/useMediaQuery';
 import { SEO } from '../components/common/SEO';
 import { SchemaOrg } from '../components/seo/SchemaOrg';
@@ -18,14 +19,16 @@ const ThirdPlaceSelector = lazy(() => import('../features/game/components/ThirdP
 const BracketView = lazy(() => import('../features/game/components/BracketView').then(module => ({ default: module.BracketView })));
 const ResultDashboard = lazy(() => import('../features/game/components/ResultDashboard').then(module => ({ default: module.ResultDashboard })));
 const EmailRegistration = lazy(() => import('../features/game/components/EmailRegistration').then(module => ({ default: module.EmailRegistration })));
+const PredictionSummary = lazy(() => import('../features/game/components/PredictionSummary').then(module => ({ default: module.PredictionSummary })));
 
 // Steps for the stepper
 const STEPS = [
   { id: 0, label: 'Group Stage' },
   { id: 1, label: 'Third Place' },
   { id: 2, label: 'Knockout Rounds' },
-  { id: 3, label: 'Submit Details' },
-  { id: 4, label: 'Your Prediction' },
+  { id: 3, label: 'Summary' },
+  { id: 4, label: 'Submit Details' },
+  { id: 5, label: 'Your Prediction' },
 ];
 
 const LoadingFallback = () => (
@@ -74,9 +77,10 @@ function PredictGameContent() {
   const navigate = useNavigate();
   const { step } = useParams();
   const [searchParams] = useSearchParams();
-  const { currentStep, setCurrentStep, thirdPlacePicks, knockoutPicks, completedGroupIds, resetGame } = useGame();
+  const { currentStep, setCurrentStep, thirdPlacePicks, knockoutPicks, completedGroupIds, resetGame, groupStandings } = useGame();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [direction, setDirection] = useState(0);
+  const stepperRef = useRef<HTMLDivElement>(null);
   const [userName, setUserName] = useState("You");
   const [userInfo, setUserInfo] = useState<{ name: string; email: string; country: string; uniqueId?: string }>({ name: "", email: "", country: "", uniqueId: "" });
 
@@ -94,9 +98,10 @@ function PredictGameContent() {
       'group-stage': 0,
       'third-place-qualifiers': 1,
       'knockout-bracket': 2,
-      'submit': 3,
-      'results': 4,
-      'success': 4
+      'summary': 3,
+      'submit': 4,
+      'results': 5,
+      'success': 5
     };
 
     if (stepMap[step] !== undefined && stepMap[step] !== currentStep) {
@@ -111,23 +116,39 @@ function PredictGameContent() {
     }
   }, [currentStep, bracketRoundIndex]);
 
+  useEffect(() => {
+    const container = stepperRef.current;
+    if (!container) return;
+    const el = container.querySelector(`[data-step="${currentStep}"]`) as HTMLElement | null;
+    if (!el) return;
+    const target = el.offsetLeft + el.offsetWidth / 2 - container.clientWidth / 2;
+    const max = container.scrollWidth - container.clientWidth;
+    const left = Math.max(0, Math.min(target, max));
+    container.scrollTo({ left, behavior: 'smooth' });
+  }, [currentStep]);
+
   const isNextDisabled = () => {
     if (currentStep === 0) return false; // Always enabled for Groups Page
     if (currentStep === 1) return thirdPlacePicks.length !== 8;
     if (currentStep === 2) {
-       if (isMobile) {
-          const rounds = ['R32', 'R16', 'QF', 'SF', 'F'];
-          const roundPrefix = rounds[bracketRoundIndex];
-          const matchCounts: Record<string, number> = { 'R32': 16, 'R16': 8, 'QF': 4, 'SF': 2, 'F': 1 };
-          const count = matchCounts[roundPrefix];
+      if (isMobile) {
+         const rounds = ['R32', 'R16', 'QF', 'SF', 'F'];
+         const roundPrefix = rounds[bracketRoundIndex];
+         const matchCounts: Record<string, number> = { 'R32': 16, 'R16': 8, 'QF': 4, 'SF': 2, 'F': 1 };
+         const count = matchCounts[roundPrefix];
           
-          for (let i = 1; i <= count; i++) {
-             const id = `${roundPrefix}-${i.toString().padStart(2, '0')}`;
-             if (!knockoutPicks[id]) return true;
+         for (let i = 1; i <= count; i++) {
+            const id = `${roundPrefix}-${i.toString().padStart(2, '0')}`;
+            if (!knockoutPicks[id]) return true;
+         }
+          // After Final selection, require Third Place winner too
+          if (roundPrefix === 'F') {
+            return !(knockoutPicks['F-01'] && knockoutPicks['TP-01']);
           }
           return false;
-       }
-       return !knockoutPicks['F-01'];
+      }
+       // Desktop: require Champion and Third Place before proceeding
+       return !(knockoutPicks['F-01'] && knockoutPicks['TP-01']);
     }
     return false;
   };
@@ -146,6 +167,10 @@ function PredictGameContent() {
        } else {
           setCurrentStep(3);
        }
+    } else if (currentStep === 3) {
+      setCurrentStep(4);
+    } else if (currentStep === 4) {
+      // Email step proceeds to nothing automatically; submission handles redirect
     }
   };
 
@@ -166,49 +191,60 @@ function PredictGameContent() {
   const handleRegistrationComplete = (data: { name: string; email: string; country: string; uniqueId: string }) => {
     setUserInfo(data);
     setUserName(data.name);
-    setCurrentStep(4);
+    try {
+      const key = 'sp_wc26_predictions';
+      const raw = localStorage.getItem(key);
+      const map = raw ? JSON.parse(raw) : {};
+      map[data.uniqueId] = {
+        unique_id: data.uniqueId,
+        name: data.name,
+        email: data.email,
+        country: data.country,
+        predictions: {
+          groupStandings,
+          thirdPlacePicks,
+          knockoutPicks
+        }
+      };
+      localStorage.setItem(key, JSON.stringify(map));
+      try { localStorage.setItem('sp_wc26_last_id', data.uniqueId); } catch {}
+    } catch {}
+
+    (async () => {
+      try {
+        if (supabase) {
+          await supabase.from('predictions').upsert({
+            unique_id: data.uniqueId,
+            name: data.name,
+            email: data.email,
+            country: data.country,
+            predictions: {
+              groupStandings,
+              thirdPlacePicks,
+              knockoutPicks
+            }
+          }, { onConflict: 'unique_id' });
+        }
+      } catch {}
+    })();
+    navigate(`/world-cup-2026-prediction-game/entry/${data.uniqueId}`);
   };
 
   const getNextLabel = () => {
     if (currentStep === 2) {
       if (isMobile && bracketRoundIndex < 4) return 'NEXT ROUND';
-      return 'CONFIRM BRACKET';
+      if (!knockoutPicks['TP-01']) return 'PICK THIRD PLACE';
+      return 'PROCEED';
+    }
+    if (currentStep === 3) {
+      return 'CONTINUE TO EMAIL';
     }
     return 'PROCEED';
   };
 
-  if (currentStep === 4) {
-    const championId = knockoutPicks['F-01'];
-    const champion = TEAMS.find(t => t.id === championId) || TEAMS[0]; 
-    
-    // Determine Runner Up (Loser of the Final)
-    // The Finalists come from SF-01 and SF-02 winners
-    const finalist1 = knockoutPicks['SF-01'];
-    const finalist2 = knockoutPicks['SF-02'];
-    const runnerUpId = finalist1 === championId ? finalist2 : finalist1;
-    const runnerUp = TEAMS.find(t => t.id === runnerUpId);
-
-    return (
-      <GameLayout>
-         <GameHeader onExit={handleExit} />
-         <Suspense fallback={<LoadingFallback />}>
-           <ResultDashboard 
-             champion={champion} 
-             runnerUp={runnerUp}
-             userName={userName}
-             userEmail={userInfo.email}
-             userCountry={userInfo.country}
-             uniqueId={userInfo.uniqueId}
-             onRestart={() => {
-               resetGame();
-               // setIsGameFinished(false); // Not defined in this scope, removing
-               // setShowRegistration(false); // Not defined in this scope, removing
-               setUserName("You");
-             }}
-           />
-         </Suspense>
-      </GameLayout>
-    );
+  if (currentStep === 5) {
+    navigate(`/world-cup-2026-prediction-game/entry/${userInfo.uniqueId || ''}`)
+    return null;
   }
 
   return (
@@ -218,7 +254,7 @@ function PredictGameContent() {
       
       <SEO 
         title="Free World Cup 2026 Predictor Contest | Win Jerseys, Match Ball & Cash (13+)" 
-        description="Free worldwide for ages 13+. Win official jerseys, match ball & $500 cash. Open to all countries. Parental consent required for minors. Void where prohibited."
+        description="Free worldwide for ages 13+. Win official jerseys, match ball & $1,000 cash. Open to all countries. Parental consent required for minors. Void where prohibited." 
         keywords={["World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes", "Win World Cup prizes internationally"]}
         url="/world-cup-2026-prediction-game"
       />
@@ -291,7 +327,7 @@ function PredictGameContent() {
             "name": "What are the prizes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Grand Prize: Authentic World Cup 2026 Jersey of your choice, Official Match Ball, and $500 Cash. Runner-up prizes include gift cards and team merchandise."
+                "text": "Grand Prize: Authentic World Cup 2026 Jersey of your choice, Official Match Ball, and $1,000 Cash. Runner-up prizes include gift cards and team merchandise."
             }
           },
           {
@@ -396,33 +432,35 @@ function PredictGameContent() {
             <>
               {/* Stepper UI (Persistent) */}
               <div className="mb-8 md:mb-12">
-                <div className="flex items-center justify-start gap-4 md:justify-between relative overflow-x-auto no-scrollbar px-2">
-                  <div className="absolute left-0 top-1/2 transform -translate-y-1/2 w-full h-1 bg-white/10 -z-10 rounded-full"></div>
+                <div ref={stepperRef} className="flex items-center justify-start gap-3 md:justify-between relative overflow-x-auto overflow-y-visible whitespace-nowrap no-scrollbar px-5 py-3 rounded-3xl border border-white/15 bg-white/8 backdrop-blur-2xl ring-1 ring-white/5 shadow-[0_4px_24px_rgba(0,0,0,0.25)] pr-5">
+                  <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] bg-white/12 -z-10 rounded-full"></div>
+                  <motion.div 
+                    className="absolute left-0 top-1/2 -translate-y-1/2 h-[1.5px] bg-white/40 -z-10 rounded-full"
+                    initial={{ width: 0 }}
+                    animate={{ width: `${Math.max(0, Math.min(100, (currentStep/(STEPS.length-1))*100))}%` }}
+                    transition={{ type: 'tween', duration: 0.35, ease: [0.25, 0.1, 0.25, 1.0] }}
+                  />
                   {STEPS.map((step) => {
                     const isCompleted = currentStep > step.id;
                     const isCurrent = currentStep === step.id;
                     
                     return (
-                      <div key={step.id} className="flex flex-col items-center min-w-[72px] md:min-w-0">
+                      <div key={step.id} data-step={step.id} className="flex flex-col items-center min-w-[68px] md:min-w-0 shrink-0">
                         <motion.div 
                           initial={false}
-                          animate={{
-                             scale: isCurrent ? 1.1 : 1,
-                             backgroundColor: isCompleted ? '#10b981' : isCurrent ? '#6366f1' : '#1e293b',
-                             borderColor: isCompleted ? '#10b981' : isCurrent ? '#818cf8' : '#334155'
-                          }}
-                          className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center font-bold text-sm border-4 transition-all duration-300 shadow-lg ${isCurrent ? 'shadow-indigo-500/30' : ''}`}
+                          animate={{ scale: isCurrent ? 1.08 : 1 }}
+                          className="flex items-center justify-center"
                         >
-                          {isCompleted ? <i className="ri-check-line text-white"></i> : <span className={isCurrent ? 'text-white' : 'text-slate-400'}>{step.id + 1}</span>}
+                          <div className={`rounded-full transition-all duration-300 ${
+                            isCurrent ? 'w-3 h-3 md:w-3.5 md:h-3.5 bg-white/90 ring-2 ring-white/60 shadow-[0_8px_24px_rgba(255,255,255,0.18)]' :
+                            isCompleted ? 'w-2.5 h-2.5 md:w-3 md:h-3 bg-white/60' :
+                            'w-2 h-2 md:w-2.5 md:h-2.5 bg-white/30'
+                          }`}></div>
                         </motion.div>
                         <span 
-                          className={`mt-3 text-[10px] md:text-xs font-bold uppercase tracking-widest transition-colors duration-300 whitespace-nowrap font-inter
-                            ${isCurrent 
-                              ? 'text-indigo-400' 
-                              : isCompleted 
-                                ? 'text-emerald-400' 
-                                : 'text-slate-500'
-                            } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
+                          className={`mt-2 text-[11px] md:text-sm font-medium tracking-wide transition-colors duration-300 whitespace-nowrap font-inter ${
+                            isCurrent ? 'text-white/90' : isCompleted ? 'text-white/65' : 'text-white/45'
+                          } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
                           >
                           {step.label}
                         </span>
@@ -488,6 +526,22 @@ function PredictGameContent() {
                   )}
                   {currentStep === 3 && (
                     <motion.div
+                      key="step-summary"
+                      custom={direction}
+                      variants={pageVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={pageTransition}
+                      style={{ willChange: 'transform, opacity' }}
+                    >
+                      <Suspense fallback={<LoadingFallback />}>
+                        <PredictionSummary />
+                      </Suspense>
+                    </motion.div>
+                  )}
+                  {currentStep === 4 && (
+                    <motion.div
                       key="step-registration"
                       custom={direction}
                       variants={pageVariants}
@@ -501,7 +555,7 @@ function PredictGameContent() {
                         <Suspense fallback={<LoadingFallback />}>
                           <EmailRegistration 
                             onComplete={handleRegistrationComplete}
-                            onBack={() => setCurrentStep(2)}
+                            onBack={() => setCurrentStep(3)}
                           />
                         </Suspense>
                       </div>
