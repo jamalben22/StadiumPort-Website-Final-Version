@@ -393,7 +393,7 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
           uniqueId: uniqueId || 'UNKNOWN-ID', // Fallback if old token
           siteUrl: SITE_URL,
           ctaText: 'View My Prediction',
-          ctaLink: `${SITE_URL}/my-prediction?id=${uniqueId || ''}`
+          ctaLink: `${SITE_URL}/world-cup-2026-prediction-game/results/${uniqueId || ''}`
         }),
       });
 

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { BracketMatchCard } from './BracketMatchCard';
 import { Match } from '../lib/bracket-logic';
 import { getTeamForMatchSlot } from '../lib/bracket-utils';
+import { TEAMS } from '../lib/wc26-data';
 
 interface BracketMobileProps {
   matches: Match[];
@@ -149,6 +150,59 @@ export const BracketMobile = React.memo(({
             className="w-full px-4 pb-40 pt-6 flex flex-col gap-4"
           >
             <div className="space-y-4 max-w-md mx-auto w-full">
+              {ROUND_ORDER[currentRoundIndex] === 'F' && (() => {
+                const sf1t1 = getTeamForMatchSlot('SF-01', 1, matches, knockoutPicks);
+                const sf1t2 = getTeamForMatchSlot('SF-01', 2, matches, knockoutPicks);
+                const sf2t1 = getTeamForMatchSlot('SF-02', 1, matches, knockoutPicks);
+                const sf2t2 = getTeamForMatchSlot('SF-02', 2, matches, knockoutPicks);
+                const sf1Winner = knockoutPicks['SF-01'];
+                const sf2Winner = knockoutPicks['SF-02'];
+                const tpTeam1 = sf1Winner && sf1t1 && sf1t2 ? (sf1Winner === sf1t1 ? sf1t2 : sf1t1) : null;
+                const tpTeam2 = sf2Winner && sf2t1 && sf2t2 ? (sf2Winner === sf2t1 ? sf2t2 : sf2t1) : null;
+                const pick = knockoutPicks['TP-01'];
+                const team1 = tpTeam1 ? TEAMS.find(t => t.id === tpTeam1) : undefined;
+                const team2 = tpTeam2 ? TEAMS.find(t => t.id === tpTeam2) : undefined;
+                return (
+                  <div className="mt-0">
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-white/70">Third Place</span>
+                      {!pick && (!tpTeam1 || !tpTeam2) && <span className="text-[10px] text-white/50 font-bold uppercase tracking-widest">Locked until Semi-Finals are decided</span>}
+                      {!pick && tpTeam1 && tpTeam2 && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-widest">Select Winner</span>}
+                    </div>
+                    <div className="grid grid-cols-1 gap-2">
+                      <button
+                        type="button"
+                        onClick={() => tpTeam1 && onPickWinner('TP-01', tpTeam1)}
+                        disabled={!tpTeam1}
+                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam1 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-white/5'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      >
+                        <div className="flex items-center gap-3">
+                          {team1 && <img src={team1.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
+                          <span className="font-['Teko'] text-lg uppercase text-white">{team1?.name || 'TBD'}</span>
+                        </div>
+                        {pick === tpTeam1 && <span className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</span>}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => tpTeam2 && onPickWinner('TP-01', tpTeam2)}
+                        disabled={!tpTeam2}
+                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam2 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-white/5'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                      >
+                        <div className="flex items-center gap-3">
+                          {team2 && <img src={team2.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
+                          <span className="font-['Teko'] text-lg uppercase text-white">{team2?.name || 'TBD'}</span>
+                        </div>
+                        {pick === tpTeam2 && <span className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</span>}
+                      </button>
+                    </div>
+                  </div>
+                );
+              })()}
+              {ROUND_ORDER[currentRoundIndex] === 'F' && (
+                <div className="flex items-center justify-center mb-2">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-[#FBBF24]/10 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest" style={{ color: '#FBBF24' }}>Final</span>
+                </div>
+              )}
               {roundMatches.map(match => {
                 const team1Id = getTeamForMatchSlot(match.id, 1, matches, knockoutPicks);
                 const team2Id = getTeamForMatchSlot(match.id, 2, matches, knockoutPicks);
@@ -156,7 +210,7 @@ export const BracketMobile = React.memo(({
 
                 return (
                   <div key={match.id} style={{ contentVisibility: 'auto', containIntrinsicSize: '100px' }}>
-                  <BracketMatchCard
+                    <BracketMatchCard
                       matchId={match.id}
                       team1Id={team1Id}
                       team2Id={team2Id}

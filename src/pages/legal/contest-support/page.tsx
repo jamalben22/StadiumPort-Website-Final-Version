@@ -42,7 +42,7 @@ export default function ContestSupportPage() {
     },
     {
       question: "Can I edit my predictions?",
-      answer: "Yes! You can edit your predictions unlimited times until the first match kicks off on June 11, 2026. Use the unique link sent to your email.",
+      answer: "No. Once you submit, your predictions are locked and cannot be changed.",
       icon: Edit3
     },
     {

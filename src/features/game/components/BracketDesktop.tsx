@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import { BracketMatchCard } from './BracketMatchCard';
 import { Match } from '../lib/bracket-logic';
 import { getTeamForMatchSlot } from '../lib/bracket-utils';
+import { TEAMS } from '../lib/wc26-data';
 
 interface BracketDesktopProps {
   matches: Match[];
@@ -178,7 +179,7 @@ export const BracketDesktop = React.memo(({
 
             return (
                 <div key={roundId} className="absolute top-0 bottom-0" style={{ left: `${rIndex * 20}%`, width: '20%' }}>
-                {roundMatches.map((match) => {
+                {roundId !== 'F' && roundMatches.map((match) => {
                     const team1Id = getTeamForMatchSlot(match.id, 1, matches, knockoutPicks);
                     const team2Id = getTeamForMatchSlot(match.id, 2, matches, knockoutPicks);
                     const winnerId = knockoutPicks[match.id];
@@ -189,9 +190,8 @@ export const BracketDesktop = React.memo(({
                         key={match.id}
                         className="absolute w-full px-2 flex items-center justify-center transition-all duration-500"
                         style={{
-                            top: `${topY + 70}px`, // +50 top padding + 20 for titles
+                            top: `${topY + 70}px`,
                             height: `${MATCH_HEIGHT}px`,
-                            // CSS-based Virtual Rendering
                             contentVisibility: 'auto',
                             containIntrinsicSize: `${MATCH_HEIGHT}px`,
                         }}
@@ -202,13 +202,96 @@ export const BracketDesktop = React.memo(({
                             team2Id={team2Id}
                             winnerId={winnerId}
                             onPickWinner={onPickWinner}
-                            compact={false} // Force standard size
+                            compact={false}
                             showCode={true}
                             className="w-full shadow-lg h-full"
                         />
                     </div>
                     );
                 })}
+                {roundId === 'F' && (
+                  (() => {
+                    const sf1t1 = getTeamForMatchSlot('SF-01', 1, matches, knockoutPicks);
+                    const sf1t2 = getTeamForMatchSlot('SF-01', 2, matches, knockoutPicks);
+                    const sf2t1 = getTeamForMatchSlot('SF-02', 1, matches, knockoutPicks);
+                    const sf2t2 = getTeamForMatchSlot('SF-02', 2, matches, knockoutPicks);
+                    const sf1Winner = knockoutPicks['SF-01'];
+                    const sf2Winner = knockoutPicks['SF-02'];
+
+                    const tpTeam1 = sf1Winner && sf1t1 && sf1t2 ? (sf1Winner === sf1t1 ? sf1t2 : sf1t1) : null;
+                    const tpTeam2 = sf2Winner && sf2t1 && sf2t2 ? (sf2Winner === sf2t1 ? sf2t2 : sf2t1) : null;
+                    const pick = knockoutPicks['TP-01'];
+                    const team1 = tpTeam1 ? TEAMS.find(t => t.id === tpTeam1) : undefined;
+                    const team2 = tpTeam2 ? TEAMS.find(t => t.id === tpTeam2) : undefined;
+
+                    const finalTop = positions['F-01'] || 0;
+                    const anchorTop = Math.max(finalTop - (MATCH_HEIGHT + GAP_Y), 0);
+                    const finalTeam1Id = getTeamForMatchSlot('F-01', 1, matches, knockoutPicks);
+                    const finalTeam2Id = getTeamForMatchSlot('F-01', 2, matches, knockoutPicks);
+                    const finalWinnerId = knockoutPicks['F-01'];
+
+                    const disabled1 = !tpTeam1;
+                    const disabled2 = !tpTeam2;
+
+                    return (
+                      <div
+                        className="absolute w-full px-2"
+                        style={{ top: `${anchorTop + 70}px` }}
+                      >
+                        <div className="w-full flex items-center justify-center mb-1">
+                          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-white/5 text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-white/80">Third Place</span>
+                        </div>
+                        {/* Third Place - match-sized card */}
+                        <div
+                          className="w-full flex items-center justify-center transition-all duration-500 mb-3"
+                          style={{ height: `${MATCH_HEIGHT}px` }}
+                        >
+                          {team1 && team2 ? (
+                            <BracketMatchCard
+                              matchId={'TP-01'}
+                              team1Id={tpTeam1}
+                              team2Id={tpTeam2}
+                              winnerId={pick}
+                              onPickWinner={onPickWinner}
+                              compact={false}
+                              showCode={true}
+                              className="w-full shadow-lg h-full"
+                            />
+                          ) : (
+                            <div className="relative flex w-full rounded-lg overflow-hidden bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl ring-1 ring-white/10 shadow-xl shadow-black/40 h-full items-center justify-between px-3">
+                              <div className="flex items-center gap-3">
+                                <div className="w-8 h-6 rounded bg-slate-700/50 flex items-center justify-center"><span className="text-[8px] font-bold text-slate-400">TBD</span></div>
+                                <span className="font-['Teko'] text-lg uppercase text-white/70">Locked until Semi-Finals</span>
+                              </div>
+                              <span className="text-[10px] font-bold text-white/40">Third Place</span>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="w-full flex items-center justify-center mb-1">
+                          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-[#FBBF24]/10 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest" style={{ color: '#FBBF24' }}>Final</span>
+                        </div>
+
+                        {/* Final - enlarged, premium emphasis */}
+                        <div
+                          className="w-full px-2 flex items-center justify-center transition-all duration-500"
+                          style={{ height: `${Math.round(MATCH_HEIGHT * 1.6)}px` }}
+                        >
+                          <BracketMatchCard
+                            matchId={'F-01'}
+                            team1Id={finalTeam1Id}
+                            team2Id={finalTeam2Id}
+                            winnerId={finalWinnerId}
+                            onPickWinner={onPickWinner}
+                            compact={false}
+                            showCode={true}
+                            className="w-full shadow-2xl h-full ring-2 ring-[#FBBF24]/50"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })()
+                )}
                 </div>
             );
             })}

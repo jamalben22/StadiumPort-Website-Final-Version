@@ -22,6 +22,8 @@ import { soundManager } from '../utils/SoundManager';
 import { RulesCard } from './RulesCard';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
+import { Info } from 'lucide-react';
+import * as Tooltip from '@radix-ui/react-tooltip';
 
 const GROUP_ACCENTS: Record<string, string> = {
   A: '#FBBF24',
@@ -53,7 +55,7 @@ const getStatusStyles = (idx: number) => {
         text: "text-white font-semibold",
         rank: "text-white/90",
         badge: {
-          text: "QUALIFIED",
+          text: "QLF",
           style: "bg-[#01b47d]/10 text-[#01b47d] border border-[#01b47d]/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
         }
       };
@@ -64,22 +66,31 @@ const getStatusStyles = (idx: number) => {
         text: "text-amber-50 font-medium",
         rank: "text-amber-200/70",
         badge: {
-          text: "THIRD PLACE",
+          text: "3RD",
           style: "bg-amber-500/10 text-amber-400 border border-amber-500/20"
         }
       };
     default: // 4th Place (Eliminated)
       return {
-        wrapper: "bg-slate-900/30 border-white/5 opacity-50 grayscale",
-        accentBar: "bg-red-500/60",
-        text: "text-slate-400 font-medium",
-        rank: "text-slate-600",
+        wrapper: "bg-red-600/10 border-red-500/20 opacity-80",
+        accentBar: "bg-red-600",
+        text: "text-slate-300 font-medium",
+        rank: "text-red-400",
         badge: {
-          text: "ELIMINATED",
-          style: "bg-red-500/10 text-red-400 border border-red-500/20"
+          text: "X",
+          style: "bg-red-600/20 text-red-400 border border-red-500/30"
         }
       };
   }
+};
+
+const PLAYOFF_INFO: Record<string, string> = {
+    'pod': "Playoff D Winner - One of: Denmark, Ireland, Czech Republic, or North Macedonia",
+    'poa': "Playoff A Winner - One of: Bosnia and Herzegovina, Italy, Wales or Northern Ireland",
+    'poc': "Playoff C Winner - One of: Slovakia, Kosovo, Turkey or Romania",
+    'pob': "Playoff B Winner - One of: Ukraine, Poland, Albania or Sweden",
+    'po2': "Playoff 2 Winner - One of: Bolivia, Iraq or Suriname",
+    'po1': "Playoff 1 Winner - One of: Jamaica, Democratic Republic of the Congo or New Caledonia"
 };
 
 // --- Sortable Team Item Component (Refactored for Official App Status System) ---
@@ -155,17 +166,42 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       {/* Flag */}
       <div className="w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-white/10 flex items-center justify-center bg-slate-700">
         {team.flagUrl ? (
-          <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" />
-        ) : team.id.startsWith('po') ? (
-          <span className="text-xs font-bold text-slate-400">?</span>
+          <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" draggable={false} />
+        ) : ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+          <span className="text-[8px] font-bold text-slate-400 tracking-tighter uppercase">FIFA</span>
         ) : (
           <span className="text-[10px] font-bold text-slate-400 tracking-tighter">{team.fifaCode}</span>
         )}
       </div>
 
       {/* Name */}
-      <div className={`flex-1 font-sans text-sm tracking-wide truncate ${status.text}`}>
-        {team.name}
+      <div className={`flex-1 font-sans text-sm tracking-wide truncate ${status.text} flex items-center gap-2 overflow-hidden`}>
+        <span className="truncate">{team.name}</span>
+        {PLAYOFF_INFO[team.id] && (
+           <Tooltip.Provider delayDuration={0}>
+              <Tooltip.Root>
+                 <Tooltip.Trigger asChild>
+                    <button 
+                        className="inline-flex items-center justify-center p-1 rounded-full hover:bg-white/10 transition-colors focus:outline-none shrink-0"
+                        onClick={(e) => e.stopPropagation()} // Prevent drag start on click
+                        onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
+                    >
+                       <Info className="w-3.5 h-3.5 text-slate-400 hover:text-white" />
+                    </button>
+                 </Tooltip.Trigger>
+                 <Tooltip.Portal>
+                    <Tooltip.Content 
+                        className="z-[9999] max-w-[250px] bg-slate-900 border border-white/10 text-slate-200 text-xs p-3 rounded-lg shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 select-none"
+                        sideOffset={5}
+                        side="top"
+                    >
+                       {PLAYOFF_INFO[team.id]}
+                       <Tooltip.Arrow className="fill-slate-900" />
+                    </Tooltip.Content>
+                 </Tooltip.Portal>
+              </Tooltip.Root>
+           </Tooltip.Provider>
+        )}
       </div>
 
       {/* Spacer (Flex-1 above handles this) */}

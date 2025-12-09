@@ -33,12 +33,18 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
       {/* Background Image/Flag */}
       <div className="absolute inset-0 bg-slate-900">
           {/* Large faded flag background */}
-          <img 
-          src={team.flagUrl} 
-          alt={team.name} 
-          loading="lazy"
-          className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
-        />
+          {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+             <div className="absolute inset-0 w-full h-full flex items-center justify-center opacity-10">
+                <span className="text-6xl font-black text-white">FIFA</span>
+             </div>
+          ) : (
+             <img 
+               src={team.flagUrl} 
+               alt={team.name} 
+               loading="lazy"
+               className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+             />
+          )}
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent" />
       </div>
@@ -69,14 +75,23 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
 
         {/* Center: Team Flag (Clean) */}
         <div className="self-center transform transition-transform duration-500 group-hover:scale-110">
-            <img 
-            src={team.flagUrl} 
-            alt={team.name} 
-            className={`
-              w-20 h-20 rounded-full object-cover shadow-2xl border-4 
-              ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
-            `}
-          />
+            {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+               <div className={`
+                 w-20 h-20 rounded-full flex items-center justify-center bg-slate-800 shadow-2xl border-4
+                 ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
+               `}>
+                  <span className="text-xs font-bold text-slate-400">FIFA</span>
+               </div>
+            ) : (
+                <img 
+                src={team.flagUrl} 
+                alt={team.name} 
+                className={`
+                  w-20 h-20 rounded-full object-cover shadow-2xl border-4 
+                  ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
+                `}
+              />
+            )}
         </div>
 
         {/* Bottom: Name */}

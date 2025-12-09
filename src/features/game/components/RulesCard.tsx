@@ -191,7 +191,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
                     Official Adidas Match Ball
                   </div>
                   <div className="flex items-center gap-3 text-white font-bold text-sm bg-indigo-500/20 p-2 rounded-lg border border-indigo-500/30">
-                    <DollarSign className="w-4 h-4 text-green-400" /> $500 USD Cash Prize
+                    <DollarSign className="w-4 h-4 text-green-400" /> $1,000 USD Cash Prize
                   </div>
                 </div>
               </div>
@@ -260,7 +260,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
             <div className="space-y-4">
               {[
                 { q: "Is it free to play?", a: "Yes! 100% free. No purchase necessary." },
-                { q: "Can I change predictions?", a: "Yes, unlimited edits until June 11, 2026." },
+                { q: "Can I change predictions?", a: "No — once you submit, your predictions are locked and cannot be edited." },
                 { q: "When are winners announced?", a: "Within 48 hours after the Final (July 19, 2026)." },
                 { q: "Can I play from any country?", a: "Yes, open globally to participants 13+." }
               ].map((item, i) => (

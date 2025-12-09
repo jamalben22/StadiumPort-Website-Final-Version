@@ -1,6 +1,6 @@
 
 import { lazy } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 import type { RouteObject } from 'react-router-dom';
 
 // Critical homepage imports directly to avoid white screen on first paint
@@ -85,6 +85,8 @@ const GroupLPage = lazy(() => import('../pages/groups/group-l/page'));
 const NotFoundPage = lazy(() => import('../pages/NotFound'));
 const AdminPredictionsPage = lazy(() => import('../pages/admin/predictions/page'));
 const MyPredictionPage = lazy(() => import('../pages/my-prediction/page'));
+const PredictResultsPage = lazy(() => import('../pages/predict-results/page'));
+const PredictSharePage = lazy(() => import('../pages/predict-share/page'));
 
 const routes: RouteObject[] = [
   {
@@ -106,6 +108,32 @@ const routes: RouteObject[] = [
   {
     path: '/world-cup-2026-prediction-game/:step',
     element: <PredictPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-game/entry',
+    element: <PredictResultsPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-game/entry/:code',
+    element: <PredictResultsPage />
+  },
+  {
+    path: '/world-cup-2026-prediction-game/results',
+    element: <Navigate to="/world-cup-2026-prediction-game/entry" replace />
+  },
+  {
+    path: '/world-cup-2026-prediction-game/results/:code',
+    element: (() => {
+      const ResultsRedirect = () => {
+        const { code } = useParams();
+        return <Navigate to={`/world-cup-2026-prediction-game/entry/${code || ''}`} replace />;
+      };
+      return <ResultsRedirect />;
+    })()
+  },
+  {
+    path: '/world-cup-2026-prediction-game/share/:code',
+    element: <PredictSharePage />
   },
   {
     path: '/2026-world-cup-draw-travel-hub',
