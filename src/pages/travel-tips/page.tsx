@@ -330,7 +330,7 @@ export default function TravelTipsPage() {
   useEffect(() => {
     const pageTitle = 'World Cup 2026 Travel Tips – Expert Advice | Stadiumport';
     const descriptionText = 'Comprehensive World Cup 2026 travel tips: flights, hotels, itineraries, safety, and more across 16 host cities.';
-    const siteUrl = (import.meta.env.VITE_SITE_URL as string) || window.location.origin;
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     const pageUrl = `${siteUrl}/world-cup-2026-travel-tips`;
     const ogImage = `${siteUrl}/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp`;
 
@@ -838,16 +838,14 @@ export default function TravelTipsPage() {
       <Header />
       
       {/* Hero + Library Unified Background - Apple-Level Luxury Design */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+      <section className="relative bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0">
           {/* Premium Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#0A0A0A]"></div>
           
           {/* Floating Glass Elements - Premium Apple Style */}
-          <div className="absolute top-6 left-4 w-8 h-8 xs:top-8 xs:left-6 xs:w-12 xs:h-12 sm:top-12 sm:left-8 sm:w-20 sm:h-20 md:top-16 md:left-10 md:w-28 md:h-28 lg:top-20 lg:left-12 lg:w-40 lg:h-40 xl:w-64 xl:h-64 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 animate-float"></div>
-          <div className="absolute bottom-6 right-4 w-12 h-12 xs:bottom-8 xs:right-6 xs:w-16 xs:h-16 sm:bottom-12 sm:right-8 sm:w-24 sm:h-24 md:bottom-16 md:right-10 md:w-32 md:h-32 lg:bottom-20 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-8 h-8 xs:top-1/4 xs:left-1/2 xs:w-12 xs:h-12 sm:top-1/3 sm:left-1/2 sm:w-16 sm:h-16 md:top-1/2 md:left-1/2 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-48 xl:h-48 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-32 md:py-40 lg:py-48">
@@ -1236,9 +1234,7 @@ export default function TravelTipsPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
           
           {/* Floating Glass Elements - Premium Apple Style */}
-          <div className="absolute top-10 left-6 w-24 h-24 xs:top-12 xs:left-8 xs:w-32 xs:h-32 sm:top-16 sm:left-10 sm:w-48 sm:h-48 md:top-20 md:left-12 md:w-56 md:h-56 lg:top-24 lg:left-16 lg:w-64 lg:h-64 xl:w-72 xl:h-72 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 animate-float"></div>
-          <div className="absolute bottom-10 right-6 w-32 h-32 xs:bottom-12 xs:right-8 xs:w-40 xs:h-40 sm:bottom-16 sm:right-10 sm:w-56 sm:h-56 md:bottom-20 md:right-12 md:w-64 md:h-64 lg:bottom-24 lg:right-16 lg:w-80 lg:h-80 xl:w-96 xl:h-96 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-20 h-20 xs:top-1/2 xs:left-1/2 xs:w-28 xs:h-28 sm:top-1/2 sm:left-1/2 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-48 lg:h-48 xl:w-56 xl:h-56 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

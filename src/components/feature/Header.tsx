@@ -1,32 +1,23 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Search, Menu, X, ChevronRight, Globe, MapPin, Building2, Users, Trophy, Plane } from 'lucide-react';
 import { DarkModeToggle } from '../base/DarkModeToggle';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [activeTab, setActiveTab] = useState<'explore' | 'actions'>('explore');
-  const tablistRef = useRef<HTMLDivElement>(null);
-  const exploreRef = useRef<HTMLButtonElement>(null);
-  const actionsRef = useRef<HTMLButtonElement>(null);
-  const [indicatorStyle, setIndicatorStyle] = useState<{ left: number; width: number }>({ left: 0, width: 0 });
   const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const closeMenu = () => setIsMenuOpen(false);
-
   // Search data
   const searchData = [
     // Cities
-  { type: 'city', title: 'New York / New Jersey', path: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide', description: 'MetLife Stadium – World Cup Final Host' },
+    { type: 'city', title: 'New York / New Jersey', path: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide', description: 'MetLife Stadium – World Cup Final Host' },
     { type: 'city', title: 'Los Angeles', path: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide', description: 'City of Angels - SoFi Stadium & Rose Bowl' },
     { type: 'city', title: 'Miami', path: '/world-cup-2026-host-cities/miami-world-cup-2026-guide', description: 'Magic City - Hard Rock Stadium' },
     { type: 'city', title: 'Atlanta', path: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide', description: 'Hotlanta - Mercedes-Benz Stadium' },
@@ -58,14 +49,15 @@ export function Header() {
     { type: 'guide', title: 'Safety Guide', path: '/world-cup-2026-safety-guide', description: 'Stay safe during your travels' },
     
     // Articles
-    { type: 'article', title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options in host cities' },
-    { type: 'article', title: 'Complete Planning Checklist', path: '/world-cup-2026-travel-tips/complete-planning-checklist', description: 'Step-by-step checklist for planning flights, stays, transport, and matchdays' },
-    { type: 'article', title: 'Visa Requirements Guide', path: '/world-cup-2026-travel-tips/visa-requirements-guide', description: 'Who needs visas or ESTA, timelines, and official resources' },
-    { type: 'article', title: 'Transportation Guide', path: '/world-cup-2026-travel-tips/transportation-guide', description: 'Getting around host cities: metro, buses, PATH, rail and airport transfers' },
-    { type: 'article', title: 'Budget Planning Tool', path: '/world-cup-2026-travel-tips/budget-planning-tool', description: 'Estimate total costs by city, match type, and trip length' },
-    { type: 'article', title: 'Safety & Security Tips', path: '/world-cup-2026-travel-tips/safety-security-tips', description: 'Tournament safety essentials: neighborhoods, crowd strategy, and emergency contacts' }
+    { type: 'article', title: 'Connectivity Guide', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options' },
+    { type: 'article', title: 'Planning Checklist', path: '/world-cup-2026-travel-tips/complete-planning-checklist', description: 'Step-by-step checklist for planning flights, stays, transport' },
+    { type: 'article', title: 'Visa Requirements', path: '/world-cup-2026-travel-tips/visa-requirements-guide', description: 'Who needs visas or ESTA, timelines, and official resources' },
+    { type: 'article', title: 'Transportation Guide', path: '/world-cup-2026-travel-tips/transportation-guide', description: 'Getting around host cities: metro, buses, rail' },
+    { type: 'article', title: 'Budget Planner', path: '/world-cup-2026-travel-tips/budget-planning-tool', description: 'Estimate total costs by city, match type, and trip length' },
+    { type: 'article', title: 'Safety Tips', path: '/world-cup-2026-travel-tips/safety-security-tips', description: 'Tournament safety essentials and emergency contacts' }
   ];
 
+  // Search Logic
   const filteredResults = searchQuery.length > 0 
     ? searchData.filter(item => 
         item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -73,540 +65,240 @@ export function Header() {
       ).slice(0, 8)
     : [];
 
-  const smartSuggestions = (() => {
-    if (!searchQuery) return [] as typeof searchData;
-    const q = searchQuery.toLowerCase().split(/[^a-z0-9]+/).filter(Boolean);
-    if (q.length === 0) return [] as typeof searchData;
-    const aliasMap: Record<string, { title: string }[]> = {
-      nyc: [{ title: 'New York / New Jersey' }],
-      'new york': [{ title: 'New York / New Jersey' }],
-      jersey: [{ title: 'New York / New Jersey' }],
-      metlife: [{ title: 'New York / New Jersey' }],
-      la: [{ title: 'Los Angeles' }],
-      'los angeles': [{ title: 'Los Angeles' }],
-      sofi: [{ title: 'Los Angeles' }],
-      rose: [{ title: 'Los Angeles' }],
-      stadium: [{ title: 'MetLife Stadium' }, { title: 'SoFi Stadium' }],
-      hotel: [{ title: 'Accommodation' }],
-      accommodation: [{ title: 'Accommodation' }],
-      stay: [{ title: 'Accommodation' }],
-      deals: [{ title: 'Deals & Offers' }],
-      offer: [{ title: 'Deals & Offers' }],
-      transport: [{ title: 'Transportation' }],
-      transit: [{ title: 'Transportation' }],
-      tips: [{ title: 'Travel Tips' }],
-      guide: [{ title: 'Travel Tips' }],
-      safety: [{ title: 'Safety Guide' }],
-      wifi: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
-      sim: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
-      esim: [{ title: 'Connectivity Guide: Phone Plans, SIM Cards & WiFi' }],
-      checklist: [{ title: 'Complete Planning Checklist' }],
-      visa: [{ title: 'Visa Requirements Guide' }],
-      budget: [{ title: 'Budget Planning Tool' }],
-      money: [{ title: 'Budget Planning Tool' }],
-      transportguide: [{ title: 'Transportation Guide' }],
-      path: [{ title: 'Transportation Guide' }],
-      metro: [{ title: 'Transportation Guide' }],
-      security: [{ title: 'Safety & Security Tips' }]
-    };
-    const typeWeight: Record<string, number> = { city: 2.5, stadium: 2, guide: 1.5, page: 1 };
-    const exactBoost = 8;
-    const startsBoost = 5;
-    const includeBoost = 3;
-    const descBoost = 2;
-    const tokenBoost = 1;
-    const byTitle: Record<string, typeof searchData[number]> = {};
-    searchData.forEach(it => { byTitle[it.title.toLowerCase()] = it; });
-    const aliasItems: typeof searchData = [];
-    q.forEach(t => {
-      const aliases = aliasMap[t];
-      if (aliases) {
-        aliases.forEach(a => {
-          const match = byTitle[a.title.toLowerCase()];
-          if (match && !aliasItems.find(x => x.path === match.path)) aliasItems.push(match);
-        });
-      }
-    });
-    const scored = searchData.map(item => {
-      const title = item.title.toLowerCase();
-      const desc = item.description.toLowerCase();
-      let score = 0;
-      q.forEach(t => {
-        if (title === t) score += exactBoost;
-        else if (title.startsWith(t)) score += startsBoost;
-        else if (title.includes(t)) score += includeBoost;
-        if (desc.includes(t)) score += descBoost;
-        score += tokenBoost;
-      });
-      score *= typeWeight[item.type] || 1;
-      return { item, score };
-    });
-    const pool: typeof searchData = [];
-    scored.sort((a, b) => b.score - a.score).forEach(s => {
-      if (s.score > 0 && !pool.find(x => x.path === s.item.path)) pool.push(s.item);
-    });
-    aliasItems.forEach(ai => { if (!pool.find(x => x.path === ai.path)) pool.unshift(ai); });
-    const curated: typeof searchData = [
-      byTitle['new york / new jersey'],
-      byTitle['los angeles'],
-      byTitle['travel tips'],
-      byTitle['accommodation'],
-      byTitle['deals & offers']
-    ].filter(Boolean) as typeof searchData;
-    curated.forEach(ci => { if (!pool.find(x => x.path === ci.path)) pool.push(ci); });
-    return pool.slice(0, 8);
-  })();
-
   const handleSearchSelect = (path: string) => {
     setIsSearchOpen(false);
     setSearchQuery('');
     navigate(path);
   };
 
-  const getTypeIcon = (type: string) => {
-    switch (type) {
-      case 'city': return 'ri-map-pin-line';
-      case 'stadium': return 'ri-building-line';
-      case 'guide': return 'ri-book-open-line';
-      case 'article': return 'ri-article-line';
-      default: return 'ri-pages-line';
-    }
-  };
-
-  const getTypeColor = (type: string) => {
-    switch (type) {
-      case 'city': return 'text-[#01b47d] bg-[#01b47d]/10';
-      case 'stadium': return 'text-[#01b47d] bg-[#01b47d]/10';
-      case 'guide': return 'text-purple-500 bg-purple-500/10';
-      case 'article': return 'text-amber-600 bg-amber-500/10';
-      default: return 'text-gold-500 bg-gold-500/10';
-    }
-  };
-
-  // Ultra-smooth scroll detection with hide/show animation
+  // Scroll Detection
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      setIsScrolled(currentScrollY > 20);
-      
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
-      }
-      
-      setLastScrollY(currentScrollY);
+      setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
-  // Dark mode detection
+  // Dark Mode Detection
   useEffect(() => {
     const checkDarkMode = () => {
-      const isDark = document.documentElement.classList.contains('dark');
-      setIsDarkMode(isDark);
+      setIsDarkMode(document.documentElement.classList.contains('dark'));
     };
-
-    // Initial check
     checkDarkMode();
-
-    // Listen for dark mode changes
     const observer = new MutationObserver(checkDarkMode);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class']
-    });
-
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
     return () => observer.disconnect();
   }, []);
 
-  // Close search on escape key
+  // Lock body scroll when menu/search is open
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        setIsSearchOpen(false);
-      }
-    };
-
-    if (isSearchOpen) {
-      document.addEventListener('keydown', handleKeyDown);
-      return () => document.removeEventListener('keydown', handleKeyDown);
+    if (isMenuOpen || isSearchOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
-  }, [isSearchOpen]);
+  }, [isMenuOpen, isSearchOpen]);
 
-  useEffect(() => {
-    const el = activeTab === 'explore' ? exploreRef.current : actionsRef.current;
-    const parent = tablistRef.current;
-    if (el && parent) {
-      const rect = el.getBoundingClientRect();
-      const parentRect = parent.getBoundingClientRect();
-      setIndicatorStyle({ left: rect.left - parentRect.left, width: rect.width });
-    }
-  }, [activeTab, isMenuOpen]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const el = activeTab === 'explore' ? exploreRef.current : actionsRef.current;
-      const parent = tablistRef.current;
-      if (el && parent) {
-        const rect = el.getBoundingClientRect();
-        const parentRect = parent.getBoundingClientRect();
-        setIndicatorStyle({ left: rect.left - parentRect.left, width: rect.width });
-      }
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [activeTab]);
+  // Navigation Items
+  const navItems = [
+    { label: 'Host Cities', path: '/world-cup-2026-host-cities' },
+    { label: 'Stadiums', path: '/world-cup-2026-stadiums' },
+    { label: 'Groups', path: '/world-cup-2026-groups' },
+    { label: 'Draw Hub', path: '/2026-world-cup-draw-travel-hub' },
+    { label: 'Predictor', path: '/world-cup-2026-prediction-game' },
+  ];
 
   return (
     <>
-      <a href="#main-content" className="skip-link">Skip to main content</a>
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isVisible ? 'translate-y-0' : '-translate-y-full'
-      } ${
-        isScrolled 
-          ? 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50' 
-          : 'bg-transparent'
-      }`}>
-        <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-12">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Apple-Style Minimal Luxury Logo */}
-            <Link to="/" className="flex items-center group">
-              <div className="relative transition-all duration-500 ease-out">
-                {/* Desktop SVG Logos - Clean minimal design */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          isScrolled 
+            ? 'h-14 lg:h-16 bg-white/80 dark:bg-black/80 backdrop-blur-xl border-b border-black/5 dark:border-white/10' 
+            : 'h-20 bg-transparent'
+        }`}
+      >
+        <div className="max-w-[1400px] mx-auto px-6 h-full flex items-center justify-between">
+          
+          {/* Left: Logo */}
+          <Link to="/" className="relative z-50 group" aria-label="Stadiumport Home">
+             <div className="relative">
+                {/* Desktop Logo */}
                 <div className="hidden lg:block">
-                  {/* Light Mode Logo */}
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
-                    alt="Stadiumport Logo"
-                    width={2400}
-                    height={600}
-                    className={`h-12 w-auto object-contain transition-all duration-500 ease-out ${
-                      isDarkMode ? 'opacity-0' : 'opacity-100'
-                    }`}
+                    alt="Stadiumport"
+                    className={`h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
-                  {/* Dark Mode Logo */}
                   <img 
                     src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
-                    alt="Stadiumport Logo"
-                    width={2400}
-                    height={600}
-                    className={`absolute top-0 left-0 h-12 w-auto object-contain transition-all duration-500 ease-out ${
-                      isDarkMode ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    alt="Stadiumport"
+                    className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
-                <div className="lg:hidden relative">
-                  <img 
+                {/* Mobile Logo */}
+                <div className="lg:hidden">
+                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px.svg"
-                    alt="Stadiumport Logo"
-                    width={180}
-                    height={180}
-                    className={`h-8 w-auto object-contain transition-all duration-500 ease-out ${
-                      isDarkMode ? 'opacity-0' : 'opacity-100'
-                    }`}
+                    alt="Stadiumport"
+                    className={`h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
                   <img 
                     src="/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
-                    alt="Stadiumport Logo"
-                    width={180}
-                    height={180}
-                    className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-500 ease-out ${
-                      isDarkMode ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    alt="Stadiumport"
+                    className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
-              </div>
-            </Link>
+             </div>
+          </Link>
 
-            {/* Apple-Style Minimal Navigation */}
-            <nav className="hidden lg:flex items-center space-x-8">
-              {[
-                { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
-                { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
-                { path: '/world-cup-2026-groups', label: 'Groups' },
-                { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
-                { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
-              ].map((item) => (
-                <Link
-                  key={item.path}
-                  to={item.path}
-                  className={`relative text-sm font-medium transition-colors duration-300 ${
-                    isActive(item.path) 
-                      ? 'text-slate-900 dark:text-white' 
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
-                >
-                  {item.label}
-                  {/* Minimal active indicator */}
-                  {isActive(item.path) && (
-                    <div className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary shadow-[0_0_10px_rgba(251,191,36,0.5)]"></div>
-                  )}
-                </Link>
-              ))}
-            </nav>
-
-            {/* Apple-Style Right Actions */}
-            <div className="flex items-center space-x-6">
-              {/* Minimal Search Button */}
-              <button 
-                onClick={() => setIsSearchOpen(true)}
-                className="hidden lg:flex items-center justify-center w-10 h-10 rounded-full text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
-                aria-label="Search"
-                title="No results? Suggest something"
+          {/* Center: Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`text-[13px] font-medium tracking-wide transition-all duration-200 ${
+                  isActive(item.path)
+                    ? 'text-black dark:text-white opacity-100'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white'
+                }`}
               >
-                <i className="ri-search-line text-lg"></i>
-              </button>
+                {item.label}
+              </Link>
+            ))}
+          </nav>
 
-              {/* Minimal Dark Mode Toggle */}
-              <DarkModeToggle />
-              
-              {/* Minimal Mobile Menu Button */}
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="lg:hidden flex items-center justify-center w-8 h-8 rounded-full text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-300"
-                aria-label="Toggle menu"
-              >
-                <i className={`text-base transition-transform duration-300 ${
-                  isMenuOpen ? 'ri-close-line' : 'ri-menu-line'
-                }`}></i>
-              </button>
+          {/* Right: Actions */}
+          <div className="flex items-center gap-4 lg:gap-6">
+            
+            {/* Search Trigger */}
+            <button 
+              onClick={() => setIsSearchOpen(true)}
+              className="p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+              aria-label="Search"
+            >
+              <Search size={18} strokeWidth={2} />
+            </button>
+
+            {/* Dark Mode Toggle */}
+            <div className="hidden sm:block">
+               <DarkModeToggle />
             </div>
+
+            {/* Mobile Menu Trigger */}
+            <button
+              className="lg:hidden p-2 text-slate-900 dark:text-white relative z-50"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Menu"
+            >
+              {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
-
-          {/* Apple-Style Minimal Mobile Navigation */}
-          <div className={`lg:hidden transition-all duration-500 ease-out overflow-hidden ${
-            isMenuOpen ? 'max-h-[480px] opacity-100' : 'max-h-0 opacity-0'
-          }`}>
-            <div className="mt-3 p-4 rounded-2xl bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50">
-              <div
-                ref={tablistRef}
-                role="tablist"
-                aria-label="Mobile navigation tabs"
-                className="relative mb-4 grid grid-cols-2 gap-1 bg-slate-100/50 dark:bg-slate-800/50 p-1 rounded-xl"
-              >
-                <button
-                  ref={exploreRef}
-                  id="tab-explore"
-                  role="tab"
-                  aria-selected={activeTab === 'explore'}
-                  aria-controls="tab-panel-explore"
-                  tabIndex={activeTab === 'explore' ? 0 : -1}
-                  onClick={() => setActiveTab('explore')}
-                  onKeyDown={(e) => {
-                    if (e.key === 'ArrowRight' || e.key === 'End') setActiveTab('actions');
-                  }}
-                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium min-h-[44px] flex items-center justify-center ${
-                    activeTab === 'explore'
-                      ? 'text-slate-900 dark:text-white bg-white dark:bg-slate-800 shadow-sm'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
-                >
-                  <span className="inline-flex items-center justify-center space-x-2">
-                    <i className="ri-compass-3-line text-sm"></i>
-                    <span>Explore</span>
-                  </span>
-                </button>
-                <button
-                  ref={actionsRef}
-                  id="tab-actions"
-                  role="tab"
-                  aria-selected={activeTab === 'actions'}
-                  aria-controls="tab-panel-actions"
-                  tabIndex={activeTab === 'actions' ? 0 : -1}
-                  onClick={() => setActiveTab('actions')}
-                  onKeyDown={(e) => {
-                    if (e.key === 'ArrowLeft' || e.key === 'Home') setActiveTab('explore');
-                  }}
-                  className={`relative z-10 w-full px-3 py-2 rounded-lg transition-all duration-200 text-sm font-medium min-h-[44px] flex items-center justify-center ${
-                    activeTab === 'actions'
-                      ? 'text-slate-900 dark:text-white bg-white dark:bg-slate-800 shadow-sm'
-                      : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'
-                  }`}
-                >
-                  <span className="inline-flex items-center justify-center space-x-2">
-                    <i className="ri-rocket-line text-sm"></i>
-                    <span>Actions</span>
-                  </span>
-                </button>
-                <div
-                  className="absolute bottom-1 h-0.5 bg-slate-900 dark:bg-white rounded-full transition-transform duration-300 will-change-transform"
-                  style={{ width: `${indicatorStyle.width}px`, transform: `translateX(${indicatorStyle.left}px)` }}
-                ></div>
-              </div>
-
-              <div
-                id="tab-panel-explore"
-                role="tabpanel"
-                aria-labelledby="tab-explore"
-                className={`${activeTab === 'explore' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none absolute'} transition-all duration-500`}
-              >
-                <nav className="space-y-1">
-                  {[
-                    { path: '/world-cup-2026-host-cities', label: 'Host Cities' },
-                    { path: '/world-cup-2026-stadiums', label: 'Stadiums' },
-                    { path: '/world-cup-2026-groups', label: 'Groups' },
-                    { path: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' },
-                    { path: '/world-cup-2026-prediction-game', label: 'Predictor' }
-                  ].map((item, index) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      onClick={closeMenu}
-                      className={`block px-3 py-2.5 rounded-lg transition-colors duration-200 ${
-                        isActive(item.path) 
-                          ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800' 
-                          : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50'
-                      }`}
-                    >
-                      <div className="font-medium">{item.label}</div>
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-
-              <div
-                id="tab-panel-actions"
-                role="tabpanel"
-                aria-labelledby="tab-actions"
-                className={`${activeTab === 'actions' ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-1 pointer-events-none absolute'} transition-all duration-500`}
-              >
-                <div className="space-y-2">
-                  <button 
-                    onClick={() => {
-                      setIsSearchOpen(true);
-                      closeMenu();
-                    }}
-                    className="w-full px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 text-left"
-                  >
-                    <div className="font-medium">Search</div>
-                  </button>
-                  <Link to="/world-cup-2026-travel-tips" onClick={closeMenu}>
-                    <button className="w-full px-3 py-2.5 rounded-lg text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors duration-200 text-left">
-                      <div className="font-medium">Travel Tips</div>
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Minimal Progress Bar */}
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-slate-200/50 dark:bg-slate-800/50">
-          <div 
-            className="h-full bg-slate-900 dark:bg-white transition-all duration-300"
-            style={{ 
-              width: `${Math.min(100, (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100)}%` 
-            }}
-          ></div>
         </div>
       </header>
 
-      {/* Minimal Search Modal */}
-      {isSearchOpen && (
-        <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 px-4">
-          {/* Backdrop */}
-          <div 
-            className="absolute inset-0 bg-black/30 backdrop-blur-sm animate-fade-in"
-            onClick={() => setIsSearchOpen(false)}
-          ></div>
+      {/* Mobile Menu Overlay */}
+      <div 
+        className={`fixed inset-0 z-40 bg-white dark:bg-black transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+          isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}
+      >
+        <div className="flex flex-col h-full pt-28 px-8 pb-12 overflow-y-auto">
+          <nav className="flex flex-col gap-6">
+            {navItems.map((item, idx) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`text-2xl font-medium tracking-tight text-slate-900 dark:text-white flex items-center justify-between group border-b border-slate-100 dark:border-white/10 pb-4`}
+                style={{ transitionDelay: `${idx * 50}ms` }}
+              >
+                {item.label}
+                <ChevronRight size={16} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            ))}
+             <Link
+                to="/world-cup-2026-travel-tips"
+                onClick={() => setIsMenuOpen(false)}
+                className="text-2xl font-medium tracking-tight text-slate-900 dark:text-white flex items-center justify-between group border-b border-slate-100 dark:border-white/10 pb-4"
+              >
+                Travel Tips
+                <ChevronRight size={16} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
+              </Link>
+          </nav>
           
-          {/* Search Modal */}
-          <div className="relative w-full max-w-2xl bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 animate-scale-in">
-            {/* Search Header */}
-            <div className="p-4 border-b border-slate-200 dark:border-slate-800">
-              <div className="flex items-center space-x-3">
-                <div className="relative flex-1">
-                  <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
-                  <input
-                    type="text"
-                    placeholder="Search cities, stadiums, guides..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-10 pr-3 py-2 bg-transparent border-0 text-slate-900 dark:text-white placeholder-slate-500 dark:placeholder-slate-400 focus:outline-none font-inter"
-                    autoFocus
-                  />
-                </div>
-                <button
-                  onClick={() => setIsSearchOpen(false)}
-                  className="p-2 rounded-full text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors duration-200"
-                >
-                  <i className="ri-close-line"></i>
-                </button>
-              </div>
+          <div className="mt-auto pt-8">
+            <div className="flex items-center justify-between mb-8">
+               <span className="text-sm text-slate-500 font-medium">Appearance</span>
+               <DarkModeToggle />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Search Modal */}
+      {isSearchOpen && (
+        <div className="fixed inset-0 z-[60] flex items-start justify-center pt-24 px-4">
+          <div 
+            className="absolute inset-0 bg-white/80 dark:bg-black/80 backdrop-blur-xl transition-opacity duration-300"
+            onClick={() => setIsSearchOpen(false)}
+          />
+          
+          <div className="relative w-full max-w-2xl bg-transparent animate-in fade-in slide-in-from-top-4 duration-300">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" size={20} />
+              <input
+                type="text"
+                autoFocus
+                placeholder="Search cities, stadiums, guides..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl py-4 pl-12 pr-12 text-lg text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-2xl"
+              />
+              <button 
+                onClick={() => setIsSearchOpen(false)}
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+              >
+                <X size={20} />
+              </button>
             </div>
 
-            {/* Search Results */}
-            <div className="max-h-80 overflow-y-auto">
-              {searchQuery.length === 0 ? (
-                <div className="p-6 text-center">
-                  <p className="text-sm text-slate-500 dark:text-slate-400">Search cities, stadiums, travel guides...</p>
-                </div>
-              ) : filteredResults.length === 0 ? (
-                <div className="p-6">
-                  <div className="text-center mb-4">
-                    <p className="text-sm text-slate-500 dark:text-slate-400">Can’t find what you’re looking for? Here are some suggestions:</p>
-                  </div>
-                  {smartSuggestions.length > 0 ? (
-                    <div className="divide-y divide-slate-200 dark:divide-slate-800 rounded-xl border border-slate-200 dark:border-slate-800">
-                      {smartSuggestions.map((result, index) => (
-                        <button
-                          key={index}
-                          onClick={() => handleSearchSelect(result.path)}
-                          className="w-full px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs ${getTypeColor(result.type)}`}>
-                              <i className={`${getTypeIcon(result.type)}`}></i>
-                            </div>
-                            <div className="flex-1">
-                              <div className="text-sm font-medium text-slate-900 dark:text-white">
-                                {result.title}
-                              </div>
-                              <div className="text-xs text-slate-500 dark:text-slate-400">
-                                {result.description}
-                              </div>
-                            </div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center">
-                      <p className="text-sm text-slate-500 dark:text-slate-400">No results. <Link to="/contact" className="text-[#01b47d] dark:text-[#01b47d] hover:underline">Suggest something</Link>.</p>
-                    </div>
-                  )}
-                </div>
-              ) : (
-                <div className="py-2">
-                  {filteredResults.map((result, index) => (
-                    <button
-                      key={index}
-                      onClick={() => handleSearchSelect(result.path)}
-                      className="w-full px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-200"
-                    >
-                      <div className="flex items-center space-x-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-xs ${getTypeColor(result.type)}`}>
-                          <i className={`${getTypeIcon(result.type)}`}></i>
+            {searchQuery && (
+              <div className="mt-4 bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 rounded-2xl shadow-xl overflow-hidden max-h-[60vh] overflow-y-auto">
+                {filteredResults.length > 0 ? (
+                  <div className="py-2">
+                    {filteredResults.map((result, idx) => (
+                      <button
+                        key={idx}
+                        onClick={() => handleSearchSelect(result.path)}
+                        className="w-full px-4 py-3 text-left hover:bg-slate-50 dark:hover:bg-white/5 transition-colors flex items-center gap-4 group"
+                      >
+                        <div className="p-2 rounded-lg bg-slate-100 dark:bg-white/5 text-slate-500 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                           {result.type === 'city' && <MapPin size={18} />}
+                           {result.type === 'stadium' && <Building2 size={18} />}
+                           {result.type === 'page' && <Trophy size={18} />}
+                           {result.type === 'guide' && <Plane size={18} />}
+                           {result.type === 'article' && <Globe size={18} />}
                         </div>
-                        <div className="flex-1">
-                          <div className="text-sm font-medium text-slate-900 dark:text-white">
+                        <div>
+                          <div className="text-sm font-medium text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                             {result.title}
                           </div>
-                          <div className="text-xs text-slate-500 dark:text-slate-400">
+                          <div className="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">
                             {result.description}
                           </div>
                         </div>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
+                      </button>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="p-8 text-center text-slate-500 dark:text-slate-400">
+                    No results found for "{searchQuery}"
+                  </div>
+                )}
+              </div>
+            )}
           </div>
         </div>
       )}

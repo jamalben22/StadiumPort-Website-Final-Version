@@ -38,7 +38,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
       discount: 33,
       timeLeft: '23:45:12',
       category: 'flight',
-      affiliateUrl: 'https://example.com/flight-deals',
+      affiliateUrl: 'https://stadiumport.com/flight-deals',
       featured: true,
     },
     {
@@ -49,7 +49,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
       discount: 34,
       timeLeft: '15:23:08',
       category: 'hotel',
-      affiliateUrl: 'https://example.com/hotel-deals',
+      affiliateUrl: 'https://stadiumport.com/hotel-deals',
     },
     {
       title: 'Complete Travel Package',
@@ -59,7 +59,7 @@ export function SmartDealBanner({ className = '', compact = false, variant = 'de
       discount: 31,
       timeLeft: '47:12:33',
       category: 'package',
-      affiliateUrl: 'https://example.com/package-deals',
+      affiliateUrl: 'https://stadiumport.com/package-deals',
       featured: true,
     },
   ];

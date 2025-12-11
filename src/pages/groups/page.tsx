@@ -213,14 +213,10 @@ export default function GroupsSchedulePage() {
 
       <Header />
 
-      <div className="min-h-screen bg-slate-50 dark:bg-navy-950 font-sans text-slate-900 dark:text-slate-100 selection:bg-blue-500/30">
+      <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-blue-500/30">
         
         {/* Hero Section */}
-        <section className="relative w-full bg-[#0f172a] dark:bg-black overflow-hidden">
-            <div className="absolute inset-0 opacity-20">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,#3b82f6,transparent_50%)]" />
-                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30" />
-            </div>
+        <section className="relative w-full bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden">
 
             <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
                 <motion.div 

@@ -8,6 +8,7 @@ import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
 import { SEO } from '../../components/common/SEO';
 import { CityShowcase } from './components/CityShowcase';
+import { HeroSection } from './components/HeroSection';
 
 // --- Original Widgets ---
 
@@ -195,10 +196,10 @@ export default function HomePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-navy-900">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] transition-colors duration-500">
       <SEO 
-        title="World Cup 2026 Travel Guide | Host Cities, Stadiums & Tickets | Stadiumport"
-        description="Complete guide to FIFA World Cup 2026. Explore 16 host cities, stadium guides, match schedules, and travel tips across USA, Canada, and Mexico. Plan your trip now."
+        title="2026 World Cup Travel Guide | USA, Canada, Mexico"
+        description="Your complete 2026 FIFA World Cup travel guide. Tickets, hotels, stadium info & match schedules for all 16 host cities across North America. Plan your trip now!"
         image="/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp"
         url="/"
       />
@@ -215,16 +216,15 @@ export default function HomePage() {
       />
       
       <Header />
-      <div className="h-16 lg:h-20"></div>
-
-      {/* World Cup Countdown Section */}
-      <WorldCupCountdown travelerCount={travelerCount} dealCount={dealCount} />
+      
+      {/* New Apple/Nike Style Hero Section */}
+      <HeroSection />
 
       {/* Replaced Original City Grid with New CityShowcase Component */}
       <CityShowcase />
 
       {/* Widgets Section */}
-      <section className="py-20 bg-white dark:bg-navy-900">
+      <section className="py-20 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
@@ -242,7 +242,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-navy-900">
+      <section className="py-20 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="font-space font-bold text-4xl md:text-5xl text-navy-900 dark:text-white mb-6">
@@ -290,7 +290,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section - Apple Luxury Simple Design */}
-      <section className="py-24 bg-white dark:bg-navy-900">
+      <section className="py-24 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
         <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6 tracking-tight">
             Your World Cup 2026 Journey

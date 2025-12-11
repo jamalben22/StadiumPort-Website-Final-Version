@@ -97,7 +97,7 @@ export const CityShowcase = () => {
   };
 
   return (
-    <section className="py-32 bg-white dark:bg-navy-900 overflow-hidden">
+    <section className="py-32 bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>

@@ -17,8 +17,8 @@ export default function ContactPage() {
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Contact', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/contact` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Contact', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/contact` }
   ]);
 
   const organizationSchema = generateOrganizationSchema();

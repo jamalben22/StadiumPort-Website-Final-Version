@@ -41,7 +41,7 @@ export function TorontoCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/toronto-world-cup-2026-guide`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/toronto-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/toronto-world-cup-2026.webp`;
         const title = 'Toronto World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = 'Emphasize Toronto’s multicultural energy, waterfront beauty, and the excitement surrounding BMO Field’s World Cup matches.';
