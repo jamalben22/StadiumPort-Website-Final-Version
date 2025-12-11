@@ -61,19 +61,19 @@ function TravelGuidesPageOriginal() {
     // Add canonical URL
     const canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/travel-guides`);
+      canonical.setAttribute('href', `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/travel-guides`);
     }
   }, []);
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Travel Guides', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/travel-guides` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Travel Guides', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/travel-guides` }
   ]);
 
   const travelGuideSchema = generateTravelGuideSchema(
     'World Cup 2026 Travel Guides',
     'Expert travel guides and tips for World Cup 2026 covering all 16 host cities with insider advice on hotels, transportation, and attractions.',
-    `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/travel-guides`
+    `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/travel-guides`
   );
 
   const openArticleModal = (article) => {

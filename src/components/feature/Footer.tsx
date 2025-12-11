@@ -1,6 +1,6 @@
-
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { Mail, Twitter, Facebook, Instagram, Youtube, ArrowRight, Globe } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -47,168 +47,177 @@ export function Footer() {
     }
   };
 
+  const footerSections = [
+    {
+      title: 'Explore',
+      links: [
+        { label: 'Host Cities', to: '/world-cup-2026-host-cities' },
+        { label: 'Stadiums', to: '/world-cup-2026-stadiums' },
+        { label: 'Groups & Teams', to: '/world-cup-2026-groups' },
+        { label: 'Prediction Game', to: '/world-cup-2026-prediction-game' },
+      ]
+    },
+    {
+      title: 'Planning',
+      links: [
+        { label: 'Travel Tips', to: '/world-cup-2026-travel-tips' },
+        { label: 'Safety Guide', to: '/world-cup-2026-safety-guide' },
+        { label: 'Draw Travel Hub', to: '/2026-world-cup-draw-travel-hub' },
+        { label: 'Deals & Offers', to: '/deals' },
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { label: 'About Us', to: '/about' },
+        { label: 'Our Authors', to: '/about/authors' },
+        { label: 'Editorial Policy', to: '/editorial-policy' },
+        { label: 'Contact', to: '/contact' },
+      ]
+    },
+    {
+      title: 'Legal',
+      links: [
+        { label: 'Privacy Policy', to: '/legal/privacy' },
+        { label: 'Terms of Service', to: '/legal/terms' },
+        { label: 'Contest Rules', to: '/world-cup-2026-prediction-contest-terms' },
+        { label: 'Affiliate Disclaimer', to: '/legal/affiliate-disclaimer' },
+      ]
+    }
+  ];
+
+  const socialLinks = [
+    { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Facebook, href: '#', label: 'Facebook' },
+    { icon: Instagram, href: '#', label: 'Instagram' },
+    { icon: Youtube, href: '#', label: 'YouTube' },
+  ];
+
   return (
-    <footer className="bg-[var(--footer-bg-light)] dark:bg-[var(--footer-bg-dark)] text-slate-900 dark:text-white duration-500 transition-colors">
-      <div className="absolute top-0 left-0 w-full h-px bg-slate-200 dark:bg-slate-800"></div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        {/* Minimal Newsletter Section */}
-        <div id="newsletter" className="text-center mb-16">
-          <h3 className="font-space font-semibold text-2xl md:text-3xl mb-4 text-slate-900 dark:text-white">
-            Don't Miss Your World Cup 2026 Journey
-          </h3>
-          <p className="font-inter text-slate-600 dark:text-slate-400 mb-8 max-w-2xl mx-auto">Get exclusive stadium guides, host city travel tips, real-time safety alerts, hotel deals, and expert planning strategies—everything you need delivered weekly to your inbox.</p>
+    <footer className="bg-[#EDEDED] dark:bg-[#000000] text-slate-900 dark:text-white border-t border-slate-200 dark:border-white/10 transition-colors duration-500">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 pt-20 pb-12">
+        
+        {/* Top Section: Brand & Newsletter */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24 mb-20">
           
-          <div className="max-w-md mx-auto">
-            <form onSubmit={handleSubscribe} data-readdy-form className="flex flex-col sm:flex-row gap-3">
-              <div className="relative flex-1">
-                <i className="ri-mail-line absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400"></i>
-                <input
-                  type="email"
-                  name="email"
+          {/* Brand Identity */}
+          <div className="max-w-sm">
+            <Link to="/" className="block mb-6 group">
+            <img 
+              src="/public/images/logos/Footer Logo 400 x 100 px.svg" 
+              alt="Stadiumport" 
+              width={160}
+              height={40}
+              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
+              onError={(e) => { e.currentTarget.src = '/images/logos/Footer Logo 400 x 100 px.svg'; }}
+            />
+            <img 
+              src="/public/images/logos/Footer Logo 400 x 100 px night mode.svg" 
+              alt="Stadiumport" 
+              width={160}
+              height={40}
+              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
+              onError={(e) => { e.currentTarget.src = '/images/logos/Footer Logo 400 x 100 px night mode.svg'; }}
+            />
+          </Link>
+            <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">
+              The definitive guide to World Cup 2026. Expert insights, stadium guides, and travel planning for the biggest tournament in history.
+            </p>
+          </div>
+
+          {/* Minimal Newsletter */}
+          <div className="w-full lg:max-w-md">
+            <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-[0.2em] mb-4">
+              Join the Community
+            </h3>
+            <form onSubmit={handleSubscribe} className="relative group">
+              <div className="relative overflow-hidden rounded-lg bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 focus-within:border-slate-400 dark:focus-within:border-white/30 transition-all duration-300">
+                <input 
+                  type="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  className="w-full pl-12 pr-4 py-3 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-600 focus:border-slate-600 transition-colors duration-300"
+                  placeholder="Enter your email for updates"
+                  className="w-full bg-transparent px-4 py-3.5 text-sm text-slate-900 dark:text-white placeholder:text-slate-400 focus:outline-none"
                   required
                   disabled={isSubmitting}
                 />
-              </div>
-              <button 
-                type="submit"
-                disabled={isSubmitting || !email}
-                className="px-6 py-3 bg-slate-900 dark:bg-slate-700 hover:bg-slate-800 dark:hover:bg-slate-600 text-white rounded-lg font-medium disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200"
-              >
-                {isSubmitting ? 'Subscribing...' : 'Get Free Updates'}
-              </button>
-            </form>
-            
-
-            
-            {/* Status Messages */}
-            {submitStatus === 'success' && (
-              <div className="mt-3 p-2 rounded-lg bg-slate-800 text-slate-300 text-sm">
-                Successfully subscribed! Welcome to Stadiumport.
-              </div>
-            )}
-            
-            {submitStatus === 'error' && (
-              <div className="mt-3 p-2 rounded-lg bg-slate-800 text-slate-300 text-sm">
-                Please enter a valid email address.
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Premium Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
-          {/* Apple-Style Premium Brand Section */}
-          <div className="lg:col-span-1 animate-fade-up-delay-100">
-            <div className="flex items-center mb-6">
-              <img 
-                src="/images/Logos/Footer Logo 400 x 100 px.svg"
-                alt="Stadiumport Logo"
-                width={400}
-                height={100}
-                className="h-8 w-auto object-contain dark:invert-0 invert"
-              />
-            </div>
-            <p className="text-slate-600 dark:text-slate-300 mb-8 text-sm leading-relaxed font-inter">
-              Your trusted guide to World Cup 2026 across the USA, Mexico, and Canada. Expert travel advice for all 16 host cities, from kickoff to final whistle.
-            </p>
-            
-            {/* Minimal Social Links */}
-            <div className="flex space-x-3">
-              {[
-                { icon: 'ri-twitter-x-line', href: '#', label: 'Twitter' },
-                { icon: 'ri-facebook-line', href: '#', label: 'Facebook' },
-                { icon: 'ri-instagram-line', href: '#', label: 'Instagram' },
-                { icon: 'ri-youtube-line', href: '#', label: 'YouTube' }
-              ].map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  className="w-8 h-8 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center justify-center transition-colors duration-200"
-                  aria-label={social.label}
+                <button 
+                  type="submit"
+                  disabled={isSubmitting || !email}
+                  className="absolute right-1.5 top-1.5 bottom-1.5 px-4 bg-slate-900 dark:bg-white text-white dark:text-black rounded-md text-xs font-bold uppercase tracking-wider hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
                 >
-                  <i className={`${social.icon} text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white text-sm`}></i>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Minimal Destinations */}
-          <div>
-            <h3 className="font-medium mb-4 text-slate-900 dark:text-slate-200">Destinations</h3>
-            <ul className="space-y-2 text-sm">
-              {[
-                { to: '/world-cup-2026-host-cities', label: 'All Host Cities' },
-                { to: '/world-cup-2026-stadiums', label: 'All Stadiums' },
-                { to: '/world-cup-2026-groups', label: 'All Groups' }
-              ].map((item) => (
-                <li key={item.to}>
-                  <Link 
-                    to={item.to} 
-                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Minimal Tools & Tips */}
-          <div>
-            <h3 className="font-medium mb-4 text-slate-900 dark:text-slate-200">Tools & Tips</h3>
-            <ul className="space-y-2 text-sm">
-              {[
-                { to: '/world-cup-2026-travel-tips', label: 'Travel Tips' },
-                { to: '/world-cup-2026-safety-guide', label: 'Safety Guide' },
-                { to: '/2026-world-cup-draw-travel-hub', label: 'Draw Travel Hub' }
-              ].map((item) => (
-                <li key={item.to}>
-                  <Link 
-                    to={item.to} 
-                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+                  {isSubmitting ? '...' : <span>Join <ArrowRight size={12} className="inline -mt-0.5" /></span>}
+                </button>
+              </div>
+              
+              {/* Feedback Messages */}
+              <div className="absolute top-full left-0 mt-2">
+                {submitStatus === 'success' && (
+                  <span className="text-emerald-600 dark:text-emerald-400 text-xs font-medium flex items-center gap-1.5 animate-in fade-in slide-in-from-top-1">
+                    <Globe size={12} /> Welcome to the team.
+                  </span>
+                )}
+                {submitStatus === 'error' && (
+                  <span className="text-red-600 dark:text-red-400 text-xs font-medium animate-in fade-in slide-in-from-top-1">
+                    Please enter a valid email.
+                  </span>
+                )}
+              </div>
+            </form>
           </div>
         </div>
 
+        {/* Divider */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-16" />
 
-
-        {/* Minimal Bottom Section */}
-        <div className="border-t border-slate-200 dark:border-slate-800 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500 dark:text-slate-400 mb-4 md:mb-0">
-              {[
-                { to: '/about', label: 'About Us' },
-                { to: '/contact', label: 'Contact Us' },
-                { to: '/editorial-policy', label: 'Editorial Policy' },
-                { to: '/about/authors', label: 'Author Bios' },
-                { to: '/legal/privacy', label: 'Privacy Policy' },
-                { to: '/legal/terms', label: 'Terms of Service' },
-                { to: '/legal/affiliate-disclaimer', label: 'Affiliate Disclaimer' }
-              ].map((item) => (
-                  <Link 
-                    key={item.to}
-                    to={item.to} 
-                    className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
-                  >
-                  {item.label}
-                </Link>
-              ))}
+        {/* Links Grid - 4 Columns */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mb-20">
+          {footerSections.map((section) => (
+            <div key={section.title} className="flex flex-col gap-4">
+              <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-[0.2em] mb-2">
+                {section.title}
+              </h3>
+              <ul className="flex flex-col gap-3">
+                {section.links.map((link) => (
+                  <li key={link.to}>
+                    <Link 
+                      to={link.to}
+                      className="text-sm text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200 font-medium"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="text-sm text-slate-600">
-              © {currentYear} Stadiumport. All rights reserved.
+          ))}
+        </div>
+
+        {/* Bottom Bar: Copyright & Socials */}
+        <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-100 dark:border-white/5">
+          <div className="flex flex-col md:flex-row items-center gap-6 text-xs text-slate-400 dark:text-slate-500 font-medium">
+            <span>© {currentYear} Stadiumport Inc. All rights reserved.</span>
+            <span className="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
+            <div className="flex gap-6">
+              <Link to="/legal/privacy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Privacy</Link>
+              <Link to="/legal/terms" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Terms</Link>
             </div>
           </div>
+
+          <div className="flex items-center gap-5">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                aria-label={social.label}
+                className="text-slate-400 hover:text-slate-900 dark:hover:text-white transform hover:scale-110 transition-all duration-200"
+              >
+                <social.icon size={20} strokeWidth={1.5} />
+              </a>
+            ))}
+          </div>
         </div>
+
       </div>
     </footer>
   );

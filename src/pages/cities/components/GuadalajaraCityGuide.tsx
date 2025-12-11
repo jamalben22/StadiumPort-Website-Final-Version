@@ -41,7 +41,7 @@ export function GuadalajaraCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/guadalajara-world-cup-2026.webp`;
         const title = 'Guadalajara World Cup 2026 – Estadio Akron & City Experience';
         const description = 'Highlight Guadalajara’s cultural identity, artistic charm, and World Cup spirit around Estadio Akron in Mexico’s heartland.';

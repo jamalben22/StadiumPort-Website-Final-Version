@@ -47,7 +47,7 @@ export function MonterreyCityGuide() {
       />
 
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/monterrey-world-cup-2026-guide`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/monterrey-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/monterrey-world-cup-2026.webp`;
         const title = 'Monterrey World Cup 2026 – Estadio BBVA & City Travel Guide';
         const description = "Highlight Monterrey’s modern skyline, mountain backdrop, and Estadio BBVA’s world-class architecture hosting FIFA World Cup 2026 matches.";

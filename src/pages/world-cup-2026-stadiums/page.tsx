@@ -663,7 +663,7 @@ export default function VenuesPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
       {/* JSON-LD Schemas */}
       <SchemaOrg schema={breadcrumbSchema} />
       <SchemaOrg schema={itemListSchema} />
@@ -671,16 +671,14 @@ export default function VenuesPage() {
       <Header />
       
       {/* Hero Section - Apple-Level Luxury Design */}
-      <section className="relative pt-32 md:pt-40 lg:pt-48 pb-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden">
+      <section className="relative pt-32 md:pt-40 lg:pt-48 pb-0 bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden">
         {/* Subtle Background Elements */}
         <div className="absolute inset-0">
           {/* Premium Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
+          <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#0A0A0A]"></div>
           
           {/* Floating Glass Elements - Premium Apple Style */}
-          <div className="absolute top-8 right-4 w-16 h-16 xs:top-10 xs:right-6 xs:w-20 xs:h-20 sm:top-16 sm:right-8 sm:w-32 sm:h-32 md:top-20 md:right-10 md:w-40 md:h-40 lg:top-24 lg:right-12 lg:w-48 lg:h-48 xl:w-72 xl:h-72 bg-gold-500/5 dark:bg-gold-500/10 backdrop-blur-3xl rounded-full border border-gold-500/10 dark:border-gold-500/20 animate-float"></div>
-          <div className="absolute bottom-8 left-4 w-20 h-20 xs:bottom-10 xs:left-6 xs:w-24 xs:h-24 sm:bottom-16 sm:left-8 sm:w-40 sm:h-40 md:bottom-20 md:left-10 md:w-48 md:h-48 lg:bottom-24 lg:left-12 lg:w-56 lg:h-56 xl:w-80 xl:h-80 bg-purple-500/5 dark:bg-purple-500/10 backdrop-blur-3xl rounded-full border border-purple-500/10 dark:border-purple-500/20 animate-float-delayed"></div>
-          <div className="absolute top-1/3 left-1/2 w-16 h-16 xs:top-1/2 xs:left-1/2 xs:w-20 xs:h-20 sm:top-1/2 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-56 xl:h-56 bg-[#01b47d]/5 dark:bg-[#01b47d]/10 backdrop-blur-3xl rounded-full border border-[#01b47d]/10 dark:border-[#01b47d]/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
+
         </div>
         
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -897,9 +895,6 @@ export default function VenuesPage() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Ultra-Premium Background Elements */}
             <div className="absolute inset-0 opacity-20">
-              <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-tl from-purple-400/10 via-transparent to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-gradient-to-br from-[#01b47d]/10 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2"></div>
             </div>
             
             {/* Floating Glass Elements */}
@@ -931,7 +926,6 @@ export default function VenuesPage() {
                 <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-purple-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}
@@ -956,7 +950,6 @@ export default function VenuesPage() {
                 <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-purple-500/20 hover:shadow-3xl hover:shadow-purple-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 via-transparent to-[#01b47d]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/15 to-transparent rounded-full blur-3xl group-hover:from-purple-400/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}
@@ -984,7 +977,6 @@ export default function VenuesPage() {
                 <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-orange-500/20 hover:shadow-3xl hover:shadow-orange-500/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-transparent rounded-full blur-3xl group-hover:from-orange-400/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}
@@ -1009,7 +1001,6 @@ export default function VenuesPage() {
                 <div className="group relative bg-white/80 dark:bg-navy-900/80 backdrop-blur-3xl rounded-3xl p-6 sm:p-8 md:p-10 border border-white/40 dark:border-navy-700/40 shadow-2xl shadow-[#01b47d]/20 hover:shadow-3xl hover:shadow-[#01b47d]/30 transition-all duration-700 hover:-translate-y-3">
                   {/* Premium Background Glow */}
                   <div className="absolute inset-0 bg-gradient-to-br from-[#01b47d]/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-[#01b47d]/15 to-transparent rounded-full blur-3xl group-hover:from-[#01b47d]/25 group-hover:scale-110 transition-all duration-700"></div>
                   
                   <div className="relative z-10">
                     {/* Premium Icon with Animation */}

@@ -1,4 +1,4 @@
-﻿
+
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Header } from '../../components/feature/Header';
@@ -263,8 +263,8 @@ function DealsPageOriginal() {
   };
 
   const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://example.com' },
-    { name: 'Travel Deals', url: `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/deals` }
+    { name: 'Home', url: import.meta.env.VITE_SITE_URL || 'https://stadiumport.com' },
+    { name: 'Travel Deals', url: `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/deals` }
   ]);
 
   const dealsSchema = {
@@ -272,7 +272,7 @@ function DealsPageOriginal() {
     "@type": "ItemList",
     "name": "World Cup 2026 Travel Deals",
     "description": "Exclusive travel deals and packages for World Cup 2026 across all host cities",
-    "url": `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/deals`,
+    "url": `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/deals`,
     "numberOfItems": deals.length,
     "itemListElement": deals.slice(0, 5).map((deal, index) => ({
       "@type": "Product",

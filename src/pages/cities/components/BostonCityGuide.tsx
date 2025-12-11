@@ -40,7 +40,7 @@ export function BostonCityGuide() {
 
       {/* Dynamic Meta Tags for OG/Twitter */}
       {(() => {
-        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://example.com'}/world-cup-2026-host-cities/boston-world-cup-2026-guide`;
+        const pageUrl = `${import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'}/world-cup-2026-host-cities/boston-world-cup-2026-guide`;
         const ogImage = `${import.meta.env.VITE_SITE_URL || ''}/images/cities/boston-world-cup-2026.webp`;
         const title = 'Boston World Cup 2026: Complete Travel Guide | Stadiumport';
         const description = "Highlight Boston’s mix of history and sports passion, showcasing its skyline and Gillette Stadium’s nearby location in Foxborough.";

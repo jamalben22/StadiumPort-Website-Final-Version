@@ -222,25 +222,13 @@ export default function SafetyGuidePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
       <Header />
       
       {/* Apple-Level Premium Safety Guide Hero - Matching Host Cities Style */}
-      <main id="main-content" className="relative bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900 overflow-hidden pb-20 md:pb-24 lg:pb-32">
+      <main id="main-content" className="relative bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden pb-20 md:pb-24 lg:pb-32">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-navy-950 dark:via-navy-900 dark:to-slate-900"></div>
-          <div className="absolute top-8 left-4 w-16 h-16 xs:top-10 xs:left-6 xs:w-20 xs:h-20 sm:top-16 sm:left-8 sm:w-32 sm:h-32 md:top-20 md:left-10 md:w-40 md:h-40 lg:top-24 lg:left-12 lg:w-48 lg:h-48 xl:w-64 xl:h-64 bg-red-500/5 dark:bg-red-500/10 backdrop-blur-3xl rounded-full border border-red-500/10 dark:border-red-500/20 animate-float"></div>
-          <div className="absolute top-1/2 right-4 w-20 h-20 xs:right-6 xs:w-24 xs:h-24 sm:right-8 sm:w-40 sm:h-40 md:right-10 md:w-48 md:h-48 lg:right-12 lg:w-56 lg:h-56 xl:w-96 xl:h-96 bg-orange-500/5 dark:bg-orange-500/10 backdrop-blur-3xl rounded-full border border-orange-500/10 dark:border-orange-500/20 animate-float-delayed"></div>
-          <div className="absolute bottom-1/3 left-1/2 w-16 h-16 xs:left-1/2 xs:w-20 xs:h-20 sm:left-1/2 sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 xl:w-48 xl:h-48 bg-amber-500/5 dark:bg-amber-500/10 backdrop-blur-3xl rounded-full border border-amber-500/10 dark:border-amber-500/20 -translate-x-1/2 -translate-y-1/2 animate-float-slow"></div>
-          {/* Additional floating elements for emergency section */}
-          <div className="absolute top-20 right-10 w-80 h-80 bg-gradient-to-br from-red-100/20 to-orange-100/20 dark:from-red-500/10 dark:to-orange-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
-          {/* Additional floating elements for dedicated article guides section */}
-          <div className="absolute top-1/2 right-10 w-80 h-80 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-1/2 left-10 w-96 h-96 bg-gradient-to-br from-[#01b47d]/10 to-[#01b47d]/10 dark:from-[#01b47d]/10 dark:to-[#01b47d]/10 rounded-full blur-3xl"></div>
-          {/* Additional floating elements for explore more safety guides section */}
-          <div className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-br from-slate-100/30 to-white/30 dark:from-slate-800/20 dark:to-navy-800/20 rounded-full blur-3xl"></div>
-          <div className="absolute top-20 right-10 w-96 h-96 bg-gradient-to-br from-slate-50/30 to-slate-100/30 dark:from-navy-900/20 dark:to-slate-900/20 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#0A0A0A]"></div>
         </div>
         
         <div className="relative z-10 py-32 md:py-40 lg:py-48">

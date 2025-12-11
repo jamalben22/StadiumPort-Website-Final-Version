@@ -27,19 +27,18 @@ function CanonicalManager() {
   const location = useLocation()
 
   useEffect(() => {
-    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
-    const pathname = location.pathname || '/'
+    // SEO Optimization: prevent conflict with Helmet
+    // Only set canonical if it doesn't exist or wasn't created by Helmet (data-rh)
+    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     
-    // SEO Optimization: Consolidate Prediction Game steps to the main URL
-    // This prevents duplicate content issues for /group-stage, /knockout-bracket, etc.
-    let canonicalPath = pathname;
-    if (pathname.startsWith('/world-cup-2026-prediction-game')) {
-      canonicalPath = '/world-cup-2026-prediction-game';
+    // If Helmet manages the canonical tag, do not interfere
+    if (canonical && canonical.hasAttribute('data-rh')) {
+      return
     }
 
-    const fullUrl = siteUrl.replace(/\/$/, '') + canonicalPath
+    const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com'
+    const fullUrl = siteUrl.replace(/\/$/, '') + (location.pathname || '/')
 
-    let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement | null
     if (!canonical) {
       canonical = document.createElement('link')
       canonical.setAttribute('rel', 'canonical')
