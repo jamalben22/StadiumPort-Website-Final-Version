@@ -79,9 +79,9 @@ export const HeroSection = () => {
     <section ref={containerRef} className="relative min-h-[100dvh] w-full overflow-hidden bg-[#F5F5F7] dark:bg-[#0A0A0A] text-navy-950 dark:text-white transition-colors duration-500 flex items-center justify-center">
        
        {/* Content Container */}
-       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center pt-24 pb-32 md:py-0">
+       <div className="relative z-10 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col items-center justify-center pt-32 pb-32 md:pt-48 md:pb-32">
           
-          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 md:mb-16">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-12 md:mb-20">
             {/* Badge */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}

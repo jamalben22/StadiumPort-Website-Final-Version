@@ -5,8 +5,14 @@ import { resolve } from 'node:path'
 import AutoImport from 'unplugin-auto-import/vite'
 import { apiMiddleware } from './scripts/vite-api-middleware'
 
-const base = process.env.BASE_PATH || '/'
-const isPreview = process.env.IS_PREVIEW  ? true : false;
+const rawBase = process.env.BASE_PATH
+const base = (() => {
+  if (!rawBase) return '/'
+  if (/^https?:\/\//i.test(rawBase)) return '/'
+  const normalized = rawBase.startsWith('/') ? rawBase : `/${rawBase}`
+  return normalized.endsWith('/') ? normalized : `${normalized}/`
+})()
+const isPreview = process.env.IS_PREVIEW ? true : false;
 // https://vite.dev/config/
 export default defineConfig({
   define: {
