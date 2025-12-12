@@ -128,20 +128,20 @@ export function Footer() {
           <div className="max-w-sm">
             <Link to="/" className="block mb-6 group">
             <img 
-              src="/public/images/logos/Footer Logo 400 x 100 px.svg" 
+              src="/images/Logos/footer-logo-400x100.svg" 
               alt="Stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
-              onError={(e) => { e.currentTarget.src = '/images/logos/Footer Logo 400 x 100 px.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100.svg'; }}
             />
             <img 
-              src="/public/images/logos/Footer Logo 400 x 100 px night mode.svg" 
+              src="/images/Logos/footer-logo-400x100-dark.svg" 
               alt="Stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
-              onError={(e) => { e.currentTarget.src = '/images/logos/Footer Logo 400 x 100 px night mode.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100-dark.svg'; }}
             />
           </Link>
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">
