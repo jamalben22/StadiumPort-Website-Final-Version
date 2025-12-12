@@ -5,20 +5,8 @@ import type { RouteObject } from 'react-router-dom';
 
 // Critical homepage imports directly to avoid white screen on first paint
 import HomePage from '../pages/home/page';
-const safeLazy = (importer: () => Promise<any>, timeoutMs = 10000) => lazy(() => new Promise((resolve, reject) => {
-  const fail = (err: any) => {
-    const msg = String(err?.message || err)
-    const onceKey = '__chunk_reload_once__'
-    const shouldReload = /ChunkLoadError|Failed to fetch dynamically imported module|Loading chunk \d+ failed|error loading dynamically imported module/i.test(msg)
-    if (shouldReload && typeof window !== 'undefined' && !sessionStorage.getItem(onceKey)) {
-      sessionStorage.setItem(onceKey, '1')
-      location.reload()
-    }
-    reject(err instanceof Error ? err : new Error(msg))
-  }
-  const timer = setTimeout(() => fail(new Error('Chunk load timeout')), timeoutMs)
-  importer().then(mod => { clearTimeout(timer); resolve(mod) }).catch(err => { clearTimeout(timer); fail(err) })
-}))
+// Simplified safeLazy - just a wrapper around lazy for now to debug
+const safeLazy = (importer: () => Promise<any>, _timeoutMs?: number) => lazy(importer);
 const AboutPage = safeLazy(() => import('../pages/about/page'));
 const ContactPage = safeLazy(() => import('../pages/contact/page'));
 const CitiesPage = safeLazy(() => import('../pages/cities/page'));

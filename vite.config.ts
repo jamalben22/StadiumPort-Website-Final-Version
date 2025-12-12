@@ -76,7 +76,7 @@ export default defineConfig({
       dts: true,
     }),
   ],
-  base,
+  base: '/',
   build: {
     sourcemap: true,
     outDir: 'dist',
