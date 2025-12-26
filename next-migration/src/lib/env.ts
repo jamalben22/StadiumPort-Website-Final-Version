@@ -22,7 +22,16 @@ export function validateEnv() {
   );
   
   const missingPublicEnvs = requiredPublicEnvs.filter(
-    (key) => !process.env[key]
+    (key) => {
+      // Check for NEXT_PUBLIC_ version
+      if (process.env[key]) return false;
+      
+      // Check for VITE_ fallback
+      const viteKey = key.replace('NEXT_PUBLIC_', 'VITE_');
+      if (process.env[viteKey]) return false;
+
+      return true;
+    }
   );
 
   if (missingServerEnvs.length > 0 && typeof window === 'undefined') {
@@ -55,9 +64,9 @@ export const env = {
   SECURITY: {
     JWT_SECRET: process.env.JWT_SECRET,
   },
-  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL,
+  SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || process.env.VITE_SITE_URL,
   SUPABASE: {
-    URL: process.env.NEXT_PUBLIC_SUPABASE_URL,
-    ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
+    URL: process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL,
+    ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY,
   },
 } as const;
