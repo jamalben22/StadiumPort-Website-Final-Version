@@ -98,44 +98,6 @@ const groupData: Record<string, { name: string; code: string; isWinner?: boolean
   ]
 };
 
-const cityLinks = [
-  { name: 'Mexico City', url: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide' },
-  { name: 'Guadalajara', url: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide' },
-  { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide' },
-  { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' },
-  { name: 'Vancouver', url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide' },
-  { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' },
-  { name: 'San Francisco', url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide' },
-  { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' },
-  { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' },
-  { name: 'New York/New Jersey', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-  { name: 'Miami', url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide' },
-  { name: 'Los Angeles', url: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide' },
-  { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-  { name: 'Dallas', url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide' },
-  { name: 'Kansas City', url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide' },
-  { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide' }
-];
-
-const stadiumLinks = [
-  { name: 'Estadio Azteca', url: '/world-cup-2026-stadiums/estadio-azteca-guide' },
-  { name: 'Estadio Akron', url: '/world-cup-2026-stadiums/estadio-akron-guide' },
-  { name: 'Estadio BBVA', url: '/world-cup-2026-stadiums/estadio-bbva-guide' },
-  { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' },
-  { name: 'BC Place', url: '/world-cup-2026-stadiums/bc-place-stadium-guide' },
-  { name: 'Lumen Field', url: '/world-cup-2026-stadiums/lumen-field-guide' },
-  { name: "Levi's Stadium", url: '/world-cup-2026-stadiums/levis-stadium-guide' },
-  { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' },
-  { name: 'Gillette Stadium', url: '/world-cup-2026-stadiums/gillette-stadium-guide' },
-  { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-  { name: 'Hard Rock Stadium', url: '/world-cup-2026-stadiums/hard-rock-stadium-guide' },
-  { name: 'SoFi Stadium', url: '/world-cup-2026-stadiums/sofi-stadium-guide' },
-  { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-  { name: 'AT&T Stadium', url: '/world-cup-2026-stadiums/att-stadium-guide' },
-  { name: 'Arrowhead Stadium', url: '/world-cup-2026-stadiums/arrowhead-stadium-guide' },
-  { name: 'Lincoln Financial Field', url: '/world-cup-2026-stadiums/lincoln-financial-field-guide' }
-];
-
 const faqs = [
   {
     question: "How many groups are in the 2026 World Cup?",
@@ -248,14 +210,8 @@ export default function GroupsSchedulePage() {
                 </motion.p>
 
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Link to="/world-cup-2026-travel-tips" className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold transition-all shadow-lg shadow-blue-600/20 flex items-center gap-2">
-                    Travel Tips <ArrowRight size={18} />
-                  </Link>
                   <Link to="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
                      Predictor Game <Trophy size={18} />
-                  </Link>
-                  <Link to="/world-cup-2026-safety-guide" className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white rounded-full font-bold transition-all backdrop-blur-md border border-white/10">
-                    Safety Guide
                   </Link>
                 </div>
             </div>
@@ -351,53 +307,6 @@ export default function GroupsSchedulePage() {
                ))}
              </motion.div>
           </section>
-
-          {/* Host Cities & Stadiums - SEO Internal Linking */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-24">
-             <section>
-                <div className="flex items-center gap-2 mb-8">
-                   <MapPin className="text-blue-500" size={24} />
-                   <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Host City Guides</h2>
-                </div>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {cityLinks.map((city, i) => (
-                      <li key={i}>
-                        <Link 
-                          to={city.url}
-                          className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors text-sm group"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-blue-500 transition-colors" />
-                          {city.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-             </section>
-
-             <section>
-                <div className="flex items-center gap-2 mb-8">
-                   <Globe className="text-emerald-500" size={24} />
-                   <h2 className="text-2xl font-bold text-slate-900 dark:text-white">Stadium Guides</h2>
-                </div>
-                <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800">
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {stadiumLinks.map((stadium, i) => (
-                      <li key={i}>
-                        <Link 
-                          to={stadium.url}
-                          className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors text-sm group"
-                        >
-                          <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700 group-hover:bg-emerald-500 transition-colors" />
-                          {stadium.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-             </section>
-          </div>
 
           {/* FAQ Section */}
           <section id="faq-section" className="max-w-4xl mx-auto">

@@ -454,10 +454,7 @@ export default function GroupHPage() {
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed">
                       Hard Rock is far north. Stay in <strong>Brickell</strong> or <strong>South Beach</strong> for the vibe, but take the <strong>Brightline</strong> train to Aventura + shuttle to stadium.
                     </p>
-                    <div className="flex gap-4 text-sm font-bold">
-                      <Link to="/cities/miami" className="text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 flex items-center gap-1">City Guide <ArrowRight className="w-3 h-3" /></Link>
-                      <Link to="/world-cup-2026-stadiums/hard-rock-stadium-guide" className="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">Stadium Guide</Link>
-                    </div>
+
                   </div>
 
                   {/* Atlanta */}
@@ -466,10 +463,7 @@ export default function GroupHPage() {
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed">
                       The stadium is downtown. Stay in <strong>Midtown</strong> or <strong>Downtown</strong>. You can walk or take the MARTA train directly to the gate.
                     </p>
-                    <div className="flex gap-4 text-sm font-bold">
-                      <Link to="/cities/atlanta" className="text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 flex items-center gap-1">City Guide <ArrowRight className="w-3 h-3" /></Link>
-                      <Link to="/world-cup-2026-stadiums/mercedes-benz-stadium-guide" className="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">Stadium Guide</Link>
-                    </div>
+
                   </div>
 
                   {/* Houston */}
@@ -478,10 +472,7 @@ export default function GroupHPage() {
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed">
                       NRG is south of the city. Stay near the <strong>Medical Center</strong> for proximity or <strong>Downtown</strong> for nightlife (connected by METRORail).
                     </p>
-                    <div className="flex gap-4 text-sm font-bold">
-                      <Link to="/cities/houston" className="text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 flex items-center gap-1">City Guide <ArrowRight className="w-3 h-3" /></Link>
-                      <Link to="/world-cup-2026-stadiums/nrg-stadium-guide" className="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">Stadium Guide</Link>
-                    </div>
+
                   </div>
 
                   {/* Guadalajara */}
@@ -490,10 +481,7 @@ export default function GroupHPage() {
                     <p className="text-slate-600 dark:text-slate-300 text-sm mb-6 leading-relaxed">
                       Akron is on the outskirts. Stay in <strong>Zapopan</strong> for luxury or <strong>Centro Histórico</strong> for culture. Rely on Uber/Didi.
                     </p>
-                    <div className="flex gap-4 text-sm font-bold">
-                      <Link to="/cities/guadalajara" className="text-fuchsia-600 dark:text-fuchsia-400 hover:text-fuchsia-700 dark:hover:text-fuchsia-300 flex items-center gap-1">City Guide <ArrowRight className="w-3 h-3" /></Link>
-                      <Link to="/world-cup-2026-stadiums/estadio-akron-guide" className="text-slate-500 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200">Stadium Guide</Link>
-                    </div>
+
                   </div>
                 </div>
 

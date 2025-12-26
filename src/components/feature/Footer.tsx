@@ -75,8 +75,6 @@ export function Footer() {
     {
       title: 'Explore',
       links: [
-        { label: 'Host Cities', to: '/world-cup-2026-host-cities' },
-        { label: 'Stadiums', to: '/world-cup-2026-stadiums' },
         { label: 'Groups & Teams', to: '/world-cup-2026-groups' },
         { label: 'Prediction Game', to: '/world-cup-2026-prediction-game' },
       ]
@@ -84,10 +82,9 @@ export function Footer() {
     {
       title: 'Planning',
       links: [
-        { label: 'Travel Tips', to: '/world-cup-2026-travel-tips' },
-        { label: 'Safety Guide', to: '/world-cup-2026-safety-guide' },
         { label: 'Draw Travel Hub', to: '/2026-world-cup-draw-travel-hub' },
-        { label: 'Deals & Offers', to: '/deals' },
+        { label: 'Travel Tips', to: '/travel-tips' },
+        { label: 'Safety Guide', to: '/safety-guide' },
       ]
     },
     {

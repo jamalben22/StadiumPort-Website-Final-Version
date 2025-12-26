@@ -6,7 +6,7 @@ import { Button } from '../components/base/Button';
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] transition-colors duration-500">
       <Header />
       
       <div className="flex flex-col items-center justify-center min-h-[80vh] text-center px-4 pt-24">
@@ -35,15 +35,9 @@ export default function NotFound() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link to="/">
-              <Button variant="primary" size="lg">
-                <i className="ri-home-line mr-2"></i>
-                Back to Home
-              </Button>
-            </Link>
-            <Link to="/world-cup-2026-host-cities">
               <Button variant="outline" size="lg">
-                <i className="ri-map-pin-line mr-2"></i>
-                Explore Cities
+                <i className="ri-home-4-line mr-2"></i>
+                Go Home
               </Button>
             </Link>
           </div>

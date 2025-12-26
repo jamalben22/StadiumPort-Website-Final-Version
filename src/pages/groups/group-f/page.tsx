@@ -431,7 +431,7 @@ export default function GroupFPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                       Stay in <strong>Arlington</strong> for match ease, or <strong>Uptown Dallas</strong> for nightlife. The stadium is isolated from the city center.
                     </p>
-                    <Link to="/cities/dallas" className="text-orange-600 dark:text-orange-400 font-bold text-sm hover:underline">Dallas City Guide →</Link>
+
                   </div>
 
                   <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
@@ -440,7 +440,7 @@ export default function GroupFPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                       Stay near the <strong>METRORail Red Line</strong> (Downtown/Midtown) to reach NRG Stadium without parking headaches.
                     </p>
-                    <Link to="/cities/houston" className="text-orange-600 dark:text-orange-400 font-bold text-sm hover:underline">Houston City Guide →</Link>
+
                   </div>
                   
                   <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
@@ -449,7 +449,7 @@ export default function GroupFPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                       San Pedro Garza García is the safest, most upscale district. Avoid outskirts at night.
                     </p>
-                    <Link to="/cities/monterrey" className="text-orange-600 dark:text-orange-400 font-bold text-sm hover:underline">Monterrey City Guide →</Link>
+
                   </div>
 
                   <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
@@ -458,7 +458,7 @@ export default function GroupFPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed">
                       Stay in <strong>Power & Light District</strong>. You MUST drive or shuttle to Arrowhead (no train).
                     </p>
-                    <Link to="/cities/kansas-city" className="text-orange-600 dark:text-orange-400 font-bold text-sm hover:underline">KC City Guide →</Link>
+
                   </div>
                 </div>
 
@@ -667,9 +667,6 @@ export default function GroupFPage() {
                     Group F offers some of the most intense atmospheres in the tournament. Prepare for the heat, and you'll have the time of your life.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-orange-600 hover:bg-orange-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-orange-500/30 text-base">
-                      Explore All Host Cities
-                    </Link>
                     <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
                       Start My Trip Plan
                     </Link>

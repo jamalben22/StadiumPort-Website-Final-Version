@@ -8,14 +8,12 @@
     "npm": ">=8.0.0"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "npm run images && vite build",
-    "build:ssg": "npm run build && node scripts/prerender-auto.mjs && node scripts/generate-sitemap.mjs",
-    "preview": "vite preview",
+    "dev": "npm run dev --prefix next-migration",
+    "build": "npm run build --prefix next-migration",
+    "start": "npm run start --prefix next-migration",
     "images": "node scripts/generate-variants.mjs && node scripts/generate-lqip.mjs",
     "lqip": "node scripts/generate-lqip.mjs",
     "postinstall": "echo 'Installation complete'",
-    "vercel-build": "npm run build:ssg",
     "validate:sd": "node scripts/validate-structured-data.mjs"
   },
   "dependencies": {

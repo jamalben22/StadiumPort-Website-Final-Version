@@ -401,14 +401,6 @@ export default function GroupGPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed relative z-10">
                       Compact and walkable. Stay in <strong>Yaletown</strong> or <strong>Gastown</strong> to walk to BC Place.
                     </p>
-                    <div className="flex flex-col gap-3 relative z-10">
-                      <Link to="/cities/vancouver" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline flex items-center gap-2">
-                        City Guide <ArrowRight className="w-4 h-4" />
-                      </Link>
-                      <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-800 dark:hover:text-white transition-colors">
-                        View BC Place Guide
-                      </Link>
-                    </div>
                   </div>
 
                   {/* Seattle */}
@@ -418,14 +410,6 @@ export default function GroupGPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed relative z-10">
                       Lumen Field is downtown. Stay in <strong>Pioneer Square</strong> (loud) or near <strong>Westlake</strong> (transit).
                     </p>
-                    <div className="flex flex-col gap-3 relative z-10">
-                      <Link to="/cities/seattle" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline flex items-center gap-2">
-                        City Guide <ArrowRight className="w-4 h-4" />
-                      </Link>
-                      <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-800 dark:hover:text-white transition-colors">
-                        View Lumen Field Guide
-                      </Link>
-                    </div>
                   </div>
 
                   {/* Los Angeles */}
@@ -435,14 +419,6 @@ export default function GroupGPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-6 leading-relaxed relative z-10">
                       SoFi is in Inglewood. Stay in <strong>Santa Monica</strong> (beach) or near <strong>LAX</strong> (convenience).
                     </p>
-                    <div className="flex flex-col gap-3 relative z-10">
-                      <Link to="/cities/los-angeles" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline flex items-center gap-2">
-                        City Guide <ArrowRight className="w-4 h-4" />
-                      </Link>
-                      <Link to="/world-cup-2026-stadiums/sofi-stadium-guide" className="text-slate-500 dark:text-slate-400 text-sm hover:text-slate-800 dark:hover:text-white transition-colors">
-                        View SoFi Stadium Guide
-                      </Link>
-                    </div>
                   </div>
                 </div>
 

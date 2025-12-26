@@ -268,7 +268,7 @@ export default function GroupCPage() {
                     Group C offers the highest density of world-class stadiums and the easiest regional travel in the tournament—if you stay North.
                   </p>
                   <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
-                    The group is split into two distinct zones: the <strong className="text-slate-900 dark:text-white">"Northeast Corridor"</strong> (<Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Boston</Link>, <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">NY/NJ</Link>, <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Philadelphia</Link>) and the <strong className="text-slate-900 dark:text-white">"Southern Heat"</strong> (<Link to="/world-cup-2026-host-cities/atlanta-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Atlanta</Link>, <Link to="/world-cup-2026-host-cities/miami-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Miami</Link>).
+                    The group is split into two distinct zones: the <strong className="text-slate-900 dark:text-white">"Northeast Corridor"</strong> (Boston, NY/NJ, Philadelphia) and the <strong className="text-slate-900 dark:text-white">"Southern Heat"</strong> (Atlanta, Miami).
                   </p>
                 </div>
                 
@@ -719,9 +719,6 @@ export default function GroupCPage() {
                     From the historic north to the tropical south, Group C is a journey of contrasts. Start planning your logistics now.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-emerald-500/30 text-base">
-                      Explore All Host Cities
-                    </Link>
                     <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
                       Start My Trip Plan
                     </Link>

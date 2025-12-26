@@ -274,7 +274,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
         </div>
 
         <div className="mt-12 pt-8 border-t border-white/10 text-center">
-           <p className="text-slate-500 text-xs font-medium leading-relaxed">
+           <div className="text-slate-500 text-xs font-medium leading-relaxed">
              <span className="text-slate-300">Official World Cup 2026 Prediction Challenge</span> · <span className="text-white font-bold uppercase tracking-widest">STADIUMPORT</span> <br />
              <div className="flex flex-wrap justify-center gap-4 mt-4">
                <Link to="/world-cup-2026-prediction-contest-terms" className="text-indigo-400 hover:text-indigo-300 transition-colors">Terms & Conditions</Link>
@@ -284,7 +284,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
              <div className="mt-4 text-slate-600">
                Updated: Nov 28, 2025 · Opens: Nov 28, 2025 · Predictions lock: Jun 11, 2026
              </div>
-           </p>
+           </div>
         </div>
       </div>
     </div>

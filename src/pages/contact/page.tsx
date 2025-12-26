@@ -63,7 +63,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
       <SchemaOrg schema={[breadcrumbSchema, organizationSchema]} />
       <Header />
 
@@ -229,8 +229,8 @@ export default function ContactPage() {
                       <span className="text-sm font-semibold text-slate-600 dark:text-slate-400 group-hover:text-indigo-600 dark:group-hover:text-indigo-400">1</span>
                     </div>
                     <div>
-                       <p className="text-slate-900 dark:text-white font-medium mb-0.5">Venue Questions?</p>
-                       <p className="text-sm text-slate-600 dark:text-slate-400">Check our <a href="/world-cup-2026-stadiums" className="text-indigo-600 dark:text-indigo-400 hover:underline">Stadium Guides</a> first.</p>
+                       <p className="text-slate-900 dark:text-white font-medium mb-0.5">Group Questions?</p>
+                       <p className="text-sm text-slate-600 dark:text-slate-400">Check our <a href="/world-cup-2026-groups" className="text-indigo-600 dark:text-indigo-400 hover:underline">Group Guides</a> first.</p>
                     </div>
                   </li>
                   <li className="flex gap-4 group">
@@ -239,7 +239,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                        <p className="text-slate-900 dark:text-white font-medium mb-0.5">Travel Planning?</p>
-                       <p className="text-sm text-slate-600 dark:text-slate-400">See <a href="/world-cup-2026-host-cities" className="text-indigo-600 dark:text-indigo-400 hover:underline">Host City Guides</a> for local tips.</p>
+                       <p className="text-sm text-slate-600 dark:text-slate-400">Start with our <a href="/planner" className="text-indigo-600 dark:text-indigo-400 hover:underline">Trip Planner</a>.</p>
                     </div>
                   </li>
                 </ul>

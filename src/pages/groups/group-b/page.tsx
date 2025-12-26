@@ -275,7 +275,7 @@ export default function GroupBPage() {
                     Group B represents the ultimate logistical challenge and reward of World Cup 2026. Unlike the compact Texas or East Coast clusters, Group B demands a cross-continental strategy that spans the cultural divide of North America.
                   </p>
                   <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
-                    You aren't just watching football; you are embarking on a 2,500-mile odyssey. You will start (or end) in the cosmopolitan bustle of <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Toronto</Link>, cross the Rockies to the stunning waterfronts of <Link to="/world-cup-2026-host-cities/vancouver-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Vancouver</Link> and <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">Seattle</Link>, and conclude in the tech capital of the world, the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-emerald-600 hover:text-emerald-500 font-semibold underline decoration-emerald-200 dark:decoration-emerald-800 underline-offset-4 decoration-2">San Francisco Bay Area</Link>.
+                    You aren't just watching football; you are embarking on a 2,500-mile odyssey. You will start (or end) in the cosmopolitan bustle of Toronto, cross the Rockies to the stunning waterfronts of Vancouver and Seattle, and conclude in the tech capital of the world, the San Francisco Bay Area.
                   </p>
                 </div>
                 
@@ -413,7 +413,7 @@ export default function GroupBPage() {
                 </div>
                 
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
-                  Each city presents a unique lodging puzzle. Toronto hotels are expensive but central. The Bay Area requires strategic positioning to avoid 2-hour commutes to <Link to="/world-cup-2026-stadiums/levis-stadium-guide" className="text-emerald-600 font-medium hover:underline decoration-2 underline-offset-2">Levi's Stadium</Link>.
+                  Each city presents a unique lodging puzzle. Toronto hotels are expensive but central. The Bay Area requires strategic positioning to avoid 2-hour commutes to Levi's Stadium.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -427,7 +427,7 @@ export default function GroupBPage() {
                     <ul className="space-y-4 mb-8">
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                        <span><strong>Best Area:</strong> Entertainment District (Walkable to <Link to="/world-cup-2026-stadiums/bmo-field-guide" className="text-emerald-600 hover:underline decoration-2 underline-offset-2">BMO Field</Link>)</span>
+                        <span><strong>Best Area:</strong> Entertainment District (Walkable to BMO Field)</span>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
@@ -453,7 +453,7 @@ export default function GroupBPage() {
                     <ul className="space-y-4 mb-8">
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                        <span><strong>Best Area:</strong> Yaletown or Gastown (Walkable to <Link to="/world-cup-2026-stadiums/bc-place-stadium-guide" className="text-emerald-600 hover:underline decoration-2 underline-offset-2">BC Place</Link>)</span>
+                        <span><strong>Best Area:</strong> Yaletown or Gastown (Walkable to BC Place)</span>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
@@ -479,7 +479,7 @@ export default function GroupBPage() {
                     <ul className="space-y-4 mb-8">
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
-                        <span><strong>Best Area:</strong> Pioneer Square (Adjacent to <Link to="/world-cup-2026-stadiums/lumen-field-guide" className="text-emerald-600 hover:underline decoration-2 underline-offset-2">Lumen Field</Link>)</span>
+                        <span><strong>Best Area:</strong> Pioneer Square (Adjacent to Lumen Field)</span>
                       </li>
                       <li className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
                         <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 mt-2 shrink-0"></div>
@@ -777,13 +777,10 @@ export default function GroupBPage() {
                     The journey of a lifetime starts with a single booking. Don't let logistics defeat you before the kickoff.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-emerald-500/30 text-base">
-                      Explore All Host Cities
-                    </Link>
-                    <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
-                      Start My Trip Plan
-                    </Link>
-                  </div>
+          <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
+            Start My Trip Plan
+          </Link>
+        </div>
                 </div>
               </div>
 

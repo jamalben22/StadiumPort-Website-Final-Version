@@ -1,0 +1,268 @@
+import React, { useMemo, useCallback } from 'react';
+import { useGame } from '../context/GameContext';
+import { TEAMS, TEAM_MAP } from '../lib/wc26-data';
+import { motion, AnimatePresence } from 'framer-motion';
+import { SEO } from '../../../components/common/SEO';
+import { SchemaOrg } from '../../../components/seo/SchemaOrg';
+
+interface ThirdPlaceCardProps {
+  groupId: string;
+  team: typeof TEAMS[0];
+  isSelected: boolean;
+  isLockedOut: boolean;
+  onToggle: (teamId: string) => void;
+}
+
+const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onToggle }: ThirdPlaceCardProps) => {
+  return (
+    <motion.div
+      layout
+      onClick={() => !isLockedOut && onToggle(team.id)}
+      whileHover={!isLockedOut ? { scale: isSelected ? 1.08 : 0.98 } : {}}
+      whileTap={!isLockedOut ? { scale: 0.95 } : {}}
+      className={`
+        relative cursor-pointer group h-64 md:h-80 rounded-xl overflow-hidden transition-all duration-300 ease-out min-h-[44px] min-w-[44px]
+        ${isSelected 
+          ? 'z-10 ring-2 ring-yellow-400 shadow-[0_0_30px_rgba(250,204,21,0.3)] grayscale-0 brightness-110 scale-105' 
+          : isLockedOut
+            ? 'grayscale opacity-30 scale-90 cursor-not-allowed'
+            : 'grayscale brightness-100 scale-95 hover:brightness-110 hover:scale-100 border border-white/20'
+        }
+      `}
+    >
+      {/* Background Image/Flag */}
+      <div className="absolute inset-0 bg-white/90">
+          {/* Large faded flag background */}
+          {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+             <div className="absolute inset-0 w-full h-full flex items-center justify-center opacity-10">
+                <span className="text-6xl font-black text-slate-900">FIFA</span>
+             </div>
+          ) : (
+             <img 
+               src={team.flagUrl} 
+               alt={team.name} 
+               loading="lazy"
+               className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+             />
+          )}
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent opacity-80" />
+      </div>
+
+      {/* Card Content */}
+      <div className="absolute inset-0 p-4 flex flex-col justify-between">
+        {/* Top: Group Badge */}
+        <div className="flex justify-between items-start">
+          <div className={`
+            px-2 py-1 text-xs font-bold font-mono rounded border
+            ${isSelected 
+              ? 'bg-yellow-500 text-black border-yellow-400' 
+              : 'bg-white/80 text-slate-600 border-white/40'}
+          `}>
+            GROUP {groupId}
+          </div>
+          
+          {isSelected && (
+            <motion.div 
+              initial={{ scale: 0 }} 
+              animate={{ scale: 1 }}
+              className="bg-yellow-500 text-black rounded-full p-1 shadow-lg"
+            >
+              <i className="ri-check-line font-bold"></i>
+            </motion.div>
+          )}
+        </div>
+
+        {/* Center: Team Flag (Clean) */}
+        <div className="self-center transform transition-transform duration-500 group-hover:scale-110">
+            {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
+               <div className={`
+                 w-20 h-20 rounded-full flex items-center justify-center bg-slate-800 shadow-2xl border-4
+                 ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
+               `}>
+                  <span className="text-xs font-bold text-slate-400">FIFA</span>
+               </div>
+            ) : (
+                <img 
+                src={team.flagUrl} 
+                alt={team.name} 
+                className={`
+                  w-20 h-20 rounded-full object-cover shadow-2xl border-4 
+                  ${isSelected ? 'border-yellow-400' : 'border-white'}
+                `}
+              />
+            )}
+        </div>
+
+        {/* Bottom: Name */}
+        <div className="text-center">
+          <h3 className={`
+            font-display font-bold text-2xl uppercase tracking-tighter leading-none mb-1
+            ${isSelected ? 'text-yellow-600 drop-shadow-sm' : 'text-slate-800'}
+          `}>
+            {team.name}
+          </h3>
+          <p className="text-xs text-slate-500 font-mono uppercase tracking-wide">
+            {team.region}
+          </p>
+        </div>
+      </div>
+      
+      {/* Scanline effect for unselected */}
+      {!isSelected && (
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjMDAwIiBmaWxsLW9wYWNpdHk9IjAuMSIvPgo8cGF0aCBkPSJNMSAxSDJWMkgxVjFabTEgMUgyVjNIMlYyIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDUiLz4KPC9zdmc+')] opacity-10 pointer-events-none" />
+      )}
+    </motion.div>
+  );
+});
+
+export const ThirdPlaceSelector = React.memo(() => {
+  const { groupStandings, thirdPlacePicks, setThirdPlacePicks, setCurrentStep } = useGame();
+  
+  // 1. Identify the 12 teams in 3rd position
+  const thirdPlaceTeams = useMemo(() => Object.entries(groupStandings).map(([groupId, teamIds]) => {
+    const teamId = teamIds[2]; // 3rd team (index 2)
+    const team = teamId ? TEAM_MAP.get(teamId) : undefined;
+    return { groupId, team };
+  }).filter(item => item.team !== undefined) as { groupId: string, team: typeof TEAMS[0] }[], [groupStandings]);
+
+  const selectedCount = thirdPlacePicks.length;
+  const isComplete = selectedCount === 8;
+
+  // Sound Optimization: Reuse AudioContext
+  const audioCtxRef = React.useRef<AudioContext | null>(null);
+
+  const playClickSound = useCallback(() => {
+    try {
+      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      if (!AudioContext) return;
+      
+      if (!audioCtxRef.current) {
+        audioCtxRef.current = new AudioContext();
+      }
+      
+      const ctx = audioCtxRef.current;
+      // Resume if suspended (browser policy)
+      if (ctx.state === 'suspended') {
+        ctx.resume();
+      }
+
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      
+      // High-pitch "digital" blip
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(800, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(1200, ctx.currentTime + 0.05);
+      
+      gain.gain.setValueAtTime(0.1, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+      
+      osc.start();
+      osc.stop(ctx.currentTime + 0.05);
+    } catch (e) {
+      // Audio autoplay might be blocked or not supported
+    }
+  }, []);
+
+  const toggleSelection = useCallback((teamId: string) => {
+    if (thirdPlacePicks.includes(teamId)) {
+      // Deselect
+      playClickSound();
+      setThirdPlacePicks(thirdPlacePicks.filter((id: string) => id !== teamId));
+    } else {
+      // Select (only if under limit)
+      if (selectedCount < 8) {
+        playClickSound();
+        setThirdPlacePicks([...thirdPlacePicks, teamId]);
+      }
+    }
+  }, [thirdPlacePicks, selectedCount, setThirdPlacePicks, playClickSound]);
+
+  return (
+    <>
+      <SEO 
+        title="Select Best Third Place Teams | World Cup 2026 Prediction"
+        description="Choose the 8 best third-place teams to advance to the knockout rounds. The new 2026 World Cup format makes every match count!"
+        keywords={["third place qualifiers", "world cup 2026 format", "bracket challenge rules", "FIFA 2026 prediction"]}
+        url="/world-cup-2026-prediction-game/third-place-qualifiers"
+      />
+      <SchemaOrg schema={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Select Best Third Place Teams",
+        "description": "Interactive selection tool for World Cup 2026 third-place qualifiers.",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game/third-place-qualifiers",
+        "isPartOf": {
+          "@type": "SportsEvent",
+          "name": "World Cup 2026 Prediction Game"
+        }
+      }} />
+    <div className="w-full px-4 py-8 space-y-8 pb-8">
+      <div className="max-w-7xl mx-auto space-y-8">
+      {/* Header Section */}
+      <div className="text-center space-y-6">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+          <span className="text-[11px] font-bold text-slate-600 uppercase tracking-[0.22em] font-['Rajdhani']">
+            Step 2 of 5: Select Best Third-Place Qualifiers
+          </span>
+        </div>
+        <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-sm">
+          Third-Place Qualifiers: Pick the 8 Teams Advancing to Round of 32
+        </h2>
+        
+        {/* Progress Bar Counter */}
+        <div className="flex items-center justify-center gap-2 md:gap-3">
+          {[...Array(8)].map((_, i) => (
+            <div
+              key={i}
+              className={`
+                h-4 w-8 md:w-12 skew-x-[-20deg] border border-white/20 transition-all duration-300
+                ${i < selectedCount 
+                  ? 'bg-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.6)] border-yellow-200' 
+                  : 'bg-white/10 backdrop-blur-sm'
+                }
+              `}
+            />
+          ))}
+        </div>
+        
+        <p className="text-white/60 font-mono text-sm uppercase tracking-widest">
+          {selectedCount} / 8 Third-Place Teams Selected
+        </p>
+      </div>
+
+      {/* Character Select Grid */}
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6">
+        {thirdPlaceTeams.map(({ groupId, team }) => {
+          const isSelected = thirdPlacePicks.includes(team.id);
+          // If not selected and we have 8 picks, dim it out but keep it interactive-ish (maybe showing it's disabled)
+          const isLockedOut = !isSelected && selectedCount >= 8;
+
+          return (
+            <ThirdPlaceCard
+              key={team.id}
+              groupId={groupId}
+              team={team}
+              isSelected={isSelected}
+              isLockedOut={isLockedOut}
+              onToggle={toggleSelection}
+            />
+          );
+        })}
+      </div>
+
+      </div>
+
+      {/* Spacer */}
+      <div className="h-32"></div>
+    </div>
+    </>
+  );
+});
+
+export default ThirdPlaceSelector;
