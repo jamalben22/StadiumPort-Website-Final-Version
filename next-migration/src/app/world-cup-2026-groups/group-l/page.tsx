@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import GroupLClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas | Stadiumport',
