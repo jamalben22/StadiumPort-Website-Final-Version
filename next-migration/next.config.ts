@@ -12,6 +12,12 @@ try {
 }
 
 const nextConfig: NextConfig = {
+  env: {
+    // Map VITE_ variables to NEXT_PUBLIC_ variables for backward compatibility
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || process.env.VITE_SITE_URL,
+    NEXT_PUBLIC_SUPABASE_URL: process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.VITE_SUPABASE_URL,
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || process.env.VITE_SUPABASE_ANON_KEY,
+  },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
