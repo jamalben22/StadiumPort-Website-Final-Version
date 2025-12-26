@@ -3,10 +3,16 @@ import { sendEmail } from '@/lib/email';
 import { getStadiumportEmailHtml } from '@/lib/email-templates';
 import { supabase } from '@/lib/supabase';
 
+// Force dynamic rendering for this route
 export const dynamic = 'force-dynamic';
 
+// Email API configuration
+const EMAIL_API_VERSION = '1.0.0';
+
 export async function POST(req: NextRequest) {
-  console.log('Send Email API route initialized');
+  const requestId = crypto.randomUUID();
+  console.log(`[${requestId}] Send Email API processing started`);
+  
   try {
     const body = await req.json();
     const { type, data } = body;
