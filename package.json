@@ -72,6 +72,7 @@
     "sharp": "^0.33.5",
     "source-map": "^0.7.6",
     "tailwindcss": "^3.4.17",
+    "next": "16.0.10",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.35.1",
     "unplugin-auto-import": "^19.3.0",
