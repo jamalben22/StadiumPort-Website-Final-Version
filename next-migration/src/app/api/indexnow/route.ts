@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { submitToIndexNow, INDEXNOW_API_KEY } from '@/lib/indexnow';
 import { getAllRoutes } from '@/data/routes';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(request: NextRequest) {
+  console.log('IndexNow API route initialized');
   try {
     const body = await request.json();
     const { urls, apiKey, action } = body;
