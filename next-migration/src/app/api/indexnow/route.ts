@@ -2,48 +2,66 @@ import { NextRequest, NextResponse } from 'next/server';
 import { submitToIndexNow, INDEXNOW_API_KEY } from '@/lib/indexnow';
 import { getAllRoutes } from '@/data/routes';
 
+// Force dynamic to prevent static optimization
 export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
-export async function POST(request: NextRequest) {
-  console.log('IndexNow API route initialized');
-  try {
-    const body = await request.json();
+/**
+ * Service class to handle IndexNow operations
+ * This structure helps differentiate this route from others during build optimization
+ */
+class IndexNowService {
+  static async validateKey(key: string): Promise<boolean> {
+    return key === INDEXNOW_API_KEY;
+  }
+
+  static async processRequest(body: any) {
     const { urls, apiKey, action } = body;
-
-    // Security check
-    if (apiKey !== INDEXNOW_API_KEY) {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    
+    if (!await this.validateKey(apiKey)) {
+      throw new Error('Unauthorized');
     }
 
     let urlsToSubmit: string[] = [];
 
     if (action === 'submit-all') {
+      console.log('Action: submit-all - Fetching all routes...');
       urlsToSubmit = getAllRoutes();
     } else {
       if (!urls || !Array.isArray(urls)) {
-        return NextResponse.json({ success: false, message: 'Invalid payload: urls must be an array, or use action: "submit-all"' }, { status: 400 });
+        throw new Error('Invalid payload: urls must be an array');
       }
       urlsToSubmit = urls;
     }
 
-    if (urlsToSubmit.length === 0) {
-      return NextResponse.json({ success: false, message: 'No URLs to submit' }, { status: 400 });
+    return await submitToIndexNow(urlsToSubmit);
+  }
+}
+
+export async function POST(request: NextRequest) {
+  const timestamp = new Date().toISOString();
+  console.log(`[${timestamp}] IndexNow API route invoked`);
+  
+  try {
+    const body = await request.json();
+    const result = await IndexNowService.processRequest(body);
+    
+    return NextResponse.json({ 
+      ...result, 
+      service: 'IndexNow-v1',
+      timestamp 
+    });
+  } catch (error: any) {
+    console.error('IndexNow Error:', error);
+    
+    if (error.message === 'Unauthorized') {
+      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+    }
+    
+    if (error.message.startsWith('Invalid payload')) {
+      return NextResponse.json({ success: false, message: error.message }, { status: 400 });
     }
 
-    // IndexNow recommends submitting in batches of up to 10,000. 
-    // Our site is small enough to submit all at once, but good to keep in mind.
-    const result = await submitToIndexNow(urlsToSubmit);
-
-    if (result.success) {
-      return NextResponse.json({ 
-        ...result, 
-        count: urlsToSubmit.length 
-      });
-    } else {
-      return NextResponse.json(result, { status: result.statusCode || 500 });
-    }
-  } catch (error) {
-    console.error('API Error:', error);
     return NextResponse.json({ success: false, message: 'Internal Server Error' }, { status: 500 });
   }
 }
