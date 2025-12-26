@@ -13,8 +13,6 @@ import {
  Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
  Anchor, CloudRain, Thermometer
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
 
 // --- Design System & Components ---
 
@@ -229,7 +227,6 @@ export default function ClientPage() {
 
  return (
  <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
- <Header />
  {/* SaveGuideButton removed */}
  <SocialShare />
 
@@ -765,18 +762,11 @@ export default function ClientPage() {
  </div>
  </Section>
 
- <footer className="mt-24 pb-12 border-t border-slate-200 dark:border-slate-800 pt-12 text-center text-slate-500 text-sm">
- <p>© 2026 Stadiumport. All rights reserved.</p>
- <p className="mt-2">Lumen Field Stadium Guide</p>
- </footer>
-
  </main>
  </div>
- <Footer />
  </div>
  );
 }
-
 
 
 

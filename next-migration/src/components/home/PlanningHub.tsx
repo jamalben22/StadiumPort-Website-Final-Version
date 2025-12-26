@@ -43,8 +43,8 @@ export const PlanningHub = () => {
         </div>
 
         {/* Tab Navigation - Apple-style Segmented Control */}
-        <div className="flex justify-center mb-16">
-            <div className="inline-flex bg-slate-200/50 dark:bg-white/10 p-1.5 rounded-full backdrop-blur-md">
+        <div className="flex justify-center mb-12 md:mb-16 overflow-x-auto pb-4 md:pb-0 no-scrollbar">
+            <div className="inline-flex bg-slate-200/50 dark:bg-white/10 p-1.5 rounded-full backdrop-blur-md whitespace-nowrap">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}

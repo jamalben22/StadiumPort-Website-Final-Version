@@ -90,7 +90,7 @@ export const TrustSection = () => {
                 TRUSTED BY READERS OF
             </motion.p>
             
-            <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-8 md:gap-x-20 opacity-30 dark:opacity-20 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-8 md:gap-x-20 opacity-30 dark:opacity-20 grayscale hover:grayscale-0 transition-all duration-700">
                {brands.map((brand, i) => (
                  <motion.span 
                    key={i}

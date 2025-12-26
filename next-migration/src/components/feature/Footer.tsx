@@ -130,11 +130,11 @@ export function Footer() {
   ];
 
   return (
-    <footer className="bg-[#EDEDED] dark:bg-[#000000] text-slate-900 dark:text-white border-t border-slate-200 dark:border-white/10 transition-colors duration-500">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-8 pt-20 pb-12">
+    <footer className="relative z-10 bg-[#EDEDED] dark:bg-[#000000] text-slate-900 dark:text-white border-t border-slate-200 dark:border-white/10 transition-colors duration-500 touch-pan-y">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-12 pt-16 pb-[calc(3rem+env(safe-area-inset-bottom))]">
         
         {/* Top Section: Brand & Newsletter */}
-        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24 mb-20">
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-24 mb-16 lg:mb-24">
           
           {/* Brand Identity */}
           <div className="max-w-sm">
@@ -204,16 +204,16 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-16" />
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-12 md:mb-16" />
 
-        {/* Links Grid - 4 Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-12 mb-20">
+        {/* Links Grid - 2 Columns on Mobile, 4 on Desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-16 lg:mb-24">
           {footerSections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-4">
+            <div key={section.title} className="flex flex-col gap-6">
               <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">
                 {section.title}
               </h3>
-              <ul className="flex flex-col gap-3">
+              <ul className="flex flex-col gap-3.5">
                 {section.links.map((link) => (
                   <li key={link.label}>
                     <Link 
@@ -230,12 +230,12 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-slate-400 dark:text-slate-500">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-200 dark:border-white/5">
+          <p className="text-xs text-slate-400 dark:text-slate-500 order-2 md:order-1">
             © {currentYear} Stadiumport. All rights reserved.
           </p>
           
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-6 order-1 md:order-2">
             {socialLinks.map((social) => (
               <a 
                 key={social.label}

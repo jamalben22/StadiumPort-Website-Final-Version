@@ -13,7 +13,6 @@ import {
  Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
  Ship
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
 
 // --- Design System & Components ---
 
@@ -229,7 +228,6 @@ export default function ClientPage() {
 
  return (
     <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
- <Header />
  {/* SaveGuideButton removed */}
  <SocialShare />
 
@@ -769,17 +767,11 @@ export default function ClientPage() {
  </div>
  </Section>
 
- <footer className="mt-24 pb-12 border-t border-slate-200 dark:border-slate-800 pt-12 text-center text-slate-500 text-sm">
- <p>© 2026 Stadiumport. All rights reserved.</p>
- <p className="mt-2">Seattle Host City Guide</p>
- </footer>
-
  </main>
     </div>
   </div>
 );
 }
-
 
 
 
