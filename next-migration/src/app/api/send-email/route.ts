@@ -3,7 +3,10 @@ import { sendEmail } from '@/lib/email';
 import { getStadiumportEmailHtml } from '@/lib/email-templates';
 import { supabase } from '@/lib/supabase';
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
+  console.log('Send Email API route initialized');
   try {
     const body = await req.json();
     const { type, data } = body;
