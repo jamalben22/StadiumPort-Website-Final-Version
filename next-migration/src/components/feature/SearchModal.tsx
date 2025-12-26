@@ -78,6 +78,11 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'f2', type: 'page', title: 'Draw Hub', description: 'Travel guide based on draw', path: '/world-cup-2026-draw-travel-hub', icon: MapPin },
 ];
 
+interface SearchModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
 export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
