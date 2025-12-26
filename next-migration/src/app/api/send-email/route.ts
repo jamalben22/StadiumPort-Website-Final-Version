@@ -10,6 +10,7 @@ export async function POST(req: NextRequest) {
     const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
     const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
 
+    // Log request type for debugging
     console.log(`🚀 API Request Received: ${type}`);
 
     if (type === 'predictor-signup') {
