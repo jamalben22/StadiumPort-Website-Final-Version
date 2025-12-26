@@ -2,8 +2,26 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+
 html {
   scroll-behavior: smooth;
+}
+
+/* Global Interactive Cursor */
+button, 
+a, 
+input[type="button"], 
+input[type="submit"], 
+input[type="reset"], 
+[role="button"] {
+  cursor: pointer;
 }
 
 /* Enable class-based dark mode */

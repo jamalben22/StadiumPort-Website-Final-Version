@@ -12,6 +12,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
   border?: boolean;
   shadow?: 'none' | 'sm' | 'md' | 'lg' | 'xl' | 'premium' | 'ultra' | 'cosmic' | 'aurora' | 'diamond' | 'holographic' | 'quantum' | 'ethereal' | 'cyber' | 'matrix' | 'plasma' | 'stellar';
   effect?: 'none' | 'shimmer' | 'glow' | 'pulse' | 'morph' | 'levitate' | 'crystalline' | 'liquid' | 'magnetic' | 'dimensional' | 'energy' | 'parallax';
+  clickable?: boolean;
 }
 
 export function Card({
@@ -24,12 +25,14 @@ export function Card({
   border = true,
   shadow = 'md',
   effect = 'shimmer',
+  clickable = false,
   className = '',
   ...props
 }: CardProps) {
   const baseClasses = `
     relative rounded-4xl transition-all duration-700 overflow-hidden ultra-premium-container
     ${animate ? 'group transform-gpu will-change-transform' : ''}
+    ${(clickable || props.onClick) ? 'cursor-pointer' : ''}
     backdrop-blur-xl
   `;
 

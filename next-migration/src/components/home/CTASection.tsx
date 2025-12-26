@@ -33,7 +33,7 @@ export const CTASection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="font-inter text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto font-light leading-relaxed"
+          className="font-inter text-lg md:text-2xl text-slate-600 dark:text-slate-400 mb-12 md:mb-16 max-w-2xl mx-auto font-light leading-relaxed"
         >
           From flights and hotels to match tickets and local experiences—plan your complete World Cup 2026 adventure across USA, Canada, and Mexico with expert guides, real-time deals, and insider tips.
         </motion.p>

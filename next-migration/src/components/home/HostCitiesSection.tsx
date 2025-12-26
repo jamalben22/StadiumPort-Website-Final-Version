@@ -115,7 +115,7 @@ export const HostCitiesSection = () => {
                 ease: [0.22, 1, 0.36, 1] 
               }}
             >
-              <Link href={city.link} className="block group relative h-[500px] md:h-[600px] w-full overflow-hidden rounded-[2rem]">
+              <Link href={city.link} className="block group relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-[2rem]">
                 <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
                 
                 <Image

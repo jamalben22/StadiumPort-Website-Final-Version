@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, X, MapPin, Calendar, Trophy, ArrowRight, ExternalLink, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -89,6 +89,13 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
+  const handleSelect = useCallback(
+    (result: SearchResult) => {
+      onClose();
+      router.push(result.path);
+    },
+    [onClose, router],
+  );
 
   // Reset when opening
   useEffect(() => {
@@ -140,12 +147,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [isOpen, results, selectedIndex]);
-
-  const handleSelect = (result: SearchResult) => {
-    onClose();
-    router.push(result.path);
-  };
+  }, [handleSelect, isOpen, onClose, results, selectedIndex]);
 
   return (
     <AnimatePresence>
