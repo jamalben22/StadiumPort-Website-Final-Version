@@ -26,17 +26,17 @@ const groupsData = [
     id: 'A',
     name: 'Group A – The Aztec Heartland',
     cityCluster: [
-      { name: 'Mexico City', url: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide' },
-      { name: 'Guadalajara', url: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide' },
-      { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide' },
-      { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' }
+      { name: 'Mexico City' },
+      { name: 'Guadalajara' },
+      { name: 'Monterrey' },
+      { name: 'Atlanta' }
     ],
     description: 'A compact, Mexico-heavy travel footprint with excellent domestic flight links and two affordable base camps. This group offers some of the tournament\'s lowest travel costs with short flights between Mexican cities and a single US connection.',
     keyStadiums: [
-      { name: 'Estadio Azteca', url: '/world-cup-2026-stadiums/estadio-azteca-guide' },
-      { name: 'Estadio Akron', url: '/world-cup-2026-stadiums/estadio-akron-guide' },
-      { name: 'Estadio BBVA', url: '/world-cup-2026-stadiums/estadio-bbva-guide' },
-      { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' }
+      { name: 'Estadio Azteca' },
+      { name: 'Estadio Akron' },
+      { name: 'Estadio BBVA' },
+      { name: 'Mercedes-Benz Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 2.5 hours between cities',
@@ -49,17 +49,17 @@ const groupsData = [
     id: 'B',
     name: 'Group B – Pacific Coast & Canada Blend',
     cityCluster: [
-      { name: 'Vancouver', url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide' },
-      { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' },
-      { name: 'San Francisco', url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide' },
-      { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' }
+      { name: 'Vancouver' },
+      { name: 'Seattle' },
+      { name: 'San Francisco' },
+      { name: 'Toronto' }
     ],
     description: 'Long but smooth routes with major airport hubs; ideal for fans who enjoy scenic West Coast movement. The Vancouver-Seattle leg offers cheap bus and train alternatives to flying.',
     keyStadiums: [
-      { name: 'BC Place', url: '/world-cup-2026-stadiums/bc-place-stadium-guide' },
-      { name: 'Lumen Field', url: '/world-cup-2026-stadiums/lumen-field-guide' },
-      { name: 'Levi\'s Stadium', url: '/world-cup-2026-stadiums/levis-stadium-guide' },
-      { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' }
+      { name: 'BC Place' },
+      { name: 'Lumen Field' },
+      { name: 'Levi\'s Stadium' },
+      { name: 'BMO Field' }
     ],
     highlights: [
       '🛫 Average flight time: 3.5 hours (West Coast) / 5 hours (Toronto connection)',
@@ -72,17 +72,17 @@ const groupsData = [
     id: 'C',
     name: 'Group C – East Coast Corridor',
     cityCluster: [
-      { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' },
-      { name: 'New York City', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-      { name: 'Miami', url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide' },
-      { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' }
+      { name: 'Boston' },
+      { name: 'New York City' },
+      { name: 'Miami' },
+      { name: 'Atlanta' }
     ],
     description: 'High-speed domestic flights, deep hotel availability, and the densest transport network in WC26. Multiple daily flights on every route make this group ideal for flexible travelers.',
     keyStadiums: [
-      { name: 'Gillette Stadium', url: '/world-cup-2026-stadiums/gillette-stadium-guide' },
-      { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-      { name: 'Hard Rock Stadium', url: '/world-cup-2026-stadiums/hard-rock-stadium-guide' },
-      { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' }
+      { name: 'Gillette Stadium' },
+      { name: 'MetLife Stadium' },
+      { name: 'Hard Rock Stadium' },
+      { name: 'Mercedes-Benz Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 2 hours (except Miami: 3 hours)',
@@ -95,17 +95,17 @@ const groupsData = [
     id: 'D',
     name: 'Group D – West Coast Pure',
     cityCluster: [
-      { name: 'Los Angeles', url: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide' },
-      { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' },
-      { name: 'Vancouver', url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide' },
-      { name: 'San Francisco', url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide' }
+      { name: 'Los Angeles' },
+      { name: 'Seattle' },
+      { name: 'Vancouver' },
+      { name: 'San Francisco' }
     ],
     description: 'Minimal time-zone stress and clean linear routing along the Pacific coast. This is one of the easiest groups to navigate with consistent weather and straightforward logistics.',
     keyStadiums: [
-      { name: 'SoFi Stadium', url: '/world-cup-2026-stadiums/sofi-stadium-guide' },
-      { name: 'Lumen Field', url: '/world-cup-2026-stadiums/lumen-field-guide' },
-      { name: 'BC Place', url: '/world-cup-2026-stadiums/bc-place-stadium-guide' },
-      { name: "Levi's Stadium", url: '/world-cup-2026-stadiums/levis-stadium-guide' }
+      { name: 'SoFi Stadium' },
+      { name: 'Lumen Field' },
+      { name: 'BC Place' },
+      { name: "Levi's Stadium" }
     ],
     highlights: [
       '🛫 Average flight time: 2 hours between cities',
@@ -118,19 +118,19 @@ const groupsData = [
     id: 'E',
     name: 'Group E – Central & East Mix',
     cityCluster: [
-      { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide' },
-      { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-      { name: 'Kansas City', url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide' },
-      { name: 'New York', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-      { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' }
+      { name: 'Philadelphia' },
+      { name: 'Houston' },
+      { name: 'Kansas City' },
+      { name: 'New York' },
+      { name: 'Toronto' }
     ],
     description: 'A balanced spread with flexible base camp options depending on match intensity. Expect moderate travel times with some longer connections to Houston.',
     keyStadiums: [
-      { name: 'Lincoln Financial Field', url: '/world-cup-2026-stadiums/lincoln-financial-field-guide' },
-      { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-      { name: 'Arrowhead Stadium', url: '/world-cup-2026-stadiums/arrowhead-stadium-guide' },
-      { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-      { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' }
+      { name: 'Lincoln Financial Field' },
+      { name: 'NRG Stadium' },
+      { name: 'Arrowhead Stadium' },
+      { name: 'MetLife Stadium' },
+      { name: 'BMO Field' }
     ],
     highlights: [
       '🛫 Average flight time: 3 hours',
@@ -143,17 +143,17 @@ const groupsData = [
     id: 'F',
     name: 'Group F – The Tex-Mex Route',
     cityCluster: [
-      { name: 'Dallas', url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide' },
-      { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide' },
-      { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-      { name: 'Kansas City', url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide' }
+      { name: 'Dallas' },
+      { name: 'Monterrey' },
+      { name: 'Houston' },
+      { name: 'Kansas City' }
     ],
     description: 'Fast transfers and low-cost flight corridors across Texas and Northern Mexico. This group offers excellent value for budget-conscious fans with affordable hotels and short flights.',
     keyStadiums: [
-      { name: 'AT&T Stadium', url: '/world-cup-2026-stadiums/att-stadium-guide' },
-      { name: 'Estadio BBVA', url: '/world-cup-2026-stadiums/estadio-bbva-guide' },
-      { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-      { name: 'Arrowhead Stadium', url: '/world-cup-2026-stadiums/arrowhead-stadium-guide' }
+      { name: 'AT&T Stadium' },
+      { name: 'Estadio BBVA' },
+      { name: 'NRG Stadium' },
+      { name: 'Arrowhead Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 1.5 hours (Texas routes) / 2 hours (Mexico)',
@@ -166,61 +166,61 @@ const groupsData = [
     id: 'G',
     name: 'Group G – Cascadia & SoFi Circuit',
     cityCluster: [
-      { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' },
-      { name: 'Vancouver', url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide' },
-      { name: 'Los Angeles', url: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide' }
+      { name: 'Seattle' },
+      { name: 'Vancouver' },
+      { name: 'Los Angeles' }
     ],
     description: 'Short hops with some of the easiest travel distances in the tournament. Three cities, minimal stress, and strong public transportation options between Seattle and Vancouver.',
     keyStadiums: [
-      { name: 'Lumen Field', url: '/world-cup-2026-stadiums/lumen-field-guide' },
-      { name: 'BC Place', url: '/world-cup-2026-stadiums/bc-place-stadium-guide' },
-      { name: 'SoFi Stadium', url: '/world-cup-2026-stadiums/sofi-stadium-guide' }
+      { name: 'Lumen Field' },
+      { name: 'BC Place' },
+      { name: 'SoFi Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 2 hours',
       '💵 Estimated base cost: $1,100-1,500 for all group matches',
       '⭐ Best base camp: Seattle (central location with easy access north and south)'
     ],
-    link: '/2026-world-cup-group-g-travel-guide'
+    link: '/groups/group-g'
   },
   {
     id: 'H',
     name: 'Group H – Southern Heat Trail',
     cityCluster: [
-      { name: 'Miami', url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide' },
-      { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' },
-      { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-      { name: 'Guadalajara', url: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide' }
+      { name: 'Miami' },
+      { name: 'Atlanta' },
+      { name: 'Houston' },
+      { name: 'Guadalajara' }
     ],
     description: 'Hot weather, high energy, and long-haul connections—but affordable hotel zones. This group requires strategic planning due to the Miami-Guadalajara distance.',
     keyStadiums: [
-      { name: 'Hard Rock Stadium', url: '/world-cup-2026-stadiums/hard-rock-stadium-guide' },
-      { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' },
-      { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-      { name: 'Estadio Akron', url: '/world-cup-2026-stadiums/estadio-akron-guide' }
+      { name: 'Hard Rock Stadium' },
+      { name: 'Mercedes-Benz Stadium' },
+      { name: 'NRG Stadium' },
+      { name: 'Estadio Akron' }
     ],
     highlights: [
       '🛫 Average flight time: 3 hours (US routes) / 4 hours (Mexico connection)',
       '💵 Estimated base cost: $1,200-1,600 for all group matches',
       '⭐ Best base camp: Houston (central between all four cities)'
     ],
-    link: '/2026-world-cup-group-h-travel-guide'
+    link: '/groups/group-h'
   },
   {
     id: 'I',
     name: 'Group I – Northeast Shuttle Route',
     cityCluster: [
-      { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' },
-      { name: 'New York City', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-      { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide' },
-      { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' }
+      { name: 'Boston' },
+      { name: 'New York City' },
+      { name: 'Philadelphia' },
+      { name: 'Toronto' }
     ],
     description: 'Excellent rail, bus, and multi-airport combinations with minimal travel friction. This is the only group where you could realistically use Amtrak for some legs instead of flying.',
     keyStadiums: [
-      { name: 'Gillette Stadium', url: '/world-cup-2026-stadiums/gillette-stadium-guide' },
-      { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-      { name: 'Lincoln Financial Field', url: '/world-cup-2026-stadiums/lincoln-financial-field-guide' },
-      { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' }
+      { name: 'Gillette Stadium' },
+      { name: 'MetLife Stadium' },
+      { name: 'Lincoln Financial Field' },
+      { name: 'BMO Field' }
     ],
     highlights: [
       '🛫 Average flight time: 1.5 hours',
@@ -228,115 +228,77 @@ const groupsData = [
       '💵 Estimated base cost: $1,300-1,700 for all group matches',
       '⭐ Best base camp: New York City (ultimate connectivity)'
     ],
-    link: '/2026-world-cup-group-i-travel-guide'
+    link: '/groups/group-i'
   },
   {
     id: 'J',
     name: 'Group J – The Long Haul Group',
     cityCluster: [
-      { name: 'Kansas City', url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide' },
-      { name: 'Dallas', url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide' },
-      { name: 'San Francisco', url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide' },
-      { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' }
+      { name: 'Kansas City' },
+      { name: 'Dallas' },
+      { name: 'San Francisco' },
+      { name: 'Atlanta' }
     ],
     description: 'Expect larger distances—best suited to fans who plan efficiently and book early. This group spans the entire continental US and requires careful flight scheduling.',
     keyStadiums: [
-      { name: 'Arrowhead Stadium', url: '/world-cup-2026-stadiums/arrowhead-stadium-guide' },
-      { name: 'AT&T Stadium', url: '/world-cup-2026-stadiums/att-stadium-guide' },
-      { name: "Levi's Stadium", url: '/world-cup-2026-stadiums/levis-stadium-guide' },
-      { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' }
+      { name: 'Arrowhead Stadium' },
+      { name: 'AT&T Stadium' },
+      { name: "Levi's Stadium" },
+      { name: 'Mercedes-Benz Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 3.5 hours',
       '💵 Estimated base cost: $1,400-1,900 for all group matches',
       '⭐ Best base camp: Dallas (central hub, lower hotel costs than SF or Atlanta)'
     ],
-    link: '/2026-world-cup-group-j-travel-guide'
+    link: '/groups/group-j'
   },
   {
     id: 'K',
     name: 'Group K – Southern Scatter Path',
     cityCluster: [
-      { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-      { name: 'Mexico City', url: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide' },
-      { name: 'Miami', url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide' },
-      { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' }
+      { name: 'Houston' },
+      { name: 'Mexico City' },
+      { name: 'Miami' },
+      { name: 'Atlanta' }
     ],
     description: 'South-focused travel with two major mega-hubs and strong hotel supply. The Houston-Mexico City connection is well-served with multiple daily flights.',
     keyStadiums: [
-      { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-      { name: 'Estadio Azteca', url: '/world-cup-2026-stadiums/estadio-azteca-guide' },
-      { name: 'Hard Rock Stadium', url: '/world-cup-2026-stadiums/hard-rock-stadium-guide' },
-      { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' }
+      { name: 'NRG Stadium' },
+      { name: 'Estadio Azteca' },
+      { name: 'Hard Rock Stadium' },
+      { name: 'Mercedes-Benz Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 2.5 hours',
       '💵 Estimated base cost: $1,100-1,500 for all group matches',
       '⭐ Best base camp: Houston or Atlanta (central location, good hotel availability)'
     ],
-    link: '/2026-world-cup-group-k-travel-guide'
+    link: '/groups/group-k'
   },
   {
     id: 'L',
     name: 'Group L – The Major Metros Pathway',
     cityCluster: [
-      { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' },
-      { name: 'Dallas', url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide' },
-      { name: 'New York City', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-      { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' }
+      { name: 'Toronto' },
+      { name: 'Dallas' },
+      { name: 'New York City' },
+      { name: 'Boston' }
     ],
     description: 'Big cities, big energy, and a premium-priced but smooth logistics cluster. Expect higher accommodation costs but flawless infrastructure and connectivity.',
     keyStadiums: [
-      { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' },
-      { name: 'AT&T Stadium', url: '/world-cup-2026-stadiums/att-stadium-guide' },
-      { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-      { name: 'Gillette Stadium', url: '/world-cup-2026-stadiums/gillette-stadium-guide' }
+      { name: 'BMO Field' },
+      { name: 'AT&T Stadium' },
+      { name: 'MetLife Stadium' },
+      { name: 'Gillette Stadium' }
     ],
     highlights: [
       '🛫 Average flight time: 2.5 hours',
       '💵 Estimated base cost: $1,500-2,000 for all group matches',
       '⭐ Best base camp: New York City or Dallas (flight hub advantage)'
     ],
-    link: '/2026-world-cup-group-l-travel-guide'
+    link: '/groups/group-l'
   }
-];
-
-const cityLinks = [
-  { name: 'Mexico City', url: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide' },
-  { name: 'Guadalajara', url: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide' },
-  { name: 'Monterrey', url: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide' },
-  { name: 'Atlanta', url: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide' },
-  { name: 'Vancouver', url: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide' },
-  { name: 'Seattle', url: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide' },
-  { name: 'San Francisco', url: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide' },
-  { name: 'Toronto', url: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide' },
-  { name: 'Boston', url: '/world-cup-2026-host-cities/boston-world-cup-2026-guide' },
-  { name: 'New York/New Jersey', url: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide' },
-  { name: 'Miami', url: '/world-cup-2026-host-cities/miami-world-cup-2026-guide' },
-  { name: 'Los Angeles', url: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide' },
-  { name: 'Houston', url: '/world-cup-2026-host-cities/houston-world-cup-2026-guide' },
-  { name: 'Dallas', url: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide' },
-  { name: 'Kansas City', url: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide' },
-  { name: 'Philadelphia', url: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide' }
-];
-
-const stadiumLinks = [
-  { name: 'Estadio Azteca', url: '/world-cup-2026-stadiums/estadio-azteca-guide' },
-  { name: 'Estadio Akron', url: '/world-cup-2026-stadiums/estadio-akron-guide' },
-  { name: 'Estadio BBVA', url: '/world-cup-2026-stadiums/estadio-bbva-guide' },
-  { name: 'Mercedes-Benz Stadium', url: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide' },
-  { name: 'BC Place', url: '/world-cup-2026-stadiums/bc-place-stadium-guide' },
-  { name: 'Lumen Field', url: '/world-cup-2026-stadiums/lumen-field-guide' },
-  { name: "Levi's Stadium", url: '/world-cup-2026-stadiums/levis-stadium-guide' },
-  { name: 'BMO Field', url: '/world-cup-2026-stadiums/bmo-field-guide' },
-  { name: 'Gillette Stadium', url: '/world-cup-2026-stadiums/gillette-stadium-guide' },
-  { name: 'MetLife Stadium', url: '/world-cup-2026-stadiums/metlife-stadium-guide' },
-  { name: 'Hard Rock Stadium', url: '/world-cup-2026-stadiums/hard-rock-stadium-guide' },
-  { name: 'SoFi Stadium', url: '/world-cup-2026-stadiums/sofi-stadium-guide' },
-  { name: 'NRG Stadium', url: '/world-cup-2026-stadiums/nrg-stadium-guide' },
-  { name: 'AT&T Stadium', url: '/world-cup-2026-stadiums/att-stadium-guide' },
-  { name: 'Arrowhead Stadium', url: '/world-cup-2026-stadiums/arrowhead-stadium-guide' },
-  { name: 'Lincoln Financial Field', url: '/world-cup-2026-stadiums/lincoln-financial-field-guide' }
 ];
 
 export default function DrawHubPage() {
@@ -846,47 +808,12 @@ export default function DrawHubPage() {
             </div>
           </section>
 
-          {/* Essential Reading & Links */}
-          <div className="mb-32 border-t border-slate-200 dark:border-slate-800 pt-24">
-             <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div>
-                    <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                        <MapPin className="text-[#01b47d]" /> Host City Guides
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4">
-                        {cityLinks.map((city) => (
-                            <Link key={city.name} to={city.url} className="text-slate-600 dark:text-slate-400 hover:text-[#01b47d] transition-colors text-sm py-1 block">
-                                {city.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-                <div>
-                    <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
-                        <Hotel className="text-purple-500" /> Stadium Guides
-                    </h3>
-                    <div className="grid grid-cols-2 gap-4">
-                        {stadiumLinks.map((stadium) => (
-                            <Link key={stadium.name} to={stadium.url} className="text-slate-600 dark:text-slate-400 hover:text-purple-500 transition-colors text-sm py-1 block">
-                                {stadium.name}
-                            </Link>
-                        ))}
-                    </div>
-                </div>
-             </div>
-          </div>
-
           {/* Final Checklist */}
           <section className="mb-24 bg-[#01b47d] rounded-[3rem] p-12 md:p-24 text-center text-white">
-            <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready for Kickoff?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Your World Cup 2026 Journey</h2>
             <p className="text-xl text-emerald-50 mb-12 max-w-2xl mx-auto">
                 Double check your travel requirements, visa status, and ticket allocations before you fly.
             </p>
-            <div className="flex flex-wrap justify-center gap-4">
-                <Link to="/world-cup-2026-travel-tips" className="bg-white text-[#01b47d] px-8 py-4 rounded-full font-bold hover:bg-emerald-50 transition-colors">
-                    View Travel Checklist
-                </Link>
-            </div>
           </section>
 
           <div className="mb-16 text-center text-sm text-slate-500 dark:text-slate-400 space-y-2">

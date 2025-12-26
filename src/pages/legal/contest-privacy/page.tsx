@@ -69,7 +69,7 @@ export default function ContestPrivacyPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
       <SchemaOrg schema={[
         breadcrumbSchema,
         {

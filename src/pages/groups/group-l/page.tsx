@@ -274,9 +274,7 @@ export default function GroupLPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-4">
                       Manhattan hotels will be $400+. <strong>Smart Move:</strong> Stay in Long Island City (Queens) or Weehawken/Jersey City (NJ). Both offer 15-minute transit to Manhattan at 60% of the price.
                     </p>
-                    <Link to="/cities/new-york-new-jersey" className="text-teal-600 dark:text-teal-400 font-bold text-sm hover:underline">
-                      View NYC Neighborhood Guide →
-                    </Link>
+
                   </div>
 
                   <div className="bg-white dark:bg-navy-800 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-navy-700">
@@ -284,9 +282,7 @@ export default function GroupLPage() {
                     <p className="text-slate-600 dark:text-slate-300 mb-4">
                       AT&T Stadium is in Arlington, 20 miles from Dallas. <strong>Smart Move:</strong> If you want nightlife, stay in Uptown Dallas and Uber to the game. If you just want the match, stay in an Arlington hotel (book 9 months out).
                     </p>
-                    <Link to="/cities/dallas" className="text-teal-600 dark:text-teal-400 font-bold text-sm hover:underline">
-                      View Dallas Neighborhood Guide →
-                    </Link>
+
                   </div>
 
                   {/* Affiliate Block: Hotels */}
@@ -357,20 +353,17 @@ export default function GroupLPage() {
               <section>
                 <h2 className="text-3xl font-bold mb-8 text-slate-900 dark:text-white">City Essentials</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
                   {[
-                    { name: "New York / NJ", link: "/cities/new-york-new-jersey", stadium: "/world-cup-2026-stadiums/metlife-stadium", desc: "The global stage. Infinite dining, complex transit, massive energy." },
-                    { name: "Toronto", link: "/cities/toronto", stadium: "/world-cup-2026-stadiums/bmo-field", desc: "Multicultural, walkable, safe. Don't forget the eTA visa." },
-                    { name: "Boston", link: "/cities/boston", stadium: "/world-cup-2026-stadiums/gillette-stadium", desc: "Historic charm meets sports passion. Stadium is 45 min from city." },
-                    { name: "Philadelphia", link: "/cities/philadelphia", stadium: "/world-cup-2026-stadiums/lincoln-financial-field", desc: "Best value. Walkable center. Incredible food scene. Intense fans." },
-                    { name: "Dallas", link: "/cities/dallas", stadium: "/world-cup-2026-stadiums/att-stadium", desc: "Big, hot, and flashy. Car-centric culture. World-class stadium." }
+                    { name: "New York / NJ", desc: "The global stage. Infinite dining, complex transit, massive energy." },
+                    { name: "Toronto", desc: "Multicultural, walkable, safe. Don't forget the eTA visa." },
+                    { name: "Boston", desc: "Historic charm meets sports passion. Stadium is 45 min from city." },
+                    { name: "Philadelphia", desc: "Best value. Walkable center. Incredible food scene. Intense fans." },
+                    { name: "Dallas", desc: "Big, hot, and flashy. Car-centric culture. World-class stadium." }
                   ].map((city) => (
                     <div key={city.name} className="bg-white dark:bg-navy-800 p-6 rounded-xl border border-slate-200 dark:border-navy-700 hover:border-teal-500 transition-colors group">
                       <h3 className="text-xl font-bold mb-2">{city.name}</h3>
                       <p className="text-slate-600 dark:text-slate-300 text-sm mb-4">{city.desc}</p>
-                      <div className="flex gap-4 text-sm font-bold">
-                        <Link to={city.link} className="text-teal-600 dark:text-teal-400 hover:underline">City Guide</Link>
-                        <Link to={city.stadium} className="text-blue-600 dark:text-blue-400 hover:underline">Stadium Guide</Link>
-                      </div>
                     </div>
                   ))}
                 </div>

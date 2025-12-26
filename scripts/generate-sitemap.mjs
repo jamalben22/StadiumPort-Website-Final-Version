@@ -49,16 +49,11 @@ function seed() {
     '/',
     '/about',
     '/contact',
-    '/world-cup-2026-host-cities',
-    '/world-cup-2026-stadiums',
     '/travel-guides',
-    '/guides',
-    '/world-cup-2026-safety-guide',
     '/luxury-travel',
     '/budget-guides',
     '/packing-lists',
     '/travel-routes',
-    '/world-cup-2026-travel-tips',
     '/city-comparisons',
     '/world-cup-2026-prediction-game',
     '/world-cup-2026-groups'
@@ -104,7 +99,11 @@ function canonicalize(routes) {
     '/group-l-travel-guide', // Redirects
     '/group-k-travel-guide',
     '/group-j-travel-guide',
-    '/group-i-travel-guide'
+    '/group-i-travel-guide',
+    '/world-cup-2026-host-cities',
+    '/world-cup-2026-stadiums',
+    '/world-cup-2026-travel-tips',
+    '/world-cup-2026-safety-guides'
   ];
   
   return Array.from(new Set(filtered))
@@ -122,21 +121,17 @@ function getPriorityAndFreq(u) {
   } else if (
     u === '/world-cup-2026-prediction-game' ||
     u === '/world-cup-2026-groups' ||
-    u === '/world-cup-2026-host-cities' ||
-    u === '/world-cup-2026-stadiums' ||
     u === '/tickets'
   ) {
     priority = 0.9;
     changefreq = 'weekly';
   } else if (
-    u.startsWith('/world-cup-2026-host-cities/') ||
-    u.startsWith('/world-cup-2026-stadiums/') ||
     u.includes('group-')
   ) {
     priority = 0.8;
     changefreq = 'weekly';
   } else if (
-    ['/travel-guides', '/guides', '/world-cup-2026-safety-guide', '/luxury-travel', '/budget-guides', '/packing-lists', '/travel-routes', '/world-cup-2026-travel-tips', '/city-comparisons'].includes(u)
+    ['/travel-guides', '/luxury-travel', '/budget-guides', '/packing-lists', '/travel-routes', '/city-comparisons'].includes(u)
   ) {
     priority = 0.7;
     changefreq = 'weekly';

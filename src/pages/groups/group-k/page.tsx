@@ -261,9 +261,7 @@ const GroupKPage: React.FC = () => {
                           <div className="text-sm font-bold text-slate-900 dark:text-white">Passionate & Historic</div>
                         </div>
                       </div>
-                      <Link to="/cities/mexico-city" className="inline-flex items-center text-rose-600 hover:text-rose-700 font-bold text-sm">
-                        Full CDMX Guide <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
+
                     </div>
                   </div>
                 </div>
@@ -301,9 +299,7 @@ const GroupKPage: React.FC = () => {
                           <div className="text-sm font-bold text-slate-900 dark:text-white">Viet-Cajun / BBQ</div>
                         </div>
                       </div>
-                      <Link to="/cities/houston" className="inline-flex items-center text-rose-600 hover:text-rose-700 font-bold text-sm">
-                        Full Houston Guide <ArrowRight className="w-4 h-4 ml-2" />
-                      </Link>
+
                     </div>
                   </div>
                 </div>
@@ -319,7 +315,7 @@ const GroupKPage: React.FC = () => {
                     <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
                       Global glamour, intense nightlife, and Hard Rock Stadium's elite facilities.
                     </p>
-                    <Link to="/cities/miami" className="text-sm font-bold text-rose-600 hover:underline">View Guide →</Link>
+
                   </div>
 
                   {/* Atlanta */}
@@ -331,7 +327,7 @@ const GroupKPage: React.FC = () => {
                     <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
                       The world's busiest airport meets the world's finest stadium (Mercedes-Benz).
                     </p>
-                    <Link to="/cities/atlanta" className="text-sm font-bold text-rose-600 hover:underline">View Guide →</Link>
+
                   </div>
 
                   {/* Guadalajara */}
@@ -343,7 +339,7 @@ const GroupKPage: React.FC = () => {
                     <p className="text-sm text-slate-600 dark:text-slate-300 mb-4">
                       Tequila, Mariachi, and pure football tradition at Estadio Akron.
                     </p>
-                    <Link to="/cities/guadalajara" className="text-sm font-bold text-rose-600 hover:underline">View Guide →</Link>
+
                   </div>
                 </div>
               </div>

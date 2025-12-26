@@ -278,7 +278,7 @@ export default function GroupEPage() {
                     Group E is a true "Continental Odyssey." It connects the historic Northeast Corridor of the USA with the industrial heartland of the Midwest and the diverse metropolis of Toronto.
                   </p>
                   <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
-                    The route covers <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-teal-600 hover:text-teal-500 font-semibold underline decoration-teal-200 dark:decoration-teal-800 underline-offset-4 decoration-2">Philadelphia</Link>, <Link to="/world-cup-2026-host-cities/houston-world-cup-2026-guide" className="text-teal-600 hover:text-teal-500 font-semibold underline decoration-teal-200 dark:decoration-teal-800 underline-offset-4 decoration-2">Houston</Link>, <Link to="/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide" className="text-teal-600 hover:text-teal-500 font-semibold underline decoration-teal-200 dark:decoration-teal-800 underline-offset-4 decoration-2">Kansas City</Link>, and <Link to="/world-cup-2026-host-cities/toronto-world-cup-2026-guide" className="text-teal-600 hover:text-teal-500 font-semibold underline decoration-teal-200 dark:decoration-teal-800 underline-offset-4 decoration-2">Toronto</Link>.
+                    The route covers Philadelphia, Houston, Kansas City, and Toronto.
                   </p>
                 </div>
                 
@@ -571,9 +571,6 @@ export default function GroupEPage() {
                     The journey of a lifetime starts with a single booking. Don't let logistics defeat you before the kickoff.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-teal-600 hover:bg-teal-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-teal-500/30 text-base">
-                      Explore All Host Cities
-                    </Link>
                     <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
                       Start My Trip Plan
                     </Link>

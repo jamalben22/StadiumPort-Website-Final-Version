@@ -1,0 +1,113 @@
+import { Metadata } from 'next';
+import ClientPage from './ClientPage';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+ title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
+ description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
+ alternates: {
+ canonical: '/world-cup-2026-host-cities/houston-city-guide',
+ },
+ openGraph: {
+ title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
+ description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
+ url: 'https://stadiumport.com/world-cup-2026-host-cities/houston-city-guide',
+ siteName: 'Stadiumport',
+ locale: 'en_US',
+ type: 'article',
+ images: [
+ {
+ url: 'https://stadiumport.com/images/cities/houston-world-cup-2026.webp',
+ width: 1200,
+ height: 630,
+ alt: 'Houston World Cup 2026 Guide',
+ },
+ ],
+ },
+ twitter: {
+ card: 'summary_large_image',
+ title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
+ description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
+ images: ['https://stadiumport.com/images/cities/houston-world-cup-2026.webp'],
+ },
+ keywords: ['Houston World Cup 2026', 'NRG Stadium', 'METRORail', 'Downtown Houston hotels', 'Medical Center hotels', 'Houston airport transfer', 'Houston travel tips', 'World Cup tickets Houston', 'NASA Space Center', 'Houston dining'],
+};
+
+export default function Page() {
+  const jsonLd = generateArticleSchema('houston-city-guide', '/world-cup-2026-host-cities/houston-city-guide');
+
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities' },
+    { name: 'Houston Guide', item: '/world-cup-2026-host-cities/houston-city-guide' }
+  ]);
+
+  const faqLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Is Houston safe for tourists?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, generally. The main tourist zones (Downtown, Galleria, Museum District) are safe. Use common sense, stay in groups at night, and be aware of your surroundings. The biggest danger is actually the heat.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do I need a car in Houston for the World Cup?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Ideally, yes, if you want to explore the whole city. However, for the World Cup, if you stay Downtown or near the Medical Center, you can survive on the METRORail and Uber, saving you money on parking.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How far is the airport from NRG Stadium?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Bush Intercontinental (IAH) is about 45-60 minutes north. Hobby (HOU) is closer, about 20-30 minutes southeast. Allow extra time; traffic can double these estimates.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can I walk to NRG Stadium?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Not really. It\'s surrounded by massive parking lots and highways. Walking from a nearby hotel is possible, but walking from Downtown is impossible (7 miles). Take the train.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'What is the alcohol situation in Houston?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Texas has relaxed alcohol laws. Last call is 2 AM. You can buy beer and wine in grocery stores, but liquor is only sold in specific liquor stores (closed on Sundays!).'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is NRG Stadium air conditioned?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes, thankfully. NRG Stadium has a retractable roof and a powerful AC system. It will be a comfortable 72°F inside regardless of the temperature outside.'
+        }
+      }
+    ]
+  };
+
+  return (
+    <>
+      <JsonLd schema={jsonLd} />
+      <JsonLd schema={breadcrumbLd} />
+      <JsonLd schema={faqLd} />
+      <ClientPage />
+    </>
+  );
+}
+
+
+
+

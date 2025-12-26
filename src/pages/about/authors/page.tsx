@@ -54,7 +54,7 @@ export default function AuthorsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
       <SchemaOrg schema={[
         breadcrumbSchema,
         {
@@ -112,7 +112,7 @@ export default function AuthorsPage() {
                 </div>
                 
                 <div className="lg:w-1/2 w-full">
-                  <div className="bg-slate-50 dark:bg-black/20 rounded-2xl p-8 border border-slate-100 dark:border-white/5">
+                  <div className="bg-white dark:bg-black/20 rounded-2xl p-8 border border-slate-100 dark:border-white/5">
                     <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                       <CheckCircle2 className="w-5 h-5 text-indigo-500" /> Our Process
                     </h3>
@@ -152,7 +152,7 @@ export default function AuthorsPage() {
                 <motion.div 
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="bg-slate-50 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 hover:shadow-lg transition-all"
+                  className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 hover:shadow-lg transition-all"
                 >
                   <div className="w-12 h-12 bg-white dark:bg-white/10 rounded-2xl flex items-center justify-center mb-6 text-indigo-600 dark:text-indigo-400 shadow-sm border border-slate-100 dark:border-white/5">
                     <item.icon className="w-6 h-6" />

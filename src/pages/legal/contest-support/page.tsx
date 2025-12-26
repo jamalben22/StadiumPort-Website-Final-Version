@@ -64,7 +64,7 @@ export default function ContestSupportPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
       <SchemaOrg schema={[
         breadcrumbSchema,
         {
@@ -148,7 +148,7 @@ export default function ContestSupportPage() {
               {faqs.map((faq, index) => (
                 <div 
                   key={index}
-                  className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden transition-all duration-300"
+                  className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl overflow-hidden transition-all"
                 >
                   <button
                     onClick={() => toggleFaq(index)}

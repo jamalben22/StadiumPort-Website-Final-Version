@@ -16,45 +16,8 @@ export function Header() {
 
   // Search data
   const searchData = [
-    // Cities
-    { type: 'city', title: 'New York / New Jersey', path: '/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide', description: 'MetLife Stadium – World Cup Final Host' },
-    { type: 'city', title: 'Los Angeles', path: '/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide', description: 'City of Angels - SoFi Stadium & Rose Bowl' },
-    { type: 'city', title: 'Miami', path: '/world-cup-2026-host-cities/miami-world-cup-2026-guide', description: 'Magic City - Hard Rock Stadium' },
-    { type: 'city', title: 'Atlanta', path: '/world-cup-2026-host-cities/atlanta-world-cup-2026-guide', description: 'Hotlanta - Mercedes-Benz Stadium' },
-    { type: 'city', title: 'Dallas', path: '/world-cup-2026-host-cities/dallas-world-cup-2026-guide', description: 'Big D - AT&T Stadium' },
-    { type: 'city', title: 'Kansas City', path: '/world-cup-2026-host-cities/kansas-city-world-cup-2026-guide', description: 'Heart of America - Arrowhead Stadium' },
-    { type: 'city', title: 'Philadelphia', path: '/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide', description: 'City of Brotherly Love - Lincoln Financial Field' },
-    { type: 'city', title: 'Seattle', path: '/world-cup-2026-host-cities/seattle-world-cup-2026-guide', description: 'Emerald City - Lumen Field' },
-    { type: 'city', title: 'San Francisco', path: '/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide', description: 'Golden Gate City - Levi\'s Stadium' },
-    { type: 'city', title: 'Boston', path: '/world-cup-2026-host-cities/boston-world-cup-2026-guide', description: 'Beantown - Gillette Stadium' },
-    { type: 'city', title: 'Toronto', path: '/world-cup-2026-host-cities/toronto-world-cup-2026-guide', description: 'The 6ix - BMO Field' },
-    { type: 'city', title: 'Vancouver', path: '/world-cup-2026-host-cities/vancouver-world-cup-2026-guide', description: 'Beautiful British Columbia - BC Place' },
-    { type: 'city', title: 'Mexico City', path: '/world-cup-2026-host-cities/mexico-city-world-cup-2026-guide', description: 'Capital of Mexico - Estadio Azteca' },
-    { type: 'city', title: 'Guadalajara', path: '/world-cup-2026-host-cities/guadalajara-world-cup-2026-guide', description: 'Pearl of the West - Estadio Akron' },
-    { type: 'city', title: 'Monterrey', path: '/world-cup-2026-host-cities/monterrey-world-cup-2026-guide', description: 'Sultan of the North - Estadio BBVA' },
-    
-    // Stadiums
-    { type: 'stadium', title: 'MetLife Stadium', path: '/world-cup-2026-stadiums', description: 'New York - Home of Giants & Jets' },
-    { type: 'stadium', title: 'SoFi Stadium', path: '/world-cup-2026-stadiums', description: 'Los Angeles - Ultra-modern venue' },
-    { type: 'stadium', title: 'Hard Rock Stadium', path: '/world-cup-2026-stadiums', description: 'Miami - Iconic football venue' },
-    { type: 'stadium', title: 'Mercedes-Benz Stadium', path: '/world-cup-2026-stadiums', description: 'Atlanta - Architectural marvel' },
-    { type: 'stadium', title: 'AT&T Stadium', path: '/world-cup-2026-stadiums', description: 'Dallas - The Star' },
-    { type: 'stadium', title: 'Arrowhead Stadium', path: '/world-cup-2026-stadiums', description: 'Kansas City - Loudest stadium' },
-
     // Groups
-    { type: 'page', title: 'Groups', path: '/world-cup-2026-groups', description: 'World Cup 2026 Groups, Teams & Schedule' },
-    
-    // Travel Guides
-    { type: 'guide', title: 'Travel Tips', path: '/world-cup-2026-travel-tips', description: 'Essential travel advice for World Cup 2026' },
-    { type: 'guide', title: 'Safety Guide', path: '/world-cup-2026-safety-guide', description: 'Stay safe during your travels' },
-    
-    // Articles
-    { type: 'article', title: 'Connectivity Guide', path: '/world-cup-2026-travel-tips/world-cup-2026-connectivity-guide-phone-plans-sim-cards-and-wifi', description: 'Stay connected: best eSIMs, local SIMs, and WiFi options' },
-    { type: 'article', title: 'Planning Checklist', path: '/world-cup-2026-travel-tips/complete-planning-checklist', description: 'Step-by-step checklist for planning flights, stays, transport' },
-    { type: 'article', title: 'Visa Requirements', path: '/world-cup-2026-travel-tips/visa-requirements-guide', description: 'Who needs visas or ESTA, timelines, and official resources' },
-    { type: 'article', title: 'Transportation Guide', path: '/world-cup-2026-travel-tips/transportation-guide', description: 'Getting around host cities: metro, buses, rail' },
-    { type: 'article', title: 'Budget Planner', path: '/world-cup-2026-travel-tips/budget-planning-tool', description: 'Estimate total costs by city, match type, and trip length' },
-    { type: 'article', title: 'Safety Tips', path: '/world-cup-2026-travel-tips/safety-security-tips', description: 'Tournament safety essentials and emergency contacts' }
+    { type: 'page', title: 'Groups', path: '/world-cup-2026-groups', description: 'World Cup 2026 Groups, Teams & Schedule' }
   ];
 
   // Search Logic
@@ -102,8 +65,6 @@ export function Header() {
 
   // Navigation Items
   const navItems = [
-    { label: 'Host Cities', path: '/world-cup-2026-host-cities' },
-    { label: 'Stadiums', path: '/world-cup-2026-stadiums' },
     { label: 'Groups', path: '/world-cup-2026-groups' },
     { label: 'Draw Hub', path: '/2026-world-cup-draw-travel-hub' },
     { label: 'Predictor', path: '/world-cup-2026-prediction-game' },
@@ -218,14 +179,6 @@ export function Header() {
                 <ChevronRight size={16} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
               </Link>
             ))}
-             <Link
-                to="/world-cup-2026-travel-tips"
-                onClick={() => setIsMenuOpen(false)}
-                className="text-2xl font-medium tracking-tight text-slate-900 dark:text-white flex items-center justify-between group border-b border-slate-100 dark:border-white/10 pb-4"
-              >
-                Travel Tips
-                <ChevronRight size={16} className="text-slate-400 group-hover:translate-x-1 transition-transform" />
-              </Link>
           </nav>
           
           <div className="mt-auto pt-8">

@@ -147,39 +147,6 @@ export const PredictSEOContent = () => {
         </div>
       </div>
 
-      {/* Host Cities CTA */}
-      <div className="text-center mb-24">
-        <h2 className="text-3xl font-bold text-white mb-6">Plan Your World Cup Journey</h2>
-        <p className="text-slate-400 max-w-2xl mx-auto mb-10">
-          Your prediction is just the beginning. Explore our comprehensive guides for all 16 host cities and stadiums.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <Link 
-            to="/world-cup-2026-stadiums/metlife-stadium"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
-          >
-            <MapPin className="w-4 h-4 text-indigo-400" /> NY/NJ Guide
-          </Link>
-          <Link 
-            to="/world-cup-2026-stadiums/att-stadium"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
-          >
-            <MapPin className="w-4 h-4 text-indigo-400" /> Dallas Guide
-          </Link>
-          <Link 
-            to="/world-cup-2026-stadiums/sofi-stadium"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
-          >
-            <MapPin className="w-4 h-4 text-indigo-400" /> LA Guide
-          </Link>
-          <Link 
-            to="/world-cup-2026-stadiums/estadio-azteca"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 text-white rounded-xl border border-white/10 transition-colors"
-          >
-            <MapPin className="w-4 h-4 text-indigo-400" /> Mexico City Guide
-          </Link>
-        </div>
-      </div>
 
       {/* FAQ */}
       <div>

@@ -21,7 +21,7 @@ export const CTASection = () => {
           transition={{ duration: 0.8 }}
           className="font-space font-bold text-6xl md:text-8xl text-white tracking-tighter mb-8"
         >
-          Ready for Kickoff?
+          Your World Cup 2026 Journey
         </motion.h2>
         
         <motion.p 
@@ -48,9 +48,9 @@ export const CTASection = () => {
                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
              </button>
           </Link>
-           <Link to="/accommodation">
+           <Link to="/travel-tips">
              <button className="px-12 py-6 rounded-full border border-white/20 text-white font-space font-semibold text-xl hover:bg-white/10 hover:border-white/40 transition-all backdrop-blur-sm">
-               Find Accommodation
+               Explore Planning Hub
              </button>
           </Link>
         </motion.div>

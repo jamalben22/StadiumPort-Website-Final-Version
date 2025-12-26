@@ -7,7 +7,6 @@ import { FlightCompareWidget } from '../../components/widgets/FlightCompareWidge
 import { WorldCupCountdown } from '../../components/widgets/WorldCupCountdown';
 import { SchemaOrg, generateWebsiteSchema, generateOrganizationSchema, generateImageObjectSchema } from '../../components/seo/SchemaOrg';
 import { SEO } from '../../components/common/SEO';
-import { CityShowcase } from './components/CityShowcase';
 import { HeroSection } from './components/HeroSection';
 
 // --- Original Widgets ---
@@ -220,9 +219,6 @@ export default function HomePage() {
       {/* New Apple/Nike Style Hero Section */}
       <HeroSection />
 
-      {/* Replaced Original City Grid with New CityShowcase Component */}
-      <CityShowcase />
-
       {/* Widgets Section */}
       <section className="py-20 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -309,9 +305,9 @@ export default function HomePage() {
               </button>
             </Link>
 
-            <Link to="/accommodation">
+            <Link to="/travel-tips">
               <button className="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-black dark:text-white bg-transparent border border-gray-300 dark:border-gray-600 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2">
-                Find Accommodation
+                Explore Planning Hub
               </button>
             </Link>
           </div>

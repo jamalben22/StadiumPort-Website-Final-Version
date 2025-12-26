@@ -271,7 +271,7 @@ export default function GroupDPage() {
                     Group D is the "Bucket List" group. It offers the most beautiful landscapes and the most modern stadiums, but it punishes the unprepared traveler with brutal traffic and deceptive distances.
                   </p>
                   <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
-                    The route covers the <Link to="/world-cup-2026-host-cities/seattle-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Pacific Northwest (Seattle)</Link>, the <Link to="/world-cup-2026-host-cities/san-francisco-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Bay Area (SF/Santa Clara)</Link>, and <Link to="/world-cup-2026-host-cities/los-angeles-world-cup-2026-guide" className="text-amber-600 hover:text-amber-500 font-semibold underline decoration-amber-200 dark:decoration-amber-800 underline-offset-4 decoration-2">Southern California (Los Angeles)</Link>. These regions operate like separate countries with unique climates, transit systems, and vibes.
+                    The route covers the Pacific Northwest (Seattle), the Bay Area (SF/Santa Clara), and Southern California (Los Angeles). These regions operate like separate countries with unique climates, transit systems, and vibes.
                   </p>
                 </div>
                 
@@ -650,9 +650,6 @@ export default function GroupDPage() {
                     From the Space Needle to the Hollywood Sign, Group D is a movie waiting to happen. Don't get stuck in traffic—plan ahead.
                   </p>
                   <div className="flex flex-col sm:flex-row justify-center gap-4">
-                    <Link to="/world-cup-2026-host-cities" className="inline-flex items-center justify-center bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 shadow-lg hover:shadow-amber-500/30 text-base">
-                      Explore All Host Cities
-                    </Link>
                     <Link to="/planner" className="inline-flex items-center justify-center bg-white text-slate-900 hover:bg-slate-100 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base">
                       Start My Trip Plan
                     </Link>

@@ -254,9 +254,7 @@ export default function GroupIPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/world-cup-2026-host-cities/new-york-new-jersey-world-cup-2026-guide" className="text-violet-600 hover:text-violet-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Book Hotels <Building2 className="w-4 h-4" />
                         </a>
@@ -288,9 +286,7 @@ export default function GroupIPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/world-cup-2026-host-cities/philadelphia-world-cup-2026-guide" className="text-violet-600 hover:text-violet-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Book Hotels <Building2 className="w-4 h-4" />
                         </a>
@@ -322,9 +318,7 @@ export default function GroupIPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/world-cup-2026-host-cities/boston-world-cup-2026-guide" className="text-violet-600 hover:text-violet-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Book Hotels <Building2 className="w-4 h-4" />
                         </a>
@@ -356,9 +350,7 @@ export default function GroupIPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/cities/toronto" className="text-violet-600 hover:text-violet-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Book Hotels <Building2 className="w-4 h-4" />
                         </a>

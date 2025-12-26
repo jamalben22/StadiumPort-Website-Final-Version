@@ -43,7 +43,7 @@ export default function AffiliateDisclaimerPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-white dark:from-navy-900 dark:to-navy-800 font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
       <SchemaOrg schema={[
         breadcrumbSchema,
         {
@@ -95,7 +95,7 @@ export default function AffiliateDisclaimerPage() {
                   <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
                     Affiliate links are special URLs that track when someone clicks from our site to a partner's website. If you complete a booking, we receive a small commission.
                   </p>
-                  <div className="bg-slate-50 dark:bg-black/20 rounded-2xl p-6 border border-slate-100 dark:border-white/5">
+                  <div className="bg-white dark:bg-black/20 rounded-2xl p-6 border border-slate-100 dark:border-white/5">
                     <h3 className="font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                       <DollarSign className="w-5 h-5 text-indigo-500" /> The Cost to You: Zero
                     </h3>
@@ -194,7 +194,7 @@ export default function AffiliateDisclaimerPage() {
             </div>
 
             <div className="lg:col-span-1">
-              <div className="bg-slate-50 dark:bg-white/5 rounded-3xl p-8 h-full">
+              <div className="bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-3xl p-8 h-full transition-all">
                 <h3 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                   <HeartHandshake className="w-5 h-5 text-indigo-500" /> Trusted Partners
                 </h3>

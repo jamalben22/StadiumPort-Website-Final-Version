@@ -278,9 +278,7 @@ export default function GroupJPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/cities/kansas-city" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Rent Car <Car className="w-4 h-4" />
                         </a>
@@ -312,9 +310,7 @@ export default function GroupJPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/cities/dallas" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://expedia.com/cars" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Rent Car <Car className="w-4 h-4" />
                         </a>
@@ -346,9 +342,7 @@ export default function GroupJPage() {
                         </span>
                       </div>
                       <div className="flex gap-3">
-                        <Link to="/cities/san-francisco" className="text-amber-600 hover:text-amber-500 font-medium flex items-center gap-1 text-sm">
-                          Full Guide <ArrowRight className="w-4 h-4" />
-                        </Link>
+
                         <a href="https://booking.com" target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-slate-900 dark:hover:text-white font-medium flex items-center gap-1 text-sm ml-auto">
                           Book Hotels <Building2 className="w-4 h-4" />
                         </a>
