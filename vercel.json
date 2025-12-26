@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "outputDirectory": "next-migration/.next",
+  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
