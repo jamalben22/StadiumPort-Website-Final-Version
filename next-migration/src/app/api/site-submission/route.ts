@@ -10,7 +10,7 @@ export const revalidate = 0;
  * Service class to handle IndexNow operations
  * This structure helps differentiate this route from others during build optimization
  */
-class IndexNowService {
+class SiteSubmissionService {
   static async validateKey(key: string): Promise<boolean> {
     return key === INDEXNOW_API_KEY;
   }
@@ -40,19 +40,19 @@ class IndexNowService {
 
 export async function POST(request: NextRequest) {
   const timestamp = new Date().toISOString();
-  console.log(`[${timestamp}] IndexNow API route invoked`);
+  console.log(`[${timestamp}] Site Submission API route invoked`);
   
   try {
     const body = await request.json();
-    const result = await IndexNowService.processRequest(body);
+    const result = await SiteSubmissionService.processRequest(body);
     
     return NextResponse.json({ 
       ...result, 
-      service: 'IndexNow-v1',
+      service: 'SiteSubmission-v1',
       timestamp 
     });
   } catch (error: any) {
-    console.error('IndexNow Error:', error);
+    console.error('Site Submission Error:', error);
     
     if (error.message === 'Unauthorized') {
       return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
