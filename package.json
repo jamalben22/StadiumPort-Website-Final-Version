@@ -13,7 +13,7 @@
     "start": "npm run start --prefix next-migration",
     "images": "node scripts/generate-variants.mjs && node scripts/generate-lqip.mjs",
     "lqip": "node scripts/generate-lqip.mjs",
-    "postinstall": "echo 'Installation complete'",
+    "postinstall": "npm install --prefix next-migration",
     "validate:sd": "node scripts/validate-structured-data.mjs"
   },
   "dependencies": {
