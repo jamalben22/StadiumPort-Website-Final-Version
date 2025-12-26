@@ -18,6 +18,8 @@ export const metadata: Metadata = {
 
 export default function EditorialPolicyPage() {
  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+ const pageUrl = '/editorial-policy';
+ const articleSchema = generateArticleSchema('editorial-policy', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",
