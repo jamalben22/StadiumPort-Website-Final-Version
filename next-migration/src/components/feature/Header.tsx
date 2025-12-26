@@ -5,39 +5,29 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { Search, Menu, X } from 'lucide-react';
 import { DarkModeToggle } from '../base/DarkModeToggle';
+import { SearchModal } from './SearchModal';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   const isActive = (path: string) => pathname === path;
 
-  // Search data
-  const searchData = [
-    // Cities
-    
-    // Groups
-    { type: 'page', title: 'Groups', path: '/world-cup-2026-groups', description: 'World Cup 2026 Groups, Teams & Schedule' },
-  ];
-
-  // Search Logic
-  const filteredResults = searchQuery.length > 0 
-    ? searchData.filter(item => 
-        item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchQuery.toLowerCase())
-      ).slice(0, 8)
-    : [];
-
-  const handleSearchSelect = (path: string) => {
-    setIsSearchOpen(false);
-    setSearchQuery('');
-    router.push(path);
-  };
+  // Keyboard Shortcut for Search (Cmd+K)
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(true);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   // Scroll Detection
   useEffect(() => {
@@ -148,10 +138,10 @@ export function Header() {
             {/* Search Trigger */}
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white transition-colors duration-200"
+              className="group p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Search"
             >
-              <Search size={18} strokeWidth={2} />
+              <Search size={20} strokeWidth={2} className="group-hover:stroke-[2.5px] transition-all" />
             </button>
 
             {/* Dark Mode Toggle */}
@@ -170,6 +160,7 @@ export function Header() {
           </div>
         </div>
       </header>
+      <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
     </>
   );
 }

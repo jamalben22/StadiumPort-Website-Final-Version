@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Enable class-based dark mode */
 @variant dark (&:where(.dark, .dark *));
 
@@ -9,6 +13,7 @@
   /* Fonts - Mapped to next/font/google CSS variables */
   --font-space: var(--font-space);
   --font-inter: var(--font-inter);
+  --font-sans: var(--font-inter);
   --font-display: var(--font-oswald);
   --font-oswald: var(--font-oswald);
   --font-mono: var(--font-mono);

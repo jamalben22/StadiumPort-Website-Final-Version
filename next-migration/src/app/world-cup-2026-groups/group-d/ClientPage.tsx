@@ -109,11 +109,6 @@ export default function GroupDClientPage() {
  </p>
  
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-              <AffiliateButton 
-                href="/planner" 
-                text="Start Your Journey" 
-                variant="primary"
-              />
               <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-amber-500 transition-colors">
                 Explore Strategy
               </button>
@@ -173,16 +168,6 @@ export default function GroupDClientPage() {
  </button>
  ))}
  </nav>
- 
- <div className="mt-12 p-6 rounded-2xl border border-slate-100 dark:border-white/5">
- <h4 className="font-bold text-slate-900 dark:text-white mb-2 text-base">Planning a Trip?</h4>
- <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Get our free checklist for Group D travel.</p>
-                <AffiliateButton 
-                  href="/planner" 
-                  text="Start Planner" 
-                  variant="secondary"
-                />
- </div>
  </div>
  </aside>
 

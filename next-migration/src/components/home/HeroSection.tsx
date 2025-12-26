@@ -198,8 +198,8 @@ export const HeroSection = () => {
          animate={{ opacity: 1 }}
          transition={{ delay: 2, duration: 1 }}
        >
-         <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-white/70">Scroll to Explore</span>
-         <div className="w-[1px] h-16 bg-gradient-to-b from-white/0 via-white/50 to-white/0" />
+         <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-black/50 dark:text-white/70">Scroll to Explore</span>
+         <div className="w-[1px] h-16 bg-gradient-to-b from-transparent via-black/20 dark:via-white/50 to-transparent" />
        </motion.div>
     </section>
   );

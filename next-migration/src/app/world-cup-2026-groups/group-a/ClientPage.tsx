@@ -120,11 +120,6 @@ export default function GroupAClientPage() {
  </p>
  
             <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-              <AffiliateButton 
-                href="/planner" 
-                text="Start Your Journey" 
-                variant="primary"
-              />
               <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-emerald-500 transition-colors">
                 Explore Strategy
               </button>
@@ -183,19 +178,9 @@ export default function GroupAClientPage() {
  {item.label}
  </button>
  ))}
- </nav>
- 
- <div className="mt-12 p-6 rounded-2xl border border-slate-100 dark:border-white/5">
- <h4 className="font-bold text-slate-900 dark:text-white mb-2 text-base">Planning a Trip?</h4>
- <p className="text-xs text-slate-500 dark:text-slate-400 mb-4 leading-relaxed">Get our free checklist for Group A travel.</p>
-                <AffiliateButton 
-                  href="/planner" 
-                  text="Start Planner" 
-                  variant="secondary"
-                />
- </div>
- </div>
- </aside>
+            </nav>
+          </div>
+        </aside>
 
  {/* Main Content */}
  <div className="lg:col-span-9 space-y-24">
@@ -672,15 +657,10 @@ export default function GroupAClientPage() {
  <div className="relative z-10 max-w-3xl mx-auto">
  <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready for the Aztec Experience?</h2>
  <p className="text-slate-300 mb-12 text-lg leading-relaxed font-light">
- From the historic heart of CDMX to the modern peaks of Monterrey, Group A is the tournament's soul. Start planning your logistics now.
- </p>
- <div className="flex flex-col sm:flex-row justify-center gap-4">
- <Link href="/planner" className="inline-flex items-center justify-center text-slate-900 font-bold py-4 px-8 rounded-2xl transition-all hover:scale-105 text-base bg-white">
- Start My Trip Plan
- </Link>
- </div>
- </div>
- </div>
+            From the historic heart of CDMX to the modern peaks of Monterrey, Group A is the tournament's soul. Start planning your logistics now.
+          </p>
+        </div>
+      </div>
 
  </div>
  </div>
