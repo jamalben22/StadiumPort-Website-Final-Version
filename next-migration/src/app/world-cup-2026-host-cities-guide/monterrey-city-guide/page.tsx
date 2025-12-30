@@ -16,7 +16,7 @@ export const metadata: Metadata = {
  type: 'article',
  images: [
  {
- url: '/images/cities/monterrey-hero.webp',
+ url: '/images/cities/monterrey-world-cup-2026.webp',
  width: 1200,
  height: 630,
  alt: 'Monterrey World Cup 2026 Guide',

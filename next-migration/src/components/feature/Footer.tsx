@@ -204,12 +204,12 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-12 md:mb-16" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-slate-200 dark:via-white/10 to-transparent mb-8 md:mb-12" />
 
-        {/* Links Grid - 2 Columns on Mobile, 4 on Desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-16 lg:mb-24">
-          {footerSections.map((section) => (
-            <div key={section.title} className="flex flex-col gap-6">
+      {/* Links Grid - 2 Columns on Mobile, 4 on Desktop */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-10 mb-8 lg:mb-12">
+        {footerSections.map((section) => (
+          <div key={section.title} className="flex flex-col gap-6">
               <h3 className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-widest">
                 {section.title}
               </h3>

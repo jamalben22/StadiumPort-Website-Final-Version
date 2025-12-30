@@ -5,7 +5,8 @@ import { motion } from 'framer-motion';
 
 export const CTASection = () => {
   return (
-    <section className="relative py-40 md:py-64 overflow-hidden flex items-center justify-center min-h-[80vh]">
+    <section className="relative py-20 md:py-32 overflow-hidden flex items-center justify-center min-h-[60vh]">
+      <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#000000]" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.h2 

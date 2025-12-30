@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  siteName: 'Stadiumport',
  images: [
       {
-        url: '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp',
+        url: '/images/cities/atlanta-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'Mercedes-Benz Stadium World Cup 2026 Guide',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
     description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
-    images: ['/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp'],
+    images: ['/images/cities/atlanta-world-cup-2026-1600.webp'],
   },
 };
 

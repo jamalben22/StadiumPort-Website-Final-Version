@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  siteName: 'Stadiumport',
  images: [
       {
-        url: '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp',
+        url: '/images/cities/mexico-city-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'Estadio Azteca World Cup 2026 Guide',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Estadio Azteca World Cup 2026: Complete Stadium Guide',
     description: 'Everything you need for Estadio Azteca World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
-    images: ['/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp'],
+    images: ['/images/cities/mexico-city-world-cup-2026-1600.webp'],
   },
 };
 

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  siteName: 'Stadiumport',
  images: [
       {
-        url: '/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp',
+        url: '/images/cities/vancouver-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'BC Place World Cup 2026 Guide',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BC Place World Cup 2026: Complete Stadium Guide',
     description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
-    images: ['/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp'],
+    images: ['/images/cities/vancouver-world-cup-2026-1600.webp'],
   },
 };
 

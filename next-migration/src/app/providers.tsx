@@ -6,7 +6,16 @@ import { AppProgressBar as ProgressBar } from 'next-nprogress-bar';
 
 export function Providers({ children }: { children: React.ReactNode }) {
  return (
- <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+   // defaultTheme="system" enables auto-detection.
+   // enableSystem={true} ensures it checks device preference.
+   // If detection fails or is undefined, it falls back to the default "light" (since no class is applied and :root is light).
+ <ThemeProvider 
+    attribute="class" 
+    defaultTheme="system" 
+    enableSystem 
+    themes={['light', 'dark']}
+    disableTransitionOnChange
+  >
    {children}
    <ProgressBar
       height="3px"

@@ -14,7 +14,7 @@ export const TPDestinationWidget = memo(() => {
     
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&sustainable=false&deals=false&border_radius=12&plain=false&powered_by=true&promo_id=2693&campaign_id=84';
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&sustainable=false&deals=false&border_radius=12&plain=false&powered_by=false&promo_id=2693&campaign_id=84';
     script.charset = 'utf-8';
     
     container.appendChild(script);
@@ -22,11 +22,11 @@ export const TPDestinationWidget = memo(() => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center py-6">
+    <div className="w-full flex justify-center">
       <div 
         ref={containerRef} 
         data-tp-loaded="false"
-        className="w-full max-w-5xl min-h-[400px] flex justify-center items-start" 
+        className="w-full max-w-5xl flex justify-center items-start" 
       />
     </div>
   );

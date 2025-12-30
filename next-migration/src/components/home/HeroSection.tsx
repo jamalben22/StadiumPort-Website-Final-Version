@@ -7,28 +7,42 @@ import { ArrowRight, MapPin, Calendar, Users, Trophy } from 'lucide-react';
 
 // Enhanced Countdown Component
 const CountdownTimer = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
-  });
+  // Initialize with correct values immediately
+  const calculateTimeLeft = () => {
+    const targetDate = new Date('2026-06-11T00:00:00').getTime();
+    const now = new Date().getTime();
+    const difference = targetDate - now;
+
+    if (difference <= 0) {
+      return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+    }
+
+    return {
+      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+      minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+      seconds: Math.floor((difference % (1000 * 60)) / 1000)
+    };
+  };
+
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [mounted, setMounted] = useState(false);
+  const requestRef = useRef<number>(0);
+  const previousTimeRef = useRef<number>(0);
+
+  const animate = (time: number) => {
+    if (time - previousTimeRef.current >= 1000) {
+      setTimeLeft(calculateTimeLeft());
+      previousTimeRef.current = time;
+    }
+    requestRef.current = requestAnimationFrame(animate);
+  };
 
   useEffect(() => {
-    const targetDate = new Date('2026-06-11T00:00:00');
-    const interval = setInterval(() => {
-      const now = new Date();
-      const difference = targetDate.getTime() - now.getTime();
-
-      if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-        setTimeLeft({ days, hours, minutes, seconds });
-      }
-    }, 1000);
-    return () => clearInterval(interval);
+    setMounted(true);
+    setTimeLeft(calculateTimeLeft());
+    requestRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(requestRef.current);
   }, []);
 
   const timeUnits = [
@@ -38,12 +52,32 @@ const CountdownTimer = () => {
     { label: 'Seconds', value: timeLeft.seconds }
   ];
 
+  if (!mounted) {
+      return (
+        <div className="flex gap-3 sm:gap-4 md:gap-8 justify-between sm:justify-start w-full opacity-0">
+          {[0, 1, 2, 3].map((_, index) => (
+            <div key={index} className="flex flex-col items-center min-w-[60px] sm:min-w-[70px]">
+              <div className="relative overflow-hidden h-[36px] sm:h-[48px] md:h-[60px]">
+                <span className="block text-2xl sm:text-3xl md:text-5xl font-space font-bold text-[#0A0A0A] dark:text-white tabular-nums tracking-tighter leading-none">
+                  00
+                </span>
+              </div>
+              <span className="text-[9px] sm:text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-black/50 dark:text-white/50 mt-2">
+                {['Days', 'Hours', 'Minutes', 'Seconds'][index]}
+              </span>
+            </div>
+          ))}
+        </div>
+      );
+  }
+
   return (
-    <div className="flex gap-3 sm:gap-4 md:gap-8 justify-between sm:justify-start w-full">
+    <div className="flex gap-3 sm:gap-4 md:gap-8 justify-between sm:justify-start w-full opacity-0 animate-fade-in" style={{ animationFillMode: 'forwards', animationDuration: '0.3s' }}>
       {timeUnits.map((unit, index) => (
         <div key={index} className="flex flex-col items-center min-w-[60px] sm:min-w-[70px]">
-          <div className="relative">
-            <span className="text-2xl sm:text-3xl md:text-5xl font-space font-bold text-[#0A0A0A] dark:text-white tabular-nums tracking-tighter leading-none">
+          <div className="relative overflow-hidden h-[36px] sm:h-[48px] md:h-[60px]">
+             {/* Use key to trigger animation on value change if desired, or keep it static for performance */}
+            <span className="block text-2xl sm:text-3xl md:text-5xl font-space font-bold text-[#0A0A0A] dark:text-white tabular-nums tracking-tighter leading-none">
               {unit.value.toString().padStart(2, '0')}
             </span>
           </div>

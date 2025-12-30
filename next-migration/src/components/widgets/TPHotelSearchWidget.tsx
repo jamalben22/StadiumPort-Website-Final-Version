@@ -2,7 +2,7 @@
 
 import React, { useRef, useEffect, memo } from 'react';
 
-export const TPGuideWidget = memo(() => {
+export const TPHotelSearchWidget = memo(() => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export const TPGuideWidget = memo(() => {
     
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://tpwgts.com/content?currency=usd&trs=468014&shmarker=679735&powered_by=false&locale=en&destination=77&lowest_price=&highest_price=&min_lines=8&color_button=%2301b47d&promo_id=5850&campaign_id=47';
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&powered_by=false&primary_override=%23FAFAFA&color_button=%2301b47d&color_icons=%2301b47d&dark=%23262626&color_border=%23A8A8A8ff&color_focused=%2301b47d&border_radius=12&no_labels=&plain=false&promo_id=8303&campaign_id=104';
     script.charset = 'utf-8';
     
     container.appendChild(script);
@@ -32,4 +32,4 @@ export const TPGuideWidget = memo(() => {
   );
 });
 
-TPGuideWidget.displayName = 'TPGuideWidget';
+TPHotelSearchWidget.displayName = 'TPHotelSearchWidget';

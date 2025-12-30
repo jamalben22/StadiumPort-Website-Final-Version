@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: '/images/stadiums/lumen-field-seattle-world-cup-2026-1600.webp',
+        url: '/images/cities/seattle-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'Lumen Field World Cup 2026',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    images: ['/images/stadiums/lumen-field-seattle-world-cup-2026-1600.webp'],
+    images: ['/images/cities/seattle-world-cup-2026-1600.webp'],
   },
 };
 

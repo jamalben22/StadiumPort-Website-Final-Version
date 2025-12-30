@@ -106,7 +106,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -283,7 +283,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
- src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp" 
+ src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
  alt="Levi's Stadium Aerial" 
  fill 
  className="object-cover opacity-60"
@@ -468,7 +468,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="The Venue">
  <LightboxImage 
-            src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp" 
+            src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
             alt="Levi's Stadium Interior" 
             caption="Levi's Stadium features an open-air design with a massive suite tower on the west side."
           />
@@ -540,7 +540,7 @@ export default function ClientPage() {
  price="$$$$"
  distance="0.2 miles"
  features={["Closest to Stadium", "Luxury", "Pool"]}
- image="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-640.webp" 
+ image="/images/cities/san-francisco-world-cup-2026-640.webp" 
  link="https://www.booking.com/hotel/us/hyatt-regency-santa-clara.html"
  />
  <HotelCard 
@@ -549,7 +549,7 @@ export default function ClientPage() {
  price="$$$"
  distance="0.3 miles"
  features={["Walking Distance", "Comfort", "Dining"]}
- image="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-640.webp" 
+ image="/images/cities/san-francisco-world-cup-2026-640.webp" 
  link="https://www.booking.com/hotel/us/hilton-santa-clara.html"
  />
  <HotelCard 
@@ -558,7 +558,7 @@ export default function ClientPage() {
         price="$$$"
         distance="1 mile"
         features={["Resort Style", "Spacious", "Amenities"]}
-        image="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-640.webp" 
+        image="/images/cities/san-francisco-world-cup-2026-640.webp" 
         link="https://www.booking.com/hotel/us/santa-clara-marriott.html"
       />
     </div>
@@ -635,14 +635,14 @@ export default function ClientPage() {
   <Section id="attractions" title="Nearby Attractions">
     <div className="grid md:grid-cols-2 gap-8">
       <div className="relative h-64 rounded-3xl overflow-hidden group">
-        <Image src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-640.webp" alt="Great America" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+        <Image src="/images/cities/san-francisco-world-cup-2026-640.webp" alt="Great America" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
           <h4 className="text-white font-bold text-xl">California's Great America</h4>
           <p className="text-white/80 text-sm">Amusement park located directly next to the stadium.</p>
         </div>
       </div>
       <div className="relative h-64 rounded-3xl overflow-hidden group">
-        <Image src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-640.webp" alt="Tech Museum" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+        <Image src="/images/cities/san-francisco-world-cup-2026-640.webp" alt="Tech Museum" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
         <div className="absolute inset-0 p-6 flex flex-col justify-end">
           <h4 className="text-white font-bold text-xl">The Tech Interactive</h4>
           <p className="text-white/80 text-sm">Interactive science and tech museum in downtown San Jose.</p>

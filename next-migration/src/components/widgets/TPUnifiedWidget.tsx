@@ -12,7 +12,7 @@ export const TPUnifiedWidget = memo(() => {
 
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=20&plain=false&color_button=%2301b47d&color_button_text=%23ffffff&color_border=%2301b47d&promo_id=4132&campaign_id=121';
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=false&border_radius=12&plain=false&color_button=%2301b47d&color_button_text=%23FAFAFA&color_border=%23C8C8C8ff&promo_id=4132&campaign_id=121';
     script.charset = 'utf-8';
     script.onerror = () => {
       console.error('Failed to load TravelPay widget script');

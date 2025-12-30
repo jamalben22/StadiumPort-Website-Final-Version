@@ -96,6 +96,13 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Force non-www
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.stadiumport.com' }],
+        destination: 'https://stadiumport.com/:path*',
+        permanent: true,
+      },
       // Legal
       { source: '/privacy', destination: '/legal/privacy', permanent: true },
       { source: '/terms', destination: '/legal/terms', permanent: true },
