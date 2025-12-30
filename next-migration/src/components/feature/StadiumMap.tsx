@@ -18,11 +18,17 @@ export function StadiumMap() {
   // Touch handlers for mobile swipe-to-close
   const onTouchStart = (e: React.TouchEvent) => {
     touchEnd.current = null; // Reset
-    touchStart.current = e.targetTouches[0].clientY;
+    const touch = e.targetTouches?.[0];
+    if (touch) {
+      touchStart.current = touch.clientY;
+    }
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    touchEnd.current = e.targetTouches[0].clientY;
+    const touch = e.targetTouches?.[0];
+    if (touch) {
+      touchEnd.current = touch.clientY;
+    }
   };
 
   const onTouchEnd = () => {
