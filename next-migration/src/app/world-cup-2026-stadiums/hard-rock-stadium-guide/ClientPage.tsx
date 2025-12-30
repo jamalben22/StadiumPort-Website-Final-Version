@@ -84,8 +84,8 @@ const SocialShare = () => {
         <button onClick={() => handleShare('linkedin')} className="p-3 hover:bg-teal-50 dark:hover:bg-teal-900/30 rounded-xl text-slate-500 hover:text-teal-600 transition-colors" aria-label="Share on LinkedIn">
           <Linkedin className="w-5 h-5" />
         </button>
-        <button onClick={handleCopy} className="p-3 hover:bg-teal-50 dark:hover:bg-teal-900/30 rounded-xl text-slate-500 hover:text-teal-600 transition-colors relative" aria-label="Copy Link">
-          {copied ? <Check className="w-5 h-5 text-teal-500" /> : <Copy className="w-5 h-5" />}
+        <button onClick={handleCopy} className="p-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors relative" aria-label="Copy Link">
+          {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
         </button>
       </div>
     </motion.div>
