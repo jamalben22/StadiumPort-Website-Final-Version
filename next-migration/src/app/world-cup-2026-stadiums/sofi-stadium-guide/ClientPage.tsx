@@ -830,12 +830,21 @@ export default function ClientPage() {
  <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-{['New York/New Jersey', 'Atlanta', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Boston'].map((city) => (
-<Link key={city} href={`/world-cup-2026-host-cities-guide/${citySlugMap[city]}`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
-{city}
-</Link>
-))}
-</div>
+    {[
+      { name: 'New York/New Jersey', slug: 'new-york-new-jersey' },
+      { name: 'Atlanta', slug: 'atlanta' },
+      { name: 'Mexico City', slug: 'mexico-city' },
+      { name: 'Toronto', slug: 'toronto' },
+      { name: 'Dallas', slug: 'dallas' },
+      { name: 'Miami', slug: 'miami' },
+      { name: 'Seattle', slug: 'seattle' },
+      { name: 'Boston', slug: 'boston' }
+    ].map((city) => (
+      <Link key={city.name} href={`/world-cup-2026-host-cities-guide/${city.slug}`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+        {city.name}
+      </Link>
+    ))}
+  </div>
  <div className="text-center mt-12">
  <Link href="/world-cup-2026-host-cities" className="text-emerald-500 hover:text-emerald-600 font-bold text-lg inline-flex items-center gap-2 hover:gap-4 transition-all">
  View All 16 Host Cities <ArrowRight className="w-5 h-5"/>
