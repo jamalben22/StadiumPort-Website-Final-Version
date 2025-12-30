@@ -143,9 +143,9 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
     <div className="w-full max-w-md mx-auto px-4">
       {/* Step Chip (Background Page, outside card) */}
       <div className="mb-6 flex justify-center">
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/40 border border-white/60 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-          <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+          <span className="text-[11px] font-bold text-slate-950 uppercase tracking-[0.22em] font-['Rajdhani']">
             Step 4 of 5: Submit Your Official Entry
           </span>
         </div>
@@ -156,7 +156,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
         <h2 className="text-3xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
           Secure Your World Cup 2026 Prediction
         </h2>
-        <p className="text-slate-400 font-mono text-xs md:text-sm uppercase tracking-widest mt-3 px-4 leading-relaxed">
+        <p className="text-black font-mono text-xs md:text-sm uppercase tracking-widest mt-3 px-4 leading-relaxed">
           You're one step away from competing for official prizes! Enter your details below to lock in your predictions and join thousands of fans worldwide.
         </p>
       </div>
@@ -185,12 +185,12 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
           
           {/* Name Field */}
           <div className="space-y-2 sm:space-y-1.5">
-            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+            <label className="text-[11px] font-bold text-slate-900 uppercase tracking-widest ml-1 font-['Rajdhani']">
               Participant Full Name
             </label>
             <div className="relative group">
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <User className="h-4 w-4 text-white/40 group-focus-within:text-[#01b47d] transition-colors" />
+                <User className="h-4 w-4 text-slate-900/40 group-focus-within:text-[#01b47d] transition-colors" />
               </div>
               <input
                 type="text"
@@ -199,7 +199,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, name: e.target.value });
                   if (errors.name) setErrors({ ...errors, name: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.name ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-slate-900 placeholder:text-slate-900/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
                 autoComplete="name"
                 placeholder="Cristiano Ronaldo"
               />
@@ -209,12 +209,12 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 
           {/* Email Field */}
           <div className="space-y-2 sm:space-y-1.5">
-            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+            <label className="text-[11px] font-bold text-slate-900 uppercase tracking-widest ml-1 font-['Rajdhani']">
               Official Contact Email
             </label>
             <div className="relative group">
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <Mail className="h-4 w-4 text-white/40 group-focus-within:text-[#01b47d] transition-colors" />
+                <Mail className="h-4 w-4 text-slate-900/40 group-focus-within:text-[#01b47d] transition-colors" />
               </div>
               <input
                 type="email"
@@ -223,7 +223,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                   setFormData({ ...formData, email: e.target.value });
                   if (errors.email) setErrors({ ...errors, email: '' });
                 }}
-                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-white placeholder:text-white/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
+                className={`w-full bg-white/5 border ${errors.email ? 'border-red-500/50' : 'border-white/10 focus:border-[#01b47d]/50'} rounded-2xl h-12 md:h-auto py-3 md:py-3.5 pl-12 md:pl-11 pr-4 text-base text-slate-900 placeholder:text-slate-900/20 focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 transition-all font-['Rajdhani'] font-medium`}
                 autoComplete="email"
                 placeholder="cr7@stadiumport.com"
               />
@@ -233,7 +233,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 
           {/* Country Field (Custom Dropdown) */}
           <div className="space-y-1.5 relative" ref={dropdownRef}>
-            <label className="text-[11px] font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+            <label className="text-[11px] font-bold text-slate-900 uppercase tracking-widest ml-1 font-['Rajdhani']">
               Country of Residence
             </label>
             
@@ -244,12 +244,12 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
               className={`relative w-full bg-white/5 border ${errors.country ? 'border-red-500/50' : isDropdownOpen ? 'border-[#01b47d]/50' : 'border-white/10'} rounded-2xl h-12 md:h-auto py-0 md:py-3.5 pl-12 md:pl-11 pr-4 flex items-center justify-between text-left transition-all focus:outline-none focus:ring-2 focus:ring-[#01b47d]/20 group hover:bg-white/10`}
             >
               <div className="absolute left-0 top-0 w-12 h-full flex items-center justify-center pointer-events-none">
-                <Globe className={`h-4 w-4 shrink-0 transition-colors ${formData.country ? 'text-[#01b47d]' : 'text-white/40 group-hover:text-white/60'}`} />
+                <Globe className={`h-4 w-4 shrink-0 transition-colors ${formData.country ? 'text-[#01b47d]' : 'text-slate-900/40 group-hover:text-slate-900/60'}`} />
               </div>
-              <span className={`block truncate font-['Rajdhani'] font-medium text-[15px] md:text-base leading-[1.25] ${formData.country ? 'text-white' : 'text-white/20'} flex-1 min-w-0`}>
+              <span className={`block truncate font-['Rajdhani'] font-medium text-[15px] md:text-base leading-[1.25] ${formData.country ? 'text-slate-900' : 'text-slate-900/20'} flex-1 min-w-0`}>
                 {formData.country || 'Select your country'}
               </span>
-              <ChevronDown className={`h-4 w-4 text-white/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-[#01b47d]' : ''}`} />
+              <ChevronDown className={`h-4 w-4 text-slate-900/40 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180 text-[#01b47d]' : ''}`} />
             </button>
 
             {/* Error Message */}
@@ -329,7 +329,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
           {/* Compliance Section */}
           <div className="space-y-4">
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+              <label className="text-xs font-bold text-slate-900/60 uppercase tracking-widest ml-1 font-['Rajdhani']">
                 Age Confirmation *
               </label>
               <button
@@ -343,7 +343,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                 }}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.ageConfirmed ? 'border-[#01b47d]/50 bg-[#01b47d]/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-[#01b47d]/30`}
               >
-                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 13 years or older</span>
+                <span className="text-slate-900 font-['Rajdhani'] font-medium text-sm text-left pr-4">I confirm I am 13 years or older</span>
                 <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.ageConfirmed ? 'bg-[#01b47d]' : 'bg-white/10 border border-white/20'}`}>
                   <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.ageConfirmed ? 'translate-x-4' : ''}`}></span>
                 </div>
@@ -352,7 +352,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             </div>
 
             <div className="space-y-1.5">
-              <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1 font-['Rajdhani']">
+              <label className="text-xs font-bold text-slate-900 uppercase tracking-widest ml-1 font-['Rajdhani']">
                 Terms & Conditions *
               </label>
               <button
@@ -366,7 +366,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                 }}
                 className={`w-full flex items-center justify-between px-3 py-2.5 rounded-2xl border ${formData.acceptedTerms ? 'border-[#01b47d]/50 bg-[#01b47d]/10' : 'border-white/10 bg-white/5'} transition-colors focus:outline-none focus:ring-2 focus:ring-[#01b47d]/30`}
               >
-                <span className="text-white/90 font-['Rajdhani'] font-medium text-sm text-left pr-4">I agree to the Official Rules and Privacy Policy</span>
+                <span className="text-slate-900 font-['Rajdhani'] font-medium text-sm text-left pr-4">I agree to the Official Rules and Privacy Policy</span>
                 <div className={`relative w-9 h-5 rounded-full shrink-0 transition-colors ${formData.acceptedTerms ? 'bg-[#01b47d]' : 'bg-white/10 border border-white/20'}`}>
                   <span className={`absolute top-0.5 left-0.5 w-4 h-4 rounded-full bg-white transition-transform ${formData.acceptedTerms ? 'translate-x-4' : ''}`}></span>
                 </div>

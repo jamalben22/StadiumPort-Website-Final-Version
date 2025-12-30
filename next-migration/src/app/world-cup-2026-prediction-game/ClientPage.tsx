@@ -323,7 +323,7 @@ function PredictGameContent() {
                     </motion.div>
                     <span 
                       className={`mt-2 text-[11px] md:text-sm font-medium tracking-wide transition-colors duration-300 whitespace-nowrap font-inter ${
-                        isCurrent ? 'text-slate-900 font-bold' : isCompleted ? 'text-slate-700' : 'text-slate-500/80'
+                        isCurrent ? 'text-slate-900 font-bold' : isCompleted ? 'text-slate-800' : 'text-slate-700'
                       } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
                     >
                       {step.label}

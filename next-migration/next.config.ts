@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss:;"
+          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss:;"
         },
         {
           key: 'Permissions-Policy',
@@ -146,6 +146,18 @@ const nextConfig: NextConfig = {
       { source: '/2026-world-cup-group-j-travel-guide', destination: '/world-cup-2026-groups/group-j', permanent: true },
       { source: '/2026-world-cup-group-k-travel-guide', destination: '/world-cup-2026-groups/group-k', permanent: true },
       { source: '/2026-world-cup-group-l-travel-guide', destination: '/world-cup-2026-groups/group-l', permanent: true },
+    ];
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/city-guide/:slug',
+        destination: '/world-cup-2026-host-cities/:slug-city-guide',
+      },
+      {
+        source: '/stadium-guide/:slug',
+        destination: '/world-cup-2026-stadiums/:slug-guide',
+      },
     ];
   },
 };

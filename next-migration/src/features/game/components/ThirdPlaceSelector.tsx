@@ -57,7 +57,7 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
             px-2 py-1 text-xs font-bold font-mono rounded border
             ${isSelected 
               ? 'bg-yellow-500 text-black border-yellow-400' 
-              : 'bg-white/80 text-slate-600 border-white/40'}
+              : 'bg-white/80 text-slate-900 border-white/40'}
           `}>
             GROUP {groupId}
           </div>
@@ -80,7 +80,7 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
                  w-20 h-20 rounded-full flex items-center justify-center bg-slate-800 shadow-2xl border-4
                  ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
                `}>
-                  <span className="text-xs font-bold text-slate-400">FIFA</span>
+                  <span className="text-xs font-bold text-white/90">FIFA</span>
                </div>
             ) : (
                 <img 
@@ -98,11 +98,11 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
         <div className="text-center">
           <h3 className={`
             font-display font-bold text-2xl uppercase tracking-tighter leading-none mb-1
-            ${isSelected ? 'text-yellow-600 drop-shadow-sm' : 'text-slate-800'}
+            ${isSelected ? 'text-yellow-700 drop-shadow-sm' : 'text-slate-900'}
           `}>
             {team.name}
           </h3>
-          <p className="text-xs text-slate-500 font-mono uppercase tracking-wide">
+          <p className={`text-xs ${isSelected ? 'text-yellow-800/80' : 'text-slate-700'} font-mono uppercase tracking-wide`}>
             {team.region}
           </p>
         </div>
@@ -207,11 +207,11 @@ export const ThirdPlaceSelector = React.memo(() => {
       <div className="text-center space-y-6">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-          <span className="text-[11px] font-bold text-slate-600 uppercase tracking-[0.22em] font-['Rajdhani']">
+          <span className="text-[11px] font-bold text-slate-800 uppercase tracking-[0.22em] font-['Rajdhani']">
             Step 2 of 5: Select Best Third-Place Qualifiers
           </span>
         </div>
-        <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-sm">
+        <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-950 uppercase tracking-tighter drop-shadow-sm">
           Third-Place Qualifiers: Pick the 8 Teams Advancing to Round of 32
         </h2>
         
@@ -221,17 +221,17 @@ export const ThirdPlaceSelector = React.memo(() => {
             <div
               key={i}
               className={`
-                h-4 w-8 md:w-12 skew-x-[-20deg] border border-white/20 transition-all duration-300
+                h-4 w-8 md:w-12 skew-x-[-20deg] border border-slate-400/30 transition-all duration-300
                 ${i < selectedCount 
                   ? 'bg-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.6)] border-yellow-200' 
-                  : 'bg-white/10 backdrop-blur-sm'
+                  : 'bg-white/20 backdrop-blur-sm'
                 }
               `}
             />
           ))}
         </div>
         
-        <p className="text-white/60 font-mono text-sm uppercase tracking-widest">
+        <p className="text-slate-900 font-mono text-sm uppercase tracking-widest">
           {selectedCount} / 8 Third-Place Teams Selected
         </p>
       </div>

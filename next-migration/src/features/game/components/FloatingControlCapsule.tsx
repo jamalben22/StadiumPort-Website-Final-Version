@@ -36,7 +36,7 @@ export const FloatingControlCapsule = ({
             transition-all duration-200
             ${!canGoBack 
               ? 'opacity-20 cursor-not-allowed' 
-              : 'hover:bg-white/10 text-white/50 hover:text-white cursor-pointer'}
+              : 'hover:bg-white/10 text-white/70 hover:text-white cursor-pointer'}
           `}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -50,7 +50,7 @@ export const FloatingControlCapsule = ({
             {[...Array(totalDots)].map((_, idx) => (
               <div 
                 key={idx} 
-                className={`w-1 h-1 rounded-full transition-all duration-300 ${idx === currentDot ? 'bg-white scale-125' : 'bg-white/20'}`}
+                className={`w-1 h-1 rounded-full transition-all duration-300 ${idx === currentDot ? 'bg-white scale-125' : 'bg-white/40'}`}
               />
             ))}
           </div>

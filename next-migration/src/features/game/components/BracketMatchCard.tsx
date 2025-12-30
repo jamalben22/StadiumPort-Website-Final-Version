@@ -75,7 +75,7 @@ const TeamRow = React.memo(({
            {/* Flag */}
            {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
              <div className={`
-                 rounded-full flex-shrink-0 bg-slate-900/10 flex items-center justify-center text-[8px] font-bold text-slate-900/60
+                 rounded-full flex-shrink-0 bg-slate-900/10 flex items-center justify-center text-[8px] font-bold text-slate-900
                  ${compact ? 'w-6 h-6' : 'w-8 h-8'}
              `}>FIFA</div>
            ) : (
@@ -98,7 +98,7 @@ const TeamRow = React.memo(({
                       ${compact ? 'text-base' : 'text-xl'}
                       ${isWinner 
                           ? 'text-white font-bold drop-shadow-sm' 
-                          : 'text-slate-900/60 group-hover:text-slate-900'
+                          : 'text-slate-900 group-hover:text-black font-semibold'
                       }
                     `}>
                       {team.fifaCode}
@@ -107,7 +107,7 @@ const TeamRow = React.memo(({
                 <span className={`
                   font-['Teko'] uppercase truncate text-left transition-colors duration-300 tracking-wide
                   ${compact ? 'text-sm' : 'text-lg'}
-                  ${isWinner ? 'text-white font-semibold' : 'text-slate-900 group-hover:text-black'}
+                  ${isWinner ? 'text-white font-semibold' : 'text-slate-900 group-hover:text-black font-medium'}
                 `}>
                   {team.name}
                 </span>
@@ -132,13 +132,13 @@ const TeamRow = React.memo(({
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent w-[50%] -skew-x-12 translate-x-[-150%] animate-[shimmer_3s_infinite]" />
 
           <span className={`
-            relative z-10 font-['Teko'] tracking-[0.15em] uppercase text-slate-500 
-            flex items-center gap-2
-            ${compact ? 'text-xs' : 'text-sm'}
-          `}>
-            <i className="ri-loader-4-line animate-spin text-[10px]"></i>
-            Waiting...
-          </span>
+                  relative z-10 font-['Teko'] tracking-[0.15em] uppercase text-slate-900 font-bold
+                  flex items-center gap-2
+                  ${compact ? 'text-xs' : 'text-sm'}
+                `}>
+                  <i className="ri-loader-4-line animate-spin text-[10px]"></i>
+                  Waiting...
+                </span>
         </div>
       )}
     </button>

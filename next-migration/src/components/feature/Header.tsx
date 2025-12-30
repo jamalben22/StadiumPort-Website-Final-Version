@@ -83,7 +83,7 @@ export function Header() {
   // Navigation Items
   const navItems = [
     { label: 'Groups', path: '/world-cup-2026-groups' },
-    { label: 'Host Cities', path: '/world-cup-2026-host-cities' },
+    { label: 'Host Cities', path: '/world-cup-2026-host-cities-guide' },
     { label: 'Stadiums', path: '/world-cup-2026-stadiums' },
     { label: 'Draw Hub', path: '/world-cup-2026-draw-travel-hub' },
     { label: 'Predictor', path: '/world-cup-2026-prediction-game' },
@@ -111,12 +111,12 @@ export function Header() {
                 {/* Desktop Logo */}
                 <div className="hidden lg:block">
                   <img 
-                    src="https://stadiumport.com/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
+                    src="/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
                     alt="Stadiumport"
                     className={`h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
                   <img 
-                    src="https://stadiumport.com/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
+                    src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
                     alt="Stadiumport"
                     className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
@@ -124,12 +124,12 @@ export function Header() {
                 {/* Mobile Logo */}
                 <div className="lg:hidden">
                    <img 
-                    src="https://stadiumport.com/images/Logos/Mobile Header Logo 180 x 180 px.svg"
+                    src="/images/Logos/Mobile Header Logo 180 x 180 px.svg"
                     alt="Stadiumport"
                     className={`h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
                   <img 
-                    src="https://stadiumport.com/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
+                    src="/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
                     alt="Stadiumport"
                     className={`absolute top-0 left-0 h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />

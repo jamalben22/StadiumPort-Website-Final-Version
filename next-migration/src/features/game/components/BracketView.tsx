@@ -203,7 +203,7 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
           <div className="sticky top-2 z-30 mx-4 mb-2">
             <div className="flex items-center justify-center gap-3 px-4 py-2 rounded-full bg-[#01b47d]/15 border border-[#01b47d]/30 backdrop-blur-md">
               <span className="inline-block w-2 h-2 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-              <span className="text-[11px] font-bold text-slate-700 dark:text-white uppercase tracking-[0.22em] font-['Rajdhani']">Select Third Place to finalize Top 3 & 4</span>
+              <span className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-[0.22em] font-['Rajdhani']">Select Third Place to finalize Top 3 & 4</span>
             </div>
           </div>
         )}

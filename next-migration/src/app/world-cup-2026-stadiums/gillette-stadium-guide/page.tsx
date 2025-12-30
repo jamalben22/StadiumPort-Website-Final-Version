@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/gillette-stadium-foxborough-world-cup-2026-1024.webp',
-        width: 1024,
-        height: 683,
+        url: '/images/stadiums/gillette-stadium-foxborough-world-cup-2026-1600.webp',
+        width: 1600,
+        height: 1066,
         alt: 'Gillette Stadium World Cup 2026',
       },
     ],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Gillette Stadium World Cup 2026: Complete Stadium Guide',
     description: 'Comprehensive guide for fans visiting Gillette Stadium for World Cup 2026.',
-    images: ['/images/stadiums/gillette-stadium-foxborough-world-cup-2026-1024.webp'],
+    images: ['/images/stadiums/gillette-stadium-foxborough-world-cup-2026-1600.webp'],
   },
 };
 

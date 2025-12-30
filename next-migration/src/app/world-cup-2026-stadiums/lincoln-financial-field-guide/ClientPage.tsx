@@ -10,7 +10,7 @@ import {
  ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
  DollarSign, Shield, Clock, Globe, Star, ExternalLink,
  Train, Bus, Car, Bike, AlertTriangle, Briefcase,
- Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy, Navigation
+ X, ChevronRight, Facebook, Twitter, Linkedin, Copy, Navigation
 } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { Footer } from '@/components/feature/Footer';
@@ -36,22 +36,62 @@ const staggerContainer = {
 
 // 2. Floating Social Share
 const SocialShare = () => {
- return (
- <motion.div 
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ delay: 1 }}
- className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
- >
- <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
- {[Twitter, Facebook, Linkedin, Copy].map((Icon, i) => (
- <button key={i} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
- <Icon className="w-5 h-5" />
- </button>
- ))}
- </div>
- </motion.div>
- );
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        break;
+    }
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1 }}
+      className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
+    >
+      <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
+        <button onClick={() => handleShare('twitter')} className="p-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors" aria-label="Share on Twitter">
+          <Twitter className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('facebook')} className="p-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors" aria-label="Share on Facebook">
+          <Facebook className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('linkedin')} className="p-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors" aria-label="Share on LinkedIn">
+          <Linkedin className="w-5 h-5" />
+        </button>
+        <button onClick={handleCopy} className="p-3 hover:bg-emerald-50 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors relative" aria-label="Copy Link">
+          {copied ? <Check className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 // 3. Lightbox Image
@@ -64,7 +104,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative group cursor-zoom-in rounded-3xl overflow-hidden mb-8"
  onClick={() => setIsOpen(true)}
  >
- <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105" />
+ <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -91,7 +131,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative max-w-7xl w-full max-h-[90vh] rounded-lg overflow-hidden"
  onClick={(e) => e.stopPropagation()}
  >
- <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full" />
+ <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full"  unoptimized />
  {caption && <p className="text-center text-white/80 mt-4 font-light text-lg">{caption}</p>}
  </motion.div>
  </motion.div>
@@ -133,22 +173,22 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
  };
 
  return (
- <a href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${variants[variant]}`}>
- <span className="relative z-10 flex items-center gap-2">
- {text} <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
- </span>
- {variant === 'primary' && (
- <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
- )}
- </a>
- );
+            <Link href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${variants[variant]}`}>
+              <span className="relative z-10 flex items-center gap-2">
+                {text} <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </span>
+              {variant === 'primary' && (
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              )}
+            </Link>
+          );
 };
 
 const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
- <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+ <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
  <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
  </div>
@@ -205,7 +245,7 @@ export default function LincolnFinancialFieldClientPage() {
  });
 
  const [activeSection, setActiveSection] = useState('hero');
- const [isSaved, setIsSaved] = useState(false);
+ 
 
  // Sticky Nav Links
  const navLinks = [
@@ -248,7 +288,7 @@ export default function LincolnFinancialFieldClientPage() {
  className="object-cover opacity-60"
  priority
  sizes="100vw"
- />
+  unoptimized />
  <div className="absolute inset-0 " />
  </div>
 
@@ -277,24 +317,7 @@ export default function LincolnFinancialFieldClientPage() {
  </motion.div>
  </div>
 
- {/* Save Guide Button - Integrated */}
- <motion.button
- initial={{ opacity: 0, scale: 0.9 }}
- animate={{ opacity: 1, scale: 1 }}
- transition={{ delay: 0.2, duration: 0.6 }}
- onClick={() => setIsSaved(!isSaved)}
- className="group flex items-center gap-3 pl-4 pr-6 py-3 hover:/20 backdrop-blur-xl border border-white/20 rounded-full transition-all duration-300 mb-2 md:mb-0"
- >
- <div className={`flex items-center justify-center w-10 h-10 rounded-full ${isSaved ? 'bg-emerald-500 text-white' : ' text-slate-900'} transition-colors duration-300`}>
- <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
- </div>
- <div className="text-left">
- <span className="block text-xs text-slate-400 uppercase tracking-wider font-bold">Guide Status</span>
- <span className="block text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
- {isSaved ? 'Saved to Library' : 'Save to Library'}
- </span>
- </div>
- </motion.button>
+
  </div>
  </div>
 
@@ -361,19 +384,19 @@ export default function LincolnFinancialFieldClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Search Philadelphia Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="#" text="Check Center City Hotels" variant="primary" icon={Hotel} />
+           <AffiliateButton href="https://www.skyscanner.com/flights-to/phl/cheap-flights-to-philadelphia-international-airport.html" text="Search Philadelphia Flights" variant="secondary" icon={Plane} />
+          <AffiliateButton href="https://www.booking.com/city/us/philadelphia.html" text="Check Center City Hotels" variant="primary" icon={Hotel} />
  </div>
  </Section>
 
  <Section id="visa" title="Visa & Entry (USA)">
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
- <AffiliateButton href="#" text="Check ESTA Eligibility" variant="outline" />
- </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+          <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
+          <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
+          <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
+        </div>
+        <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
  <ul className="space-y-4 mb-8">
  {['Use PHL\'s automated passport control', 'Proof of onward travel required', 'Carry digital copies of tickets'].map((item, i) => (
@@ -382,7 +405,7 @@ export default function LincolnFinancialFieldClientPage() {
  </li>
  ))}
  </ul>
- <AffiliateButton href="#" text="Buy Travel Insurance" variant="secondary" />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
  </div>
  </div>
  </Section>
@@ -401,8 +424,8 @@ export default function LincolnFinancialFieldClientPage() {
  ))}
  </div>
  <div className="mt-8 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Set Flight Alerts" variant="primary" icon={Plane} />
- <AffiliateButton href="#" text="Reserve Restaurant Tables" variant="outline" />
+ <AffiliateButton href="https://www.skyscanner.com/flights-to/phl/cheap-flights-to-philadelphia-international-airport.html" text="Set Flight Alerts" variant="primary" icon={Plane} />
+ <AffiliateButton href="https://www.opentable.com/philadelphia-restaurants" text="Reserve Restaurant Tables" variant="outline" />
  </div>
  </Section>
 
@@ -427,16 +450,21 @@ export default function LincolnFinancialFieldClientPage() {
  ))}
  </div>
  <div className="mt-8 text-center">
- <AffiliateButton href="#" text="Search Philadelphia Packages" variant="secondary" icon={Briefcase} />
+ <p className="text-slate-600 dark:text-slate-300 mb-8">
+ From budget-friendly options to VIP experiences, plan your trip according to your budget.
+ </p>
+ <div className="flex flex-wrap gap-4 justify-center">
+ <AffiliateButton href="https://www.viator.com/Philadelphia/d906-ttd" text="View Local Tours" variant="secondary" icon={MapPin} />
+ </div>
  </div>
  </Section>
 
  <Section id="stadium" title="Inside The Linc">
  <LightboxImage 
-        src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1024.webp" 
-        alt="Lincoln Financial Field Seating" 
-        caption="The Linc offers excellent sightlines and a passionate Philadelphia atmosphere."
-      />
+            src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp" 
+            alt="Lincoln Financial Field Seating" 
+            caption="The Linc offers excellent sightlines and a passionate Philadelphia atmosphere."
+          />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
@@ -490,12 +518,12 @@ export default function LincolnFinancialFieldClientPage() {
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
  ))}
- </div>
- <div className="flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Buy Clear Stadium Bag" variant="primary" />
- <AffiliateButton href="#" text="Add Refillable Bottle" variant="outline" />
- </div>
- </Section>
+      </div>
+      <div className="flex flex-wrap gap-4">
+        <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag&tag=stadiumport-20" text="Buy Clear Stadium Bag" variant="primary" />
+        <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle&tag=stadiumport-20" text="Add Refillable Bottle" variant="outline" />
+      </div>
+    </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
  <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
@@ -530,12 +558,12 @@ export default function LincolnFinancialFieldClientPage() {
  <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
- Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the July 4th game.
- </p>
- <AffiliateButton href="#" text="Check StubHub" variant="primary" />
- </div>
- </div>
- </Section>
+          Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the July 4th game.
+        </p>
+        <AffiliateButton href="https://www.stubhub.com/lincoln-financial-field-tickets/venue/109/" text="Check StubHub" variant="primary" />
+      </div>
+    </div>
+  </Section>
 
  <Section id="hotels" title="Where to Stay">
  <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
@@ -550,7 +578,7 @@ export default function LincolnFinancialFieldClientPage() {
  distance="0.3 miles"
  features={["Walking Distance", "Casino", "Entertainment"]}
  image="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-640.webp" 
- link="#"
+ link="https://www.booking.com/hotel/us/live-casino-amp-philadelphia.html"
  />
  <HotelCard 
  name="Courtyard Philadelphia South" 
@@ -559,7 +587,7 @@ export default function LincolnFinancialFieldClientPage() {
  distance="0.4 miles"
  features={["Modern Rooms", "Fitness Center", "Parking"]}
  image="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-640.webp" 
- link="#"
+ link="https://www.booking.com/hotel/us/courtyard-by-marriott-philadelphia-south-at-the-navy-yard.html"
  />
  <HotelCard 
  name="Holiday Inn Philadelphia South" 
@@ -568,12 +596,12 @@ export default function LincolnFinancialFieldClientPage() {
  distance="0.6 miles"
  features={["Affordable", "Restaurant", "Business Center"]}
  image="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-640.webp" 
- link="#"
+ link="https://www.booking.com/hotel/us/holiday-inn-philadelphia-stadium.html"
  />
  </div>
  
  <div className="mt-12 text-center">
- <AffiliateButton href="#" text="Search All Philadelphia Hotels" variant="outline" />
+ <AffiliateButton href="https://www.booking.com/city/us/philadelphia.html" text="Search All Philadelphia Hotels" variant="outline" />
  </div>
  </Section>
 
@@ -631,7 +659,7 @@ export default function LincolnFinancialFieldClientPage() {
  ))}
  </ul>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
- <AffiliateButton href="#" text="Book Airport Transfer" variant="secondary" />
+ <AffiliateButton href="https://www.viator.com/Philadelphia-tours/Transfers-and-Ground-Transport/d906-g15" text="Book Airport Transfer" variant="secondary" />
  </div>
  </div>
  </div>
@@ -677,7 +705,13 @@ export default function LincolnFinancialFieldClientPage() {
  ))}
  </div>
  <div className="mt-8">
- <AffiliateButton href="#" text="Get Philadelphia CityPASS (Save 40%)" variant="primary" />
+ <div className="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-700">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Tours & Activities</h3>
+ <p className="text-slate-600 dark:text-slate-300 mb-6">
+ Explore Philadelphia's rich history and culture.
+ </p>
+ <AffiliateButton href="https://www.viator.com/Philadelphia/d906-ttd" text="Find Tours" variant="secondary" />
+ </div>
  </div>
  </Section>
 
@@ -695,7 +729,7 @@ export default function LincolnFinancialFieldClientPage() {
  <li>• Save local emergency contacts offline.</li>
  </ul>
  <div className="mt-6">
- <AffiliateButton href="#" text="Get Travel Insurance" variant="secondary" />
+ <AffiliateButton href="https://www.worldnomads.com/travel-insurance" text="Get Travel Insurance" variant="secondary" />
  </div>
  </div>
  </div>
@@ -737,10 +771,10 @@ export default function LincolnFinancialFieldClientPage() {
  <li>• US plug adapters (Type A/B)</li>
  <li>• Offline maps</li>
  <li>• eSIM with hotspot</li>
- </ul>
- <AffiliateButton href="#" text="Get an eSIM" variant="secondary" />
- </div>
- </div>
+        </ul>
+        <AffiliateButton href="https://www.airalo.com/united-states-esim" text="Get an eSIM" variant="secondary" />
+      </div>
+    </div>
  </Section>
 
  <Section id="faq" title="Frequently Asked Questions">
@@ -784,10 +818,10 @@ export default function LincolnFinancialFieldClientPage() {
  <li>• <strong>WiFi:</strong> Free at PHL Airport & Stadium.</li>
  <li>• <strong>Power:</strong> 120V, Type A/B plugs.</li>
  <li>• <strong>Sim Cards:</strong> Kiosks at PHL Arrivals.</li>
- </ul>
- <AffiliateButton href="#" text="Get an Airalo eSIM" variant="secondary" />
- </div>
- </div>
+        </ul>
+        <AffiliateButton href="https://www.airalo.com/united-states-esim" text="Get an Airalo eSIM" variant="secondary" />
+      </div>
+    </div>
  </Section>
 
  <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">

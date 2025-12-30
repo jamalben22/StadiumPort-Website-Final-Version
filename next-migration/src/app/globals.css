@@ -133,6 +133,26 @@ input[type="reset"],
   --color-aurora-800: #075985;
   --color-aurora-900: #0c4a6e;
 
+  /* Semantic Colors Mapped to Variables */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
   /* Animations */
   --animate-fade-up: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   --animate-fade-in: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
@@ -179,6 +199,51 @@ input[type="reset"],
   --brand-accent-soft: #fbbf24;
   --footer-bg-light: #EDEDED;
   --footer-bg-dark: #000000;
+
+  /* Semantic Theme Variables - Light Mode (Default) */
+  --background: #F5F5F7; /* Apple system gray light */
+  --foreground: #1D1D1F; /* Apple system text */
+  --card: #FFFFFF;
+  --card-foreground: #1D1D1F;
+  --popover: #FFFFFF;
+  --popover-foreground: #1D1D1F;
+  --primary: #01b47d;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E5E5EA; /* Apple system gray 6 */
+  --secondary-foreground: #1D1D1F;
+  --muted: #F5F5F7;
+  --muted-foreground: #86868B; /* Apple system gray */
+  --accent: #007AFF; /* Apple system blue */
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF3B30; /* Apple system red */
+  --destructive-foreground: #FFFFFF;
+  --border: #D1D1D6; /* Apple system gray 4 */
+  --input: #E5E5EA;
+  --ring: #01b47d;
+  --radius: 0.75rem;
+}
+
+.dark {
+  /* Semantic Theme Variables - Dark Mode */
+  --background: #000000; /* Apple system black */
+  --foreground: #F5F5F7;
+  --card: #1C1C1E; /* Apple system gray 6 dark */
+  --card-foreground: #F5F5F7;
+  --popover: #1C1C1E;
+  --popover-foreground: #F5F5F7;
+  --primary: #01b47d;
+  --primary-foreground: #FFFFFF;
+  --secondary: #2C2C2E; /* Apple system gray 5 dark */
+  --secondary-foreground: #F5F5F7;
+  --muted: #1C1C1E;
+  --muted-foreground: #98989D; /* Apple system gray dark */
+  --accent: #0A84FF; /* Apple system blue dark */
+  --accent-foreground: #FFFFFF;
+  --destructive: #FF453A; /* Apple system red dark */
+  --destructive-foreground: #FFFFFF;
+  --border: #38383A; /* Apple system gray 4 dark */
+  --input: #1C1C1E;
+  --ring: #01b47d;
 }
 
 /* Custom Utilities */

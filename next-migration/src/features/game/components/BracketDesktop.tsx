@@ -98,12 +98,12 @@ export const BracketDesktop = React.memo(({
       <div className="text-center space-y-6">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-          <span className="text-[11px] font-bold text-slate-600 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+          <span className="text-[11px] font-bold text-slate-800 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
         </div>
         <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 uppercase tracking-tighter drop-shadow-sm">Knockout Stage: From Round of 32 to World Cup Champion</h2>
-        <p className="text-slate-700 font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+        <p className="text-slate-800 font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
         <p
-          className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-sm text-slate-800"
+          className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-sm text-slate-900"
         >
           Tournament Bracket Progress:
         </p>
@@ -234,7 +234,7 @@ export const BracketDesktop = React.memo(({
                         style={{ top: `${anchorTop + 70}px` }}
                       >
                         <div className="w-full flex items-center justify-center mb-1">
-                          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/40 bg-white/80 text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-500">Third Place</span>
+                          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/40 bg-white/80 text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-700">Third Place</span>
                         </div>
                         {/* Third Place - match-sized card */}
                         <div
@@ -255,10 +255,10 @@ export const BracketDesktop = React.memo(({
                           ) : (
                             <div className="relative flex w-full rounded-lg overflow-hidden bg-white/95 backdrop-blur-xl ring-1 ring-white/40 shadow-md h-full items-center justify-between px-3">
                               <div className="flex items-center gap-3">
-                                <div className="w-8 h-6 rounded bg-slate-200 flex items-center justify-center"><span className="text-[8px] font-bold text-slate-400">TBD</span></div>
-                                <span className="font-['Teko'] text-lg uppercase text-slate-500">Locked until Semi-Finals</span>
+                                <div className="w-8 h-6 rounded bg-slate-200 flex items-center justify-center"><span className="text-[8px] font-bold text-slate-600">TBD</span></div>
+                                <span className="font-['Teko'] text-lg uppercase text-slate-800">Locked until Semi-Finals</span>
                               </div>
-                              <span className="text-[10px] font-bold text-slate-400">Third Place</span>
+                              <span className="text-[10px] font-bold text-slate-600">Third Place</span>
                             </div>
                           )}
                         </div>

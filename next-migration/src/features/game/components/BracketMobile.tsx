@@ -93,10 +93,10 @@ export const BracketMobile = React.memo(({
         <div className="text-center space-y-6 mb-3">
           <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-            <span className="text-[11px] font-bold text-slate-600 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-sm">Knockout Stage: From Round of 32 to World Cup Champion</h2>
-          <p className="text-white/80 font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+          <p className="text-white font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
           <p
             className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-[0_0_12px_rgba(251,191,36,0.35)]"
             style={{

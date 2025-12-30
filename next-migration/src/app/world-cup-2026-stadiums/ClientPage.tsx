@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, Trophy, Plane, Hotel, Ticket, Globe, Flag } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
+import { StadiumMap } from '@/components/feature/StadiumMap';
 
 // Stadium Data
 const stadiums = [
@@ -420,7 +421,7 @@ export default function ClientPage() {
               priority 
               sizes="100vw"
               quality={90}
-            />
+             unoptimized />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0A0A0A]"></div>
           </div>
           
@@ -505,7 +506,7 @@ export default function ClientPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     priority={index < 6}
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-                  />
+                   unoptimized />
                   <div className="absolute top-4 right-4 dark:bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold shadow-sm border border-black/5 dark:border-white/10 text-slate-900 dark:text-white">
                     {stadium.flag} {stadium.country}
                   </div>
@@ -548,13 +549,9 @@ export default function ClientPage() {
               <p className="text-xl text-slate-500 dark:text-slate-400 font-light">Explore the geography of the 16 world-class venues across North America.</p>
             </div>
             
-            <div className="relative w-full aspect-[16/9] bg-white dark:bg-slate-900/50 rounded-[32px] overflow-hidden flex items-center justify-center shadow-inner border border-slate-200 dark:border-white/10">
-              <div className="text-center p-8">
-                <MapPin className="w-16 h-16 text-slate-300 dark:text-slate-600 mx-auto mb-6" />
-                <h3 className="text-xl font-bold text-slate-400 dark:text-slate-500">Interactive Map Loading...</h3>
-                <p className="text-slate-400 dark:text-slate-600 mt-2">Visualizing 16 venues across 3 countries</p>
-              </div>
-            </div>
+            <div className="relative w-full aspect-[16/9] bg-white dark:bg-slate-900/50 rounded-[32px] overflow-hidden shadow-inner border border-slate-200 dark:border-white/10">
+            <StadiumMap />
+          </div>
           </div>
         </section>
 
