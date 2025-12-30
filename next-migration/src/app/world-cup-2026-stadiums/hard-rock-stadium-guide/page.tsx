@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1600.webp',
+        url: '/images/cities/miami-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'Hard Rock Stadium World Cup 2026',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Hard Rock Stadium World Cup 2026: Complete Stadium Guide',
     description: 'Plan your World Cup 2026 visit to Hard Rock Stadium in Miami.',
-    images: ['/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1600.webp'],
+    images: ['/images/cities/miami-world-cup-2026-1600.webp'],
   },
 };
 

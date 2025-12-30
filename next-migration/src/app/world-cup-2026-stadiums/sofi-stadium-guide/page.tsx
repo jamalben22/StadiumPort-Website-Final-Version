@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1600.webp',
+        url: '/images/cities/los-angeles-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'SoFi Stadium World Cup 2026',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'SoFi Stadium World Cup 2026: Complete Stadium Guide',
     description: 'Ultimate fan guide to SoFi Stadium for World Cup 2026.',
-    images: ['/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1600.webp'],
+    images: ['/images/cities/los-angeles-world-cup-2026-1600.webp'],
   },
 };
 

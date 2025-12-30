@@ -14,7 +14,7 @@ export const TPESimWidget = memo(() => {
     
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&country=United%20States&powered_by=true&color_button=%2301b47d&color_focused=%2301b47d&secondary=%23FFFFFF&dark=%2311100f&light=%23FFFFFF&special=%23C4C4C4&border_radius=12&plain=false&no_labels=true&promo_id=8588&campaign_id=541';
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&powered_by=false&color_button=%2301b47d&color_focused=%2301B47D&secondary=%23FAFAFA&dark=%2311100f&light=%23FAFAFA&special=%23D6D6D6ff&border_radius=12&plain=false&no_labels=&promo_id=8588&campaign_id=541';
     script.charset = 'utf-8';
     
     container.appendChild(script);
@@ -22,11 +22,11 @@ export const TPESimWidget = memo(() => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center py-6">
+    <div className="w-full flex justify-center">
       <div 
         ref={containerRef} 
         data-tp-loaded="false"
-        className="w-full max-w-5xl min-h-[400px] flex justify-center items-start" 
+        className="w-full max-w-5xl flex justify-center items-start" 
       />
     </div>
   );

@@ -98,7 +98,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -515,7 +515,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -563,32 +563,35 @@ export default function ClientPage() {
  
  <div className="space-y-8">
  <HotelCard 
- name="Omni Atlanta Hotel at Centennial Park"
- rating={4.5}
- price="$350 - $600"
- distance="5 min walk"
- features={['Connected to CNN Center', 'Pool Deck', 'Luxury']}
- image="/images/cities/atlanta-world-cup-2026-640.webp" 
- link="https://www.booking.com/searchresults.html?ss=Omni+Atlanta+Hotel+at+Centennial+Park"
- />
- <HotelCard 
- name="The Westin Peachtree Plaza"
- rating={4.6}
- price="$350+"
- distance="0.6 miles"
- features={["Iconic Views", "Revolving Restaurant", "Central Location"]}
- image="/images/cities/atlanta-world-cup-2026-640.webp"
- link="https://www.booking.com/searchresults.html?ss=The+Westin+Peachtree+Plaza"
- />
- <HotelCard 
- name="Hyatt Regency Atlanta"
- rating={4.5}
- price="$300+"
- distance="0.7 miles"
- features={["Atrium Lobby", "Business Center", "MARTA Access"]}
- image="/images/cities/atlanta-world-cup-2026-640.webp"
- link="https://www.booking.com/searchresults.html?ss=Hyatt+Regency+Atlanta"
- />
+            name="Hyatt Place Atlanta Downtown"
+            rating={8.4}
+            price="~$99/night"
+            distance="0.7 miles"
+            description="Top-value pick with free breakfast and spacious rooms near the Aquarium."
+            features={["Free Breakfast", "Free WiFi", "Pet Friendly"]}
+            image="/images/hotels/atlanta/hyatt-place-v3.jpg" 
+            link="https://www.booking.com/hotel/us/hyatt-place-atlanta-downtown.html"
+          />
+          <HotelCard 
+            name="SpringHill Suites by Marriott Atlanta Downtown"
+            rating={8.8}
+            price="~$106/night"
+            distance="0.8 miles"
+            description="Highly rated all-suite hotel with modern amenities and great city views."
+            features={["All-Suite", "Fitness Center", "Free Breakfast"]}
+            image="/images/hotels/atlanta/springhill-suites.jpg"
+            link="https://www.booking.com/hotel/us/springhill-suites-by-marriott-atlanta-downtown.html"
+          />
+          <HotelCard 
+            name="Reverb by Hard Rock Atlanta Downtown"
+            rating={8.7}
+            price="~$129/night"
+            distance="0.4 miles"
+            description="Stylish, music-themed hotel steps from the stadium with a rooftop bar."
+            features={["Rooftop Bar", "Stadium Views", "Pet Friendly"]}
+            image="/images/hotels/atlanta/reverb-hard-rock.jpg"
+            link="https://www.booking.com/hotel/us/reverb-by-hard-rock-atlanta-downtown.html"
+          />
  </div>
  
  <div className="mt-12 text-center">

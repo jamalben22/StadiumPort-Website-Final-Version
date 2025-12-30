@@ -98,7 +98,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -514,7 +514,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -567,7 +567,7 @@ export default function ClientPage() {
   price="$250 - $450"
   distance="20 min drive"
   features={['Luxury', 'San Pedro', 'Shopping', 'Spa']}
-  image="/images/cities/monterrey-hero.webp" 
+  image="/images/cities/monterrey-world-cup-2026-640.webp" 
   link="https://www.booking.com/searchresults.html?ss=Live+Aqua+Urban+Resort+Monterrey"
 />
 <HotelCard 
@@ -576,7 +576,7 @@ export default function ClientPage() {
   price="$300 - $500"
   distance="20 min drive"
   features={['New', 'Upscale', 'Pool', 'Business']}
-  image="/images/cities/monterrey-hero.webp" 
+  image="/images/cities/monterrey-world-cup-2026-640.webp" 
   link="https://www.booking.com/searchresults.html?ss=JW+Marriott+Hotel+Monterrey"
 />
 <HotelCard 
@@ -585,7 +585,7 @@ export default function ClientPage() {
   price="$90 - $150"
   distance="30 min Metro"
   features={['Historic', 'Centro', 'Value', 'Culture']}
-  image="/images/cities/monterrey-hero.webp" 
+  image="/images/cities/monterrey-world-cup-2026-640.webp" 
   link="https://www.booking.com/searchresults.html?ss=Gamma+Monterrey+Gran+Hotel"
 />
  </div>

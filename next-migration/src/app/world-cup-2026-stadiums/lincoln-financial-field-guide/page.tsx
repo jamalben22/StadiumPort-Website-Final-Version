@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp',
+        url: '/images/cities/philadelphia-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'Lincoln Financial Field World Cup 2026',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Lincoln Financial Field World Cup 2026: Complete Stadium Guide',
     description: 'Complete guide to Lincoln Financial Field for World Cup 2026.',
-    images: ['/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp'],
+    images: ['/images/cities/philadelphia-world-cup-2026-1600.webp'],
   },
 };
 

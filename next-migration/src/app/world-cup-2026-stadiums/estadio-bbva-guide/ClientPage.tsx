@@ -97,7 +97,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -275,7 +275,7 @@ export default function EstadioBBVAClientPage() {
   <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
     <div className="absolute inset-0 z-0">
       <Image 
-        src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1600.webp" 
+        src="/images/cities/monterrey-world-cup-2026-1600.webp" 
         alt="Estadio BBVA Monterrey" 
         fill 
         className="object-cover opacity-80"
@@ -448,7 +448,7 @@ export default function EstadioBBVAClientPage() {
 
  <Section id="stadium" title="Estadio BBVA">
  <LightboxImage 
-src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1600.webp" 
+src="/images/cities/monterrey-world-cup-2026-1600.webp" 
 alt="Estadio BBVA Stadium Guide" 
 caption="The metallic skin of 'El Gigante de Acero' mimics the city's industrial heritage."
 />
@@ -488,13 +488,13 @@ Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</
 
 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
 <div className="relative h-64 rounded-[2rem] overflow-hidden group">
-<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium Interior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+<Image src="/images/cities/monterrey-world-cup-2026-640.webp" alt="Stadium Interior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
 </div>
 <div className="relative h-64 rounded-[2rem] overflow-hidden group">
-<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium Exterior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+<Image src="/images/cities/monterrey-world-cup-2026-640.webp" alt="Stadium Exterior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
 </div>
 <div className="relative h-64 rounded-[2rem] overflow-hidden group">
-<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium View" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+<Image src="/images/cities/monterrey-world-cup-2026-640.webp" alt="Stadium View" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
 </div>
 </div>
  
@@ -576,7 +576,7 @@ Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</
         price="$200 - $400"
         distance="15 min drive"
         features={['San Pedro Location', 'Luxury Mall Access', 'Pool']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        image="/images/cities/monterrey-world-cup-2026-640.webp" 
         link="https://www.booking.com/searchresults.html?ss=Safi+Royal+Luxury+Metropolitan"
       />
       <HotelCard 
@@ -585,7 +585,7 @@ Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</
         price="$150 - $300"
         distance="20 min metro"
         features={['Centro Location', 'Near Macroplaza', 'Reliable']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        image="/images/cities/monterrey-world-cup-2026-640.webp" 
         link="https://www.booking.com/searchresults.html?ss=Crowne+Plaza+Monterrey"
       />
       <HotelCard 
@@ -594,7 +594,7 @@ Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</
         price="$180 - $350"
         distance="10 min drive"
         features={['Inside Park', 'Near Fan Fest', 'Modern']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        image="/images/cities/monterrey-world-cup-2026-640.webp" 
         link="https://www.booking.com/searchresults.html?ss=Holiday+Inn+Parque+Fundidora"
       />
  </div>

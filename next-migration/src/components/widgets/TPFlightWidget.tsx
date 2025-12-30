@@ -14,7 +14,7 @@ export const TPFlightWidget = memo(() => {
     
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=true&border_radius=12&plain=true&color_button=%2301b47d&color_button_text=%23ffffff&color_border=%2301b47d&promo_id=4132&campaign_id=121';
+    script.src = 'https://tpwgts.com/content?trs=468014&shmarker=679735&locale=en&curr=USD&powered_by=false&border_radius=12&plain=false&color_button=%2301b47d&color_button_text=%23FAFAFA&color_border=%23C8C8C8ff&promo_id=4132&campaign_id=121';
     script.charset = 'utf-8';
     
     container.appendChild(script);
@@ -22,11 +22,11 @@ export const TPFlightWidget = memo(() => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center py-6">
+    <div className="w-full flex justify-center">
       <div 
         ref={containerRef} 
         data-tp-loaded="false"
-        className="w-full max-w-5xl min-h-[400px] flex justify-center items-start" 
+        className="w-full max-w-5xl flex justify-center items-start" 
       />
     </div>
   );

@@ -3,23 +3,23 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
- title: 'Free World Cup 2026 Predictor Contest | Win Jerseys, Match Ball & Cash (13+)',
- description: 'Free worldwide for ages 13+. Win official jerseys, match ball & $1,000 cash. Open to all countries. Parental consent required for minors. Void where prohibited.',
- keywords: ["World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes", "Win World Cup prizes internationally"],
+ title: 'World Cup 2026 Predictor Game | Stadiumport',
+ description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
+ keywords: ["Stadiumport", "World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes"],
  alternates: {
  canonical: 'https://stadiumport.com/world-cup-2026-prediction-game',
  },
  openGraph: {
- title: 'Free World Cup 2026 Predictor Contest | Win Jerseys, Match Ball & Cash (13+)',
- description: 'Free worldwide for ages 13+. Win official jerseys, match ball & $1,000 cash. Open to all countries. Parental consent required for minors. Void where prohibited.',
+ title: 'World Cup 2026 Predictor Game | Stadiumport',
+ description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
  url: 'https://stadiumport.com/world-cup-2026-prediction-game',
  siteName: 'Stadiumport',
  type: 'website',
  },
  twitter: {
  card: 'summary_large_image',
- title: 'Free World Cup 2026 Predictor Contest | Win Jerseys, Match Ball & Cash (13+)',
- description: 'Free worldwide for ages 13+. Win official jerseys, match ball & $1,000 cash. Open to all countries. Parental consent required for minors. Void where prohibited.',
+ title: 'World Cup 2026 Predictor Game | Stadiumport',
+ description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
  },
 };
 

@@ -38,13 +38,13 @@ export const TrustSection = () => {
   ];
 
   return (
-    <section className="relative py-32 md:py-48 border-t border-slate-100 dark:border-white/5 overflow-hidden">
+    <section className="relative pt-16 pb-32 md:pt-24 md:pb-48 border-t border-slate-100 dark:border-white/5 overflow-hidden">
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
         {/* Trust Grid - Apple & Nike Style */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-20 md:gap-16 mb-40 md:mb-64 items-stretch">
-          {trustIndicators.map((item, idx) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12 md:gap-12 mb-20 md:mb-32 items-stretch">
+        {trustIndicators.map((item, idx) => (
             <motion.div 
                 key={idx} 
                 initial={{ opacity: 0, y: 30 }}

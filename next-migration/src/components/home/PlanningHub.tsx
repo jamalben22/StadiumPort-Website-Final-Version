@@ -3,22 +3,29 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { TPFlightWidget } from '../widgets/TPFlightWidget';
+import { TPFlightSearchWidget } from '../widgets/TPFlightSearchWidget';
+import { TPFlightCalendarWidget } from '../widgets/TPFlightCalendarWidget';
 import { TPDestinationWidget } from '../widgets/TPDestinationWidget';
+import { TPDestinationMapWidget } from '../widgets/TPDestinationMapWidget';
+import { TPHotelSearchWidget } from '../widgets/TPHotelSearchWidget';
 import { TPGuideWidget } from '../widgets/TPGuideWidget';
+import { TPAttractionsWidget } from '../widgets/TPAttractionsWidget';
 import { TPESimWidget } from '../widgets/TPESimWidget';
+import { TPTransportWidget } from '../widgets/TPTransportWidget';
+import { TPRentalWidget } from '../widgets/TPRentalWidget';
 
 export const PlanningHub = () => {
-  const [activeTab, setActiveTab] = useState<'flights' | 'hotels' | 'guides' | 'esims'>('flights');
+  const [activeTab, setActiveTab] = useState<'flights' | 'hotels' | 'guides' | 'essentials'>('flights');
 
   const tabs = [
     { id: 'flights', label: 'Flights', icon: 'ri-plane-fill' },
     { id: 'hotels', label: 'Hotels', icon: 'ri-hotel-fill' },
-    { id: 'guides', label: 'Guides', icon: 'ri-guide-fill' },
-    { id: 'esims', label: 'eSIMs', icon: 'ri-rfid-fill' }
+    { id: 'guides', label: 'Experiences', icon: 'ri-compass-3-fill' },
+    { id: 'essentials', label: 'Essentials', icon: 'ri-briefcase-4-fill' }
   ];
 
   return (
-    <section className="py-32 md:py-48 relative overflow-hidden">
+    <section className="pt-32 pb-16 md:pt-48 md:pb-24 relative overflow-hidden">
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="text-center mb-20 md:mb-32">
@@ -87,10 +94,33 @@ export const PlanningHub = () => {
                         className="w-full"
                     >
                         <div className="px-4 md:px-8">
-                          {activeTab === 'flights' && <TPFlightWidget />}
-                          {activeTab === 'hotels' && <TPDestinationWidget />}
-                          {activeTab === 'guides' && <TPGuideWidget />}
-                          {activeTab === 'esims' && <TPESimWidget />}
+                          {activeTab === 'flights' && (
+                            <div className="flex flex-col gap-5">
+                              <TPFlightWidget />
+                              <TPFlightSearchWidget />
+                              <TPFlightCalendarWidget />
+                            </div>
+                          )}
+                          {activeTab === 'hotels' && (
+                            <div className="flex flex-col gap-5">
+                              <TPDestinationWidget />
+                              <TPDestinationMapWidget />
+                              <TPHotelSearchWidget />
+                            </div>
+                          )}
+                          {activeTab === 'guides' && (
+                            <div className="flex flex-col gap-5">
+                              <TPGuideWidget />
+                              <TPAttractionsWidget />
+                            </div>
+                          )}
+                          {activeTab === 'essentials' && (
+                            <div className="flex flex-col gap-5">
+                              <TPESimWidget />
+                              <TPTransportWidget />
+                              <TPRentalWidget />
+                            </div>
+                          )}
                         </div>
                     </motion.div>
                   </AnimatePresence>

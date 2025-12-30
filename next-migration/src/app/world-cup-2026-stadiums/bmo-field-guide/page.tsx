@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  siteName: 'Stadiumport',
  images: [
       {
-        url: '/images/stadiums/bmo-field-toronto-world-cup-2026-1600.webp',
+        url: '/images/cities/toronto-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'BMO Field World Cup 2026 Guide',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'BMO Field World Cup 2026: Complete Stadium Guide',
     description: 'Everything you need for BMO Field World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
-    images: ['/images/stadiums/bmo-field-toronto-world-cup-2026-1600.webp'],
+    images: ['/images/cities/toronto-world-cup-2026-1600.webp'],
   },
 };
 

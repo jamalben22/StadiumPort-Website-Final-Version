@@ -104,7 +104,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -280,7 +280,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
- src="/images/stadiums/lumen-field-seattle-world-cup-2026-1600.webp" 
+ src="/images/cities/seattle-world-cup-2026-1600.webp" 
  alt="Lumen Field Aerial" 
  fill 
  className="object-cover opacity-60"
@@ -454,7 +454,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="Lumen Field">
  <LightboxImage 
-            src="/images/stadiums/lumen-field-seattle-world-cup-2026-1600.webp" 
+            src="/images/cities/seattle-world-cup-2026-1600.webp" 
             alt="Lumen Field Seating" 
             caption="Lumen Field offers spectacular views of the Seattle skyline and Elliott Bay."
           />
@@ -519,7 +519,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -574,7 +574,7 @@ export default function ClientPage() {
  price="$$$$"
  distance="0.1 miles"
  features={["Rooftop Pool", "Stadium Views", "Modern"]}
- image="/images/stadiums/lumen-field-seattle-world-cup-2026-640.webp" 
+ image="/images/cities/seattle-world-cup-2026-640.webp" 
  link="https://www.booking.com/searchresults.html?ss=Silver+Cloud+Hotel+Seattle+-+Stadium"
  />
  <HotelCard 
@@ -583,7 +583,7 @@ export default function ClientPage() {
  price="$$$"
  distance="0.2 miles"
  features={["Atrium", "Free Breakfast", "Suites"]}
- image="/images/stadiums/lumen-field-seattle-world-cup-2026-640.webp" 
+ image="/images/cities/seattle-world-cup-2026-640.webp" 
  link="https://www.booking.com/searchresults.html?ss=Embassy+Suites+by+Hilton+Seattle+Downtown+Pioneer+Square"
  />
  <HotelCard 
@@ -592,7 +592,7 @@ export default function ClientPage() {
  price="$$$"
  distance="0.5 miles"
  features={["Historic", "Luxury", "Classic Bar"]}
- image="/images/stadiums/lumen-field-seattle-world-cup-2026-640.webp" 
+ image="/images/cities/seattle-world-cup-2026-640.webp" 
  link="https://www.booking.com/searchresults.html?ss=The+Arctic+Club+Seattle"
  />
  </div>

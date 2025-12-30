@@ -95,7 +95,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -271,7 +271,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
- src="/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp" 
+ src="/images/cities/vancouver-world-cup-2026-1600.webp" 
  alt="BC Place Stadium" 
  fill 
  className="object-cover opacity-80"
@@ -442,7 +442,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="BC Place Stadium">
  <LightboxImage 
-    src="/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp" 
+    src="/images/cities/vancouver-world-cup-2026-1600.webp" 
     alt="BC Place Stadium Interior" 
     caption="The iconic retractable roof of BC Place, the largest of its kind in the world."
   />
@@ -507,7 +507,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -560,7 +560,7 @@ export default function ClientPage() {
         price="$$$$"
         distance="0.1 miles"
         features={["Next to Stadium", "Casino", "Luxury"]}
-        image="/images/stadiums/bc-place-vancouver-world-cup-2026-640.webp" 
+        image="/images/cities/vancouver-world-cup-2026-640.webp" 
        link="https://www.booking.com/searchresults.html?ss=Parq+Vancouver"
      />
      <HotelCard 
@@ -569,7 +569,7 @@ export default function ClientPage() {
        price="$$$$"
        distance="0.1 miles"
        features={["Luxury", "Spa", "Views"]}
-       image="/images/stadiums/bc-place-vancouver-world-cup-2026-640.webp" 
+       image="/images/cities/vancouver-world-cup-2026-640.webp" 
        link="https://www.booking.com/searchresults.html?ss=JW+Marriott+Parq+Vancouver"
      />
      <HotelCard 
@@ -578,7 +578,7 @@ export default function ClientPage() {
        price="$$"
        distance="0.3 miles"
        features={["Value", "Pool", "Central"]}
-       image="/images/stadiums/bc-place-vancouver-world-cup-2026-640.webp" 
+       image="/images/cities/vancouver-world-cup-2026-640.webp" 
        link="https://www.booking.com/searchresults.html?ss=Sandman+Hotel+Vancouver+City+Centre"
      />
  </div>

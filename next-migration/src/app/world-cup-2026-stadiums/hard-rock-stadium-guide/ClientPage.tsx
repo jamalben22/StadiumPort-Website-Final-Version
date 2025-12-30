@@ -103,7 +103,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -273,7 +273,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
-          src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1600.webp" 
+          src="/images/cities/miami-world-cup-2026-1600.webp" 
           alt="Hard Rock Stadium" 
           fill 
           className="object-cover opacity-80"
@@ -397,7 +397,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="Stadium Intelligence">
         <LightboxImage 
-          src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1600.webp" 
+          src="/images/cities/miami-world-cup-2026-1600.webp" 
           alt="Hard Rock Stadium Seating Chart"
           caption="Hard Rock Stadium's modern layout provides excellent views from all levels."
         />
@@ -521,7 +521,7 @@ export default function ClientPage() {
   price="$$"
   distance="0.4 miles"
   features={["Walking Distance", "Budget", "Basic"]}
-  image="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-640.webp" 
+  image="/images/cities/miami-world-cup-2026-640.webp" 
           link="https://www.booking.com/searchresults.html?ss=Stadium+Hotel+Miami+Gardens"
         />
         <HotelCard 
@@ -530,7 +530,7 @@ export default function ClientPage() {
           price="$$$$"
           distance="4.2 miles"
           features={["Golf", "Waterpark", "Luxury"]}
-          image="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-640.webp" 
+          image="/images/cities/miami-world-cup-2026-640.webp" 
           link="https://www.booking.com/searchresults.html?ss=JW+Marriott+Turnberry+Resort+and+Spa"
         />
       </div>
@@ -565,7 +565,7 @@ export default function ClientPage() {
  </div>
  </div>
  <div className="relative h-[400px] rounded-[2rem] overflow-hidden">
- <Image src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1024.webp" alt="Stadium Food" fill className="object-cover"  unoptimized />
+ <Image src="/images/cities/miami-world-cup-2026-1024.webp" alt="Stadium Food" fill className="object-cover"  unoptimized />
  </div>
  </div>
  </Section>

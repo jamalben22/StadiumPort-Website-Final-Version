@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/nrg-stadium-houston-texas-world-cup-2026-1600.webp',
+        url: '/images/cities/houston-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
         alt: 'NRG Stadium World Cup 2026',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'NRG Stadium World Cup 2026: Complete Stadium Guide',
     description: 'Plan your trip to NRG Stadium for World Cup 2026.',
-    images: ['/images/stadiums/nrg-stadium-houston-texas-world-cup-2026-1600.webp'],
+    images: ['/images/cities/houston-world-cup-2026-1600.webp'],
   },
 };
 

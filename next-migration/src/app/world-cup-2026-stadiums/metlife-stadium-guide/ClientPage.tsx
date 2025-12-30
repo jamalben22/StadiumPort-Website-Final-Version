@@ -121,7 +121,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -291,7 +291,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
- src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1600.webp" 
+ src="/images/cities/new-york-new-jersey-world-cup-2026-1600.webp" 
  alt="MetLife Stadium" 
  fill 
  className="object-cover opacity-80"
@@ -531,7 +531,7 @@ export default function ClientPage() {
 
  <Section id="seating" title="Seating & Views">
  <LightboxImage 
-        src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1600.webp" 
+        src="/images/cities/new-york-new-jersey-world-cup-2026-1600.webp" 
         alt="MetLife Stadium Bowl" 
         caption="The massive 82,500 seat bowl of MetLife Stadium."
       />

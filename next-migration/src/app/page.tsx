@@ -7,9 +7,9 @@ import { CTASection } from '../components/home/CTASection';
 import { constructMetadata } from '@/lib/seo';
 
 export const metadata = constructMetadata({
-  title: 'World Cup 2026 Travel Guide | Host Cities & Stadiums',
-  description: 'The ultimate guide to the FIFA World Cup 2026. Explore all 16 host cities, stadium guides, match schedules, travel tips, and accommodation.',
-  keywords: ['World Cup 2026', 'FIFA World Cup 2026', 'World Cup Host Cities', 'World Cup Stadiums', 'World Cup Travel Guide'],
+  title: 'Stadiumport | World Cup 2026 Travel Guide & Host Cities',
+  description: 'The definitive World Cup 2026 resource. Plan your journey with expert stadium guides, host city insights, match schedules, and travel tips for USA, Mexico, and Canada.',
+  keywords: ['Stadiumport', 'World Cup 2026', 'FIFA World Cup 2026', 'World Cup Host Cities', 'World Cup Stadiums', 'World Cup Travel Guide'],
 });
 
 export default function HomePage() {

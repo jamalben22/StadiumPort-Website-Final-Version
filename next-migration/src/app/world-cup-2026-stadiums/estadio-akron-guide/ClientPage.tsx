@@ -98,7 +98,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -275,7 +275,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
-        src="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-1600.webp" 
+        src="/images/cities/guadalajara-world-cup-2026-1600.webp" 
         alt="Estadio Akron" 
         fill 
         className="object-cover opacity-80"
@@ -448,7 +448,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="Estadio Akron">
   <LightboxImage 
-    src="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-1600.webp" 
+    src="/images/cities/guadalajara-world-cup-2026-1600.webp" 
     alt="Estadio Akron Interior" 
     caption="The Volcano: A modern architectural marvel integrated into the landscape."
   />
@@ -513,7 +513,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -566,7 +566,7 @@ export default function ClientPage() {
           price="$300 - $600"
           distance="20 min drive"
           features={['Luxury Mall Access', 'Modern', 'Safe Zone']}
-          image="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-640.webp" 
+          image="/images/cities/guadalajara-world-cup-2026-640.webp" 
           link="https://www.booking.com/searchresults.html?ss=Hyatt+Regency+Andares+Guadalajara"
         />
         <HotelCard 
@@ -575,7 +575,7 @@ export default function ClientPage() {
           price="$200 - $400"
           distance="25 min drive"
           features={['Rooftop Pool', 'Vibrant', 'Central']}
-          image="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-640.webp" 
+          image="/images/cities/guadalajara-world-cup-2026-640.webp" 
           link="https://www.booking.com/searchresults.html?ss=Hard+Rock+Hotel+Guadalajara"
         />
         <HotelCard 
@@ -584,7 +584,7 @@ export default function ClientPage() {
           price="$100 - $250"
           distance="45+ min drive"
           features={['Colonial Architecture', 'Centro Histórico', 'Culture']}
-          image="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-640.webp" 
+          image="/images/cities/guadalajara-world-cup-2026-640.webp" 
           link="https://www.booking.com/searchresults.html?ss=Hotel+Morales+Historical+and+Colonial+Downtown+Core"
         />
       </div>

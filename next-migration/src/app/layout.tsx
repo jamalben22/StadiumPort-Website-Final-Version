@@ -18,7 +18,7 @@ import { constructMetadata } from "@/lib/seo";
 import { Providers } from "./providers";
 
 export const metadata = constructMetadata({
-  title: "Stadiumport - World Cup 2026 Travel Guide",
+  title: "Stadiumport | World Cup 2026 Travel Guide",
   description: "The definitive guide to World Cup 2026. Expert insights, stadium guides, and travel planning.",
   // verification: {
   //   google: "YOUR_GOOGLE_VERIFICATION_CODE",

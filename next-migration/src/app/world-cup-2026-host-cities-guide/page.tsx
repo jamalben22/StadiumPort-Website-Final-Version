@@ -2,15 +2,15 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
- title: '2026 World Cup Host Cities: Complete Guide to All 16 Locations',
+ title: 'World Cup 2026 Host Cities Guide | Stadiumport',
  description: 'Explore the 16 host cities for the 2026 FIFA World Cup in USA, Canada, and Mexico. Get stadium details, travel tips, and tourist guides for every location.',
  alternates: {
- canonical: '/world-cup-2026-host-cities',
+ canonical: '/world-cup-2026-host-cities-guide',
  },
  openGraph: {
- title: '2026 World Cup Host Cities: Complete Guide to All 16 Locations',
+ title: 'World Cup 2026 Host Cities Guide | Stadiumport',
  description: 'Explore the 16 host cities for the 2026 FIFA World Cup in USA, Canada, and Mexico. Get stadium details, travel tips, and tourist guides for every location.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities',
+ url: 'https://stadiumport.com/world-cup-2026-host-cities-guide',
  type: 'article',
  images: [
  {
@@ -36,11 +36,11 @@ export default function Page() {
  "item": "https://stadiumport.com"
  },
  {
- "@type": "ListItem",
- "position": 2,
- "name": "World Cup 2026 Host Cities",
- "item": "https://stadiumport.com/world-cup-2026-host-cities"
- }
+        "@type": "ListItem",
+        "position": 2,
+        "name": "World Cup 2026 Host Cities",
+        "item": "https://stadiumport.com/world-cup-2026-host-cities-guide"
+        }
  ]
  };
 

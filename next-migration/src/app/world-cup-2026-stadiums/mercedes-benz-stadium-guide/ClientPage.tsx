@@ -93,7 +93,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  onClick={() => setIsOpen(true)}
  >
  <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
- <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+ <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
  <p className="text-white font-medium">{caption}</p>
@@ -269,7 +269,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
-          src="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp" 
+          src="/images/cities/atlanta-world-cup-2026-1600.webp" 
           alt="Mercedes-Benz Stadium Interior" 
           fill 
           className="object-cover opacity-80"
@@ -468,7 +468,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="Inside the Stadium">
         <LightboxImage 
-          src="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp" 
+          src="/images/cities/atlanta-world-cup-2026-1600.webp" 
           alt="Mercedes-Benz Stadium Interior" 
           caption="The stunning 'Halo' board at Mercedes-Benz Stadium."
         />
@@ -533,7 +533,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Tickets & Schedule">
- <div className=" text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-red-600 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -586,7 +586,7 @@ export default function ClientPage() {
  price="$350 - $600"
  distance="5 min walk"
  features={['Connected to CNN Center', 'Pool Deck', 'Luxury']}
- image="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp" 
+ image="/images/cities/atlanta-world-cup-2026-1024.webp" 
         link="https://www.booking.com/searchresults.html?ss=Omni+Atlanta+Hotel+at+Centennial+Park&aid=8063172"
       />
       <HotelCard 
@@ -595,7 +595,7 @@ export default function ClientPage() {
         price="$300 - $500"
         distance="Across the street"
         features={['Rooftop Bar', 'Music Themed', 'Modern']}
-        image="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp" 
+        image="/images/cities/atlanta-world-cup-2026-1024.webp" 
         link="https://www.booking.com/searchresults.html?ss=Reverb+by+Hard+Rock+Atlanta&aid=8063172"
       />
       <HotelCard 
@@ -604,7 +604,7 @@ export default function ClientPage() {
         price="$250 - $450"
         distance="10 min walk"
         features={['Iconic Tower', 'Rotating Restaurant', 'Central Location']}
-        image="/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp" 
+        image="/images/cities/atlanta-world-cup-2026-1024.webp" 
         link="https://www.booking.com/searchresults.html?ss=The+Westin+Peachtree+Plaza+Atlanta&aid=8063172"
       />
  </div>
