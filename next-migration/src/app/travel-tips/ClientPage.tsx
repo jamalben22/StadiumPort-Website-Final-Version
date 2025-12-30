@@ -11,70 +11,70 @@ const guides = [
     title: "World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies",
     teaser: "A realistic look at what you'll spend—and how to save thousands without compromising the experience.",
     icon: CreditCard,
-    link: "/coming-soon?title=World%20Cup%202026%20Budget%20Guide",
+    link: "/world-cup-2026-budget-guide",
     image: "/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp"
   },
   {
     title: "Best Time to Book World Cup 2026: Tickets, Flights & Hotels",
     teaser: "Timing is everything. Learn the exact booking windows to secure the best rates and availability.",
     icon: Clock,
-    link: "/coming-soon?title=Booking%20Timeline%20Guide",
+    link: "/best-time-book-world-cup-2026",
     image: "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Host City Guide: Which Cities Should You Visit?",
     teaser: "16 cities, infinite vibes. Find the perfect host cities that match your travel style and budget.",
     icon: Map,
-    link: "/world-cup-2026-host-cities",
+    link: "/world-cup-2026-host-cities-guide",
     image: "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Accommodation Guide: Where to Stay for Every Budget",
     teaser: "From luxury hotels to strategic hostels. How to find a bed when millions descend on North America.",
     icon: Map,
-    link: "/coming-soon?title=Accommodation%20Guide",
+    link: "/world-cup-2026-accommodation-guide",
     image: "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Flight Booking Guide: Routes, Airlines & Strategies",
     teaser: "Master the art of multi-city travel. Hub strategies, open-jaw tickets, and regional carriers explained.",
     icon: Globe,
-    link: "/coming-soon?title=Flight%20Booking%20Guide",
+    link: "/world-cup-2026-flight-booking-guide",
     image: "/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries",
     teaser: "Don't waste time in transit. Optimized routes for seeing the most football with the least stress.",
     icon: Map,
-    link: "/coming-soon?title=Itinerary%20Planning%20Guide",
+    link: "/world-cup-2026-itinerary-planning",
     image: "/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Packing Guide: Ultimate Checklist for All Weather",
     teaser: "From Mexican heat to Canadian cool. What to bring for a continent-spanning adventure.",
     icon: Shield,
-    link: "/coming-soon?title=Packing%20Guide",
+    link: "/world-cup-2026-packing-guide",
     image: "/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Match Selection Strategy: Which Games to Attend",
     teaser: "Group stage value vs. knockout drama. How to build a match schedule that delivers unforgettable moments.",
     icon: ArrowRight,
-    link: "/coming-soon?title=Match%20Selection%20Strategy",
+    link: "/world-cup-2026-match-selection-strategy",
     image: "/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp"
   },
   {
     title: "World Cup 2026 Food & Dining Guide: Eating Well on Any Budget",
     teaser: "Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion.",
     icon: Globe,
-    link: "/coming-soon?title=Food%20%26%20Dining%20Guide",
+    link: "/world-cup-2026-food-dining-guide",
     image: "/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp"
   },
   {
     title: "World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi",
     teaser: "Stay connected across borders. The best eSims and roaming plans for seamless 3-country coverage.",
     icon: Smartphone,
-    link: "/coming-soon?title=Connectivity%20Guide",
+    link: "/world-cup-2026-connectivity-guide",
     image: "/images/travel-tips/World Cup 2026 Connectivity Guide Illustration.webp"
   }
 ];
@@ -141,7 +141,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
   );
 };
 
-export default function TravelTipsClientPage() {
+const TravelTipsClientPage = () => {
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
       {/* Hero Section */}
@@ -214,7 +214,7 @@ export default function TravelTipsClientPage() {
                   alt={guide.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                 unoptimized />
                 <div className="absolute bottom-4 left-4 z-20">
                   <div className="bg-white/90 dark:bg-black/80 p-2 rounded-lg backdrop-blur-sm inline-block">
                     <guide.icon className="w-5 h-5 text-slate-900 dark:text-white" />
@@ -271,3 +271,5 @@ export default function TravelTipsClientPage() {
     </div>
   );
 }
+
+export default TravelTipsClientPage;

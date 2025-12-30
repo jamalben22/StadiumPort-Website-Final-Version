@@ -17,7 +17,7 @@ interface MetadataProps {
 }
 
 const defaultUrl = 'https://stadiumport.com';
-const defaultImage = 'https://stadiumport.com/images/og-image.png'; // Needs to be created/uploaded
+const defaultImage = '/images/og-image.png'; // Needs to be created/uploaded
 
 export function constructMetadata({
   title,

@@ -35,22 +35,54 @@ const staggerContainer = {
 
 // Floating Social Share
 const SocialShare = () => {
- return (
- <motion.div 
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ delay: 1 }}
- className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
- >
- <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
- {[Twitter, Facebook, Linkedin, Copy].map((Icon, i) => (
- <button key={i} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
- <Icon className="w-5 h-5" />
- </button>
- ))}
- </div>
- </motion.div>
- );
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    const text = document.title;
+    
+    if (platform === 'twitter') {
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'facebook') {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'linkedin') {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1 }}
+      className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
+    >
+      <div className="backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
+        <button onClick={() => handleShare('twitter')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Twitter className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('facebook')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Facebook className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('linkedin')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Linkedin className="w-5 h-5" />
+        </button>
+        <button onClick={handleCopy} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors relative">
+          {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 // Lightbox Image
@@ -63,7 +95,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative group cursor-zoom-in rounded-3xl overflow-hidden mb-8"
  onClick={() => setIsOpen(true)}
  >
- <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105" />
+ <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -90,7 +122,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative max-w-7xl w-full max-h-[90vh] rounded-lg overflow-hidden"
  onClick={(e) => e.stopPropagation()}
  >
- <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full" />
+ <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full"  unoptimized />
  {caption && <p className="text-center text-white/80 mt-4 font-light text-lg">{caption}</p>}
  </motion.div>
  </motion.div>
@@ -148,7 +180,7 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
- <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+ <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
  <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
  </div>
@@ -205,7 +237,7 @@ export default function EstadioAztecaClientPage() {
  });
 
  const [activeSection, setActiveSection] = useState('hero');
- const [isSaved, setIsSaved] = useState(false);
+ 
 
  // Sticky Nav Links
  const navLinks = [
@@ -238,9 +270,9 @@ export default function EstadioAztecaClientPage() {
         src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp" 
         alt="Estadio Azteca Interior" 
         fill 
-        className="object-cover opacity-50"
+        className="object-cover opacity-80"
         priority sizes="100vw"
-      />
+       unoptimized />
  <div className="absolute inset-0 " />
  </div>
 
@@ -269,24 +301,7 @@ export default function EstadioAztecaClientPage() {
  </motion.div>
  </div>
 
- {/* Save Guide Button - Integrated */}
- <motion.button
- initial={{ opacity: 0, scale: 0.9 }}
- animate={{ opacity: 1, scale: 1 }}
- transition={{ delay: 0.2, duration: 0.6 }}
- onClick={() => setIsSaved(!isSaved)}
- className="group flex items-center gap-3 pl-4 pr-6 py-3 hover:/20 backdrop-blur-xl border border-white/20 rounded-full transition-all duration-300 mb-2 md:mb-0"
- >
- <div className={`flex items-center justify-center w-10 h-10 rounded-full ${isSaved ? 'bg-emerald-500 text-white' : ' text-slate-900'} transition-colors duration-300`}>
- <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
- </div>
- <div className="text-left">
- <span className="block text-xs text-slate-400 uppercase tracking-wider font-bold">Guide Status</span>
- <span className="block text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
- {isSaved ? 'Saved to Library' : 'Save to Library'}
- </span>
- </div>
- </motion.button>
+
  </div>
  </div>
 
@@ -353,14 +368,14 @@ export default function EstadioAztecaClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Search Mexico City Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="#" text="Check Hotels" variant="primary" icon={Hotel} />
- </div>
- </Section>
+            <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/mex" text="Search Mexico City Flights" variant="secondary" icon={Plane} />
+            <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Mexico+City" text="Check Hotels" variant="primary" icon={Hotel} />
+          </div>
+        </Section>
 
  <Section id="stadium" title="The Colossus Reborn">
   <LightboxImage 
-    src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1024.webp" 
+    src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp" 
     alt="Estadio Azteca Renovation" 
     caption="The transformed Estadio Azteca will feature a new roof and modern amenities."
   />
@@ -433,21 +448,21 @@ export default function EstadioAztecaClientPage() {
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8">
- World Cup tickets will be distributed via FIFA's official lottery. Registration typically opens 12-18 months before the tournament.
- </p>
- <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
- </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8">
- For sold-out matches, verified resale markets are your only safe option. Prices will be significantly higher for the Opening Match.
- </p>
- <AffiliateButton href="#" text="Check Availability" variant="primary" />
- </div>
- </div>
+      <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+        <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
+        <p className="text-slate-600 dark:text-slate-400 mb-8">
+          World Cup tickets will be distributed via FIFA's official lottery. Registration typically opens 12-18 months before the tournament.
+        </p>
+        <AffiliateButton href="https://www.fifa.com/worldcup" text="FIFA Official Site" variant="secondary" />
+      </div>
+      <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+        <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
+        <p className="text-slate-600 dark:text-slate-400 mb-8">
+          For sold-out matches, verified resale markets are your only safe option. Prices will be significantly higher for the Opening Match.
+        </p>
+        <AffiliateButton href="https://www.viagogo.com/Sports-Tickets/International-Soccer/World-Cup-Tickets" text="Check Availability" variant="primary" />
+      </div>
+    </div>
  </Section>
 
  <Section id="tickets" title="Seating Guide">
@@ -539,34 +554,34 @@ export default function EstadioAztecaClientPage() {
  </p>
  
  <div className="space-y-8">
- <HotelCard 
- name="Grand Fiesta Americana" 
- rating={4.8}
- price="$$$$"
- distance="7.2 miles"
- features={["Luxury", "Views", "Fine Dining"]}
- image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1024.webp" 
- link="#"
- />
- <HotelCard 
- name="Hyatt Regency Mexico City" 
- rating={4.7}
- price="$$$"
- distance="8.1 miles"
- features={["Business", "Central", "Pool"]}
- image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1024.webp" 
- link="#"
- />
- <HotelCard 
- name="JW Marriott Hotel" 
- rating={4.6}
- price="$$$$"
- distance="7.9 miles"
- features={["Upscale", "Spa", "Polanco Area"]}
- image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1024.webp" 
- link="#"
- />
- </div>
+<HotelCard 
+name="Grand Fiesta Americana" 
+rating={4.8}
+price="$$$$"
+distance="7.2 miles"
+features={["Luxury", "Views", "Fine Dining"]}
+image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-640.webp" 
+      link="https://www.booking.com/searchresults.html?ss=Grand+Fiesta+Americana+Mexico+City"
+    />
+    <HotelCard 
+      name="Hyatt Regency Mexico City" 
+      rating={4.7}
+      price="$$$"
+      distance="8.1 miles"
+      features={["Business", "Central", "Pool"]}
+      image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-640.webp" 
+      link="https://www.booking.com/searchresults.html?ss=Hyatt+Regency+Mexico+City"
+    />
+    <HotelCard 
+      name="JW Marriott Hotel" 
+      rating={4.6}
+      price="$$$$"
+      distance="7.9 miles"
+      features={["Upscale", "Spa", "Polanco Area"]}
+      image="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-640.webp" 
+      link="https://www.booking.com/searchresults.html?ss=JW+Marriott+Hotel+Mexico+City"
+    />
+</div>
  </Section>
 
  <Section id="food" title="Food & Amenities">
@@ -629,20 +644,29 @@ export default function EstadioAztecaClientPage() {
  </Section>
 
  <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
- <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {['Atlanta', 'New York/New Jersey', 'Los Angeles', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Monterrey'].map((city) => (
- <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
- {city}
- </Link>
- ))}
- </div>
- <div className="text-center mt-12">
- <Link href="/world-cup-2026-host-cities" className="text-emerald-500 hover:text-emerald-600 font-bold text-lg inline-flex items-center gap-2 hover:gap-4 transition-all">
- View All 16 Host Cities <ArrowRight className="w-5 h-5"/>
- </Link>
- </div>
- </div>
+    <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        { name: 'Atlanta', slug: 'atlanta-city-guide' },
+        { name: 'New York/New Jersey', slug: 'new-york-city-guide' },
+        { name: 'Los Angeles', slug: 'los-angeles-city-guide' },
+        { name: 'Toronto', slug: 'toronto-city-guide' },
+        { name: 'Dallas', slug: 'dallas-city-guide' },
+        { name: 'Miami', slug: 'miami-city-guide' },
+        { name: 'Seattle', slug: 'seattle-city-guide' },
+        { name: 'Monterrey', slug: 'monterrey-city-guide' }
+      ].map((city) => (
+        <Link key={city.name} href={`/world-cup-2026-host-cities-guide/${city.slug}`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          {city.name}
+        </Link>
+      ))}
+    </div>
+    <div className="text-center mt-12">
+      <Link href="/world-cup-2026-host-cities-guide" className="text-emerald-500 hover:text-emerald-600 font-bold text-lg inline-flex items-center gap-2 hover:gap-4 transition-all">
+        View All 16 Host Cities <ArrowRight className="w-5 h-5"/>
+      </Link>
+    </div>
+  </div>
  </main>
  </div>
  </div>

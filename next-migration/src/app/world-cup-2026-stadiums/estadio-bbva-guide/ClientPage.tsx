@@ -36,22 +36,54 @@ const staggerContainer = {
 
 // 2. Floating Social Share
 const SocialShare = () => {
- return (
- <motion.div 
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ delay: 1 }}
- className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
- >
- <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
- {[Twitter, Facebook, Linkedin, Copy].map((Icon, i) => (
- <button key={i} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
- <Icon className="w-5 h-5" />
- </button>
- ))}
- </div>
- </motion.div>
- );
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    const text = document.title;
+    
+    if (platform === 'twitter') {
+      window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'facebook') {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    } else if (platform === 'linkedin') {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1 }}
+      className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
+    >
+      <div className="backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
+        <button onClick={() => handleShare('twitter')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Twitter className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('facebook')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Facebook className="w-5 h-5" />
+        </button>
+        <button onClick={() => handleShare('linkedin')} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
+          <Linkedin className="w-5 h-5" />
+        </button>
+        <button onClick={handleCopy} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors relative">
+          {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 // 3. Lightbox Image
@@ -64,7 +96,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative group cursor-zoom-in rounded-3xl overflow-hidden mb-8"
  onClick={() => setIsOpen(true)}
  >
- <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105" />
+ <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -91,7 +123,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative max-w-7xl w-full max-h-[90vh] rounded-lg overflow-hidden"
  onClick={(e) => e.stopPropagation()}
  >
- <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full" />
+ <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full"  unoptimized />
  {caption && <p className="text-center text-white/80 mt-4 font-light text-lg">{caption}</p>}
  </motion.div>
  </motion.div>
@@ -133,7 +165,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
   };
 
   return (
-    <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+    <Link href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${variants[variant]}`}>
       <span className="relative z-10 flex items-center gap-2">
         {text}
         <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -149,7 +181,7 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
- <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+ <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
  <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
  </div>
@@ -206,7 +238,7 @@ export default function EstadioBBVAClientPage() {
  });
 
  const [activeSection, setActiveSection] = useState('hero');
- const [isSaved, setIsSaved] = useState(false);
+ 
 
  // Sticky Nav Links
  const navLinks = [
@@ -246,9 +278,9 @@ export default function EstadioBBVAClientPage() {
         src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1600.webp" 
         alt="Estadio BBVA Monterrey" 
         fill 
-        className="object-cover opacity-50"
+        className="object-cover opacity-80"
         priority sizes="100vw"
-      />
+       unoptimized />
       <div className="absolute inset-0 " />
     </div>
 
@@ -277,24 +309,7 @@ export default function EstadioBBVAClientPage() {
  </motion.div>
  </div>
 
- {/* Save Guide Button - Integrated */}
- <motion.button
- initial={{ opacity: 0, scale: 0.9 }}
- animate={{ opacity: 1, scale: 1 }}
- transition={{ delay: 0.2, duration: 0.6 }}
- onClick={() => setIsSaved(!isSaved)}
- className="group flex items-center gap-3 pl-4 pr-6 py-3 hover:/20 backdrop-blur-xl border border-white/20 rounded-full transition-all duration-300 mb-2 md:mb-0"
- >
- <div className={`flex items-center justify-center w-10 h-10 rounded-full ${isSaved ? 'bg-emerald-500 text-white' : ' text-slate-900'} transition-colors duration-300`}>
- <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
- </div>
- <div className="text-left">
- <span className="block text-xs text-slate-400 uppercase tracking-wider font-bold">Guide Status</span>
- <span className="block text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
- {isSaved ? 'Saved to Library' : 'Save to Library'}
- </span>
- </div>
- </motion.button>
+
  </div>
  </div>
 
@@ -361,9 +376,9 @@ export default function EstadioBBVAClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Search Monterrey Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="#" text="Check San Pedro Hotels" variant="primary" icon={Hotel} />
- </div>
+    <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/mty" text="Search Monterrey Flights" variant="secondary" icon={Plane} />
+    <AffiliateButton href="https://www.booking.com/searchresults.html?ss=San+Pedro+Garza+Garcia" text="Check San Pedro Hotels" variant="primary" icon={Hotel} />
+  </div>
  </Section>
 
  <Section id="visa" title="Visa & Entry (Mexico)">
@@ -371,39 +386,39 @@ export default function EstadioBBVAClientPage() {
  <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Most visitors will need a Forma Migratoria Múltiple (FMM). Citizens of USA, Canada, UK, and Schengen area typically do not need a visa for tourism.</p>
- <AffiliateButton href="#" text="Check Entry Requirements" variant="outline" />
- </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
- <ul className="space-y-4 mb-8">
- {['Keep your FMM card safe (if paper)', 'Use authorized airport taxis', 'Have accommodation proof ready'].map((item, i) => (
- <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
- <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
- </li>
- ))}
- </ul>
- <AffiliateButton href="#" text="Buy Travel Insurance" variant="secondary" />
- </div>
- </div>
- </Section>
+ <AffiliateButton href="https://www.inm.gob.mx/" text="Check Entry Requirements" variant="outline" />
+            </div>
+            <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
+              <ul className="space-y-4 mb-8">
+                {['Keep your FMM card safe (if paper)', 'Use authorized airport taxis', 'Have accommodation proof ready'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+                    <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
+                  </li>
+                ))}
+              </ul>
+              <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+            </div>
+          </div>
+        </Section>
 
- <Section id="planning" title="Planning Timeline">
- <div className="space-y-6">
- {[
- { time: "6–9 Months Out", desc: "Book flights and hotels. San Pedro hotels fill up fast. Research visa requirements for Mexico." },
- { time: "3–6 Months Out", desc: "Confirm match tickets. Learn basic Spanish phrases. Plan day trips to Cola de Caballo or Garcia Caves." },
- { time: "1–3 Months Out", desc: "Check vaccinations. Download the Metrorrey/Urbani app. Prepare for the summer heat." }
- ].map((item, i) => (
- <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
- <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
- <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
- </div>
- ))}
- </div>
- <div className="mt-8 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Set Flight Alerts" variant="primary" icon={Plane} />
- <AffiliateButton href="#" text="Reserve Restaurant Tables" variant="outline" />
- </div>
+        <Section id="planning" title="Planning Timeline">
+          <div className="space-y-6">
+            {[
+              { time: "6–9 Months Out", desc: "Book flights and hotels. San Pedro hotels fill up fast. Research visa requirements for Mexico." },
+              { time: "3–6 Months Out", desc: "Confirm match tickets. Learn basic Spanish phrases. Plan day trips to Cola de Caballo or Garcia Caves." },
+              { time: "1–3 Months Out", desc: "Check vaccinations. Download the Metrorrey/Urbani app. Prepare for the summer heat." }
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
+                <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
+                <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-4">
+            <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/mty" text="Set Flight Alerts" variant="primary" icon={Plane} />
+            <AffiliateButton href="https://www.opentable.com/monterrey-restaurants" text="Reserve Restaurant Tables" variant="outline" />
+          </div>
  </Section>
 
  <Section id="budget" title="Budget Tiers">
@@ -427,61 +442,61 @@ export default function EstadioBBVAClientPage() {
  ))}
  </div>
  <div className="mt-8 text-center">
- <AffiliateButton href="#" text="Search Monterrey Packages" variant="secondary" icon={Briefcase} />
- </div>
+    <AffiliateButton href="https://www.viator.com/Monterrey-tourism/d23608-r58660086872-s194458348" text="Search Monterrey Packages" variant="secondary" icon={Briefcase} />
+  </div>
  </Section>
 
  <Section id="stadium" title="Estadio BBVA">
  <LightboxImage 
- src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" 
- alt="Estadio BBVA Stadium Guide" 
- caption="The metallic skin of 'El Gigante de Acero' mimics the city's industrial heritage."
- />
+src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1600.webp" 
+alt="Estadio BBVA Stadium Guide" 
+caption="The metallic skin of 'El Gigante de Acero' mimics the city's industrial heritage."
+/>
 
- <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
- <p>
- Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</strong> was a statement of intent. Designed by Populous, it was built to be the crown jewel of Latin American football. The nickname "El Gigante de Acero" isn't hyperbole. The facade is clad in brushed aluminum, a nod to Monterrey's history as Mexico's steel capital.
- </p>
- </div>
- 
- <div className="grid md:grid-cols-2 gap-8 mb-12">
- <div className=" p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
- <ul className="space-y-4">
- {[
- { label: "Capacity", val: "53,500" },
- { label: "Surface", val: "Grass (Heat Resistant)" },
- { label: "Roof", val: "Partial (Covers 100% seats)" },
- { label: "Opened", val: "2015" }
- ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
- <span className="font-medium text-slate-500">{item.label}</span>
- <span className="font-bold">{item.val}</span>
- </li>
- ))}
- </ul>
- </div>
- <div className=" p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
- <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> The View: The northern end is open to frame the mountain.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Heat: It gets very hot. Hydrate well before matches.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Gates typically open 3 hours before kickoff.</li>
- </ul>
- </div>
- </div>
+<div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+<p>
+Opened in 2015 to replace the aging Estadio Tecnológico, <strong>Estadio BBVA</strong> was a statement of intent. Designed by Populous, it was built to be the crown jewel of Latin American football. The nickname "El Gigante de Acero" isn't hyperbole. The facade is clad in brushed aluminum, a nod to Monterrey's history as Mexico's steel capital.
+</p>
+</div>
 
- <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
- <div className="relative h-64 rounded-[2rem] overflow-hidden group">
- <Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" alt="Stadium Interior" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
- </div>
- <div className="relative h-64 rounded-[2rem] overflow-hidden group">
- <Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" alt="Stadium Exterior" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
- </div>
- <div className="relative h-64 rounded-[2rem] overflow-hidden group">
- <Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" alt="Stadium View" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
- </div>
- </div>
+<div className="grid md:grid-cols-2 gap-8 mb-12">
+<div className=" p-8 rounded-[2rem]">
+<h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
+<ul className="space-y-4">
+{[
+{ label: "Capacity", val: "53,500" },
+{ label: "Surface", val: "Grass (Heat Resistant)" },
+{ label: "Roof", val: "Partial (Covers 100% seats)" },
+{ label: "Opened", val: "2015" }
+].map((item, i) => (
+<li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+<span className="font-medium text-slate-500">{item.label}</span>
+<span className="font-bold">{item.val}</span>
+</li>
+))}
+</ul>
+</div>
+<div className=" p-8 rounded-[2rem]">
+<h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
+<ul className="space-y-4 text-slate-700 dark:text-slate-300">
+<li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> The View: The northern end is open to frame the mountain.</li>
+<li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Heat: It gets very hot. Hydrate well before matches.</li>
+<li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Gates typically open 3 hours before kickoff.</li>
+</ul>
+</div>
+</div>
+
+<div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+<div className="relative h-64 rounded-[2rem] overflow-hidden group">
+<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium Interior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+</div>
+<div className="relative h-64 rounded-[2rem] overflow-hidden group">
+<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium Exterior" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+</div>
+<div className="relative h-64 rounded-[2rem] overflow-hidden group">
+<Image src="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" alt="Stadium View" fill className="object-cover transition-transform duration-700 group-hover:scale-110"  unoptimized />
+</div>
+</div>
  
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
@@ -504,8 +519,8 @@ export default function EstadioBBVAClientPage() {
  ))}
  </div>
  <div className="flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Buy Clear Stadium Bag" variant="primary" />
- <AffiliateButton href="#" text="Add Refillable Bottle" variant="outline" />
+ <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
+                <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle" text="Add Refillable Bottle" variant="outline" />
  </div>
  </Section>
 
@@ -544,7 +559,7 @@ export default function EstadioBBVAClientPage() {
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches.
  </p>
- <AffiliateButton href="#" text="Check StubHub" variant="primary" />
+ <AffiliateButton href="https://www.stubhub.com/" text="Check StubHub" variant="primary" />
  </div>
  </div>
  </Section>
@@ -561,8 +576,8 @@ export default function EstadioBBVAClientPage() {
         price="$200 - $400"
         distance="15 min drive"
         features={['San Pedro Location', 'Luxury Mall Access', 'Pool']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" 
-        link="#"
+        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        link="https://www.booking.com/searchresults.html?ss=Safi+Royal+Luxury+Metropolitan"
       />
       <HotelCard 
         name="Crowne Plaza Monterrey"
@@ -570,8 +585,8 @@ export default function EstadioBBVAClientPage() {
         price="$150 - $300"
         distance="20 min metro"
         features={['Centro Location', 'Near Macroplaza', 'Reliable']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" 
-        link="#"
+        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        link="https://www.booking.com/searchresults.html?ss=Crowne+Plaza+Monterrey"
       />
       <HotelCard 
         name="Holiday Inn Parque Fundidora"
@@ -579,13 +594,13 @@ export default function EstadioBBVAClientPage() {
         price="$180 - $350"
         distance="10 min drive"
         features={['Inside Park', 'Near Fan Fest', 'Modern']}
-        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp" 
-        link="#"
+        image="/images/stadiums/estadio-bbva-monterrey-world-cup-2026-640.webp" 
+        link="https://www.booking.com/searchresults.html?ss=Holiday+Inn+Parque+Fundidora"
       />
  </div>
  
  <div className="mt-12 text-center">
- <AffiliateButton href="#" text="Search All Monterrey Hotels" variant="outline" />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Monterrey" text="Search All Monterrey Hotels" variant="outline" />
  </div>
  </Section>
 
@@ -643,7 +658,7 @@ export default function EstadioBBVAClientPage() {
  ))}
  </ul>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
- <AffiliateButton href="#" text="Book Airport Transfer" variant="secondary" />
+ <AffiliateButton href="https://www.viator.com/Monterrey-tours/Transfers-and-Ground-Transport/d23608-g15" text="Book Airport Transfer" variant="secondary" />
  </div>
  </div>
  </div>
@@ -689,8 +704,8 @@ export default function EstadioBBVAClientPage() {
  ))}
  </div>
  <div className="mt-8">
- <AffiliateButton href="#" text="Explore Monterrey Tours" variant="primary" />
- </div>
+    <AffiliateButton href="https://www.viator.com/Monterrey-tours/d23608-ttd" text="Explore Monterrey Tours" variant="primary" />
+  </div>
  </Section>
 
  <Section id="safety" title="Safety & Security">
@@ -707,8 +722,8 @@ export default function EstadioBBVAClientPage() {
  <li>• Keep emergency numbers handy (911 works in Mexico).</li>
  </ul>
  <div className="mt-6">
- <AffiliateButton href="#" text="Get Travel Insurance" variant="secondary" />
- </div>
+          <AffiliateButton href="https://www.worldnomads.com/travel-insurance" text="Get Travel Insurance" variant="secondary" />
+        </div>
  </div>
  </div>
  </Section>
@@ -750,7 +765,7 @@ export default function EstadioBBVAClientPage() {
  <li>• Google Translate App</li>
  <li>• WhatsApp (Standard for communication)</li>
  </ul>
- <AffiliateButton href="#" text="Get an eSIM" variant="secondary" />
+ <AffiliateButton href="https://www.airalo.com/mexico-esim" text="Get an eSIM" variant="secondary" />
  </div>
  </div>
  </Section>
@@ -791,7 +806,7 @@ export default function EstadioBBVAClientPage() {
  <li>• <strong>Power:</strong> 127V, Type A/B plugs (Same as US).</li>
  <li>• <strong>Sim Cards:</strong> Telcel is the best provider.</li>
  </ul>
- <AffiliateButton href="#" text="Get an Airalo eSIM" variant="secondary" />
+ <AffiliateButton href="https://www.airalo.com/mexico-esim" text="Get an Airalo eSIM" variant="secondary" />
  </div>
  </div>
  </Section>

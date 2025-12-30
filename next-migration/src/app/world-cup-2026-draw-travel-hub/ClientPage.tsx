@@ -25,6 +25,7 @@ const itemVariants = {
 export default function DrawHubClientPage() {
   return (
     <div className="min-h-screen font-sans overflow-x-hidden selection:bg-[#01b47d]/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
+      <SocialShare />
  
  {/* Hero Section */}
  <div className="relative w-full overflow-hidden">
@@ -93,7 +94,7 @@ export default function DrawHubClientPage() {
  <figure className="group relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200/50 dark:shadow-black/50 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
  <div className="relative w-full aspect-video max-h-[600px] bg-transparent">
  <OptimizedImage
-  src="https://stadiumport.com/images/Hub Pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
+  src="/images/Hub Pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
   alt="FIFA World Cup 26 Qualified Teams Wallchart – Stadiumport"
   fill
   containerClassName="bg-transparent dark:bg-transparent"

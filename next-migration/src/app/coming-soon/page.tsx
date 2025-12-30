@@ -1,14 +1,33 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Link from 'next/link';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Clock, Sparkles } from 'lucide-react';
 
 function ComingSoonContent() {
   const searchParams = useSearchParams();
+  const router = useRouter();
   const title = searchParams.get('title') || 'This Guide';
+
+  useEffect(() => {
+    if (title.toLowerCase().includes('connectivity')) {
+      router.replace('/world-cup-2026-connectivity-guide');
+    }
+    if (title.toLowerCase().includes('scams') || title.toLowerCase().includes('fraud')) {
+      router.replace('/world-cup-2026-scams-avoid-fraud');
+    }
+    if (title.toLowerCase().includes('stadium') && title.toLowerCase().includes('safety')) {
+      router.replace('/world-cup-2026-stadium-safety');
+    }
+    if (title.toLowerCase().includes('health') || title.toLowerCase().includes('medical')) {
+      router.replace('/world-cup-2026-health-medical-preparedness');
+    }
+    if (title.toLowerCase().includes('transport') || title.toLowerCase().includes('getting around')) {
+      router.replace('/world-cup-2026-transportation-safety');
+    }
+  }, [title, router]);
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] flex flex-col items-center justify-center p-6 relative overflow-hidden">

@@ -99,7 +99,7 @@ export const ShareDashboard = ({
                        <Trophy className="w-4 h-4" />
                        <span className="text-[10px] font-bold uppercase tracking-wider">Trophy Winner</span>
                      </div>
-                     <span className="text-black font-['Rajdhani'] text-xs uppercase tracking-widest text-right">
+                     <span className="text-white font-['Rajdhani'] text-xs uppercase tracking-widest text-right">
                        FIFA World Cup 26™
                      </span>
                   </div>
@@ -125,7 +125,7 @@ export const ShareDashboard = ({
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-8 w-px h-16 bg-gradient-to-b from-transparent via-slate-300 to-slate-900"></div>
           
           <h2 className="relative text-5xl md:text-8xl font-['Teko'] font-bold uppercase text-slate-900 tracking-tight leading-[0.85] flex flex-col items-center">
-            <span className="text-slate-400 text-2xl md:text-3xl tracking-[0.2em] mb-4 font-['Rajdhani'] font-bold">
+            <span className="text-slate-700 text-2xl md:text-3xl tracking-[0.2em] mb-4 font-['Rajdhani'] font-bold">
               {userName}'s
             </span>
             <span className="relative">

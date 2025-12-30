@@ -10,31 +10,31 @@ const safetyGuides = [
   {
     title: "World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud",
     teaser: "Identify the red flags before you book. Essential protection against counterfeit tickets and phishing.",
-    link: "/coming-soon?title=World%20Cup%202026%20Scams%20Guide",
+    link: "/world-cup-2026-scams-avoid-fraud",
     image: "/images/safety-guide/A_realistic_photo-style_image_showing_a_worried_football_fan_reviewing_suspiciou.webp",
     icon: ShieldAlert
   },
   {
     title: "Stadium Safety at World Cup 2026: Security Rules & What to Expect",
     teaser: "From bag policies to prohibited items. Navigate venue security smoothly and quickly.",
-    link: "/coming-soon?title=Stadium%20Safety%20Guide",
+    link: "/world-cup-2026-stadium-safety",
     image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp",
     icon: Lock
   },
   {
-    title: "Health & Medical Preparedness",
-    teaser: "Pharmacy access, emergency care, and health insurance requirements for US, Canada, and Mexico.",
-    link: "/coming-soon?title=Health%20%26%20Medical%20Guide",
+    title: "World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy",
+    teaser: "Travel insurance, vaccinations, prescriptions, and emergency contacts. Stay healthy across USA, Canada, & Mexico.",
+    link: "/world-cup-2026-health-medical-preparedness",
     image: "/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp",
     icon: HeartPulse
   },
   {
-    title: "Transportation Safety: Getting Around World Cup 2026 Host Cities",
-    teaser: "Safe transit options, rideshare tips, and navigating public transport systems late at night.",
-    link: "/coming-soon?title=Transportation%20Safety%20Guide",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp",
-    icon: Bus
-  },
+      title: "Transportation Safety: Getting Around World Cup 2026 Host Cities",
+      teaser: "Safe transit options, rideshare tips, and navigating public transport systems late at night.",
+      link: "/world-cup-2026-transportation-safety",
+      image: "/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp",
+      icon: Bus
+    },
   {
     title: "World Cup 2026 Emergency Contacts & Resources Guide",
     teaser: "One list, three countries. The essential emergency numbers and embassy contacts you need offline.",
@@ -206,7 +206,7 @@ export default function SafetyGuideClientPage() {
                   alt={guide.title}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
-                />
+                 unoptimized />
                 <div className="absolute bottom-4 left-4 z-20">
                   <div className="bg-white/90 dark:bg-black/80 p-2 rounded-lg backdrop-blur-sm inline-block">
                     <guide.icon className="w-5 h-5 text-slate-900 dark:text-white" />

@@ -13,20 +13,20 @@ export const metadata: Metadata = {
  url: 'https://stadiumport.com/world-cup-2026-stadiums/mercedes-benz-stadium-guide',
  siteName: 'Stadiumport',
  images: [
- {
- url: '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp',
- width: 1024,
- height: 683,
- alt: 'Mercedes-Benz Stadium World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
- images: ['/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp'],
- },
+      {
+        url: '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp',
+        width: 1600,
+        height: 1066,
+        alt: 'Mercedes-Benz Stadium World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
+    description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    images: ['/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1600.webp'],
+  },
 };
 
 export default function Page() {

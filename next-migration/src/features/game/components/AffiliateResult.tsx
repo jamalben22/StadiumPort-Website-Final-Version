@@ -186,10 +186,10 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
             </div>
             <div>
               <div className="font-bold text-slate-200 group-hover:text-white">Book Hotels in NY</div>
-              <div className="text-xs text-slate-500">Best rates on Booking.com</div>
+              <div className="text-xs text-slate-300">Best rates on Booking.com</div>
             </div>
           </div>
-          <i className="ri-arrow-right-line text-slate-500 group-hover:translate-x-1 transition-transform"></i>
+          <i className="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition-transform"></i>
         </motion.a>
 
         <motion.a 
@@ -204,11 +204,11 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
               <i className="ri-plane-line text-2xl"></i>
             </div>
             <div>
-              <div className="font-bold text-slate-200 group-hover:text-white">Find Flight Deals</div>
-              <div className="text-xs text-slate-500">Compare prices on Skyscanner</div>
+              <div className="font-bold text-white group-hover:text-white">Find Flight Deals</div>
+              <div className="text-xs text-slate-200">Compare prices on Skyscanner</div>
             </div>
           </div>
-          <i className="ri-arrow-right-line text-slate-500 group-hover:translate-x-1 transition-transform"></i>
+          <i className="ri-arrow-right-line text-slate-300 group-hover:translate-x-1 transition-transform"></i>
         </motion.a>
       </motion.div>
     </div>

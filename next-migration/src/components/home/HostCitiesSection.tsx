@@ -12,28 +12,28 @@ const cities = [
     country: 'USA',
     image: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
     info: 'Host of the Grand Final',
-    link: '/world-cup-2026-host-cities/new-york-city-guide',
+    link: '/world-cup-2026-host-cities-guide/new-york-city-guide',
   },
   {
     name: 'Los Angeles',
     country: 'USA',
     image: '/images/cities/los-angeles-world-cup-2026-1600.webp',
     info: 'Entertainment Capital',
-    link: '/world-cup-2026-host-cities/los-angeles-city-guide',
+    link: '/world-cup-2026-host-cities-guide/los-angeles-city-guide',
   },
   {
     name: 'Mexico City',
     country: 'Mexico',
     image: '/images/cities/mexico-city-world-cup-2026-1600.webp',
     info: 'Opening Match Host',
-    link: '/world-cup-2026-host-cities/mexico-city-city-guide',
+    link: '/world-cup-2026-host-cities-guide/mexico-city-city-guide',
   },
   {
     name: 'Toronto',
     country: 'Canada',
     image: '/images/cities/toronto-world-cup-2026-1600.webp',
     info: 'Canada’s Cultural Hub',
-    link: '/world-cup-2026-host-cities/toronto-city-guide',
+    link: '/world-cup-2026-host-cities-guide/toronto-city-guide',
   },
 ];
 
@@ -92,7 +92,7 @@ export const HostCitiesSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Link 
-              href="/world-cup-2026-host-cities"
+              href="/world-cup-2026-host-cities-guide"
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-white dark:hover:bg-white/5 transition-colors"
             >
               <span className="text-sm font-medium text-[#0A0A0A] dark:text-white">View all cities</span>

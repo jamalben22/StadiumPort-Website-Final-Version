@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://stadiumport.com/images/draw-hub-og.jpg',
+        url: '/images/draw-hub-og.jpg',
       },
     ],
     siteName: 'Stadiumport',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub',
     description: 'Complete guide to FIFA World Cup 2026 Draw results. Detailed travel itineraries for all 12 groups (A-L), host city logistics, flight tips, and accommodation strategies for fans.',
-    images: ['https://stadiumport.com/images/draw-hub-og.jpg'],
+    images: ['/images/draw-hub-og.jpg'],
   },
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-draw-travel-hub',

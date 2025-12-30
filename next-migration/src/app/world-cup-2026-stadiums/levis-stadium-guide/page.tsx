@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     siteName: 'Stadiumport',
     images: [
       {
-        url: '/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1024.webp',
-        width: 1024,
-        height: 683,
+        url: '/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp',
+        width: 1600,
+        height: 1066,
         alt: "Levi's Stadium World Cup 2026",
       },
     ],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Levi's Stadium World Cup 2026: Complete Stadium Guide",
     description: "Essential fan guide for Levi's Stadium during World Cup 2026.",
-    images: ['/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1024.webp'],
+    images: ['/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp'],
   },
 };
 

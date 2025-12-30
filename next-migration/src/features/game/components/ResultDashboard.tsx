@@ -179,14 +179,14 @@ export const ResultDashboard = ({
         <h1 className="text-4xl md:text-6xl font-['Teko'] font-bold uppercase text-slate-900 drop-shadow-sm tracking-tight">
           Official Entry Confirmed
         </h1>
-        <p className="text-slate-600 font-['Rajdhani'] font-semibold text-lg md:text-xl uppercase tracking-wider max-w-2xl mx-auto leading-tight">
+        <p className="text-slate-800 font-['Rajdhani'] font-bold text-lg md:text-xl uppercase tracking-wider max-w-2xl mx-auto leading-tight">
           Official World Cup 2026 predictions Confirmed, Good luck competing for official prizes!
         </p>
       </div>
 
       {/* Predicted Champion Summary */}
       <div className="text-center -mt-4 mb-2">
-        <p className="text-slate-500 font-['Rajdhani'] font-bold text-sm uppercase tracking-[0.3em] mb-1">
+        <p className="text-slate-700 font-['Rajdhani'] font-bold text-sm uppercase tracking-[0.3em] mb-1">
           {userName === 'You' ? 'YOUR' : `${userName.toUpperCase()}'S`} PREDICTED CHAMPION
         </p>
         <h2 className="text-6xl md:text-8xl font-['Teko'] font-black uppercase text-slate-900 leading-none">

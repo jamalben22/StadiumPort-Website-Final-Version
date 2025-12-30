@@ -74,7 +74,7 @@ export const BracketSummary = ({
   }, [groupStandings, thirdPlacePicks, knockoutPicks, hasPredictionData])
 
   if (!hasPredictionData) {
-    return <div className="p-4 text-center text-slate-500">No prediction data available.</div>
+    return <div className="p-4 text-center text-slate-900 font-bold">No prediction data available.</div>
   }
 
   const getTeam = (id?: string | null) => (id ? TEAM_MAP.get(id) : undefined)
@@ -112,14 +112,14 @@ export const BracketSummary = ({
       {/* Group Stage Summary */}
       <section>
         <div className="flex items-center gap-4 mb-6">
-          <h3 className="text-xl font-['Teko'] font-bold uppercase text-slate-900 tracking-wider">Group Stage</h3>
-          <div className="h-px flex-1 bg-slate-200"></div>
+          <h3 className="text-xl font-['Teko'] font-bold uppercase text-black tracking-wider">Group Stage</h3>
+          <div className="h-px flex-1 bg-slate-300"></div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {Object.entries(groupStandings).map(([gid, teamIds]) => (
             <div key={gid} className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-100">
-                <span className="text-xs font-bold text-slate-500 font-['Rajdhani'] uppercase tracking-widest">Group {gid}</span>
+              <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-200">
+                <span className="text-xs font-bold text-slate-900 font-['Rajdhani'] uppercase tracking-widest">Group {gid}</span>
               </div>
               <div className="space-y-2">
                 {teamIds.map((tid, idx) => {
@@ -128,7 +128,7 @@ export const BracketSummary = ({
                   return (
                     <div key={tid} className="flex items-center justify-between gap-2">
                       <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold text-slate-400 w-4">{idx + 1}</span>
+                        <span className="text-[10px] font-bold text-slate-900 w-4">{idx + 1}</span>
                         {t?.flagUrl && (
                           <img 
                             src={t.flagUrl} 
@@ -136,7 +136,7 @@ export const BracketSummary = ({
                             className="w-5 h-3.5 rounded-sm object-cover ring-1 ring-slate-200" 
                           />
                         )}
-                        <span className={`text-xs font-['Teko'] uppercase ${isAdvancing ? 'text-slate-900 font-bold' : 'text-slate-400'}`}>
+                        <span className={`text-xs font-['Teko'] uppercase ${isAdvancing ? 'text-black font-bold' : 'text-slate-900'}`}>
                           {t?.name || 'TBD'}
                         </span>
                       </div>
@@ -156,10 +156,10 @@ export const BracketSummary = ({
       <section>
         <div className="flex items-end justify-between mb-8 px-2">
           <div>
-            <h3 className="text-3xl font-['Teko'] font-bold uppercase text-slate-900 leading-none">Knockout Stage</h3>
-            <p className="text-slate-600 font-['Rajdhani'] font-semibold text-sm tracking-wider uppercase">The Path to Glory</p>
+            <h3 className="text-3xl font-['Teko'] font-bold uppercase text-black leading-none">Knockout Stage</h3>
+            <p className="text-slate-900 font-['Rajdhani'] font-bold text-sm tracking-wider uppercase">The Path to Glory</p>
           </div>
-          <div className="hidden sm:block h-px flex-1 bg-gradient-to-r from-slate-200 to-transparent ml-6 mb-2"></div>
+          <div className="hidden sm:block h-px flex-1 bg-gradient-to-r from-slate-300 to-transparent ml-6 mb-2"></div>
         </div>
         
         <div className="space-y-12">
@@ -175,18 +175,18 @@ export const BracketSummary = ({
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2 mb-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#01b47d]"></div>
-                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-600 uppercase tracking-[0.2em]">
+                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-900 uppercase tracking-[0.2em]">
                         {section.subtitle}
                       </span>
                     </div>
-                    <h4 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-slate-900 leading-none tracking-tight">
+                    <h4 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-black leading-none tracking-tight">
                       {section.title}
                     </h4>
                   </div>
                   
                   <div className="hidden sm:flex items-center gap-3">
-                    <div className="h-px w-12 bg-gradient-to-r from-slate-200 to-transparent"></div>
-                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-600 uppercase tracking-widest">
+                    <div className="h-px w-12 bg-gradient-to-r from-slate-300 to-transparent"></div>
+                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-900 uppercase tracking-widest">
                       Knockout Phase
                     </span>
                   </div>
@@ -209,7 +209,7 @@ export const BracketSummary = ({
                               className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
                                 isWinner 
                                   ? 'bg-slate-900 text-white' 
-                                  : 'bg-transparent text-slate-500 hover:bg-slate-50'
+                                  : 'bg-transparent text-slate-700 hover:bg-slate-50'
                               }`}
                             >
                               <div className="flex items-center gap-3">
@@ -245,7 +245,7 @@ export const BracketSummary = ({
                   <div className="flex flex-col">
                     <div className="flex items-center gap-2 mb-0.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#fbbf24]"></div>
-                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-600 uppercase tracking-[0.2em]">
+                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-800 uppercase tracking-[0.2em]">
                         The Final Verdict
                       </span>
                     </div>
@@ -256,7 +256,7 @@ export const BracketSummary = ({
                   
                   <div className="hidden sm:flex items-center gap-3">
                     <div className="h-px w-12 bg-gradient-to-r from-slate-200 to-transparent"></div>
-                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-600 uppercase tracking-widest">
+                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-800 uppercase tracking-widest">
                       Podium Finish
                     </span>
                   </div>
@@ -267,9 +267,9 @@ export const BracketSummary = ({
               {/* Third Place Card */}
               <div className="md:col-span-1 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-3xl p-6 relative overflow-hidden group hover:shadow-lg transition-all">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <div className="text-6xl font-['Teko'] font-bold text-slate-900">3</div>
+                  <div className="text-6xl font-['Teko'] font-bold text-black">3</div>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 mb-6 block font-['Rajdhani']">Bronze Medal Match</span>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-900 mb-6 block font-['Rajdhani']">Bronze Medal Match</span>
                 
                 <div className="space-y-3 relative z-10">
                   {[sf1LoserId, sf2LoserId].map((tid, i) => {
@@ -279,9 +279,9 @@ export const BracketSummary = ({
                       <div key={i} className={`flex items-center justify-between p-3 rounded-xl border ${isWinner ? 'bg-white border-slate-200 shadow-md transform scale-[1.02]' : 'bg-transparent border-transparent opacity-60'} transition-all`}>
                         <div className="flex items-center gap-3">
                           {t?.flagUrl && <img src={t.flagUrl} className="w-8 h-5 rounded shadow-sm" />}
-                          <span className={`font-['Teko'] text-lg uppercase ${isWinner ? 'text-slate-900 font-bold' : 'text-slate-500'}`}>{t?.name || 'TBD'}</span>
+                          <span className={`font-['Teko'] text-lg uppercase ${isWinner ? 'text-black font-bold' : 'text-slate-900 font-bold'}`}>{t?.name || 'TBD'}</span>
                         </div>
-                        {isWinner && <span className="text-[10px] font-bold text-[#b45309] bg-amber-50 px-2 py-1 rounded-full uppercase tracking-wider border border-amber-100">Bronze</span>}
+                        {isWinner && <span className="text-[10px] font-bold text-amber-950 bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wider border border-amber-300">Bronze</span>}
                       </div>
                     )
                   })}

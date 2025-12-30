@@ -63,22 +63,22 @@ const getStatusStyles = (idx: number) => {
       return {
         wrapper: "bg-amber-50 border-amber-200",
         accentBar: "bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.2)]",
-        text: "text-amber-900 font-medium",
-        rank: "text-amber-600/70",
+        text: "text-amber-950 font-bold",
+        rank: "text-amber-900",
         badge: {
           text: "3RD",
-          style: "bg-amber-500/10 text-amber-600 border border-amber-500/20"
+          style: "bg-amber-500/20 text-amber-900 border border-amber-500/30 font-bold"
         }
       };
     default: // 4th Place (Eliminated)
       return {
         wrapper: "bg-red-50 border-red-200 opacity-80",
         accentBar: "bg-red-600",
-        text: "text-slate-600 font-medium",
-        rank: "text-red-600",
+        text: "text-red-950 font-bold",
+        rank: "text-red-900",
         badge: {
           text: "X",
-          style: "bg-red-600/20 text-red-600 border border-red-500/30"
+          style: "bg-red-600/20 text-red-900 border border-red-500/30 font-bold"
         }
       };
   }
@@ -168,9 +168,9 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
         {team.flagUrl ? (
           <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" draggable={false} />
         ) : ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
-          <span className="text-[8px] font-bold text-slate-400 tracking-tighter uppercase">FIFA</span>
+          <span className={`text-[8px] font-bold tracking-tighter uppercase ${index === 2 ? 'text-amber-700/70' : 'text-slate-400'}`}>FIFA</span>
         ) : (
-          <span className="text-[10px] font-bold text-slate-400 tracking-tighter">{team.fifaCode}</span>
+          <span className={`text-[10px] font-bold tracking-tighter ${index === 2 ? 'text-amber-700/70' : 'text-slate-400'}`}>{team.fifaCode}</span>
         )}
       </div>
 
@@ -186,7 +186,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
                         onClick={(e) => e.stopPropagation()} // Prevent drag start on click
                         onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
                     >
-                       <Info className="w-3.5 h-3.5 text-slate-400 hover:text-slate-600 dark:hover:text-white" />
+                       <Info className={`w-3.5 h-3.5 hover:text-slate-600 dark:hover:text-white ${index === 2 ? 'text-amber-700/60' : 'text-slate-400'}`} />
                     </button>
                  </Tooltip.Trigger>
                  <Tooltip.Portal>
@@ -355,60 +355,60 @@ export const GroupStage = () => {
        {/* Dashboard Header */}
        <div className="text-center mb-8 pt-4">
           <RulesCard variant="short" className="max-w-2xl mx-auto mb-8" />
-         <h2 className="text-3xl md:text-4xl font-sans font-bold text-white tracking-tight mb-2">
+         <h2 className="text-3xl md:text-4xl font-sans font-bold text-slate-950 tracking-tight mb-2">
            Group Stage: Predict All 12 Groups
          </h2>
-       <p className="text-slate-400 font-mono text-xs tracking-widest uppercase">
+       <p className="text-slate-900 font-mono text-xs tracking-widest uppercase">
           Drag & Drop Teams to Set Your Rankings • Top 2 + Best 8 Third-Place Teams Advance to Round of 32
         </p>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 md:px-0 mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          <div className="relative group bg-white/6 border border-white/15 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="relative group bg-white/10 border border-white/20 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#01b47d]/10 blur-[80px] rounded-full pointer-events-none" />
-            <h4 className="text-center text-white font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-white/20 via-white/40 to-white/20" />
+            <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-slate-400/20 via-slate-400/40 to-slate-400/20" />
             <div className="space-y-2">
-              <div className="flex items-start gap-2 text-white/85 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>48 teams divided into 12 groups of 4</span>
               </div>
-              <div className="flex items-start gap-2 text-white/85 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Top 2 from each group automatically advance (24 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-white/85 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Best 8 third-place teams also qualify (8 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-white/85 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Total: 32 teams advance to knockout rounds</span>
               </div>
             </div>
           </div>
-          <div className="relative group bg-white/6 border border-white/15 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
+          <div className="relative group bg-white/10 border border-white/20 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <div className="absolute -top-24 -right-24 w-52 h-52 bg-purple-400/10 blur-[80px] rounded-full pointer-events-none" />
-            <h4 className="text-center text-white font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">How Rankings Work</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-white/20 via-white/40 to-white/20" />
-            <div className="space-y-2 text-white/85 font-['Rajdhani'] text-sm md:text-base">
+            <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">How Rankings Work</h4>
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-slate-400/20 via-slate-400/40 to-slate-400/20" />
+            <div className="space-y-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span><span className="font-bold">1st Place</span> – Group Winner (automatic qualification)</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span><span className="font-bold">2nd Place</span> – Group Runner-up (automatic qualification)</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span><span className="font-bold">3rd Place</span> – May qualify as one of 8 best third-place teams</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/40"></span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span><span className="font-bold">4th Place</span> – Eliminated</span>
               </div>
             </div>
@@ -416,7 +416,7 @@ export const GroupStage = () => {
         </div>
       </div>
       <div className="text-center mb-6">
-        <h3 className="text-2xl md:text-3xl font-sans font-bold text-[#FBBF24] tracking-tight">
+        <h3 className="text-2xl md:text-3xl font-sans font-bold text-slate-900 tracking-tight">
           Rank all 4 teams in each group below (1st to 4th place)
         </h3>
       </div>

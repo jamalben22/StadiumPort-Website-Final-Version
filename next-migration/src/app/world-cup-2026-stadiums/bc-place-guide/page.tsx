@@ -13,20 +13,20 @@ export const metadata: Metadata = {
  url: 'https://stadiumport.com/world-cup-2026-stadiums/bc-place-guide',
  siteName: 'Stadiumport',
  images: [
- {
- url: '/images/stadiums/bc-place-vancouver-world-cup-2026-1024.webp',
- width: 1024,
- height: 683,
- alt: 'BC Place World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'BC Place World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
- images: ['/images/stadiums/bc-place-vancouver-world-cup-2026-1024.webp'],
- },
+      {
+        url: '/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp',
+        width: 1600,
+        height: 1066,
+        alt: 'BC Place World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'BC Place World Cup 2026: Complete Stadium Guide',
+    description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    images: ['/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp'],
+  },
 };
 
 export default function Page() {

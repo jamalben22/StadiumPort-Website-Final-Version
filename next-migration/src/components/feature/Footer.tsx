@@ -89,7 +89,7 @@ export function Footer() {
       title: 'Explore',
       links: [
         { label: 'Groups & Teams', to: '/world-cup-2026-groups' },
-        { label: 'Host Cities', to: '/world-cup-2026-host-cities' },
+        { label: 'Host Cities', to: '/world-cup-2026-host-cities-guide' },
         { label: 'Stadiums', to: '/world-cup-2026-stadiums' },
         { label: 'Prediction Game', to: '/world-cup-2026-prediction-game' },
       ]
@@ -140,20 +140,20 @@ export function Footer() {
           <div className="max-w-sm">
             <Link href="/" className="block mb-6 group">
             <img 
-              src="https://stadiumport.com/images/Logos/footer-logo-400x100.svg" 
+              src="/images/Logos/footer-logo-400x100.svg" 
               alt="Stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
-              onError={(e) => { e.currentTarget.src = 'https://stadiumport.com/images/Logos/footer-logo-400x100.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100.svg'; }}
             />
             <img 
-              src="https://stadiumport.com/images/Logos/footer-logo-400x100-dark.svg" 
+              src="/images/Logos/footer-logo-400x100-dark.svg" 
               alt="Stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
-              onError={(e) => { e.currentTarget.src = 'https://stadiumport.com/images/Logos/footer-logo-400x100-dark.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100-dark.svg'; }}
             />
           </Link>
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">

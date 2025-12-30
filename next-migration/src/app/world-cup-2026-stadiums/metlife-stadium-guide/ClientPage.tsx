@@ -7,11 +7,11 @@ import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer
 import { 
  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
  Trophy, Plane, Hotel, Ticket, Share2, MessageSquare, 
- ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
- DollarSign, Shield, Clock, Globe, Star, ExternalLink,
- Train, Bus, Car, Bike, AlertTriangle, Briefcase,
- Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy
-} from 'lucide-react';
+    ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
+    DollarSign, Shield, Clock, Globe, Star, ExternalLink,
+    Train, Bus, Car, Bike, AlertTriangle,
+    X, ChevronRight, Facebook, Twitter, Linkedin, Copy, FileCheck
+  } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { Footer } from '@/components/feature/Footer';
 
@@ -36,22 +36,78 @@ const staggerContainer = {
 
 // 2. Floating Social Share
 const SocialShare = () => {
- return (
- <motion.div 
- initial={{ opacity: 0, x: -20 }}
- animate={{ opacity: 1, x: 0 }}
- transition={{ delay: 1 }}
- className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
- >
- <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
- {[Twitter, Facebook, Linkedin, Copy].map((Icon, i) => (
- <button key={i} className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors">
- <Icon className="w-5 h-5" />
- </button>
- ))}
- </div>
- </motion.div>
- );
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    let shareUrl = '';
+
+    switch (platform) {
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        break;
+    }
+
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1 }}
+      className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
+    >
+      <div className="backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
+        <button 
+          onClick={() => handleShare('twitter')} 
+          className="p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-slate-500 hover:text-[#1DA1F2] transition-colors" 
+          aria-label="Share on Twitter"
+        >
+          <Twitter className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={() => handleShare('facebook')} 
+          className="p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-slate-500 hover:text-[#4267B2] transition-colors" 
+          aria-label="Share on Facebook"
+        >
+          <Facebook className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={() => handleShare('linkedin')} 
+          className="p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-slate-500 hover:text-[#0077b5] transition-colors" 
+          aria-label="Share on LinkedIn"
+        >
+          <Linkedin className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={handleCopy} 
+          className="p-3 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl text-slate-500 hover:text-emerald-500 transition-colors relative" 
+          aria-label="Copy Link"
+        >
+          {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
+        </button>
+      </div>
+    </motion.div>
+  );
 };
 
 // 3. Lightbox Image
@@ -64,7 +120,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative group cursor-zoom-in rounded-3xl overflow-hidden mb-8"
  onClick={() => setIsOpen(true)}
  >
- <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105" />
+ <Image src={src} alt={alt} width={1200} height={800} className="object-cover w-full h-[400px] md:h-[600px] transition-transform duration-700 group-hover:scale-105"  unoptimized />
  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -91,7 +147,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="relative max-w-7xl w-full max-h-[90vh] rounded-lg overflow-hidden"
  onClick={(e) => e.stopPropagation()}
  >
- <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full" />
+ <Image src={src} alt={alt} width={1920} height={1080} className="object-contain w-full h-full"  unoptimized />
  {caption && <p className="text-center text-white/80 mt-4 font-light text-lg">{caption}</p>}
  </motion.div>
  </motion.div>
@@ -133,10 +189,9 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
   };
 
   return (
-    <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+    <Link href={href} target="_blank" rel="noopener noreferrer" className={`${baseClasses} ${variants[variant]}`}>
       <span className="relative z-10 flex items-center gap-2">
-        {text}
-        <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+        {text} <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
       </span>
       {variant === 'primary' && (
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
@@ -149,7 +204,7 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
- <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+ <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
  <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
  </div>
@@ -206,7 +261,7 @@ export default function ClientPage() {
  });
 
  const [activeSection, setActiveSection] = useState('hero');
- const [isSaved, setIsSaved] = useState(false);
+ 
 
  // Sticky Nav Links
  const navLinks = [
@@ -239,9 +294,9 @@ export default function ClientPage() {
  src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1600.webp" 
  alt="MetLife Stadium" 
  fill 
- className="object-cover opacity-50"
+ className="object-cover opacity-80"
  priority sizes="100vw"
- />
+  unoptimized />
  <div className="absolute inset-0 " />
  </div>
 
@@ -266,29 +321,10 @@ export default function ClientPage() {
  </h1>
  <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
  New York New Jersey. <span className="text-white font-medium">World Cup 2026 Final</span> definitive guide.
- </p>
- </motion.div>
- </div>
-
- {/* Save Guide Button - Integrated */}
- <motion.button
- initial={{ opacity: 0, scale: 0.9 }}
- animate={{ opacity: 1, scale: 1 }}
- transition={{ delay: 0.2, duration: 0.6 }}
- onClick={() => setIsSaved(!isSaved)}
- className="group flex items-center gap-3 pl-4 pr-6 py-3 hover:/20 backdrop-blur-xl border border-white/20 rounded-full transition-all duration-300 mb-2 md:mb-0"
- >
- <div className={`flex items-center justify-center w-10 h-10 rounded-full ${isSaved ? 'bg-emerald-500 text-white' : ' text-slate-900'} transition-colors duration-300`}>
- <Bookmark className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
- </div>
- <div className="text-left">
- <span className="block text-xs text-slate-400 uppercase tracking-wider font-bold">Guide Status</span>
- <span className="block text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
- {isSaved ? 'Saved to Library' : 'Save to Library'}
- </span>
- </div>
- </motion.button>
- </div>
+          </p>
+        </motion.div>
+      </div>
+    </div>
  </div>
 
  <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-20 relative pt-16">
@@ -357,8 +393,8 @@ export default function ClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Search NYC Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="#" text="Check Secaucus Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.skyscanner.com/transport/flights-to/nyc" text="Search NYC Flights" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/city/us/new-york.html" text="Check Secaucus Hotels" variant="primary" icon={Hotel} />
  </div>
  </Section>
 
@@ -403,10 +439,10 @@ export default function ClientPage() {
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Expect record-breaking prices. Verified resale platforms will be your only safe alternative to the official lottery.
  </p>
- <AffiliateButton href="#" text="Check StubHub" variant="primary" />
- </div>
- </div>
- </Section>
+ <AffiliateButton href="https://www.stubhub.com" text="Check StubHub" variant="primary" />
+          </div>
+        </div>
+      </Section>
 
  <Section id="transport" title="Getting There">
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -461,12 +497,12 @@ export default function ClientPage() {
  </li>
  ))}
  </ul>
- <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
- <AffiliateButton href="#" text="View NJ Transit Map" variant="secondary" />
- </div>
- </div>
- </div>
- </Section>
+      <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+        <AffiliateButton href="https://www.njtransit.com/meadowlands" text="View NJ Transit Map" variant="secondary" />
+      </div>
+    </div>
+  </div>
+</Section>
 
  <Section id="parking" title="Parking Strategy">
  <div className="grid md:grid-cols-3 gap-8">
@@ -487,15 +523,15 @@ export default function ClientPage() {
  </ul>
  </div>
  ))}
- </div>
- <div className="mt-8 text-center">
- <AffiliateButton href="#" text="Pre-Book Parking" variant="secondary" icon={Car} />
- </div>
- </Section>
+    </div>
+    <div className="mt-8 text-center">
+      <AffiliateButton href="https://www.metlifestadium.com/getting-here/parking" text="Pre-Book Parking" variant="secondary" icon={Car} />
+    </div>
+  </Section>
 
  <Section id="seating" title="Seating & Views">
  <LightboxImage 
-        src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1024.webp" 
+        src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1600.webp" 
         alt="MetLife Stadium Bowl" 
         caption="The massive 82,500 seat bowl of MetLife Stadium."
       />
@@ -569,7 +605,7 @@ export default function ClientPage() {
  </div>
  </div>
  <div className="mt-8 flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Buy Clear Stadium Bag" variant="primary" />
+ <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag&tag=stadiumport-20" text="Buy Clear Stadium Bag" variant="primary" />
  </div>
  </Section>
 
@@ -601,27 +637,50 @@ export default function ClientPage() {
  </ul>
  </div>
  <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
- <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Globe className="w-6 h-6 text-emerald-500"/> Connectivity</h4>
- <ul className="space-y-3 text-slate-600 dark:text-slate-400 mb-6">
- <li>• <strong>WiFi:</strong> Free stadium-wide WiFi available.</li>
- <li>• <strong>App:</strong> Download One MetLife Stadium App.</li>
- <li>• <strong>Power:</strong> Bring a power bank.</li>
- </ul>
- <AffiliateButton href="#" text="Download Stadium App" variant="secondary" />
+              <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Globe className="w-6 h-6 text-emerald-500"/> Connectivity</h4>
+              <ul className="space-y-3 text-slate-600 dark:text-slate-400 mb-6">
+                <li>• <strong>WiFi:</strong> Free stadium-wide WiFi available.</li>
+                <li>• <strong>App:</strong> Download One MetLife Stadium App.</li>
+                <li>• <strong>Power:</strong> Bring a power bank.</li>
+              </ul>
+              <AffiliateButton href="https://airalo.tp.st/yF9Qk3Ol" text="Get US eSIM" variant="secondary" />
+            </div>
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 md:col-span-2">
+ <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Plane className="w-6 h-6 text-emerald-500"/> International Travel</h4>
+ <p className="text-slate-600 dark:text-slate-300 mb-8">
+ International visitors to the US typically need a visa or ESTA. Check the latest requirements early.
+ </p>
+ <div className="flex flex-wrap gap-4">
+ <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check Visa Requirements" icon={FileCheck} />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Travel Insurance" icon={Shield} variant="outline" />
+ </div>
  </div>
  </div>
  </Section>
 
  <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {['New York/New Jersey', 'Los Angeles', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Boston'].map((city) => (
- <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
- {city}
- </Link>
- ))}
- </div>
- <div className="text-center mt-12">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { name: 'New York/New Jersey', slug: 'new-york-city-guide' },
+          { name: 'Los Angeles', slug: 'los-angeles-city-guide' },
+          { name: 'Mexico City', slug: 'mexico-city-city-guide' },
+          { name: 'Toronto', slug: 'toronto-city-guide' },
+          { name: 'Dallas', slug: 'dallas-city-guide' },
+          { name: 'Miami', slug: 'miami-city-guide' },
+          { name: 'Seattle', slug: 'seattle-city-guide' },
+          { name: 'Boston', slug: 'boston-city-guide' }
+        ].map((city) => (
+          <Link 
+            key={city.name} 
+            href={`/world-cup-2026-host-cities-guide/${city.slug}`} 
+            className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200"
+          >
+            {city.name}
+          </Link>
+        ))}
+      </div>
+      <div className="text-center mt-12">
  <Link href="/world-cup-2026-host-cities" className="text-emerald-500 hover:text-emerald-600 font-bold text-lg inline-flex items-center gap-2 hover:gap-4 transition-all">
  View All 16 Host Cities <ArrowRight className="w-5 h-5"/>
  </Link>

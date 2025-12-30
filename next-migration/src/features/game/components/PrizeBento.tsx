@@ -20,7 +20,7 @@ export const PrizeBento = () => {
           </div>
           
           <h3 className="text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Grand Champion</h3>
-          <p className="text-white/40 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
+          <p className="text-white/60 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
             The ultimate victory package
           </p>
           
@@ -52,7 +52,7 @@ export const PrizeBento = () => {
           </div>
           
           <h3 className="text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Elite Predictors</h3>
-          <p className="text-white/40 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
+          <p className="text-white/60 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
             Rewards for the best
           </p>
           

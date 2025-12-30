@@ -48,7 +48,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 "Top 5 players win exclusive World Cup 2026 prizes",
                 "Winners announced after the Final on July 19, 2026"
               ].map((rule, i) => (
-                <li key={i} className={`flex items-start gap-3 text-sm ${isDark ? 'text-slate-300' : 'text-slate-800 font-medium'} font-inter leading-relaxed`}>
+                <li key={i} className={`flex items-start gap-3 text-sm ${isDark ? 'text-white' : 'text-slate-800 font-medium'} font-inter leading-relaxed`}>
                   <CheckCircle2 className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-slate-900'} mt-0.5 shrink-0`} />
                   <span>{rule}</span>
                 </li>
@@ -111,7 +111,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
           <h2 className={`text-3xl md:text-4xl font-bold ${isDark ? 'text-white' : 'text-slate-900'} mb-4`}>
             World Cup 2026 <span className={`text-transparent bg-clip-text bg-gradient-to-r ${isDark ? 'from-indigo-400 to-purple-400' : 'from-slate-900 to-slate-700'}`}>Prediction Game</span> Rules
           </h2>
-          <p className={`${isDark ? 'text-slate-400' : 'text-slate-900'} max-w-2xl mx-auto font-medium`}>
+          <p className={`${isDark ? 'text-white/90' : 'text-slate-900'} max-w-2xl mx-auto font-medium`}>
             Everything you need to know about scoring, prizes, and fair play.
           </p>
         </div>
@@ -121,7 +121,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
           <div className="space-y-8">
             <div className={`flex items-center gap-3 pb-4 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
               <BookOpen className={`w-5 h-5 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} />
-              <h3 className={`text-sm font-bold ${isDark ? 'text-slate-400' : 'text-slate-800'} uppercase tracking-widest`}>
+              <h3 className={`text-sm font-bold ${isDark ? 'text-white/80' : 'text-slate-800'} uppercase tracking-widest`}>
                 How to Play & Win
               </h3>
             </div>
@@ -134,7 +134,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 </div>
                 <div>
                   <h4 className={`${isDark ? 'text-white' : 'text-slate-900'} font-bold mb-2`}>Complete Prediction Journey</h4>
-                  <p className={`${isDark ? 'text-slate-400' : 'text-slate-800'} text-sm leading-relaxed`}>
+                  <p className={`${isDark ? 'text-white/80' : 'text-slate-800'} text-sm leading-relaxed`}>
                     Predict every tournament stage: Group Stage → Round of 32 → Round of 16 → Quarter-Finals → Semi-Finals → Final & Champion.
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 </div>
                 <div>
                   <h4 className={`${isDark ? 'text-white' : 'text-slate-900'} font-bold mb-2`}>Point System</h4>
-                  <p className={`${isDark ? 'text-slate-400' : 'text-slate-800'} text-sm leading-relaxed`}>
+                  <p className={`${isDark ? 'text-white/80' : 'text-slate-800'} text-sm leading-relaxed`}>
                     Earn <span className={`${isDark ? 'text-white' : 'text-slate-900'} font-extrabold`}>1 point</span> for each correct prediction. Final scores calculated after the Final on July 19, 2026.
                   </p>
                 </div>
@@ -157,7 +157,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 </div>
                 <div>
                   <h4 className={`${isDark ? 'text-white' : 'text-slate-900'} font-bold mb-2`}>Fair Play Policy</h4>
-                  <p className={`${isDark ? 'text-slate-400' : 'text-slate-800'} text-sm leading-relaxed`}>
+                  <p className={`${isDark ? 'text-white/80' : 'text-slate-800'} text-sm leading-relaxed`}>
                     One entry per person. Ties broken by: (1) Correct Champion → (2) Correct Runner-up → (3) Random verified draw.
                   </p>
                 </div>
@@ -169,7 +169,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
           <div className="space-y-8">
             <div className={`flex items-center gap-3 pb-4 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
               <Award className={`w-5 h-5 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} />
-              <h3 className={`text-sm font-bold ${isDark ? 'text-slate-400' : 'text-slate-800'} uppercase tracking-widest`}>
+              <h3 className={`text-sm font-bold ${isDark ? 'text-white/80' : 'text-slate-800'} uppercase tracking-widest`}>
                 Prize Pool & Rewards
               </h3>
             </div>
@@ -185,11 +185,11 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                   <Trophy className="w-5 h-5 text-amber-500" />
                 </div>
                 <div className="space-y-3">
-                  <div className={`flex items-center gap-3 ${isDark ? 'text-slate-300' : 'text-slate-800'} text-sm font-semibold`}>
+                  <div className={`flex items-center gap-3 ${isDark ? 'text-white/90' : 'text-slate-800'} text-sm font-semibold`}>
                     <div className={`p-1.5 rounded-lg ${isDark ? 'bg-indigo-500/20' : 'bg-black/5'}`}><Shirt className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} /></div>
                     Official World Cup 2026 Winner Jersey
                   </div>
-                  <div className={`flex items-center gap-3 ${isDark ? 'text-slate-300' : 'text-slate-800'} text-sm font-semibold`}>
+                  <div className={`flex items-center gap-3 ${isDark ? 'text-white/90' : 'text-slate-800'} text-sm font-semibold`}>
                     <div className={`p-1.5 rounded-lg ${isDark ? 'bg-indigo-500/20' : 'bg-black/5'}`}><Disc className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} /></div>
                     Official Adidas Match Ball
                   </div>
@@ -207,11 +207,11 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 <span className={`text-[10px] ${isDark ? 'text-indigo-300' : 'text-slate-800'} font-bold uppercase tracking-wider ${isDark ? 'bg-indigo-500/20' : 'bg-white/50'} px-2 py-1 rounded border ${isDark ? 'border-indigo-500/20' : 'border-black/5'}`}>Runners Up</span>
               </div>
               <div className="space-y-3">
-                <div className={`flex items-center gap-3 ${isDark ? 'text-slate-300' : 'text-slate-800'} text-sm font-medium`}>
+                <div className={`flex items-center gap-3 ${isDark ? 'text-white/90' : 'text-slate-800'} text-sm font-medium`}>
                   <div className={`p-1.5 rounded-lg ${isDark ? 'bg-white/5' : 'bg-white/40'}`}><Shirt className={`w-4 h-4 ${isDark ? 'text-white/60' : 'text-slate-900'}`} /></div>
                   Official World Cup 2026 Winner Jersey
                 </div>
-                <div className={`flex items-center gap-3 ${isDark ? 'text-slate-300' : 'text-slate-800'} text-sm font-medium`}>
+                <div className={`flex items-center gap-3 ${isDark ? 'text-white/90' : 'text-slate-800'} text-sm font-medium`}>
                   <div className={`p-1.5 rounded-lg ${isDark ? 'bg-white/5' : 'bg-white/40'}`}><Disc className={`w-4 h-4 ${isDark ? 'text-white/60' : 'text-slate-900'}`} /></div>
                   Official Adidas Match Ball
                 </div>
@@ -223,7 +223,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
           <div className="space-y-8">
             <div className={`flex items-center gap-3 pb-4 border-b ${isDark ? 'border-white/10' : 'border-black/10'}`}>
               <Shield className={`w-5 h-5 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} />
-              <h3 className={`text-sm font-bold ${isDark ? 'text-slate-400' : 'text-slate-800'} uppercase tracking-widest`}>
+              <h3 className={`text-sm font-bold ${isDark ? 'text-white/80' : 'text-slate-800'} uppercase tracking-widest`}>
                 Official Rules & Fair Play
               </h3>
             </div>
@@ -233,7 +233,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 <h4 className={`${isDark ? 'text-white' : 'text-slate-900'} font-bold mb-2 flex items-center gap-2`}>
                   <AlertCircle className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} /> Tie-Breaking Protocol
                 </h4>
-                <p className={`${isDark ? 'text-slate-400' : 'text-slate-800 font-medium'} text-sm leading-relaxed pl-6 border-l ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+                <p className={`${isDark ? 'text-white/80' : 'text-slate-800 font-medium'} text-sm leading-relaxed pl-6 border-l ${isDark ? 'border-white/10' : 'border-black/10'}`}>
                   Equal points resolved by: <br />
                   1. Correct Champion <br />
                   2. Correct Runner-Up <br />
@@ -244,7 +244,7 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
                 <h4 className={`${isDark ? 'text-white' : 'text-slate-900'} font-bold mb-2 flex items-center gap-2`}>
                   <Shield className={`w-4 h-4 ${isDark ? 'text-indigo-400' : 'text-slate-900'}`} /> Anti-Cheating
                 </h4>
-                <p className={`${isDark ? 'text-slate-400' : 'text-slate-800 font-medium'} text-sm leading-relaxed pl-6 border-l ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+                <p className={`${isDark ? 'text-white/80' : 'text-slate-800 font-medium'} text-sm leading-relaxed pl-6 border-l ${isDark ? 'border-white/10' : 'border-black/10'}`}>
                   Strictly ONE entry per person. Multiple accounts, bots, or scripts result in immediate disqualification.
                 </p>
               </div>
