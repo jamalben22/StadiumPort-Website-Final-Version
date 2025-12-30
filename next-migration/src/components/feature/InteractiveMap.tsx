@@ -18,11 +18,15 @@ export function InteractiveMap() {
   // Touch handlers for mobile swipe-to-close
   const onTouchStart = (e: React.TouchEvent) => {
     touchEnd.current = null; // Reset
-    touchStart.current = e.targetTouches[0].clientY;
+    if (e.targetTouches && e.targetTouches.length > 0) {
+      touchStart.current = e.targetTouches[0].clientY;
+    }
   };
 
   const onTouchMove = (e: React.TouchEvent) => {
-    touchEnd.current = e.targetTouches[0].clientY;
+    if (e.targetTouches && e.targetTouches.length > 0) {
+      touchEnd.current = e.targetTouches[0].clientY;
+    }
   };
 
   const onTouchEnd = () => {
