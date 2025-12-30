@@ -124,9 +124,9 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
   return (
     <section id={id} ref={ref} className={`py-16 md:py-24 scroll-mt-24 ${className}`}>
       <motion.div
-        variants={fadeIn}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
+        initial={{ opacity: 0, y: 20 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-12 tracking-tight">
           <span className="text-emerald-500 text-lg md:text-xl font-bold uppercase tracking-widest block mb-2">Guide Section</span>
