@@ -595,10 +595,19 @@ export default function ClientPage() {
  </div>
  </div>
  <div className=" p-6 rounded-2xl">
- <h4 className="font-bold text-slate-900 dark:text-white mb-4">Transit Map</h4>
-            <div className="aspect-video rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700">
-              <InteractiveMap />
-            </div>
+          <h4 className="font-bold text-slate-900 dark:text-white mb-4">Transit Map</h4>
+          <div className="aspect-video rounded-xl overflow-hidden shadow-inner border border-slate-200 dark:border-slate-700 relative">
+             <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3168.548777085758!2d-121.97209768469246!3d37.40316497982859!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fc9c827c5f0df%3A0x10319765275037e9!2sLevi's%20Stadium!5e0!3m2!1sen!2sus!4v1675123456789!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{border:0}} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full"
+              ></iframe>
+          </div>
         </div>
       </div>
       <AffiliateButton href="https://www.clippercard.com/ClipperWeb/pay-with-phone" text="Get Clipper Card App" variant="secondary" icon={ExternalLink} />
