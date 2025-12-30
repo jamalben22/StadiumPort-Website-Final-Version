@@ -1,11 +1,94 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowRight, Shield, AlertCircle, TrendingUp, Check, Plane, Hotel, Building2, Trophy } from 'lucide-react';
+import { MapPin, ArrowRight, Shield, AlertCircle, TrendingUp, Check, Plane, Hotel, Building2, Trophy, Twitter, Facebook, Linkedin, Copy, CheckCircle2 } from 'lucide-react';
 import { GROUPS_DATA, CITY_LINKS, STADIUM_LINKS } from '@/data/draw-hub';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
+
+// --- Social Share Component ---
+const SocialShare = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleShare = (platform: string) => {
+    const url = window.location.href;
+    const text = "Check out this World Cup 2026 Draw & Travel Hub!";
+    
+    let shareUrl = '';
+    switch (platform) {
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+        break;
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`;
+        break;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, x: -20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: 1 }}
+      className="fixed left-4 top-1/3 z-40 hidden xl:flex flex-col gap-3"
+    >
+      <div className=" backdrop-blur-md p-2 rounded-2xl shadow-xl border border-slate-200/50 dark:border-slate-700/50 flex flex-col gap-3">
+        <button 
+          onClick={() => handleShare('twitter')}
+          className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors"
+          aria-label="Share on Twitter"
+        >
+          <Twitter className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={() => handleShare('facebook')}
+          className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors"
+          aria-label="Share on Facebook"
+        >
+          <Facebook className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={() => handleShare('linkedin')}
+          className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors"
+          aria-label="Share on LinkedIn"
+        >
+          <Linkedin className="w-5 h-5" />
+        </button>
+        <button 
+          onClick={handleCopy}
+          className="p-3 dark:hover:bg-emerald-900/30 rounded-xl text-slate-500 hover:text-emerald-600 transition-colors relative"
+          aria-label="Copy link"
+        >
+          {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
+          {copied && (
+            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-white text-xs rounded whitespace-nowrap">
+              Copied!
+            </span>
+          )}
+        </button>
+      </div>
+    </motion.div>
+  );
+};
+
 
 const containerVariants = {
  hidden: { opacity: 0 },
