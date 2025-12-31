@@ -321,9 +321,14 @@ export default function ClientPage() {
  ["Food & Drink", "$400 ($40/day)", "$1,000 ($100/day)", "$2,500+ ($250/day)"],
  ["Transport (Inter-city)", "$300 (Bus/Train)", "$800 (Domestic Flights)", "$1,500+ (Flexible Flights)"],
  ["Local Transport", "$100 (Metro/Bus)", "$300 (Rideshare)", "$1,000+ (Private Car)"],
- [<strong>TOTAL ESTIMATE</strong>, <strong>$2,700 - $4,000</strong>, <strong>$6,600 - $10,000</strong>, <strong>$16,500+</strong>]
- ]}
- />
+ [
+   <strong key="total-label">TOTAL ESTIMATE</strong>,
+   <strong key="total-budget">$2,700 - $4,000</strong>,
+   <strong key="total-mid">$6,600 - $10,000</strong>,
+   <strong key="total-premium">$16,500+</strong>,
+ ]
+]}
+/>
  <div className="grid md:grid-cols-3 gap-8 mt-12">
  {[
  { icon: Wallet, title: "The Reality", text: "Attending World Cup 2026 is an investment, but early planning can save you 40-50%." },
