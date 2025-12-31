@@ -178,7 +178,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
   );
 };
 
-const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
+const HotelCard = ({ name, rating, price, distance, description, features, image, link }: { name: string, rating: number, price: string, distance: string, description?: string, features: string[], image: string, link: string }) => (
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] bg-white dark:bg-slate-900/50">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
@@ -193,9 +193,14 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-tight">{name}</h3>
  <span className="text-emerald-600 dark:text-emerald-400 font-bold text-lg bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-lg">{price}</span>
  </div>
- <p className="text-slate-500 dark:text-slate-400 mb-6 flex items-center gap-2 font-medium">
+ <p className="text-slate-500 dark:text-slate-400 mb-4 flex items-center gap-2 font-medium">
  <MapPin className="w-4 h-4 text-emerald-500" /> {distance} to Stadium
  </p>
+ {description && (
+ <p className="text-slate-600 dark:text-slate-300 mb-6 text-sm leading-relaxed">
+ {description}
+ </p>
+ )}
  <div className="flex flex-wrap gap-2 mb-8">
  {features.map((f, i) => (
  <span key={i} className="text-xs font-semibold text-slate-600 dark:text-slate-300 bg-slate-100 dark:bg-white/5 px-3 py-1.5 rounded-full uppercase tracking-wide">
