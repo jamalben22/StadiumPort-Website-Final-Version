@@ -491,7 +491,7 @@ export default function ClientPage() {
               priority 
               sizes="100vw"
               quality={90}
-             unoptimized />
+            />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0A0A0A]"></div>
           </div>
           
