@@ -33,11 +33,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} ${oswald.variable} ${jetbrains.variable}`}>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
-        <Script
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {process.env.NODE_ENV === 'production' && (
+          <Script
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855"
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        )}
         <Providers>
           <JsonLd schema={generateOrganizationSchema()} />
           <JsonLd schema={generateWebsiteSchema()} />

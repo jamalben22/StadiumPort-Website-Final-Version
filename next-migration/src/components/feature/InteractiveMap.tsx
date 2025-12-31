@@ -41,6 +41,7 @@ export function InteractiveMap() {
   };
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [showScrollTooltip, setShowScrollTooltip] = useState(false);
   const [viewState, setViewState] = useState({
     latitude: 39.8283,
@@ -213,11 +214,22 @@ export function InteractiveMap() {
       `}</style>
 
       {/* Loading State */}
-      {!isLoaded && (
+      {!isLoaded && !hasError && (
         <div className="absolute inset-0 z-50 bg-slate-50 dark:bg-slate-900 flex items-center justify-center transition-opacity duration-500">
           <div className="flex flex-col items-center gap-3">
             <div className="w-8 h-8 border-2 border-slate-200 border-t-blue-500 rounded-full animate-spin" />
             <span className="text-sm font-medium text-slate-500">Loading Map...</span>
+          </div>
+        </div>
+      )}
+
+      {/* Error State */}
+      {hasError && (
+        <div className="absolute inset-0 z-50 bg-slate-50 dark:bg-slate-900 flex items-center justify-center">
+          <div className="flex flex-col items-center gap-3 p-4 text-center">
+            <MapPin className="w-10 h-10 text-red-500 mb-2" />
+            <h3 className="text-lg font-semibold">Map Error</h3>
+            <p className="text-sm text-slate-500">Failed to load map. Please check your connection or ad blocker.</p>
           </div>
         </div>
       )}

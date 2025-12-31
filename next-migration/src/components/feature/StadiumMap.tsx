@@ -41,6 +41,7 @@ export function StadiumMap() {
   };
 
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
   const [showScrollTooltip, setShowScrollTooltip] = useState(false);
   const [viewState, setViewState] = useState({
     latitude: 39.8283,
@@ -238,6 +239,11 @@ export function StadiumMap() {
           if (map.getLayer('water')) {
             map.setPaintProperty('water', 'fill-color', '#B8D4E8');
           }
+        }}
+        onError={(e) => {
+          console.error("Mapbox error:", e);
+          setHasError(true);
+          setIsLoaded(true);
         }}
         style={{ width: '100%', height: '100%' }}
         mapStyle={mapStyle}
