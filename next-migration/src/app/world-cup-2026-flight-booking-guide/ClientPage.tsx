@@ -242,7 +242,7 @@ export default function ClientPage() {
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/Hub Pages/ultra-high-resolution_cinematic_background_image_for_a_World_Cup_2026_Host_cities.webp" 
+            src="/images/hub-pages/ultra-high-resolution_cinematic_background_image_for_a_World_Cup_2026_Host_cities.webp" 
             alt="World Cup 2026 Flights" 
             fill 
             className="object-cover object-center"

@@ -47,6 +47,14 @@ export default function ClientPage() {
       
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <OptimizedImage
+            src="/images/hub-pages/ultra-high-resolution_cinematic_background_image_for_a_World_Cup_2026_Host_cities.webp"
+            alt="World Cup 2026 Host Cities"
+            fill
+            imgClassName="object-cover"
+          />
+        </div>
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-[#F5F5F7] dark:to-[#0A0A0A] pointer-events-none" />
         
