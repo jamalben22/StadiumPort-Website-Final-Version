@@ -49,7 +49,7 @@ export const TrustSection = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter"
           >
-            Why StadiumPort is Your <span className="text-emerald-600 dark:text-emerald-400">#1 Companion</span>
+            Why Stadiumport is Your <span className="text-emerald-600 dark:text-emerald-400">#1 Companion</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
