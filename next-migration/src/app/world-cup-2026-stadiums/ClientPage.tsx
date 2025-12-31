@@ -487,12 +487,12 @@ export default function ClientPage() {
               src="/images/hub-pages/stadiums-bg.webp" 
               alt="World Cup 2026 Stadiums" 
               fill 
-              className="object-cover opacity-50 scale-105" 
+              className="object-cover scale-105" 
               priority 
               sizes="100vw"
               quality={90}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#0A0A0A]"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#0A0A0A]"></div>
           </div>
           
           <div className="relative z-10 max-w-7xl mx-auto w-full">

@@ -180,8 +180,8 @@ export default function DrawHubClientPage() {
   src="/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
   alt="FIFA World Cup 26 Qualified Teams Wallchart – Stadiumport"
   fill
-  containerClassName="bg-transparent dark:bg-transparent"
-  imgClassName="object-contain w-full h-full bg-[#F5F5F7] dark:bg-[#0A0A0A] transition-transform duration-700 group-hover:scale-[1.02]"
+  containerClassName="bg-transparent"
+  imgClassName="object-contain w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
   />
  </div>
  <div className="absolute inset-0 border-4 border-white/10 rounded-[2rem] pointer-events-none"></div>
