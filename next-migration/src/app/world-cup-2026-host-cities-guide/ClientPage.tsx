@@ -209,18 +209,7 @@ export default function ClientPage() {
  <main>
  {/* Hero Section */}
  <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0A0A0A]">
- <div className="absolute inset-0 z-0">
- <Image 
- src="/images/hub-pages/host-cities-bg.webp" 
-              alt="World Cup 2026 Host Cities" 
- fill 
- className="object-cover scale-105" 
- priority 
- sizes="100vw"
- quality={90}
- />
- <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#0A0A0A]"></div>
- </div>
+ 
  
  <div className="relative z-10 max-w-7xl mx-auto w-full">
  {/* Breadcrumbs */}
