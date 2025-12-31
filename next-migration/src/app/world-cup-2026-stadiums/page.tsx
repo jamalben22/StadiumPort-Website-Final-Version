@@ -3,15 +3,15 @@ import ClientPage from './ClientPage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Stadiums Guide | Stadiumport',
-  description: 'Explore all 16 host stadiums for the FIFA World Cup 2026 across the USA, Canada, and Mexico. Get details on capacity, location, and match schedules.',
-  keywords: 'Stadiumport, World Cup 2026 stadiums, FIFA World Cup venues, 2026 World Cup host cities, soccer stadiums USA Canada Mexico',
+  title: 'World Cup 2026 Stadiums: All 16 Venues Guide | StadiumPort',
+  description: 'Explore all 16 World Cup 2026 stadiums across USA, Mexico & Canada. Get expert guides on capacity, seating, and tickets for every FIFA venue.',
+  keywords: 'World Cup 2026 stadiums, FIFA World Cup 2026 stadiums, World Cup 2026 venues, World Cup 2026 stadium guide, 16 World Cup 2026 stadiums, StadiumPort',
   openGraph: {
-    title: 'World Cup 2026 Stadiums Guide | Stadiumport',
-    description: 'Explore all 16 host stadiums for the FIFA World Cup 2026 across the USA, Canada, and Mexico.',
+    title: 'World Cup 2026 Stadiums: All 16 Venues Guide | StadiumPort',
+    description: 'Explore all 16 World Cup 2026 stadiums across USA, Mexico & Canada. Get expert guides on capacity, seating, and tickets for every FIFA venue.',
     type: 'website',
     url: 'https://stadiumport.com/world-cup-2026-stadiums',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     images: [
       {
         url: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Stadiums Guide | Stadiumport',
-    description: 'Explore all 16 host stadiums for the FIFA World Cup 2026.',
+    title: 'World Cup 2026 Stadiums: All 16 Venues Guide | StadiumPort',
+    description: 'Explore all 16 World Cup 2026 stadiums across USA, Mexico & Canada. Get expert guides on capacity, seating, and tickets for every FIFA venue.',
     images: ['/images/cities/new-york-new-jersey-world-cup-2026-1600.webp'],
   },
 };

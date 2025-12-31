@@ -117,3 +117,42 @@ export const generateOrganizationSchema = () => ({
     "https://instagram.com/stadiumport"
   ]
 });
+
+export const generateSportsEventSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": "FIFA World Cup 2026",
+  "description": "The 23rd FIFA World Cup, hosted jointly by Canada, Mexico, and the United States. Featuring 48 teams and 104 matches across 16 host cities.",
+  "startDate": "2026-06-11",
+  "endDate": "2026-07-19",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": [
+    {
+      "@type": "Place",
+      "name": "United States",
+      "address": { "@type": "PostalAddress", "addressCountry": "US" }
+    },
+    {
+      "@type": "Place",
+      "name": "Mexico",
+      "address": { "@type": "PostalAddress", "addressCountry": "MX" }
+    },
+    {
+      "@type": "Place",
+      "name": "Canada",
+      "address": { "@type": "PostalAddress", "addressCountry": "CA" }
+    }
+  ],
+  "organizer": {
+    "@type": "Organization",
+    "name": "FIFA",
+    "url": "https://www.fifa.com"
+  },
+  "image": getSiteUrl('/images/hero/world-cup-2026-hero.webp'),
+  "offers": {
+    "@type": "Offer",
+    "url": "https://www.fifa.com/tickets",
+    "availability": "https://schema.org/PreOrder"
+  }
+});

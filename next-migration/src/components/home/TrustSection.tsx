@@ -42,6 +42,26 @@ export const TrustSection = () => {
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
+        <div className="text-center mb-20 md:mb-32">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-6 tracking-tighter"
+          >
+            Why StadiumPort is Your <span className="text-emerald-600 dark:text-emerald-400">#1 Companion</span>
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto"
+          >
+            We don't just list stadiums. We build complete experiences for the traveling fan.
+          </motion.p>
+        </div>
+
         {/* Trust Grid - Apple & Nike Style */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-12 md:gap-12 mb-20 md:mb-32 items-stretch">
         {trustIndicators.map((item, idx) => (

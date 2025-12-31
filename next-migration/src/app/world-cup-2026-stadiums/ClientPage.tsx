@@ -405,8 +405,78 @@ export default function ClientPage() {
 
   const filteredStadiums = stadiums;
 
+  // Schema.org Data
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "itemListElement": stadiums.map((stadium, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "item": {
+        "@type": "SportsActivityLocation",
+        "name": stadium.name,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": stadium.city,
+          "addressCountry": stadium.country === 'USA' ? 'US' : stadium.country === 'Canada' ? 'CA' : 'MX'
+        },
+        "image": `https://stadiumport.com${stadium.image}`,
+        "url": `https://stadiumport.com${stadium.link}`,
+        "amenityFeature": stadium.capacity ? {
+          "@type": "LocationFeatureSpecification",
+          "name": "Capacity",
+          "value": stadium.capacity
+        } : undefined
+      }
+    }))
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "World Cup 2026 Stadiums",
+        "item": "https://stadiumport.com/world-cup-2026-stadiums"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
 
       <main>
@@ -445,11 +515,11 @@ export default function ClientPage() {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tighter leading-[1.1]">
-                  The Stage is Set.<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
-                    16 Venues. 3 Nations.
-                  </span>
-                </h1>
+                World Cup 2026 Stadiums<br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+                  16 Venues. 3 Nations.
+                </span>
+              </h1>
                 <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
                   The 2026 FIFA World Cup™ expands across the USA, Canada, and Mexico. 
                   Experience the architecture, atmosphere, and history of the venues defining the next era of football.

@@ -110,6 +110,10 @@ export const HeroSection = () => {
        
        {/* Cinematic Background */}
        <div className="absolute inset-0 z-0">
+         <div className="absolute inset-0 bg-[#F5F5F7]/90 dark:bg-gradient-to-b dark:from-black/90 dark:to-black/80 z-10" />
+         {/* Placeholder for Hero Image - User to replace src */}
+         {/* <Image src="/images/hero-bg.jpg" alt="World Cup 2026 Stadium Atmosphere" fill className="object-cover" priority /> */}
+         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
        </div>
 
        {/* Main Content */}
@@ -131,7 +135,7 @@ export const HeroSection = () => {
                   <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-[#01b47d]"></span>
                 </span>
                 <span className="text-[10px] sm:text-xs font-mono tracking-[0.2em] uppercase text-black/70 dark:text-white/70">
-                  The Official 2026 Resource
+                  #1 World Cup 2026 Travel Guide
                 </span>
               </motion.div>
               
@@ -141,9 +145,9 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="font-space font-bold text-[2.75rem] xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl tracking-tighter text-[#0A0A0A] dark:text-white mb-4 sm:mb-6 md:mb-8 leading-[1.05] sm:leading-[0.9]"
               >
-                Experience the <br />
+                World Cup 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#01b47d] to-[#008f63]">
-                  Beautiful Game
+                  Travel Guide
                 </span>
               </motion.h1>
 
@@ -154,8 +158,7 @@ export const HeroSection = () => {
                 transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="font-inter text-base sm:text-lg md:text-xl text-black/60 dark:text-white/60 max-w-xl leading-relaxed font-light mb-8 sm:mb-12"
               >
-                Your essential companion for the biggest sporting event in history. 
-                Hosting across USA, Mexico, and Canada.
+                Plan your trip to USA, Mexico & Canada. The ultimate resource for 16 host cities, 48 teams, and 104 matches.
               </motion.p>
 
               {/* CTAs */}
