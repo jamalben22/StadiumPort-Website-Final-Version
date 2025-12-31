@@ -6,7 +6,6 @@ import { PlanningHub } from '../components/home/PlanningHub';
 import { LatestUpdates } from '../components/home/LatestUpdates';
 import { TrustSection } from '../components/home/TrustSection';
 import { FAQSection } from '../components/home/FAQSection';
-import { QuickLinks } from '../components/home/QuickLinks';
 import { CTASection } from '../components/home/CTASection';
 import { constructMetadata } from '@/lib/seo';
 import { JsonLd } from '@/components/seo/JsonLd';
@@ -76,7 +75,6 @@ export default function HomePage() {
       <LatestUpdates />
       <TrustSection />
       <FAQSection />
-      <QuickLinks />
       <CTASection />
     </>
   );
