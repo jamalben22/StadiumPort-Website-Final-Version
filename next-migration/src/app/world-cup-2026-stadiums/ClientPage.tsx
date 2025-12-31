@@ -484,7 +484,7 @@ export default function ClientPage() {
         <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0A0A0A]">
           <div className="absolute inset-0 z-0">
             <Image 
-              src="/images/Hub Pages/ultra-high-resolution_cinematic_background_image_for_a_World_Cup_2026_Stadiums.webp" 
+              src="/images/hub-pages/ultra-high-resolution_cinematic_background_image_for_a_World_Cup_2026_Stadiums.webp" 
               alt="World Cup 2026 Stadiums" 
               fill 
               className="object-cover opacity-50 scale-105" 
