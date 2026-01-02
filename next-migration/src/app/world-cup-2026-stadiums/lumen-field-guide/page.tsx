@@ -1,6 +1,7 @@
 
 import ClientPage from './ClientPage';
 import { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'Lumen Field | World Cup 2026 Seattle Stadium Guide',

@@ -4,6 +4,7 @@ import { BracketSummary } from './BracketSummary';
 import { RulesCard } from './RulesCard';
 import { Trophy, ArrowRight, BadgeCheck, Star, Globe } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface ShareDashboardProps {
   champion?: any;

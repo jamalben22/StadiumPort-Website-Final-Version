@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
  title: 'World Cup 2026 Predictor Game | Stadiumport',

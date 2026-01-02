@@ -18,7 +18,6 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/cities/new-york-new-jersey-world-cup-2026.webp', // Using a generic placeholder or the family one if available. I'll use the NYC one for now as a fallback but the family one is better.
         // Actually, I saw family images in public/images/safety-guide/
         // Let's use one of those.
         // public/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near.webp

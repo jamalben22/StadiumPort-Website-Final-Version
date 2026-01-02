@@ -14,7 +14,6 @@ import {
  Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
-import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Footer } from '@/components/feature/Footer';
 
 // --- Design System & Components ---

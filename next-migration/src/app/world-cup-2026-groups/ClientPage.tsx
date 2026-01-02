@@ -329,7 +329,7 @@ export default function ClientPage() {
          <div key={key} className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden">
            <div className="h-48 relative bg-slate-200 dark:bg-slate-800">
              <OptimizedImage
-               src={`/images/cities/${region.cities[0].toLowerCase().replace(/ /g, '-')}-world-cup-2026.webp`}
+               src={`/images/cities/${(region.cities[0] || 'default').toLowerCase().replace(/ /g, '-')}-world-cup-2026.webp`}
                alt={`${region.name} Host Cities`}
                fill
                imgClassName="object-cover"

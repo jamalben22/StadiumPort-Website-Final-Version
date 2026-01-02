@@ -81,7 +81,7 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           <motion.div
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" as const }}
             className="absolute inset-0 bg-white z-50 pointer-events-none rounded-3xl"
           />
         )}
