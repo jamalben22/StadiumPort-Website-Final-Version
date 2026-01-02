@@ -26,7 +26,7 @@ export default function AffiliateDisclaimerClientPage() {
  ];
 
  return (
- <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+ <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-slate-900 dark:text-white">
  <main className="pt-32 pb-20 px-4 md:px-6">
  <div className="max-w-5xl mx-auto">
  
@@ -39,7 +39,7 @@ export default function AffiliateDisclaimerClientPage() {
           className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
         >
           <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
           <span className="text-emerald-700 dark:text-emerald-400">Affiliate Disclaimer</span>
         </motion.div>
 
@@ -220,6 +220,7 @@ export default function AffiliateDisclaimerClientPage() {
  </div>
  );
 }
+
 
 
 

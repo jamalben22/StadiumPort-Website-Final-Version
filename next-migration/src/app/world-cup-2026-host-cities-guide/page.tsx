@@ -1,19 +1,22 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { HOST_CITIES } from '@/data/host-cities';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Host Cities: Ultimate 16-City Guide | StadiumPort',
-  description: 'The ultimate guide to World Cup 2026 host cities. Explore all 16 venues across USA (11), Mexico (3) & Canada (2). Get stadium info & travel tips. Plan now!',
+  title: 'World Cup 2026 Host Cities Guide: 16 Venues & Travel Tips',
+  description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
   keywords: ['World Cup 2026 host cities', 'World Cup 2026 cities', 'FIFA World Cup 2026 locations', 'World Cup 2026 venues', 'World Cup 2026 USA Mexico Canada cities', 'StadiumPort'],
   alternates: {
-    canonical: '/world-cup-2026-host-cities-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide',
   },
   openGraph: {
-    title: 'World Cup 2026 Host Cities: Ultimate 16-City Guide | StadiumPort',
-    description: 'The ultimate guide to World Cup 2026 host cities. Explore all 16 venues across USA (11), Mexico (3) & Canada (2). Get stadium info & travel tips. Plan now!',
+    title: 'World Cup 2026 Host Cities Guide: 16 Venues & Travel Tips',
+    description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide',
     type: 'article',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     images: [
       {
         url: '/images/cities/new-york-new-jersey-world-cup-2026-1024.webp',
@@ -25,10 +28,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Host Cities: Ultimate 16-City Guide | StadiumPort',
-    description: 'The ultimate guide to World Cup 2026 host cities. Explore all 16 venues across USA (11), Mexico (3) & Canada (2).',
+    title: 'World Cup 2026 Host Cities Guide: 16 Venues & Travel Tips',
+    description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
     images: ['/images/cities/new-york-new-jersey-world-cup-2026-1024.webp'],
-  }
+  },
 };
 
 export default function Page() {
@@ -96,44 +99,14 @@ export default function Page() {
           "@type": "Answer",
           "text": "Top tourist destinations among host cities include New York City, Los Angeles, Mexico City, Toronto, and Miami, offering diverse cultural experiences and major attractions."
         }
-      },
-      {
-        "@type": "Question",
-        "name": "Do I need a visa to travel between host countries?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, depending on your citizenship, you may need separate visas for the USA, Canada, and Mexico. Check official government websites for specific requirements."
-        }
       }
     ]
   };
 
-  // JSON-LD for ItemList (Host Cities)
-  const itemListJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "itemListElement": HOST_CITIES.map((city, index) => ({
-      "@type": "ListItem",
-      "position": index + 1,
-      "url": `https://stadiumport.com/world-cup-2026-host-cities-guide/${city.id}-city-guide`,
-      "name": city.name
-    }))
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
-      />
+      <JsonLd schema={breadcrumbJsonLd} />
+      <JsonLd schema={faqJsonLd} />
       <ClientPage />
     </>
   );

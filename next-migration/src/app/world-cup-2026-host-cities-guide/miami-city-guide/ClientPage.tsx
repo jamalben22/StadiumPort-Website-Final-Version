@@ -93,7 +93,7 @@ const SocialShare = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-slate-900 dark:text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
           >
             <CheckCircle2 className="w-5 h-5 text-emerald-400" />
             <span className="font-medium">Link copied to clipboard!</span>
@@ -118,7 +118,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
- <p className="text-white font-medium">{caption}</p>
+ <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
  </div>
  )}
  </div>
@@ -132,7 +132,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
  onClick={() => setIsOpen(false)}
  >
- <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+ <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
  <X className="w-8 h-8" />
  </button>
  <motion.div
@@ -177,7 +177,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-600 text-white hover:bg-emerald-700 shadow-[0_10px_40px_-10px_rgba(5,150,105,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(5,150,105,0.6)]",
+    primary: "bg-emerald-600 text-slate-900 dark:text-white hover:bg-emerald-700 shadow-[0_10px_40px_-10px_rgba(5,150,105,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(5,150,105,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -196,7 +196,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
 };
 
 const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
- <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+ <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
  <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
@@ -230,12 +230,12 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
 );
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => (
- <details className="group border-b border-slate-200 dark:border-slate-800">
+ <details className="group border-b border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <summary className="flex items-center justify-between py-6 cursor-pointer list-none">
  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
  {question}
  </h3>
- <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+ <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
  <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
  </span>
  </summary>
@@ -296,7 +296,7 @@ style={{ scaleX }}
 src="/images/cities/miami-world-cup-2026-1600.webp" 
 alt="Miami Skyline" 
 fill 
-className="object-cover opacity-80"
+className="object-cover"
 priority sizes="100vw"
  unoptimized />
 <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
@@ -310,7 +310,7 @@ items={[
 { label: "Host Cities", href: "/world-cup-2026-host-cities-guide" },
 { label: "Miami", href: "/world-cup-2026-host-cities-guide/miami-city-guide" }
 ]} 
-variant="light"
+
 className="mb-6"
 />
 
@@ -320,19 +320,19 @@ animate={{ opacity: 1, y: 0 }}
 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
 >
 <div className="flex items-center gap-4 mb-6">
-<span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+<span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
 Host City
 </span>
-<span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+<span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
 Bronze Final Host
 </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
 MIAMI
 </h1>
-<p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-The Global Gateway. <span className="text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+The Global Gateway. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
 </p>
 </motion.div>
 </div>
@@ -355,7 +355,7 @@ The Global Gateway. <span className="text-white font-medium">World Cup 2026</spa
  className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
  activeSection === link.id 
  ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
- : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+ : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
  }`}
  onClick={() => setActiveSection(link.id)}
  >
@@ -396,7 +396,7 @@ Miami is the gateway to the Americas and a global party capital. Hosting the Bro
 { icon: Train, title: "Transport Strategy", text: "Use Brightline. Take the high-speed train from Downtown to Aventura, then the shuttle. Uber will be gridlocked." },
 { icon: DollarSign, title: "Budget Signals", text: "Expect astronomical prices. Miami is premium. Book refundable rates immediately." }
 ].map((item, i) => (
-<div key={i} className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] transition-all duration-300 hover:border-emerald-500/50">
+<div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] transition-all duration-300 hover:border-emerald-500/50">
 <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
 <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
@@ -411,14 +411,14 @@ Miami is the gateway to the Americas and a global party capital. Hosting the Bro
 
  <Section id="visa" title="Visa & Safety">
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+ <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
 <h4 className="font-bold text-2xl mb-6 flex items-center gap-3"><Globe className="w-6 h-6 text-emerald-500" /> US Entry</h4>
 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
 International visitors will need a <strong>US Visa</strong> or <strong>ESTA</strong>. Miami is a major port of entry, so expect long lines at immigration during the tournament. Apply at least 3 months in advance.
 </p>
 <AffiliateButton href="https://travel.state.gov/content/travel/en/us-visas.html" text="Check Visa Requirements" variant="outline" />
 </div>
- <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+ <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
   <h4 className="font-bold text-2xl mb-6 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-500" /> Safety Brief</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
  Miami is generally safe in tourist areas (South Beach, Brickell). Avoid walking alone late at night in unlit areas. Be aware of heat exhaustion – drink plenty of water.
@@ -438,7 +438,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  { time: "3–6 Months Out", desc: "Reserve Brightline train tickets. Secure reservations at top-tier restaurants and clubs." },
  { time: "1–3 Months Out", desc: "Finalize stadium transport logistics. Miami traffic is unpredictable; have a backup plan." }
  ].map((item, i) => (
- <div key={i} className="flex flex-col md:flex-row gap-6 p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] items-center">
+ <div key={i} className="flex flex-col md:flex-row gap-6 p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] items-center">
  <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
  <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
  </div>
@@ -457,7 +457,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  { title: "Comfort Upgrades", items: ["Brickell 4-star hotels", "Brightline Premium", "Rooftop dining"] },
  { title: "Premium", items: ["Ocean Drive Suites", "Private Chauffeur", "VIP Club Access"] }
  ].map((tier, i) => (
- <div key={i} className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+ <div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
 <h4 className="font-bold text-xl mb-6 text-slate-900 dark:text-white">{tier.title}</h4>
  <ul className="space-y-4">
  {tier.items.map((item, j) => (
@@ -489,7 +489,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
- <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+ <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
 <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
@@ -529,7 +529,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  { title: "Kickoff", text: "Be in your seat 30 mins prior. The national anthems and flyovers are spectacular here." },
  { title: "Exit Plan", text: "Wait 30+ minutes inside. Traffic out of the stadium lots is gridlock. Grab a post-match drink at the stadium club." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+ <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
@@ -542,7 +542,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-slate-900 dark:text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -566,14 +566,14 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
  </p>
  <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
  </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Bronze Final.
@@ -661,7 +661,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  </div>
  
- <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 h-fit">
+ <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 h-fit">
  <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
  <ul className="space-y-6">
  {[
@@ -670,13 +670,13 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  { label: "Hollywood", time: "15-20 min drive" },
  { label: "MIA Airport", time: "20-30 min drive" }
  ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
+ <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
  <span className="font-bold text-slate-900 dark:text-white">{item.time}</span>
  </li>
  ))}
  </ul>
- <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <AffiliateButton href="#" text="Book Brightline Tickets" variant="secondary" />
  </div>
  </div>
@@ -690,7 +690,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  { title: "The Varsity", desc: "The world's largest drive-in restaurant. A legendary spot for chili dogs and frosted orange shakes." },
  { title: "Ponce City Market", desc: "A massive food hall in a historic building. Great for groups with diverse tastes. Access via BeltLine." }
  ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+ <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
  <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
@@ -716,7 +716,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  className="object-cover group-hover:scale-110 transition-transform duration-700"
   unoptimized />
  <div className="absolute inset-0" />
- <div className="absolute bottom-6 left-6 text-white">
+ <div className="absolute bottom-6 left-6 text-slate-900 dark:text-white">
  <h4 className="font-bold text-xl">Wynwood Walls</h4>
  <p className="text-sm opacity-80">Open Air Street Art Museum</p>
  </div>
@@ -731,7 +731,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  className="object-cover group-hover:scale-110 transition-transform duration-700"
   unoptimized />
  <div className="absolute inset-0" />
- <div className="absolute bottom-6 left-6 text-white">
+ <div className="absolute bottom-6 left-6 text-slate-900 dark:text-white">
  <h4 className="font-bold text-xl">Frost Science</h4>
  <p className="text-sm opacity-80">Aquarium & Planetarium</p>
  </div>
@@ -746,7 +746,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  className="object-cover group-hover:scale-110 transition-transform duration-700"
   unoptimized />
  <div className="absolute inset-0" />
- <div className="absolute bottom-6 left-6 text-white">
+ <div className="absolute bottom-6 left-6 text-slate-900 dark:text-white">
  <h4 className="font-bold text-xl">Vizcaya Gardens</h4>
  <p className="text-sm opacity-80">Historic Italian Estate</p>
  </div>
@@ -831,14 +831,14 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  ))}
  </ul>
  </div>
- <div className="flex items-center justify-center p-8 bg-emerald-900 text-white rounded-[2rem] text-center">
+ <div className="flex items-center justify-center p-8 bg-emerald-900 text-slate-900 dark:text-white rounded-[2rem] text-center">
  <div>
  <Sun className="w-16 h-16 text-amber-400 mx-auto mb-4" />
  <p className="text-emerald-200 font-bold text-xl">Average Temp: 88°F (31°C)</p>
  <p className="text-emerald-200">Humidity: High</p>
  </div>
  </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] flex flex-col justify-center">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] flex flex-col justify-center">
  <h4 className="font-bold text-xl mb-2">Power & Data</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-4">US Type A/B plugs (120V). Bring a universal adapter and a power bank for long match days.</p>
  <AffiliateButton href="#" text="Get eSIM" variant="outline" />
@@ -872,6 +872,8 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
   </div>
 );
 }
+
+
 
 
 

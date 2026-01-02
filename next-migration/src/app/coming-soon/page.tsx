@@ -48,7 +48,7 @@ function ComingSoonContent() {
           initial={{ scale: 0.8, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mx-auto mb-8 w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center border border-slate-100 dark:border-slate-800"
+          className="mx-auto mb-8 w-16 h-16 bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex items-center justify-center border border-slate-100 dark:border-slate-200 dark:border-slate-800"
         >
           <Sparkles className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />
         </motion.div>
@@ -89,7 +89,7 @@ function ComingSoonContent() {
           </Link>
           <Link 
             href="/world-cup-2026-travel-tips"
-            className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-full font-bold transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:-translate-y-0.5"
+            className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-full font-bold transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:-translate-y-0.5"
           >
             Explore Other Guides
           </Link>
@@ -120,3 +120,5 @@ export default function ComingSoonPage() {
     </Suspense>
   );
 }
+
+

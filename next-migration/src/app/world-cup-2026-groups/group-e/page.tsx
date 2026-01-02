@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupEClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC | Stadiumport',
- description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
- keywords: 'World Cup 2026 Group E Travel Guide, Philadelphia World Cup, Houston World Cup, Kansas City World Cup, Toronto World Cup, Lincoln Financial Field guide, NRG Stadium guide, Arrowhead Stadium guide',
- alternates: {
- canonical: '/groups/group-e',
- },
- openGraph: {
- title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC | Stadiumport',
- description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
- url: '/groups/group-e',
- }
+  title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
+  description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
+  keywords: ['World Cup 2026 Group E Travel Guide', 'Philadelphia World Cup', 'Houston World Cup', 'Kansas City World Cup', 'Toronto World Cup', 'Lincoln Financial Field guide', 'NRG Stadium guide', 'Arrowhead Stadium guide'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-e',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
+    description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-e',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group E Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
+    description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupEPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-e';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-e';
 
- const articleSchema = generateArticleSchema('group-e', pageUrl);
+  const articleSchema = generateArticleSchema('group-e', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",

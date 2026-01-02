@@ -102,7 +102,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
- <p className="text-white font-medium">{caption}</p>
+ <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
  </div>
  )}
  </div>
@@ -116,7 +116,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
  onClick={() => setIsOpen(false)}
  >
- <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+ <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
  <X className="w-8 h-8" />
  </button>
  <motion.div
@@ -161,7 +161,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-red-600 text-white hover:bg-red-500 shadow-[0_10px_40px_-10px_rgba(220,38,38,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(220,38,38,0.6)]",
+    primary: "bg-red-600 text-slate-900 dark:text-white hover:bg-red-500 shadow-[0_10px_40px_-10px_rgba(220,38,38,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(220,38,38,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-slate-700 hover:border-red-600 dark:hover:border-red-600 text-slate-900 dark:text-white bg-transparent"
   };
@@ -180,7 +180,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
 };
 
 const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
- <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-red-500/50 dark:hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+ <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:border-red-500/50 dark:hover:border-red-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
  <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
@@ -214,12 +214,12 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
 );
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => (
- <details className="group border-b border-slate-200 dark:border-slate-800">
+ <details className="group border-b border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <summary className="flex items-center justify-between py-6 cursor-pointer list-none">
  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors pr-8">
  {question}
  </h3>
- <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-red-600 group-open:border-red-600 group-open:text-white transition-all duration-300">
+ <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-red-600 group-open:border-red-600 group-open:text-slate-900 dark:text-white transition-all duration-300">
  <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
  </span>
  </summary>
@@ -280,10 +280,10 @@ export default function ClientPage() {
           src="/images/cities/kansas-city-world-cup-2026-1600.webp" 
           alt="Arrowhead Stadium" 
           fill 
-          className="object-cover opacity-80"
+          className="object-cover"
           priority sizes="100vw"
          unoptimized />
- <div className="absolute inset-0 " />
+ <div className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-200/60 to-[#F5F5F7] dark:from-[#0A0A0A]/40 dark:via-[#0A0A0A]/60 dark:to-[#0A0A0A]" />
  </div>
 
  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
@@ -294,7 +294,6 @@ export default function ClientPage() {
                   { label: "Stadiums", href: "/world-cup-2026-stadiums" },
                   { label: "Arrowhead Stadium", href: "/world-cup-2026-stadiums/arrowhead-stadium-guide" }
                 ]} 
-                variant="light"
                 className="mb-6"
               />
 
@@ -304,19 +303,19 @@ export default function ClientPage() {
  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
  >
  <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+ <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Host City
  </span>
- <span className="px-3 py-1 rounded-full bg-red-600/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-600/20">
+ <span className="px-3 py-1 rounded-full bg-red-600/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-600/20">
  Quarterfinal Host
  </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+ <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
  ARROWHEAD
  </h1>
- <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
- The Loudest Stadium in the World. <span className="text-white font-medium">World Cup 2026</span> definitive guide.
+ <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+ The Loudest Stadium in the World. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
           </p>
         </motion.div>
       </div>
@@ -329,7 +328,7 @@ export default function ClientPage() {
  <aside className="hidden lg:block w-72 shrink-0 relative">
  <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
  <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
- <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+ <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
  {navLinks.map((link) => (
  <Link 
  key={link.id} 
@@ -337,7 +336,7 @@ export default function ClientPage() {
  className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
  activeSection === link.id 
  ? 'text-red-600 dark:text-red-400 translate-x-1' 
- : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+ : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
  }`}
  onClick={() => setActiveSection(link.id)}
  >
@@ -393,12 +392,12 @@ export default function ClientPage() {
 
  <Section id="visa" title="Visa & Entry (USA)">
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
         <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
       </div>
-      <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+      <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
         <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
         <ul className="space-y-4 mb-8">
           {['Use MCI (Kansas City Intl) airport', 'Proof of onward travel required', 'Carry digital copies of tickets'].map((item, i) => (
@@ -438,7 +437,7 @@ export default function ClientPage() {
  { title: "Comfort Upgrades", items: ["Downtown hotels", "Official shuttles", "Pre-booked BBQ"] },
  { title: "Premium", items: ["Luxury suites", "Private car service", "VIP Parking access"] }
  ].map((tier, i) => (
- <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+ <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
  <ul className="space-y-4">
  {tier.items.map((item, j) => (
@@ -510,7 +509,7 @@ export default function ClientPage() {
  { title: "Clear Bag", text: "Strict clear bag policy. Bring sealed water and sunscreen as the stadium is open-air." },
  { title: "Exit Plan", text: "Expect delays leaving the parking complex. Plan to hang out post-match or use the dedicated rideshare lot." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+ <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
@@ -523,7 +522,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-slate-900 dark:text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-red-600 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -546,14 +545,14 @@ export default function ClientPage() {
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
  </p>
  <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
  </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Quarterfinal.
@@ -641,7 +640,7 @@ export default function ClientPage() {
  </div>
  </div>
  
- <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 h-fit">
+ <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 h-fit">
  <h4 className="font-bold text-2xl mb-6">Drive Times</h4>
  <ul className="space-y-6">
  {[
@@ -650,13 +649,13 @@ export default function ClientPage() {
  { label: "Overland Park", time: "25-30 min" },
  { label: "Westport", time: "20 min" }
  ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
+ <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
  <span className="font-bold text-slate-900 dark:text-white">{item.time}</span>
  </li>
  ))}
  </ul>
- <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <AffiliateButton href="https://www.kayak.com/cars/Kansas-City,MO-c19642" text="Rent a Car in KC" variant="secondary" />
  </div>
  </div>
@@ -670,7 +669,7 @@ export default function ClientPage() {
  { title: "Q39", desc: "Chef-driven, competition-style BBQ. A bit more upscale but incredible brisket and burnt ends." },
  { title: "Arthur Bryant's", desc: "The legendary historic spot. Known for its distinct sauce and connection to KC history." }
  ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+ <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
  <div className="w-12 h-12 bg-red-100 dark:bg-red-900/30 rounded-full flex items-center justify-center text-red-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
@@ -735,7 +734,7 @@ export default function ClientPage() {
  { title: "BBQ Wars", desc: "Locals have strong opinions on 'best BBQ.' Try a few spots. Burnt ends are the local specialty." },
  { title: "Nightlife", desc: "Power & Light District downtown is the main party hub. Westport is more local/historic bars." }
  ].map((item, i) => (
- <div key={i} className="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl">
+ <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
  </div>
@@ -796,7 +795,7 @@ export default function ClientPage() {
 
  <Section id="essential" title="Essential Information">
  <div className="grid md:grid-cols-2 gap-8">
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Shield className="w-6 h-6 text-red-600"/> Emergency Numbers</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Emergency</strong> <span>911</span></li>
@@ -804,7 +803,7 @@ export default function ClientPage() {
  <li className="flex justify-between"><strong>Hospital</strong> <span>University Health Truman</span></li>
  </ul>
  </div>
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Globe className="w-6 h-6 text-red-600"/> Connectivity</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400 mb-6">
  <li>• <strong>WiFi:</strong> Free at MCI Airport & Stadium.</li>
@@ -816,11 +815,11 @@ export default function ClientPage() {
  </div>
  </Section>
 
- <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
  {['Atlanta', 'Los Angeles', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'New York'].map((city) => (
- <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-red-600 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+ <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-red-600 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
  {city}
  </Link>
  ))}
@@ -836,6 +835,8 @@ export default function ClientPage() {
  </div>
  );
 }
+
+
 
 
 

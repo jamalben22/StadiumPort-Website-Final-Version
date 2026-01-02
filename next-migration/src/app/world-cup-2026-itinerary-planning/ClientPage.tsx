@@ -96,7 +96,7 @@ const SocialShare = () => {
           aria-label="Copy Link"
         >
           {copied ? <CheckCircle2 size={20} /> : <Copy size={20} />}
-          <span className="absolute left-full ml-2 px-2 py-1 bg-slate-800 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+          <span className="absolute left-full ml-2 px-2 py-1 bg-slate-800 text-slate-900 dark:text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
             {copied ? 'Copied!' : 'Copy Link'}
           </span>
         </button>
@@ -118,7 +118,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
         <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
         {caption && (
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-white font-medium">{caption}</p>
+            <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
           </div>
         )}
       </div>
@@ -132,7 +132,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+            <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
               <X className="w-8 h-8" />
             </button>
             <motion.div
@@ -177,10 +177,10 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' | 'alert', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent",
-    alert: "bg-amber-500 text-white hover:bg-amber-600 shadow-[0_10px_40px_-10px_rgba(245,158,11,0.5)]"
+    alert: "bg-amber-500 text-slate-900 dark:text-white hover:bg-amber-600 shadow-[0_10px_40px_-10px_rgba(245,158,11,0.5)]"
   };
 
   return (
@@ -235,7 +235,7 @@ const Callout = ({ type = 'info', title, children }: { type?: 'info' | 'warning'
 
 // Table Component
 const Table = ({ headers, rows }: { headers: string[], rows: (string | React.ReactNode)[][] }) => (
-  <div className="overflow-x-auto my-12 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-slate-900/50">
+  <div className="overflow-x-auto my-12 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-xl bg-white dark:bg-slate-50 dark:bg-slate-900/50">
     <table className="w-full text-left text-sm md:text-base">
       <thead className="bg-slate-50 dark:bg-white/5 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
         <tr>
@@ -319,26 +319,26 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-center gap-2 text-sm font-medium text-white/60 mb-6 tracking-wide uppercase">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-white transition-colors">Travel Tips</Link>
+                <Link href="/world-cup-2026-travel-tips" className="hover:text-slate-900 dark:text-white transition-colors">Travel Tips</Link>
                 <span className="text-white/40">/</span>
-                <span className="text-white">Itinerary Planning</span>
+                <span className="text-slate-900 dark:text-white">Itinerary Planning</span>
               </div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Strategy
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Global Guide
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 ITINERARY PLANNING
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                104 matches. 16 cities. <span className="text-white font-medium">1, 2, or 3 Week</span> definitive routes.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                104 matches. 16 cities. <span className="text-slate-900 dark:text-white font-medium">1, 2, or 3 Week</span> definitive routes.
               </p>
             </motion.div>
           </div>
@@ -353,7 +353,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -361,7 +361,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                       ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                      : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                      : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -394,7 +394,7 @@ export default function ClientPage() {
             </p>
             
             <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
                   <span className="text-3xl font-black text-emerald-600 dark:text-emerald-400">1</span>
                 </div>
@@ -407,8 +407,8 @@ export default function ClientPage() {
                 </ul>
               </div>
 
-              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border-2 border-emerald-500/20 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden">
-                <div className="absolute top-0 right-0 bg-emerald-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">Most Popular</div>
+              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border-2 border-emerald-500/20 shadow-lg hover:shadow-xl transition-shadow relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-emerald-500 text-slate-900 dark:text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-widest">Most Popular</div>
                 <div className="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
                   <span className="text-3xl font-black text-emerald-600 dark:text-emerald-400">2</span>
                 </div>
@@ -421,7 +421,7 @@ export default function ClientPage() {
                 </ul>
               </div>
 
-              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-14 h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6">
                   <span className="text-3xl font-black text-emerald-600 dark:text-emerald-400">3</span>
                 </div>
@@ -442,7 +442,7 @@ export default function ClientPage() {
             </p>
 
             <div className="grid gap-8">
-              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
+              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
                   <Calendar className="w-6 h-6 text-emerald-500" />
                   Match Schedule Considerations
@@ -452,7 +452,7 @@ export default function ClientPage() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
+              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
                   <Plane className="w-6 h-6 text-emerald-500" />
                   Transportation Between Cities
@@ -463,7 +463,7 @@ export default function ClientPage() {
                 <AffiliateButton href="https://www.skyscanner.com" text="Check Flight Prices" icon={Plane} variant="secondary" subtext="Compare Multi-City Options" />
               </div>
 
-              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
+              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
                   <Clock className="w-6 h-6 text-emerald-500" />
                   Pacing and Rest Days
@@ -501,7 +501,7 @@ export default function ClientPage() {
               Perfect for the "get in, soak it up, get out" strategy. We focus on single regions to minimize travel time.
             </p>
 
-            <div className="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl mb-12">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl mb-12">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 border-b border-slate-100 dark:border-white/5 pb-8">
                 <div>
                   <h3 className="text-3xl font-black text-slate-900 dark:text-white flex items-center gap-4 mb-2">
@@ -519,10 +519,10 @@ export default function ClientPage() {
                 
                 {/* Day 1 */}
                 <div className="relative pl-16">
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">1</div>
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">1</div>
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Arrive New York / New Jersey</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">Land at EWR (closest to stadium) or JFK. Settle into your base. We recommend staying in Manhattan for the vibe, or Jersey City for budget/proximity.</p>
-                  <div className="inline-flex gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-800">
+                  <div className="inline-flex gap-3 p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-100 dark:border-slate-200 dark:border-slate-800">
                     <span className="text-xs font-bold uppercase text-slate-500 tracking-wider">Daily Budget: $250</span>
                   </div>
                 </div>
@@ -545,7 +545,7 @@ export default function ClientPage() {
 
                 {/* Day 3 */}
                 <div className="relative pl-16">
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">3</div>
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">3</div>
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">NYC → Philadelphia</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                     Morning: Statue of Liberty or Central Park.<br/>
@@ -572,7 +572,7 @@ export default function ClientPage() {
 
                 {/* Day 5 */}
                 <div className="relative pl-16">
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">5</div>
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">5</div>
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Philadelphia → Boston</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                     Long travel day. Amtrak Acela (5 hrs) or fly PHL-BOS (1.5 hrs). Arrive in Boston for a seafood dinner in the North End.
@@ -594,7 +594,7 @@ export default function ClientPage() {
 
                  {/* Day 7 */}
                 <div className="relative pl-16">
-                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">7</div>
+                  <div className="absolute left-0 top-0 w-10 h-10 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center font-bold text-lg shadow-lg shadow-emerald-500/30 z-10">7</div>
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Depart Boston</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                     Fly out of Logan (BOS). If time permits, do the Freedom Trail walk before your flight.
@@ -603,7 +603,7 @@ export default function ClientPage() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
               <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">Option 1B: West Coast Sun</h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
                 <strong>Los Angeles & San Francisco</strong> | 2 Matches | Budget: $4,000 - $6,000
@@ -618,7 +618,7 @@ export default function ClientPage() {
               With 14 days, you can comfortably cover two distinct regions or one massive loop. This allows for 3-5 matches and actual rest days.
             </p>
 
-            <div className="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl mb-12">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl mb-12">
               <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 flex items-center gap-3">
                 Option 2A: USA Coast-to-Coast
               </h3>
@@ -628,7 +628,7 @@ export default function ClientPage() {
                   <h4 className="font-bold text-emerald-600 dark:text-emerald-400 mb-6 uppercase tracking-wider text-sm flex items-center gap-2">
                     <span className="w-8 h-[2px] bg-emerald-500"></span> Week 1: The East
                   </h4>
-                  <ul className="space-y-6 border-l-2 border-slate-200 dark:border-slate-800 pl-6">
+                  <ul className="space-y-6 border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 pl-6">
                     <li>
                       <strong className="block text-xl text-slate-900 dark:text-white mb-1">Days 1-3: New York City</strong>
                       <span className="text-slate-600 dark:text-slate-400 leading-relaxed">Sightseeing + 1 Match at MetLife. Experience the global melting pot.</span>
@@ -647,7 +647,7 @@ export default function ClientPage() {
                   <h4 className="font-bold text-emerald-600 dark:text-emerald-400 mb-6 uppercase tracking-wider text-sm flex items-center gap-2">
                     <span className="w-8 h-[2px] bg-emerald-500"></span> Week 2: The West
                   </h4>
-                  <ul className="space-y-6 border-l-2 border-slate-200 dark:border-slate-800 pl-6">
+                  <ul className="space-y-6 border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 pl-6">
                     <li>
                       <strong className="block text-xl text-slate-900 dark:text-white mb-1">Days 8-11: Los Angeles</strong>
                       <span className="text-slate-600 dark:text-slate-400 leading-relaxed">Hollywood, Santa Monica, and 1 Match at SoFi Stadium.</span>
@@ -661,7 +661,7 @@ export default function ClientPage() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
               <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">Option 2B: The Texas-Mexico Loop</h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                 <strong>Dallas, Houston, Monterrey, Mexico City</strong> | 4 Matches | Budget: $4,500 - $7,000
@@ -679,11 +679,11 @@ export default function ClientPage() {
               For the superfan. This is a marathon. Pace yourself, hydrate, and get ready for 6-8 matches across 3 countries.
             </p>
             
-            <div className="bg-white dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 md:p-12 border border-slate-200 dark:border-white/10 shadow-xl">
               <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8">Option 3A: The Ultimate North American Road Trip</h3>
               
               <div className="space-y-8">
-                <div className="pl-6 border-l-4 border-slate-200 dark:border-slate-800">
+                <div className="pl-6 border-l-4 border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Week 1: Canada & Pacific Northwest</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
                     Start in <strong>Vancouver</strong> (Sea-to-Sky highway, 2 matches). Train/Drive to <strong>Seattle</strong> (Space Needle, 1 match).
@@ -691,7 +691,7 @@ export default function ClientPage() {
                   <InternalLink href="/world-cup-2026-host-cities-guide/vancouver-city-guide" text="Vancouver Guide" />
                 </div>
 
-                <div className="pl-6 border-l-4 border-slate-200 dark:border-slate-800">
+                <div className="pl-6 border-l-4 border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Week 2: The Northeast Corridor</h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
                     Fly Toronto &rarr; Boston. Take the train down the corridor: <strong>Boston</strong> &rarr; <strong>NYC</strong> &rarr; <strong>Philadelphia</strong>. Catch 3 matches in this dense cluster.
@@ -726,7 +726,7 @@ export default function ClientPage() {
 
           <Section id="customization" title="Customizing Your Trip">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
+              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
                 <div className="w-12 h-12 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 flex items-center justify-center mb-6">
                   <Flag className="w-6 h-6" />
                 </div>
@@ -739,8 +739,8 @@ export default function ClientPage() {
                 </Callout>
               </div>
 
-              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="w-12 h-12 rounded-full bg-emerald-500 text-white flex items-center justify-center mb-6">
+              <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 shadow-lg hover:shadow-xl transition-shadow">
+                <div className="w-12 h-12 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center mb-6">
                   <Map className="w-6 h-6" />
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">Base Camp Strategy</h3>
@@ -763,3 +763,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

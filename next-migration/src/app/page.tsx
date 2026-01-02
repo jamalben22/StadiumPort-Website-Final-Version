@@ -7,7 +7,6 @@ import { LatestUpdates } from '../components/home/LatestUpdates';
 import { TrustSection } from '../components/home/TrustSection';
 import { FAQSection } from '../components/home/FAQSection';
 import { CTASection } from '../components/home/CTASection';
-import { constructMetadata } from '@/lib/seo';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { 
   generateSportsEventSchema, 
@@ -17,9 +16,9 @@ import {
   generateBreadcrumbSchema
 } from '@/lib/schema';
 
-export const metadata = constructMetadata({
-  title: 'World Cup 2026 Travel Guide | StadiumPort Official',
-  description: 'The #1 World Cup 2026 travel guide. Expert tips for all 16 host cities & stadiums in USA, Mexico, Canada. Complete match schedule, tickets & hotel deals.',
+export const metadata: Metadata = {
+  title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico | StadiumPort',
+  description: 'The #1 World Cup 2026 travel guide. Expert planning resources for all 16 host cities, stadiums, tickets & match schedules. Plan your 2026 trip now!',
   keywords: [
     'World Cup 2026',
     'World Cup 2026 Travel Guide',
@@ -32,7 +31,32 @@ export const metadata = constructMetadata({
     'World Cup 2026 Hotels',
     'World Cup 2026 Flights'
   ],
-});
+  alternates: {
+    canonical: 'https://stadiumport.com',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico',
+    description: 'The ultimate World Cup 2026 travel resource. Detailed guides for all 16 host cities, stadium seating charts, ticket info, and match schedules.',
+    url: 'https://stadiumport.com',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'website',
+    images: [
+      {
+        url: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp', // Using a high-quality hero image
+        width: 1600,
+        height: 900,
+        alt: 'World Cup 2026 Travel Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico',
+    description: 'The ultimate World Cup 2026 travel resource. Detailed guides for all 16 host cities, stadium seating charts, ticket info, and match schedules.',
+    images: ['/images/cities/new-york-new-jersey-world-cup-2026-1600.webp'],
+  },
+};
 
 const faqSchema = generateFAQSchema([
   {

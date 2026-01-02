@@ -204,7 +204,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
+    <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-center justify-between text-left group"
@@ -272,7 +272,7 @@ const TravelTipsClientPage = () => {
 
       {/* Authority Introduction */}
       <section className="px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
@@ -313,8 +313,8 @@ const TravelTipsClientPage = () => {
         <SectionHeading icon={Calendar}>Your Planning Timeline</SectionHeading>
         <div className="grid md:grid-cols-5 gap-4">
           {timeline.map((item, index) => (
-            <div key={index} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 relative">
-              <div className="absolute -top-3 left-6 bg-emerald-600 text-white text-xs font-bold px-3 py-1 rounded-full">
+            <div key={index} className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 relative">
+              <div className="absolute -top-3 left-6 bg-emerald-600 text-slate-900 dark:text-white text-xs font-bold px-3 py-1 rounded-full">
                 {item.time}
               </div>
               <item.icon className="w-8 h-8 text-emerald-600 dark:text-emerald-400 mb-4 mt-2" />
@@ -330,7 +330,7 @@ const TravelTipsClientPage = () => {
         <SectionHeading icon={Shield}>Visa & Entry Requirements</SectionHeading>
         <div className="grid md:grid-cols-3 gap-6">
           {/* USA */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">🇺🇸</span> USA
             </h3>
@@ -346,7 +346,7 @@ const TravelTipsClientPage = () => {
             </ul>
           </div>
           {/* Canada */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">🇨🇦</span> Canada
             </h3>
@@ -362,7 +362,7 @@ const TravelTipsClientPage = () => {
             </ul>
           </div>
           {/* Mexico */}
-          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 p-8 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
               <span className="text-2xl">🇲🇽</span> Mexico
             </h3>
@@ -394,7 +394,7 @@ const TravelTipsClientPage = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.05 }}
-              className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
+              className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
             >
               {/* Featured Image */}
               <div className="relative h-48 w-full overflow-hidden">
@@ -487,7 +487,7 @@ const TravelTipsClientPage = () => {
       <section className="px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <SectionHeading icon={AlertTriangle}>Safety & Essentials</SectionHeading>
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-slate-900 dark:text-white mb-3">Emergency Numbers</h3>
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
               <strong>911</strong> works in USA, Canada, and Mexico for all emergencies.
@@ -496,7 +496,7 @@ const TravelTipsClientPage = () => {
               Keep your embassy contact info saved on your phone.
             </p>
           </div>
-          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+          <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-slate-900 dark:text-white mb-3">Connectivity</h3>
             <p className="text-slate-600 dark:text-slate-400 text-sm mb-2">
               Don't rely on free WiFi. Get a regional eSIM (Airalo/Holafly) that covers all 3 countries.
@@ -505,7 +505,7 @@ const TravelTipsClientPage = () => {
               View Connectivity Guide →
             </Link>
           </div>
-           <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+           <div className="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="font-bold text-slate-900 dark:text-white mb-3">Weather</h3>
             <div className="flex justify-between text-sm text-slate-600 dark:text-slate-400">
                <span><Sun className="w-4 h-4 inline mr-1"/> South: Hot (30°C+)</span>
@@ -567,7 +567,7 @@ const TravelTipsClientPage = () => {
             </p>
           </div>
           <div className="md:col-span-8">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
               {faqs.map((faq, index) => (
                 <FaqItem key={index} question={faq.question} answer={faq.answer} />
               ))}
@@ -587,3 +587,4 @@ const TravelTipsClientPage = () => {
 }
 
 export default TravelTipsClientPage;
+

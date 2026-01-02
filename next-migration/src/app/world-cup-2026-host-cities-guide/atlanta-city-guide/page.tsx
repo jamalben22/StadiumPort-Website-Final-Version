@@ -4,16 +4,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Atlanta World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-  description: 'Plan World Cup 2026 in Atlanta: Mercedes-Benz Stadium tips, best downtown/Midtown hotels, MARTA strategy from ATL airport, dining near Centennial Park, safety, packing, and insider advice.',
+  title: 'Atlanta World Cup 2026 Guide: Mercedes-Benz Stadium & Travel Tips',
+  description: 'Complete Atlanta World Cup 2026 travel guide. Mercedes-Benz Stadium info, best hotels, MARTA transportation tips, fan zones & match schedule. Plan your trip.',
   alternates: {
-    canonical: '/world-cup-2026-host-cities-guide/atlanta-city-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/atlanta-city-guide',
   },
   openGraph: {
-    title: 'Atlanta World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-    description: 'Everything you need for World Cup 2026 in Atlanta: stadium overview, walkable hotel areas, MARTA routes, matchday plan, and local secrets.',
+    title: 'Atlanta World Cup 2026 Guide: Mercedes-Benz Stadium & Travel Tips',
+    description: 'Complete Atlanta World Cup 2026 travel guide. Mercedes-Benz Stadium info, best hotels, MARTA transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/atlanta-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
         alt: 'Atlanta World Cup 2026 Guide',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Atlanta World Cup 2026 Guide - Mercedes-Benz Stadium & Travel',
+    description: 'Complete Atlanta World Cup 2026 travel guide. Mercedes-Benz Stadium info, best hotels, MARTA transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/atlanta-world-cup-2026.webp'],
   },
   keywords: ['Atlanta World Cup 2026', 'Mercedes-Benz Stadium', 'MARTA', 'Downtown Atlanta hotels', 'Midtown Atlanta hotels', 'Atlanta airport transfer', 'Atlanta travel tips', 'World Cup tickets Atlanta', 'Atlanta CityPASS', 'Atlanta fan zones'],
 };

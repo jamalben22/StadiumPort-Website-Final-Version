@@ -31,7 +31,7 @@ export default function NotFound() {
  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-sm mx-auto">
  <Link 
  href="/"
- className="flex items-center justify-center gap-2 py-3 px-6 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-xl transition-colors shadow-lg shadow-emerald-500/20"
+ className="flex items-center justify-center gap-2 py-3 px-6 bg-emerald-500 hover:bg-emerald-600 text-slate-900 dark:text-white font-bold rounded-xl transition-colors shadow-lg shadow-emerald-500/20"
  >
  <Home className="w-5 h-5" /> Home Base
  </Link>
@@ -40,6 +40,7 @@ export default function NotFound() {
  </div>
  );
 }
+
 
 
 

@@ -181,14 +181,6 @@ export default function GroupsSchedulePage() {
         <section className="relative w-full bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden">
 
             <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/5 border border-white/10 text-blue-400 font-bold text-sm uppercase tracking-widest mb-8 backdrop-blur-md"
-                >
-                    <Trophy size={16} /> Official Tournament Hub
-                </motion.div>
                 
                 <motion.h1 
                     initial={{ opacity: 0, y: 20 }}

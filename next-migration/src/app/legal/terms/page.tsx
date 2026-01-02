@@ -2,11 +2,24 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
- title: 'Terms of Service – Stadiumport',
- description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
- alternates: {
- canonical: '/legal/terms',
- },
+  title: 'Terms of Service – Stadiumport',
+  description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
+  alternates: {
+    canonical: 'https://stadiumport.com/legal/terms',
+  },
+  openGraph: {
+    title: 'Terms of Service – Stadiumport',
+    description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
+    url: 'https://stadiumport.com/legal/terms',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Service – Stadiumport',
+    description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
+  },
 };
 
 export default function TermsPage() {

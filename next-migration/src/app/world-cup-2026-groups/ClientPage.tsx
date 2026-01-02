@@ -142,14 +142,6 @@ export default function ClientPage() {
             className="justify-center" 
           />
 
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 py-2 px-6 rounded-full border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/50 text-blue-600 dark:text-blue-400 font-bold text-sm uppercase tracking-widest mb-8 backdrop-blur-md"
-          >
-            <Trophy size={16} /> Official Tournament Hub
-          </motion.div>
      
      <motion.h1 
        initial={{ opacity: 0, y: 20 }}
@@ -171,7 +163,7 @@ export default function ClientPage() {
      </motion.p>
 
      <div className="flex flex-wrap justify-center gap-4">
-       <Link href="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
+       <Link href="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-slate-900 dark:text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-600/20 flex items-center gap-2">
          Predictor Game <Trophy size={18} />
        </Link>
      </div>
@@ -185,7 +177,7 @@ export default function ClientPage() {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="bg-white dark:bg-slate-900/50 rounded-[2rem] p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-white/10 mb-16 relative overflow-hidden"
+      className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] p-8 md:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-200 dark:border-white/10 mb-16 relative overflow-hidden"
     >
      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-orange-500" />
      <div className="flex flex-col md:flex-row items-start gap-6">
@@ -213,7 +205,7 @@ export default function ClientPage() {
      </div>
      
      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-       <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+       <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
          <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-full flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
            <Users size={24} />
          </div>
@@ -223,7 +215,7 @@ export default function ClientPage() {
          </p>
        </div>
        
-       <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+       <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
          <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-4">
            <TrendingUp size={24} />
          </div>
@@ -233,7 +225,7 @@ export default function ClientPage() {
          </p>
        </div>
 
-       <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+       <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
          <div className="w-12 h-12 bg-amber-100 dark:bg-amber-900/30 rounded-full flex items-center justify-center text-amber-600 dark:text-amber-400 mb-4">
            <Calendar size={24} />
          </div>
@@ -265,7 +257,7 @@ export default function ClientPage() {
         <motion.div 
           key={groupLetter}
           variants={itemVariants}
-          className="group bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden"
+          className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden"
         >
           <div className="px-6 py-4 border-b border-slate-200 dark:border-white/10 flex justify-between items-center bg-slate-50/50 dark:bg-white/5">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white">Group {groupLetter}</h3>
@@ -326,7 +318,7 @@ export default function ClientPage() {
      
      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
        {Object.entries(HOST_REGIONS).map(([key, region]) => (
-         <div key={key} className="bg-white dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden">
+         <div key={key} className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden">
            <div className="h-48 relative bg-slate-200 dark:bg-slate-800">
              <OptimizedImage
                src={`/images/cities/${(region.cities[0] || 'default').toLowerCase().replace(/ /g, '-')}-world-cup-2026.webp`}
@@ -337,7 +329,7 @@ export default function ClientPage() {
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
              <div className="absolute bottom-4 left-6">
-               <h3 className="text-2xl font-bold text-white">{region.name}</h3>
+               <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{region.name}</h3>
              </div>
            </div>
            <div className="p-6">
@@ -404,25 +396,25 @@ export default function ClientPage() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 font-bold text-sm">
               <History size={16} /> Historical Context
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">
               A Tournament of Firsts
             </h2>
-            <p className="text-lg text-slate-300 leading-relaxed">
+            <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
               2026 marks the first time three nations co-host the World Cup. It's also the debut of the 48-team format, resulting in 104 total matches—40 more than previous tournaments.
             </p>
             <div className="grid grid-cols-2 gap-6 pt-4">
               <div>
-                <div className="text-4xl font-bold text-white mb-1">104</div>
+                <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">104</div>
                 <div className="text-sm text-slate-400 uppercase tracking-wider">Total Matches</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-white mb-1">16</div>
+                <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">16</div>
                 <div className="text-sm text-slate-400 uppercase tracking-wider">Host Cities</div>
               </div>
             </div>
           </div>
           <div className="flex-1 w-full bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
               <Info size={20} className="text-blue-400" /> Key Dates & Timeline
             </h3>
             <div className="space-y-6">
@@ -433,7 +425,7 @@ export default function ClientPage() {
                 </div>
                 <div>
                   <div className="text-blue-400 font-bold text-sm mb-1">Late 2025</div>
-                  <div className="text-white font-semibold">Official Final Draw</div>
+                  <div className="text-slate-900 dark:text-white font-semibold">Official Final Draw</div>
                   <div className="text-slate-400 text-sm">Teams assigned to groups A-L</div>
                 </div>
               </div>
@@ -444,7 +436,7 @@ export default function ClientPage() {
                 </div>
                 <div>
                   <div className="text-emerald-400 font-bold text-sm mb-1">June 11, 2026</div>
-                  <div className="text-white font-semibold">Opening Match</div>
+                  <div className="text-slate-900 dark:text-white font-semibold">Opening Match</div>
                   <div className="text-slate-400 text-sm">Estadio Azteca, Mexico City</div>
                 </div>
               </div>
@@ -454,7 +446,7 @@ export default function ClientPage() {
                 </div>
                 <div>
                   <div className="text-amber-400 font-bold text-sm mb-1">July 19, 2026</div>
-                  <div className="text-white font-semibold">World Cup Final</div>
+                  <div className="text-slate-900 dark:text-white font-semibold">World Cup Final</div>
                   <div className="text-slate-400 text-sm">MetLife Stadium, New York/NJ</div>
                 </div>
               </div>
@@ -466,7 +458,7 @@ export default function ClientPage() {
 
    {/* Fan Resources */}
   <section className="mb-24 grid grid-cols-1 md:grid-cols-3 gap-6">
-    <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-white relative overflow-hidden group">
+    <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-8 text-slate-900 dark:text-white relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
         <Shield size={120} />
       </div>
@@ -483,7 +475,7 @@ export default function ClientPage() {
       </div>
     </div>
 
-    <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-8 text-white relative overflow-hidden group">
+    <div className="bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-2xl p-8 text-slate-900 dark:text-white relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
         <Plane size={120} />
       </div>
@@ -500,7 +492,7 @@ export default function ClientPage() {
       </div>
     </div>
 
-    <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 text-white relative overflow-hidden group">
+    <div className="bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl p-8 text-slate-900 dark:text-white relative overflow-hidden group">
       <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:scale-110 transition-transform">
         <MapPin size={120} />
       </div>
@@ -531,7 +523,7 @@ export default function ClientPage() {
      
      <div className="space-y-4">
        {EXPANDED_FAQS.map((faq, index) => (
-         <details key={index} className="group bg-white dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-800 overflow-hidden open:ring-2 open:ring-blue-500/20">
+         <details key={index} className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 overflow-hidden open:ring-2 open:ring-blue-500/20">
            <summary className="flex items-center justify-between p-6 cursor-pointer list-none hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
              <h3 className="text-lg font-bold text-slate-900 dark:text-white pr-8">{faq.question}</h3>
              <span className="text-slate-400 group-open:rotate-180 transition-transform duration-300">
@@ -550,6 +542,7 @@ export default function ClientPage() {
 </div>
  );
 }
+
 
 
 

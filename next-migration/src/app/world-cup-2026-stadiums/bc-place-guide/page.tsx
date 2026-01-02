@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
-  description: 'Your guide to BC Place for World Cup 2026. Discover Vancouver\'s waterfront stadium, seating charts, roof details, and local travel tips.',
+  title: 'BC Place World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to BC Place for World Cup 2026. Seating charts, capacity, parking & local transport tips for Vancouver.',
   keywords: 'BC Place World Cup 2026, Vancouver World Cup, BC Place Stadium Guide, World Cup 2026 Vancouver, stadium seating, travel guide',
   openGraph: {
-    title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
-    description: 'Your guide to BC Place for World Cup 2026. Discover Vancouver\'s waterfront stadium.',
+    title: 'BC Place World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to BC Place for World Cup 2026. Seating charts, capacity, parking & local transport tips for Vancouver.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/bc-place-guide',
     siteName: 'Stadiumport',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
-    description: 'Your guide to BC Place for World Cup 2026.',
+    title: 'BC Place World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to BC Place for World Cup 2026. Seating charts, capacity, parking & local transport tips for Vancouver.',
     images: ['/images/cities/vancouver-world-cup-2026-1600.webp'],
   },
 };

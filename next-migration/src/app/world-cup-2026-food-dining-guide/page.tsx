@@ -6,14 +6,29 @@ import { JsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
   description: 'Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion with our 2026 World Cup food guide.',
+  keywords: [
+    'World Cup 2026 food guide',
+    'best food USA Canada Mexico',
+    'dining guide World Cup host cities',
+    'cheap eats World Cup 2026',
+    'traditional food Mexico City',
+    'BBQ Kansas City World Cup',
+    'pizza New York World Cup',
+    'food safety tips travelers'
+  ],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-food-dining-guide',
+  },
   openGraph: {
     title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
     description: 'Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion with our 2026 World Cup food guide.',
     url: 'https://stadiumport.com/world-cup-2026-food-dining-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
     images: [
       {
-        url: '/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Food%20&%20Dining%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Food & Dining Guide',
@@ -24,7 +39,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
     description: 'Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion with our 2026 World Cup food guide.',
-    images: ['/images/travel-tips/World Cup 2026 Food & Dining Guide Illustration.webp'],
+    images: ['/images/travel-tips/World%20Cup%202026%20Food%20&%20Dining%20Guide%20Illustration.webp'],
   },
 };
 

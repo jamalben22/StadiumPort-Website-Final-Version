@@ -126,14 +126,6 @@ export default function ClientPage() {
  <section className="relative w-full overflow-hidden">
 
  <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
- <motion.div 
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.8 }}
- className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/5 border border-white/10 text-blue-400 font-bold text-sm uppercase tracking-widest mb-8 backdrop-blur-md"
- >
- <Trophy size={16} /> Official Tournament Hub
- </motion.div>
  
  <motion.h1 
  initial={{ opacity: 0, y: 20 }}
@@ -155,7 +147,7 @@ export default function ClientPage() {
  </motion.p>
 
  <div className="flex flex-wrap justify-center gap-4">
- <Link href="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
+ <Link href="/world-cup-2026-prediction-game" className="px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-slate-900 dark:text-white rounded-full font-bold transition-all shadow-lg shadow-emerald-500/20 flex items-center gap-2">
  Predictor Game <Trophy size={18} />
  </Link>
  </div>
@@ -169,7 +161,7 @@ export default function ClientPage() {
  initial={{ opacity: 0, y: 40 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, delay: 0.3 }}
- className=" rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-blue-900/20 border border-slate-100 dark:border-slate-800 mb-16 relative overflow-hidden"
+ className=" rounded-[2rem] p-8 md:p-10 shadow-2xl shadow-blue-900/20 border border-slate-100 dark:border-slate-200 dark:border-slate-800 mb-16 relative overflow-hidden"
  >
  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 to-orange-500" />
  <div className="flex flex-col md:flex-row items-start gap-6">
@@ -206,9 +198,9 @@ export default function ClientPage() {
  <motion.div 
  key={groupLetter}
  variants={itemVariants}
- className="group rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden"
+ className="group rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:border-blue-500/50 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 overflow-hidden"
  >
- <div className=" px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+ <div className=" px-6 py-4 border-b border-slate-100 dark:border-slate-200 dark:border-slate-800 flex justify-between items-center">
  <h3 className="text-xl font-bold text-slate-900 dark:text-white">Group {groupLetter}</h3>
  <Link href={`/groups/group-${groupLetter.toLowerCase()}`} className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 uppercase tracking-wider flex items-center gap-1">
  Analysis <ArrowRight size={12} />
@@ -268,7 +260,7 @@ export default function ClientPage() {
  
  <div className="space-y-4">
  {faqs.map((faq, index) => (
- <div key={index} className=" rounded-xl p-6 border border-slate-200 dark:border-slate-800">
+ <div key={index} className=" rounded-xl p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{faq.question}</h3>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{faq.answer}</p>
  </div>
@@ -279,6 +271,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

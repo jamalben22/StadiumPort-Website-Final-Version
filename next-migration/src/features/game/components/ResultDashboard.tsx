@@ -144,7 +144,7 @@ export const ResultDashboard = ({
         <div className="flex items-center gap-3 p-1.5 bg-slate-100 rounded-full border border-slate-200 shadow-sm">
           <button
             onClick={handleShare}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-slate-900 dark:text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105"
           >
             <Share2 className="w-3.5 h-3.5" />
             Share Link
@@ -218,7 +218,7 @@ export const ResultDashboard = ({
 
           <button
             onClick={handleDownload}
-            className="flex items-center gap-2 bg-slate-900 text-white px-8 py-3 rounded-full font-['Rajdhani'] font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-lg group"
+            className="flex items-center gap-2 bg-slate-900 text-slate-900 dark:text-white px-8 py-3 rounded-full font-['Rajdhani'] font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-lg group"
           >
             <Download className="w-5 h-5 group-hover:animate-bounce" />
             Download My Card
@@ -260,7 +260,7 @@ export const ResultDashboard = ({
           >
             <div className="bg-white/80 backdrop-blur-xl border border-slate-200/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)] px-6 py-3 rounded-2xl flex items-center gap-3 ring-1 ring-slate-900/5">
               <div className="w-6 h-6 bg-slate-900 rounded-full flex items-center justify-center">
-                <Check className="w-3.5 h-3.5 text-white stroke-[3]" />
+                <Check className="w-3.5 h-3.5 text-slate-900 dark:text-white stroke-[3]" />
               </div>
               <span className="text-slate-900 font-['Rajdhani'] font-bold uppercase tracking-widest text-sm">
                 Link Copied to Clipboard
@@ -275,4 +275,5 @@ export const ResultDashboard = ({
 };
 
 export default ResultDashboard;
+
 

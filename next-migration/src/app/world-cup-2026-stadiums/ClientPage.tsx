@@ -341,7 +341,7 @@ const StadiumQuiz = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-slate-900/50 rounded-[32px] p-10 shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-none text-center max-w-2xl mx-auto border border-slate-200 dark:border-white/10">
+    <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[32px] p-10 shadow-[0_20px_40px_rgba(0,0,0,0.08)] dark:shadow-none text-center max-w-2xl mx-auto border border-slate-200 dark:border-white/10">
       <h3 className="text-2xl font-bold text-[#1D1D1F] dark:text-[#F5F5F7] mb-8 tracking-tight">
         {result ? "We found your perfect stadium!" : "Which Stadium Should You Visit?"}
       </h3>
@@ -365,7 +365,7 @@ const StadiumQuiz = () => {
               <button
                 key={option.value}
                 onClick={() => handleAnswer(option.value)}
-                className="w-full py-5 px-8 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-emerald-500 hover:text-white dark:hover:bg-emerald-500 transition-all duration-300 font-semibold text-slate-600 dark:text-slate-300 text-lg shadow-sm hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5"
+                className="w-full py-5 px-8 rounded-2xl bg-slate-50 dark:bg-white/5 hover:bg-emerald-500 hover:text-slate-900 dark:text-white dark:hover:bg-emerald-500 transition-all duration-300 font-semibold text-slate-600 dark:text-slate-300 text-lg shadow-sm hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5"
               >
                 {option.label}
               </button>
@@ -390,7 +390,7 @@ const StadiumQuiz = () => {
             </button>
             <Link 
               href={`/world-cup-2026-stadiums/${result?.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '')}-guide`}
-              className="px-8 py-4 bg-emerald-500 text-white font-bold rounded-2xl hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 hover:-translate-y-0.5"
+              className="px-8 py-4 bg-emerald-500 text-slate-900 dark:text-white font-bold rounded-2xl hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 hover:-translate-y-0.5"
             >
               Explore {result}
             </Link>
@@ -482,14 +482,13 @@ export default function ClientPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0A0A0A]">
+        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#F5F5F7] dark:bg-[#0A0A0A]">
 
           
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             {/* Breadcrumbs */}
             <Breadcrumb 
           items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
-          variant="light"
           className="mb-12 justify-center"
         />
 
@@ -499,41 +498,41 @@ export default function ClientPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tighter leading-[1.1]">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.1]">
                 World Cup 2026 Stadiums<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-200">
                   16 Venues. 3 Nations.
                 </span>
               </h1>
-                <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
                   The 2026 FIFA World Cup™ expands across the USA, Canada, and Mexico. 
                   Experience the architecture, atmosphere, and history of the venues defining the next era of football.
                 </p>
                 
-                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-slate-300">
+                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-slate-500 dark:text-slate-400">
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-                      <MapPin className="w-6 h-6 text-emerald-400" />
+                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                      <MapPin className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-white/80">16 Stadiums</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">16 Stadiums</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-                      <Globe className="w-6 h-6 text-emerald-400" />
+                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                      <Globe className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-white/80">3 Nations</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">3 Nations</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-                      <Flag className="w-6 h-6 text-emerald-400" />
+                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                      <Flag className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-white/80">48 Teams</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">48 Teams</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-white/10 group-hover:border-emerald-500/50 transition-colors">
-                      <Trophy className="w-6 h-6 text-emerald-400" />
+                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                      <Trophy className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-white/80">104 Matches</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">104 Matches</span>
                   </div>
                 </div>
               </motion.div>
@@ -551,7 +550,7 @@ export default function ClientPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ delay: index * 0.05, duration: 0.5 }}
-                className="group bg-white dark:bg-slate-900/50 rounded-[24px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] dark:shadow-none border border-slate-200 dark:border-white/10 transition-all duration-500 ease-out"
+                className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[24px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.12)] dark:shadow-none border border-slate-200 dark:border-white/10 transition-all duration-500 ease-out"
               >
                 <Link href={stadium.link} className="block relative aspect-[4/3] overflow-hidden ">
                   <Image 
@@ -604,7 +603,7 @@ export default function ClientPage() {
               <p className="text-xl text-slate-500 dark:text-slate-400 font-light">Explore the geography of the 16 world-class venues across North America.</p>
             </div>
             
-            <div className="relative w-full aspect-[16/9] bg-white dark:bg-slate-900/50 rounded-[32px] overflow-hidden shadow-inner border border-slate-200 dark:border-white/10">
+            <div className="relative w-full aspect-[16/9] bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[32px] overflow-hidden shadow-inner border border-slate-200 dark:border-white/10">
             <StadiumMap />
           </div>
           </div>
@@ -625,7 +624,7 @@ export default function ClientPage() {
         <section className="py-24 px-4 max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-[#1D1D1F] dark:text-[#F5F5F7] mb-16 text-center tracking-tight">Key Match Locations</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="group bg-white dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
+            <div className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
               <div className="w-14 h-14 bg-emerald-50 dark:bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600 dark:text-emerald-400 mb-6 group-hover:scale-110 transition-transform">
                 <Calendar className="w-7 h-7" />
               </div>
@@ -635,7 +634,7 @@ export default function ClientPage() {
               <p className="text-slate-400 dark:text-slate-500 text-sm mt-1">Mexico City, Mexico</p>
             </div>
             
-            <div className="group bg-white dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
+            <div className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
               <div className="w-14 h-14 bg-blue-50 dark:bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-600 dark:text-blue-400 mb-6 group-hover:scale-110 transition-transform">
                 <Users className="w-7 h-7" />
               </div>
@@ -645,7 +644,7 @@ export default function ClientPage() {
               <p className="text-slate-400 dark:text-slate-500 text-sm mt-1">72 Matches Total</p>
             </div>
 
-            <div className="group bg-white dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
+            <div className="group bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[32px] shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-500">
               <div className="w-14 h-14 bg-amber-50 dark:bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-600 dark:text-amber-400 mb-6 group-hover:scale-110 transition-transform">
                 <Trophy className="w-7 h-7" />
               </div>
@@ -684,7 +683,7 @@ export default function ClientPage() {
               <p className="text-xl text-slate-500 dark:text-slate-400 font-light">Compare capacity, roof types, and surfaces at a glance.</p>
             </div>
             
-            <div className="bg-white dark:bg-slate-900/50 rounded-[32px] border border-slate-200 dark:border-white/10 overflow-hidden">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[32px] border border-slate-200 dark:border-white/10 overflow-hidden">
               <table className="w-full text-left border-collapse min-w-[800px]">
                 <thead>
                   <tr className=" border-b border-slate-200 dark:border-white/10">
@@ -732,7 +731,7 @@ export default function ClientPage() {
               { title: "Food & Culture Guide for Each Host City", icon: <Users className="w-6 h-6" />, color: "bg-amber-500" },
               { title: "Best Stadium Experiences at World Cup 2026", icon: <Trophy className="w-6 h-6" />, color: "bg-violet-500" },
             ].map((guide, i) => (
-              <Link key={i} href="#" className="group flex items-center gap-5 p-6 bg-white dark:bg-slate-900/50 rounded-[24px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-300 hover:-translate-y-1">
+              <Link key={i} href="#" className="group flex items-center gap-5 p-6 bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[24px] shadow-[0_2px_8px_rgba(0,0,0,0.04)] hover:shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-slate-200 dark:border-white/10 transition-all duration-300 hover:-translate-y-1">
                 <div className={`w-14 h-14 rounded-2xl ${guide.color}/10 flex items-center justify-center ${guide.color.replace('bg-', 'text-')} shrink-0 group-hover:scale-110 transition-transform`}>
                   {guide.icon}
                 </div>
@@ -748,7 +747,7 @@ export default function ClientPage() {
             <h2 className="text-4xl font-bold text-[#1D1D1F] dark:text-[#F5F5F7] mb-16 text-center tracking-tight">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {faqs.map((faq, index) => (
-                <div key={index} className="bg-white dark:bg-slate-900/50 rounded-[24px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-200 dark:border-white/10">
+                <div key={index} className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[24px] overflow-hidden shadow-[0_2px_8px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-200 dark:border-white/10">
                   <button 
                     onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                     className="w-full flex items-center justify-between p-8 text-left group"
@@ -770,3 +769,4 @@ export default function ClientPage() {
     </div>
   );
 }
+

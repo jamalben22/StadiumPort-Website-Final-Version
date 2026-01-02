@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
- title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day.',
+ title: 'Mercedes-Benz Stadium World Cup 2026 Guide: Seating & Tickets',
+ description: 'Complete guide to Mercedes-Benz Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Atlanta.',
  keywords: 'Mercedes-Benz Stadium World Cup 2026, Atlanta World Cup Stadium, Mercedes-Benz Stadium Guide, Atlanta Soccer Guide, World Cup 2026 Atlanta matches, Mercedes-Benz Stadium seating chart',
  openGraph: {
- title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day.',
+ title: 'Mercedes-Benz Stadium World Cup 2026 Guide: Seating & Tickets',
+ description: 'Complete guide to Mercedes-Benz Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Atlanta.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/mercedes-benz-stadium-guide',
  siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Mercedes-Benz Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Everything you need for Mercedes-Benz Stadium World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    title: 'Mercedes-Benz Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Mercedes-Benz Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Atlanta.',
     images: ['/images/cities/atlanta-world-cup-2026-1600.webp'],
   },
 };

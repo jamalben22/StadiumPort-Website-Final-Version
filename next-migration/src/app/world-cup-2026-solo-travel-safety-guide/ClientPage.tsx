@@ -93,7 +93,7 @@ const SocialShare = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 20 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 bg-slate-900 text-slate-900 dark:text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3"
           >
             <CheckCircle2 className="w-5 h-5 text-emerald-400" />
             <span className="font-medium">Link copied to clipboard!</span>
@@ -118,7 +118,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
- <p className="text-white font-medium">{caption}</p>
+ <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
  </div>
  )}
  </div>
@@ -132,7 +132,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
  onClick={() => setIsOpen(false)}
  >
- <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+ <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
  <X className="w-8 h-8" />
  </button>
  <motion.div
@@ -177,7 +177,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-slate-700 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -196,7 +196,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
 };
 
 const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
- <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+ <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
  <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
@@ -230,12 +230,12 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
 );
 
 const FAQItem = ({ question, answer }: { question: string, answer: string }) => (
- <details className="group border-b border-slate-200 dark:border-slate-800">
+ <details className="group border-b border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <summary className="flex items-center justify-between py-6 cursor-pointer list-none">
  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
  {question}
  </h3>
- <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+ <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-slate-700 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
  <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
  </span>
  </summary>
@@ -296,7 +296,7 @@ export default function ClientPage() {
 src="/images/safety-guide/A_realistic_high-detail_photo_of_a_solo_traveler_at_a_World_Cup_2026_host_city.webp" 
 alt="Solo Traveler at World Cup" 
  fill 
- className="object-cover opacity-80"
+ className="object-cover"
  priority sizes="100vw"
   unoptimized />
  <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
@@ -313,7 +313,7 @@ alt="Solo Traveler at World Cup"
  initial={{ opacity: 0, y: -10 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.6, delay: 0.2 }}
- className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+ className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
  >
  <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -323,19 +323,19 @@ alt="Solo Traveler at World Cup"
  </motion.div>
 
  <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+ <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Safety Guide
  </span>
- <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+ <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
  Essential Reading
  </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+ <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
  SOLO TRAVEL <span className="block text-4xl md:text-6xl lg:text-7xl mt-2 text-slate-400">/ SAFETY GUIDE</span>
  </h1>
- <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
- Attending World Cup 2026 Alone. <span className="text-white font-medium">Your definitive strategy</span> for a safe & social trip.
+ <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+ Attending World Cup 2026 Alone. <span className="text-slate-900 dark:text-white font-medium">Your definitive strategy</span> for a safe & social trip.
  </p>
  </motion.div>
  </div>
@@ -350,7 +350,7 @@ alt="Solo Traveler at World Cup"
  <aside className="hidden lg:block w-72 shrink-0 relative">
  <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
  <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
- <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+ <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
  {navLinks.map((link) => (
  <Link 
  key={link.id} 
@@ -358,7 +358,7 @@ alt="Solo Traveler at World Cup"
  className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
  activeSection === link.id 
  ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
- : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+ : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
  }`}
  onClick={() => setActiveSection(link.id)}
  >
@@ -414,12 +414,12 @@ alt="Solo Traveler at World Cup"
 
  <Section id="visa" title="Documents & Essentials">
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Digital Redundancy</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">As a solo traveler, losing your passport or phone is a crisis. Backup everything. Keep digital copies of IDs in the cloud and physical copies in your luggage.</p>
  <AffiliateButton href="#" text="Cloud Storage Tips" variant="outline" />
  </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Vital Docs</h4>
  <ul className="space-y-4 mb-8">
  {['Passport (valid 6+ months)', 'Travel Insurance Policy', 'Emergency Contact List (Laminated)'].map((item, i) => (
@@ -459,7 +459,7 @@ alt="Solo Traveler at World Cup"
  { title: "The Flashpacker", items: ["Private Rooms / Airbnb", "Casual Dining", "Mix of Transit & Uber"] },
  { title: "The Solo Pro", items: ["Business Hotels", "Stadium Hospitality", "Direct Flights"] }
  ].map((tier, i) => (
- <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+ <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
  <ul className="space-y-4">
  {tier.items.map((item, j) => (
@@ -531,7 +531,7 @@ alt="Stadium Crowd Safety"
  { title: "During Game", text: "Befriend your seat neighbors. A quick 'Hello' creates a micro-safety net around you in the stands." },
  { title: "Post-Game", text: "Wait for the rush to die down or leave slightly early. Avoid fighting for cabs; stick to the herd heading to transit." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+ <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
@@ -544,7 +544,7 @@ alt="Stadium Crowd Safety"
  </Section>
 
  <Section id="tickets" title="Ticket Safety">
- <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-slate-900 dark:text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -568,14 +568,14 @@ alt="Stadium Crowd Safety"
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Buying Solo</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Solo tickets are often easier to snag in resale drops. Look for "singles" that groups leave behind. You can get premium seats this way.
  </p>
  <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
  </div>
- <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Verification</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Never pay via wire transfer or Zelle/Venmo to strangers. Use credit cards or official resale platforms that guarantee the ticket.
@@ -663,7 +663,7 @@ alt="Stadium Crowd Safety"
  </div>
  </div>
  
- <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-800 h-fit">
+ <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 h-fit">
  <h4 className="font-bold text-2xl mb-6">Transport Rules</h4>
  <ul className="space-y-6">
  {[
@@ -672,13 +672,13 @@ alt="Stadium Crowd Safety"
  { label: "Navigation", time: "Study map BEFORE leaving" },
  { label: "Headphones", time: "Keep one ear open" }
  ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
+ <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
  <span className="font-bold text-slate-900 dark:text-white">{item.time}</span>
  </li>
  ))}
  </ul>
- <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <AffiliateButton href="#" text="Book Airport Transfer" variant="secondary" />
  </div>
  </div>
@@ -692,7 +692,7 @@ alt="Stadium Crowd Safety"
  { title: "Food Halls", desc: "Casual, bustling, and perfect for one. Try a variety of foods without the formality of a sit-down restaurant." },
  { title: "Communal Tables", desc: "Many modern spots have large shared tables. A natural way to meet locals or other travelers." }
  ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+ <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
  <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
@@ -737,7 +737,7 @@ alt="Stadium Crowd Safety"
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Practical Tips</h4>
- <ul className="space-y-4 text-slate-300">
+ <ul className="space-y-4 text-slate-600 dark:text-slate-300">
  <li>• Keep your hotel address written down.</li>
  <li>• Don't flash expensive gear or cash.</li>
  <li>• Update your location with a friend daily.</li>
@@ -757,7 +757,7 @@ alt="Stadium Crowd Safety"
  { title: "The 'Photo' Trick", desc: "Ask someone to take your photo, or offer to take theirs. It's the easiest icebreaker in the book." },
  { title: "Boundaries", desc: "Be friendly but firm. You don't have to tell strangers you are traveling alone or where you are staying." }
  ].map((item, i) => (
- <div key={i} className="p-6 border border-slate-200 dark:border-slate-800 rounded-2xl">
+ <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
  </div>
@@ -810,14 +810,14 @@ alt="Stadium Crowd Safety"
 
  <Section id="essential" title="Emergency Contacts">
  <div className="grid md:grid-cols-2 gap-8">
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Shield className="w-6 h-6 text-emerald-500"/> Universal Numbers</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>USA / Canada / Mexico</strong> <span>911</span></li>
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>311</strong> <span>Non-Emergency (USA)</span></li>
  </ul>
  </div>
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Globe className="w-6 h-6 text-emerald-500"/> Stay Connected</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400 mb-6">
  <li>• <strong>WhatsApp:</strong> Essential for international communication.</li>
@@ -828,11 +828,11 @@ alt="Stadium Crowd Safety"
  </div>
  </Section>
 
- <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Host Cities</h3>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
  {['New York', 'Los Angeles', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Boston'].map((city) => (
- <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+ <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
  {city}
  </Link>
  ))}
@@ -848,3 +848,6 @@ alt="Stadium Crowd Safety"
  </div>
  );
 }
+
+
+

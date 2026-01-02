@@ -1,38 +1,37 @@
-
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
- description: 'The ultimate guide to Miami for World Cup 2026. Navigate Hard Rock Stadium transport, find the best hotels in South Beach, and explore Wynwood and Little Havana.',
- keywords: 'Miami World Cup 2026, Hard Rock Stadium guide, World Cup Miami tickets, Miami hotels for World Cup, FIFA World Cup 26 Miami',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/miami-city-guide',
- },
- openGraph: {
- title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
- description: 'The ultimate guide to Miami for World Cup 2026. Navigate Hard Rock Stadium transport, find the best hotels in South Beach, and explore Wynwood and Little Havana.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/miami-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/miami-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Miami World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
- description: 'The ultimate guide to Miami for World Cup 2026. Navigate Hard Rock Stadium transport, find the best hotels in South Beach, and explore Wynwood and Little Havana.',
- images: ['/images/cities/miami-world-cup-2026.webp'],
- },
+  title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
+  description: 'Complete Miami World Cup 2026 travel guide. Hard Rock Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+  keywords: ['Miami World Cup 2026', 'Hard Rock Stadium guide', 'World Cup Miami tickets', 'Miami hotels for World Cup', 'FIFA World Cup 26 Miami'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/miami-city-guide',
+  },
+  openGraph: {
+    title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
+    description: 'Complete Miami World Cup 2026 travel guide. Hard Rock Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/miami-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/miami-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Miami World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Miami World Cup 2026 Guide - Hard Rock Stadium & Travel',
+    description: 'Complete Miami World Cup 2026 travel guide. Hard Rock Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/miami-world-cup-2026.webp'],
+  },
 };
 
 export default function Page() {

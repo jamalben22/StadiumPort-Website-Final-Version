@@ -20,7 +20,7 @@ import {
 
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
   return (
-    <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
+    <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
       <button 
         onClick={onClick} 
         className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
@@ -28,7 +28,7 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
         <span className="text-lg md:text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors pr-8 tracking-tight">
           {question}
         </span>
-        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-indigo-500 text-white rotate-180' : ' text-slate-500 group-hover:bg-indigo-500/10 group-hover:text-indigo-600'}`}>
+        <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300 ${isOpen ? 'bg-indigo-500 text-slate-900 dark:text-white rotate-180' : ' text-slate-500 group-hover:bg-indigo-500/10 group-hover:text-indigo-600'}`}>
           <ChevronDown className="w-4 h-4" />
         </div>
       </button>
@@ -50,7 +50,7 @@ export default function GroupKClientPage() {
   const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
     const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
     const variants = {
-      primary: "bg-indigo-600 text-white hover:bg-indigo-500 shadow-[0_10px_40px_-10px_rgba(79,70,229,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.6)]",
+      primary: "bg-indigo-600 text-slate-900 dark:text-white hover:bg-indigo-500 shadow-[0_10px_40px_-10px_rgba(79,70,229,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(79,70,229,0.6)]",
       secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
       outline: "border-2 border-slate-200 dark:border-white/10 hover:border-indigo-500 dark:hover:border-indigo-500 text-slate-900 dark:text-white bg-transparent"
     };
@@ -110,11 +110,6 @@ export default function GroupKClientPage() {
            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group K', href: '/world-cup-2026-groups/group-k' }]} />
 
            <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-indigo-700 dark:text-indigo-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
-                <MapPin className="w-3 h-3" />
-                Ultimate Travel Guide
-              </div>
-
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
                 World Cup 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 dark:from-indigo-400 dark:to-blue-300">Group K Strategy</span>
@@ -130,7 +125,7 @@ export default function GroupKClientPage() {
                 </button>
               </div>
 
-              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
+              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-4 h-4 text-indigo-500" /> 
                   Updated: June 2025
@@ -160,7 +155,7 @@ export default function GroupKClientPage() {
             {/* Minimalist Sticky Sidebar */}
             <aside className="hidden lg:block lg:col-span-3 relative">
               <div className="sticky top-32">
-                <nav className="space-y-1 border-l border-slate-200 dark:border-slate-800 ml-2">
+                <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
                   {[
                     { id: 'intro', label: 'Introduction' },
                     { id: 'strategy', label: 'Travel Strategy' },
@@ -201,7 +196,7 @@ export default function GroupKClientPage() {
                   </p>
                 </div>
 
-                <div className=" p-10 rounded-[2rem] shadow-xl shadow-slate-200/40 dark:shadow-none border border-slate-100 dark:border-slate-800 mt-12">
+                <div className=" p-10 rounded-[2rem] shadow-xl shadow-slate-200/40 dark:shadow-none border border-slate-100 dark:border-slate-200 dark:border-slate-800 mt-12">
                   <h3 className="text-lg font-bold text-indigo-600 dark:text-indigo-400 mb-6 flex items-center gap-3 tracking-tight uppercase">
                     <Plane className="w-5 h-5" />
                     The Group K "Southern Crossing"
@@ -233,19 +228,19 @@ export default function GroupKClientPage() {
                   </p>
 
                   <div className="grid md:grid-cols-3 gap-6">
-                    <div className=" p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div className=" p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
                       <Plane className="w-8 h-8 text-indigo-500 mb-6" />
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Aviation Hubs</h4>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">ATL and MIA are major international gateways. Book multi-city loops.</p>
                       <span className="inline-block px-3 py-1 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 text-xs font-bold rounded-full">$600-900 USD Total</span>
                     </div>
-                    <div className=" p-8 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+                    <div className=" p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
                       <Car className="w-8 h-8 text-indigo-500 mb-6" />
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">Rental Cars</h4>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">Mandatory for Houston and Miami. Public transit is limited.</p>
                       <span className="inline-block px-3 py-1 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400 text-xs font-bold rounded-full">$70-130 USD / Day</span>
                     </div>
-                    <div className=" p-8 rounded-3xl border border-transparent dark:border-slate-800 opacity-70 hover:opacity-100 transition-opacity duration-300">
+                    <div className=" p-8 rounded-3xl border border-transparent dark:border-slate-200 dark:border-slate-800 opacity-70 hover:opacity-100 transition-opacity duration-300">
                       <div className="w-8 h-8 text-slate-400 mb-6 flex items-center justify-center font-bold border-2 border-slate-300 rounded-full text-[10px]">RAIL</div>
                       <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-2">MARTA (Atlanta)</h4>
                       <p className="text-sm text-slate-500 dark:text-slate-400 mb-6 leading-relaxed">The only city in Group K with direct rail to the stadium gates.</p>
@@ -260,10 +255,10 @@ export default function GroupKClientPage() {
                     International flights from Mexico City (MEX) to US hubs will be in extremely high demand. Book these first.
                   </p>
 
-                  <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm ">
+                  <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm ">
                     <table className="w-full text-left border-collapse">
                       <thead>
-                        <tr className="border-b border-slate-100 dark:border-slate-800">
+                        <tr className="border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
                           <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Route</th>
                           <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Flight Time</th>
                           <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Booking Window</th>
@@ -294,7 +289,7 @@ export default function GroupKClientPage() {
                   </div>
 
                   {/* Affiliate Block: Flights */}
-                  <div className="mt-12 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                  <div className="mt-12 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
                     <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
                       <div>
                         <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
@@ -336,7 +331,7 @@ export default function GroupKClientPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Mexico City */}
-                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="flex justify-between items-start mb-6">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Mexico City</h3>
                       <span className="px-3 py-1 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Best Value</span>
@@ -360,7 +355,7 @@ export default function GroupKClientPage() {
                   </div>
 
                   {/* Miami */}
-                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="flex justify-between items-start mb-6">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Miami</h3>
                       <span className="px-3 py-1 dark:bg-red-500/10 text-red-600 dark:text-red-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">High Demand</span>
@@ -384,7 +379,7 @@ export default function GroupKClientPage() {
                   </div>
 
                   {/* Houston */}
-                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="flex justify-between items-start mb-6">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Houston</h3>
                       <span className="px-3 py-1 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Space City</span>
@@ -406,7 +401,7 @@ export default function GroupKClientPage() {
                   </div>
 
                   {/* Pro Move */}
-                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:border-indigo-500/30 dark:hover:border-indigo-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="flex justify-between items-start mb-6">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">The Fort Lauderdale Pivot</h3>
                       <span className="px-3 py-1 dark:bg-purple-500/10 text-purple-600 dark:text-purple-400 text-[10px] font-bold uppercase tracking-widest rounded-lg">Pro Move</span>
@@ -442,7 +437,7 @@ export default function GroupKClientPage() {
 
                 <div className="grid md:grid-cols-3 gap-6 mb-16">
                   {/* Economy */}
-                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:scale-[1.02] transition-transform duration-300">
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:scale-[1.02] transition-transform duration-300">
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Economy Strategy</div>
                     <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$3,900</div>
                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">CDMX Hostels, budget airlines, street tacos/BBQ, car-pooling with other fans.</p>
@@ -450,21 +445,21 @@ export default function GroupKClientPage() {
 
                   {/* Mid-Range */}
                   <div className="p-8 rounded-3xl border border-indigo-100 dark:border-indigo-900 dark:bg-indigo-900/10 relative overflow-hidden transform md:-translate-y-4 shadow-xl shadow-indigo-900/5">
-                    <div className="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl uppercase tracking-widest">Recommended</div>
+                    <div className="absolute top-0 right-0 bg-indigo-500 text-slate-900 dark:text-white text-[10px] font-bold px-3 py-1.5 rounded-bl-xl uppercase tracking-widest">Recommended</div>
                     <div className="text-[10px] font-bold text-indigo-700 dark:text-indigo-400 uppercase tracking-widest mb-4">Mid-Range Strategy</div>
                     <div className="text-4xl font-bold text-indigo-600 dark:text-indigo-400 mb-4 tracking-tighter">$6,400</div>
                     <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">4-star hotels in Condesa/Midtown, direct hub flights, Cat 2 tickets, rental car split.</p>
                   </div>
 
                   {/* Premium */}
-                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-800 hover:scale-[1.02] transition-transform duration-300">
+                  <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:scale-[1.02] transition-transform duration-300">
                     <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">Premium Experience</div>
                     <div className="text-4xl font-bold text-slate-900 dark:text-white mb-4 tracking-tighter">$11,500+</div>
                     <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">Polanco/Brickell luxury suites, Business Class hub jumps, VIP Hospitality, private transport.</p>
                   </div>
                 </div>
 
-                <div className=" rounded-[2.5rem] p-10 border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                <div className=" rounded-[2.5rem] p-10 border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3 tracking-tight">
                     <CreditCard className="w-6 h-6 text-indigo-500" />
                     Money-Saving Hacks for Group K
@@ -510,8 +505,8 @@ export default function GroupKClientPage() {
                 </div>
 
                 <div className="grid md:grid-cols-1 gap-8">
-                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
-                    <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6 pb-4 border-b border-slate-100 dark:border-slate-800">
+                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+                    <h3 className="flex items-center gap-3 text-xl font-bold text-slate-900 dark:text-white mb-6 pb-4 border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
                       <Globe className="w-6 h-6 text-indigo-500" />
                       Cross-Border Entry
                     </h3>
@@ -541,7 +536,7 @@ export default function GroupKClientPage() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
                     <div className="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-500/10 flex items-center justify-center text-xl mb-6">🏔️</div>
                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">The Altitude Adjustment</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -549,7 +544,7 @@ export default function GroupKClientPage() {
                     </p>
                   </div>
 
-                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
                     <div className="w-10 h-10 rounded-xl bg-orange-50 dark:bg-orange-500/10 flex items-center justify-center text-xl mb-6">💦</div>
                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">The Humidity Furnace</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -557,7 +552,7 @@ export default function GroupKClientPage() {
                     </p>
                   </div>
 
-                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
                     <div className="w-10 h-10 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-xl mb-6">🏟️</div>
                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Estadio Azteca Magic</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -565,7 +560,7 @@ export default function GroupKClientPage() {
                     </p>
                   </div>
 
-                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+                  <div className=" p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
                     <div className="w-10 h-10 rounded-xl bg-purple-50 dark:bg-purple-500/10 flex items-center justify-center text-xl mb-6">🍗</div>
                     <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-3">Southern Hospitality</h3>
                     <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
@@ -583,25 +578,25 @@ export default function GroupKClientPage() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🥤</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Hydration Tabs</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Essential for altitude and humidity.</p>
                     <a href="#" className="text-indigo-600 text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧴</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">High-SPF Sunscreen</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">The tropical sun is intense.</p>
                     <a href="#" className="text-indigo-600 text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🌬️</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Cooling Towels</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Survival gear for Houston fan zones.</p>
                     <a href="#" className="text-indigo-600 text-[10px] font-bold uppercase tracking-widest hover:text-indigo-500 transition-colors">Shop Now</a>
                   </div>
-                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
+                  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-indigo-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-indigo-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long international hub days.</p>
@@ -642,11 +637,11 @@ export default function GroupKClientPage() {
               </section>
 
               {/* Final CTA */}
-              <div className="relative overflow-hidden rounded-[3rem] text-white p-12 md:p-20 text-center shadow-2xl shadow-slate-900/20">
+              <div className="relative overflow-hidden rounded-[3rem] text-slate-900 dark:text-white p-12 md:p-20 text-center shadow-2xl shadow-slate-900/20">
                 <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-indigo-500/20 via-slate-900 to-slate-900"></div>
                 <div className="relative z-10 max-w-3xl mx-auto">
                   <h2 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">Ready for the Southern Crossing?</h2>
-                  <p className="text-slate-300 mb-12 text-lg leading-relaxed font-light">
+                  <p className="text-slate-600 dark:text-slate-300 mb-12 text-lg leading-relaxed font-light">
                     From the historic peaks of Mexico City to the Gulf Coast energy, Group K is a journey across the heart of North America. Secure your logistics today.
                   </p>
                 </div>
@@ -659,3 +654,5 @@ export default function GroupKClientPage() {
     </div>
   );
 }
+
+

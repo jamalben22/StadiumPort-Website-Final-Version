@@ -4,16 +4,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Los Angeles World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-  description: 'Plan World Cup 2026 in Los Angeles: SoFi Stadium tips, best Santa Monica/Hollywood hotels, Metro strategy from LAX airport, dining near Inglewood, safety, packing, and insider advice.',
+  title: 'Los Angeles World Cup 2026 Guide: SoFi Stadium & Travel Tips',
+  description: 'Complete Los Angeles World Cup 2026 travel guide. SoFi Stadium info, best hotels, Metro transportation tips, fan zones & match schedule. Plan your trip.',
   alternates: {
-    canonical: '/world-cup-2026-host-cities-guide/los-angeles-city-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/los-angeles-city-guide',
   },
   openGraph: {
-    title: 'Los Angeles World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-    description: 'Everything you need for World Cup 2026 in Los Angeles: stadium overview, walkable hotel areas, Metro routes, matchday plan, and local secrets.',
+    title: 'Los Angeles World Cup 2026 Guide: SoFi Stadium & Travel Tips',
+    description: 'Complete Los Angeles World Cup 2026 travel guide. SoFi Stadium info, best hotels, Metro transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/los-angeles-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
         alt: 'Los Angeles World Cup 2026 Guide',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Los Angeles World Cup 2026 Guide - SoFi Stadium & Travel',
+    description: 'Complete Los Angeles World Cup 2026 travel guide. SoFi Stadium info, best hotels, Metro transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/los-angeles-world-cup-2026.webp'],
   },
   keywords: ['Los Angeles World Cup 2026', 'SoFi Stadium', 'LA Metro', 'Santa Monica hotels', 'Hollywood hotels', 'LAX airport transfer', 'Los Angeles travel tips', 'World Cup tickets Los Angeles', 'Los Angeles fan zones'],
 };

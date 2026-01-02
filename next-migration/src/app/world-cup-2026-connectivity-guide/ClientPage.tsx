@@ -106,7 +106,7 @@ const SocialShare = () => {
         >
           {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
           {copied && (
-            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-white text-xs rounded whitespace-nowrap">
+            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-slate-900 dark:text-white text-xs rounded whitespace-nowrap">
               Copied!
             </span>
           )}
@@ -130,7 +130,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
         <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
         {caption && (
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-white font-medium">{caption}</p>
+            <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
           </div>
         )}
       </div>
@@ -144,7 +144,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+            <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
               <X className="w-8 h-8" />
             </button>
             <motion.div
@@ -189,7 +189,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -213,7 +213,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -285,26 +285,26 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-center gap-2 text-sm font-medium text-white/60 mb-6 tracking-wide uppercase">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-white transition-colors">Travel Tips</Link>
+                <Link href="/world-cup-2026-travel-tips" className="hover:text-slate-900 dark:text-white transition-colors">Travel Tips</Link>
                 <span className="text-white/40">/</span>
-                <span className="text-white">Connectivity Guide</span>
+                <span className="text-slate-900 dark:text-white">Connectivity Guide</span>
               </div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Essential
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 CONNECTIVITY GUIDE
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Phone Plans, SIM Cards & WiFi. <span className="text-white font-medium">World Cup 2026</span> definitive guide to staying online.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Phone Plans, SIM Cards & WiFi. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide to staying online.
               </p>
             </motion.div>
           </div>
@@ -319,7 +319,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -327,7 +327,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -377,7 +377,7 @@ export default function ClientPage() {
                 { icon: Smartphone, title: "Option 3: Local SIM", text: "Best for budget travelers on long trips (2+ weeks) with unlocked phones. Cheapest rates for unlimited data." },
                 { icon: Wifi, title: "Option 4: Portable WiFi", text: "Best for families and groups (4-5 people). Connect multiple devices at once and split the cost." }
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-[2rem] transition-colors bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 hover:border-emerald-500/50 hover:shadow-lg">
+                <div key={i} className="p-8 rounded-[2rem] transition-colors bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 hover:border-emerald-500/50 hover:shadow-lg">
                   <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
@@ -391,7 +391,7 @@ export default function ClientPage() {
 
           <Section id="phone-check" title="Understanding Your Phone">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4">Is Your Phone Unlocked?</h4>
                 <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">This is critical. If your phone is "locked" to your home carrier, it will NOT work with other SIM cards. Check Settings {'>'} General {'>'} About {'>'} Carrier Lock (iPhone) or call your carrier.</p>
                 <div className="p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-xl">
@@ -400,7 +400,7 @@ export default function ClientPage() {
                   </p>
                 </div>
               </div>
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4">eSIM Compatibility</h4>
                 <ul className="space-y-4 mb-8">
                   {[
@@ -433,7 +433,7 @@ export default function ClientPage() {
                 { name: "Nomad", desc: "Flexible. Best for multi-country trips. Regional & Global plans. Competitive rates.", link: "https://www.getnomad.app/" },
                 { name: "Ubigi", desc: "High Quality. Best for reliable speeds and 5G access. Premium networks.", link: "https://cellulardata.ubigi.com/" }
               ].map((brand, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
                   <div>
                     <h4 className="font-bold text-2xl mb-4 text-slate-900 dark:text-white">{brand.name}</h4>
                     <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">{brand.desc}</p>
@@ -443,7 +443,7 @@ export default function ClientPage() {
               ))}
             </div>
 
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/5">
               <h3 className="text-2xl font-bold mb-6">How to Set Up Your eSIM</h3>
               <div className="grid md:grid-cols-2 gap-12">
                 <div>
@@ -480,7 +480,7 @@ export default function ClientPage() {
                  { carrier: "T-Mobile", plan: "Magenta / MAX", price: "Free / Included", detail: "5GB high-speed in Can/Mex, then slow (256kbps). Too slow for heavy use." },
                  { carrier: "Canada (Rogers/Bell)", plan: "Roam Like Home", price: "$12-16 CAD / day", detail: "Extremely expensive for long trips. Maximize your data cap." }
               ].map((item, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500 transition-colors">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500 transition-colors">
                   <div className="flex justify-between items-start mb-4">
                     <h4 className="font-bold text-xl text-slate-900 dark:text-white">{item.carrier}</h4>
                     <span className="text-emerald-600 dark:text-emerald-400 font-bold bg-emerald-50 dark:bg-emerald-900/30 px-3 py-1 rounded-lg text-sm">{item.price}</span>
@@ -505,7 +505,7 @@ export default function ClientPage() {
                 { title: "🇨🇦 Canada", items: ["Fido / Koodo (~$35-50 CAD)", "PhoneBox (Airport Kiosks)", "Virgin Plus"] },
                 { title: "🇲🇽 Mexico", items: ["Telcel Amigo (Best Coverage)", "AT&T Mexico", "Buy at OXXO Stores"] }
               ].map((country, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
                   <h4 className="font-bold text-xl mb-6">{country.title}</h4>
                   <ul className="space-y-4">
                     {country.items.map((item, j) => (
@@ -520,7 +520,7 @@ export default function ClientPage() {
             </div>
             <div className="mt-8">
               <h3 className="text-xl font-bold mb-4">How to Buy & Activate</h3>
-              <div className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-slate-50 dark:bg-slate-900/50">
+              <div className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50">
                  <ul className="space-y-3 w-full">
                   <li className="flex items-center gap-3 text-slate-700 dark:text-slate-300"><CheckCircle2 className="w-5 h-5 text-emerald-500"/> Bring Passport (often required).</li>
                   <li className="flex items-center gap-3 text-slate-700 dark:text-slate-300"><CheckCircle2 className="w-5 h-5 text-emerald-500"/> Go to official carrier stores (not airport kiosks if possible).</li>
@@ -537,14 +537,14 @@ export default function ClientPage() {
                     Traveling with a group of 4-5 friends? A portable WiFi hotspot (or "pocket WiFi") can save you a fortune. It's a small device that creates a WiFi network for everyone to connect to.
                   </p>
                   <div className="space-y-4 mb-8">
-                    <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50">
+                    <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50">
                       <Wifi className="w-6 h-6 text-emerald-500 mt-1" />
                       <div>
                         <h4 className="font-bold text-slate-900 dark:text-white">Skyroam (Solis)</h4>
                         <p className="text-sm text-slate-600 dark:text-slate-400">One of the best. Rent or buy. Day passes ~$9 for unlimited global data.</p>
                       </div>
                     </div>
-                     <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50">
+                     <div className="flex items-start gap-4 p-4 rounded-xl bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50">
                       <Globe className="w-6 h-6 text-emerald-500 mt-1" />
                       <div>
                         <h4 className="font-bold text-slate-900 dark:text-white">TravelWifi</h4>
@@ -578,21 +578,21 @@ export default function ClientPage() {
 
           <Section id="wifi-guide" title="WiFi Availability Guide">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Hotel className="w-6 h-6 text-emerald-500"/> Hotels</h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-4">Free WiFi is standard in 99% of hotels. Speeds vary. Luxury hotels sometimes charge extra for "premium" speeds.</p>
                 <Link href="/world-cup-2026-accommodation-guide" className="text-emerald-600 font-bold text-sm hover:underline">Check Accommodation Guide →</Link>
               </div>
-              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h3 className="text-xl font-bold mb-4 flex items-center gap-2"><Trophy className="w-6 h-6 text-emerald-500"/> Stadiums</h3>
                  <p className="text-slate-600 dark:text-slate-400 mb-4">Technically available, but <strong>do not rely on it</strong>. Networks often crash with 70k people. Download tickets to Wallet apps beforehand.</p>
               </div>
             </div>
             
-            <div className="bg-slate-900 text-white p-8 rounded-[2rem] relative overflow-hidden">
+            <div className="bg-slate-900 text-slate-900 dark:text-white p-8 rounded-[2rem] relative overflow-hidden">
                <div className="relative z-10">
                  <h4 className="font-bold text-2xl mb-4 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-400" /> Public WiFi Safety</h4>
-                 <p className="mb-8 text-slate-300 text-lg max-w-2xl">
+                 <p className="mb-8 text-slate-600 dark:text-slate-300 text-lg max-w-2xl">
                     Never access your bank account or enter passwords on public WiFi (Starbucks, Airports) without a VPN. It's a hacker's playground.
                   </p>
                   <div className="flex flex-wrap gap-4">
@@ -611,7 +611,7 @@ export default function ClientPage() {
                 { type: "Medium", amount: "3-5 GB/week", use: "Daily nav, Social media, Photos, Music." },
                 { type: "Heavy", amount: "8-10 GB+/week", use: "Stories/Reels, TikTok, Video calls, YouTube." }
               ].map((tier, i) => (
-                <div key={i} className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-center">
+                <div key={i} className="p-6 rounded-2xl bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/5 text-center">
                   <h4 className="font-bold text-lg mb-2">{tier.type}</h4>
                   <div className="text-3xl font-black text-emerald-500 mb-3">{tier.amount}</div>
                   <p className="text-sm text-slate-600 dark:text-slate-400">{tier.use}</p>
@@ -625,7 +625,7 @@ export default function ClientPage() {
 
           <Section id="apps" title="Essential Apps">
              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><MapPin className="w-5 h-5 text-emerald-500"/> Navigation</h4>
                   <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                     <li><strong>Google Maps:</strong> Gold standard. Download offline areas.</li>
@@ -633,21 +633,21 @@ export default function ClientPage() {
                     <li><strong>Waze:</strong> Best for driving (traffic/police alerts).</li>
                   </ul>
                 </div>
-                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><MessageSquare className="w-5 h-5 text-emerald-500"/> Communication</h4>
                   <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                     <li><strong>WhatsApp:</strong> Essential for contacting hosts/drivers.</li>
                     <li><strong>Google Translate:</strong> Download Spanish/French offline.</li>
                   </ul>
                 </div>
-                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><Car className="w-5 h-5 text-emerald-500"/> Transport</h4>
                   <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                     <li><strong>Uber / Lyft:</strong> Works in USA & Canada.</li>
                     <li><strong>Uber / DiDi:</strong> Main apps in Mexico.</li>
                   </ul>
                 </div>
-                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                 <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="font-bold text-lg mb-4 flex items-center gap-2"><Briefcase className="w-5 h-5 text-emerald-500"/> Utilities</h4>
                   <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
                     <li><strong>XE Currency:</strong> For quick exchange rates.</li>
@@ -712,7 +712,7 @@ export default function ClientPage() {
                     "Write down hotel addresses and emergency numbers"
                  ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3">
-                       <div className="w-8 h-8 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold text-sm shrink-0">
+                       <div className="w-8 h-8 rounded-full bg-emerald-500 text-slate-900 dark:text-white flex items-center justify-center font-bold text-sm shrink-0">
                           {i + 1}
                        </div>
                        <span className="font-medium text-slate-800 dark:text-slate-200">{item}</span>
@@ -732,3 +732,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

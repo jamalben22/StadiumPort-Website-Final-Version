@@ -129,7 +129,7 @@ export function WorldClassFAQ({
       {/* Skip to FAQ content link for accessibility */}
       <a 
         href="#faq-content" 
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#01b47d] text-white px-4 py-2 rounded-lg z-50"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-[#01b47d] text-slate-900 dark:text-white px-4 py-2 rounded-lg z-50"
       >
         Skip to FAQ content
       </a>
@@ -138,7 +138,7 @@ export function WorldClassFAQ({
         {/* Header */}
         <div className="text-center mb-12 md:mb-16 lg:mb-20">
           <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 lg:w-24 h-16 md:h-20 lg:h-24 bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d] rounded-2xl md:rounded-3xl mb-6 md:mb-8 shadow-2xl shadow-[#01b47d]/30 backdrop-blur-xl border border-white/20">
-            <i className="ri-question-line text-2xl md:text-3xl lg:text-4xl text-white"></i>
+            <i className="ri-question-line text-2xl md:text-3xl lg:text-4xl text-slate-900 dark:text-white"></i>
           </div>
           <h2 className="font-space font-bold text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-navy-900 dark:text-white mb-4 md:mb-6 bg-gradient-to-r from-navy-900 via-[#01b47d] to-[#01b47d] bg-clip-text text-transparent tracking-tight">
             {title}
@@ -170,7 +170,7 @@ export function WorldClassFAQ({
                   onClick={() => setSearchQuery('')}
                   className="absolute inset-y-0 right-0 pr-4 md:pr-6 flex items-center"
                 >
-                  <X className="h-4 w-4 md:h-5 md:w-5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300" />
+                  <X className="h-4 w-4 md:h-5 md:w-5 text-slate-400 hover:text-slate-600 dark:hover:text-slate-600 dark:text-slate-300" />
                 </button>
               )}
             </div>
@@ -184,7 +184,7 @@ export function WorldClassFAQ({
                     onClick={() => setSelectedCategory(category)}
                     className={`px-3 py-2 md:px-4 rounded-lg md:rounded-xl text-xs md:text-sm font-medium transition-all duration-300 ${
                       selectedCategory === category
-                        ? 'bg-[#01b47d] text-white shadow-lg shadow-[#01b47d]/25'
+                        ? 'bg-[#01b47d] text-slate-900 dark:text-white shadow-lg shadow-[#01b47d]/25'
                         : 'bg-white/60 dark:bg-navy-800/60 text-slate-600 dark:text-slate-300 hover:bg-white dark:hover:bg-navy-800'
                     }`}
                   >
@@ -268,7 +268,7 @@ export function WorldClassFAQ({
                       <div className="flex-1 pr-4 md:pr-8">
                         <div className="flex items-start space-x-3 md:space-x-4">
                           <div className="flex-shrink-0 w-6 h-6 md:w-8 md:h-8 bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-lg md:rounded-xl flex items-center justify-center">
-                            <Hash className="h-3 w-3 md:h-4 md:w-4 text-white" />
+                            <Hash className="h-3 w-3 md:h-4 md:w-4 text-slate-900 dark:text-white" />
                           </div>
                           <div className="flex-1">
                             <h3 className="
@@ -301,7 +301,7 @@ export function WorldClassFAQ({
                           flex items-center justify-center
                           rounded-xl md:rounded-2xl
                           bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d]
-                          text-white
+                          text-slate-900 dark:text-white
                           group-hover:from-[#01b47d] group-hover:via-[#01b47d] group-hover:to-[#01b47d]
                           transition-all duration-500 ease-out
                           transform group-hover:scale-110 group-hover:rotate-3
@@ -385,3 +385,4 @@ export function WorldClassFAQ({
     </section>
   );
 }
+

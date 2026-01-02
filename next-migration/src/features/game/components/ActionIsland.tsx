@@ -39,7 +39,7 @@ export const ActionIsland: React.FC<ActionIslandProps> = ({
         <button 
           onClick={onSave}
           disabled={isGenerating}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-all active:scale-90 border border-white/5 disabled:opacity-50"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-slate-900 dark:text-white transition-all active:scale-90 border border-white/5 disabled:opacity-50"
           title="Save Image"
         >
           {isGenerating ? (
@@ -54,7 +54,7 @@ export const ActionIsland: React.FC<ActionIslandProps> = ({
         {/* Challenge Friend (WhatsApp) */}
         <button 
           onClick={onChallenge}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] text-white hover:bg-[#20bd5a] transition-all active:scale-90 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
+          className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] text-slate-900 dark:text-white hover:bg-[#20bd5a] transition-all active:scale-90 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
           title="Challenge on WhatsApp"
         >
           <MessageCircle className="w-5 h-5" />
@@ -64,3 +64,4 @@ export const ActionIsland: React.FC<ActionIslandProps> = ({
     </div>
   );
 };
+

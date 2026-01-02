@@ -3,16 +3,24 @@ import AffiliateDisclaimerClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
- title: 'Affiliate Disclaimer – Stadiumport',
- description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
- alternates: {
- canonical: '/legal/affiliate-disclaimer',
- },
- openGraph: {
- title: 'Affiliate Disclaimer – Stadiumport',
- description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
- url: '/legal/affiliate-disclaimer',
- }
+  title: 'Affiliate Disclaimer – Stadiumport',
+  description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
+  alternates: {
+    canonical: 'https://stadiumport.com/legal/affiliate-disclaimer',
+  },
+  openGraph: {
+    title: 'Affiliate Disclaimer – Stadiumport',
+    description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
+    url: 'https://stadiumport.com/legal/affiliate-disclaimer',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Affiliate Disclaimer – Stadiumport',
+    description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
+  },
 };
 
 export default function AffiliateDisclaimerPage() {

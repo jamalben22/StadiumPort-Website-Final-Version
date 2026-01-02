@@ -15,12 +15,14 @@ export const metadata: Metadata = {
     '911 USA Canada Mexico'
   ],
   alternates: {
-    canonical: '/world-cup-2026-emergency-contacts-resources',
+    canonical: 'https://stadiumport.com/world-cup-2026-emergency-contacts-resources',
   },
   openGraph: {
     title: 'World Cup 2026 Emergency Contacts & Resources Guide | StadiumPort',
     description: 'Essential World Cup 2026 emergency contacts for USA, Canada & Mexico. Access police, medical, embassy info & safety resources. Stay safe!',
     url: 'https://stadiumport.com/world-cup-2026-emergency-contacts-resources',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
     images: [
       {

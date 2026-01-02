@@ -153,7 +153,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 
       {/* Page Title */}
       <div className="text-center mb-6 md:mb-8">
-        <h2 className="text-3xl md:text-6xl font-display font-bold text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
+        <h2 className="text-3xl md:text-6xl font-display font-bold text-slate-900 dark:text-white uppercase tracking-tighter drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] px-2">
           Secure Your World Cup 2026 Prediction
         </h2>
         <p className="text-black font-mono text-xs md:text-sm uppercase tracking-widest mt-3 px-4 leading-relaxed">
@@ -172,9 +172,9 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
         {/* Header */}
         <div className="text-center mb-6 relative z-10">
           <div className="w-12 h-12 mx-auto bg-gradient-to-br from-[#01b47d] to-[#01b47d] rounded-2xl flex items-center justify-center shadow-lg mb-4 rotate-3">
-            <CheckCircle2 className="w-6 h-6 text-white" />
+            <CheckCircle2 className="w-6 h-6 text-slate-900 dark:text-white" />
           </div>
-          <h2 className="text-3xl font-black font-['Teko'] text-white tracking-wide uppercase mb-1">
+          <h2 className="text-3xl font-black font-['Teko'] text-slate-900 dark:text-white tracking-wide uppercase mb-1">
             Official Entry Form
           </h2>
           
@@ -275,12 +275,12 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                         placeholder="Search country..."
-                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-base text-white placeholder:text-white/20 focus:outline-none focus:border-[#01b47d]/50 focus:bg-white/10 transition-all font-['Rajdhani']"
+                        className="w-full bg-white/5 border border-white/10 rounded-xl py-2.5 pl-9 pr-8 text-base text-slate-900 dark:text-white placeholder:text-white/20 focus:outline-none focus:border-[#01b47d]/50 focus:bg-white/10 transition-all font-['Rajdhani']"
                       />
                       {searchQuery && (
                         <button 
                           onClick={() => setSearchQuery('')}
-                          className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white transition-colors"
+                          className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-slate-900 dark:text-white transition-colors"
                         >
                           <X className="h-3 w-3" />
                         </button>
@@ -305,7 +305,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
                             className={`w-full text-left px-4 py-2.5 rounded-xl text-sm font-['Rajdhani'] font-medium transition-all flex items-center justify-between group ${
                               formData.country === country 
                                 ? 'bg-[#01b47d]/10 text-[#01b47d]' 
-                                : 'text-white/70 hover:bg-white/5 hover:text-white'
+                                : 'text-white/70 hover:bg-white/5 hover:text-slate-900 dark:text-white'
                             }`}
                           >
                             <span>{country}</span>
@@ -385,7 +385,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#01b47d] text-white font-bold py-3 md:py-4 rounded-2xl shadow-lg shadow-[#01b47d]/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-base md:text-lg"
+              className="w-full bg-gradient-to-r from-[#01b47d] to-[#01b47d] hover:from-[#01b47d] hover:to-[#01b47d] text-slate-900 dark:text-white font-bold py-3 md:py-4 rounded-2xl shadow-lg shadow-[#01b47d]/20 transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed font-['Rajdhani'] uppercase tracking-wider text-base md:text-lg"
             >
               {isSubmitting ? (
                 <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
@@ -400,7 +400,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
               type="button"
               onClick={onBack}
               disabled={isSubmitting}
-              className="w-full text-white/40 hover:text-white text-sm font-medium transition-colors font-['Rajdhani'] uppercase tracking-wide py-3"
+              className="w-full text-white/40 hover:text-slate-900 dark:text-white text-sm font-medium transition-colors font-['Rajdhani'] uppercase tracking-wide py-3"
             >
               ← Back to Edit Predictions
             </button>
@@ -410,10 +410,10 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
       {/* Footnotes Outside Card for compact layout */}
       <div className="mt-3 text-center">
         <p className="text-white/70 text-xs font-['Rajdhani']">
-          <span className="text-white font-bold">Your Information is Secure</span> · All data is encrypted and used only for game administration and prize distribution. We never share your information with third parties.
+          <span className="text-slate-900 dark:text-white font-bold">Your Information is Secure</span> · All data is encrypted and used only for game administration and prize distribution. We never share your information with third parties.
         </p>
         <p className="text-white/60 text-[11px] font-['Rajdhani'] mt-1">
-          <span className="text-white font-bold">After Submission:</span> Automatic entry into prize drawings
+          <span className="text-slate-900 dark:text-white font-bold">After Submission:</span> Automatic entry into prize drawings
         </p>
       </div>
     </div>
@@ -422,3 +422,4 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
 };
 
 export default EmailRegistration;
+

@@ -139,7 +139,7 @@ export const HostCitiesSection = () => {
                       {city.country}
                     </span>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2 leading-tight">
+                  <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-2 leading-tight">
                     {city.name}
                   </h3>
                   <p className="text-sm font-medium text-white/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 transform translate-y-2 group-hover:translate-y-0">
@@ -154,3 +154,4 @@ export const HostCitiesSection = () => {
     </section>
   );
 };
+

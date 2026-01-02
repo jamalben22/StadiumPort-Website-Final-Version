@@ -18,19 +18,19 @@ export function Breadcrumb({ items, variant = 'default', className = '' }: Bread
   const isLight = variant === 'light';
   
   const containerClasses = isLight 
-    ? "text-white/60" 
+    ? "text-slate-600/60 dark:text-white/60" 
     : "text-slate-500 dark:text-slate-400";
     
   const separatorClasses = isLight
-    ? "text-white/40"
-    : "text-slate-300 dark:text-slate-600";
+    ? "text-slate-400/40 dark:text-white/40"
+    : "text-slate-600 dark:text-slate-300";
     
   const activeClasses = isLight
-    ? "text-white"
+    ? "text-slate-900 dark:text-white"
     : "text-emerald-700 dark:text-emerald-400";
     
   const linkHoverClasses = isLight
-    ? "hover:text-white"
+    ? "hover:text-slate-900 dark:hover:text-slate-900 dark:text-white"
     : "hover:text-emerald-600 dark:hover:text-emerald-400";
 
   return (
@@ -38,7 +38,7 @@ export function Breadcrumb({ items, variant = 'default', className = '' }: Bread
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className={`flex items-center gap-2 text-sm font-medium mb-8 tracking-wide uppercase flex-wrap ${containerClasses} ${className}`}
+      className={`flex items-center gap-2 text-sm font-medium tracking-wide uppercase flex-wrap ${containerClasses} ${className}`}
     >
       <Link href="/" className={`${linkHoverClasses} transition-colors`}>
         Home
@@ -66,3 +66,4 @@ export function Breadcrumb({ items, variant = 'default', className = '' }: Bread
     </motion.div>
   );
 }
+

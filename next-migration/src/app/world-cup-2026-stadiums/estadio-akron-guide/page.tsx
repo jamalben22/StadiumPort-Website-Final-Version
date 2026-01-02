@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
- title: 'Estadio Akron World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Estadio Akron World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day in Guadalajara.',
- keywords: 'Estadio Akron World Cup 2026, Guadalajara World Cup Stadium, Estadio Akron Guide, Guadalajara Soccer Guide, World Cup 2026 Guadalajara matches, Estadio Akron seating chart',
- openGraph: {
- title: 'Estadio Akron World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Estadio Akron World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day.',
+  title: 'Estadio Akron World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to Estadio Akron for World Cup 2026. Seating charts, capacity, parking & local transport tips for Guadalajara.',
+  keywords: 'Estadio Akron World Cup 2026, Guadalajara World Cup Stadium, Estadio Akron Guide, Guadalajara Soccer Guide, World Cup 2026 Guadalajara matches, Estadio Akron seating chart',
+  openGraph: {
+    title: 'Estadio Akron World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Estadio Akron for World Cup 2026. Seating charts, capacity, parking & local transport tips for Guadalajara.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/estadio-akron-guide',
  siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estadio Akron World Cup 2026: Complete Stadium Guide',
-    description: 'Everything you need for Estadio Akron World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    title: 'Estadio Akron World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Estadio Akron for World Cup 2026. Seating charts, capacity, parking & local transport tips for Guadalajara.',
     images: ['/images/cities/guadalajara-world-cup-2026-1600.webp'],
   },
 };

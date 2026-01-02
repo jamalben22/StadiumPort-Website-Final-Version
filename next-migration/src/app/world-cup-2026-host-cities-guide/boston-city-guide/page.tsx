@@ -4,44 +4,44 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Boston World Cup 2026 Guide: Matches, Hotels & Travel',
- description: 'The ultimate Boston World Cup 2026 guide. Verified match schedule, Gillette Stadium logistics, best neighborhoods to stay, and insider tips for fans.',
- keywords: [
- 'Boston World Cup 2026',
- 'Gillette Stadium World Cup',
- 'Boston World Cup hotels',
- 'Boston World Cup tickets',
- 'Gillette Stadium transportation',
- 'World Cup 2026 host cities',
- 'Boston travel guide',
- 'Foxborough World Cup guide',
- 'FIFA World Cup 2026 Boston'
- ],
- alternates: {
- canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/boston-city-guide',
- },
- openGraph: {
- title: 'Boston World Cup 2026 Guide: Matches, Hotels & Travel',
- description: 'The ultimate Boston World Cup 2026 guide. Verified match schedule, Gillette Stadium logistics, best neighborhoods to stay, and insider tips for fans.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/boston-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/boston-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Boston World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Boston World Cup 2026 Guide',
- description: 'Everything you need to know about World Cup 2026 in Boston. Matches, hotels, and stadium guide.',
- images: ['/images/cities/boston-world-cup-2026.webp'],
- },
+  title: 'Boston World Cup 2026 Guide: Gillette Stadium & Travel Tips',
+  description: 'Complete Boston World Cup 2026 travel guide. Gillette Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+  keywords: [
+    'Boston World Cup 2026',
+    'Gillette Stadium World Cup',
+    'Boston World Cup hotels',
+    'Boston World Cup tickets',
+    'Gillette Stadium transportation',
+    'World Cup 2026 host cities',
+    'Boston travel guide',
+    'Foxborough World Cup guide',
+    'FIFA World Cup 2026 Boston'
+  ],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/boston-city-guide',
+  },
+  openGraph: {
+    title: 'Boston World Cup 2026 Guide: Gillette Stadium & Travel Tips',
+    description: 'Complete Boston World Cup 2026 travel guide. Gillette Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/boston-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/boston-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Boston World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Boston World Cup 2026 Guide - Gillette Stadium & Travel Tips',
+    description: 'Complete Boston World Cup 2026 travel guide. Gillette Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/boston-world-cup-2026.webp'],
+  },
 };
 
 export default function Page() {

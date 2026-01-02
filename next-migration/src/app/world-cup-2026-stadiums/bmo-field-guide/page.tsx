@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'BMO Field World Cup 2026: Toronto Stadium Guide',
-  description: 'Complete guide to BMO Field for World Cup 2026. Learn about the stadium expansion, seating, public transport in Toronto, and match day tips.',
+  title: 'BMO Field World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to BMO Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Toronto.',
   keywords: 'BMO Field World Cup 2026, Toronto World Cup, Toronto Stadium Guide, World Cup 2026 Toronto, stadium seating, travel guide',
   openGraph: {
-    title: 'BMO Field World Cup 2026: Toronto Stadium Guide',
-    description: 'Complete guide to BMO Field for World Cup 2026. Learn about the stadium expansion and Toronto tips.',
+    title: 'BMO Field World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to BMO Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Toronto.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/bmo-field-guide',
     siteName: 'Stadiumport',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BMO Field World Cup 2026: Toronto Stadium Guide',
-    description: 'Complete guide to BMO Field for World Cup 2026.',
+    title: 'BMO Field World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to BMO Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Toronto.',
     images: ['/images/cities/toronto-world-cup-2026-1600.webp'],
   },
 };

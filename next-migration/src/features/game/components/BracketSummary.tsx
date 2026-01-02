@@ -208,7 +208,7 @@ export const BracketSummary = ({
                               key={i}
                               className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
                                 isWinner 
-                                  ? 'bg-slate-900 text-white' 
+                                  ? 'bg-slate-900 text-slate-900 dark:text-white' 
                                   : 'bg-transparent text-slate-700 hover:bg-slate-50'
                               }`}
                             >
@@ -289,7 +289,7 @@ export const BracketSummary = ({
               </div>
 
               {/* The Final Card */}
-              <div className="md:col-span-2 bg-slate-900 text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl ring-1 ring-white/10 group">
+              <div className="md:col-span-2 bg-slate-900 text-slate-900 dark:text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl ring-1 ring-white/10 group">
                 {/* Background Decoration */}
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-900"></div>
                 <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#01b47d] rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity duration-1000"></div>
@@ -316,7 +316,7 @@ export const BracketSummary = ({
                           <div className="flex items-center gap-4">
                             {t?.flagUrl && <img src={t.flagUrl} className={`w-12 h-8 rounded shadow-lg ${isWinner ? 'ring-2 ring-white/20' : ''}`} />}
                             <div>
-                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-white font-bold' : 'text-slate-300'}`}>
+                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-600 dark:text-slate-300'}`}>
                                 {t?.name || 'TBD'}
                               </span>
                               {isWinner && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-wider font-['Rajdhani']">Winner</span>}
@@ -340,3 +340,4 @@ export const BracketSummary = ({
     </div>
   )
 }
+

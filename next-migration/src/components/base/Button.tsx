@@ -43,13 +43,13 @@ export function Button({
 
   const variants = {
     primary: `
-      bg-[#01b47d] text-white font-bold
+      bg-[#01b47d] text-slate-900 dark:text-white font-bold
       hover:bg-[#008f63] focus:ring-[#01b47d]/30
       shadow-premium hover:shadow-premium-lg border border-[#01b47d]/20
       ${glow ? 'shadow-[0_0_20px_rgba(1,180,125,0.6)] hover:shadow-[0_0_30px_rgba(1,180,125,0.8)]' : ''}
     `,
     secondary: `
-      bg-[#01b47d] text-white 
+      bg-[#01b47d] text-slate-900 dark:text-white 
       hover:bg-[#008f63] focus:ring-[#01b47d]/30
       dark:bg-[#01b47d] dark:text-white 
       dark:hover:bg-[#008f63]
@@ -57,7 +57,7 @@ export function Button({
     `,
     outline: `
       border-2 border-[#01b47d] text-[#01b47d] bg-transparent backdrop-blur-xl
-      hover:bg-[#008f63] hover:text-white hover:border-[#008f63] focus:ring-[#01b47d]/30
+      hover:bg-[#008f63] hover:text-slate-900 dark:text-white hover:border-[#008f63] focus:ring-[#01b47d]/30
       shadow-premium hover:shadow-premium-lg font-bold
     `,
     ghost: `
@@ -66,33 +66,33 @@ export function Button({
       border border-transparent hover:border-[#008f63]/20
     `,
     premium: `
-      bg-[#01b47d] text-white
+      bg-[#01b47d] text-slate-900 dark:text-white
       hover:bg-[#008f63]
       focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg
       border border-[#01b47d]/30 backdrop-blur-xl
       ${glow ? 'shadow-ultra-glow hover:shadow-ultra-glow' : ''}
     `,
     gold: `
-      bg-[#01b47d] text-white
+      bg-[#01b47d] text-slate-900 dark:text-white
       hover:bg-[#008f63]
       focus:ring-[#01b47d]/30 shadow-premium hover:shadow-premium-lg
       border border-[#01b47d]/30 font-bold backdrop-blur-xl
       ${glow ? 'shadow-gold-glow-lg hover:shadow-gold-glow-xl' : ''}
     `,
     glass: `
-      bg-white/10 backdrop-blur-2xl border border-white/30 text-white
+      bg-white/10 backdrop-blur-2xl border border-white/30 text-slate-900 dark:text-white
       hover:bg-white/20 hover:border-white/40 focus:ring-white/30
       shadow-glass hover:shadow-glass-lg
     `,
     cosmic: `
-      text-white focus:ring-purple-500/30 shadow-cosmic hover:shadow-cosmic
+      text-slate-900 dark:text-white focus:ring-purple-500/30 shadow-cosmic hover:shadow-cosmic
       border border-purple-400/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-purple-500 via-pink-500 to-[#01b47d]
       hover:from-purple-600 hover:via-pink-600 hover:to-[#01b47d]
       animate-cosmic
     `,
     aurora: `
-      text-white focus:ring-[#01b47d]/30 shadow-aurora hover:shadow-aurora
+      text-slate-900 dark:text-white focus:ring-[#01b47d]/30 shadow-aurora hover:shadow-aurora
       border border-[#01b47d]/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-[#01b47d]
       hover:from-[#01b47d] hover:via-[#01b47d] hover:to-[#01b47d]
@@ -106,14 +106,14 @@ export function Button({
       animate-crystalline
     `,
     holographic: `
-      text-white focus:ring-pink-500/30 shadow-holographic hover:shadow-holographic
+      text-slate-900 dark:text-white focus:ring-pink-500/30 shadow-holographic hover:shadow-holographic
       border border-pink-400/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-pink-500 via-purple-500 to-[#01b47d]
       hover:from-pink-600 hover:via-purple-600 hover:to-[#01b47d]
       animate-holographic
     `,
     quantum: `
-      text-white focus:ring-violet-500/30 shadow-quantum hover:shadow-quantum
+      text-slate-900 dark:text-white focus:ring-violet-500/30 shadow-quantum hover:shadow-quantum
       border border-violet-400/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-[#01b47d] via-[#01b47d] to-violet-500
       hover:from-[#01b47d] hover:via-[#01b47d] hover:to-violet-600
@@ -141,14 +141,14 @@ export function Button({
       animate-matrix
     `,
     plasma: `
-      text-white focus:ring-purple-500/30 shadow-plasma hover:shadow-plasma
+      text-slate-900 dark:text-white focus:ring-purple-500/30 shadow-plasma hover:shadow-plasma
       border border-purple-400/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-pink-500 via-purple-500 to-[#01b47d]
       hover:from-pink-600 hover:via-purple-600 hover:to-[#01b47d]
       animate-plasma
     `,
     stellar: `
-      text-white focus:ring-[#01b47d]/30 shadow-stellar hover:shadow-stellar
+      text-slate-900 dark:text-white focus:ring-[#01b47d]/30 shadow-stellar hover:shadow-stellar
       border border-[#01b47d]/30 backdrop-blur-xl font-bold
       bg-gradient-to-br from-[#01b47d] via-purple-500 to-black
       hover:from-[#01b47d] hover:via-purple-600 hover:to-gray-900
@@ -321,3 +321,4 @@ export function Button({
     </motion.button>
   );
 }
+

@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Lincoln Financial Field World Cup 2026: Complete Stadium Guide',
-  description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating info, parking, SEPTA transport, and Philadelphia fan experience tips.',
+  title: 'Lincoln Financial Field World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Philadelphia.',
   keywords: 'Lincoln Financial Field World Cup 2026, Philadelphia World Cup, Lincoln Financial Field Guide, World Cup 2026 Philadelphia, stadium seating, travel guide',
   openGraph: {
-    title: 'Lincoln Financial Field World Cup 2026: Complete Stadium Guide',
-    description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating info, transportation, and local tips.',
+    title: 'Lincoln Financial Field World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Philadelphia.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/lincoln-financial-field-guide',
     siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lincoln Financial Field World Cup 2026: Complete Stadium Guide',
-    description: 'Complete guide to Lincoln Financial Field for World Cup 2026.',
+    title: 'Lincoln Financial Field World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Philadelphia.',
     images: ['/images/cities/philadelphia-world-cup-2026-1600.webp'],
   },
 };

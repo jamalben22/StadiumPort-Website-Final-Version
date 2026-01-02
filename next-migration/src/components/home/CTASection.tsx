@@ -47,7 +47,7 @@ export const CTASection = () => {
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
           <Link href="/groups">
-             <button className="group relative px-10 py-5 rounded-full bg-[#0A0A0A] text-white dark:bg-white dark:text-black font-space font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all duration-300 hover:scale-105 active:scale-95">
+             <button className="group relative px-10 py-5 rounded-full bg-[#0A0A0A] text-slate-900 dark:text-white dark:bg-white dark:text-black font-space font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all duration-300 hover:scale-105 active:scale-95">
                <span className="relative z-10">Start Planning Now</span>
              </button>
           </Link>
@@ -61,3 +61,4 @@ export const CTASection = () => {
     </section>
   );
 };
+

@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupAClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey | Stadiumport',
- description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
- keywords: 'World Cup 2026 Group A Travel Guide, Group A matches, Mexico City Guadalajara Monterrey World Cup, ETN Luxury Bus Mexico, Estadio Azteca travel guide',
- alternates: {
- canonical: '/groups/group-a',
- },
- openGraph: {
- title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey | Stadiumport',
- description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
- url: '/groups/group-a',
- }
+  title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
+  description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
+  keywords: ['World Cup 2026 Group A Travel Guide', 'Group A matches', 'Mexico City Guadalajara Monterrey World Cup', 'ETN Luxury Bus Mexico', 'Estadio Azteca travel guide'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-a',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
+    description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-a',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group A Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
+    description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupAPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-a';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-a';
 
- const articleSchema = generateArticleSchema('group-a', pageUrl);
+  const articleSchema = generateArticleSchema('group-a', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",

@@ -146,7 +146,7 @@ export function Header() {
                 className={`text-[13px] font-medium tracking-wide transition-all duration-200 ${
                   isActive(item.path)
                     ? 'text-black dark:text-white opacity-100'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white'
+                    : 'text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-slate-900 dark:text-white'
                 }`}
               >
                 {item.label}
@@ -160,7 +160,7 @@ export function Header() {
             {/* Search Trigger */}
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="group p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-110 active:scale-95"
+              className="group p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-slate-900 dark:text-white transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Search"
             >
               <Search size={20} strokeWidth={2} className="group-hover:stroke-[2.5px] transition-all" />
@@ -217,3 +217,4 @@ export function Header() {
     </>
   );
 }
+

@@ -214,7 +214,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
+    <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 flex items-center justify-between text-left group"
@@ -246,7 +246,7 @@ const FaqItem = ({ question, answer }: { question: string, answer: string }) => 
 };
 
 const QuickReference = () => (
-  <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 mb-12 shadow-sm">
+  <div className="bg-white dark:bg-slate-900 rounded-2xl p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-12 shadow-sm">
     <div className="flex flex-col md:flex-row gap-8 justify-between">
       <div className="flex-1">
         <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -321,7 +321,7 @@ export default function SafetyGuideClientPage() {
 
       {/* Authority Introduction */}
       <section className="px-6 lg:px-8 max-w-7xl mx-auto mb-16">
-        <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 shadow-sm">
+        <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
           <div className="max-w-3xl">
             <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
               Your Complete Fan Security Hub
@@ -347,7 +347,7 @@ export default function SafetyGuideClientPage() {
 
           return (
             <div key={category}>
-              <div className="flex items-end justify-between mb-8 border-b border-slate-200 dark:border-slate-800 pb-4">
+              <div className="flex items-end justify-between mb-8 border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4">
                 <h2 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                   {category}
                 </h2>
@@ -361,7 +361,7 @@ export default function SafetyGuideClientPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.05 }}
-                    className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
+                    className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
                   >
                     {/* Featured Image */}
                     <div className="relative h-48 w-full overflow-hidden">
@@ -414,7 +414,7 @@ export default function SafetyGuideClientPage() {
             </p>
           </div>
           <div className="md:col-span-8">
-            <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-800">
+            <div className="bg-white dark:bg-slate-900 rounded-3xl p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
               {faqs.map((faq, index) => (
                 <FaqItem key={index} question={faq.question} answer={faq.answer} />
               ))}
@@ -432,3 +432,4 @@ export default function SafetyGuideClientPage() {
     </div>
   );
 }
+

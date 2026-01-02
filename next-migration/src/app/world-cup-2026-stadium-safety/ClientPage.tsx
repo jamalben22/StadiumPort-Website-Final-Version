@@ -106,7 +106,7 @@ const SocialShare = () => {
         >
           {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
           {copied && (
-            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-white text-xs rounded whitespace-nowrap">
+            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-slate-900 dark:text-white text-xs rounded whitespace-nowrap">
               Copied!
             </span>
           )}
@@ -142,7 +142,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -168,7 +168,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -282,7 +282,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -295,17 +295,17 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Official Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Safety First
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 STADIUM <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">SAFETY</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Security Rules & What to Expect at World Cup 2026. <span className="text-white font-medium">Know Before You Go</span>.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Security Rules & What to Expect at World Cup 2026. <span className="text-slate-900 dark:text-white font-medium">Know Before You Go</span>.
               </p>
             </motion.div>
           </div>
@@ -320,7 +320,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -328,7 +328,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -366,22 +366,22 @@ export default function ClientPage() {
 
           <Section id="environment" title="The Security Environment">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
                   <Smartphone className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Digital Verification</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">100% mobile ticketing with dynamic barcodes to prevent fraud.</p>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
                   <UserCheck className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Advanced Screening</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Evolv technology and AI threat detection systems.</p>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
                   <Search className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">K-9 Units</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Explosive and narcotic detection dogs patrolling perimeters.</p>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all">
                   <MapPin className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-3">Perimeter Zones</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Security checks starting 1-2 miles from the stadium.</p>
@@ -399,7 +399,7 @@ export default function ClientPage() {
                   { title: "Mag & Bag", desc: "Metal detectors and body scanners." },
                   { title: "Ticket Scan", desc: "Digital validation." }
                ].map((step, i) => (
-                 <div key={i} className="flex items-start gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800">
+                 <div key={i} className="flex items-start gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-200 dark:border-slate-800">
                     <span className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-lg font-bold text-emerald-600 dark:text-emerald-400">{i + 1}</span>
                     <div>
                       <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-1">{step.title}</h4>
@@ -528,7 +528,7 @@ export default function ClientPage() {
           </Section>
 
           <Section id="arrival" title="The Arrival Timeline">
-            <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-4 space-y-12 my-12">
+            <div className="relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-4 space-y-12 my-12">
                {[
                  { time: "T-Minus 4 Hours", title: "Departure", desc: "Leave your hotel/accommodation. Expect heavy traffic and full public transport." },
                  { time: "T-Minus 3 Hours", title: "Arrival at Zone", desc: "Arrive at the stadium perimeter. Ticket check #1 usually happens here." },
@@ -547,7 +547,7 @@ export default function ClientPage() {
           </Section>
 
           <Section id="emergency" title="Emergency Procedures">
-             <div className="bg-white dark:bg-slate-900 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-xl">
+             <div className="bg-white dark:bg-slate-900 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl">
                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 flex items-center gap-3">
                  <Siren className="w-8 h-8 text-red-500" />
                  In Case of Emergency
@@ -625,8 +625,8 @@ export default function ClientPage() {
           {/* Conclusion */}
           <div className="mt-24 p-12 md:p-20 bg-slate-900 dark:bg-slate-950 rounded-[3rem] text-center shadow-2xl overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-emerald-500 via-cyan-500 to-blue-500" />
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight">Stay Safe. Enjoy the Match.</h3>
-            <p className="text-slate-300 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 tracking-tight">Stay Safe. Enjoy the Match.</h3>
+            <p className="text-slate-600 dark:text-slate-300 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               Security is there to ensure the only drama happens on the pitch. Plan ahead, follow the rules, and you&apos;ll be in your seat well before the first whistle.
             </p>
             <div className="max-w-md mx-auto">
@@ -646,3 +646,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

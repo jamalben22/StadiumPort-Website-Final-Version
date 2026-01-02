@@ -41,7 +41,7 @@ export default function ClientAbout() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-slate-900 dark:text-white transition-colors duration-500">
       <main className="pt-32 pb-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           
@@ -54,7 +54,7 @@ export default function ClientAbout() {
               className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
             >
               <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
               <span className="text-emerald-700 dark:text-emerald-400">About</span>
             </motion.div>
 
@@ -129,26 +129,26 @@ export default function ClientAbout() {
 
           {/* Why Trust Us / Approach */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-24 animate-fade-up [animation-delay:600ms]">
-            <div className="bg-slate-900 dark:bg-white/5 rounded-3xl p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-center min-h-[400px]">
+            <div className="bg-slate-900 dark:bg-white/5 rounded-3xl p-10 md:p-12 text-slate-900 dark:text-white relative overflow-hidden flex flex-col justify-center min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20"></div>
               <div className="relative z-10">
                 <h3 className="text-3xl font-bold mb-6">Why Trust Stadiumport?</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300"><strong>Independent:</strong> Not affiliated with FIFA or hotels. Just passionate fans helping fans.</span>
+                    <span className="text-slate-600 dark:text-slate-300"><strong>Independent:</strong> Not affiliated with FIFA or hotels. Just passionate fans helping fans.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300"><strong>Comprehensive:</strong> Detailed guides for every stadium and city.</span>
+                    <span className="text-slate-600 dark:text-slate-300"><strong>Comprehensive:</strong> Detailed guides for every stadium and city.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300"><strong>Transparent:</strong> We clearly disclose how we work.</span>
+                    <span className="text-slate-600 dark:text-slate-300"><strong>Transparent:</strong> We clearly disclose how we work.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
-                    <span className="text-slate-300"><strong>Experienced:</strong> Built by travelers who know major tournaments.</span>
+                    <span className="text-slate-600 dark:text-slate-300"><strong>Experienced:</strong> Built by travelers who know major tournaments.</span>
                   </li>
                 </ul>
               </div>
@@ -173,3 +173,4 @@ export default function ClientAbout() {
     </div>
   );
 }
+

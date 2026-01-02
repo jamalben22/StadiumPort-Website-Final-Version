@@ -4,17 +4,42 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Passport & Document Security: Protecting Your Identity | Stadiumport',
-  description: 'Essential strategies for safeguarding passports and visas during World Cup 2026. Learn the 3-location rule, RFID prevention, and digital backup methods.',
-  keywords: 'World Cup 2026 passport safety, travel document security, RFID theft prevention, lost passport abroad, identity theft protection travel',
+  title: 'World Cup 2026 Document Safety: Passport & Visa Tips',
+  description: 'Protect your passport & documents at World Cup 2026. Essential security tips, digital backup strategies & lost passport procedures for international fans.',
+  keywords: [
+    'World Cup 2026 passport safety',
+    'travel document security',
+    'RFID theft prevention',
+    'lost passport abroad',
+    'identity theft protection travel',
+    'World Cup 2026 visa security',
+    'passport backup strategies'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-passport-document-security',
+    canonical: 'https://stadiumport.com/world-cup-2026-passport-document-security',
   },
   openGraph: {
-    title: 'Passport & Document Security: Protecting Your Identity | Stadiumport',
-    description: 'Essential strategies for safeguarding passports and visas during World Cup 2026. Learn the 3-location rule, RFID prevention, and digital backup methods.',
-    url: '/world-cup-2026-passport-document-security',
-  }
+    title: 'World Cup 2026 Document Safety: Passport & Visa Tips',
+    description: 'Protect your passport & documents at World Cup 2026. Essential security tips, digital backup strategies & lost passport procedures for international fans.',
+    url: 'https://stadiumport.com/world-cup-2026-passport-document-security',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/travel-tips/World%20Cup%202026%20Document%20Security%20Illustration.webp',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Document Security',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Document Safety: Passport & Visa Tips',
+    description: 'Protect your passport & documents at World Cup 2026. Essential security tips, digital backup strategies & lost passport procedures for international fans.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Document%20Security%20Illustration.webp'],
+  },
 };
 
 export default function DocumentSecurityPage() {

@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss:;"
+          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com;"
         },
         {
           key: 'Permissions-Policy',

@@ -5,29 +5,32 @@ export const metadata: Metadata = {
  title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
  description: 'Plan World Cup 2026 in Vancouver: BC Place stadium tips, best downtown/Yaletown hotels, SkyTrain strategy from YVR airport, dining, safety, packing, and insider advice.',
  alternates: {
- canonical: '/world-cup-2026-host-cities-guide/vancouver-city-guide',
- },
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/vancouver-city-guide',
+  },
  openGraph: {
- title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Everything you need for World Cup 2026 in Vancouver: stadium overview, walkable hotel areas, SkyTrain routes, matchday plan, and local secrets.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/vancouver-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/vancouver-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Vancouver World Cup 2026 Guide',
- },
- ],
- },
- keywords: ['Vancouver World Cup 2026', 'BC Place', 'SkyTrain', 'Downtown Vancouver hotels', 'Yaletown hotels', 'Vancouver airport transfer', 'Vancouver travel tips', 'World Cup tickets Vancouver', 'Vancouver fan zones', 'Canada Place'],
+    title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
+    description: 'Everything you need for World Cup 2026 in Vancouver: stadium overview, walkable hotel areas, SkyTrain routes, matchday plan, and local secrets.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/vancouver-city-guide',
+    siteName: 'Stadiumport',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/vancouver-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Vancouver World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
+    description: 'Everything you need for World Cup 2026 in Vancouver: stadium overview, walkable hotel areas, SkyTrain routes, matchday plan, and local secrets.',
+    images: ['/images/cities/vancouver-world-cup-2026.webp'],
+  },
+  keywords: ['Vancouver World Cup 2026', 'BC Place', 'SkyTrain', 'Downtown Vancouver hotels', 'Yaletown hotels', 'Vancouver airport transfer', 'Vancouver travel tips', 'World Cup tickets Vancouver', 'Vancouver fan zones', 'Canada Place'],
 };
-
-import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export default function Page() {
   const jsonLd = generateArticleSchema('vancouver-city-guide', '/world-cup-2026-host-cities-guide/vancouver-city-guide');

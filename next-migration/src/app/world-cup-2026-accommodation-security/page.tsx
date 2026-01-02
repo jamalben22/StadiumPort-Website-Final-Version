@@ -6,16 +6,40 @@ import { generateArticleSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Accommodation Security: Safe Stays for World Cup 2026 | Stadiumport',
   description: 'Complete guide to accommodation security for World Cup 2026. Learn how to choose safe hotels, verify Airbnb listings, avoid scams, and secure your room in USA, Canada, and Mexico.',
-  keywords: 'World Cup 2026 accommodation security, safe stays World Cup, hotel security World Cup, Airbnb safety World Cup, World Cup lodging safety, secure accommodation North America, travel security 2026',
+  keywords: [
+    'World Cup 2026 accommodation security',
+    'safe stays World Cup',
+    'hotel security World Cup',
+    'Airbnb safety World Cup',
+    'World Cup lodging safety',
+    'secure accommodation North America',
+    'travel security 2026'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-accommodation-security',
+    canonical: 'https://stadiumport.com/world-cup-2026-accommodation-security',
   },
   openGraph: {
-    title: 'Accommodation Security: Safe Stays for World Cup 2026 | Stadiumport',
+    title: 'Accommodation Security: Safe Stays for World Cup 2026 | StadiumPort',
     description: 'Complete guide to accommodation security for World Cup 2026. Safe hotel strategies, Airbnb verification, neighborhood safety, and scam prevention.',
-    url: '/world-cup-2026-accommodation-security',
+    url: 'https://stadiumport.com/world-cup-2026-accommodation-security',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
-  }
+    images: [
+      {
+        url: '/images/safety-guide/Accommodation%20Security_Safe%20Stays.webp',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Accommodation Security',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Accommodation Security: Safe Stays for World Cup 2026 | StadiumPort',
+    description: 'Complete guide to accommodation security for World Cup 2026. Safe hotel strategies, Airbnb verification, neighborhood safety.',
+    images: ['/images/safety-guide/Accommodation%20Security_Safe%20Stays.webp'],
+  },
 };
 
 export default function AccommodationSecurityPage() {

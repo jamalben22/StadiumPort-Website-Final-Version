@@ -5,34 +5,34 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
- description: 'The ultimate guide to Dallas & Arlington for World Cup 2026. Navigate AT&T Stadium transport, find the best BBQ, and book hotels in Uptown or Fort Worth.',
- keywords: 'Dallas World Cup 2026, AT&T Stadium guide, World Cup Arlington tickets, Dallas hotels for World Cup, FIFA World Cup 26 Dallas',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/dallas-city-guide',
- },
- openGraph: {
- title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
- description: 'The ultimate guide to Dallas & Arlington for World Cup 2026. Navigate AT&T Stadium transport, find the best BBQ, and book hotels in Uptown or Fort Worth.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/dallas-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/dallas-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Dallas World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
- description: 'The ultimate guide to Dallas & Arlington for World Cup 2026. Navigate AT&T Stadium transport, find the best BBQ, and book hotels in Uptown or Fort Worth.',
- images: ['/images/cities/dallas-world-cup-2026.webp'],
- },
+  title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
+  description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+  keywords: ['Dallas World Cup 2026', 'AT&T Stadium guide', 'World Cup Arlington tickets', 'Dallas hotels for World Cup', 'FIFA World Cup 26 Dallas'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/dallas-city-guide',
+  },
+  openGraph: {
+    title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
+    description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/dallas-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/dallas-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Dallas World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dallas World Cup 2026 Guide - AT&T Stadium & Travel Info',
+    description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/dallas-world-cup-2026.webp'],
+  },
 };
 
 export default function Page() {

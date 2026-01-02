@@ -5,30 +5,43 @@ import { contentRegistry } from '@/data/content-registry';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
 
-const slug = 'world-cup-2026-itinerary-planning';
-const meta = contentRegistry[slug] || {
-  title: 'World Cup 2026 Itinerary Planning: 1, 2, or 3 Week Sample Itineraries',
-  description: 'Optimized World Cup 2026 itineraries for 1, 2, and 3-week trips. Daily schedules, budget breakdowns, and logistics for USA, Canada, and Mexico.',
-  publishedAt: new Date().toISOString(),
-  updatedAt: new Date().toISOString(),
-  image: '/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp'
-};
-
 export const metadata: Metadata = {
-  title: meta.title,
-  description: meta.description,
+  title: 'World Cup 2026 Itinerary: 1 & 2 Week Trip Plans for Fans',
+  description: 'Optimized World Cup 2026 itineraries. Step-by-step travel plans for 1, 2, and 3-week trips across USA, Canada & Mexico. Maximize matches & minimize travel.',
+  keywords: [
+    'World Cup 2026 itinerary',
+    'World Cup 2026 trip planner',
+    '2 week World Cup itinerary',
+    '1 week World Cup itinerary',
+    'traveling to World Cup 2026',
+    'World Cup 2026 schedule planning',
+    'USA Mexico Canada trip plan',
+    'World Cup road trip'
+  ],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-itinerary-planning',
+  },
   openGraph: {
-    title: meta.title,
-    description: meta.description,
-    url: `https://stadiumport.com/${slug}`,
+    title: 'World Cup 2026 Itinerary: 1 & 2 Week Trip Plans for Fans',
+    description: 'Optimized World Cup 2026 itineraries. Step-by-step travel plans for 1, 2, and 3-week trips across USA, Canada & Mexico. Maximize matches & minimize travel.',
+    url: 'https://stadiumport.com/world-cup-2026-itinerary-planning',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
     images: [
       {
-        url: meta.image || '/images/travel-tips/World Cup 2026 Itinerary Planning Guide Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Itinerary%20Planning%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
-        alt: meta.title,
+        alt: 'World Cup 2026 Itinerary Planning',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Itinerary: 1 & 2 Week Trip Plans for Fans',
+    description: 'Optimized World Cup 2026 itineraries. Step-by-step travel plans for 1, 2, and 3-week trips across USA, Canada & Mexico. Maximize matches & minimize travel.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Itinerary%20Planning%20Guide%20Illustration.webp'],
   },
 };
 

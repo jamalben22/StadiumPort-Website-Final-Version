@@ -81,7 +81,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -105,7 +105,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -173,7 +173,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -186,16 +186,16 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Official Transport Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Essential Read
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 TRANSPORT <br/> SAFETY
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Getting Around World Cup 2026. <span className="text-white font-medium">Navigate 16 host cities like a local.</span>
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Getting Around World Cup 2026. <span className="text-slate-900 dark:text-white font-medium">Navigate 16 host cities like a local.</span>
               </p>
             </motion.div>
           </div>
@@ -210,7 +210,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -218,7 +218,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -279,15 +279,15 @@ export default function ClientPage() {
 
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Availability & Cost</h3>
             <div className="grid md:grid-cols-3 gap-6 mb-12">
-              <div className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
+              <div className="p-8 bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
                 <strong className="block text-xl text-slate-900 dark:text-white mb-2">USA</strong>
                 <span className="text-slate-600 dark:text-slate-400 leading-relaxed">Uber & Lyft available in all 11 host cities. High availability.</span>
               </div>
-              <div className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
+              <div className="p-8 bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
                 <strong className="block text-xl text-slate-900 dark:text-white mb-2">Canada</strong>
                 <span className="text-slate-600 dark:text-slate-400 leading-relaxed">Uber & Lyft in Toronto & Vancouver. Very reliable.</span>
               </div>
-              <div className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
+              <div className="p-8 bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] border border-slate-200 dark:border-white/10">
                 <strong className="block text-xl text-slate-900 dark:text-white mb-2">Mexico</strong>
                 <span className="text-slate-600 dark:text-slate-400 leading-relaxed">Uber & DiDi in CDMX, Guadalajara, Monterrey. <span className="text-emerald-500 font-bold">Safer than taxis.</span></span>
               </div>
@@ -295,7 +295,7 @@ export default function ClientPage() {
 
             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">How to Ride Safely</h3>
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                   <ul className="space-y-6">
                     <li className="flex items-start gap-4">
                       <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" />
@@ -313,7 +313,7 @@ export default function ClientPage() {
                     </li>
                   </ul>
                </div>
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                   <ul className="space-y-6">
                     <li className="flex items-start gap-4">
                       <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" />
@@ -362,7 +362,7 @@ export default function ClientPage() {
                 <p className="text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed">
                   Taxis in US and Canadian cities are generally safe and strictly regulated. They are a good alternative if rideshare prices surge, though typically 20-50% more expensive.
                 </p>
-                <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/10">
+                <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/10">
                   <h4 className="font-bold text-xl text-slate-900 dark:text-white mb-6">Safety Checklist:</h4>
                   <ul className="space-y-4">
                     <li className="flex items-center gap-3 text-slate-600 dark:text-slate-400"><CheckCircle2 className="w-5 h-5 text-emerald-500"/> Only use official taxi stands at airports, hotels, and stations.</li>
@@ -429,7 +429,7 @@ export default function ClientPage() {
                   { city: "Los Angeles", desc: "Metro Rail/Bus. Improving, but coverage is limited. Rideshare often better for SoFi Stadium." },
                   { city: "Atlanta & Seattle", desc: "MARTA & Link Light Rail. Very safe, clean, and drops you right at the stadium gates." }
                 ].map((item, i) => (
-                  <div key={i} className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+                  <div key={i} className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
                     <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">{item.city}</h4>
                     <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">{item.desc}</p>
                   </div>
@@ -442,11 +442,11 @@ export default function ClientPage() {
             <div className="mb-12">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-700 pb-4">Canada Highlights</h3>
               <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+                <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
                   <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Toronto (TTC)</h4>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">Subway/Streetcar. Very safe, clean. Connects well to BMO Field via GO Train or streetcar.</p>
                 </div>
-                <div className="bg-white dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
+                <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-2xl border border-slate-200 dark:border-white/10 shadow-sm">
                   <h4 className="font-bold text-lg text-slate-900 dark:text-white mb-2">Vancouver (TransLink)</h4>
                   <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">SkyTrain/Bus. Excellent system. BC Place is right downtown, easily accessible.</p>
                 </div>
@@ -456,7 +456,7 @@ export default function ClientPage() {
             {/* Mexico Transit */}
             <div>
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-700 pb-4">Mexico Highlights</h3>
-              <div className="bg-white dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-sm mb-8">
+              <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-white/10 shadow-sm mb-8">
                 <h4 className="font-bold text-xl text-slate-900 dark:text-white mb-2">Mexico City (Metro)</h4>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
                   Massive, efficient, and incredibly cheap (~$0.30 USD). <span className="text-amber-600 font-bold">High pickpocket risk.</span> Women-only cars available (pink signs).
@@ -497,7 +497,7 @@ export default function ClientPage() {
           <Section id="walking" title="Walking & Rental Cars">
             <div className="grid md:grid-cols-2 gap-8">
               {/* Walking */}
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
                   <Footprints className="w-6 h-6 text-emerald-500"/> Walking Safety
                 </h3>
@@ -512,7 +512,7 @@ export default function ClientPage() {
               </div>
 
               {/* Rental Cars */}
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-3">
                   <Car className="w-6 h-6 text-emerald-500"/> Rental Cars
                 </h3>
@@ -538,3 +538,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

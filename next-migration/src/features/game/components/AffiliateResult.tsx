@@ -113,7 +113,7 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
             {/* Header Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/30 mb-8 shadow-lg">
                 <i className="ri-trophy-fill text-yellow-400"></i>
-                <span className="text-xs font-bold text-white uppercase tracking-[0.2em]">Official Prediction</span>
+                <span className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-[0.2em]">Official Prediction</span>
             </div>
 
             {/* Champion Flag */}
@@ -134,7 +134,7 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] italic leading-none mb-2"
+                className="text-5xl md:text-7xl font-black text-slate-900 dark:text-white uppercase tracking-tighter drop-shadow-[0_4px_4px_rgba(0,0,0,0.5)] italic leading-none mb-2"
             >
                 {champion.name}
             </motion.h2>
@@ -181,12 +181,12 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           className="group flex items-center justify-between p-4 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700 border border-slate-700 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-white transition-colors">
+            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-slate-900 dark:text-white transition-colors">
               <i className="ri-hotel-bed-line text-2xl"></i>
             </div>
             <div>
-              <div className="font-bold text-slate-200 group-hover:text-white">Book Hotels in NY</div>
-              <div className="text-xs text-slate-300">Best rates on Booking.com</div>
+              <div className="font-bold text-slate-200 group-hover:text-slate-900 dark:text-white">Book Hotels in NY</div>
+              <div className="text-xs text-slate-600 dark:text-slate-300">Best rates on Booking.com</div>
             </div>
           </div>
           <i className="ri-arrow-right-line text-slate-400 group-hover:translate-x-1 transition-transform"></i>
@@ -200,15 +200,15 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           className="group flex items-center justify-between p-4 bg-slate-800/80 backdrop-blur-sm hover:bg-slate-700 border border-slate-700 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-white transition-colors">
+            <div className="p-3 bg-[#008f63]/50 rounded-lg text-[#01b47d] group-hover:text-slate-900 dark:text-white transition-colors">
               <i className="ri-plane-line text-2xl"></i>
             </div>
             <div>
-              <div className="font-bold text-white group-hover:text-white">Find Flight Deals</div>
+              <div className="font-bold text-slate-900 dark:text-white group-hover:text-slate-900 dark:text-white">Find Flight Deals</div>
               <div className="text-xs text-slate-200">Compare prices on Skyscanner</div>
             </div>
           </div>
-          <i className="ri-arrow-right-line text-slate-300 group-hover:translate-x-1 transition-transform"></i>
+          <i className="ri-arrow-right-line text-slate-600 dark:text-slate-300 group-hover:translate-x-1 transition-transform"></i>
         </motion.a>
       </motion.div>
     </div>
@@ -216,3 +216,4 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
 };
 
 export default AffiliateResult;
+

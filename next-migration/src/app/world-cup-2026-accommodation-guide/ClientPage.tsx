@@ -100,7 +100,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
         <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
         {caption && (
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-white font-medium">{caption}</p>
+            <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
           </div>
         )}
       </div>
@@ -114,7 +114,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+            <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
               <X className="w-8 h-8" />
             </button>
             <motion.div
@@ -159,7 +159,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -186,7 +186,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -225,12 +225,12 @@ const Callout = ({ type = 'info', title, children }: { type?: 'info' | 'warning'
 };
 
 const Table = ({ headers, rows }: { headers: string[], rows: (string | React.ReactNode)[][] }) => (
-  <div className="overflow-x-auto my-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900/50">
+  <div className="overflow-x-auto my-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-50 dark:bg-slate-900/50">
     <table className="w-full text-left text-sm md:text-base">
-      <thead className="bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
+      <thead className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
         <tr>
           {headers.map((h, i) => (
-            <th key={i} className="p-6 whitespace-nowrap border-b border-slate-200 dark:border-slate-800">{h}</th>
+            <th key={i} className="p-6 whitespace-nowrap border-b border-slate-200 dark:border-slate-200 dark:border-slate-800">{h}</th>
           ))}
         </tr>
       </thead>
@@ -254,7 +254,7 @@ const CitySection = ({ city, country, stadium, capacity, neighborhoods }: {
   capacity: string,
   neighborhoods: Array<{ name: string, vibe: string, price: string, transit: string, bestFor: string }>
 }) => (
-  <div className="mb-20 p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group">
+  <div className="mb-20 p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group">
     <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
       <MapPin className="w-32 h-32 text-emerald-500" />
     </div>
@@ -390,7 +390,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -402,16 +402,16 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Updated June 2025
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 ACCOMMODATION<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">GUIDE 2026</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-2xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-2xl leading-relaxed">
                 Neighborhood breakdowns, price ranges, and verified strategies for finding a bed in all 16 host cities across the USA, Canada, and Mexico.
               </p>
             </motion.div>
@@ -427,7 +427,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -435,7 +435,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -455,7 +455,7 @@ export default function ClientPage() {
         {/* Main Content Column */}
         <main className="flex-1 min-w-0 pb-24">
           
-          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-200 dark:border-slate-800">
             <Info className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.
@@ -483,11 +483,11 @@ export default function ClientPage() {
               </p>
             </Callout>
 
-            <div className="my-12 p-10 bg-slate-900 dark:bg-slate-800 text-white rounded-[2.5rem] relative overflow-hidden shadow-2xl">
+            <div className="my-12 p-10 bg-slate-900 dark:bg-slate-800 text-slate-900 dark:text-white rounded-[2.5rem] relative overflow-hidden shadow-2xl">
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-2">Start Your Search Now</h3>
-                  <p className="text-slate-300 mb-0">Browse availability before the rush begins.</p>
+                  <p className="text-slate-600 dark:text-slate-300 mb-0">Browse availability before the rush begins.</p>
                 </div>
                 <AffiliateButton 
                   href="https://www.booking.com" 
@@ -537,7 +537,7 @@ export default function ClientPage() {
 
           <Section id="accommodation-types" title="Where Should You Stay?">
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 rounded-2xl flex items-center justify-center mb-6">
                   <Hotel className="w-7 h-7 text-blue-600 dark:text-blue-400" />
                 </div>
@@ -551,7 +551,7 @@ export default function ClientPage() {
                 </ul>
               </div>
 
-              <div className="bg-white dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-purple-100 dark:bg-purple-900/30 rounded-2xl flex items-center justify-center mb-6">
                   <Home className="w-7 h-7 text-purple-600 dark:text-purple-400" />
                 </div>
@@ -565,7 +565,7 @@ export default function ClientPage() {
                 </ul>
               </div>
 
-              <div className="bg-white dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
+              <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300">
                 <div className="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mb-6">
                   <Bed className="w-7 h-7 text-orange-600 dark:text-orange-400" />
                 </div>
@@ -788,7 +788,7 @@ export default function ClientPage() {
           </Section>
 
           <Section id="booking-strategy" title="Smart Booking Strategy">
-            <div className="bg-white dark:bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 shadow-xl">
+            <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl">
               <ol className="space-y-10">
                 <li className="flex gap-6">
                   <span className="flex-shrink-0 w-12 h-12 rounded-2xl bg-emerald-100 dark:bg-emerald-900/50 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-black text-xl shadow-inner">1</span>
@@ -891,3 +891,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

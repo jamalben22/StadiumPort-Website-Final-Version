@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Gillette Stadium World Cup 2026: Complete Stadium Guide',
-  description: 'Comprehensive guide for fans visiting Gillette Stadium for World Cup 2026. Seating chart, parking, transport, and Foxborough travel advice.',
+  title: 'Gillette Stadium World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to Gillette Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Boston.',
   keywords: 'Gillette Stadium World Cup 2026, Boston World Cup, Gillette Stadium Guide, World Cup 2026 Foxborough, stadium seating, travel guide',
   openGraph: {
-    title: 'Gillette Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Comprehensive guide for fans visiting Gillette Stadium for World Cup 2026. Seating chart, transportation, and local tips.',
+    title: 'Gillette Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Gillette Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Boston.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/gillette-stadium-guide',
     siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gillette Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Comprehensive guide for fans visiting Gillette Stadium for World Cup 2026.',
+    title: 'Gillette Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Gillette Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Boston.',
     images: ['/images/cities/boston-world-cup-2026-1600.webp'],
   },
 };
