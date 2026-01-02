@@ -1,25 +1,42 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupIClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles | Stadiumport',
+  title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles',
   description: 'The definitive guide for following Group I in World Cup 2026. Master the California Corridor (SF-LA). Pacific Coast Highway tips, stadium logistics, and budget strategy.',
-  keywords: 'World Cup 2026 Group I Travel Guide, Group I matches, San Francisco Los Angeles World Cup, California World Cup itinerary, Levi\'s Stadium guide, SoFi Stadium guide',
+  keywords: ['World Cup 2026 Group I Travel Guide', 'Group I matches', 'San Francisco Los Angeles World Cup', 'California World Cup itinerary', "Levi's Stadium guide", 'SoFi Stadium guide'],
   alternates: {
-    canonical: '/groups/group-i',
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-i',
   },
   openGraph: {
-    title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles | Stadiumport',
+    title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles',
     description: 'The definitive guide for following Group I in World Cup 2026. Master the California Corridor (SF-LA). Pacific Coast Highway tips, stadium logistics, and budget strategy.',
-    url: '/groups/group-i',
-  }
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-i',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group I Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles',
+    description: 'The definitive guide for following Group I in World Cup 2026. Master the California Corridor (SF-LA). Pacific Coast Highway tips, stadium logistics, and budget strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupIPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/groups/group-i';
+  const pageUrl = '/world-cup-2026-groups/group-i';
 
   const articleSchema = generateArticleSchema('group-i', pageUrl);
 

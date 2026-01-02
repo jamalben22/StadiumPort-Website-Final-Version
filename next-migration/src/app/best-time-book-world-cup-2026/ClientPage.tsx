@@ -101,7 +101,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
         <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
         {caption && (
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-white font-medium">{caption}</p>
+            <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
           </div>
         )}
       </div>
@@ -115,7 +115,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+            <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
               <X className="w-8 h-8" />
             </button>
             <motion.div
@@ -160,7 +160,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -187,7 +187,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -226,9 +226,9 @@ const Callout = ({ type = 'info', title, children }: { type?: 'info' | 'warning'
 };
 
 const Table = ({ headers, rows }: { headers: string[], rows: (string | React.ReactNode)[][] }) => (
-  <div className="overflow-x-auto my-12 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm">
+  <div className="overflow-x-auto my-12 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
     <table className="w-full text-left text-sm md:text-base">
-      <thead className="bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
+      <thead className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
         <tr>
           {headers.map((h, i) => (
             <th key={i} className="p-6 whitespace-nowrap">{h}</th>
@@ -318,16 +318,16 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Tips
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Verified Data
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 BOOKING <br/> TIMELINE
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                The difference between booking now and waiting? <span className="text-white font-medium">Potentially $2,000+ per person.</span> The definitive guide.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                The difference between booking now and waiting? <span className="text-slate-900 dark:text-white font-medium">Potentially $2,000+ per person.</span> The definitive guide.
               </p>
             </motion.div>
           </div>
@@ -342,7 +342,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -350,7 +350,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -394,8 +394,8 @@ export default function ClientPage() {
             <div className="my-12 p-10 bg-slate-900 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
               <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-2 text-white">Track Prices Automatically</h3>
-                  <p className="text-slate-300 mb-0 text-lg">Don't check every day. Let the deals come to you.</p>
+                  <h3 className="text-2xl font-bold mb-2 text-slate-900 dark:text-white">Track Prices Automatically</h3>
+                  <p className="text-slate-600 dark:text-slate-300 mb-0 text-lg">Don't check every day. Let the deals come to you.</p>
                 </div>
                 <AffiliateButton 
                   href="https://www.google.com/travel/flights" 
@@ -420,7 +420,7 @@ export default function ClientPage() {
                 { status: "future", time: "0-3 Months Out", phase: "Last Minute / Resale", desc: "High-stress zone. Relying on resale tickets and last-minute cancellations." }
               ].map((item, i) => (
                 <div key={i} className={`flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center border ${
-                  item.status === 'current' ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/10' : 'border-slate-200 dark:border-slate-800'
+                  item.status === 'current' ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-900/10' : 'border-slate-200 dark:border-slate-200 dark:border-slate-800'
                 }`}>
                   <div className={`shrink-0 w-48 font-black text-2xl ${
                     item.status === 'current' ? 'text-emerald-500' : 'text-slate-400'
@@ -456,7 +456,7 @@ export default function ClientPage() {
                     { phase: "Phase 2: FCFS", title: "First Come First Served", desc: "The digital queue. Tickets sell out in minutes. Be online 30 mins prior.", color: "blue" },
                     { phase: "Phase 3: Last Minute", title: "Last Minute Sales", desc: "Remaining inventory and official resale platform tickets appear here.", color: "purple" }
                   ].map((item, i) => (
-                    <div key={i} className="bg-slate-50 dark:bg-slate-900/50 p-6 rounded-[1.5rem] border border-slate-100 dark:border-slate-800">
+                    <div key={i} className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-6 rounded-[1.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800">
                       <span className={`block text-xs font-bold uppercase tracking-wider mb-2 text-${item.color}-600`}>{item.phase}</span>
                       <span className="block font-bold text-lg mb-2 text-slate-900 dark:text-white">{item.title}</span>
                       <span className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</span>
@@ -480,7 +480,7 @@ export default function ClientPage() {
                   />
                 </div>
 
-                <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700">
+                <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-700">
                   <h3 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">Secondary Market</h3>
                   <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                     Missed the official drop? Verified resale sites are your safety net, but expect to pay a premium.
@@ -514,7 +514,7 @@ export default function ClientPage() {
             />
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h3 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">Why 11 Months?</h3>
                 <ul className="space-y-4">
                   {[
@@ -529,7 +529,7 @@ export default function ClientPage() {
                   ))}
                 </ul>
               </div>
-              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+              <div className="p-8 rounded-[2rem] bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                  <h3 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">The "Dead Zone"</h3>
                  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                    Avoid booking 6-8 weeks out. This is when algorithms detect "urgency" and business travelers start booking, driving prices up by 40% or more.
@@ -612,7 +612,7 @@ export default function ClientPage() {
               Here is the historical data on how prices escalate as the tournament approaches.
             </p>
             
-            <div className="relative h-80 w-full bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 p-8 flex items-end justify-between gap-2 md:gap-4 overflow-hidden">
+            <div className="relative h-80 w-full bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 p-8 flex items-end justify-between gap-2 md:gap-4 overflow-hidden">
                 {[
                     { label: "12 Mo", height: "20%", price: "Base" },
                     { label: "9 Mo", height: "25%", price: "+5%" },
@@ -718,10 +718,10 @@ export default function ClientPage() {
             </div>
           </Section>
 
-          <section className="py-20 mt-20 bg-slate-900 rounded-[3rem] text-white text-center relative overflow-hidden mx-4 md:mx-0">
+          <section className="py-20 mt-20 bg-slate-900 rounded-[3rem] text-slate-900 dark:text-white text-center relative overflow-hidden mx-4 md:mx-0">
             <div className="relative z-10 container mx-auto px-4 max-w-3xl">
                 <h2 className="text-3xl md:text-5xl font-black mb-8 tracking-tight">Every Day You Wait Costs Money.</h2>
-                <p className="text-xl text-slate-300 mb-12 leading-relaxed">
+                <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 leading-relaxed">
                     The best time to start planning was yesterday. The second best time is right now. 
                     Set your alerts, check your passport, and get in the game.
                 </p>
@@ -750,3 +750,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

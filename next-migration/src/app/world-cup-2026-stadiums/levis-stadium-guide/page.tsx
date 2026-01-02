@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: "Levi's Stadium World Cup 2026: Complete Stadium Guide",
-  description: "Essential fan guide for Levi's Stadium during World Cup 2026. Seating chart, high-tech amenities, transport from San Francisco, and Santa Clara tips.",
+  title: "Levi's Stadium World Cup 2026 Guide: Seating & Tickets",
+  description: "Complete guide to Levi's Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for San Francisco/Bay Area.",
   keywords: "Levi's Stadium World Cup 2026, San Francisco World Cup, Levi's Stadium Guide, World Cup 2026 Santa Clara, stadium seating, travel guide",
   openGraph: {
-    title: "Levi's Stadium World Cup 2026: Complete Stadium Guide",
-    description: "Essential fan guide for Levi's Stadium during World Cup 2026. Seating chart, transportation, and local tips.",
+    title: "Levi's Stadium World Cup 2026 Guide: Seating & Tickets",
+    description: "Complete guide to Levi's Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for San Francisco/Bay Area.",
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/levis-stadium-guide',
     siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Levi's Stadium World Cup 2026: Complete Stadium Guide",
-    description: "Essential fan guide for Levi's Stadium during World Cup 2026.",
+    title: "Levi's Stadium World Cup 2026 Guide: Seating & Tickets",
+    description: "Complete guide to Levi's Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for San Francisco/Bay Area.",
     images: ['/images/cities/san-francisco-world-cup-2026-1600.webp'],
   },
 };

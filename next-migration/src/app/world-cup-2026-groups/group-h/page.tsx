@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupHClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta | Stadiumport',
- description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
- keywords: 'World Cup 2026 Group H Travel Guide, Group H matches, Miami Houston Atlanta World Cup, Southern Triangle World Cup itinerary, Hard Rock Stadium guide, NRG Stadium, Mercedes-Benz Stadium',
- alternates: {
-   canonical: '/groups/group-h',
- },
- openGraph: {
-   title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta | Stadiumport',
-   description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
-   url: '/groups/group-h',
- }
+  title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta',
+  description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
+  keywords: ['World Cup 2026 Group H Travel Guide', 'Group H matches', 'Miami Houston Atlanta World Cup', 'Southern Triangle World Cup itinerary', 'Hard Rock Stadium guide', 'NRG Stadium', 'Mercedes-Benz Stadium'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-h',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta',
+    description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-h',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group H Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta',
+    description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupHPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-h';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-h';
 
- const articleSchema = generateArticleSchema('group-h', pageUrl);
+  const articleSchema = generateArticleSchema('group-h', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",

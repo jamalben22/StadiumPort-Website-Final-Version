@@ -173,11 +173,6 @@ export default function GroupDPage() {
           
           <div className="container mx-auto max-w-7xl relative z-10">
             <div className="max-w-4xl">
-              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-amber-700 dark:text-amber-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
-                <MapPin className="w-3 h-3" />
-                Ultimate Travel Guide
-              </div>
-              
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
                 World Cup 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 to-orange-500 dark:from-amber-400 dark:to-orange-300">Group D Strategy</span>

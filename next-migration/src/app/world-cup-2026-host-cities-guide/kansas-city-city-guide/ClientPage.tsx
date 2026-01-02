@@ -89,7 +89,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
  {caption && (
  <div className="absolute bottom-0 left-0 right-0 p-6">
- <p className="text-white font-medium">{caption}</p>
+ <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
  </div>
  )}
  </div>
@@ -103,7 +103,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
  className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
  onClick={() => setIsOpen(false)}
  >
- <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+ <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
  <X className="w-8 h-8" />
  </button>
  <motion.div
@@ -148,7 +148,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -167,7 +167,7 @@ const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'prima
 };
 
 const HotelCard = ({ name, rating, price, distance, features, image, link }: { name: string, rating: number, price: string, distance: string, features: string[], image: string, link: string }) => (
- <div className="group rounded-[2rem] overflow-hidden bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
+ <div className="group rounded-[2rem] overflow-hidden bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
   <div className="flex flex-col md:flex-row h-full">
    <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
     <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
@@ -206,7 +206,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
    <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
     {question}
    </h3>
-   <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+   <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
     <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
    </span>
   </summary>
@@ -266,7 +266,7 @@ export default function ClientPage() {
     src="/images/cities/kansas-city-world-cup-2026-1600.webp" 
     alt="Kansas City Skyline" 
     fill 
-    className="object-cover opacity-80"
+    className="object-cover"
     priority sizes="100vw"
     unoptimized />
    <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
@@ -280,7 +280,7 @@ export default function ClientPage() {
                     { label: "Host Cities", href: "/world-cup-2026-host-cities-guide" },
                     { label: "Kansas City", href: "/world-cup-2026-host-cities-guide/kansas-city-city-guide" }
                   ]} 
-                  variant="light"
+                  
                   className="mb-6"
                 />
 
@@ -290,19 +290,19 @@ export default function ClientPage() {
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+ <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Host City
  </span>
- <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+ <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
  Quarterfinal Host
  </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+ <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
  KANSAS CITY
  </h1>
- <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
- Heart of America. <span className="text-white font-medium">World Cup 2026</span> definitive guide.
+ <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+ Heart of America. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
  </p>
  </motion.div>
  </div>
@@ -325,7 +325,7 @@ export default function ClientPage() {
  className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
  activeSection === link.id 
  ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
- : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+ : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
  }`}
  onClick={() => setActiveSection(link.id)}
  >
@@ -366,7 +366,7 @@ export default function ClientPage() {
  { icon: Car, title: "Transport Strategy", text: "KC is a driving city. Use the free streetcar downtown, but plan for shuttles or rideshare to reach Arrowhead." },
  { icon: DollarSign, title: "Budget Signals", text: "Generally more affordable than coastal hosts, but demand for the Quarterfinal will spike hotel rates." }
  ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 transition-colors">
+ <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
  <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
@@ -381,12 +381,12 @@ export default function ClientPage() {
 
  <Section id="visa" title="Visa & Entry (USA)">
    <div className="grid md:grid-cols-2 gap-8">
-    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+    <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
      <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
      <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
      <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
     </div>
-    <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+    <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
      <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
  <ul className="space-y-4 mb-8">
  {['Use MCI’s new terminal automated control', 'Proof of onward travel required', 'Carry digital copies of tickets'].map((item, i) => (
@@ -407,7 +407,7 @@ export default function ClientPage() {
  { time: "3–6 Months Out", desc: "Confirm match tickets. Reserve airport transfers and key BBQ restaurants like Joe's KC and Q39." },
  { time: "1–3 Months Out", desc: "Lock in eSIMs, clear stadium bags, and museum tickets. Re-price hotels weekly; big events often trigger cancellations." }
  ].map((item, i) => (
- <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+ <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
  <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
  <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
  </div>
@@ -426,7 +426,7 @@ export default function ClientPage() {
  { title: "Comfort Upgrades", items: ["Downtown 4-star hotels", "Rideshare to stadium", "Craft brewery tours"] },
  { title: "Premium", items: ["Plaza luxury hotels", "Private car service", "VIP Jazz experiences"] }
  ].map((tier, i) => (
- <div key={i} className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+ <div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
  <ul className="space-y-4">
  {tier.items.map((item, j) => (
@@ -458,7 +458,7 @@ export default function ClientPage() {
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
      <ul className="space-y-4">
       {[
@@ -474,7 +474,7 @@ export default function ClientPage() {
       ))}
      </ul>
     </div>
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Tailgating: Essential part of the experience. Arrive early.</li>
@@ -498,7 +498,7 @@ export default function ClientPage() {
  { title: "Clear Bag", text: "Strict clear bag policy. Bring sealed water and sunscreen as the stadium is open-air." },
  { title: "Exit Plan", text: "Expect delays leaving the parking complex. Plan to hang out post-match or use the dedicated rideshare lot." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+ <div key={i} className="p-6 rounded-2xl bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
@@ -511,7 +511,7 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
- <div className="bg-emerald-900 dark:bg-emerald-950 text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
+ <div className="bg-emerald-900 dark:bg-emerald-950 text-slate-900 dark:text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
@@ -534,14 +534,14 @@ export default function ClientPage() {
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
-  <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+  <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
    <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
    <p className="text-slate-600 dark:text-slate-400 mb-8">
     The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
    </p>
    <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
   </div>
-  <div className="p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
+  <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
    <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Quarterfinal.
@@ -629,7 +629,7 @@ export default function ClientPage() {
  </div>
  </div>
  
- <div className="rounded-[2.5rem] p-8 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 h-fit">
+ <div className="rounded-[2.5rem] p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 h-fit">
    <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
    <ul className="space-y-6">
     {[
@@ -658,7 +658,7 @@ export default function ClientPage() {
  { title: "Q39", desc: "Competition-style BBQ in a rustic-chic setting. The burnt end burger and brisket are must-try items." },
  { title: "Arthur Bryant's", desc: "The 'King of Ribs'. Historic spot near the 18th & Vine Jazz District. Authentic and gritty." }
  ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 shadow-lg border border-slate-200 dark:border-white/10 hover:-translate-y-2 transition-transform duration-300">
+ <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 shadow-lg border border-slate-200 dark:border-white/10 hover:-translate-y-2 transition-transform duration-300">
  <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
@@ -679,7 +679,7 @@ export default function ClientPage() {
  { title: "Nelson-Atkins Museum of Art", desc: "Renowned for its neoclassical architecture and extensive collection of Asian art. Free admission.", color: "text-emerald-500" },
  { title: "Negro Leagues Baseball Museum", desc: "A profound look at the history of African American baseball. Located in the historic 18th & Vine district.", color: "text-amber-500" }
  ].map((item, i) => (
- <div key={i} className="flex gap-6 items-center p-6 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-3xl transition-colors shadow-sm hover:shadow-md">
+ <div key={i} className="flex gap-6 items-center p-6 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-3xl transition-colors shadow-sm hover:shadow-md">
  <div className=" p-4 rounded-2xl shadow-sm shrink-0">
  <Camera className={`w-8 h-8 ${item.color}`} />
  </div>
@@ -697,11 +697,11 @@ export default function ClientPage() {
 
  <Section id="safety" title="Safety & Security">
    <div className="grid md:grid-cols-2 gap-8">
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-500"/> Event Patterns</h4>
      <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Downtown and the Plaza are safe tourist areas. Be cautious in unlit areas late at night. The stadium atmosphere is intense but generally safe.</p>
     </div>
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Practical Tips</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li>• Use official rideshare pickup zones.</li>
@@ -723,7 +723,7 @@ export default function ClientPage() {
  { title: "Dining Etiquette", desc: "BBQ is often casual/counter service. Don't be afraid to use your hands. Ask locals for their favorite spot." },
  { title: "Jazz Heritage", desc: "Visit the Blue Room or Green Lady Lounge for authentic jazz. Shows go late into the night." }
  ].map((item, i) => (
- <div key={i} className="p-6 bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl">
+ <div key={i} className="p-6 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.desc}</p>
  </div>
@@ -733,11 +733,11 @@ export default function ClientPage() {
 
  <Section id="packing" title="Climate & Packing">
    <div className="grid md:grid-cols-3 gap-6">
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> June July Weather</h4>
      <p className="text-slate-600 dark:text-slate-400">Hot and humid. Highs of 85 95 F. Sudden thunderstorms are possible.</p>
     </div>
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-4">Essentials</h4>
      <ul className="space-y-2 text-slate-600 dark:text-slate-400">
       <li> Sunscreen & Hat</li>
@@ -745,7 +745,7 @@ export default function ClientPage() {
       <li> Comfortable walking shoes</li>
      </ul>
     </div>
-    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+    <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
      <h4 className="font-bold text-xl mb-4">Tech</h4>
  <ul className="space-y-2 text-slate-600 dark:text-slate-400 mb-6">
  <li>• US plug adapters (Type A/B)</li>
@@ -784,7 +784,7 @@ export default function ClientPage() {
 
  <Section id="essential" title="Essential Information">
  <div className="grid md:grid-cols-2 gap-8">
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Shield className="w-6 h-6 text-emerald-500"/> Emergency Numbers</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Emergency</strong> <span>911</span></li>
@@ -792,7 +792,7 @@ export default function ClientPage() {
  <li className="flex justify-between"><strong>Hospital</strong> <span>KU Medical Center</span></li>
  </ul>
  </div>
- <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+ <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-emerald-500"/> Connectivity</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400 mb-6">
  <li>• <strong>WiFi:</strong> Free on Streetcar & MCI Airport.</li>
@@ -804,31 +804,31 @@ export default function ClientPage() {
  </div>
  </Section>
 
- <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
+ <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
         <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Link href="/world-cup-2026-host-cities-guide/new-york-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/new-york-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             New York/New Jersey
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/los-angeles-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/los-angeles-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Los Angeles
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Mexico City
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/toronto-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/toronto-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Toronto
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/dallas-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/dallas-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Dallas
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/miami-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/miami-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Miami
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/seattle-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/seattle-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Seattle
           </Link>
-          <Link href="/world-cup-2026-host-cities-guide/boston-city-guide" className="block p-4 border border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+          <Link href="/world-cup-2026-host-cities-guide/boston-city-guide" className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
             Boston
           </Link>
         </div>
@@ -843,6 +843,8 @@ export default function ClientPage() {
  </div>
  );
 }
+
+
 
 
 

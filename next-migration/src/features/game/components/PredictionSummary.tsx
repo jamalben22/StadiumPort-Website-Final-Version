@@ -202,14 +202,14 @@ export const PredictionSummary = () => {
                 {sf1LoserId && getTeam(sf1LoserId)?.flagUrl && <img src={getTeam(sf1LoserId)!.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf1LoserId || '')?.name || 'TBD'}</span>
               </div>
-              {tpWinner?.id === sf1LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</span>}
+              {tpWinner?.id === sf1LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 dark:text-white px-2 py-0.5 rounded">WIN</span>}
             </div>
             <div className={`mt-2 flex items-center justify-between p-2 rounded ${tpWinner?.id === (sf2LoserId || '') ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40' : ''}`}>
               <div className="flex items-center gap-3">
                 {sf2LoserId && getTeam(sf2LoserId)?.flagUrl && <img src={getTeam(sf2LoserId)!.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf2LoserId || '')?.name || 'TBD'}</span>
               </div>
-              {tpWinner?.id === sf2LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-white px-2 py-0.5 rounded">WIN</span>}
+              {tpWinner?.id === sf2LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 dark:text-white px-2 py-0.5 rounded">WIN</span>}
             </div>
             <div className="mt-3 text-[10px] text-slate-700 font-bold">4th: {tpLoser?.name || 'TBD'}</div>
           </div>
@@ -248,7 +248,7 @@ export const PredictionSummary = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M15 18l-6-6 6-6"></path></svg>
           </button>
           <button
-            className="rounded-full h-10 px-6 text-xs font-bold tracking-widest uppercase transition-all duration-200 flex items-center justify-center whitespace-nowrap bg-black text-white shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+            className="rounded-full h-10 px-6 text-xs font-bold tracking-widest uppercase transition-all duration-200 flex items-center justify-center whitespace-nowrap bg-black text-slate-900 dark:text-white shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
             onClick={() => setCurrentStep(4)}
             aria-label="Confirm & Submit"
             type="button"
@@ -262,3 +262,4 @@ export const PredictionSummary = () => {
 }
 
 export default PredictionSummary
+

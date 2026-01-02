@@ -106,7 +106,7 @@ const SocialShare = () => {
         >
           {copied ? <CheckCircle2 className="w-5 h-5 text-emerald-500" /> : <Copy className="w-5 h-5" />}
           {copied && (
-            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-white text-xs rounded whitespace-nowrap">
+            <span className="absolute left-full ml-2 px-2 py-1 bg-emerald-500 text-slate-900 dark:text-white text-xs rounded whitespace-nowrap">
               Copied!
             </span>
           )}
@@ -142,7 +142,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -166,7 +166,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -239,7 +239,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -252,16 +252,16 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Official Medical Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Essential Read
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 HEALTH & <br/> MEDICAL
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Stay Safe & Healthy. <span className="text-white font-medium">World Cup 2026</span> definitive preparedness guide.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Stay Safe & Healthy. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive preparedness guide.
               </p>
             </motion.div>
           </div>
@@ -276,7 +276,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -284,7 +284,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -330,7 +330,7 @@ export default function ClientPage() {
                 { icon: DollarSign, title: "Cost Savings", text: "Avoid expensive ER visits and emergency evacuations with proper insurance." },
                 { icon: HeartPulse, title: "Peace of Mind", text: "Enjoy the matches knowing you are prepared for any medical situation." }
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-[2rem] transition-colors bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+                <div key={i} className="p-8 rounded-[2rem] transition-colors bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
                   <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
@@ -341,7 +341,7 @@ export default function ClientPage() {
 
           <Section id="prep" title="Pre-Departure Preparation">
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4 flex items-center gap-3">
                   <Stethoscope className="w-6 h-6 text-emerald-500" /> Doctor Visit
                 </h4>
@@ -356,7 +356,7 @@ export default function ClientPage() {
                   ))}
                 </ul>
               </div>
-              <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+              <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4 flex items-center gap-3">
                   <ListChecks className="w-6 h-6 text-emerald-500" /> Vaccinations
                 </h4>
@@ -389,7 +389,7 @@ export default function ClientPage() {
               </div>
             </div>
             
-            <div className="p-8 bg-slate-50 dark:bg-slate-900/50 rounded-[2rem]">
+            <div className="p-8 bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem]">
               <h4 className="font-bold text-2xl mb-6 text-slate-900 dark:text-white">Medical Documentation</h4>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                  {[
@@ -469,7 +469,7 @@ export default function ClientPage() {
                 { title: "Carry-On Only", text: "NEVER check essential medication. Lost bags happen." },
                 { title: "Doctor's Letter", text: "Carry a signed letter, especially for controlled substances." }
               ].map((item, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
                    <Pill className="w-10 h-10 text-emerald-500 mb-6" />
                    <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
                    <p className="text-slate-600 dark:text-slate-400">{item.text}</p>
@@ -477,13 +477,13 @@ export default function ClientPage() {
               ))}
             </div>
 
-            <div className="bg-slate-900 text-white p-8 rounded-[2rem] relative overflow-hidden">
+            <div className="bg-slate-900 text-slate-900 dark:text-white p-8 rounded-[2rem] relative overflow-hidden">
                <div className="relative z-10">
                  <h3 className="text-2xl font-bold mb-6 flex items-center gap-3"><HeartPulse className="w-6 h-6 text-emerald-400"/> Travel Medical Kit Essentials</h3>
                  <div className="grid sm:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-bold text-emerald-400 mb-3 uppercase tracking-wider text-sm">Pain & Fever</h4>
-                      <ul className="space-y-2 text-slate-300">
+                      <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                         <li>• Ibuprofen (Advil)</li>
                         <li>• Acetaminophen (Tylenol)</li>
                         <li>• Aspirin</li>
@@ -491,7 +491,7 @@ export default function ClientPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-emerald-400 mb-3 uppercase tracking-wider text-sm">Digestive</h4>
-                      <ul className="space-y-2 text-slate-300">
+                      <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                         <li>• Imodium (ESSENTIAL for Mexico)</li>
                         <li>• Pepto-Bismol / Tums</li>
                         <li>• Probiotics</li>
@@ -499,7 +499,7 @@ export default function ClientPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-emerald-400 mb-3 uppercase tracking-wider text-sm">First Aid</h4>
-                      <ul className="space-y-2 text-slate-300">
+                      <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                         <li>• Band-aids & Neosporin</li>
                         <li>• Moleskin (for blisters)</li>
                         <li>• Tweezers & Thermometer</li>
@@ -507,7 +507,7 @@ export default function ClientPage() {
                     </div>
                     <div>
                       <h4 className="font-bold text-emerald-400 mb-3 uppercase tracking-wider text-sm">Must-Haves</h4>
-                      <ul className="space-y-2 text-slate-300">
+                      <ul className="space-y-2 text-slate-600 dark:text-slate-300">
                         <li>• Electrolyte packets (Liquid IV)</li>
                         <li>• Sunscreen SPF 50+</li>
                         <li>• Insect Repellent (DEET)</li>
@@ -546,7 +546,7 @@ export default function ClientPage() {
                   emergency: "Dial 911" 
                 }
               ].map((item, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500 transition-colors group">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500 transition-colors group">
                   <div className="text-4xl mb-4">{item.flag}</div>
                   <h4 className="font-bold text-2xl mb-6 text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">{item.country}</h4>
                   <ul className="space-y-4 text-slate-600 dark:text-slate-400">
@@ -568,7 +568,7 @@ export default function ClientPage() {
             </div>
             
             <div className="mt-12 grid md:grid-cols-2 gap-8">
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem]">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem]">
                  <h4 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">Montezuma's Revenge</h4>
                  <p className="text-slate-600 dark:text-slate-400 mb-4">Very common in Mexico. Caused by bacteria in water/food.</p>
                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -577,7 +577,7 @@ export default function ClientPage() {
                    <li className="flex gap-2"><CheckCircle2 className="w-5 h-5 text-emerald-500"/> Hydrate & Imodium.</li>
                  </ul>
                </div>
-               <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem]">
+               <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem]">
                  <h4 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">Altitude Sickness (CDMX)</h4>
                  <p className="text-slate-600 dark:text-slate-400 mb-4">Mexico City is at 7,350 ft. The air is thinner.</p>
                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -623,7 +623,7 @@ export default function ClientPage() {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                  <h4 className="font-bold text-xl mb-4">Blisters & Feet</h4>
                  <p className="text-slate-600 dark:text-slate-400 mb-4">You will walk 5-10 miles on match day.</p>
                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -632,7 +632,7 @@ export default function ClientPage() {
                    <li>• Apply moleskin to hotspots immediately.</li>
                  </ul>
                </div>
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                  <h4 className="font-bold text-xl mb-4">Sunburn</h4>
                  <p className="text-slate-600 dark:text-slate-400 mb-4">Sun intensity is high in host cities.</p>
                  <ul className="space-y-2 text-sm text-slate-600 dark:text-slate-400">
@@ -655,7 +655,7 @@ export default function ClientPage() {
                 { title: "Asthma", items: ["Air quality can trigger", "Bring extra inhalers", "Know your triggers"] },
                 { title: "Allergies", items: ["Translation cards", "Bring 2+ EpiPens", "Research local cuisine"] }
               ].map((tier, i) => (
-                <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+                <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
                   <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
                   <ul className="space-y-4">
                     {tier.items.map((item, j) => (
@@ -693,20 +693,20 @@ export default function ClientPage() {
                  </ul>
                </div>
              </div>
-             <div className="p-8 bg-slate-900 rounded-[2rem] text-white">
+             <div className="p-8 bg-slate-900 rounded-[2rem] text-slate-900 dark:text-white">
                 <h4 className="font-bold text-2xl mb-6">Finding Help Abroad</h4>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div>
                     <strong className="block text-emerald-400 mb-2">USA</strong>
-                    <p className="text-slate-300 text-sm">Google "Urgent care near me".</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm">Google "Urgent care near me".</p>
                   </div>
                   <div>
                     <strong className="block text-emerald-400 mb-2">Canada</strong>
-                    <p className="text-slate-300 text-sm">Look for "Walk-in clinic".</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm">Look for "Walk-in clinic".</p>
                   </div>
                   <div>
                     <strong className="block text-emerald-400 mb-2">Mexico</strong>
-                    <p className="text-slate-300 text-sm">Ask concierge for private doctor. Use insurance assistance.</p>
+                    <p className="text-slate-600 dark:text-slate-300 text-sm">Ask concierge for private doctor. Use insurance assistance.</p>
                   </div>
                 </div>
              </div>
@@ -720,7 +720,7 @@ export default function ClientPage() {
                 { time: "2–3 Weeks Out", title: "Supplies", desc: "Build first aid kit. Buy OTC meds. Copy medical docs." },
                 { time: "1 Week Out", title: "Pack & Prep", desc: "Pack meds in carry-on. Test translation apps. Break in shoes." }
               ].map((item, i) => (
-                <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800">
+                <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
                   <div>
                     <h4 className="font-bold text-xl text-slate-900 dark:text-white mb-2">{item.title}</h4>
@@ -757,9 +757,9 @@ export default function ClientPage() {
           </Section>
 
           {/* Conclusion */}
-          <div className="bg-slate-900 text-white rounded-[2rem] p-8 md:p-12 text-center mt-12">
+          <div className="bg-slate-900 text-slate-900 dark:text-white rounded-[2rem] p-8 md:p-12 text-center mt-12">
             <h2 className="text-3xl font-bold mb-6">Preparedness is Peace of Mind</h2>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
               Your health is the foundation of your World Cup experience. Proper preparation ensures you'll remember the goals, not the stomach cramps.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -774,3 +774,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

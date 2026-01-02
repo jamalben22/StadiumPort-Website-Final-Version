@@ -1,33 +1,38 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-
-export const metadata: Metadata = {
- title: 'San Francisco Bay Area World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Plan World Cup 2026 in San Francisco Bay Area: Levi\'s Stadium tips, best SF/Santa Clara hotels, Caltrain strategy, dining, safety, packing, and insider advice.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/san-francisco-city-guide',
- },
- openGraph: {
- title: 'San Francisco Bay Area World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Everything you need for World Cup 2026 in San Francisco Bay Area: Levi\'s Stadium overview, SF vs Santa Clara hotels, Caltrain routes, matchday plan, and local secrets.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/san-francisco-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/san-francisco-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'San Francisco Bay Area World Cup 2026 Guide',
- },
- ],
- },
- keywords: ['San Francisco World Cup 2026', 'Levi\'s Stadium', 'Santa Clara World Cup', 'San Francisco hotels', 'Santa Clara hotels', 'Caltrain to Levi\'s Stadium', 'San Francisco travel tips', 'World Cup tickets San Francisco', 'SF CityPASS', 'Bay Area fan zones'],
-};
-
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: "San Francisco World Cup 2026 Guide: Levi's Stadium & Travel Tips",
+  description: "Complete San Francisco World Cup 2026 travel guide. Levi's Stadium info, best hotels, Caltrain tips, fan zones & match schedule. Plan your trip.",
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/san-francisco-city-guide',
+  },
+  openGraph: {
+    title: "San Francisco World Cup 2026 Guide: Levi's Stadium & Travel Tips",
+    description: "Complete San Francisco World Cup 2026 travel guide. Levi's Stadium info, best hotels, Caltrain tips, fan zones & match schedule. Plan your trip.",
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/san-francisco-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/san-francisco-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'San Francisco Bay Area World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'San Francisco Bay Area World Cup 2026 Travel Guide',
+    description: 'Everything you need for World Cup 2026 in San Francisco Bay Area: Levi\'s Stadium overview, SF vs Santa Clara hotels, Caltrain routes, matchday plan, and local secrets.',
+    images: ['/images/cities/san-francisco-world-cup-2026.webp'],
+  },
+  keywords: ['San Francisco World Cup 2026', 'Levi\'s Stadium', 'Santa Clara World Cup', 'San Francisco hotels', 'Santa Clara hotels', 'Caltrain to Levi\'s Stadium', 'San Francisco travel tips', 'World Cup tickets San Francisco', 'SF CityPASS', 'Bay Area fan zones'],
+};
 
 export default function Page() {
   const jsonLd = generateArticleSchema('san-francisco-city-guide', '/world-cup-2026-host-cities-guide/san-francisco-city-guide');

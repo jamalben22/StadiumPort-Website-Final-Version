@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'AT&T Stadium World Cup 2026: Complete Stadium Guide',
-  description: 'Your essential guide to AT&T Stadium for World Cup 2026. Information on seating, retractable roof, transportation, and match day tips for Arlington.',
+  title: 'AT&T Stadium World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to AT&T Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Dallas.',
   keywords: 'AT&T Stadium World Cup 2026, Dallas World Cup, AT&T Stadium Guide, World Cup 2026 Arlington, stadium seating, travel guide',
   openGraph: {
-    title: 'AT&T Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Your essential guide to AT&T Stadium for World Cup 2026. Information on seating, transportation, and local tips.',
+    title: 'AT&T Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to AT&T Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Dallas.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/att-stadium-guide',
     siteName: 'Stadiumport',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AT&T Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Your essential guide to AT&T Stadium for World Cup 2026.',
+    title: 'AT&T Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to AT&T Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Dallas.',
     images: ['/images/cities/dallas-world-cup-2026-1600.webp'],
   },
 };

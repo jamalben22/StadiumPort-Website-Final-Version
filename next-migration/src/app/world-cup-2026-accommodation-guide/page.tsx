@@ -4,25 +4,34 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
 
-const slug = 'world-cup-2026-accommodation-guide';
-const meta = getContentMeta(slug);
-
 export const metadata: Metadata = {
-  title: meta?.title || 'World Cup 2026 Accommodation Guide',
-  description: meta?.description || 'Where to stay for World Cup 2026. Complete guide to hotels, hostels, and rentals in all 16 host cities.',
+  title: 'World Cup 2026 Accommodation Guide: Best Hotels & Where to Stay',
+  description: 'Complete guide to World Cup 2026 hotels & accommodation. Best areas to stay, booking tips & hostel options for all 16 host cities in USA, Canada & Mexico.',
+  keywords: [
+    'World Cup 2026 accommodation',
+    'World Cup 2026 hotels',
+    'where to stay World Cup 2026',
+    'World Cup 2026 hostels',
+    'cheap hotels World Cup 2026',
+    'World Cup 2026 rental apartments',
+    'World Cup 2026 housing',
+    'best hotels for World Cup 2026',
+    'booking World Cup 2026',
+    'stadium hotels World Cup 2026'
+  ],
   alternates: {
-    canonical: `/world-cup-2026-accommodation-guide`,
+    canonical: 'https://stadiumport.com/world-cup-2026-accommodation-guide',
   },
   openGraph: {
-    title: meta?.title || 'World Cup 2026 Accommodation Guide',
-    description: meta?.description || 'Where to stay for World Cup 2026. Complete guide to hotels, hostels, and rentals in all 16 host cities.',
+    title: 'World Cup 2026 Accommodation Guide: Best Hotels & Where to Stay',
+    description: 'Complete guide to World Cup 2026 hotels & accommodation. Best areas to stay, booking tips & hostel options for all 16 host cities in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-accommodation-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
       {
-        url: meta?.image || '/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Accommodation%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Accommodation Guide',
@@ -31,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: meta?.title || 'World Cup 2026 Accommodation Guide',
-    description: meta?.description || 'Where to stay for World Cup 2026. Complete guide to hotels, hostels, and rentals in all 16 host cities.',
-    images: [meta?.image || '/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp'],
+    title: 'World Cup 2026 Accommodation Guide: Best Hotels & Where to Stay',
+    description: 'Complete guide to World Cup 2026 hotels & accommodation. Best areas to stay, booking tips & hostel options for all 16 host cities in USA, Canada & Mexico.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Accommodation%20Guide%20Illustration.webp'],
   },
 };
 

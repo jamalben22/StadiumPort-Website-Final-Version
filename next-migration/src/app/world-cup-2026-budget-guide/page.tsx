@@ -6,8 +6,9 @@ import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
   description: 'The ultimate World Cup 2026 budget guide. Verified costs for tickets, flights, and hotels in USA, Canada & Mexico. Plus 15+ proven money-saving strategies.',
+  keywords: ['World Cup 2026 budget', 'World Cup 2026 cost', 'World Cup 2026 ticket prices', 'World Cup 2026 flights', 'cheap hotels World Cup 2026', 'save money World Cup 2026', 'World Cup travel budget'],
   alternates: {
-    canonical: '/world-cup-2026-budget-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-budget-guide',
   },
   openGraph: {
     title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
@@ -18,14 +19,19 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/travel-tips/World Cup 2026 Budget Guide Cover Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Budget%20Guide%20Cover%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Budget Guide',
       },
     ],
   },
-  keywords: ['World Cup 2026 budget', 'World Cup 2026 cost', 'World Cup 2026 ticket prices', 'World Cup 2026 flights', 'cheap hotels World Cup 2026', 'save money World Cup 2026', 'World Cup travel budget'],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
+    description: 'The ultimate World Cup 2026 budget guide. Verified costs for tickets, flights, and hotels in USA, Canada & Mexico. Plus 15+ proven money-saving strategies.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Budget%20Guide%20Cover%20Illustration.webp'],
+  },
 };
 
 export default function BudgetGuidePage() {

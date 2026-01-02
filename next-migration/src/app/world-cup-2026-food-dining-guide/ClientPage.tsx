@@ -119,7 +119,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
         <div className="absolute inset-0 bg-transparent group-hover:bg-black/20 transition-colors duration-300" />
         {caption && (
           <div className="absolute bottom-0 left-0 right-0 p-6">
-            <p className="text-white font-medium">{caption}</p>
+            <p className="text-slate-900 dark:text-white font-medium">{caption}</p>
           </div>
         )}
       </div>
@@ -133,7 +133,7 @@ const LightboxImage = ({ src, alt, caption }: { src: string, alt: string, captio
             className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           >
-            <button className="absolute top-8 right-8 text-white/50 hover:text-white p-2">
+            <button className="absolute top-8 right-8 text-white/50 hover:text-slate-900 dark:text-white p-2">
               <X className="w-8 h-8" />
             </button>
             <motion.div
@@ -178,10 +178,10 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' | 'alert' | 'gold', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent",
-    alert: "bg-amber-600 hover:bg-amber-700 text-white shadow-amber-900/20",
+    alert: "bg-amber-600 hover:bg-amber-700 text-slate-900 dark:text-white shadow-amber-900/20",
     gold: "bg-amber-400 hover:bg-amber-500 text-slate-900 shadow-amber-500/20"
   };
 
@@ -209,7 +209,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -286,26 +286,26 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="flex items-center gap-2 text-sm font-medium text-white/60 mb-6 tracking-wide uppercase">
-                <Link href="/" className="hover:text-white transition-colors">Home</Link>
+                <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-white transition-colors">Travel Tips</Link>
+                <Link href="/world-cup-2026-travel-tips" className="hover:text-slate-900 dark:text-white transition-colors">Travel Tips</Link>
                 <span className="text-white/40">/</span>
-                <span className="text-white">Food & Dining Guide</span>
+                <span className="text-slate-900 dark:text-white">Food & Dining Guide</span>
               </div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Tips
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Updated Dec 2025
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 FOOD & <br/> DINING GUIDE
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Eating Well on Any Budget. <span className="text-white font-medium">From street tacos to Michelin stars.</span> Your definitive culinary guide to 16 host cities.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Eating Well on Any Budget. <span className="text-slate-900 dark:text-white font-medium">From street tacos to Michelin stars.</span> Your definitive culinary guide to 16 host cities.
               </p>
             </motion.div>
           </div>
@@ -320,7 +320,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -328,7 +328,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                       ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                      : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                      : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -343,7 +343,7 @@ export default function ClientPage() {
               ))}
             </div>
             
-            <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white">
+            <div className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-600 text-slate-900 dark:text-white">
               <h3 className="font-bold text-xl mb-2">Book Dining Early</h3>
               <p className="text-emerald-100 text-sm mb-6">Top restaurants will book out months in advance.</p>
               <AffiliateButton href="https://www.opentable.com/" text="Reserve on OpenTable" variant="secondary" icon={Clock} />
@@ -432,12 +432,12 @@ export default function ClientPage() {
                       note: "The full culinary experience with cocktails."
                   }
               ].map((tier, i) => (
-                <div key={i} className={`p-8 rounded-[2rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 ${tier.colorClass} transition-all duration-300 hover:shadow-2xl`}>
+                <div key={i} className={`p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800 ${tier.colorClass} transition-all duration-300 hover:shadow-2xl`}>
                     <h3 className={`text-2xl font-bold ${tier.textClass} mb-2`}>{tier.title}</h3>
                     <div className="text-3xl font-black text-slate-900 dark:text-white mb-6">{tier.price}</div>
                     <ul className="space-y-4 mb-8">
                         {tier.items.map((item, j) => (
-                            <li key={j} className="flex justify-between items-center text-sm border-b border-slate-100 dark:border-slate-800 pb-2 last:border-0">
+                            <li key={j} className="flex justify-between items-center text-sm border-b border-slate-100 dark:border-slate-200 dark:border-slate-800 pb-2 last:border-0">
                                 <span className="text-slate-500">{item.l}</span>
                                 <span className="font-bold text-slate-900 dark:text-white">{item.v}</span>
                             </li>
@@ -487,7 +487,7 @@ export default function ClientPage() {
                         tip: null
                     }
                 ].map((strategy, i) => (
-                    <div key={i} className="flex flex-col md:flex-row gap-6 p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-lg transition-all duration-300">
+                    <div key={i} className="flex flex-col md:flex-row gap-6 p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-lg transition-all duration-300">
                         <div className="shrink-0">
                             <div className="w-16 h-16 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center text-emerald-600 dark:text-emerald-400">
                                 <strategy.icon className="w-8 h-8" />
@@ -562,7 +562,7 @@ export default function ClientPage() {
                       ]
                   }
               ].map((region, i) => (
-                  <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-colors">
+                  <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-colors">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-2">{region.city}</h3>
                       <p className="text-emerald-600 dark:text-emerald-400 font-medium mb-6">{region.desc}</p>
                       <ul className="space-y-3 mb-6">
@@ -623,12 +623,12 @@ export default function ClientPage() {
                       ]
                   }
               ].map((city, i) => (
-                  <div key={i} className="p-8 bg-white dark:bg-slate-900/50 rounded-[2rem] shadow-sm border border-slate-200 dark:border-slate-800">
+                  <div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem] shadow-sm border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                       <h3 className="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-3">{city.city}</h3>
                       <p className="text-sm text-slate-500 mb-6">{city.desc}</p>
                       <ul className="space-y-3">
                           {city.items.map((item, j) => (
-                              <li key={j} className="text-sm text-slate-700 dark:text-slate-300 font-medium pb-2 border-b border-slate-100 dark:border-slate-800 last:border-0">
+                              <li key={j} className="text-sm text-slate-700 dark:text-slate-300 font-medium pb-2 border-b border-slate-100 dark:border-slate-200 dark:border-slate-800 last:border-0">
                                   {item}
                               </li>
                           ))}
@@ -664,7 +664,7 @@ export default function ClientPage() {
                         ]
                     }
                 ].map((city, i) => (
-                    <div key={i} className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+                    <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                         <h3 className="text-2xl font-bold text-red-600 dark:text-red-400 mb-3">{city.city}</h3>
                         <p className="text-slate-600 dark:text-slate-400 mb-6">{city.desc}</p>
                         <ul className="space-y-4 mb-6">
@@ -699,7 +699,7 @@ export default function ClientPage() {
               </div>
             </div>
             
-            <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem]">
+            <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><Trophy className="w-6 h-6 text-amber-500"/> Regional Stadium Specialties</h4>
                <ul className="grid md:grid-cols-2 gap-6">
                  {[
@@ -720,7 +720,7 @@ export default function ClientPage() {
           </Section>
 
           <Section id="dietary" title="Dietary Restrictions">
-            <div className="overflow-hidden rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-xl">
+            <div className="overflow-hidden rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl">
                 <table className="w-full text-left">
                   <thead className="bg-slate-50 dark:bg-slate-900/80 text-slate-900 dark:text-white">
                     <tr>
@@ -752,7 +752,7 @@ export default function ClientPage() {
 
           <Section id="etiquette" title="Cultural Dining Etiquette">
              <div className="grid md:grid-cols-3 gap-8">
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
                  <h3 className="font-bold text-2xl mb-6 text-emerald-600 flex items-center gap-3">🇺🇸 USA</h3>
                  <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
                    <li className="flex justify-between border-b border-slate-100 pb-2"><span>Tipping</span> <span className="font-bold">18-22% (Mandatory)</span></li>
@@ -761,7 +761,7 @@ export default function ClientPage() {
                    <li className="flex justify-between border-b border-slate-100 pb-2"><span>Portions</span> <span className="font-bold">Huge (Split it)</span></li>
                  </ul>
                </div>
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
                  <h3 className="font-bold text-2xl mb-6 text-red-600 flex items-center gap-3">🇨🇦 Canada</h3>
                  <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
                    <li className="flex justify-between border-b border-slate-100 pb-2"><span>Tipping</span> <span className="font-bold">15-18% Standard</span></li>
@@ -770,7 +770,7 @@ export default function ClientPage() {
                    <li className="flex justify-between border-b border-slate-100 pb-2"><span>Alcohol</span> <span className="font-bold">Strict Laws</span></li>
                  </ul>
                </div>
-               <div className="p-8 border border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
+               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-xl transition-all">
                  <h3 className="font-bold text-2xl mb-6 text-green-600 flex items-center gap-3">🇲🇽 Mexico</h3>
                  <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
                    <li className="flex justify-between border-b border-slate-100 pb-2"><span>Tipping</span> <span className="font-bold">10-15% (Propina)</span></li>
@@ -803,7 +803,7 @@ export default function ClientPage() {
           <div className="mt-20 p-12 bg-emerald-900 rounded-[3rem] text-center relative overflow-hidden">
             <div className="absolute inset-0 bg-[url('/images/pattern.png')] opacity-10" />
             <div className="relative z-10">
-                <h3 className="text-3xl md:text-4xl font-black text-white mb-6">Ready to Eat Your Way Through 2026?</h3>
+                <h3 className="text-3xl md:text-4xl font-black text-slate-900 dark:text-white mb-6">Ready to Eat Your Way Through 2026?</h3>
                 <p className="text-emerald-100 mb-10 max-w-2xl mx-auto text-lg leading-relaxed">
                   Don't just eat to survive—make meals part of your World Cup story. Book your food tours and reservations early to secure your spot at the table.
                 </p>
@@ -819,3 +819,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

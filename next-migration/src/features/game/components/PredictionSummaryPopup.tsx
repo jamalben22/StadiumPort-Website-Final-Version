@@ -50,7 +50,7 @@ export const PredictionSummaryPopup = ({
         {/* Header */}
         <div className="flex-none px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 border-b border-white/5 bg-gradient-to-r from-white/5 to-transparent flex justify-between items-center">
           <div>
-            <h2 className="text-xl sm:text-2xl font-['Teko'] font-bold uppercase tracking-wide text-white">
+            <h2 className="text-xl sm:text-2xl font-['Teko'] font-bold uppercase tracking-wide text-slate-900 dark:text-white">
               Prediction Summary
             </h2>
             <p className="text-white/40 text-xs sm:text-sm font-['Rajdhani'] font-medium uppercase tracking-widest">
@@ -60,7 +60,7 @@ export const PredictionSummaryPopup = ({
           {onCancel && (
             <button 
               onClick={onCancel}
-              className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/40 hover:text-white transition-colors"
+              className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-white/40 hover:text-slate-900 dark:text-white transition-colors"
             >
               Edit Predictions
             </button>
@@ -88,7 +88,7 @@ export const PredictionSummaryPopup = ({
                     <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 mb-3 sm:mb-4 shadow-[0_0_30px_rgba(251,191,36,0.3)] rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-[#FBBF24] transform transition-transform group-hover:scale-105">
                       {winner?.flagUrl && <img src={winner.flagUrl} alt={winner.name} className="w-full h-full object-cover" />}
                     </div>
-                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black font-['Teko'] text-white uppercase tracking-wide">
+                    <h3 className="text-2xl sm:text-3xl md:text-5xl font-black font-['Teko'] text-slate-900 dark:text-white uppercase tracking-wide">
                       {winner.name}
                     </h3>
                   </div>
@@ -170,3 +170,4 @@ export const PredictionSummaryPopup = ({
     </motion.div>
   );
 };
+

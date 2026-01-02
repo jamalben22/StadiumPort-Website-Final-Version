@@ -1,18 +1,20 @@
-import React from 'react';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Groups: Complete Guide to Teams, Draw & Schedule',
-  description: 'The definitive guide to World Cup 2026 groups. Comprehensive analysis of all 48 teams, 12 groups, match schedules, host cities, and advancement scenarios for USA, Mexico, and Canada.',
-  keywords: 'World Cup 2026 groups, World Cup 2026 group stage, FIFA 2026 groups, World Cup groups 2026, World Cup 2026 teams by group, World Cup 2026 schedule, FIFA World Cup 48 teams format',
+  title: 'World Cup 2026 Groups Guide: 48 Teams, Tables & Schedule',
+  description: 'Complete analysis of World Cup 2026 groups. Standings, match schedules & advancement scenarios for all 48 teams in USA, Canada & Mexico.',
+  keywords: ['World Cup 2026 groups', 'World Cup 2026 group stage', 'FIFA 2026 groups', 'World Cup groups 2026', 'World Cup 2026 teams by group', 'World Cup 2026 schedule', 'FIFA World Cup 48 teams format'],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-groups',
   },
   openGraph: {
-    title: 'World Cup 2026 Groups: Complete Guide to Teams, Draw & Schedule',
-    description: 'The definitive guide to World Cup 2026 groups. Comprehensive analysis of all 48 teams, 12 groups, match schedules, and host cities.',
+    title: 'World Cup 2026 Groups Guide: 48 Teams, Tables & Schedule',
+    description: 'Complete analysis of World Cup 2026 groups. Standings, match schedules & advancement scenarios for all 48 teams in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-groups',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
     images: [
       {
@@ -75,14 +77,8 @@ export default function Page() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <JsonLd schema={jsonLd} />
+      <JsonLd schema={breadcrumbJsonLd} />
       <ClientPage />
     </>
   );

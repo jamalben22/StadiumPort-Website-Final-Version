@@ -240,7 +240,7 @@ export function Footer() {
               <a 
                 key={social.label}
                 href={social.href}
-                className="text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors duration-200"
+                className="text-slate-400 hover:text-slate-900 dark:hover:text-slate-900 dark:text-white transition-colors duration-200"
                 aria-label={social.label}
               >
                 <social.icon className="w-5 h-5" />
@@ -252,3 +252,5 @@ export function Footer() {
     </footer>
   );
 }
+
+

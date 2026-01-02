@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Hard Rock Stadium World Cup 2026: Complete Stadium Guide',
-  description: 'Plan your World Cup 2026 visit to Hard Rock Stadium in Miami. Detailed info on seating, transport, climate-controlled areas, and Miami travel tips.',
+  title: 'Hard Rock Stadium World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to Hard Rock Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Miami.',
   keywords: 'Hard Rock Stadium World Cup 2026, Miami World Cup, Hard Rock Stadium Guide, World Cup 2026 Miami, stadium seating, travel guide',
   openGraph: {
-    title: 'Hard Rock Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Plan your World Cup 2026 visit to Hard Rock Stadium in Miami. Detailed info on seating, transportation, and local tips.',
+    title: 'Hard Rock Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Hard Rock Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Miami.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/hard-rock-stadium-guide',
     siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hard Rock Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Plan your World Cup 2026 visit to Hard Rock Stadium in Miami.',
+    title: 'Hard Rock Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Hard Rock Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Miami.',
     images: ['/images/cities/miami-world-cup-2026-1600.webp'],
   },
 };

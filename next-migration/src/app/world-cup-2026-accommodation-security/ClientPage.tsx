@@ -136,7 +136,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -169,7 +169,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -283,7 +283,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -296,16 +296,16 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Essential Security
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Safe Stays
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 ACCOMMODATION <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">SECURITY</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
                 The definitive guide to securing your sanctuary during World Cup 2026. From booking verification to in-room defense.
               </p>
             </motion.div>
@@ -319,7 +319,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -327,7 +327,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -348,7 +348,7 @@ export default function ClientPage() {
         <main className="flex-1 min-w-0 pb-24">
           
           {/* Disclosure */}
-          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-900/50">
+          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50">
             <Info className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.
@@ -375,7 +375,7 @@ export default function ClientPage() {
               <StatCard icon={Shield} label="Security Level" value="Critical" />
             </div>
             
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800 mb-8">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-8">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Historical Context</h3>
               <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-lg">
                 During the 2014 World Cup in Brazil, there was a spike in "express kidnappings" originating from fake accommodation listings. In Russia 2018, the threat shifted to cybercrime and Wi-Fi spoofing in hotels.
@@ -409,7 +409,7 @@ export default function ClientPage() {
               ]}
             />
 
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800 mb-12">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-12">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6">Location Security Intelligence</h3>
               <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed text-lg">
                 Don&apos;t just look at distance to the stadium. Use Google Maps Street View to &quot;walk&quot; the neighborhood virtually.
@@ -442,7 +442,7 @@ export default function ClientPage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-4 mb-6 text-emerald-600 dark:text-emerald-400">
                   <ShieldCheck className="w-8 h-8" />
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Essential Features</h3>
@@ -457,7 +457,7 @@ export default function ClientPage() {
                 </ul>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-4 mb-6 text-blue-600 dark:text-blue-400">
                   <Shield className="w-8 h-8" />
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Advanced Security</h3>
@@ -514,7 +514,7 @@ export default function ClientPage() {
               Your security routine begins the moment you step onto the property. Do not let the relief of arrival dull your senses.
             </p>
 
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8">The 5-Minute Room Sweep</h3>
               <div className="space-y-6">
                 {[
@@ -544,7 +544,7 @@ export default function ClientPage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Door Security Upgrades</h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                   Don&apos;t rely solely on hotel locks. Master keys are widely available. We recommend carrying a <strong>Portable Door Lock</strong> or <strong>Door Stop Alarm</strong>.
@@ -555,7 +555,7 @@ export default function ClientPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">The TV Illusion</h3>
                 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
                   When leaving your room for the evening match, leave the TV on at a moderate volume and keep a light on. This simple trick simulates presence and deters opportunistic entry.
@@ -655,3 +655,6 @@ const faqs = [
     answer: "Most host city downtowns are safe, especially near stadiums and tourist zones where police presence will be high. However, research specific neighborhoods in cities like Mexico City, Los Angeles, or Philadelphia to avoid high-crime zones."
   }
 ];
+
+
+

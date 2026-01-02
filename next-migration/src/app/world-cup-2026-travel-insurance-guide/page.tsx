@@ -4,17 +4,43 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Travel Insurance: Complete Protection Guide | Stadiumport',
-  description: 'Complete guide to World Cup 2026 travel insurance. Compare costs, coverage types, and providers. Learn why coverage is non-negotiable for USA, Canada & Mexico.',
-  keywords: 'World Cup 2026 travel insurance, medical coverage USA, trip cancellation insurance, medical evacuation insurance, World Cup 2026 safety',
+  title: 'World Cup 2026 Travel Insurance: Medical & Trip Protection',
+  description: 'Why you need travel insurance for World Cup 2026. Medical coverage for USA healthcare costs, trip cancellation protection & policy comparisons.',
+  keywords: [
+    'World Cup 2026 travel insurance',
+    'medical coverage USA',
+    'trip cancellation insurance',
+    'medical evacuation insurance',
+    'World Cup 2026 safety',
+    'travel insurance for Mexico',
+    'travel insurance for Canada',
+    'visitor insurance USA'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-travel-insurance-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-travel-insurance-guide',
   },
   openGraph: {
-    title: 'World Cup 2026 Travel Insurance: Complete Protection Guide | Stadiumport',
-    description: 'Complete guide to World Cup 2026 travel insurance. Compare costs, coverage types, and providers. Learn why coverage is non-negotiable for USA, Canada & Mexico.',
-    url: '/world-cup-2026-travel-insurance-guide',
-  }
+    title: 'World Cup 2026 Travel Insurance: Medical & Trip Protection',
+    description: 'Why you need travel insurance for World Cup 2026. Medical coverage for USA healthcare costs, trip cancellation protection & policy comparisons.',
+    url: 'https://stadiumport.com/world-cup-2026-travel-insurance-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/travel-tips/World%20Cup%202026%20Travel%20Insurance%20Guide%20Illustration.webp',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Travel Insurance',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Travel Insurance: Medical & Trip Protection',
+    description: 'Why you need travel insurance for World Cup 2026. Medical coverage for USA healthcare costs, trip cancellation protection & policy comparisons.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Travel%20Insurance%20Guide%20Illustration.webp'],
+  },
 };
 
 export default function TravelInsuranceGuidePage() {

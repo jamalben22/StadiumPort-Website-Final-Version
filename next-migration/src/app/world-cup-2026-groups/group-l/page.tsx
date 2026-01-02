@@ -1,25 +1,42 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupLClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas | Stadiumport',
+  title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas',
   description: 'The definitive guide for following Group L in World Cup 2026. Master the Cross-Border Strategy (Toronto-NYC-Boston-Philly) and the Texas Jump (Dallas). Borders, trains, and budget strategy.',
-  keywords: 'World Cup 2026 Group L Travel Guide, Group L matches, Toronto NYC Boston Philadelphia Dallas World Cup, Cross-border World Cup travel, Amtrak Northeast World Cup itinerary',
+  keywords: ['World Cup 2026 Group L Travel Guide', 'Group L matches', 'Toronto NYC Boston Philadelphia Dallas World Cup', 'Cross-border World Cup travel', 'Amtrak Northeast World Cup itinerary'],
   alternates: {
-    canonical: '/groups/group-l',
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-l',
   },
   openGraph: {
-    title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas | Stadiumport',
+    title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas',
     description: 'The definitive guide for following Group L in World Cup 2026. Master the Cross-Border Strategy (Toronto-NYC-Boston-Philly) and the Texas Jump (Dallas). Borders, trains, and budget strategy.',
-    url: '/groups/group-l',
-  }
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-l',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group L Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas',
+    description: 'The definitive guide for following Group L in World Cup 2026. Master the Cross-Border Strategy (Toronto-NYC-Boston-Philly) and the Texas Jump (Dallas). Borders, trains, and budget strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupLPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
-  const pageUrl = '/groups/group-l';
+  const pageUrl = '/world-cup-2026-groups/group-l';
 
   const articleSchema = generateArticleSchema('group-l', pageUrl);
 

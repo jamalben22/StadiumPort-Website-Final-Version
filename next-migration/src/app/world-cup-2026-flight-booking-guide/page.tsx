@@ -4,25 +4,35 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
 
-const slug = 'world-cup-2026-flight-booking-guide';
-const meta = getContentMeta(slug);
-
 export const metadata: Metadata = {
-  title: meta?.title || 'World Cup 2026 Flight Booking Guide',
-  description: meta?.description || 'Master World Cup 2026 travel with this ultimate flight booking guide. Routes, pricing strategies, and airline tips for USA, Canada & Mexico.',
+  title: 'World Cup 2026 Flight Guide: Booking Tips & Best Routes',
+  description: 'Ultimate World Cup 2026 flight booking guide. Find the best routes, cheapest times to book & airline tips for traveling to USA, Canada & Mexico.',
+  keywords: [
+    'World Cup 2026 flights',
+    'book flights World Cup 2026',
+    'cheap flights World Cup 2026',
+    'airlines World Cup 2026',
+    'flying to World Cup 2026',
+    'World Cup 2026 flight routes',
+    'World Cup 2026 air travel',
+    'best time to book World Cup flights',
+    'flights to USA World Cup 2026',
+    'flights to Mexico World Cup 2026',
+    'flights to Canada World Cup 2026'
+  ],
   alternates: {
-    canonical: `/world-cup-2026-flight-booking-guide`,
+    canonical: 'https://stadiumport.com/world-cup-2026-flight-booking-guide',
   },
   openGraph: {
-    title: meta?.title || 'World Cup 2026 Flight Booking Guide',
-    description: meta?.description || 'Master World Cup 2026 travel with this ultimate flight booking guide. Routes, pricing strategies, and airline tips for USA, Canada & Mexico.',
+    title: 'World Cup 2026 Flight Guide: Booking Tips & Best Routes',
+    description: 'Ultimate World Cup 2026 flight booking guide. Find the best routes, cheapest times to book & airline tips for traveling to USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-flight-booking-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
       {
-        url: meta?.image || '/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Flight%20Booking%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Flight Booking Guide',
@@ -31,9 +41,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: meta?.title || 'World Cup 2026 Flight Booking Guide',
-    description: meta?.description || 'Master World Cup 2026 travel with this ultimate flight booking guide. Routes, pricing strategies, and airline tips for USA, Canada & Mexico.',
-    images: [meta?.image || '/images/travel-tips/World Cup 2026 Flight Booking Guide Illustration.webp'],
+    title: 'World Cup 2026 Flight Guide: Booking Tips & Best Routes',
+    description: 'Ultimate World Cup 2026 flight booking guide. Find the best routes, cheapest times to book & airline tips for traveling to USA, Canada & Mexico.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Flight%20Booking%20Guide%20Illustration.webp'],
   },
 };
 

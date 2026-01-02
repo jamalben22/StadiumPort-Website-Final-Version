@@ -4,8 +4,18 @@ import ClientPage from './ClientPage';
 export const metadata: Metadata = {
   title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
   description: 'Complete health guide for World Cup 2026. Travel insurance requirements, vaccinations, prescription rules, and emergency medical contacts for USA, Canada, and Mexico.',
+  keywords: [
+    'World Cup 2026 travel insurance',
+    'World Cup 2026 vaccinations',
+    'traveling with medication to USA Mexico Canada',
+    'Mexico City altitude sickness World Cup',
+    'World Cup 2026 emergency numbers',
+    'travel health safety World Cup',
+    'medical preparation World Cup 2026',
+    'pharmacy access World Cup host cities'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-health-medical-preparedness',
+    canonical: 'https://stadiumport.com/world-cup-2026-health-medical-preparedness',
   },
   openGraph: {
     title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
@@ -23,16 +33,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  keywords: [
-    'World Cup 2026 travel insurance',
-    'World Cup 2026 vaccinations',
-    'traveling with medication to USA Mexico Canada',
-    'Mexico City altitude sickness World Cup',
-    'World Cup 2026 emergency numbers',
-    'travel health safety World Cup',
-    'medical preparation World Cup 2026',
-    'pharmacy access World Cup host cities'
-  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
+    description: 'Complete health guide for World Cup 2026. Travel insurance requirements, vaccinations, prescription rules, and emergency medical contacts for USA, Canada, and Mexico.',
+    images: ['/images/safety-guide/A_realistic_photo_showing_a_well-prepared_traveler_organizing_a_travel_medical_kit_for_World_Cup_2.webp'],
+  },
 };
 
 export default function HealthMedicalPage() {

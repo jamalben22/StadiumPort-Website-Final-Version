@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupDClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles | Stadiumport',
- description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
- keywords: 'World Cup 2026 Group D Travel Guide, Seattle World Cup, San Francisco World Cup, Los Angeles World Cup, West Coast World Cup itinerary, SoFi Stadium guide, Levi\'s Stadium guide, Lumen Field guide',
- alternates: {
- canonical: '/groups/group-d',
- },
- openGraph: {
- title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles | Stadiumport',
- description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
- url: '/groups/group-d',
- }
+  title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
+  description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
+  keywords: ['World Cup 2026 Group D Travel Guide', 'Seattle World Cup', 'San Francisco World Cup', 'Los Angeles World Cup', 'West Coast World Cup itinerary', 'SoFi Stadium guide', "Levi's Stadium guide", 'Lumen Field guide'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-d',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
+    description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-d',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group D Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
+    description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupDPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-d';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-d';
 
- const articleSchema = generateArticleSchema('group-d', pageUrl);
+  const articleSchema = generateArticleSchema('group-d', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",

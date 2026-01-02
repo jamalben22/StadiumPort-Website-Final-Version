@@ -186,7 +186,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
                         onClick={(e) => e.stopPropagation()} // Prevent drag start on click
                         onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
                     >
-                       <Info className={`w-3.5 h-3.5 hover:text-slate-600 dark:hover:text-white ${index === 2 ? 'text-amber-700/60' : 'text-slate-400'}`} />
+                       <Info className={`w-3.5 h-3.5 hover:text-slate-600 dark:hover:text-slate-900 dark:text-white ${index === 2 ? 'text-amber-700/60' : 'text-slate-400'}`} />
                     </button>
                  </Tooltip.Trigger>
                  <Tooltip.Portal>
@@ -447,3 +447,4 @@ export const GroupStage = () => {
 };
 
 export default GroupStage;
+

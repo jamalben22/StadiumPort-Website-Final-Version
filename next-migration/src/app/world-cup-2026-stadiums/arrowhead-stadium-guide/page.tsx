@@ -5,12 +5,12 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Arrowhead Stadium World Cup 2026: The Loudest Venue Guide',
-  description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Experience the loudest stadium in the world with our tips on seating, parking, and BBQ.',
+  title: 'Arrowhead Stadium World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Kansas City.',
   keywords: 'Arrowhead Stadium World Cup 2026, Kansas City World Cup, GEHA Field at Arrowhead Stadium, World Cup 2026 Kansas City, stadium seating',
   openGraph: {
-    title: 'Arrowhead Stadium World Cup 2026: The Loudest Venue Guide',
-    description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Experience the loudest stadium in the world.',
+    title: 'Arrowhead Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Kansas City.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/arrowhead-stadium-guide',
     siteName: 'Stadiumport',
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Arrowhead Stadium World Cup 2026: The Loudest Venue Guide',
-    description: 'Complete guide to Arrowhead Stadium for World Cup 2026.',
+    title: 'Arrowhead Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Kansas City.',
     images: ['/images/cities/kansas-city-world-cup-2026-1600.webp'],
   },
 };

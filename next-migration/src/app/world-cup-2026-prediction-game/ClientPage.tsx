@@ -303,7 +303,7 @@ function PredictGameContent() {
               className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
             >
               <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
               <span className="text-emerald-700 dark:text-emerald-400">Prediction Game</span>
             </motion.div>
 
@@ -462,6 +462,7 @@ export default function ClientPage() {
  </GameProvider>
  );
 }
+
 
 
 

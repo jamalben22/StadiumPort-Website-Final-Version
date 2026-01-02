@@ -4,39 +4,43 @@ import { contentRegistry } from '@/data/content-registry';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
 
-const slug = 'world-cup-2026-packing-guide';
-const meta = contentRegistry[slug] || {
-  title: 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather',
-  description: 'The definitive packing list for World Cup 2026. Weather-specific gear for 16 cities, baggage policies, stadium rules, and space-saving hacks.',
-  publishedAt: '2025-12-30T00:00:00Z',
-  updatedAt: '2025-12-30T00:00:00Z',
-  image: '/images/travel-tips/World Cup 2026 Packing Guide Illustration.webp'
-};
-
 export const metadata: Metadata = {
-  title: meta.title,
-  description: meta.description,
+  title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
+  description: 'The ultimate World Cup 2026 packing guide. What to bring for hot Mexico stadiums vs cool Canada venues. Stadium bag policies & travel gear checklist.',
+  keywords: [
+    'World Cup 2026 packing list',
+    'what to pack for World Cup 2026',
+    'World Cup 2026 travel gear',
+    'stadium bag policy World Cup 2026',
+    'clear bag policy World Cup 2026',
+    'packing for Mexico World Cup',
+    'packing for Canada World Cup',
+    'travel adapters for World Cup'
+  ],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-packing-guide',
+  },
   openGraph: {
-    title: meta.title,
-    description: meta.description,
-    url: `https://stadiumport.com/${slug}`,
+    title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
+    description: 'The ultimate World Cup 2026 packing guide. What to bring for hot Mexico stadiums vs cool Canada venues. Stadium bag policies & travel gear checklist.',
+    url: 'https://stadiumport.com/world-cup-2026-packing-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
-    publishedTime: meta.publishedAt,
-    modifiedTime: meta.updatedAt,
     images: [
       {
-        url: meta.image || '/images/default-og.jpg',
+        url: '/images/travel-tips/World%20Cup%202026%20Packing%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
-        alt: meta.title,
+        alt: 'World Cup 2026 Packing Guide',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: meta.title,
-    description: meta.description,
-    images: [meta.image || '/images/default-og.jpg'],
+    title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
+    description: 'The ultimate World Cup 2026 packing guide. What to bring for hot Mexico stadiums vs cool Canada venues. Stadium bag policies & travel gear checklist.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Packing%20Guide%20Illustration.webp'],
   },
 };
 

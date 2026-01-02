@@ -58,7 +58,7 @@ export const PlanningHub = () => {
                         onClick={() => setActiveTab(tab.id as any)}
                         className={`
                             relative px-6 md:px-8 py-3 rounded-full font-medium text-sm md:text-base transition-all duration-300
-                            ${activeTab === tab.id ? 'text-slate-900 dark:text-black' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white'}
+                            ${activeTab === tab.id ? 'text-slate-900 dark:text-black' : 'text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-900 dark:text-white'}
                         `}
                     >
                         {activeTab === tab.id && (
@@ -131,3 +131,4 @@ export const PlanningHub = () => {
     </section>
   );
 };
+

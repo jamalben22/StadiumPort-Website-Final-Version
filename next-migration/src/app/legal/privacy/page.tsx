@@ -2,11 +2,24 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
- title: 'Privacy Policy – Stadiumport',
- description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
- alternates: {
- canonical: '/legal/privacy',
- },
+  title: 'Privacy Policy – Stadiumport',
+  description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+  alternates: {
+    canonical: 'https://stadiumport.com/legal/privacy',
+  },
+  openGraph: {
+    title: 'Privacy Policy – Stadiumport',
+    description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+    url: 'https://stadiumport.com/legal/privacy',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy – Stadiumport',
+    description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+  },
 };
 
 export default function PrivacyPage() {

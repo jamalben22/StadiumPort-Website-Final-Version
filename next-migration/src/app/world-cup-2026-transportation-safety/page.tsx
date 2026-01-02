@@ -2,14 +2,24 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'Transportation Safety: Getting Around World Cup 2026 Host Cities',
-  description: 'Complete guide to safe transportation for World Cup 2026. Rideshare safety, taxi scams to avoid, public transit tips, and emergency protocols for USA, Canada, & Mexico.',
+  title: 'World Cup 2026 Transport Safety: Taxis, Uber & Transit',
+  description: 'Safe travel guide for World Cup 2026. Avoid taxi scams, use rideshares safely & navigate public transit in USA, Canada & Mexico host cities.',
+  keywords: [
+    'World Cup 2026 transportation safety',
+    'World Cup 2026 taxi safety Mexico',
+    'Uber safety World Cup 2026',
+    'World Cup public transit guide',
+    'stadium transportation 2026',
+    'World Cup 2026 travel scams',
+    'getting around World Cup cities',
+    'World Cup 2026 car rental tips'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-transportation-safety',
+    canonical: 'https://stadiumport.com/world-cup-2026-transportation-safety',
   },
   openGraph: {
-    title: 'Transportation Safety: Getting Around World Cup 2026 Host Cities',
-    description: 'Complete guide to safe transportation for World Cup 2026. Rideshare safety, taxi scams to avoid, public transit tips, and emergency protocols for USA, Canada, & Mexico.',
+    title: 'World Cup 2026 Transport Safety: Taxis, Uber & Transit',
+    description: 'Safe travel guide for World Cup 2026. Avoid taxi scams, use rideshares safely & navigate public transit in USA, Canada & Mexico host cities.',
     url: 'https://stadiumport.com/world-cup-2026-transportation-safety',
     siteName: 'StadiumPort',
     locale: 'en_US',
@@ -23,16 +33,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  keywords: [
-    'World Cup 2026 transportation safety',
-    'World Cup 2026 taxi safety Mexico',
-    'Uber safety World Cup 2026',
-    'World Cup public transit guide',
-    'stadium transportation 2026',
-    'World Cup 2026 travel scams',
-    'getting around World Cup cities',
-    'World Cup 2026 car rental tips'
-  ],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Transport Safety: Taxis, Uber & Transit',
+    description: 'Safe travel guide for World Cup 2026. Avoid taxi scams, use rideshares safely & navigate public transit in USA, Canada & Mexico host cities.',
+    images: ['/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp'],
+  },
 };
 
 export default function Page() {

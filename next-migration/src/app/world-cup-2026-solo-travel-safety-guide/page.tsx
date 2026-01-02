@@ -4,16 +4,26 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Solo Travel Safety Guide: Attending World Cup 2026 Alone',
+  title: 'World Cup 2026 Solo Travel: Safety Tips for Fans',
   description: 'The ultimate guide for solo travelers attending World Cup 2026. Safety tips, meeting other fans, accommodation strategies, and navigating host cities alone.',
+  keywords: [
+    'Solo travel World Cup 2026',
+    'World Cup safety tips',
+    'Traveling alone to World Cup',
+    'Solo fan guide',
+    'Host city safety',
+    'Meeting fans World Cup',
+    'Solo accommodation',
+    'Transport safety'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-solo-travel-safety-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-solo-travel-safety-guide',
   },
   openGraph: {
-    title: 'Solo Travel Safety Guide: Attending World Cup 2026 Alone',
-    description: 'Expert advice for solo fans at World Cup 2026: Safety protocols, social hubs, budget tips, and how to make the most of your solo adventure in USA, Mexico, and Canada.',
+    title: 'World Cup 2026 Solo Travel: Safety Tips for Fans',
+    description: 'The ultimate guide for solo travelers attending World Cup 2026. Safety tips, meeting other fans, accommodation strategies, and navigating host cities alone.',
     url: 'https://stadiumport.com/world-cup-2026-solo-travel-safety-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -25,7 +35,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  keywords: ['Solo travel World Cup 2026', 'World Cup safety tips', 'Traveling alone to World Cup', 'Solo fan guide', 'Host city safety', 'Meeting fans World Cup', 'Solo accommodation', 'Transport safety'],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Solo Travel: Safety Tips for Fans',
+    description: 'The ultimate guide for solo travelers attending World Cup 2026. Safety tips, meeting other fans, accommodation strategies, and navigating host cities alone.',
+    images: ['/images/safety-guide/A_realistic_high-detail_photo_of_a_solo_traveler_at_a_World_Cup_2026_host_city.webp'],
+  },
 };
 
 export default function Page() {

@@ -41,7 +41,7 @@ const ShareCardInner = (
     <div 
       ref={ref}
       // 9:16 Aspect Ratio (360x640)
-      className={`relative w-[360px] h-[640px] bg-[#0f172a] text-white overflow-hidden font-sans flex flex-col ${className}`}
+      className={`relative w-[360px] h-[640px] bg-[#0f172a] text-slate-900 dark:text-white overflow-hidden font-sans flex flex-col ${className}`}
     >
       {/* --- PREMIUM BACKGROUND LAYERS --- */}
       
@@ -147,7 +147,7 @@ const ShareCardInner = (
                        style={{ imageRendering: 'auto' }}
                      />
                  )}
-                 <span className="text-white font-['Teko'] text-xl tracking-wide uppercase leading-none mt-0.5">
+                 <span className="text-slate-900 dark:text-white font-['Teko'] text-xl tracking-wide uppercase leading-none mt-0.5">
                     {runnerUp?.name || "TBD"}
                  </span>
              </div>
@@ -217,3 +217,4 @@ const ShareCardInner = (
 export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(ShareCardInner);
 
 ShareCard.displayName = 'ShareCard';
+

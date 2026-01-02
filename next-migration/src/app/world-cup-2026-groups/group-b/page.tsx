@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupBClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA | Stadiumport',
- description: 'The definitive guide for following Group B in World Cup 2026. Master the Pacific Coast Strategy (Vancouver-Seattle-SF-LA). Flights, border crossings, and budget strategy.',
- keywords: 'World Cup 2026 Group B Travel Guide, Group B matches, Vancouver Seattle San Francisco Los Angeles World Cup, Pacific Northwest World Cup travel, West Coast World Cup itinerary',
- alternates: {
-  canonical: '/groups/group-b',
- },
- openGraph: {
-  title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA | Stadiumport',
+  title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA',
   description: 'The definitive guide for following Group B in World Cup 2026. Master the Pacific Coast Strategy (Vancouver-Seattle-SF-LA). Flights, border crossings, and budget strategy.',
-  url: '/groups/group-b',
- }
+  keywords: ['World Cup 2026 Group B Travel Guide', 'Group B matches', 'Vancouver Seattle San Francisco Los Angeles World Cup', 'Pacific Northwest World Cup travel', 'West Coast World Cup itinerary'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-b',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA',
+    description: 'The definitive guide for following Group B in World Cup 2026. Master the Pacific Coast Strategy (Vancouver-Seattle-SF-LA). Flights, border crossings, and budget strategy.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-b',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group B Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA',
+    description: 'The definitive guide for following Group B in World Cup 2026. Master the Pacific Coast Strategy (Vancouver-Seattle-SF-LA). Flights, border crossings, and budget strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupBPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-b';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-b';
 
- const articleSchema = generateArticleSchema('group-b', pageUrl);
+  const articleSchema = generateArticleSchema('group-b', pageUrl);
 
  const breadcrumbSchema = {
   "@context": "https://schema.org",

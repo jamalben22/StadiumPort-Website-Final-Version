@@ -4,16 +4,24 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Editorial Policy – Stadiumport',
- description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
- alternates: {
- canonical: '/editorial-policy',
- },
- openGraph: {
- title: 'Editorial Policy – Stadiumport',
- description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
- url: '/editorial-policy',
- }
+  title: 'Editorial Policy – Stadiumport',
+  description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
+  alternates: {
+    canonical: 'https://stadiumport.com/legal/editorial-policy',
+  },
+  openGraph: {
+    title: 'Editorial Policy – Stadiumport',
+    description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
+    url: 'https://stadiumport.com/legal/editorial-policy',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Editorial Policy – Stadiumport',
+    description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
+  },
 };
 
 export default function EditorialPolicyPage() {

@@ -52,7 +52,7 @@ export default function ClientPage() {
  ];
 
  return (
- <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+ <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-slate-900 dark:text-white">
  <main className="pt-32 pb-20 px-4 md:px-6">
  <div className="max-w-5xl mx-auto">
         
@@ -64,7 +64,7 @@ export default function ClientPage() {
           className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
         >
           <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
           <span className="text-emerald-700 dark:text-emerald-400">Terms & Conditions</span>
         </motion.div>
 
@@ -201,7 +201,7 @@ export default function ClientPage() {
  Prizes
  </h2>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
- <div className="bg-gradient-to-br from-indigo-600 to-purple-700 text-white rounded-3xl p-8 relative overflow-hidden">
+ <div className="bg-gradient-to-br from-indigo-600 to-purple-700 text-slate-900 dark:text-white rounded-3xl p-8 relative overflow-hidden">
  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
  <div className="relative z-10">
  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 border border-white/20 mb-4 text-xs font-bold uppercase tracking-wider">
@@ -319,6 +319,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

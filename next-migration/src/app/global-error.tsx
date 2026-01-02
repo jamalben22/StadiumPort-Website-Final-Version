@@ -33,7 +33,7 @@ export default function GlobalError({
  <div className="flex flex-col gap-3">
  <button
  onClick={() => reset()}
- className="w-full py-3 px-4 bg-rose-500 hover:bg-rose-600 text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2"
+ className="w-full py-3 px-4 bg-rose-500 hover:bg-rose-600 text-slate-900 dark:text-white font-bold rounded-xl transition-colors flex items-center justify-center gap-2"
  >
  <RefreshCw className="w-4 h-4" /> Try Again
  </button>
@@ -50,6 +50,7 @@ export default function GlobalError({
  </html>
  );
 }
+
 
 
 

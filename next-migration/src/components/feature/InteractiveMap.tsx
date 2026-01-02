@@ -108,7 +108,7 @@ export function InteractiveMap() {
   if (!mapToken) {
     return (
       <div className="relative w-full aspect-[16/9] bg-slate-100 dark:bg-slate-900 rounded-[32px] overflow-hidden flex flex-col items-center justify-center p-8 text-center border border-slate-200 dark:border-white/10">
-        <MapPin className="w-16 h-16 text-slate-300 dark:text-slate-600 mb-4" />
+        <MapPin className="w-16 h-16 text-slate-600 dark:text-slate-300 dark:text-slate-600 mb-4" />
         <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Map Configuration Required</h3>
         <p className="text-slate-500 dark:text-slate-400 max-w-md">
           Please add your Mapbox Access Token to <code className="bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded text-sm">.env.local</code> as <code className="text-emerald-600 dark:text-emerald-400">NEXT_PUBLIC_MAPBOX_TOKEN</code>
@@ -465,7 +465,7 @@ export function InteractiveMap() {
                 href={`/city-guide/${popupInfo.id}`}
                 className="block w-full"
               >
-                <button className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-white text-xs font-semibold rounded-lg shadow-sm transition-all flex items-center justify-center gap-1.5">
+                <button className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 active:scale-[0.98] text-slate-900 dark:text-white text-xs font-semibold rounded-lg shadow-sm transition-all flex items-center justify-center gap-1.5">
                   Read Full Guide
                   <ChevronRight size={14} strokeWidth={2.5} />
                 </button>
@@ -564,7 +564,7 @@ export function InteractiveMap() {
                 href={`/city-guide/${popupInfo.id}`}
                 className="block w-full pt-2"
               >
-                <button className="w-full h-12 bg-[#007AFF] hover:bg-[#0062CC] active:scale-[0.98] text-white text-[17px] font-semibold rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2">
+                <button className="w-full h-12 bg-[#007AFF] hover:bg-[#0062CC] active:scale-[0.98] text-slate-900 dark:text-white text-[17px] font-semibold rounded-2xl shadow-sm transition-all flex items-center justify-center gap-2">
                   View City Guide
                   <ChevronRight size={18} strokeWidth={2.5} className="opacity-70" />
                 </button>
@@ -577,3 +577,4 @@ export function InteractiveMap() {
     </div>
   );
 }
+

@@ -1,30 +1,38 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-
-export const metadata: Metadata = {
- title: 'Mexico City World Cup 2026 Guide: Matches, Hotels & Travel',
- description: 'Complete Mexico City World Cup 2026 guide: match schedule, best hotels, transportation, things to do, and insider tips for the ultimate fan experience.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/mexico-city-city-guide',
- },
- openGraph: {
- title: 'Mexico City World Cup 2026 Guide: Matches, Hotels & Travel',
- description: 'Complete Mexico City World Cup 2026 guide: match schedule, best hotels, transportation, things to do, and insider tips for the ultimate fan experience.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/mexico-city-city-guide',
- type: 'article',
- images: [
- {
- url: '/images/cities/mexico-city-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Mexico City skyline with Estadio Azteca during World Cup 2026',
- },
- ],
- },
-};
-
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: 'Mexico City World Cup 2026 Guide: Estadio Azteca & Travel Tips',
+  description: 'Complete Mexico City World Cup 2026 travel guide. Estadio Azteca info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+  keywords: ['Mexico City World Cup 2026', 'Estadio Azteca', 'Mexico City hotels', 'World Cup tickets Mexico City', 'CDMX travel guide', 'Estadio Azteca seating', 'Mexico City fan zones', 'World Cup 2026 Opening Match'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/mexico-city-city-guide',
+  },
+  openGraph: {
+    title: 'Mexico City World Cup 2026 Guide: Estadio Azteca & Travel Tips',
+    description: 'Complete Mexico City World Cup 2026 travel guide. Estadio Azteca info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/mexico-city-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/mexico-city-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Mexico City skyline with Estadio Azteca during World Cup 2026',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mexico City World Cup 2026 Guide - Estadio Azteca & Travel',
+    description: 'Complete Mexico City World Cup 2026 travel guide. Estadio Azteca info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/mexico-city-world-cup-2026.webp'],
+  },
+};
 
 export default function MexicoCityGuide() {
   const jsonLd = generateArticleSchema('mexico-city-city-guide', '/world-cup-2026-host-cities-guide/mexico-city-city-guide');

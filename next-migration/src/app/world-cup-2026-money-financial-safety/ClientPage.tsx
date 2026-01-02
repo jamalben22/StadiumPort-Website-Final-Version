@@ -136,7 +136,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -169,7 +169,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -283,7 +283,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -296,17 +296,17 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Essential Guide
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Financial Safety
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 MONEY & <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">FINANCE</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                Cash, Cards & Currencies. <span className="text-white font-medium">Definitive Guide</span>.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                Cash, Cards & Currencies. <span className="text-slate-900 dark:text-white font-medium">Definitive Guide</span>.
               </p>
             </motion.div>
           </div>
@@ -319,7 +319,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -327,7 +327,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -348,7 +348,7 @@ export default function ClientPage() {
               <p className="text-sm text-emerald-800 dark:text-emerald-200 mb-4">
                 Don't pay hidden fees. Get the card built for international travel.
               </p>
-              <a href="https://wise.com" target="_blank" rel="noopener noreferrer" className="block w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-center text-sm font-bold rounded-lg transition-colors">
+              <a href="https://wise.com" target="_blank" rel="noopener noreferrer" className="block w-full py-2 bg-emerald-600 hover:bg-emerald-700 text-slate-900 dark:text-white text-center text-sm font-bold rounded-lg transition-colors">
                 Get a Wise Card
               </a>
             </div>
@@ -359,7 +359,7 @@ export default function ClientPage() {
         <main className="flex-1 min-w-0 pb-24">
           
           {/* Disclosure */}
-          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-900/50">
+          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-50 dark:bg-slate-900/50">
             <Info className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.
@@ -385,7 +385,7 @@ export default function ClientPage() {
               <StatCard icon={Banknote} label="Mexico (Volatile)" value="MXN" />
             </div>
             
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">The Cross-Border Reality</h3>
               <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-lg">
                 If you are following your team from Toronto to New York to Mexico City, you will be juggling three wallets. Do not assume you can use USD in Canada or Mexico.
@@ -424,8 +424,8 @@ export default function ClientPage() {
             </p>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg">
-                <div className="bg-blue-600 p-8 text-white">
+              <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg">
+                <div className="bg-blue-600 p-8 text-slate-900 dark:text-white">
                   <h3 className="text-2xl font-bold mb-2">Chase Sapphire Preferred®</h3>
                   <span className="text-blue-100 font-medium">Best Overall Travel Card</span>
                 </div>
@@ -445,8 +445,8 @@ export default function ClientPage() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg">
-                <div className="bg-indigo-600 p-8 text-white">
+              <div className="bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 overflow-hidden shadow-lg">
+                <div className="bg-indigo-600 p-8 text-slate-900 dark:text-white">
                   <h3 className="text-2xl font-bold mb-2">Capital One Venture X</h3>
                   <span className="text-indigo-100 font-medium">Best for Lounge Access</span>
                 </div>
@@ -485,7 +485,7 @@ export default function ClientPage() {
 
           <Section id="cash" title="Cash Strategy by Country">
             <div className="space-y-6">
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
                 <div className="w-full md:w-48 shrink-0">
                   <span className="block text-4xl font-black text-slate-900 dark:text-white mb-2">USA</span>
                   <span className="text-emerald-600 font-bold uppercase tracking-wider text-sm">Card is King</span>
@@ -498,7 +498,7 @@ export default function ClientPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
                 <div className="w-full md:w-48 shrink-0">
                   <span className="block text-4xl font-black text-slate-900 dark:text-white mb-2">Canada</span>
                   <span className="text-emerald-600 font-bold uppercase tracking-wider text-sm">Contactless</span>
@@ -511,7 +511,7 @@ export default function ClientPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 flex flex-col md:flex-row gap-8 items-start">
                 <div className="w-full md:w-48 shrink-0">
                   <span className="block text-4xl font-black text-slate-900 dark:text-white mb-2">Mexico</span>
                   <span className="text-emerald-600 font-bold uppercase tracking-wider text-sm">Cash Essential</span>
@@ -589,7 +589,7 @@ export default function ClientPage() {
           </Section>
 
           {/* Read Next */}
-          <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-800">
+          <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-8">Read Next</h3>
             <div className="grid md:grid-cols-3 gap-8">
               <Link href="/world-cup-2026-travel-insurance-guide" className="group block">
@@ -603,7 +603,7 @@ export default function ClientPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Essential Protection</span>
-                    <h4 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors">
                       Travel Insurance Guide
                     </h4>
                   </div>
@@ -620,7 +620,7 @@ export default function ClientPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2 block">Critical Warning</span>
-                    <h4 className="text-xl font-bold text-white group-hover:text-red-400 transition-colors">
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-400 transition-colors">
                       Avoid Ticket Scams
                     </h4>
                   </div>
@@ -637,7 +637,7 @@ export default function ClientPage() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Identity Safety</span>
-                    <h4 className="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                    <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors">
                       Passport Security
                     </h4>
                   </div>
@@ -657,3 +657,5 @@ export default function ClientPage() {
 const Banknote = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
 );
+
+

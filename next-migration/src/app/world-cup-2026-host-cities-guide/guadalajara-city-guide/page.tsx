@@ -1,40 +1,38 @@
-import React from 'react';
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-
-export const metadata: Metadata = {
- title: 'Guadalajara World Cup 2026 City Guide | Stadiumport',
- description: 'The ultimate guide to World Cup 2026 in Guadalajara. Stadium info, transport tips, where to stay, and the best tequila and mariachi experiences.',
- keywords: 'Guadalajara World Cup 2026, Estadio Akron guide, Guadalajara travel guide, World Cup 2026 Mexico, Guadalajara hotels, Estadio Akron tickets',
- openGraph: {
- title: 'Guadalajara World Cup 2026 City Guide | Stadiumport',
- description: 'The ultimate guide to World Cup 2026 in Guadalajara. Stadium info, transport tips, where to stay, and the best tequila and mariachi experiences.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/guadalajara-city-guide',
- siteName: 'Stadiumport',
- images: [
- {
- url: '/images/cities/guadalajara-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Guadalajara World Cup 2026',
- },
- ],
- locale: 'en_US',
- type: 'article',
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Guadalajara World Cup 2026 City Guide | Stadiumport',
- description: 'The ultimate guide to World Cup 2026 in Guadalajara. Stadium info, transport tips, where to stay, and the best tequila and mariachi experiences.',
- images: ['/images/cities/guadalajara-world-cup-2026.webp'],
- },
- alternates: {
- canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/guadalajara-city-guide',
- },
-};
-
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: 'Guadalajara World Cup 2026 Guide: Estadio Akron & Travel Tips',
+  description: 'Complete Guadalajara World Cup 2026 travel guide. Estadio Akron info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+  keywords: ['Guadalajara World Cup 2026', 'Estadio Akron guide', 'Guadalajara travel guide', 'World Cup 2026 Mexico', 'Guadalajara hotels', 'Estadio Akron tickets'],
+  openGraph: {
+    title: 'Guadalajara World Cup 2026 Guide: Estadio Akron & Travel Tips',
+    description: 'Complete Guadalajara World Cup 2026 travel guide. Estadio Akron info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/guadalajara-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/guadalajara-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Guadalajara World Cup 2026',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Guadalajara World Cup 2026 Guide - Estadio Akron & Travel',
+    description: 'Complete Guadalajara World Cup 2026 travel guide. Estadio Akron info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/guadalajara-world-cup-2026.webp'],
+  },
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/guadalajara-city-guide',
+  },
+};
 
 export default function GuadalajaraCityGuide() {
   const jsonLd = generateArticleSchema('guadalajara-city-guide', '/world-cup-2026-host-cities-guide/guadalajara-city-guide');

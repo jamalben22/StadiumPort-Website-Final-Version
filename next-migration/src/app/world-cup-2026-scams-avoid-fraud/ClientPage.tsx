@@ -136,7 +136,7 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
 const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary', subtext }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline', subtext?: string }) => {
   const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
   const variants = {
-    primary: "bg-emerald-500 text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
+    primary: "bg-emerald-500 text-slate-900 dark:text-white hover:bg-emerald-400 shadow-[0_10px_40px_-10px_rgba(16,185,129,0.5)] hover:shadow-[0_20px_40px_-10px_rgba(16,185,129,0.6)]",
     secondary: "bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 transition-colors shadow-xl",
     outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
   };
@@ -169,7 +169,7 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
       <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors pr-8">
         {question}
       </h3>
-      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-white transition-all duration-300">
+      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-slate-300 dark:border-white/10 group-open:bg-emerald-500 group-open:border-emerald-500 group-open:text-slate-900 dark:text-white transition-all duration-300">
         <ChevronRight className="w-4 h-4 transition-transform duration-300 group-open:rotate-90" />
       </span>
     </summary>
@@ -283,7 +283,7 @@ export default function ClientPage() {
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
               >
                 <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
                 <span className="text-slate-500">/</span>
@@ -296,17 +296,17 @@ export default function ClientPage() {
                 <span className="px-3 py-1 rounded-full border border-red-500/30 text-red-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Critical Warning
                 </span>
-                <span className="px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-500/20">
+                <span className="px-3 py-1 rounded-full bg-red-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-500/20">
                   Fraud Prevention
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 WORLD CUP 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">SCAMS</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-300 font-light max-w-xl leading-relaxed">
-                How to Avoid Ticket & Travel Fraud. <span className="text-white font-medium">Definitive Guide</span>.
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+                How to Avoid Ticket & Travel Fraud. <span className="text-slate-900 dark:text-white font-medium">Definitive Guide</span>.
               </p>
             </motion.div>
           </div>
@@ -321,7 +321,7 @@ export default function ClientPage() {
         <aside className="hidden lg:block w-72 shrink-0 relative">
           <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
             <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
-            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-800 ml-3">
+            <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
               {navLinks.map((link) => (
                 <Link 
                   key={link.id} 
@@ -329,7 +329,7 @@ export default function ClientPage() {
                   className={`block px-6 py-3 text-sm font-bold transition-all duration-300 relative ${
                     activeSection === link.id 
                     ? 'text-emerald-600 dark:text-emerald-400 translate-x-1' 
-                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-300'
+                    : 'text-slate-500 dark:text-slate-500 hover:text-slate-900 dark:hover:text-slate-600 dark:text-slate-300'
                   }`}
                   onClick={() => setActiveSection(link.id)}
                 >
@@ -350,7 +350,7 @@ export default function ClientPage() {
         <main className="flex-1 min-w-0 pb-24">
           
           {/* Disclosure */}
-          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-900/50">
+          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-100 dark:bg-slate-50 dark:bg-slate-900/50">
             <Info className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.
@@ -377,7 +377,7 @@ export default function ClientPage() {
               <StatCard icon={Users} label="Estimated Targets" value="3 Million" />
             </div>
             
-            <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+            <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
               <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Why You Are a Target</h3>
               <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed text-lg">
                 Scammers exploit the &quot;fear of missing out&quot; (FOMO). With 2026 being a tri-nation tournament (USA, Canada, Mexico), the logistical complexity creates confusion—and fraudsters thrive on confusion.
@@ -409,7 +409,7 @@ export default function ClientPage() {
                     "No physical address or working phone number listed"
                   ]}
                 />
-                <p className="text-slate-500 italic pl-6 border-l-2 border-slate-200 dark:border-slate-800 mb-8">
+                <p className="text-slate-500 italic pl-6 border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-8">
                   Real Example: In 2022, a site &quot;Fifa-Tickets-Qatar.com&quot; stole over $500,000 from fans before authorities shut it down.
                 </p>
                 <AffiliateButton href="/world-cup-2026-tickets" text="Read our Official Ticket Booking Guide" variant="secondary" icon={Ticket} />
@@ -555,7 +555,7 @@ export default function ClientPage() {
 
           <Section id="transport" title="TRANSPORTATION SCAMS">
             <div className="grid md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-4 mb-6 text-red-600 dark:text-red-400">
                   <Bus className="w-8 h-8" />
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Fake Taxis & Rides</h3>
@@ -568,7 +568,7 @@ export default function ClientPage() {
                 </div>
               </div>
 
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-4 mb-6 text-red-600 dark:text-red-400">
                   <AlertTriangle className="w-8 h-8" />
                   <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Mexico Specific: &quot;Broken Meter&quot;</h3>
@@ -594,14 +594,14 @@ export default function ClientPage() {
                 Criminals install devices on ATMs (especially in tourist areas) that read your card strip and record your PIN.
               </p>
               
-              <div className="bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+              <div className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                 <h4 className="font-bold text-2xl text-slate-900 dark:text-white mb-6">Public WiFi Danger</h4>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-8 text-lg">
                   Hackers set up fake WiFi hotspots named &quot;Free World Cup WiFi&quot; or &quot;Stadium Guest.&quot; Once you connect, they steal your login credentials and credit card info.
                 </p>
                 
                 <div className="flex flex-col gap-6">
-                  <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                  <div className="flex items-center gap-4 text-slate-700 dark:text-slate-300 bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                     <Wifi className="w-6 h-6 text-emerald-500" /> 
                     <span className="text-lg"><strong>Defense:</strong> NEVER access banking apps on public WiFi without a VPN.</span>
                   </div>
@@ -647,7 +647,7 @@ export default function ClientPage() {
           </Section>
 
           <Section id="recovery" title="WHAT TO DO IF SCAMMED">
-            <div className="bg-white dark:bg-slate-900 p-10 md:p-12 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-2xl shadow-slate-200/50 dark:shadow-none">
+            <div className="bg-white dark:bg-slate-900 p-10 md:p-12 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-2xl shadow-slate-200/50 dark:shadow-none">
               <h3 className="text-3xl font-bold text-red-600 mb-10 flex items-center gap-4">
                 <AlertTriangle className="w-10 h-10" />
                 Immediate Action Plan (First 24 Hours)
@@ -676,7 +676,7 @@ export default function ClientPage() {
                 </li>
               </ol>
               
-              <div className="mt-12 pt-10 border-t border-slate-100 dark:border-slate-800">
+              <div className="mt-12 pt-10 border-t border-slate-100 dark:border-slate-200 dark:border-slate-800">
                 <h4 className="font-bold text-slate-900 dark:text-white mb-8 text-xl">Recovery Chances by Payment Method:</h4>
                 <div className="grid grid-cols-2 gap-4 text-sm font-medium">
                   <div className="p-6 bg-emerald-50 dark:bg-emerald-900/20 rounded-2xl text-emerald-800 dark:text-emerald-200 border border-emerald-100 dark:border-emerald-900/30">
@@ -718,7 +718,7 @@ export default function ClientPage() {
 
           <Section id="prevention" title="PREVENTION CHECKLIST">
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
                  <h3 className="font-bold text-2xl text-slate-900 dark:text-white mb-8">Before Booking Anything:</h3>
                  <ul className="space-y-6">
                    {[
@@ -735,7 +735,7 @@ export default function ClientPage() {
                    ))}
                  </ul>
               </div>
-              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
+              <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl hover:shadow-2xl transition-all">
                  <h3 className="font-bold text-2xl text-slate-900 dark:text-white mb-8">Before You Travel:</h3>
                  <ul className="space-y-6">
                    {[
@@ -787,8 +787,8 @@ export default function ClientPage() {
           {/* Conclusion */}
           <div className="mt-24 p-12 md:p-20 bg-slate-900 dark:bg-slate-950 rounded-[3rem] text-center shadow-2xl overflow-hidden relative">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-red-500 via-emerald-500 to-blue-500" />
-            <h3 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight">Don&apos;t Let Them Win.</h3>
-            <p className="text-slate-300 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+            <h3 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-8 tracking-tight">Don&apos;t Let Them Win.</h3>
+            <p className="text-slate-600 dark:text-slate-300 text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed font-light">
               Scammers count on your desperation and ignorance. But now you are armed with knowledge. Verify everything. Trust your instincts. And if something feels wrong, walk away.
             </p>
             <div className="max-w-md mx-auto">
@@ -808,3 +808,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
+

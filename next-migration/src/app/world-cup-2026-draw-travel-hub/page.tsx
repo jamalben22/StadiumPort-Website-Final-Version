@@ -1,31 +1,45 @@
 import React from 'react';
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import DrawHubClientPage from './ClientPage';
 import { GROUPS_DATA } from '@/data/draw-hub';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { getContentMeta } from '@/data/content-registry';
 import { getSiteUrl } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub | Stadiumport',
-  description: 'Complete guide to FIFA World Cup 2026 Draw results. Detailed travel itineraries for all 12 groups (A-L), host city logistics, flight tips, and accommodation strategies for fans.',
-  keywords: 'World Cup 2026 draw results, FIFA World Cup 2026 groups, World Cup 2026 travel guide, WC26 group stage logistics, Group A to Group L travel, host city flights, World Cup hotel booking, World Cup 2026 tickets price, World Cup 2026 cities map, best base camp world cup 2026, USA Canada Mexico World Cup schedule',
+  title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | StadiumPort',
+  description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
+  keywords: [
+    'World Cup 2026 draw travel',
+    'World Cup 2026 draw travel planning',
+    'travel after World Cup draw',
+    'World Cup 2026 draw schedule',
+    'plan trip after draw',
+    'how to book travel after World Cup draw',
+    'World Cup draw travel tips',
+    'best time to book after draw',
+    'World Cup 2026 host cities',
+    'FIFA World Cup 2026 logistics'
+  ],
   openGraph: {
-    title: 'World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub',
-    description: 'Complete guide to FIFA World Cup 2026 Draw results. Detailed travel itineraries for all 12 groups (A-L), host city logistics, flight tips, and accommodation strategies for fans.',
+    title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide',
+    description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
     url: 'https://stadiumport.com/world-cup-2026-draw-travel-hub',
     type: 'article',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     images: [
       {
         url: '/images/draw-hub-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Draw Travel Hub',
       },
     ],
-    siteName: 'Stadiumport',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub',
-    description: 'Complete guide to FIFA World Cup 2026 Draw results. Detailed travel itineraries for all 12 groups (A-L), host city logistics, flight tips, and accommodation strategies for fans.',
+    title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide',
+    description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
     images: ['/images/draw-hub-og.jpg'],
   },
   alternates: {
@@ -34,8 +48,12 @@ export const metadata: Metadata = {
 };
 
 export default function DrawHubPage() {
-  const slug = 'world-cup-2026-draw-travel-hub';
-  const meta = getContentMeta(slug);
+  const meta = {
+    title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | StadiumPort',
+    description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
+    publishedAt: '2025-12-05',
+    updatedAt: '2025-12-05'
+  };
   const url = getSiteUrl('/world-cup-2026-draw-travel-hub');
 
   const groupSchemaItems = GROUPS_DATA.map((group, index) => ({
@@ -121,6 +139,41 @@ export default function DrawHubPage() {
             }
           }
         ]
+      },
+      {
+        "@type": "Event",
+        "name": "FIFA World Cup 2026 Final Draw",
+        "startDate": "2025-12-05T12:00:00-05:00",
+        "endDate": "2025-12-05T14:00:00-05:00",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": "Washington, D.C.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Washington",
+            "addressRegion": "DC",
+            "addressCountry": "US"
+          }
+        },
+        "image": [
+          getSiteUrl('/images/draw-hub-og.jpg')
+        ],
+        "description": "The official draw ceremony for the FIFA World Cup 2026, determining group assignments and match schedules for all 48 qualified teams.",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.fifa.com",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2025-12-01T00:00:00-05:00"
+        },
+        "organizer": {
+          "@type": "Organization",
+          "name": "FIFA",
+          "url": "https://www.fifa.com"
+        }
       },
       {
         "@type": "BreadcrumbList",

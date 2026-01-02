@@ -1,33 +1,38 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-
-export const metadata: Metadata = {
- title: 'Seattle World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Plan World Cup 2026 in Seattle: Lumen Field tips, Pioneer Square/SoDo hotels, Link Light Rail strategy from SEA airport, dining in Pike Place, safety, packing, and insider advice.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/seattle-city-guide',
- },
- openGraph: {
- title: 'Seattle World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Everything you need for World Cup 2026 in Seattle: stadium overview, walkable hotel areas, Link Light Rail routes, matchday plan, and local secrets.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/seattle-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/seattle-hero.jpg',
- width: 1200,
- height: 630,
- alt: 'Seattle World Cup 2026 Guide',
- },
- ],
- },
- keywords: ['Seattle World Cup 2026', 'Lumen Field', 'Link Light Rail', 'Downtown Seattle hotels', 'Pioneer Square hotels', 'SEA airport transfer', 'Seattle travel tips', 'World Cup tickets Seattle', 'Seattle CityPASS', 'Seattle fan zones'],
-};
-
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: 'Seattle World Cup 2026 Guide: Lumen Field & Travel Tips',
+  description: 'Complete Seattle World Cup 2026 travel guide. Lumen Field info, best hotels, Link Light Rail tips, fan zones & match schedule. Plan your trip.',
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/seattle-city-guide',
+  },
+  openGraph: {
+    title: 'Seattle World Cup 2026 Guide: Lumen Field & Travel Tips',
+    description: 'Complete Seattle World Cup 2026 travel guide. Lumen Field info, best hotels, Link Light Rail tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/seattle-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/seattle-hero.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Seattle World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Seattle World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
+    description: 'Everything you need for World Cup 2026 in Seattle: stadium overview, walkable hotel areas, Link Light Rail routes, matchday plan, and local secrets.',
+    images: ['/images/seattle-hero.jpg'],
+  },
+  keywords: ['Seattle World Cup 2026', 'Lumen Field', 'Link Light Rail', 'Downtown Seattle hotels', 'Pioneer Square hotels', 'SEA airport transfer', 'Seattle travel tips', 'World Cup tickets Seattle', 'Seattle CityPASS', 'Seattle fan zones'],
+};
 
 export default function Page() {
   const jsonLd = generateArticleSchema('seattle-city-guide', '/world-cup-2026-host-cities-guide/seattle-city-guide');

@@ -5,16 +5,16 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'New York/NJ World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-  description: 'Plan World Cup 2026 in New York & New Jersey: MetLife Stadium tips, best Manhattan/Jersey City hotels, NJ Transit strategy from EWR/JFK airports, dining, safety, packing, and insider advice.',
+  title: 'New York/NJ World Cup 2026 Guide: MetLife Stadium & Travel Tips',
+  description: 'Complete New York/NJ World Cup 2026 travel guide. MetLife Stadium info, best hotels, NJ Transit tips, fan zones & match schedule. Plan your trip.',
   alternates: {
-    canonical: '/world-cup-2026-host-cities-guide/new-york-city-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/new-york-city-guide',
   },
   openGraph: {
-    title: 'New York/NJ World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
-    description: 'Everything you need for World Cup 2026 in New York/NJ: MetLife Stadium overview, Manhattan vs. Jersey City hotels, NJ Transit routes, matchday plan, and local secrets.',
+    title: 'New York/NJ World Cup 2026 Guide: MetLife Stadium & Travel Tips',
+    description: 'Complete New York/NJ World Cup 2026 travel guide. MetLife Stadium info, best hotels, NJ Transit tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/new-york-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'StadiumPort',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -25,6 +25,12 @@ export const metadata: Metadata = {
         alt: 'New York/New Jersey World Cup 2026 Guide',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'New York/NJ World Cup 2026 Guide - MetLife Stadium & Travel',
+    description: 'Complete New York/NJ World Cup 2026 travel guide. MetLife Stadium info, best hotels, NJ Transit tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/new-york-new-jersey-world-cup-2026.webp'],
   },
   keywords: ['New York World Cup 2026', 'MetLife Stadium', 'NJ Transit', 'Manhattan hotels', 'Jersey City hotels', 'EWR airport transfer', 'New York travel tips', 'World Cup tickets New York', 'NYC Subway', 'New York fan zones'],
 };

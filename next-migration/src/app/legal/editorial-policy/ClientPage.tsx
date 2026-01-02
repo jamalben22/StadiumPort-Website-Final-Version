@@ -41,7 +41,7 @@ export default function EditorialPolicyClientPage() {
  ];
 
  return (
- <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
+ <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-slate-900 dark:text-white">
  <main className="pt-32 pb-20 px-4 md:px-6">
  <div className="max-w-6xl mx-auto">
  
@@ -54,7 +54,7 @@ export default function EditorialPolicyClientPage() {
           className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
         >
           <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
           <span className="text-emerald-700 dark:text-emerald-400">Editorial Policy</span>
         </motion.div>
 
@@ -118,11 +118,11 @@ export default function EditorialPolicyClientPage() {
  ))}
  
  {/* Responsibility Card (Spans 1 on mobile, fits nicely in grid) */}
- <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-8 text-white md:col-span-2 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group">
+ <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-8 text-slate-900 dark:text-white md:col-span-2 lg:col-span-1 flex flex-col justify-center relative overflow-hidden group">
  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"></div>
  <div className="relative z-10">
  <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-6 backdrop-blur-sm">
- <CheckCircle2 className="w-6 h-6 text-white" />
+ <CheckCircle2 className="w-6 h-6 text-slate-900 dark:text-white" />
  </div>
  <h3 className="text-xl font-bold mb-3">
  Reader Responsibility
@@ -152,6 +152,7 @@ export default function EditorialPolicyClientPage() {
  </div>
  );
 }
+
 
 
 

@@ -37,15 +37,15 @@ export const ShareDashboard = ({
         transition={{ duration: 0.6, delay: 0.2 }}
         className="flex items-center gap-2 text-sm font-medium text-white/60 mb-2 tracking-wide uppercase"
       >
-        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
         <span className="text-white/40">/</span>
-        <Link href="/world-cup-2026-prediction-game" className="hover:text-white transition-colors">Prediction Game</Link>
+        <Link href="/world-cup-2026-prediction-game" className="hover:text-slate-900 dark:text-white transition-colors">Prediction Game</Link>
         <span className="text-white/40">/</span>
-        <span className="text-white">Share</span>
+        <span className="text-slate-900 dark:text-white">Share</span>
       </motion.div>
 
       {/* Hero Section - FIFA x Apple x Nike Style */}
-      <div className="relative w-full overflow-hidden rounded-[2rem] bg-[#09090b] text-white shadow-2xl border border-white/10 p-6 md:p-12 mb-8 group isolate">
+      <div className="relative w-full overflow-hidden rounded-[2rem] bg-[#09090b] text-slate-900 dark:text-white shadow-2xl border border-white/10 p-6 md:p-12 mb-8 group isolate">
         
         {/* Dynamic Background */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,_#1e293b_0%,_#09090b_60%)]"></div>
@@ -114,7 +114,7 @@ export const ShareDashboard = ({
                        <Trophy className="w-4 h-4" />
                        <span className="text-[10px] font-bold uppercase tracking-wider">Trophy Winner</span>
                      </div>
-                     <span className="text-white font-['Rajdhani'] text-xs uppercase tracking-widest text-right">
+                     <span className="text-slate-900 dark:text-white font-['Rajdhani'] text-xs uppercase tracking-widest text-right">
                        FIFA World Cup 26™
                      </span>
                   </div>
@@ -145,7 +145,7 @@ export const ShareDashboard = ({
             </span>
             <span className="relative">
               Tournament
-              <span className="absolute -right-8 -top-4 text-xs bg-slate-900 text-white px-2 py-1 rounded-sm font-['Rajdhani'] tracking-widest">2026</span>
+              <span className="absolute -right-8 -top-4 text-xs bg-slate-900 text-slate-900 dark:text-white px-2 py-1 rounded-sm font-['Rajdhani'] tracking-widest">2026</span>
             </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-500">
               Prediction
@@ -190,7 +190,7 @@ export const ShareDashboard = ({
       <div className="flex justify-center mt-12 mb-8">
         <Link 
           href="/world-cup-2026-prediction-game"
-          className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-xl ring-4 ring-slate-900/10"
+          className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-slate-900 dark:text-white rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-xl ring-4 ring-slate-900/10"
         >
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <Trophy className="w-6 h-6 text-[#fbbf24]" />
@@ -205,3 +205,4 @@ export const ShareDashboard = ({
     </div>
   );
 };
+

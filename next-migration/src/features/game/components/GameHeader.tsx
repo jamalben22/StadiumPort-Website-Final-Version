@@ -44,7 +44,7 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
           strokeWidth="2" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
-          className="w-5 h-5 text-white/80 group-hover:text-white transition-colors"
+          className="w-5 h-5 text-white/80 group-hover:text-slate-900 dark:text-white transition-colors"
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
@@ -53,3 +53,4 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
     </header>
   );
 });
+

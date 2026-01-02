@@ -205,7 +205,7 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                       onMouseEnter={() => setSelectedIndex(index)}
                       className={`w-full px-4 py-3 flex items-center gap-4 text-left transition-colors ${
                         index === selectedIndex 
-                          ? 'bg-emerald-500 text-white' 
+                          ? 'bg-emerald-500 text-slate-900 dark:text-white' 
                           : 'text-slate-900 dark:text-white hover:bg-black/5 dark:hover:bg-white/5'
                       }`}
                       initial={{ opacity: 0 }}
@@ -214,14 +214,14 @@ export function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     >
                       <div className={`p-2 rounded-lg ${
                         index === selectedIndex 
-                          ? 'bg-white/20 text-white' 
+                          ? 'bg-white/20 text-slate-900 dark:text-white' 
                           : 'bg-slate-100 dark:bg-white/10 text-slate-500 dark:text-slate-400'
                       }`}>
                         {result.icon ? <result.icon className="w-5 h-5" /> : <Search className="w-5 h-5" />}
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className={`text-base font-medium ${
-                          index === selectedIndex ? 'text-white' : 'text-slate-900 dark:text-white'
+                          index === selectedIndex ? 'text-slate-900 dark:text-white' : 'text-slate-900 dark:text-white'
                         }`}>
                           {result.title}
                         </div>
@@ -300,3 +300,4 @@ function QuickLink({ title, path, icon: Icon, onClick }: { title: string, path: 
     </motion.button>
   );
 }
+

@@ -4,28 +4,34 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Kansas City World Cup 2026 Guide: Matches, Hotels & BBQ | Stadiumport',
- description: 'The ultimate Kansas City World Cup 2026 guide. Insider tips on Arrowhead Stadium, best BBQ joints, hotel neighborhoods, and transport for the Quarterfinal host city.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/kansas-city-city-guide',
- },
- openGraph: {
- title: 'Kansas City World Cup 2026 Guide: Matches, Hotels & BBQ',
- description: 'The ultimate Kansas City World Cup 2026 guide. Insider tips on Arrowhead Stadium, best BBQ joints, hotel neighborhoods, and transport.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/kansas-city-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/kansas-city-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Kansas City World Cup 2026 Guide',
- },
- ],
- },
- keywords: ['Kansas City World Cup 2026', 'Arrowhead Stadium World Cup', 'Kansas City World Cup hotels', 'Kansas City BBQ guide', 'World Cup 2026 Quarterfinal'],
+  title: 'Kansas City World Cup 2026 Guide: Arrowhead Stadium & Travel Tips',
+  description: 'Complete Kansas City World Cup 2026 travel guide. Arrowhead Stadium info, best hotels, transportation tips, BBQ guide & match schedule. Plan your trip.',
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/kansas-city-city-guide',
+  },
+  openGraph: {
+    title: 'Kansas City World Cup 2026 Guide: Arrowhead Stadium & Travel Tips',
+    description: 'Complete Kansas City World Cup 2026 travel guide. Arrowhead Stadium info, best hotels, transportation tips, BBQ guide & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/kansas-city-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/kansas-city-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Kansas City World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kansas City World Cup 2026 Guide - Arrowhead Stadium & Travel',
+    description: 'Complete Kansas City World Cup 2026 travel guide. Arrowhead Stadium info, best hotels, transportation tips, BBQ guide & match schedule. Plan your trip.',
+    images: ['/images/cities/kansas-city-world-cup-2026.webp'],
+  },
+  keywords: ['Kansas City World Cup 2026', 'Arrowhead Stadium World Cup', 'Kansas City World Cup hotels', 'Kansas City BBQ guide', 'World Cup 2026 Quarterfinal'],
 };
 
 export default function Page() {

@@ -6,15 +6,40 @@ import { generateArticleSchema } from '@/lib/schema';
 export const metadata: Metadata = {
   title: 'Money & Financial Safety: World Cup 2026 Complete Guide | Stadiumport',
   description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips, and fraud prevention.',
-  keywords: 'Money World Cup 2026, Financial Safety World Cup, World Cup Currency Guide, World Cup Travel Money, credit cards World Cup, ATM fees North America, Currency exchange World Cup',
+  keywords: [
+    'Money World Cup 2026',
+    'Financial Safety World Cup',
+    'World Cup Currency Guide',
+    'World Cup Travel Money',
+    'credit cards World Cup',
+    'ATM fees North America',
+    'Currency exchange World Cup'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-money-financial-safety',
+    canonical: 'https://stadiumport.com/world-cup-2026-money-financial-safety',
   },
   openGraph: {
-    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | Stadiumport',
+    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | StadiumPort',
     description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips, and fraud prevention.',
-    url: '/world-cup-2026-money-financial-safety',
-  }
+    url: 'https://stadiumport.com/world-cup-2026-money-financial-safety',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/safety-guide/Money%20&%20Financial%20Safety%20Cash%20Cards%20&%20Currencies.webp',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Money & Financial Safety',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | StadiumPort',
+    description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips.',
+    images: ['/images/safety-guide/Money%20&%20Financial%20Safety%20Cash%20Cards%20&%20Currencies.webp'],
+  },
 };
 
 export default function MoneySafetyPage() {

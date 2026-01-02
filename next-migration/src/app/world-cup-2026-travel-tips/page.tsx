@@ -1,10 +1,12 @@
 import React from 'react';
+import { Metadata } from 'next';
 import TravelTipsClientPage from './ClientPage';
-import { constructMetadata } from '@/lib/seo';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
-export const metadata = constructMetadata({
-  title: 'World Cup 2026 Travel Tips: The Ultimate Guide (USA, Canada, Mexico)',
-  description: 'The #1 World Cup 2026 travel guide. Complete advice on visas, tickets, accommodation, transport, and host cities for USA, Canada, and Mexico. Plan your trip now.',
+export const metadata: Metadata = {
+  title: 'World Cup 2026 Travel Tips: Complete Fan Planning Guide',
+  description: 'Essential travel tips for World Cup 2026. Expert advice on visas, tickets, accommodation, transport & budgets for USA, Canada & Mexico.',
   keywords: [
     'World Cup 2026 travel tips',
     'World Cup 2026 travel guide',
@@ -17,35 +19,45 @@ export const metadata = constructMetadata({
     'World Cup 2026 accommodation',
     'World Cup 2026 tickets'
   ],
-  path: '/world-cup-2026-travel-tips',
-});
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-travel-tips',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Travel Tips: Complete Fan Planning Guide',
+    description: 'Essential travel tips for World Cup 2026. Expert advice on visas, tickets, accommodation, transport & budgets for USA, Canada & Mexico.',
+    url: 'https://stadiumport.com/world-cup-2026-travel-tips',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/travel-tips/World%20Cup%202026%20Travel%20Tips%20Cover.webp',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Travel Tips',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Travel Tips: Complete Fan Planning Guide',
+    description: 'Essential travel tips for World Cup 2026. Expert advice on visas, tickets, accommodation, transport & budgets for USA, Canada & Mexico.',
+    images: ['/images/travel-tips/World%20Cup%202026%20Travel%20Tips%20Cover.webp'],
+  },
+};
 
 export default function TravelTipsPage() {
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://stadiumport.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Travel Tips",
-        "item": "https://stadiumport.com/world-cup-2026-travel-tips"
-      }
-    ]
-  };
+  const breadcrumbJsonLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Travel Tips', item: '/world-cup-2026-travel-tips' }
+  ]);
+  
+  const articleSchema = generateArticleSchema('world-cup-2026-travel-tips', '/world-cup-2026-travel-tips');
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <JsonLd schema={breadcrumbJsonLd} />
+      <JsonLd schema={articleSchema} />
       <TravelTipsClientPage />
     </>
   );

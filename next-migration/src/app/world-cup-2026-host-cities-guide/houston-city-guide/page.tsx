@@ -4,34 +4,34 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
- description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/houston-city-guide',
- },
- openGraph: {
- title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
- description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/houston-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/houston-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Houston World Cup 2026 Guide',
- },
- ],
- },
- twitter: {
- card: 'summary_large_image',
- title: 'Houston World Cup 2026 Guide: NRG Stadium, Hotels & Transport',
- description: 'The definitive Houston World Cup 2026 guide. Insider intel on NRG Stadium AC, METRORail transport strategy, best hotels, and Viet-Cajun food spots.',
- images: ['/images/cities/houston-world-cup-2026.webp'],
- },
- keywords: ['Houston World Cup 2026', 'NRG Stadium', 'METRORail', 'Downtown Houston hotels', 'Medical Center hotels', 'Houston airport transfer', 'Houston travel tips', 'World Cup tickets Houston', 'NASA Space Center', 'Houston dining'],
+  title: 'Houston World Cup 2026 Guide: NRG Stadium & Travel Tips',
+  description: 'Complete Houston World Cup 2026 travel guide. NRG Stadium info, best hotels, METRORail transportation tips, fan zones & match schedule. Plan your trip.',
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/houston-city-guide',
+  },
+  openGraph: {
+    title: 'Houston World Cup 2026 Guide: NRG Stadium & Travel Tips',
+    description: 'Complete Houston World Cup 2026 travel guide. NRG Stadium info, best hotels, METRORail transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/houston-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/houston-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Houston World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Houston World Cup 2026 Guide - NRG Stadium & Travel Info',
+    description: 'Complete Houston World Cup 2026 travel guide. NRG Stadium info, best hotels, METRORail transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/houston-world-cup-2026.webp'],
+  },
+  keywords: ['Houston World Cup 2026', 'NRG Stadium', 'METRORail', 'Downtown Houston hotels', 'Medical Center hotels', 'Houston airport transfer', 'Houston travel tips', 'World Cup tickets Houston', 'NASA Space Center', 'Houston dining'],
 };
 
 export default function Page() {

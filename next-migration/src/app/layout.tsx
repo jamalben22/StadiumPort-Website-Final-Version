@@ -44,7 +44,7 @@ export default function RootLayout({
           <JsonLd schema={generateOrganizationSchema()} />
           <JsonLd schema={generateWebsiteSchema()} />
           <WebVitalsReporter />
-          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-white rounded-md">
+          <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-slate-900 dark:text-white rounded-md">
             Skip to content
           </a>
           <Header />
@@ -57,3 +57,4 @@ export default function RootLayout({
     </html>
   );
 }
+

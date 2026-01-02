@@ -37,7 +37,7 @@ export default function ClientAuthors() {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white transition-colors duration-500">
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-slate-900 dark:text-white transition-colors duration-500">
       <main className="pt-32 pb-20 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
           
@@ -50,9 +50,9 @@ export default function ClientAuthors() {
               className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
             >
               <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
               <Link href="/about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About</Link>
-              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
               <span className="text-emerald-700 dark:text-emerald-400">Authors</span>
             </motion.div>
 
@@ -154,7 +154,7 @@ export default function ClientAuthors() {
           </div>
 
           {/* Commitment Section */}
-          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-10 md:p-20 text-center text-white relative overflow-hidden animate-fade-up [animation-delay:600ms]">
+          <div className="bg-gradient-to-br from-indigo-600 to-purple-700 rounded-3xl p-10 md:p-20 text-center text-slate-900 dark:text-white relative overflow-hidden animate-fade-up [animation-delay:600ms]">
             <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-10"></div>
             <div className="relative z-10 max-w-3xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">Committed to Transparency</h2>
@@ -177,3 +177,4 @@ export default function ClientAuthors() {
     </div>
   );
 }
+

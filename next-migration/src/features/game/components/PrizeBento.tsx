@@ -19,7 +19,7 @@ export const PrizeBento = () => {
             </span>
           </div>
           
-          <h3 className="text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Grand Champion</h3>
+          <h3 className="text-slate-900 dark:text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Grand Champion</h3>
           <p className="text-white/60 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
             The ultimate victory package
           </p>
@@ -27,7 +27,7 @@ export const PrizeBento = () => {
           <div className="mt-auto space-y-3">
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
               <Banknote className="w-5 h-5 text-[#FBBF24]" />
-              <span className="text-sm text-white font-bold font-['Rajdhani']">$1,000 Cash Prize</span>
+              <span className="text-sm text-slate-900 dark:text-white font-bold font-['Rajdhani']">$1,000 Cash Prize</span>
             </div>
             <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5">
               <Shirt className="w-5 h-5 text-white/60" />
@@ -44,14 +44,14 @@ export const PrizeBento = () => {
         <div className="relative z-10 flex flex-col h-full">
           <div className="flex items-start justify-between mb-6">
             <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center border border-white/10">
-              <Medal className="w-6 h-6 text-white" />
+              <Medal className="w-6 h-6 text-slate-900 dark:text-white" />
             </div>
             <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-white/60 text-[10px] font-bold uppercase tracking-widest">
               Top 5
             </span>
           </div>
           
-          <h3 className="text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Elite Predictors</h3>
+          <h3 className="text-slate-900 dark:text-white font-['Teko'] font-bold text-3xl mb-1 leading-none">Elite Predictors</h3>
           <p className="text-white/60 text-xs font-['Rajdhani'] font-medium uppercase tracking-wider mb-6">
             Rewards for the best
           </p>
@@ -71,3 +71,4 @@ export const PrizeBento = () => {
     </div>
   );
 };
+

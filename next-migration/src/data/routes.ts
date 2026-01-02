@@ -55,6 +55,22 @@ export const STATIC_ROUTES = [
   '/world-cup-2026-packing-guide',
   '/world-cup-2026-match-selection-strategy',
   '/world-cup-2026-food-dining-guide',
+  '/world-cup-2026-host-cities-guide/los-angeles-city-guide',
+  '/world-cup-2026-accommodation-security',
+  '/world-cup-2026-connectivity-guide',
+  '/world-cup-2026-emergency-contacts-resources',
+  '/world-cup-2026-family-safety-guide',
+  '/world-cup-2026-health-medical-preparedness',
+  '/world-cup-2026-money-financial-safety',
+  '/world-cup-2026-passport-document-security',
+  '/world-cup-2026-scams-avoid-fraud',
+  '/world-cup-2026-solo-travel-safety-guide',
+  '/world-cup-2026-stadium-safety',
+  '/world-cup-2026-transportation-safety',
+  '/world-cup-2026-travel-insurance-guide',
+  '/world-cup-2026-prediction-contest-privacy',
+  '/world-cup-2026-prediction-contest-terms',
+  '/about/authors',
 ];
 
 export const GROUPS = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l'];

@@ -4,13 +4,21 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud',
+  title: 'World Cup 2026 Scams: Avoid Ticket & Travel Fraud',
   description: 'Protect yourself from World Cup 2026 ticket scams, fake accommodation listings, and travel fraud. Essential guide to avoiding fraud in USA, Canada & Mexico.',
+  keywords: [
+    'World Cup 2026 ticket scams',
+    'fake World Cup tickets',
+    'World Cup 2026 fraud',
+    'avoid travel scams USA Canada Mexico',
+    'safe World Cup ticket buying',
+    'World Cup accommodation scams'
+  ],
   alternates: {
-    canonical: '/world-cup-2026-scams-avoid-fraud',
+    canonical: 'https://stadiumport.com/world-cup-2026-scams-avoid-fraud',
   },
   openGraph: {
-    title: 'World Cup 2026 Scams: How to Avoid Ticket & Travel Fraud',
+    title: 'World Cup 2026 Scams: Avoid Ticket & Travel Fraud',
     description: 'Protect yourself from World Cup 2026 ticket scams, fake accommodation listings, and travel fraud. Essential guide to avoiding fraud in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-scams-avoid-fraud',
     siteName: 'StadiumPort',
@@ -25,7 +33,12 @@ export const metadata: Metadata = {
       },
     ],
   },
-  keywords: ['World Cup 2026 ticket scams', 'fake World Cup tickets', 'World Cup 2026 fraud', 'avoid travel scams USA Canada Mexico', 'safe World Cup ticket buying', 'World Cup accommodation scams'],
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Scams: Avoid Ticket & Travel Fraud',
+    description: 'Protect yourself from World Cup 2026 ticket scams, fake accommodation listings, and travel fraud. Essential guide to avoiding fraud in USA, Canada & Mexico.',
+    images: ['/images/safety-guide/A_realistic_photo-style_image_showing_a_worried_football_fan_reviewing_suspiciou.webp'],
+  },
 };
 
 export default function Page() {

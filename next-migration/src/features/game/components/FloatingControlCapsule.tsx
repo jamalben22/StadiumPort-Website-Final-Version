@@ -36,7 +36,7 @@ export const FloatingControlCapsule = ({
             transition-all duration-200
             ${!canGoBack 
               ? 'opacity-20 cursor-not-allowed' 
-              : 'hover:bg-white/10 text-white/70 hover:text-white cursor-pointer'}
+              : 'hover:bg-white/10 text-white/70 hover:text-slate-900 dark:text-white cursor-pointer'}
           `}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -74,3 +74,4 @@ export const FloatingControlCapsule = ({
     </div>
   );
 };
+

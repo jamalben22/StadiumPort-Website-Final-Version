@@ -97,7 +97,7 @@ const TeamRow = React.memo(({
                       font-['Teko'] leading-none uppercase tracking-wide transition-all duration-300 flex-shrink-0
                       ${compact ? 'text-base' : 'text-xl'}
                       ${isWinner 
-                          ? 'text-white font-bold drop-shadow-sm' 
+                          ? 'text-slate-900 dark:text-white font-bold drop-shadow-sm' 
                           : 'text-slate-900 group-hover:text-black font-semibold'
                       }
                     `}>
@@ -107,7 +107,7 @@ const TeamRow = React.memo(({
                 <span className={`
                   font-['Teko'] uppercase truncate text-left transition-colors duration-300 tracking-wide
                   ${compact ? 'text-sm' : 'text-lg'}
-                  ${isWinner ? 'text-white font-semibold' : 'text-slate-900 group-hover:text-black font-medium'}
+                  ${isWinner ? 'text-slate-900 dark:text-white font-semibold' : 'text-slate-900 group-hover:text-black font-medium'}
                 `}>
                   {team.name}
                 </span>
@@ -119,7 +119,7 @@ const TeamRow = React.memo(({
                 z-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-sm
                 ${compact ? 'w-4 h-4' : 'w-6 h-6'}
             `}>
-                <i className={`ri-check-line text-white font-bold ${compact ? 'text-[10px]' : 'text-sm'}`}></i>
+                <i className={`ri-check-line text-slate-900 dark:text-white font-bold ${compact ? 'text-[10px]' : 'text-sm'}`}></i>
             </div>
           )}
         </>
@@ -200,3 +200,4 @@ export const BracketMatchCard = React.memo(({
     </div>
   );
 });
+

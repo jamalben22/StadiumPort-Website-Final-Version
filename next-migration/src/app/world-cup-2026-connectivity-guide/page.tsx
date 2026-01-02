@@ -4,14 +4,14 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi',
-  description: 'The ultimate connectivity guide for World Cup 2026. Compare eSIMs, local SIM cards, and roaming plans for USA, Canada & Mexico. Avoid roaming fees.',
+  title: 'World Cup 2026 Connectivity: eSIM, WiFi & Phone Plans',
+  description: 'Stay connected at World Cup 2026. Best eSIMs, local SIM cards & roaming tips for USA, Canada & Mexico. Avoid high fees & stay online.',
   alternates: {
-    canonical: '/world-cup-2026-connectivity-guide',
+    canonical: 'https://stadiumport.com/world-cup-2026-connectivity-guide',
   },
   openGraph: {
-    title: 'World Cup 2026 Connectivity Guide: Phone Plans, SIM Cards & WiFi',
-    description: 'The ultimate connectivity guide for World Cup 2026. Compare eSIMs, local SIM cards, and roaming plans for USA, Canada & Mexico. Avoid roaming fees.',
+    title: 'World Cup 2026 Connectivity: eSIM, WiFi & Phone Plans',
+    description: 'Stay connected at World Cup 2026. Best eSIMs, local SIM cards & roaming tips for USA, Canada & Mexico. Avoid high fees & stay online.',
     url: 'https://stadiumport.com/world-cup-2026-connectivity-guide',
     siteName: 'StadiumPort',
     locale: 'en_US',
@@ -24,6 +24,12 @@ export const metadata: Metadata = {
         alt: 'World Cup 2026 Connectivity Guide',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Connectivity: eSIM, WiFi & Phone Plans',
+    description: 'Stay connected at World Cup 2026. Best eSIMs, local SIM cards & roaming tips for USA, Canada & Mexico. Avoid high fees & stay online.',
+    images: ['/images/travel-tips/connectivity-guide-cover.webp'],
   },
   keywords: ['World Cup 2026 eSIM', 'World Cup 2026 SIM card', 'World Cup 2026 phone plans', 'roaming in USA Canada Mexico', 'best eSIM for World Cup', 'portable wifi World Cup 2026'],
 };

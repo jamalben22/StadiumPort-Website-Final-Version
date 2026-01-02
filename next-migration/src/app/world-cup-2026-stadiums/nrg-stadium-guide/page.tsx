@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'NRG Stadium World Cup 2026: Complete Stadium Guide',
-  description: 'Plan your trip to NRG Stadium for World Cup 2026. Detailed guide on seating, retractable roof, Houston transportation, and local fan tips.',
+  title: 'NRG Stadium World Cup 2026 Guide: Seating & Tickets',
+  description: 'Complete guide to NRG Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Houston.',
   keywords: 'NRG Stadium World Cup 2026, Houston World Cup, NRG Stadium Guide, World Cup 2026 Houston, stadium seating, travel guide',
   openGraph: {
-    title: 'NRG Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Plan your trip to NRG Stadium for World Cup 2026. Detailed guide on seating, transportation, and local tips.',
+    title: 'NRG Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to NRG Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Houston.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/nrg-stadium-guide',
     siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NRG Stadium World Cup 2026: Complete Stadium Guide',
-    description: 'Plan your trip to NRG Stadium for World Cup 2026.',
+    title: 'NRG Stadium World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to NRG Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Houston.',
     images: ['/images/cities/houston-world-cup-2026-1600.webp'],
   },
 };

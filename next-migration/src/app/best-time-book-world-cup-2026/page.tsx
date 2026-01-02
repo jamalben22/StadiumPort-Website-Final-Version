@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
   description: 'The definitive timeline for booking World Cup 2026. Data-backed guide on when to buy tickets, flights, and hotels to save thousands. Don\'t miss the 11-month sweet spot.',
   alternates: {
-    canonical: '/best-time-book-world-cup-2026',
+    canonical: 'https://stadiumport.com/best-time-book-world-cup-2026',
   },
   openGraph: {
     title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
@@ -18,12 +18,18 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: '/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp',
+        url: '/images/travel-tips/Best%20Time%20to%20Book%20World%20Cup%202026%20Guide%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'Best Time to Book World Cup 2026 Guide',
       },
     ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
+    description: 'The definitive timeline for booking World Cup 2026. Data-backed guide on when to buy tickets, flights, and hotels to save thousands.',
+    images: ['/images/travel-tips/Best%20Time%20to%20Book%20World%20Cup%202026%20Guide%20Illustration.webp'],
   },
   keywords: ['World Cup 2026 booking timeline', 'when to book World Cup 2026 flights', 'World Cup 2026 ticket lottery dates', 'best time to book hotels for World Cup 2026', 'World Cup 2026 travel planning'],
 };

@@ -4,12 +4,12 @@ import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
- title: 'Estadio Azteca World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Estadio Azteca World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day in Mexico City.',
+ title: 'Estadio Azteca World Cup 2026 Guide: Seating & Tickets',
+ description: 'Complete guide to Estadio Azteca for World Cup 2026. Seating charts, capacity, parking & local transport tips for Mexico City.',
  keywords: 'Estadio Azteca World Cup 2026, Mexico City World Cup Stadium, Estadio Azteca Guide, Mexico City Soccer Guide, World Cup 2026 Mexico City matches, Estadio Azteca seating chart',
  openGraph: {
- title: 'Estadio Azteca World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for Estadio Azteca World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day.',
+ title: 'Estadio Azteca World Cup 2026 Guide: Seating & Tickets',
+ description: 'Complete guide to Estadio Azteca for World Cup 2026. Seating charts, capacity, parking & local transport tips for Mexico City.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/estadio-azteca-guide',
  siteName: 'Stadiumport',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Estadio Azteca World Cup 2026: Complete Stadium Guide',
-    description: 'Everything you need for Estadio Azteca World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    title: 'Estadio Azteca World Cup 2026 Guide: Seating & Tickets',
+    description: 'Complete guide to Estadio Azteca for World Cup 2026. Seating charts, capacity, parking & local transport tips for Mexico City.',
     images: ['/images/cities/mexico-city-world-cup-2026-1600.webp'],
   },
 };

@@ -7,15 +7,27 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } fr
 export const metadata: Metadata = {
   title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend | StadiumPort',
   description: 'Maximize your World Cup 2026 experience. Expert guide on which matches to attend, ticket value ratings, and strategic planning for every budget.',
-  keywords: 'World Cup 2026 matches, best games to attend, ticket strategy, match schedule analysis, group stage vs knockout, World Cup travel planning',
+  keywords: [
+    'World Cup 2026 matches',
+    'best games to attend',
+    'ticket strategy',
+    'match schedule analysis',
+    'group stage vs knockout',
+    'World Cup travel planning'
+  ],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-match-selection-strategy',
+  },
   openGraph: {
     title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend',
     description: 'Group stage value vs. knockout drama. How to build a match schedule that delivers unforgettable moments.',
     url: 'https://stadiumport.com/world-cup-2026-match-selection-strategy',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
     type: 'article',
     images: [
       {
-        url: '/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp',
+        url: '/images/travel-tips/World%20Cup%202026%20Match%20Selection%20Strategy%20Illustration.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Match Selection Strategy',
@@ -26,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend',
     description: 'Group stage value vs. knockout drama. How to build a match schedule that delivers unforgettable moments.',
-    images: ['/images/travel-tips/World Cup 2026 Match Selection Strategy Illustration.webp'],
+    images: ['/images/travel-tips/World%20Cup%202026%20Match%20Selection%20Strategy%20Illustration.webp'],
   },
 };
 

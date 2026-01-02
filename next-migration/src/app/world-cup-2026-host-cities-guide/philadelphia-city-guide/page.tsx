@@ -1,33 +1,38 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-
-export const metadata: Metadata = {
- title: 'Philadelphia World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Plan World Cup 2026 in Philadelphia: Lincoln Financial Field tips, best Center City/Old City hotels, SEPTA strategy from PHL airport, dining, safety, packing, and insider advice.',
- alternates: {
- canonical: '/world-cup-2026-host-cities-guide/philadelphia-city-guide',
- },
- openGraph: {
- title: 'Philadelphia World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
- description: 'Everything you need for World Cup 2026 in Philadelphia: stadium overview, walkable hotel areas, SEPTA routes, matchday plan, and local secrets.',
- url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/philadelphia-city-guide',
- siteName: 'Stadiumport',
- locale: 'en_US',
- type: 'article',
- images: [
- {
- url: '/images/cities/philadelphia-world-cup-2026.webp',
- width: 1200,
- height: 630,
- alt: 'Philadelphia World Cup 2026 Guide',
- },
- ],
- },
- keywords: ['Philadelphia World Cup 2026', 'Lincoln Financial Field', 'SEPTA', 'Center City hotels', 'Old City hotels', 'PHL airport transfer', 'Philadelphia travel tips', 'World Cup tickets Philadelphia', 'Philadelphia CityPASS', 'Philadelphia fan zones'],
-};
-
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+export const metadata: Metadata = {
+  title: 'Philadelphia World Cup 2026 Guide: Lincoln Financial Field & Travel Tips',
+  description: 'Complete Philadelphia World Cup 2026 travel guide. Lincoln Financial Field info, best hotels, SEPTA transportation tips, fan zones & match schedule. Plan your trip.',
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide/philadelphia-city-guide',
+  },
+  openGraph: {
+    title: 'Philadelphia World Cup 2026 Guide: Lincoln Financial Field & Travel Tips',
+    description: 'Complete Philadelphia World Cup 2026 travel guide. Lincoln Financial Field info, best hotels, SEPTA transportation tips, fan zones & match schedule. Plan your trip.',
+    url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/philadelphia-city-guide',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: '/images/cities/philadelphia-world-cup-2026.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Philadelphia World Cup 2026 Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Philadelphia World Cup 2026 Guide - Lincoln Financial Field & Travel',
+    description: 'Complete Philadelphia World Cup 2026 travel guide. Lincoln Financial Field info, best hotels, SEPTA transportation tips, fan zones & match schedule. Plan your trip.',
+    images: ['/images/cities/philadelphia-world-cup-2026.webp'],
+  },
+  keywords: ['Philadelphia World Cup 2026', 'Lincoln Financial Field', 'SEPTA', 'Center City hotels', 'Old City hotels', 'PHL airport transfer', 'Philadelphia travel tips', 'World Cup tickets Philadelphia', 'Philadelphia CityPASS', 'Philadelphia fan zones'],
+};
 
 export default function Page() {
   const jsonLd = generateArticleSchema('philadelphia-city-guide', '/world-cup-2026-host-cities-guide/philadelphia-city-guide');

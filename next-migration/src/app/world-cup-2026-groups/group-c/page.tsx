@@ -1,27 +1,44 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import GroupCClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami | Stadiumport',
- description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
- keywords: 'World Cup 2026 Group C Travel Guide, Group C matches, Boston NYC Philadelphia Atlanta Miami World Cup, Amtrak Acela World Cup travel, East Coast World Cup itinerary',
- alternates: {
- canonical: '/groups/group-c',
- },
- openGraph: {
- title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami | Stadiumport',
- description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
- url: '/groups/group-c',
- }
+  title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami',
+  description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
+  keywords: ['World Cup 2026 Group C Travel Guide', 'Group C matches', 'Boston NYC Philadelphia Atlanta Miami World Cup', 'Amtrak Acela World Cup travel', 'East Coast World Cup itinerary'],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-groups/group-c',
+  },
+  openGraph: {
+    title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami',
+    description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
+    url: 'https://stadiumport.com/world-cup-2026-groups/group-c',
+    siteName: 'StadiumPort',
+    locale: 'en_US',
+    type: 'article',
+    images: [
+      {
+        url: 'https://stadiumport.com/assets/wc26-groups-og.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'World Cup 2026 Group C Guide',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami',
+    description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
+    images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
+  },
 };
 
 export default function GroupCPage() {
- const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
- const pageUrl = '/groups/group-c';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
+  const pageUrl = '/world-cup-2026-groups/group-c';
 
- const articleSchema = generateArticleSchema('group-c', pageUrl);
+  const articleSchema = generateArticleSchema('group-c', pageUrl);
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",
