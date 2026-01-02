@@ -95,9 +95,38 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
     return TEAMS.find(t => t.id === ruId);
   }, [prediction]);
 
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Prediction Game', item: '/world-cup-2026-prediction-game' },
+    { name: 'Entry', item: `/world-cup-2026-prediction-game/entry/${code}` }
+  ]);
+
   return (
-    <ResultDashboard 
-      champion={champion}
+    <GameLayout allowScroll={true}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <GameHeader />
+      
+      {/* Breadcrumbs */}
+      <div className="w-full max-w-5xl mx-auto px-4 pt-24 pb-0">
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center gap-2 text-sm font-medium text-slate-900/60 mb-4 tracking-wide uppercase"
+        >
+          <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
+          <span className="text-slate-900/40">/</span>
+          <Link href="/world-cup-2026-prediction-game" className="hover:text-slate-900 transition-colors">Prediction Game</Link>
+          <span className="text-slate-900/40">/</span>
+          <span className="text-slate-900">Entry</span>
+        </motion.div>
+      </div>
+
+      <ResultDashboard 
+        champion={champion}
       runnerUp={runnerUp}
       userName={prediction.name || 'Participant'}
       userEmail={prediction.email || ''}

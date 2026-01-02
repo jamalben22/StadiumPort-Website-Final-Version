@@ -40,11 +40,30 @@ export const metadata: Metadata = {
 export default function Page() {
   const jsonLd = generateArticleSchema(slug, '/world-cup-2026-accommodation-guide');
   
-  const breadcrumbLd = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Accommodation Guide', item: '/world-cup-2026-accommodation-guide' }
-  ]);
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Accommodation Guide",
+        "item": "https://stadiumport.com/world-cup-2026-accommodation-guide"
+      }
+    ]
+  };
 
   const faqLd = {
     '@context': 'https://schema.org',

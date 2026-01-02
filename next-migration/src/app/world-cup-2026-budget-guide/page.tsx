@@ -28,14 +28,33 @@ export const metadata: Metadata = {
   keywords: ['World Cup 2026 budget', 'World Cup 2026 cost', 'World Cup 2026 ticket prices', 'World Cup 2026 flights', 'cheap hotels World Cup 2026', 'save money World Cup 2026', 'World Cup travel budget'],
 };
 
-export default function Page() {
+export default function BudgetGuidePage() {
   const jsonLd = generateArticleSchema('world-cup-2026-budget-guide', '/world-cup-2026-budget-guide');
 
-  const breadcrumbLd = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Budget Guide', item: '/world-cup-2026-budget-guide' }
-  ]);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Budget Guide",
+        "item": "https://stadiumport.com/world-cup-2026-budget-guide"
+      }
+    ]
+  };
 
   const faqLd = {
     '@context': 'https://schema.org',
@@ -87,7 +106,10 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={jsonLd} />
-      <JsonLd schema={breadcrumbLd} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <JsonLd schema={faqLd} />
       <ClientPage />
     </>

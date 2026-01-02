@@ -31,7 +31,7 @@ export default function MexicoCityGuide() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
-    { name: 'World Cup 2026 Host Cities', item: '/world-cup-2026-host-cities' },
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities-guide' },
     { name: 'Mexico City Guide', item: '/world-cup-2026-host-cities-guide/mexico-city-city-guide' }
   ]);
 

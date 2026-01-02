@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
 
 import { twMerge } from 'tailwind-merge';
@@ -17,6 +17,7 @@ type OptimizedImageProps = Omit<ImageProps, 'src' | 'alt'> & {
   imgClassName?: string; // image class
   containerClassName?: string; // alias for className
   useSkeleton?: boolean;
+  fallbackSrc?: string;
 };
 
 // Generate a deterministic blur placeholder based on the src string.
@@ -56,9 +57,15 @@ export function OptimizedImage({
   fill,
   sizes,
   useSkeleton = false,
+  fallbackSrc,
   ...props
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
+  const [imgSrc, setImgSrc] = useState(src);
+
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
   
   const [blurDataURL] = useState(() => {
     if (blurDataURLProp) return blurDataURLProp;
@@ -78,7 +85,7 @@ export function OptimizedImage({
       style={!fill && width && height ? { width: width, height: height } : undefined}
     >
       <Image
-        src={src}
+        src={imgSrc}
         alt={alt}
         className={cn(
           'duration-700 ease-in-out',
@@ -93,6 +100,11 @@ export function OptimizedImage({
         placeholder={placeholder === 'empty' ? 'empty' : 'blur'}
         blurDataURL={blurDataURL}
         onLoad={() => setIsLoading(false)}
+        onError={() => {
+          if (fallbackSrc) {
+            setImgSrc(fallbackSrc);
+          }
+        }}
         {...props}
       />
     </div>

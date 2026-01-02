@@ -25,7 +25,7 @@ export const PlanningHub = () => {
   ];
 
   return (
-    <section className="pt-32 pb-16 md:pt-48 md:pb-24 relative overflow-hidden">
+    <section className="pt-32 pb-16 md:pt-48 md:pb-24 bg-[#F5F5F7] dark:bg-[#0A0A0A] relative overflow-hidden">
       
       <div className="relative z-10 max-w-[1400px] mx-auto px-6 md:px-12">
         <div className="text-center mb-20 md:mb-32">
@@ -33,7 +33,7 @@ export const PlanningHub = () => {
              initial={{ opacity: 0, y: 20 }}
              whileInView={{ opacity: 1, y: 0 }}
              viewport={{ once: true }}
-             className="inline-block mb-6 px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-md text-sm font-medium text-slate-900 dark:text-white"
+             className="inline-block mb-6 px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-[#0A0A0A] backdrop-blur-md text-sm font-medium text-slate-900 dark:text-white"
            >
              Plan Your Journey
            </motion.span>
@@ -51,7 +51,7 @@ export const PlanningHub = () => {
 
         {/* Tab Navigation - Apple-style Segmented Control */}
         <div className="flex justify-center mb-12 md:mb-16 overflow-x-auto pb-4 md:pb-0 no-scrollbar">
-            <div className="inline-flex bg-slate-200/50 dark:bg-white/10 p-1.5 rounded-full backdrop-blur-md whitespace-nowrap">
+            <div className="inline-flex bg-slate-200/50 dark:bg-[#0A0A0A] p-1.5 rounded-full backdrop-blur-md whitespace-nowrap">
                 {tabs.map((tab) => (
                     <button
                         key={tab.id}
@@ -81,9 +81,9 @@ export const PlanningHub = () => {
         <div className="max-w-6xl mx-auto">
           <motion.div 
             layout
-            className="bg-white/40 dark:bg-white/5 backdrop-blur-xl rounded-[2.5rem] shadow-2xl shadow-slate-200/20 dark:shadow-black/40 border border-white/40 dark:border-white/10 p-2 md:p-3"
+            className="bg-white/40 dark:bg-[#0A0A0A] backdrop-blur-xl rounded-[2.5rem] shadow-2xl shadow-slate-200/20 dark:shadow-black/40 border border-white/40 dark:border-white/10 p-2 md:p-3"
           >
-             <div className="bg-white/60 dark:bg-black/40 rounded-[2.2rem] relative flex flex-col overflow-hidden">
+             <div className="bg-white/60 dark:bg-[#0A0A0A]/50 rounded-[2.2rem] relative flex flex-col overflow-hidden">
                   <AnimatePresence mode="wait">
                     <motion.div
                         key={activeTab}

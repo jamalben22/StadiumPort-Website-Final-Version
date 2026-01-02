@@ -98,8 +98,8 @@ export function Footer() {
       title: 'Planning',
       links: [
         { label: 'Draw Travel Hub', to: '/world-cup-2026-draw-travel-hub' },
-        { label: 'Travel Tips', to: '/travel-tips' },
-        { label: 'Safety Guide', to: '/safety-guide' },
+        { label: 'Travel Tips', to: '/world-cup-2026-travel-tips' },
+        { label: 'Safety Guide', to: '/world-cup-2026-safety-guide' },
       ]
     },
     {

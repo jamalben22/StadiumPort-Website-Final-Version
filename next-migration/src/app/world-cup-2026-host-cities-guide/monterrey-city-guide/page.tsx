@@ -34,7 +34,7 @@ export default function Page() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
-    { name: 'Host Cities', item: '/world-cup-2026-host-cities' },
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities-guide' },
     { name: 'Monterrey Guide', item: '/world-cup-2026-host-cities-guide/monterrey-city-guide' }
   ]);
 

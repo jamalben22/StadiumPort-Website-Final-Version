@@ -43,11 +43,30 @@ export const metadata: Metadata = {
 export default function Page() {
   const articleSchema = generateArticleSchema(slug, slug);
   
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Packing Guide', item: `/${slug}` },
-  ]);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Packing Guide",
+        "item": `https://stadiumport.com/${slug}`
+      }
+    ]
+  };
 
   const faqSchema = generateFAQSchema([
     {
@@ -75,7 +94,10 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={articleSchema} />
-      <JsonLd schema={breadcrumbSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <JsonLd schema={faqSchema} />
       <ClientPage />
     </>

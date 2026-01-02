@@ -14,6 +14,7 @@ import {
   } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { Footer } from '@/components/feature/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components ---
 
@@ -307,10 +308,18 @@ export default function ClientPage() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
  >
- <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
- Host City Venue
- </span>
+ <Breadcrumb 
+            items={[
+              { label: 'Stadiums', href: '/world-cup-2026-stadiums' },
+              { label: 'MetLife Stadium', href: '/world-cup-2026-stadiums/metlife-stadium-guide' }
+            ]} 
+            variant="light" 
+            className="mb-6"
+          />
+          <div className="flex items-center gap-4 mb-6">
+            <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+              Host City Venue
+            </span>
  <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
  World Cup Final Host
  </span>

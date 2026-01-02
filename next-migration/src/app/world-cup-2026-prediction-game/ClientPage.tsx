@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, Suspense, useCallback } from 'react';
 import { useRouter, useParams, useSearchParams } from 'next/navigation';
+import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GameProvider, useGame } from '../../features/game/context/GameContext';
@@ -293,8 +294,20 @@ function PredictGameContent() {
         className="relative w-full h-full flex-1 overflow-y-auto pb-32 pt-20 no-scrollbar"
       >
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <>
-           {/* Stepper UI (Persistent) */}
+          <>
+            {/* Breadcrumb */}
+            <motion.div 
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
+            >
+              <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
+              <span className="text-slate-300 dark:text-slate-600">/</span>
+              <span className="text-emerald-700 dark:text-emerald-400">Prediction Game</span>
+            </motion.div>
+
+            {/* Stepper UI (Persistent) */}
           <div className="mb-8 md:mb-12">
             <div ref={stepperRef} className="flex items-center justify-start gap-3 md:justify-between relative overflow-x-auto overflow-y-visible whitespace-nowrap no-scrollbar px-5 py-3 rounded-3xl border border-white/40 bg-white/30 backdrop-blur-2xl ring-1 ring-white/40 shadow-lg pr-5">
               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] -z-10 rounded-full bg-white/20"></div>

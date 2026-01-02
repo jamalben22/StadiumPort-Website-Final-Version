@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  ChevronDown, 
  Clock, 
@@ -104,8 +106,10 @@ export default function GroupBClientPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-[#F5F5F7] to-[#F5F5F7] dark:from-emerald-900/20 dark:via-[#0A0A0A] dark:to-[#0A0A0A]" />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F7] dark:from-[#0A0A0A] to-transparent" />
  
- <div className="container mx-auto max-w-7xl relative z-10">
- <div className="max-w-4xl">
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group B', href: '/world-cup-2026-groups/group-b' }]} />
+
+            <div className="max-w-4xl">
  <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
  <MapPin className="w-3 h-3" />
  Ultimate Travel Guide

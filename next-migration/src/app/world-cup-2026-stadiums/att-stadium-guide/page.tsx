@@ -1,6 +1,8 @@
 
-import ClientPage from './ClientPage';
 import { Metadata } from 'next';
+import ClientPage from './ClientPage';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'AT&T Stadium World Cup 2026: Complete Stadium Guide',
@@ -30,5 +32,16 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Stadiums', item: '/world-cup-2026-stadiums' },
+    { name: 'AT&T Stadium Guide', item: '/world-cup-2026-stadiums/att-stadium-guide' }
+  ]);
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbLd} />
+      <ClientPage />
+    </>
+  );
 }

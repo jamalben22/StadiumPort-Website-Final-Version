@@ -62,7 +62,7 @@ export const TournamentOverview = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="relative p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-100 dark:border-white/10 hover:border-emerald-500/30 transition-colors group shadow-sm"
+              className="relative p-8 rounded-3xl bg-white dark:bg-[#0A0A0A] border border-slate-100 dark:border-white/10 hover:border-emerald-500/30 transition-colors group shadow-sm"
             >
               <div className="w-12 h-12 rounded-2xl bg-white dark:bg-white/10 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400 shadow-sm group-hover:scale-110 transition-transform duration-300">
                 <stat.icon size={24} strokeWidth={2} />

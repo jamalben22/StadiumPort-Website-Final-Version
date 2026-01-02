@@ -31,11 +31,30 @@ export const metadata: Metadata = {
 export default function Page() {
   const articleSchema = generateArticleSchema('world-cup-2026-food-dining-guide', '/world-cup-2026-food-dining-guide');
   
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Food & Dining Guide', item: '/world-cup-2026-food-dining-guide' }
-  ]);
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Food & Dining Guide",
+        "item": "https://stadiumport.com/world-cup-2026-food-dining-guide"
+      }
+    ]
+  };
 
   const faqSchema = generateFAQSchema([
     { question: "How much should I budget for food daily?", answer: "For a comfortable trip, budget $50-60 USD per day. This allows for coffee, a casual lunch, and a decent dinner. In Mexico, you can do it for $30. In NYC/SF, budget $80." },

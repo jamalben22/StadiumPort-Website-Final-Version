@@ -279,6 +279,19 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+              >
+                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
+                <span className="text-slate-500">/</span>
+                <Link href="/world-cup-2026-safety-guide" className="hover:text-emerald-400 transition-colors">Safety Guide</Link>
+                <span className="text-slate-500">/</span>
+                <span className="text-emerald-400">Scams & Fraud</span>
+              </motion.div>
+
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-red-500/30 text-red-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Critical Warning
@@ -695,7 +708,7 @@ export default function ClientPage() {
                 subtext="Includes fraud & theft coverage"
               />
               <div className="mt-8 text-center">
-                 <Link href="/safety-guide" className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                 <Link href="/world-cup-2026-safety-guide" className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
                    <ShieldCheck className="w-5 h-5" />
                    Back to Safety Hub
                  </Link>

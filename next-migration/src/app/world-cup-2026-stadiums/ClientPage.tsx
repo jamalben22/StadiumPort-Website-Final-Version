@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { Breadcrumb } from "@/components/ui/Breadcrumb"
+import { motion } from "framer-motion"
 import { MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, Trophy, Plane, Hotel, Ticket, Globe, Flag } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { StadiumMap } from '@/components/feature/StadiumMap';
@@ -486,16 +487,11 @@ export default function ClientPage() {
           
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             {/* Breadcrumbs */}
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center gap-2 text-sm font-medium text-white/60 mb-12 justify-center tracking-wide uppercase"
-            >
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <span className="text-white/40">/</span>
-              <span className="text-white">Stadiums</span>
-            </motion.div>
+            <Breadcrumb 
+          items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
+          variant="light"
+          className="mb-12 justify-center"
+        />
 
             <div className="text-center max-w-5xl mx-auto">
               <motion.div 

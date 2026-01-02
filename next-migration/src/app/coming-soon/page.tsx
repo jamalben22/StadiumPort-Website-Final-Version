@@ -88,7 +88,7 @@ function ComingSoonContent() {
             Return Home
           </Link>
           <Link 
-            href="/travel-tips"
+            href="/world-cup-2026-travel-tips"
             className="px-8 py-4 bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-800 rounded-full font-bold transition-all duration-300 hover:bg-slate-50 dark:hover:bg-slate-800 hover:-translate-y-0.5"
           >
             Explore Other Guides

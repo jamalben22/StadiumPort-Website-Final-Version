@@ -42,7 +42,7 @@ export const LatestUpdates = () => {
              </p>
           </div>
           <Link 
-            href="/travel-tips"
+            href="/world-cup-2026-travel-tips"
             className="hidden md:flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:text-emerald-700 transition-colors"
           >
             View all updates <ArrowRight size={18} />
@@ -57,7 +57,7 @@ export const LatestUpdates = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group relative flex flex-col h-full bg-white dark:bg-white/5 rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 shadow-sm transition-all"
+              className="group relative flex flex-col h-full bg-white dark:bg-[#0A0A0A] rounded-2xl p-6 border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 shadow-sm transition-all"
             >
               <div className="flex items-center gap-3 mb-4">
                 <span className="px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider">
@@ -88,8 +88,8 @@ export const LatestUpdates = () => {
         
         <div className="mt-8 md:hidden">
             <Link 
-            href="/travel-tips"
-            className="flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:text-emerald-700 transition-colors w-full py-3 bg-white dark:bg-white/5 rounded-xl border border-slate-200 dark:border-white/10"
+            href="/world-cup-2026-travel-tips"
+            className="flex items-center justify-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:text-emerald-700 transition-colors w-full py-3 bg-white dark:bg-[#0A0A0A] rounded-xl border border-slate-200 dark:border-white/10"
           >
             View all updates <ArrowRight size={18} />
           </Link>

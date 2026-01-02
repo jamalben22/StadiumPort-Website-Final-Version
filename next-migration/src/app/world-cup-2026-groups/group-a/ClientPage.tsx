@@ -3,8 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { motion } from 'framer-motion';
 import { 
- ChevronDown, 
+  ChevronDown, 
  Clock, 
  Calendar, 
  MapPin, 
@@ -103,8 +105,10 @@ export default function GroupAClientPage() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-[#F5F5F7] to-[#F5F5F7] dark:from-emerald-900/20 dark:via-[#0A0A0A] dark:to-[#0A0A0A]" />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F7] dark:from-[#0A0A0A] to-transparent" />
  
- <div className="container mx-auto max-w-7xl relative z-10">
- <div className="max-w-4xl">
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group A', href: '/world-cup-2026-groups/group-a' }]} />
+
+            <div className="max-w-4xl">
  <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
  <MapPin className="w-3 h-3" />
  Ultimate Travel Guide
@@ -425,8 +429,9 @@ export default function GroupAClientPage() {
  <span><strong>Recommendation:</strong> Use Uber "Comfort" or "Black" for added security and better-maintained vehicles.</span>
  </li>
  </ul>
- <Link href="/safety-guide" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
- Read Safety Guide <ArrowRight className="w-3 h-3" />
+ <Link href="/world-cup-2026-safety-guide" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
+   Safety Guide
+   <ArrowRight className="w-4 h-4" />
  </Link>
  </div>
  </div>

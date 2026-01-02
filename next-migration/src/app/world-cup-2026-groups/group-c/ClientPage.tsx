@@ -2,7 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  ChevronDown, 
  Clock, 
@@ -95,62 +97,64 @@ export default function GroupCClientPage() {
  return () => window.removeEventListener('scroll', handleScroll);
  }, []);
 
- return (
+  return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[80vh] flex items-center pt-32 pb-20 px-6 overflow-hidden">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-emerald-500/10 via-[#F5F5F7] to-[#F5F5F7] dark:from-emerald-900/20 dark:via-[#0A0A0A] dark:to-[#0A0A0A]" />
           <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#F5F5F7] dark:from-[#0A0A0A] to-transparent" />
- 
- <div className="container mx-auto max-w-7xl relative z-10">
- <div className="max-w-4xl">
- <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
- <MapPin className="w-3 h-3" />
- Ultimate Travel Guide
- </div>
- 
- <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
- World Cup 2026 <br />
- <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group C Strategy</span>
- </h1>
- 
- <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
- Five powerhouses. One coast. From the history of Boston to the nightlife of Miami, Group C is the tournament's most diverse cultural journey.
- </p>
- 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-              <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-emerald-500 transition-colors">
-                Explore Strategy
-              </button>
-            </div>
- 
- <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
- <div className="flex items-center gap-2">
- <Calendar className="w-4 h-4 text-emerald-500" /> 
- Updated: June 2025
- </div>
- <div className="flex items-center gap-2">
- <Clock className="w-4 h-4 text-emerald-500" /> 
- 14 min read
- </div>
- <div className="flex items-center gap-2">
- <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
- By Stadiumport Strategy Team
- </div>
- </div>
- </div>
- </div>
- 
- {/* Scroll Indicator */}
- <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
- <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
- <ChevronDown className="w-5 h-5 text-emerald-500" />
- </div>
- </section>
 
- <div className="container mx-auto max-w-7xl px-6 pb-32">
- <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
+          <div className="container mx-auto max-w-7xl relative z-10">
+            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group C', href: '/world-cup-2026-groups/group-c' }]} />
+
+            <div className="max-w-4xl">
+              <div className="inline-flex items-center gap-2 py-2 px-4 rounded-full border border-slate-200 dark:border-white/10 shadow-sm backdrop-blur-sm text-emerald-700 dark:text-emerald-400 text-xs font-bold tracking-[0.15em] uppercase mb-8 animate-fade-in">
+                <MapPin className="w-3 h-3" />
+                Ultimate Travel Guide
+              </div>
+
+              <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
+                World Cup 2026 <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group C Strategy</span>
+              </h1>
+
+              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
+                Five cities. One coast. From the high-speed rails of the Northeast to the sunny shores of Miami, Group C offers the tournament's most efficient travel routes.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
+                <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-emerald-500 transition-colors">
+                  Explore Strategy
+                </button>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4 text-emerald-500" />
+                  Updated: June 2025
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock className="w-4 h-4 text-emerald-500" />
+                  10 min read
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] text-white font-bold">S</div>
+                  By Stadiumport Strategy Team
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
+            <ChevronDown className="w-5 h-5 text-emerald-500" />
+          </div>
+        </section>
+
+        <div className="container mx-auto max-w-7xl px-6 pb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
  
  {/* Minimalist Sticky Sidebar */}
  <aside className="hidden lg:block lg:col-span-3 relative">
@@ -663,11 +667,11 @@ export default function GroupCClientPage() {
  </div>
 
  </div>
- </div>
- </div>
- </main>
- </div>
- );
+      </div>
+    </div>
+  </main>
+</div>
+);
 }
 
 

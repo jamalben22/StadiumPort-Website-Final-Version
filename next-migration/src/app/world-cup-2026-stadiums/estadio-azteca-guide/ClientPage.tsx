@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { Footer } from '@/components/feature/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components (Mirrored from Atlanta Guide) ---
 
@@ -283,6 +284,16 @@ export default function EstadioAztecaClientPage() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
  >
+ {/* Breadcrumb */}
+ <Breadcrumb 
+ items={[
+ { label: "Stadiums", href: "/world-cup-2026-stadiums" },
+ { label: "Estadio Azteca", href: "/world-cup-2026-stadiums/estadio-azteca-guide" }
+ ]} 
+ variant="light"
+ className="mb-8"
+ />
+
  <div className="flex items-center gap-4 mb-6">
  <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Opening Match Venue

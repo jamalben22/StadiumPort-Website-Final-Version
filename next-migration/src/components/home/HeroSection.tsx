@@ -110,7 +110,7 @@ export const HeroSection = () => {
        
        {/* Cinematic Background */}
        <div className="absolute inset-0 z-0">
-         <div className="absolute inset-0 bg-[#F5F5F7]/90 dark:bg-gradient-to-b dark:from-black/90 dark:to-black/80 z-10" />
+         <div className="absolute inset-0 bg-[#F5F5F7]/90 dark:bg-[#0A0A0A]/90 z-10" />
          {/* Placeholder for Hero Image - User to replace src */}
          {/* <Image src="/images/hero-bg.jpg" alt="World Cup 2026 Stadium Atmosphere" fill className="object-cover" priority /> */}
          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10" />
