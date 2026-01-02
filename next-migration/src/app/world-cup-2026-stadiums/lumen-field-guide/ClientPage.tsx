@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Header } from '@/components/feature/Header';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 import { 
  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
@@ -297,10 +299,18 @@ export default function ClientPage() {
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
  >
- <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
- Host Venue
- </span>
+ <Breadcrumb 
+            items={[
+              { label: 'Stadiums', href: '/world-cup-2026-stadiums' },
+              { label: 'Lumen Field', href: '/world-cup-2026-stadiums/lumen-field-guide' }
+            ]} 
+            variant="light" 
+            className="mb-6"
+          />
+          <div className="flex items-center gap-4 mb-6">
+            <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+              Host Venue
+            </span>
  <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
  Group & Knockout
  </span>

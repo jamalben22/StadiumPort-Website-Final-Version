@@ -98,6 +98,38 @@ export const contentRegistry: Record<string, ContentMeta> = {
     wordCount: 4800,
     image: '/images/cities/seattle-world-cup-2026.webp'
   },
+  'world-cup-2026-travel-insurance-guide': {
+    title: 'World Cup 2026 Travel Insurance: Complete Protection Guide | Stadiumport',
+    description: 'Complete guide to World Cup 2026 travel insurance. Compare costs, coverage types, and providers. Learn why coverage is non-negotiable for USA, Canada & Mexico.',
+    publishedAt: '2026-01-02T00:00:00Z',
+    updatedAt: '2026-01-02T00:00:00Z',
+    wordCount: 3000,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_of_travel_insurance_essentials_for_World_Cup_2026.webp'
+  },
+  'world-cup-2026-passport-document-security': {
+    title: 'Passport & Document Security: Protecting Your Identity | Stadiumport',
+    description: 'Essential strategies for safeguarding passports and visas during World Cup 2026. Learn the 3-location rule, RFID prevention, and digital backup methods.',
+    publishedAt: '2026-01-02T00:00:00Z',
+    updatedAt: '2026-01-02T00:00:00Z',
+    wordCount: 2800,
+    image: '/images/safety-guide/Passport & Document Security Protecting Your Identity.webp'
+  },
+  'world-cup-2026-money-financial-safety': {
+    title: 'Money & Financial Safety: Cash, Cards & Currencies for World Cup 2026 | Stadiumport',
+    description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips, and fraud prevention.',
+    publishedAt: '2026-01-02T00:00:00Z',
+    updatedAt: '2026-01-02T00:00:00Z',
+    wordCount: 4200,
+    image: '/images/safety-guide/Money & Financial Safety Cash Cards & Currencies.webp'
+  },
+  'world-cup-2026-accommodation-security': {
+    title: 'Accommodation Security: Safe Stays for World Cup 2026 | Stadiumport',
+    description: 'Complete guide to accommodation security for World Cup 2026. Safe hotel strategies, Airbnb verification, neighborhood safety, and scam prevention.',
+    publishedAt: '2026-01-02T00:00:00Z',
+    updatedAt: '2026-01-02T00:00:00Z',
+    wordCount: 4500,
+    image: '/images/safety-guide/Accommodation Security_Safe Stays.webp'
+  },
   'world-cup-2026-packing-guide': {
     title: 'World Cup 2026 Packing Guide: Ultimate Checklist for All Weather',
     description: 'From Mexican heat to Canadian cool. What to bring for a continent-spanning adventure.',

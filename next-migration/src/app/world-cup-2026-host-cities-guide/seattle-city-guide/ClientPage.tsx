@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 import { 
  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
@@ -284,6 +285,16 @@ export default function ClientPage() {
 
  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
  <div className="max-w-4xl">
+ {/* Breadcrumbs */}
+<Breadcrumb 
+items={[
+{ label: "Host Cities", href: "/world-cup-2026-host-cities-guide" },
+{ label: "Seattle", href: "/world-cup-2026-host-cities-guide/seattle-city-guide" }
+]} 
+variant="light"
+className="mb-6"
+/>
+
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  animate={{ opacity: 1, y: 0 }}

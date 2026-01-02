@@ -13,6 +13,7 @@ import {
   X, ChevronRight, Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { Footer } from '@/components/feature/Footer';
 
 // --- Design System & Components ---
@@ -293,12 +294,24 @@ export default function ClientPage() {
 
  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
  <div className="max-w-4xl">
- <motion.div
- initial={{ opacity: 0, y: 30 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
- >
- <div className="flex items-center gap-4 mb-6">
+                {/* Breadcrumbs */}
+                <Breadcrumb 
+                  items={[
+                    { label: "Host Cities", href: "/world-cup-2026-host-cities-guide" },
+                    { label: "Atlanta", href: "/world-cup-2026-host-cities-guide/atlanta-city-guide" }
+                  ]} 
+                  variant="light"
+                  className="mb-6"
+                />
+
+
+
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <div className="flex items-center gap-4 mb-6">
  <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Host City
  </span>

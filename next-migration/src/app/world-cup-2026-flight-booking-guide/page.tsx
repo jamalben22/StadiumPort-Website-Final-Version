@@ -37,14 +37,33 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default function FlightBookingGuidePage() {
   const jsonLd = generateArticleSchema(slug, '/world-cup-2026-flight-booking-guide');
-  
-  const breadcrumbLd = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Flight Booking Guide', item: '/world-cup-2026-flight-booking-guide' }
-  ]);
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Flight Booking Guide",
+        "item": "https://stadiumport.com/world-cup-2026-flight-booking-guide"
+      }
+    ]
+  };
 
   const faqLd = {
     '@context': 'https://schema.org',
@@ -80,7 +99,10 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={jsonLd} />
-      <JsonLd schema={breadcrumbLd} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <JsonLd schema={faqLd} />
       <ClientPage />
     </>

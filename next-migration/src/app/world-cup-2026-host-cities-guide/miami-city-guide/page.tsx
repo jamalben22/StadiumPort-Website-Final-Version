@@ -40,8 +40,8 @@ export default function Page() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
-    { name: 'Host Cities', item: '/world-cup-2026-host-cities' },
-    { name: 'Miami City Guide', item: '/world-cup-2026-host-cities-guide/miami-city-guide' }
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities-guide' },
+    { name: 'Miami Guide', item: '/world-cup-2026-host-cities-guide/miami-city-guide' }
   ]);
 
   const faqLd = {

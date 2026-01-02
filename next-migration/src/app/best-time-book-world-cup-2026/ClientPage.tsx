@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
   Trophy, Plane, Hotel, Ticket, Share2, MessageSquare, 
@@ -305,6 +306,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
+              <Breadcrumb 
+                items={[
+                  { label: 'Travel Tips', href: '/travel-tips' },
+                  { label: 'Booking Guide', href: '/best-time-book-world-cup-2026' }
+                ]} 
+                variant="light" 
+                className="mb-6"
+              />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Tips

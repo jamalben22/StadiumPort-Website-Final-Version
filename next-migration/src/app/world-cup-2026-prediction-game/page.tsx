@@ -191,9 +191,18 @@ export default function Page() {
  }
  ];
 
- return (
- <>
- <script
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Prediction Game', item: '/world-cup-2026-prediction-game' }
+  ]);
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
  type="application/ld+json"
  dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
  />

@@ -33,7 +33,7 @@ export default function Page() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
-    { name: 'Host Cities', item: '/world-cup-2026-host-cities' },
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities-guide' },
     { name: 'Atlanta Guide', item: '/world-cup-2026-host-cities-guide/atlanta-city-guide' }
   ]);
 

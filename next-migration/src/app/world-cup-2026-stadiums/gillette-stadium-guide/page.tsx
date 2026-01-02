@@ -29,6 +29,38 @@ export const metadata: Metadata = {
   },
 };
 
+function generateBreadcrumbSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://stadiumport.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Stadiums',
+        item: 'https://stadiumport.com/world-cup-2026-stadiums',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Gillette Stadium',
+        item: 'https://stadiumport.com/world-cup-2026-stadiums/gillette-stadium-guide',
+      },
+    ],
+  };
+}
+
 export default function Page() {
-  return <ClientPage />;
+  return (
+    <>
+      <ClientPage />
+      <JsonLd data={generateBreadcrumbSchema()} />
+    </>
+  );
 }

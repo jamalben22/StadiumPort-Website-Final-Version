@@ -47,7 +47,7 @@ export const HostCitiesSection = () => {
   return (
     <section 
       ref={containerRef}
-      className="py-32 overflow-hidden"
+      className="py-32 bg-[#F5F5F7] dark:bg-[#0A0A0A] overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12">
         {/* Header */}
@@ -116,7 +116,7 @@ export const HostCitiesSection = () => {
               }}
             >
               <Link href={city.link} className="block group relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-[2rem]">
-                <div className="absolute inset-0 bg-gray-200 dark:bg-gray-800 animate-pulse" />
+                <div className="absolute inset-0 bg-gray-200 dark:bg-[#0A0A0A] animate-pulse" />
                 
                 <Image
                   src={city.image}

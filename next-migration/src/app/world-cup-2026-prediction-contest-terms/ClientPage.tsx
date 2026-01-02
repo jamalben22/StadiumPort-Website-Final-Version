@@ -55,8 +55,20 @@ export default function ClientPage() {
  <div className="min-h-screen font-inter text-slate-900 dark:text-white selection:bg-indigo-500 selection:text-white">
  <main className="pt-32 pb-20 px-4 md:px-6">
  <div className="max-w-5xl mx-auto">
- 
- {/* Hero Section */}
+        
+        {/* Breadcrumb */}
+        <motion.div 
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
+        >
+          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
+          <span className="text-slate-300 dark:text-slate-600">/</span>
+          <span className="text-emerald-700 dark:text-emerald-400">Terms & Conditions</span>
+        </motion.div>
+
+        {/* Hero Section */}
  <div className="text-center mb-20 animate-fade-up">
  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
  <span className="relative flex h-2 w-2">

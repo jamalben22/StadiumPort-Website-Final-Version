@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, Trophy, Plane, Hotel, Ticket, Globe, Flag } from 'lucide-react';
@@ -202,29 +204,19 @@ export default function ClientPage() {
 
  const filteredCities = cities;
 
- return (
-    <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
- <Header />
+  return (
+    <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
+      <Header />
+      
+      <main className="pt-24 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Breadcrumb */}
+          <Breadcrumb 
+            items={[{ label: 'Host Cities', href: '/world-cup-2026-host-cities-guide' }]} 
+            className="mb-8"
+          />
 
- <main>
- {/* Hero Section */}
- <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#0A0A0A]">
- 
- 
- <div className="relative z-10 max-w-7xl mx-auto w-full">
- {/* Breadcrumbs */}
- <motion.div 
- initial={{ opacity: 0, y: -10 }}
- animate={{ opacity: 1, y: 0 }}
- transition={{ duration: 0.6, delay: 0.2 }}
- className="flex items-center gap-2 text-sm font-medium text-white/60 mb-12 justify-center tracking-wide uppercase"
- >
- <Link href="/" className="hover:text-white transition-colors">Home</Link>
- <span className="text-white/40">/</span>
- <span className="text-white">Host Cities</span>
- </motion.div>
-
- <div className="text-center max-w-5xl mx-auto">
+          <div className="text-center mb-16">
  <motion.div 
  initial={{ opacity: 0, y: 30 }}
  animate={{ opacity: 1, y: 0 }}
@@ -270,7 +262,6 @@ export default function ClientPage() {
  </motion.div>
  </div>
  </div>
- </section>
 
 
 

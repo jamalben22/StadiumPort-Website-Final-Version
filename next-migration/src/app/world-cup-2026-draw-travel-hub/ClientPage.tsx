@@ -111,14 +111,25 @@ export default function DrawHubClientPage() {
       <SocialShare />
  
  {/* Hero Section */}
- <div className="relative w-full overflow-hidden">
-   {/* Background Gradient */}
-   <div className="absolute inset-0 bg-gradient-to-b from-[#01b47d]/5 via-transparent to-[#F5F5F7] dark:to-[#0A0A0A] pointer-events-none" />
+      <div className="relative w-full overflow-hidden">
+        {/* Background Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#01b47d]/5 via-transparent to-[#F5F5F7] dark:to-[#0A0A0A] pointer-events-none" />
 
- <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
- <motion.div 
- initial={{ opacity: 0, y: 20 }}
- animate={{ opacity: 1, y: 0 }}
+        <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
+          >
+            <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
+            <span className="text-slate-300 dark:text-slate-600">/</span>
+            <span className="text-emerald-700 dark:text-emerald-400">Draw Travel Hub</span>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8 }}
  className="inline-flex items-center gap-2 py-2 px-6 rounded-full bg-white/50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 text-[#01b47d] font-bold text-sm uppercase tracking-widest mb-8 backdrop-blur-md"
  >

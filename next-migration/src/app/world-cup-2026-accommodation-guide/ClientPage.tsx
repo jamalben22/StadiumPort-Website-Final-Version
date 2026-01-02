@@ -386,6 +386,18 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
+              <motion.div 
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="flex items-center gap-2 text-sm font-medium text-slate-300 mb-6 tracking-wide uppercase"
+              >
+                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
+                <span className="text-slate-500">/</span>
+                <Link href="/world-cup-2026-travel-tips" className="hover:text-emerald-400 transition-colors">Travel Tips</Link>
+                <span className="text-slate-500">/</span>
+                <span className="text-emerald-400">Accommodation Guide</span>
+              </motion.div>
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Guide

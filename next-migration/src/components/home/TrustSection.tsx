@@ -38,7 +38,7 @@ export const TrustSection = () => {
   ];
 
   return (
-    <section className="relative pt-16 pb-32 md:pt-24 md:pb-48 border-t border-slate-100 dark:border-white/5 overflow-hidden">
+    <section className="relative pt-16 pb-32 md:pt-24 md:pb-48 bg-[#F5F5F7] dark:bg-[#0A0A0A] border-t border-slate-100 dark:border-white/5 overflow-hidden">
       
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 relative z-10">
         
@@ -74,7 +74,7 @@ export const TrustSection = () => {
                 className="flex flex-col items-center text-center group h-full"
             >
               <div className="relative mb-10 shrink-0">
-                <div className="w-24 h-24 rounded-[2.5rem] bg-white dark:bg-white/[0.03] flex items-center justify-center group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-slate-200/50 dark:border-white/10 text-slate-900 dark:text-white shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-none overflow-hidden">
+                <div className="w-24 h-24 rounded-[2.5rem] bg-white dark:bg-[#0A0A0A] flex items-center justify-center group-hover:scale-105 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] border border-slate-200/50 dark:border-white/10 text-slate-900 dark:text-white shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-none overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                   <item.icon strokeWidth={1} className="w-10 h-10 md:w-11 md:h-11 relative z-10" />
                 </div>

@@ -31,11 +31,30 @@ export const metadata: Metadata = {
 export default function Page() {
   const jsonLd = generateArticleSchema('best-time-book-world-cup-2026', '/best-time-book-world-cup-2026');
 
-  const breadcrumbLd = generateBreadcrumbSchema([
-    { name: 'Home', item: '/' },
-    { name: 'Travel Tips', item: '/travel-tips' },
-    { name: 'Booking Timeline', item: '/best-time-book-world-cup-2026' }
-  ]);
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://stadiumport.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Travel Tips",
+        "item": "https://stadiumport.com/travel-tips"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Best Time to Book",
+        "item": "https://stadiumport.com/best-time-book-world-cup-2026"
+      }
+    ]
+  };
 
   const faqLd = {
     '@context': 'https://schema.org',
@@ -87,7 +106,10 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={jsonLd} />
-      <JsonLd schema={breadcrumbLd} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <JsonLd schema={faqLd} />
       <ClientPage />
     </>

@@ -154,23 +154,5 @@ export const travelGuideArticles = [
       ]
     }
   },
-  {
-    id: 9,
-    title: 'World Cup 2026 Safety & Security Guide',
-    category: 'Safety Guide',
-    author: 'Michael Torres',
-    readTime: '14 min read',
-    publishDate: '2023-12-25',
-    image: '/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026-1024.webp',
-    excerpt: 'Stay safe during World Cup 2026. Essential safety tips, emergency contacts, and security protocols.',
-    fullContent: {
-      introduction: 'Your safety is paramount during World Cup 2026. Learn essential safety protocols and emergency procedures.',
-      sections: [
-        {
-          title: 'Coming Soon',
-          content: 'Detailed safety guide content will be available soon. Stay tuned for comprehensive safety information.'
-        }
-      ]
-    }
-  }
+
 ];

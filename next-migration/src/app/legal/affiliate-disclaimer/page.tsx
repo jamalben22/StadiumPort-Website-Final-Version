@@ -31,12 +31,6 @@ export default function AffiliateDisclaimerPage() {
  {
  "@type": "ListItem",
  "position": 2,
- "name": "Legal",
- "item": `${siteUrl}/legal/terms`
- },
- {
- "@type": "ListItem",
- "position": 3,
  "name": "Affiliate Disclaimer",
  "item": `${siteUrl}/legal/affiliate-disclaimer`
  }

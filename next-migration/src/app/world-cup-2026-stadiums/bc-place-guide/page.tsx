@@ -1,34 +1,47 @@
 
-import ClientPage from './ClientPage';
 import { Metadata } from 'next';
+import ClientPage from './ClientPage';
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'BC Place World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day in Vancouver.',
- keywords: 'BC Place World Cup 2026, Vancouver World Cup Stadium, BC Place Guide, Vancouver Soccer Guide, World Cup 2026 Vancouver matches, BC Place seating chart',
- openGraph: {
- title: 'BC Place World Cup 2026: Complete Stadium Guide',
- description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars. Plan your perfect match day.',
- type: 'article',
- url: 'https://stadiumport.com/world-cup-2026-stadiums/bc-place-guide',
- siteName: 'Stadiumport',
- images: [
+  title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
+  description: 'Your guide to BC Place for World Cup 2026. Discover Vancouver\'s waterfront stadium, seating charts, roof details, and local travel tips.',
+  keywords: 'BC Place World Cup 2026, Vancouver World Cup, BC Place Stadium Guide, World Cup 2026 Vancouver, stadium seating, travel guide',
+  openGraph: {
+    title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
+    description: 'Your guide to BC Place for World Cup 2026. Discover Vancouver\'s waterfront stadium.',
+    type: 'article',
+    url: 'https://stadiumport.com/world-cup-2026-stadiums/bc-place-guide',
+    siteName: 'Stadiumport',
+    images: [
       {
         url: '/images/cities/vancouver-world-cup-2026-1600.webp',
         width: 1600,
         height: 1066,
-        alt: 'BC Place World Cup 2026 Guide',
+        alt: 'BC Place World Cup 2026',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BC Place World Cup 2026: Complete Stadium Guide',
-    description: 'Everything you need for BC Place World Cup 2026: seating guide, parking, transportation, food, tips from stadium regulars.',
+    title: 'BC Place World Cup 2026: Vancouver Stadium Guide',
+    description: 'Your guide to BC Place for World Cup 2026.',
     images: ['/images/cities/vancouver-world-cup-2026-1600.webp'],
   },
 };
 
 export default function Page() {
-  return <ClientPage />;
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Stadiums', item: '/world-cup-2026-stadiums' },
+    { name: 'BC Place Guide', item: '/world-cup-2026-stadiums/bc-place-guide' }
+  ]);
+
+  return (
+    <>
+      <JsonLd schema={breadcrumbLd} />
+      <ClientPage />
+    </>
+  );
 }

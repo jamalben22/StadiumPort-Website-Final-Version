@@ -14,6 +14,7 @@ import {
   } from 'lucide-react';
 import { Header } from '@/components/feature/Header';
 import { Footer } from '@/components/feature/Footer';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components ---
 
@@ -282,6 +283,16 @@ export default function ClientPage() {
 
  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
  <div className="max-w-4xl">
+              {/* Breadcrumb */}
+              <Breadcrumb 
+                items={[
+                  { label: "Stadiums", href: "/world-cup-2026-stadiums" },
+                  { label: "BC Place", href: "/world-cup-2026-stadiums/bc-place-guide" }
+                ]} 
+                variant="light"
+                className="mb-6"
+              />
+
  <motion.div
  initial={{ opacity: 0, y: 30 }}
  animate={{ opacity: 1, y: 0 }}

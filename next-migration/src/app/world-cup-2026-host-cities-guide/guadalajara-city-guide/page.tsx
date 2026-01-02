@@ -41,8 +41,8 @@ export default function GuadalajaraCityGuide() {
 
   const breadcrumbLd = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
-    { name: 'World Cup 2026 Host Cities', item: '/world-cup-2026-host-cities' },
-    { name: 'Guadalajara City Guide', item: '/world-cup-2026-host-cities-guide/guadalajara-city-guide' }
+    { name: 'Host Cities', item: '/world-cup-2026-host-cities-guide' },
+    { name: 'Guadalajara Guide', item: '/world-cup-2026-host-cities-guide/guadalajara-city-guide' }
   ]);
 
   const faqLd = {

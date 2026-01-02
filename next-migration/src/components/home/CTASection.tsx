@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 export const CTASection = () => {
   return (
     <section className="relative py-20 md:py-32 overflow-hidden flex items-center justify-center min-h-[60vh]">
-      <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#000000]" />
+      <div className="absolute inset-0 bg-[#F5F5F7] dark:bg-[#0A0A0A]" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         <motion.h2 
@@ -51,7 +51,7 @@ export const CTASection = () => {
                <span className="relative z-10">Start Planning Now</span>
              </button>
           </Link>
-           <Link href="/travel-tips">
+           <Link href="/world-cup-2026-travel-tips">
              <button className="px-10 py-5 rounded-full border border-black/20 text-black dark:border-white/20 dark:text-white font-space font-semibold text-lg hover:bg-black/5 dark:hover:bg-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all backdrop-blur-sm hover:scale-105 active:scale-95">
                Explore Planning Hub
              </button>

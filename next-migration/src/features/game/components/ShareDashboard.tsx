@@ -29,6 +29,20 @@ export const ShareDashboard = ({
   return (
     <div className="w-full max-w-5xl mx-auto px-4 pb-24 pt-24 flex flex-col gap-8">
       
+      {/* Breadcrumbs */}
+      <motion.div 
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="flex items-center gap-2 text-sm font-medium text-white/60 mb-2 tracking-wide uppercase"
+      >
+        <Link href="/" className="hover:text-white transition-colors">Home</Link>
+        <span className="text-white/40">/</span>
+        <Link href="/world-cup-2026-prediction-game" className="hover:text-white transition-colors">Prediction Game</Link>
+        <span className="text-white/40">/</span>
+        <span className="text-white">Share</span>
+      </motion.div>
+
       {/* Hero Section - FIFA x Apple x Nike Style */}
       <div className="relative w-full overflow-hidden rounded-[2rem] bg-[#09090b] text-white shadow-2xl border border-white/10 p-6 md:p-12 mb-8 group isolate">
         

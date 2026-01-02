@@ -76,7 +76,10 @@ export default function Page() {
   return (
     <>
       <JsonLd schema={articleSchema} />
-      <JsonLd schema={breadcrumbSchema} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <JsonLd schema={faqSchema} />
       <ClientPage />
     </>

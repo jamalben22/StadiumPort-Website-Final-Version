@@ -31,12 +31,6 @@ export default function TermsPage() {
  {
  "@type": "ListItem",
  "position": 2,
- "name": "Legal",
- "item": "https://stadiumport.com/legal/terms"
- },
- {
- "@type": "ListItem",
- "position": 3,
  "name": "Terms of Service",
  "item": "https://stadiumport.com/legal/terms"
  }
