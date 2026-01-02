@@ -7,11 +7,18 @@ import { ShareDashboard } from '../../../../features/game/components/ShareDashbo
 import { GameHeader } from '../../../../features/game/components/GameHeader';
 import { GameLayout } from '../../../../features/game/components/GameLayout';
 import { TEAMS } from '../../../../features/game/lib/wc26-data';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export default function SharePage() {
   const params = useParams();
   const code = params?.uniqueId as string;
   const { prediction, loading, error } = usePredictionByCode(code);
+
+  const breadcrumbLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Prediction Game', item: '/world-cup-2026-prediction-game' },
+    { name: 'Share', item: `/world-cup-2026-prediction-game/share/${code}` }
+  ]);
 
   const champion = useMemo(() => {
     if (!prediction?.predictions?.knockoutPicks) return undefined;

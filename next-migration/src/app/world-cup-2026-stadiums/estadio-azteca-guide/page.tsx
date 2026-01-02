@@ -1,6 +1,7 @@
 
 import ClientPage from './ClientPage';
 import { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
  title: 'Estadio Azteca World Cup 2026: Complete Stadium Guide',
@@ -60,7 +61,7 @@ export default function Page() {
   return (
     <>
       <ClientPage />
-      <JsonLd data={generateBreadcrumbSchema()} />
+      <JsonLd schema={generateBreadcrumbSchema()} />
     </>
   );
 }

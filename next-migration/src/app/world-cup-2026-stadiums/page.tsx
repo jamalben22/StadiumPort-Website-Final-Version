@@ -1,6 +1,7 @@
 
 import ClientPage from './ClientPage';
 import { Metadata } from 'next';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Stadiums: All 16 Venues Guide | StadiumPort',

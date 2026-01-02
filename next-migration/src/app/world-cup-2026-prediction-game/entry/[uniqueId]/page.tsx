@@ -9,6 +9,9 @@ import { TEAMS } from '../../../../features/game/lib/wc26-data';
 import { supabase } from '../../../../lib/supabase';
 import { GameLayout } from '../../../../features/game/components/GameLayout';
 import { Home, Share2 } from 'lucide-react';
+import { generateBreadcrumbSchema } from '@/lib/schema';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 const STORAGE_KEY = 'sp_wc26_predictions';
 
@@ -134,6 +137,7 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
       uniqueId={prediction.unique_id || code}
       disableSEO={true}
     />
+    </GameLayout>
   );
 }
 
