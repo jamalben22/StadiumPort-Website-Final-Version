@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: 'Affiliate Disclaimer – Stadiumport',
     description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
     url: 'https://stadiumport.com/legal/affiliate-disclaimer',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

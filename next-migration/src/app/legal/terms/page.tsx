@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Terms of Service – Stadiumport',
     description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
     url: 'https://stadiumport.com/legal/terms',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

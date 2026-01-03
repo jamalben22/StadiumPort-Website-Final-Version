@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Scams: Avoid Ticket & Travel Fraud',
     description: 'Protect yourself from World Cup 2026 ticket scams, fake accommodation listings, and travel fraud. Essential guide to avoiding fraud in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-scams-avoid-fraud',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

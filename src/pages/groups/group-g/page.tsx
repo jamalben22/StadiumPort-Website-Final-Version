@@ -73,7 +73,7 @@ export default function GroupGPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900 font-sans text-slate-900 dark:text-white selection:bg-emerald-500/30">
       <Helmet>
-        <title>Group G World Cup 2026 Travel Guide: Vancouver, Seattle & Los Angeles | StadiumPort</title>
+        <title>Group G World Cup 2026 Travel Guide: Vancouver, Seattle & Los Angeles | Stadiumport</title>
         <meta name="description" content="The definitive travel guide for World Cup 2026 Group G. Master the 'Cascadia Corridor' (Vancouver-Seattle) and the jump to Los Angeles. Amtrak tips, border crossings, and budget strategies." />
         <meta name="keywords" content="Group G World Cup 2026, Vancouver World Cup travel, Seattle World Cup guide, Los Angeles World Cup, Amtrak Cascades World Cup, West Coast World Cup itinerary" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -86,10 +86,10 @@ export default function GroupGPage() {
             "@type": "Article",
             "headline": "Group G World Cup 2026 Travel Guide: The Pacific Coast Route",
             "description": "Complete logistics guide for World Cup Group G fans traveling between Vancouver, Seattle, and Los Angeles. Focuses on the Amtrak Cascades route and LA flight strategy.",
-            "author": { "@type": "Organization", "name": "StadiumPort" },
+            "author": { "@type": "Organization", "name": "Stadiumport" },
             "publisher": { 
               "@type": "Organization", 
-              "name": "StadiumPort",
+              "name": "Stadiumport",
               "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/Logos/stadiumport-logo.png` }
             },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}${pageUrl}` }

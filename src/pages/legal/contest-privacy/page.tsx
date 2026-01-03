@@ -23,7 +23,7 @@ export default function ContestPrivacyPage() {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
       title: 'Contest Privacy Policy – Stadiumport',
-      description: 'Privacy policy for the StadiumPort World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
+      description: 'Privacy policy for the Stadiumport World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
       url: `${siteUrl}/world-cup-2026-prediction-contest-privacy`
     });
   }, []);

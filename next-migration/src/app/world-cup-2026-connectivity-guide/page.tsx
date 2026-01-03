@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Connectivity: eSIM, WiFi & Phone Plans',
     description: 'Stay connected at World Cup 2026. Best eSIMs, local SIM cards & roaming tips for USA, Canada & Mexico. Avoid high fees & stay online.',
     url: 'https://stadiumport.com/world-cup-2026-connectivity-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

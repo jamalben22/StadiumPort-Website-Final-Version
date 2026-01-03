@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     canonical: 'https://stadiumport.com/world-cup-2026-accommodation-security',
   },
   openGraph: {
-    title: 'Accommodation Security: Safe Stays for World Cup 2026 | StadiumPort',
+    title: 'Accommodation Security: Safe Stays for World Cup 2026 | Stadiumport',
     description: 'Complete guide to accommodation security for World Cup 2026. Safe hotel strategies, Airbnb verification, neighborhood safety, and scam prevention.',
     url: 'https://stadiumport.com/world-cup-2026-accommodation-security',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Accommodation Security: Safe Stays for World Cup 2026 | StadiumPort',
+    title: 'Accommodation Security: Safe Stays for World Cup 2026 | Stadiumport',
     description: 'Complete guide to accommodation security for World Cup 2026. Safe hotel strategies, Airbnb verification, neighborhood safety.',
     images: ['/images/safety-guide/Accommodation%20Security_Safe%20Stays.webp'],
   },

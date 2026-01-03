@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Philadelphia World Cup 2026 Guide: Lincoln Financial Field & Travel Tips',
     description: 'Complete Philadelphia World Cup 2026 travel guide. Lincoln Financial Field info, best hotels, SEPTA transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/philadelphia-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Privacy Policy – Stadiumport',
     description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
     url: 'https://stadiumport.com/legal/privacy',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

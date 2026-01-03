@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Editorial Policy – Stadiumport',
     description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
     url: 'https://stadiumport.com/legal/editorial-policy',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

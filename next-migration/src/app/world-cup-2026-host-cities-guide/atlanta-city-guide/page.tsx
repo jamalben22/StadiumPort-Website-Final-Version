@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Atlanta World Cup 2026 Guide: Mercedes-Benz Stadium & Travel Tips',
     description: 'Complete Atlanta World Cup 2026 travel guide. Mercedes-Benz Stadium info, best hotels, MARTA transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/atlanta-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

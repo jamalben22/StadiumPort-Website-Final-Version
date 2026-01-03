@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group J Travel Guide: Kansas City, Dallas & San Francisco',
     description: 'The definitive guide for following Group J in World Cup 2026. Master the American Frontier (Kansas City-Dallas-San Francisco). Flights, rentals, and heat strategy.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-j',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

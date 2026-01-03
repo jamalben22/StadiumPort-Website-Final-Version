@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Contact – Stadiumport',
     description: 'Get in touch with Stadiumport for World Cup 2026 questions, corrections, partnerships, press/media, and general inquiries.',
     url: 'https://stadiumport.com/contact',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

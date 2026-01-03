@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Houston World Cup 2026 Guide: NRG Stadium & Travel Tips',
     description: 'Complete Houston World Cup 2026 travel guide. NRG Stadium info, best hotels, METRORail transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/houston-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

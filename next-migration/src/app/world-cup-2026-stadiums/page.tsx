@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     'World Cup 2026 venues',
     'World Cup 2026 stadium guide',
     '16 World Cup 2026 stadiums',
-    'StadiumPort'
+    'Stadiumport'
   ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-stadiums',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to all 16 World Cup 2026 stadiums. Seating charts, capacity, tickets & accessibility for USA, Mexico & Canada venues.',
     type: 'website',
     url: 'https://stadiumport.com/world-cup-2026-stadiums',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Stadiums: All 16 Venues Guide | StadiumPort',
+    title: 'World Cup 2026 Stadiums: All 16 Venues Guide | Stadiumport',
     description: 'Explore all 16 World Cup 2026 stadiums across USA, Mexico & Canada. Get expert guides on capacity, seating, and tickets for every FIFA venue.',
     images: ['/images/cities/new-york-new-jersey-world-cup-2026-1600.webp'],
   },

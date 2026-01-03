@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Family Safety Guide: Taking Kids to World Cup 2026',
     description: 'Complete parent\'s guide to World Cup 2026 safety. Stadium strategies for kids, family lodging, transport tips, and emergency preparedness.',
     url: 'https://stadiumport.com/world-cup-2026-family-safety-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

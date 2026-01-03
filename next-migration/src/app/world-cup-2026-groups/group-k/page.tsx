@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group K Travel Guide: Mexico City, Houston, Atlanta & Miami',
     description: 'The definitive guide for following Group K in World Cup 2026. Master the Southern Crossing (Mexico City-Houston-Atlanta-Miami). Altitude, humidity, and hub strategy.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-k',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

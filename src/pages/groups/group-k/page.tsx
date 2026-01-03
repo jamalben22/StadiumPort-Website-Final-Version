@@ -34,11 +34,11 @@ const GroupKPage: React.FC = () => {
             "description": "The definitive travel guide for Group K. Experience the historic heights of Mexico City, the humidity of Houston and Miami, and the energy of Atlanta.",
             "author": {
               "@type": "Organization",
-              "name": "StadiumPort"
+              "name": "Stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "StadiumPort",
+              "name": "Stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
     description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-d',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

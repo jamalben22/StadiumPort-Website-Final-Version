@@ -46,7 +46,7 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Stadiumport",
-  "alternateName": ["StadiumPort", "StadiumPort.com"],
+  "alternateName": ["Stadiumport", "Stadiumport.com"],
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "logo": {
     "@type": "ImageObject",

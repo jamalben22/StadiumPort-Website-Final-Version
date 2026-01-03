@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
     description: 'The definitive timeline for booking World Cup 2026. Data-backed guide on when to buy tickets, flights, and hotels to save thousands. Don\'t miss the 11-month sweet spot.',
     url: 'https://stadiumport.com/best-time-book-world-cup-2026',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

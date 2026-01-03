@@ -5,7 +5,7 @@ import ClientPage from './ClientPage';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend | StadiumPort',
+  title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend | Stadiumport',
   description: 'Maximize your World Cup 2026 experience. Expert guide on which matches to attend, ticket value ratings, and strategic planning for every budget.',
   keywords: [
     'World Cup 2026 matches',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Match Selection Strategy: Which Games to Attend',
     description: 'Group stage value vs. knockout drama. How to build a match schedule that delivers unforgettable moments.',
     url: 'https://stadiumport.com/world-cup-2026-match-selection-strategy',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

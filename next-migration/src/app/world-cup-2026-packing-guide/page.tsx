@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
     description: 'The ultimate World Cup 2026 packing guide. What to bring for hot Mexico stadiums vs cool Canada venues. Stadium bag policies & travel gear checklist.',
     url: 'https://stadiumport.com/world-cup-2026-packing-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

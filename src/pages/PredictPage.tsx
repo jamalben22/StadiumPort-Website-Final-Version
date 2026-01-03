@@ -294,7 +294,7 @@ function PredictGameContent() {
         },
         "organizer": {
           "@type": "Organization",
-          "name": "StadiumPort",
+          "name": "Stadiumport",
           "url": "https://stadiumport.com"
         },
         "offers": {
@@ -307,7 +307,7 @@ function PredictGameContent() {
         },
         "performer": {
           "@type": "Organization",
-          "name": "StadiumPort"
+          "name": "Stadiumport"
         }
       }} />
       <SchemaOrg schema={{
@@ -335,7 +335,7 @@ function PredictGameContent() {
             "name": "Is the contest free to enter?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, the StadiumPort Predictor is 100% free to play. No purchase necessary to enter or win."
+              "text": "Yes, the Stadiumport Predictor is 100% free to play. No purchase necessary to enter or win."
             }
           },
           {
