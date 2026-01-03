@@ -5,6 +5,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { EzoicAd } from '@/components/EzoicAd';
+import { useEzoicDynamicAds } from '@/hooks/useEzoicDynamicAds';
 import { 
   ArrowRight, ChevronDown, Globe, Shield, Map, Clock, CreditCard, Smartphone,
   Calendar, Ticket, Plane, Train, Car, DollarSign, AlertTriangle, Info, 
@@ -245,8 +247,20 @@ const SectionHeading = ({ children, icon: Icon }: { children: React.ReactNode, i
 );
 
 const TravelTipsClientPage = () => {
+  const { showDynamicAds } = useEzoicDynamicAds();
+  const [visibleGuides, setVisibleGuides] = useState(6);
+
+  const loadMoreGuides = () => {
+    setVisibleGuides(prev => prev + 6);
+  };
+
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
+      {/* Top Ad Placement */}
+      <div className="flex justify-center my-6">
+        <EzoicAd placementId={101} />
+      </div>
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={[{ label: 'Travel Tips', href: '/travel-tips' }]} />
@@ -383,52 +397,62 @@ const TravelTipsClientPage = () => {
         </p>
       </section>
 
-      {/* Featured Guides Grid */}
+      {/* Core Travel Guides Grid */}
       <section className="px-6 lg:px-8 max-w-7xl mx-auto mb-24">
-        <SectionHeading icon={Map}>Essential Planning Guides</SectionHeading>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {guides.map((guide, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.05 }}
-              className="group bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full"
-            >
-              {/* Featured Image */}
-              <div className="relative h-48 w-full overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10" />
-                <Image 
-                  src={guide.image} 
-                  alt={guide.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  unoptimized />
-                <div className="absolute bottom-4 left-4 z-20">
-                  <div className="bg-white/90 dark:bg-black/80 p-2 rounded-lg backdrop-blur-sm inline-block">
-                    <guide.icon className="w-5 h-5 text-slate-900 dark:text-white" />
+        <SectionHeading icon={Map}>Essential Travel Guides</SectionHeading>
+        <div className="grid md:grid-cols-2 gap-8">
+          {guides.slice(0, visibleGuides).map((guide, index) => (
+            <Link key={index} href={guide.link} className="group block h-full">
+              <div className="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full flex flex-col">
+                <div className="relative h-64 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                   <Image 
+                     src={guide.image} 
+                     alt={guide.title}
+                     fill
+                     className="object-cover transition-transform duration-500 group-hover:scale-105"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+                   <div className="absolute bottom-6 left-6 right-6">
+                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-medium mb-3 border border-white/20">
+                       <guide.icon className="w-3 h-3" />
+                       Travel Guide
+                     </div>
+                     <h3 className="text-2xl font-bold text-white leading-tight">
+                       {guide.title}
+                     </h3>
+                   </div>
+                </div>
+                <div className="p-8 flex flex-col flex-grow">
+                  <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed">
+                    {guide.teaser}
+                  </p>
+                  <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold group-hover:gap-2 transition-all">
+                    Read Guide <ArrowRight className="w-5 h-5 ml-2" />
                   </div>
                 </div>
               </div>
-              
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3 leading-tight">
-                  {guide.title}
-                </h3>
-                <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed text-sm">
-                  {guide.teaser}
-                </p>
-                <Link 
-                  href={guide.link}
-                  className="inline-flex items-center text-sm font-bold text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors mt-auto"
-                >
-                  Read Full Guide <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
+            </Link>
           ))}
         </div>
+        
+        {/* Load More Button & Dynamic Ads Example */}
+        {visibleGuides < guides.length && (
+          <div className="mt-12 text-center">
+            <button 
+              onClick={loadMoreGuides}
+              className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-emerald-600 dark:hover:bg-emerald-400 transition-colors"
+            >
+              Load More Guides <ChevronDown className="w-5 h-5" />
+            </button>
+          </div>
+        )}
+        
+        {/* Dynamic Ad Placement - Appears when content expands */}
+        {visibleGuides > 6 && (
+           <div className="flex justify-center mt-12">
+              <EzoicAd placementId={103} />
+           </div>
+        )}
       </section>
 
       {/* Getting There & Around */}

@@ -6,8 +6,12 @@ import { usePathname } from 'next/navigation';
 import { Search, Menu, X, ChevronRight } from 'lucide-react';
 import { DarkModeToggle } from '../base/DarkModeToggle';
 import { SearchModal } from './SearchModal';
+import { useEzoicDynamicAds } from '@/hooks/useEzoicDynamicAds';
 
 export function Header() {
+  // Initialize Ezoic Dynamic Ads handler
+  useEzoicDynamicAds();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
