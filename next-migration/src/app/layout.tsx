@@ -27,7 +27,7 @@ export const metadata = constructMetadata({
   title: "Stadiumport | World Cup 2026 Travel Guide",
   description: "The definitive guide to World Cup 2026. Expert insights, stadium guides, and travel planning.",
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "Add_Your_Verification_Code_Here",
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
 });
 

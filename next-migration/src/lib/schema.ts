@@ -81,7 +81,8 @@ export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Stadiumport",
-  "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
+  "alternateName": ["Stadium Port", "StadiumPort.com", "World Cup 2026 Travel Guide"],
+  "description": "The ultimate resource for World Cup 2026. Expert travel guides, stadium info, and planning for USA, Mexico, and Canada.",
   "url": getSiteUrl(),
   "potentialAction": {
     "@type": "SearchAction",
@@ -168,7 +169,7 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Stadiumport",
-  "alternateName": ["Stadiumport"],
+  "alternateName": ["Stadium Port", "StadiumPort World Cup Guide"],
   "url": getSiteUrl(),
   "logo": {
     "@type": "ImageObject",
@@ -177,11 +178,20 @@ export const generateOrganizationSchema = () => ({
     "height": 512,
     "caption": "Stadiumport Logo"
   },
+  "description": "The definitive travel guide for the 2026 FIFA World Cup. We provide expert insights, stadium guides, and comprehensive travel planning resources for fans visiting the USA, Mexico, and Canada.",
+  "foundingDate": "2023",
   "sameAs": [
     "https://twitter.com/stadiumport",
     "https://facebook.com/stadiumport",
-    "https://instagram.com/stadiumport"
-  ]
+    "https://instagram.com/stadiumport",
+    "https://www.linkedin.com/company/stadiumport",
+    "https://www.youtube.com/@stadiumport"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "email": "hello@stadiumport.com"
+  }
 });
 
 export const generateSportsEventSchema = () => ({
@@ -215,10 +225,7 @@ export const generateSportsEventSchema = () => ({
     "name": "FIFA",
     "url": "https://www.fifa.com"
   },
-  "image": getSiteUrl('/images/hero/world-cup-2026-hero.webp'),
-  "offers": {
-    "@type": "Offer",
-    "url": "https://www.fifa.com/tickets",
-    "availability": "https://schema.org/PreOrder"
-  }
+  "image": [
+    getSiteUrl("/images/world-cup-2026-banner.jpg") // Needs actual image
+  ]
 });
