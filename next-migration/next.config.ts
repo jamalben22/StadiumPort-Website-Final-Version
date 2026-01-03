@@ -169,7 +169,7 @@ const nextConfig: NextConfig = {
       // Ezoic Ads.txt Redirect
       {
         source: '/ads.txt',
-        destination: 'https://srv.adstxtmanager.com/82108/stadiumport.com',
+        destination: 'https://srv.adstxtmanager.com/19390/stadiumport.com',
         statusCode: 301,
       },
     ];
