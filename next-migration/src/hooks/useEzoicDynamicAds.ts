@@ -26,9 +26,9 @@ export const useEzoicDynamicAds = () => {
 
     if (typeof window !== 'undefined') {
       window.ezstandalone = window.ezstandalone || ({} as any);
-      window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+      window.ezstandalone!.cmd = window.ezstandalone!.cmd || [];
 
-      window.ezstandalone.cmd.push(() => {
+      window.ezstandalone!.cmd.push(() => {
         // destroyAll() is aggressive but ensures a clean slate for the new page.
         // Ezoic recommends calling showAds() on navigation, which usually implies
         // we should just let the new page's components register themselves.
@@ -57,9 +57,9 @@ export const useEzoicDynamicAds = () => {
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
     window.ezstandalone = window.ezstandalone || ({} as any);
-    window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+    window.ezstandalone!.cmd = window.ezstandalone!.cmd || [];
 
-    window.ezstandalone.cmd.push(() => {
+    window.ezstandalone!.cmd.push(() => {
       if (window.ezstandalone?.showAds) {
         window.ezstandalone.showAds(...placeholderIds);
       }
@@ -76,9 +76,9 @@ export const useEzoicDynamicAds = () => {
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
     window.ezstandalone = window.ezstandalone || ({} as any);
-    window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+    window.ezstandalone!.cmd = window.ezstandalone!.cmd || [];
 
-    window.ezstandalone.cmd.push(() => {
+    window.ezstandalone!.cmd.push(() => {
       if (window.ezstandalone?.destroyPlaceholders) {
         window.ezstandalone.destroyPlaceholders(...placeholderIds);
       }
@@ -96,9 +96,9 @@ export const useEzoicDynamicAds = () => {
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
     window.ezstandalone = window.ezstandalone || ({} as any);
-    window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+    window.ezstandalone!.cmd = window.ezstandalone!.cmd || [];
 
-    window.ezstandalone.cmd.push(() => {
+    window.ezstandalone!.cmd.push(() => {
       if (window.ezstandalone?.destroyPlaceholders && window.ezstandalone?.showAds) {
         window.ezstandalone.destroyPlaceholders(...placeholderIds);
         window.ezstandalone.showAds(...placeholderIds);
