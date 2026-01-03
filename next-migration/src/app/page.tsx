@@ -16,9 +16,10 @@ import {
   generateWebsiteSchema,
   generateBreadcrumbSchema
 } from '@/lib/schema';
+import { constructMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico | StadiumPort',
+export const metadata: Metadata = constructMetadata({
+  title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico',
   description: 'The #1 World Cup 2026 travel guide. Expert planning resources for all 16 host cities, stadiums, tickets & match schedules. Plan your 2026 trip now!',
   keywords: [
     'World Cup 2026',
@@ -28,34 +29,20 @@ export const metadata: Metadata = {
     'World Cup 2026 Stadiums',
     'World Cup 2026 Tickets',
     'USA Mexico Canada World Cup',
-    'StadiumPort',
+    'Stadiumport',
     'World Cup 2026 Hotels',
     'World Cup 2026 Flights'
   ],
-  alternates: {
-    canonical: 'https://stadiumport.com',
-  },
-  openGraph: {
-    title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico',
-    description: 'The ultimate World Cup 2026 travel resource. Detailed guides for all 16 host cities, stadium seating charts, ticket info, and match schedules.',
-    url: 'https://stadiumport.com',
-    siteName: 'StadiumPort',
-    locale: 'en_US',
-    type: 'website',
-    images: [
-      {
-        url: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp', // Using a high-quality hero image
-        width: 1600,
-        height: 900,
-        alt: 'World Cup 2026 Travel Guide',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'World Cup 2026 Travel Guide: USA, Canada & Mexico',
-    description: 'The ultimate World Cup 2026 travel resource. Detailed guides for all 16 host cities, stadium seating charts, ticket info, and match schedules.',
-    images: ['/images/cities/new-york-new-jersey-world-cup-2026-1600.webp'],
+  image: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',
+  path: '/',
+});
+
+// Add hreflang for homepage specifically
+metadata.alternates = {
+  ...metadata.alternates,
+  languages: {
+    'en': 'https://stadiumport.com',
+    'x-default': 'https://stadiumport.com',
   },
 };
 
@@ -104,7 +91,3 @@ export default function HomePage() {
     </>
   );
 }
-
-
-
-

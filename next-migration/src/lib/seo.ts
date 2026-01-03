@@ -17,7 +17,7 @@ interface MetadataProps {
 }
 
 const defaultUrl = 'https://stadiumport.com';
-const defaultImage = '/images/og-image.png'; // Needs to be created/uploaded
+const defaultImage = '/images/og-image.png'; // Make sure this exists
 
 export function constructMetadata({
   title,
@@ -26,13 +26,27 @@ export function constructMetadata({
   type = 'website',
   path = '',
   noIndex = false,
-  keywords,
+  keywords = [
+    "World Cup 2026", 
+    "FIFA World Cup 2026", 
+    "World Cup Travel Guide", 
+    "Stadiumport", 
+    "2026 World Cup Stadiums",
+    "World Cup Host Cities"
+  ],
   verification,
 }: MetadataProps): Metadata {
   const url = `${defaultUrl}${path}`;
+  const brandName = "Stadiumport";
   
+  // Ensure title always includes brand name if not present (though Next.js template handles this usually)
+  const fullTitle = title.includes(brandName) ? title : `${title} | ${brandName}`;
+
   return {
-    title,
+    title: {
+      default: fullTitle,
+      template: `%s | ${brandName}`,
+    },
     description,
     keywords,
     metadataBase: new URL(defaultUrl),
@@ -60,7 +74,7 @@ export function constructMetadata({
       ],
     },
     openGraph: {
-      title,
+      title: fullTitle,
       description,
       url,
       type,
@@ -69,18 +83,18 @@ export function constructMetadata({
           url: image,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: fullTitle,
         },
       ],
-      siteName: 'Stadiumport',
+      siteName: brandName,
       locale: 'en_US',
     },
     twitter: {
       card: 'summary_large_image',
-      title,
+      title: fullTitle,
       description,
       images: [image],
-      creator: '@stadiumport', // Update with real handle
+      creator: '@stadiumport', 
       site: '@stadiumport',
     },
     robots: {
@@ -94,17 +108,5 @@ export function constructMetadata({
         'max-snippet': -1,
       },
     },
-  };
-}
-
-export function constructSchema(type: 'Organization' | 'WebSite' | 'BreadcrumbList' | 'Article', data: any) {
-  const baseContext = {
-    '@context': 'https://schema.org',
-  };
-
-  return {
-    ...baseContext,
-    '@type': type,
-    ...data,
   };
 }
