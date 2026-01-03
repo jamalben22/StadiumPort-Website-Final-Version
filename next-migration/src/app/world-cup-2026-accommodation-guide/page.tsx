@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Accommodation Guide: Best Hotels & Where to Stay',
     description: 'Complete guide to World Cup 2026 hotels & accommodation. Best areas to stay, booking tips & hostel options for all 16 host cities in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-accommodation-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

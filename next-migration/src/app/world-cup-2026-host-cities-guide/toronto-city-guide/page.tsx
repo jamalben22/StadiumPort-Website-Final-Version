@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Toronto World Cup 2026 Guide: BMO Field & Travel Tips',
     description: 'Complete Toronto World Cup 2026 travel guide. BMO Field info, best hotels, UP Express/TTC tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/toronto-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

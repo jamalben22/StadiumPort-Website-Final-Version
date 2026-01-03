@@ -217,7 +217,7 @@ const getPremiumEmailHtml = (options: {
     <table role="presentation" style="width:100%;border:none;border-spacing:0;">
       <tr>
         <td align="center" style="padding:40px 20px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:#64748b;line-height:1.5;">
-          <p style="margin:0 0 10px 0;">© 2026 StadiumPort. All rights reserved.</p>
+          <p style="margin:0 0 10px 0;">© 2026 Stadiumport. All rights reserved.</p>
           <p style="margin:0;">
             <a href="${siteUrl}/privacy" style="color:#64748b;text-decoration:underline;">Privacy Policy</a> &bull; 
             <a href="${siteUrl}/terms" style="color:#64748b;text-decoration:underline;">Terms of Service</a>
@@ -475,7 +475,7 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
           // Send Verification Email
           await sendEmail({
             to: email,
-            subject: 'Action Required: Verify your StadiumPort entry',
+            subject: 'Action Required: Verify your Stadiumport entry',
             html: getPremiumEmailHtml({
               type: 'verification',
               title: 'Verify Your Email',
@@ -534,7 +534,7 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
             subject: 'Welcome to Stadiumport!',
             html: getPremiumEmailHtml({
               type: 'general',
-              title: 'Welcome to StadiumPort',
+              title: 'Welcome to Stadiumport',
               bodyContent: `<p>Thanks for subscribing. You'll receive the latest updates about World Cup 2026.</p>`,
               siteUrl: SITE_URL
             }),

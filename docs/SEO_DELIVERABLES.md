@@ -23,7 +23,7 @@ Copy and paste this into `src/components/seo/SchemaOrg.tsx` (Already Implemented
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Stadiumport",
-  "alternateName": ["StadiumPort", "StadiumPort.com"],
+  "alternateName": ["Stadiumport", "Stadiumport.com"],
   "url": "https://stadiumport.com",
   "logo": {
     "@type": "ImageObject",

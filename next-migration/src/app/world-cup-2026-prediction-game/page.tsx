@@ -11,10 +11,10 @@ export const metadata: Metadata = {
  canonical: 'https://stadiumport.com/world-cup-2026-prediction-game',
  },
  openGraph: {
-    title: 'World Cup 2026 Predictor Game | StadiumPort',
+    title: 'World Cup 2026 Predictor Game | Stadiumport',
     description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
     url: 'https://stadiumport.com/world-cup-2026-prediction-game',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Predictor Game | StadiumPort',
+    title: 'World Cup 2026 Predictor Game | Stadiumport',
     description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
     images: ['/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp'],
   },

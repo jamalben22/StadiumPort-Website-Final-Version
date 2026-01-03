@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
     description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
     url: 'https://stadiumport.com/about',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

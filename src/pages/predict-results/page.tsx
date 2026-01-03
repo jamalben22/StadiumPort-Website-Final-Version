@@ -254,7 +254,7 @@ export const PredictResultsPage = () => {
       </main>
       <div className="relative z-20 px-6 pb-6 text-center">
         <span className="text-[10px] text-white/30 font-['Rajdhani'] tracking-[0.3em]">
-          © 2026 StadiumPort • <a href="/privacy" className="underline hover:no-underline">Privacy</a>
+          © 2026 Stadiumport • <a href="/privacy" className="underline hover:no-underline">Privacy</a>
         </span>
       </div>
       </div>

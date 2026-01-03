@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group F Travel Guide: Dallas, Houston, KC & Monterrey',
     description: 'The definitive guide for following Group F in World Cup 2026. Master the Tex-Mex Corridor (Dallas-Houston-Monterrey) and the Midwest Hub (Kansas City). Drive times, heat safety, and border tips.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-f',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

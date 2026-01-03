@@ -19,10 +19,10 @@ export const metadata: Metadata = {
     canonical: 'https://stadiumport.com/world-cup-2026-money-financial-safety',
   },
   openGraph: {
-    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | StadiumPort',
+    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | Stadiumport',
     description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips, and fraud prevention.',
     url: 'https://stadiumport.com/world-cup-2026-money-financial-safety',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | StadiumPort',
+    title: 'Money & Financial Safety: World Cup 2026 Complete Guide | Stadiumport',
     description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips.',
     images: ['/images/safety-guide/Money%20&%20Financial%20Safety%20Cash%20Cards%20&%20Currencies.webp'],
   },

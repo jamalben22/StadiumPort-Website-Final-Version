@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Itinerary: 1 & 2 Week Trip Plans for Fans',
     description: 'Optimized World Cup 2026 itineraries. Step-by-step travel plans for 1, 2, and 3-week trips across USA, Canada & Mexico. Maximize matches & minimize travel.',
     url: 'https://stadiumport.com/world-cup-2026-itinerary-planning',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Authors & Editorial Team – Stadiumport',
     description: 'Meet the team behind Stadiumport. Our dedicated writers, researchers, and editors work to provide the most accurate World Cup 2026 travel guides.',
     url: 'https://stadiumport.com/about/authors',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
   },

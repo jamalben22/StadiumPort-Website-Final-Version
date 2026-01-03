@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Seattle World Cup 2026 Guide: Lumen Field & Travel Tips',
     description: 'Complete Seattle World Cup 2026 travel guide. Lumen Field info, best hotels, Link Light Rail tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/seattle-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

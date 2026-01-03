@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'New York/NJ World Cup 2026 Guide: MetLife Stadium & Travel Tips',
     description: 'Complete New York/NJ World Cup 2026 travel guide. MetLife Stadium info, best hotels, NJ Transit tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/new-york-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

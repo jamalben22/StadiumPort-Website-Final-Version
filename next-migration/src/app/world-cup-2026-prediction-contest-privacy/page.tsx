@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'Contest Privacy Policy – StadiumPort',
-  description: 'Privacy policy for the StadiumPort World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
-  keywords: ['World Cup 2026 contest privacy', 'StadiumPort privacy policy', 'data protection', 'contest rules', 'user privacy'],
+  title: 'Contest Privacy Policy – Stadiumport',
+  description: 'Privacy policy for the Stadiumport World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
+  keywords: ['World Cup 2026 contest privacy', 'Stadiumport privacy policy', 'data protection', 'contest rules', 'user privacy'],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-prediction-contest-privacy',
   },
   openGraph: {
-    title: 'Contest Privacy Policy – StadiumPort',
-    description: 'Privacy policy for the StadiumPort World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
+    title: 'Contest Privacy Policy – Stadiumport',
+    description: 'Privacy policy for the Stadiumport World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
     url: 'https://stadiumport.com/world-cup-2026-prediction-contest-privacy',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'StadiumPort Contest Privacy',
+        alt: 'Stadiumport Contest Privacy',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contest Privacy Policy – StadiumPort',
-    description: 'Privacy policy for the StadiumPort World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
+    title: 'Contest Privacy Policy – Stadiumport',
+    description: 'Privacy policy for the Stadiumport World Cup 2026 Prediction Contest detailing data collection, use, and protection.',
     images: ['/images/og-image.png'],
   },
 };

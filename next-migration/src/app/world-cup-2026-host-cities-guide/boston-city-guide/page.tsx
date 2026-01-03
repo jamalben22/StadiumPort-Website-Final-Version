@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Boston World Cup 2026 Guide: Gillette Stadium & Travel Tips',
     description: 'Complete Boston World Cup 2026 travel guide. Gillette Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/boston-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -69,7 +69,7 @@ export const ResultDashboard = ({
       
     const shareData = {
       title: 'My World Cup 2026 Prediction',
-      text: `I predicted ${champion?.name} to win the World Cup 2026! Check out my full bracket on StadiumPort.`,
+      text: `I predicted ${champion?.name} to win the World Cup 2026! Check out my full bracket on Stadiumport.`,
       url: shareUrl,
     };
 
@@ -95,7 +95,7 @@ export const ResultDashboard = ({
       : (typeof window !== 'undefined' ? window.location.href : '');
       
     const encodedUrl = encodeURIComponent(shareUrl);
-    const text = encodeURIComponent(`I predicted ${champion?.name} to win the World Cup 2026! Check out my full bracket on StadiumPort.`);
+    const text = encodeURIComponent(`I predicted ${champion?.name} to win the World Cup 2026! Check out my full bracket on Stadiumport.`);
     
     if (platform === 'twitter') {
       window.open(`https://twitter.com/intent/tweet?text=${text}&url=${encodedUrl}`, '_blank');

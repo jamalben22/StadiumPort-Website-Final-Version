@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
     description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/dallas-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

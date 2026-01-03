@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Travel Tips: Complete Fan Planning Guide',
     description: 'Essential travel tips for World Cup 2026. Expert advice on visas, tickets, accommodation, transport & budgets for USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-travel-tips',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

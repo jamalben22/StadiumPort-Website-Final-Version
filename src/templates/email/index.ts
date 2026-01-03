@@ -12,11 +12,11 @@ export interface EmailTemplateOptions {
 export const getStadiumPortEmailHtml = (options: EmailTemplateOptions): string => {
   const {
     title,
-    previewText = 'StadiumPort Update',
+    previewText = 'Stadiumport Update',
     bodyContent,
     ctaLink,
     ctaText,
-    footerText = '© 2025 StadiumPort. All rights reserved.',
+    footerText = '© 2025 Stadiumport. All rights reserved.',
     siteUrl
   } = options;
 

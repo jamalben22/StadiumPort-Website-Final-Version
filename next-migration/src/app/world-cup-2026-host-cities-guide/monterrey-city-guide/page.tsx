@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Monterrey World Cup 2026 Guide: Estadio BBVA & Travel Tips',
     description: 'Complete Monterrey World Cup 2026 travel guide. Estadio BBVA info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/monterrey-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

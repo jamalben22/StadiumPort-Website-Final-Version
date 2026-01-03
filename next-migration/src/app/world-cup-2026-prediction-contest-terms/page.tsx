@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'Contest Terms & Conditions – StadiumPort',
-  description: 'Official rules and terms for the StadiumPort World Cup 2026 Prediction Contest. Eligibility, prizes, scoring, and legal details.',
-  keywords: ['World Cup 2026 contest rules', 'StadiumPort prediction game terms', 'World Cup 2026 prizes', 'official contest rules', 'soccer prediction contest terms'],
+  title: 'Contest Terms & Conditions – Stadiumport',
+  description: 'Official rules and terms for the Stadiumport World Cup 2026 Prediction Contest. Eligibility, prizes, scoring, and legal details.',
+  keywords: ['World Cup 2026 contest rules', 'Stadiumport prediction game terms', 'World Cup 2026 prizes', 'official contest rules', 'soccer prediction contest terms'],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-prediction-contest-terms',
   },
   openGraph: {
-    title: 'Contest Terms & Conditions – StadiumPort',
-    description: 'Official rules and terms for the StadiumPort World Cup 2026 Prediction Contest. Eligibility, prizes, scoring, and legal details.',
+    title: 'Contest Terms & Conditions – Stadiumport',
+    description: 'Official rules and terms for the Stadiumport World Cup 2026 Prediction Contest. Eligibility, prizes, scoring, and legal details.',
     url: 'https://stadiumport.com/world-cup-2026-prediction-contest-terms',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -20,14 +20,14 @@ export const metadata: Metadata = {
         url: '/images/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'StadiumPort Contest Terms',
+        alt: 'Stadiumport Contest Terms',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contest Terms & Conditions – StadiumPort',
-    description: 'Official rules and terms for the StadiumPort World Cup 2026 Prediction Contest.',
+    title: 'Contest Terms & Conditions – Stadiumport',
+    description: 'Official rules and terms for the Stadiumport World Cup 2026 Prediction Contest.',
     images: ['/images/og-image.png'],
   },
 };

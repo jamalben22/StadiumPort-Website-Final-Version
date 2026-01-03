@@ -89,7 +89,7 @@ export default async function handler(req, res) {
               <p style="margin: 0; font-size: 14px; color: #065f46;">Your Unique Prediction ID</p>
               <p style="margin: 10px 0 0 0; font-size: 24px; font-weight: bold; color: #059669; letter-spacing: 1px;">${uniqueId}</p>
             </div>
-            <p>Thanks for joining the StadiumPort World Cup 2026 Predictor Game.</p>
+            <p>Thanks for joining the Stadiumport World Cup 2026 Predictor Game.</p>
             <p>Your prediction has been securely recorded. You can view your bracket anytime using your unique ID.</p>
           `,
           ctaText: 'View My Prediction',
@@ -153,7 +153,7 @@ export default async function handler(req, res) {
         to: email,
         subject: 'Welcome to Stadiumport!',
         html: getStadiumPortEmailHtml({
-          title: 'Welcome to StadiumPort',
+          title: 'Welcome to Stadiumport',
           bodyContent: `<p>Thanks for subscribing to our newsletter. You'll receive the latest updates about World Cup 2026.</p>`,
           siteUrl: SITE_URL
         }),

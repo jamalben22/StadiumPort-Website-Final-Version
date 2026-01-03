@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Kansas City World Cup 2026 Guide: Arrowhead Stadium & Travel Tips',
     description: 'Complete Kansas City World Cup 2026 travel guide. Arrowhead Stadium info, best hotels, transportation tips, BBQ guide & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/kansas-city-city-guide',
-    siteName: 'StadiumPort',
+    siteName: 'Stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
