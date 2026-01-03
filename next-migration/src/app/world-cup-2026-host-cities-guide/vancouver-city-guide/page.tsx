@@ -1,5 +1,7 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
  title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',

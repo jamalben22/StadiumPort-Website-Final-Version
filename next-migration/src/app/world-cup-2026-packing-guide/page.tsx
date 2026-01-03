@@ -45,6 +45,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const slug = 'world-cup-2026-packing-guide';
   const articleSchema = generateArticleSchema(slug, slug);
   
   const breadcrumbJsonLd = {

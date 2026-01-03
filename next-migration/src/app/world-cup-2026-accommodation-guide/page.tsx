@@ -47,6 +47,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const slug = 'world-cup-2026-accommodation-guide';
   const jsonLd = generateArticleSchema(slug, '/world-cup-2026-accommodation-guide');
   
   const breadcrumbLd = {
