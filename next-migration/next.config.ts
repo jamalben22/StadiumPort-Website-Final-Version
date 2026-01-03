@@ -97,6 +97,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Ezoic ads.txt redirect
+      {
+        source: '/ads.txt',
+        destination: 'https://srv.adstxtmanager.com/82108/stadiumport.com',
+        permanent: true,
+      },
       // Force non-www
       {
         source: '/:path*',

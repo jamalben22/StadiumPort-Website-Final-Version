@@ -130,6 +130,14 @@ export const contentRegistry: Record<string, ContentMeta> = {
     wordCount: 4500,
     image: '/images/safety-guide/Accommodation Security_Safe Stays.webp'
   },
+  'nightlife-after-hours-safety-world-cup-2026': {
+    title: 'Nightlife & After-Hours Safety: World Cup 2026 Guide',
+    description: 'Expert guide to World Cup 2026 nightlife safety. Enjoy the atmosphere responsibly with tips on safe transport, alcohol awareness, and venue security.',
+    publishedAt: '2026-01-03T00:00:00Z',
+    updatedAt: '2026-01-03T00:00:00Z',
+    wordCount: 4100,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp'
+  },
   'world-cup-2026-packing-guide': {
     title: 'World Cup 2026 Packing Guide: Ultimate Fan Checklist',
     description: 'From Mexican heat to Canadian cool. What to pack for a continent-spanning World Cup 2026 adventure.',
@@ -291,6 +299,40 @@ export const contentRegistry: Record<string, ContentMeta> = {
     updatedAt: '2025-12-26T00:00:00Z',
     wordCount: 3000,
     image: '/images/groups/group-l-hero.webp'
+  },
+
+  // Safety
+  'food-water-safety-dining-world-cup-2026': {
+    title: 'Food & Water Safety: Dining Without Distress',
+    description: 'Expert guide to World Cup 2026 food & water safety. Learn where to eat, water potability in USA/Canada/Mexico, and how to avoid traveler\'s diarrhea.',
+    publishedAt: '2026-01-03T00:00:00Z',
+    updatedAt: '2026-01-03T00:00:00Z',
+    wordCount: 4200,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp'
+  },
+  'fan-zone-crowd-safety-world-cup-2026': {
+    title: 'Fan Zone & Crowd Safety: World Cup 2026 Guide',
+    description: 'Expert guide to World Cup 2026 fan zone safety. Navigate crowds, enjoy the atmosphere, and stay safe at official viewing parties in USA, Canada & Mexico.',
+    publishedAt: '2026-01-03T00:00:00Z',
+    updatedAt: '2026-01-03T00:00:00Z',
+    wordCount: 3800,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp'
+  },
+  'staying-connected-sim-cards-emergency-communications-world-cup-2026': {
+    title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
+    description: 'Expert guide to World Cup 2026 connectivity. Compare SIM cards, eSIMs, and roaming plans for USA, Canada, and Mexico. Plus, essential emergency communication protocols.',
+    publishedAt: '2026-01-04T00:00:00Z',
+    updatedAt: '2026-01-04T00:00:00Z',
+    wordCount: 4100,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp'
+  },
+  'border-crossing-usa-canada-mexico-world-cup-2026': {
+    title: 'Border Crossing Guide: USA, Canada & Mexico 2026',
+    description: 'Ultimate border crossing guide for World Cup 2026. Smoothly navigate land and air borders between USA, Canada, and Mexico. Visa requirements, wait times, and customs rules.',
+    publishedAt: '2026-01-04T00:00:00Z',
+    updatedAt: '2026-01-04T00:00:00Z',
+    wordCount: 4200,
+    image: '/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp'
   },
 
   // Travel Tips
