@@ -25,7 +25,7 @@ export const useEzoicDynamicAds = () => {
     lastPathname.current = pathname;
 
     if (typeof window !== 'undefined') {
-      window.ezstandalone = window.ezstandalone || {};
+      window.ezstandalone = window.ezstandalone || ({} as any);
       window.ezstandalone.cmd = window.ezstandalone.cmd || [];
 
       window.ezstandalone.cmd.push(() => {
@@ -56,7 +56,7 @@ export const useEzoicDynamicAds = () => {
     if (!isEzoicEnabled) return;
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
-    window.ezstandalone = window.ezstandalone || {};
+    window.ezstandalone = window.ezstandalone || ({} as any);
     window.ezstandalone.cmd = window.ezstandalone.cmd || [];
 
     window.ezstandalone.cmd.push(() => {
@@ -75,7 +75,7 @@ export const useEzoicDynamicAds = () => {
     if (!isEzoicEnabled) return;
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
-    window.ezstandalone = window.ezstandalone || {};
+    window.ezstandalone = window.ezstandalone || ({} as any);
     window.ezstandalone.cmd = window.ezstandalone.cmd || [];
 
     window.ezstandalone.cmd.push(() => {
@@ -95,7 +95,7 @@ export const useEzoicDynamicAds = () => {
     if (!isEzoicEnabled) return;
     if (typeof window === 'undefined' || placeholderIds.length === 0) return;
 
-    window.ezstandalone = window.ezstandalone || {};
+    window.ezstandalone = window.ezstandalone || ({} as any);
     window.ezstandalone.cmd = window.ezstandalone.cmd || [];
 
     window.ezstandalone.cmd.push(() => {
