@@ -97,12 +97,6 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Ezoic ads.txt redirect
-      {
-        source: '/ads.txt',
-        destination: 'https://srv.adstxtmanager.com/82108/stadiumport.com',
-        permanent: true,
-      },
       // Force non-www
       {
         source: '/:path*',
@@ -172,6 +166,12 @@ const nextConfig: NextConfig = {
       { source: '/2026-world-cup-group-j-travel-guide', destination: '/world-cup-2026-groups/group-j', permanent: true },
       { source: '/2026-world-cup-group-k-travel-guide', destination: '/world-cup-2026-groups/group-k', permanent: true },
       { source: '/2026-world-cup-group-l-travel-guide', destination: '/world-cup-2026-groups/group-l', permanent: true },
+      // Ezoic Ads.txt Redirect
+      {
+        source: '/ads.txt',
+        destination: 'https://srv.adstxtmanager.com/82108/stadiumport.com',
+        permanent: true,
+      },
     ];
   },
 
