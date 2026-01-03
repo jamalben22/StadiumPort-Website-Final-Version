@@ -170,7 +170,7 @@ const nextConfig: NextConfig = {
       {
         source: '/ads.txt',
         destination: 'https://srv.adstxtmanager.com/82108/stadiumport.com',
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },
