@@ -73,6 +73,7 @@ const nextConfig: NextConfig = {
     }
   ],
   images: {
+    qualities: [75, 95],
     remotePatterns: [
       {
         protocol: 'https',
@@ -101,6 +102,18 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.stadiumport.com' }],
         destination: 'https://stadiumport.com/:path*',
+        permanent: true,
+      },
+      // City Guides (301 Redirects from old structure)
+      {
+        source: '/city-guide/:slug',
+        destination: '/world-cup-2026-host-cities-guide/:slug-city-guide',
+        permanent: true,
+      },
+      // Stadium Guides (301 Redirects from old structure)
+      {
+        source: '/stadium-guide/:slug',
+        destination: '/world-cup-2026-stadiums/:slug-guide',
         permanent: true,
       },
       // Legal
@@ -155,18 +168,7 @@ const nextConfig: NextConfig = {
       { source: '/2026-world-cup-group-l-travel-guide', destination: '/world-cup-2026-groups/group-l', permanent: true },
     ];
   },
-  async rewrites() {
-    return [
-      {
-        source: '/city-guide/:slug',
-        destination: '/world-cup-2026-host-cities/:slug-city-guide',
-      },
-      {
-        source: '/stadium-guide/:slug',
-        destination: '/world-cup-2026-stadiums/:slug-guide',
-      },
-    ];
-  },
+
 };
 
 export default nextConfig;
