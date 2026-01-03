@@ -51,7 +51,7 @@ export const EzoicAd = ({ placementId, placementIds, className = '' }: EzoicAdPr
     initialized.current = true;
 
     // Push to Ezoic command queue
-    window.ezstandalone = window.ezstandalone || {};
+    window.ezstandalone = window.ezstandalone || ({} as any);
     window.ezstandalone.cmd = window.ezstandalone.cmd || [];
 
     window.ezstandalone.cmd.push(() => {
