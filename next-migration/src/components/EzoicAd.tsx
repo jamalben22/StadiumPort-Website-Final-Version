@@ -52,9 +52,9 @@ export const EzoicAd = ({ placementId, placementIds, className = '' }: EzoicAdPr
 
     // Push to Ezoic command queue
     window.ezstandalone = window.ezstandalone || ({} as any);
-    window.ezstandalone.cmd = window.ezstandalone.cmd || [];
+    window.ezstandalone!.cmd = window.ezstandalone!.cmd || [];
 
-    window.ezstandalone.cmd.push(() => {
+    window.ezstandalone!.cmd.push(() => {
       // Ensure ezstandalone is available
       if (window.ezstandalone && typeof window.ezstandalone.showAds === 'function') {
         // We use spread operator to pass all IDs as individual arguments
