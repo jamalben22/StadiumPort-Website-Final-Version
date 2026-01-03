@@ -7,6 +7,8 @@ import { Footer } from "@/components/feature/Footer";
 import { WebVitalsReporter } from "@/components/analytics/WebVitalsReporter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/schema";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/next';
 
 // Font configurations
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -16,6 +18,7 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" }
 
 import { constructMetadata } from "@/lib/seo";
 import { Providers } from "./providers";
+import { isEzoicEnabled } from "@/lib/ads";
 
 export const metadata = constructMetadata({
   title: "Stadiumport | World Cup 2026 Travel Guide",
@@ -33,13 +36,37 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} ${oswald.variable} ${jetbrains.variable}`}>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
-        {process.env.NODE_ENV === 'production' && (
-          <Script
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855"
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
+        {/* Privacy Scripts (MUST LOAD FIRST) */}
+        <Script
+          src="https://cmp.gatekeeperconsent.com/min.js"
+          strategy="beforeInteractive"
+          data-cfasync="false"
+        />
+        <Script
+          src="https://the.gatekeeperconsent.com/cmp.min.js"
+          strategy="beforeInteractive"
+          data-cfasync="false"
+        />
+
+        {/* Ezoic Header Script */}
+        {isEzoicEnabled && (
+          <>
+            <Script
+              src="//www.ezojs.com/ezoic/sa.min.js"
+              strategy="beforeInteractive"
+            />
+            <Script
+              id="ezoic-init"
+              strategy="beforeInteractive"
+            >
+              {`
+                window.ezstandalone = window.ezstandalone || {};
+                ezstandalone.cmd = ezstandalone.cmd || [];
+              `}
+            </Script>
+          </>
         )}
+
         <Providers>
           <JsonLd schema={generateOrganizationSchema()} />
           <JsonLd schema={generateWebsiteSchema()} />
@@ -53,6 +80,8 @@ export default function RootLayout({
           </div>
           <Footer />
         </Providers>
+        <SpeedInsights />
+        <Analytics mode="production" />
       </body>
     </html>
   );
