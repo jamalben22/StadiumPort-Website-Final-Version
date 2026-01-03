@@ -48,6 +48,7 @@ export const metadata: Metadata = {
 };
 
 export default function FlightBookingGuidePage() {
+  const slug = 'world-cup-2026-flight-booking-guide';
   const jsonLd = generateArticleSchema(slug, '/world-cup-2026-flight-booking-guide');
 
   const breadcrumbJsonLd = {

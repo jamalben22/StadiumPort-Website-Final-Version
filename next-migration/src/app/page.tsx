@@ -1,4 +1,5 @@
 import React from 'react';
+import { Metadata } from 'next';
 import { HeroSection } from '../components/home/HeroSection';
 import { TournamentOverview } from '../components/home/TournamentOverview';
 import { HostCitiesSection } from '../components/home/HostCitiesSection';
