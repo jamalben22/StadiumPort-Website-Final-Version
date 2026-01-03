@@ -74,7 +74,7 @@ const safetyGuides = [
   {
     title: "Fan Zone & Crowd Safety: Enjoying the Atmosphere",
     teaser: "Staying safe in large crowds and official Fan Fests. Exit strategies, meeting points, and situational awareness.",
-    link: "/coming-soon?title=Fan%20Zone%20Safety",
+    link: "/guides/fan-zone-crowd-safety-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
     icon: Users,
     category: "During Your Trip Safety"
@@ -82,7 +82,7 @@ const safetyGuides = [
   {
     title: "Nightlife & After-Hours Safety",
     teaser: "Enjoying the nightlife safely. Transport after dark, alcohol laws, and staying safe in entertainment districts.",
-    link: "/coming-soon?title=Night%20Safety",
+    link: "/guides/nightlife-after-hours-safety-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp",
     icon: Moon,
     category: "During Your Trip Safety"
@@ -90,7 +90,7 @@ const safetyGuides = [
   {
     title: "Food & Water Safety: Dining Without Distress",
     teaser: "Where to drink tap water (and where not to). Street food safety tips and handling dietary restrictions abroad.",
-    link: "/coming-soon?title=Food%20and%20Water%20Safety",
+    link: "/guides/food-water-safety-dining-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp",
     icon: Utensils,
     category: "During Your Trip Safety"
@@ -116,7 +116,7 @@ const safetyGuides = [
   {
     title: "Staying Connected: SIM Cards & Emergency Comms",
     teaser: "Reliable mobile networks and emergency communication apps. Keeping in touch with your group across borders.",
-    link: "/coming-soon?title=Communication%20Safety",
+    link: "/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp",
     icon: Smartphone,
     category: "Emergency Preparedness"
@@ -126,23 +126,15 @@ const safetyGuides = [
   {
     title: "Border Crossing Guide: USA, Canada & Mexico",
     teaser: "Navigating land and air borders smoothly. Visa requirements, customs rules, and transit protocols between host nations.",
-    link: "/coming-soon?title=Border%20Crossing%20Safety",
+    link: "/guides/border-crossing-usa-canada-mexico-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp",
     icon: MapPin,
     category: "Location-Specific Safety"
   },
   {
-    title: "Host City Safety Profiles: Local Intelligence",
-    teaser: "Neighborhood-level safety guides for all 16 host cities. Areas to enjoy and zones to avoid.",
-    link: "/world-cup-2026-host-cities",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
-    icon: Globe,
-    category: "Location-Specific Safety"
-  },
-  {
     title: "Local Laws & Cultural Etiquette",
     teaser: "Respecting local customs and avoiding legal trouble. Alcohol laws, smoking bans, and cultural do's and don'ts.",
-    link: "/coming-soon?title=Local%20Laws",
+    link: "/guides/local-laws-cultural-etiquette-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
     icon: Scale,
     category: "Location-Specific Safety"
@@ -150,7 +142,7 @@ const safetyGuides = [
   {
     title: "Weather & Climate Safety: Heat, Cold & Storms",
     teaser: "Preparing for Miami heat, Toronto rain, or Mexico City altitude. Staying safe in extreme weather conditions.",
-    link: "/coming-soon?title=Weather%20Safety",
+    link: "/guides/weather-climate-safety-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near.webp",
     icon: Cloud,
     category: "Location-Specific Safety"
@@ -176,7 +168,7 @@ const safetyGuides = [
   {
     title: "LGBTQ+ Traveler Safety Guide",
     teaser: "Inclusive safety advice for LGBTQ+ fans. Local laws, cultural attitudes, and safe spaces in all three host nations.",
-    link: "/coming-soon?title=LGBTQ%20Safety",
+    link: "/guides/lgbtq-traveler-safety-guide-world-cup-2026",
     image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
     icon: Heart,
     category: "Special Considerations"
