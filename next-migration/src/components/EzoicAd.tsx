@@ -15,6 +15,7 @@ declare global {
       display?: () => void;
       refresh?: () => void;
       destroy?: () => void;
+      destroyPlaceholders?: (...args: number[]) => void;
     };
   }
 }
