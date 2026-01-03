@@ -7,6 +7,7 @@ import { Footer } from "@/components/feature/Footer";
 import { WebVitalsReporter } from "@/components/analytics/WebVitalsReporter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/schema";
+import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -20,12 +21,14 @@ import { constructMetadata } from "@/lib/seo";
 import { Providers } from "./providers";
 import { isEzoicEnabled } from "@/lib/ads";
 
+const GA_MEASUREMENT_ID = 'G-7GLKVF44RM';
+
 export const metadata = constructMetadata({
   title: "Stadiumport | World Cup 2026 Travel Guide",
   description: "The definitive guide to World Cup 2026. Expert insights, stadium guides, and travel planning.",
-  // verification: {
-  //   google: "YOUR_GOOGLE_VERIFICATION_CODE",
-  // },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION || "Add_Your_Verification_Code_Here",
+  },
 });
 
 export default function RootLayout({
@@ -35,7 +38,26 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} ${oswald.variable} ${jetbrains.variable}`}>
+      <head>
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+      </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
+        {/* Google tag (gtag.js) */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=G-7GLKVF44RM" 
+          strategy="afterInteractive" 
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-7GLKVF44RM');
+          `}
+        </Script>
+
         {/* Privacy Scripts (MUST LOAD FIRST) */}
         <Script
           src="https://cmp.gatekeeperconsent.com/min.js"
@@ -68,6 +90,7 @@ export default function RootLayout({
         )}
 
         <Providers>
+          <AnalyticsTracker pageId="root" />
           <JsonLd schema={generateOrganizationSchema()} />
           <JsonLd schema={generateWebsiteSchema()} />
           <WebVitalsReporter />

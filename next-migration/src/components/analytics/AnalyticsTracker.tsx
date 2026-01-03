@@ -103,10 +103,46 @@ export function AnalyticsTracker({ pageId }: { pageId: string }) {
     };
     
     window.addEventListener('scroll', trackScroll);
+
+    // Enhanced Tracking: Outbound Clicks & File Downloads
+    const handleClick = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest('a');
+      if (!target) return;
+      
+      const url = target.href;
+      if (!url) return;
+      
+      // Outbound Link Tracking
+      if (url.startsWith('http') && !url.includes(window.location.hostname)) {
+        if (window.gtag) {
+          window.gtag('event', 'click', {
+            event_category: 'outbound',
+            event_label: url,
+            transport_type: 'beacon'
+          });
+        }
+      }
+      
+      // File Download Tracking
+      const extension = url.split('.').pop()?.toLowerCase();
+      const fileTypes = ['pdf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pptx', 'zip', 'rar'];
+      if (extension && fileTypes.includes(extension)) {
+         if (window.gtag) {
+          window.gtag('event', 'file_download', {
+            file_extension: extension,
+            file_name: url,
+            link_text: target.innerText
+          });
+        }
+      }
+    };
+    
+    document.addEventListener('click', handleClick);
     
     return () => {
       clearInterval(timer);
       window.removeEventListener('scroll', trackScroll);
+      document.removeEventListener('click', handleClick);
     };
   }, [pageId]);
 

@@ -98,6 +98,72 @@ export const generateWebsiteSchema = () => ({
   }
 });
 
+export const generateEventSchema = (event: {
+  name: string;
+  startDate: string;
+  endDate: string;
+  location: { name: string; address: string };
+  image: string;
+  description: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "SportsEvent",
+  "name": event.name,
+  "startDate": event.startDate,
+  "endDate": event.endDate,
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "location": {
+    "@type": "Place",
+    "name": event.location.name,
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": event.location.address,
+      "addressCountry": "US" // Dynamic based on city? For now US default or pass in
+    }
+  },
+  "image": [getSiteUrl(event.image)],
+  "description": event.description,
+  "organizer": {
+    "@type": "Organization",
+    "name": "FIFA",
+    "url": "https://www.fifa.com"
+  }
+});
+
+export const generateLocalBusinessSchema = (business: {
+  name: string;
+  image: string;
+  telephone?: string;
+  address: { street?: string; city: string; region: string; postalCode?: string; country: string };
+  geo?: { latitude: number; longitude: number };
+  priceRange?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness", // or SportsActivityLocation
+  "name": business.name,
+  "image": getSiteUrl(business.image),
+  "@id": getSiteUrl(),
+  "url": getSiteUrl(),
+  "telephone": business.telephone,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": business.address.street,
+    "addressLocality": business.address.city,
+    "addressRegion": business.address.region,
+    "postalCode": business.address.postalCode,
+    "addressCountry": business.address.country
+  },
+  ...(business.geo ? {
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": business.geo.latitude,
+      "longitude": business.geo.longitude
+    }
+  } : {}),
+  "priceRange": business.priceRange || "$$"
+});
+
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
