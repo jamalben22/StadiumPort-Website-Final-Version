@@ -1,4 +1,5 @@
 import React, { useState, useCallback, useMemo } from 'react';
+import Image from 'next/image';
 import {
   DndContext,
   closestCenter,
@@ -137,7 +138,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       className={`
         relative h-12 mb-2 rounded-lg flex items-center pl-0 pr-3 overflow-hidden
         border transition-all duration-300 ease-out touch-none select-none group
-        ${isDragging ? 'opacity-95 scale-[1.03] shadow-2xl z-50 ring-1 ring-slate-200 dark:ring-white/20 bg-white dark:bg-slate-800 cursor-grabbing' : status.wrapper}
+        ${isDragging ? 'opacity-95 scale-[1.03] shadow-2xl z-50 ring-1 ring-slate-200 bg-white cursor-grabbing' : status.wrapper}
       `}
     >
       {/* Status Accent Bar (Left Edge) */}
@@ -146,12 +147,12 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       {/* Grip Handle (Subtle, elegant dots) */}
       <div className="mr-3 opacity-20 group-hover:opacity-50 transition-opacity duration-300 cursor-grab active:cursor-grabbing p-1">
         <div className="grid grid-cols-2 gap-[2px]">
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 dark:bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
         </div>
       </div>
 
@@ -164,13 +165,20 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       </div>
 
       {/* Flag */}
-      <div className="w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-slate-200 dark:ring-white/10 flex items-center justify-center bg-slate-100 dark:bg-slate-700">
+      <div className="relative w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-slate-200 flex items-center justify-center bg-slate-100">
         {team.flagUrl ? (
-          <img src={team.flagUrl} alt={team.name} className="w-full h-full object-cover" draggable={false} />
+          <Image 
+            src={team.flagUrl} 
+            alt={team.name} 
+            fill
+            sizes="28px"
+            className="object-cover" 
+            draggable={false} 
+          />
         ) : ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
-          <span className={`text-[8px] font-bold tracking-tighter uppercase ${index === 2 ? 'text-amber-700/70' : 'text-slate-400'}`}>FIFA</span>
+          <span className={`text-[8px] font-bold tracking-tighter uppercase ${index === 2 ? 'text-amber-700/70' : 'text-slate-900'}`}>FIFA</span>
         ) : (
-          <span className={`text-[10px] font-bold tracking-tighter ${index === 2 ? 'text-amber-700/70' : 'text-slate-400'}`}>{team.fifaCode}</span>
+          <span className={`text-[10px] font-bold tracking-tighter ${index === 2 ? 'text-amber-700/70' : 'text-slate-900'}`}>{team.fifaCode}</span>
         )}
       </div>
 
@@ -178,29 +186,29 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       <div className={`flex-1 font-sans text-sm tracking-wide truncate ${status.text} flex items-center gap-2 overflow-hidden`}>
         <span className="truncate">{team.name}</span>
         {PLAYOFF_INFO[team.id] && (
-           <Tooltip.Provider delayDuration={0}>
-              <Tooltip.Root>
-                 <Tooltip.Trigger asChild>
-                    <button 
-                        className="inline-flex items-center justify-center p-1 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-colors focus:outline-none shrink-0"
-                        onClick={(e) => e.stopPropagation()} // Prevent drag start on click
-                        onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
-                    >
-                       <Info className={`w-3.5 h-3.5 hover:text-slate-600 dark:hover:text-slate-900 dark:text-white ${index === 2 ? 'text-amber-700/60' : 'text-slate-400'}`} />
-                    </button>
-                 </Tooltip.Trigger>
-                 <Tooltip.Portal>
-                    <Tooltip.Content 
-                        className="z-[9999] max-w-[250px] bg-white dark:bg-slate-900 border border-slate-200 dark:border-white/10 text-slate-600 dark:text-slate-200 text-xs p-3 rounded-lg shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 select-none"
-                        sideOffset={5}
-                        side="top"
-                    >
-                       {PLAYOFF_INFO[team.id]}
-                       <Tooltip.Arrow className="fill-white dark:fill-slate-900" />
-                    </Tooltip.Content>
-                 </Tooltip.Portal>
-              </Tooltip.Root>
-           </Tooltip.Provider>
+          <Tooltip.Provider delayDuration={0}>
+             <Tooltip.Root>
+                <Tooltip.Trigger asChild>
+                   <button 
+                       className="inline-flex items-center justify-center p-1 rounded-full hover:bg-slate-100 transition-colors focus:outline-none shrink-0"
+                       onClick={(e) => e.stopPropagation()} // Prevent drag start on click
+                       onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
+                   >
+                      <Info className={`w-3.5 h-3.5 hover:text-slate-600 text-slate-900 ${index === 2 ? 'text-amber-700/60' : 'text-slate-900'}`} />
+                   </button>
+                </Tooltip.Trigger>
+                <Tooltip.Portal>
+                   <Tooltip.Content 
+                       className="z-[9999] max-w-[250px] bg-white border border-slate-200 text-slate-900 text-xs p-3 rounded-lg shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 select-none"
+                       sideOffset={5}
+                       side="top"
+                   >
+                      {PLAYOFF_INFO[team.id]}
+                      <Tooltip.Arrow className="fill-white" />
+                   </Tooltip.Content>
+                </Tooltip.Portal>
+             </Tooltip.Root>
+          </Tooltip.Provider>
         )}
       </div>
 
@@ -234,8 +242,8 @@ const DirectGroupCard = React.memo(({ groupId, teams }: DirectGroupCardProps) =>
   const dotStyle = useMemo(() => ({ backgroundColor: accent }), [accent]);
 
   return (
-    <div className="flex flex-col h-full bg-white/30 backdrop-blur-2xl rounded-2xl border border-white/40 overflow-hidden shadow-lg ring-1 ring-white/20">
-      <div className="px-4 py-3 border-b border-white/20 flex items-center justify-between bg-white/5">
+    <div className="flex flex-col h-full bg-white/90 backdrop-blur-2xl rounded-2xl border border-black/10 overflow-hidden shadow-lg ring-1 ring-black/5">
+      <div className="px-4 py-3 border-b border-black/10 flex items-center justify-between bg-black/5">
         <div className="relative">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
@@ -359,9 +367,9 @@ export const GroupStage = () => {
 
       <div className="w-full px-4 md:px-6 lg:px-8 pt-24 pb-32 md:pt-28">
        <div className="mb-6 flex justify-center">
-         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/8 border border-white/20 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.08)]">
+         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/90 border border-black/10 backdrop-blur-xl shadow-sm">
            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-           <span className="text-[11px] font-bold text-white/85 uppercase tracking-[0.22em] font-['Rajdhani']">
+           <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">
              Step 1 of 5: Group Stage Predictions
            </span>
          </div>
@@ -379,36 +387,36 @@ export const GroupStage = () => {
 
       <div className="max-w-5xl mx-auto px-4 md:px-0 mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          <div className="relative group bg-white/10 border border-white/20 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          <div className="relative group bg-white/90 border border-black/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-black/5 shadow-lg overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#01b47d]/10 blur-[80px] rounded-full pointer-events-none" />
             <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-slate-400/20 via-slate-400/40 to-slate-400/20" />
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-black/5 via-black/10 to-black/5" />
             <div className="space-y-2">
-              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>48 teams divided into 12 groups of 4</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Top 2 from each group automatically advance (24 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Best 8 third-place teams also qualify (8 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span>Total: 32 teams advance to knockout rounds</span>
               </div>
             </div>
           </div>
-          <div className="relative group bg-white/10 border border-white/20 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-white/10 shadow-[0_18px_48px_rgba(0,0,0,0.35)] overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          <div className="relative group bg-white/90 border border-black/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-black/5 shadow-lg overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
             <div className="absolute -top-24 -right-24 w-52 h-52 bg-purple-400/10 blur-[80px] rounded-full pointer-events-none" />
             <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">How Rankings Work</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-slate-400/20 via-slate-400/40 to-slate-400/20" />
-            <div className="space-y-2 text-slate-800 font-['Rajdhani'] text-sm md:text-base">
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-black/5 via-black/10 to-black/5" />
+            <div className="space-y-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
               <div className="flex items-start gap-2">
                 <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
                 <span><span className="font-bold">1st Place</span> – Group Winner (automatic qualification)</span>

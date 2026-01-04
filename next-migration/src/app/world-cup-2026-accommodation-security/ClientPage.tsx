@@ -13,8 +13,8 @@ import {
   X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
   ShieldAlert, Lock, XCircle, Search, CreditCard, Smartphone, User, Flag, Wifi, FileText, Eye, ShieldCheck, Ban, Home, AlertOctagon, Key, DoorClosed
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 
 // --- Design System & Components (Mirrored from Scams Guide) ---
 
@@ -248,7 +248,7 @@ export default function ClientPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
-      <Header />
+      
       <SocialShare />
 
       {/* Progress Bar */}
@@ -624,7 +624,7 @@ export default function ClientPage() {
 
         </main>
       </div>
-      <Footer />
+      
     </div>
   );
 }
@@ -655,6 +655,7 @@ const faqs = [
     answer: "Most host city downtowns are safe, especially near stadiums and tourist zones where police presence will be high. However, research specific neighborhoods in cities like Mexico City, Los Angeles, or Philadelphia to avoid high-crime zones."
   }
 ];
+
 
 
 

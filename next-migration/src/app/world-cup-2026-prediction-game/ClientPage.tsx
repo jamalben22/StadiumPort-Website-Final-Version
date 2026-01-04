@@ -13,6 +13,7 @@ import { TEAMS } from '../../features/game/lib/wc26-data';
 import { supabase } from '../../lib/supabase';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
 import { ScrollScrubber } from '../../features/game/components/ScrollScrubber';
+import { GroupStageSkeleton } from '../../features/game/components/GroupStageSkeleton';
 
 // Loading fallback component
 const LoadingFallback = () => (
@@ -25,9 +26,9 @@ const LoadingFallback = () => (
 // Moved inside PredictGameContent to avoid reference errors during SSR
 
 // Lazy loaded components with next/dynamic (Client-only)
-const GroupStage = dynamic(() => import('../../features/game/components/GroupStage'), { 
+const GroupStage = dynamic(() => import('../../features/game/components/GroupStage').then(mod => mod.GroupStage), { 
   ssr: false,
-  loading: () => <LoadingFallback />
+  loading: () => <GroupStageSkeleton />
 });
 const ThirdPlaceSelector = dynamic(() => import('../../features/game/components/ThirdPlaceSelector'), { 
   ssr: false,
@@ -462,6 +463,7 @@ export default function ClientPage() {
  </GameProvider>
  );
 }
+
 
 
 

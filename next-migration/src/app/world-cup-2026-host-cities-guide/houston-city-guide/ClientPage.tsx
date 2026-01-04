@@ -14,7 +14,7 @@ import {
  X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
  Thermometer, Droplets, Wind, Music, ShoppingBag
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
+
 
 // --- Design System & Components ---
 
@@ -263,7 +263,7 @@ export default function ClientPage() {
 
  return (
     <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
- <Header />
+ 
  {/* SaveGuideButton removed */}
  <SocialShare />
 
@@ -764,6 +764,7 @@ export default function ClientPage() {
   </div>
 );
 }
+
 
 
 

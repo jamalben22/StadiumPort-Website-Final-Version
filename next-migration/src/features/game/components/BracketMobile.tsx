@@ -87,23 +87,18 @@ export const BracketMobile = React.memo(({
   const progress = ((currentRoundIndex + 1) / ROUND_ORDER.length) * 100;
 
   return (
-    <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-slate-900 dark:text-white overflow-x-hidden">
+    <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-slate-900 overflow-x-hidden">
       {/* Liquid Gold Progress Header */}
-      <div className="flex-none px-6 pt-6 pb-2 z-10 border-b border-white/5">
+      <div className="flex-none px-6 pt-6 pb-2 z-10 border-b border-black/5">
         <div className="text-center space-y-6 mb-3">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-black/10 backdrop-blur-xl shadow-sm">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+            <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-900 dark:text-white uppercase tracking-tighter drop-shadow-sm">Knockout Stage: From Round of 32 to World Cup Champion</h2>
-          <p className="text-slate-900 dark:text-white font-mono text-sm uppercase tracking-widest">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-950 uppercase tracking-tighter drop-shadow-sm">Knockout Stage: From Round of 32 to World Cup Champion</h2>
+          <p className="text-slate-900 font-mono text-sm uppercase tracking-widest font-bold">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
           <p
-            className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-[0_0_12px_rgba(251,191,36,0.35)]"
-            style={{
-              background: 'linear-gradient(90deg, #FBBF24, #F59E0B)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent'
-            }}
+            className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-sm text-slate-950 font-bold"
           >
             Tournament Bracket Progress:
           </p>
@@ -115,13 +110,13 @@ export const BracketMobile = React.memo(({
             >
               {ROUND_NAMES[currentRoundId]}
             </h2>
-            <div className="text-amber-500/80 font-mono text-xs font-bold tracking-widest mb-1">
+            <div className="text-amber-600 font-mono text-xs font-bold tracking-widest mb-1">
                 STAGE {currentRoundIndex + 1}/{ROUND_ORDER.length}
             </div>
         </div>
         
         {/* Progress Bar Container */}
-        <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden relative">
+        <div className="h-1.5 w-full bg-black/5 rounded-full overflow-hidden relative">
             {/* Liquid Gold Bar */}
             <div 
                 className="absolute top-0 left-0 h-full transition-all duration-700 ease-out rounded-full"
@@ -165,8 +160,8 @@ export const BracketMobile = React.memo(({
                 return (
                   <div className="mt-0">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-white/70">Third Place</span>
-                      {!pick && (!tpTeam1 || !tpTeam2) && <span className="text-[10px] text-white/50 font-bold uppercase tracking-widest">Locked until Semi-Finals are decided</span>}
+                      <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-900">Third Place</span>
+                      {!pick && (!tpTeam1 || !tpTeam2) && <span className="text-[10px] text-slate-900/50 font-bold uppercase tracking-widest">Locked until Semi-Finals are decided</span>}
                       {!pick && tpTeam1 && tpTeam2 && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-widest">Select Winner</span>}
                     </div>
                     <div className="grid grid-cols-1 gap-2">
@@ -174,25 +169,25 @@ export const BracketMobile = React.memo(({
                         type="button"
                         onClick={() => tpTeam1 && onPickWinner('TP-01', tpTeam1)}
                         disabled={!tpTeam1}
-                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam1 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-white/5'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam1 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
                         <div className="flex items-center gap-3">
                           {team1?.flagUrl && <img src={team1.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
-                          <span className="font-['Teko'] text-lg uppercase text-slate-900 dark:text-white">{team1?.name || 'TBD'}</span>
+                          <span className="font-['Teko'] text-lg uppercase text-slate-900">{team1?.name || 'TBD'}</span>
                         </div>
-                        {pick === tpTeam1 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 dark:text-white px-2 py-0.5 rounded">WIN</span>}
+                        {pick === tpTeam1 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}
                       </button>
                       <button
                         type="button"
                         onClick={() => tpTeam2 && onPickWinner('TP-01', tpTeam2)}
                         disabled={!tpTeam2}
-                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam2 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-white/5'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam2 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
                         <div className="flex items-center gap-3">
                           {team2?.flagUrl && <img src={team2.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
-                          <span className="font-['Teko'] text-lg uppercase text-slate-900 dark:text-white">{team2?.name || 'TBD'}</span>
+                          <span className="font-['Teko'] text-lg uppercase text-slate-900">{team2?.name || 'TBD'}</span>
                         </div>
-                        {pick === tpTeam2 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 dark:text-white px-2 py-0.5 rounded">WIN</span>}
+                        {pick === tpTeam2 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}
                       </button>
                     </div>
                   </div>
@@ -200,7 +195,7 @@ export const BracketMobile = React.memo(({
               })()}
               {ROUND_ORDER[currentRoundIndex] === 'F' && (
                 <div className="flex items-center justify-center mb-2">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-amber-500/10 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest" style={{ color: '#FBBF24' }}>Final</span>
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-black/10 bg-amber-500/5 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest" style={{ color: '#FBBF24' }}>Final</span>
                 </div>
               )}
               {roundMatches.map(match => {

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
 import { motion } from "framer-motion"
 import { MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, Trophy, Plane, Hotel, Ticket, Globe, Flag } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
+
 import { StadiumMap } from '@/components/feature/StadiumMap';
 
 // Stadium Data
@@ -478,7 +478,7 @@ export default function ClientPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <Header />
+      
 
       <main>
         {/* Hero Section */}
@@ -769,4 +769,5 @@ export default function ClientPage() {
     </div>
   );
 }
+
 

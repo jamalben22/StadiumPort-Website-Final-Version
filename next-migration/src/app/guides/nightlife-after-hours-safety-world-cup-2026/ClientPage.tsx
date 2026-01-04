@@ -11,8 +11,8 @@ import {
 } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -234,7 +234,7 @@ export default function NightlifeSafetyClientPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
-      <Header />
+      
       <SocialShare />
 
       {/* Progress Bar */}
@@ -603,7 +603,7 @@ export default function NightlifeSafetyClientPage() {
 
         </main>
       </div>
-      <Footer />
+      
     </div>
   );
 }
@@ -634,3 +634,4 @@ const faqs = [
     answer: "It varies by city. USA/Canada: typically 2 AM (some 4 AM in NYC/Miami). Mexico: often later, 3-5 AM or until the last customer leaves in tourist areas."
   }
 ];
+

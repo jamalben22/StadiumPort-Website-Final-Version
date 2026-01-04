@@ -7,7 +7,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, Trophy, Plane, Hotel, Ticket, Globe, Flag } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
+
 import { InteractiveMap } from '@/components/feature/InteractiveMap';
 
 
@@ -206,7 +206,7 @@ export default function ClientPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
-      <Header />
+      
       
       <main className="pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -487,6 +487,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

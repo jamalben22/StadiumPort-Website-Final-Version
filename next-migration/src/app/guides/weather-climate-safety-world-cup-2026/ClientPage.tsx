@@ -10,8 +10,8 @@ import {
   AlertTriangle, XCircle, FileText, Globe, Zap, CloudFog,
   Twitter, Facebook, Linkedin, Copy, Check, CloudLightning
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 
 // --- Design System & Components (Mirrored from Accommodation Security) ---
 
@@ -256,7 +256,7 @@ export default function ClientPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
-      <Header />
+      
       <SocialShare />
 
       {/* Progress Bar */}
@@ -516,7 +516,8 @@ export default function ClientPage() {
 
         </main>
       </div>
-      <Footer />
+      
     </div>
   );
 }
+

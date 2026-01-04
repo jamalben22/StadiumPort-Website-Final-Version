@@ -261,7 +261,7 @@ export const ScrollScrubber: React.FC<ScrollScrubberProps> = ({ containerRef, cl
         }}
         transition={{ duration: 0.2 }}
       >
-        <div className="bg-black/80 text-slate-900 dark:text-white text-[10px] font-bold tracking-widest py-1 px-3 rounded-md border border-white/10 shadow-xl whitespace-nowrap backdrop-blur-md">
+        <div className="bg-white/80 text-slate-900 text-[10px] font-bold tracking-widest py-1 px-3 rounded-md border border-black/10 shadow-xl whitespace-nowrap backdrop-blur-md">
             SCROLL
         </div>
         <div className="w-2 h-[1px] bg-white/50 ml-1"></div>

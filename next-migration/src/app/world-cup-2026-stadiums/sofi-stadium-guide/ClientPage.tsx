@@ -12,9 +12,9 @@ import {
     Train, Bus, Car, Bike, AlertTriangle, Briefcase,
     X, ChevronRight, Facebook, Twitter, Linkedin, Copy
   } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
+
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { Footer } from '@/components/feature/Footer';
+
 
 // --- Design System & Components ---
 
@@ -284,7 +284,7 @@ export default function ClientPage() {
 
  return (
  <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
- <Header />
+ 
  {/* SaveGuideButton removed */}
  <SocialShare />
 
@@ -865,6 +865,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

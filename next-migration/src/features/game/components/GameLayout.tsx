@@ -4,8 +4,6 @@ import React, { ReactNode } from 'react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { motion } from 'framer-motion';
-import '@fontsource/teko';
-import '@fontsource/rajdhani';
 
 // Utility for class merging
 function cn(...inputs: ClassValue[]) {
@@ -55,8 +53,8 @@ export const GameLayout = ({ children, className, allowScroll = false }: GameLay
     )}>
       {/* Enforce Fonts Scoped Style */}
       <style>{`
-        .game-font-header { font-family: 'Teko', sans-serif; }
-        .game-font-body { font-family: 'Rajdhani', sans-serif; }
+        .game-font-header { font-family: var(--font-teko), sans-serif; }
+        .game-font-body { font-family: var(--font-rajdhani), sans-serif; }
       `}</style>
 
       {/* --- PREMIUM GAMING ATMOSPHERE --- */}

@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com;"
+          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://cmp.gatekeeperconsent.com https://the.gatekeeperconsent.com https://www.ezojs.com https://www.google-analytics.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com;"
         },
         {
           key: 'Permissions-Policy',
@@ -73,6 +73,10 @@ const nextConfig: NextConfig = {
     }
   ],
   images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    minimumCacheTTL: 60,
     qualities: [75, 95],
     remotePatterns: [
       {

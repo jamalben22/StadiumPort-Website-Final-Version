@@ -1,4 +1,5 @@
 import React, { useMemo, useCallback } from 'react';
+import Image from 'next/image';
 import { useGame } from '../context/GameContext';
 import { TEAMS, TEAM_MAP } from '../lib/wc26-data';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -38,11 +39,12 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
                 <span className="text-6xl font-black text-slate-900">FIFA</span>
              </div>
           ) : (
-             <img 
+             <Image 
                src={team.flagUrl} 
                alt={team.name} 
-               loading="lazy"
-               className="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-overlay"
+               fill
+               className="object-cover opacity-60 mix-blend-overlay"
+               sizes="(max-width: 768px) 50vw, 33vw"
              />
           )}
         {/* Gradient overlay */}
@@ -80,14 +82,16 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
                  w-20 h-20 rounded-full flex items-center justify-center bg-slate-800 shadow-2xl border-4
                  ${isSelected ? 'border-yellow-400' : 'border-slate-700'}
                `}>
-                  <span className="text-xs font-bold text-white/90">FIFA</span>
+                  <span className="text-xs font-bold text-slate-100">FIFA</span>
                </div>
             ) : (
-                <img 
+                <Image 
                 src={team.flagUrl} 
                 alt={team.name} 
+                width={80}
+                height={80}
                 className={`
-                  w-20 h-20 rounded-full object-cover shadow-2xl border-4 
+                  rounded-full object-cover shadow-2xl border-4 
                   ${isSelected ? 'border-yellow-400' : 'border-white'}
                 `}
               />
@@ -205,9 +209,9 @@ export const ThirdPlaceSelector = React.memo(() => {
       <div className="max-w-7xl mx-auto space-y-8">
       {/* Header Section */}
       <div className="text-center space-y-6">
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-white/40 backdrop-blur-xl shadow-sm">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-black/10 backdrop-blur-xl shadow-sm">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-          <span className="text-[11px] font-bold text-slate-800 uppercase tracking-[0.22em] font-['Rajdhani']">
+          <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">
             Step 2 of 5: Select Best Third-Place Qualifiers
           </span>
         </div>
@@ -221,17 +225,17 @@ export const ThirdPlaceSelector = React.memo(() => {
             <div
               key={i}
               className={`
-                h-4 w-8 md:w-12 skew-x-[-20deg] border border-slate-400/30 transition-all duration-300
+                h-4 w-8 md:w-12 skew-x-[-20deg] border border-black/10 transition-all duration-300
                 ${i < selectedCount 
                   ? 'bg-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.6)] border-yellow-200' 
-                  : 'bg-white/20 backdrop-blur-sm'
+                  : 'bg-white/90 backdrop-blur-sm'
                 }
               `}
             />
           ))}
         </div>
         
-        <p className="text-slate-900 font-mono text-sm uppercase tracking-widest">
+        <p className="text-slate-950 font-mono text-sm uppercase tracking-widest font-bold">
           {selectedCount} / 8 Third-Place Teams Selected
         </p>
       </div>

@@ -12,7 +12,7 @@ import {
  Train, Bus, Car, Bike, AlertTriangle, Briefcase,
  Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
+
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components ---
@@ -279,7 +279,7 @@ export default function ClientPage() {
 
  return (
     <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
-<Header />
+
 {/* SaveGuideButton removed */}
 <SocialShare />
 
@@ -872,6 +872,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
   </div>
 );
 }
+
 
 
 

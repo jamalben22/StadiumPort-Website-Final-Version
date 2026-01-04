@@ -141,32 +141,32 @@ export const ResultDashboard = ({
       
       {/* Top Actions: Share Buttons */}
       <div className="flex justify-center mb-2">
-        <div className="flex items-center gap-3 p-1.5 bg-slate-100 rounded-full border border-slate-200 shadow-sm">
+        <div className="flex items-center gap-3 p-1.5 bg-white rounded-full border border-black/10 shadow-sm">
           <button
             onClick={handleShare}
-            className="flex items-center gap-2 px-4 py-2 bg-slate-900 text-slate-900 dark:text-white rounded-full text-xs font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105"
+            className="flex items-center gap-2 px-4 py-2 bg-black/5 text-slate-900 border border-black/10 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-black/10 transition-all hover:scale-105"
           >
             <Share2 className="w-3.5 h-3.5" />
             Share Link
           </button>
-          <div className="w-px h-4 bg-slate-300 mx-1" />
+          <div className="w-px h-4 bg-black/10 mx-1" />
           <button
             onClick={() => handleSocialShare('twitter')}
-            className="p-2 text-slate-600 hover:text-slate-900 hover:bg-white rounded-full transition-all"
+            className="p-2 text-slate-900 hover:bg-black/5 rounded-full transition-all"
             title="Share on X"
           >
             <XIcon className="w-4 h-4" />
           </button>
           <button
             onClick={() => handleSocialShare('whatsapp')}
-            className="p-2 text-slate-600 hover:text-slate-900 hover:bg-white rounded-full transition-all"
+            className="p-2 text-slate-900 hover:bg-black/5 rounded-full transition-all"
             title="Share on WhatsApp"
           >
             <WhatsAppIcon className="w-4 h-4" />
           </button>
           <button
             onClick={() => handleSocialShare('instagram')}
-            className="p-2 text-slate-600 hover:text-slate-900 hover:bg-white rounded-full transition-all"
+            className="p-2 text-slate-900 hover:bg-black/5 rounded-full transition-all"
             title="Share on Instagram"
           >
             <Instagram className="w-4 h-4" />
@@ -179,14 +179,14 @@ export const ResultDashboard = ({
         <h1 className="text-4xl md:text-6xl font-['Teko'] font-bold uppercase text-slate-900 drop-shadow-sm tracking-tight">
           Official Entry Confirmed
         </h1>
-        <p className="text-slate-800 font-['Rajdhani'] font-bold text-lg md:text-xl uppercase tracking-wider max-w-2xl mx-auto leading-tight">
+        <p className="text-slate-900 font-['Rajdhani'] font-bold text-lg md:text-xl uppercase tracking-wider max-w-2xl mx-auto leading-tight">
           Official World Cup 2026 predictions Confirmed, Good luck competing for official prizes!
         </p>
       </div>
 
       {/* Predicted Champion Summary */}
       <div className="text-center -mt-4 mb-2">
-        <p className="text-slate-700 font-['Rajdhani'] font-bold text-sm uppercase tracking-[0.3em] mb-1">
+        <p className="text-slate-900 font-['Rajdhani'] font-bold text-sm uppercase tracking-[0.3em] mb-1">
           {userName === 'You' ? 'YOUR' : `${userName.toUpperCase()}'S`} PREDICTED CHAMPION
         </p>
         <h2 className="text-6xl md:text-8xl font-['Teko'] font-black uppercase text-slate-900 leading-none">
@@ -206,7 +206,7 @@ export const ResultDashboard = ({
             <div className="w-16 h-0.5 bg-[#c0a062] mx-auto mt-1 opacity-60"></div>
           </div>
 
-          <div className="shadow-2xl rounded-2xl overflow-hidden ring-1 ring-slate-200">
+          <div className="shadow-2xl rounded-2xl overflow-hidden ring-1 ring-black/10">
             <ShareCard 
               ref={cardRef}
               champion={champion} 
@@ -218,7 +218,7 @@ export const ResultDashboard = ({
 
           <button
             onClick={handleDownload}
-            className="flex items-center gap-2 bg-slate-900 text-slate-900 dark:text-white px-8 py-3 rounded-full font-['Rajdhani'] font-bold uppercase tracking-widest hover:bg-slate-800 transition-all hover:scale-105 active:scale-95 shadow-lg group"
+            className="flex items-center gap-2 bg-black/5 text-slate-900 border border-black/10 px-8 py-3 rounded-full font-['Rajdhani'] font-bold uppercase tracking-widest hover:bg-black/10 transition-all hover:scale-105 active:scale-95 shadow-lg group"
           >
             <Download className="w-5 h-5 group-hover:animate-bounce" />
             Download My Card
@@ -244,7 +244,7 @@ export const ResultDashboard = ({
           </h2>
           <div className="w-24 h-1 bg-slate-900 mx-auto mt-2"></div>
         </div>
-        <div className="bg-slate-900 rounded-[32px] overflow-hidden shadow-2xl">
+        <div className="bg-white/5 border border-black/10 rounded-[32px] overflow-hidden shadow-2xl">
           <RulesCard variant="full" />
         </div>
       </div>
@@ -258,9 +258,9 @@ export const ResultDashboard = ({
             exit={{ opacity: 0, y: -20, x: '-50%' }}
             className="fixed top-8 left-1/2 z-[100] pointer-events-none"
           >
-            <div className="bg-white/80 backdrop-blur-xl border border-slate-200/50 shadow-[0_8px_32px_rgba(0,0,0,0.12)] px-6 py-3 rounded-2xl flex items-center gap-3 ring-1 ring-slate-900/5">
-              <div className="w-6 h-6 bg-slate-900 rounded-full flex items-center justify-center">
-                <Check className="w-3.5 h-3.5 text-slate-900 dark:text-white stroke-[3]" />
+            <div className="bg-white backdrop-blur-xl border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)] px-6 py-3 rounded-2xl flex items-center gap-3 ring-1 ring-black/5">
+              <div className="w-6 h-6 bg-black/5 border border-black/10 rounded-full flex items-center justify-center">
+                <Check className="w-3.5 h-3.5 text-[#01b47d] stroke-[3]" />
               </div>
               <span className="text-slate-900 font-['Rajdhani'] font-bold uppercase tracking-widest text-sm">
                 Link Copied to Clipboard

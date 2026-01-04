@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Header } from '@/components/feature/Header';
+
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 import { 
@@ -811,6 +811,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

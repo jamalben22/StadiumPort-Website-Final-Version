@@ -41,6 +41,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="preconnect" href="https://flagcdn.com" />
       </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         {/* Google tag (gtag.js) */}

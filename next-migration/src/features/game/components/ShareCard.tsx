@@ -41,24 +41,24 @@ const ShareCardInner = (
     <div 
       ref={ref}
       // 9:16 Aspect Ratio (360x640)
-      className={`relative w-[360px] h-[640px] bg-[#0f172a] text-slate-900 dark:text-white overflow-hidden font-sans flex flex-col ${className}`}
+      className={`relative w-[360px] h-[640px] bg-white text-slate-900 overflow-hidden font-sans flex flex-col ${className}`}
     >
       {/* --- PREMIUM BACKGROUND LAYERS --- */}
       
-      {/* 1. Base Gradient (Deep Navy/Charcoal) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#020617]" />
+      {/* 1. Base Gradient (Light Gold/White) */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-slate-50 to-amber-50" />
       
       {/* 2. Metallic Texture Overlay */}
-      <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none" />
       
       {/* 3. Gold Dust/Particles */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#fbbf24]/10 via-transparent to-transparent opacity-40" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-200/20 via-transparent to-transparent opacity-40" />
 
       {/* --- GOLD FRAME (FUT STYLE) --- */}
-      <div className="absolute inset-3 border-[3px] border-[#c0a062] rounded-xl z-20 shadow-[0_0_15px_rgba(192,160,98,0.3)]" 
+      <div className="absolute inset-3 border-[3px] border-amber-600/30 rounded-xl z-20 shadow-[0_0_15px_rgba(180,83,9,0.1)]" 
            style={{ 
-             background: 'linear-gradient(to bottom right, rgba(255,255,255,0.03), rgba(0,0,0,0.2))',
-             borderColor: '#c0a062' // Fallback
+             background: 'linear-gradient(to bottom right, rgba(255,255,255,0.8), rgba(255,255,255,0.4))',
+             borderColor: '#b4530933' // Fallback
            }}
       >
          {/* Inner hairline border */}
@@ -75,7 +75,7 @@ const ShareCardInner = (
       <div className="relative z-30 pt-8 px-8 flex justify-center items-end mb-4">
         <div className="flex flex-col items-center">
             <span className="font-['Teko'] text-[#c0a062] text-xl leading-none tracking-widest">FIFA WORLD CUP 26™</span>
-            <span className="font-['Rajdhani'] text-white/70 text-[10px] tracking-[0.32em] uppercase">OFFICIAL PREDICTION</span>
+            <span className="font-['Rajdhani'] text-slate-900/70 text-[10px] tracking-[0.32em] uppercase">OFFICIAL PREDICTION</span>
             <span
               className="mt-2 font-['Rajdhani'] font-bold text-[10px] uppercase tracking-[0.38em]"
               style={{ background: 'linear-gradient(90deg,#FCD34D,#FFF4C1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
@@ -147,7 +147,7 @@ const ShareCardInner = (
                        style={{ imageRendering: 'auto' }}
                      />
                  )}
-                 <span className="text-slate-900 dark:text-white font-['Teko'] text-xl tracking-wide uppercase leading-none mt-0.5">
+                 <span className="text-slate-900 font-['Teko'] text-xl tracking-wide uppercase leading-none mt-0.5">
                     {runnerUp?.name || "TBD"}
                  </span>
              </div>
@@ -160,7 +160,7 @@ const ShareCardInner = (
                   <div className="text-[#c0a062]/70 font-['Rajdhani'] text-[9px] uppercase tracking-[0.2em] mb-0.5">
                      TEAM MANAGER
                   </div>
-                  <div className="text-xs font-mono text-white/90 tracking-[0.12em] leading-tight whitespace-nowrap">
+                  <div className="text-xs font-mono text-slate-900/90 tracking-[0.12em] leading-tight whitespace-nowrap">
                      {userName}
                   </div>
                </div>
@@ -168,7 +168,7 @@ const ShareCardInner = (
                    <div className="text-[#c0a062]/70 font-['Rajdhani'] text-[9px] uppercase tracking-[0.2em] mb-0.5">
                      Entry ID
                   </div>
-                  <div className="text-xs font-mono text-white/90 tracking-[0.12em] leading-tight whitespace-nowrap">
+                  <div className="text-xs font-mono text-slate-900/90 tracking-[0.12em] leading-tight whitespace-nowrap">
                      {displayId}
                   </div>
                </div>
@@ -179,25 +179,25 @@ const ShareCardInner = (
 
       {/* --- FOOTER: HIGH STAKES PRIZE --- */}
       <div className="relative z-30 pb-8 px-6">
-         <div className="relative bg-gradient-to-r from-[#1e293b] via-[#334155] to-[#1e293b] rounded-lg p-[1px] shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#b45309] via-[#fcd34d] to-[#b45309] rounded-lg opacity-30 blur-sm" />
-            <div className="relative bg-[#0f172a] rounded-lg p-3 flex items-center justify-between overflow-hidden">
+         <div className="relative bg-gradient-to-r from-slate-100 via-white to-slate-100 rounded-lg p-[1px] shadow-[0_10px_30px_rgba(0,0,0,0.08)]">
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-600/20 via-amber-400/20 to-amber-600/20 rounded-lg opacity-30 blur-sm" />
+            <div className="relative bg-white rounded-lg p-3 flex items-center justify-between overflow-hidden">
                {/* Shine effect */}
-               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 translate-x-[-100%] animate-[shimmer_3s_infinite]" />
+               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/5 to-transparent skew-x-12 translate-x-[-100%] animate-[shimmer_3s_infinite]" />
                
                <div className="flex flex-col z-10">
-                  <span className="text-[#c0a062] font-['Rajdhani'] font-bold text-[9px] uppercase tracking-[0.2em]">
+                  <span className="text-amber-800 font-['Rajdhani'] font-bold text-[9px] uppercase tracking-[0.2em]">
                      TOURNAMENT PRIZE POOL
                   </span>
                   <span
-                    className="font-['Teko'] text-2xl uppercase tracking-widest leading-none text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(252,211,77,0.25)]"
-                    style={{ backgroundImage: 'linear-gradient(90deg,#ffffff 0%, #FCD34D 35%, #FFF4C1 60%, #ffffff 100%)' }}
+                    className="font-['Teko'] text-2xl uppercase tracking-widest leading-none text-transparent bg-clip-text drop-shadow-[0_2px_8px_rgba(180,83,9,0.1)]"
+                    style={{ backgroundImage: 'linear-gradient(90deg,#0f172a 0%, #b45309 35%, #d97706 60%, #0f172a 100%)' }}
                   >
                     $1,000 + OFFICIAL GEAR
                   </span>
                </div>
                
-               <div className="z-10 bg-[#c0a062] text-[#0f172a] p-1.5 rounded flex items-center justify-center">
+                <div className="z-10 bg-amber-600 text-slate-950 p-1.5 rounded flex items-center justify-center">
                   <Trophy className="w-4 h-4" fill="currentColor" />
                </div>
             </div>
@@ -207,7 +207,7 @@ const ShareCardInner = (
       </div>
 
       <div className="absolute bottom-3 left-0 right-0 z-30 text-center">
-         <span className="text-white/40 font-['Rajdhani'] text-[9px] tracking-[0.35em] uppercase">STADIUMPORT.COM</span>
+         <span className="text-slate-900/40 font-['Rajdhani'] font-bold text-[9px] tracking-[0.35em] uppercase">STADIUMPORT.COM</span>
       </div>
 
     </div>

@@ -13,8 +13,8 @@ import {
  X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
  Flame, Volume2
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components ---
@@ -263,7 +263,7 @@ export default function ClientPage() {
 
  return (
  <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-red-500/30">
- <Header />
+ 
  {/* SaveGuideButton removed */}
  <SocialShare />
 
@@ -835,6 +835,7 @@ export default function ClientPage() {
  </div>
  );
 }
+
 
 
 

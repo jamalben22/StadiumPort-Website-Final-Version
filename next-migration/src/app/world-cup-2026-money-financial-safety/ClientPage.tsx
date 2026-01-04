@@ -13,8 +13,8 @@ import {
   X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
   ShieldAlert, Lock, XCircle, Search, CreditCard, Smartphone, User, Flag, Wifi, FileText, Eye, ShieldCheck, Ban, Wallet, Landmark, Calculator, Coins, CheckCircle
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 
 // --- Design System & Components (Mirrored from Scams Guide) ---
 
@@ -248,7 +248,7 @@ export default function ClientPage() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
-      <Header />
+      
       <SocialShare />
 
       {/* Progress Bar */}
@@ -648,7 +648,7 @@ export default function ClientPage() {
 
         </main>
       </div>
-      <Footer />
+      
     </div>
   );
 }
@@ -657,5 +657,6 @@ export default function ClientPage() {
 const Banknote = ({ className }: { className?: string }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
 );
+
 
 

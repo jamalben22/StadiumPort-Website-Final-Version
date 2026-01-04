@@ -208,7 +208,7 @@ export const BracketSummary = ({
                               key={i}
                               className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
                                 isWinner 
-                                  ? 'bg-slate-900 text-slate-900 dark:text-white' 
+                                  ? 'bg-slate-100 text-slate-950 border border-slate-200' 
                                   : 'bg-transparent text-slate-700 hover:bg-slate-50'
                               }`}
                             >
@@ -289,16 +289,16 @@ export const BracketSummary = ({
               </div>
 
               {/* The Final Card */}
-              <div className="md:col-span-2 bg-slate-900 text-slate-900 dark:text-white rounded-3xl p-8 relative overflow-hidden shadow-2xl ring-1 ring-white/10 group">
+              <div className="md:col-span-2 bg-white text-slate-900 rounded-3xl p-8 relative overflow-hidden shadow-2xl ring-1 ring-black/10 group">
                 {/* Background Decoration */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-900"></div>
-                <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#01b47d] rounded-full blur-[100px] opacity-20 group-hover:opacity-30 transition-opacity duration-1000"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-50 via-white to-white"></div>
+                <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#01b47d] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
                 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-8">
                     <div>
                       <span className="text-[#01b47d] font-['Rajdhani'] font-bold uppercase tracking-[0.3em] text-xs mb-2 block">The Grand Final</span>
-                      <h3 className="text-4xl font-['Teko'] font-bold uppercase leading-none">World Champion</h3>
+                      <h3 className="text-4xl font-['Teko'] font-bold uppercase leading-none text-slate-950">World Champion</h3>
                     </div>
                     <Trophy className="w-12 h-12 text-[#fbbf24] drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]" />
                   </div>
@@ -310,20 +310,20 @@ export const BracketSummary = ({
                       return (
                         <div key={i} className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-500 ${
                           isWinner 
-                            ? 'bg-white/10 border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-sm' 
+                            ? 'bg-white border-slate-200 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-sm' 
                             : 'bg-transparent border-transparent opacity-50 hover:opacity-75'
                         }`}>
                           <div className="flex items-center gap-4">
-                            {t?.flagUrl && <img src={t.flagUrl} className={`w-12 h-8 rounded shadow-lg ${isWinner ? 'ring-2 ring-white/20' : ''}`} />}
+                            {t?.flagUrl && <img src={t.flagUrl} className={`w-12 h-8 rounded shadow-lg ${isWinner ? 'ring-2 ring-black/5' : ''}`} />}
                             <div>
-                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-slate-900 dark:text-white font-bold' : 'text-slate-600 dark:text-slate-300'}`}>
+                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-slate-950 font-bold' : 'text-slate-600'}`}>
                                 {t?.name || 'TBD'}
                               </span>
                               {isWinner && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-wider font-['Rajdhani']">Winner</span>}
                             </div>
                           </div>
                           {isWinner && (
-                            <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shadow-[0_0_20px_rgba(251,191,36,0.4)] text-slate-900">
+                            <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shadow-[0_0_20px_rgba(251,191,36,0.4)] text-slate-950">
                               <Trophy className="w-5 h-5" />
                             </div>
                           )}

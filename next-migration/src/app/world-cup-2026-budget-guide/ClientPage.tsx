@@ -13,8 +13,8 @@ import {
  Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
  CreditCard, Wallet, Smartphone, TrendingDown
 } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 
 // --- Design System & Components ---
 
@@ -211,7 +211,7 @@ export default function ClientPage() {
 
  return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
- <Header />
+ 
  <SocialShare />
 
  {/* Progress Bar */}
@@ -654,9 +654,10 @@ export default function ClientPage() {
  </div>
  </main>
  </div>
- <Footer />
+ 
  </div>
  );
 }
+
 
 

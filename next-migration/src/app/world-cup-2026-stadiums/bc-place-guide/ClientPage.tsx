@@ -12,8 +12,8 @@ import {
     Train, Bus, Car, Bike, AlertTriangle, Briefcase,
     X, ChevronRight, Facebook, Twitter, Linkedin, Copy, CloudRain
   } from 'lucide-react';
-import { Header } from '@/components/feature/Header';
-import { Footer } from '@/components/feature/Footer';
+
+
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 // --- Design System & Components ---
@@ -259,7 +259,7 @@ export default function ClientPage() {
 
  return (
  <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
- <Header />
+ 
  <SocialShare />
 
  {/* Progress Bar */}
@@ -814,10 +814,11 @@ export default function ClientPage() {
 
       </main>
  </div>
- <Footer />
+ 
  </div>
  );
 }
+
 
 
 
