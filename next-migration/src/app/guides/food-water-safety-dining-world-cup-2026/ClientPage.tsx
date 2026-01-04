@@ -269,7 +269,7 @@ export default function FoodSafetyClientPage() {
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp" 
+            src="/images/safety-guide/Food & Water Safety Dining Without Distress.webp" 
             alt="World Cup 2026 Food & Water Safety" 
             fill 
             className="object-cover object-center"

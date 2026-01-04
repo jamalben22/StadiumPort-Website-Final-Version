@@ -136,7 +136,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     publishedAt: '2026-01-03T00:00:00Z',
     updatedAt: '2026-01-03T00:00:00Z',
     wordCount: 4100,
-    image: '/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp'
+    image: '/images/safety-guide/Nightlife & After-Hours Safety.webp'
   },
   'world-cup-2026-packing-guide': {
     title: 'World Cup 2026 Packing Guide: Ultimate Fan Checklist',
@@ -308,7 +308,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     publishedAt: '2026-01-03T00:00:00Z',
     updatedAt: '2026-01-03T00:00:00Z',
     wordCount: 4200,
-    image: '/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp'
+    image: '/images/safety-guide/Food & Water Safety Dining Without Distress.webp'
   },
   'fan-zone-crowd-safety-world-cup-2026': {
     title: 'Fan Zone & Crowd Safety: World Cup 2026 Guide',
@@ -316,7 +316,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     publishedAt: '2026-01-03T00:00:00Z',
     updatedAt: '2026-01-03T00:00:00Z',
     wordCount: 3800,
-    image: '/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp'
+    image: '/images/safety-guide/Fan Zone & Crowd Safety Enjoying the Atmosphere.webp'
   },
   'staying-connected-sim-cards-emergency-communications-world-cup-2026': {
     title: 'Staying Connected: SIM Cards & Emergency Comms 2026',

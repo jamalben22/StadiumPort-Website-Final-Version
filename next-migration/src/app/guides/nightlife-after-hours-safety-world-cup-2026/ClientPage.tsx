@@ -247,7 +247,7 @@ export default function NightlifeSafetyClientPage() {
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/safety-guide/article mode/A_realistic_high-detail_photo_of_a_solo_traveler_walking_confidently_through_a_world_cup_2026.webp" 
+            src="/images/safety-guide/Nightlife & After-Hours Safety.webp" 
             alt="World Cup 2026 Nightlife & After-Hours Safety" 
             fill 
             className="object-cover object-center"

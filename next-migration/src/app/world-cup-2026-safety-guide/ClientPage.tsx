@@ -75,7 +75,7 @@ const safetyGuides = [
     title: "Fan Zone & Crowd Safety: Enjoying the Atmosphere",
     teaser: "Staying safe in large crowds and official Fan Fests. Exit strategies, meeting points, and situational awareness.",
     link: "/guides/fan-zone-crowd-safety-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
+    image: "/images/safety-guide/Fan Zone & Crowd Safety Enjoying the Atmosphere.webp",
     icon: Users,
     category: "During Your Trip Safety"
   },
@@ -83,7 +83,7 @@ const safetyGuides = [
     title: "Nightlife & After-Hours Safety",
     teaser: "Enjoying the nightlife safely. Transport after dark, alcohol laws, and staying safe in entertainment districts.",
     link: "/guides/nightlife-after-hours-safety-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_modern_football_stadium_entrance_during_World_cup_2026.webp",
+    image: "/images/safety-guide/Nightlife & After-Hours Safety.webp",
     icon: Moon,
     category: "During Your Trip Safety"
   },
@@ -91,7 +91,7 @@ const safetyGuides = [
     title: "Food & Water Safety: Dining Without Distress",
     teaser: "Where to drink tap water (and where not to). Street food safety tips and handling dietary restrictions abroad.",
     link: "/guides/food-water-safety-dining-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_showing_a_travel_medical_essentials_layout_for_World_cup_2026.webp",
+    image: "/images/safety-guide/Food & Water Safety Dining Without Distress.webp",
     icon: Utensils,
     category: "During Your Trip Safety"
   },
