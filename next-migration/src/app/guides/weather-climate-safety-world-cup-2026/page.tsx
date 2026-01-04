@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Weather & Climate Safety: World Cup 2026 Survival Guide',
     description: 'Prepare for extreme heat, humidity, storms, and altitude in USA, Canada, and Mexico.',
     url: 'https://stadiumport.com/guides/weather-climate-safety-world-cup-2026',
-    siteName: 'StadiumPort',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

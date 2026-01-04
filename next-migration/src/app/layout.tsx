@@ -24,7 +24,7 @@ import { isEzoicEnabled } from "@/lib/ads";
 const GA_MEASUREMENT_ID = 'G-7GLKVF44RM';
 
 export const metadata = constructMetadata({
-  title: "Stadiumport | World Cup 2026 Travel Guide",
+  title: "World Cup 2026 Guide | stadiumport",
   description: "The definitive guide to World Cup 2026. Expert insights, stadium guides, and travel planning.",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

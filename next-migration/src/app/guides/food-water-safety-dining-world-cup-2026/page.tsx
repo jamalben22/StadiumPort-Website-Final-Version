@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'Food & Water Safety: Dining Without Distress',
     description: 'Expert guide to World Cup 2026 food & water safety. Learn where to eat, water potability in USA/Canada/Mexico, and how to avoid traveler\'s diarrhea.',
     url: 'https://stadiumport.com/guides/food-water-safety-dining-world-cup-2026',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

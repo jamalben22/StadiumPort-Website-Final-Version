@@ -4,17 +4,17 @@ import ClientPage from './ClientPage';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Predictor Game | Stadiumport',
+ title: 'World Cup 2026 Predictor Game | stadiumport',
  description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
- keywords: ["Stadiumport", "World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes"],
+ keywords: ["stadiumport", "World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes"],
  alternates: {
  canonical: 'https://stadiumport.com/world-cup-2026-prediction-game',
  },
  openGraph: {
-    title: 'World Cup 2026 Predictor Game | Stadiumport',
+    title: 'World Cup 2026 Predictor Game | stadiumport',
     description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
     url: 'https://stadiumport.com/world-cup-2026-prediction-game',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'website',
     images: [
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Predictor Game | Stadiumport',
+    title: 'World Cup 2026 Predictor Game | stadiumport',
     description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
     images: ['/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp'],
   },
@@ -72,7 +72,7 @@ export default function Page() {
  },
  "organizer": {
  "@type": "Organization",
- "name": "Stadiumport",
+ "name": "stadiumport",
  "url": "https://stadiumport.com"
  },
  "offers": {
@@ -85,7 +85,7 @@ export default function Page() {
  },
  "performer": {
  "@type": "Organization",
- "name": "Stadiumport"
+ "name": "stadiumport"
  }
  },
  {
@@ -113,7 +113,7 @@ export default function Page() {
  "name": "Is the contest free to enter?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Yes, the Stadiumport Predictor is 100% free to play. No purchase necessary to enter or win."
+ "text": "Yes, the stadiumport Predictor is 100% free to play. No purchase necessary to enter or win."
  }
  },
  {

@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
 import { 
   MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
@@ -277,18 +278,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
-              >
-                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-safety-guide" className="hover:text-emerald-400 transition-colors">Safety Guide</Link>
-                <span className="text-slate-500">/</span>
-                <span className="text-emerald-400">Passport Security</span>
-              </motion.div>
+            <Breadcrumb 
+              items={[
+                { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
+                { label: 'Documents', href: '/world-cup-2026-passport-document-security' }
+              ]} 
+              variant="light"
+              className="mb-8"
+            />
 
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { sendEmail } from '@/lib/email';
-import { getStadiumportEmailHtml } from '@/lib/email-templates';
+import { getstadiumportEmailHtml } from '@/lib/email-templates';
 import { supabase } from '@/lib/supabase';
 
 // Force dynamic rendering for this route
@@ -62,12 +62,12 @@ export async function POST(req: NextRequest) {
         const userEmailPromise = sendEmail({
           to: email,
           subject: 'Prediction Locked! - World Cup 2026 Contest',
-          html: getStadiumportEmailHtml({
+          html: getstadiumportEmailHtml({
             title: 'Your Prediction is Locked In!',
             siteUrl: SITE_URL,
             bodyContent: `
               <p>Hi ${name},</p>
-              <p>Thanks for joining the Stadiumport World Cup 2026 Predictor Game.</p>
+              <p>Thanks for joining the stadiumport World Cup 2026 Predictor Game.</p>
               <p>Your unique entry ID is: <strong>${uniqueId}</strong></p>
               <p>You can view your bracket anytime using the link below:</p>
               <p><a href="${SITE_URL}/world-cup-2026-prediction-game/entry/${uniqueId}">${SITE_URL}/world-cup-2026-prediction-game/entry/${uniqueId}</a></p>

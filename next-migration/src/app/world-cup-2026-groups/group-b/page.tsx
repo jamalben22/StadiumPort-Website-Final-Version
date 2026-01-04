@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group B Travel Guide: Vancouver, Seattle, SF & LA',
     description: 'The definitive guide for following Group B in World Cup 2026. Master the Pacific Coast Strategy (Vancouver-Seattle-SF-LA). Flights, border crossings, and budget strategy.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-b',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

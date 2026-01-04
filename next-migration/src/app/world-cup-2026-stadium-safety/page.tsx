@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Stadium Safety at World Cup 2026: Security Rules & What to Expect',
     description: 'Complete guide to World Cup 2026 stadium security. Clear bag policy, prohibited items, arrival timing, and emergency procedures for all 16 host venues.',
     url: 'https://stadiumport.com/world-cup-2026-stadium-safety',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -49,12 +49,12 @@ export default function StadiumSafetyPage() {
     description: 'Complete guide to World Cup 2026 stadium security. Clear bag policy, prohibited items, arrival timing, and emergency procedures for all 16 host venues.',
     author: {
       '@type': 'Organization',
-      name: 'Stadiumport',
+      name: 'stadiumport',
       url: 'https://stadiumport.com'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Stadiumport',
+      name: 'stadiumport',
       logo: {
         '@type': 'ImageObject',
         url: 'https://stadiumport.com/logo.png'

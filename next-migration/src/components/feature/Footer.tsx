@@ -140,20 +140,20 @@ export function Footer() {
           <div className="max-w-sm">
             <Link href="/" className="block mb-6 group">
             <img 
-              src="/images/Logos/footer-logo-400x100.svg" 
-              alt="Stadiumport" 
+              src="/images/Logos/stadiumport-footer-logo-v2-light.svg" 
+              alt="stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-v2-light.svg'; }}
             />
             <img 
-              src="/images/Logos/footer-logo-400x100-dark.svg" 
-              alt="Stadiumport" 
+              src="/images/Logos/stadiumport-footer-logo-dark.svg" 
+              alt="stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100-dark.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-dark.svg'; }}
             />
           </Link>
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">
@@ -232,7 +232,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-200 dark:border-white/5">
           <p className="text-xs text-slate-400 dark:text-slate-500 order-2 md:order-1">
-            © {currentYear} Stadiumport. All rights reserved.
+            © {currentYear} stadiumport. All rights reserved.
           </p>
           
           <div className="flex items-center gap-6 order-1 md:order-2">

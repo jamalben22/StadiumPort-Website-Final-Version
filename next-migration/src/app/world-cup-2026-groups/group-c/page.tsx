@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami',
     description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-c',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

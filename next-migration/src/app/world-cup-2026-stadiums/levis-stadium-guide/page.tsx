@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: "Complete guide to Levi's Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for San Francisco/Bay Area.",
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/levis-stadium-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/san-francisco-world-cup-2026-1600.webp',

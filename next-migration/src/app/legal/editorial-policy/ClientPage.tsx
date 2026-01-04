@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ShieldCheck, Search, FileCheck, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
 
 export default function EditorialPolicyClientPage() {
@@ -47,16 +48,13 @@ export default function EditorialPolicyClientPage() {
  
  {/* Hero Section */}
       <div className="text-center mb-20 animate-fade-up">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-          <span className="text-emerald-700 dark:text-emerald-400">Editorial Policy</span>
-        </motion.div>
+       <Breadcrumb 
+          items={[
+            { label: 'Editorial Policy', href: '/legal/editorial-policy' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
  <span className="relative flex h-2 w-2">
@@ -72,8 +70,7 @@ export default function EditorialPolicyClientPage() {
  Editorial <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Policy</span>
  </h1>
  
- <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
- Stadiumport is built on accuracy, transparency, and trust. Our mission is to provide the most reliable information for fans traveling to World Cup 2026.
+ <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">Stadiumport is built on accuracy, transparency, and trust. Our mission is to provide the most reliable information for fans traveling to World Cup 2026.
  </p>
  </div>
 
@@ -131,7 +128,7 @@ export default function EditorialPolicyClientPage() {
  We exist to remove confusion and prevent planning mistakes. Your trust is our priority.
  </p>
  <div className="font-semibold text-sm">
- Travel confidently with Stadiumport.
+ Travel confidently with stadiumport.
  </div>
  </div>
  </div>

@@ -5,23 +5,23 @@ import { JsonLd } from '../../components/seo/JsonLd';
 import { generateBreadcrumbSchema } from '../../lib/schema';
 
 export const metadata: Metadata = {
-  title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
-  description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
+  title: 'About stadiumport – Your World Cup 2026 Travel Companion',
+  description: 'Learn about stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
   alternates: {
     canonical: 'https://stadiumport.com/about',
   },
   openGraph: {
-    title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
-    description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
+    title: 'About stadiumport – Your World Cup 2026 Travel Companion',
+    description: 'Learn about stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
     url: 'https://stadiumport.com/about',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
-    description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
+    title: 'About stadiumport – Your World Cup 2026 Travel Companion',
+    description: 'Learn about stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
   },
 };
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
  const organizationSchema = {
  '@context': 'https://schema.org',
  '@type': 'Organization',
- name: 'Stadiumport',
+ name: 'stadiumport',
  url: 'https://stadiumport.com',
  logo: 'https://stadiumport.com/logo.png',
  sameAs: [

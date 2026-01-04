@@ -4,7 +4,7 @@ export interface EmailTemplateOptions {
   siteUrl: string;
 }
 
-export const getStadiumportEmailHtml = ({ title, bodyContent, siteUrl }: EmailTemplateOptions) => {
+export const getstadiumportEmailHtml = ({ title, bodyContent, siteUrl }: EmailTemplateOptions) => {
   return `
     <!DOCTYPE html>
     <html>
@@ -21,14 +21,14 @@ export const getStadiumportEmailHtml = ({ title, bodyContent, siteUrl }: EmailTe
       <body>
         <div class="container">
           <div class="header">
-            <h1>Stadiumport</h1>
+            <h1>stadiumport</h1>
           </div>
           <div class="content">
             <h2>${title}</h2>
             ${bodyContent}
           </div>
           <div class="footer">
-            <p>&copy; ${new Date().getFullYear()} Stadiumport. All rights reserved.</p>
+            <p>&copy; ${new Date().getFullYear()} stadiumport. All rights reserved.</p>
             <p><a href="${siteUrl}">${siteUrl}</a></p>
           </div>
         </div>

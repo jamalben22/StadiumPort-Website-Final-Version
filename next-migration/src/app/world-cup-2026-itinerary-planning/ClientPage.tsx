@@ -4,6 +4,7 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   Map, Calendar, Clock, DollarSign, Globe, Train, Plane, 
   Hotel, ArrowRight, Shield, CheckCircle2, AlertTriangle, 
@@ -318,13 +319,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="flex items-center gap-2 text-sm font-medium text-white/60 mb-6 tracking-wide uppercase">
-                <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-slate-900 dark:text-white transition-colors">Travel Tips</Link>
-                <span className="text-white/40">/</span>
-                <span className="text-slate-900 dark:text-white">Itinerary Planning</span>
-              </div>
+              <Breadcrumb 
+                items={[
+                  { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
+                  { label: 'Itinerary Planning', href: '/world-cup-2026-itinerary-planning' }
+                ]} 
+                variant="light"
+                className="mb-8"
+              />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Strategy

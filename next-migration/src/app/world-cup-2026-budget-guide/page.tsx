@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
     description: 'The ultimate World Cup 2026 budget guide. Verified costs for tickets, flights, and hotels in USA, Canada & Mexico. Plus 15+ proven money-saving strategies.',
     url: 'https://stadiumport.com/world-cup-2026-budget-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   Mail, 
   Send, 
@@ -73,16 +74,13 @@ export default function ClientContact() {
           
           {/* Hero Section */}
           <div className="text-center mb-20 animate-fade-up">
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-            >
-              <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-              <span className="text-emerald-700 dark:text-emerald-400">Contact</span>
-            </motion.div>
+            <Breadcrumb 
+              items={[
+                { label: 'Contact', href: '#' }
+              ]} 
+              variant="light"
+              className="mb-8"
+            />
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
               <span className="relative flex h-2 w-2">
@@ -96,7 +94,7 @@ export default function ClientContact() {
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
               Get in touch with <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">

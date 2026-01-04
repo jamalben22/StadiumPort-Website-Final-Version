@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Safety Guide: Essential Tips for Fans',
     description: 'Stay safe at World Cup 2026. Critical advice on stadium security, emergency contacts, solo travel & scam prevention for USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-safety-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

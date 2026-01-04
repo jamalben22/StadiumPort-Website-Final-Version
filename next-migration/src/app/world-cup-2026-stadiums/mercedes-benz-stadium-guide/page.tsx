@@ -12,7 +12,7 @@ export const metadata: Metadata = {
  description: 'Complete guide to Mercedes-Benz Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Atlanta.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/mercedes-benz-stadium-guide',
- siteName: 'Stadiumport',
+ siteName: 'stadiumport',
  images: [
       {
         url: '/images/cities/atlanta-world-cup-2026-1600.webp',

@@ -4,15 +4,16 @@ import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
-import { 
-  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
-  Trophy, Plane, Hotel, Ticket, Share2, MessageSquare, 
-  ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
+import {
+  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2,
+  Trophy, Plane, Hotel, Ticket, Share2, MessageSquare,
+  ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun,
   DollarSign, Shield, Clock, Globe, Star, ExternalLink,
   Train, Bus, Car, Bike, AlertTriangle, Briefcase,
   Bookmark, X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
   Bell, Search, Mail, TrendingUp, CreditCard, Bed, Building, Home, Map
 } from 'lucide-react';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 
 
@@ -225,7 +226,7 @@ const Callout = ({ type = 'info', title, children }: { type?: 'info' | 'warning'
 };
 
 const Table = ({ headers, rows }: { headers: string[], rows: (string | React.ReactNode)[][] }) => (
-  <div className="overflow-x-auto my-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+  <div className="overflow-x-auto my-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm bg-white dark:bg-slate-900/50">
     <table className="w-full text-left text-sm md:text-base">
       <thead className="bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 text-slate-900 dark:text-white font-bold uppercase tracking-wider">
         <tr>
@@ -254,7 +255,7 @@ const CitySection = ({ city, country, stadium, capacity, neighborhoods }: {
   capacity: string,
   neighborhoods: Array<{ name: string, vibe: string, price: string, transit: string, bestFor: string }>
 }) => (
-  <div className="mb-20 p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group">
+  <div className="mb-20 p-8 md:p-10 rounded-[2.5rem] bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800 shadow-xl relative overflow-hidden group">
     <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
       <MapPin className="w-32 h-32 text-emerald-500" />
     </div>
@@ -386,18 +387,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
-              >
-                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-emerald-400 transition-colors">Travel Tips</Link>
-                <span className="text-slate-500">/</span>
-                <span className="text-emerald-400">Accommodation Guide</span>
-              </motion.div>
+              <Breadcrumb 
+                items={[
+                  { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
+                  { label: 'Accommodation', href: '/world-cup-2026-accommodation-guide' }
+                ]} 
+                variant="light"
+                className="mb-8"
+              />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Guide
@@ -455,7 +452,7 @@ export default function ClientPage() {
         {/* Main Content Column */}
         <main className="flex-1 min-w-0 pb-24">
           
-          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-50 dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-200 dark:border-slate-800">
+          <div className="mb-12 p-6 rounded-2xl text-sm text-slate-500 dark:text-slate-400 flex gap-4 items-start bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
             <Info className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
             <p className="leading-relaxed">
               <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.

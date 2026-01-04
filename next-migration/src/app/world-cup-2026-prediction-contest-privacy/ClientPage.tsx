@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { 
  Shield, 
@@ -59,16 +60,14 @@ export default function ClientPage() {
  <div className="max-w-5xl mx-auto">
         
         {/* Breadcrumb */}
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-          <span className="text-emerald-700 dark:text-emerald-400">Privacy Policy</span>
-        </motion.div>
+        <Breadcrumb 
+          items={[
+            { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
+            { label: 'Privacy', href: '#' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
 
         {/* Hero Section */}
  <div className="text-center mb-20 animate-fade-up">

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to Hard Rock Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Miami.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/hard-rock-stadium-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/miami-world-cup-2026-1600.webp',

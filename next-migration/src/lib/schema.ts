@@ -14,7 +14,7 @@ export const generateArticleSchema = (slug: string, urlPath: string) => {
     return {
       "@context": "https://schema.org",
       "@type": "Article",
-      "headline": "Stadiumport Guide",
+      "headline": "stadiumport Guide",
       "url": url,
       "datePublished": new Date().toISOString(),
       "dateModified": new Date().toISOString(),
@@ -29,12 +29,12 @@ export const generateArticleSchema = (slug: string, urlPath: string) => {
     "image": meta.image ? getSiteUrl(meta.image) : undefined,
     "author": {
       "@type": "Organization",
-      "name": meta.author || "Stadiumport Team",
+      "name": meta.author || "stadiumport Team",
       "url": getSiteUrl()
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Stadiumport",
+      "name": "stadiumport",
       "logo": {
         "@type": "ImageObject",
         "url": getSiteUrl('/images/Logos/favicon/android-chrome-512x512.png'),
@@ -80,8 +80,8 @@ export const generateFAQSchema = (faqs: { question: string; answer: string }[]) 
 export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Stadiumport",
-  "alternateName": ["Stadium Port", "Stadiumport.com", "World Cup 2026 Travel Guide"],
+  "name": "stadiumport",
+  "alternateName": ["Stadium Port", "stadiumport.com", "World Cup 2026 Travel Guide"],
   "description": "The ultimate resource for World Cup 2026. Expert travel guides, stadium info, and planning for USA, Mexico, and Canada.",
   "url": getSiteUrl(),
   "potentialAction": {
@@ -94,7 +94,7 @@ export const generateWebsiteSchema = () => ({
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "url": getSiteUrl()
   }
 });
@@ -168,15 +168,15 @@ export const generateLocalBusinessSchema = (business: {
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Stadiumport",
-  "alternateName": ["Stadium Port", "Stadiumport World Cup Guide"],
+  "name": "stadiumport",
+  "alternateName": ["Stadium Port", "stadiumport World Cup Guide"],
   "url": getSiteUrl(),
   "logo": {
     "@type": "ImageObject",
     "url": `${getSiteUrl()}/images/Logos/favicon/android-chrome-512x512.png`,
     "width": 512,
     "height": 512,
-    "caption": "Stadiumport Logo"
+    "caption": "stadiumport Logo"
   },
   "description": "The definitive travel guide for the 2026 FIFA World Cup. We provide expert insights, stadium guides, and comprehensive travel planning resources for fans visiting the USA, Mexico, and Canada.",
   "foundingDate": "2023",

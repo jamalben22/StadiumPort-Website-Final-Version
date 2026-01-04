@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: 'Border Crossing Guide: USA, Canada & Mexico 2026',
     description: 'The definitive border crossing guide for World Cup 2026. Navigate USA, Canada, and Mexico borders smoothly.',
     url: 'https://stadiumport.com/guides/border-crossing-usa-canada-mexico-world-cup-2026',
-    siteName: 'StadiumPort',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
   },

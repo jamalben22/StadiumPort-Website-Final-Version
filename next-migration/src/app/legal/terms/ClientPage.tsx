@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  FileCheck, 
  Scale, 
@@ -21,7 +22,7 @@ export default function ClientPage() {
  {
  icon: FileCheck,
  title: "Agreement",
- description: "By using Stadiumport, you agree to these terms, our Privacy Policy, and Affiliate Disclaimer."
+ description: "By using stadiumport, you agree to these terms, our Privacy Policy, and Affiliate Disclaimer."
  },
  {
  icon: Scale,
@@ -64,16 +65,13 @@ export default function ClientPage() {
  
  {/* Hero Section */}
       <div className="text-center mb-20 animate-fade-up">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-          <span className="text-emerald-700 dark:text-emerald-400">Terms of Service</span>
-        </motion.div>
+       <Breadcrumb 
+          items={[
+            { label: 'Terms of Service', href: '/legal/terms' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
  <span className="relative flex h-2 w-2">
@@ -90,7 +88,7 @@ export default function ClientPage() {
  </h1>
  
  <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
- Welcome to Stadiumport. Please read these terms carefully before using our website, as they govern your access and use of our services.
+ Welcome to stadiumport. Please read these terms carefully before using our website, as they govern your access and use of our services.
  </p>
  </div>
 
@@ -215,7 +213,7 @@ export default function ClientPage() {
  Intellectual Property
  </h2>
  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
- All content on Stadiumport (text, images, design) is owned by us or licensed to us.
+ All content on stadiumport (text, images, design) is owned by us or licensed to us.
  </p>
  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
  <div className=" rounded-2xl p-6">
@@ -289,7 +287,7 @@ export default function ClientPage() {
  Limitation of Liability
  </h2>
  <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
- To the maximum extent permitted by law, Stadiumport shall not be liable for any lost profits, travel disruptions, personal injury, or incorrect information. This applies even if we have been advised of the possibility of such damages.
+ To the maximum extent permitted by law, stadiumport shall not be liable for any lost profits, travel disruptions, personal injury, or incorrect information. This applies even if we have been advised of the possibility of such damages.
  </p>
  <p className="text-slate-900 dark:text-white font-medium">
  Your sole remedy for dissatisfaction is to stop using the Website.
@@ -302,7 +300,7 @@ export default function ClientPage() {
  Indemnification
  </h2>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- You agree to indemnify and hold harmless Stadiumport from any claims, damages, or expenses arising from your use of the Website, your violation of these Terms, or your travel decisions based on our content.
+ You agree to indemnify and hold harmless stadiumport from any claims, damages, or expenses arising from your use of the Website, your violation of these Terms, or your travel decisions based on our content.
  </p>
  </section>
 

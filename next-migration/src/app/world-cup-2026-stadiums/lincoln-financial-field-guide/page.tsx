@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Philadelphia.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/lincoln-financial-field-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/philadelphia-world-cup-2026-1600.webp',

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
     description: 'Complete health guide for World Cup 2026. Travel insurance requirements, vaccinations, prescription rules, and emergency medical contacts for USA, Canada, and Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-health-medical-preparedness',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -49,12 +49,12 @@ export default function HealthMedicalPage() {
     description: 'Complete health guide for World Cup 2026. Travel insurance requirements, vaccinations, prescription rules, and emergency medical contacts for USA, Canada, and Mexico.',
     author: {
       '@type': 'Organization',
-      name: 'Stadiumport',
+      name: 'stadiumport',
       url: 'https://stadiumport.com'
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Stadiumport',
+      name: 'stadiumport',
       logo: {
         '@type': 'ImageObject',
         url: 'https://stadiumport.com/logo.png'

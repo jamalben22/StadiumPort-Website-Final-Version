@@ -25,12 +25,12 @@ export const metadata: Metadata = {
     title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
     description: 'Expert guide to World Cup 2026 connectivity. Compare SIM cards, eSIMs, and roaming plans for USA, Canada, and Mexico.',
     url: 'https://stadiumport.com/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
       {
-        url: '/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp',
+        url: '/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp',
         width: 1200,
         height: 630,
         alt: 'World Cup 2026 Connectivity Essentials',
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
     description: 'Expert guide to World Cup 2026 connectivity. Compare SIM cards, eSIMs, and roaming plans for USA, Canada, and Mexico.',
-    images: ['/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp'],
+    images: ['/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp'],
   },
 };
 

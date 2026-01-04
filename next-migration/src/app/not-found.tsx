@@ -3,7 +3,7 @@ import { Home, MapPin, Search } from 'lucide-react';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
- title: 'Page Not Found - Stadiumport',
+ title: 'Page Not Found - stadiumport',
  description: 'The page you are looking for could not be found.',
 };
 

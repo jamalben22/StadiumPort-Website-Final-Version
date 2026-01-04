@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { getSiteUrl } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | Stadiumport',
+  title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | stadiumport',
   description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
   keywords: [
     'World Cup 2026 draw travel',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
     url: 'https://stadiumport.com/world-cup-2026-draw-travel-hub',
     type: 'article',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     images: [
       {
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 
 export default function DrawHubPage() {
   const meta = {
-    title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | Stadiumport',
+    title: 'World Cup 2026 Draw Travel Hub: The Ultimate Planning Guide | stadiumport',
     description: 'The #1 guide for World Cup 2026 draw travel planning. Master the logistics, find your base camp, book flights & hotels, and save money with our comprehensive post-draw strategy.',
     publishedAt: '2025-12-05',
     updatedAt: '2025-12-05'
@@ -77,10 +77,10 @@ export default function DrawHubPage() {
         "dateModified": meta?.updatedAt || "2025-12-05",
         "publisher": {
           "@type": "Organization",
-          "name": "Stadiumport",
+          "name": "stadiumport",
           "logo": {
             "@type": "ImageObject",
-            "url": getSiteUrl('/images/Logos/Mobile%20Header%20Logo%20180%20x%20180%20px.svg')
+            "url": getSiteUrl('/images/Logos/stadiumport-mobile-logo-light.svg')
           }
         },
         "isPartOf": {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
  description: 'Complete guide to Estadio BBVA for World Cup 2026. Seating charts, capacity, parking & local transport tips for Monterrey.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/estadio-bbva-guide',
- siteName: 'Stadiumport',
+ siteName: 'stadiumport',
  images: [
       {
         url: '/images/cities/monterrey-world-cup-2026-1600.webp',

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Local Laws & Cultural Etiquette: World Cup 2026 Guide',
     description: 'Essential guide to local laws, customs, and etiquette in USA, Canada, and Mexico for World Cup 2026.',
     url: 'https://stadiumport.com/guides/local-laws-cultural-etiquette-world-cup-2026',
-    siteName: 'StadiumPort',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

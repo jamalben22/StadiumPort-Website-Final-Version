@@ -35,7 +35,7 @@ export const PlanningHub = () => {
              viewport={{ once: true }}
              className="inline-block mb-6 px-4 py-1.5 rounded-full border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-[#0A0A0A] backdrop-blur-md text-sm font-medium text-slate-900 dark:text-white"
            >
-             Plan Your Journey
+             Architect Your Itinerary
            </motion.span>
            <motion.h2 
              initial={{ opacity: 0, y: 20 }}
@@ -44,8 +44,8 @@ export const PlanningHub = () => {
              transition={{ delay: 0.1 }}
              className="font-space font-bold text-5xl md:text-7xl text-slate-900 dark:text-white tracking-tight mb-8"
            >
-             Everything you need.<br />
-             <span className="text-slate-400 dark:text-slate-600">All in one place.</span>
+             Global Logistics Protocol.<br />
+             <span className="text-slate-400 dark:text-slate-600">Every Detail, Managed.</span>
            </motion.h2>
         </div>
 

@@ -324,7 +324,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     publishedAt: '2026-01-04T00:00:00Z',
     updatedAt: '2026-01-04T00:00:00Z',
     wordCount: 4100,
-    image: '/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp'
+    image: '/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp'
   },
   'border-crossing-usa-canada-mexico-world-cup-2026': {
     title: 'Border Crossing Guide: USA, Canada & Mexico 2026',
@@ -379,8 +379,8 @@ export const contentRegistry: Record<string, ContentMeta> = {
 
   // Legal
   'editorial-policy': {
-    title: 'Editorial Policy – Stadiumport',
-    description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
+    title: 'Editorial Policy – stadiumport',
+    description: 'Our commitment to accuracy, transparency, and trust. Learn about stadiumport\'s editorial standards for World Cup 2026 travel guides.',
     publishedAt: '2025-12-01T00:00:00Z',
     updatedAt: '2025-12-01T00:00:00Z',
     wordCount: 1200,

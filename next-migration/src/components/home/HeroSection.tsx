@@ -171,13 +171,13 @@ export const HeroSection = () => {
                  <Link href="/world-cup-2026-groups" className="group relative w-full sm:w-auto">
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-[#01b47d] to-blue-600 rounded-full blur opacity-30 group-hover:opacity-75 transition duration-500 hidden sm:block"></div>
                     <div className="relative w-full sm:w-auto px-8 py-3.5 sm:py-4 bg-[#0A0A0A] text-white dark:bg-white dark:text-black rounded-full font-space font-bold text-base sm:text-lg flex items-center justify-center gap-2 transition-transform duration-200 active:scale-95">
-                      Explore Groups
+                      View Groups & Brackets
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 transition-transform group-hover:translate-x-1" />
                     </div>
                  </Link>
                  
                  <Link href="/world-cup-2026-host-cities-guide" className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full border border-black/20 text-black dark:border-white/20 dark:text-white font-space font-medium text-base sm:text-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
-                    Host Cities
+                    Explore 16 Host Venues
                  </Link>
               </motion.div>
             </div>

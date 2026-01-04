@@ -110,31 +110,31 @@ export function Header() {
         <div className="max-w-[1400px] mx-auto px-4 lg:px-6 h-full flex items-center justify-between">
           
           {/* Left: Logo */}
-          <Link href="/" className="relative z-50 group" aria-label="Stadiumport Home">
+          <Link href="/" className="relative z-50 group" aria-label="stadiumport Home">
              <div className="relative">
                 {/* Desktop Logo */}
                 <div className="hidden lg:block">
                   <img 
-                    src="/images/Logos/Desktop Header SP Logo 2400 x 600 px.svg"
-                    alt="Stadiumport"
+                    src="/images/Logos/stadiumport-header-logo-light.svg"
+                    alt="stadiumport"
                     className={`h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
                   <img 
-                    src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg"
-                    alt="Stadiumport"
+                    src="/images/Logos/stadiumport-header-logo-dark.svg"
+                    alt="stadiumport"
                     className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
                 {/* Mobile Logo */}
                 <div className="lg:hidden">
                    <img 
-                    src="/images/Logos/Mobile Header Logo 180 x 180 px.svg"
-                    alt="Stadiumport"
+                    src="/images/Logos/stadiumport-mobile-logo-light.svg"
+                    alt="stadiumport"
                     className={`h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
                   <img 
-                    src="/images/Logos/Mobile Header Logo 180 x 180 px night mode.svg"
-                    alt="Stadiumport"
+                    src="/images/Logos/stadiumport-mobile-logo-dark.svg"
+                    alt="stadiumport"
                     className={`absolute top-0 left-0 h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>

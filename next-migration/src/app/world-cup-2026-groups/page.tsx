@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Groups Guide: 48 Teams, Tables & Schedule',
     description: 'Complete analysis of World Cup 2026 groups. Standings, match schedules & advancement scenarios for all 48 teams in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-groups',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -75,12 +75,12 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
     },
     "organizer": {
       "@type": "Organization",
-      "name": "Stadiumport",
+      "name": "stadiumport",
       "url": "https://stadiumport.com"
     },
     "performer": {
       "@type": "Organization",
-      "name": "Stadiumport Prediction Contestants"
+      "name": "stadiumport Prediction Contestants"
     },
     "offers": {
       "@type": "Offer",
@@ -280,7 +280,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
 
         <div className="mt-12 pt-8 border-t border-black/10 text-center">
            <div className="text-slate-700 text-xs font-medium leading-relaxed">
-             <span className="text-slate-900/60">Official World Cup 2026 Prediction Challenge</span> · <span className="text-slate-900 font-bold uppercase tracking-widest">STADIUMPORT</span> <br />
+             <span className="text-slate-900/60">Official World Cup 2026 Prediction Challenge</span> · <span className="text-slate-900 font-bold uppercase tracking-widest">stadiumport</span> <br />
              <div className="flex flex-wrap justify-center gap-4 mt-4">
                <Link href="/world-cup-2026-prediction-contest-terms" className="text-slate-900 hover:text-black underline decoration-black/20 transition-colors">Terms & Conditions</Link>
                <Link href="/world-cup-2026-prediction-contest-privacy" className="text-slate-900 hover:text-black underline decoration-black/20 transition-colors">Privacy Policy</Link>

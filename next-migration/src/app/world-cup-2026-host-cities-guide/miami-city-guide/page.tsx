@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
     description: 'Complete Miami World Cup 2026 travel guide. Hard Rock Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/miami-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

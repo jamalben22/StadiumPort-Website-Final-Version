@@ -29,7 +29,7 @@ export const metadata: Metadata = constructMetadata({
     'World Cup 2026 Stadiums',
     'World Cup 2026 Tickets',
     'USA Mexico Canada World Cup',
-    'Stadiumport',
+    'stadiumport',
     'World Cup 2026 Hotels',
     'World Cup 2026 Flights'
   ],

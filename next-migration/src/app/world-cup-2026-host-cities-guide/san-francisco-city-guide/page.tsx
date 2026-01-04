@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "San Francisco World Cup 2026 Guide: Levi's Stadium & Travel Tips",
     description: "Complete San Francisco World Cup 2026 travel guide. Levi's Stadium info, best hotels, Caltrain tips, fan zones & match schedule. Plan your trip.",
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/san-francisco-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

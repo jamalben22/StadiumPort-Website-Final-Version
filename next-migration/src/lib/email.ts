@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer';
 
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
-const SENDER_NAME = process.env.SENDER_NAME || 'Stadiumport';
+const SENDER_NAME = process.env.SENDER_NAME || 'stadiumport';
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || 'smtp.hostinger.com',

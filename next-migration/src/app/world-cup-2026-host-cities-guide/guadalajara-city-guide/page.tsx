@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: 'Guadalajara World Cup 2026 Guide: Estadio Akron & Travel Tips',
     description: 'Complete Guadalajara World Cup 2026 travel guide. Estadio Akron info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/guadalajara-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

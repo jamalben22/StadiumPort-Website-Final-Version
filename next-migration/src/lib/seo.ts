@@ -30,14 +30,14 @@ export function constructMetadata({
     "World Cup 2026", 
     "FIFA World Cup 2026", 
     "World Cup Travel Guide", 
-    "Stadiumport", 
+    "stadiumport", 
     "2026 World Cup Stadiums",
     "World Cup Host Cities"
   ],
   verification,
 }: MetadataProps): Metadata {
   const url = `${defaultUrl}${path}`;
-  const brandName = "Stadiumport";
+  const brandName = "stadiumport";
   
   // Ensure title always includes brand name if not present (though Next.js template handles this usually)
   const fullTitle = title.includes(brandName) ? title : `${title} | ${brandName}`;

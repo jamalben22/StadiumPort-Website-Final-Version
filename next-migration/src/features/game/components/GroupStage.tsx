@@ -340,12 +340,12 @@ export const GroupStage = () => {
         "image": "https://stadiumport.com/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp",
         "organizer": {
           "@type": "Organization",
-          "name": "Stadiumport",
+          "name": "stadiumport",
           "url": "https://stadiumport.com"
         },
         "performer": {
           "@type": "Organization",
-          "name": "Stadiumport Prediction Contestants"
+          "name": "stadiumport Prediction Contestants"
         },
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Transport Safety: Taxis, Uber & Transit',
     description: 'Safe travel guide for World Cup 2026. Avoid taxi scams, use rideshares safely & navigate public transit in USA, Canada & Mexico host cities.',
     url: 'https://stadiumport.com/world-cup-2026-transportation-safety',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -55,12 +55,12 @@ export default function Page() {
             image: '/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp',
             author: {
               '@type': 'Organization',
-              name: 'Stadiumport',
+              name: 'stadiumport',
               url: 'https://stadiumport.com'
             },
             publisher: {
               '@type': 'Organization',
-              name: 'Stadiumport',
+              name: 'stadiumport',
               logo: {
                 '@type': 'ImageObject',
                 url: 'https://stadiumport.com/logo.png'

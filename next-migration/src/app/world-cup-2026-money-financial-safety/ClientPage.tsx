@@ -4,14 +4,35 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
-  MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
-  Trophy, Plane, Hotel, Ticket, Share2, MessageSquare, 
-  ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
-  DollarSign, Shield, Clock, Globe, Star, ExternalLink,
-  Train, Bus, Car, Bike, AlertTriangle, Briefcase,
-  X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
-  ShieldAlert, Lock, XCircle, Search, CreditCard, Smartphone, User, Flag, Wifi, FileText, Eye, ShieldCheck, Ban, Wallet, Landmark, Calculator, Coins, CheckCircle
+  DollarSign, 
+  CreditCard, 
+  Wallet, 
+  ShieldAlert, 
+  Smartphone, 
+  Globe, 
+  Info, 
+  ArrowRight, 
+  CheckCircle2, 
+  ShieldCheck, 
+  AlertTriangle,
+  ChevronRight,
+  TrendingUp,
+  Landmark,
+  Shield,
+  Phone,
+  Banknote,
+  Twitter,
+  Facebook,
+  Linkedin,
+  Copy,
+  Check,
+  MessageSquare,
+  Users,
+  Hotel,
+  Star,
+  Coins
 } from 'lucide-react';
 
 
@@ -279,18 +300,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
-              >
-                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-safety-guide" className="hover:text-emerald-400 transition-colors">Safety Guide</Link>
-                <span className="text-slate-500">/</span>
-                <span className="text-emerald-400">Money & Financial Safety</span>
-              </motion.div>
+              <Breadcrumb 
+                items={[
+                  { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+                  { label: 'Money & Finance', href: '/world-cup-2026-money-financial-safety' }
+                ]} 
+                variant="light"
+                className="mb-8"
+              />
 
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

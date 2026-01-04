@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   MapPin, Calendar, Users, ArrowRight, Info, CheckCircle2, 
   Trophy, Plane, Hotel, Ticket, Share2, MessageSquare, 
@@ -11,7 +12,8 @@ import {
   DollarSign, Shield, Clock, Globe, Star, ExternalLink,
   Train, Bus, Car, Bike, AlertTriangle, Briefcase,
   X, ChevronRight, Facebook, Twitter, Linkedin, Copy,
-  Phone, Stethoscope, FileText, Menu, ChevronDown
+  Phone, Stethoscope, FileText, Menu, ChevronDown,
+  ShieldCheck, HeartPulse, Building2
 } from 'lucide-react';
 
 
@@ -278,18 +280,14 @@ export default function ClientPage() {
 
         {/* Hero Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-          >
-            <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-            <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-            <Link href="/world-cup-2026-safety-guide" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Safety Guide</Link>
-            <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-            <span className="text-emerald-700 dark:text-emerald-400">Emergency Contacts</span>
-          </motion.div>
+          <Breadcrumb 
+            items={[
+              { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
+              { label: 'Emergency', href: '/world-cup-2026-emergency-contacts-resources' }
+            ]} 
+            variant="light"
+            className="mb-8"
+          />
 
           <motion.div
               initial={{ opacity: 0, y: 30 }}

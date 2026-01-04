@@ -8,6 +8,7 @@ import { GameHeader } from '../../../../features/game/components/GameHeader';
 import { GameLayout } from '../../../../features/game/components/GameLayout';
 import { TEAMS } from '../../../../features/game/lib/wc26-data';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 export default function SharePage() {
   const params = useParams();
@@ -56,6 +57,19 @@ export default function SharePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <GameHeader />
+      
+      {/* Breadcrumbs */}
+      <div className="w-full max-w-5xl mx-auto px-4 pt-4 pb-0">
+        <Breadcrumb 
+          items={[
+            { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
+            { label: 'Shared Prediction', href: '#' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
+      </div>
+
       <ShareDashboard 
         champion={champion}
         userName={prediction.name}

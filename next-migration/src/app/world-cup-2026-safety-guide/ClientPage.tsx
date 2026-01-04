@@ -117,7 +117,7 @@ const safetyGuides = [
     title: "Staying Connected: SIM Cards & Emergency Comms",
     teaser: "Reliable mobile networks and emergency communication apps. Keeping in touch with your group across borders.",
     link: "/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp",
+    image: "/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp",
     icon: Smartphone,
     category: "Emergency Preparedness"
   },
@@ -163,14 +163,6 @@ const safetyGuides = [
     link: "/world-cup-2026-family-safety-guide",
     image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near.webp",
     icon: Users,
-    category: "Special Considerations"
-  },
-  {
-    title: "LGBTQ+ Traveler Safety Guide",
-    teaser: "Inclusive safety advice for LGBTQ+ fans. Local laws, cultural attitudes, and safe spaces in all three host nations.",
-    link: "/guides/lgbtq-traveler-safety-guide-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
-    icon: Heart,
     category: "Special Considerations"
   }
 ];
@@ -289,7 +281,11 @@ export default function SafetyGuideClientPage() {
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
-        <Breadcrumb items={[{ label: 'Safety Guide', href: '/safety-guide' }]} />
+        <Breadcrumb 
+          items={[{ label: 'Safety Guide', href: '/world-cup-2026-safety-guide' }]} 
+          variant="light"
+          className="mb-8"
+        />
         <div className="max-w-4xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'Mexico City World Cup 2026 Guide: Estadio Azteca & Travel Tips',
     description: 'Complete Mexico City World Cup 2026 travel guide. Estadio Azteca info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/mexico-city-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

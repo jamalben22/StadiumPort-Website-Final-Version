@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Solo Travel: Safety Tips for Fans',
     description: 'The ultimate guide for solo travelers attending World Cup 2026. Safety tips, meeting other fans, accommodation strategies, and navigating host cities alone.',
     url: 'https://stadiumport.com/world-cup-2026-solo-travel-safety-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

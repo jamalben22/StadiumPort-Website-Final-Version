@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to Estadio Akron for World Cup 2026. Seating charts, capacity, parking & local transport tips for Guadalajara.',
  type: 'article',
  url: 'https://stadiumport.com/world-cup-2026-stadiums/estadio-akron-guide',
- siteName: 'Stadiumport',
+ siteName: 'stadiumport',
  images: [
       {
         url: '/images/cities/guadalajara-world-cup-2026-1600.webp',

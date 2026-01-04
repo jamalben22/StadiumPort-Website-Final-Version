@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, Suspense, useCallback } from 'react
 import { useRouter, useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion, AnimatePresence } from 'framer-motion';
 import { GameProvider, useGame } from '../../features/game/context/GameContext';
 import { GameLayout } from '../../features/game/components/GameLayout';
@@ -297,16 +298,13 @@ function PredictGameContent() {
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <>
             {/* Breadcrumb */}
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-            >
-              <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-              <span className="text-emerald-700 dark:text-emerald-400">Prediction Game</span>
-            </motion.div>
+            <Breadcrumb 
+            items={[
+              { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' }
+            ]} 
+            variant="light"
+            className="mb-8"
+          />
 
             {/* Stepper UI (Persistent) */}
           <div className="mb-8 md:mb-12">

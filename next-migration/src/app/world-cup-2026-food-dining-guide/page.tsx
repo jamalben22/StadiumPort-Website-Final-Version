@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
     description: 'Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion with our 2026 World Cup food guide.',
     url: 'https://stadiumport.com/world-cup-2026-food-dining-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

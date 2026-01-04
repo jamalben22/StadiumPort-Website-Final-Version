@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to BC Place for World Cup 2026. Seating charts, capacity, parking & local transport tips for Vancouver.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/bc-place-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/vancouver-world-cup-2026-1600.webp',

@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 export const metadata: Metadata = {
   title: 'World Cup 2026 Host Cities Guide: 16 Venues & Travel Tips',
   description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
-  keywords: ['World Cup 2026 host cities', 'World Cup 2026 cities', 'FIFA World Cup 2026 locations', 'World Cup 2026 venues', 'World Cup 2026 USA Mexico Canada cities', 'Stadiumport'],
+  keywords: ['World Cup 2026 host cities', 'World Cup 2026 cities', 'FIFA World Cup 2026 locations', 'World Cup 2026 venues', 'World Cup 2026 USA Mexico Canada cities', 'stadiumport'],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-host-cities-guide',
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide',
     type: 'article',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     images: [
       {

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     title: 'Nightlife & After-Hours Safety: World Cup 2026 Guide',
     description: 'Expert guide to World Cup 2026 nightlife safety. Enjoy the atmosphere responsibly with tips on safe transport, alcohol awareness, and venue security in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/guides/nightlife-after-hours-safety-world-cup-2026',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -48,12 +48,12 @@ export const CTASection = () => {
         >
           <Link href="/groups">
              <button className="group relative px-10 py-5 rounded-full bg-[#0A0A0A] text-white dark:text-black dark:bg-white font-space font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-all duration-300 hover:scale-105 active:scale-95">
-               <span className="relative z-10">Start Planning Now</span>
+               <span className="relative z-10">Secure Your 2026 Match Base</span>
              </button>
           </Link>
            <Link href="/world-cup-2026-travel-tips">
              <button className="px-10 py-5 rounded-full border border-black/20 text-black dark:border-white/20 dark:text-white font-space font-semibold text-lg hover:bg-black/5 dark:hover:bg-white/10 hover:border-black/40 dark:hover:border-white/40 transition-all backdrop-blur-sm hover:scale-105 active:scale-95">
-               Explore Planning Hub
+               Access Master Travel Toolkit
              </button>
           </Link>
         </motion.div>

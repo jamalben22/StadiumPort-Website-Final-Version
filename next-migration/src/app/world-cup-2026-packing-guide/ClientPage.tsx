@@ -11,6 +11,7 @@ import {
   ChevronRight, Printer, Share2, Info, Clock, Facebook, Twitter, 
   Linkedin, Copy, X, Bookmark, Flag, Star, MapPin, Train, DollarSign, Hotel
 } from 'lucide-react';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 
 
@@ -340,13 +341,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="flex items-center gap-2 text-sm font-medium text-white/60 mb-6 tracking-wide uppercase">
-                <Link href="/" className="hover:text-slate-900 dark:text-white transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-travel-tips" className="hover:text-slate-900 dark:text-white transition-colors">Travel Tips</Link>
-                <span className="text-white/40">/</span>
-                <span className="text-slate-900 dark:text-white">Packing Guide</span>
-              </div>
+              <Breadcrumb 
+                items={[
+                  { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
+                  { label: 'Packing Guide', href: '/world-cup-2026-packing-guide' }
+                ]} 
+                variant="light"
+                className="mb-8"
+              />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Essentials

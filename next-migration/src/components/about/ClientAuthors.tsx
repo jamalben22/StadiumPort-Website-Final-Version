@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   Users, 
   PenTool, 
@@ -43,18 +44,14 @@ export default function ClientAuthors() {
           
           {/* Hero Section */}
           <div className="text-center mb-24 animate-fade-up">
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-            >
-              <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-              <Link href="/about" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">About</Link>
-              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-              <span className="text-emerald-700 dark:text-emerald-400">Authors</span>
-            </motion.div>
+            <Breadcrumb 
+              items={[
+                { label: 'About', href: '/about' },
+                { label: 'Authors', href: '#' }
+              ]} 
+              variant="light"
+              className="mb-8"
+            />
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
               <span className="relative flex h-2 w-2">
@@ -67,7 +64,7 @@ export default function ClientAuthors() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
-              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span> Team
+              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span> Team
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -89,7 +86,7 @@ export default function ClientAuthors() {
                     Accuracy Over Everything
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                    Stadiumport isn't built by a single influencer. It's built by a dedicated editorial team focused on accuracy, utility, and factual integrity.
+                    stadiumport isn't built by a single influencer. It's built by a dedicated editorial team focused on accuracy, utility, and factual integrity.
                   </p>
                   <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                     Our writers, editors, and researchers work together to ensure every guide meets the highest standards. We verify information with official tourism boards, stadium operators, and FIFA publications.

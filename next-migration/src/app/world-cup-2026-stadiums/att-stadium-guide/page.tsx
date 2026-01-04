@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to AT&T Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Dallas.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/att-stadium-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/dallas-world-cup-2026-1600.webp',

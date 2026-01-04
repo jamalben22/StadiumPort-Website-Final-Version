@@ -5,6 +5,7 @@ import { RulesCard } from './RulesCard';
 import { Trophy, ArrowRight, BadgeCheck, Star, Globe } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 
 interface ShareDashboardProps {
   champion?: any;
@@ -31,18 +32,14 @@ export const ShareDashboard = ({
     <div className="w-full max-w-5xl mx-auto px-4 pb-24 pt-24 flex flex-col gap-8">
       
       {/* Breadcrumbs */}
-      <motion.div 
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-        className="flex items-center gap-2 text-sm font-medium text-slate-900/60 mb-2 tracking-wide uppercase"
-      >
-        <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
-        <span className="text-slate-900/40">/</span>
-        <Link href="/world-cup-2026-prediction-game" className="hover:text-slate-900 transition-colors">Prediction Game</Link>
-        <span className="text-slate-900/40">/</span>
-        <span className="text-slate-900">Share</span>
-      </motion.div>
+      <Breadcrumb 
+        items={[
+          { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
+          { label: 'Share', href: '#' }
+        ]} 
+        variant="light"
+        className="mb-8"
+      />
 
       {/* Hero Section - FIFA x Apple x Nike Style */}
       <div className="relative w-full overflow-hidden rounded-[2rem] bg-white text-slate-900 shadow-2xl border border-black/10 p-6 md:p-12 mb-8 group isolate">

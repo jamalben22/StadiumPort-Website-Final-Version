@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Document Safety: Passport & Visa Tips',
     description: 'Protect your passport & documents at World Cup 2026. Essential security tips, digital backup strategies & lost passport procedures for international fans.',
     url: 'https://stadiumport.com/world-cup-2026-passport-document-security',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

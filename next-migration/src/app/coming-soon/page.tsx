@@ -103,7 +103,7 @@ function ComingSoonContent() {
         transition={{ delay: 0.8 }}
         className="absolute bottom-8 text-sm text-slate-400 dark:text-slate-600 font-medium tracking-widest uppercase"
       >
-        Stadiumport • World Cup 2026
+        stadiumport • World Cup 2026
       </motion.p>
     </div>
   );

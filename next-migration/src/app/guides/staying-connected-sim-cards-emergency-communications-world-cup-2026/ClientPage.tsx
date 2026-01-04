@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, useScroll, useSpring, AnimatePresence, useInView } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   Smartphone, Wifi, Radio, AlertTriangle, CheckCircle2, Info, MapPin, 
   Globe, ShieldCheck, Battery, Phone, Lock, Signal, XCircle, 
@@ -267,17 +268,22 @@ export default function ClientPage() {
 
       {/* 1. Hero Section */}
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
+        <motion.div 
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0 z-0"
+        >
           <Image 
-            src="/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp" 
-            alt="World Cup 2026 Connectivity & Safety" 
+            src="/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp" 
+            alt="World Cup 2026 Connectivity Guide" 
             fill 
             className="object-cover object-center"
             priority 
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
-        </div>
+        </motion.div>
         
         <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
           <div className="max-w-4xl">
@@ -286,18 +292,14 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
-              <motion.div 
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-300 mb-6 tracking-wide uppercase"
-              >
-                <Link href="/" className="hover:text-emerald-400 transition-colors">Home</Link>
-                <span className="text-slate-500">/</span>
-                <Link href="/world-cup-2026-safety-guide" className="hover:text-emerald-400 transition-colors">Safety Guide</Link>
-                <span className="text-slate-500">/</span>
-                <span className="text-emerald-400">Connectivity</span>
-              </motion.div>
+              <Breadcrumb 
+                items={[
+                  { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+                  { label: 'Connectivity', href: '/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026' }
+                ]} 
+                variant="light"
+                className="mb-8"
+              />
 
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

@@ -95,7 +95,7 @@ export const HostCitiesSection = () => {
               href="/world-cup-2026-host-cities-guide"
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 dark:border-white/10 hover:bg-white dark:hover:bg-white/5 transition-colors"
             >
-              <span className="text-sm font-medium text-[#0A0A0A] dark:text-white">View all cities</span>
+              <span className="text-sm font-medium text-[#0A0A0A] dark:text-white">Explore All 16 Venues</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>

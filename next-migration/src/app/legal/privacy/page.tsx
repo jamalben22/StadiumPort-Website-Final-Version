@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy – Stadiumport',
-  description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+  title: 'Privacy Policy – stadiumport',
+  description: 'Read stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
   alternates: {
     canonical: 'https://stadiumport.com/legal/privacy',
   },
   openGraph: {
-    title: 'Privacy Policy – Stadiumport',
-    description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+    title: 'Privacy Policy – stadiumport',
+    description: 'Read stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
     url: 'https://stadiumport.com/legal/privacy',
     siteName: 'Stadiumport',
     locale: 'en_US',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Privacy Policy – Stadiumport',
-    description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+    title: 'Privacy Policy – stadiumport',
+    description: 'Read stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
   },
 };
 
@@ -28,7 +28,7 @@ export default function PrivacyPage() {
  "@type": "WebPage",
  "name": "Privacy Policy",
  "url": "https://stadiumport.com/legal/privacy",
- "description": "Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user."
+ "description": "Read stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user."
  };
 
  const breadcrumbJsonLd = {

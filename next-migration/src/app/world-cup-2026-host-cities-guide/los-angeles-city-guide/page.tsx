@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Los Angeles World Cup 2026 Guide: SoFi Stadium & Travel Tips',
     description: 'Complete Los Angeles World Cup 2026 travel guide. SoFi Stadium info, best hotels, Metro transportation tips, fan zones & match schedule. Plan your trip.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/los-angeles-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  DollarSign, 
  Link as LinkIcon, 
@@ -32,16 +33,13 @@ export default function AffiliateDisclaimerClientPage() {
  
  {/* Hero Section */}
       <div className="text-center mb-20 animate-fade-up">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-          <span className="text-emerald-700 dark:text-emerald-400">Affiliate Disclaimer</span>
-        </motion.div>
+       <Breadcrumb 
+          items={[
+            { label: 'Affiliate Disclaimer', href: '/legal/affiliate-disclaimer' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
  <span className="relative flex h-2 w-2">
@@ -57,8 +55,7 @@ export default function AffiliateDisclaimerClientPage() {
  Affiliate <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Disclaimer</span>
  </h1>
  
- <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
- Stadiumport is a free resource funded by affiliate commissions. We believe in being 100% honest about how we make money.
+ <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">Stadiumport is a free resource funded by affiliate commissions. We believe in being 100% honest about how we make money.
  </p>
  </div>
 

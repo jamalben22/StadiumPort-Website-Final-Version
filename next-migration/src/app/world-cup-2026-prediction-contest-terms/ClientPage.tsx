@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  Trophy, 
  Gavel, 
@@ -57,16 +58,14 @@ export default function ClientPage() {
  <div className="max-w-5xl mx-auto">
         
         {/* Breadcrumb */}
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-          <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-          <span className="text-emerald-700 dark:text-emerald-400">Terms & Conditions</span>
-        </motion.div>
+        <Breadcrumb 
+          items={[
+            { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
+            { label: 'Terms', href: '#' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
 
         {/* Hero Section */}
  <div className="text-center mb-20 animate-fade-up">
@@ -161,7 +160,7 @@ export default function ClientPage() {
  </li>
  <li className="flex items-start gap-3">
  <AlertTriangle className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
- <span>Employees of Stadiumport and their immediate families are ineligible.</span>
+ <span>Employees of stadiumport and their immediate families are ineligible.</span>
  </li>
  </ul>
  </div>
@@ -289,7 +288,7 @@ export default function ClientPage() {
  Limitation of Liability
  </h2>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
- Stadiumport is not responsible for technical failures, shipping issues, or force majeure events. By entering, participants release Stadiumport from liability related to prize acceptance. Disputes resolved via binding arbitration under US law.
+ stadiumport is not responsible for technical failures, shipping issues, or force majeure events. By entering, participants release stadiumport from liability related to prize acceptance. Disputes resolved via binding arbitration under US law.
  </p>
  </section>
 

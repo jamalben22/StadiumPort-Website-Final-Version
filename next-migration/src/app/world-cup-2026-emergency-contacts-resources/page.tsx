@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Emergency Contacts & Resources Guide | Stadiumport',
+  title: 'World Cup 2026 Emergency Contacts & Resources Guide | stadiumport',
   description: 'Essential World Cup 2026 emergency contacts for USA, Canada & Mexico. Access police, medical, embassy info & safety resources. Stay safe!',
   keywords: [
     'World Cup 2026 emergency contacts',
@@ -18,10 +18,10 @@ export const metadata: Metadata = {
     canonical: 'https://stadiumport.com/world-cup-2026-emergency-contacts-resources',
   },
   openGraph: {
-    title: 'World Cup 2026 Emergency Contacts & Resources Guide | Stadiumport',
+    title: 'World Cup 2026 Emergency Contacts & Resources Guide | stadiumport',
     description: 'Essential World Cup 2026 emergency contacts for USA, Canada & Mexico. Access police, medical, embassy info & safety resources. Stay safe!',
     url: 'https://stadiumport.com/world-cup-2026-emergency-contacts-resources',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Emergency Contacts & Resources Guide | Stadiumport',
+    title: 'World Cup 2026 Emergency Contacts & Resources Guide | stadiumport',
     description: 'Essential World Cup 2026 emergency contacts for USA, Canada & Mexico. Access police, medical, embassy info & safety resources.',
     images: ['/images/safety-guide/A_realistic_high-detail_photo_of_essential_emergency_resources_for_World_Cup_2026.webp'],
   }
@@ -76,11 +76,11 @@ export default function Page() {
     "description": "Comprehensive guide to emergency numbers, medical resources, and safety tips for World Cup 2026 in USA, Canada, and Mexico.",
     "author": {
       "@type": "Organization",
-      "name": "Stadiumport"
+      "name": "stadiumport"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Stadiumport",
+      "name": "stadiumport",
       "logo": {
         "@type": "ImageObject",
         "url": "https://stadiumport.com/logo.png"

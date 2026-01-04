@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Flight Guide: Booking Tips & Best Routes',
     description: 'Ultimate World Cup 2026 flight booking guide. Find the best routes, cheapest times to book & airline tips for traveling to USA, Canada & Mexico.',
     url: 'https://stadiumport.com/world-cup-2026-flight-booking-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

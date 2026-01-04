@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Group H Travel Guide: Miami, Houston & Atlanta',
     description: 'The definitive guide for following Group H in World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies, stadium cooling tips, and budget strategy.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-h',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

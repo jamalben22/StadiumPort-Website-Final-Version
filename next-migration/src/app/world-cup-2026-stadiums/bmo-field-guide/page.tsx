@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description: 'Complete guide to BMO Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Toronto.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/bmo-field-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/toronto-world-cup-2026-1600.webp',

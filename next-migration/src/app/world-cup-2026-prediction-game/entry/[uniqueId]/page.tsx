@@ -10,6 +10,7 @@ import { supabase } from '../../../../lib/supabase';
 import { GameLayout } from '../../../../features/game/components/GameLayout';
 import { Home, Share2 } from 'lucide-react';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
@@ -105,39 +106,34 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
   ]);
 
   return (
-    <GameLayout allowScroll={true}>
+    <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
-      <GameHeader />
       
       {/* Breadcrumbs */}
-      <div className="w-full max-w-5xl mx-auto px-4 pt-24 pb-0">
-        <motion.div 
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center gap-2 text-sm font-medium text-slate-900/60 mb-4 tracking-wide uppercase"
-        >
-          <Link href="/" className="hover:text-slate-900 transition-colors">Home</Link>
-          <span className="text-slate-900/40">/</span>
-          <Link href="/world-cup-2026-prediction-game" className="hover:text-slate-900 transition-colors">Prediction Game</Link>
-          <span className="text-slate-900/40">/</span>
-          <span className="text-slate-900">Entry</span>
-        </motion.div>
+      <div className="w-full max-w-5xl mx-auto px-4 pt-4 pb-0">
+        <Breadcrumb 
+          items={[
+            { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
+            { label: 'Entry', href: '#' }
+          ]} 
+          variant="light"
+          className="mb-8"
+        />
       </div>
 
       <ResultDashboard 
         champion={champion}
-      runnerUp={runnerUp}
-      userName={prediction.name || 'Participant'}
-      userEmail={prediction.email || ''}
-      userCountry={prediction.country || ''}
-      uniqueId={prediction.unique_id || code}
-      disableSEO={true}
-    />
-    </GameLayout>
+        runnerUp={runnerUp}
+        userName={prediction.name || 'Participant'}
+        userEmail={prediction.email || ''}
+        userCountry={prediction.country || ''}
+        uniqueId={prediction.unique_id || code}
+        disableSEO={true}
+      />
+    </>
   );
 }
 
@@ -226,7 +222,7 @@ function PredictResultsContent() {
       </main>
       <div className="relative z-20 px-6 pb-6 text-center">
         <span className="text-[10px] text-white/30 font-inter tracking-[0.3em]">
-          © 2026 Stadiumport • <a href="/legal/privacy" className="underline hover:no-underline">Privacy</a>
+          © 2026 stadiumport • <a href="/legal/privacy" className="underline hover:no-underline">Privacy</a>
         </span>
       </div>
     </div>

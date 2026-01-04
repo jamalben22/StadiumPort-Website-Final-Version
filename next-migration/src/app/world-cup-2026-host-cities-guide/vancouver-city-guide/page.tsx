@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: 'Vancouver World Cup 2026 Travel Guide: Hotels, Transport, Tickets',
     description: 'Everything you need for World Cup 2026 in Vancouver: stadium overview, walkable hotel areas, SkyTrain routes, matchday plan, and local secrets.',
     url: 'https://stadiumport.com/world-cup-2026-host-cities-guide/vancouver-city-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

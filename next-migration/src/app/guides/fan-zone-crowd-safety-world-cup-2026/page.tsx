@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     title: 'Fan Zone & Crowd Safety: World Cup 2026 Guide',
     description: 'Expert guide to World Cup 2026 fan zone safety. Navigate crowds, enjoy the atmosphere, and stay safe at official viewing parties in USA, Canada & Mexico.',
     url: 'https://stadiumport.com/guides/fan-zone-crowd-safety-world-cup-2026',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

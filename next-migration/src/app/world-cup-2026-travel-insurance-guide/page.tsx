@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: 'World Cup 2026 Travel Insurance: Medical & Trip Protection',
     description: 'Why you need travel insurance for World Cup 2026. Medical coverage for USA healthcare costs, trip cancellation protection & policy comparisons.',
     url: 'https://stadiumport.com/world-cup-2026-travel-insurance-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
     images: [

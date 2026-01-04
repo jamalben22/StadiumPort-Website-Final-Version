@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MapPin, ArrowRight, Shield, AlertCircle, TrendingUp, Check, Plane, Hotel, Building2, Trophy, Twitter, Facebook, Linkedin, Copy, CheckCircle2, Calendar, Clock, DollarSign, FileText, Globe, HelpCircle, Info, ChevronDown, ChevronUp, Timer } from 'lucide-react';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { MapPin, ArrowRight, Shield, AlertCircle, TrendingUp, Check, Plane, Train, Hotel, Building2, Trophy, Twitter, Facebook, Linkedin, Copy, CheckCircle2, Calendar, Clock, DollarSign, FileText, Globe, HelpCircle, Info, ChevronDown, ChevronUp, Timer } from 'lucide-react';
 import { GROUPS_DATA, CITY_LINKS, STADIUM_LINKS } from '@/data/draw-hub';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 
@@ -250,16 +251,13 @@ export default function DrawHubClientPage() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#01b47d]/5 via-transparent to-[#F5F5F7] dark:to-[#0A0A0A] pointer-events-none" />
 
         <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-          >
-            <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-            <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-            <span className="text-emerald-700 dark:text-emerald-400">Draw Travel Hub</span>
-          </motion.div>
+          <Breadcrumb 
+            items={[
+              { label: 'Draw Travel Hub', href: '/world-cup-2026-draw-travel-hub' }
+            ]} 
+            variant="light"
+            className="mb-8"
+          />
 
  
  <motion.h1 
@@ -315,7 +313,7 @@ export default function DrawHubClientPage() {
  <div className="relative w-full aspect-video max-h-[600px] bg-transparent">
  <OptimizedImage
   src="/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
-  alt="FIFA World Cup 26 Qualified Teams Wallchart – Stadiumport"
+  alt="FIFA World Cup 26 Qualified Teams Wallchart – stadiumport"
   fill
   containerClassName="bg-transparent"
   imgClassName="object-contain w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
@@ -331,7 +329,7 @@ export default function DrawHubClientPage() {
  This page transforms the draw results into <strong className="text-[#01b47d]">actionable travel intelligence</strong>—showing you exactly where to fly, where to stay, how to move between host cities, and how to avoid the expensive, chaotic mistakes most fans make.
  </p>
  <p className="mt-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
- Stadiumport doesn't just track the matches. We track the logistics that get you to the matches. Use this hub as your master dashboard to explore every group's city cluster, recommended base camps, flight paths, and ideal travel routes.
+ stadiumport doesn't just track the matches. We track the logistics that get you to the matches. Use this hub as your master dashboard to explore every group's city cluster, recommended base camps, flight paths, and ideal travel routes.
  </p>
  </div>
 
@@ -686,7 +684,7 @@ export default function DrawHubClientPage() {
         </div>
       </section>
 
-      {/* Why Smart Fans Use Stadiumport */}
+      {/* Why Smart Fans Use stadiumport */}
     <section className="mb-32 relative overflow-hidden text-slate-900 dark:text-white p-12 md:p-24 text-center">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
         <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#01b47d] opacity-10 dark:opacity-20 blur-[120px] rounded-full" />
@@ -694,7 +692,7 @@ export default function DrawHubClientPage() {
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-900 dark:text-white">Why Smart Fans Use Stadiumport</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-900 dark:text-white">Why Smart Fans Use stadiumport</h2>
         <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-16 font-light leading-relaxed">
           Most fans book a round-trip flight to one city and get stuck paying $500+ for last-minute connection flights.
         </p>

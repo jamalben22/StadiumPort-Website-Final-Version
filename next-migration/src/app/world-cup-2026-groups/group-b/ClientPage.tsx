@@ -136,7 +136,7 @@ export default function GroupBClientPage() {
  </div>
  <div className="flex items-center gap-2">
  <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] text-slate-900 dark:text-white font-bold">S</div>
- By Stadiumport Strategy Team
+ By stadiumport Strategy Team
  </div>
  </div>
  </div>

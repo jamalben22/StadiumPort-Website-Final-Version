@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description: 'Host of the World Cup 2026 Final. Complete MetLife Stadium guide: seating charts, capacity, parking & local transport tips for New York/New Jersey.',
     type: 'article',
     url: 'https://stadiumport.com/world-cup-2026-stadiums/metlife-stadium-guide',
-    siteName: 'Stadiumport',
+    siteName: 'stadiumport',
     images: [
       {
         url: '/images/cities/new-york-new-jersey-world-cup-2026-1600.webp',

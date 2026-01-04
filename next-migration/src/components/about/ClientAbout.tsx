@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   Globe2, 
   Map, 
@@ -47,16 +48,13 @@ export default function ClientAbout() {
           
           {/* Hero Section */}
           <div className="text-center mb-24 animate-fade-up">
-            <motion.div 
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex items-center justify-center gap-2 text-sm font-medium text-slate-500 dark:text-slate-400 mb-8 tracking-wide uppercase"
-            >
-              <Link href="/" className="hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Home</Link>
-              <span className="text-slate-600 dark:text-slate-300 dark:text-slate-600">/</span>
-              <span className="text-emerald-700 dark:text-emerald-400">About</span>
-            </motion.div>
+            <Breadcrumb 
+              items={[
+                { label: 'About', href: '#' }
+              ]} 
+              variant="light"
+              className="mb-8"
+            />
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">
               <span className="relative flex h-2 w-2">
@@ -69,7 +67,7 @@ export default function ClientAbout() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span>
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -132,7 +130,7 @@ export default function ClientAbout() {
             <div className="bg-slate-900 dark:bg-white/5 rounded-3xl p-10 md:p-12 text-slate-900 dark:text-white relative overflow-hidden flex flex-col justify-center min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20"></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6">Why Trust Stadiumport?</h3>
+                <h3 className="text-3xl font-bold mb-6">Why Trust stadiumport?</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />
