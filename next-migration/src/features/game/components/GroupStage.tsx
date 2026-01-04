@@ -329,17 +329,31 @@ export const GroupStage = () => {
         "name": "World Cup 2026 Group Stage Prediction",
         "description": "Predict the group stage standings for the 2026 FIFA World Cup. Rank 48 teams in 12 groups.",
         "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+        "image": "https://stadiumport.com/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp",
         "organizer": {
           "@type": "Organization",
           "name": "Stadiumport",
           "url": "https://stadiumport.com"
         },
+        "performer": {
+          "@type": "Organization",
+          "name": "Stadiumport Prediction Contestants"
+        },
         "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
         "startDate": "2026-06-11",
         "endDate": "2026-06-27",
         "location": {
-          "@type": "Place",
-          "name": "North America (USA, Mexico, Canada)"
+          "@type": "VirtualLocation",
+          "url": "https://stadiumport.com/world-cup-2026-prediction-game"
+        },
+        "offers": {
+          "@type": "Offer",
+          "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+          "price": "0",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "validFrom": "2024-06-11T09:00:00Z"
         }
       }} />
 

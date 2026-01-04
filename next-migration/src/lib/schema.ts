@@ -225,7 +225,21 @@ export const generateSportsEventSchema = () => ({
     "name": "FIFA",
     "url": "https://www.fifa.com"
   },
+  "performer": {
+    "@type": "Organization",
+    "name": "FIFA World Cup 2026 Qualified Teams"
+  },
   "image": [
-    getSiteUrl("/images/world-cup-2026-banner.jpg") // Needs actual image
-  ]
+    "https://stadiumport.com/images/hero/world-cup-2026-hero.webp"
+  ],
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://www.fifa.com/tickets",
+    "availability": "https://schema.org/PreOrder",
+    "price": "60",
+    "priceCurrency": "USD",
+    "lowPrice": "60",
+    "highPrice": "2030",
+    "validFrom": "2025-10-01"
+  }
 });

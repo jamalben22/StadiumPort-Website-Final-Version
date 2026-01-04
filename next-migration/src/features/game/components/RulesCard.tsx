@@ -65,28 +65,32 @@ export const RulesCard = React.memo(({ variant, className = '', theme = 'dark' }
     "@type": "SportsEvent",
     "name": "World Cup 2026 Prediction Game",
     "description": "Free to play World Cup 2026 prediction bracket game. Predict group winners and knockout stage matches to win official merchandise and cash prizes.",
+    "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+    "image": "https://stadiumport.com/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp",
     "startDate": "2026-06-11",
     "endDate": "2026-07-19",
     "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
     "location": {
-      "@type": "Place",
-      "name": "Online (Stadiumport)",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "USA"
-      }
+      "@type": "VirtualLocation",
+      "url": "https://stadiumport.com/world-cup-2026-prediction-game"
     },
     "organizer": {
       "@type": "Organization",
       "name": "Stadiumport",
       "url": "https://stadiumport.com"
     },
+    "performer": {
+      "@type": "Organization",
+      "name": "Stadiumport Prediction Contestants"
+    },
     "offers": {
       "@type": "Offer",
+      "url": "https://stadiumport.com/world-cup-2026-prediction-game",
       "price": "0",
       "priceCurrency": "USD",
-      "url": "https://stadiumport.com/game",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "validFrom": "2024-06-11T09:00:00Z"
     }
   };
   
