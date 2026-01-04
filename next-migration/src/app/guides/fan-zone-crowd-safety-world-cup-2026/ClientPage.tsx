@@ -246,7 +246,7 @@ export default function FanZoneSafetyClientPage() {
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp" 
+            src="/images/safety-guide/Fan Zone & Crowd Safety Enjoying the Atmosphere.webp" 
             alt="World Cup 2026 Fan Zone Crowd Safety" 
             fill 
             className="object-cover object-center"
