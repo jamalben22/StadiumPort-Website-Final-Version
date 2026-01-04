@@ -323,7 +323,7 @@ export default function DrawHubPage() {
         "dateModified": "2025-12-05",
         "publisher": {
           "@type": "Organization",
-          "name": "Stadiumport",
+          "name": "stadiumport",
           "logo": {
             "@type": "ImageObject",
             "url": "https://stadiumport.com/logo.png"
@@ -414,7 +414,7 @@ export default function DrawHubPage() {
   return (
     <>
       <Helmet>
-        <title>World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub | Stadiumport</title>
+        <title>World Cup 2026 Draw: Groups, Schedule & Travel Planning Hub | stadiumport</title>
         <meta name="description" content="Complete guide to FIFA World Cup 2026 Draw results. Detailed travel itineraries for all 12 groups (A-L), host city logistics, flight tips, and accommodation strategies for fans." />
         <meta name="keywords" content="World Cup 2026 draw results, FIFA World Cup 2026 groups, World Cup 2026 travel guide, WC26 group stage logistics, Group A to Group L travel, host city flights, World Cup hotel booking, World Cup 2026 tickets price, World Cup 2026 cities map, best base camp world cup 2026, USA Canada Mexico World Cup schedule" />
         
@@ -424,7 +424,7 @@ export default function DrawHubPage() {
         <meta property="og:url" content="https://stadiumport.com/2026-world-cup-draw-travel-hub" />
         <meta property="og:type" content="article" />
         <meta property="og:image" content="https://stadiumport.com/images/draw-hub-og.jpg" />
-        <meta property="og:site_name" content="Stadiumport" />
+        <meta property="og:site_name" content="stadiumport" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -500,7 +500,7 @@ export default function DrawHubPage() {
               <div className="relative w-full aspect-video max-h-[600px] bg-slate-100 dark:bg-slate-900">
                 <img
                   src="/images/Hub Pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
-                  alt="FIFA World Cup 26 Qualified Teams Wallchart – Stadiumport"
+                  alt="FIFA World Cup 26 Qualified Teams Wallchart – stadiumport"
                   className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
                 />
               </div>
@@ -514,7 +514,7 @@ export default function DrawHubPage() {
               This page transforms the draw results into <strong className="text-[#01b47d]">actionable travel intelligence</strong>—showing you exactly where to fly, where to stay, how to move between host cities, and how to avoid the expensive, chaotic mistakes most fans make.
             </p>
             <p className="mt-8 text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-              Stadiumport doesn't just track the matches. We track the logistics that get you to the matches. Use this hub as your master dashboard to explore every group's city cluster, recommended base camps, flight paths, and ideal travel routes.
+              stadiumport doesn't just track the matches. We track the logistics that get you to the matches. Use this hub as your master dashboard to explore every group's city cluster, recommended base camps, flight paths, and ideal travel routes.
             </p>
           </div>
 
@@ -718,7 +718,7 @@ export default function DrawHubPage() {
             </div>
           </section>
 
-          {/* Why Smart Fans Use Stadiumport */}
+          {/* Why Smart Fans Use stadiumport */}
           <section className="mb-32 relative overflow-hidden rounded-[3rem] bg-[#F5F5F7] dark:bg-[#0A0A0A] text-slate-900 dark:text-white p-12 md:p-24 text-center border border-slate-200 dark:border-white/10">
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
                 <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-[#01b47d] opacity-20 blur-[120px] rounded-full" />
@@ -726,7 +726,7 @@ export default function DrawHubPage() {
             </div>
 
             <div className="relative z-10 max-w-4xl mx-auto">
-                <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-900 dark:text-white">Why Smart Fans Use Stadiumport</h2>
+                <h2 className="text-3xl md:text-5xl font-bold mb-12 text-slate-900 dark:text-white">Why Smart Fans Use stadiumport</h2>
                 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-400 mb-16 font-light leading-relaxed">
                   Most fans book a round-trip flight to one city and get stuck paying $500+ for last-minute connection flights.
                 </p>
@@ -810,7 +810,7 @@ export default function DrawHubPage() {
 
           <div className="mb-16 text-center text-sm text-slate-500 dark:text-slate-400 space-y-2">
             <p><strong>Last Updated:</strong> December 5, 2025</p>
-            <p className="italic">Stadiumport is an independent travel guide and is not affiliated with FIFA.</p>
+            <p className="italic">stadiumport is an independent travel guide and is not affiliated with FIFA.</p>
           </div>
 
         </main>

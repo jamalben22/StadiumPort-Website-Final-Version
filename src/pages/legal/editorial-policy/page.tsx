@@ -10,8 +10,8 @@ export default function EditorialPolicyPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Editorial Policy – Stadiumport',
-      description: 'Our commitment to accuracy, transparency, and trust. Learn about Stadiumport\'s editorial standards for World Cup 2026 travel guides.',
+      title: 'Editorial Policy – stadiumport',
+      description: 'Our commitment to accuracy, transparency, and trust. Learn about stadiumport\'s editorial standards for World Cup 2026 travel guides.',
       url: `${siteUrl}/editorial-policy`
     });
   }, []);
@@ -81,8 +81,7 @@ export default function EditorialPolicyPage() {
               Editorial <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Policy</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              Stadiumport is built on accuracy, transparency, and trust. Our mission is to provide the most reliable information for fans traveling to World Cup 2026.
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">Stadiumport is built on accuracy, transparency, and trust. Our mission is to provide the most reliable information for fans traveling to World Cup 2026.
             </p>
           </div>
 
@@ -140,7 +139,7 @@ export default function EditorialPolicyPage() {
                   We exist to remove confusion and prevent planning mistakes. Your trust is our priority.
                 </p>
                 <div className="font-semibold text-sm">
-                  Travel confidently with Stadiumport.
+                  Travel confidently with stadiumport.
                 </div>
               </div>
             </div>

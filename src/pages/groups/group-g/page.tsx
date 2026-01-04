@@ -73,7 +73,7 @@ export default function GroupGPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-navy-900 font-sans text-slate-900 dark:text-white selection:bg-emerald-500/30">
       <Helmet>
-        <title>Group G World Cup 2026 Travel Guide: Vancouver, Seattle & Los Angeles | Stadiumport</title>
+        <title>Group G World Cup 2026 Travel Guide: Vancouver, Seattle & Los Angeles | stadiumport</title>
         <meta name="description" content="The definitive travel guide for World Cup 2026 Group G. Master the 'Cascadia Corridor' (Vancouver-Seattle) and the jump to Los Angeles. Amtrak tips, border crossings, and budget strategies." />
         <meta name="keywords" content="Group G World Cup 2026, Vancouver World Cup travel, Seattle World Cup guide, Los Angeles World Cup, Amtrak Cascades World Cup, West Coast World Cup itinerary" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -86,10 +86,10 @@ export default function GroupGPage() {
             "@type": "Article",
             "headline": "Group G World Cup 2026 Travel Guide: The Pacific Coast Route",
             "description": "Complete logistics guide for World Cup Group G fans traveling between Vancouver, Seattle, and Los Angeles. Focuses on the Amtrak Cascades route and LA flight strategy.",
-            "author": { "@type": "Organization", "name": "Stadiumport" },
+            "author": { "@type": "Organization", "name": "stadiumport" },
             "publisher": { 
               "@type": "Organization", 
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/Logos/stadiumport-logo.png` }
             },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}${pageUrl}` }
@@ -191,7 +191,7 @@ export default function GroupGPage() {
                 <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4 text-emerald-500" />
-                  <span>By Stadiumport Strategy Team</span>
+                  <span>By stadiumport Strategy Team</span>
                 </div>
               </div>
             </div>

@@ -23,15 +23,15 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
       <div className="flex items-center gap-3 pointer-events-auto">
         {/* Logo / Brand */}
         <img 
-          src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg" 
-          alt="Stadiumport" 
+          src="/images/Logos/stadiumport-header-logo-dark.svg" 
+          alt="stadiumport" 
           className="h-8 w-auto object-contain" 
         />
       </div>
 
       <button 
         onClick={handleExit}
-        title="Return to Stadiumport World Cup 2026 Hub"
+        title="Return to stadiumport World Cup 2026 Hub"
         className="pointer-events-auto group flex items-center justify-center w-10 h-10 rounded-full bg-[#1c1c1e]/60 backdrop-blur-md border border-white/10 hover:bg-white/20 transition-all duration-300"
       >
         <svg 

@@ -84,7 +84,7 @@ export default function GroupDPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-amber-500/30">
       <Helmet>
-        <title>World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles | Stadiumport</title>
+        <title>World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles | stadiumport</title>
         <meta name="description" content="The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics." />
         <meta name="keywords" content="World Cup 2026 Group D Travel Guide, Seattle World Cup, San Francisco World Cup, Los Angeles World Cup, West Coast World Cup itinerary, SoFi Stadium guide, Levi's Stadium guide, Lumen Field guide" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -99,11 +99,11 @@ export default function GroupDPage() {
             "description": "The definitive guide for following Group D in World Cup 2026. Complete travel strategy for Seattle, San Francisco Bay Area, and Los Angeles.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`
@@ -202,7 +202,7 @@ export default function GroupDPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
-                  By Stadiumport Strategy Team
+                  By stadiumport Strategy Team
                 </div>
               </div>
             </div>

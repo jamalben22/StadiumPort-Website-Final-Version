@@ -144,7 +144,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
         if (navigator.share) {
             await navigator.share({
                 title: 'My WC26 Prediction',
-                text: `I predict ${champion.name} will win the World Cup 2026! 🏆 #Stadiumport #WC26`,
+                text: `I predict ${champion.name} will win the World Cup 2026! 🏆 #stadiumport #WC26`,
                 files: [file]
             });
         } else {
@@ -160,7 +160,7 @@ export const ResultDashboard: React.FC<ResultDashboardProps> = React.memo(({ cha
     }
   };
 
-  const shareText = `I predict ${champion.name} will win the World Cup 2026! 🏆 #Stadiumport #WC26`;
+  const shareText = `I predict ${champion.name} will win the World Cup 2026! 🏆 #stadiumport #WC26`;
   const pageUrl = typeof window !== 'undefined' ? window.location.href : 'https://stadiumport.com';
   const handleShareTwitter = () => {
     const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(pageUrl)}`;

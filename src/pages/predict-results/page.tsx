@@ -183,7 +183,7 @@ export const PredictResultsPage = () => {
           className="group inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/8 border border-white/15 hover:bg-white/12 transition-all ring-1 ring-white/5 backdrop-blur-xl shadow-[0_8px_30px_rgba(255,255,255,0.06)] active:scale-[0.98]"
           title="Return to Home"
         >
-          <img src="/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg" alt="Stadiumport" className="h-5 w-auto opacity-90 group-hover:opacity-100" />
+          <img src="/images/Logos/stadiumport-header-logo-dark.svg" alt="stadiumport" className="h-5 w-auto opacity-90 group-hover:opacity-100" />
           <span className="text-[11px] font-inter font-medium uppercase tracking-[0.12em] text-white/85 group-hover:text-white">Home</span>
         </button>
 
@@ -254,7 +254,7 @@ export const PredictResultsPage = () => {
       </main>
       <div className="relative z-20 px-6 pb-6 text-center">
         <span className="text-[10px] text-white/30 font-['Rajdhani'] tracking-[0.3em]">
-          © 2026 Stadiumport • <a href="/privacy" className="underline hover:no-underline">Privacy</a>
+          © 2026 stadiumport • <a href="/privacy" className="underline hover:no-underline">Privacy</a>
         </span>
       </div>
       </div>

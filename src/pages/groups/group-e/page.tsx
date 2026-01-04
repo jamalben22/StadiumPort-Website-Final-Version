@@ -83,7 +83,7 @@ export default function GroupEPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-teal-500/30">
       <Helmet>
-        <title>World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC | Stadiumport</title>
+        <title>World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC | stadiumport</title>
         <meta name="description" content="The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics." />
         <meta name="keywords" content="World Cup 2026 Group E Travel Guide, Philadelphia World Cup, Houston World Cup, Kansas City World Cup, Toronto World Cup, Lincoln Financial Field guide, NRG Stadium guide, Arrowhead Stadium guide" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -98,11 +98,11 @@ export default function GroupEPage() {
             "description": "The definitive guide for following Group E in World Cup 2026. Complete travel strategy for Philadelphia, Houston, Kansas City, Toronto, and NY/NJ.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`
@@ -209,7 +209,7 @@ export default function GroupEPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
-                  By Stadiumport Strategy Team
+                  By stadiumport Strategy Team
                 </div>
               </div>
             </div>

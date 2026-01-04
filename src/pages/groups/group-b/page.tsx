@@ -88,7 +88,7 @@ export default function GroupBPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
       <Helmet>
-        <title>World Cup 2026 Group B Travel Guide: Toronto, Vancouver, Seattle & SF | Stadiumport</title>
+        <title>World Cup 2026 Group B Travel Guide: Toronto, Vancouver, Seattle & SF | stadiumport</title>
         <meta name="description" content="The definitive guide for following Group B in World Cup 2026. Complete travel strategy for Toronto, Vancouver, Seattle, and San Francisco. Flights, hotels, and budget." />
         <meta name="keywords" content="World Cup 2026 Group B Travel Guide, Group B matches, Toronto Vancouver Seattle San Francisco World Cup, following your team World Cup 2026, multi-city World Cup travel" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -103,11 +103,11 @@ export default function GroupBPage() {
             "description": "The definitive guide for following Group B in World Cup 2026. Complete travel strategy for Toronto, Vancouver, Seattle, and San Francisco.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`
@@ -206,7 +206,7 @@ export default function GroupBPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
-                  By Stadiumport Strategy Team
+                  By stadiumport Strategy Team
                 </div>
               </div>
             </div>

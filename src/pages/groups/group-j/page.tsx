@@ -19,7 +19,7 @@ export default function GroupJPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       <Helmet>
-        <title>Group J World Cup 2026 Travel Guide: Kansas City, Dallas & San Francisco | Stadiumport</title>
+        <title>Group J World Cup 2026 Travel Guide: Kansas City, Dallas & San Francisco | stadiumport</title>
         <meta name="description" content="The definitive travel guide for Group J (The American Frontier). Master the logistics of Kansas City, Dallas, and San Francisco. Stadium guides, heat survival, and rental car strategies." />
         <meta name="keywords" content="World Cup 2026 Group J, Kansas City World Cup travel, Dallas World Cup guide, San Francisco World Cup, Arrowhead Stadium, AT&T Stadium, Levi's Stadium" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -58,11 +58,11 @@ export default function GroupJPage() {
             "description": "The definitive travel guide for Group J. Experience the loudest stadium in the world in Kansas City, the grandeur of Dallas, and the innovation of San Francisco.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`

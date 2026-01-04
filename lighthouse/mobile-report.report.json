@@ -969,7 +969,7 @@
             "entity": "stadiumport.com"
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Desktop%20Header%20SP%20Logo%202400%20x%20600%20px.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-header-logo-light.svg",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 718.4079999923706,
@@ -986,7 +986,7 @@
             "entity": "stadiumport.com"
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Desktop%20Header%20SP%20Logo%202400%20x%20600%20px%20Night%20mode.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-header-logo-dark.svg",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 718.75,
@@ -1003,7 +1003,7 @@
             "entity": "stadiumport.com"
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Mobile%20Header%20Logo%20180%20x%20180%20px.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-mobile-logo-light.svg",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 718.9259999990463,
@@ -1020,7 +1020,7 @@
             "entity": "stadiumport.com"
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Mobile%20Header%20Logo%20180%20x%20180%20px%20night%20mode.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-mobile-logo-dark.svg",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 719.0629999935627,
@@ -1071,7 +1071,7 @@
             "entity": "stadiumport.com"
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Footer%20Logo%20400%20x%20100%20px.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-footer-logo-light.svg",
             "sessionTargetType": "page",
             "protocol": "h2",
             "rendererStartTime": 719.5530000030994,
@@ -3039,7 +3039,7 @@
         ],
         "items": [
           {
-            "url": "https://stadiumport.com/images/Logos/Footer%20Logo%20400%20x%20100%20px.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-footer-logo-light.svg",
             "node": {
               "type": "node",
               "lhId": "1-128-IMG",
@@ -3053,12 +3053,12 @@
                 "width": 128,
                 "height": 32
               },
-              "snippet": "<img src=\"/images/Logos/Footer Logo 400 x 100 px.svg\" alt=\"StadiumPort Logo\" class=\"h-8 w-auto object-contain\">",
-              "nodeLabel": "StadiumPort Logo"
+              "snippet": "<img src=\"/images/Logos/stadiumport-footer-logo-light.svg\" alt=\"stadiumport Logo\" class=\"h-8 w-auto object-contain\">",
+              "nodeLabel": "stadiumport Logo"
             }
           },
           {
-            "url": "https://stadiumport.com/images/Logos/Mobile%20Header%20Logo%20180%20x%20180%20px.svg",
+            "url": "https://stadiumport.com/images/Logos/stadiumport-mobile-logo-light.svg",
             "node": {
               "type": "node",
               "lhId": "1-122-IMG",
@@ -3072,8 +3072,8 @@
                 "width": 32,
                 "height": 32
               },
-              "snippet": "<img src=\"/images/Logos/Mobile Header Logo 180 x 180 px.svg\" alt=\"StadiumPort Logo\" class=\"h-8 w-auto object-contain transition-all duration-500 ease-out opacity-0\">",
-              "nodeLabel": "StadiumPort Logo"
+              "snippet": "<img src=\"/images/Logos/stadiumport-mobile-logo-light.svg\" alt=\"stadiumport Logo\" class=\"h-8 w-auto object-contain transition-all duration-500 ease-out opacity-0\">",
+              "nodeLabel": "stadiumport Logo"
             }
           }
         ]
@@ -7308,7 +7308,7 @@
                 "height": 20
               },
               "snippet": "<div class=\"text-sm text-slate-500\">",
-              "nodeLabel": "© 2025 StadiumPort. All rights reserved.",
+              "nodeLabel": "© 2025 stadiumport. All rights reserved.",
               "explanation": "Fix any of the following:\n  Element has insufficient color contrast of 3.07 (foreground color: #64748b, background color: #1e293b, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
             },
             "subItems": {

@@ -85,7 +85,7 @@ export default function NotFound() {
             <div className="relative max-w-md mx-auto">
               <input
                 type="text"
-                placeholder="Search Stadiumport..."
+                placeholder="Search stadiumport..."
                 className="w-full pl-10 pr-4 py-3 border border-[#01b47d]/20 dark:border-[#008f63] rounded-xl bg-white dark:bg-navy-800 text-navy-900 dark:text-white placeholder-slate-500 focus:ring-2 focus:ring-[#01b47d] focus:border-transparent"
               />
               <i className="ri-search-line absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400"></i>

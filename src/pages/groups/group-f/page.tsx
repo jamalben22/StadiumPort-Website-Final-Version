@@ -75,7 +75,7 @@ export default function GroupFPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-orange-500/30">
       <Helmet>
-        <title>Group F World Cup 2026 Travel Guide: Dallas, Houston, KC & Monterrey | Stadiumport</title>
+        <title>Group F World Cup 2026 Travel Guide: Dallas, Houston, KC & Monterrey | stadiumport</title>
         <meta name="description" content="The definitive travel guide for World Cup 2026 Group F. Navigate the 'Tex-Mex Corridor' (Dallas, Houston, Monterrey, Kansas City) safely. Heat survival, I-35 road trip strategy, and border crossing tips." />
         <meta name="keywords" content="Group F World Cup 2026, Dallas World Cup travel, Houston World Cup guide, Monterrey World Cup safety, Kansas City World Cup, I-35 road trip World Cup" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -112,10 +112,10 @@ export default function GroupFPage() {
             "@type": "Article",
             "headline": "Group F World Cup 2026 Travel Guide: The Heat Wave Corridor",
             "description": "Complete logistics guide for World Cup Group F fans traveling between Dallas, Houston, Kansas City, and Monterrey. Focuses on heat safety and cross-border travel.",
-            "author": { "@type": "Organization", "name": "Stadiumport" },
+            "author": { "@type": "Organization", "name": "stadiumport" },
             "publisher": { 
               "@type": "Organization", 
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/Logos/stadiumport-logo.png` }
             },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}${pageUrl}` }
@@ -193,7 +193,7 @@ export default function GroupFPage() {
                 <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4 text-orange-500" />
-                  <span>By Stadiumport Strategy Team</span>
+                  <span>By stadiumport Strategy Team</span>
                 </div>
               </div>
             </div>

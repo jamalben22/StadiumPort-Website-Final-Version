@@ -9,14 +9,14 @@ export interface EmailTemplateOptions {
   siteUrl: string;
 }
 
-export const getStadiumPortEmailHtml = (options: EmailTemplateOptions): string => {
+export const getstadiumportEmailHtml = (options: EmailTemplateOptions): string => {
   const {
     title,
-    previewText = 'Stadiumport Update',
+    previewText = 'stadiumport Update',
     bodyContent,
     ctaLink,
     ctaText,
-    footerText = '© 2025 Stadiumport. All rights reserved.',
+    footerText = '© 2025 stadiumport. All rights reserved.',
     siteUrl
   } = options;
 
@@ -69,7 +69,7 @@ export const getStadiumPortEmailHtml = (options: EmailTemplateOptions): string =
                         <tr>
                             <td align="center" style="padding:40px 0 30px 0;background-color:#020617;background-image:linear-gradient(135deg, #020617 0%, #0f172a 100%);border-bottom:3px solid #FBBF24;">
                                 <a href="${baseUrl}" style="text-decoration:none;">
-                                    <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:#FBBF24;letter-spacing:2px;text-transform:uppercase;">STADIUMPORT</span>
+                                    <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:#FBBF24;letter-spacing:2px;text-transform:uppercase;">stadiumport</span>
                                     <span style="display:block;margin-top:8px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:#94a3b8;letter-spacing:1px;">WORLD CUP 2026 TRAVEL HUB</span>
                                 </a>
                             </td>

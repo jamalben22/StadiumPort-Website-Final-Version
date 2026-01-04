@@ -10,8 +10,8 @@ export default function ContactPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Contact – Stadiumport',
-      description: 'Get in touch with Stadiumport for World Cup 2026 questions, corrections, partnerships, press/media, and general inquiries.',
+      title: 'Contact – stadiumport',
+      description: 'Get in touch with stadiumport for World Cup 2026 questions, corrections, partnerships, press/media, and general inquiries.',
       url: `${siteUrl}/contact`
     });
   }, []);
@@ -84,7 +84,7 @@ export default function ContactPage() {
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
               Get in touch with <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">

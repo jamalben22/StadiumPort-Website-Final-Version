@@ -19,7 +19,7 @@ export default function GroupIPage() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans transition-colors duration-200">
       <Helmet>
-        <title>Group I World Cup 2026 Travel Guide: Boston, NYC, Philly & Toronto | Stadiumport</title>
+        <title>Group I World Cup 2026 Travel Guide: Boston, NYC, Philly & Toronto | stadiumport</title>
         <meta name="description" content="The definitive travel guide for Group I (The Rail Corridor). Master the Amtrak route between Boston, NY/NJ, Philadelphia, and Toronto. Hotel hacks, stadium logistics, and cross-border travel." />
         <meta name="keywords" content="World Cup 2026 Group I, Boston World Cup travel, New York NJ World Cup guide, Philadelphia World Cup, Toronto World Cup travel, Amtrak World Cup route" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -34,11 +34,11 @@ export default function GroupIPage() {
             "description": "The definitive travel guide for Group I. Master the logistics of Boston, New York/NJ, Philadelphia, and Toronto.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`

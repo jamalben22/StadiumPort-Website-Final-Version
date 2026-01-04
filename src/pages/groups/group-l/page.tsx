@@ -14,7 +14,7 @@ export default function GroupLPage() {
   return (
     <>
       <Helmet>
-        <title>Group L World Cup 2026 Travel Guide: Toronto, NY, Boston, Philly & Dallas | Stadiumport</title>
+        <title>Group L World Cup 2026 Travel Guide: Toronto, NY, Boston, Philly & Dallas | stadiumport</title>
         <meta name="description" content="The definitive travel guide for World Cup 2026 Group L. Master the logistics of following your team across Toronto, New York, Boston, Philadelphia, and Dallas. Flight strategies, budget breakdowns, and visa tips." />
         <meta name="keywords" content="Group L World Cup 2026, Toronto World Cup travel, Dallas World Cup travel, New York World Cup guide, Boston World Cup guide, Philadelphia World Cup, multi-city World Cup itinerary" />
         <link rel="canonical" href={`${import.meta.env.VITE_SITE_URL}/2026-world-cup-group-l-travel-guide`} />
@@ -27,10 +27,10 @@ export default function GroupLPage() {
             "@type": "Article",
             "headline": "Group L World Cup 2026 Travel Guide: The Cross-Continental Challenge",
             "description": "Complete logistics guide for World Cup Group L fans traveling between Toronto, New York, Boston, Philadelphia, and Dallas.",
-            "author": { "@type": "Organization", "name": "Stadiumport" },
+            "author": { "@type": "Organization", "name": "stadiumport" },
             "publisher": { 
               "@type": "Organization", 
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": { "@type": "ImageObject", "url": "https://stadiumport.com/logo.png" }
             },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `${import.meta.env.VITE_SITE_URL}/2026-world-cup-group-l-travel-guide` }

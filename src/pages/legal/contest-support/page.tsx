@@ -23,7 +23,7 @@ export default function ContestSupportPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Contest Support – Stadiumport',
+      title: 'Contest Support – stadiumport',
       description: 'Get help with the World Cup 2026 Prediction Contest. FAQs, troubleshooting, and direct support contact.',
       url: `${siteUrl}/world-cup-2026-prediction-contest-support`
     });

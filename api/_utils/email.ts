@@ -11,7 +11,7 @@ const SMTP_PORT = parseInt(process.env.SMTP_PORT || '465');
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
 const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
-const SENDER_NAME = process.env.SENDER_NAME || 'Stadiumport';
+const SENDER_NAME = process.env.SENDER_NAME || 'stadiumport';
 
 // Site URL Detection (Vercel vs Localhost)
 export const getSiteUrl = () => {

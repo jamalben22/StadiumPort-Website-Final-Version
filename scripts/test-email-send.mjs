@@ -37,11 +37,11 @@ const config = {
 const transporter = nodemailer.createTransport(config);
 
 const mailOptions = {
-  from: `"${process.env.SENDER_NAME || 'Stadiumport'}" <${process.env.SENDER_EMAIL || 'info@stadiumport.com'}>`,
+  from: `"${process.env.SENDER_NAME || 'stadiumport'}" <${process.env.SENDER_EMAIL || 'info@stadiumport.com'}>`,
   to: process.env.SENDER_EMAIL || 'info@stadiumport.com', // Send to self to verify
-  subject: 'StadiumPort Email Integration Test',
+  subject: 'stadiumport Email Integration Test',
   text: 'This is a test email to verify the SMTP configuration and email sending capability.',
-  html: '<h2>StadiumPort Email Test</h2><p>This is a test email to verify the SMTP configuration and email sending capability.</p>',
+  html: '<h2>stadiumport Email Test</h2><p>This is a test email to verify the SMTP configuration and email sending capability.</p>',
 };
 
 console.log('Sending test email to:', mailOptions.to);

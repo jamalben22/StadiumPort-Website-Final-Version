@@ -23,8 +23,8 @@ export default function AboutPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'About Stadiumport – Your World Cup 2026 Travel Companion',
-      description: 'Learn about Stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
+      title: 'About stadiumport – Your World Cup 2026 Travel Companion',
+      description: 'Learn about stadiumport — your trusted World Cup 2026 travel companion. Discover our mission, guides, and resources to help you plan an unforgettable tournament journey.',
       url: `${siteUrl}/about`
     });
   }, []);
@@ -103,7 +103,7 @@ export default function AboutPage() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
-              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span>
+              About <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span>
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -166,7 +166,7 @@ export default function AboutPage() {
             <div className="bg-slate-900 dark:bg-white/5 rounded-3xl p-10 md:p-12 text-white relative overflow-hidden flex flex-col justify-center min-h-[400px]">
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600/20 to-purple-600/20"></div>
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6">Why Trust Stadiumport?</h3>
+                <h3 className="text-3xl font-bold mb-6">Why Trust stadiumport?</h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
                     <CheckCircle2 className="w-6 h-6 text-indigo-400 shrink-0 mt-0.5" />

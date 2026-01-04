@@ -55,14 +55,14 @@ async function testNewsletter() {
     await transporter.sendMail({
       from: `"${process.env.SENDER_NAME}" <${SENDER_EMAIL}>`,
       to: TEST_EMAIL,
-      subject: 'Welcome to the Stadiumport Community! (TEST)',
+      subject: 'Welcome to the stadiumport Community! (TEST)',
       html: `
           <h2>Welcome!</h2>
-          <p>Thanks for subscribing to the Stadiumport newsletter.</p>
+          <p>Thanks for subscribing to the stadiumport newsletter.</p>
           <p>You'll now receive exclusive stadium guides, host city travel tips, and expert planning strategies for World Cup 2026.</p>
           <br>
           <p>Best regards,</p>
-          <p>The Stadiumport Team</p>
+          <p>The stadiumport Team</p>
         `,
     });
     console.log('✅ User Welcome Email Sent');

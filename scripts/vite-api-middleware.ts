@@ -100,7 +100,7 @@ const getPremiumEmailHtml = (options: {
       <tr>
         <td align="center" style="padding:40px 0 30px 0;background-color:${bgDark};background-image:linear-gradient(135deg, ${bgDark} 0%, #0f172a 100%);border-bottom:3px solid ${brandGold};">
           <a href="${siteUrl}" style="text-decoration:none;">
-             <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:${brandGold};letter-spacing:2px;text-transform:uppercase;">STADIUMPORT</span>
+             <span style="font-family:'Arial Black', sans-serif;font-size:24px;color:${brandGold};letter-spacing:2px;text-transform:uppercase;">stadiumport</span>
              <span style="display:block;margin-top:8px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:${textMuted};letter-spacing:1px;">WORLD CUP 2026 TRAVEL HUB</span>
           </a>
         </td>
@@ -217,7 +217,7 @@ const getPremiumEmailHtml = (options: {
     <table role="presentation" style="width:100%;border:none;border-spacing:0;">
       <tr>
         <td align="center" style="padding:40px 20px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:12px;color:#64748b;line-height:1.5;">
-          <p style="margin:0 0 10px 0;">© 2026 Stadiumport. All rights reserved.</p>
+          <p style="margin:0 0 10px 0;">© 2026 stadiumport. All rights reserved.</p>
           <p style="margin:0;">
             <a href="${siteUrl}/privacy" style="color:#64748b;text-decoration:underline;">Privacy Policy</a> &bull; 
             <a href="${siteUrl}/terms" style="color:#64748b;text-decoration:underline;">Terms of Service</a>
@@ -277,7 +277,7 @@ const transporter = nodemailer.createTransport({
 
 const sendEmail = async (options: any) => {
   const SENDER_EMAIL = process.env.SENDER_EMAIL || 'info@stadiumport.com';
-  const SENDER_NAME = process.env.SENDER_NAME || 'Stadiumport';
+  const SENDER_NAME = process.env.SENDER_NAME || 'stadiumport';
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
 
   console.log(`📧 Preparing to send email to: ${options.to} | Subject: ${options.subject}`);
@@ -475,7 +475,7 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
           // Send Verification Email
           await sendEmail({
             to: email,
-            subject: 'Action Required: Verify your Stadiumport entry',
+            subject: 'Action Required: Verify your stadiumport entry',
             html: getPremiumEmailHtml({
               type: 'verification',
               title: 'Verify Your Email',
@@ -507,7 +507,7 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
           // User
           await sendEmail({
             to: email,
-            subject: 'We received your message - Stadiumport',
+            subject: 'We received your message - stadiumport',
             html: getPremiumEmailHtml({
               type: 'general',
               title: 'Message Received',
@@ -531,10 +531,10 @@ export const apiMiddleware = async (req: any, res: any, next: any) => {
           // User
           await sendEmail({
             to: email,
-            subject: 'Welcome to Stadiumport!',
+            subject: 'Welcome to stadiumport!',
             html: getPremiumEmailHtml({
               type: 'general',
-              title: 'Welcome to Stadiumport',
+              title: 'Welcome to stadiumport',
               bodyContent: `<p>Thanks for subscribing. You'll receive the latest updates about World Cup 2026.</p>`,
               siteUrl: SITE_URL
             }),

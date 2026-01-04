@@ -86,10 +86,10 @@ export default function GroupHPage() {
             "@type": "Article",
             "headline": "Group H World Cup 2026 Travel Guide: The Southern Heat",
             "description": "Complete logistics guide for World Cup Group H fans. Covers Atlanta, Miami, Houston, and Guadalajara with a focus on flight connections and managing the summer heat.",
-            "author": { "@type": "Organization", "name": "Stadiumport" },
+            "author": { "@type": "Organization", "name": "stadiumport" },
             "publisher": { 
               "@type": "Organization", 
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": { "@type": "ImageObject", "url": `${siteUrl}/images/Logos/stadiumport-logo.png` }
             },
             "mainEntityOfPage": { "@type": "WebPage", "@id": `${siteUrl}${pageUrl}` }
@@ -191,7 +191,7 @@ export default function GroupHPage() {
                 <div className="w-1 h-1 rounded-full bg-slate-700 hidden sm:block"></div>
                 <div className="flex items-center gap-2">
                   <User className="w-4 h-4 text-fuchsia-500" />
-                  <span>By Stadiumport Strategy Team</span>
+                  <span>By stadiumport Strategy Team</span>
                 </div>
               </div>
             </div>

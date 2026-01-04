@@ -2,7 +2,7 @@
 import jwt from 'jsonwebtoken';
 import { supabase } from './_utils/supabase.js';
 import { sendEmail, getSiteUrl } from './_utils/email.js';
-import { getStadiumPortEmailHtml } from './_utils/template.js';
+import { getstadiumportEmailHtml } from './_utils/template.js';
 
 const JWT_SECRET = process.env.JWT_SECRET || 'stadiumport-secure-secret-key-2026';
 
@@ -82,14 +82,14 @@ export default async function handler(req, res) {
       const userEmailPromise = sendEmail({
         to: email,
         subject: 'Your World Cup 2026 Prediction ID',
-        html: getStadiumPortEmailHtml({
+        html: getstadiumportEmailHtml({
           title: `Prediction Saved!`,
           bodyContent: `
             <div style="background-color: #f0fdf4; border: 1px solid #10b981; padding: 20px; border-radius: 8px; margin: 20px 0; text-align: center;">
               <p style="margin: 0; font-size: 14px; color: #065f46;">Your Unique Prediction ID</p>
               <p style="margin: 10px 0 0 0; font-size: 24px; font-weight: bold; color: #059669; letter-spacing: 1px;">${uniqueId}</p>
             </div>
-            <p>Thanks for joining the Stadiumport World Cup 2026 Predictor Game.</p>
+            <p>Thanks for joining the stadiumport World Cup 2026 Predictor Game.</p>
             <p>Your prediction has been securely recorded. You can view your bracket anytime using your unique ID.</p>
           `,
           ctaText: 'View My Prediction',
@@ -127,8 +127,8 @@ export default async function handler(req, res) {
 
       const userEmailPromise = sendEmail({
         to: email,
-        subject: 'We received your message - Stadiumport',
-        html: getStadiumPortEmailHtml({
+        subject: 'We received your message - stadiumport',
+        html: getstadiumportEmailHtml({
           title: 'Message Received',
           bodyContent: `<p>Hi ${name},</p><p>Thanks for reaching out. We've received your message and will get back to you shortly.</p>`,
           siteUrl: SITE_URL
@@ -151,9 +151,9 @@ export default async function handler(req, res) {
 
       const userEmailPromise = sendEmail({
         to: email,
-        subject: 'Welcome to Stadiumport!',
-        html: getStadiumPortEmailHtml({
-          title: 'Welcome to Stadiumport',
+        subject: 'Welcome to stadiumport!',
+        html: getstadiumportEmailHtml({
+          title: 'Welcome to stadiumport',
           bodyContent: `<p>Thanks for subscribing to our newsletter. You'll receive the latest updates about World Cup 2026.</p>`,
           siteUrl: SITE_URL
         }),

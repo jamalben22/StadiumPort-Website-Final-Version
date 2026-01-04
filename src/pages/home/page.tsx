@@ -208,7 +208,7 @@ export default function HomePage() {
         schema={generateImageObjectSchema('/images/world-cup-2026-night-stadium-usa-mexico-canada-flags-middle.webp', {
           width: 1920,
           height: 1080,
-          caption: 'FIFA World Cup 2026 Host Cities & Stadiums Guide - Stadiumport',
+          caption: 'FIFA World Cup 2026 Host Cities & Stadiums Guide - stadiumport',
           description:
             'Breathtaking night view of a World Cup 2026 stadium featuring massive USA, Mexico, and Canada flags suspended over the pitch, symbolizing the three host nations.'
         })}

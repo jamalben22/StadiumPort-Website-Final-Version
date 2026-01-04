@@ -21,8 +21,8 @@ export default function PrivacyPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Privacy Policy – Stadiumport',
-      description: 'Read Stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
+      title: 'Privacy Policy – stadiumport',
+      description: 'Read stadiumport’s privacy policy covering data collection, usage, cookies, and your rights as a user.',
       url: `${siteUrl}/legal/privacy`
     });
   }, []);
@@ -89,7 +89,7 @@ export default function PrivacyPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              At Stadiumport, we respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data.
+              At stadiumport, we respect your privacy and are committed to protecting your personal information. This policy explains how we collect, use, and safeguard your data.
             </p>
           </div>
 
@@ -270,7 +270,7 @@ export default function PrivacyPage() {
                   <Server className="w-8 h-8 text-indigo-500" />
                   <div>
                     <h3 className="font-bold text-slate-900 dark:text-white">Secure Infrastructure</h3>
-                    <p className="text-sm text-slate-600 dark:text-slate-400">Your connection to Stadiumport is always encrypted.</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Your connection to stadiumport is always encrypted.</p>
                   </div>
                 </div>
               </section>

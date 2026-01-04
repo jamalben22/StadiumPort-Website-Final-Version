@@ -23,7 +23,7 @@ export default function AffiliateDisclaimerPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Affiliate Disclaimer – Stadiumport',
+      title: 'Affiliate Disclaimer – stadiumport',
       description: 'Stadiumport is a free resource supported by affiliate commissions. Learn how affiliate links work and our commitment to transparency.',
       url: `${siteUrl}/legal/affiliate-disclaimer`
     });
@@ -74,8 +74,7 @@ export default function AffiliateDisclaimerPage() {
               Affiliate <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Disclaimer</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              Stadiumport is a free resource funded by affiliate commissions. We believe in being 100% honest about how we make money.
+            <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">Stadiumport is a free resource funded by affiliate commissions. We believe in being 100% honest about how we make money.
             </p>
           </div>
 

@@ -139,10 +139,10 @@ function DateModifiedManager() {
       ...(entry?.datePublished ? { datePublished: entry.datePublished } : {}),
       ...(entry?.keywords && entry.keywords.length ? { keywords: entry.keywords } : {}),
       ...(entry?.section ? { articleSection: entry.section } : {}),
-      "author": { "@type": "Organization", "name": "Stadiumport Team", "url": siteUrl },
+      "author": { "@type": "Organization", "name": "stadiumport Team", "url": siteUrl },
       "publisher": {
         "@type": "Organization",
-        "name": "Stadiumport",
+        "name": "stadiumport",
         "url": siteUrl,
         "logo": {
           "@type": "ImageObject",
@@ -175,7 +175,7 @@ function GlobalTitleManager() {
   const location = useLocation()
   useEffect(() => {
     const current = document.title || ''
-    const formatted = formatTitle(current || 'Stadiumport')
+    const formatted = formatTitle(current || 'stadiumport')
     if (formatted !== current) {
       document.title = formatted
       const ensure = (prop: string, content: string) => {

@@ -24,7 +24,7 @@ export function SchemaOrg({ schema }: SchemaOrgProps) {
 export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Stadiumport",
+  "name": "stadiumport",
   "description": "Experience the breathtaking atmosphere of the World Cup 2026 with three massive USA, Mexico, and Canada flags proudly displayed in the middle of a night-lit stadium.",
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "potentialAction": {
@@ -37,7 +37,7 @@ export const generateWebsiteSchema = () => ({
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });
@@ -45,15 +45,15 @@ export const generateWebsiteSchema = () => ({
 export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Stadiumport",
-  "alternateName": ["Stadiumport", "Stadiumport.com"],
+  "name": "stadiumport",
+  "alternateName": ["stadiumport", "stadiumport.com"],
   "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com",
   "logo": {
     "@type": "ImageObject",
-    "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg`,
+    "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/stadiumport-header-logo-dark.svg`,
     "width": 2400,
     "height": 600,
-    "caption": "Stadiumport Logo"
+    "caption": "stadiumport Logo"
   },
   "sameAs": [
     "https://twitter.com/stadiumport",
@@ -88,7 +88,7 @@ export const generateTravelGuideSchema = (
   ...(extras?.keywords && extras.keywords.length ? { keywords: extras.keywords } : {}),
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   },
   "about": {
@@ -125,7 +125,7 @@ export const generateCityGuideSchema = (
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "url": import.meta.env.VITE_SITE_URL || "https://stadiumport.com"
   }
 });
@@ -220,7 +220,7 @@ export const generateArticleSchema = (
   image: string | string[],
   publishedAt: string,
   modifiedAt: string,
-  authorName: string = "Stadiumport Team",
+  authorName: string = "stadiumport Team",
   url: string
 ) => ({
   "@context": "https://schema.org",
@@ -236,7 +236,7 @@ export const generateArticleSchema = (
   },
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "logo": {
       "@type": "ImageObject",
       "url": (import.meta.env.VITE_SITE_URL || "https://stadiumport.com") + "/images/Logos/favicon/android-chrome-512x512.png"
@@ -435,10 +435,10 @@ export const generateVideoObjectSchema = (
   ...(embedUrl ? { "embedUrl": embedUrl } : {}),
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport",
+    "name": "stadiumport",
     "logo": {
       "@type": "ImageObject",
-      "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/Desktop Header SP Logo 2400 x 600 px Night mode.svg`
+      "url": `${import.meta.env.VITE_SITE_URL || "https://stadiumport.com"}/images/Logos/stadiumport-header-logo-dark.svg`
     }
   }
 });
@@ -468,6 +468,6 @@ export const generateReviewSchema = (
   "reviewBody": reviewBody,
   "publisher": {
     "@type": "Organization",
-    "name": "Stadiumport"
+    "name": "stadiumport"
   }
 });

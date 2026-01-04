@@ -2,7 +2,7 @@ const sharp = require('sharp');
 const fs = require('fs');
 const path = require('path');
 
-const SOURCE_SVG = path.join(__dirname, '../public/images/Logos/Mobile Header Logo 180 x 180 px.svg');
+const SOURCE_SVG = path.join(__dirname, '../public/images/Logos/stadiumport-mobile-logo-light.svg');
 const OUTPUT_DIR = path.join(__dirname, '../public/images/Logos/favicon');
 
 // Ensure output directory exists

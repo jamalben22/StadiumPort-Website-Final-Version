@@ -55,9 +55,9 @@ async function verifyAndSend() {
     // Send test email
     console.log('Sending test email...');
     const info = await transporter.sendMail({
-      from: `"${process.env.SENDER_NAME || 'Stadiumport Test'}" <${SENDER_EMAIL}>`,
+      from: `"${process.env.SENDER_NAME || 'stadiumport Test'}" <${SENDER_EMAIL}>`,
       to: SENDER_EMAIL, // Send to self
-      subject: 'Stadiumport SMTP Configuration Test',
+      subject: 'stadiumport SMTP Configuration Test',
       text: 'If you are reading this, the email infrastructure is working correctly.',
       html: '<b>If you are reading this, the email infrastructure is working correctly.</b>',
     });

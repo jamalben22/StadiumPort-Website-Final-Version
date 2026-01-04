@@ -81,7 +81,7 @@ export default function GroupCPage() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] dark:bg-[#0A0A0A] font-sans text-slate-900 dark:text-slate-100 selection:bg-emerald-500/30">
       <Helmet>
-        <title>World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami | Stadiumport</title>
+        <title>World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami | stadiumport</title>
         <meta name="description" content="The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy." />
         <meta name="keywords" content="World Cup 2026 Group C Travel Guide, Group C matches, Boston NYC Philadelphia Atlanta Miami World Cup, Amtrak Acela World Cup travel, East Coast World Cup itinerary" />
         <link rel="canonical" href={`${siteUrl}${pageUrl}`} />
@@ -96,11 +96,11 @@ export default function GroupCPage() {
             "description": "The definitive guide for following Group C in World Cup 2026. Complete travel strategy for Boston, New York, Philadelphia, Atlanta, and Miami.",
             "author": {
               "@type": "Organization",
-              "name": "Stadiumport"
+              "name": "stadiumport"
             },
             "publisher": {
               "@type": "Organization",
-              "name": "Stadiumport",
+              "name": "stadiumport",
               "logo": {
                 "@type": "ImageObject",
                 "url": `${siteUrl}/images/Logos/stadiumport-logo.png`
@@ -199,7 +199,7 @@ export default function GroupCPage() {
                 </div>
                 <div className="flex items-center gap-2">
                   <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
-                  By Stadiumport Strategy Team
+                  By stadiumport Strategy Team
                 </div>
               </div>
             </div>

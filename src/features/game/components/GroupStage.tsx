@@ -329,7 +329,7 @@ export const GroupStage = () => {
         "url": "https://stadiumport.com/world-cup-2026-prediction-game",
         "organizer": {
           "@type": "Organization",
-          "name": "Stadiumport",
+          "name": "stadiumport",
           "url": "https://stadiumport.com"
         },
         "eventStatus": "https://schema.org/EventScheduled",

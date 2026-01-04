@@ -125,20 +125,20 @@ export function Footer() {
           <div className="max-w-sm">
             <Link to="/" className="block mb-6 group">
             <img 
-              src="/images/Logos/footer-logo-400x100.svg" 
-              alt="Stadiumport" 
+              src="/images/Logos/stadiumport-footer-logo-v2-light.svg" 
+              alt="stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-v2-light.svg'; }}
             />
             <img 
-              src="/images/Logos/footer-logo-400x100-dark.svg" 
-              alt="Stadiumport" 
+              src="/images/Logos/stadiumport-footer-logo-dark.svg" 
+              alt="stadiumport" 
               width={160}
               height={40}
               className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/footer-logo-400x100-dark.svg'; }}
+              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-dark.svg'; }}
             />
           </Link>
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">
@@ -217,7 +217,7 @@ export function Footer() {
         {/* Bottom Bar: Copyright & Socials */}
         <div className="flex flex-col-reverse md:flex-row justify-between items-center gap-6 pt-8 border-t border-slate-100 dark:border-white/5">
           <div className="flex flex-col md:flex-row items-center gap-6 text-xs text-slate-400 dark:text-slate-500 font-medium">
-            <span>© {currentYear} Stadiumport Inc. All rights reserved.</span>
+            <span>© {currentYear} stadiumport Inc. All rights reserved.</span>
             <span className="hidden md:inline w-1 h-1 rounded-full bg-slate-300 dark:bg-slate-700" />
             <div className="flex gap-6">
               <Link to="/legal/privacy" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors">Privacy</Link>

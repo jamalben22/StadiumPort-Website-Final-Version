@@ -22,8 +22,8 @@ export default function TermsPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Terms of Service – Stadiumport',
-      description: 'Read Stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
+      title: 'Terms of Service – stadiumport',
+      description: 'Read stadiumport’s Terms of Service outlining acceptable use, policies, and legal disclaimers.',
       url: `${siteUrl}/legal/terms`
     });
   }, []);
@@ -38,7 +38,7 @@ export default function TermsPage() {
     {
       icon: FileCheck,
       title: "Agreement",
-      description: "By using Stadiumport, you agree to these terms, our Privacy Policy, and Affiliate Disclaimer."
+      description: "By using stadiumport, you agree to these terms, our Privacy Policy, and Affiliate Disclaimer."
     },
     {
       icon: Scale,
@@ -107,7 +107,7 @@ export default function TermsPage() {
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
-              Welcome to Stadiumport. Please read these terms carefully before using our website, as they govern your access and use of our services.
+              Welcome to stadiumport. Please read these terms carefully before using our website, as they govern your access and use of our services.
             </p>
           </div>
 
@@ -232,7 +232,7 @@ export default function TermsPage() {
                   Intellectual Property
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                  All content on Stadiumport (text, images, design) is owned by us or licensed to us.
+                  All content on stadiumport (text, images, design) is owned by us or licensed to us.
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="bg-slate-50 dark:bg-white/5 rounded-2xl p-6">
@@ -306,7 +306,7 @@ export default function TermsPage() {
                   Limitation of Liability
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
-                  To the maximum extent permitted by law, Stadiumport shall not be liable for any lost profits, travel disruptions, personal injury, or incorrect information. This applies even if we have been advised of the possibility of such damages.
+                  To the maximum extent permitted by law, stadiumport shall not be liable for any lost profits, travel disruptions, personal injury, or incorrect information. This applies even if we have been advised of the possibility of such damages.
                 </p>
                 <p className="text-slate-900 dark:text-white font-medium">
                   Your sole remedy for dissatisfaction is to stop using the Website.
@@ -319,7 +319,7 @@ export default function TermsPage() {
                   Indemnification
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                  You agree to indemnify and hold harmless Stadiumport from any claims, damages, or expenses arising from your use of the Website, your violation of these Terms, or your travel decisions based on our content.
+                  You agree to indemnify and hold harmless stadiumport from any claims, damages, or expenses arising from your use of the Website, your violation of these Terms, or your travel decisions based on our content.
                 </p>
               </section>
 

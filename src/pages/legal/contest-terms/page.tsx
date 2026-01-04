@@ -21,8 +21,8 @@ export default function ContestTermsPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Contest Terms & Conditions – Stadiumport',
-      description: 'Official rules, eligibility requirements, and prize details for the Stadiumport World Cup 2026 Prediction Contest.',
+      title: 'Contest Terms & Conditions – stadiumport',
+      description: 'Official rules, eligibility requirements, and prize details for the stadiumport World Cup 2026 Prediction Contest.',
       url: `${siteUrl}/world-cup-2026-prediction-contest-terms`
     });
   }, []);
@@ -176,7 +176,7 @@ export default function ContestTermsPage() {
                       </li>
                        <li className="flex items-start gap-3">
                         <AlertTriangle className="w-5 h-5 text-yellow-500 mt-0.5 shrink-0" />
-                        <span>Employees of Stadiumport and their immediate families are ineligible.</span>
+                        <span>Employees of stadiumport and their immediate families are ineligible.</span>
                       </li>
                    </ul>
                 </div>
@@ -188,7 +188,7 @@ export default function ContestTermsPage() {
                   How To Enter
                 </h2>
                 <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                  Register at <a href="/world-cup-2026-prediction-game" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">stadiumport.com/prediction-game</a> and complete predictions for all tournament stages.
+                  Register at <a href="/world-cup-2026-prediction-game" className="text-indigo-600 dark:text-indigo-400 hover:underline font-semibold">Stadiumport.com/prediction-game</a> and complete predictions for all tournament stages.
                 </p>
                 <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-100 dark:border-indigo-500/20 rounded-2xl p-6">
                   <p className="text-indigo-900 dark:text-indigo-200 font-medium text-sm">
@@ -303,8 +303,7 @@ export default function ContestTermsPage() {
                   <div className="w-8 h-8 rounded-lg bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center text-indigo-600 dark:text-indigo-400 text-sm font-bold">8</div>
                   Limitation of Liability
                 </h2>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">
-                  Stadiumport is not responsible for technical failures, shipping issues, or force majeure events. By entering, participants release Stadiumport from liability related to prize acceptance. Disputes resolved via binding arbitration under US law.
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">Stadiumport is not responsible for technical failures, shipping issues, or force majeure events. By entering, participants release stadiumport from liability related to prize acceptance. Disputes resolved via binding arbitration under US law.
                 </p>
               </section>
 

@@ -28,7 +28,7 @@ export function ensureCanonical(href: string) {
   canonical.setAttribute('href', href)
 }
 
-export const BRAND = 'Stadiumport'
+export const BRAND = 'stadiumport'
 export function formatTitle(title: string) {
   const normalized = title.trim()
   const hasBrand = /stadiumport/i.test(normalized)

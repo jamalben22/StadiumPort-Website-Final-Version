@@ -68,7 +68,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(({ champion,
               className="mt-2 font-['Rajdhani'] font-bold text-[10px] uppercase tracking-[0.38em]"
               style={{ background: 'linear-gradient(90deg,#FCD34D,#FFF4C1)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
             >
-              POWERED BY STADIUMPORT
+              POWERED BY stadiumport
             </span>
         </div>
       </div>
@@ -195,7 +195,7 @@ export const ShareCard = forwardRef<HTMLDivElement, ShareCardProps>(({ champion,
       </div>
 
       <div className="absolute bottom-3 left-0 right-0 z-30 text-center">
-         <span className="text-white/40 font-['Rajdhani'] text-[9px] tracking-[0.35em] uppercase">STADIUMPORT.COM</span>
+         <span className="text-white/40 font-['Rajdhani'] text-[9px] tracking-[0.35em] uppercase">stadiumport.COM</span>
       </div>
 
     </div>

@@ -18,8 +18,8 @@ export default function AuthorsPage() {
   useEffect(() => {
     const siteUrl = import.meta.env.VITE_SITE_URL || 'https://stadiumport.com';
     setPageMeta({
-      title: 'Authors & Editorial Team – Stadiumport',
-      description: 'Meet the team behind Stadiumport. Our dedicated writers, researchers, and editors work to provide the most accurate World Cup 2026 travel guides.',
+      title: 'Authors & Editorial Team – stadiumport',
+      description: 'Meet the team behind stadiumport. Our dedicated writers, researchers, and editors work to provide the most accurate World Cup 2026 travel guides.',
       url: `${siteUrl}/about/authors`
     });
   }, []);
@@ -82,7 +82,7 @@ export default function AuthorsPage() {
             </div>
             
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
-              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Stadiumport</span> Team
+              The <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">stadiumport</span> Team
             </h1>
             
             <p className="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed">
@@ -104,7 +104,7 @@ export default function AuthorsPage() {
                     Accuracy Over Everything
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
-                    Stadiumport isn't built by a single influencer. It's built by a dedicated editorial team focused on accuracy, utility, and factual integrity.
+                    stadiumport isn't built by a single influencer. It's built by a dedicated editorial team focused on accuracy, utility, and factual integrity.
                   </p>
                   <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
                     Our writers, editors, and researchers work together to ensure every guide meets the highest standards. We verify information with official tourism boards, stadium operators, and FIFA publications.
