@@ -41,6 +41,11 @@ export default function Page() {
     "description": "The group stage of the 2026 FIFA World Cup featuring 48 teams competing in 12 groups across USA, Mexico, and Canada.",
     "startDate": "2026-06-11",
     "endDate": "2026-06-27",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "image": [
+      "https://stadiumport.com/assets/wc26-groups-og.jpg"
+    ],
     "location": {
       "@type": "Place",
       "name": "North America (USA, Mexico, Canada)",
@@ -53,6 +58,18 @@ export default function Page() {
       "@type": "Organization",
       "name": "FIFA",
       "url": "https://www.fifa.com"
+    },
+    "performer": {
+      "@type": "Organization",
+      "name": "FIFA World Cup 2026 Qualified Teams"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/tickets",
+      "priceCurrency": "USD",
+      "lowPrice": 60,
+      "highPrice": 2030,
+      "availability": "https://schema.org/PreOrder"
     }
   };
 
