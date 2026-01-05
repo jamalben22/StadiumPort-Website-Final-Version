@@ -107,14 +107,8 @@ export default function GroupEClientPage() {
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
                 From the Birthplace of America to the Heartland of BBQ. A logistical puzzle spanning two countries and three distinct cultural regions.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-                <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
-                  Explore Strategy
-                </button>
-              </div>
- 
- <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
+
+              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
  <div className="flex items-center gap-2">
  <Calendar className="w-4 h-4 text-teal-500" /> 
  Updated: June 2025

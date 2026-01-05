@@ -119,12 +119,6 @@ export default function GroupIClientPage() {
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
                 Two icons. One state. From the tech-hills of San Francisco to the cinematic sprawl of Los Angeles, Group I is California's ultimate football showcase.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-                <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-emerald-500 transition-colors">
-                  Explore Strategy
-                </button>
-              </div>
 
               <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
                 <div className="flex items-center gap-2">

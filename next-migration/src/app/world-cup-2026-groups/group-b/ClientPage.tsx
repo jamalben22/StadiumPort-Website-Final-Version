@@ -111,21 +111,15 @@ export default function GroupBClientPage() {
 
             <div className="max-w-4xl">
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
- World Cup 2026 <br />
- <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group B Strategy</span>
- </h1>
- 
- <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
- Four cities. Two nations. One coast. From the mountains of Vancouver to the Hollywood hills, Group B is the tournament's most scenic route.
- </p>
- 
-            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-up delay-200">
-              <button onClick={() => scrollToSection('strategy')} className="inline-flex items-center justify-center h-14 px-8 rounded-full bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white font-bold text-sm tracking-wide hover:border-emerald-500 transition-colors">
-                Explore Strategy
-              </button>
-            </div>
- 
- <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
+World Cup 2026 <br />
+<span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group B Strategy</span>
+</h1>
+
+<p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
+Four cities. Two nations. One coast. From the mountains of Vancouver to the Hollywood hills, Group B is the tournament's most scenic route.
+</p>
+
+<div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
  <div className="flex items-center gap-2">
  <Calendar className="w-4 h-4 text-emerald-500" /> 
  Updated: June 2025
