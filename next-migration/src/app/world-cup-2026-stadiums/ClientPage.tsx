@@ -486,18 +486,19 @@ export default function ClientPage() {
         <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
-            <OptimizedImage
+            <Image
               src="/images/hub-pages/stadiums-bg.webp"
               alt="World Cup 2026 Stadiums Background"
               fill
               priority
-              imgClassName="object-cover"
+              className="object-cover z-0"
+              unoptimized
             />
             {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
           </div>
           
-          <div className="relative z-10 max-w-7xl mx-auto w-full">
+          <div className="relative z-20 max-w-7xl mx-auto w-full">
             {/* Breadcrumbs */}
             <Breadcrumb 
               items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
