@@ -615,7 +615,6 @@ export default function ClientPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Essential Protection</span>
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors">
@@ -632,7 +631,6 @@ export default function ClientPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-red-400 uppercase tracking-wider mb-2 block">Critical Warning</span>
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-red-400 transition-colors">
@@ -649,7 +647,6 @@ export default function ClientPage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-60" />
                   <div className="absolute bottom-6 left-6 right-6">
                     <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2 block">Identity Safety</span>
                     <h4 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-emerald-400 transition-colors">

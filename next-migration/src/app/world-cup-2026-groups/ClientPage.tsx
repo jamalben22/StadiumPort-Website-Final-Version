@@ -309,50 +309,79 @@ export default function ClientPage() {
      </motion.div>
    </section>
 
-   {/* Host Cities Section */}
-   <section className="mb-24">
-     <div className="flex items-center gap-3 mb-12">
-       <div className="h-10 w-2 bg-rose-500 rounded-full" />
-       <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">
-         Host Cities by Region
-       </h2>
-     </div>
-     
-     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-       {Object.entries(HOST_REGIONS).map(([key, region]) => (
-         <div key={key} className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden">
-           <div className="h-48 relative bg-slate-200 dark:bg-slate-800">
-             <Image
-               src={`/images/cities/${(region.cities[0] || 'default').toLowerCase().replace(/ /g, '-')}-world-cup-2026.webp`}
-               alt={`${region.name} Host Cities`}
-               fill
-               className="object-cover"
-               unoptimized
-             />
-             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-             <div className="absolute bottom-4 left-6">
-               <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{region.name}</h3>
-             </div>
-           </div>
-           <div className="p-6">
-            <ul className="space-y-3">
+   {/* Host Cities Section - Apple Style Redesign */}
+  <section className="mb-32">
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <motion.span 
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="text-blue-600 dark:text-blue-400 font-bold uppercase tracking-[0.2em] text-sm mb-4 block"
+      >
+        Geography of the Tournament
+      </motion.span>
+      <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.1 }}
+        className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tight"
+      >
+        Host Cities by Region
+      </motion.h2>
+    </div>
+    
+    <motion.div 
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-100px" }}
+      className="grid grid-cols-1 md:grid-cols-3 gap-8"
+    >
+      {Object.entries(HOST_REGIONS).map(([key, region]) => (
+        <motion.div 
+          key={key} 
+          variants={itemVariants}
+          className="group relative bg-white dark:bg-slate-900/40 rounded-[2.5rem] border border-slate-200 dark:border-white/5 p-10 hover:shadow-2xl hover:shadow-slate-200/50 dark:hover:shadow-none transition-all duration-500 overflow-hidden"
+        >
+          {/* Decorative background element */}
+          <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/10 transition-colors duration-500" />
+          
+          <div className="relative z-10">
+            <div className="flex justify-between items-start mb-8">
+              <h3 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">{region.name}</h3>
+              <span className="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 text-slate-500 dark:text-slate-400 text-xs font-bold uppercase tracking-wider">
+                {region.cities.length} Cities
+              </span>
+            </div>
+            
+            <ul className="space-y-4">
               {region.cities.map((city) => (
                 <li key={city}>
                   <Link 
                     href={`/world-cup-2026-${getCitySlug(city)}-guide`}
-                    className="flex items-center gap-3 text-slate-600 dark:text-slate-300 hover:text-rose-500 dark:hover:text-rose-400 transition-colors group"
+                    className="flex items-center group/link"
                   >
-                    <MapPin size={18} className="text-rose-500 group-hover:scale-110 transition-transform" />
-                    <span className="group-hover:translate-x-1 transition-transform">{city}</span>
+                    <div className="w-10 h-10 rounded-full bg-slate-50 dark:bg-white/5 flex items-center justify-center text-slate-400 group-hover/link:bg-blue-600 group-hover/link:text-white transition-all duration-300 mr-4">
+                      <MapPin size={18} />
+                    </div>
+                    <div className="flex flex-col">
+                      <span className="text-lg font-semibold text-slate-700 dark:text-slate-200 group-hover/link:text-blue-600 dark:group-hover/link:text-blue-400 transition-colors">
+                        {city}
+                      </span>
+                      <span className="text-xs text-slate-400 uppercase tracking-widest font-medium opacity-0 group-hover/link:opacity-100 transition-opacity">
+                        View Guide
+                      </span>
+                    </div>
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-         </div>
-       ))}
-     </div>
-   </section>
+        </motion.div>
+      ))}
+    </motion.div>
+  </section>
 
    {/* Key Narratives */}
    <section className="mb-24">
@@ -388,20 +417,11 @@ export default function ClientPage() {
    </section>
 
    {/* Historical Context & Stats */}
-   <section className="mb-24">
-     <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-center md:text-left">
-        <div className="absolute inset-0 opacity-20">
-           <Image 
-            src="/images/hub-pages/stadiums-bg.webp" 
-            alt="Stadium Background" 
-            fill 
-            className="object-cover" 
-            unoptimized 
-          />
-        </div>
-        <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
+  <section className="mb-24">
+    <div className="bg-slate-50 dark:bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-center md:text-left border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
+       <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/20 text-blue-400 font-bold text-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-600/10 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 font-bold text-sm">
               <History size={16} /> Historical Context
             </div>
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white">
@@ -413,26 +433,26 @@ export default function ClientPage() {
             <div className="grid grid-cols-2 gap-6 pt-4">
               <div>
                 <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">104</div>
-                <div className="text-sm text-slate-400 uppercase tracking-wider">Total Matches</div>
+                <div className="text-sm text-slate-400 dark:text-slate-500 uppercase tracking-wider">Total Matches</div>
               </div>
               <div>
                 <div className="text-4xl font-bold text-slate-900 dark:text-white mb-1">16</div>
-                <div className="text-sm text-slate-400 uppercase tracking-wider">Host Cities</div>
+                <div className="text-sm text-slate-400 dark:text-slate-500 uppercase tracking-wider">Host Cities</div>
               </div>
             </div>
           </div>
-          <div className="flex-1 w-full bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
+          <div className="flex-1 w-full bg-white dark:bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm dark:shadow-none">
             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-              <Info size={20} className="text-blue-400" /> Key Dates & Timeline
+              <Info size={20} className="text-blue-600 dark:text-blue-400" /> Key Dates & Timeline
             </h3>
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="flex-col items-center hidden md:flex">
                   <div className="w-3 h-3 rounded-full bg-blue-500" />
-                  <div className="w-0.5 h-full bg-white/10 my-1" />
+                  <div className="w-0.5 h-full bg-slate-200 dark:bg-white/10 my-1" />
                 </div>
                 <div>
-                  <div className="text-blue-400 font-bold text-sm mb-1">Late 2025</div>
+                  <div className="text-blue-600 dark:text-blue-400 font-bold text-sm mb-1">Late 2025</div>
                   <div className="text-slate-900 dark:text-white font-semibold">Official Final Draw</div>
                   <div className="text-slate-400 text-sm">Teams assigned to groups A-L</div>
                 </div>
@@ -440,10 +460,10 @@ export default function ClientPage() {
               <div className="flex gap-4">
                  <div className="flex-col items-center hidden md:flex">
                   <div className="w-3 h-3 rounded-full bg-emerald-500" />
-                  <div className="w-0.5 h-full bg-white/10 my-1" />
+                  <div className="w-0.5 h-full bg-slate-200 dark:bg-white/10 my-1" />
                 </div>
                 <div>
-                  <div className="text-emerald-400 font-bold text-sm mb-1">June 11, 2026</div>
+                  <div className="text-emerald-600 dark:text-emerald-400 font-bold text-sm mb-1">June 11, 2026</div>
                   <div className="text-slate-900 dark:text-white font-semibold">Opening Match</div>
                   <div className="text-slate-400 text-sm">Estadio Azteca, Mexico City</div>
                 </div>
@@ -453,16 +473,16 @@ export default function ClientPage() {
                   <div className="w-3 h-3 rounded-full bg-amber-500" />
                 </div>
                 <div>
-                  <div className="text-amber-400 font-bold text-sm mb-1">July 19, 2026</div>
+                  <div className="text-amber-600 dark:text-amber-400 font-bold text-sm mb-1">July 19, 2026</div>
                   <div className="text-slate-900 dark:text-white font-semibold">World Cup Final</div>
                   <div className="text-slate-400 text-sm">MetLife Stadium, New York/NJ</div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-     </div>
-   </section>
+       </div>
+    </div>
+  </section>
 
    {/* Fan Resources */}
   <section className="mb-24 grid grid-cols-1 md:grid-cols-3 gap-6">

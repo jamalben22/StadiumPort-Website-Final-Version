@@ -483,14 +483,6 @@ export default function ClientPage() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-900">
-          <Image
-            src="/images/hub-pages/stadiums-bg.webp"
-            alt="World Cup 2026 Stadiums"
-            fill
-            priority
-            className="object-cover z-0"
-            unoptimized
-          />
           {/* Background Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
           
