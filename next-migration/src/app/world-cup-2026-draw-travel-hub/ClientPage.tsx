@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { MapPin, ArrowRight, Shield, AlertCircle, TrendingUp, Check, Plane, Train, Hotel, Building2, Trophy, Twitter, Facebook, Linkedin, Copy, CheckCircle2, Calendar, Clock, DollarSign, FileText, Globe, HelpCircle, Info, ChevronDown, ChevronUp, Timer } from 'lucide-react';
 import { GROUPS_DATA, CITY_LINKS, STADIUM_LINKS } from '@/data/draw-hub';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
+import Image from 'next/image';
 
 // --- Countdown Timer Component ---
 const CountdownTimer = () => {
@@ -310,12 +310,12 @@ export default function DrawHubClientPage() {
  >
  <figure className="group relative overflow-hidden rounded-[2rem] shadow-2xl shadow-slate-200/50 dark:shadow-black/50 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
  <div className="relative w-full aspect-video max-h-[600px] bg-transparent">
- <OptimizedImage
+ <Image
   src="/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp"
   alt="FIFA World Cup 26 Qualified Teams Wallchart – stadiumport"
   fill
-  containerClassName="bg-transparent"
-  imgClassName="object-contain w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
+  className="object-contain w-full h-full transition-transform duration-700 group-hover:scale-[1.02]"
+  unoptimized
   />
  </div>
  <div className="absolute inset-0 border-4 border-white/10 rounded-[2rem] pointer-events-none"></div>

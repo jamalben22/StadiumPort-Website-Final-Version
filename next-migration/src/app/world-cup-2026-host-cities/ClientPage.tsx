@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -209,15 +208,15 @@ export default function ClientPage() {
       
       <main>
         {/* Hero Section */}
-        <section 
-          className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-900"
-          style={{
-            backgroundImage: 'url("/images/hub-pages/host-cities-bg.webp")',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
+        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-900">
+          <Image
+            src="/images/hub-pages/host-cities-bg.webp"
+            alt="World Cup 2026 Host Cities"
+            fill
+            priority
+            className="object-cover z-0"
+            unoptimized
+          />
           {/* Background Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
 

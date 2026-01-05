@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Trophy, ArrowRight, AlertCircle, Globe, Calendar, MapPin, Info, Users, History, TrendingUp, Plane, Ticket, ChevronDown, ChevronUp, Zap, FileText, Shield } from 'lucide-react';
 import { TEAMS, GROUPS, TEAM_MAP } from '@/data/teams';
-import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const HOST_REGIONS = {
@@ -279,11 +279,12 @@ export default function ClientPage() {
                      {isPlaceholder ? (
                        <span className="text-[10px] font-bold text-slate-400">{teamData.code}</span>
                      ) : teamData.flagUrl ? (
-                       <OptimizedImage 
+                       <Image 
                          src={teamData.flagUrl} 
                          alt={`${teamData.name} Flag`} 
                          fill
-                         imgClassName="object-cover"
+                         className="object-cover"
+                         unoptimized
                        />
                      ) : (
                        <span className="text-[10px] font-bold text-slate-400">{teamData.code}</span>
@@ -321,12 +322,12 @@ export default function ClientPage() {
        {Object.entries(HOST_REGIONS).map(([key, region]) => (
          <div key={key} className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-2xl border border-slate-200 dark:border-white/10 overflow-hidden">
            <div className="h-48 relative bg-slate-200 dark:bg-slate-800">
-             <OptimizedImage
+             <Image
                src={`/images/cities/${(region.cities[0] || 'default').toLowerCase().replace(/ /g, '-')}-world-cup-2026.webp`}
                alt={`${region.name} Host Cities`}
                fill
-               imgClassName="object-cover"
-               fallbackSrc="/images/hub-pages/host-cities-bg.webp"
+               className="object-cover"
+               unoptimized
              />
              <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
              <div className="absolute bottom-4 left-6">
@@ -390,7 +391,13 @@ export default function ClientPage() {
    <section className="mb-24">
      <div className="bg-slate-900 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-center md:text-left">
         <div className="absolute inset-0 opacity-20">
-           <OptimizedImage src="/images/hub-pages/stadiums-bg.webp" alt="Stadium Background" fill imgClassName="object-cover" />
+           <Image 
+            src="/images/hub-pages/stadiums-bg.webp" 
+            alt="Stadium Background" 
+            fill 
+            className="object-cover" 
+            unoptimized 
+          />
         </div>
         <div className="relative z-10 flex flex-col md:flex-row items-center gap-12">
           <div className="flex-1 space-y-6">
