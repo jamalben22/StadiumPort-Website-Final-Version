@@ -89,7 +89,7 @@ export function Footer() {
       title: 'Explore',
       links: [
         { label: 'Groups & Teams', to: '/world-cup-2026-groups' },
-        { label: 'Host Cities', to: '/world-cup-2026-host-cities-guide' },
+        { label: 'Host Cities', to: '/world-cup-2026-host-cities' },
         { label: 'Stadiums', to: '/world-cup-2026-stadiums' },
         { label: 'Prediction Game', to: '/world-cup-2026-prediction-game' },
       ]
@@ -107,7 +107,7 @@ export function Footer() {
       links: [
         { label: 'About Us', to: '/about' },
         { label: 'Our Authors', to: '/about/authors' },
-        { label: 'Editorial Policy', to: '/editorial-policy' },
+        { label: 'Editorial Policy', to: '/legal/editorial-policy' },
         { label: 'Contact', to: '/contact' },
       ]
     },

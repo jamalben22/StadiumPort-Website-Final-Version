@@ -32,7 +32,7 @@ const guides = [
     title: "World Cup 2026 Host City Guide: Which Cities Should You Visit?",
     teaser: "16 cities, infinite vibes. Find the perfect host cities that match your travel style and budget.",
     icon: Map,
-    link: "/world-cup-2026-host-cities-guide",
+    link: "/world-cup-2026-host-cities",
     image: "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp"
   },
   {

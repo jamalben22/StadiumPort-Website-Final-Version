@@ -63,10 +63,8 @@ export default function SharePage() {
         <Breadcrumb 
           items={[
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
-            { label: 'Shared Prediction', href: '#' }
+            { label: 'Share Result', href: '#' }
           ]} 
-          variant="light"
-          className="mb-8"
         />
       </div>
 

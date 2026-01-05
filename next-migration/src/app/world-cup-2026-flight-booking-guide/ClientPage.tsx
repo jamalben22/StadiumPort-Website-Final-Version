@@ -264,8 +264,6 @@ export default function ClientPage() {
                   { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
                   { label: 'Flight Booking', href: '/world-cup-2026-flight-booking-guide' }
                 ]} 
-                variant="light"
-                className="mb-8"
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

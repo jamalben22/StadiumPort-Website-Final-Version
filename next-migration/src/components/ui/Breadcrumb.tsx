@@ -2,6 +2,12 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { twMerge } from 'tailwind-merge';
+import { clsx, type ClassValue } from 'clsx';
+
+function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
 
 interface BreadcrumbItem {
   label: string;
@@ -18,16 +24,16 @@ export function Breadcrumb({ items, variant = 'default', className = '' }: Bread
   const isLight = variant === 'light';
   
   const containerClasses = isLight 
-    ? "text-slate-900/30 dark:text-white/30" 
-    : "text-slate-500/30 dark:text-slate-400/30";
+    ? "text-slate-900/60 dark:text-white/60" 
+    : "text-slate-500 dark:text-slate-400";
     
   const separatorClasses = isLight
-    ? "opacity-30 dark:opacity-20"
-    : "opacity-30 dark:opacity-20";
+    ? "text-slate-900/40 dark:text-white/40"
+    : "text-slate-300 dark:text-slate-700";
     
   const activeClasses = isLight
-    ? "text-slate-900/60 dark:text-white/60"
-    : "text-emerald-700/60 dark:text-emerald-400/60";
+    ? "text-slate-900 dark:text-white font-bold"
+    : "text-emerald-600 dark:text-emerald-400 font-bold";
     
   const linkHoverClasses = isLight
     ? "hover:text-slate-900 dark:hover:text-white transition-colors"
@@ -38,7 +44,11 @@ export function Breadcrumb({ items, variant = 'default', className = '' }: Bread
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.2 }}
-      className={`flex items-center justify-center gap-2 text-[10px] font-medium tracking-[0.25em] uppercase flex-wrap ${containerClasses} ${className}`}
+      className={cn(
+        "flex items-center justify-start gap-2 text-[10px] font-medium tracking-[0.25em] uppercase flex-wrap mb-12",
+        containerClasses,
+        className
+      )}
     >
       <Link href="/" className={`${linkHoverClasses} transition-colors`}>
         Home

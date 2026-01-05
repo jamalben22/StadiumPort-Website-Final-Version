@@ -310,11 +310,9 @@ export default function ClientPage() {
             >
             <Breadcrumb 
               items={[
-                { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
+                { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
                 { label: 'Family Safety', href: '/world-cup-2026-family-safety-guide' }
               ]} 
-              variant="light"
-              className="mb-8"
             />
 
               <div className="flex items-center gap-4 mb-6">

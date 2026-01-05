@@ -117,10 +117,8 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
         <Breadcrumb 
           items={[
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
-            { label: 'Entry', href: '#' }
+            { label: 'Entry Details', href: '#' }
           ]} 
-          variant="light"
-          className="mb-8"
         />
       </div>
 

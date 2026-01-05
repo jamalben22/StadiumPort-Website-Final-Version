@@ -101,6 +101,53 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Host Cities Hub
+      { source: '/world-cup-2026-host-cities-guide', destination: '/world-cup-2026-host-cities', permanent: true },
+      // Host Cities
+      { source: '/world-cup-2026-host-cities-guide/atlanta-city-guide', destination: '/world-cup-2026-atlanta-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/boston-city-guide', destination: '/world-cup-2026-boston-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/dallas-city-guide', destination: '/world-cup-2026-dallas-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/guadalajara-city-guide', destination: '/world-cup-2026-guadalajara-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/houston-city-guide', destination: '/world-cup-2026-houston-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/kansas-city-city-guide', destination: '/world-cup-2026-kansas-city-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/los-angeles-city-guide', destination: '/world-cup-2026-los-angeles-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/mexico-city-city-guide', destination: '/world-cup-2026-mexico-city-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/miami-city-guide', destination: '/world-cup-2026-miami-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/monterrey-city-guide', destination: '/world-cup-2026-monterrey-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/new-york-city-guide', destination: '/world-cup-2026-new-york-new-jersey-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/philadelphia-city-guide', destination: '/world-cup-2026-philadelphia-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/san-francisco-city-guide', destination: '/world-cup-2026-san-francisco-bay-area-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/seattle-city-guide', destination: '/world-cup-2026-seattle-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/toronto-city-guide', destination: '/world-cup-2026-toronto-guide', permanent: true },
+      { source: '/world-cup-2026-host-cities-guide/vancouver-city-guide', destination: '/world-cup-2026-vancouver-guide', permanent: true },
+      
+      // Stadiums
+      { source: '/world-cup-2026-stadiums/arrowhead-stadium-guide', destination: '/arrowhead-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/att-stadium-guide', destination: '/att-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/bc-place-guide', destination: '/bc-place-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/bmo-field-guide', destination: '/bmo-field-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/estadio-akron-guide', destination: '/estadio-akron-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/estadio-azteca-guide', destination: '/estadio-azteca-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/estadio-bbva-guide', destination: '/estadio-bbva-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/gillette-stadium-guide', destination: '/gillette-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/hard-rock-stadium-guide', destination: '/hard-rock-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/levis-stadium-guide', destination: '/levis-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/lincoln-financial-field-guide', destination: '/lincoln-financial-field-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/lumen-field-guide', destination: '/lumen-field-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide', destination: '/mercedes-benz-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/metlife-stadium-guide', destination: '/metlife-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/nrg-stadium-guide', destination: '/nrg-stadium-world-cup-2026', permanent: true },
+      { source: '/world-cup-2026-stadiums/sofi-stadium-guide', destination: '/sofi-stadium-world-cup-2026', permanent: true },
+      
+      // Safety Guides
+      { source: '/guides/fan-zone-crowd-safety-world-cup-2026', destination: '/world-cup-2026-fan-zones-safety', permanent: true },
+      { source: '/guides/nightlife-after-hours-safety-world-cup-2026', destination: '/world-cup-2026-nightlife-safety', permanent: true },
+      { source: '/guides/food-water-safety-dining-world-cup-2026', destination: '/world-cup-2026-food-dining-safety', permanent: true },
+      { source: '/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026', destination: '/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026', permanent: true },
+      { source: '/guides/border-crossing-usa-canada-mexico-world-cup-2026', destination: '/world-cup-2026-border-crossing-guide', permanent: true },
+      { source: '/guides/local-laws-cultural-etiquette-world-cup-2026', destination: '/world-cup-2026-local-laws-etiquette', permanent: true },
+      { source: '/guides/weather-climate-safety-world-cup-2026', destination: '/world-cup-2026-weather-climate-safety', permanent: true },
+
       // Force non-www
       {
         source: '/:path*',
@@ -111,7 +158,7 @@ const nextConfig: NextConfig = {
       // City Guides (301 Redirects from old structure)
       {
         source: '/city-guide/:slug',
-        destination: '/world-cup-2026-host-cities-guide/:slug-city-guide',
+        destination: '/world-cup-2026-:slug-guide',
         permanent: true,
       },
       // Stadium Guides (301 Redirects from old structure)

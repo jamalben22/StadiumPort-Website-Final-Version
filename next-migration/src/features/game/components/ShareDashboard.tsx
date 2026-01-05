@@ -35,10 +35,8 @@ export const ShareDashboard = ({
       <Breadcrumb 
         items={[
           { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
-          { label: 'Share', href: '#' }
+          { label: 'Share Dashboard', href: '#' }
         ]} 
-        variant="light"
-        className="mb-8"
       />
 
       {/* Hero Section - FIFA x Apple x Nike Style */}

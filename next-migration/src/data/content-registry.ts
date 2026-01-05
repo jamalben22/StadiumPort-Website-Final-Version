@@ -332,7 +332,23 @@ export const contentRegistry: Record<string, ContentMeta> = {
     publishedAt: '2026-01-04T00:00:00Z',
     updatedAt: '2026-01-04T00:00:00Z',
     wordCount: 4200,
-    image: '/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp'
+    image: '/images/safety-guide/Border Crossing Guide USA, Canada & Mexico.webp'
+  },
+  'local-laws-cultural-etiquette-world-cup-2026': {
+    title: 'Local Laws & Cultural Etiquette: World Cup 2026 Guide',
+    description: 'Essential guide to local laws, customs, and etiquette in USA, Canada, and Mexico for World Cup 2026. Avoid fines and cultural faux pas.',
+    publishedAt: '2026-01-04T00:00:00Z',
+    updatedAt: '2026-01-04T00:00:00Z',
+    wordCount: 3900,
+    image: '/images/safety-guide/Local Laws & Cultural Etiquette.webp'
+  },
+  'weather-climate-safety-world-cup-2026': {
+    title: 'Weather & Climate Safety: World Cup 2026 Survival Guide',
+    description: 'Prepare for extreme heat, humidity, storms, and altitude in USA, Canada, and Mexico. Essential packing and safety tips for World Cup fans.',
+    publishedAt: '2026-01-04T00:00:00Z',
+    updatedAt: '2026-01-04T00:00:00Z',
+    wordCount: 4000,
+    image: '/images/safety-guide/Weather & Climate Safety Heat, Cold & Storms.webp'
   },
 
   // Travel Tips

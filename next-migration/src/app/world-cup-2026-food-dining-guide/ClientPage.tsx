@@ -291,8 +291,6 @@ export default function ClientPage() {
                   { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
                   { label: 'Food & Dining', href: '/world-cup-2026-food-dining-guide' }
                 ]} 
-                variant="light"
-                className="mb-8"
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
@@ -526,7 +524,7 @@ export default function ClientPage() {
                           "Halal Carts: The Halal Guys (53rd & 6th).",
                           "Splurge: Peter Luger Steak House or Le Bernardin."
                       ],
-                      link: "/world-cup-2026-host-cities-guide/new-york-city-guide"
+                      link: "/world-cup-2026-new-york-new-jersey-guide"
                   },
                   {
                       city: "Philadelphia",
@@ -654,7 +652,7 @@ export default function ClientPage() {
                             "Asian Food: Chinatown & Kensington Market dumplings.",
                             "Caribbean: Roti and jerk chicken are staples."
                         ],
-                        link: "/world-cup-2026-host-cities-guide/toronto-city-guide"
+                        link: "/world-cup-2026-toronto-guide"
                     },
                     {
                         city: "Vancouver",

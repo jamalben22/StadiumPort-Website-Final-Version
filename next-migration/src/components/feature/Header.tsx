@@ -87,7 +87,7 @@ export function Header() {
   // Navigation Items
   const navItems = [
     { label: 'Groups', path: '/world-cup-2026-groups' },
-    { label: 'Host Cities', path: '/world-cup-2026-host-cities-guide' },
+    { label: 'Host Cities', path: '/world-cup-2026-host-cities' },
     { label: 'Stadiums', path: '/world-cup-2026-stadiums' },
     { label: 'Draw Hub', path: '/world-cup-2026-draw-travel-hub' },
     { label: 'Predictor', path: '/world-cup-2026-prediction-game' },
@@ -149,8 +149,8 @@ export function Header() {
                 href={item.path}
                 className={`text-[13px] font-medium tracking-wide transition-all duration-200 ${
                   isActive(item.path)
-                    ? 'text-black dark:text-white opacity-100'
-                    : 'text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-slate-900 dark:text-white'
+                    ? 'text-black dark:text-white'
+                    : 'text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white'
                 }`}
               >
                 {item.label}
@@ -164,7 +164,7 @@ export function Header() {
             {/* Search Trigger */}
             <button 
               onClick={() => setIsSearchOpen(true)}
-              className="group p-2 text-slate-600 dark:text-slate-300 hover:text-black dark:hover:text-slate-900 dark:text-white transition-all duration-200 hover:scale-110 active:scale-95"
+              className="group p-2 text-slate-500 dark:text-slate-400 hover:text-black dark:hover:text-white transition-all duration-200 hover:scale-110 active:scale-95"
               aria-label="Search"
             >
               <Search size={20} strokeWidth={2} className="group-hover:stroke-[2.5px] transition-all" />

@@ -65,8 +65,6 @@ export default function ClientPage() {
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
             { label: 'Privacy', href: '#' }
           ]} 
-          variant="light"
-          className="mb-8"
         />
 
         {/* Hero Section */}

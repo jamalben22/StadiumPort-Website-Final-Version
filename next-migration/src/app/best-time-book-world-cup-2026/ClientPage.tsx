@@ -308,11 +308,9 @@ export default function ClientPage() {
             >
               <Breadcrumb 
                 items={[
-                  { label: 'Travel Tips', href: '/travel-tips' },
-                  { label: 'Booking Guide', href: '/best-time-book-world-cup-2026' }
+                  { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
+                  { label: 'Best Time to Book', href: '/best-time-book-world-cup-2026' }
                 ]} 
-                variant="light" 
-                className="mb-6"
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

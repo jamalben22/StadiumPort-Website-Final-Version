@@ -255,8 +255,7 @@ export default function DrawHubClientPage() {
             items={[
               { label: 'Draw Travel Hub', href: '/world-cup-2026-draw-travel-hub' }
             ]} 
-            variant="light"
-            className="mb-8"
+            className="justify-center mb-12"
           />
 
  

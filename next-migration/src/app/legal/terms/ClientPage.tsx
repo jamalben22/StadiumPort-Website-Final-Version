@@ -69,8 +69,6 @@ export default function ClientPage() {
           items={[
             { label: 'Terms of Service', href: '/legal/terms' }
           ]} 
-          variant="light"
-          className="mb-8"
         />
 
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">

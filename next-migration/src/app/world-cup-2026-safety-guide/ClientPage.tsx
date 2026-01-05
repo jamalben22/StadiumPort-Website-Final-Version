@@ -74,7 +74,7 @@ const safetyGuides = [
   {
     title: "Fan Zone & Crowd Safety: Enjoying the Atmosphere",
     teaser: "Staying safe in large crowds and official Fan Fests. Exit strategies, meeting points, and situational awareness.",
-    link: "/guides/fan-zone-crowd-safety-world-cup-2026",
+    link: "/world-cup-2026-fan-zones-safety",
     image: "/images/safety-guide/Fan Zone & Crowd Safety Enjoying the Atmosphere.webp",
     icon: Users,
     category: "During Your Trip Safety"
@@ -82,7 +82,7 @@ const safetyGuides = [
   {
     title: "Nightlife & After-Hours Safety",
     teaser: "Enjoying the nightlife safely. Transport after dark, alcohol laws, and staying safe in entertainment districts.",
-    link: "/guides/nightlife-after-hours-safety-world-cup-2026",
+    link: "/world-cup-2026-nightlife-safety",
     image: "/images/safety-guide/Nightlife & After-Hours Safety.webp",
     icon: Moon,
     category: "During Your Trip Safety"
@@ -90,7 +90,7 @@ const safetyGuides = [
   {
     title: "Food & Water Safety: Dining Without Distress",
     teaser: "Where to drink tap water (and where not to). Street food safety tips and handling dietary restrictions abroad.",
-    link: "/guides/food-water-safety-dining-world-cup-2026",
+    link: "/world-cup-2026-food-dining-safety",
     image: "/images/safety-guide/Food & Water Safety Dining Without Distress.webp",
     icon: Utensils,
     category: "During Your Trip Safety"
@@ -116,7 +116,7 @@ const safetyGuides = [
   {
     title: "Staying Connected: SIM Cards & Emergency Comms",
     teaser: "Reliable mobile networks and emergency communication apps. Keeping in touch with your group across borders.",
-    link: "/guides/staying-connected-sim-cards-emergency-communications-world-cup-2026",
+    link: "/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026",
     image: "/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp",
     icon: Smartphone,
     category: "Emergency Preparedness"
@@ -126,24 +126,24 @@ const safetyGuides = [
   {
     title: "Border Crossing Guide: USA, Canada & Mexico",
     teaser: "Navigating land and air borders smoothly. Visa requirements, customs rules, and transit protocols between host nations.",
-    link: "/guides/border-crossing-usa-canada-mexico-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_depicting_safe_transportation_in_a_World_Cup_2026.webp",
+    link: "/world-cup-2026-border-crossing-guide",
+    image: "/images/safety-guide/Border Crossing Guide USA, Canada & Mexico.webp",
     icon: MapPin,
     category: "Location-Specific Safety"
   },
   {
     title: "Local Laws & Cultural Etiquette",
     teaser: "Respecting local customs and avoiding legal trouble. Alcohol laws, smoking bans, and cultural do's and don'ts.",
-    link: "/guides/local-laws-cultural-etiquette-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_representing_overall_fan_safety_for_World_Cup_2026.webp",
+    link: "/world-cup-2026-local-laws-etiquette",
+    image: "/images/safety-guide/Local Laws & Cultural Etiquette.webp",
     icon: Scale,
     category: "Location-Specific Safety"
   },
   {
     title: "Weather & Climate Safety: Heat, Cold & Storms",
     teaser: "Preparing for Miami heat, Toronto rain, or Mexico City altitude. Staying safe in extreme weather conditions.",
-    link: "/guides/weather-climate-safety-world-cup-2026",
-    image: "/images/safety-guide/A_realistic_high-detail_photo_of_a_family_with_children_entering_or_walking_near.webp",
+    link: "/world-cup-2026-weather-climate-safety",
+    image: "/images/safety-guide/Weather & Climate Safety Heat, Cold & Storms.webp",
     icon: Cloud,
     category: "Location-Specific Safety"
   },
@@ -283,8 +283,7 @@ export default function SafetyGuideClientPage() {
       <section className="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb 
           items={[{ label: 'Safety Guide', href: '/world-cup-2026-safety-guide' }]} 
-          variant="light"
-          className="mb-8"
+          className="justify-center mb-12"
         />
         <div className="max-w-4xl">
           <motion.h1 

@@ -324,8 +324,6 @@ export default function ClientPage() {
                   { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
                   { label: 'Itinerary Planning', href: '/world-cup-2026-itinerary-planning' }
                 ]} 
-                variant="light"
-                className="mb-8"
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
@@ -537,7 +535,7 @@ export default function ClientPage() {
                     <Flag className="w-5 h-5 text-emerald-500" />
                   </h4>
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
-                    Morning sleep-in (jet lag). Head to the stadium early (3pm) for Fan Fest. <InternalLink href="/world-cup-2026-stadiums/metlife-stadium-guide" text="MetLife Guide" />. The train from Penn Station takes ~30 mins but lines will be long.
+                    Morning sleep-in (jet lag). Head to the stadium early (3pm) for Fan Fest. <InternalLink href="/metlife-stadium-world-cup-2026" text="MetLife Guide" />. The train from Penn Station takes ~30 mins but lines will be long.
                   </p>
                   <div className="bg-emerald-50 dark:bg-emerald-900/10 p-4 rounded-xl border border-emerald-100 dark:border-emerald-900/20 mb-4">
                     <p className="text-sm font-bold text-emerald-800 dark:text-emerald-300">Highlight: Post-match celebration in Times Square.</p>
@@ -569,7 +567,7 @@ export default function ClientPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                     Explore the Rocky Steps and Liberty Bell in the morning. Head to the Sports Complex in South Philly for the match. The atmosphere here is intense.
                   </p>
-                  <InternalLink href="/world-cup-2026-stadiums/lincoln-financial-field-guide" text="Philadelphia Stadium Guide" />
+                  <InternalLink href="/lincoln-financial-field-world-cup-2026" text="Philadelphia Stadium Guide" />
                 </div>
 
                 {/* Day 5 */}
@@ -591,7 +589,7 @@ export default function ClientPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-4 leading-relaxed">
                     Take the MBTA Commuter Rail from South Station to Foxborough. It is a dedicated train for events. Gillette is huge and loud.
                   </p>
-                   <InternalLink href="/world-cup-2026-stadiums/gillette-stadium-guide" text="Boston Stadium Guide" />
+                   <InternalLink href="/gillette-stadium-world-cup-2026" text="Boston Stadium Guide" />
                 </div>
 
                  {/* Day 7 */}
@@ -670,8 +668,8 @@ export default function ClientPage() {
                 <br/>Authentic football culture. Start in Dallas (AT&T Stadium). Drive/Bus to Houston (NRG Stadium). Fly to Monterrey (Estadio BBVA). Finish in Mexico City (Azteca). The food on this trip will be legendary.
               </p>
               <div className="flex gap-4">
-                <AffiliateButton href="/world-cup-2026-host-cities-guide/dallas-city-guide" text="View Texas Guide" variant="secondary" />
-                <InternalLink href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" text="View CDMX Guide" />
+                <AffiliateButton href="/world-cup-2026-dallas-guide" text="View Texas Guide" variant="secondary" />
+                <InternalLink href="/world-cup-2026-mexico-city-guide" text="View CDMX Guide" />
               </div>
             </div>
           </Section>
@@ -690,7 +688,7 @@ export default function ClientPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
                     Start in <strong>Vancouver</strong> (Sea-to-Sky highway, 2 matches). Train/Drive to <strong>Seattle</strong> (Space Needle, 1 match).
                   </p>
-                  <InternalLink href="/world-cup-2026-host-cities-guide/vancouver-city-guide" text="Vancouver Guide" />
+                  <InternalLink href="/world-cup-2026-vancouver-guide" text="Vancouver Guide" />
                 </div>
 
                 <div className="pl-6 border-l-4 border-slate-200 dark:border-slate-200 dark:border-slate-800">
@@ -698,7 +696,7 @@ export default function ClientPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
                     Fly Toronto &rarr; Boston. Take the train down the corridor: <strong>Boston</strong> &rarr; <strong>NYC</strong> &rarr; <strong>Philadelphia</strong>. Catch 3 matches in this dense cluster.
                   </p>
-                  <InternalLink href="/world-cup-2026-host-cities-guide/boston-city-guide" text="Boston Guide" />
+                  <InternalLink href="/world-cup-2026-boston-guide" text="Boston Guide" />
                 </div>
 
                 <div className="pl-6 border-l-4 border-emerald-500">
@@ -706,7 +704,7 @@ export default function ClientPage() {
                   <p className="text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
                     Fly Philly &rarr; <strong>Mexico City</strong>. End your trip with the most passionate fans in the world. Spend 4 days here, seeing Pyramids of Teotihuacan and 2 matches at the legendary Estadio Azteca.
                   </p>
-                  <InternalLink href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" text="Mexico City Guide" />
+                  <InternalLink href="/world-cup-2026-mexico-city-guide" text="Mexico City Guide" />
                 </div>
              </div>
 

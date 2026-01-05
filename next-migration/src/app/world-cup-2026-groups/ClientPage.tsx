@@ -16,7 +16,15 @@ const HOST_REGIONS = {
 };
 
 const getCitySlug = (city: string) => {
-  if (city === 'New York/NJ') return 'new-york-city';
+  const cityMap: { [key: string]: string } = {
+    'New York/NJ': 'new-york-new-jersey',
+    'San Francisco': 'san-francisco-bay-area',
+    'Kansas City': 'kansas-city',
+    'Los Angeles': 'los-angeles',
+    'Mexico City': 'mexico-city'
+  };
+  
+  if (cityMap[city]) return cityMap[city];
   return city.toLowerCase().replace(/ /g, '-');
 };
 
@@ -124,22 +132,15 @@ export default function ClientPage() {
       
       {/* Hero Section */}
       <section className="relative w-full overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <OptimizedImage
-            src="/images/hub-pages/host-cities-bg.webp"
-            alt="World Cup 2026 Host Cities"
-            fill
-            imgClassName="object-cover"
-          />
-        </div>
         {/* Background Gradient */}
         <div className="absolute inset-0 bg-gradient-to-b from-blue-600/5 via-transparent to-[#F5F5F7] dark:to-[#0A0A0A] pointer-events-none" />
         
         <div className="relative max-w-[1440px] mx-auto pt-32 pb-24 px-6 md:px-12 text-center">
           <Breadcrumb 
-            items={[{ label: 'Groups', href: '/world-cup-2026-groups' }]} 
-            variant="light" 
-            className="justify-center" 
+            items={[
+              { label: 'Groups', href: '/world-cup-2026-groups' }
+            ]} 
+            className="justify-center mb-12"
           />
 
      
@@ -337,7 +338,7 @@ export default function ClientPage() {
               {region.cities.map((city) => (
                 <li key={city}>
                   <Link 
-                    href={`/world-cup-2026-host-cities-guide/${getCitySlug(city)}-city-guide`}
+                    href={`/world-cup-2026-${getCitySlug(city)}-guide`}
                     className="flex items-center gap-3 text-slate-600 dark:text-slate-300 hover:text-rose-500 dark:hover:text-rose-400 transition-colors group"
                   >
                     <MapPin size={18} className="text-rose-500 group-hover:scale-110 transition-transform" />

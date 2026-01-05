@@ -172,11 +172,9 @@ export default function ClientPage() {
             >
             <Breadcrumb 
               items={[
-                { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
-                { label: 'Transportation', href: '/world-cup-2026-transportation-safety' }
+                { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+                { label: 'Transportation Safety', href: '/world-cup-2026-transportation-safety' }
               ]} 
-              variant="light"
-              className="mb-8"
             />
 
               <div className="flex items-center gap-4 mb-6">
@@ -404,7 +402,7 @@ export default function ClientPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-4 mt-8">
-                  <AffiliateButton text="Mexico City Safety Guide" href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" variant="outline" icon={MapPin} />
+                  <AffiliateButton text="Mexico City Safety Guide" href="/world-cup-2026-mexico-city-guide" variant="outline" icon={MapPin} />
                   <AffiliateButton text="Common Taxi Scams" href="/world-cup-2026-scams-avoid-fraud" variant="outline" icon={AlertTriangle} />
                 </div>
               </div>
@@ -487,7 +485,7 @@ export default function ClientPage() {
 
             <div className="mt-12 flex flex-wrap gap-4">
               <AffiliateButton text="Shop Anti-Theft Backpacks" href="https://www.amazon.com/s?k=anti+theft+backpack" variant="secondary" icon={ShieldAlert} />
-              <AffiliateButton text="See All Host City Guides" href="/world-cup-2026-host-cities-guide" variant="primary" icon={MapPin} />
+              <AffiliateButton text="See All Host City Guides" href="/world-cup-2026-host-cities" variant="primary" icon={MapPin} />
             </div>
           </Section>
 

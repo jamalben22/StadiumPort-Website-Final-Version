@@ -176,7 +176,7 @@ export const HeroSection = () => {
                     </div>
                  </Link>
                  
-                 <Link href="/world-cup-2026-host-cities-guide" className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full border border-black/20 text-black dark:border-white/20 dark:text-white font-space font-medium text-base sm:text-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
+                 <Link href="/world-cup-2026-host-cities" className="w-full sm:w-auto px-8 py-3.5 sm:py-4 rounded-full border border-black/20 text-black dark:border-white/20 dark:text-white font-space font-medium text-base sm:text-lg hover:bg-black/5 dark:hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center">
                     Explore 16 Host Venues
                  </Link>
               </motion.div>

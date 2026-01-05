@@ -392,8 +392,6 @@ export default function ClientPage() {
                   { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
                   { label: 'Accommodation', href: '/world-cup-2026-accommodation-guide' }
                 ]} 
-                variant="light"
-                className="mb-8"
               />
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
@@ -467,7 +465,7 @@ export default function ClientPage() {
               </p>
               <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
                 The mistake most fans make? Assuming they need to stay right next to the stadium. 
-                In North America, most stadiums are located in suburbs. Read our <InternalLink href="/world-cup-2026-host-cities-guide" text="Host Cities Guide" /> to understand the layout of each venue.
+                In North America, most stadiums are located in suburbs. Read our <InternalLink href="/world-cup-2026-host-cities" text="Host Cities Guide" /> to understand the layout of each venue.
                 The pro move is to stay in vibrant downtown hubs or strategic transit corridors and commute to the match.
               </p>
             </div>

@@ -282,13 +282,11 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <Breadcrumb 
-              items={[
-                { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
-                { label: 'Accommodation', href: '/world-cup-2026-accommodation-security' }
-              ]} 
-              variant="light"
-              className="mb-8"
-            />
+                items={[
+                  { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+                  { label: 'Accommodation Security', href: '/world-cup-2026-accommodation-security' }
+                ]} 
+              />
 
               <div className="flex items-center gap-4 mb-6">
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">

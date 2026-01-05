@@ -49,8 +49,7 @@ export default function ClientAuthors() {
                 { label: 'About', href: '/about' },
                 { label: 'Authors', href: '#' }
               ]} 
-              variant="light"
-              className="mb-8"
+              className="justify-center mb-12"
             />
 
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 dark:bg-white/10 border border-slate-200 dark:border-white/10 mb-8">

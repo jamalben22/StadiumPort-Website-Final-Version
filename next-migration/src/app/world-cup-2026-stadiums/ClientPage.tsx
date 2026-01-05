@@ -23,7 +23,7 @@ const stadiums = [
     surface: 'Artificial Turf',
     image: '/images/cities/atlanta-world-cup-2026-1024.webp', 
     highlights: ['Unique camera-shutter roof', '360-degree Halo video board', 'Cheap concessions'], 
-    link: '/world-cup-2026-stadiums/mercedes-benz-stadium-guide',
+    link: '/mercedes-benz-stadium-world-cup-2026',
     region: 'East'
   },
   { 
@@ -37,7 +37,7 @@ const stadiums = [
     surface: 'FieldTurf',
     image: '/images/cities/boston-world-cup-2026-1024.webp', 
     highlights: ['New lighthouse renovation', 'Open corners design', 'Patriot Place entertainment'], 
-    link: '/world-cup-2026-stadiums/gillette-stadium-guide',
+    link: '/gillette-stadium-world-cup-2026',
     region: 'East'
   },
   { 
@@ -51,7 +51,7 @@ const stadiums = [
     surface: 'Matrix Turf',
     image: '/images/cities/dallas-world-cup-2026-1024.webp', 
     highlights: ['Massive center-hung video board', 'Largest retractable roof dome', 'Capacity expandable to 100k'], 
-    link: '/world-cup-2026-stadiums/att-stadium-guide',
+    link: '/att-stadium-world-cup-2026',
     region: 'Central'
   },
   { 
@@ -65,7 +65,7 @@ const stadiums = [
     surface: 'Artificial Turf',
     image: '/images/cities/houston-world-cup-2026-1024.webp', 
     highlights: ['First NFL retractable roof', 'Air-conditioned comfort', 'Compact seating bowl'], 
-    link: '/world-cup-2026-stadiums/nrg-stadium-guide',
+    link: '/nrg-stadium-world-cup-2026',
     region: 'Central'
   },
   { 
@@ -79,7 +79,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/kansas-city-world-cup-2026-1024.webp', 
     highlights: ['Loudest stadium in the world', 'Historic bowl design', 'Tailgating culture'], 
-    link: '/world-cup-2026-stadiums/arrowhead-stadium-guide',
+    link: '/arrowhead-stadium-world-cup-2026',
     region: 'Central'
   },
   { 
@@ -93,7 +93,7 @@ const stadiums = [
     surface: 'Matrix Turf',
     image: '/images/cities/los-angeles-world-cup-2026-1024.webp', 
     highlights: ['Most expensive stadium ever', 'Infinity Screen (4K)', 'Indoor-outdoor design'], 
-    link: '/world-cup-2026-stadiums/sofi-stadium-guide',
+    link: '/sofi-stadium-world-cup-2026',
     region: 'West'
   },
   { 
@@ -107,7 +107,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/miami-world-cup-2026-1024.webp', 
     highlights: ['European soccer atmosphere', 'Modern canopy roof', 'Premium club seating'], 
-    link: '/world-cup-2026-stadiums/hard-rock-stadium-guide',
+    link: '/hard-rock-stadium-world-cup-2026',
     region: 'East'
   },
   { 
@@ -121,7 +121,7 @@ const stadiums = [
     surface: 'FieldTurf',
     image: '/images/cities/new-york-new-jersey-world-cup-2026-1024.webp', 
     highlights: ['Host of the 2026 Final', 'Largest NFL stadium by capacity', '360-degree lighting'], 
-    link: '/world-cup-2026-stadiums/metlife-stadium-guide',
+    link: '/metlife-stadium-world-cup-2026',
     region: 'East'
   },
   { 
@@ -135,7 +135,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/philadelphia-world-cup-2026-1024.webp', 
     highlights: ['Intimidating acoustics', 'Green energy powered', 'Views of Philly skyline'], 
-    link: '/world-cup-2026-stadiums/lincoln-financial-field-guide',
+    link: '/lincoln-financial-field-world-cup-2026',
     region: 'East'
   },
   { 
@@ -149,7 +149,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/san-francisco-world-cup-2026-1024.webp', 
     highlights: ['High-tech connectivity', 'Open concourses', 'Sustainable design'], 
-    link: '/world-cup-2026-stadiums/levis-stadium-guide',
+    link: '/levis-stadium-world-cup-2026',
     region: 'West'
   },
   { 
@@ -163,7 +163,7 @@ const stadiums = [
     surface: 'FieldTurf',
     image: '/images/cities/seattle-world-cup-2026-1024.webp', 
     highlights: ['Designed for noise', 'Downtown location', 'Iconic partial roof arches'], 
-    link: '/world-cup-2026-stadiums/lumen-field-guide',
+    link: '/lumen-field-world-cup-2026',
     region: 'West'
   },
   // Canada
@@ -178,7 +178,7 @@ const stadiums = [
     surface: 'Hybrid Grass',
     image: '/images/cities/toronto-world-cup-2026-1024.webp', 
     highlights: ['Specific soccer design', 'Lakeshore location', 'Temporary expansion for WC'], 
-    link: '/world-cup-2026-stadiums/bmo-field-guide',
+    link: '/bmo-field-world-cup-2026',
     region: 'East'
   },
   { 
@@ -192,7 +192,7 @@ const stadiums = [
     surface: 'Polytan LigaTurf',
     image: '/images/cities/vancouver-world-cup-2026-1024.webp', 
     highlights: ['Largest cable-supported roof', 'Stunning mountain views', 'Downtown location'], 
-    link: '/world-cup-2026-stadiums/bc-place-guide',
+    link: '/bc-place-world-cup-2026',
     region: 'West'
   },
   // Mexico
@@ -207,7 +207,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/mexico-city-world-cup-2026-1024.webp', 
     highlights: ['Host of the 1970 & 1986 Finals', 'Iconic high-altitude venue', 'Opening match stadium'], 
-    link: '/world-cup-2026-stadiums/estadio-azteca-guide',
+    link: '/estadio-azteca-world-cup-2026',
     region: 'Central'
   },
   { 
@@ -221,7 +221,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/monterrey-world-cup-2026-1024.webp', 
     highlights: ['View of Cerro de la Silla', 'Modern "Steel Giant" design', 'Close-to-pitch seating'], 
-    link: '/world-cup-2026-stadiums/estadio-bbva-guide',
+    link: '/estadio-bbva-world-cup-2026',
     region: 'Central'
   },
   { 
@@ -235,7 +235,7 @@ const stadiums = [
     surface: 'Grass',
     image: '/images/cities/guadalajara-world-cup-2026-1024.webp', 
     highlights: ['"Volcano" exterior design', 'Cloud-like roof structure', 'High-tech facilities'], 
-    link: '/world-cup-2026-stadiums/estadio-akron-guide',
+    link: '/estadio-akron-world-cup-2026',
     region: 'Central'
   },
 ];
@@ -389,7 +389,7 @@ const StadiumQuiz = () => {
               Retake Quiz
             </button>
             <Link 
-              href={`/world-cup-2026-stadiums/${result?.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '')}-guide`}
+              href={`/${result?.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '')}-world-cup-2026`}
               className="px-8 py-4 bg-emerald-500 text-slate-900 dark:text-white font-bold rounded-2xl hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 hover:-translate-y-0.5"
             >
               Explore {result}
@@ -483,14 +483,26 @@ export default function ClientPage() {
       <main>
         {/* Hero Section */}
         <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#F5F5F7] dark:bg-[#0A0A0A]">
-
+          {/* Background Image with Overlay */}
+          <div className="absolute inset-0 z-0">
+            <Image
+              src="/images/hub-pages/stadiums-bg.webp"
+              alt="World Cup 2026 Stadiums Background"
+              fill
+              priority
+              className="object-cover"
+            />
+            {/* Dark gradient overlay for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+          </div>
           
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             {/* Breadcrumbs */}
             <Breadcrumb 
-          items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
-          className="mb-12 justify-center"
-        />
+              items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
+              className="mb-12 justify-center"
+              variant="light"
+            />
 
             <div className="text-center max-w-5xl mx-auto">
               <motion.div 
@@ -498,41 +510,41 @@ export default function ClientPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.1]">
-                World Cup 2026 Stadiums<br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-200">
-                  16 Venues. 3 Nations.
-                </span>
-              </h1>
-                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tighter leading-[1.1]">
+                  World Cup 2026 Stadiums<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+                    16 Venues. 3 Nations.
+                  </span>
+                </h1>
+                <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
                   The 2026 FIFA World Cup™ expands across the USA, Canada, and Mexico. 
                   Experience the architecture, atmosphere, and history of the venues defining the next era of football.
                 </p>
                 
-                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-slate-500 dark:text-slate-400">
+                <div className="flex flex-wrap justify-center gap-x-12 gap-y-6 text-slate-900 dark:text-slate-300">
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                    <div className="p-3 rounded-2xl border border-black/10 dark:border-white/20 group-hover:border-emerald-400/50 transition-colors bg-white/5 backdrop-blur-sm">
                       <MapPin className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">16 Stadiums</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-900 dark:text-white/90">16 Stadiums</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                    <div className="p-3 rounded-2xl border border-black/10 dark:border-white/20 group-hover:border-emerald-400/50 transition-colors bg-white/5 backdrop-blur-sm">
                       <Globe className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">3 Nations</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-900 dark:text-white/90">3 Nations</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                    <div className="p-3 rounded-2xl border border-black/10 dark:border-white/20 group-hover:border-emerald-400/50 transition-colors bg-white/5 backdrop-blur-sm">
                       <Flag className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">48 Teams</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-900 dark:text-white/90">48 Teams</span>
                   </div>
                   <div className="flex flex-col items-center gap-2 group cursor-default">
-                    <div className="p-3 rounded-2xl border border-slate-200 dark:border-white/10 group-hover:border-emerald-500/50 transition-colors">
+                    <div className="p-3 rounded-2xl border border-black/10 dark:border-white/20 group-hover:border-emerald-400/50 transition-colors bg-white/5 backdrop-blur-sm">
                       <Trophy className="w-6 h-6 text-emerald-600 dark:text-emerald-400" />
                     </div>
-                    <span className="text-sm font-medium uppercase tracking-widest text-slate-700 dark:text-white/80">104 Matches</span>
+                    <span className="text-sm font-medium uppercase tracking-widest text-slate-900 dark:text-white/90">104 Matches</span>
                   </div>
                 </div>
               </motion.div>

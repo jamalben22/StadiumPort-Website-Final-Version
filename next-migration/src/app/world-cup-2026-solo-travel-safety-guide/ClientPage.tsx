@@ -312,11 +312,9 @@ alt="Solo Traveler at World Cup"
  >
  <Breadcrumb 
  items={[
- { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
- { label: 'Solo Travel', href: '/world-cup-2026-solo-travel-safety-guide' }
+ { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+ { label: 'Solo Travel Safety', href: '/world-cup-2026-solo-travel-safety-guide' }
  ]} 
- variant="light"
- className="mb-8"
  />
 
  <div className="flex items-center gap-4 mb-6">

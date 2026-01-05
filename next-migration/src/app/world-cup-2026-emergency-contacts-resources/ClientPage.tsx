@@ -20,6 +20,19 @@ import {
 
 // --- Design System & Components ---
 
+const getCitySlug = (city: string) => {
+  const cityMap: { [key: string]: string } = {
+    'New York/NJ': 'new-york-new-jersey',
+    'San Francisco': 'san-francisco-bay-area',
+    'Kansas City': 'kansas-city',
+    'Los Angeles': 'los-angeles',
+    'Mexico City': 'mexico-city'
+  };
+  
+  if (cityMap[city]) return cityMap[city];
+  return city.toLowerCase().replace(/ /g, '-');
+};
+
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" as const } }
@@ -282,11 +295,9 @@ export default function ClientPage() {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <Breadcrumb 
             items={[
-              { label: 'Security', href: '/world-cup-2026-travel-safety-security-guide' },
-              { label: 'Emergency', href: '/world-cup-2026-emergency-contacts-resources' }
+              { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
+              { label: 'Emergency Contacts', href: '/world-cup-2026-emergency-contacts-resources' }
             ]} 
-            variant="light"
-            className="mb-8"
           />
 
           <motion.div
@@ -496,7 +507,7 @@ export default function ClientPage() {
                      </div>
                   </div>
                   <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-200 dark:border-slate-800">
-                    <Link href={`/world-cup-2026-host-cities-guide/${city.city.toLowerCase().replace(/ /g, '-')}-city-guide`} className="text-sm font-bold text-emerald-600 hover:text-emerald-500 flex items-center gap-1">
+                    <Link href={`/world-cup-2026-${getCitySlug(city.city)}-guide`} className="text-sm font-bold text-emerald-600 hover:text-emerald-500 flex items-center gap-1">
                       View Local Guide <ArrowRight className="w-3 h-3" />
                     </Link>
                   </div>

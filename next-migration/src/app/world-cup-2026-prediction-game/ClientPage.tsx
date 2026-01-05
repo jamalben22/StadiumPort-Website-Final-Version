@@ -299,12 +299,11 @@ function PredictGameContent() {
           <>
             {/* Breadcrumb */}
             <Breadcrumb 
-            items={[
-              { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' }
-            ]} 
-            variant="light"
-            className="mb-8"
-          />
+              items={[
+                { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' }
+              ]} 
+              className="justify-center mb-12"
+            />
 
             {/* Stepper UI (Persistent) */}
           <div className="mb-8 md:mb-12">

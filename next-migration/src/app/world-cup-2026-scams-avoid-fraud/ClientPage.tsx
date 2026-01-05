@@ -285,8 +285,6 @@ export default function ClientPage() {
                   { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
                   { label: 'Scams & Fraud', href: '/world-cup-2026-scams-avoid-fraud' }
                 ]} 
-                variant="light"
-                className="mb-8"
               />
 
               <div className="flex items-center gap-4 mb-6">
@@ -578,7 +576,7 @@ export default function ClientPage() {
                 </div>
               </div>
             </div>
-            <Link href="/world-cup-2026-host-cities-guide/mexico-city-city-guide" className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+            <Link href="/world-cup-2026-mexico-city-guide" className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
               <MapPin className="w-5 h-5" />
               Mexico City Safety & Transport Guide
             </Link>
