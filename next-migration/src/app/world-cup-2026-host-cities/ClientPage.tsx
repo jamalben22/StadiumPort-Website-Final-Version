@@ -209,19 +209,17 @@ export default function ClientPage() {
       
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-900">
           {/* Background Image with Overlay */}
           <div className="absolute inset-0 z-0">
-            <Image
+            <img
               src="/images/hub-pages/host-cities-bg.webp"
               alt="World Cup 2026 Host Cities Background"
-              fill
-              priority
-              className="object-cover"
-              unoptimized
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
             />
             {/* Dark gradient overlay for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
           </div>
 
           <div className="relative z-20 max-w-7xl mx-auto w-full">
