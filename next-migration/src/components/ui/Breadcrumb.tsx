@@ -16,26 +16,35 @@ interface BreadcrumbItem {
 
 interface BreadcrumbProps {
   items: BreadcrumbItem[];
-  variant?: 'default' | 'light';
+  variant?: 'default' | 'light' | 'white';
   className?: string;
 }
 
 export function Breadcrumb({ items, variant = 'default', className = '' }: BreadcrumbProps) {
   const isLight = variant === 'light';
+  const isWhite = variant === 'white';
   
-  const containerClasses = isLight 
+  const containerClasses = isWhite
+    ? "text-white/70"
+    : isLight 
     ? "text-slate-900/60 dark:text-white/60" 
     : "text-slate-500 dark:text-slate-400";
     
-  const separatorClasses = isLight
+  const separatorClasses = isWhite
+    ? "text-white/40"
+    : isLight
     ? "text-slate-900/40 dark:text-white/40"
     : "text-slate-300 dark:text-slate-700";
     
-  const activeClasses = isLight
+  const activeClasses = isWhite
+    ? "text-white font-bold"
+    : isLight
     ? "text-slate-900 dark:text-white font-bold"
     : "text-emerald-600 dark:text-emerald-400 font-bold";
     
-  const linkHoverClasses = isLight
+  const linkHoverClasses = isWhite
+    ? "hover:text-white transition-colors"
+    : isLight
     ? "hover:text-slate-900 dark:hover:text-white transition-colors"
     : "hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors";
 

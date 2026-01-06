@@ -288,13 +288,16 @@ export default function ClientPage() {
               />
 
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full border border-red-500/30 text-red-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
-                  Critical Warning
-                </span>
-                <span className="px-3 py-1 rounded-full bg-red-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-500/20">
-                  Fraud Prevention
-                </span>
-              </div>
+          <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+            Last Updated: January 4, 2026
+          </span>
+          <span className="px-3 py-1 rounded-full border border-red-500/30 text-red-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+            Critical Warning
+          </span>
+          <span className="px-3 py-1 rounded-full bg-red-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-red-500/20">
+            Fraud Prevention
+          </span>
+        </div>
               
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
                 WORLD CUP 2026 <br />

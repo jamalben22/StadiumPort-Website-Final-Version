@@ -265,6 +265,17 @@ const TravelTipsClientPage = () => {
       <section className="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={[{ label: 'Travel Tips', href: '/travel-tips' }]} />
         <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+              Last Updated: January 4, 2026
+            </span>
+            <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+              Essential Advice
+            </span>
+            <span className="px-3 py-1 rounded-full bg-blue-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-blue-500/20">
+              Global Guide
+            </span>
+          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

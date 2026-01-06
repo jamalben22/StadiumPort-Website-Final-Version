@@ -65,6 +65,8 @@ export default function SharePage() {
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
             { label: 'Share Result', href: '#' }
           ]} 
+          variant="white"
+          className="justify-center"
         />
       </div>
 

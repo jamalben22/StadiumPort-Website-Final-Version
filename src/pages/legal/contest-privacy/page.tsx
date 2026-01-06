@@ -147,7 +147,11 @@ export default function ContestPrivacyPage() {
                   ))}
                 </nav>
                 <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
-                   <p className="text-xs text-slate-500 dark:text-slate-400">Last Updated: November 28, 2025</p>
+                   <div className="flex justify-start">
+                     <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                       Last Updated: January 2, 2026
+                     </span>
+                   </div>
                 </div>
               </div>
             </div>

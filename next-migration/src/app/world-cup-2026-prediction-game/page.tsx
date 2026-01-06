@@ -4,15 +4,15 @@ import ClientPage from './ClientPage';
 import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
- title: 'World Cup 2026 Predictor Game | stadiumport',
- description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
- keywords: ["stadiumport", "World Cup 2026 predictor", "free World Cup prediction game", "International World Cup contest", "Global soccer prediction game", "Worldwide World Cup prizes"],
- alternates: {
- canonical: 'https://stadiumport.com/world-cup-2026-prediction-game',
- },
- openGraph: {
-    title: 'World Cup 2026 Predictor Game | stadiumport',
-    description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
+  title: 'Play World Cup 2026 Predictor: Win $1k & Official Jersey',
+  description: 'Win $1,000 + Jersey in the Free World Cup 2026 Predictor! Predict the full bracket. Open globally 13+. 100% Free. Beat the experts & win big!',
+  keywords: ["World Cup 2026 predictor", "World Cup 2026 bracket challenge", "free World Cup prediction game", "World Cup 2026 contest", "soccer prediction game", "FIFA World Cup 2026 bracket", "win World Cup prizes"],
+  alternates: {
+    canonical: 'https://stadiumport.com/world-cup-2026-prediction-game',
+  },
+  openGraph: {
+    title: 'Play World Cup 2026 Predictor: Win $1k & Official Jersey',
+    description: 'Win $1,000 + Jersey in the Free World Cup 2026 Predictor! Predict the full bracket. Open globally 13+. 100% Free. Beat the experts & win big!',
     url: 'https://stadiumport.com/world-cup-2026-prediction-game',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -28,66 +28,66 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Predictor Game | stadiumport',
-    description: 'Free worldwide prediction contest (13+). Predict the World Cup 2026 bracket, beat the experts, and win official jerseys, match balls & $1,000 cash prizes.',
+    title: 'Play World Cup 2026 Predictor: Win $1k & Official Jersey',
+    description: 'Win $1,000 + Jersey in the Free World Cup 2026 Predictor! Predict the full bracket. Open globally 13+. 100% Free. Beat the experts & win big!',
     images: ['/images/hub-pages/FIFA-World-Cup-26-qualified-teams-wallchart-graphic.webp'],
   },
 };
 
 export default function Page() {
- const schemas = [
- {
- "@context": "https://schema.org",
- "@type": "WebApplication",
- "name": "World Cup 2026 Predictor",
- "applicationCategory": "GameApplication",
- "operatingSystem": "Any",
- "url": "https://stadiumport.com/world-cup-2026-prediction-game",
- "offers": {
- "@type": "Offer",
- "price": "0",
- "priceCurrency": "USD"
- },
- "description": "Interactive World Cup 2026 bracket simulator and prediction game. Free to play worldwide for ages 13+.",
- "featureList": "48-team group stage simulation, Third-place qualifier logic, Knockout bracket predictor, Social sharing",
- "browserRequirements": "Requires JavaScript. Works on modern browsers.",
- "softwareVersion": "2.0",
- "audience": {
- "@type": "PeopleAudience",
- "suggestedMinAge": "13"
- }
- },
- {
- "@context": "https://schema.org",
- "@type": "Event",
- "name": "World Cup 2026 Predictor Challenge",
- "description": "Global World Cup 2026 prediction contest open to participants worldwide aged 13 or older. Participants aged 13-17 must have parental or guardian permission. All physical prizes ship internationally to any country. Prize winners under 18 must have a parent or guardian claim the prize on their behalf. Void where prohibited by law.",
- "startDate": "2024-06-11T09:00:00Z",
- "endDate": "2026-06-11T09:00:00Z",
- "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
- "eventStatus": "https://schema.org/EventScheduled",
- "location": {
- "@type": "VirtualLocation",
- "url": "https://stadiumport.com/world-cup-2026-prediction-game"
- },
- "organizer": {
- "@type": "Organization",
- "name": "stadiumport",
- "url": "https://stadiumport.com"
- },
- "offers": {
- "@type": "Offer",
- "url": "https://stadiumport.com/world-cup-2026-prediction-game",
- "price": "0",
- "priceCurrency": "USD",
- "availability": "https://schema.org/InStock",
- "validFrom": "2024-06-11T09:00:00Z"
- },
- "performer": {
- "@type": "Organization",
- "name": "stadiumport"
- }
- },
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "World Cup 2026 Predictor Game",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Any",
+      "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Play the #1 World Cup 2026 Predictor Game. Free to enter, open globally (13+). Win $1,000 cash, official jersey & match ball. Predict the full 48-team bracket.",
+      "featureList": "48-team group stage simulation, Third-place qualifier logic, Knockout bracket predictor, Social sharing, Global leaderboard",
+      "browserRequirements": "Requires JavaScript. Works on modern browsers.",
+      "softwareVersion": "2.1",
+      "audience": {
+        "@type": "PeopleAudience",
+        "suggestedMinAge": "13"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Event",
+      "name": "World Cup 2026 Predictor Challenge - Win $1000 & Jersey",
+      "description": "Join the global World Cup 2026 Prediction Contest. 100% Free to play. Open to ages 13+ worldwide. Grand Prize: $1,000 USD + Official World Cup Jersey + Match Ball. Predict the Group Stage, Knockout Bracket, and Final Champion. Predictions lock on June 11, 2026.",
+      "startDate": "2024-06-11T09:00:00Z",
+      "endDate": "2026-06-11T09:00:00Z",
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game"
+      },
+      "organizer": {
+        "@type": "Organization",
+        "name": "stadiumport",
+        "url": "https://stadiumport.com"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://stadiumport.com/world-cup-2026-prediction-game",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2024-06-11T09:00:00Z"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "stadiumport"
+      }
+    },
  {
  "@context": "https://schema.org",
  "@type": "FAQPage",

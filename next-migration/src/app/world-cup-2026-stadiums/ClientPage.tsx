@@ -482,16 +482,12 @@ export default function ClientPage() {
 
       <main>
         {/* Hero Section */}
-        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-900">
-          {/* Background Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A] z-10" />
-          
+        <section className="relative min-h-[85vh] flex items-center justify-center py-24 px-4 sm:px-6 lg:px-8 overflow-hidden bg-slate-50 dark:bg-[#0A0A0A]">
           <div className="relative z-20 max-w-7xl mx-auto w-full">
             {/* Breadcrumbs */}
             <Breadcrumb 
               items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }]} 
               className="mb-12 justify-center"
-              variant="light"
             />
 
             <div className="text-center max-w-5xl mx-auto">
@@ -500,13 +496,18 @@ export default function ClientPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-8 tracking-tighter leading-[1.1]">
+                <div className="flex justify-center mb-8">
+                  <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                    Last Updated: January 4, 2026
+                  </span>
+                </div>
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.1]">
                   World Cup 2026 Stadiums<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-200">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-200">
                     16 Venues. 3 Nations.
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
                   The 2026 FIFA World Cup™ expands across the USA, Canada, and Mexico. 
                   Experience the architecture, atmosphere, and history of the venues defining the next era of football.
                 </p>

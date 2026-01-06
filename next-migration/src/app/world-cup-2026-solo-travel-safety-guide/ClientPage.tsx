@@ -318,6 +318,9 @@ alt="Solo Traveler at World Cup"
  />
 
  <div className="flex items-center gap-4 mb-6">
+ <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+ Last Updated: January 4, 2026
+ </span>
  <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Safety Guide
  </span>

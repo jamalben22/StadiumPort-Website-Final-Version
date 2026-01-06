@@ -69,17 +69,14 @@ export default function ClientPage() {
           items={[
             { label: 'Terms of Service', href: '/legal/terms' }
           ]} 
+          className="justify-center"
         />
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
- <span className="relative flex h-2 w-2">
- <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
- <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
- </span>
- <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
- Last Updated: January 15, 2025
- </span>
- </div>
+        <div className="flex items-center gap-4 mb-8 justify-center">
+          <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+            Last Updated: January 2, 2026
+          </span>
+        </div>
  
  <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
  Terms of <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Service</span>

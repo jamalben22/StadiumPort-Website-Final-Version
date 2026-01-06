@@ -119,6 +119,8 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
             { label: 'Entry Details', href: '#' }
           ]} 
+          variant="white"
+          className="justify-center"
         />
       </div>
 

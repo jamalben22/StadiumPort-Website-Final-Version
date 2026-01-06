@@ -258,8 +258,13 @@ export default function DrawHubClientPage() {
             className="justify-center mb-12"
           />
 
- 
- <motion.h1 
+          <div className="flex justify-center mb-8">
+            <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+              Last Updated: January 4, 2026
+            </span>
+          </div>
+
+          <motion.h1 
  initial={{ opacity: 0, y: 20 }}
  animate={{ opacity: 1, y: 0 }}
  transition={{ duration: 0.8, delay: 0.1 }}

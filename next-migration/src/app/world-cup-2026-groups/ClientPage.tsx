@@ -28,6 +28,15 @@ const getCitySlug = (city: string) => {
   return city.toLowerCase().replace(/ /g, '-');
 };
 
+const PLAYOFF_INFO: Record<string, string> = {
+    'pod': "Playoff D Winner - One of: Denmark, Ireland, Czech Republic, or North Macedonia",
+    'poa': "Playoff A Winner - One of: Bosnia and Herzegovina, Italy, Wales or Northern Ireland",
+    'poc': "Playoff C Winner - One of: Slovakia, Kosovo, Turkey or Romania",
+    'pob': "Playoff B Winner - One of: Ukraine, Poland, Albania or Sweden",
+    'po2': "Playoff 2 Winner - One of: Bolivia, Iraq or Suriname",
+    'po1': "Playoff 1 Winner - One of: Jamaica, Democratic Republic of the Congo or New Caledonia"
+};
+
 const EXPANDED_FAQS = [
   {
     question: "How many groups are in the World Cup 2026?",
@@ -143,7 +152,12 @@ export default function ClientPage() {
             className="justify-center mb-12"
           />
 
-     
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+              Last Updated: January 2, 2026
+            </span>
+          </div>
+
      <motion.h1 
        initial={{ opacity: 0, y: 20 }}
        animate={{ opacity: 1, y: 0 }}
@@ -277,7 +291,7 @@ export default function ClientPage() {
                 <div key={idx} className="flex items-center gap-4 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-white/5 transition-colors">
                   <div className="w-12 h-8 rounded shadow-sm overflow-hidden flex items-center justify-center relative bg-slate-100 dark:bg-white/5">
                      {isPlaceholder ? (
-                       <span className="text-[10px] font-bold text-slate-400">{teamData.code}</span>
+                       <span className="text-[10px] font-bold text-slate-900 dark:text-slate-200 tracking-tighter uppercase">FIFA</span>
                      ) : teamData.flagUrl ? (
                        <Image 
                          src={teamData.flagUrl} 
@@ -291,8 +305,33 @@ export default function ClientPage() {
                      )}
                    </div>
                    <div className="flex-1">
-                     <div className="font-semibold text-slate-900 dark:text-slate-200 leading-tight">
-                       {teamData.name}
+                     <div className="flex items-center gap-2">
+                       <div className="font-semibold text-slate-900 dark:text-slate-200 leading-tight">
+                         {teamData.name}
+                       </div>
+                       {PLAYOFF_INFO[teamId] && (
+                         <div className="group/tooltip relative flex items-center">
+                           <button className="inline-flex items-center justify-center p-1 rounded-full hover:bg-slate-100 dark:hover:bg-white/10 transition-all duration-300 focus:outline-none">
+                             <Info className="w-3.5 h-3.5 text-slate-400 group-hover/tooltip:text-blue-600 dark:group-hover/tooltip:text-blue-400 transition-colors" />
+                           </button>
+                           
+                           {/* Apple-style Glassmorphism Tooltip */}
+                           <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-3 px-4 py-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] opacity-0 scale-95 pointer-events-none group-hover/tooltip:opacity-100 group-hover/tooltip:scale-100 transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] z-[100] min-w-[240px]">
+                             <div className="relative">
+                               <p className="text-[11px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-1.5 flex items-center gap-1.5">
+                                 <Globe size={10} /> Qualification Path
+                               </p>
+                               <p className="text-[13px] font-medium text-slate-900 dark:text-slate-100 leading-relaxed">
+                                 {PLAYOFF_INFO[teamId]}
+                               </p>
+                               {/* Tooltip Arrow */}
+                               <div className="absolute -bottom-[19px] left-1/2 -translate-x-1/2 w-4 h-4 overflow-hidden">
+                                 <div className="w-2.5 h-2.5 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border-r border-b border-slate-200/50 dark:border-white/10 rotate-45 translate-y-[-50%] mx-auto"></div>
+                               </div>
+                             </div>
+                           </div>
+                         </div>
+                       )}
                      </div>
                      {!isPlaceholder && (
                        <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">

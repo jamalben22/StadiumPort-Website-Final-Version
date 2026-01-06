@@ -809,7 +809,11 @@ export default function DrawHubPage() {
           </section>
 
           <div className="mb-16 text-center text-sm text-slate-500 dark:text-slate-400 space-y-2">
-            <p><strong>Last Updated:</strong> December 5, 2025</p>
+            <div className="flex justify-center mb-4">
+              <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                Last Updated: January 4, 2026
+              </span>
+            </div>
             <p className="italic">stadiumport is an independent travel guide and is not affiliated with FIFA.</p>
           </div>
 

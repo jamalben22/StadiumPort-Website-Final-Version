@@ -65,19 +65,16 @@ export default function ClientPage() {
             { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' },
             { label: 'Privacy', href: '#' }
           ]} 
+          className="justify-center"
         />
 
         {/* Hero Section */}
  <div className="text-center mb-20 animate-fade-up">
- <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
- <span className="relative flex h-2 w-2">
- <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
- <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
- </span>
- <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
- Data Protection
- </span>
- </div>
+ <div className="flex items-center gap-4 mb-8 justify-center">
+          <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+            Last Updated: January 2, 2026
+          </span>
+        </div>
  
  <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-slate-900 dark:text-white">
  Contest <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Privacy Policy</span>
@@ -130,8 +127,7 @@ export default function ClientPage() {
  ))}
  </nav>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-700">
- <p className="text-xs text-slate-500 dark:text-slate-400">Last Updated: November 28, 2025</p>
- </div>
+              </div>
  </div>
  </div>
 

@@ -99,6 +99,14 @@ export default function GroupEClientPage() {
            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group E', href: '/world-cup-2026-groups/group-e' }]} />
 
            <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-6 animate-fade-up">
+                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Last Updated: January 2, 2026
+                </span>
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Group Strategy
+                </span>
+              </div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
                 World Cup 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-emerald-500 dark:from-teal-400 dark:to-emerald-300">Group E Strategy</span>
@@ -107,23 +115,8 @@ export default function GroupEClientPage() {
               <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
                 From the Birthplace of America to the Heartland of BBQ. A logistical puzzle spanning two countries and three distinct cultural regions.
               </p>
-
-              <div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
- <div className="flex items-center gap-2">
- <Calendar className="w-4 h-4 text-teal-500" /> 
- Updated: June 2025
- </div>
- <div className="flex items-center gap-2">
- <Clock className="w-4 h-4 text-teal-500" /> 
- 16 min read
- </div>
- <div className="flex items-center gap-2">
- <div className="w-5 h-5 rounded-full bg-slate-900 dark:bg-white flex items-center justify-center text-[10px] text-white dark:text-slate-900 font-bold">S</div>
- By stadiumport Strategy Team
- </div>
- </div>
- </div>
- </div>
+            </div>
+          </div>
  
  {/* Scroll Indicator */}
  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>

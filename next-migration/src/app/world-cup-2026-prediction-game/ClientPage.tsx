@@ -302,8 +302,19 @@ function PredictGameContent() {
               items={[
                 { label: 'Prediction Game', href: '/world-cup-2026-prediction-game' }
               ]} 
-              className="justify-center mb-12"
+              className="justify-center mb-8"
+              variant="white"
             />
+
+            <h1 className="text-3xl md:text-5xl font-black text-center text-white mb-6 tracking-tight drop-shadow-md">
+              World Cup 2026 <span className="text-[#FBBF24]">Predictor Game</span>
+            </h1>
+
+            <div className="flex justify-center mb-12">
+              <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                Last Updated: January 4, 2026
+              </span>
+            </div>
 
             {/* Stepper UI (Persistent) */}
           <div className="mb-8 md:mb-12">

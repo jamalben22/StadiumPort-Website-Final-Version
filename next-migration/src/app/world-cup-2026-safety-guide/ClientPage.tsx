@@ -286,6 +286,14 @@ export default function SafetyGuideClientPage() {
           className="justify-center mb-12"
         />
         <div className="max-w-4xl">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+              Last Updated: January 4, 2026
+            </span>
+            <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+              Security Briefing
+            </span>
+          </div>
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

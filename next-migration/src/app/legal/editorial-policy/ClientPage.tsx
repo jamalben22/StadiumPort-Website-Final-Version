@@ -7,13 +7,7 @@ import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { ShieldCheck, Search, FileCheck, RefreshCw, Users, BookOpen, CheckCircle2 } from 'lucide-react';
 
 export default function EditorialPolicyClientPage() {
- const [lastUpdated, setLastUpdated] = useState<string>('');
-
- useEffect(() => {
-   setLastUpdated(new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' }));
- }, []);
-
- const principles = [
+  const principles = [
  {
  icon: Search,
  title: "Accuracy First",
@@ -52,17 +46,14 @@ export default function EditorialPolicyClientPage() {
           items={[
             { label: 'Editorial Policy', href: '/legal/editorial-policy' }
           ]} 
+          className="justify-center"
         />
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full dark:/10 border border-slate-200 dark:border-white/10 mb-8">
- <span className="relative flex h-2 w-2">
- <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
- <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
- </span>
- <span className="text-xs font-semibold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
- Our Standards
- </span>
- </div>
+        <div className="flex items-center gap-4 mb-8 justify-center">
+         <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+           Last Updated: January 2, 2026
+         </span>
+       </div>
  
  <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-slate-900 dark:text-white">
  Editorial <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500">Policy</span>
@@ -132,15 +123,7 @@ export default function EditorialPolicyClientPage() {
  </div>
  </div>
 
- {/* Verification Badge */}
- <div className="text-center animate-fade-up [animation-delay:600ms]">
- <p className="text-sm text-slate-500 dark:text-slate-500 font-medium uppercase tracking-widest mb-2">
- Last Updated
- </p>
- <p className="text-slate-900 dark:text-white font-semibold">
- {lastUpdated || 'Loading...'}
-</p>
- </div>
+ 
 
  </div>
  </main>

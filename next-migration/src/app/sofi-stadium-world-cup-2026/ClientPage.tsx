@@ -318,8 +318,11 @@ export default function ClientPage() {
             items={[{ label: "Stadiums", href: "/world-cup-2026-stadiums" }, { label: "SoFi Stadium", href: "/sofi-stadium-world-cup-2026" }]} 
           />
           <div className="flex items-center gap-4 mb-6">
+ <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+ Last Updated: January 4, 2026
+ </span>
  <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
- Host Venue
+ Host City Venue
  </span>
  <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
  USMNT Opener Host

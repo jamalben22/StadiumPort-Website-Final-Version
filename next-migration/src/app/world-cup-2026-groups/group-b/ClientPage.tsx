@@ -110,6 +110,14 @@ export default function GroupBClientPage() {
             <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group B', href: '/world-cup-2026-groups/group-b' }]} />
 
             <div className="max-w-4xl">
+              <div className="flex items-center gap-4 mb-6 animate-fade-up">
+                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Last Updated: January 2, 2026
+                </span>
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Group Strategy
+                </span>
+              </div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[1.1] text-slate-900 dark:text-white animate-fade-up">
 World Cup 2026 <br />
 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group B Strategy</span>
@@ -118,23 +126,8 @@ World Cup 2026 <br />
 <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
 Four cities. Two nations. One coast. From the mountains of Vancouver to the Hollywood hills, Group B is the tournament's most scenic route.
 </p>
-
-<div className="flex flex-wrap items-center gap-8 text-xs font-semibold text-slate-500 dark:text-slate-400 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800 pt-8 animate-fade-up delay-300">
- <div className="flex items-center gap-2">
- <Calendar className="w-4 h-4 text-emerald-500" /> 
- Updated: June 2025
- </div>
- <div className="flex items-center gap-2">
- <Clock className="w-4 h-4 text-emerald-500" /> 
- 12 min read
- </div>
- <div className="flex items-center gap-2">
- <div className="w-5 h-5 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] text-slate-900 dark:text-white font-bold">S</div>
- By stadiumport Strategy Team
- </div>
- </div>
- </div>
- </div>
+</div>
+</div>
  
  {/* Scroll Indicator */}
  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>

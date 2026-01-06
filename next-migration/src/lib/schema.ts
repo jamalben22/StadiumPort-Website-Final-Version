@@ -81,7 +81,7 @@ export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "stadiumport",
-  "alternateName": ["Stadium Port", "stadiumport.com", "World Cup 2026 Travel Guide"],
+  "alternateName": ["stadiumport", "World Cup 2026 Travel Guide"],
   "description": "The ultimate resource for World Cup 2026. Expert travel guides, stadium info, and planning for USA, Mexico, and Canada.",
   "url": getSiteUrl(),
   "potentialAction": {
@@ -169,7 +169,7 @@ export const generateOrganizationSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "stadiumport",
-  "alternateName": ["Stadium Port", "stadiumport World Cup Guide"],
+  "alternateName": ["stadiumport", "stadiumport World Cup Guide"],
   "url": getSiteUrl(),
   "logo": {
     "@type": "ImageObject",
