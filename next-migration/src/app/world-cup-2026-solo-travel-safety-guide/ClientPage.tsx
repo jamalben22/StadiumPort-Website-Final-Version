@@ -300,7 +300,7 @@ alt="Solo Traveler at World Cup"
  className="object-cover"
  priority sizes="100vw"
   unoptimized />
- <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/40 to-transparent" />
+ <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
  </div>
 
  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
@@ -311,6 +311,7 @@ alt="Solo Traveler at World Cup"
  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
  >
  <Breadcrumb 
+ variant="white"
  items={[
  { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
  { label: 'Solo Travel Safety', href: '/world-cup-2026-solo-travel-safety-guide' }
@@ -318,10 +319,10 @@ alt="Solo Traveler at World Cup"
  />
 
  <div className="flex items-center gap-4 mb-6">
- <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+ <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
  Last Updated: January 4, 2026
  </span>
- <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
+ <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
  Safety Guide
  </span>
  <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
@@ -329,10 +330,10 @@ alt="Solo Traveler at World Cup"
  </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+ <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
  SOLO TRAVEL <span className="block text-4xl md:text-6xl lg:text-7xl mt-2 text-slate-400">/ SAFETY GUIDE</span>
  </h1>
- <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+ <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
  Attending World Cup 2026 Alone. <span className="text-slate-900 dark:text-white font-medium">Your definitive strategy</span> for a safe & social trip.
  </p>
  </motion.div>

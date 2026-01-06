@@ -289,6 +289,7 @@ export default function FoodSafetyClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <Breadcrumb 
+                variant="white"
                 items={[
                   { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
                   { label: 'Food & Dining Safety', href: '/world-cup-2026-food-dining-safety' }
@@ -296,7 +297,7 @@ export default function FoodSafetyClientPage() {
               />
 
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
                     Last Updated: January 4, 2026
                   </span>
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
@@ -304,11 +305,11 @@ export default function FoodSafetyClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
                 FOOD & WATER <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">SAFETY</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
                 Dining without distress. Your complete guide to safe eating, water potability, and staying healthy across USA, Canada, and Mexico.
               </p>
             </motion.div>

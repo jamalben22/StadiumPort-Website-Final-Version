@@ -19,12 +19,12 @@ export const metadata: Metadata = {
     'emergency numbers USA Canada Mexico'
   ],
   alternates: {
-    canonical: 'https://stadiumport.com/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026',
+    canonical: 'https://stadiumport.com/world-cup-2026-connectivity-sim-cards-emergency-communications',
   },
   openGraph: {
     title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
     description: 'Expert guide to World Cup 2026 connectivity. Compare SIM cards, eSIMs, and roaming plans for USA, Canada, and Mexico.',
-    url: 'https://stadiumport.com/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026',
+    url: 'https://stadiumport.com/world-cup-2026-connectivity-sim-cards-emergency-communications',
     siteName: 'stadiumport',
     locale: 'en_US',
     type: 'article',
@@ -47,14 +47,14 @@ export const metadata: Metadata = {
 
 export default function ConnectivityPage() {
   const articleSchema = generateArticleSchema(
-    'staying-connected-sim-cards-emergency-communications-world-cup-2026',
-    '/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026'
+    'world-cup-2026-connectivity-sim-cards-emergency-communications',
+    '/world-cup-2026-connectivity-sim-cards-emergency-communications'
   );
 
   const breadcrumbSchema = generateBreadcrumbSchema([
     { name: 'Home', item: '/' },
     { name: 'Safety Guide', item: '/world-cup-2026-safety-guide' },
-    { name: 'Staying Connected', item: '/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026' }
+    { name: 'Staying Connected', item: '/world-cup-2026-connectivity-sim-cards-emergency-communications' }
   ]);
 
   const faqSchema = generateFAQSchema([

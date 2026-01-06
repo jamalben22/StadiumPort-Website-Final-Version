@@ -280,6 +280,7 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
             <Breadcrumb 
+              variant="white"
               items={[
                 { label: 'Safety Guide', href: '/world-cup-2026-safety-guide' },
                 { label: 'Travel Insurance', href: '/world-cup-2026-travel-insurance-guide' }
@@ -287,22 +288,22 @@ export default function ClientPage() {
             />
 
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
                   Last Updated: January 4, 2026
                 </span>
                 <span className="px-3 py-1 rounded-full border border-emerald-500/30 text-emerald-400 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Essential Protection
                 </span>
-                <span className="px-3 py-1 rounded-full bg-emerald-600 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
                   Financial Safety
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
                 WORLD CUP 2026 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">INSURANCE</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
                 Complete Protection Guide. <span className="text-slate-900 dark:text-white font-medium">Medical, Cancellation & Evacuation Coverage</span>.
               </p>
             </motion.div>

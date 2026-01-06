@@ -29,13 +29,6 @@ const guides = [
     image: "/images/travel-tips/Best Time to Book World Cup 2026 Guide Illustration.webp"
   },
   {
-    title: "World Cup 2026 Host City Guide: Which Cities Should You Visit?",
-    teaser: "16 cities, infinite vibes. Find the perfect host cities that match your travel style and budget.",
-    icon: Map,
-    link: "/world-cup-2026-host-cities",
-    image: "/images/travel-tips/World Cup 2026 Host City Guide Illustration.webp"
-  },
-  {
     title: "World Cup 2026 Accommodation Guide: Where to Stay for Every Budget",
     teaser: "From luxury hotels to strategic hostels. How to find a bed when millions descend on North America.",
     icon: Map,
@@ -248,11 +241,6 @@ const SectionHeading = ({ children, icon: Icon }: { children: React.ReactNode, i
 
 const TravelTipsClientPage = () => {
   const { showDynamicAds } = useEzoicDynamicAds();
-  const [visibleGuides, setVisibleGuides] = useState(6);
-
-  const loadMoreGuides = () => {
-    setVisibleGuides(prev => prev + 6);
-  };
 
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
@@ -412,58 +400,40 @@ const TravelTipsClientPage = () => {
       <section className="px-6 lg:px-8 max-w-7xl mx-auto mb-24">
         <SectionHeading icon={Map}>Essential Travel Guides</SectionHeading>
         <div className="grid md:grid-cols-2 gap-8">
-          {guides.slice(0, visibleGuides).map((guide, index) => (
-            <Link key={index} href={guide.link} className="group block h-full">
-              <div className="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 transition-all duration-300 hover:shadow-xl hover:scale-[1.02] h-full flex flex-col">
-                <div className="relative h-64 overflow-hidden bg-slate-100 dark:bg-slate-800">
-                   <Image 
-                     src={guide.image} 
-                     alt={guide.title}
-                     fill
-                     className="object-cover transition-transform duration-500 group-hover:scale-105"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
-                   <div className="absolute bottom-6 left-6 right-6">
-                     <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-medium mb-3 border border-white/20">
-                       <guide.icon className="w-3 h-3" />
-                       Travel Guide
-                     </div>
-                     <h3 className="text-2xl font-bold text-white leading-tight">
-                       {guide.title}
-                     </h3>
+          {guides.map((guide, index) => (
+            <div key={index} className="group bg-white dark:bg-slate-900 rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 transition-all duration-300 hover:shadow-xl h-full flex flex-col">
+              <div className="relative h-64 overflow-hidden bg-slate-100 dark:bg-slate-800">
+                 <Image 
+                   src={guide.image} 
+                   alt={guide.title}
+                   fill
+                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                 />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60" />
+                 <div className="absolute bottom-6 left-6 right-6">
+                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-xs font-medium mb-3 border border-white/20">
+                     <guide.icon className="w-3 h-3" />
+                     Travel Guide
                    </div>
-                </div>
-                <div className="p-8 flex flex-col flex-grow">
-                  <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed">
-                    {guide.teaser}
-                  </p>
-                  <div className="flex items-center text-emerald-600 dark:text-emerald-400 font-bold group-hover:gap-2 transition-all">
-                    Read Guide <ArrowRight className="w-5 h-5 ml-2" />
-                  </div>
-                </div>
+                   <h3 className="text-2xl font-bold text-white leading-tight">
+                     {guide.title}
+                   </h3>
+                 </div>
               </div>
-            </Link>
+              <div className="p-8 flex flex-col flex-grow">
+                <p className="text-slate-600 dark:text-slate-400 mb-6 flex-grow leading-relaxed">
+                  {guide.teaser}
+                </p>
+                <Link 
+                  href={guide.link}
+                  className="inline-flex items-center text-emerald-600 dark:text-emerald-400 font-bold hover:gap-2 transition-all w-fit group/link"
+                >
+                  Read Guide <ArrowRight className="w-5 h-5 ml-2 transition-transform group-hover/link:translate-x-1" />
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
-        
-        {/* Load More Button & Dynamic Ads Example */}
-        {visibleGuides < guides.length && (
-          <div className="mt-12 text-center">
-            <button 
-              onClick={loadMoreGuides}
-              className="inline-flex items-center gap-2 bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-8 py-4 rounded-full font-bold hover:bg-emerald-600 dark:hover:bg-emerald-400 transition-colors"
-            >
-              Load More Guides <ChevronDown className="w-5 h-5" />
-            </button>
-          </div>
-        )}
-        
-        {/* Dynamic Ad Placement - Appears when content expands */}
-        {visibleGuides > 6 && (
-           <div className="flex justify-center mt-12">
-              <EzoicAd placementId={103} />
-           </div>
-        )}
       </section>
 
       {/* Getting There & Around */}

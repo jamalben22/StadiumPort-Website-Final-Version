@@ -318,7 +318,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     wordCount: 3800,
     image: '/images/safety-guide/Fan Zone & Crowd Safety Enjoying the Atmosphere.webp'
   },
-  'staying-connected-sim-cards-emergency-communications-world-cup-2026': {
+  'world-cup-2026-connectivity-sim-cards-emergency-communications': {
     title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
     description: 'Expert guide to World Cup 2026 connectivity. Compare SIM cards, eSIMs, and roaming plans for USA, Canada, and Mexico. Plus, essential emergency communication protocols.',
     publishedAt: '2026-01-04T00:00:00Z',

@@ -27,7 +27,7 @@ const updates = [
     title: "World Cup 2026 Accommodation Guide: Hotels & Hostels",
     date: "Dec 30, 2025",
     link: "/world-cup-2026-accommodation-guide",
-    image: "/images/safety-guide/Accommodation Security_Safe Stays.webp",
+    image: "/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp",
     summary: "Where to stay for World Cup 2026. Complete guide to hotels, hostels, and rentals in all 16 host cities."
   }
 ];

@@ -116,7 +116,7 @@ const safetyGuides = [
   {
     title: "Staying Connected: SIM Cards & Emergency Comms",
     teaser: "Reliable mobile networks and emergency communication apps. Keeping in touch with your group across borders.",
-    link: "/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026",
+    link: "/world-cup-2026-connectivity-sim-cards-emergency-communications",
     image: "/images/safety-guide/Staying Connected SIM Cards & Emergency Comms.webp",
     icon: Smartphone,
     category: "Emergency Preparedness"

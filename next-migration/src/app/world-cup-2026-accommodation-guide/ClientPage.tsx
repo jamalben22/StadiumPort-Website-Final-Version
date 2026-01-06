@@ -370,7 +370,7 @@ export default function ClientPage() {
       <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/images/hub-pages/host-cities-bg.webp" 
+            src="/images/travel-tips/World Cup 2026 Accommodation Guide Illustration.webp" 
             alt="World Cup 2026 Accommodation Guide" 
             fill 
             className="object-cover object-center"
@@ -380,7 +380,7 @@ export default function ClientPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
         </div>
 
-        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
+        <div className="relative z-10 container mx-auto px-4 pt-32 pb-20">
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -388,6 +388,7 @@ export default function ClientPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <Breadcrumb 
+                variant="white"
                 items={[
                   { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
                   { label: 'Accommodation', href: '/world-cup-2026-accommodation-guide' }
@@ -395,25 +396,27 @@ export default function ClientPage() {
               />
               {/* Badge/Category */}
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
                   Last Updated: January 4, 2026
                 </span>
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
                   Travel Tips
                 </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-500/90 text-slate-900 dark:text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                  Accommodation
+                </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
                 ACCOMMODATION<br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">GUIDE 2026</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-2xl leading-relaxed">
-                Neighborhood breakdowns, price ranges, and verified strategies for finding a bed in all 16 host cities across the USA, Canada, and Mexico.
-              </p>
+              
+              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+                 Neighborhood breakdowns, price ranges, and verified strategies for finding a bed in all 16 host cities across the USA, Canada, and Mexico.
+               </p>
             </motion.div>
           </div>
-
-
         </div>
       </div>
 

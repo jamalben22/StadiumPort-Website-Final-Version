@@ -74,7 +74,7 @@ export const STATIC_ROUTES = [
   '/world-cup-2026-border-crossing-guide',
   '/world-cup-2026-local-laws-etiquette',
   '/world-cup-2026-weather-climate-safety',
-  '/world-cup-2026-connectivity-guide/staying-connected-sim-cards-emergency-communications-world-cup-2026',
+  '/world-cup-2026-connectivity-sim-cards-emergency-communications',
   '/world-cup-2026-prediction-contest-privacy',
   '/world-cup-2026-prediction-contest-terms',
   '/about/authors',

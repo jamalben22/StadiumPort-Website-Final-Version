@@ -341,8 +341,15 @@ export default function ClientPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
+              <Breadcrumb 
+                variant="white"
+                items={[
+                  { label: 'Travel Tips', href: '/world-cup-2026-travel-tips' },
+                  { label: 'Packing Guide', href: '/world-cup-2026-packing-guide' }
+                ]} 
+              />
               <div className="flex items-center gap-4 mb-6">
-                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
                   Last Updated: January 4, 2026
                 </span>
                 <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
@@ -350,11 +357,11 @@ export default function ClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tighter mb-6 leading-[0.9]">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
                 PACKING GUIDE
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 font-light max-w-xl leading-relaxed">
-                Ultimate Checklist. <span className="text-slate-900 dark:text-white font-medium">All Weather</span>. 3 Countries.
+              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
+                Ultimate Checklist for All Weather. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive packing strategy.
               </p>
             </motion.div>
           </div>
