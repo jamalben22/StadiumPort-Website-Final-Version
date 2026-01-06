@@ -50,7 +50,7 @@ const itemVariants = {
     y: 0,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 80,
       damping: 15,
       mass: 1,
@@ -98,7 +98,7 @@ export const LatestUpdates = () => {
               variants={itemVariants}
               whileHover={{ 
                 y: -5,
-                transition: { duration: 0.2, ease: "easeOut" }
+                transition: { duration: 0.2, ease: "easeOut" as const }
               }}
               className="group relative flex flex-col h-full bg-white dark:bg-[#0A0A0A] rounded-2xl overflow-hidden border border-slate-200 dark:border-white/10 hover:border-emerald-500/30 shadow-sm hover:shadow-xl transition-[border-color,box-shadow] duration-300"
             >
