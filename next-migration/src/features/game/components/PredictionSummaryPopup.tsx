@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { TEAMS } from '../lib/wc26-data';
 import { useGame } from '../context/GameContext';
@@ -86,7 +87,14 @@ export const PredictionSummaryPopup = ({
                   {/* Winner */}
                   <div className="flex flex-col items-center group">
                     <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 mb-3 sm:mb-4 shadow-[0_0_30px_rgba(251,191,36,0.3)] rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-[#FBBF24] transform transition-transform group-hover:scale-105">
-                      {winner?.flagUrl && <img src={winner.flagUrl} alt={winner.name} className="w-full h-full object-cover" />}
+                      {winner?.flagUrl && (
+                        <Image 
+                          src={winner.flagUrl} 
+                          alt={winner.name} 
+                          fill
+                          className="object-cover" 
+                        />
+                      )}
                     </div>
                     <h3 className="text-2xl sm:text-3xl md:text-5xl font-black font-['Teko'] text-slate-900 uppercase tracking-wide">
                       {winner.name}
@@ -99,8 +107,15 @@ export const PredictionSummaryPopup = ({
 
                   {/* Runner Up */}
                   <div className="flex flex-col items-center opacity-80 scale-90">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24 mb-3 sm:mb-4 shadow-lg rounded-full overflow-hidden border-2 border-black/10 grayscale-[50%]">
-                      {runnerUp?.flagUrl && <img src={runnerUp.flagUrl} alt={runnerUp.name} className="w-full h-full object-cover" />}
+                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 md:w-24 md:h-24 mb-3 sm:mb-4 shadow-lg rounded-full overflow-hidden border-2 border-black/10 grayscale-[50%]">
+                      {runnerUp?.flagUrl && (
+                        <Image 
+                          src={runnerUp.flagUrl} 
+                          alt={runnerUp.name} 
+                          fill
+                          className="object-cover" 
+                        />
+                      )}
                     </div>
                     <h3 className="text-lg sm:text-xl md:text-3xl font-bold font-['Teko'] text-slate-900/60 uppercase tracking-wide">
                       {runnerUp.name}
@@ -132,8 +147,28 @@ export const PredictionSummaryPopup = ({
                         {groupId}
                       </span>
                       <div className="flex items-center gap-2">
-                         {first?.flagUrl && <img src={first.flagUrl} alt={`1st Place: ${first.name}`} className="w-5 h-3 sm:w-6 sm:h-4 object-cover rounded shadow-sm" title={`1st: ${first.name}`} />}
-                         {second?.flagUrl && <img src={second.flagUrl} alt={`2nd Place: ${second.name}`} className="w-5 h-3 sm:w-6 sm:h-4 object-cover rounded shadow-sm opacity-70" title={`2nd: ${second.name}`} />}
+                         {first?.flagUrl && (
+                           <div className="relative w-5 h-3 sm:w-6 sm:h-4 flex-shrink-0">
+                             <Image 
+                               src={first.flagUrl} 
+                               alt={`1st Place: ${first.name}`} 
+                               fill
+                               className="object-cover rounded shadow-sm" 
+                               title={`1st: ${first.name}`} 
+                             />
+                           </div>
+                         )}
+                         {second?.flagUrl && (
+                           <div className="relative w-5 h-3 sm:w-6 sm:h-4 flex-shrink-0">
+                             <Image 
+                               src={second.flagUrl} 
+                               alt={`2nd Place: ${second.name}`} 
+                               fill
+                               className="object-cover rounded shadow-sm opacity-70" 
+                               title={`2nd: ${second.name}`} 
+                             />
+                           </div>
+                         )}
                       </div>
                     </div>
                   );
@@ -151,8 +186,17 @@ export const PredictionSummaryPopup = ({
                   const team = TEAMS.find(t => t.id === teamId);
                   if (!team) return null;
                   return (
-                    <div key={teamId} className="flex items-center gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-amber-50 border border-amber-500/20 rounded-lg">
-                      {team.flagUrl && <img src={team.flagUrl} alt={`${team.name} Flag`} className="w-4 h-3 sm:w-5 sm:h-3 object-cover rounded" />}
+                    <div key={teamId} className="flex items-center gap-2 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-amber-5 border border-amber-500/20 rounded-lg">
+                      {team.flagUrl && (
+                        <div className="relative w-4 h-3 sm:w-5 sm:h-3 flex-shrink-0">
+                          <Image 
+                            src={team.flagUrl} 
+                            alt={`${team.name} Flag`} 
+                            fill
+                            className="object-cover rounded" 
+                          />
+                        </div>
+                      )}
                       <span className="text-[10px] sm:text-xs font-bold text-amber-900 uppercase tracking-wider">
                         {team.fifaCode}
                       </span>

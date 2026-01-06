@@ -2,7 +2,7 @@ import React, { useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import { useGame } from '../context/GameContext';
 import { TEAMS, TEAM_MAP } from '../lib/wc26-data';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { SEO } from '../../../components/common/SEO';
 import { SchemaOrg } from '../../../components/seo/SchemaOrg';
 
@@ -121,7 +121,7 @@ const ThirdPlaceCard = React.memo(({ groupId, team, isSelected, isLockedOut, onT
 });
 
 export const ThirdPlaceSelector = React.memo(() => {
-  const { groupStandings, thirdPlacePicks, setThirdPlacePicks, setCurrentStep } = useGame();
+  const { groupStandings, thirdPlacePicks, setThirdPlacePicks } = useGame();
   
   // 1. Identify the 12 teams in 3rd position
   const thirdPlaceTeams = useMemo(() => Object.entries(groupStandings).map(([groupId, teamIds]) => {
@@ -167,7 +167,7 @@ export const ThirdPlaceSelector = React.memo(() => {
       
       osc.start();
       osc.stop(ctx.currentTime + 0.05);
-    } catch (e) {
+    } catch (_) {
       // Audio autoplay might be blocked or not supported
     }
   }, []);

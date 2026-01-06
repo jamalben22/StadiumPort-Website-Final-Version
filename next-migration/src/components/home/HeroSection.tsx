@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, MapPin, Calendar, Users, Trophy } from 'lucide-react';
 
 // Enhanced Countdown Component

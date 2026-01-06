@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { ArrowRight, Globe } from 'lucide-react';
@@ -138,22 +139,18 @@ export function Footer() {
           
           {/* Brand Identity */}
           <div className="max-w-sm">
-            <Link href="/" className="block mb-6 group">
-            <img 
+            <Link href="/" className="block mb-6 group relative h-8 w-40">
+            <Image 
               src="/images/Logos/stadiumport-footer-logo-v2-light.svg" 
               alt="stadiumport" 
-              width={160}
-              height={40}
-              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 block dark:hidden"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-v2-light.svg'; }}
+              fill
+              className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 dark:hidden"
             />
-            <img 
+            <Image 
               src="/images/Logos/stadiumport-footer-logo-dark.svg" 
               alt="stadiumport" 
-              width={160}
-              height={40}
-              className="h-8 w-auto opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
-              onError={(e) => { e.currentTarget.src = '/images/Logos/stadiumport-footer-logo-dark.svg'; }}
+              fill
+              className="object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 hidden dark:block"
             />
           </Link>
             <p className="text-slate-500 dark:text-slate-400 text-[15px] leading-relaxed font-medium antialiased">

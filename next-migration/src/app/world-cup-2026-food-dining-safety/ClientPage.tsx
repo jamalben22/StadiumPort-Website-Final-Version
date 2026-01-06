@@ -433,9 +433,9 @@ export default function FoodSafetyClientPage() {
             <ComparisonTable 
               headers={["Country", "Tap Water Safety", "Action Required"]}
               rows={[
-                ["USA", <span className="text-emerald-600 font-bold flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Safe (99%)</span>, "Drink freely (unless local advisory)"],
-                ["Canada", <span className="text-emerald-600 font-bold flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Safe (99%)</span>, "Drink freely"],
-                ["Mexico", <span className="text-red-600 font-bold flex items-center gap-2"><AlertTriangle className="w-4 h-4"/> Unsafe</span>, "BOTTLED WATER ONLY"],
+                ["USA", <span key="usa" className="text-emerald-600 font-bold flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Safe (99%)</span>, "Drink freely (unless local advisory)"],
+                ["Canada", <span key="canada" className="text-emerald-600 font-bold flex items-center gap-2"><CheckCircle2 className="w-4 h-4"/> Safe (99%)</span>, "Drink freely"],
+                ["Mexico", <span key="mexico" className="text-red-600 font-bold flex items-center gap-2"><AlertTriangle className="w-4 h-4"/> Unsafe</span>, "BOTTLED WATER ONLY"],
               ]}
             />
 

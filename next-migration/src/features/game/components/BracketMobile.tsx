@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { BracketMatchCard } from './BracketMatchCard';
 import { Match } from '../lib/bracket-logic';
@@ -172,7 +173,16 @@ export const BracketMobile = React.memo(({
                         className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam1 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
                         <div className="flex items-center gap-3">
-                          {team1?.flagUrl && <img src={team1.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
+                          {team1?.flagUrl && (
+                            <div className="relative w-6 h-4 flex-shrink-0">
+                              <Image 
+                                src={team1.flagUrl} 
+                                alt={team1.name} 
+                                fill
+                                className="rounded shadow-sm object-cover" 
+                              />
+                            </div>
+                          )}
                           <span className="font-['Teko'] text-lg uppercase text-slate-900">{team1?.name || 'TBD'}</span>
                         </div>
                         {pick === tpTeam1 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}
@@ -184,7 +194,16 @@ export const BracketMobile = React.memo(({
                         className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam2 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed' : ''}`}
                       >
                         <div className="flex items-center gap-3">
-                          {team2?.flagUrl && <img src={team2.flagUrl} className="w-6 h-4 rounded shadow-sm" />}
+                          {team2?.flagUrl && (
+                            <div className="relative w-6 h-4 flex-shrink-0">
+                              <Image 
+                                src={team2.flagUrl} 
+                                alt={team2.name} 
+                                fill
+                                className="rounded shadow-sm object-cover" 
+                              />
+                            </div>
+                          )}
                           <span className="font-['Teko'] text-lg uppercase text-slate-900">{team2?.name || 'TBD'}</span>
                         </div>
                         {pick === tpTeam2 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}

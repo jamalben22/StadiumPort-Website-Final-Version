@@ -1,4 +1,5 @@
 import React, { useMemo, useContext } from 'react'
+import Image from 'next/image'
 import { GameContext } from '../context/GameContext'
 import { TEAM_MAP } from '../lib/wc26-data'
 import { generateBracketMatches, Match } from '../lib/bracket-logic'
@@ -111,41 +112,57 @@ export const BracketSummary = ({
     <div className="w-full space-y-16">
       {/* Group Stage Summary */}
       <section>
-        <div className="flex items-center gap-4 mb-6">
-          <h3 className="text-xl font-['Teko'] font-bold uppercase text-black tracking-wider">Group Stage</h3>
-          <div className="h-px flex-1 bg-slate-300"></div>
+        <div className="flex items-center gap-6 mb-8 px-2">
+          <div className="flex flex-col">
+            <span className="text-[10px] font-['Rajdhani'] font-bold text-amber-500/80 uppercase tracking-[0.3em] mb-1">Phase One</span>
+            <h3 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-white tracking-wider leading-none">Group Stage</h3>
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+          <div className="hidden sm:flex items-center gap-2 text-[10px] font-['Rajdhani'] font-bold text-slate-300 uppercase tracking-widest">
+            <div className="w-1 h-1 rounded-full bg-black"></div>
+            <span>48 Teams</span>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {Object.entries(groupStandings).map(([gid, teamIds]) => (
-            <div key={gid} className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-              <div className="flex items-center justify-between mb-3 pb-2 border-b border-slate-200">
-                <span className="text-xs font-bold text-slate-900 font-['Rajdhani'] uppercase tracking-widest">Group {gid}</span>
-              </div>
-              <div className="space-y-2">
-                {teamIds.map((tid, idx) => {
-                  const t = getTeam(tid)
-                  const isAdvancing = idx < 2 || thirdPlacePicks?.includes(tid)
-                  return (
-                    <div key={tid} className="flex items-center justify-between gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="text-[10px] font-bold text-slate-900 w-4">{idx + 1}</span>
-                        {t?.flagUrl && (
-                          <img 
-                            src={t.flagUrl} 
-                            alt={t.name}
-                            className="w-5 h-3.5 rounded-sm object-cover ring-1 ring-slate-200" 
-                          />
+            <div key={gid} className="relative overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-xl p-4 shadow-2xl group/card">
+              {/* Background Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/10">
+                  <span className="text-xs font-bold text-amber-400 font-['Rajdhani'] uppercase tracking-widest">Group {gid}</span>
+                </div>
+                <div className="space-y-2">
+                  {teamIds.map((tid, idx) => {
+                    const t = getTeam(tid)
+                    const isAdvancing = idx < 2 || thirdPlacePicks?.includes(tid)
+                    return (
+                      <div key={tid} className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-[10px] font-bold text-slate-300 w-4">{idx + 1}</span>
+                          {t?.flagUrl && (
+                            <div className="relative w-5 h-3.5 flex-shrink-0">
+                              <Image 
+                                src={t.flagUrl} 
+                                alt={t.name}
+                                fill
+                                className="rounded-sm object-cover ring-1 ring-white/10" 
+                              />
+                            </div>
+                          )}
+                          <span className={`text-xs font-['Teko'] uppercase ${isAdvancing ? 'text-white font-bold' : 'text-slate-200'}`}>
+                            {t?.name || 'TBD'}
+                          </span>
+                        </div>
+                        {isAdvancing && (
+                          <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
                         )}
-                        <span className={`text-xs font-['Teko'] uppercase ${isAdvancing ? 'text-black font-bold' : 'text-slate-900'}`}>
-                          {t?.name || 'TBD'}
-                        </span>
                       </div>
-                      {isAdvancing && (
-                        <div className="w-1.5 h-1.5 rounded-full bg-[#01b47d]"></div>
-                      )}
-                    </div>
-                  )
-                })}
+                    )
+                  })}
+                </div>
               </div>
             </div>
           ))}
@@ -156,10 +173,10 @@ export const BracketSummary = ({
       <section>
         <div className="flex items-end justify-between mb-8 px-2">
           <div>
-            <h3 className="text-3xl font-['Teko'] font-bold uppercase text-black leading-none">Knockout Stage</h3>
-            <p className="text-slate-900 font-['Rajdhani'] font-bold text-sm tracking-wider uppercase">The Path to Glory</p>
+            <h3 className="text-3xl font-['Teko'] font-bold uppercase text-white leading-none">Knockout Stage</h3>
+            <p className="text-amber-400 font-['Rajdhani'] font-bold text-sm tracking-wider uppercase">The Path to Glory</p>
           </div>
-          <div className="hidden sm:block h-px flex-1 bg-gradient-to-r from-slate-300 to-transparent ml-6 mb-2"></div>
+          <div className="hidden sm:block h-px flex-1 bg-gradient-to-r from-black to-transparent ml-6 mb-2"></div>
         </div>
         
         <div className="space-y-12">
@@ -170,26 +187,24 @@ export const BracketSummary = ({
             { title: 'Semi-Finals', subtitle: 'Final Four', list: rounds.sf, cols: 'grid-cols-1 md:grid-cols-2' },
           ].map((section) => (
             <div key={section.title} className="relative">
-              <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-xl py-4 mb-6 border-b border-slate-100/50 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
-                <div className="flex items-center justify-between px-2">
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#01b47d]"></div>
-                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-900 uppercase tracking-[0.2em]">
-                        {section.subtitle}
-                      </span>
-                    </div>
-                    <h4 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-black leading-none tracking-tight">
-                      {section.title}
-                    </h4>
-                  </div>
-                  
-                  <div className="hidden sm:flex items-center gap-3">
-                    <div className="h-px w-12 bg-gradient-to-r from-slate-300 to-transparent"></div>
-                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-900 uppercase tracking-widest">
-                      Knockout Phase
+              <div className="flex items-center justify-between px-2 mb-6">
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-2 mb-1">
+                    <div className="w-1.5 h-1.5 rounded-full bg-black shadow-[0_0_12px_rgba(0,0,0,0.8)]"></div>
+                    <span className="text-[10px] font-['Rajdhani'] font-black text-amber-500/90 uppercase tracking-[0.3em]">
+                      {section.subtitle}
                     </span>
                   </div>
+                  <h4 className="text-3xl md:text-4xl font-['Teko'] font-bold uppercase text-white leading-none tracking-tight drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                    {section.title}
+                  </h4>
+                </div>
+                
+                <div className="hidden sm:flex items-center gap-4">
+                  <div className="h-px w-16 bg-gradient-to-r from-amber-500/20 to-transparent"></div>
+                  <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-200 uppercase tracking-[0.25em] bg-white/5 px-3 py-1 rounded-full border border-white/10 backdrop-blur-sm">
+                    Elimination Phase
+                  </span>
                 </div>
               </div>
               
@@ -199,8 +214,11 @@ export const BracketSummary = ({
                   const t1 = getTeam(m.team1Id)
                   const t2 = getTeam(m.team2Id)
                   return (
-                    <div key={m.id} className="group bg-white border border-slate-200 rounded-xl p-1 shadow-sm hover:shadow-md hover:border-slate-300 transition-all">
-                      <div className="space-y-0.5">
+                    <div key={m.id} className="group bg-[#0A0A0C] border border-white/5 rounded-xl p-1 shadow-2xl hover:border-amber-500/30 transition-all relative overflow-hidden">
+                      {/* Background Gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+                      
+                      <div className="relative z-10 space-y-0.5">
                         {[t1, t2].map((t, i) => {
                           const isWinner = wId === t?.id;
                           return (
@@ -208,24 +226,27 @@ export const BracketSummary = ({
                               key={i}
                               className={`flex items-center justify-between px-3 py-2 rounded-lg transition-colors ${
                                 isWinner 
-                                  ? 'bg-slate-100 text-slate-950 border border-slate-200' 
-                                  : 'bg-transparent text-slate-700 hover:bg-slate-50'
+                                  ? 'bg-white/5 text-white border border-white/10' 
+                                  : 'bg-transparent text-slate-300 hover:bg-white/[0.02]'
                               }`}
                             >
                               <div className="flex items-center gap-3">
                                 {t?.flagUrl && (
-                                  <img 
-                                    src={t.flagUrl} 
-                                    alt={t.name}
-                                    className={`w-5 h-3.5 rounded-[2px] object-cover ring-1 ${isWinner ? 'ring-white/20' : 'ring-slate-200'}`} 
-                                  />
+                                  <div className="relative w-5 h-3.5 flex-shrink-0">
+                                    <Image 
+                                      src={t.flagUrl} 
+                                      alt={t.name}
+                                      fill
+                                      className={`rounded-[2px] object-cover ring-1 ${isWinner ? 'ring-amber-500/30' : 'ring-white/5'}`} 
+                                    />
+                                  </div>
                                 )}
-                                <span className={`text-sm font-['Teko'] uppercase tracking-wide ${isWinner ? 'font-bold' : 'font-medium'}`}>
+                                <span className={`text-sm font-['Teko'] uppercase tracking-wide ${isWinner ? 'font-bold text-amber-400' : 'font-medium'}`}>
                                   {t?.name || 'TBD'}
                                 </span>
                               </div>
                               {isWinner && (
-                                <div className="w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_#01b47d]"></div>
+                                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
                               )}
                             </div>
                           )
@@ -239,49 +260,64 @@ export const BracketSummary = ({
           ))}
 
           {/* Final Standings - The Crown Jewel */}
-          <div className="pt-8">
-             <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-xl py-4 mb-8 border-b border-slate-100/50 shadow-[0_4px_20px_-10px_rgba(0,0,0,0.05)]">
-                <div className="flex items-center justify-between px-2">
-                  <div className="flex flex-col">
-                    <div className="flex items-center gap-2 mb-0.5">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#fbbf24]"></div>
-                      <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-800 uppercase tracking-[0.2em]">
-                        The Final Verdict
-                      </span>
-                    </div>
-                    <h4 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-slate-900 leading-none tracking-tight">
-                      Championship Results
-                    </h4>
-                  </div>
-                  
-                  <div className="hidden sm:flex items-center gap-3">
-                    <div className="h-px w-12 bg-gradient-to-r from-slate-200 to-transparent"></div>
-                    <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-800 uppercase tracking-widest">
-                      Podium Finish
-                    </span>
-                  </div>
+          <div className="pt-12">
+            <div className="flex items-center justify-between px-2 mb-10">
+              <div className="flex flex-col">
+                <div className="flex items-center gap-3 mb-1.5">
+                  <div className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_15px_rgba(245,158,11,1)] animate-pulse"></div>
+                  <span className="text-xs font-['Rajdhani'] font-black text-amber-500 uppercase tracking-[0.4em] drop-shadow-[0_0_8px_rgba(245,158,11,0.4)]">
+                    The Final Verdict
+                  </span>
+                </div>
+                <h4 className="text-4xl md:text-6xl font-['Teko'] font-bold uppercase text-white leading-none tracking-tighter drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
+                  Championship Results
+                </h4>
+              </div>
+              
+              <div className="hidden sm:flex items-center gap-5">
+                <div className="h-px w-24 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+                <div className="flex flex-col items-end">
+                  <span className="text-[10px] font-['Rajdhani'] font-bold text-amber-400 uppercase tracking-widest mb-0.5">Official Ranking</span>
+                  <span className="text-[10px] font-['Rajdhani'] font-bold text-slate-200 uppercase tracking-widest">Podium Finish</span>
                 </div>
               </div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Third Place Card */}
-              <div className="md:col-span-1 bg-gradient-to-br from-slate-50 to-white border border-slate-200 rounded-3xl p-6 relative overflow-hidden group hover:shadow-lg transition-all">
+              <div className="md:col-span-1 relative overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-3xl p-6 group hover:shadow-2xl transition-all">
+                {/* Background Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+                
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                  <div className="text-6xl font-['Teko'] font-bold text-black">3</div>
+                  <div className="text-6xl font-['Teko'] font-bold text-white">3</div>
                 </div>
-                <span className="text-xs font-bold uppercase tracking-[0.2em] text-slate-900 mb-6 block font-['Rajdhani']">Bronze Medal Match</span>
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-amber-400 mb-6 block font-['Rajdhani'] relative z-10">Bronze Medal Match</span>
                 
                 <div className="space-y-3 relative z-10">
                   {[sf1LoserId, sf2LoserId].map((tid, i) => {
                     const t = getTeam(tid)
                     const isWinner = tpWinner?.id === tid
                     return (
-                      <div key={i} className={`flex items-center justify-between p-3 rounded-xl border ${isWinner ? 'bg-white border-slate-200 shadow-md transform scale-[1.02]' : 'bg-transparent border-transparent opacity-60'} transition-all`}>
+                      <div key={i} className={`flex items-center justify-between p-3 rounded-xl border transition-all ${
+                        isWinner 
+                          ? 'bg-white/5 border-white/10 shadow-xl transform scale-[1.02] text-white' 
+                          : 'bg-transparent border-transparent opacity-40 grayscale text-slate-200'
+                      }`}>
                         <div className="flex items-center gap-3">
-                          {t?.flagUrl && <img src={t.flagUrl} className="w-8 h-5 rounded shadow-sm" />}
-                          <span className={`font-['Teko'] text-lg uppercase ${isWinner ? 'text-black font-bold' : 'text-slate-900 font-bold'}`}>{t?.name || 'TBD'}</span>
+                          {t?.flagUrl && (
+                            <div className="relative w-8 h-5 flex-shrink-0">
+                              <Image 
+                                src={t.flagUrl} 
+                                alt={t.name}
+                                fill
+                                className="rounded shadow-sm object-cover ring-1 ring-white/10" 
+                              />
+                            </div>
+                          )}
+                          <span className={`font-['Teko'] text-lg uppercase ${isWinner ? 'text-amber-400 font-bold' : 'font-bold'}`}>{t?.name || 'TBD'}</span>
                         </div>
-                        {isWinner && <span className="text-[10px] font-bold text-amber-950 bg-amber-100 px-2 py-1 rounded-full uppercase tracking-wider border border-amber-300">Bronze</span>}
+                        {isWinner && <span className="text-[10px] font-bold text-amber-950 bg-amber-400 px-2 py-1 rounded-full uppercase tracking-wider">Bronze</span>}
                       </div>
                     )
                   })}
@@ -289,18 +325,19 @@ export const BracketSummary = ({
               </div>
 
               {/* The Final Card */}
-              <div className="md:col-span-2 bg-white text-slate-900 rounded-3xl p-8 relative overflow-hidden shadow-2xl ring-1 ring-black/10 group">
-                {/* Background Decoration */}
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-slate-50 via-white to-white"></div>
-                <div className="absolute -right-12 -top-12 w-64 h-64 bg-[#01b47d] rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
+              <div className="md:col-span-2 relative overflow-hidden bg-[#0A0A0C] rounded-3xl p-8 shadow-2xl border border-white/10 group">
+                {/* Background Layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+                <div className="absolute -right-12 -top-12 w-64 h-64 bg-amber-500 rounded-full blur-[100px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
+                <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
                 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-8">
                     <div>
-                      <span className="text-[#01b47d] font-['Rajdhani'] font-bold uppercase tracking-[0.3em] text-xs mb-2 block">The Grand Final</span>
-                      <h3 className="text-4xl font-['Teko'] font-bold uppercase leading-none text-slate-950">World Champion</h3>
+                      <span className="text-amber-400 font-['Rajdhani'] font-bold uppercase tracking-[0.3em] text-xs mb-2 block">The Grand Final</span>
+                      <h3 className="text-4xl font-['Teko'] font-bold uppercase leading-none text-white">World Champion</h3>
                     </div>
-                    <Trophy className="w-12 h-12 text-[#fbbf24] drop-shadow-[0_0_15px_rgba(251,191,36,0.3)]" />
+                    <Trophy className="w-12 h-12 text-amber-500 drop-shadow-[0_0_15px_rgba(245,158,11,0.3)]" />
                   </div>
 
                   <div className="space-y-4">
@@ -310,20 +347,29 @@ export const BracketSummary = ({
                       return (
                         <div key={i} className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-500 ${
                           isWinner 
-                            ? 'bg-white border-slate-200 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-sm' 
-                            : 'bg-transparent border-transparent opacity-50 hover:opacity-75'
+                            ? 'bg-white/5 border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] backdrop-blur-sm text-white' 
+                            : 'bg-transparent border-transparent opacity-30 grayscale hover:opacity-50 text-slate-200'
                         }`}>
                           <div className="flex items-center gap-4">
-                            {t?.flagUrl && <img src={t.flagUrl} className={`w-12 h-8 rounded shadow-lg ${isWinner ? 'ring-2 ring-black/5' : ''}`} />}
+                            {t?.flagUrl && (
+                              <div className="relative w-12 h-8 flex-shrink-0">
+                                <Image 
+                                  src={t.flagUrl} 
+                                  alt={t.name} 
+                                  fill
+                                  className={`rounded shadow-lg object-cover ${isWinner ? 'ring-2 ring-amber-500/20' : ''}`} 
+                                />
+                              </div>
+                            )}
                             <div>
-                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-slate-950 font-bold' : 'text-slate-600'}`}>
+                              <span className={`font-['Teko'] text-2xl uppercase block leading-none ${isWinner ? 'text-white font-bold' : ''}`}>
                                 {t?.name || 'TBD'}
                               </span>
-                              {isWinner && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-wider font-['Rajdhani']">Winner</span>}
+                              {isWinner && <span className="text-[10px] text-amber-400 font-bold uppercase tracking-wider font-['Rajdhani']">Winner</span>}
                             </div>
                           </div>
                           {isWinner && (
-                            <div className="w-10 h-10 rounded-full bg-[#fbbf24] flex items-center justify-center shadow-[0_0_20px_rgba(251,191,36,0.4)] text-slate-950">
+                            <div className="w-10 h-10 rounded-full bg-amber-500 flex items-center justify-center shadow-[0_0_20px_rgba(245,158,11,0.4)] text-slate-950">
                               <Trophy className="w-5 h-5" />
                             </div>
                           )}

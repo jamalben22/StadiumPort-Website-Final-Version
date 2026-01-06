@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Image from 'next/image';
 import { TEAM_MAP } from '../lib/wc26-data';
 
 interface BracketMatchCardProps {
@@ -79,15 +80,14 @@ const TeamRow = React.memo(({
                  ${compact ? 'w-6 h-6' : 'w-8 h-8'}
              `}>FIFA</div>
            ) : (
-             <img 
-               src={team.flagUrl} 
-               alt={team.name} 
-               loading="lazy"
-               className={`
-                   rounded-full flex-shrink-0 object-cover shadow-sm ring-1 ring-black/10
-                   ${compact ? 'w-6 h-6' : 'w-8 h-8'}
-               `} 
-             />
+             <div className={`relative flex-shrink-0 ${compact ? 'w-6 h-6' : 'w-8 h-8'}`}>
+               <Image 
+                 src={team.flagUrl} 
+                 alt={team.name} 
+                 fill
+                 className="rounded-full object-cover shadow-sm ring-1 ring-black/10"
+               />
+             </div>
            )}
             
             {/* Name & Code */}

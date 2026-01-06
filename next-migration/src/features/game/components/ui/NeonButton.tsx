@@ -16,6 +16,7 @@ interface NeonButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> 
 export const NeonButton = ({ 
   children, 
   className, 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   variant = 'default',
   ...props 
 }: NeonButtonProps) => {

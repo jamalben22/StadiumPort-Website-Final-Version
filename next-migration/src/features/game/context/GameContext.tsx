@@ -104,7 +104,14 @@ export const GameProvider = ({ children }: { children: ReactNode }) => {
     thirdPlacePicks,
     knockoutPicks,
     currentStep,
-    completedGroupIds
+    completedGroupIds,
+    updateGroupStandings,
+    setThirdPlacePicks,
+    setKnockoutPick,
+    updateKnockoutPicks,
+    setCurrentStep,
+    markGroupCompleted,
+    resetGame
   ]);
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

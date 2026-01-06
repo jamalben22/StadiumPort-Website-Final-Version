@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/private/', '/api/', '/admin/'],
+      disallow: ['/private/', '/api/', '/admin/', '/coming-soon', '/world-cup-2026-prediction-game/entry/'],
     },
     sitemap: 'https://stadiumport.com/sitemap.xml',
   };

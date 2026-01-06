@@ -1,4 +1,5 @@
 import React, { useMemo, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { useGame } from '../context/GameContext'
 import { TEAMS, TEAM_MAP } from '../lib/wc26-data'
 import { generateBracketMatches, Match } from '../lib/bracket-logic'
@@ -129,7 +130,16 @@ export const PredictionSummary = () => {
                     return (
                       <div key={tid} className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
-                          {t?.flagUrl && <img src={t.flagUrl} className="w-5 h-4 rounded shadow-sm ring-1 ring-black/10" />}
+                          {t?.flagUrl && (
+                            <div className="relative w-5 h-4 flex-shrink-0">
+                              <Image 
+                                src={t.flagUrl} 
+                                alt={t.name}
+                                fill
+                                className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                              />
+                            </div>
+                          )}
                           <span className="text-xs font-['Teko'] uppercase text-slate-900 font-bold">{t?.name || 'TBD'}</span>
                         </div>
                         <div className="flex items-center gap-2">
@@ -168,13 +178,31 @@ export const PredictionSummary = () => {
                 <div key={m.id} className="bg-white/90 border border-black/10 rounded-lg p-3 backdrop-blur-md shadow-sm">
                   <div className={`flex items-center justify-between p-1.5 rounded transition-all ${wId === t1?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40 shadow-sm' : ''}`}>
                     <div className="flex items-center gap-2">
-                      {t1?.flagUrl && <img src={t1.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
+                      {t1?.flagUrl && (
+                        <div className="relative w-6 h-4 flex-shrink-0">
+                          <Image 
+                            src={t1.flagUrl} 
+                            alt={t1.name}
+                            fill
+                            className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                          />
+                        </div>
+                      )}
                       <span className={`text-xs font-['Teko'] uppercase ${wId === t1?.id ? 'text-slate-900 font-bold' : 'text-slate-900 font-medium'}`}>{t1?.name || 'TBD'}</span>
                     </div>
                   </div>
                   <div className={`flex items-center justify-between p-1.5 rounded mt-1 transition-all ${wId === t2?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40 shadow-sm' : ''}`}>
                     <div className="flex items-center gap-2">
-                      {t2?.flagUrl && <img src={t2.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
+                      {t2?.flagUrl && (
+                        <div className="relative w-6 h-4 flex-shrink-0">
+                          <Image 
+                            src={t2.flagUrl} 
+                            alt={t2.name} 
+                            fill
+                            className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                          />
+                        </div>
+                      )}
                       <span className={`text-xs font-['Teko'] uppercase ${wId === t2?.id ? 'text-slate-900 font-bold' : 'text-slate-900 font-medium'}`}>{t2?.name || 'TBD'}</span>
                     </div>
                   </div>
@@ -199,14 +227,32 @@ export const PredictionSummary = () => {
             </div>
             <div className={`flex items-center justify-between p-2 rounded ${tpWinner?.id === (sf1LoserId || '') ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40' : ''}`}>
               <div className="flex items-center gap-3">
-                {sf1LoserId && getTeam(sf1LoserId)?.flagUrl && <img src={getTeam(sf1LoserId)!.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
+                {sf1LoserId && getTeam(sf1LoserId)?.flagUrl && (
+                  <div className="relative w-6 h-4 flex-shrink-0">
+                    <Image 
+                      src={getTeam(sf1LoserId)!.flagUrl} 
+                      alt={getTeam(sf1LoserId)!.name}
+                      fill
+                      className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                    />
+                  </div>
+                )}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf1LoserId || '')?.name || 'TBD'}</span>
               </div>
               {tpWinner?.id === sf1LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-950 px-2 py-0.5 rounded">WIN</span>}
             </div>
             <div className={`mt-2 flex items-center justify-between p-2 rounded ${tpWinner?.id === (sf2LoserId || '') ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40' : ''}`}>
               <div className="flex items-center gap-3">
-                {sf2LoserId && getTeam(sf2LoserId)?.flagUrl && <img src={getTeam(sf2LoserId)!.flagUrl} className="w-6 h-4 rounded shadow-sm ring-1 ring-black/10" />}
+                {sf2LoserId && getTeam(sf2LoserId)?.flagUrl && (
+                  <div className="relative w-6 h-4 flex-shrink-0">
+                    <Image 
+                      src={getTeam(sf2LoserId)!.flagUrl} 
+                      alt={getTeam(sf2LoserId)!.name}
+                      fill
+                      className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                    />
+                  </div>
+                )}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf2LoserId || '')?.name || 'TBD'}</span>
               </div>
               {tpWinner?.id === sf2LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-950 px-2 py-0.5 rounded">WIN</span>}
@@ -220,14 +266,32 @@ export const PredictionSummary = () => {
             </div>
             <div className={`flex items-center justify-between p-2 rounded ${champion?.id === (rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '') ? 'bg-[#FBBF24]/20 ring-1 ring-[#FBBF24]/50' : ''}`}>
               <div className="flex items-center gap-3">
-                {rounds.sf[0] && knockoutPicks[rounds.sf[0].id] && getTeam(knockoutPicks[rounds.sf[0].id])?.flagUrl && <img src={getTeam(knockoutPicks[rounds.sf[0].id])!.flagUrl} className="w-6 h-4 rounded ring-1 ring-[#FBBF24]/40 shadow-sm" />}
+                {rounds.sf[0] && knockoutPicks[rounds.sf[0].id] && getTeam(knockoutPicks[rounds.sf[0].id])?.flagUrl && (
+                  <div className="relative w-6 h-4 flex-shrink-0">
+                    <Image 
+                      src={getTeam(knockoutPicks[rounds.sf[0].id])!.flagUrl} 
+                      alt={getTeam(knockoutPicks[rounds.sf[0].id])!.name}
+                      fill
+                      className="rounded ring-1 ring-[#FBBF24]/40 shadow-sm object-cover" 
+                    />
+                  </div>
+                )}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '')?.name || 'TBD'}</span>
               </div>
               {champion?.id === (rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '') && <span className="text-[10px] font-bold bg-[#FBBF24] text-black px-2 py-0.5 rounded">WINNER</span>}
             </div>
             <div className={`mt-2 flex items-center justify-between p-2 rounded ${champion?.id === (rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '') ? 'bg-[#FBBF24]/20 ring-1 ring-[#FBBF24]/50' : ''}`}>
               <div className="flex items-center gap-3">
-                {rounds.sf[1] && knockoutPicks[rounds.sf[1].id] && getTeam(knockoutPicks[rounds.sf[1].id])?.flagUrl && <img src={getTeam(knockoutPicks[rounds.sf[1].id])!.flagUrl} className="w-6 h-4 rounded ring-1 ring-[#FBBF24]/40 shadow-sm" />}
+                {rounds.sf[1] && knockoutPicks[rounds.sf[1].id] && getTeam(knockoutPicks[rounds.sf[1].id])?.flagUrl && (
+                  <div className="relative w-6 h-4 flex-shrink-0">
+                    <Image 
+                      src={getTeam(knockoutPicks[rounds.sf[1].id])!.flagUrl} 
+                      alt={getTeam(knockoutPicks[rounds.sf[1].id])!.name}
+                      fill
+                      className="rounded ring-1 ring-[#FBBF24]/40 shadow-sm object-cover" 
+                    />
+                  </div>
+                )}
                 <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '')?.name || 'TBD'}</span>
               </div>
               {champion?.id === (rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '') && <span className="text-[10px] font-bold bg-[#FBBF24] text-black px-2 py-0.5 rounded">WINNER</span>}

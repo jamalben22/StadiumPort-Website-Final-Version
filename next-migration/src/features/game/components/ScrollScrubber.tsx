@@ -4,8 +4,6 @@ import {
   useMotionValue, 
   useTransform, 
   useSpring, 
-  animate,
-  MotionValue
 } from 'framer-motion';
 
 interface ScrollScrubberProps {

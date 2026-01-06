@@ -31,9 +31,6 @@ export const EzoicAd = ({ placementId, placementIds, className = '' }: EzoicAdPr
   // to prevent duplicate calls, although Ezoic is generally safe with them.
   const initialized = useRef(false);
 
-  // Feature flag check
-  if (!isEzoicEnabled) return null;
-
   // Combine single ID and array of IDs into one normalized array
   const allPlacementIds = [
     ...(placementId ? [placementId] : []),
@@ -66,8 +63,10 @@ export const EzoicAd = ({ placementId, placementIds, className = '' }: EzoicAdPr
 
   if (allPlacementIds.length === 0) return null;
 
+  if (!isEzoicEnabled) return null;
+
   return (
-    <>
+    <div className={`ezoic-ad-container ${className}`}>
       {allPlacementIds.map((id) => (
         <div 
           key={id} 
@@ -76,6 +75,6 @@ export const EzoicAd = ({ placementId, placementIds, className = '' }: EzoicAdPr
           // Intentionally empty and unstyled as per Ezoic requirements
         />
       ))}
-    </>
+    </div>
   );
 };

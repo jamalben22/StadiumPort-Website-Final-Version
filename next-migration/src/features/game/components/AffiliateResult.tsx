@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import { useGame } from '../context/GameContext';
 import { TEAMS } from '../lib/wc26-data';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -125,7 +126,12 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
             >
                 <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10 rounded-full"></div>
                 {champion.flagUrl && (
-                    <img src={champion.flagUrl} alt={champion.name} className="w-full h-full object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700" />
+                    <Image 
+                      src={champion.flagUrl} 
+                      alt={champion.name} 
+                      fill
+                      className="object-cover transform scale-110 group-hover:scale-125 transition-transform duration-700" 
+                    />
                 )}
             </motion.div>
 

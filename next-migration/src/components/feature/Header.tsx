@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Search, Menu, X, ChevronRight } from 'lucide-react';
 import { DarkModeToggle } from '../base/DarkModeToggle';
@@ -113,29 +114,33 @@ export function Header() {
           <Link href="/" className="relative z-50 group" aria-label="stadiumport Home">
              <div className="relative">
                 {/* Desktop Logo */}
-                <div className="hidden lg:block">
-                  <img 
+                <div className="hidden lg:block relative h-8 w-40">
+                  <Image 
                     src="/images/Logos/stadiumport-header-logo-light.svg"
                     alt="stadiumport"
-                    className={`h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
+                    fill
+                    className={`object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
-                  <img 
+                  <Image 
                     src="/images/Logos/stadiumport-header-logo-dark.svg"
                     alt="stadiumport"
-                    className={`absolute top-0 left-0 h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
+                    fill
+                    className={`absolute top-0 left-0 object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
                 {/* Mobile Logo */}
-                <div className="lg:hidden">
-                   <img 
+                <div className="lg:hidden relative h-7 sm:h-8 w-32">
+                   <Image 
                     src="/images/Logos/stadiumport-mobile-logo-light.svg"
                     alt="stadiumport"
-                    className={`h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
+                    fill
+                    className={`object-contain transition-all duration-300 ${isDarkMode ? 'opacity-0' : 'opacity-100'}`}
                   />
-                  <img 
+                  <Image 
                     src="/images/Logos/stadiumport-mobile-logo-dark.svg"
                     alt="stadiumport"
-                    className={`absolute top-0 left-0 h-7 sm:h-8 w-auto object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
+                    fill
+                    className={`absolute top-0 left-0 object-contain transition-all duration-300 ${isDarkMode ? 'opacity-100' : 'opacity-0'}`}
                   />
                 </div>
              </div>
