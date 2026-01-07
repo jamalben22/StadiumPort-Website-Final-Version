@@ -309,15 +309,15 @@ transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
              Host City
            </span>
 <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
-US Opening Match
+SoFi Stadium (Inglewood)
 </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-LOS ANGELES
+<h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+Los Angeles World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-The Entertainment Capital. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+I’ve lived in L.A. long enough to remember when “getting to Inglewood” was a whole plan. For World Cup 2026, this is the reality: SoFi Stadium is spectacular, but the city is a patchwork of neighborhoods and traffic patterns. Nail your base, time your moves, and you’ll have the trip of your life.
 </p>
  </motion.div>
  </div>
@@ -617,7 +617,7 @@ The Entertainment Capital. <span className="text-slate-900 dark:text-white font-
  <div>
  <h4 className="font-bold text-xl mb-2">Metro (Train)</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- The K Line serves Inglewood. Connects to E Line (Expo) for Downtown and Santa Monica. It's improving, but coverage is less dense than NYC.
+ The K Line serves Inglewood. Connects to E Line (Expo) for Downtown and Santa Monica. Metro uses fare-capping (TAP required): $1.75 base fare, $5 daily cap, and $18 weekly cap.
  </p>
  </div>
  </div>
@@ -628,7 +628,18 @@ The Entertainment Capital. <span className="text-slate-900 dark:text-white font-
  <div>
  <h4 className="font-bold text-xl mb-2">Airport Transfer</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- LAX is the main hub. The new Automated People Mover (expected) will connect terminals to the Metro and rental car center.
+ LAX is the main hub. FlyAway to Union Station is $12.75 one-way (2025). The new Automated People Mover (expected) will connect terminals to the Metro and rental car center.
+ </p>
+ </div>
+ </div>
+ <div className="flex gap-6">
+ <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
+ <Bus className="w-8 h-8" />
+ </div>
+ <div>
+ <h4 className="font-bold text-xl mb-2">SoFi Shuttle (Match Day)</h4>
+ <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+ For Metro C Line (Hawthorne/Lennox) access, the game-day shuttle now picks up at the LAX/Metro Transit Center (Bus Bay 8). It’s free, runs every 3–5 minutes starting 3 hours before kickoff, and returns for 90 minutes after the game.
  </p>
  </div>
  </div>
@@ -858,8 +869,6 @@ The Entertainment Capital. <span className="text-slate-900 dark:text-white font-
  </div>
  );
 }
-
-
 
 
 

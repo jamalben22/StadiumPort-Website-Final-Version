@@ -247,15 +247,18 @@ export default function ClientPage() {
  { id: 'visa', label: 'Visa & Entry' },
  { id: 'planning', label: 'Planning' },
  { id: 'budget', label: 'Budget' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
  { id: 'stadium', label: 'Stadium' },
  { id: 'tickets', label: 'Tickets' },
  { id: 'hotels', label: 'Hotels' },
  { id: 'transport', label: 'Transport' },
  { id: 'dining', label: 'Dining' },
  { id: 'attractions', label: 'Attractions' },
+ { id: 'itineraries', label: 'Itineraries' },
  { id: 'tips', label: 'Match Day' },
  { id: 'safety', label: 'Safety' },
  { id: 'culture', label: 'Culture' },
+ { id: 'language', label: 'Language' },
  { id: 'packing', label: 'Packing' },
  { id: 'faq', label: 'FAQ' },
  ];
@@ -301,9 +304,9 @@ export default function ClientPage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
+          <div className="flex items-center gap-4 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-              Last Updated: January 4, 2026
+              Last Updated: January 7, 2026
             </span>
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
               Host City
@@ -314,10 +317,10 @@ export default function ClientPage() {
           </div>
           
           <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-            GUADALAJARA
+            Guadalajara <span className="block">World Cup 2026 Guide</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-            The Heart of Mexico. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+          <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+            A local-first matchweek playbook for Estadio Akron: where to stay, how to move, what to eat, and how to actually enjoy Guadalajara between fixtures.
           </p>
  </motion.div>
  </div>
@@ -372,14 +375,20 @@ export default function ClientPage() {
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- You feel Guadalajara before you see it. It’s the scent of wet earth and roasting agave. It’s the rhythm of mariachi trumpets bouncing off colonial stone walls. Mexico City might be the brain of the country, but Guadalajara is its heart.
+ You feel Guadalajara before you see it. The scent of wet earth after a summer shower. Tortillas puffing on a comal. Mariachi trumpets ricocheting off colonial stone. I’ve lived here long enough to measure time by little rituals: the first rains of June, the way the city empties during a Chivas match, the exact moment a quiet dinner on Chapultepec turns into a street-wide celebration.
+ </p>
+ <p>
+ This <strong>Guadalajara World Cup 2026 guide</strong> is the version I’d hand my cousins from abroad: where to base yourself (and why), the fastest matchday routes to <strong>Estadio Akron</strong>, the neighborhoods that feel “right” depending on your vibe, and the small local hacks that save you time, money, and headaches.
+ </p>
+ <p>
+ One big truth up front: Guadalajara is not a “walk from your hotel to the stadium” host city. Estadio Akron sits out west in Zapopan. That’s not a problem—it just means your trip gets better when you choose your base with stadium logistics in mind, not just pretty photos of Centro.
  </p>
  </div>
  <div className="grid md:grid-cols-3 gap-8">
           {[
-            { icon: MapPin, title: "Where to Base", text: "Zapopan for proximity to Estadio Akron. Centro Histórico for culture. Chapultepec for nightlife." },
-            { icon: Train, title: "Transport Strategy", text: "Use Mi Tren (Light Rail) and Uber. Traffic to the stadium in Zapopan can be heavy, so plan ahead." },
-            { icon: DollarSign, title: "Budget Signals", text: "Very affordable compared to US cities. Luxury hotels in Zapopan price higher during matches." }
+            { icon: MapPin, title: "Where to Base", text: "For easiest matchday: Zapopan (Andares / Puerta de Hierro) or Vallarta Poniente. For nightlife: Colonia Americana + Chapultepec. For museums: Centro + Tlaquepaque." },
+            { icon: Train, title: "Transport Strategy", text: "Use Mi Movilidad transit where it fits, then rideshare strategically. The best trick is timing: arrive early, leave late, and let traffic burn off." },
+            { icon: DollarSign, title: "Budget Reality", text: "Compared to USA/Canada host cities, Guadalajara still feels like a deal. Your big swing costs are hotels on match weeks and rideshare surge after games." }
           ].map((item, i) => (
             <div key={i} className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 transition-all duration-300 hover:shadow-xl">
               <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -388,39 +397,87 @@ export default function ClientPage() {
             </div>
           ))}
  </div>
+ <div className="mt-12 p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+ <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Quick Answers (Read This First)</h3>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+ <li><strong>Best area to stay for Estadio Akron:</strong> Zapopan (Andares/Puerta de Hierro) or Vallarta Poniente.</li>
+ <li><strong>Best nightlife base:</strong> Colonia Americana + Avenida Chapultepec (walkable bars, patios, late nights).</li>
+ <li><strong>Best family base:</strong> Providencia or Chapalita (calmer streets, good parks, easy taxis).</li>
+ <li><strong>Public transit move for matchday:</strong> Mi Macro Periférico to the Estadio Chivas stop, then follow the crowd.</li>
+ <li><strong>Weather surprise people forget:</strong> June–July storms. Pack a light rain layer and quick-dry shoes.</li>
+ </ul>
+ </div>
  <div className="mt-12 flex flex-wrap gap-4">
-            <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/gdl" text="Search GDL Flights" variant="secondary" icon={Plane} />
-            <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Zapopan" text="Check Zapopan Hotels" variant="primary" icon={Hotel} />
+            <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/gdl" text="Compare Flights to GDL" variant="secondary" icon={Plane} />
+            <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Zapopan" text="Find Matchweek Hotels in Zapopan" variant="primary" icon={Hotel} />
+            <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="outline" icon={Shield} />
+            <AffiliateButton href="https://fifaworldcup26.hospitality.fifa.com/us/en" text="Explore Official Hospitality" variant="outline" icon={Star} />
+          </div>
+          <div className="mt-10 flex flex-wrap gap-4 text-sm">
+            <Link href="/world-cup-2026-mexico-city-guide" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition-colors">
+              Pair It With Mexico City <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/world-cup-2026-monterrey-guide" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition-colors">
+              Or Monterrey <ArrowRight className="w-4 h-4" />
+            </Link>
+            <Link href="/world-cup-2026-groups/group-a" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-500 transition-colors">
+              Follow Group A Strategy <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </Section>
 
-        <Section id="visa" title="Visa & Entry (Mexico)">
+ <Section id="visa" title="Visa & Entry (Mexico)">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="p-8 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem]">
               <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
-              <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of the US, Canada, UK, and Schengen Area do NOT need a visa for stays under 180 days. You will receive an FMM (tourist card) upon arrival.</p>
-              <AffiliateButton href="https://www.inm.gob.mx/" text="Check Visa Requirements" variant="outline" />
+              <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">
+                Mexico is visa-free for many passport holders for tourism, but entry rules depend on your nationality and the length/purpose of your stay. The smartest move is to check official guidance for your passport and keep your plans simple: tourism, clear hotel/flight details, and a passport valid for your entire trip.
+              </p>
+              <div className="text-slate-600 dark:text-slate-400 text-lg">
+                <a href="https://www.inm.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-emerald-600 hover:text-emerald-500">
+                  INM (Mexico Immigration) <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
             <div className="p-8 border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2rem]">
               <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
               <ul className="space-y-4 mb-8">
-                {['Keep your FMM exit part safe', 'Passports must be valid for 6 months', 'Declare cash over $10,000 USD'].map((item, i) => (
+                {[
+                  'Your allowed stay length is set by immigration on arrival—check your passport stamp/receipt.',
+                  'Airports use digital FMMD / e-gates in many cases—save the receipt/QR for your records.',
+                  'Declare large amounts of cash when entering any country, and don’t travel with anything you can’t explain.',
+                ].map((item, i) => (
                   <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                     <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
                   </li>
                 ))}
               </ul>
-              <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+              <div className="flex flex-wrap gap-4">
+                <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+                <a href="https://travel.state.gov/content/travel/en/traveladvisories/traveladvisories/mexico-travel-advisory.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 font-bold text-emerald-600 hover:text-emerald-500 px-6 py-4 rounded-full border border-slate-200 dark:border-white/10">
+                  Entry Details (FMMD) <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
             </div>
           </div>
         </Section>
 
  <Section id="planning" title="Planning Timeline">
+          <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              Guadalajara planning is a game of timing. The city is easy when you’re early and impossible when you’re late. Build your trip around two pressure points: <strong>hotel inventory</strong> (Zapopan fills first) and <strong>matchday transport</strong> (the stadium is outside the center).
+            </p>
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              Also: Guadalajara is on FIFA’s calendar before the tournament starts—FIFA announced the <strong>World Cup 2026 Play-Off Tournament</strong> will be hosted in Guadalajara and Monterrey in <strong>March 2026</strong>. <a href="https://inside.fifa.com/media-releases/mexico-guadalajara-monterrey-world-cup-2026-play-off-tournament" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">Source <ExternalLink className="w-4 h-4" /></a>
+            </p>
+          </div>
+
           <div className="relative border-l-2 border-emerald-500/30 pl-8 ml-4 space-y-12">
             {[
-              { time: "12+ Months Out", title: "Flights & Hotels", desc: "Book refundable accommodation in Zapopan/Providence." },
-              { time: "6-9 Months Out", title: "Match Tickets", desc: "Apply via FIFA lottery phase." },
-              { time: "3 Months Out", title: "Tequila Tours", desc: "Reserve distillery tours in Tequila town." }
+              { time: "9–12 Months Out", title: "Lock Your Base", desc: "Book refundable rooms in Zapopan (Andares/Vallarta Poniente) first, then decide how much Centro you want. Location beats room size on match weeks." },
+              { time: "6–9 Months Out", title: "Tickets & Alerts", desc: "Register for FIFA ticket updates, and decide whether you want official hospitality (less stress, more cost) or standard seats." },
+              { time: "3–6 Months Out", title: "Build Your Non-Match Plan", desc: "Tequila (the town), Tlaquepaque evenings, and weekend reservations fill up fast in summer." },
+              { time: "1–3 Months Out", title: "Matchday Logistics Drill", desc: "Save your stadium route, choose a pickup point for rideshare, and buy a compact rain layer. If you’re in a group, pick one meetup café per neighborhood." }
             ].map((item, i) => (
               <div key={i} className="relative">
                 <div className="absolute -left-[41px] top-0 w-5 h-5 rounded-full bg-emerald-500 ring-4 ring-white dark:ring-slate-900" />
@@ -430,35 +487,184 @@ export default function ClientPage() {
               </div>
             ))}
             <div className="flex gap-4 pt-4">
-              <AffiliateButton href="https://www.google.com/travel/flights" text="Set Flight Alerts" variant="primary" icon={Plane} />
+              <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/gdl" text="Set Flight Alerts" variant="primary" icon={Plane} />
+              <AffiliateButton href="https://www.fifa.com/en/tickets" text="FIFA Ticket Updates" variant="secondary" icon={Ticket} />
               <AffiliateButton href="https://www.viator.com/Guadalajara/d5366-ttd" text="Reserve Experiences" variant="outline" />
             </div>
           </div>
         </Section>
 
-        <Section id="budget" title="Est. Daily Budget">
-          <div className="grid md:grid-cols-3 gap-6">
+        <Section id="budget" title="Budget Tiers (Reality Check)">
+          <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              Guadalajara can be wildly affordable or quietly expensive—it depends on two choices: <strong>where you sleep</strong> (Zapopan matchweek prices climb) and <strong>how you move</strong> (rideshare at peak hours adds up fast).
+            </p>
+            <p className="text-xl text-slate-600 dark:text-slate-300">
+              I recommend budgeting in <strong>MXN</strong> on the ground. Your “small costs” (tacos, coffee, transit) feel light; your “big costs” (hotels, VIP packages, last-minute transport) are what bite.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
             {[
-              { level: "Budget", price: "$60-90", color: "bg-emerald-100 text-emerald-800", desc: "Hostels, street tacos, public transit" },
-              { level: "Mid-Range", price: "$120-180", color: "bg-blue-100 text-blue-800", desc: "3-star hotel, sit-down meals, Uber" },
-              { level: "Luxury", price: "$300+", color: "bg-purple-100 text-purple-800", desc: "5-star hotel in Andares, private tours" }
+              { title: "Smart Saver", items: ["Hostel or simple hotel outside the hottest zones", "Street food + mercados + one sit-down meal", "Mi Movilidad transit when it fits your route"] },
+              { title: "Comfort Upgrades", items: ["Mid-range hotel in Americana / Providencia", "Two great meals per day, plus coffee runs", "Uber/DiDi for evenings and time-critical moments"] },
+              { title: "Premium", items: ["Luxury in Andares / Puerta de Hierro or top boutique", "Private tours (Tequila, Chapala) and reservations", "Official hospitality and private transfers"] }
             ].map((tier, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 text-center">
-                <span className={`inline-block px-3 py-1 rounded-full text-sm font-bold mb-4 ${tier.color}`}>{tier.level}</span>
-                <div className="text-3xl font-bold mb-2">{tier.price}</div>
-                <p className="text-slate-500 text-sm">{tier.desc}</p>
+              <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 hover:shadow-2xl transition-all duration-300">
+                <h4 className="font-bold text-xl mb-6 text-slate-900 dark:text-white">{tier.title}</h4>
+                <ul className="space-y-4">
+                  {tier.items.map((item, j) => (
+                    <li key={j} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+                      <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-          <div className="mt-8 text-center">
-            <p className="text-slate-600 dark:text-slate-400 mb-6 max-w-2xl mx-auto">
-              Guadalajara is significantly more affordable than US/Canada host cities. High-end dining often costs 50% less than equivalent US options.
-            </p>
-            <AffiliateButton href="https://www.expedia.com/Guadalajara-Vacation-Packages.d1416.Travel-Guide-Packages" text="Search GDL Packages" variant="secondary" icon={Briefcase} />
+
+          <div className="mt-10 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+            <h4 className="font-bold text-2xl mb-4 text-slate-900 dark:text-white">Fast Cost Benchmarks (MXN)</h4>
+            <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+              <li>
+                • <strong>Mi Macro Periférico fare:</strong> $9.50 MXN.{' '}
+                <a href="https://mimacro.jalisco.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">
+                  Source <ExternalLink className="w-4 h-4" />
+                </a>
+              </li>
+              <li>
+                • <strong>Transfers:</strong> 50% discount applies on certain connections when paying with <strong>Tarjeta Mi Movilidad</strong>.{' '}
+                <a href="https://mimacro.jalisco.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">
+                  Source <ExternalLink className="w-4 h-4" />
+                </a>
+              </li>
+              <li>• <strong>Matchweek hotels:</strong> book early, choose location over “extras”.</li>
+              <li>• <strong>After-match rideshare:</strong> surge pricing is normal—build a 30–60 minute buffer.</li>
+            </ul>
+            <div className="mt-10 flex flex-wrap gap-4 justify-center">
+              <AffiliateButton href="https://www.expedia.com/Guadalajara-Vacation-Packages.d1416.Travel-Guide-Packages" text="Bundle Flights + Hotels" variant="secondary" icon={Briefcase} />
+              <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Guadalajara" text="Compare Hotel Deals" variant="primary" icon={Hotel} />
+            </div>
           </div>
         </Section>
 
- <Section id="stadium" title="Estadio Akron">
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood (Local Read)">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Guadalajara is really a network of neighborhoods with different personalities. The mistake visitors make is picking a base that looks central on a map and then spending match week trapped in traffic. Pick your vibe first, then sanity-check stadium access.
+ </p>
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Below is how locals explain the city to friends: where you’ll actually sleep well, where you’ll actually find good food without a 45-minute ride, and where you’ll want to be when the streets turn into one big football conversation.
+ </p>
+ </div>
+
+ <div className="grid lg:grid-cols-2 gap-8">
+ {[
+ {
+ title: 'Zapopan: Andares / Puerta de Hierro',
+ vibe: 'Upscale, modern, efficient. Best logistics for Estadio Akron.',
+ stay: 'Best for: first-time visitors who hate stress and love convenience.',
+ eat: 'High-end dining, malls, polished cafés.',
+ drink: 'Hotel bars, cocktails, “nice night out” energy.',
+ explore: 'Andares, upscale shopping, easy taxis.',
+ bestFor: 'Luxury, families, “walk less, plan less.”',
+ matchday: 'Closest big hotel cluster to the stadium; easiest exits.',
+ },
+ {
+ title: 'Vallarta Poniente / Ciudad Granja',
+ vibe: 'Practical and stadium-adjacent without being stuck in the middle of nowhere.',
+ stay: 'Best for: match-first trips and groups who want value.',
+ eat: 'Solid chains and local spots along Vallarta; easy delivery.',
+ drink: 'Pre-game beers, then head to Americana if you want nightlife.',
+ explore: 'Quick access to the stadium corridor.',
+ bestFor: 'Budget-to-mid, matchday convenience.',
+ matchday: 'Strong base if you want shorter rides and earlier arrivals.',
+ },
+ {
+ title: 'Colonia Americana + Avenida Chapultepec',
+ vibe: 'Trendy, loud, social. The city’s “we’re going out” zone.',
+ stay: 'Best for: nightlife and walkability between bars/restaurants.',
+ eat: 'Modern Mexican, coffee culture, late-night tacos.',
+ drink: 'Patios, cocktail bars, music—this is where match nights spill out.',
+ explore: 'Design shops, galleries, street life.',
+ bestFor: 'Friends trips, couples, solo travelers who want energy.',
+ matchday: 'Great vibe, but plan your stadium transport early.',
+ },
+ {
+ title: 'Providencia (and nearby)',
+ vibe: 'Leafy, comfortable, quietly upscale.',
+ stay: 'Best for: families, long stays, people who want calmer nights.',
+ eat: 'Excellent neighborhood restaurants; less “tourist theater”.',
+ drink: 'Wine bars and calm spots over clubbing.',
+ explore: 'Parks, shopping pockets, easy access to many parts of the city.',
+ bestFor: 'Families, comfort, slower pace.',
+ matchday: 'Balanced: not closest, not far—good if you’re doing more than football.',
+ },
+ {
+ title: 'Centro Histórico',
+ vibe: 'Cathedrals, plazas, murals, history. Gorgeous by day.',
+ stay: 'Best for: culture-first travelers who plan early nights.',
+ eat: 'Markets and classic spots; fewer “late-late” dining options.',
+ drink: 'Classic cantinas, but nightlife is thinner than Americana.',
+ explore: 'Hospicio Cabañas, Cathedral, plazas and museums.',
+ bestFor: 'History lovers, photographers, day walkers.',
+ matchday: 'Longer stadium ride; leave very early on matchday.',
+ },
+ {
+ title: 'Tlaquepaque (San Pedro Tlaquepaque)',
+ vibe: 'Artisanal, romantic, mariachi-friendly evenings.',
+ stay: 'Best for: a quieter base with a strong “Mexico” feel.',
+ eat: 'Great traditional dining and sweets; lively evenings.',
+ drink: 'Perfect for a slow dinner that turns into a serenade.',
+ explore: 'Craft shops, galleries, strolling streets.',
+ bestFor: 'Couples, culture, food-focused trips.',
+ matchday: 'Further from the stadium; pair it with non-match days.',
+ },
+ {
+ title: 'Chapalita',
+ vibe: 'Residential, parks, calm streets.',
+ stay: 'Best for: families and travelers who want a local routine.',
+ eat: 'Local cafés, bakeries, neighborhood dining.',
+ drink: 'Low-key bars; less late-night chaos.',
+ explore: 'Roundabouts, parks, a “living city” feel.',
+ bestFor: 'Family-friendly, mid-range value.',
+ matchday: 'Good access to Vallarta corridors—still plan buffers.',
+ },
+ {
+ title: 'Zapopan Centro (Basilica area)',
+ vibe: 'Historic core of Zapopan with a more local rhythm.',
+ stay: 'Best for: cultural mornings and calmer evenings in Zapopan.',
+ eat: 'Street snacks, plazas, local restaurants.',
+ drink: 'Relaxed nights; less club energy.',
+ explore: 'Basilica, plazas, weekend life.',
+ bestFor: 'Culture + logistics blend.',
+ matchday: 'Better stadium access than Centro Guadalajara.',
+ },
+ ].map((n, i) => (
+ <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+ <h4 className="font-bold text-2xl mb-3 text-slate-900 dark:text-white">{n.title}</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6">{n.vibe}</p>
+ <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+ <li>• <strong>Stay:</strong> {n.stay}</li>
+ <li>• <strong>Eat:</strong> {n.eat}</li>
+ <li>• <strong>Drink:</strong> {n.drink}</li>
+ <li>• <strong>Explore:</strong> {n.explore}</li>
+ <li>• <strong>Best for:</strong> {n.bestFor}</li>
+ <li>• <strong>Matchday:</strong> {n.matchday}</li>
+ </ul>
+ </div>
+ ))}
+ </div>
+
+ <div className="mt-12 flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Zapopan" text="Search Zapopan Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Colonia%20Americana%2C%20Guadalajara" text="Search Colonia Americana Hotels" variant="outline" icon={Hotel} />
+ <AffiliateButton href="https://www.airbnb.com/s/Guadalajara--Jalisco--Mexico/homes" text="Find Apartments for Groups" variant="outline" icon={Users} />
+ </div>
+ </Section>
+
+ <Section id="stadium" title="Estadio Akron (Guadalajara Stadium)">
  <LightboxImage 
  src="/images/stadiums/estadio-akron-guadalajara-world-cup-2026-1600.webp" 
  alt="Estadio Akron Interior" 
@@ -467,19 +673,28 @@ export default function ClientPage() {
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- Home of Chivas, <strong>Estadio Akron</strong> is famous for its berm design—the exterior looks like a grassy hill or volcano. Inside, it's a cauldron of noise. It's modern, safe, and offers excellent sightlines for World Cup matches.
+ Locals call it <strong>El Volcán</strong> for a reason. Estadio Akron is built into a grassy berm, so from the outside it looks like a landscape—like someone folded the earth and decided to host a match inside it. It’s the home of Chivas, and when the city is in football mode, you’ll hear it before you arrive.
+ </p>
+ <p>
+ During FIFA World Cup 2026, the venue uses the neutral name <strong>Guadalajara Stadium</strong> and hosts <strong>four Group Stage matches</strong>.{' '}
+ <a href="https://fifaworldcup26.suites.fifa.com/venues/guadalajara-stadium/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">
+ Source <ExternalLink className="w-4 h-4" />
+ </a>
+ </p>
+ <p>
+ The stadium sits in Zapopan (west metro), so matchday planning is mostly a transport problem—not a safety problem. Solve the transport, and you’re golden.
  </p>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
- <div className=" p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
+ <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+ <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Facts</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "~48,000" },
- { label: "Surface", val: "Natural Grass" },
- { label: "Roof", val: "90% Coverage" },
- { label: "Built", val: "2010" }
+ { label: "Tournament name", val: "Guadalajara Stadium" },
+ { label: "Local name", val: "Estadio Akron" },
+ { label: "Home club", val: "C.D. Guadalajara (Chivas)" },
+ { label: "Location", val: "Zapopan (Guadalajara metro)" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
  <span className="font-medium text-slate-500">{item.label}</span>
@@ -488,59 +703,81 @@ export default function ClientPage() {
  ))}
  </ul>
  </div>
- <div className=" p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
+ <div className="p-8 rounded-[2rem] bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10">
+ <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips (Local Edition)</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Rainy Season: Afternoon storms are common in June.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Arrive 3 hours early; access roads get busy.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Bag Policy: Strict clear bag policy. Small clutches only.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Treat rain like part of the schedule: sunny mornings, storms later.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrive early, leave late. The “right” time is rarely the obvious time.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Save a pin for your pickup spot before kickoff. After the match, data congestion is normal.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Keep your plan simple: one pre-match meet point, one post-match meet point.</li>
  </ul>
  </div>
  </div>
  
         <div className="p-8 rounded-[2rem] bg-emerald-500/5 border border-emerald-500/20">
           <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
-            <strong>Getting There:</strong> Unlike many stadiums, Estadio Akron is located on the outskirts (Zapopan). Plan for traffic and use <strong>Rideshare</strong> or dedicated shuttles.
+            <strong>Getting There:</strong> Mi Macro Periférico is $9.50 MXN and uses the <strong>Tarjeta Mi Movilidad</strong>.{' '}
+            <a href="https://mimacro.jalisco.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-700 dark:text-emerald-300 hover:text-emerald-600 font-bold">
+              Source <ExternalLink className="w-4 h-4" />
+            </a>
           </p>
         </div>
  </Section>
 
  <Section id="tips" title="Match Day Gameplan">
- <div className="grid md:grid-cols-3 gap-6 mb-8">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Matchday in Guadalajara is equal parts football and choreography. If you try to “wing it,” you’ll spend the best hours in traffic. If you follow a simple time budget, it feels easy—and honestly, fun.
+ </p>
+ </div>
+
+ <div className="grid md:grid-cols-3 gap-6 mb-10">
  {[
- { title: "Arrival", text: "Be at the gates 90 minutes before kickoff. Traffic in Zapopan can be intense." },
- { title: "Clear Bag", text: "Bring a stadium-approved clear bag. Security is strict but efficient." },
- { title: "Exit Plan", text: "Traffic can be heavy leaving the stadium. Wait a bit or walk to designated pickup points." }
+ { title: "T-5h to T-3h", text: "Eat a real meal early (you don’t want to be hangry in a security line), then head west before the biggest traffic wave." },
+ { title: "T-3h to Kickoff", text: "Get to the stadium zone, walk a bit, and let the crowd flow guide you. Rain usually shows up later—still bring a layer." },
+ { title: "Post-Match", text: "Don’t fight the first surge. Grab a drink, take photos, and leave when the pressure drops. Your wallet will thank you." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
- <h4 className="font-bold mb-3">{item.title}</h4>
+ <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+ <h4 className="font-bold mb-3 text-slate-900 dark:text-white">{item.title}</h4>
  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
  </div>
  ))}
  </div>
- <div className="mt-6 flex gap-3">
- <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
- <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle" text="Add Refillable Bottle" variant="outline" />
+
+ <div className="mt-6 flex flex-wrap gap-3">
+ <AffiliateButton href="https://www.amazon.com/s?k=packable+rain+jacket" text="Packable Rain Jacket" variant="primary" />
+ <AffiliateButton href="https://www.amazon.com/s?k=portable+power+bank" text="Bring a Power Bank" variant="outline" />
+ <AffiliateButton href="https://www.airalo.com/mexico-esim" text="Grab a Mexico eSIM" variant="outline" icon={Globe} />
  </div>
  
- <div className="mt-8">
- <h3 className="font-bold text-xl mb-4">Getting to the Stadium</h3>
+ <div className="mt-10">
+ <h3 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">Getting to Estadio Akron</h3>
  <div className="space-y-4">
  {[
- { mode: "Mi Macro", time: "45-60 min", cost: "$0.50", desc: "Periférico line to Estadio Chivas station + 15 min walk." },
- { mode: "Rideshare", time: "30-50 min", cost: "$10-20", desc: "Designated drop-off zones can be far from gates." }
+ { mode: "Mi Macro Periférico", time: "Varies by base", cost: "$9.50 MXN", desc: "Use your Tarjeta Mi Movilidad; get off near the Estadio Chivas area, then walk with the crowd.", icon: Bus, accent: "text-emerald-600" },
+ { mode: "Rideshare (Uber/DiDi)", time: "Varies", cost: "Varies", desc: "Most convenient door-to-zone option. Save a pickup pin before kickoff; expect surge pricing after the whistle.", icon: Car, accent: "text-blue-600" },
+ { mode: "Park & Ride (Match Events)", time: "Varies", cost: "Varies", desc: "Local match events sometimes run park-and-ride style operations (example: Concentro parking area + shuttle routing). Always confirm the current plan.", icon: MapPin, accent: "text-amber-600" }
  ].map((opt, i) => (
  <div key={i} className="flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800/50">
  <div className="bg-slate-100 dark:bg-slate-700 p-3 rounded-lg">
- {i === 0 ? <Bus className="w-6 h-6 text-emerald-600" /> : <Car className="w-6 h-6 text-blue-600" />}
+ <opt.icon className={`w-6 h-6 ${opt.accent}`} />
  </div>
- <div>
- <div className="font-bold">{opt.mode} <span className="text-slate-400 font-normal">({opt.time})</span></div>
- <div className="text-sm text-slate-500">{opt.desc}</div>
+ <div className="min-w-0">
+ <div className="font-bold text-slate-900 dark:text-white">{opt.mode} <span className="text-slate-400 font-normal">({opt.time})</span></div>
+ <div className="text-sm text-slate-500 dark:text-slate-400">{opt.desc}</div>
  </div>
- <div className="ml-auto font-bold text-emerald-600">{opt.cost}</div>
+ <div className="ml-auto font-bold text-emerald-600 whitespace-nowrap">{opt.cost}</div>
  </div>
  ))}
+ </div>
+
+ <div className="mt-6 p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-50 dark:bg-slate-900/50">
+ <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+ A useful local reference point: Mi Macro Periférico matchday routing has historically used stations like <strong>Ciudad Granja</strong>, <strong>Ciudad Judicial</strong>, and <strong>Estadio Chivas</strong> as access points for event shuttles.{' '}
+ <a href="https://www.informador.mx/jalisco/Chivas-vs.-Tigres-Vas-a-la-final-Estas-son-las-3-rutas-a-tomar-para-llegar-al-Estadio-Akron-20230527-0070.html" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">
+ Source <ExternalLink className="w-4 h-4" />
+ </a>
+ </p>
  </div>
  </div>
  </Section>
@@ -613,52 +850,63 @@ export default function ClientPage() {
  </div>
  </Section>
 
- <Section id="transport" title="Getting Around">
- <div className="grid md:grid-cols-2 gap-8 mb-12">
- <div className="space-y-8">
- <div className="flex gap-6">
- <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
- <Train className="w-8 h-8" />
- </div>
- <div>
- <h4 className="font-bold text-xl mb-2">Mi Tren (Light Rail)</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Clean and efficient. Line 3 connects the historic center to Zapopan, getting you closer to the stadium area.
- </p>
- </div>
- </div>
- <div className="flex gap-6">
- <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
- <Plane className="w-8 h-8" />
- </div>
- <div>
- <h4 className="font-bold text-xl mb-2">Airport Transfer</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Miguel Hidalgo y Costilla (GDL) is the main airport. Taxis and Ubers are readily available to take you to the city center (30-45 mins).
- </p>
- </div>
- </div>
- <div className="flex gap-6">
- <div className="w-16 h-16 rounded-2xl flex items-center justify-center text-amber-600 shrink-0">
- <Car className="w-8 h-8" />
- </div>
- <div>
- <h4 className="font-bold text-xl mb-2">Rideshare & Driving</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Uber & DiDi are widely available, safe, and affordable. Traffic can be intense, so allow extra time.
- </p>
- </div>
- </div>
- </div>
+<Section id="transport" title="Getting Around">
+<div className="grid md:grid-cols-2 gap-8 mb-12">
+<div className="space-y-8">
+<div className="flex gap-6">
+<div className="w-16 h-16 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
+<Train className="w-8 h-8" />
+</div>
+<div>
+<h4 className="font-bold text-xl mb-2">Mi Tren (Light Rail)</h4>
+<p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+Clean and efficient. Line 3 connects Centro to Zapopan; use it to cut across the city, then finish with a short connector (bus / rideshare) toward Estadio Akron.
+</p>
+</div>
+</div>
+<div className="flex gap-6">
+<div className="w-16 h-16 rounded-2xl flex items-center justify-center text-violet-600 shrink-0">
+<Bus className="w-8 h-8" />
+</div>
+<div>
+<h4 className="font-bold text-xl mb-2">Mi Macro Periférico (BRT Ring Line)</h4>
+<p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+This is the matchday workhorse around the Periférico. The key stop for the stadium zone is <strong>Estadio Chivas</strong>. Standard fare is <strong>$9.50 MXN</strong>. If you use a <strong>Mi Movilidad</strong> card, transfers get a <strong>50% discount</strong>.
+</p>
+</div>
+</div>
+<div className="flex gap-6">
+<div className="w-16 h-16 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
+<Plane className="w-8 h-8" />
+</div>
+<div>
+<h4 className="font-bold text-xl mb-2">Airport Transfer</h4>
+<p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+Miguel Hidalgo y Costilla (GDL) is the main airport. Authorized taxis and app-based rides are available to the city (typically 30-60 mins depending on traffic).
+</p>
+</div>
+</div>
+<div className="flex gap-6">
+<div className="w-16 h-16 rounded-2xl flex items-center justify-center text-amber-600 shrink-0">
+<Car className="w-8 h-8" />
+</div>
+<div>
+<h4 className="font-bold text-xl mb-2">Rideshare & Driving</h4>
+<p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+Uber & DiDi are widely available, safe, and affordable. Traffic can be intense, so allow extra time.
+</p>
+</div>
+</div>
+</div>
  
         <div className="bg-white dark:bg-slate-50 dark:bg-slate-900/50 rounded-[2.5rem] p-8 border border-slate-200 dark:border-white/10 h-fit">
           <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
           <ul className="space-y-6">
             {[
-              { label: "Zapopan Hotels", time: "10-20 min drive" },
-              { label: "Colonia Americana", time: "30-45 min drive" },
-              { label: "Centro Histórico", time: "40-60 min drive" },
-              { label: "Airport (GDL)", time: "45-60 min drive" }
+              { label: "Zapopan / Andares", time: "25-45 min transit" },
+              { label: "Colonia Americana", time: "45-75 min transit" },
+              { label: "Centro Histórico", time: "55-90 min transit" },
+              { label: "Airport (GDL)", time: "70-110 min transit" }
             ].map((item, i) => (
               <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-white/10 pb-4 last:border-0 last:pb-0">
                 <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
@@ -667,11 +915,11 @@ export default function ClientPage() {
             ))}
           </ul>
           <div className="mt-8 pt-8 border-t border-slate-200 dark:border-white/10">
-            <AffiliateButton href="https://www.uber.com/global/en/airports/" text="Book Airport Transfer" variant="secondary" />
+            <AffiliateButton href="https://web.didiglobal.com/mx/pasajero/" text="Use DiDi (Mexico)" variant="secondary" />
           </div>
         </div>
- </div>
- </Section>
+</div>
+</Section>
 
  <Section id="dining" title="Food & Drink">
         <div className="grid md:grid-cols-3 gap-8">
@@ -837,16 +1085,6 @@ export default function ClientPage() {
   </div>
 );
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

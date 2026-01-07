@@ -19,7 +19,6 @@ const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" }
 
 import { constructMetadata } from "@/lib/seo";
 import { Providers } from "./providers";
-import { isEzoicEnabled } from "@/lib/ads";
 
 const GA_MEASUREMENT_ID = 'G-7GLKVF44RM';
 
@@ -43,6 +42,13 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://flagcdn.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+        <Script 
+          async 
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855" 
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         {/* Google tag (gtag.js) */}
@@ -59,37 +65,6 @@ export default function RootLayout({
             gtag('config', 'G-7GLKVF44RM');
           `}
         </Script>
-
-        {/* Privacy Scripts (MUST LOAD FIRST) */}
-        <Script
-          src="https://cmp.gatekeeperconsent.com/min.js"
-          strategy="beforeInteractive"
-          data-cfasync="false"
-        />
-        <Script
-          src="https://the.gatekeeperconsent.com/cmp.min.js"
-          strategy="beforeInteractive"
-          data-cfasync="false"
-        />
-
-        {/* Ezoic Header Script */}
-        {isEzoicEnabled && (
-          <>
-            <Script
-              src="//www.ezojs.com/ezoic/sa.min.js"
-              strategy="beforeInteractive"
-            />
-            <Script
-              id="ezoic-init"
-              strategy="beforeInteractive"
-            >
-              {`
-                window.ezstandalone = window.ezstandalone || {};
-                ezstandalone.cmd = ezstandalone.cmd || [];
-              `}
-            </Script>
-          </>
-        )}
 
         <Providers>
           <AnalyticsTracker pageId="root" />

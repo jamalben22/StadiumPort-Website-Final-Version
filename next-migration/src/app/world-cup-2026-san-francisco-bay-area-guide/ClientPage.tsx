@@ -140,19 +140,19 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
  return (
- <section id={id} ref={ref} className={`py-16 md:py-24 scroll-mt-24 ${className}`}>
- <motion.div
- variants={fadeIn}
- initial="hidden"
- animate={isInView ? "visible" : "hidden"}
- >
- <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-12 tracking-tight">
- <span className="text-emerald-500 text-lg md:text-xl font-bold uppercase tracking-widest block mb-2">Guide Section</span>
- {title}
- </h2>
- {children}
- </motion.div>
- </section>
+  <section id={id} ref={ref} className={`py-12 md:py-20 scroll-mt-24 ${className}`}>
+  <motion.div
+  variants={fadeIn}
+  initial="hidden"
+  animate={isInView ? "visible" : "hidden"}
+  >
+  <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-10 tracking-tight">
+  <span className="text-emerald-500 text-sm md:text-base font-bold uppercase tracking-[0.2em] block mb-3">Guide Section</span>
+  {title}
+  </h2>
+  {children}
+  </motion.div>
+  </section>
  );
 };
 
@@ -272,61 +272,63 @@ export default function ClientPage() {
  style={{ scaleX }}
  />
 
- {/* 1. Hero Section - Refined & Minimal */}
- <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
- <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
- alt="San Francisco Skyline" 
- fill 
- className="object-cover"
- priority sizes="100vw"
-  unoptimized />
- <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
-</div>
+      {/* 1. Hero Section - Refined & Minimal */}
+      <div className="relative h-[75vh] md:h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
+            alt="San Francisco Skyline" 
+            fill 
+            className="object-cover"
+            priority 
+            sizes="100vw"
+            unoptimized 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+        </div>
 
-<div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
-<div className="max-w-4xl">
-{/* Breadcrumbs */}
-<Breadcrumb 
-           variant="white"
-           items={[
-             { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
-             { label: 'San Francisco Bay Area', href: '/world-cup-2026-san-francisco-bay-area-guide' }
-           ]} 
-         />
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col items-start justify-center pt-20">
+          <div className="max-w-5xl">
+            {/* Breadcrumbs */}
+            <Breadcrumb 
+              variant="white"
+              items={[
+                { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
+                { label: 'San Francisco Bay Area', href: '/world-cup-2026-san-francisco-bay-area-guide' }
+              ]} 
+            />
 
-<motion.div
-initial={{ opacity: 0, y: 30 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
->
-<div className="flex items-center gap-4 mb-6">
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-             Last Updated: January 4, 2026
-           </span>
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
-             Host City
-           </span>
-<span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
-Quarterfinal Host
-</span>
-</div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Last Updated: January 4, 2026
+                </span>
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-medium tracking-widest uppercase backdrop-blur-md">
+                  Host City
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                  Quarterfinal Host
+                </span>
+              </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-SAN FRANCISCO
-</h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
-</p>
- </motion.div>
- </div>
+              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+                San Francisco Bay Area World Cup 2026 Guide
+              </h1>
+              
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+                Levi&apos;s Stadium match-day logistics, neighborhood-by-neighborhood bases, local food shortcuts, and the stuff most guides skip.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </div>
 
-
- </div>
- </div>
-
- <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-20 relative pt-16">
+      <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-12 relative pt-16">
  
  {/* 2. Apple-style Sticky Table of Contents */}
  <aside className="hidden lg:block w-72 shrink-0 relative">
@@ -370,27 +372,61 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  </div>
 
  <Section id="overview" title="Strategic Overview">
- <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
- <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- The Bay Area offers a unique World Cup experience. Levi&apos;s Stadium is in <strong>Santa Clara</strong>, about 45 miles (72km) south of <strong>San Francisco</strong>. Your strategy depends on whether you prioritize match convenience (stay in Santa Clara) or tourism and nightlife (stay in SF).
- </p>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
+     Welcome to the <strong>San Francisco Bay Area World Cup 2026 guide</strong> that actually respects geography.
+     The matches are at <strong>Levi&apos;s Stadium in Santa Clara</strong> (FIFA calls it <em>San Francisco Bay Area Stadium</em>), not in San Francisco.
+     That one detail changes everything: where you sleep, how you move, what time you eat, and whether match day feels like a smooth victory lap or a logistics fight.
+   </p>
+   <p>
+     My Bay Area rule for visiting friends is simple: <strong>tour like you&apos;re in SF</strong>, but <strong>sleep like you&apos;re going to Santa Clara</strong> (at least on match nights).
+     If you want the postcard trip, base in the city and accept a longer commute. If you want calm match days, base in the South Bay or on the Caltrain corridor.
+   </p>
  </div>
- <div className="grid md:grid-cols-3 gap-8">
- {[
- { icon: MapPin, title: "Where to Base", text: "San Francisco for culture and sights. Santa Clara for match day ease and proximity to the stadium." },
- { icon: Train, title: "Transport Strategy", text: "Use Caltrain from SF to Mountain View, then VTA Light Rail to the stadium. Avoid driving during rush hour." },
- { icon: DollarSign, title: "Budget Signals", text: "The Bay Area is expensive. Book hotels early and budget for higher dining and transport costs." }
- ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] transition-colors">
- <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
- <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+
+ <div className="grid md:grid-cols-3 gap-8 mb-12">
+   {[
+     { icon: MapPin, title: "Where To Base", text: "SF for iconic sights and nightlife. South Bay (Santa Clara/San Jose) for stress-free match days. Peninsula (Palo Alto/Mountain View) is the compromise." },
+     { icon: Train, title: "Match-Day Transit", text: "Best no-car plan: Caltrain to Mountain View + VTA Light Rail (Orange Line) to Great America Station. Build buffer time for queues after the whistle." },
+     { icon: Sun, title: "Microclimates Are Real", text: "Foggy 60s in SF can coexist with sunny 80s in Santa Clara. Pack layers and bring sun protection specifically for daytime matches." }
+   ].map((item, i) => (
+     <div key={i} className="p-8 rounded-[2rem] transition-colors">
+       <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+       <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+     </div>
+   ))}
  </div>
- ))}
+
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">Quick Answers (Featured Snippet Mode)</h3>
+     <div className="space-y-5 text-slate-700 dark:text-slate-300">
+       <p><strong>Closest base to the stadium:</strong> Santa Clara / North San Jose (walk or short light rail).</p>
+       <p><strong>Best base for first-time visitors:</strong> SF (Union Square, SoMa, North Beach) + one overnight near Santa Clara on match night.</p>
+       <p><strong>Fastest transit combo from SF:</strong> Caltrain → Mountain View → VTA (Orange Line) → Great America.</p>
+       <p><strong>One mistake to avoid:</strong> Driving into SF and leaving bags in the car. Don&apos;t do it.</p>
+     </div>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-emerald-500/20">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6 tracking-tight">What Most Guides Get Wrong</h3>
+     <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+       <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> They treat “San Francisco” and “Levi&apos;s Stadium” like neighbors.</li>
+       <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> They skip the last-train reality and post-match queue math.</li>
+       <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> They recommend rental cars in SF without warning you about break-ins.</li>
+       <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> They ignore microclimates—so people dress wrong and feel miserable.</li>
+     </ul>
+     <div className="mt-8 flex flex-wrap gap-4">
+       <AffiliateButton href="/levis-stadium-world-cup-2026" text="Read the Levi’s Stadium Guide" variant="outline" icon={ArrowRight} />
+       <AffiliateButton href="https://www.fifa.com" text="FIFA Schedule & Tickets" variant="secondary" icon={Ticket} />
+     </div>
+   </div>
  </div>
- <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/sfo" text="Search SF Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="https://www.booking.com/searchresults.html?ss=San+Francisco" text="Check SF Hotels" variant="primary" icon={Hotel} />
+
+ <div className="flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/sfo" text="Compare Bay Area Flights" variant="secondary" icon={Plane} />
+   <AffiliateButton href="https://www.booking.com/searchresults.html?ss=San+Francisco" text="Find SF Hotels (Refundable)" variant="primary" icon={Hotel} />
+   <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Santa+Clara" text="Find Santa Clara Hotels" variant="outline" icon={Hotel} />
  </div>
  </Section>
 
@@ -494,7 +530,7 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Sun Warning: The East side gets direct sun. Bring a hat.</li>
  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Tech: Use the app for in-seat food ordering.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Transport: VTA Light Rail stops directly at the gate.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Transport: VTA Light Rail stops beside the stadium at Great America Station.</li>
  </ul>
  </div>
  </div>
@@ -535,9 +571,8 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  </div>
  <div className="space-y-6">
  {[
- { stage: "Group Stage", count: "4 Matches", color: "text-emerald-300" },
- { stage: "Round of 32", count: "1 Match", color: "text-emerald-300" },
- { stage: "Quarterfinal", count: "?? HOST MATCH", color: "text-amber-400" }
+ { stage: "Group Stage", count: "5 Matches", color: "text-emerald-300" },
+ { stage: "Round of 32", count: "1 Match", color: "text-emerald-300" }
  ].map((match, i) => (
  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
  <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
@@ -559,7 +594,7 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
       <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
         <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
         <p className="text-slate-600 dark:text-slate-400 mb-8">
-          Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Quarterfinal.
+          Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand match days.
         </p>
         <AffiliateButton href="https://www.stubhub.com/" text="Check StubHub" variant="primary" />
       </div>
@@ -736,7 +771,7 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">The Bay Area is diverse, progressive, and tech-focused. Casual dress (jeans/hoodies) is the norm, even in nice restaurants.</p>
  <div className="grid md:grid-cols-3 gap-6">
  {[
- { title: "Fan Zones", desc: "Expect activations in Embarcadero Plaza (SF) and Plaza de César Chávez (San Jose)." },
+ { title: "Fan Zones", desc: "Look for official fan zones and city activations closer to the tournament—plans can change year to year." },
  { title: "Tipping", desc: "Standard is 18-22%. Living costs are high, and service workers rely on tips." },
  { title: "Sustainability", desc: "Bring a reusable bag. Plastic bags are banned or cost extra everywhere." }
  ].map((item, i) => (
@@ -752,7 +787,7 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  <div className="grid md:grid-cols-3 gap-6">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> Microclimates</h4>
- <p className="text-slate-600 dark:text-slate-400">SF is cool/foggy (60°F), Santa Clara is hot/sunny (85°F). You will likely experience both.</p>
+ <p className="text-slate-600 dark:text-slate-400">SF can be cool and breezy even in summer, while Santa Clara is usually warmer and sunnier. Plan for a 10–25°F swing and pack layers.</p>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4">Essentials</h4>
@@ -844,9 +879,6 @@ The Bay Area. <span className="text-slate-900 dark:text-white font-medium">World
  </div>
  );
 }
-
-
-
 
 
 

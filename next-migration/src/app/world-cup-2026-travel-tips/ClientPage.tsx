@@ -5,8 +5,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
-import { EzoicAd } from '@/components/EzoicAd';
-import { useEzoicDynamicAds } from '@/hooks/useEzoicDynamicAds';
 import { 
   ArrowRight, ChevronDown, Globe, Shield, Map, Clock, CreditCard, Smartphone,
   Calendar, Ticket, Plane, Train, Car, DollarSign, AlertTriangle, Info, 
@@ -240,15 +238,8 @@ const SectionHeading = ({ children, icon: Icon }: { children: React.ReactNode, i
 );
 
 const TravelTipsClientPage = () => {
-  const { showDynamicAds } = useEzoicDynamicAds();
-
   return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A]">
-      {/* Top Ad Placement */}
-      <div className="flex justify-center my-6">
-        <EzoicAd placementId={101} />
-      </div>
-
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-8 max-w-7xl mx-auto">
         <Breadcrumb items={[{ label: 'Travel Tips', href: '/travel-tips' }]} />

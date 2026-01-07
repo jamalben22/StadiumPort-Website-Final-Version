@@ -5,15 +5,35 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
-  description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
-  keywords: ['Dallas World Cup 2026', 'AT&T Stadium guide', 'World Cup Arlington tickets', 'Dallas hotels for World Cup', 'FIFA World Cup 26 Dallas'],
+  title: 'Dallas World Cup 2026 Guide: Local Tips + Hotels',
+  description: 'Dallas World Cup 2026 guide from a 20-year local: where to stay, match-day shuttles to AT&T Stadium, heat strategy, budgets, and FAQs.',
+  keywords: [
+    'Dallas World Cup 2026 guide',
+    'Dallas World Cup 2026',
+    'AT&T Stadium World Cup 2026',
+    'Arlington World Cup 2026',
+    'Dallas hotels near AT&T Stadium',
+    'Arlington hotels near AT&T Stadium',
+    'Uptown Dallas hotels',
+    'Deep Ellum nightlife',
+    'Bishop Arts District',
+    'Fort Worth Stockyards',
+    'DFW airport to downtown Dallas',
+    'DART Orange Line DFW',
+    'Dallas Love Field to downtown',
+    'Dallas airport transfer',
+    'Texas Live Arlington',
+    'Dallas BBQ guide',
+    'Dallas itinerary',
+    'Dallas safety tips',
+    'World Cup 2026 Dallas fan festival'
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-dallas-guide',
   },
   openGraph: {
-    title: 'Dallas World Cup 2026 Guide: AT&T Stadium & Travel Tips',
-    description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    title: 'Dallas World Cup 2026 Guide: Local Tips + Hotels',
+    description: 'Dallas World Cup 2026 guide from a 20-year local: where to stay, match-day shuttles to AT&T Stadium, heat strategy, budgets, and FAQs.',
     url: 'https://stadiumport.com/world-cup-2026-dallas-guide',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -29,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dallas World Cup 2026 Guide - AT&T Stadium & Travel Info',
-    description: 'Complete Dallas World Cup 2026 travel guide. AT&T Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
+    title: 'Dallas World Cup 2026 Guide: Local Tips + Hotels',
+    description: 'Dallas World Cup 2026 guide from a 20-year local: where to stay, match-day shuttles to AT&T Stadium, heat strategy, budgets, and FAQs.',
     images: ['/images/cities/dallas-world-cup-2026.webp'],
   },
 };
@@ -50,18 +70,26 @@ export default function Page() {
     mainEntity: [
       {
         '@type': 'Question',
-        name: 'Is there public transport to AT&T Stadium?',
+        name: 'Is AT&T Stadium in Dallas?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'There is NO direct rail link to AT&T Stadium. Your options are driving (expensive parking), rideshare (surge pricing), or private shuttles. We highly recommend booking a shuttle or staying within walking distance in Arlington if budget allows.'
+          text: 'No. The World Cup venue is AT&T Stadium in Arlington, Texas (between Dallas and Fort Worth). Plan match day like an excursion—there is no direct rail line to the stadium.'
         }
       },
       {
         '@type': 'Question',
-        name: 'Where should I stay for World Cup matches in Dallas?',
+        name: 'Is there public transport to AT&T Stadium?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'If you want nightlife and culture, stay in Uptown Dallas or Deep Ellum. If you want convenience to the stadium, stay in Arlington (book 12+ months ahead). Fort Worth Stockyards offers a unique cowboy experience.'
+          text: 'There is no direct rail service to AT&T Stadium. Most fans use rideshare, driving + prepaid parking, or official event shuttles (when offered). Arlington On-Demand can connect you to CentrePort TRE Station.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Is AT&T Stadium air-conditioned?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. The indoor environment is climate-controlled, and it can feel chilly compared to the heat outside—bring a light layer.'
         }
       },
       {
@@ -69,7 +97,55 @@ export default function Page() {
         name: 'How hot is Dallas during the World Cup?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Expect highs of 95°F+ (35°C+). However, AT&T Stadium has a retractable roof and powerful air conditioning, so match conditions will be perfect. Hydrate constantly when exploring the city.'
+          text: 'June and July are hot. Dallas/Fort Worth normal highs are about 91.5°F (June) and 95.6°F (July). Inside AT&T Stadium is air-conditioned, but the walk outside can be intense—hydrate and plan shade.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is the best place to stay for Dallas World Cup 2026?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'For nightlife and walkability: Uptown, Downtown, Deep Ellum, or Bishop Arts. For easiest match day access: Arlington entertainment district (book early). For a classic Texas vibe: Fort Worth (Stockyards / Near Southside).'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Which airport should I fly into: DFW or Love Field?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'DFW is the main international hub with the most flight options. Love Field (DAL) is smaller and closer to central Dallas. Choose based on price, landing time, and where you’re staying.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How do I get from DFW to Downtown Dallas cheaply?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use the DART Orange Line from DFW Airport Station to Downtown (budget-friendly). If you’re hauling luggage late at night, rideshare is easier.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do I need a rental car in Dallas for the World Cup?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'If you’re staying in walkable Dallas neighborhoods and only doing a few match days, you can skip a car and use DART + rideshare + shuttles. If you’re exploring widely across the Metroplex (or traveling with family), a rental car is usually worth it.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'How early should I arrive for a match at AT&T Stadium?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Plan to arrive hours early. Entry lines, security screening, and traffic around Arlington can take longer than you expect—especially for high-demand matches.'
+        }
+      },
+      {
+        '@type': 'Question',
+        name: 'Where should I watch matches in Dallas if I don’t have tickets?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Deep Ellum and Lower Greenville bars will be lively. For bigger crowds, look for official fan events and stadium-adjacent watch spots in Arlington.'
         }
       }
     ]

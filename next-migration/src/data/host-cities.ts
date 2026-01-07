@@ -183,7 +183,7 @@ export const HOST_CITIES: HostCity[] = [
     country: 'Mexico',
     coordinates: { lat: 19.3029, lng: -99.1505 }, // Azteca
     stadium: 'Estadio Azteca',
-    capacity: '87,000',
+    capacity: '83,000',
     matches: 5,
     description: 'The historic colossus hosting the opening match of the tournament.',
     image: '/images/cities/mexico-city-world-cup-2026.webp',

@@ -84,7 +84,7 @@ export default function Page() {
         name: 'What is the alcohol situation in Houston?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Texas has relaxed alcohol laws. Last call is 2 AM. You can buy beer and wine in grocery stores, but liquor is only sold in specific liquor stores (closed on Sundays!).'
+          text: 'Bars commonly serve until 2 AM where permitted. Beer and wine are sold in grocery stores, but liquor is sold in dedicated liquor stores (“package stores”), typically Mon–Sat 10am–9pm and closed Sundays.'
         }
       },
       {

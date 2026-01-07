@@ -10,7 +10,7 @@ import {
  ThumbsUp, Send, HelpCircle, Utensils, Camera, Sun, 
  DollarSign, Shield, Clock, Globe, Star, ExternalLink,
  Train, Bus, Car, Bike, AlertTriangle, Briefcase,
-  X, ChevronRight, Facebook, Twitter, Linkedin, Copy
+  X, ChevronRight, Facebook, Twitter, Linkedin, Copy, Home
 } from 'lucide-react';
 
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
@@ -234,6 +234,30 @@ const FAQItem = ({ question, answer }: { question: string, answer: string }) => 
  </details>
 );
 
+const NAV_LINKS = [
+ { id: 'overview', label: 'Overview' },
+ { id: 'visa', label: 'Visa & Entry' },
+ { id: 'planning', label: 'Planning' },
+ { id: 'itinerary', label: 'Itineraries' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
+ { id: 'budget', label: 'Budget' },
+ { id: 'stadium', label: 'Stadium' },
+ { id: 'tips', label: 'Match Day' },
+ { id: 'tickets', label: 'Tickets' },
+ { id: 'hotels', label: 'Hotels' },
+ { id: 'transport', label: 'Transport' },
+ { id: 'transport-hacks', label: 'Transport Hacks' },
+ { id: 'dining', label: 'Dining' },
+ { id: 'attractions', label: 'Attractions' },
+ { id: 'hidden-gems', label: 'Hidden Gems' },
+ { id: 'safety', label: 'Safety' },
+ { id: 'culture', label: 'Culture' },
+ { id: 'language', label: 'Local Phrases' },
+ { id: 'packing', label: 'Packing' },
+ { id: 'faq', label: 'FAQ' },
+ { id: 'essential', label: 'Essential' },
+];
+
 // --- Main Page Component ---
 
 export default function ClientPage() {
@@ -246,25 +270,29 @@ export default function ClientPage() {
 
  const [activeSection, setActiveSection] = useState('hero');
  
+ useEffect(() => {
+  const ids = NAV_LINKS.map((l) => l.id);
+  const sections = ids
+   .map((id) => document.getElementById(id))
+   .filter((el): el is HTMLElement => Boolean(el));
 
- // Sticky Nav Links
- const navLinks = [
- { id: 'overview', label: 'Overview' },
- { id: 'visa', label: 'Visa & Entry' },
- { id: 'planning', label: 'Planning' },
- { id: 'budget', label: 'Budget' },
- { id: 'stadium', label: 'Stadium' },
- { id: 'tickets', label: 'Tickets' },
- { id: 'hotels', label: 'Hotels' },
- { id: 'transport', label: 'Transport' },
- { id: 'dining', label: 'Dining' },
- { id: 'attractions', label: 'Attractions' },
- { id: 'tips', label: 'Match Day' },
- { id: 'safety', label: 'Safety' },
- { id: 'culture', label: 'Culture' },
- { id: 'packing', label: 'Packing' },
- { id: 'faq', label: 'FAQ' },
- ];
+  if (sections.length === 0) return;
+
+  const observer = new IntersectionObserver(
+   (entries) => {
+    const visible = entries
+     .filter((e) => e.isIntersecting)
+     .sort((a, b) => (a.boundingClientRect.top ?? 0) - (b.boundingClientRect.top ?? 0));
+
+    const next = visible[0]?.target?.id;
+    if (next) setActiveSection(next);
+   },
+   { root: null, rootMargin: '-20% 0px -70% 0px', threshold: [0, 0.1, 0.25, 0.5, 1] }
+  );
+
+  sections.forEach((section) => observer.observe(section));
+  return () => observer.disconnect();
+ }, []);
 
  return (
     <div className="min-h-screen bg-[#F5F5F7] dark:bg-[#0A0A0A] font-sans selection:bg-emerald-500/30">
@@ -310,7 +338,7 @@ export default function ClientPage() {
                >
                  <div className="flex items-center gap-4 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-              Last Updated: January 4, 2026
+              Last Updated: January 6, 2026
             </span>
             <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
               Host City
@@ -320,11 +348,11 @@ export default function ClientPage() {
             </span>
           </div>
           
-              <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                ATLANTA
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                Atlanta World Cup 2026 Guide
               </h1>
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-                The Southern Capital. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+              <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+                Matchday logistics, neighborhood intel, and the little Atlanta tricks you only learn by living here.
               </p>
             </motion.div>
         </div>
@@ -340,7 +368,7 @@ export default function ClientPage() {
  <div className="sticky top-40 max-h-[calc(100vh-10rem)] overflow-y-auto pr-4 scrollbar-hide">
  <h3 className="font-black text-slate-900 dark:text-white mb-6 px-3 text-lg uppercase tracking-wider">Contents</h3>
  <div className="space-y-1 relative border-l-2 border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-3">
- {navLinks.map((link) => (
+ {NAV_LINKS.map((link) => (
  <Link 
  key={link.id} 
  href={`#${link.id}`}
@@ -379,14 +407,65 @@ export default function ClientPage() {
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- Atlanta balances high-energy matchdays with walkable logistics. The stadium sits in the city core, flanked by hotels and attractions around Centennial Olympic Park. For World Cup 2026, this means minimal transit stress if you base yourself Downtown or Midtown.
+ I’ve lived in Atlanta long enough to remember when people still called it “Phillips Arena” and the BeltLine was more rumor than reality. Here’s the truth: Atlanta can feel like a city designed by cars… until you plan the World Cup the Atlanta way. Stay where the sidewalks actually connect, ride MARTA when it makes sense, and keep your nights anchored in neighborhoods that don’t require a 45-minute “quick Uber.”
  </p>
+ <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+ This <strong>Atlanta World Cup 2026 guide</strong> is written for fans who want the matchday buzz at Mercedes-Benz Stadium <em>and</em> the version of Atlanta locals love—food that doesn’t apologize, museums that hit you in the chest, and small pockets of calm just outside the Downtown swirl.
+ </p>
+ </div>
+ 
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+   <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Quick Answers (Featured Snippet Ready)</h3>
+     <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+       <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Best base:</strong> Downtown for walkability; Midtown for restaurants + MARTA access.</span></li>
+       <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Airport to stadium:</strong> MARTA from ATL → Five Points → Blue/Green line.</span></li>
+       <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Car needed?</strong> Not if you’re Downtown/Midtown. Parking and traffic are the real opponent.</span></li>
+       <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Weather:</strong> Hot, humid, and thunderstormy outside; the stadium is climate-controlled.</span></li>
+     </ul>
+     <div className="mt-6 flex flex-wrap gap-3">
+       <Link href="/mercedes-benz-stadium-world-cup-2026" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+         <Trophy className="w-5 h-5" />
+         Mercedes-Benz Stadium Guide
+       </Link>
+       <Link href="/world-cup-2026-flight-booking-guide" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+         <Plane className="w-5 h-5" />
+         Flight Strategy Guide
+       </Link>
+     </div>
+   </div>
+ 
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">The “Atlanta Works” Rule</h3>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+       Atlanta is a city of “pockets.” If your hotel is in the right pocket, your trip feels effortless. If it’s in the wrong pocket, you’ll spend the tournament staring at taillights on I-75/85 (locals call it <em>the Connector</em> for a reason).
+     </p>
+     <div className="grid grid-cols-2 gap-4">
+       {[
+         { label: "Walkable Matchday", val: "Downtown / Centennial Park" },
+         { label: "Food + Nightlife", val: "Midtown / BeltLine Eastside" },
+         { label: "Upscale Comfort", val: "Buckhead (MARTA-accessible)" },
+         { label: "Family Base", val: "Decatur / VaHi" }
+       ].map((row, i) => (
+         <div key={i} className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/40 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+           <div className="text-[10px] font-bold tracking-widest uppercase text-slate-400">{row.label}</div>
+           <div className="font-bold text-slate-900 dark:text-white mt-1">{row.val}</div>
+         </div>
+       ))}
+     </div>
+     <div className="mt-6">
+       <Link href="/world-cup-2026-accommodation-guide" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+         <Hotel className="w-5 h-5" />
+         How to Book World Cup Hotels (Safely)
+       </Link>
+     </div>
+   </div>
  </div>
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Downtown for walk-to-stadium convenience. Midtown for dining and nightlife with quick MARTA access." },
- { icon: Train, title: "Transport Strategy", text: "Use MARTA. Gold/Red from ATL airport to Five Points, then Blue/Green to the stadium. Skip car rentals." },
- { icon: DollarSign, title: "Budget Signals", text: "Hotel rates spike for the Semi-Final. Lock flexible bookings early, then price-watch." }
+ { icon: MapPin, title: "Where to Base", text: "Downtown is the easiest matchday—walk, grab a drink, done. Midtown is the better ‘real Atlanta’ base with quick MARTA access." },
+ { icon: Train, title: "Transport Strategy", text: "Use MARTA for airport + matchdays. Save rideshare for late nights or neighborhood jumps you can’t rail." },
+ { icon: DollarSign, title: "Budget Signals", text: "Atlanta is mid-range by US host city standards, but semi-final demand will bend prices upward. Book refundable early, then re-shop." }
  ].map((item, i) => (
  <div key={i} className="p-8 rounded-[2rem] transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -396,8 +475,9 @@ export default function ClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="https://www.skyscanner.com/flights-to/atl/cheap-flights-to-hartsfield-jackson-atlanta-international-airport.html" text="Search Atlanta Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Downtown+Atlanta&nflt=di%3D953" text="Check Downtown Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.skyscanner.com/flights-to/atl/cheap-flights-to-hartsfield-jackson-atlanta-international-airport.html" text="Compare Flights to ATL" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Downtown+Atlanta&nflt=di%3D953&aid=8063172" text="Check Downtown Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="/world-cup-2026-travel-insurance-guide" text="Travel Insurance Checklist" variant="outline" icon={Shield} />
  </div>
  </Section>
 
@@ -405,19 +485,30 @@ export default function ClientPage() {
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
- <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
+ <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+ Many travelers can enter the US under the Visa Waiver Program with an approved <strong>ESTA</strong>. If you’re not eligible, you’ll need a <strong>B-2 tourist visa</strong>. Don’t guess based on a friend’s passport—check the official rules and apply early. In tournament years, appointment calendars fill fast.
+ </p>
+ <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Official ESTA Site" variant="outline" />
  </div>
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
  <ul className="space-y-4 mb-8">
- {['Use ATL’s automated passport control', 'Proof of onward travel required', 'Carry digital copies of tickets'].map((item, i) => (
+ {[
+   'Keep your match tickets + hotel confirmations easily accessible (digital + screenshot).',
+   'Carry an address for your first night (hotel or host) for arrival questions.',
+   'If you have connections, leave yourself real buffer time—ATL can be smooth or chaotic.'
+ ].map((item, i) => (
  <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
  <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
  </li>
  ))}
  </ul>
- <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+ <div className="space-y-3">
+   <AffiliateButton href="/world-cup-2026-travel-insurance-guide" text="Travel Insurance: What to Cover" variant="secondary" />
+   <p className="text-xs text-slate-500 dark:text-slate-400">
+     For the World Cup, prioritize medical coverage, trip delay, and event-related disruptions.
+   </p>
+ </div>
  </div>
  </div>
  </Section>
@@ -441,12 +532,149 @@ export default function ClientPage() {
  </div>
  </Section>
 
+ <Section id="itinerary" title="Day-by-Day Itineraries (Built Around Kickoff)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+     <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+       You don’t need a 12-stop checklist to “do Atlanta.” You need a plan that respects heat, distances, and that magical moment when MARTA becomes the most beautiful thing you’ve ever seen. Here are three itineraries I’d genuinely recommend to a friend flying in for a match.
+     </p>
+   </div>
+
+   <div className="grid lg:grid-cols-3 gap-8">
+     {[
+       {
+         title: "2-Day Sprint (Match-Centric)",
+         badge: "Best for: quick trips",
+         days: [
+           { day: "Day 1 (Arrive)", plan: "Check in Downtown, sunset walk at Centennial Olympic Park, dinner at Ponce City Market (Uber there, MARTA back if you’re feeling brave), early night." },
+           { day: "Day 2 (Match Day)", plan: "Brunch in Downtown/Midtown, hydrate, pre-game at a sports bar near the stadium, match, then post-match drinks in Midtown (avoid getting stranded Downtown late)." }
+         ]
+       },
+       {
+         title: "4-Day Sweet Spot (Atlanta Done Right)",
+         badge: "Best for: first-timers",
+         days: [
+           { day: "Day 1", plan: "Midtown base, Piedmont Park + Atlanta Botanical Garden, dinner on the BeltLine Eastside Trail." },
+           { day: "Day 2", plan: "Civil rights morning (MLK National Historical Park area), Sweet Auburn lunch, evening at Krog Street Market." },
+           { day: "Day 3 (Match Day)", plan: "Light museum or coffee run, early stadium arrival, match, then celebratory night in Midtown or East Atlanta Village." },
+           { day: "Day 4", plan: "Buford Highway food crawl (no, seriously) + a low-key afternoon at Oakland Cemetery or the High Museum." }
+         ]
+       },
+       {
+         title: "7-Day Deep Cut (City + Day Trips)",
+         badge: "Best for: families & groups",
+         days: [
+           { day: "Day 1–2", plan: "Settle in, Downtown attractions (Aquarium / World of Coca-Cola), keep your walking days early before the heat spikes." },
+           { day: "Day 3", plan: "BeltLine day: Ponce City Market → Krog Street Market, with ice cream breaks and people-watching." },
+           { day: "Day 4 (Match Day)", plan: "Match-focused schedule with a long, slow pre-game meal and a clean exit plan." },
+           { day: "Day 5", plan: "Day trip options: Stone Mountain (sunrise is worth it) or Decatur for an easier-paced family day." },
+           { day: "Day 6", plan: "Museum pick: High Museum or the National Center for Civil and Human Rights. Dinner in Inman Park." },
+           { day: "Day 7", plan: "Brunch, souvenirs, and fly out with your legs still intact." }
+         ]
+       }
+     ].map((it, i) => (
+       <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+         <div className="flex items-start justify-between gap-6 mb-6">
+           <h3 className="text-2xl font-black text-slate-900 dark:text-white leading-tight">{it.title}</h3>
+         </div>
+         <p className="text-[10px] font-bold tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-6">{it.badge}</p>
+         <div className="space-y-5">
+           {it.days.map((d, j) => (
+             <div key={j} className="border-l-2 border-emerald-500/40 pl-4">
+               <div className="font-bold text-slate-900 dark:text-white">{d.day}</div>
+               <div className="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{d.plan}</div>
+             </div>
+           ))}
+         </div>
+       </div>
+     ))}
+   </div>
+
+   <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.opentable.com/atlanta-restaurants" text="Reserve Dinner (Opentable)" variant="primary" icon={Utensils} />
+   <AffiliateButton href="https://www.getyourguide.com/atlanta-l503/" text="Browse Atlanta Experiences" variant="outline" icon={Camera} />
+  </div>
+ </Section>
+
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood: Where to Stay, Eat, Drink">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+     <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+       If you only read one thing: Atlanta is not a “pick any hotel and wing it” city. Neighborhood choice decides your entire trip—matchday stress, late-night safety, and whether you’ll actually see Atlanta beyond the stadium perimeter.
+     </p>
+   </div>
+
+   <div className="grid md:grid-cols-2 gap-8">
+     {[
+       {
+         name: "Downtown / Centennial Park",
+         bestFor: "Walk-to-stadium convenience",
+         transit: "Walk + MARTA (Blue/Green nearby)",
+         vibe: "Event energy, big hotels, tourist attractions",
+         localMove: "Eat Downtown early, then hop to Midtown/BeltLine for your ‘real’ Atlanta nights."
+       },
+       {
+         name: "Midtown",
+         bestFor: "Restaurants + nightlife with structure",
+         transit: "MARTA Red/Gold + quick transfers",
+         vibe: "Polished, busy, safe-feeling streets near Piedmont Park",
+         localMove: "Post-match, Midtown is the easiest place to keep the night going without chaos."
+       },
+       {
+         name: "Old Fourth Ward + BeltLine Eastside",
+         bestFor: "Food halls, bars, and walking paths",
+         transit: "Rideshare / scooters; MARTA is doable but indirect",
+         vibe: "Modern Atlanta: patios, murals, people everywhere",
+         localMove: "Plan a late afternoon BeltLine stroll—Atlanta’s best ‘free attraction.’"
+       },
+       {
+         name: "Inman Park / Krog District",
+         bestFor: "Couples, food lovers, chill-but-fun nights",
+         transit: "Short rideshare to Downtown; walkable pockets",
+         vibe: "Historic streets + modern dining",
+         localMove: "Perfect pre-match base for a long meal that doesn’t feel rushed."
+       },
+       {
+         name: "Buckhead",
+         bestFor: "Luxury stays + shopping",
+         transit: "MARTA Red/Gold straight shot to Downtown",
+         vibe: "Upscale, spread out, comfortable",
+         localMove: "Great if you’re mixing World Cup with business or want a quieter sleep."
+       },
+       {
+         name: "Decatur",
+         bestFor: "Families + relaxed evenings",
+         transit: "MARTA (Blue line corridor) + easy walks",
+         vibe: "Small-city feel inside a big city trip",
+         localMove: "If you’re traveling with kids, Decatur keeps the trip calm without feeling boring."
+       }
+     ].map((n, i) => (
+       <div key={i} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+         <div className="flex items-start justify-between gap-6 mb-4">
+           <h3 className="text-2xl font-black text-slate-900 dark:text-white">{n.name}</h3>
+         </div>
+         <div className="flex flex-wrap gap-2 mb-6">
+           <span className="text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300">{n.bestFor}</span>
+           <span className="text-xs font-bold uppercase tracking-wide px-3 py-1 rounded-full bg-slate-50 dark:bg-slate-900/40 text-slate-600 dark:text-slate-300">{n.vibe}</span>
+         </div>
+         <div className="space-y-3 text-slate-600 dark:text-slate-400">
+           <div className="flex items-start gap-3"><Train className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Transit:</strong> {n.transit}</span></div>
+           <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Local move:</strong> {n.localMove}</span></div>
+         </div>
+       </div>
+     ))}
+   </div>
+
+   <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.booking.com/city/us/atlanta.html?aid=8063172" text="Search Neighborhood Hotels" variant="primary" icon={Hotel} />
+   <AffiliateButton href="https://www.vrbo.com/" text="Browse Apartments & Group Stays" variant="outline" icon={Home} />
+  </div>
+ </Section>
+
  <Section id="budget" title="Budget Tiers">
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Smart Saver", items: ["Midtown boutique hotels", "CityPASS for attractions", "Walk to stadium"] },
- { title: "Comfort Upgrades", items: ["Downtown 4-star hotels", "Airport lounge access", "Pre-booked dining"] },
- { title: "Premium", items: ["Luxury suites in Buckhead", "Private transfers", "Chef-led experiences"] }
+ { title: "Budget", items: ["$80–$180 food + transit per day (smart choices)", "MARTA rides ($2.50 each) instead of constant Ubers", "Free wins: BeltLine, Piedmont Park, street art"], note: "Best move: stay Midtown/Decatur and use MARTA + rideshare sparingly." },
+ { title: "Mid-Range", items: ["$200–$350/night hotel on non-peak dates (can spike)", "One paid attraction/day (Aquarium, museums)", "Restaurants + a proper cocktail bar"], note: "Best move: Downtown for match convenience, Midtown for nights." },
+ { title: "Luxury", items: ["$400–$800+/night in Buckhead or premium Downtown suites", "Private transfers for airport + late nights", "VIP hospitality and curated dining"], note: "Best move: pay for time, not distance—choose proximity and flexibility." }
  ].map((tier, i) => (
  <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
@@ -458,11 +686,12 @@ export default function ClientPage() {
  </li>
  ))}
  </ul>
+ <p className="mt-6 text-sm text-slate-500 dark:text-slate-400 leading-relaxed">{tier.note}</p>
  </div>
  ))}
  </div>
  <div className="mt-8 text-center">
- <AffiliateButton href="https://www.expedia.com/Atlanta-Vacation-Packages.d178232.Travel-Assets-Vacation-Packages" text="Search Atlanta Packages" variant="secondary" icon={Briefcase} />
+  <AffiliateButton href="https://www.expedia.com/Atlanta-Vacation-Packages.d178232.Travel-Assets-Vacation-Packages" text="Search Atlanta Packages" variant="secondary" icon={Briefcase} />
  </div>
  </Section>
 
@@ -475,7 +704,13 @@ export default function ClientPage() {
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- Widely considered one of the most technologically advanced stadiums in the world, <strong>Mercedes-Benz Stadium</strong> is the crown jewel of Atlanta's sports scene. Famous for its unique camera-shutter retractable roof and massive 360-degree "Halo" video board, this venue offers an unparalleled fan experience right in the heart of downtown.
+ Widely considered one of the most technologically advanced stadiums in the world, <strong>Mercedes-Benz Stadium</strong> is the crown jewel of Atlanta’s sports scene. The camera-shutter roof, the 360-degree “Halo” board, and the overall layout make it feel more like a futuristic arena than a typical US football stadium.
+ </p>
+ <p>
+ For World Cup travel planning, the most important detail is simple: the stadium is in the city core, at <strong>1 AMB Dr NW, Atlanta, GA 30313</strong>. That puts you within a short walk of Centennial Olympic Park, major hotels, and MARTA rail stations—rare in America, and a massive win for visitors.
+ </p>
+ <p>
+ A few matchday realities: the stadium is <strong>cashless</strong>, entry is faster if you don’t bring a bag, and if you must bring one, stick to the clear-bag dimensions published by the stadium. The air inside will feel dramatically cooler than outside in June/July, so don’t be surprised if you’re sweating on the plaza and reaching for a light layer in your seat.
  </p>
  </div>
  
@@ -484,41 +719,48 @@ export default function ClientPage() {
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "~71,000 (Expandable)" },
- { label: "Surface", val: "Artificial Turf (Likely Grass for WC)" },
- { label: "Roof", val: "Retractable 'Camera Shutter'" },
- { label: "Built", val: "2017 ($1.6 Billion)" }
+  { label: "Capacity", val: "~71,000 (Expandable)" },
+  { label: "Surface", val: "Artificial Turf (Likely Grass for WC)" },
+  { label: "Roof", val: "Retractable 'Camera Shutter'" },
+  { label: "Built", val: "2017 ($1.6 Billion)" }
  ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
- <span className="font-medium text-slate-500">{item.label}</span>
- <span className="font-bold">{item.val}</span>
- </li>
+  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+   <span className="font-medium text-slate-500">{item.label}</span>
+   <span className="font-bold">{item.val}</span>
+  </li>
  ))}
  </ul>
  </div>
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Fan Friendly Pricing: Concessions are famously cheap.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> A/C: Fully climate-controlled, essential for summer.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Gates open 2 hours before kickoff.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Concessions: “Fan Friendly Pricing” is famous here, but World Cup pricing can differ.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Comfort: Climate-controlled interior, which is non-negotiable in an Atlanta summer.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Treat 90–120 minutes before kickoff as normal, not “early.”</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Bag policy: Clear bags up to 12” x 6” x 12”; small clutch up to 4.5” x 6.5”.</li>
  </ul>
  </div>
  </div>
  
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> Unlike many US stadiums, Mercedes-Benz Stadium is located directly in the city center. The <strong>MARTA train</strong> stops right at the venue (Dome/GWCC/Philips Arena/CNN Center Station).
+  <strong>Getting There:</strong> Unlike many US stadiums, Mercedes-Benz Stadium is located directly in the city center. The <strong>MARTA train</strong> stops right at the venue (Dome/GWCC/Philips Arena/CNN Center Station).
  </p>
+ </div>
+ 
+ <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.mercedesbenzstadium.com/guidelines" text="Read Official Stadium Rules" variant="outline" icon={Info} />
+   <AffiliateButton href="https://parking.mercedesbenzstadium.com/" text="Book Official Parking" variant="secondary" icon={Car} />
+   <AffiliateButton href="https://spothero.com/destination/atlanta/mercedes-benz-stadium-parking" text="Compare Parking Deals" variant="primary" icon={Car} />
  </div>
  </Section>
 
  <Section id="tips" title="Match Day Gameplan">
  <div className="grid md:grid-cols-3 gap-6 mb-8">
  {[
- { title: "Arrival", text: "Be at the gates 90 minutes before kickoff to clear security calmly and soak in the pre-game atmosphere." },
- { title: "Clear Bag", text: "Bring a stadium-approved clear bag and sealed water. Concessions are fan-friendly but lines build up." },
- { title: "Exit Plan", text: "Wait 10–15 minutes inside after the whistle to bypass the first transit crush, then head to MARTA." }
+ { title: "Arrival", text: "Aim to be on the plaza 90–120 minutes early. For MARTA, GWCC/CNN Center is the cleanest drop; Vine City can be faster but gets packed." },
+ { title: "Clear Bag", text: "If you bring a bag, keep it simple: clear bag up to 12” x 6” x 12”, or a small clutch up to 4.5” x 6.5”. The less you carry, the faster you’re inside." },
+ { title: "Exit Plan", text: "Let the first wave go. Linger 10–15 minutes, then move with purpose. If rideshare is your plan, walk a few blocks first to beat surge + gridlock." }
  ].map((item, i) => (
  <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -530,6 +772,31 @@ export default function ClientPage() {
  <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
  <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle" text="Add Refillable Bottle" variant="outline" />
  </div>
+ 
+ <div className="mt-12 grid md:grid-cols-2 gap-8">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-2xl mb-6 flex items-center gap-3"><Clock className="w-6 h-6 text-emerald-500" /> Matchday Timeline (My No-Stress Version)</h4>
+     <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+       <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500 mt-2" /><span><strong>T-4 hours:</strong> Big lunch + water. Atlanta heat turns “one drink” into “why am I dizzy?” fast.</span></li>
+       <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500 mt-2" /><span><strong>T-2 hours:</strong> MARTA/walk to the stadium district. Take photos outside before you’re herded into lines.</span></li>
+       <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500 mt-2" /><span><strong>T-90 mins:</strong> Security + scan. Don’t fight it—this is when the energy is best anyway.</span></li>
+       <li className="flex items-start gap-3"><div className="w-2 h-2 rounded-full bg-emerald-500 mt-2" /><span><strong>Final whistle:</strong> Decide: MARTA now, or celebrate first and leave later. Both can be correct.</span></li>
+     </ul>
+   </div>
+ 
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-2xl mb-6 flex items-center gap-3"><Users className="w-6 h-6 text-emerald-500" /> Fan Zones & Watch Parties</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+       Big tournaments turn Centennial Olympic Park into an unofficial living room—expect screens, sponsor pop-ups, and crowds that swell around transit nodes. If you’re watching without tickets, pick one “home base” bar and arrive early.
+     </p>
+     <div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+       <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Downtown:</strong> easiest for big crowds and post-game walking.</span></div>
+       <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Midtown:</strong> better for a cleaner “night out” after the match.</span></div>
+       <div className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>BeltLine:</strong> fun but logistically trickier—plan your return.</span></div>
+     </div>
+   </div>
+ </div>
+ 
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
@@ -538,49 +805,75 @@ export default function ClientPage() {
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
  <Ticket className="w-8 h-8 text-emerald-400" />
- <h3 className="text-3xl font-black">Confirmed Matches</h3>
+ <h3 className="text-3xl font-black">Match Allocation (Atlanta)</h3>
  </div>
  <div className="space-y-6">
  {[
  { stage: "Group Stage", count: "5 Matches", color: "text-emerald-300" },
  { stage: "Round of 32", count: "1 Match", color: "text-emerald-300" },
  { stage: "Round of 16", count: "1 Match", color: "text-emerald-300" },
- { stage: "Semi-Final", count: "?? HOST MATCH", color: "text-amber-400" }
+ { stage: "Semi-Final", count: "1 Match", color: "text-amber-400" }
  ].map((match, i) => (
- <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
- <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
- <span className="font-bold text-xl">{match.count}</span>
- </div>
+  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
+   <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
+   <span className="font-bold text-xl">{match.count}</span>
+  </div>
  ))}
  </div>
+ <p className="mt-8 text-sm text-emerald-100/90 leading-relaxed">
+   Exact dates and kickoffs are published by FIFA closer to the tournament. Plan your trip around the neighborhood strategy first (Downtown/Midtown), then lock the calendar once the official schedule drops.
+ </p>
  </div>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8">
- <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8">
- The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
- </p>
- <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
- </div>
- <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8">
- Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Semi-Final.
- </p>
- <AffiliateButton href="https://www.stubhub.com/atlanta-tickets/geography/180/" text="Check StubHub" variant="primary" />
- </div>
+  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+   <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
+   <p className="text-slate-600 dark:text-slate-400 mb-8">
+    The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
+   </p>
+   <AffiliateButton href="https://www.fifa.com/tickets" text="FIFA Ticketing Portal" variant="secondary" />
+   <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">Always verify the URL is exactly fifa.com.</p>
+  </div>
+  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+   <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
+   <p className="text-slate-600 dark:text-slate-400 mb-8">
+    Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Semi-Final.
+   </p>
+   <AffiliateButton href="https://www.stubhub.com/atlanta-tickets/geography/180/" text="Check StubHub" variant="primary" />
+  </div>
  </div>
  </Section>
 
  <Section id="hotels" title="Where to Stay">
  <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
- Atlanta is unique because the stadium is surrounded by world-class hotels. Staying <strong>Downtown</strong> allows you to walk to the match. Alternatively, <strong>Midtown</strong> offers a trendier vibe just a short train ride away.
+ Atlanta is one of the rare US host-city setups where you can genuinely do a “wake up, coffee, walk to a World Cup match” day without planning your life around parking. The cheat code is staying <strong>Downtown</strong> (Centennial Park area) or <strong>Midtown</strong> (better for restaurants and nightlife, still easy on MARTA).
  </p>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Pick Your Base</h3>
+     <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+       <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Downtown:</strong> easiest matchday logistics and early mornings at the Aquarium/park.</span></li>
+       <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Midtown:</strong> best overall “Atlanta trip” feel; MARTA access + late-night options.</span></li>
+       <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Buckhead:</strong> upscale and comfortable; still workable via MARTA, just less walkable.</span></li>
+       <li className="flex items-start gap-3"><MapPin className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Decatur:</strong> family-friendly and calmer nights; you trade a little convenience for sanity.</span></li>
+     </ul>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Hotel Booking Rule (Tournament Edition)</h3>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+       Atlanta rates can swing hard around major event weekends. My approach: lock a refundable booking early, then keep re-checking prices as your trip firms up. If you see a good deal, rebook and cancel the old one.
+     </p>
+     <Link href="/world-cup-2026-accommodation-security" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+       <Shield className="w-5 h-5" />
+       Avoid Cancellations & Accommodation Scams
+     </Link>
+   </div>
+ </div>
  
  <div className="space-y-8">
- <HotelCard 
+  <HotelCard 
             name="Hyatt Place Atlanta Downtown"
             rating={8.4}
             price="~$99/night"
@@ -588,7 +881,7 @@ export default function ClientPage() {
             description="Top-value pick with free breakfast and spacious rooms near the Aquarium."
             features={["Free Breakfast", "Free WiFi", "Pet Friendly"]}
             image="/images/hotels/atlanta/hyatt-place-v3.jpg" 
-            link="https://www.booking.com/hotel/us/hyatt-place-atlanta-downtown.html"
+            link="https://www.booking.com/hotel/us/hyatt-place-atlanta-downtown.html?aid=8063172"
           />
           <HotelCard 
             name="SpringHill Suites by Marriott Atlanta Downtown"
@@ -598,7 +891,7 @@ export default function ClientPage() {
             description="Highly rated all-suite hotel with modern amenities and great city views."
             features={["All-Suite", "Fitness Center", "Free Breakfast"]}
             image="/images/hotels/atlanta/springhill-suites.jpg"
-            link="https://www.booking.com/hotel/us/springhill-suites-by-marriott-atlanta-downtown.html"
+            link="https://www.booking.com/hotel/us/springhill-suites-by-marriott-atlanta-downtown.html?aid=8063172"
           />
           <HotelCard 
             name="Reverb by Hard Rock Atlanta Downtown"
@@ -608,12 +901,12 @@ export default function ClientPage() {
             description="Stylish, music-themed hotel steps from the stadium with a rooftop bar."
             features={["Rooftop Bar", "Stadium Views", "Pet Friendly"]}
             image="/images/hotels/atlanta/reverb-hard-rock.jpg"
-            link="https://www.booking.com/hotel/us/reverb-by-hard-rock-atlanta-downtown.html"
+            link="https://www.booking.com/hotel/us/reverb-by-hard-rock-atlanta-downtown.html?aid=8063172"
           />
  </div>
  
  <div className="mt-12 text-center">
- <AffiliateButton href="https://www.booking.com/city/us/atlanta.html" text="Search All Atlanta Hotels" variant="outline" />
+ <AffiliateButton href="https://www.booking.com/city/us/atlanta.html?aid=8063172" text="Search All Atlanta Hotels" variant="outline" />
  </div>
  </Section>
 
@@ -627,8 +920,11 @@ export default function ClientPage() {
  <div>
  <h4 className="font-bold text-xl mb-2">MARTA (Train)</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- MARTA is your best friend. The Gold and Red lines run directly from the Airport to Downtown (Five Points). Transfer to Blue/Green to reach the stadium. Cost: $2.50 per ride.
+ MARTA is your best friend on matchdays. The Gold and Red lines run directly from the Airport to Downtown (Five Points). From there, connect to Blue/Green for the stadium-area stations. Standard fare is $2.50 for a one-way trip.
  </p>
+ <div className="mt-4">
+   <AffiliateButton href="https://itsmarta.com/fare-programs.aspx" text="Check MARTA Fares (Official)" variant="outline" icon={ExternalLink} />
+ </div>
  </div>
  </div>
  <div className="flex gap-6">
@@ -638,7 +934,7 @@ export default function ClientPage() {
  <div>
  <h4 className="font-bold text-xl mb-2">Airport Transfer</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Hartsfield-Jackson (ATL) is the busiest airport in the world. The train station is inside the domestic terminal. It takes ~20 mins to reach downtown.
+ ATL is huge, but the good news is the MARTA station is connected to the airport. If you’re staying Downtown/Midtown for the World Cup, MARTA is usually faster than a car once you factor in traffic and surge pricing.
  </p>
  </div>
  </div>
@@ -649,7 +945,7 @@ export default function ClientPage() {
  <div>
  <h4 className="font-bold text-xl mb-2">Rideshare & Driving</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Traffic in Atlanta is notorious. Avoid renting a car if you are staying downtown. Uber/Lyft are available but prices surge on match days.
+ Traffic in Atlanta is notorious. Avoid renting a car if you’re staying Downtown or Midtown. Uber/Lyft work well for neighborhood hops, but prices surge hard around kickoff and the final whistle.
  </p>
  </div>
  </div>
@@ -677,27 +973,73 @@ export default function ClientPage() {
  </div>
  </Section>
 
+ <Section id="transport-hacks" title="Transportation Hacks Locals Actually Use">
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">MARTA Strategy (Airport → Match → Night Out)</h3>
+       <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>ATL to city:</strong> ride MARTA out of the airport, then decide Downtown vs Midtown based on your hotel.</span></li>
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Matchday station choice:</strong> GWCC/CNN Center is straightforward; Vine City can be faster but gets crushed after matches.</span></li>
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Post-match move:</strong> don’t be a hero—if trains are packed, hang back 10–15 minutes and let the first rush pass.</span></li>
+       </ul>
+       <div className="mt-6">
+         <Link href="/world-cup-2026-transportation-safety" className="inline-flex items-center gap-2 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+           <Shield className="w-5 h-5" />
+           Transport Safety Guide (World Cup)
+         </Link>
+       </div>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Rideshare Tricks</h3>
+       <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+         <li className="flex items-start gap-3"><DollarSign className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Beat surge:</strong> walk 10–15 minutes away from the stadium district before requesting.</span></li>
+         <li className="flex items-start gap-3"><Clock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Time your ride:</strong> leaving 20 minutes after the final whistle often costs less than leaving at minute 90.</span></li>
+         <li className="flex items-start gap-3"><AlertTriangle className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>Don’t take “discount rides”:</strong> only use in-app pickups and official zones.</span></li>
+       </ul>
+       <div className="mt-8 flex flex-wrap gap-4">
+         <AffiliateButton href="https://www.uber.com/" text="Open Uber" variant="secondary" icon={Car} />
+         <AffiliateButton href="https://www.rentalcars.com/" text="Compare Rental Cars" variant="outline" icon={Car} />
+       </div>
+     </div>
+   </div>
+ </Section>
+
  <Section id="dining" title="Food & Drink">
- <div className="grid md:grid-cols-3 gap-8">
- {[
- { title: "Soul Food", desc: "Famous Southern comfort food. Try fried chicken, mac n cheese, and collard greens at Mary Mac's Tea Room." },
- { title: "The Varsity", desc: "The world's largest drive-in restaurant. A legendary spot for chili dogs and frosted orange shakes." },
- { title: "Ponce City Market", desc: "A massive food hall in a historic building. Great for groups with diverse tastes. Access via BeltLine." }
- ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
- <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
- <Utensils className="w-6 h-6" />
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+   <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+     Atlanta eats like a city that’s had the world passing through it for decades. Southern classics are here (and yes, they’re worth it), but the real flex is how quickly you can pivot from soul food to Korean barbecue to tacos that’ll make you question your life choices.
+   </p>
  </div>
- <h4 className="font-bold text-xl mb-3">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+
+ <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+   {[
+     { title: "Southern Staples", desc: "If you want ‘Atlanta on a plate,’ start with Mary Mac’s Tea Room. It’s old-school, unapologetic, and exactly the kind of place locals bring relatives to." },
+     { title: "Classic Atlanta Chaos", desc: "The Varsity is loud, fast, and slightly ridiculous—in a good way. Go once. Order something you’ll regret later. That’s the point." },
+     { title: "Food Hall for Groups", desc: "Ponce City Market is the easiest win for groups with mixed tastes. Start on the BeltLine, end with something sweet, and call it a perfect Atlanta evening." },
+     { title: "BeltLine Bar Hopping", desc: "The BeltLine Eastside Trail is a choose-your-own-adventure: patios, cocktails, and people-watching. It’s a whole vibe, especially after a match." },
+     { title: "Buford Highway Food Crawl", desc: "If you’re hunting the best ‘only in Atlanta’ meal, go to Buford Highway. It’s international Atlanta, and it’s unbeatable." },
+     { title: "Late-Night Bite Strategy", desc: "After a match, Downtown options thin out fast. Midtown and the BeltLine neighborhoods keep feeding you later into the night." }
+   ].map((item, i) => (
+     <div key={i} className="p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+       <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
+         <Utensils className="w-6 h-6" />
+       </div>
+       <h4 className="font-bold text-xl mb-3">{item.title}</h4>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+     </div>
+   ))}
  </div>
- ))}
+
+ <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.opentable.com/atlanta-restaurants" text="Book Restaurants (OpenTable)" variant="primary" icon={Utensils} />
+   <AffiliateButton href="/world-cup-2026-food-dining-guide" text="World Cup Food & Dining Guide" variant="outline" icon={ArrowRight} />
  </div>
  </Section>
 
  <Section id="attractions" title="Top Attractions">
  <p className="mb-8 text-xl text-slate-600 dark:text-slate-300">
- Most of Atlanta's top attractions are clustered around Centennial Olympic Park, right next to the stadium. You can easily hit 2-3 in a single day.
+ Most of Atlanta’s “first-timer” attractions cluster around Centennial Olympic Park—easy wins before a match. But the best Atlanta memories usually happen a little farther out: the BeltLine, the neighborhoods, and the museums that tell the city’s real story.
  </p>
  <div className="space-y-6">
  {[
@@ -721,6 +1063,38 @@ export default function ClientPage() {
  </div>
  </Section>
 
+ <Section id="hidden-gems" title="Hidden Gems (Local Favorites)">
+   <div className="grid md:grid-cols-2 gap-8">
+     {[
+       {
+         title: "Oakland Cemetery",
+         desc: "A quiet, beautiful pocket that feels miles away from the stadium crowds. Great for a calm morning walk and skyline views."
+       },
+       {
+         title: "BeltLine Eastside Trail at Golden Hour",
+         desc: "If you want one ‘Atlanta’ photo that doesn’t look like every other travel guide, this is it. Start near Ponce City Market and wander."
+       },
+       {
+         title: "Sweet Auburn / MLK Historic Area",
+         desc: "Atlanta’s heartbeat. Give it time, don’t rush it, and go with a respectful mindset. It’s not a box to tick."
+       },
+       {
+         title: "Buford Highway",
+         desc: "The most ‘Atlanta’ food corridor there is. Bring friends, split plates, and don’t overthink it."
+       }
+     ].map((g, i) => (
+       <div key={i} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:shadow-xl transition-all duration-300">
+         <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">{g.title}</h3>
+         <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{g.desc}</p>
+       </div>
+     ))}
+   </div>
+  <div className="mt-10 flex flex-wrap gap-4">
+    <AffiliateButton href="https://www.getyourguide.com/atlanta-l503/" text="Book Atlanta Tours" variant="primary" icon={Camera} />
+    <AffiliateButton href="/world-cup-2026-itinerary-planning" text="Build Your Multi-City Itinerary" variant="outline" icon={ArrowRight} />
+  </div>
+ </Section>
+
  <Section id="safety" title="Safety & Security">
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 rounded-[2rem]">
@@ -733,6 +1107,8 @@ export default function ClientPage() {
  <li>• Keep valuables front-facing on trains.</li>
  <li>• Use rideshare pickup zones; avoid unofficial touts.</li>
  <li>• Save local emergency contacts offline.</li>
+ <li>• If you feel the street emptying out, follow the crowd back toward lit main roads.</li>
+ <li>• Avoid wandering into unfamiliar blocks late at night just because they look “close” on a map.</li>
  </ul>
  <div className="mt-6">
  <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="secondary" />
@@ -742,12 +1118,14 @@ export default function ClientPage() {
  </Section>
 
  <Section id="culture" title="Cultural Intelligence">
- <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">Atlanta blends Southern hospitality with global influences. Tipping norms: 18–22% in restaurants and bars. Casual dress works everywhere.</p>
+ <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">
+   Atlanta blends Southern hospitality with global influence—and it’s more “neighborhood city” than visitors expect. Tipping norms: 18–22% in restaurants and bars. Casual dress works almost everywhere, but you’ll see people turn it up at night in Midtown and Buckhead.
+ </p>
  <div className="grid md:grid-cols-3 gap-6">
  {[
- { title: "Fan Zones", desc: "Expect pop-up screens and sponsor activations near the park; early arrival secures better sightlines." },
- { title: "Dining Etiquette", desc: "Reservations recommended weekends. Share plates common in market halls. Bar tips per drink appreciated." },
- { title: "Nightlife Rhythm", desc: "Midtown and BeltLine bars fill up post-match. Last calls vary; plan transport before midnight." }
+  { title: "Fan Zones", desc: "Expect pop-up screens and sponsor activations near the park; early arrival secures better sightlines." },
+  { title: "Dining Etiquette", desc: "Reservations recommended weekends. Share plates common in market halls. Bar tips per drink appreciated." },
+  { title: "Nightlife Rhythm", desc: "Midtown and BeltLine bars fill up post-match. Last calls vary; plan transport before midnight." }
  ].map((item, i) => (
  <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -757,11 +1135,35 @@ export default function ClientPage() {
  </div>
  </Section>
 
+ <Section id="language" title="Local Phrases & Atlanta-isms">
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Things You’ll Hear</h3>
+       <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+         <li className="flex items-start gap-3"><MessageSquare className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>“Y’all”</strong> is plural and useful. Use it. You’re allowed.</span></li>
+         <li className="flex items-start gap-3"><MessageSquare className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>“The Connector”</strong> is I-75/85 through Downtown. If it’s red on maps, believe it.</span></li>
+         <li className="flex items-start gap-3"><MessageSquare className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>“OTP”</strong> means “outside the perimeter” (outside I-285). It can feel like another planet.</span></li>
+         <li className="flex items-start gap-3"><MessageSquare className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span><strong>“Peachtree”</strong> is… everything. Streets, buildings, neighborhoods. Double-check addresses.</span></li>
+       </ul>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Small Cultural Notes</h3>
+       <ul className="space-y-4 text-slate-600 dark:text-slate-400">
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span>People will talk to you in lines. It’s normal. You don’t have to be suspicious.</span></li>
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span>“Bless your heart” can be kind… or it can be a soft knockout punch. Context matters.</span></li>
+         <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /><span>Atlanta loves brunch like it’s a sport. Book ahead on weekends.</span></li>
+       </ul>
+     </div>
+   </div>
+ </Section>
+
  <Section id="packing" title="Climate & Packing">
  <div className="grid md:grid-cols-3 gap-6">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> June–July Weather</h4>
- <p className="text-slate-600 dark:text-slate-400">Hot and humid outdoors; stadium interior is cooled. Lightweight synthetics breathe best.</p>
+ <p className="text-slate-600 dark:text-slate-400">
+   Hot, humid, and stormy at random times. The stadium is climate-controlled, and indoor A/C in Atlanta is aggressive. Dress for summer outside and “mild fall” inside.
+ </p>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4">Essentials</h4>
@@ -769,6 +1171,7 @@ export default function ClientPage() {
  <li>• Water-resistant RFID wallet</li>
  <li>• Clear stadium bag</li>
  <li>• Portable power bank</li>
+ <li>• A light layer for indoor A/C</li>
  </ul>
  </div>
  <div className="p-8 rounded-[2rem]">
@@ -778,7 +1181,7 @@ export default function ClientPage() {
  <li>• Offline maps</li>
  <li>• eSIM with hotspot</li>
  </ul>
- <AffiliateButton href="https://www.airalo.com/" text="Get an eSIM" variant="secondary" />
+ <AffiliateButton href="https://airalo.tp.st/yF9Qk3Ol" text="Get a US eSIM" variant="secondary" />
  </div>
  </div>
  </Section>
@@ -786,22 +1189,23 @@ export default function ClientPage() {
  <Section id="faq" title="Frequently Asked Questions">
  <div className="space-y-2">
  {[
- { q: "Where is the stadium located?", a: "Mercedes-Benz Stadium is in downtown Atlanta, next to the Georgia World Congress Center and Centennial Olympic Park." },
- { q: "Is Atlanta safe for tourists?", a: "Downtown and Midtown are generally safe, especially during major events. As in any big city, stay aware of your surroundings." },
- { q: "Do I need a car in Atlanta?", a: "If you are staying Downtown or Midtown for the World Cup, NO. MARTA covers key routes efficiently and parking is expensive." },
- { q: "What is the weather like in June/July?", a: "Hot and humid. Expect highs of 88–95°F (31–35°C). The stadium is enclosed and air-conditioned." },
- { q: "How far is the airport from the stadium?", a: "About 10 miles. The MARTA train takes you directly from the airport baggage claim to the stadium area in about 20 minutes." },
- { q: "Which area should I stay in?", a: "Downtown for walk-to-stadium convenience; Midtown for dining and nightlife with quick train access; Buckhead for upscale stays." },
- { q: "Can I bring a bag to the stadium?", a: "Yes, clear stadium-approved bags only. Small sealed water bottles typically allowed; check matchday policies." },
- { q: "How early should I arrive for matches?", a: "Aim for 90 minutes before kickoff to enjoy pre-game atmosphere and avoid peak security queues." },
- { q: "Is the stadium air-conditioned?", a: "Yes. Mercedes-Benz Stadium is climate-controlled and uses a retractable roof for ventilation when conditions allow." },
- { q: "What’s the best way to get from the airport?", a: "Take MARTA from ATL directly to Five Points, then connect to the Blue/Green line to the stadium area." },
- { q: "Where can I watch matches if I don’t have tickets?", a: "Fan zones and bars around Centennial Olympic Park and Midtown will host screenings. Arrive early for good spots." },
- { q: "Are restaurants close to the stadium?", a: "Yes. Ponce City Market and Centennial Park-area spots are walkable or a short train ride away." },
- { q: "Do I need travel insurance?", a: "Highly recommended for medical and trip protections. It’s inexpensive peace of mind for major events." },
- { q: "What mobile connectivity works best?", a: "An eSIM with a generous data bundle and hotspot support is ideal. US plugs are Type A/B." },
- { q: "How do I avoid rideshare surge pricing?", a: "Walk 10–15 minutes from the stadium before requesting, or use MARTA from designated stations." },
- { q: "Where can I buy souvenirs?", a: "Team stores inside the stadium and shops around Olympic Park and Downtown carry official merchandise." }
+  { q: "Where is the stadium located?", a: "Mercedes-Benz Stadium is in downtown Atlanta, next to the Georgia World Congress Center and Centennial Olympic Park." },
+  { q: "Is Atlanta safe for tourists?", a: "Downtown and Midtown are generally safe, especially during major events. As in any big city, stay aware of your surroundings." },
+  { q: "Do I need a car in Atlanta?", a: "If you are staying Downtown or Midtown for the World Cup, NO. MARTA covers key routes efficiently and parking is expensive." },
+  { q: "What is the weather like in June/July?", a: "Hot and humid. Expect highs of 88–95°F (31–35°C). The stadium is enclosed and air-conditioned." },
+  { q: "How do I get from ATL airport to Mercedes-Benz Stadium?", a: "Take MARTA from the airport to Five Points, then connect to the Blue/Green line for the stadium-area stations." },
+  { q: "Which area should I stay in for World Cup 2026?", a: "Downtown for pure match convenience; Midtown for dining and nightlife with MARTA access; Buckhead for upscale comfort; Decatur for a calmer family base." },
+  { q: "Can I bring a bag to Mercedes-Benz Stadium?", a: "Yes, but follow the clear bag policy: clear bags up to 12” x 6” x 12”, or a small clutch up to 4.5” x 6.5”. Policies can vary by event." },
+  { q: "How early should I arrive for matches?", a: "Aim for 90 minutes before kickoff to enjoy pre-game atmosphere and avoid peak security queues." },
+  { q: "Is the stadium air-conditioned?", a: "Yes. Mercedes-Benz Stadium is climate-controlled and uses a retractable roof for ventilation when conditions allow." },
+  { q: "What’s the best way to avoid rideshare surge pricing?", a: "Walk 10–15 minutes away from the stadium district before requesting, or use MARTA to get out of the immediate surge zone." },
+  { q: "Where can I watch matches if I don’t have tickets?", a: "Fan zones and bars around Centennial Olympic Park and Midtown will host screenings. Arrive early for good spots." },
+  { q: "Are restaurants close to the stadium?", a: "Yes. Ponce City Market and Centennial Park-area spots are walkable or a short train ride away." },
+  { q: "Is MARTA safe during the World Cup?", a: "It’s the best option for matchdays. Use the same city habits you’d use anywhere: keep valuables close, stay aware, and travel with people when possible." },
+  { q: "Is Downtown or Midtown better for nightlife?", a: "Midtown is the cleaner, easier nightlife base. Downtown can be fun around big events, but it quiets down fast after." },
+  { q: "What’s the best district for families?", a: "Downtown for Aquarium/park convenience, or Decatur for quieter evenings with easy access back into the city." },
+  { q: "Do I need travel insurance for World Cup 2026?", a: "Strongly recommended for medical coverage and trip delays. Tournament trips are expensive; insurance is the cheap part." },
+  { q: "What mobile connectivity works best?", a: "A US eSIM with plenty of data and hotspot support is ideal for maps, tickets, and rideshares." }
  ].map((item, i) => (
  <FAQItem key={i} question={item.q} answer={item.a} />
  ))}
@@ -814,7 +1218,7 @@ export default function ClientPage() {
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Shield className="w-6 h-6 text-emerald-500"/> Emergency Numbers</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Emergency</strong> <span>911</span></li>
- <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Non-Emergency Police</strong> <span>311</span></li>
+ <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>ATL311 (Non-Emergency)</strong> <span>311 / 404-546-0311</span></li>
  <li className="flex justify-between"><strong>Hospital</strong> <span>Emory University Hospital</span></li>
  </ul>
  </div>
@@ -863,19 +1267,3 @@ export default function ClientPage() {
  </div>
  );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

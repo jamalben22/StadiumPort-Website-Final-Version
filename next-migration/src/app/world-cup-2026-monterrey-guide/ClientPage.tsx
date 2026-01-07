@@ -140,21 +140,21 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
  const ref = useRef(null);
  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
- return (
- <section id={id} ref={ref} className={`py-16 md:py-24 scroll-mt-24 ${className}`}>
- <motion.div
- variants={fadeIn}
- initial="hidden"
- animate={isInView ? "visible" : "hidden"}
- >
- <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-12 tracking-tight">
- <span className="text-emerald-500 text-lg md:text-xl font-bold uppercase tracking-widest block mb-2">Guide Section</span>
- {title}
- </h2>
- {children}
- </motion.div>
- </section>
- );
+  return (
+    <section id={id} ref={ref} className={`py-12 md:py-20 scroll-mt-24 ${className}`}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-10 tracking-tight">
+          <span className="text-emerald-500 text-sm md:text-base font-bold uppercase tracking-[0.2em] block mb-3">Guide Section</span>
+          {title}
+        </h2>
+        {children}
+      </motion.div>
+    </section>
+  );
 };
 
 // 5. Premium Affiliate Button
@@ -185,7 +185,7 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
  <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
- <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
+ <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> StadiumPort Score: {rating.toFixed(1)}/5
  </div>
  </div>
  <div className="p-8 md:w-3/5 flex flex-col justify-between">
@@ -259,6 +259,7 @@ export default function ClientPage() {
  { id: 'culture', label: 'Culture' },
  { id: 'packing', label: 'Packing' },
  { id: 'faq', label: 'FAQ' },
+ { id: 'essential', label: 'Essentials' },
  ];
 
  return (
@@ -274,60 +275,62 @@ export default function ClientPage() {
  />
 
  {/* 1. Hero Section - Refined & Minimal */}
- <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
- <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/monterrey-world-cup-2026-1600.webp" 
- alt="Monterrey Skyline" 
- fill 
- className="object-cover"
- priority sizes="100vw"
-  unoptimized />
- <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+<div className="relative h-[75vh] md:h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
+  <div className="absolute inset-0 z-0">
+    <Image 
+      src="/images/cities/monterrey-world-cup-2026-1600.webp" 
+      alt="Monterrey Skyline" 
+      fill 
+      className="object-cover"
+      priority 
+      sizes="100vw"
+      unoptimized 
+    />
+    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+  </div>
+
+  <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col items-start justify-center pt-20">
+    <div className="max-w-5xl">
+      {/* Breadcrumbs */}
+      <Breadcrumb 
+        variant="white"
+        items={[
+          { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
+          { label: 'Monterrey', href: '/world-cup-2026-monterrey-guide' }
+        ]} 
+      />
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="mt-8"
+      >
+        <div className="flex flex-wrap items-center gap-3 mb-8">
+          <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+            Last Updated: January 7, 2026
+          </span>
+          <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-medium tracking-widest uppercase backdrop-blur-md">
+            Host City
+          </span>
+          <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+            Round of 32 Host
+          </span>
+        </div>
+
+        <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+          Monterrey World Cup 2026 Guide
+        </h1>
+        
+        <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+          If you want the “local” version of Monterrey—fast, proud, a little blunt, and wildly underrated—this is it. Let’s get you to <span className="text-white font-medium">Estadio BBVA</span> without losing an hour to traffic.
+        </p>
+      </motion.div>
+    </div>
+  </div>
 </div>
 
-<div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
-<div className="max-w-4xl">
-{/* Breadcrumbs */}
-<Breadcrumb 
-           variant="white"
-           items={[
-             { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
-             { label: 'Monterrey', href: '/world-cup-2026-monterrey-guide' }
-           ]} 
-         />
-
-<motion.div
-initial={{ opacity: 0, y: 30 }}
-animate={{ opacity: 1, y: 0 }}
-transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
->
-<div className="flex items-center gap-4 mb-6">
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-             Last Updated: January 4, 2026
-           </span>
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
-             Host City
-           </span>
-<span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
-Round of 32 Host
-</span>
-</div>
-
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-MONTERREY
-</h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-The Northern Titan. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
-</p>
- </motion.div>
- </div>
-
-
- </div>
- </div>
-
- <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-20 relative pt-16">
+<div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-12 relative pt-16">
  
  {/* 2. Apple-style Sticky Table of Contents */}
  <aside className="hidden lg:block w-72 shrink-0 relative">
@@ -373,25 +376,36 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- Monterrey balances industrial power with stunning nature. The stadium sits in Guadalupe, framed by the iconic Cerro de la Silla mountain. For World Cup 2026, base yourself in San Pedro for luxury and safety, or Centro for culture and history.
+ I’ve called Monterrey home for more than twenty years, and I can tell you exactly how this city works: it moves fast, it eats late, it sweats proudly, and it rewards people who plan. The payoff is huge—World Cup matches at Estadio BBVA with that Cerro de la Silla backdrop that makes your camera look like it’s lying.
  </p>
+ <p>
+ This Monterrey World Cup 2026 guide is built for real travel decisions: which neighborhoods save you time on match day, where the nightlife actually is (and where it just pretends), how to use Metrorrey without confusion, and what locals do when visitors ask, “So… what should I eat first?”
+ </p>
+ <h3>Monterrey at a glance (save this)</h3>
+ <ul>
+   <li><strong>Best base for comfort:</strong> San Pedro Garza García (walkable pockets, best hotels, easiest “first trip to Mexico” vibe).</li>
+   <li><strong>Best base for character:</strong> Centro + Barrio Antiguo (history, bars, street life—just use rideshare late).</li>
+   <li><strong>Match-day reality:</strong> the stadium is in Guadalupe; traffic spikes hard; Metrorrey Line 1 helps you dodge the worst of it.</li>
+   <li><strong>Don’t skip:</strong> Parque Fundidora at golden hour, a carne asada night, and one proper mountain viewpoint (Obispado or Chipinque).</li>
+ </ul>
  </div>
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "San Pedro Garza García for luxury. Barrio Antiguo (Centro) for nightlife and culture." },
- { icon: Train, title: "Transport Strategy", text: "Use Metrorrey (Line 1) to reach the stadium. Uber is excellent for getting around the city safely." },
- { icon: DollarSign, title: "Budget Signals", text: "San Pedro is expensive (US prices). Centro offers great value. Overall, excellent value for dollars." }
+ { icon: MapPin, title: "Where to Base", text: "San Pedro for easy mode. Centro/Barrio Antiguo for culture + nightlife. Valle Oriente splits the difference." },
+ { icon: Train, title: "Match-Day Transport", text: "Build your plan around Metrorrey Line 1 (Exposición) + walking routes. Use rideshare for everything else." },
+ { icon: DollarSign, title: "Cost Reality", text: "Monterrey isn’t ‘cheap Mexico’—it’s a business city. You can still travel smart with tacos, metro, and the right neighborhood." }
  ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] transition-colors">
- <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
- <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
- </div>
+  <div key={i} className="p-8 rounded-[2rem] transition-colors">
+  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+  <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+  </div>
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
         <AffiliateButton href="https://www.skyscanner.com/transport/flights-to/mty" text="Search Monterrey Flights" variant="secondary" icon={Plane} />
         <AffiliateButton href="https://www.booking.com/searchresults.html?ss=San+Pedro+Garza+Garcia" text="Check San Pedro Hotels" variant="primary" icon={Hotel} />
+        <AffiliateButton href="https://www.safetywing.com/" text="Compare Travel Insurance" variant="outline" icon={Shield} />
       </div>
  </Section>
 
@@ -399,19 +413,25 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of USA, Canada, UK, EU, and many others do <strong>not</strong> need a visa. You will complete a digital FMM (Multiple Immigration Form) upon entry.</p>
- <AffiliateButton href="https://www.inm.gob.mx/" text="Check Entry Requirements" variant="outline" />
+ <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+ Many travelers (USA, Canada, UK, EU, Australia, and more) enter Mexico visa-free for tourism, but rules depend on your passport and your itinerary. On arrival, you’ll be processed through Mexico immigration and issued your entry record (often digital; sometimes paper depending on the airport/system that day).
+ </p>
+ <AffiliateButton href="https://www.inm.gob.mx/" text="Mexico Immigration (INM)" variant="outline" />
  </div>
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
  <ul className="space-y-4 mb-8">
- {['Passport must be valid for 6 months', 'Keep your FMM (Digital or Paper)', 'Use authorized airport taxis/Uber'].map((item, i) => (
- <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
- <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
- </li>
+ {[
+  'Bring the passport you used to book flights (names must match exactly).',
+  'Save a screenshot of your hotel address + match tickets (immigration may ask your plan).',
+  'Use authorized airport taxis or a pre-booked transfer as your default.',
+ ].map((item, i) => (
+  <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+  <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
+  </li>
  ))}
  </ul>
- <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Travel Insurance (World Cup Trips)" variant="secondary" />
  </div>
  </div>
  </Section>
@@ -419,15 +439,39 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <Section id="planning" title="Planning Timeline">
  <div className="space-y-6">
  {[
- { time: "6–9 Months Out", desc: "Book hotels in San Pedro. The best hotels will fill up fast. Check passport validity." },
- { time: "3–6 Months Out", desc: "Confirm match tickets via FIFA. Plan day trips to Chipinque or Cola de Caballo." },
- { time: "1–3 Months Out", desc: "Download the 'Urbani' app for Metro. Arrange airport transfers. Check latest safety advisories." }
+ { time: "6–9 Months Out", desc: "Book your neighborhood first, not your hotel brand. San Pedro sells out early. Lock flights once your match city is confirmed." },
+ { time: "3–6 Months Out", desc: "Build two plans: a ‘heat day’ plan and a ‘storm day’ plan. Reserve any must-do restaurants (Monterrey takes dining seriously)." },
+ { time: "1–3 Months Out", desc: "Install Urbani (for QR payments) and save your key addresses offline. Pre-book airport transfers for peak arrival days." }
  ].map((item, i) => (
- <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
- <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
- <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
- </div>
+  <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
+  <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
+  <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
+  </div>
  ))}
+ </div>
+ <div className="prose prose-lg dark:prose-invert max-w-none mt-10">
+   <h3>A simple itinerary that works (3 days)</h3>
+   <p>
+     Monterrey is a “pick two” city: food, mountains, museums, nightlife. You can’t do everything, but you can do the best version of the trip without feeling rushed.
+   </p>
+   <h4>Day 1: Arrive + get oriented</h4>
+   <ul>
+     <li><strong>Late afternoon:</strong> check in, then head to <strong>Parque Fundidora</strong> for an easy first walk.</li>
+     <li><strong>Dinner:</strong> your first carne asada night (yes, it counts as culture here).</li>
+     <li><strong>Nightcap:</strong> San Pedro wine bars for calm, Barrio Antiguo for chaos (good chaos).</li>
+   </ul>
+   <h4>Day 2: Match day</h4>
+   <ul>
+     <li><strong>Morning:</strong> shade + air conditioning (museum, mall, long brunch).</li>
+     <li><strong>3–4 hours pre-kick:</strong> move toward the stadium side early; heat + traffic will not be merciful.</li>
+     <li><strong>Post-match:</strong> don’t fight the crowd immediately—walk, snack, let surge pricing cool down.</li>
+   </ul>
+   <h4>Day 3: Mountains + goodbye</h4>
+   <ul>
+     <li><strong>Sunrise option:</strong> Mirador del Obispado for city views without a long hike.</li>
+     <li><strong>Half-day option:</strong> Chipinque for cooler air and a proper “Monterrey is mountains” moment.</li>
+     <li><strong>Eat one more thing:</strong> cabrito or machaca—whichever you didn’t do yet.</li>
+   </ul>
  </div>
  <div className="mt-8 flex flex-wrap gap-4">
         <AffiliateButton href="https://www.google.com/travel/flights" text="Set Flight Alerts" variant="primary" icon={Plane} />
@@ -438,22 +482,35 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <Section id="budget" title="Budget Tiers">
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Smart Saver", items: ["Stay in Centro/Barrio Antiguo", "Use Metrorrey ($0.40)", "Street Tacos & Tortas"] },
- { title: "Comfort Upgrades", items: ["San Pedro Business Hotels", "Uber for transport", "Steakhouse dinners"] },
- { title: "Premium", items: ["Luxury Resorts in San Pedro", "Private Driver", "Fine Dining (Pangea)"] }
+ { title: "Smart Saver", items: ["Stay Centro (Macroplaza) or Barrio Antiguo", "Metrorrey + short rideshare hops", "Tacos, tortas, and mercados"] },
+ { title: "Comfort Upgrades", items: ["San Pedro or Valle Oriente hotels", "Rideshare for cross-city moves", "Steakhouse dinners + craft beer"] },
+ { title: "Premium", items: ["Top-end San Pedro properties", "Private driver on match day", "Tasting menus + VIP hospitality"] }
  ].map((tier, i) => (
- <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
- <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
- <ul className="space-y-4">
- {tier.items.map((item, j) => (
- <li key={j} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
- <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
- {item}
- </li>
+  <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
+  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
+  <ul className="space-y-4">
+  {tier.items.map((item, j) => (
+   <li key={j} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
+   <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
+   {item}
+   </li>
+  ))}
+  </ul>
+  </div>
  ))}
- </ul>
  </div>
- ))}
+ <div className="prose prose-lg dark:prose-invert max-w-none mt-10">
+   <h3>Typical costs (2025–2026 reality check)</h3>
+   <p>
+     Prices swing hard depending on neighborhood and match week demand. Think in ranges, not absolutes—and remember Monterrey is one of Mexico’s wealthiest metros, so “cheap” isn’t the default setting.
+   </p>
+   <ul>
+     <li><strong>Street tacos:</strong> ~MXN 20–35 each (more in San Pedro).</li>
+     <li><strong>Casual meal:</strong> ~MXN 200–450 per person.</li>
+     <li><strong>Nice dinner:</strong> ~MXN 600–1,500+ per person.</li>
+     <li><strong>Rideshare across town:</strong> ~MXN 120–300 off-peak; surge after matches.</li>
+     <li><strong>eSIM data:</strong> often cheaper than roaming; buy before you land.</li>
+   </ul>
  </div>
  <div className="mt-8 text-center">
         <AffiliateButton href="https://www.expedia.com/Monterrey-Vacation-Packages.d2524.Destination-Travel-Guides" text="Search Monterrey Packages" variant="secondary" icon={Briefcase} />
@@ -469,8 +526,17 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- Nicknamed <strong>"El Gigante de Acero"</strong> (The Steel Giant), this stadium is an architectural marvel. But the real star is the view. The open-ended northern stand frames the Cerro de la Silla mountain perfectly, creating a backdrop that looks like CGI.
+ Nicknamed <strong>“El Gigante de Acero”</strong>, Estadio BBVA is one of those venues that makes neutral fans feel something. You’re watching a match, then you look up and the mountain is sitting there like a stage prop. That’s Monterrey: steel-and-glass modernity, with raw nature pressed right against it.
  </p>
+ <p>
+ The stadium sits in <strong>Guadalupe</strong> at <strong>Av. Pablo Livas 2011, Col. La Pastora</strong>—that’s the official address published by the club. If you’re the type who likes receipts, here’s the source straight from Rayados: <a href="https://www.rayados.com/en/monterrey/stadium-location" target="_blank" rel="noopener noreferrer">rayados.com stadium location</a>.
+ </p>
+ <h3>What most guides don’t tell you</h3>
+ <ul>
+   <li><strong>Match-day traffic is the boss fight.</strong> Plan for the city to slow down for a few hours.</li>
+   <li><strong>The stadium “side” of town matters.</strong> If you’re staying in San Pedro, you’re crossing the metro area—leave earlier than you think.</li>
+   <li><strong>Photos:</strong> the mountain view is best from the northwest side of the bowl. Get one shot before kickoff and one after sunset.</li>
+ </ul>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -478,31 +544,31 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "53,500" },
- { label: "Surface", val: "Grass" },
- { label: "View", val: "Mountain Backdrop" },
- { label: "Built", val: "2015" }
+  { label: "Capacity", val: "53,500" },
+  { label: "Surface", val: "Grass" },
+  { label: "View", val: "Mountain Backdrop" },
+  { label: "Opened", val: "2015" }
  ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
- <span className="font-medium text-slate-500">{item.label}</span>
- <span className="font-bold">{item.val}</span>
- </li>
+  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
+  <span className="font-medium text-slate-500">{item.label}</span>
+  <span className="font-bold">{item.val}</span>
+  </li>
  ))}
  </ul>
  </div>
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Club Seats: Essential for A/C in June heat.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> West Stands: Best mountain views.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival: Traffic is heavy; use Metro or walk.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Heat strategy: plan shade, water, and a breathable shirt—this is not a “cute outfit” city in June.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Photo strategy: grab your mountain shot early before the concourses fill.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Transport strategy: metro to Exposición helps; rideshare after the match is patience + timing.</li>
  </ul>
  </div>
  </div>
  
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> Take Metrorrey <strong>Line 1</strong> to "Exposición" station. From there, it is a dedicated pedestrian walkway directly to the stadium gates.
+ <strong>Getting There:</strong> Take Metrorrey <strong>Line 1</strong> toward <strong>Exposición</strong> (Guadalupe), then follow match-day signage and pedestrian routes toward Estadio BBVA. Walking time varies with crowd control—assume roughly 10–25 minutes.
  </p>
  </div>
  </Section>
@@ -510,19 +576,33 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <Section id="tips" title="Match Day Gameplan">
  <div className="grid md:grid-cols-3 gap-6 mb-8">
  {[
- { title: "Precopeo", text: "Locals love to pre-game. Barrio Antiguo is the spot for drinks before heading to the stadium." },
- { title: "Hydration", text: "It will be 35°C+ (95°F). Drink water constantly. Wear a hat and sunglasses." },
- { title: "Exit Plan", text: "The Metro will be packed. Be patient or walk to a nearby mall (Sun Mall) to catch an Uber." }
+ { title: "Pre-game (precopeo)", text: "For nightlife energy, Barrio Antiguo is the classic. For a calmer start, do Fundidora + early dinner, then head out." },
+ { title: "Heat & Sun", text: "June/July in Monterrey is no joke. Hydrate early, wear sunscreen, and treat shade like a strategy—not a bonus." },
+ { title: "Exit Plan", text: "Don’t sprint into surge pricing. Walk a bit, grab a snack, and request rides from less congested streets." }
  ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
- <h4 className="font-bold mb-3">{item.title}</h4>
- <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
- </div>
+  <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+  <h4 className="font-bold mb-3">{item.title}</h4>
+  <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
+  </div>
  ))}
+ </div>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <h3>My “no-stress” match-day schedule</h3>
+   <ul>
+     <li><strong>4–5 hours before kickoff:</strong> eat a real meal (protein + salt). You’ll thank me later.</li>
+     <li><strong>3 hours before:</strong> start moving toward Guadalupe. If you’re in San Pedro, assume the city is already stacking traffic.</li>
+     <li><strong>2 hours before:</strong> arrive near the stadium area, scan tickets, get water, and take your photos.</li>
+     <li><strong>60–75 minutes before:</strong> be inside. Security + crowd flow always takes longer during tournaments.</li>
+     <li><strong>After the whistle:</strong> linger 20–40 minutes, then leave with intention (metro, a pre-set pickup point, or a short walk first).</li>
+   </ul>
+   <p>
+     Family with kids? Your easiest win is <strong>Parque Fundidora</strong> earlier in the day, then an early move to the stadium. Nightlife crew? Do your Barrio Antiguo time on a <em>non-match</em> night too—Monterrey deserves more than one blurry memory.
+   </p>
  </div>
  <div className="flex flex-wrap gap-4">
         <AffiliateButton href="https://www.amazon.com/s?k=cooling+towel" text="Buy Cooling Towel" variant="primary" />
         <AffiliateButton href="https://urbani.app/" text="Get Metro App" variant="outline" />
+        <AffiliateButton href="https://www.getyourguide.com/monterrey-l921/" text="Browse Experiences" variant="secondary" />
       </div>
  </Section>
 
@@ -532,21 +612,22 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
  <Ticket className="w-8 h-8 text-emerald-400" />
- <h3 className="text-3xl font-black">Confirmed Matches</h3>
+ <h3 className="text-3xl font-black">Matches in Monterrey (Confirmed)</h3>
  </div>
  <div className="space-y-6">
  {[
- { stage: "Group Stage", count: "June 14", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 20", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 24", color: "text-emerald-300" },
- { stage: "Round of 32", count: "June 29", color: "text-amber-400" }
+ { stage: "Group Stage", count: "3 matches", color: "text-emerald-300" },
+ { stage: "Knockout", count: "1 Round of 32 match", color: "text-amber-400" }
  ].map((match, i) => (
- <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
- <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
- <span className="font-bold text-xl">{match.count}</span>
- </div>
+  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
+  <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
+  <span className="font-bold text-xl">{match.count}</span>
+  </div>
  ))}
  </div>
+ <p className="mt-8 text-white/80 max-w-3xl leading-relaxed">
+   Kickoff dates and times are set by FIFA and can shift as the tournament planning locks in. Use this guide for logistics, then confirm match details on FIFA’s official schedule once it’s published.
+ </p>
  </div>
  </div>
  
@@ -569,14 +650,27 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  </Section>
 
  <Section id="hotels" title="Where to Stay">
- <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
- Monterrey is sprawling. Choosing the wrong neighborhood means spending hours in traffic. Stick to <strong>San Pedro</strong> for luxury/safety or <strong>Centro</strong> for budget/culture.
- </p>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+   <p className="text-xl text-slate-600 dark:text-slate-300 leading-relaxed">
+     Monterrey is big, spread out, and allergic to “I’ll just wing it.” Picking the wrong base can turn a simple match day into a three-ride ordeal. Pick your neighborhood like you’re picking a strategy.
+   </p>
+   <h3>Neighborhood-by-neighborhood: where to sleep (and why)</h3>
+   <ul>
+     <li><strong>San Pedro Garza García:</strong> safest-feeling, most polished, best hotel inventory, and the easiest place to be a first-time visitor.</li>
+     <li><strong>Valle Oriente:</strong> modern towers, great business hotels, good restaurants; convenient if you like malls and taxis waiting outside.</li>
+     <li><strong>Centro (Macroplaza):</strong> museums, walkability, and “real city” vibes. Better value, but you’ll rely more on rideshare at night.</li>
+     <li><strong>Barrio Antiguo:</strong> nightlife base. Fun, loud, and not for light sleepers—perfect if you want to walk home from bars.</li>
+     <li><strong>Guadalupe (near the stadium):</strong> pure match convenience, fewer “vacation” amenities. Great if you’re in and out.</li>
+   </ul>
+   <p>
+     For stadium logistics, pair this with the stadium page: <Link href="/estadio-bbva-world-cup-2026">Estadio BBVA World Cup 2026 guide</Link>.
+   </p>
+ </div>
  
  <div className="space-y-8">
  <HotelCard 
   name="Live Aqua Urban Resort Monterrey"
-  rating={4.9}
+  rating={4.8}
   price="$250 - $450"
   distance="20 min drive"
   features={['Luxury', 'San Pedro', 'Shopping', 'Spa']}
@@ -585,7 +679,7 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
 />
 <HotelCard 
   name="JW Marriott Hotel Monterrey"
-  rating={4.8}
+  rating={4.7}
   price="$300 - $500"
   distance="20 min drive"
   features={['New', 'Upscale', 'Pool', 'Business']}
@@ -594,12 +688,30 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
 />
 <HotelCard 
   name="Gamma Monterrey Gran Hotel"
-  rating={4.5}
+  rating={4.3}
   price="$90 - $150"
   distance="30 min Metro"
   features={['Historic', 'Centro', 'Value', 'Culture']}
   image="/images/cities/monterrey-world-cup-2026-640.webp" 
   link="https://www.booking.com/searchresults.html?ss=Gamma+Monterrey+Gran+Hotel"
+/>
+<HotelCard 
+  name="Safi Royal Luxury Valle"
+  rating={4.6}
+  price="$160 - $320"
+  distance="25 min drive"
+  features={['San Pedro', 'Pool', 'Walkable', 'Restaurants']}
+  image="/images/cities/monterrey-world-cup-2026-640.webp" 
+  link="https://www.booking.com/searchresults.html?ss=Safi+Royal+Luxury+Valle+Monterrey"
+/>
+<HotelCard 
+  name="Fiesta Americana Monterrey Pabellón M"
+  rating={4.5}
+  price="$140 - $260"
+  distance="30 min Metro"
+  features={['Centro', 'Views', 'Walkable', 'Good value']}
+  image="/images/cities/monterrey-world-cup-2026-640.webp" 
+  link="https://www.booking.com/searchresults.html?ss=Fiesta+Americana+Monterrey+Pabellon+M"
 />
  </div>
  
@@ -618,7 +730,7 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div>
  <h4 className="font-bold text-xl mb-2">Metrorrey</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Clean, safe, and cheap ($0.40). Line 1 is your connection to the stadium. Use the "Urbani" app to pay via QR code.
+ Clean, fast, and the closest thing Monterrey has to “easy mode.” Line 1 is your match-day friend (Exposición for the stadium side). You can pay with a Me Muevo card or QR via apps like Urbani.
  </p>
  </div>
  </div>
@@ -629,7 +741,7 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div>
  <h4 className="font-bold text-xl mb-2">Airport (MTY)</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- MTY is modern but far from the city (30-45 mins). Authorized airport taxis or Uber are the best options.
+ MTY is modern but not close. Assume ~30–60 minutes to most hotels depending on traffic and where you’re staying. For peak World Cup arrival windows, a pre-booked transfer saves stress.
  </p>
  </div>
  </div>
@@ -640,7 +752,7 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div>
  <h4 className="font-bold text-xl mb-2">Uber / Rideshare</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Uber works perfectly in Monterrey and is very safe. It is the best way to get between San Pedro and other areas.
+ Rideshare is the default for most visitors, especially between San Pedro, Centro, Fundidora, and Valle Oriente. After matches, expect surge pricing—walk first, then request.
  </p>
  </div>
  </div>
@@ -650,10 +762,10 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
  <ul className="space-y-6">
  {[
- { label: "San Pedro", time: "30-45 min drive" },
- { label: "Centro / Macroplaza", time: "30 min Metro" },
- { label: "Tec de Monterrey", time: "15 min drive" },
- { label: "Airport (MTY)", time: "30 min drive" }
+ { label: "San Pedro", time: "25–45 min drive (more on match day)" },
+ { label: "Centro / Macroplaza", time: "Line 1 metro + walk (plan extra time)" },
+ { label: "Parque Fundidora", time: "Quick rideshare or metro connection" },
+ { label: "Airport (MTY)", time: "30–60 min drive" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
@@ -663,6 +775,7 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  </ul>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
         <AffiliateButton href="https://www.viator.com/Monterrey-tours/Transfers-and-Ground-Transport/d922-g15" text="Book Airport Transfer" variant="secondary" />
+        <AffiliateButton href="https://www.discovercars.com/" text="Compare Car Rentals" variant="outline" />
       </div>
  </div>
  </div>
@@ -671,11 +784,11 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <Section id="dining" title="Food & Drink">
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Cabrito", desc: "Roast kid goat. The city's signature dish. Try it at 'El Rey del Cabrito' in Centro." },
- { title: "Carne Asada", desc: "Monterrey is the steak capital of Mexico. Premium cuts of Ribeye are standard here." },
- { title: "Chicharrón", desc: "Famous pressed pork crackling. 'Carnicería Ramos' is legendary for this." }
+ { title: "Cabrito", desc: "Yes, the legend is real. Order it with confidence. Centro has classic spots, and locals will argue about which one is “the” one." },
+ { title: "Carne Asada", desc: "This is a ritual, not just dinner. If you get invited to someone’s asada, bring beer and say yes. Steakhouses in San Pedro are top tier." },
+ { title: "Machaca & Chicharrón", desc: "Breakfast that fixes a late night. Machaca con huevo and pressed chicharrón are peak Monterrey comfort food." }
  ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+  <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
  <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
@@ -684,27 +797,42 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  </div>
  ))}
  </div>
+ <div className="prose prose-lg dark:prose-invert max-w-none mt-10">
+   <h3>Where to eat and drink (by neighborhood)</h3>
+   <ul>
+     <li><strong>San Pedro:</strong> upscale dining, cocktail bars, steakhouses, and the “let’s make a reservation” spots.</li>
+     <li><strong>Centro:</strong> classic cabrito, old-school cantinas, and museum-day lunches.</li>
+     <li><strong>Barrio Antiguo:</strong> bars, live music, and late nights—eat before you arrive.</li>
+     <li><strong>Fundidora:</strong> daytime coffee, snacks, and easy group-friendly meals nearby.</li>
+   </ul>
+ </div>
+ <div className="mt-8 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.opentable.com/" text="Reserve Restaurants" variant="secondary" />
+   <AffiliateButton href="https://www.thefork.com/" text="Find Tables (Alt)" variant="outline" />
+ </div>
  </Section>
 
  <Section id="attractions" title="Top Attractions">
  <p className="mb-8 text-xl text-slate-600 dark:text-slate-300">
- Monterrey offers a mix of modern industrial parks and breathtaking nature. You can hike a mountain in the morning and shop in a luxury mall in the afternoon.
+ Monterrey is the rare big city where you can do skyline photos, museums, and a mountain viewpoint in the same day without leaving the metro area. The trick is timing: do outdoors early, then hide in A/C when the heat peaks.
  </p>
  <div className="space-y-6">
  {[
- { title: "Parque Fundidora", desc: "Massive park on an old steel foundry site. Museums, walkways, and fan fest area.", color: "text-blue-500" },
- { title: "Chipinque", desc: "Ecological park in the mountains. Incredible views of the city. Great for hiking.", color: "text-green-500" },
- { title: "Paseo Santa Lucía", desc: "Artificial riverwalk connecting Fundidora to the Macroplaza. Take a boat tour.", color: "text-emerald-500" }
+ { title: "Parque Fundidora", desc: "The city’s favorite giant park: old steel-foundry bones turned into trails, museums, events, and lazy afternoon walks.", color: "text-blue-500" },
+ { title: "Paseo Santa Lucía", desc: "The riverwalk link between Fundidora and Macroplaza. It’s touristy, yes—and still genuinely relaxing at sunset.", color: "text-emerald-500" },
+ { title: "Mirador del Obispado", desc: "The ‘big view’ without a big hike. Go near golden hour for the skyline glow.", color: "text-amber-500" },
+ { title: "Chipinque", desc: "Higher, cooler, greener. If you want the Monterrey mountains in one hit, this is the safe, scenic choice.", color: "text-green-500" },
+ { title: "Day trip: Santiago", desc: "A calmer Pueblo Mágico feel south of the city. Great reset day between matches.", color: "text-slate-500" }
  ].map((item, i) => (
- <div key={i} className="flex gap-6 items-center p-6 rounded-3xl transition-colors shadow-sm hover:shadow-md">
- <div className=" p-4 rounded-2xl shadow-sm shrink-0">
- <Camera className={`w-8 h-8 ${item.color}`} />
- </div>
- <div>
- <h4 className="font-bold text-xl mb-1">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400">{item.desc}</p>
- </div>
- </div>
+  <div key={i} className="flex gap-6 items-center p-6 rounded-3xl transition-colors shadow-sm hover:shadow-md">
+  <div className=" p-4 rounded-2xl shadow-sm shrink-0">
+  <Camera className={`w-8 h-8 ${item.color}`} />
+  </div>
+  <div>
+  <h4 className="font-bold text-xl mb-1">{item.title}</h4>
+  <p className="text-slate-600 dark:text-slate-400">{item.desc}</p>
+  </div>
+  </div>
  ))}
  </div>
  <div className="mt-8">
@@ -716,29 +844,66 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-500"/> Safe Zones</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed"><strong>San Pedro Garza García</strong> is one of the safest municipalities in Latin America. Centro and Fundidora are also generally safe for tourists, especially during events.</p>
+ <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+ <strong>San Pedro Garza García</strong>, Valle Oriente, Fundidora, and the main Centro/Macroplaza corridors are where most visitors spend time without issues. The “safety secret” in Monterrey is boring: stay in busy areas, use rideshare late, and don’t wander empty blocks after midnight just because your hotel looks close on the map.
+ </p>
+ <ul className="mt-6 space-y-3 text-slate-600 dark:text-slate-400">
+   <li>• Keep your phone low-key (especially curbside while waiting for rideshare).</li>
+   <li>• Avoid isolated underpasses and poorly lit streets late at night.</li>
+   <li>• Use ATMs inside banks or malls, not on the street.</li>
+ </ul>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Emergency</h4>
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
- <li>• <strong>911</strong> for Police/Ambulance.</li>
- <li>• Use Uber instead of hailing taxis on the street.</li>
- <li>• Stay hydrated and watch for heat exhaustion.</li>
+  <li>• <strong>911</strong> for Police/Ambulance.</li>
+  <li>• Use Uber instead of hailing taxis on the street.</li>
+  <li>• Heat is the #1 match-day risk: hydrate and watch for dizziness/headache.</li>
  </ul>
  <div className="mt-6">
               <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="secondary" />
  </div>
  </div>
  </div>
+ <div className="mt-10 text-center">
+   <Link href="/world-cup-2026-emergency-contacts-resources" className="text-emerald-500 hover:text-emerald-600 font-bold text-lg inline-flex items-center gap-2 hover:gap-4 transition-all">
+     World Cup Emergency Contacts & Resources <ArrowRight className="w-5 h-5"/>
+   </Link>
+ </div>
  </Section>
 
  <Section id="culture" title="Cultural Intelligence">
- <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">Regios are proud, hardworking, and direct. The culture is closer to Texas than to Mexico City in some ways.</p>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p className="text-xl text-slate-600 dark:text-slate-300">
+     Regios (people from Monterrey) are proud, hardworking, and pretty direct. It’s not rude—it’s efficient. You’ll feel it in the way people drive, order food, and talk about their city like it’s a person they’re defending.
+   </p>
+   <h3>Local customs that actually matter</h3>
+   <ul>
+     <li><strong>Food timing:</strong> lunch is big, dinner runs late, and “we’ll just grab something quick” turns into a two-hour meal if you’re having fun.</li>
+     <li><strong>Carne asada culture:</strong> it’s social glue. If you get invited, show up hungry and bring something (beer, hielo/ice, or dessert).</li>
+     <li><strong>Sports talk:</strong> people love fútbol here, but don’t be surprised if the conversation turns into business, mountains, then back to fútbol.</li>
+     <li><strong>Tipping:</strong> 10–15% is standard; 15–20% is normal for great service.</li>
+   </ul>
+   <h3>Local phrases that make life easier</h3>
+   <ul>
+     <li><strong>¿Cuánto cuesta?</strong> How much does it cost?</li>
+     <li><strong>¿Me puede ayudar?</strong> Can you help me?</li>
+     <li><strong>¿Dónde queda…?</strong> Where is…?</li>
+     <li><strong>Una botella de agua, por favor.</strong> A bottle of water, please.</li>
+     <li><strong>¿A qué hora cierran?</strong> What time do you close?</li>
+     <li><strong>Con permiso.</strong> Excuse me (polite squeeze-by).</li>
+     <li><strong>Está bien / Está perfecto.</strong> That’s fine / perfect.</li>
+     <li><strong>¿Me trae la cuenta?</strong> Can I get the check?</li>
+   </ul>
+   <p>
+     And yes—people say <strong>“ahorita”</strong>. It can mean “right now,” “in a bit,” or “eventually.” Context is everything. Welcome to Mexico.
+   </p>
+ </div>
  <div className="grid md:grid-cols-3 gap-6">
  {[
- { title: "Tipping", desc: "10-15% is standard. 15-20% for excellent service in fine dining." },
- { title: "Language", desc: "English is widely spoken in San Pedro and business circles." },
- { title: "Fan Zones", desc: "Parque Fundidora will likely host the main Fan Fest with screens and music." }
+ { title: "Family-Friendly", desc: "Parque Fundidora, Santa Lucía, museums, and early dinners in San Pedro. Build your day around shade + A/C." },
+ { title: "Nightlife", desc: "Barrio Antiguo is the headline. Start late, use rideshare home, and keep your group together after midnight." },
+ { title: "Fan Zones", desc: "Fundidora is the natural “big screen” magnet during major events. Expect crowds, music, and food stands." }
  ].map((item, i) => (
  <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -749,17 +914,26 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  </Section>
 
  <Section id="packing" title="Climate & Packing">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p className="text-xl text-slate-600 dark:text-slate-300">
+     Monterrey in June and July is hot enough to change your personality. Plan for sun, sweat, and the occasional surprise storm. If you pack for “summer” but forget the sun and the concrete heat, you’ll feel it fast.
+   </p>
+ </div>
  <div className="grid md:grid-cols-3 gap-6">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> June–July Weather</h4>
- <p className="text-slate-600 dark:text-slate-400">Hot (35°C/95°F) and dry/humid mix. Stadium is open-ended but shaded. Light, breathable clothing is essential.</p>
+ <p className="text-slate-600 dark:text-slate-400">
+ Hot days (often mid-30s °C / mid-90s °F), bright sun, and sticky afternoons. Evenings can cool a little, and storms can roll in fast.
+ </p>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4">Essentials</h4>
  <ul className="space-y-2 text-slate-600 dark:text-slate-400">
- <li>• High SPF Sunscreen</li>
- <li>• Hat & Sunglasses</li>
- <li>• Portable fan</li>
+ <li>• High SPF sunscreen (reapply)</li>
+ <li>• Hat & sunglasses</li>
+ <li>• Breathable shirt + light shorts/pants</li>
+ <li>• Cooling towel or small portable fan</li>
+ <li>• Light rain layer (thin, packable)</li>
  </ul>
  </div>
  <div className="p-8 rounded-[2rem]">
@@ -768,31 +942,38 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <li>• Type A/B plugs (Same as US)</li>
  <li>• Offline maps</li>
  <li>• eSIM with data</li>
+ <li>• Power bank for match day</li>
  </ul>
  <AffiliateButton href="https://www.airalo.com/mexico-esim" text="Get an eSIM" variant="secondary" />
  </div>
+ </div>
+ <div className="prose prose-lg dark:prose-invert max-w-none mt-10">
+   <h3>Stadium comfort checklist</h3>
+   <ul>
+     <li><strong>Water:</strong> start hydrating hours before kickoff, not when you’re already sweating.</li>
+     <li><strong>Sun:</strong> sunscreen + hat isn’t optional.</li>
+     <li><strong>Bag policy:</strong> expect restrictions—pack light and keep essentials in pockets.</li>
+   </ul>
  </div>
  </Section>
 
  <Section id="faq" title="Frequently Asked Questions">
  <div className="space-y-2">
  {[
- { q: "Where is the stadium located?", a: "Estadio BBVA is located in the Guadalupe municipality, about a 30-minute drive from San Pedro or 30 minutes by Metro from Centro." },
- { q: "Is Monterrey safe for tourists?", a: "Yes, especially in San Pedro Garza García, which is very safe. Stick to tourist areas and use Uber." },
- { q: "Do I need a car in Monterrey?", a: "Not necessarily. Uber is very efficient. However, the city is spread out, so budget for rides." },
- { q: "What is the weather like in June/July?", a: "Very hot. Expect temperatures above 35°C (95°F). Stay hydrated and seek shade." },
- { q: "How far is the airport from the stadium?", a: "About 30-45 minutes by car, depending on traffic." },
- { q: "Which area should I stay in?", a: "San Pedro for luxury and safety. Centro/Barrio Antiguo for a more cultural and budget-friendly experience." },
- { q: "Can I bring a bag to the stadium?", a: "Strict bag policies apply. Usually small clear bags only." },
- { q: "How early should I arrive for matches?", a: "At least 2 hours. Traffic around the stadium can be heavy." },
- { q: "Is the stadium air-conditioned?", a: "No, it is an open stadium, but the roof provides shade for most seats." },
- { q: "What’s the best way to get from the airport?", a: "Authorized airport taxis or Uber." },
- { q: "Where can I watch matches if I don’t have tickets?", a: "Parque Fundidora usually hosts large fan fests with screens." },
- { q: "Are restaurants close to the stadium?", a: "There are some, but it is better to eat in Centro or San Pedro before heading to the match." },
- { q: "Do I need travel insurance?", a: "Yes, highly recommended for international travel." },
- { q: "What mobile connectivity works best?", a: "Telcel has the best coverage. Airalo eSIMs work well on the Telcel network." },
- { q: "How do I avoid rideshare surge pricing?", a: "Wait a bit after the match or walk to a nearby mall like Sun Mall to request a ride." },
- { q: "Where can I buy souvenirs?", a: "Morelos street in Centro or shopping malls like Plaza Fiesta San Agustín." }
+ { q: "Where is Estadio BBVA located?", a: "Estadio BBVA is in Guadalupe (Greater Monterrey). The official address is Av. Pablo Livas 2011, Col. La Pastora, C.P. 67140." },
+ { q: "How many World Cup 2026 matches are in Monterrey?", a: "Monterrey hosts 4 matches at Estadio BBVA: 3 group-stage matches and 1 Round of 32 match." },
+ { q: "What’s the best way to get to Estadio BBVA on match day?", a: "Your simplest plan is Metrorrey Line 1 toward Exposición + walking routes, or a rideshare drop-off well before kickoff. If you’re staying in San Pedro, leave earlier than you think—traffic is the main risk." },
+ { q: "Where should I stay for the best Monterrey World Cup experience?", a: "San Pedro Garza García is the easiest base for comfort, dining, and safety. Centro + Barrio Antiguo is best for nightlife and a more local feel—just use rideshare at night." },
+ { q: "Is Monterrey safe for tourists?", a: "Most fans stick to San Pedro, Valle Oriente, Fundidora, and the main Centro corridors and have a smooth trip. Use rideshare late, avoid empty streets after midnight, and keep valuables low-key." },
+ { q: "Do I need a car in Monterrey?", a: "No. Rideshare + metro covers most visitors. Rent a car only if you’re planning day trips or you want full flexibility (and you’re comfortable driving in big-city traffic)." },
+ { q: "What’s the weather like in June/July?", a: "Hot and sunny—often mid-30s °C / mid-90s °F—plus the possibility of short storms. Plan shade, water, and a light rain layer." },
+ { q: "How far is Monterrey Airport (MTY) from the city and stadium?", a: "Plan roughly 30–60 minutes to most hotels depending on traffic. Match day traffic adds extra time if you’re crossing the metro area." },
+ { q: "Can I use US Dollars in Monterrey?", a: "Sometimes, but the exchange rate won’t be kind. Pesos (MXN) and card payments are the best value most of the time." },
+ { q: "Do I need travel insurance for Mexico?", a: "If you’re traveling internationally, yes. Look for medical coverage plus trip delay and interruption—World Cup weeks are peak travel." },
+ { q: "What’s the best mobile connectivity option?", a: "Telcel typically has strong coverage around the metro area. An eSIM is a clean option if your phone supports it." },
+ { q: "Where can I watch matches without tickets?", a: "Fundidora is the obvious gathering spot during major events. Also check bars in San Pedro and Barrio Antiguo for big-screen atmospheres." },
+ { q: "How do I avoid rideshare surge pricing after the match?", a: "Don’t request the second the whistle blows. Walk 10–20 minutes, grab a snack, and request from a less congested area." },
+ { q: "What’s one ‘local’ thing I should do besides the match?", a: "Go to Fundidora around sunset, then commit to a proper carne asada night. It’s the fastest way to understand the city." }
  ].map((item, i) => (
  <FAQItem key={i} question={item.q} answer={item.a} />
  ))}
@@ -806,8 +987,13 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Emergency</strong> <span>911</span></li>
  <li className="flex justify-between border-b border-slate-200 dark:border-slate-700 pb-2"><strong>Police</strong> <span>911</span></li>
- <li className="flex justify-between"><strong>Hospital</strong> <span>Hospital Zambrano Hellion</span></li>
+ <li className="flex justify-between"><strong>Heat warning</strong> <span>Don’t ignore dizziness</span></li>
  </ul>
+ <div className="mt-6">
+   <Link href="/world-cup-2026-emergency-contacts-resources" className="text-emerald-500 hover:text-emerald-600 font-bold inline-flex items-center gap-2 hover:gap-4 transition-all">
+     Emergency resources page <ArrowRight className="w-4 h-4"/>
+   </Link>
+ </div>
  </div>
  <div className=" p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Globe className="w-6 h-6 text-emerald-500"/> Connectivity</h4>
@@ -815,9 +1001,14 @@ The Northern Titan. <span className="text-slate-900 dark:text-white font-medium"
  <li>• <strong>WiFi:</strong> Available in most cafes/hotels.</li>
  <li>• <strong>Power:</strong> 120V, Type A/B plugs (Same as US).</li>
  <li>• <strong>Sim Cards:</strong> Telcel / OXXO stores.</li>
+ <li>• <strong>Offline:</strong> Save hotel + stadium address screenshots.</li>
  </ul>
  <AffiliateButton href="https://www.airalo.com/mexico-esim" text="Get an Airalo eSIM" variant="secondary" />
  </div>
+ </div>
+ <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.getyourguide.com/monterrey-l921/" text="Book Tours & Activities" variant="primary" />
+   <AffiliateButton href="https://www.booking.com/city/mx/monterrey.html" text="Last-Minute Hotels" variant="outline" />
  </div>
  </Section>
 

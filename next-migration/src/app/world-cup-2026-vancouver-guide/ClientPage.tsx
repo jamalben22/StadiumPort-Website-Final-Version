@@ -248,16 +248,19 @@ export default function ClientPage() {
  { id: 'visa', label: 'Visa & Entry' },
  { id: 'planning', label: 'Planning' },
  { id: 'budget', label: 'Budget' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
  { id: 'stadium', label: 'Stadium' },
  { id: 'tickets', label: 'Tickets' },
  { id: 'hotels', label: 'Hotels' },
  { id: 'transport', label: 'Transport' },
  { id: 'dining', label: 'Dining' },
  { id: 'attractions', label: 'Attractions' },
+ { id: 'itineraries', label: 'Itineraries' },
  { id: 'tips', label: 'Match Day' },
  { id: 'safety', label: 'Safety' },
  { id: 'culture', label: 'Culture' },
  { id: 'packing', label: 'Packing' },
+ { id: 'essential', label: 'Essentials' },
  { id: 'faq', label: 'FAQ' },
  ];
 
@@ -303,7 +306,7 @@ export default function ClientPage() {
  >
  <div className="flex items-center gap-4 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-              Last Updated: January 4, 2026
+              Last Updated: January 7, 2026
             </span>
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
               Host City
@@ -313,13 +316,13 @@ export default function ClientPage() {
  </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
- VANCOUVER
+ <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+ Vancouver <span className="block">World Cup 2026 Guide</span>
  </h1>
- <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
- Where Nature Meets the Game. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+ <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+ A local-first playbook for BC Place: neighborhoods, SkyTrain hacks, matchday rhythm, and what’s actually worth your time between fixtures.
  </p>
- </motion.div>
+</motion.div>
  </div>
 
 
@@ -372,14 +375,21 @@ export default function ClientPage() {
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- Imagine walking out of a world-class stadium and being 15 minutes away from both ocean kayaking and mountain hiking. Vancouver delivers a refreshing anomaly: a compact, walkable downtown peninsula surrounded by nature, where the average match-day temperature is a perfect 22°C (72°F).
+ Vancouver has a funny superpower: you can eat world-class sushi, walk to a World Cup match, and still be back on the seawall in time for a sunset that looks like someone spilled apricot paint over the mountains.
+ </p>
+ <p>
+ This <strong>Vancouver World Cup 2026 guide</strong> is built for fans who want the good stuff—<strong>BC Place</strong> logistics, where to stay, how to move fast when transit is jammed, and which neighborhoods feel right for your trip—without wasting money on the wrong side of a bridge or the wrong end of a nightlife street.
+ </p>
+ <p>
+ The headline strategy is simple: stay on (or near) the downtown peninsula if you can, use <strong>SkyTrain</strong> like locals do, and treat matchday like a city-wide street party that happens to have a world-class stadium in the middle of it.
  </p>
  </div>
+
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Downtown or Yaletown. The entire peninsula is walkable to BC Place. Avoid driving." },
- { icon: Train, title: "Transport Strategy", text: "Use the SkyTrain. The Canada Line connects YVR Airport to Downtown in 25 minutes." },
- { icon: DollarSign, title: "Budget Signals", text: "Vancouver is expensive. Hotel rates will be premium. Book early and budget for higher food costs." }
+ { icon: MapPin, title: "Where to Base", text: "Downtown, Yaletown, or the West End if you want a walkable matchday. Richmond works if you value YVR access and late-night eats." },
+ { icon: Train, title: "Transport Strategy", text: "SkyTrain + walking. Downtown stations put you in BC Place’s orbit fast; avoid rideshare surge right after the whistle." },
+ { icon: DollarSign, title: "Budget Reality", text: "Hotels are the big spend. Save money by choosing a slightly smaller room in a better location—you’ll spend your days outside anyway." }
  ].map((item, i) => (
  <div key={i} className="p-8 rounded-[2rem] transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -388,10 +398,22 @@ export default function ClientPage() {
  </div>
  ))}
  </div>
+
+ <div className="mt-12 p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Quick Answers (Read This First)</h3>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+ <li><strong>Best area to stay for BC Place:</strong> Yaletown or Downtown (walkable, easy transit).</li>
+ <li><strong>Fastest way from YVR:</strong> Canada Line SkyTrain into Downtown, then walk or connect.</li>
+ <li><strong>Best pre-match vibe:</strong> Yaletown patios for relaxed, Gastown for louder energy.</li>
+ <li><strong>Car or no car:</strong> No car if you’re downtown. You’ll pay more to park than to ride.</li>
+ </ul>
+ </div>
+
  <div className="mt-12 flex flex-wrap gap-4">
-        <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/yvr" text="Search Vancouver Flights" variant="secondary" icon={Plane} />
-        <AffiliateButton href="https://www.booking.com/city/ca/vancouver.html" text="Check Downtown Hotels" variant="primary" icon={Hotel} />
-      </div>
+ <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/yvr" text="Compare Flights to YVR" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/city/ca/vancouver.html" text="Find Hotels Near BC Place" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="outline" icon={Shield} />
+ </div>
  </Section>
 
  <Section id="visa" title="Visa & Entry (Canada)">
@@ -418,9 +440,10 @@ export default function ClientPage() {
  <Section id="planning" title="Planning Timeline">
  <div className="space-y-6">
  {[
- { time: "6–9 Months Out", desc: "Book hotels immediately. Vancouver has a hotel shortage and high demand in summer. Look at Richmond if Downtown is full." },
- { time: "3–6 Months Out", desc: "Confirm match tickets. Plan trips to Whistler or Vancouver Island (ferries need booking)." },
- { time: "1–3 Months Out", desc: "Book popular restaurants (Miku, Vij's). Prepare rain gear just in case." }
+ { time: "9–12 Months Out", desc: "Make sure your passport expiry is safe, check Canada entry rules (eTA/visa), and set flight alerts for YVR. If you want hospitality, start there—inventory moves fast." },
+ { time: "6–9 Months Out", desc: "Book accommodation. If Downtown and Yaletown look wild, use Richmond (Canada Line) or Burnaby (Expo Line) as your pressure valve." },
+ { time: "3–6 Months Out", desc: "Lock in your match plan and your between-match plan. Whistler day trips, seaplanes, and peak-season dinners don’t like last-minute people." },
+ { time: "1–3 Months Out", desc: "Reserve restaurants, map your walking routes (seawall is your friend), and download offline maps. Build one ‘rainy day’ plan for each match week." }
  ].map((item, i) => (
  <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
  <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
@@ -430,16 +453,27 @@ export default function ClientPage() {
  </div>
  <div className="mt-8 flex flex-wrap gap-4">
  <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/yvr" text="Set Flight Alerts" variant="primary" icon={Plane} />
-<AffiliateButton href="https://www.bcferries.com/" text="Reserve Ferry Tickets" variant="outline" />
+ <AffiliateButton href="https://www.fifa.com/en/tickets" text="Register for FIFA Ticket Updates" variant="secondary" icon={Ticket} />
+ <AffiliateButton href="https://fifaworldcup26.hospitality.fifa.com/us/en" text="Explore Official Hospitality" variant="outline" icon={Star} />
+ <AffiliateButton href="https://www.bcferries.com/" text="Reserve BC Ferries" variant="outline" />
  </div>
  </Section>
 
  <Section id="budget" title="Budget Tiers">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Vancouver can feel expensive until you realize where the money actually goes: <strong>rooms</strong>, not <strong>getting around</strong>. Transit is straightforward, walking is easy, and you can eat incredibly well without turning every meal into a white-tablecloth event.
+ </p>
+ <p>
+ A useful mental model for match weeks: budget in <strong>CAD</strong>, expect downtown prices, and decide in advance whether you’re a “views person” (splurge on a waterfront base) or a “sleep-and-go person” (mid-range hotel, more experiences).
+ </p>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Smart Saver", items: ["Stay in Richmond (SkyTrain)", "Eat at Food Trucks/Markets", "Free Hiking/Parks"] },
- { title: "Comfort Upgrades", items: ["Downtown 4-star hotels", "Seafood dinners", "Capilano Bridge tickets"] },
- { title: "Premium", items: ["Waterfront luxury hotels", "Seaplane tours", "Private Whistler transfers"] }
+ { title: "Smart Saver", items: ["Stay on a SkyTrain line (Richmond/Burnaby)", "Groceries + food courts + dumpling runs", "Big nature days (free): Stanley Park, beaches, hikes"] },
+ { title: "Comfort Upgrades", items: ["Downtown or Yaletown hotel for walkability", "Two ‘nice’ meals + one casual daily", "Paid highlights: Capilano, Grouse, or a harbor cruise"] },
+ { title: "Premium", items: ["Waterfront luxury or Parq-connected convenience", "Seaplane/heli views or private day tours", "Hospitality seating or premium match bundles"] }
  ].map((tier, i) => (
  <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
  <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
@@ -454,8 +488,110 @@ export default function ClientPage() {
  </div>
       ))}
       </div>
-      <div className="mt-8 text-center">
-        <AffiliateButton href="https://www.expedia.com/Vancouver.d178315.Destination-Travel-Guides" text="Search Vancouver Packages" variant="secondary" icon={Briefcase} />
+      <div className="mt-8 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+        <h4 className="font-bold text-2xl mb-4 text-slate-900 dark:text-white">Fast Cost Benchmarks (CAD)</h4>
+        <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+          <li>• <strong>Transit (adult cash/contactless):</strong> 1-Zone $3.35, 2-Zone $4.85, 3-Zone $6.60 (SkyTrain zones; buses are always 1-Zone). <a href="https://www.translink.ca/transit-fares/pricing-and-fare-zones" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">Source <ExternalLink className="w-4 h-4" /></a></li>
+          <li>• <strong>Hotels:</strong> match weeks are the swing factor—book early and prioritize location over room size.</li>
+          <li>• <strong>Food:</strong> you can do cheap and excellent (food courts, ramen, dumplings) or go all-in (tasting menus, omakase).</li>
+        </ul>
+        <div className="mt-8 flex flex-wrap gap-4 justify-center">
+          <AffiliateButton href="https://www.expedia.com/Vancouver.d178315.Destination-Travel-Guides" text="Bundle Flights + Hotels" variant="secondary" icon={Briefcase} />
+          <AffiliateButton href="https://www.booking.com/city/ca/vancouver.html" text="Compare Hotel Deals" variant="primary" icon={Hotel} />
+        </div>
+      </div>
+    </Section>
+
+    <Section id="neighborhoods" title="Neighborhood-by-Neighborhood Gameplan">
+      <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+        <p className="text-xl text-slate-600 dark:text-slate-300">
+          Vancouver trips go sideways when you pick the wrong base. Not “bad neighborhood” wrong—more like “why am I crossing a bridge twice a day” wrong. Below is how locals think about the city when we’re choosing where to sleep, eat, and celebrate.
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8">
+        {[
+          {
+            title: 'Downtown (CBD / Coal Harbour / Waterfront)',
+            vibe: 'Easiest logistics. Polished, walkable, expensive.',
+            stay: 'Best if you want zero friction on matchday.',
+            eat: 'Seafood, steakhouses, quick ramen, coffee everywhere.',
+            drink: 'Hotel bars, waterfront patios, early nights.',
+            explore: 'Seawall, Canada Place, Stanley Park access.',
+          },
+          {
+            title: 'Yaletown',
+            vibe: 'The “we’re celebrating tonight” neighborhood.',
+            stay: 'Best balance: walkable to BC Place + great dining.',
+            eat: 'Patios, sushi, modern Canadian, late reservations.',
+            drink: 'Cocktail bars and lively patios; match nights pop off.',
+            explore: 'False Creek, seawall loops, quick hop to Granville Island.',
+          },
+          {
+            title: 'West End',
+            vibe: 'Local, leafy, beachy. Quiet in the best way.',
+            stay: 'Great for families and long-stay apartments.',
+            eat: 'Casual gems, ramen, brunch, Denman/Robson runs.',
+            drink: 'Low-key pubs; strollable evenings.',
+            explore: 'English Bay, Sunset Beach, Stanley Park on your doorstep.',
+          },
+          {
+            title: 'Gastown (and edges of Chinatown)',
+            vibe: 'Historic streets, louder nights, strong character.',
+            stay: 'Good if you like boutique vibes and don’t mind noise.',
+            eat: 'Small plates, great cocktails, late-night bites.',
+            drink: 'Some of the city’s best bars—pace yourself.',
+            explore: 'Cobblestones, design shops, quick walk to Waterfront Station.',
+          },
+          {
+            title: 'Mount Pleasant / Main Street',
+            vibe: 'Creative, brewery-friendly, very Vancouver.',
+            stay: 'Often better value than downtown; easy transit in.',
+            eat: 'Coffee culture, bakeries, casual standouts.',
+            drink: 'Breweries + natural wine bars; friendly crowds.',
+            explore: 'Murals, small shops, a “real city” feel.',
+          },
+          {
+            title: 'Kitsilano',
+            vibe: 'Beaches, yoga mats, and sunset energy.',
+            stay: 'Perfect for a family + beach trip hybrid.',
+            eat: 'Brunch, healthy-ish, ocean-view snacks.',
+            drink: 'Chill patios; not the loudest post-match zone.',
+            explore: 'Kits Beach, Jericho/Spanish Banks, seawall access.',
+          },
+          {
+            title: 'Richmond (Canada Line)',
+            vibe: 'Practical, food-obsessed, airport-adjacent.',
+            stay: 'Best if you value YVR access and price control.',
+            eat: 'Some of the best Chinese food in North America—seriously.',
+            drink: 'Quieter evenings; you’ll head downtown to party.',
+            explore: 'Food courts, night markets (seasonal), river walks.',
+          },
+          {
+            title: 'Burnaby (Metrotown / Brentwood)',
+            vibe: 'Easy SkyTrain access, shopping, good value.',
+            stay: 'A smart base if downtown is sold out.',
+            eat: 'Malls + local pockets; quick access to downtown dining.',
+            drink: 'Low-key; focus on logistics.',
+            explore: 'Metrotown, quick hops to downtown.',
+          },
+        ].map((n, i) => (
+          <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+            <h4 className="font-bold text-2xl mb-4 text-slate-900 dark:text-white">{n.title}</h4>
+            <p className="text-slate-600 dark:text-slate-400 mb-6">{n.vibe}</p>
+            <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+              <li>• <strong>Stay:</strong> {n.stay}</li>
+              <li>• <strong>Eat:</strong> {n.eat}</li>
+              <li>• <strong>Drink:</strong> {n.drink}</li>
+              <li>• <strong>Explore:</strong> {n.explore}</li>
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 flex flex-wrap gap-4">
+        <AffiliateButton href="https://www.booking.com/city/ca/vancouver.html" text="Search Neighborhood Hotels" variant="primary" icon={Hotel} />
+        <AffiliateButton href="https://www.airbnb.com/s/Vancouver--BC--Canada/homes" text="Check Apartments for Groups" variant="outline" icon={Users} />
       </div>
     </Section>
 
@@ -463,12 +599,18 @@ export default function ClientPage() {
  <LightboxImage 
  src="/images/cities/vancouver-world-cup-2026-1600.webp" 
  alt="BC Place Interior" 
- caption="BC Place features a retractable roof and the largest center-hung scoreboard in North America."
+ caption="BC Place is downtown, walkable, and built for big-event nights."
  />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- <strong>BC Place</strong> is a visual landmark on the Vancouver skyline. With its state-of-the-art retractable roof, it ensures perfect conditions regardless of the Pacific Northwest weather. It hosts Canada's national team matches, creating an electric home-field atmosphere.
+ <strong>BC Place</strong> sits right on the edge of False Creek—close enough that you can smell the water on breezy evenings. On World Cup nights, the whole Entertainment District tightens up around it: pre-game patios fill, streets turn into a river of jerseys, and SkyTrain platforms become a moving crowd soundtrack.
+ </p>
+ <p>
+ Vancouver hosts <strong>seven</strong> World Cup matches here (five group games plus a Round of 32 and Round of 16). FIFA’s Vancouver host-city breakdown is worth bookmarking if you want the official framing. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/vancouver-host-seven-matches-canada-stadium-bc-place" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">FIFA overview <ExternalLink className="w-4 h-4" /></a>
+ </p>
+ <p>
+ Want the deep dive on entrances, seating feel, and the “where do I actually stand” details? Use the dedicated stadium guide: <Link href="/bc-place-world-cup-2026" className="text-emerald-600 hover:text-emerald-500 font-bold">BC Place World Cup 2026 guide</Link>.
  </p>
  </div>
  
@@ -477,10 +619,10 @@ export default function ClientPage() {
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "~54,500" },
- { label: "Surface", val: "Artificial Turf (Grass for WC)" },
- { label: "Roof", val: "Retractable (Cable-supported)" },
- { label: "Renovated", val: "2011" }
+ { label: "Capacity", val: "54,000 (FIFA listing)" },
+ { label: "Opened", val: "1983" },
+ { label: "Roof", val: "Retractable (downtown weather insurance)" },
+ { label: "Transit", val: "Stadium-Chinatown (Expo Line) + Downtown walks" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
  <span className="font-medium text-slate-500">{item.label}</span>
@@ -492,10 +634,13 @@ export default function ClientPage() {
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Food: Try the Vij's Curry stand inside.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Gates: Avoid Gate A (Terry Fox Plaza) if busy.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Sound: The acoustics are incredibly loud.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Costco move: there’s a Costco right by the stadium—cheap pre-match fuel if you time it.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrive on foot: the last 10 minutes walking from Downtown is often faster than “just one more” rideshare loop.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Screenshot your ticket and save key addresses offline—cell networks get cranky near kickoff.</li>
  </ul>
+ <div className="mt-8">
+   <AffiliateButton href="https://www.bcplace.com/visiting/guest-policies" text="BC Place Guest Policies" variant="outline" />
+ </div>
  </div>
  </div>
  
@@ -507,11 +652,17 @@ export default function ClientPage() {
  </Section>
 
  <Section id="tips" title="Match Day Gameplan">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Matchday in Vancouver is less “tailgate parking lot” and more “city festival that just happens to end at a stadium.” The key is timing: build in buffer, pick a pre-game neighborhood, and assume the first 20 minutes after full-time are pure crowd physics.
+ </p>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-6 mb-8">
  {[
- { title: "Arrival", text: "Arrive early. The stadium is downtown, so pubs and streets will be packed with fans." },
- { title: "Weather", text: "The roof is retractable, but it might be closed if it rains. The stadium is comfortable regardless." },
- { title: "Post-Match", text: "Walk to Yaletown or Gastown for celebrations. The SkyTrain will be busy immediately after the whistle." }
+ { title: "3–4 Hours Before Kickoff", text: "Pick your lane: Yaletown patios for easy walkability, Gastown for louder energy, or the seawall if you need fresh air before the noise. Eat early—lines spike fast." },
+ { title: "90 Minutes Before Kickoff", text: "Get into the BC Place orbit. SkyTrain to Stadium-Chinatown works, but walking from Downtown can be faster than waiting for the perfect train." },
+ { title: "After the Whistle", text: "If the platforms look like a concert exit, don’t fight it. Walk 15 minutes, grab a snack, then ride. Yaletown and the waterfront absorb crowds better than squeezing onto the first train." }
  ].map((item, i) => (
  <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -519,13 +670,37 @@ export default function ClientPage() {
  </div>
  ))}
  </div>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-bold text-2xl mb-4">Fan Festival & Watch Parties</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">
+ Vancouver’s official FIFA Fan Festival™ programming is planned around the PNE Amphitheatre area, with broadcast matches, entertainment, and family-friendly activations. <a href="https://vancouverfwc26.ca/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">Updates here <ExternalLink className="w-4 h-4" /></a>
+ </p>
+ <AffiliateButton href="https://www.getyourguide.com/vancouver-l189/" text="Book Vancouver Experiences" variant="secondary" />
+ </div>
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-bold text-2xl mb-4">Parking Reality Check</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6 text-lg">
+ Downtown parking fills and prices spike on big-event nights. If you must drive, park outside the downtown core near a SkyTrain station and ride in. Otherwise: walk + train beats stress.
+ </p>
+ <AffiliateButton href="https://www.discovercars.com/" text="Compare Rental Cars" variant="outline" icon={Car} />
+ </div>
+ </div>
+
  <div className="flex flex-wrap gap-4">
  <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
-        <AffiliateButton href="https://www.bcplace.com/visiting/guest-policies" text="Check prohibited items" variant="outline" />
+ <AffiliateButton href="https://www.bcplace.com/visiting/guest-policies" text="Check Prohibited Items" variant="outline" />
+ <AffiliateButton href="https://www.opentable.ca/s?metroId=73" text="Reserve Restaurants (OpenTable)" variant="secondary" icon={Utensils} />
  </div>
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+ <p className="text-xl text-slate-600 dark:text-slate-300">
+ Vancouver’s match schedule is published. For the authoritative version, keep FIFA’s schedule bookmarked and cross-check with BC Place updates. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/match-schedule-fixtures-results-teams-stadiums" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">FIFA schedule <ExternalLink className="w-4 h-4" /></a>
+ </p>
+ </div>
  <div className="bg-emerald-900 dark:bg-emerald-950 text-slate-900 dark:text-white rounded-[2.5rem] p-8 md:p-12 mb-12 relative overflow-hidden shadow-2xl">
  <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500 rounded-full blur-[150px] opacity-20"></div>
  <div className="relative z-10">
@@ -535,19 +710,24 @@ export default function ClientPage() {
  </div>
  <div className="space-y-6">
  {[
- { stage: "Group Stage", count: "June 13 (Canada)", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 18", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 21 (Canada)", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 24", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 26 (Canada)", color: "text-emerald-300" },
- { stage: "Round of 32", count: "July 2", color: "text-amber-400" },
- { stage: "Round of 16", count: "July 7", color: "text-amber-400" }
+ { stage: "Match 6 (Group D)", count: "Sat, Jun 13, 2026 — 21:00 PT — Australia vs UEFA Playoff Winner C", color: "text-emerald-300" },
+ { stage: "Match 27 (Group B)", count: "Thu, Jun 18, 2026 — 15:00 PT — Canada vs Qatar", color: "text-emerald-300" },
+ { stage: "Match 40 (Group G)", count: "Sun, Jun 21, 2026 — 18:00 PT — New Zealand vs Egypt", color: "text-emerald-300" },
+ { stage: "Match 51 (Group B)", count: "Wed, Jun 24, 2026 — 12:00 PT — Switzerland vs Canada", color: "text-emerald-300" },
+ { stage: "Match 64 (Group G)", count: "Fri, Jun 26, 2026 — 20:00 PT — New Zealand vs Belgium", color: "text-emerald-300" },
+ { stage: "Match 85 (Round of 32)", count: "Thu, Jul 2, 2026 — 20:00 PT — 1B vs 3 E/F/G/I/J", color: "text-amber-400" },
+ { stage: "Match 96 (Round of 16)", count: "Tue, Jul 7, 2026 — 13:00 PT — Winner 85 vs Winner 87", color: "text-amber-400" }
  ].map((match, i) => (
  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
  <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
  <span className="font-bold text-xl">{match.count}</span>
  </div>
  ))}
+ </div>
+ <div className="mt-8">
+   <a href="https://www.bcplace.com/?news=vancouver-final-match-schedule-for-the-fifa-world-cup-2026-now-available" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-emerald-300 hover:text-emerald-200 font-bold">
+     BC Place schedule announcement <ExternalLink className="w-4 h-4" />
+   </a>
  </div>
  </div>
  </div>
@@ -556,18 +736,18 @@ export default function ClientPage() {
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
- Canada's home matches will have immense demand. Register for the FIFA lottery as soon as it opens (likely late 2025).
+ Canada's matches will be the hottest tickets in town. Use FIFA’s official channels, create your FIFA ID early, and register for ticket updates so you don’t miss sales windows.
  </p>
- <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
+ <AffiliateButton href="https://www.fifa.com/en/tickets" text="FIFA Ticketing Hub" variant="secondary" />
  </div>
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
- Expect high premiums for Canada matches. Verified resale sites are your safest bet if you miss the initial draw.
+ Expect premiums for Canada matches. If you missed the initial phases, stick to platforms with buyer protections and clear ticket transfer policies.
  </p>
  <div className="flex flex-wrap gap-4">
  <AffiliateButton href="https://www.stubhub.com/bc-place-stadium-tickets/venue/294/" text="Check StubHub" variant="primary" />
- <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle&tag=stadiumport-20" text="Add Refillable Bottle" variant="outline" />
+ <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle&tag=stadiumport-20" text="Pack a Collapsible Bottle" variant="outline" />
  </div>
  </div>
  </div>
@@ -575,7 +755,7 @@ export default function ClientPage() {
 
  <Section id="hotels" title="Where to Stay">
  <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
- Vancouver faces a hotel shortage. Staying <strong>Downtown</strong> is best for walking to the stadium. <strong>Richmond</strong> (near the airport) is a great alternative, connected by the Canada Line SkyTrain.
+ Vancouver has a real hotel squeeze, and match weeks tighten it further. If you can, stay <strong>Downtown</strong>, <strong>Yaletown</strong>, or the <strong>West End</strong> so you can walk to BC Place and back without your night being held hostage by traffic. If prices get spicy, use <strong>Richmond</strong> (Canada Line) or <strong>Burnaby</strong> (Expo Line) as a transit-friendly alternative.
  </p>
  
  <div className="space-y-8">
@@ -587,6 +767,15 @@ export default function ClientPage() {
  features={['Luxury', 'Casino', 'Rooftop Park']}
  image="/images/cities/vancouver-world-cup-2026-1024.webp" 
  link="https://www.booking.com/hotel/ca/the-douglas-autograph-collection.html"
+ />
+ <HotelCard 
+ name="L'Hermitage Hotel"
+ rating={4.7}
+ price="$350 - $650"
+ distance="0.7 miles"
+ features={['Boutique', 'Quiet Rooms', 'Downtown Base']}
+ image="/images/cities/vancouver-world-cup-2026-640.webp" 
+ link="https://www.booking.com/hotel/ca/l-hermitage.html"
  />
  <HotelCard 
  name="Fairmont Waterfront"
@@ -606,10 +795,19 @@ export default function ClientPage() {
  image="/images/cities/vancouver-world-cup-2026-1024.webp" 
  link="https://www.booking.com/hotel/ca/sandman-vancouver-city-centre.html"
  />
+ <HotelCard 
+ name="Samesun Vancouver (Hostel)"
+ rating={4.3}
+ price="$60 - $180"
+ distance="1.6 miles"
+ features={['Budget', 'Social', 'Good Transit']}
+ image="/images/cities/vancouver-world-cup-2026-640.webp" 
+ link="https://www.booking.com/hotel/ca/samesun-vancouver.html"
+ />
  </div>
  
  <div className="mt-12 text-center">
- <AffiliateButton href="#" text="Search All Vancouver Hotels" variant="outline" />
+ <AffiliateButton href="https://www.booking.com/city/ca/vancouver.html" text="Search All Vancouver Hotels" variant="outline" />
  </div>
  </Section>
 

@@ -4,9 +4,27 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Mexico City World Cup 2026 Guide: Estadio Azteca & Travel Tips',
-  description: 'Complete Mexico City World Cup 2026 travel guide. Estadio Azteca info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
-  keywords: ['Mexico City World Cup 2026', 'Estadio Azteca', 'Mexico City hotels', 'World Cup tickets Mexico City', 'CDMX travel guide', 'Estadio Azteca seating', 'Mexico City fan zones', 'World Cup 2026 Opening Match'],
+  title: 'Mexico City World Cup 2026 Guide: Local Tips for CDMX',
+  description: 'Mexico City World Cup 2026 guide with local logistics: Azteca match-day transport, best neighborhoods, hotels, safety, costs, and itineraries.',
+  keywords: [
+    'Mexico City World Cup 2026 guide',
+    'Mexico City World Cup 2026',
+    'CDMX World Cup 2026',
+    'Estadio Azteca World Cup 2026',
+    'Mexico City Stadium',
+    'opening match Mexico City',
+    'where to stay in Mexico City for World Cup',
+    'Roma Norte hotels',
+    'Condesa hotels',
+    'Polanco hotels',
+    'how to get to Estadio Azteca',
+    'Tren Ligero Estadio Azteca',
+    'Metro Tasqueña to Estadio Azteca',
+    'Mexico City fan festival',
+    'World Cup tickets Mexico City',
+    'Mexico City travel safety',
+    'Mexico City itinerary World Cup'
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-mexico-city-guide',
   },
@@ -43,7 +61,7 @@ export default function MexicoCityGuide() {
     { name: 'Mexico City Guide', item: '/world-cup-2026-mexico-city-guide' }
   ]);
 
-  const faqLd = {
+ const faqLd = {
  '@context': 'https://schema.org',
  '@type': 'FAQPage',
  mainEntity: [
@@ -52,7 +70,7 @@ export default function MexicoCityGuide() {
  name: 'When are World Cup matches in Mexico City?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'Mexico City will host five matches, starting with the historic Opening Match on June 11, 2026, featuring the Mexican National Team. Other group stage matches are on June 17 and June 24. The city also hosts a Round of 32 match on June 30 and a Round of 16 match on July 5, 2026.'
+ text: 'FIFA’s published match schedule lists five World Cup 2026 games in Mexico City (Mexico City Stadium / Estadio Azteca): Mexico vs South Africa (June 11, 2026), Uzbekistan vs Colombia (June 17), and Czechia/Denmark/North Macedonia/Republic of Ireland vs Mexico (June 24), plus a Round of 32 match (June 30) and a Round of 16 match (July 5, 2026).'
  }
  },
  {
@@ -109,9 +127,8 @@ export default function MexicoCityGuide() {
  const eventLd = {
  '@context': 'https://schema.org',
  '@type': 'Event',
- name: 'World Cup 2026 Opening Match - Mexico City',
- startDate: '2026-06-11T12:00:00-06:00',
- endDate: '2026-06-11T15:00:00-06:00',
+ name: 'FIFA World Cup 2026 Opening Match (Mexico City)',
+ startDate: '2026-06-11',
  eventStatus: 'https://schema.org/EventScheduled',
  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
  location: {
@@ -129,11 +146,7 @@ export default function MexicoCityGuide() {
  image: [
  '/images/cities/mexico-city-world-cup-2026.webp'
  ],
- description: 'The historic opening match of the FIFA World Cup 2026 featuring the Mexican National Team at the legendary Estadio Azteca.',
- performer: {
- '@type': 'SportsTeam',
- name: 'Mexico National Football Team'
- },
+ description: 'The opening match of the FIFA World Cup 2026 in Mexico City at Mexico City Stadium (Estadio Azteca).',
  organizer: {
  '@type': 'Organization',
  name: 'FIFA',
@@ -159,16 +172,7 @@ export default function MexicoCityGuide() {
  latitude: 19.3029,
  longitude: -99.1505
  },
- url: 'https://www.estadioazteca.com.mx/',
- telephone: '+525554873100',
- openingHoursSpecification: [
- {
- '@type': 'OpeningHoursSpecification',
- dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
- opens: '09:00',
- closes: '17:00'
- }
- ]
+ url: 'https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026'
  };
 
  return (

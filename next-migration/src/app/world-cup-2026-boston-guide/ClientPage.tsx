@@ -155,14 +155,14 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id={id} ref={ref} className={`py-16 md:py-24 scroll-mt-24 ${className}`}>
+    <section id={id} ref={ref} className={`py-12 md:py-20 scroll-mt-24 ${className}`}>
       <motion.div
         variants={fadeIn}
         initial="hidden"
         animate={isInView ? "visible" : "hidden"}
       >
-        <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-12 tracking-tight">
-          <span className="text-emerald-500 text-lg md:text-xl font-bold uppercase tracking-widest block mb-2">Guide Section</span>
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-10 tracking-tight">
+          <span className="text-emerald-500 text-sm md:text-base font-bold uppercase tracking-[0.2em] block mb-3">Guide Section</span>
           {title}
         </h2>
         {children}
@@ -259,6 +259,8 @@ export default function ClientPage() {
   // Sticky Nav Links
   const navLinks = [
     { id: 'overview', label: 'Overview' },
+    { id: 'neighborhoods', label: 'Neighborhoods' },
+    { id: 'itinerary', label: 'Itineraries' },
     { id: 'visa', label: 'Visa & Entry' },
     { id: 'planning', label: 'Planning' },
     { id: 'budget', label: 'Budget' },
@@ -273,6 +275,7 @@ export default function ClientPage() {
     { id: 'culture', label: 'Culture' },
     { id: 'packing', label: 'Packing' },
     { id: 'faq', label: 'FAQ' },
+    { id: 'essential', label: 'Essentials' },
   ];
 
   return (
@@ -287,58 +290,64 @@ export default function ClientPage() {
       />
 
       {/* 1. Hero Section - Refined & Minimal */}
-      <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
+      <div className="relative h-[75vh] md:h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
         <div className="absolute inset-0 z-0">
           <Image 
-          src="/images/cities/boston-world-cup-2026-1600.webp" 
-          alt="Boston Skyline" 
-          fill 
-          className="object-cover"
-          priority sizes="100vw"
-           unoptimized />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+            src="/images/cities/boston-world-cup-2026-1600.webp" 
+            alt="Boston Skyline" 
+            fill 
+            className="object-cover"
+            priority 
+            sizes="100vw"
+            unoptimized 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+        </div>
+
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col items-start justify-center pt-20">
+          <div className="max-w-5xl">
+            {/* Breadcrumbs */}
+            <Breadcrumb 
+              variant="white"
+              items={[
+                { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
+                { label: 'Boston', href: '/world-cup-2026-boston-guide' }
+              ]} 
+            />
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Last Updated: January 4, 2026
+                </span>
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-medium tracking-widest uppercase backdrop-blur-md">
+                  Host City
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                  Quarter-Final Host
+                </span>
+              </div>
+              
+              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+                Boston World Cup 2026 Guide
+                <span className="block text-xl md:text-3xl lg:text-4xl xl:text-5xl mt-4 text-white/80 font-bold tracking-tight">
+                  Foxborough + Gillette Stadium (Boston Stadium)
+                </span>
+              </h1>
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+                I’ve lived here long enough to remember when the Big Dig was still a punchline. Use this Boston World Cup 2026 guide to eat well, move fast, and actually enjoy match day.
+              </p>
+            </motion.div>
+          </div>
+        </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
-        <div className="max-w-4xl">
-          {/* Breadcrumbs */}
-              <Breadcrumb 
-                variant="white"
-                items={[
-                  { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
-                  { label: 'Boston', href: '/world-cup-2026-boston-guide' }
-                ]} 
-              />
-
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <div className="flex items-center gap-4 mb-6">
-          <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-            Last Updated: January 4, 2026
-          </span>
-          <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
-            Host City
-          </span>
-              <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
-                Quarter-Final Host
-              </span>
-            </div>
-            
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-              BOSTON <span className="block text-4xl md:text-6xl lg:text-7xl mt-2 text-white/70">/ FOXBOROUGH</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-              Revolutionary Spirit. World Class Soccer. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
-            </p>
-          </motion.div>
-        </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-20 relative pt-16">
+      <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-12 relative pt-16">
         
         {/* 2. Apple-style Sticky Table of Contents */}
         <aside className="hidden lg:block w-72 shrink-0 relative">
@@ -384,25 +393,343 @@ export default function ClientPage() {
           <Section id="overview" title="Strategic Overview">
             <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
               <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
-                Boston blends historic charm with fanatical sports passion. While the city itself is compact and walkable, the World Cup action happens at <strong>Gillette Stadium</strong> in Foxborough, about 28 miles southwest. Your strategy must bridge the gap between downtown culture and matchday logistics.
+                Boston is a small city with big sports energy, and that’s exactly why it works for a World Cup trip. You can spend the morning on cobblestones and the evening in a stadium parking lot that feels like a traveling festival. Here’s the twist: your match is not downtown. It’s at <strong>Gillette Stadium</strong> in Foxborough, <strong>29 miles (47 km) southwest of downtown Boston</strong>.
+              </p>
+              <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+                If you only remember one thing, make it this: <strong>Boston is your base camp; Foxborough is your match site</strong>. Build your trip like a two-city itinerary and you’ll have a stress-free tournament week. Pretend it’s “one place,” and you’ll spend half your vacation in traffic.
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-8 mb-10">
               {[
-                { icon: MapPin, title: "Where to Base", text: "Downtown/Back Bay for history and dining. Foxborough for match-day convenience only." },
-                { icon: Train, title: "Transport Strategy", text: "The Commuter Rail (Purple Line) is your lifeline to the stadium. Avoid driving on Route 1." },
-                { icon: DollarSign, title: "Budget Signals", text: "Boston hotels are pricey. Book well in advance or look to suburbs like Quincy or Braintree." }
+                { icon: MapPin, title: "Best Base Camp", text: "Back Bay, Downtown/Waterfront, Seaport, or Fenway. Easy transit, plenty of food, and late-night options (Boston-late, anyway)." },
+                { icon: Train, title: "Matchday Move", text: "Commuter Rail to Foxboro Station when available. It’s the cleanest way to dodge Route 1 chaos and post-match gridlock." },
+                { icon: DollarSign, title: "Money Reality Check", text: "Boston is expensive. The hack is to pick one splurge neighborhood and pair it with smart transit, not more Ubers." }
               ].map((item, i) => (
-                <div key={i} className="p-8 rounded-[2rem] transition-colors">
+                <div key={i} className="p-8 rounded-[2rem] transition-colors border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
                   <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
                   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-12 flex flex-wrap gap-4">
-              <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/bos" text="Search Boston Flights" variant="secondary" icon={Plane} />
-              <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Boston" text="Check Boston Hotels" variant="primary" icon={Hotel} />
+            <div className="grid md:grid-cols-2 gap-8 mb-10">
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Quick Answers (Featured Snippet)</h3>
+                <ul className="space-y-4 text-slate-600 dark:text-slate-400 text-lg">
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Where are the games?</strong> Foxborough (Gillette Stadium), not downtown Boston.</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Best place to stay?</strong> Back Bay if you want “easy mode.” Seaport if you want modern + waterfront.</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Best way to the stadium?</strong> Commuter Rail to Foxboro when special event trains run.</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Biggest mistake?</strong> Driving last-minute and assuming parking will be simple.</span></li>
+                </ul>
+              </div>
+              <div className="p-8 rounded-[2rem] border border-emerald-500/20 bg-emerald-50/50 dark:bg-emerald-500/5">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">My Local Rule</h3>
+                <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                  If your hotel doesn’t give you a clean transit path to <strong>South Station</strong>, you’re making match day harder than it needs to be.
+                  South Station is your hinge point: airport → city, city → commuter rail, commuter rail → Foxborough.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/bos" text="Compare Flights to BOS" variant="secondary" icon={Plane} />
+                  <AffiliateButton href="https://www.booking.com/city/us/boston.html" text="Check Boston Hotels" variant="primary" icon={Hotel} />
+                </div>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { icon: Users, title: "Best for First-Timers", text: "Back Bay + South End edge. Walkable, safe, and you can reach everywhere without thinking." },
+                { icon: Sun, title: "Best Summer Vibe", text: "Seaport + Waterfront. Sunsets, patios, and an easy hop to the airport." },
+                { icon: ThumbsUp, title: "Best Value Base", text: "Quincy/Braintree on the Red Line. Less glamorous, more money left for match nights." }
+              ].map((item, i) => (
+                <div key={i} className="p-8 rounded-[2rem] transition-colors border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+                  <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </Section>
+
+          <Section id="neighborhoods" title="Neighborhood-by-Neighborhood">
+            <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl leading-relaxed">
+              Boston is a patchwork of neighborhoods that feel like mini-cities. Choose your base by vibe and transit, not by whatever hotel looks prettiest on a map. Here’s the local read, including who each area is best for during World Cup 2026.
+            </p>
+
+            <div className="grid lg:grid-cols-2 gap-8">
+              {[
+                {
+                  title: "Back Bay (Best All-Around Base)",
+                  vibe: "Classic Boston, brownstones, shopping, easy transit.",
+                  bestFor: "First-time visitors, couples, anyone who hates friction.",
+                  stay: "Near Copley or Prudential for walkability.",
+                  eat: "Newbury Street for people-watching; Boylston for pre-game energy.",
+                  note: "If you’re only choosing one neighborhood, choose this."
+                },
+                {
+                  title: "South End (Restaurants + Walkable Nights)",
+                  vibe: "Tree-lined streets, brownstones, patios, and a deep restaurant bench.",
+                  bestFor: "Food-first travelers, couples, groups who want nights out without clubs.",
+                  stay: "South End edge near Back Bay for simple transit options.",
+                  eat: "Small plates, cocktail bars, and the kind of dinners that turn into long nights.",
+                  note: "Don’t confuse this with South Boston (“Southie”). Totally different vibe."
+                },
+                {
+                  title: "Seaport / South Boston Waterfront (Modern + Match-Week Energy)",
+                  vibe: "New-build Boston: wide sidewalks, harbor views, rooftop bars.",
+                  bestFor: "Nightlife, groups, easy Logan access.",
+                  stay: "Seaport for modern hotels; Fort Point for quieter nights.",
+                  eat: "Seafood, patios, ‘start early’ nights.",
+                  note: "Great for summer. Less “historic Boston,” more “global city.”"
+                },
+                {
+                  title: "Downtown / Waterfront (History on Foot)",
+                  vibe: "Freedom Trail access, government buildings, classic hotels.",
+                  bestFor: "History-heavy itineraries, short stays, families who walk.",
+                  stay: "Close to Boston Common or the Harbor for easy routes.",
+                  eat: "Quincy Market for convenience (touristy), Chinatown for real meals.",
+                  note: "Weeknights can feel quiet once office workers disappear."
+                },
+                {
+                  title: "North End (Food-First, Crowded, Worth It)",
+                  vibe: "Boston’s Little Italy: tight streets, strong opinions, better espresso.",
+                  bestFor: "Food lovers, late-night dessert runs.",
+                  stay: "Boutique stays exist, but space is tight and prices jump.",
+                  eat: "Italian classics; cannoli debates you did not ask for.",
+                  note: "Go early for dinner. Go late for dessert. Lines shrink."
+                },
+                {
+                  title: "Fenway / Kenmore (Sports District)",
+                  vibe: "Fenway Park energy spills into everything nearby.",
+                  bestFor: "Fans who want bars, crowds, and a loud walk home.",
+                  stay: "Great for quick access to the Green Line and Back Bay edge.",
+                  eat: "Casual, pub-style, and ‘before/after’ places.",
+                  note: "If you want a quiet morning, this isn’t your pick."
+                },
+                {
+                  title: "Charlestown / Navy Yard (Quiet Historic + Views)",
+                  vibe: "Cobblestones, harbor views, and a calmer pace than downtown.",
+                  bestFor: "Families, early risers, travelers who want a quieter base.",
+                  stay: "Navy Yard for water views; be mindful of limited late-night transit.",
+                  eat: "Neighborhood pubs and waterfront spots, plus easy access to North End dinners.",
+                  note: "Great for walking. Less great if you’re trying to be spontaneous at 1:30 AM."
+                },
+                {
+                  title: "Cambridge (Harvard/MIT) + Somerville (Local Cool)",
+                  vibe: "Bookstores, cafes, smart-people conversations you can eavesdrop on.",
+                  bestFor: "Explorers, repeat visitors, and anyone who prefers neighborhoods to downtown.",
+                  stay: "Harvard/Kendall for transit; Davis for a local scene.",
+                  eat: "Global food, bakeries, and a deeper bench than you expect.",
+                  note: "Getting to South Station can be a little indirect—plan it."
+                },
+                {
+                  title: "Quincy / Braintree (Red Line Value Base)",
+                  vibe: "Practical, less glamorous, and genuinely useful for saving money.",
+                  bestFor: "Budget travelers, longer stays, anyone who wants space and a calmer sleep.",
+                  stay: "Near Quincy Center or Braintree for easy Red Line access.",
+                  eat: "Solid casual spots, plus quick access to Chinatown and downtown food.",
+                  note: "Red Line goes to South Station, which makes match-day logistics simpler than it looks."
+                },
+              ].map((n, i) => (
+                <div key={i} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-3">{n.title}</h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-5 leading-relaxed">{n.vibe}</p>
+                  <div className="space-y-3 text-slate-600 dark:text-slate-400">
+                    <p><strong className="text-slate-900 dark:text-white">Best for:</strong> {n.bestFor}</p>
+                    <p><strong className="text-slate-900 dark:text-white">Where to stay:</strong> {n.stay}</p>
+                    <p><strong className="text-slate-900 dark:text-white">Where to eat/drink:</strong> {n.eat}</p>
+                    <p><strong className="text-slate-900 dark:text-white">Local note:</strong> {n.note}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 grid md:grid-cols-2 gap-8">
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Family-Friendly Bases</h3>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Back Bay</strong> (easy sidewalks, central, calm hotels)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Downtown/Waterfront</strong> (history walks, aquarium area)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Charlestown</strong> (quiet streets + easy daytime walks)</span></li>
+                </ul>
+              </div>
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Nightlife-First Bases</h3>
+                <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Seaport</strong> (late patios, modern bars, easy airport)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Fenway/Kenmore</strong> (sports bars, loud crowds)</span></li>
+                  <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>South End edge</strong> (cocktail bars + restaurants)</span></li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="mt-10 p-8 rounded-[2rem] border border-emerald-500/20 bg-emerald-50/50 dark:bg-emerald-500/5">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Neighborhood Shortcut (Match-Week Logic)</h3>
+              <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+                Build your trip around two anchors: <strong>where you’ll walk</strong> (the fun part) and <strong>how you’ll reach South Station</strong> (the practical part). If you can reach South Station without transfers you hate, match day becomes easy mode.
+              </p>
+              <div className="grid md:grid-cols-2 gap-6 text-slate-600 dark:text-slate-400 text-lg">
+                <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-white/5">
+                  <h4 className="font-black text-slate-900 dark:text-white mb-3">Closest “No-Brainer” Picks</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>Downtown/Waterfront:</strong> short hops to South Station</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>Seaport:</strong> quick access + easy airport moves</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>Quincy/Braintree:</strong> Red Line to South Station</span></li>
+                  </ul>
+                </div>
+                <div className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white/60 dark:bg-white/5">
+                  <h4 className="font-black text-slate-900 dark:text-white mb-3">Great, With One Extra Thought</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>Cambridge/Somerville:</strong> plan your exact route to South Station</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>North End:</strong> amazing nights, but transit is less direct</span></li>
+                    <li className="flex items-start gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" /><span><strong>Charlestown:</strong> quieter base, fewer late-night options</span></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </Section>
+
+          <Section id="itinerary" title="Day-by-Day Itineraries">
+            <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-4xl leading-relaxed">
+              The best Boston World Cup itinerary is built around two rhythms: <strong>walk the city early</strong>, then <strong>commit to match day logistics</strong> like it’s a mini road trip. Here are the itineraries I’d give a friend flying in for a single match, and the one I’d do myself if I had 5 days.
+            </p>
+
+            <div className="space-y-8">
+              <div className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">3-Day Plan (One Match)</h3>
+                <div className="grid lg:grid-cols-3 gap-6">
+                  {[
+                    {
+                      day: "Day 1 (Arrival + Harbor Night)",
+                      bullets: [
+                        "Land at BOS, take SL1 to South Station (easy win).",
+                        "Check in and walk the Harborwalk until you’re hungry.",
+                        "Dinner in the North End, then a late cannoli run."
+                      ]
+                    },
+                    {
+                      day: "Day 2 (Match Day: Boston → Foxborough)",
+                      bullets: [
+                        "Big breakfast. You’ll be on your feet for hours.",
+                        "Head to South Station with time to spare; activate your commuter rail ticket right before boarding.",
+                        "Arrive 2–3 hours early, soak up Patriot Place, then get inside early for security."
+                      ]
+                    },
+                    {
+                      day: "Day 3 (History + Victory Lap)",
+                      bullets: [
+                        "Freedom Trail in the morning before it gets hot.",
+                        "Fenway area walk or museum pick (ICA in Seaport is an easy add).",
+                        "Fly out or stay one more night if you can swing it."
+                      ]
+                    }
+                  ].map((d, i) => (
+                    <div key={i} className="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                      <h4 className="font-black text-xl text-slate-900 dark:text-white mb-4">{d.day}</h4>
+                      <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+                        {d.bullets.map((b, j) => (
+                          <li key={j} className="flex items-start gap-3">
+                            <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2.5" />
+                            <span className="leading-relaxed">{b}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">Match Day Template (Train Day)</h3>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="space-y-5">
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white">The Whole Point</h4>
+                    <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Your goal is not to “make kickoff.” Your goal is to arrive calm, hydrated, and fed. Treat it like an event day with buffers, not like a normal commute.
+                    </p>
+                    <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Morning:</strong> early breakfast + fill a water bottle</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Midday:</strong> get to South Station with a cushion</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Arrival:</strong> Patriot Place lap + gates early</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Post-match:</strong> commit to your return plan immediately</span></li>
+                    </ul>
+                  </div>
+                  <div className="p-8 rounded-[2rem] bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Quick Checklist</h4>
+                    <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                      {[
+                        "Stadium-compliant clear bag or no bag at all",
+                        "Portable charger (screenshots + maps + tickets drain batteries)",
+                        "Light rain shell (open-air stadium weather swings)",
+                        "Sunscreen + sunglasses for afternoon kickoffs",
+                        "A planned meet-up point in case your group splits",
+                      ].map((item, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2.5" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">5-Day Plan (Two Matches + Real Boston)</h3>
+                <div className="grid lg:grid-cols-2 gap-8">
+                  <div className="space-y-5">
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white">The Shape of the Week</h4>
+                    <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Use Boston as your base, then treat each match as its own “event day.” On the non-match days, you’ll see the city at its best: early mornings, long walks, short transit hops, and meals you’ll talk about for years.
+                    </p>
+                    <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Day 1:</strong> Back Bay + Common + Beacon Hill</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Day 2:</strong> Match Day #1 (Foxborough)</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Day 3:</strong> Cambridge day + brewery or live music night</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Day 4:</strong> Match Day #2 (or day trip: Salem / Cape Ann)</span></li>
+                      <li className="flex items-start gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" /><span><strong>Day 5:</strong> Seaport + harbor sunset + fly out</span></li>
+                    </ul>
+                  </div>
+                  <div className="p-8 rounded-[2rem] bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-500/20">
+                    <h4 className="text-2xl font-black text-slate-900 dark:text-white mb-4">StadiumPort “Time Budget” (Original)</h4>
+                    <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                      This is the schedule buffer I use for any Gillette event when I care about being calm, not frantic.
+                    </p>
+                    <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+                      {[
+                        "T-90 min: be at South Station (minimum).",
+                        "T-75 min: board / settle in.",
+                        "T-0: arrive Foxboro Station (typical event timing varies).",
+                        "T+20 min: food/water + gate approach.",
+                        "T+60 min: in your seat, relaxed.",
+                      ].map((t, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Clock className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+                          <span>{t}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex flex-wrap gap-4">
+                      <AffiliateButton href="/world-cup-2026-itinerary-planning" text="See WC26 Itinerary Planning" variant="outline" />
+                      <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Flight Booking Strategy" variant="secondary" icon={Plane} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="p-10 rounded-[2.5rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-6">Between Matches: Best Day Trips</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  {[
+                    { title: "Salem (Half-Day History)", desc: "Easy train access, walkable center, and a lot of atmosphere. Go early and you’ll beat the crowds." },
+                    { title: "Cape Ann (Gloucester/Rockport)", desc: "Ocean air, seafood, and a break from the city. Feels like New England on purpose." },
+                    { title: "Concord + Lexington (Revolutionary Day)", desc: "If you want the origin-story version of the U.S., this is the cleanest day trip." },
+                  ].map((item, i) => (
+                    <div key={i} className="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                      <h4 className="font-black text-xl text-slate-900 dark:text-white mb-3">{item.title}</h4>
+                      <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </Section>
 
@@ -410,13 +737,19 @@ export default function ClientPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
-                <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
+                <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+                  Many travelers can enter the U.S. on ESTA via the Visa Waiver Program; others need a B-2 tourist visa. The paperwork is the boring part, but it’s the part that can break your trip if you ignore it. Apply early.
+                </p>
                 <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
               </div>
               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
                 <ul className="space-y-4 mb-8">
-                  {['Use Logan (BOS) automated passport control', 'Silver Line bus is free from airport', 'Carry digital copies of tickets'].map((item, i) => (
+                  {[
+                    'Fly into Boston Logan (BOS) for the fastest downtown access',
+                    'Use the SL1 bus from Logan to South Station as a simple low-cost transfer',
+                    'Carry digital copies of tickets and hotel confirmations'
+                  ].map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
                       <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
                     </li>
@@ -425,14 +758,24 @@ export default function ClientPage() {
                 <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
               </div>
             </div>
+            <div className="mt-10 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Official Sources (Worth Bookmarking)</h3>
+              <div className="grid md:grid-cols-2 gap-4 text-slate-600 dark:text-slate-400">
+                <Link href="https://www.mbta.com/destinations/logan-airport" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">MBTA: Logan Airport connections (SL1)</Link>
+                <Link href="https://www.mbta.com/destinations/gillette-stadium" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">MBTA: Gillette Stadium trains and fares</Link>
+                <Link href="https://www.gillettestadium.com/directions/" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">Gillette Stadium directions (distance + routes)</Link>
+                <Link href="https://www.gillettestadium.com/bag-policy/" target="_blank" rel="noopener noreferrer" className="font-bold hover:underline">Gillette Stadium bag policy (sizes)</Link>
+              </div>
+            </div>
           </Section>
 
           <Section id="planning" title="Planning Timeline">
             <div className="space-y-6">
               {[
-                { time: "6–9 Months Out", desc: "Book flights to Logan (BOS). Secure accommodation in Back Bay, Seaport, or near South Station." },
-                { time: "3–6 Months Out", desc: "Confirm match tickets. Research Commuter Rail schedules to Foxborough." },
-                { time: "1–3 Months Out", desc: "Book 'Patriot Train' tickets if available. Reserve North End dining spots." }
+                { time: "9–12 Months Out", desc: "Pick your base (Back Bay / Seaport / Downtown). Start hotel tracking immediately—Boston is a premium-rate city in summer." },
+                { time: "6–9 Months Out", desc: "Lock flights into BOS and decide if you’re doing multiple host cities (NYC and Philly pair perfectly with Boston).", },
+                { time: "3–6 Months Out", desc: "Sort tickets and build a matchday plan that does not rely on last-minute rideshares." },
+                { time: "2–6 Weeks Out", desc: "Reserve your ‘must-eat’ spots (North End, seafood, and one splurge meal). Buy a stadium-compliant clear bag now, not at the gate." }
               ].map((item, i) => (
                 <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
                   <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
@@ -449,9 +792,9 @@ export default function ClientPage() {
           <Section id="budget" title="Budget Tiers">
             <div className="grid md:grid-cols-3 gap-8">
               {[
-                { title: "Smart Saver", items: ["Stay in Quincy/Braintree (Red Line)", "MBTA Week Link Pass", "Pizza & Food Halls"] },
-                { title: "Comfort Upgrades", items: ["Back Bay/Downtown Hotels", "Uber/Lyft for short trips", "Seafood dinners"] },
-                { title: "Premium", items: ["Seaport Luxury Suites", "Private Car to Stadium", "VIP Match Hospitality"] }
+                { title: "Budget (Smart Saver)", items: ["Stay in Quincy/Braintree (Red Line)", "Use SL1 + MBTA + walking", "Food halls + quick counter spots", "One paid museum, not three"] },
+                { title: "Mid-Range (Comfort)", items: ["Back Bay / Fenway / Downtown hotels", "Mix transit with selective rideshares", "A proper North End dinner", "One day tour or boat outing"] },
+                { title: "Luxury (Premium)", items: ["Seaport or waterfront luxury", "Private transfers on match days", "Chef-driven restaurants + cocktails", "VIP hospitality or premium seats"] }
               ].map((tier, i) => (
                 <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
                   <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
@@ -466,8 +809,32 @@ export default function ClientPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-10 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Typical Daily Spend (StadiumPort Estimates)</h3>
+              <div className="grid md:grid-cols-3 gap-6 text-slate-600 dark:text-slate-400">
+                <div className="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                  <h4 className="font-black text-lg text-slate-900 dark:text-white mb-2">Budget</h4>
+                  <p className="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-2">$150–$250</p>
+                  <p className="leading-relaxed">Transit + casual food + one paid activity. Works best outside match days.</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                  <h4 className="font-black text-lg text-slate-900 dark:text-white mb-2">Mid-Range</h4>
+                  <p className="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-2">$250–$450</p>
+                  <p className="leading-relaxed">A nicer hotel zone, one sit-down dinner, and room for drinks.</p>
+                </div>
+                <div className="p-6 rounded-2xl bg-white/50 dark:bg-white/5 border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                  <h4 className="font-black text-lg text-slate-900 dark:text-white mb-2">Luxury</h4>
+                  <p className="text-3xl font-black text-emerald-600 dark:text-emerald-400 mb-2">$500+</p>
+                  <p className="leading-relaxed">Seaport luxury, driver service, and premium dining stack quickly.</p>
+                </div>
+              </div>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <AffiliateButton href="https://www.kayak.com/packages/Boston-c25588" text="Search Boston Packages" variant="secondary" icon={Briefcase} />
+                <AffiliateButton href="/world-cup-2026-budget-guide" text="See Our WC26 Budget Guide" variant="outline" icon={DollarSign} />
+              </div>
+            </div>
             <div className="mt-8 text-center">
-              <AffiliateButton href="https://www.kayak.com/packages/Boston-c25588" text="Search Boston Packages" variant="secondary" icon={Briefcase} />
+              <AffiliateButton href="https://www.expedia.com" text="Check Bundles on Expedia" variant="outline" icon={Globe} />
             </div>
           </Section>
 
@@ -480,7 +847,7 @@ export default function ClientPage() {
 
             <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
               <p>
-                Located in Foxborough, <strong>Gillette Stadium</strong> is a modern fortress of American sports. While it sits 28 miles from Boston, it offers excellent sightlines and a passionate atmosphere. The surrounding "Patriot Place" is a massive entertainment complex with dining and shopping.
+                Located in Foxborough, <strong>Gillette Stadium</strong> is a modern, open-air venue surrounded by <strong>Patriot Place</strong>, an entertainment district that makes match days feel bigger than just 90 minutes of football. The catch is geography: it’s <strong>29 miles (47 km) southwest of downtown Boston</strong>. That distance is fine when you plan it—and a nightmare when you don’t.
               </p>
             </div>
             
@@ -489,10 +856,12 @@ export default function ClientPage() {
                 <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
                 <ul className="space-y-4">
                   {[
-                    { label: "Capacity", val: "~64,600" },
-                    { label: "Surface", val: "FieldTurf (Grass for WC)" },
+                    { label: "Distance from Boston", val: "29 miles / 47 km" },
+                    { label: "Transit (Event Days)", val: "Commuter Rail to Foxboro Station" },
+                    { label: "Parking Options", val: "General + prepaid (event dependent)" },
+                    { label: "Bag Policy", val: "Clear bag rules apply" },
                     { label: "Roof", val: "Open Air" },
-                    { label: "Opened", val: "2002" }
+                    { label: "Opened", val: "2002" },
                   ].map((item, i) => (
                     <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
                       <span className="font-medium text-slate-500">{item.label}</span>
@@ -504,26 +873,31 @@ export default function ClientPage() {
               <div className=" p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
                 <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
-                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Traffic: Route 1 is notorious. Take the train.</li>
-                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Weather: Completely exposed. Bring rain gear/sunscreen.</li>
-                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Tailgating: Legendary scene in the parking lots.</li>
+                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> If an event train is offered, take it. Post-match road traffic is the Boston vacation killer.</li>
+                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> This is an open-air stadium. Pack for sun, humidity, and sudden rain.</li>
+                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Tailgating is part of the culture. Even if you don’t drink, it’s worth walking through.</li>
+                  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Screenshot your ticket and your return plan. Cell service can get patchy in crowds.</li>
                 </ul>
               </div>
             </div>
             
             <div className="p-8 rounded-[2rem] border border-emerald-500/20">
               <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
-                <strong>Getting There:</strong> The <strong>MBTA Commuter Rail</strong> runs special event trains from South Station (Boston) and Providence (RI) directly to the stadium. This is the only way to avoid unpredictable traffic.
+                <strong>Getting There:</strong> Check MBTA’s Gillette Stadium page for <strong>special event trains</strong> and fares, and Gillette’s own transportation pages for the latest parking and rideshare pickup rules.
               </p>
+              <div className="mt-6 flex flex-wrap gap-4 justify-center">
+                <AffiliateButton href="https://www.mbta.com/destinations/gillette-stadium" text="MBTA Event Train Info" variant="secondary" icon={Train} />
+                <AffiliateButton href="/gillette-stadium-world-cup-2026" text="Read Our Gillette Stadium Guide" variant="outline" icon={MapPin} />
+              </div>
             </div>
           </Section>
 
           <Section id="tips" title="Match Day Gameplan">
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               {[
-                { title: "Departure", text: "If taking the train, buy tickets in advance via the mTicket app. Trains leave promptly." },
-                { title: "Clear Bag", text: "Strict NFL-style clear bag policy. Small clutch bags (4.5\" x 6.5\") are allowed." },
-                { title: "Post-Match", text: "Trains depart 30 minutes after the final whistle. Don't linger too long." }
+                { title: "Departure", text: "Make South Station your anchor. Buy Commuter Rail tickets in advance and activate right before boarding. Assume you’ll want a buffer." },
+                { title: "Clear Bag", text: "Gillette enforces a strict clear bag policy. If your bag is too big, you’ll lose time (and patience) at entry." },
+                { title: "Post-Match", text: "Decide your post-match plan before kickoff. If you’re on a train, be ready to move when the crowd moves." }
               ].map((item, i) => (
                 <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
                   <h4 className="font-bold mb-3">{item.title}</h4>
@@ -532,8 +906,9 @@ export default function ClientPage() {
               ))}
             </div>
             <div className="flex flex-wrap gap-4">
-              <AffiliateButton href="#" text="Buy Clear Stadium Bag" variant="primary" />
-              <AffiliateButton href="#" text="Download mTicket App" variant="outline" />
+              <AffiliateButton href="https://www.gillettestadium.com/bag-policy/" text="Official Bag Policy" variant="outline" icon={Shield} />
+              <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag&tag=stadiumport-20" text="Stadium-Approved Clear Bags" variant="primary" icon={Briefcase} />
+              <AffiliateButton href="https://www.mbta.com/mbta-endorsed-apps" text="Get MBTA Apps (mTicket)" variant="secondary" icon={Train} />
             </div>
           </Section>
 
@@ -571,50 +946,50 @@ export default function ClientPage() {
               <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
                 <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
                 <p className="text-slate-600 dark:text-slate-400 mb-8">
-                  Missed the draw? Trusted resale platforms offer verified tickets, though prices will be higher for high-demand matches like the Quarter-Final.
+                  Missed the draw? Trusted resale platforms offer verified tickets, though prices can rise sharply for knockout matches. Use buyer protection and avoid off-platform payment requests.
                 </p>
-                <AffiliateButton href="#" text="Check StubHub" variant="primary" />
+                <AffiliateButton href="https://www.stubhub.com/" text="Check StubHub" variant="primary" />
               </div>
             </div>
           </Section>
 
           <Section id="hotels" title="Where to Stay">
             <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
-              Boston hotels are among the most expensive in the US. <strong>Downtown/Back Bay</strong> puts you in the action. <strong>Patriot Place</strong> is right at the stadium but isolated from the city.
+              Boston hotels are among the most expensive in the U.S., and match-week demand will push rates higher. The winning move is to pick a neighborhood you’ll actually enjoy <em>between</em> matches, then build a reliable route to South Station for stadium days. Foxborough hotels are convenient for the stadium, but you’ll sacrifice the city.
             </p>
             
             <div className="space-y-8">
               <HotelCard 
-                name="Omni Parker House"
+                name="Omni Parker House (Downtown)"
                 rating={4.4}
-                price="$350 - $600"
-                distance="45 min train"
-                features={['Historic', 'Downtown', 'Boston Cream Pie']}
+                price="$$$"
+                distance="South Station access"
+                features={['Historic', 'Walkable', 'Downtown base']}
                 image="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" 
-                link="#"
+                link="https://www.booking.com/searchresults.html?ss=Omni+Parker+House+Boston"
               />
               <HotelCard 
-                name="Renaissance Boston Patriot Place"
+                name="Renaissance Boston Patriot Place (Foxborough)"
                 rating={4.6}
-                price="$400 - $800"
-                distance="Steps away"
-                features={['Stadium View', 'Luxury', 'Convenience']}
+                price="$$$$"
+                distance="Walk to stadium"
+                features={['Matchday convenience', 'Patriot Place', 'Easy logistics']}
                 image="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" 
-                link="#"
+                link="https://www.booking.com/searchresults.html?ss=Renaissance+Boston+Patriot+Place+Hotel"
               />
               <HotelCard 
-                name="Best Western Adams Inn Quincy"
+                name="Best Western Adams Inn Quincy (Value Base)"
                 rating={4.0}
-                price="$150 - $250"
-                distance="20 min drive"
-                features={['Waterfront', 'Breakfast', 'Shuttle']}
+                price="$$"
+                distance="Red Line strategy"
+                features={['Budget-friendly', 'Transit access', 'Good fallback']}
                 image="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" 
-                link="#"
+                link="https://www.booking.com/searchresults.html?ss=Best+Western+Adams+Inn+Quincy"
               />
             </div>
             
             <div className="mt-12 text-center">
-              <AffiliateButton href="#" text="Search All Boston Hotels" variant="outline" />
+              <AffiliateButton href="https://www.booking.com/city/us/boston.html" text="Search All Boston Hotels" variant="outline" />
             </div>
           </Section>
 
@@ -628,7 +1003,7 @@ export default function ClientPage() {
                   <div>
                     <h4 className="font-bold text-xl mb-2">The T (MBTA)</h4>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Boston's subway system is the oldest in America. The Red, Green, Orange, and Blue lines cover the city core efficiently.
+                      Boston’s subway is old, imperfect, and still the fastest way to get across the core when traffic is ugly. The Red, Green, Orange, and Blue lines do the heavy lifting.
                     </p>
                   </div>
                 </div>
@@ -639,7 +1014,7 @@ export default function ClientPage() {
                   <div>
                     <h4 className="font-bold text-xl mb-2">Logan Airport (BOS)</h4>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Located just 3 miles from downtown. Take the Silver Line (Bus Rapid Transit) for FREE from the terminals to South Station.
+                      BOS is extremely close to downtown for a major U.S. airport. The SL1 bus from Logan to South Station is one of Boston’s best value moves, and it sets you up perfectly for commuter rail connections.
                     </p>
                   </div>
                 </div>
@@ -650,7 +1025,7 @@ export default function ClientPage() {
                   <div>
                     <h4 className="font-bold text-xl mb-2">Driving</h4>
                     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-                      Don't drive in Boston. The streets are confusing ("cow paths") and parking is scarce. Only drive if heading to Foxborough.
+                      Driving in Boston is an art form and most visitors don’t have the brush. Parking is expensive, streets are oddly shaped, and you’ll lose time. Consider a rental car only if you’re doing day trips or you want full control for Foxborough.
                     </p>
                   </div>
                 </div>
@@ -660,10 +1035,10 @@ export default function ClientPage() {
                 <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
                 <ul className="space-y-6">
                   {[
-                    { label: "Downtown Boston", time: "45-60 min train" },
-                    { label: "Logan Airport (BOS)", time: "60+ min drive" },
-                    { label: "Providence (RI)", time: "30 min train" },
-                    { label: "Cambridge/Harvard", time: "60+ min transit" }
+                    { label: "South Station (Boston)", time: "Event train when offered" },
+                    { label: "Downtown Boston (general)", time: "Plan for a long matchday window" },
+                    { label: "Providence (RI)", time: "Event train for select dates" },
+                    { label: "Driving", time: "Variable + traffic dependent" }
                   ].map((item, i) => (
                     <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
                       <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
@@ -672,18 +1047,43 @@ export default function ClientPage() {
                   ))}
                 </ul>
                 <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
-                  <AffiliateButton href="#" text="Book Rental Car" variant="secondary" />
+                  <AffiliateButton href="https://www.discovercars.com/" text="Compare Rental Cars" variant="secondary" icon={Car} />
+                </div>
+              </div>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Cheapest Airport → Hotel Hack</h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-6">
+                  If you land at Logan and your hotel is anywhere near Downtown, Back Bay, Seaport, or the subway lines, start with the SL1 to South Station. It’s simple, luggage-friendly, and doesn’t require a “Boston driving” personality.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <AffiliateButton href="https://www.mbta.com/destinations/logan-airport" text="MBTA Logan Transit Guide" variant="outline" icon={Bus} />
+                  <AffiliateButton href="https://www.booking.com/city/us/boston.html" text="Pick a Transit-Friendly Hotel" variant="primary" icon={Hotel} />
+                </div>
+              </div>
+              <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+                <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Fastest “I’m Late” Option</h3>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg mb-6">
+                  When time is tight, don’t do cute detours. Get to South Station, get on the right train, and save your wandering for the next morning.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <AffiliateButton href="https://www.google.com/maps" text="Navigate in Google Maps" variant="outline" icon={MapPin} />
+                  <AffiliateButton href="https://www.mbta.com/destinations/gillette-stadium" text="Check Gillette Train Options" variant="secondary" icon={Train} />
                 </div>
               </div>
             </div>
           </Section>
 
           <Section id="dining" title="Food & Drink">
-            <div className="grid md:grid-cols-3 gap-8">
+            <p className="text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-4xl leading-relaxed">
+              Boston eats better than people expect, and it’s not just lobster rolls. The best food plan is simple: one classic seafood moment, one North End night, one “this is why I love living here” neighborhood meal that isn’t aimed at tourists.
+            </p>
+            <div className="grid md:grid-cols-3 gap-8 mb-10">
               {[
-                { title: "Seafood", desc: "Clam chowder and lobster rolls are mandatory. Legal Sea Foods is the reliable standard; Neptune Oyster is the splurge." },
-                { title: "North End", desc: "Boston's Little Italy. Hanover Street is lined with amazing restaurants. Grab a cannoli at Mike's or Modern." },
-                { title: "Craft Beer", desc: "New England IPAs are world-famous. Visit Trillium or Harpoon breweries for the freshest pours." }
+                { title: "Seafood Classics", desc: "Yes, you should try chowder and a lobster roll. The local move is to do it once, do it properly, then move on to everything else Boston does well." },
+                { title: "North End Night", desc: "Dinner in the North End is a ritual. If you hate lines, eat early and walk late. And yes, people really argue about cannoli." },
+                { title: "Beer + Pre-Match Energy", desc: "New England IPAs are the home soundtrack. Trillium and Harpoon are the easy answers; smaller spots fill in the gaps." }
               ].map((item, i) => (
                 <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
@@ -694,11 +1094,15 @@ export default function ClientPage() {
                 </div>
               ))}
             </div>
+            <div className="flex flex-wrap gap-4">
+              <AffiliateButton href="https://www.opentable.com/boston-restaurants" text="Book Boston Restaurants" variant="primary" icon={Utensils} />
+              <AffiliateButton href="https://resy.com/cities/boston-ma" text="Find Hot Tables on Resy" variant="outline" icon={Star} />
+            </div>
           </Section>
 
           <Section id="attractions" title="Top Attractions">
             <p className="mb-8 text-xl text-slate-600 dark:text-slate-300">
-              Boston is a walking city. You can cover 400 years of history in a single afternoon.
+              Boston is a walking city. You can cover 400 years of history in a single afternoon, then still have energy for a sunset by the harbor. My advice: pick two anchor attractions per day and let the rest happen naturally.
             </p>
             <div className="space-y-6">
               {[
@@ -718,7 +1122,8 @@ export default function ClientPage() {
               ))}
             </div>
             <div className="mt-8">
-              <AffiliateButton href="#" text="Get Boston CityPASS (Save 45%)" variant="primary" />
+              <AffiliateButton href="https://www.citypass.com/boston" text="Get Boston CityPASS" variant="primary" />
+              <AffiliateButton href="https://www.viator.com/Boston/d678-ttd" text="Browse Boston Tours" variant="secondary" />
             </div>
           </Section>
 
@@ -726,29 +1131,33 @@ export default function ClientPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-500"/> Event Patterns</h4>
-                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Boston is one of the safest major cities in the US. The main risk is erratic drivers—look both ways twice before crossing streets.</p>
+                <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Boston is generally safe for visitors, especially in the central neighborhoods you’ll likely stay in. Your most common “danger” is honestly the street layout and impatient drivers. Cross like a local: alert, quick, and not glued to your phone.
+                </p>
               </div>
               <div className="p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Practical Tips</h4>
                 <ul className="space-y-4 text-slate-600 dark:text-slate-300">
                   <li>• Late night T service is limited (ends ~12:30 AM).</li>
                   <li>• Downtown Crossing can be sketchy very late at night.</li>
-                  <li>• Student move-in days (Sept 1) cause chaos ("Allston Christmas").</li>
+                  <li>• The Mass & Cass area can be rough; don’t wander there as a visitor.</li>
                 </ul>
                 <div className="mt-6">
-                  <AffiliateButton href="#" text="Get Travel Insurance" variant="secondary" />
+                  <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="secondary" />
                 </div>
               </div>
             </div>
           </Section>
 
           <Section id="culture" title="Cultural Intelligence">
-            <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">Bostonians are direct, proud, and fiercely loyal to their sports teams. "Wicked" means "very" (as in "wicked good").</p>
+            <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">
+              Bostonians are direct. Not rude, not warm-and-fuzzy—just direct. If someone sounds sharp, it’s often efficiency, not hostility. Sports loyalty is real. And yes, “wicked” means “very,” as in “that goal was wicked good.”
+            </p>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "Sports is Religion", desc: "Don't wear Yankees gear unless you want friendly (or unfriendly) banter." },
-                { title: "Walking City", desc: "We walk everywhere. Jaywalking is practically a competitive sport here." },
-                { title: "Early Nights", desc: "Bars close at 2 AM strictly. The T stops running around 12:30 AM. Plan accordingly." }
+                { title: "Local Phrases", desc: "Wicked = very. Packie = liquor store. Rotary = roundabout. If you nail ‘packie,’ you’ll sound like you live here." },
+                { title: "Walking City", desc: "Boston rewards walking. The fastest route is often the one you can do on foot." },
+                { title: "Early Nights", desc: "Bars close at 2 AM. Transit winds down earlier. Start your night earlier than you’re used to." }
               ].map((item, i) => (
                 <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
                   <h4 className="font-bold mb-3">{item.title}</h4>
@@ -756,30 +1165,50 @@ export default function ClientPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-10 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+              <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">What Most Boston Guides Miss</h3>
+              <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+                {[
+                  "Gillette is a full match-day commitment. Treat it like a planned excursion, not a casual subway stop.",
+                  "South Station is the key node for airport + commuter rail + day trips—pick lodging that respects that.",
+                  "Boston’s nightlife is real, but it starts earlier and ends earlier than many visitors expect.",
+                  "The city is compact: don’t waste money on rideshares for distances you can walk in 15 minutes."
+                ].map((t, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <CheckCircle2 className="w-6 h-6 text-emerald-500 shrink-0 mt-1" />
+                    <span>{t}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </Section>
 
           <Section id="packing" title="Climate & Packing">
             <div className="grid md:grid-cols-3 gap-6">
               <div className="p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> June–July Weather</h4>
-                <p className="text-slate-600 dark:text-slate-400">Warm and humid (75°F–85°F). Sea breezes cool things down near the harbor.</p>
+                <p className="text-slate-600 dark:text-slate-400">
+                  Expect warm, sometimes humid days and cooler nights near the water. The sneaky factor is rain: it can flip quickly, and Gillette is exposed.
+                </p>
               </div>
               <div className="p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-4">Essentials</h4>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-400">
                   <li>• Sturdy walking shoes (cobblestones!)</li>
                   <li>• Light jacket for evenings</li>
-                  <li>• Sunglasses</li>
+                  <li>• Sunglasses + sunscreen</li>
+                  <li>• Light rain shell (not a heavy coat)</li>
                 </ul>
               </div>
               <div className="p-8 rounded-[2rem]">
                 <h4 className="font-bold text-xl mb-4">Tech</h4>
                 <ul className="space-y-2 text-slate-600 dark:text-slate-400 mb-6">
                   <li>• US plug adapters (Type A/B)</li>
-                  <li>• mTicket App (for Commuter Rail)</li>
+                  <li>• MBTA mTicket (for commuter rail)</li>
                   <li>• Uber/Lyft App</li>
+                  <li>• Offline maps + battery pack</li>
                 </ul>
-                <AffiliateButton href="#" text="Get an eSIM" variant="secondary" />
+                <AffiliateButton href="https://airalo.tp.st/yF9Qk3Ol" text="Get US eSIM" variant="secondary" />
               </div>
             </div>
           </Section>
@@ -787,16 +1216,18 @@ export default function ClientPage() {
           <Section id="faq" title="Frequently Asked Questions">
             <div className="space-y-2">
               {[
-                { q: "Is Gillette Stadium in Boston?", a: "No, it's in Foxborough, about 28 miles (45km) southwest of downtown Boston." },
-                { q: "How do I get to the stadium without a car?", a: "The MBTA Commuter Rail operates special event trains from South Station directly to the stadium." },
-                { q: "Where should I stay?", a: "Stay in Boston (Back Bay/Downtown) for the city experience; stay in Foxborough for match convenience." },
-                { q: "What is 'The T'?", a: "The T is the local name for the MBTA subway system. It's the best way to get around Boston proper." },
-                { q: "Is Boston expensive?", a: "Yes, hotels and dining are pricey. It's comparable to New York or San Francisco." },
-                { q: "What is the best food to try?", a: "New England Clam Chowder, Lobster Rolls (hot with butter or cold with mayo), and Cannoli." },
-                { q: "Can I walk to the stadium from Boston?", a: "No, it is far too far. You must take a train, bus, or car." },
-                { q: "How early should I get to the game?", a: "Arrive at least 2-3 hours early. Security is tight and there is plenty to do at Patriot Place." },
-                { q: "Is tipping expected?", a: "Yes, 20% is standard in restaurants and bars." },
-                { q: "Is the stadium covered?", a: "No, Gillette Stadium is open-air. Check the forecast before you go." }
+                { q: "Is Gillette Stadium actually in Boston?", a: "No. Gillette is in Foxborough, 29 miles (47 km) southwest of downtown Boston. Treat it as a matchday excursion." },
+                { q: "What’s the best way to get to Gillette Stadium?", a: "The MBTA Commuter Rail to Foxboro Station is the easiest option when special event trains run. Check MBTA’s Gillette Stadium destination page for what’s offered on your date." },
+                { q: "Where should I stay for World Cup 2026 in Boston?", a: "Back Bay is the easiest base for most visitors. Seaport is great for a modern waterfront vibe. Downtown/Waterfront is best for history-on-foot. Foxborough is only for stadium-first convenience." },
+                { q: "How do I get from Logan Airport (BOS) to downtown?", a: "For most travelers, the Silver Line SL1 bus to South Station is the cleanest budget move. From there you can connect to the subway, commuter rail, or walk into Seaport." },
+                { q: "Should I rent a car in Boston?", a: "Usually no. The city is compact and transit-friendly, while parking is expensive. Consider a car only if you’re doing day trips or you want total control for Foxborough." },
+                { q: "How early should I leave for the stadium?", a: "Aim to arrive at Foxborough 2–3 hours before kickoff. That buffer covers security, food, and the inevitable little delays." },
+                { q: "Is Boston expensive during summer?", a: "Yes. Summer is peak season, and World Cup demand will amplify it. Book lodging early and choose a neighborhood you’ll enjoy between matches." },
+                { q: "Do Boston bars really close at 2 AM?", a: "Yes. 2 AM is the hard stop. Also, the MBTA stops earlier than many visitors expect, so plan your ride home." },
+                { q: "What should I eat in Boston at least once?", a: "Do one seafood moment (chowder or lobster roll), one North End dinner, and one local bakery/coffee stop. Then chase whatever your taste buds want." },
+                { q: "Is Gillette Stadium covered?", a: "No. It’s open-air. Pack for sun and possible rain—especially if you’re sitting high up where wind hits." },
+                { q: "Is Boston safe for tourists?", a: "Generally, yes—especially in the neighborhoods most visitors stay in. Use standard city awareness late at night and keep your belongings secure in crowds." },
+                { q: "What’s the easiest way to sound local?", a: "Drop ‘wicked’ naturally, and call the liquor store a ‘packie.’ Don’t overdo it, though—we can tell." }
               ].map((item, i) => (
                 <FAQItem key={i} question={item.q} answer={item.a} />
               ))}
@@ -820,7 +1251,7 @@ export default function ClientPage() {
                   <li>• <strong>Power:</strong> 120V, Type A/B plugs.</li>
                   <li>• <strong>Sim Cards:</strong> Available at Logan Airport kiosks.</li>
                 </ul>
-                <AffiliateButton href="#" text="Get an Airalo eSIM" variant="secondary" />
+                <AffiliateButton href="https://airalo.tp.st/yF9Qk3Ol" text="Get an Airalo eSIM" variant="secondary" />
               </div>
             </div>
           </Section>
@@ -828,9 +1259,18 @@ export default function ClientPage() {
           <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
             <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {['New York', 'Los Angeles', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Atlanta'].map((city) => (
-                <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
-                  {city}
+              {[
+                { name: 'New York / New Jersey', href: '/world-cup-2026-new-york-new-jersey-guide' },
+                { name: 'Los Angeles', href: '/world-cup-2026-los-angeles-guide' },
+                { name: 'Mexico City', href: '/world-cup-2026-mexico-city-guide' },
+                { name: 'Toronto', href: '/world-cup-2026-toronto-guide' },
+                { name: 'Dallas', href: '/world-cup-2026-dallas-guide' },
+                { name: 'Miami', href: '/world-cup-2026-miami-guide' },
+                { name: 'Seattle', href: '/world-cup-2026-seattle-guide' },
+                { name: 'Atlanta', href: '/world-cup-2026-atlanta-guide' },
+              ].map((city) => (
+                <Link key={city.href} href={city.href} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+                  {city.name}
                 </Link>
               ))}
             </div>
@@ -845,6 +1285,3 @@ export default function ClientPage() {
     </div>
   );
 }
-
-
-

@@ -166,7 +166,7 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     city: 'Mexico City',
     country: 'Mexico',
     coordinates: { lat: 19.3029, lng: -99.1505 },
-    capacity: '87,523',
+    capacity: '83,000',
     matches: 5,
     image: '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp',
     highlights: ['Historic 3-time World Cup host', 'Legendary atmosphere', 'Hosting Tournament Opener']

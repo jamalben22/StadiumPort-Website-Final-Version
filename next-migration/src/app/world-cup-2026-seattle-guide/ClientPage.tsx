@@ -311,11 +311,11 @@ export default function ClientPage() {
               </span>
  </div>
  
- <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
- SEATTLE
+ <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+ Seattle <span className="block">World Cup 2026 Guide</span>
  </h1>
- <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
- The Emerald City. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+ <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+ A local’s playbook for Lumen Field match days, where to stay, how to move, what to eat, and what to skip so your trip feels effortless.
  </p>
  </motion.div>
  </div>
@@ -370,14 +370,29 @@ export default function ClientPage() {
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- June and July are arguably the best months to visit Seattle. The notorious rain disappears, leaving long sunny days where the sun doesn't set until nearly 9:30 PM. This "Seattle Summer" is legendary—perfect for exploring the outdoors between matches.
+ I’ve watched this city change for two decades: cranes, coffee, and a whole lot more soccer than anyone predicted. But one thing hasn’t changed—when Seattle gets a big match, we show up early, we walk a lot, and we let the stadium do the shouting.
  </p>
+ <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-400">
+ If you’re short on time, here are the answers people actually Google (and the answers locals actually use):
+ </p>
+ </div>
+ <div className="grid md:grid-cols-3 gap-6 mb-12">
+ {[
+ { q: "Best place to stay?", a: "Pioneer Square for walking; Belltown for variety; Capitol Hill for nightlife." },
+ { q: "Best airport transfer?", a: "Link light rail. Cheap, reliable, and it doesn’t care about traffic." },
+ { q: "Car or no car?", a: "No car if you’re based Downtown. Use rail + ferries + your feet." }
+ ].map((item, i) => (
+ <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <p className="text-sm uppercase tracking-widest text-slate-500 dark:text-slate-400 font-bold mb-3">{item.q}</p>
+ <p className="text-slate-700 dark:text-slate-300 leading-relaxed">{item.a}</p>
+ </div>
+ ))}
  </div>
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Pioneer Square or SoDo for walking distance. Downtown/Belltown for more hotel options near transit." },
- { icon: Train, title: "Transport Strategy", text: "Use Link Light Rail. Connects SEA Airport to Downtown and Stadiums efficiently. No car needed." },
- { icon: DollarSign, title: "Budget Signals", text: "Seattle is a high-cost city. Book accommodation early as downtown inventory is limited." }
+ { icon: MapPin, title: "The Stadium Is Downtown-Adjacent", text: "Lumen Field sits in SoDo, right on the edge of Pioneer Square. Pick a hotel where you can walk or take one quick rail hop—your future self will thank you." },
+ { icon: Train, title: "The Link Light Rail Trick", text: "Seattle’s secret isn’t secret: Link from SEA airport straight into the core, then one more stop to the stadium. It’s the least-stress commute you’ll have all week." },
+ { icon: DollarSign, title: "Seattle Pricing Reality", text: "This is not a bargain city. The smartest move is booking early with free cancellation, then watching for price drops later." }
  ].map((item, i) => (
  <div key={i} className="p-8 rounded-[2rem] transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -387,8 +402,9 @@ export default function ClientPage() {
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/sea" text="Search Seattle Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="https://www.booking.com/city/us/seattle.html" text="Check Downtown Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/sea" text="Compare Flights to SEA" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/city/us/seattle.html" text="Find Seattle Hotels (Refundable)" variant="primary" icon={Hotel} />
+ <AffiliateButton href="/lumen-field-world-cup-2026" text="Read the Lumen Field Guide" variant="outline" icon={ArrowRight} />
  </div>
  </Section>
 
@@ -414,34 +430,73 @@ export default function ClientPage() {
  </Section>
 
  <Section id="planning" title="Planning Timeline">
- <div className="space-y-6">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+ <p className="text-slate-600 dark:text-slate-300">
+ Seattle’s World Cup weeks will be a squeeze: limited hotel inventory in the core, a lot of fans trying to do “downtown + stadium + waterfront” in the same 6-hour window, and a transit system that’s great when you use it like a local (and frustrating when you try to outsmart it).
+ </p>
+ </div>
+ <div className="space-y-6 mb-12">
  {[
- { time: "6–9 Months Out", desc: "Book flights and refundable hotels in Downtown/Pioneer Square. Prices will soar. Secure your base early." },
- { time: "3–6 Months Out", desc: "Confirm match tickets via FIFA portal. Plan day trips to Mt. Rainier or Bainbridge Island ferries." },
- { time: "1–3 Months Out", desc: "Buy ORCA card for transit. Pack layers for cool evenings. Check stadium bag policies." }
+ { time: "9–6 months out", desc: "Book flights into SEA and lock a refundable hotel in Downtown, Belltown, or Pioneer Square. Re-check pricing every few weeks; Seattle rates swing hard." },
+ { time: "6–3 months out", desc: "Decide your “base neighborhood” and stick to it. The best trips here feel compact: walk + one train + one ferry. Anything else becomes a logistics hobby." },
+ { time: "90–30 days out", desc: "Buy travel insurance, confirm your transit plan (Link + ORCA), and map your matchday food stops so you’re not wandering hungry around 3rd Ave at midnight." }
  ].map((item, i) => (
- <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-center">
+ <div key={i} className="flex flex-col md:flex-row gap-6 p-8 rounded-[2rem] items-start md:items-center border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <div className="shrink-0 w-48 font-black text-2xl text-emerald-500">{item.time}</div>
  <p className="text-lg text-slate-700 dark:text-slate-300">{item.desc}</p>
  </div>
  ))}
  </div>
- <div className="mt-8 flex flex-wrap gap-4">
+
+ <div className="grid md:grid-cols-3 gap-8">
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-2xl mb-4">48 Hours (One Match)</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+ Day 1: Pike Place → Waterfront stroll → sunset drinks in Belltown. Day 2: matchday walk through Pioneer Square → Lumen Field → late-night noodles in the ID.
+ </p>
+ <AffiliateButton href="https://www.getyourguide.com/seattle-l198/" text="Book Seattle Experiences" variant="outline" />
+ </div>
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-2xl mb-4">4 Days (Seattle + Water)</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+ Slot in a ferry day: walk-on to Bainbridge for coffee + bookstores, back for the stadium. It’s the easiest “I was in the Pacific Northwest” flex that doesn’t require a car.
+ </p>
+ <AffiliateButton href="https://wsdot.wa.gov/ferries" text="Check Ferry Schedules" variant="secondary" />
+ </div>
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-2xl mb-4">6–7 Days (PNW Week)</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+ Add one big nature day (Mt. Rainier or Olympic Peninsula) and one neighborhood day (Ballard + Fremont). This is how locals do “summer Seattle.”
+ </p>
+ <AffiliateButton href="https://www.viator.com/Seattle/d704-ttd" text="Browse Day Trips" variant="primary" />
+ </div>
+ </div>
+
+ <div className="mt-10 flex flex-wrap gap-4">
  <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/sea" text="Set Flight Alerts" variant="primary" icon={Plane} />
- <AffiliateButton href="https://wsdot.wa.gov/ferries" text="Reserve Ferry Tickets" variant="outline" />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Protect Your Trip" variant="secondary" icon={Shield} />
  </div>
  </Section>
 
  <Section id="budget" title="Budget Tiers">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+ <p className="text-slate-600 dark:text-slate-300">
+ Here’s the honest version: Seattle can be an expensive city, but you can still travel smart if you keep your “big three” under control—hotel, match tickets, and getting around. The best savings come from staying near Link light rail and eating like a local (coffee + markets + casual seafood) instead of trying to turn every meal into a reservation.
+ </p>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Smart Saver", items: ["Hostel in Belltown", "Street food & Pike Place", "Light Rail everywhere"] },
- { title: "Comfort Upgrades", items: ["Downtown 4-star hotels", "Ferry dinners", "Space Needle tickets"] },
- { title: "Premium", items: ["Waterfront luxury suites", "Private boat charters", "Fine dining in Capitol Hill"] }
+ { title: "Budget", headline: "$220–$380/day", items: ["Hostel or simple hotel in Belltown/Queen Anne", "Link + walking (no rideshares)", "Market meals + cheap teriyaki + happy hour"], cta: { href: "https://www.booking.com/city/us/seattle.html", text: "Find Budget Stays" } },
+ { title: "Mid-Range", headline: "$380–$650/day", items: ["Downtown/Belltown 3–4 star hotel", "One paid attraction + one ferry day", "Restaurants mixed with market snacks"], cta: { href: "https://www.booking.com/city/us/seattle.html", text: "Compare Mid-Range Hotels" } },
+ { title: "Luxury", headline: "$650–$1,200+/day", items: ["Waterfront luxury or top suites near downtown", "Premium dining + cocktails + Uber comfort", "Private experiences (boats, chefs, VIP)"], cta: { href: "https://www.booking.com/city/us/seattle.html", text: "Browse Luxury Options" } }
  ].map((tier, i) => (
  <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
- <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
- <ul className="space-y-4">
+ <div className="flex items-baseline justify-between gap-4 mb-6">
+ <h4 className="font-black text-2xl text-slate-900 dark:text-white">{tier.title}</h4>
+ <span className="text-emerald-600 dark:text-emerald-400 font-bold">{tier.headline}</span>
+ </div>
+ <ul className="space-y-4 mb-8">
  {tier.items.map((item, j) => (
  <li key={j} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-400">
  <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-2" />
@@ -449,11 +504,14 @@ export default function ClientPage() {
  </li>
  ))}
  </ul>
+ <AffiliateButton href={tier.cta.href} text={tier.cta.text} variant={i === 1 ? "primary" : "outline"} icon={Hotel} />
  </div>
  ))}
  </div>
- <div className="mt-8 text-center">
- <AffiliateButton href="https://www.expedia.com/Seattle.d178307.Destination-Travel-Guides" text="Search Seattle Packages" variant="secondary" icon={Briefcase} />
+
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.expedia.com/Seattle.d178307.Destination-Travel-Guides" text="Bundle Flight + Hotel" variant="secondary" icon={Briefcase} />
+ <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Read Flight Booking Strategy" variant="outline" icon={Plane} />
  </div>
  </Section>
 
@@ -466,7 +524,10 @@ export default function ClientPage() {
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- Known as the "Loudest House" in the NFL/MLS, <strong>Lumen Field</strong> is designed with parabolic roofs that reflect sound back onto the pitch. It has held the Guinness World Record for crowd noise (137.6 decibels). The atmosphere here is European-grade intense, located right in the SoDo district.
+ Lumen Field is built for noise. The rooflines trap sound, the stands sit close, and Seattle crowds don’t really do “quiet appreciation”—they do full-throated commitment. You’re also not trekking to a suburban complex: the stadium sits in SoDo, a short walk from Pioneer Square and a straight shot on Link light rail.
+ </p>
+ <p>
+ The most important stadium rule to remember is the bag rule. Lumen Field enforces a clear bag policy, so plan around it and you’ll glide through security instead of doing the “what do I do with my backpack?” panic outside the gate.
  </p>
  </div>
  
@@ -476,8 +537,8 @@ export default function ClientPage() {
  <ul className="space-y-4">
  {[
  { label: "Capacity", val: "68,740" },
- { label: "Surface", val: "Natural Grass (Installed for WC)" },
- { label: "Roof", val: "Partial Roof Coverage" },
+ { label: "Surface", val: "Tournament-ready pitch setup" },
+ { label: "Roof", val: "Partial roof (windy ends)" },
  { label: "Built", val: "2002" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
@@ -490,26 +551,35 @@ export default function ClientPage() {
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> March to the Match: Join fans in Pioneer Square 60 mins before kickoff.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Weather: Roof covers 70% of seats, but open ends can be breezy.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Food: Try the local garlic fries and craft beer.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Pre-match flow: start in Pioneer Square, then walk south with the crowd. It’s the best “Seattle soccer” atmosphere you’ll get outside the stadium.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Bag rule: clear bags only (up to 12″ x 6″ x 12″) plus a small clutch (up to 4.5″ x 6.5″).</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Wind matters: even in summer, the open ends can feel chilly once the sun drops—bring one thin layer.</li>
  </ul>
  </div>
  </div>
  
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> Lumen Field is highly accessible. The <strong>Link Light Rail</strong> stops at Stadium Station and International District/Chinatown Station, both a short walk away.
+ <strong>Getting There:</strong> Use Link light rail to Stadium Station or International District/Chinatown Station, then follow the crowd. If you must drive, pre-book parking and expect slow exits after full-capacity matches.
  </p>
+ </div>
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="/lumen-field-world-cup-2026" text="Stadium Seating & Entry Guide" variant="primary" icon={ArrowRight} />
+ <AffiliateButton href="https://www.getyourguide.com/seattle-l198/" text="Book a Stadium-Area Tour" variant="outline" />
  </div>
  </Section>
 
  <Section id="tips" title="Match Day Gameplan">
- <div className="grid md:grid-cols-3 gap-6 mb-8">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+ <p className="text-slate-600 dark:text-slate-300">
+ Here’s the rhythm that works in Seattle. Don’t fight it. Lean into it. The whole area south of downtown becomes a moving river of jerseys, flags, and very opinionated people telling you which gate is “way faster” (sometimes they’re right).
+ </p>
+ </div>
+ <div className="grid md:grid-cols-3 gap-6 mb-10">
  {[
- { title: "Arrival", text: "Arrive early to enjoy the 'March to the Match' festivities in Pioneer Square." },
- { title: "Clear Bag", text: "Strict clear bag policy is enforced. Lockers are available but expensive/limited." },
- { title: "Exit Plan", text: "Crowds funnel to the Light Rail. Consider walking to Pioneer Square for a drink to let the rush subside." }
+ { title: "T–4 to T–2 hours", text: "Start in Pioneer Square. Get one proper meal now, not “later.” Later becomes a $18 hot dog line." },
+ { title: "T–90 minutes", text: "Walk south to the stadium with the crowd. Bring only what fits the clear bag rule—security moves fast when people don’t improvise." },
+ { title: "Post-match", text: "Don’t sprint to Link unless you have to. Grab a drink or dessert in Pioneer Square and let the first wave clear." }
  ].map((item, i) => (
  <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -517,9 +587,28 @@ export default function ClientPage() {
  </div>
  ))}
  </div>
+ <div className="grid md:grid-cols-2 gap-8 mb-10">
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-2xl mb-4">Local Pre-Match Shortlist</h4>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+ <li>• Pioneer Square for pre-match bars and the walk-in atmosphere.</li>
+ <li>• International District for fast, satisfying food right after the match.</li>
+ <li>• Waterfront for a calmer reset if you’re traveling with family.</li>
+ </ul>
+ </div>
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-2xl mb-4">Bring These, Skip Those</h4>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+ <li>• Portable charger and a thin layer for the ride home.</li>
+ <li>• Earplugs if you’re sensitive to noise (Lumen is loud on purpose).</li>
+ <li>• Skip big umbrellas—bring a packable shell instead.</li>
+ </ul>
+ </div>
+ </div>
  <div className="flex flex-wrap gap-4">
  <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
  <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle" text="Add Refillable Bottle" variant="outline" />
+ <AffiliateButton href="https://www.airalo.com/" text="Get an eSIM (Arrive Connected)" variant="secondary" icon={Globe} />
  </div>
  </Section>
 
@@ -529,12 +618,12 @@ export default function ClientPage() {
  <div className="relative z-10">
  <div className="flex items-center gap-4 mb-8">
  <Ticket className="w-8 h-8 text-emerald-400" />
- <h3 className="text-3xl font-black">Confirmed Matches</h3>
+ <h3 className="text-3xl font-black">Seattle Match Slate</h3>
  </div>
  <div className="space-y-6">
  {[
- { stage: "Group Stage", count: "June 15 (Opener)", color: "text-emerald-300" },
- { stage: "Group Stage", count: "June 19 (USA Projected)", color: "text-emerald-300" },
+ { stage: "Group Stage", count: "June 15", color: "text-emerald-300" },
+ { stage: "Group Stage", count: "June 19", color: "text-emerald-300" },
  { stage: "Group Stage", count: "June 24", color: "text-emerald-300" },
  { stage: "Group Stage", count: "June 26", color: "text-emerald-300" },
  { stage: "Round of 32", count: "July 1", color: "text-emerald-300" },
@@ -545,6 +634,10 @@ export default function ClientPage() {
  <span className="font-bold text-xl">{match.count}</span>
  </div>
  ))}
+ </div>
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="/world-cup-2026-schedule" text="See Full Tournament Schedule" variant="outline" icon={Calendar} />
+ <AffiliateButton href="/world-cup-2026-match-selection-strategy" text="Match Selection Strategy" variant="secondary" icon={Trophy} />
  </div>
  </div>
  </div>
@@ -560,9 +653,9 @@ export default function ClientPage() {
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
- Missed the draw? Trusted resale platforms offer verified tickets. Expect high demand for USA matches.
+ Missed a sales phase? Use reputable ticket marketplaces with buyer guarantees and clear refund policies. Avoid random DMs and “PDF ticket” scams.
  </p>
- <AffiliateButton href="#" text="Check StubHub" variant="primary" />
+ <AffiliateButton href="https://www.stubhub.com/fifa-world-cup-tickets/" text="Check StubHub Availability" variant="primary" />
  </div>
  </div>
  </Section>

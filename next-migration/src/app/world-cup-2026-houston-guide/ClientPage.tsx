@@ -139,21 +139,21 @@ const Section = ({ id, title, children, className = "" }: { id: string, title: s
  const ref = useRef(null);
  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
- return (
- <section id={id} ref={ref} className={`py-16 md:py-24 scroll-mt-24 ${className}`}>
- <motion.div
- variants={fadeIn}
- initial="hidden"
- animate={isInView ? "visible" : "hidden"}
- >
- <h2 className="text-4xl md:text-6xl font-black text-slate-900 dark:text-white mb-12 tracking-tight">
- <span className="text-emerald-500 text-lg md:text-xl font-bold uppercase tracking-widest block mb-2">Guide Section</span>
- {title}
- </h2>
- {children}
- </motion.div>
- </section>
- );
+  return (
+    <section id={id} ref={ref} className={`py-12 md:py-20 scroll-mt-24 ${className}`}>
+      <motion.div
+        variants={fadeIn}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        <h2 className="text-3xl md:text-5xl font-black text-slate-900 dark:text-white mb-10 tracking-tight">
+          <span className="text-emerald-500 text-sm md:text-base font-bold uppercase tracking-[0.2em] block mb-3">Guide Section</span>
+          {title}
+        </h2>
+        {children}
+      </motion.div>
+    </section>
+  );
 };
 
 // 5. Premium Affiliate Button
@@ -244,6 +244,9 @@ export default function ClientPage() {
  // Sticky Nav Links
  const navLinks = [
  { id: 'overview', label: 'Overview' },
+ { id: 'weather', label: 'Weather' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
+ { id: 'itineraries', label: 'Itineraries' },
  { id: 'visa', label: 'Visa & Entry' },
  { id: 'planning', label: 'Planning' },
  { id: 'budget', label: 'Budget' },
@@ -274,58 +277,62 @@ export default function ClientPage() {
  />
 
  {/* 1. Hero Section - Refined & Minimal */}
- <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
- <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/houston-world-cup-2026-1600.webp" 
- alt="Houston Skyline" 
- fill 
- className="object-cover"
- priority sizes="100vw"
-  unoptimized />
- <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-[#0A0A0A]/60 to-[#F5F5F7] dark:to-[#0A0A0A]" />
-</div>
+      <div className="relative h-[75vh] md:h-[85vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
+        <div className="absolute inset-0 z-0">
+          <Image 
+            src="/images/cities/houston-world-cup-2026-1600.webp" 
+            alt="Houston Skyline" 
+            fill 
+            className="object-cover"
+            priority 
+            sizes="100vw"
+            unoptimized 
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-[#F5F5F7] dark:to-[#0A0A0A]" />
+        </div>
 
-<div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col md:flex-row items-end md:items-center justify-between gap-12 pt-20">
-<div className="max-w-4xl">
-               {/* Breadcrumbs */}
-               <Breadcrumb 
-                 variant="white"
-                 items={[
-                   { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
-                   { label: 'Houston', href: '/world-cup-2026-houston-guide' }
-                 ]} 
-               />
+        <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 flex flex-col items-start justify-center pt-20">
+          <div className="max-w-5xl">
+            {/* Breadcrumbs */}
+            <Breadcrumb 
+              variant="white"
+              items={[
+                { label: 'Host Cities', href: '/world-cup-2026-host-cities' },
+                { label: 'Houston', href: '/world-cup-2026-houston-guide' }
+              ]} 
+            />
 
-               <motion.div
-                 initial={{ opacity: 0, y: 30 }}
-                 animate={{ opacity: 1, y: 0 }}
-                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-               >
-                 <div className="flex items-center gap-4 mb-6">
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-             Last Updated: January 4, 2026
-           </span>
-           <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
-             Host City
-           </span>
-<span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
-Round of 32 Host
-</span>
-</div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-8"
+            >
+              <div className="flex flex-wrap items-center gap-3 mb-8">
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+                  Last Updated: January 4, 2026
+                </span>
+                <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-medium tracking-widest uppercase backdrop-blur-md">
+                  Host City
+                </span>
+                <span className="px-3 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md shadow-lg shadow-emerald-500/20">
+                  7 Matches in 2026
+                </span>
+              </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-HOUSTON
-</h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-             Space City. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
-           </p>
-          </motion.div>
+              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+                Houston World Cup 2026 Guide
+              </h1>
+              
+              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+                A practical, local-feeling playbook for <span className="text-white font-medium">NRG Stadium</span>, the Red Line, and the neighborhoods you’ll actually enjoy.
+              </p>
+            </motion.div>
+          </div>
         </div>
       </div>
- </div>
 
- <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-20 relative pt-16">
+      <div className="flex flex-col lg:flex-row max-w-[1400px] mx-auto px-6 gap-12 relative pt-16">
  
  {/* 2. Apple-style Sticky Table of Contents */}
  <aside className="hidden lg:block w-72 shrink-0 relative">
@@ -371,14 +378,32 @@ HOUSTON
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- Houston is America's fourth-largest city and arguably its most culturally diverse. It is a sprawling metropolis known for space exploration, world-class dining, and Southern hospitality. For the World Cup, the key is mastering the AC tunnels and the METRORail.
+ Houston doesn’t behave like a postcard city. It’s big. It’s humid. It’s famously car-forward. And yet, for World Cup 2026, it becomes surprisingly simple if you base yourself on one spine: METRORail’s Red Line, which runs through Downtown, Midtown, the Museum District, the Texas Medical Center, and down to NRG Park.
  </p>
+ <p className="text-lg text-slate-600 dark:text-slate-300">
+ The win condition for this Houston World Cup 2026 guide is not “see everything.” It’s “move smart, stay cool, eat outrageously well, and never waste match day in traffic.”
+ </p>
+ </div>
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 mb-12">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Quick Answers (Featured Snippet Friendly)</h3>
+   <div className="grid md:grid-cols-2 gap-6 text-slate-700 dark:text-slate-300">
+     <div className="space-y-3">
+       <p><span className="font-bold">Best area to stay:</span> Downtown, Midtown, Museum District, or the Medical Center (Red Line access).</p>
+       <p><span className="font-bold">Best way to reach NRG Stadium:</span> METRORail Red Line to Stadium Park / Astrodome station.</p>
+       <p><span className="font-bold">Do you need a car?</span> Not if you stay on the rail corridor; yes if you want day trips and suburbs.</p>
+     </div>
+     <div className="space-y-3">
+       <p><span className="font-bold">Houston summer reality:</span> Hot + humid with pop-up storms; plan for AC-to-AC travel.</p>
+       <p><span className="font-bold">Biggest rookie mistake:</span> Driving to NRG Park close to kickoff.</p>
+       <p><span className="font-bold">Food you can’t skip:</span> Tex-Mex, Vietnamese, Viet-Cajun, and proper Texas BBQ.</p>
+     </div>
+   </div>
  </div>
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Downtown or Medical Center. Both connect directly to NRG Stadium via the Red Line." },
- { icon: Train, title: "Transport Strategy", text: "METRORail Red Line is essential. It connects Downtown, Museum District, and NRG Stadium. Avoid driving." },
- { icon: DollarSign, title: "Budget Signals", text: "More affordable than coastal hubs. Book early to secure rates near the rail line." }
+ { icon: MapPin, title: "Where to Base", text: "Pick a neighborhood that touches the Red Line. Downtown and the Medical Center are the easiest match-day bases." },
+ { icon: Train, title: "Transport Strategy", text: "Rail for match day, rideshare for late nights, and plan your meals around where you already are." },
+ { icon: DollarSign, title: "Budget Signals", text: "Houston can be excellent value compared with coastal host cities, but big events spike prices fast." }
  ].map((item, i) => (
  <div key={i} className="p-8 rounded-[2rem] transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -391,6 +416,198 @@ HOUSTON
             <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/iah" text="Search Houston Flights" variant="secondary" icon={Plane} />
             <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Downtown+Houston" text="Check Downtown Hotels" variant="primary" icon={Hotel} />
           </div>
+ </Section>
+
+ <Section id="weather" title="Weather (June–July) + Heat Survival">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       Houston in June and July is the kind of weather that makes you respect shade. Expect heat, humidity, and the occasional dramatic thunderstorm that rolls in like it has a personal grudge. The good news: the city is built for air conditioning, and NRG Stadium is a retractable-roof venue.
+     </p>
+     <p>
+       Pack for “outside feels like a sauna, inside feels like a freezer.” A light jacket for indoor AC is not a joke. It’s Houston common sense.
+     </p>
+   </div>
+   <div className="grid md:grid-cols-3 gap-8 mb-10">
+     {[
+       { icon: Thermometer, title: "Heat", text: "Plan early mornings and late evenings outdoors; midday is indoor time." },
+       { icon: Droplets, title: "Humidity", text: "Moisture-wicking shirts beat cotton. Your future self will thank you." },
+       { icon: Wind, title: "Storms", text: "Expect pop-up rain. Keep a tiny umbrella or packable rain shell." }
+     ].map((item, i) => (
+       <div key={i} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+         <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+         <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+         <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+       </div>
+     ))}
+   </div>
+   <div className="p-8 rounded-[2rem] border border-emerald-500/20">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Heat Index Checklist</h3>
+     <ul className="grid md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300">
+       {[
+         "Hydrate before you leave the hotel, not when you arrive.",
+         "Electrolytes matter more than you think.",
+         "Use sunscreen even on cloudy days.",
+         "Schedule museum time as your midday reset."
+       ].map((t) => (
+         <li key={t} className="flex items-start gap-3">
+           <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+           <span>{t}</span>
+         </li>
+       ))}
+     </ul>
+   </div>
+ </Section>
+
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood (Where to Sleep, Eat, Play)">
+   <LightboxImage
+     src="/images/images articles/houston guide/Interactive Neighborhood Map.webp"
+     alt="Houston neighborhood map for World Cup 2026: rail corridor, nightlife, family zones"
+     caption="Neighborhood strategy: pick a base near the Red Line, then branch out by rideshare."
+   />
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+     <p>
+       Houston isn’t “Downtown or nothing.” It’s a patchwork of neighborhoods with totally different personalities. The trick is to choose a base that matches your travel style, then treat everything else like a short hop.
+     </p>
+     <p>
+       If you’re here for matches first, stay on the Red Line corridor. If you’re here for food and nightlife, you can bend the rules a bit—just budget for rideshare.
+     </p>
+   </div>
+   <div className="grid md:grid-cols-2 gap-8">
+     {[
+       {
+         title: "Downtown",
+         icon: MapPin,
+         text:
+           "Best for: first-timers, easy logistics, sports nights. You’re close to arenas, parks, and the rail spine. Use the Downtown tunnel system on weekdays for an air-conditioned lunch mission.",
+       },
+       {
+         title: "Midtown",
+         icon: Music,
+         text:
+           "Best for: bars, late dinners, and a younger vibe. It’s between Downtown and the Museum District, with plenty of Red Line access. Great compromise base if your group splits between match day discipline and nightlife chaos.",
+       },
+       {
+         title: "Museum District + Hermann Park",
+         icon: Camera,
+         text:
+           "Best for: families, culture, and daytime exploring. You’re near major museums and green space, with quick rail access to NRG Park. This is the calm, classy Houston you’ll want after a loud match night.",
+       },
+       {
+         title: "Texas Medical Center (TMC)",
+         icon: Briefcase,
+         text:
+           "Best for: match-day convenience. Hotel stock is large, rail access is excellent, and it’s relatively straightforward to get in/out. It’s not the most charming at night, but it’s efficient—like choosing the aisle seat.",
+       },
+       {
+         title: "Montrose",
+         icon: Star,
+         text:
+           "Best for: independent shops, coffee, art, and nightlife that’s more vibe than volume. Not directly on the rail, but rideshare times to Downtown and the Museum District are usually manageable.",
+       },
+       {
+         title: "EaDo (East Downtown)",
+         icon: Trophy,
+         text:
+           "Best for: breweries, soccer energy, and pregame culture. It’s near stadiums/venues and has a gritty-cool feel. If your group wants to watch matches in bars with actual noise, this is a strong candidate.",
+       },
+       {
+         title: "The Heights",
+         icon: ShoppingBag,
+         text:
+           "Best for: boutiques, brunch, and a slightly more local residential feel. Not on rail, but an easy rideshare to Downtown. Great if you’re extending your trip beyond match days.",
+       },
+       {
+         title: "Uptown / Galleria",
+         icon: Hotel,
+         text:
+           "Best for: shopping and corporate-style hotels. Transit to NRG can be slower by car in peak traffic; you’re trading match-day simplicity for hotel availability and big-brand comfort.",
+       },
+     ].map((n) => (
+       <div key={n.title} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+         <div className="flex items-center gap-3 mb-4">
+           <n.icon className="w-6 h-6 text-emerald-500" />
+           <h3 className="text-2xl font-black text-slate-900 dark:text-white">{n.title}</h3>
+         </div>
+         <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-lg">{n.text}</p>
+       </div>
+     ))}
+   </div>
+   <div className="mt-12 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Affiliate Placement Suggestions</h3>
+     <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
+       <p>[Affiliate: Booking.com — Downtown Houston hotels (Red Line access)]</p>
+       <p>[Affiliate: Booking.com — Texas Medical Center hotels (match-day efficiency)]</p>
+       <p>[Affiliate: Hotel deals platform — flexible/refundable rates for World Cup weeks]</p>
+       <p>[Affiliate: Airport transfer — prebooked pickup for late arrivals]</p>
+     </div>
+   </div>
+ </Section>
+
+ <Section id="itineraries" title="Itineraries (Pre-Match, Match Day, Post-Match)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       Below are three ready-to-run itineraries. They’re designed around Houston’s reality: heat, distance, and the fact that your best nights are usually the ones where you didn’t spend an hour searching for parking.
+     </p>
+   </div>
+   <div className="space-y-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">3-Day “Matches First” (Efficient)</h3>
+       <div className="grid md:grid-cols-3 gap-6 text-slate-700 dark:text-slate-300">
+         <div>
+           <h4 className="font-bold mb-2">Day 1 (Arrival)</h4>
+           <p>Check in near the Red Line, grab an early dinner, and take a short rail ride to get your bearings.</p>
+         </div>
+         <div>
+           <h4 className="font-bold mb-2">Day 2 (Match Day)</h4>
+           <p>Late brunch, museum time indoors, rail to NRG Park with time to spare, then post-match drinks back in Midtown or EaDo.</p>
+         </div>
+         <div>
+           <h4 className="font-bold mb-2">Day 3 (Recovery)</h4>
+           <p>Breakfast tacos, a slow walk in a shaded park, and one “big meal” before you fly out.</p>
+         </div>
+       </div>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">4-Day “Food City” (Eat Like You Mean It)</h3>
+       <p className="text-slate-600 dark:text-slate-400 text-lg mb-6">
+         Houston’s dining scene is not a side quest. It’s a main storyline. Mix cuisines the way locals do: tacos one meal, Vietnamese the next, BBQ the next, and somehow you’re still hungry.
+       </p>
+       <div className="grid md:grid-cols-2 gap-6 text-slate-700 dark:text-slate-300">
+         <p><span className="font-bold">Night 1:</span> Tex-Mex + margaritas (start here; it calibrates your trip).</p>
+         <p><span className="font-bold">Day 2:</span> Vietnamese lunch, then a brewery crawl where you don’t have to shout to talk.</p>
+         <p><span className="font-bold">Day 3 (Match Day):</span> Light meal pre-match, big meal post-match.</p>
+         <p><span className="font-bold">Day 4:</span> BBQ early (popular spots sell out) then dessert and a walk.</p>
+       </div>
+       <div className="mt-8">
+         <p className="text-slate-700 dark:text-slate-300">[Affiliate: Restaurant reservations platform — book World Cup week tables in advance]</p>
+       </div>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">5-Day “Families + First-Timers”</h3>
+       <p className="text-slate-600 dark:text-slate-400 text-lg mb-6">
+         Keep it simple: museums, parks, the zoo area, and one “wow” day that feels like Space City.
+       </p>
+       <div className="grid md:grid-cols-3 gap-6 text-slate-700 dark:text-slate-300">
+         <div>
+           <h4 className="font-bold mb-2">Day 1</h4>
+           <p>Settle in, early night, and lock down your match-day plan.</p>
+         </div>
+         <div>
+           <h4 className="font-bold mb-2">Day 2</h4>
+           <p>Museum District + shaded park time, then dinner near your hotel.</p>
+         </div>
+         <div>
+           <h4 className="font-bold mb-2">Day 3</h4>
+           <p>Match day with a long buffer and a calm post-match meal.</p>
+         </div>
+       </div>
+       <div className="mt-8">
+         <p className="text-slate-700 dark:text-slate-300">[Affiliate: Tours/experiences platform — family-friendly Houston highlights and day trips]</p>
+       </div>
+     </div>
+   </div>
  </Section>
 
  <Section id="visa" title="Visa & Entry (USA)">
@@ -433,25 +650,67 @@ HOUSTON
  </Section>
 
  <Section id="budget" title="Budgeting">
- <p className="text-lg text-slate-600 dark:text-slate-400 mb-8">
- Houston is generally more affordable than coastal cities like New York or LA. Accommodation offers good value, especially if you book early.
- </p>
- <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {[
- { label: "Budget Hotel", price: "$100-150" },
- { label: "Mid-Range", price: "$150-300" },
- { label: "Luxury", price: "$400+" },
- { label: "Beer", price: "$6-9" },
- { label: "Meal", price: "$15-25" },
- { label: "Metro", price: "$1.25" },
- { label: "Coffee", price: "$4-6" },
- { label: "Sim Card", price: "$30" }
- ].map((item, i) => (
- <div key={i} className=" p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 text-center hover:border-emerald-500 transition-colors">
- <p className="text-sm text-slate-500 mb-2 font-medium">{item.label}</p>
- <p className="text-2xl font-black text-emerald-600 dark:text-emerald-400">{item.price}</p>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p>
+     Houston can be a strong value play compared with coastal host cities, but World Cup weeks compress supply. The biggest lever is your hotel location: stay on the rail corridor and you’ll spend less time (and money) fixing transportation mistakes.
+   </p>
  </div>
- ))}
+
+ <div className="grid md:grid-cols-3 gap-8 mb-10">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Budget</h3>
+     <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+       <li className="flex justify-between gap-6"><span>Hotels</span><span className="font-bold">$100–$170/night (typical)</span></li>
+       <li className="flex justify-between gap-6"><span>Local meal</span><span className="font-bold">$12–$20</span></li>
+       <li className="flex justify-between gap-6"><span>METRO rail fare</span><span className="font-bold">$1.25 (3-hour pass)</span></li>
+     </ul>
+     <div className="mt-6">
+       <p className="text-slate-600 dark:text-slate-400">[Affiliate: Budget-friendly hotels near METRORail Red Line]</p>
+     </div>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Mid-Range</h3>
+     <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+       <li className="flex justify-between gap-6"><span>Hotels</span><span className="font-bold">$180–$320/night (typical)</span></li>
+       <li className="flex justify-between gap-6"><span>Dinner + drinks</span><span className="font-bold">$35–$70</span></li>
+       <li className="flex justify-between gap-6"><span>Rideshare (short hop)</span><span className="font-bold">$10–$25</span></li>
+     </ul>
+     <div className="mt-6">
+       <p className="text-slate-600 dark:text-slate-400">[Affiliate: Hotel deals with free cancellation + price alerts]</p>
+     </div>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Luxury</h3>
+     <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+       <li className="flex justify-between gap-6"><span>Hotels</span><span className="font-bold">$350+/night (typical)</span></li>
+       <li className="flex justify-between gap-6"><span>Chef-driven dinner</span><span className="font-bold">$80–$200+</span></li>
+       <li className="flex justify-between gap-6"><span>Hospitality packages</span><span className="font-bold">Varies</span></li>
+     </ul>
+     <div className="mt-6">
+       <p className="text-slate-600 dark:text-slate-400">[Affiliate: VIP hospitality packages (official)]</p>
+     </div>
+   </div>
+ </div>
+
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Money-Saving Moves</h3>
+   <ul className="grid md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300">
+     {[
+       "Choose a hotel you can reach by rail on match days.",
+       "Book refundable rooms early, then re-check prices monthly.",
+       "Plan one big BBQ meal, not three; you’ll want variety.",
+       "Buy eSIM data before arrival so maps work instantly."
+     ].map((t) => (
+       <li key={t} className="flex items-start gap-3">
+         <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+         <span>{t}</span>
+       </li>
+     ))}
+   </ul>
+   <div className="mt-6 grid md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300">
+     <p>[Affiliate: eSIM provider — activate before landing at IAH/HOU]</p>
+     <p>[Affiliate: Travel insurance — trip delay + event coverage]</p>
+   </div>
  </div>
  </Section>
 
@@ -459,11 +718,17 @@ HOUSTON
  <LightboxImage 
  src="/images/stadiums/nrg-stadium-houston-texas-world-cup-2026-1600.webp" 
  alt="NRG Stadium Interior" 
- caption="NRG Stadium: The world's first retractable roof NFL stadium, equipped with massive AC capacity."
+ caption="NRG Stadium (NRG Park): a retractable-roof venue built for Houston summers."
  />
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- <strong>NRG Stadium</strong> is a marvel of engineering designed specifically to defeat the Texas heat. With a capacity of 72,220 and a fully retractable roof (which will likely stay closed for cooling), it guarantees a perfect 72°F match environment regardless of the sweltering conditions outside.
+ <strong>NRG Stadium</strong> is Houston’s World Cup stage, inside the larger NRG Park complex. For FIFA events, naming rules may change how it’s branded publicly, but locals will still call it “NRG.”
+ </p>
+ <p>
+ If you want the simplest possible match day: stay near the Red Line, ride southbound, and get off at <strong>Stadium Park / Astrodome</strong>. Everything else is optional.
+ </p>
+ <p>
+ Read the venue deep-dive: <Link href="/nrg-stadium-world-cup-2026" className="text-emerald-600 dark:text-emerald-400 font-bold">NRG Stadium World Cup 2026 guide</Link>.
  </p>
  </div>
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -472,8 +737,8 @@ HOUSTON
  <ul className="space-y-4">
  {[
  { label: "Capacity", val: "72,220" },
- { label: "Surface", val: "Natural Grass (Temp)" },
- { label: "Climate", val: "Full AC + Retractable Roof" },
+ { label: "Roof", val: "Retractable" },
+ { label: "Complex", val: "NRG Park" },
  { label: "Opened", val: "2002" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
@@ -486,16 +751,21 @@ HOUSTON
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Clear Bag Policy: Strictly enforced. 12" x 6" x 12".</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Ride the Rail: Do not drive. Parking is chaotic.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Hydration: It is hot outside. Drink water before arrival.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrive early: security lines + heat slow everything down.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Expect bag restrictions: plan for a small, clear bag and verify event rules close to your match.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Rail beats parking: driving can work, but it’s the hardest mode on big-event days.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Post-match: don’t fight the first train; let the surge pass with a snack and photos.</li>
  </ul>
  </div>
  </div>
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> The **METRORail Red Line** stops right at the stadium. It connects directly to Downtown and the Museum District. This is the only way to travel on match days.
+ <strong>Getting There:</strong> METRORail Red Line serves NRG Park via Stadium Park / Astrodome station, connecting Downtown, Midtown, the Museum District, and the Texas Medical Center.
  </p>
+ </div>
+ <div className="mt-10 grid md:grid-cols-2 gap-4">
+   <p className="text-slate-700 dark:text-slate-300">[Affiliate: Stadium tours/experiences — NRG Stadium tours (when available)]</p>
+   <p className="text-slate-700 dark:text-slate-300">[Affiliate: Official merchandise — jerseys, scarves, match-day essentials]</p>
  </div>
  </Section>
 
@@ -516,99 +786,181 @@ HOUSTON
  </Section>
 
  <Section id="matches" title="Match Schedule">
- <div className="space-y-4">
- {[
- { date: "June 14", stage: "Group Stage", teams: "Match 7" },
- { date: "June 17", stage: "Group Stage", teams: "Match 16" },
- { date: "June 20", stage: "Group Stage", teams: "Match 24" },
- { date: "June 23", stage: "Group Stage", teams: "Match 31" },
- { date: "June 26", stage: "Group Stage", teams: "Match 39" },
- { date: "June 29", stage: "Round of 32", teams: "Match 75" },
- { date: "July 4", stage: "Round of 16", teams: "Match 89" }
- ].map((match, i) => (
- <div key={i} className="group p-6 rounded-2xl border border-slate-100 dark:border-slate-200 dark:border-slate-800 hover:border-emerald-500 dark:hover:border-emerald-500 transition-all hover:shadow-lg flex flex-col md:flex-row md:items-center justify-between gap-4">
- <div className="flex items-center gap-6">
- <div className="w-16 h-16 rounded-xl flex flex-col items-center justify-center text-slate-500">
- <span className="text-xs font-bold uppercase">{match.date.split(' ')[0]}</span>
- <span className="text-2xl font-black text-slate-900 dark:text-white">{match.date.split(' ')[1]}</span>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p>
+     Houston is scheduled to host <strong>seven</strong> World Cup matches at NRG Stadium. Matchups and kickoff times are controlled by FIFA and depend on the draw and the official tournament schedule.
+   </p>
+   <p>
+     This page is built to stay useful even before the final match list drops: hotels, transport, and match-day strategy are the parts you can lock in early.
+   </p>
  </div>
- <div>
- <h4 className="font-bold text-xl text-slate-900 dark:text-white group-hover:text-emerald-500 transition-colors">{match.teams}</h4>
- <p className="text-slate-500 font-medium">{match.stage}</p>
+
+ <div className="grid md:grid-cols-3 gap-8 mb-10">
+   {[
+     { title: "What’s Confirmed", text: "Houston is a Host City and will stage multiple matches at NRG Stadium." },
+     { title: "What Changes", text: "Teams, dates, and kickoff times (FIFA controls the schedule)." },
+     { title: "What You Can Do Now", text: "Book refundable hotels, learn the rail corridor, and pre-plan match day." }
+   ].map((item) => (
+     <div key={item.title} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+       <h3 className="text-xl font-black text-slate-900 dark:text-white mb-3">{item.title}</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+     </div>
+   ))}
  </div>
- </div>
- <div className="flex items-center gap-4 pl-22 md:pl-0">
- <span className="text-sm font-bold text-slate-400">20:00 Local</span>
- <button className="w-10 h-10 rounded-full flex items-center justify-center text-slate-400 group-hover:bg-emerald-500 group-hover:text-slate-900 dark:text-white transition-all">
- <ArrowRight className="w-5 h-5" />
- </button>
- </div>
- </div>
- ))}
+
+ <div className="flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.fifa.com/tickets" text="Track FIFA Ticket Phases" variant="secondary" icon={Ticket} />
+   <AffiliateButton href="https://www.fifa.com/" text="Check Official Schedule" variant="outline" icon={Calendar} />
  </div>
  </Section>
 
  <Section id="hotels" title="Where to Stay">
  <p className="text-lg text-slate-600 dark:text-slate-400 mb-12">
- The best areas to stay are <strong>Downtown</strong>, the <strong>Museum District</strong>, or the <strong>Medical Center</strong>. All are connected to the stadium by the Red Line.
+ The best match-day bases are <strong>Downtown</strong>, <strong>Midtown</strong>, the <strong>Museum District</strong>, and the <strong>Texas Medical Center</strong>—because they plug into the METRORail Red Line. If you can step out of your hotel, ride one line, and step off near NRG Park, you’ve solved Houston.
  </p>
- <div className="grid md:grid-cols-2 gap-8">
- <HotelCard 
- name="Marriott Marquis Houston" 
- rating={5} 
- price="$350" 
- distance="20 min Rail"
- features={['Lazy River', 'Downtown', 'Luxury', 'Pool']}
- image="/images/hotels/marriott-marquis.webp"
- link="https://www.booking.com/searchresults.html?ss=Marriott+Marquis+Houston"
- />
- <HotelCard 
- name="Hotel Zaza Museum District" 
- rating={4} 
- price="$280" 
- distance="10 min Rail"
- features={['Boutique', 'Museums', 'Stylish', 'Spa']}
- image="/images/hotels/hotel-zaza.webp"
- link="https://www.booking.com/searchresults.html?ss=Hotel+Zaza+Museum+District"
- />
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+   <HotelCard 
+     name="Marriott Marquis Houston" 
+     rating={5} 
+     price="$$$$" 
+     distance="Rail access via Downtown"
+     features={['Downtown', 'Big-Event Ready', 'Pool', 'Convention Center']}
+     image="/images/cities/houston-world-cup-2026.webp"
+     link="https://www.booking.com/searchresults.html?ss=Marriott+Marquis+Houston"
+   />
+   <HotelCard 
+     name="Hotel ZaZa Museum District" 
+     rating={4} 
+     price="$$$" 
+     distance="Short hop to Red Line"
+     features={['Boutique', 'Museums', 'Spa', 'Walkable']}
+     image="/images/cities/houston-world-cup-2026.webp"
+     link="https://www.booking.com/searchresults.html?ss=Hotel+ZaZa+Museum+District"
+   />
+   <HotelCard 
+     name="Hilton Americas-Houston" 
+     rating={4} 
+     price="$$$" 
+     distance="Downtown base"
+     features={['Downtown', 'Convention District', 'Pool', 'Walkable']}
+     image="/images/cities/houston-world-cup-2026.webp"
+     link="https://www.booking.com/searchresults.html?ss=Hilton+Americas-Houston"
+   />
+   <HotelCard 
+     name="The Westin Houston Downtown" 
+     rating={4} 
+     price="$$$" 
+     distance="Downtown base"
+     features={['Downtown', 'Game Nights', 'Modern', 'Walkable']}
+     image="/images/cities/houston-world-cup-2026.webp"
+     link="https://www.booking.com/searchresults.html?ss=Westin+Houston+Downtown"
+   />
+ </div>
+
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Booking Strategy</h3>
+   <ul className="grid md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300">
+     {[
+       "Prioritize Red Line access over “closest hotel by car.”",
+       "Book refundable first, then optimize price later.",
+       "Avoid “too good to be true” third-party ticket bundles.",
+       "If you’re driving, confirm parking and daily fees in writing."
+     ].map((t) => (
+       <li key={t} className="flex items-start gap-3">
+         <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+         <span>{t}</span>
+       </li>
+     ))}
+   </ul>
+   <div className="mt-6 grid md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300">
+     <p>[Affiliate: Booking.com — filter for “free cancellation” + “near public transport”]</p>
+     <p>[Affiliate: Hotel booking platform — price alerts for World Cup weeks]</p>
+   </div>
  </div>
  </Section>
 
  <Section id="transport" title="Getting Around">
- <div className="grid md:grid-cols-2 gap-8">
- <div className="space-y-6">
- <div className="p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Train className="w-6 h-6 text-emerald-500"/> METRORail (Red Line)</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- The Red Line is your lifeline. It connects Downtown, the Museum District, and NRG Stadium. Cost: $1.25 per ride.
- </p>
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p>
+     Houston transportation is a personality test. If you like flexibility, you’ll rent a car. If you like sanity on match day, you’ll ride METRORail. Most visitors end up with a hybrid plan: rail for NRG Park, rideshare for late nights, and a car only if you’re doing day trips.
+   </p>
  </div>
- <div className="p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Plane className="w-6 h-6 text-emerald-500"/> Airport Transfer</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- IAH (Bush) is the main international hub. Hobby (HOU) is closer to downtown. Rideshare or shuttle is recommended from both.
- </p>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-10">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Train className="w-6 h-6 text-emerald-500"/> METRORail (Red Line) = Match-Day Cheat Code</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+       The Red Line runs north–south through central Houston and provides access to NRG Park via <strong>Stadium Park / Astrodome</strong> station. It’s the cleanest “avoid traffic” move you can make.
+     </p>
+     <ul className="space-y-3 text-slate-700 dark:text-slate-300">
+       {[
+         "Regular fare: $1.25 (3-hour pass).",
+         "Day Pass: $3 (great for bouncing between neighborhoods on rail).",
+         "Transfer tip: if you pay with the same method, transfers can apply within a window."
+       ].map((t) => (
+         <li key={t} className="flex items-start gap-3">
+           <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" />
+           <span>{t}</span>
+         </li>
+       ))}
+     </ul>
+     <div className="mt-6 grid gap-3 text-slate-700 dark:text-slate-300">
+       <p>[Affiliate: eSIM provider — keep maps working underground/in transit]</p>
+       <p>[Affiliate: Airport transfer — prebook a late-night pickup]</p>
+     </div>
+   </div>
+
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Plane className="w-6 h-6 text-emerald-500"/> Airport Options (IAH + HOU)</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed mb-6">
+       Bush Intercontinental (IAH) is the main international gateway. Hobby (HOU) is smaller and usually simpler. Your best “cheap + reliable” move from IAH is often a METRO bus into Downtown, then rail.
+     </p>
+     <div className="space-y-4 text-slate-700 dark:text-slate-300">
+       <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+         <p className="font-bold">METRO 500 IAH Downtown Direct</p>
+         <p className="text-slate-600 dark:text-slate-400">Nonstop to the George R. Brown Convention Center for $4.50.</p>
+       </div>
+       <div className="p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+         <p className="font-bold">METRO 102 Bush IAH</p>
+         <p className="text-slate-600 dark:text-slate-400">Local route to Downtown for $1.25.</p>
+       </div>
+     </div>
+     <div className="mt-8 flex flex-wrap gap-4">
+       <AffiliateButton href="https://www.uber.com/" text="Rideshare Pickup" variant="secondary" icon={Car} />
+       <AffiliateButton href="https://www.ridemetro.org/" text="METRO Trip Planner" variant="outline" icon={Bus} />
+     </div>
+   </div>
  </div>
+
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800 mb-10">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">StadiumPort Straight-Line Distance Index</h3>
+   <p className="text-slate-600 dark:text-slate-400 mb-6">
+     These are straight-line distances (not driving distances). They’re useful for sanity-checking how “close” something really is in a city where a short distance can still mean a long trip.
+   </p>
+   <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
+     {[
+       { a: "NRG Stadium → Downtown", v: "9.3 km / 5.8 mi" },
+       { a: "NRG Stadium → IAH", v: "34.7 km / 21.6 mi" },
+       { a: "NRG Stadium → HOU", v: "13.5 km / 8.4 mi" },
+       { a: "Downtown → IAH", v: "25.7 km / 16.0 mi" },
+       { a: "Downtown → HOU", v: "15.5 km / 9.6 mi" },
+     ].map((row) => (
+       <div key={row.a} className="flex items-center justify-between p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+         <span className="font-bold">{row.a}</span>
+         <span>{row.v}</span>
+       </div>
+     ))}
+   </div>
  </div>
- <div className="p-8 rounded-[2rem]">
- <h4 className="font-bold text-xl mb-6">Travel Times</h4>
- <ul className="space-y-4">
- {[
- { label: "Downtown Hotels", time: "20 min Rail" },
- { label: "Museum District", time: "10 min Rail" },
- { label: "Galleria", time: "30 min Drive" },
- { label: "Airport (IAH)", time: "45 min Drive" }
- ].map((item, i) => (
- <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300 border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-3 last:border-0">
- <span>{item.label}</span>
- <span className="font-bold">{item.time}</span>
- </li>
- ))}
- </ul>
- <div className="mt-8">
-            <AffiliateButton href="https://www.uber.com/" text="Book Airport Transfer" variant="secondary" />
-          </div>
- </div>
+
+ <div className="p-8 rounded-[2rem] border border-amber-100 dark:border-amber-800">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Local Transportation Language (So You Don’t Get Lost)</h3>
+   <div className="grid md:grid-cols-2 gap-4 text-slate-700 dark:text-slate-300">
+     <p><span className="font-bold">“Feeder” / “service road”</span>: the road running alongside a freeway.</p>
+     <p><span className="font-bold">“The Loop”</span>: I-610 around central Houston.</p>
+     <p><span className="font-bold">“The Beltway”</span>: Beltway 8 (Sam Houston Tollway).</p>
+     <p><span className="font-bold">“It’s 20 minutes away”</span>: translate as “unless it’s rush hour.”</p>
+   </div>
  </div>
  </Section>
 
@@ -657,6 +1009,7 @@ HOUSTON
  <ul className="space-y-6">
  {[
  { title: "Underground Tunnels", desc: "Downtown has 6 miles of AC tunnels connecting buildings. Use them to escape the heat." },
+ { title: "Alcohol + Liquor Stores", desc: "Beer and wine are sold in grocery stores. Liquor is sold in dedicated liquor stores (“package stores”), typically Mon–Sat 10am–9pm and closed Sundays." },
  { title: "Tipping", desc: "20% is standard in restaurants and bars." },
  { title: "Dress Code", desc: "Casual is fine almost everywhere. Shorts are acceptable due to heat." }
  ].map((tip, i) => (
@@ -728,6 +1081,10 @@ HOUSTON
  <FAQItem 
  question="How hot will it be?"
  answer="Very hot. Highs of 95°F (35°C) are common. However, the stadium has a roof and AC, and most indoor places are heavily air-conditioned."
+ />
+ <FAQItem 
+ question="Where can I buy alcohol in Houston?"
+ answer="Beer and wine are sold in grocery stores. Liquor is sold in dedicated liquor stores (“package stores”), typically Mon–Sat 10am–9pm and closed Sundays."
  />
  <FAQItem 
  question="Can I visit NASA?"

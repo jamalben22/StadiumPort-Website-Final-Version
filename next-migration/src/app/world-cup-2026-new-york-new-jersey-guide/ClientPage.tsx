@@ -265,17 +265,22 @@ export default function ClientPage() {
  { id: 'visa', label: 'Visa & Entry' },
  { id: 'planning', label: 'Planning' },
  { id: 'budget', label: 'Budget' },
- { id: 'stadium', label: 'Stadium' },
+ { id: 'stadium', label: 'MetLife' },
+ { id: 'matchday', label: 'Match Day' },
  { id: 'tickets', label: 'Tickets' },
- { id: 'hotels', label: 'Hotels' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
+ { id: 'hotels', label: 'Where to Stay' },
  { id: 'transport', label: 'Transport' },
- { id: 'dining', label: 'Dining' },
- { id: 'attractions', label: 'Attractions' },
- { id: 'tips', label: 'Match Day' },
+ { id: 'dining', label: 'Food & Drink' },
+ { id: 'hidden-gems', label: 'Hidden Gems' },
+ { id: 'itineraries', label: 'Itineraries' },
+ { id: 'attractions', label: 'Must-Do' },
+ { id: 'tips', label: 'Local Hacks' },
  { id: 'safety', label: 'Safety' },
- { id: 'culture', label: 'Culture' },
- { id: 'packing', label: 'Packing' },
+ { id: 'culture', label: 'Local Rules' },
+ { id: 'packing', label: 'Weather & Packing' },
  { id: 'faq', label: 'FAQ' },
+ { id: 'essential', label: 'Essential Info' },
  ];
 
  return (
@@ -321,7 +326,7 @@ transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
 >
 <div className="flex items-center gap-4 mb-6">
            <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-             Last Updated: January 4, 2026
+             Last Updated: January 7, 2026
            </span>
            <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
              Host City
@@ -331,11 +336,11 @@ Final Host
 </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-NEW YORK <span className="block text-4xl md:text-6xl lg:text-7xl mt-2 text-white/70">/ NEW JERSEY</span>
+<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+New York/New Jersey World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+MetLife Stadium logistics, neighborhood picks, and the local shortcuts that save you hours.
 </p>
  </motion.div>
  </div>
@@ -386,29 +391,57 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <strong>Transparency:</strong> This guide contains affiliate links. We may earn a commission if you book through them, which helps fund our independent journalism.
  </p>
  </div>
-
+ 
  <Section id="overview" title="Strategic Overview">
- <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
- <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- New York / New Jersey is the epicenter of the 2026 World Cup, hosting the <strong>Grand Final</strong>. The experience spans two states: the electric energy of Manhattan and the massive scale of MetLife Stadium in East Rutherford, NJ. Your strategy must balance city thrills with cross-river logistics.
- </p>
+ <div className="prose prose-lg dark:prose-invert max-w-none">
+   <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
+     I’ve lived in the New York / New Jersey orbit long enough to remember when people still carried paper MetroCards like they were precious family heirlooms. The good news? You’re coming for the <strong>World Cup 2026</strong> in the biggest media market on earth. The bad news? The stadium isn’t in New York City, and your trip can go from “cinematic” to “why am I on the wrong platform at Secaucus?” in about 90 seconds.
+   </p>
+   <p>
+     This <strong>New York/New Jersey World Cup 2026 guide</strong> is built for one thing: helping you have the trip you pictured in your head—skyline, bagels, borough energy—while still getting you to <strong>MetLife Stadium</strong> on time, fed, hydrated, and not in a rideshare surge spiral.
+   </p>
  </div>
- <div className="grid md:grid-cols-3 gap-8">
- {[
- { icon: MapPin, title: "Where to Base", text: "Manhattan for the iconic experience. Secaucus/Hoboken (NJ) for easier stadium access." },
- { icon: Train, title: "Transport Strategy", text: "NJ Transit is key. Take the train from NY Penn Station to Secaucus, then the rail link to the stadium." },
- { icon: DollarSign, title: "Budget Signals", text: "Expect record-breaking prices for the Final. Book flexible rates immediately." }
- ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] transition-colors">
- <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
- <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+
+ <div className="grid md:grid-cols-3 gap-8 mt-12">
+   {[
+     { icon: MapPin, title: "The Core Truth", text: "MetLife Stadium is in East Rutherford, New Jersey. NYC is the base. NJ is match day." },
+     { icon: Train, title: "The Winning Route", text: "NJ Transit from New York Penn → Secaucus Junction → Meadowlands Station for major events." },
+     { icon: DollarSign, title: "The Pricing Reality", text: "The Final week will be the most expensive of your life here. Book refundable, then optimize." }
+   ].map((item, i) => (
+     <div key={i} className="p-8 rounded-[2rem] transition-colors border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+       <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+     </div>
+   ))}
  </div>
- ))}
+
+ <div className="mt-12 p-8 rounded-[2rem] border border-emerald-500/20">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Quick answers (for the impatient)</h3>
+   <div className="grid md:grid-cols-2 gap-6 text-slate-700 dark:text-slate-300">
+     <div className="flex gap-3">
+       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" />
+       <p><strong>Best area for first-timers:</strong> Midtown Manhattan near Penn Station.</p>
+     </div>
+     <div className="flex gap-3">
+       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" />
+       <p><strong>Best value base:</strong> Jersey City waterfront (PATH + NJ Transit access).</p>
+     </div>
+     <div className="flex gap-3">
+       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" />
+       <p><strong>Best airport for match logistics:</strong> Newark (EWR) in New Jersey.</p>
+     </div>
+     <div className="flex gap-3">
+       <CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-1" />
+       <p><strong>One mistake to avoid:</strong> Assuming you can “just take the subway” to the stadium.</p>
+     </div>
+   </div>
  </div>
+
  <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/nyc" text="Search NYC Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="https://www.booking.com/searchresults.html?ss=New+York" text="Check Manhattan Hotels" variant="primary" icon={Hotel} />
+   <AffiliateButton href="https://www.skyscanner.com" text="Compare Flights" variant="secondary" icon={Plane} />
+   <AffiliateButton href="https://www.expedia.com" text="Bundle Flight + Hotel" variant="outline" icon={Briefcase} />
+   <AffiliateButton href="https://www.booking.com/searchresults.html?ss=New+York" text="Search NYC Hotels" variant="primary" icon={Hotel} />
  </div>
  </Section>
 
@@ -477,7 +510,7 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  </div>
  </Section>
 
- <Section id="stadium" title="MetLife Stadium">
+ <Section id="stadium" title="MetLife Stadium (Know This Cold)">
  <LightboxImage 
  src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp" 
  alt="MetLife Stadium" 
@@ -485,9 +518,15 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
- <p>
- Selected to host the <strong>2026 World Cup Final</strong>, MetLife Stadium is a colossus. Located in the New Jersey Meadowlands, it offers massive capacity and excellent sightlines. While it lacks a roof, the energy of 82,000+ fans for the world's biggest game will be unmatched.
- </p>
+   <p>
+     MetLife is huge, open-air, and built for volume—volume of people, volume of security checks, volume of “where’s the exit?” questions after the whistle. It’s the home of the Giants and Jets, and it’s sitting in the Meadowlands Sports Complex in East Rutherford, NJ.
+   </p>
+   <p>
+     If you take one thing from this section: <strong>MetLife is not “a quick hop from Manhattan” unless you plan it like a commuter.</strong> On Final day, the region’s entire transportation system is going to feel like it’s wearing cleats.
+   </p>
+   <p>
+     Official match-day transport guidance consistently points fans to mass transit. NJ Transit runs Meadowlands rail service for major events, and the bus option from Manhattan is the Coach USA 351 from the Port Authority Bus Terminal. On big match days, rail service typically starts hours before kickoff and continues after the match; the Secaucus → stadium ride is only about 10 minutes when trains are running. For the official framework and timing windows, use the MetLife transport notes published by VisitNJ and NJ Transit. 
+   </p>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -510,37 +549,73 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-600 dark:text-slate-400 font-medium">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Wind: Upper decks can get breezy.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Transit: Train is the only reliable way. Traffic is gridlock.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Bag Policy: Strict clear bag policy enforced.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> It’s open-air: pack a light rain layer and sunscreen.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Train beats car: road traffic into the complex gets ugly fast.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Tailgates are real: arrive early if you want the parking-lot culture.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Buy tickets before boarding: onboard purchases can add surcharges.</li>
  </ul>
  </div>
  </div>
  
- <div className="p-8 rounded-[2rem] border border-emerald-500/20">
- <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> The <strong>NJ Transit Rail Line</strong> is the lifeline. Trains run from NY Penn Station (Manhattan) to Secaucus Junction, then directly to the stadium station. Allow 1 hour from Manhattan.
- </p>
+ <div className="grid md:grid-cols-3 gap-6">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-3">Address</h4>
+     <p className="text-slate-600 dark:text-slate-400">1 MetLife Stadium Dr, East Rutherford, NJ 07073</p>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-3">Rail Route</h4>
+     <p className="text-slate-600 dark:text-slate-400">New York Penn → Secaucus Junction → Meadowlands Station (event service).</p>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-3">Bus Route</h4>
+     <p className="text-slate-600 dark:text-slate-400">Coach USA 351 from Port Authority Bus Terminal (when operating for the event).</p>
+   </div>
+ </div>
+
+ <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="/metlife-stadium-world-cup-2026" text="MetLife Stadium Deep Guide" variant="secondary" icon={MapPin} />
+   <AffiliateButton href="https://www.njtransit.com/meadowlands" text="NJ Transit Meadowlands Info" variant="outline" icon={Train} />
  </div>
  </Section>
 
- <Section id="tips" title="Match Day Gameplan">
- <div className="grid md:grid-cols-3 gap-6 mb-8">
- {[
- { title: "Arrival", text: "Be at the gates 2+ hours before kickoff. Security for the Final will be unprecedented." },
- { title: "Clear Bag", text: "Bring a stadium-approved clear bag and sealed water. Lines will be long, so travel light." },
- { title: "Exit Plan", text: "Be patient. The train queue back to Manhattan can take 1-2 hours after big events." }
- ].map((item, i) => (
- <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
- <h4 className="font-bold mb-3">{item.title}</h4>
- <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
- </div>
- ))}
- </div>
- <div className="flex flex-wrap gap-4">
- <AffiliateButton href="#" text="Buy Clear Stadium Bag" variant="primary" />
- <AffiliateButton href="#" text="Add Refillable Bottle" variant="outline" />
- </div>
+ <Section id="matchday" title="Match Day Gameplan (The Local Clock)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       Here’s the rhythm of a big game day around here: the city wakes up early, the trains load up, and Penn Station turns into a slow-moving river of jerseys. If you plan it like a normal sightseeing day, you’ll be late. If you plan it like a commuter with somewhere important to be, you’ll be relaxed enough to actually enjoy the build-up.
+     </p>
+   </div>
+
+   <div className="grid md:grid-cols-3 gap-6 mb-10">
+     {[
+       { title: "T-5 hours", text: "Eat a real meal (not a granola bar) and check your route. Stadium is open-air: glance at weather." },
+       { title: "T-4 hours", text: "Get to New York Penn Station (or your NJ rail base). Buy round-trip tickets in the NJ Transit app." },
+       { title: "T-3 hours", text: "Aim to be in the Meadowlands complex area. Security + crowd-control for knockout matches is slower." },
+       { title: "T-2 hours", text: "Gates, photos, bathrooms, and the “I’m glad we came early” moment." },
+       { title: "Full time", text: "Hydrate. Upper deck breeze is real. Your voice will be gone by minute 60." },
+       { title: "Post-match", text: "Either queue calmly for rail, or hang back 30–45 minutes and let the first wave clear." }
+     ].map((item, i) => (
+       <div key={i} className="p-6 rounded-2xl border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+         <h4 className="font-bold mb-3">{item.title}</h4>
+         <p className="text-sm text-slate-600 dark:text-slate-400">{item.text}</p>
+       </div>
+     ))}
+   </div>
+
+   <div className="p-8 rounded-[2rem] border border-emerald-500/20">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">The standard train route (Manhattan)</h3>
+     <ol className="space-y-3 text-slate-700 dark:text-slate-300 font-medium list-decimal pl-5">
+       <li>Get to <strong>New York Penn Station</strong> and follow signs for <strong>NJ TRANSIT</strong>.</li>
+       <li>Take a train to <strong>Secaucus Junction</strong> (departure boards commonly mark it as “SEC”).</li>
+       <li>Transfer to the <strong>Meadowlands-bound</strong> shuttle (event service) for <strong>Meadowlands Station</strong>.</li>
+       <li>Walk into the stadium complex and follow crowd routing to your gate.</li>
+     </ol>
+   </div>
+
+   <div className="mt-10 flex flex-wrap gap-4">
+     <AffiliateButton href="https://www.worldnomads.com/" text="Travel Insurance (Event Trips)" variant="secondary" icon={Shield} />
+     <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Clear Stadium Bags" variant="outline" icon={Briefcase} />
+     <AffiliateButton href="https://www.fanatics.com/soccer" text="Jerseys & Merch" variant="primary" icon={Trophy} />
+   </div>
  </Section>
 
  <Section id="tickets" title="Schedule & Tickets">
@@ -585,29 +660,100 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  </div>
  </Section>
 
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood (Where You Actually Want to Base)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       People love to argue “Manhattan vs New Jersey” like it’s a sports debate. Here’s the truth: you’re probably going to do both. You sleep in one place, you eat in three, you celebrate in a fourth, and you commute through a fifth. Pick a base that matches <em>your</em> vibe, then build a reliable route to a transit hub for match day.
+     </p>
+     <p>
+       I’ve broken this down the way locals do it—by “how your day feels” and “how fast you can get to the train,” not by what a hotel brochure says.
+     </p>
+   </div>
+
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Midtown (Penn Station / Times Square edge)</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         Best for first-time visitors who want the “walk outside and it’s New York” feeling. You’re also closest to NJ Transit at Penn. The tradeoff: it’s crowded, loud, and the restaurant lines can feel like theme-park rides.
+       </p>
+       <ul className="mt-6 space-y-2 text-slate-700 dark:text-slate-300 font-medium">
+         <li>• Family-friendly: Midtown East is calmer than Times Square itself.</li>
+         <li>• Nightlife: Hell’s Kitchen has the bars without the chaos.</li>
+         <li>• Match-day advantage: shortest route to NJ Transit trains.</li>
+       </ul>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Lower Manhattan (SoHo / LES / Financial District)</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         Food, neighborhoods, and late-night energy—without Midtown’s tourist crush. Great if you’re here for the city as much as the match. You’ll add commuting time to Penn, but you’ll gain a better daily rhythm.
+       </p>
+       <ul className="mt-6 space-y-2 text-slate-700 dark:text-slate-300 font-medium">
+         <li>• Best for: repeat visitors, food people, bar people.</li>
+         <li>• Transit note: plan your Penn Station run early on match day.</li>
+         <li>• Local move: pre-book restaurants; walk-ins get brutal in summer.</li>
+       </ul>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Jersey City Waterfront (New Jersey)</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         Skyline views that’ll make your group chat jealous, often better hotel value, and easy access to Manhattan via PATH. This is the “I want NYC, but I also want sleep” option.
+       </p>
+       <ul className="mt-6 space-y-2 text-slate-700 dark:text-slate-300 font-medium">
+         <li>• Family-friendly: yes, especially around Exchange Place.</li>
+         <li>• Match-day advantage: closer to the Meadowlands than Manhattan is.</li>
+         <li>• Local move: pregame along the waterfront, then head to the train.</li>
+       </ul>
+     </div>
+
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Hoboken (New Jersey)</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         Brownstones, bars, and a walkable “small city” feeling. Hoboken is a classic pregame spot, and it can be a smoother launch point for NJ Transit than Midtown on very crowded days.
+       </p>
+       <ul className="mt-6 space-y-2 text-slate-700 dark:text-slate-300 font-medium">
+         <li>• Nightlife: strong, especially on weekends.</li>
+         <li>• Match-day advantage: easier station access than Penn’s crush.</li>
+         <li>• Good for: groups who want bars and a simpler sleep setup.</li>
+       </ul>
+     </div>
+   </div>
+
+   <div className="mt-10 p-8 rounded-[2rem] border border-emerald-500/20">
+     <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Where I’d base, depending on your trip</h3>
+     <div className="grid md:grid-cols-2 gap-6 text-slate-700 dark:text-slate-300 font-medium">
+       <p><strong>First trip, one match:</strong> Midtown (near Penn) for simplicity.</p>
+       <p><strong>Two+ matches, want sanity:</strong> Jersey City waterfront for value + views.</p>
+       <p><strong>Nightlife crew:</strong> Lower East Side or Hoboken.</p>
+       <p><strong>Family with kids:</strong> Upper West Side or Midtown East; easy parks, easy food.</p>
+     </div>
+   </div>
+ </Section>
+
  <Section id="hotels" title="Where to Stay">
  <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
- New York offers endless options. <strong>Manhattan</strong> is best for the full city experience. <strong>Secaucus/Meadowlands</strong> is practical for match days.
+ New York’s inventory is massive, but match-week pricing can make it feel tiny. Start with location (Penn access vs skyline calm), then filter by cancellation flexibility. If you’re coming for the Final, book something refundable now and “shop down” later.
  </p>
  
  <div className="space-y-8">
  <HotelCard 
  name="The New Yorker, A Wyndham Hotel"
  rating={4.0}
- price="$300 - $600"
- distance="40 min train"
- features={['Near Penn Station', 'Art Deco', 'Central']}
+ price="$250–$700"
+ distance="Penn Station (walk)"
+ features={['Penn Station access', 'Classic NYC', 'Easy match day']}
  image="/images/cities/new-york-new-jersey-world-cup-2026.webp" 
- link="#"
+ link="https://www.booking.com/searchresults.html?ss=The+New+Yorker+Hotel%2C+New+York"
  />
  <HotelCard 
- name="Harmony Suites Secaucus"
- rating={4.2}
- price="$150 - $300"
- distance="10 min train"
- features={['Near Stadium', 'Value', 'Breakfast']}
+ name="Hyatt House Jersey City"
+ rating={4.3}
+ price="$220–$650"
+ distance="PATH + NJ Transit"
+ features={['Skyline views', 'Transit base', 'Great value (often)']}
  image="/images/cities/new-york-new-jersey-world-cup-2026.webp" 
- link="#"
+ link="https://www.booking.com/searchresults.html?ss=Hyatt+House+Jersey+City"
  />
  <HotelCard 
  name="1 Hotel Brooklyn Bridge"
@@ -616,12 +762,12 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  distance="60 min train"
  features={['Skyline Views', 'Luxury', 'Ferry Access']}
  image="/images/cities/new-york-new-jersey-world-cup-2026.webp" 
- link="#"
+ link="https://www.booking.com/searchresults.html?ss=1+Hotel+Brooklyn+Bridge"
  />
  </div>
  
  <div className="mt-12 text-center">
- <AffiliateButton href="#" text="Search All NYC Hotels" variant="outline" />
+ <AffiliateButton href="https://www.booking.com" text="Search All Hotels (NYC + NJ)" variant="outline" />
  </div>
  </Section>
 
@@ -633,9 +779,9 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <Train className="w-8 h-8" />
  </div>
  <div>
- <h4 className="font-bold text-xl mb-2">NJ Transit & Subway</h4>
+ <h4 className="font-bold text-xl mb-2">MTA + NJ Transit (Your two systems)</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- NJ Transit connects Manhattan to the stadium. The Subway (MTA) gets you everywhere in NYC. Use OMNY (contactless) to pay.
+ Think of this trip as two networks: <strong>MTA</strong> (subways/buses inside NYC) and <strong>NJ Transit</strong> (getting you across to New Jersey and to Meadowlands service on event days). You’ll often connect through Penn Station or Secaucus.
  </p>
  </div>
  </div>
@@ -646,7 +792,7 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <div>
  <h4 className="font-bold text-xl mb-2">Airport Transfer</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- JFK, Newark (EWR), and LaGuardia (LGA) serve the city. EWR is closest to the stadium. JFK has the AirTrain.
+ Newark (EWR) is typically easiest for MetLife and New Jersey bases. JFK and LaGuardia are in Queens. JFK and EWR both use an AirTrain/airport access system; LaGuardia’s Q70 bus is fare-free.
  </p>
  </div>
  </div>
@@ -657,20 +803,20 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <div>
  <h4 className="font-bold text-xl mb-2">Rideshare & Driving</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Avoid driving into Manhattan or to the stadium if possible. Traffic is intense. Rideshare is good for airports but expensive.
+ Rideshare is useful for airports with luggage, but surge pricing after matches can be wild. Driving into Manhattan is a rookie mistake; driving to the stadium can work, but expect heavy exit congestion.
  </p>
  </div>
  </div>
  </div>
  
  <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 h-fit">
- <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
+ <h4 className="font-bold text-2xl mb-6">Airport Reality Check</h4>
  <ul className="space-y-6">
  {[
- { label: "Midtown Manhattan", time: "40 min train" },
- { label: "Secaucus (NJ)", time: "10 min train" },
- { label: "Newark Airport (EWR)", time: "20 min car/train" },
- { label: "JFK Airport", time: "60+ min car/train" }
+ { label: "JFK: AirTrain fare", time: "$8.50 (plus subway/LIRR fare)" },
+ { label: "LGA: Q70 bus", time: "Fare-free; pay subway fare to continue" },
+ { label: "EWR: AirTrain access fee", time: "$8.50 (included in NJT rail ticket)" },
+ { label: "Best for MetLife", time: "EWR (usually) + NJ bases" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
@@ -679,31 +825,120 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  ))}
  </ul>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
- <AffiliateButton href="#" text="Book Airport Transfer" variant="secondary" />
+ <AffiliateButton href="https://www.uber.com" text="Open Uber" variant="secondary" icon={Car} />
  </div>
  </div>
+ </div>
+
+ <div className="mt-12 p-8 rounded-[2rem] border border-emerald-500/20">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Local transport hacks</h3>
+   <ul className="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+     <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /> If Penn Station is chaos, consider basing near PATH (Jersey City/Hoboken) so you can access NJ Transit with less Midtown squeeze.</li>
+     <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /> For LaGuardia, the Q70 is fare-free; your cost is your subway fare once you connect.</li>
+     <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /> For JFK, the AirTrain fare is separate from subway/LIRR; budget it into every airport run.</li>
+     <li className="flex gap-3"><CheckCircle2 className="w-5 h-5 text-emerald-500 shrink-0 mt-0.5" /> For EWR, the airport rail/AirTrain access fee is included when you buy a ticket to/from the airport station.</li>
+   </ul>
  </div>
  </Section>
 
  <Section id="dining" title="Food & Drink">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+   <p>
+     If you only eat in Times Square, you’ll think New York is overrated and expensive. If you eat one great slice, one great dumpling, and one ridiculous deli sandwich, you’ll understand why people never shut up about food here.
+   </p>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-8">
- {[
- { title: "NY Pizza", desc: "The quintessential New York slice. Try Joe's Pizza or Di Fara for the authentic experience." },
- { title: "Katz's Delicatessen", desc: "Iconic Lower East Side deli famous for massive pastrami sandwiches and movie history." },
- { title: "Bagels", desc: "Start your day right. Ess-a-Bagel or Russ & Daughters offer the best bagels and lox in town." }
- ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
- <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
- <Utensils className="w-6 h-6" />
+   {[
+     { title: "Slices (fast + reliable)", desc: "You want speed and consistency. Grab a classic NY slice when you’re running between sights and trains." },
+     { title: "Deli culture", desc: "Order like you mean it: pastrami, mustard, pickles. Don’t overthink it—just commit." },
+     { title: "Queens eats", desc: "Jackson Heights and Flushing are where locals go when they’re hungry-hungry. Plan a food crawl." }
+   ].map((item, i) => (
+     <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+       <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
+         <Utensils className="w-6 h-6" />
+       </div>
+       <h4 className="font-bold text-xl mb-3">{item.title}</h4>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
+     </div>
+   ))}
  </div>
- <h4 className="font-bold text-xl mb-3">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
- </div>
- ))}
+
+ <div className="mt-10 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.opentable.com/new-york-city-restaurants" text="Reserve NYC Restaurants" variant="primary" icon={Utensils} />
+   <AffiliateButton href="https://www.opentable.com/new-jersey-restaurants" text="Reserve NJ Restaurants" variant="outline" icon={Utensils} />
  </div>
  </Section>
 
- <Section id="attractions" title="Top Attractions">
+ <Section id="hidden-gems" title="Hidden Gems (Locals Actually Do These)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       The Statue of Liberty is iconic. Also, it can eat half a day. If you’re here for matches, you want experiences that feel like New York without turning your trip into a scheduling spreadsheet.
+     </p>
+   </div>
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Roosevelt Island Tram</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         A quick, dramatic skyline ride that feels like a movie scene. It’s not a “tourist attraction” so much as a commuter shortcut that happens to be gorgeous.
+       </p>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Liberty State Park (NJ)</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         The view back toward Manhattan is unreal. If you want a calmer pregame day with space to breathe, this is it.
+       </p>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Sunset from Hoboken waterfront</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         NYC has plenty of rooftops. Hoboken gives you the same skyline for the price of… a walk.
+       </p>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">The “bodega breakfast”</h3>
+       <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+         This is as New York as it gets: egg-and-cheese on a roll, coffee, and a quick “next!” from behind the counter.
+       </p>
+     </div>
+   </div>
+ </Section>
+
+ <Section id="itineraries" title="Day-by-Day Itineraries (Pre, Match, Post)">
+   <div className="prose prose-lg dark:prose-invert max-w-none mb-10">
+     <p>
+       You can do a lot here. The trick is doing the right amount. New York will happily exhaust you. Don’t let it.
+     </p>
+   </div>
+
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">3-day “One Match” itinerary</h3>
+       <ul className="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+         <li><strong>Day 1:</strong> Midtown walk (Bryant Park → 5th Ave), early dinner, sleep early.</li>
+         <li><strong>Day 2 (Match Day):</strong> Big breakfast, train plan, arrive early, post-match hang back then return.</li>
+         <li><strong>Day 3:</strong> Lower Manhattan food + neighborhoods; pack and fly.</li>
+       </ul>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">5-day “Do NYC properly” itinerary</h3>
+       <ul className="space-y-3 text-slate-700 dark:text-slate-300 font-medium">
+         <li><strong>Day 1:</strong> Arrival + easy walk + early night.</li>
+         <li><strong>Day 2:</strong> Central Park + museum block + dinner.</li>
+         <li><strong>Day 3:</strong> Brooklyn views + neighborhoods + sunset.</li>
+         <li><strong>Day 4 (Match Day):</strong> MetLife plan, pregame, match, celebration.</li>
+         <li><strong>Day 5:</strong> Hidden gem morning + airport transfer.</li>
+       </ul>
+     </div>
+   </div>
+
+   <div className="mt-10 flex flex-wrap gap-4">
+     <AffiliateButton href="https://www.getyourguide.com/new-york-l59/" text="Book NYC Experiences" variant="secondary" icon={Camera} />
+     <AffiliateButton href="https://www.viator.com/New-York-City/d687-ttd" text="City Tours & Day Trips" variant="outline" icon={ExternalLink} />
+   </div>
+ </Section>
+
+ <Section id="attractions" title="Must-Do Classics (If It’s Your First Time)">
  <p className="mb-8 text-xl text-slate-600 dark:text-slate-300">
  New York City is a global icon. While the stadium is in NJ, you'll likely spend your free time exploring Manhattan's legendary sights.
  </p>
@@ -729,33 +964,61 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  </div>
  </Section>
 
- <Section id="safety" title="Safety & Security">
+ <Section id="tips" title="Local Hacks (Small Moves, Big Difference)">
+   <div className="grid md:grid-cols-2 gap-8">
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Clock className="w-6 h-6 text-emerald-500"/> Time Savers</h4>
+       <ul className="space-y-3 text-slate-600 dark:text-slate-300 font-medium">
+         <li>• Don’t stop at the top of subway stairs. People behind you are moving at full speed.</li>
+         <li>• On escalators: stand right, walk left. Yes, it matters.</li>
+         <li>• Eat before you travel to the stadium. Penn Station food lines can be chaotic.</li>
+         <li>• After the match: wait 30–45 minutes if your group prefers calm over speed.</li>
+       </ul>
+     </div>
+     <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+       <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><DollarSign className="w-6 h-6 text-emerald-500"/> Money Savers</h4>
+       <ul className="space-y-3 text-slate-600 dark:text-slate-300 font-medium">
+         <li>• LaGuardia’s Q70 bus is fare-free; you only pay for the subway after you connect.</li>
+         <li>• The best skyline “viewpoint” is often a waterfront walk in NJ.</li>
+         <li>• Skip Midtown souvenir shops. Buy team gear from major retailers online.</li>
+         <li>• Use booking platforms with free cancellation, then re-price weekly.</li>
+       </ul>
+     </div>
+   </div>
+ </Section>
+
+ <Section id="safety" title="Safety & Security (Big City Rules)">
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Shield className="w-6 h-6 text-emerald-500"/> Event Patterns</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">Manhattan is generally safe but busy. Watch out for pickpockets in Times Square. Avoid empty subway cars late at night.</p>
+ <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+   Most visitor-heavy areas are safe, but the risk is usually petty theft in crowds. The main “danger zone” on a match week is distraction: phones out, passports loose, bags unzipped.
+ </p>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Practical Tips</h4>
  <ul className="space-y-4 text-slate-600 dark:text-slate-300">
- <li>• Stay alert in crowded areas.</li>
- <li>• Use official taxi stands or rideshare apps.</li>
- <li>• Keep valuables secure and out of sight.</li>
+ <li>• In Midtown and Penn Station, keep your phone in a front pocket when moving.</li>
+ <li>• If a subway car is empty at night, don’t be the only one in it.</li>
+ <li>• Don’t take “help” from random people at ticket machines—use official staff.</li>
+ <li>• In the Meadowlands, follow official crowd routing; shortcuts can get blocked.</li>
  </ul>
  <div className="mt-6">
- <AffiliateButton href="#" text="Get Travel Insurance" variant="secondary" />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Get Travel Insurance" variant="secondary" />
  </div>
  </div>
  </div>
  </Section>
 
- <Section id="culture" title="Cultural Intelligence">
- <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">New York moves fast. Walk with purpose, stand to the right on escalators, and don't block the sidewalk. Tipping 20-25% is standard.</p>
+ <Section id="culture" title="Local Rules (So You Don’t Look Lost)">
+ <p className="text-xl mb-8 text-slate-600 dark:text-slate-300">
+   New York moves fast, and it’s not personal. Walk with purpose, don’t block the sidewalk, and remember: the city runs on a thousand tiny courtesies that aren’t announced out loud. Also: tipping matters here (often 18–25% in restaurants).
+ </p>
  <div className="grid md:grid-cols-3 gap-6">
  {[
- { title: "Fast Pace", desc: "New Yorkers value efficiency. Have your payment ready and keep moving." },
- { title: "Dining Etiquette", desc: "Reservations are essential. Bagels are for breakfast/lunch. Pizza is a religion." },
- { title: "Late Night", desc: "The city that never sleeps. You can find food and transport 24/7." }
+ { title: "Language tips", desc: "Uptown/downtown is direction. A “bodega” is a corner store. “To-go” means takeout. “The City” usually means Manhattan." },
+ { title: "Transit etiquette", desc: "Stand right, walk left on escalators. Let people off the train first. Move to the center of the subway car." },
+ { title: "Stadium culture", desc: "Tailgating is part of the show. If you’re invited to a parking-lot grill, say yes and bring something small." }
  ].map((item, i) => (
  <div key={i} className="p-6 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-2xl">
  <h4 className="font-bold mb-3">{item.title}</h4>
@@ -765,18 +1028,21 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  </div>
  </Section>
 
- <Section id="packing" title="Climate & Packing">
+ <Section id="packing" title="Weather & Packing (June–July)">
  <div className="grid md:grid-cols-3 gap-6">
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4 flex items-center gap-2"><Sun className="w-6 h-6 text-amber-500"/> June–July Weather</h4>
- <p className="text-slate-600 dark:text-slate-400">Hot and humid (85°F+). Thunderstorms possible. Stadium is open-air, so dress accordingly.</p>
+ <p className="text-slate-600 dark:text-slate-400">
+   Expect heat, humidity, and random storms that blow through like they’re late for a meeting. MetLife is open-air, so you’re exposed: sun, rain, wind—pick your adventure.
+ </p>
  </div>
  <div className="p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-4">Essentials</h4>
  <ul className="space-y-2 text-slate-600 dark:text-slate-400">
  <li>• Comfortable walking shoes</li>
- <li>• Clear stadium bag</li>
+ <li>• Light rain layer / poncho</li>
  <li>• Portable power bank</li>
+ <li>• Sunscreen + hat for open-air stadium</li>
  </ul>
  </div>
  <div className="p-8 rounded-[2rem]">
@@ -786,7 +1052,7 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <li>• Offline maps</li>
  <li>• eSIM with hotspot</li>
  </ul>
- <AffiliateButton href="#" text="Get an eSIM" variant="secondary" />
+ <AffiliateButton href="https://airalo.tp.st/yF9Qk3Ol" text="Get a US eSIM" variant="secondary" />
  </div>
  </div>
  </Section>
@@ -794,22 +1060,18 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <Section id="faq" title="Frequently Asked Questions">
  <div className="space-y-2">
  {[
- { q: "Where is the stadium located?", a: "MetLife Stadium is in East Rutherford, New Jersey, about 8 miles west of Manhattan." },
- { q: "Is New York safe for tourists?", a: "Yes, Manhattan is generally safe. Exercise normal big-city precautions, especially in crowded tourist areas." },
- { q: "Do I need a car in New York?", a: "No. Driving is stressful and parking is expensive. Use the subway and NJ Transit." },
- { q: "What is the weather like in June/July?", a: "Hot and humid. Highs around 85°F (29°C). Rain and thunderstorms can occur." },
- { q: "How far is the airport from the stadium?", a: "Newark (EWR) is closest (20 mins). JFK and LaGuardia are further and require crossing through NYC." },
- { q: "Which area should I stay in?", a: "Manhattan for sightseeing and nightlife; Secaucus/Meadowlands for lower cost and stadium proximity." },
- { q: "Can I bring a bag to the stadium?", a: "Only clear plastic, vinyl, or PVC bags not exceeding 12x6x12 inches." },
- { q: "How early should I arrive for matches?", a: "For the Final, aim for 2-3 hours before kickoff to clear security." },
- { q: "Is the stadium air-conditioned?", a: "No, MetLife Stadium is an open-air venue. Dress for the weather." },
- { q: "What’s the best way to get from the airport?", a: "From JFK, take AirTrain to Jamaica then LIRR to Penn Station. From EWR, take AirTrain to NJ Transit." },
- { q: "Where can I watch matches if I don’t have tickets?", a: "Fan fests will likely be held in parks and plazas across NYC and NJ." },
- { q: "Are restaurants close to the stadium?", a: "The stadium is in a complex, but there are options in the nearby American Dream mall." },
- { q: "Do I need travel insurance?", a: "Yes, especially for international travelers. US healthcare is expensive." },
- { q: "What mobile connectivity works best?", a: "Major carriers (Verizon, T-Mobile, AT&T) have strong 5G coverage throughout the region." },
- { q: "How do I avoid rideshare surge pricing?", a: "Use public transit (Subway/NJ Transit) whenever possible, especially on match days." },
- { q: "Where can I buy souvenirs?", a: "Times Square has many shops, plus official stores at the stadium and airports." }
+ { q: "Where is the stadium located?", a: "MetLife Stadium is in East Rutherford, New Jersey (not in NYC). Plan to cross the Hudson River for match day." },
+ { q: "What’s the best way to get to MetLife from Manhattan?", a: "NJ Transit from New York Penn Station to Secaucus Junction, then transfer to Meadowlands Station on event service." },
+ { q: "Can I take the NYC subway to the stadium?", a: "No. The subway stays in NYC. You’ll use NJ Transit or a car service once you’re headed into New Jersey." },
+ { q: "Is it better to stay in Manhattan or New Jersey?", a: "Manhattan is iconic and convenient for sightseeing; Jersey City/Hoboken can be better value with easy NYC access." },
+ { q: "Which airport should I fly into?", a: "EWR is often the easiest for MetLife and NJ bases. JFK/LGA are great for NYC, but add cross-city travel." },
+ { q: "How early should I arrive for the Final?", a: "Aim to be in the Meadowlands complex 2–3 hours before kickoff. Security and platform queues will be heavy." },
+ { q: "What’s the weather like in June/July?", a: "Warm to hot and humid, with occasional thunderstorms. MetLife is open-air, so pack for sun and rain." },
+ { q: "Is New York safe for tourists?", a: "Generally yes, but stay alert in crowded areas and keep valuables zipped—especially around Penn and Times Square." },
+ { q: "Do I need a car in NYC?", a: "No. Driving is stressful and parking is expensive. Use MTA transit in NYC and NJ Transit for match day." },
+ { q: "Where should families stay?", a: "Midtown East, the Upper West Side, and Jersey City waterfront are comfortable, walkable, and transit-friendly." },
+ { q: "Where can I eat near the stadium?", a: "The Meadowlands complex has limited options; American Dream across the way offers more choices before/after." },
+ { q: "Do I need travel insurance?", a: "If you’re traveling internationally, yes—U.S. medical costs and big-event disruptions can be expensive." }
  ].map((item, i) => (
  <FAQItem key={i} question={item.q} answer={item.a} />
  ))}
@@ -841,10 +1103,19 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  <div className="mt-24 pt-12 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
  <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8 text-center">Explore Other Host Cities</h3>
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
- {['Atlanta', 'Los Angeles', 'Mexico City', 'Toronto', 'Dallas', 'Miami', 'Seattle', 'Boston'].map((city) => (
- <Link key={city} href={`/world-cup-2026-host-cities`} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
- {city}
- </Link>
+ {[
+   { name: 'Atlanta', slug: 'world-cup-2026-atlanta-guide' },
+   { name: 'Los Angeles', slug: 'world-cup-2026-los-angeles-guide' },
+   { name: 'Mexico City', slug: 'world-cup-2026-mexico-city-guide' },
+   { name: 'Toronto', slug: 'world-cup-2026-toronto-guide' },
+   { name: 'Dallas', slug: 'world-cup-2026-dallas-guide' },
+   { name: 'Miami', slug: 'world-cup-2026-miami-guide' },
+   { name: 'Seattle', slug: 'world-cup-2026-seattle-guide' },
+   { name: 'Boston', slug: 'world-cup-2026-boston-guide' }
+ ].map((city) => (
+   <Link key={city.name} href={`/${city.slug}`} className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200">
+     {city.name}
+   </Link>
  ))}
  </div>
  <div className="text-center mt-12">
@@ -858,8 +1129,6 @@ The World's Biggest Stage. <span className="text-slate-900 dark:text-white font-
  </div>
  );
 }
-
-
 
 
 

@@ -171,11 +171,11 @@ export const contentRegistry: Record<string, ContentMeta> = {
     image: '/images/cities/toronto-world-cup-2026.webp'
   },
   'vancouver-city-guide': {
-    title: 'Vancouver World Cup 2026 Guide: BC Place & Travel Tips',
-    description: 'The most scenic World Cup host city. BC Place guide, Sea-to-Sky highway trips, Stanley Park & waterfront luxury.',
+    title: 'Vancouver World Cup 2026 Guide: BC Place, Hotels & Local Tips',
+    description: 'A local-first Vancouver World Cup 2026 guide: BC Place logistics, SkyTrain from YVR, neighborhoods, food, safety, budgets, and itineraries.',
     publishedAt: '2025-12-31T00:00:00Z',
-    updatedAt: '2025-12-31T00:00:00Z',
-    wordCount: 3800,
+    updatedAt: '2026-01-07T00:00:00Z',
+    wordCount: 4700,
     image: '/images/cities/vancouver-world-cup-2026.webp'
   },
   'guadalajara-city-guide': {

@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://cmp.gatekeeperconsent.com https://the.gatekeeperconsent.com https://www.ezojs.com https://www.google-analytics.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https:; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com;"
+          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https: https://googleads.g.doubleclick.net; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com https://googleads.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;"
         },
         {
           key: 'Permissions-Policy',
@@ -217,12 +217,6 @@ const nextConfig: NextConfig = {
       { source: '/2026-world-cup-group-j-travel-guide', destination: '/world-cup-2026-groups/group-j', permanent: true },
       { source: '/2026-world-cup-group-k-travel-guide', destination: '/world-cup-2026-groups/group-k', permanent: true },
       { source: '/2026-world-cup-group-l-travel-guide', destination: '/world-cup-2026-groups/group-l', permanent: true },
-      // Ezoic Ads.txt Redirect
-      {
-        source: '/ads.txt',
-        destination: 'https://srv.adstxtmanager.com/19390/stadiumport.com',
-        statusCode: 301,
-      },
     ];
   },
 

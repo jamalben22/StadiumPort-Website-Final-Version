@@ -103,7 +103,7 @@ export const generateEventSchema = (event: {
   name: string;
   startDate: string;
   endDate: string;
-  location: { name: string; address: string };
+  location: { name: string; address: string; country?: string };
   image: string;
   description: string;
 }) => ({
@@ -120,7 +120,7 @@ export const generateEventSchema = (event: {
     "address": {
       "@type": "PostalAddress",
       "addressLocality": event.location.address,
-      "addressCountry": "US" // Dynamic based on city? For now US default or pass in
+      "addressCountry": event.location.country || "US"
     }
   },
   "image": [getSiteUrl(event.image)],
@@ -204,6 +204,18 @@ export const generateSportsEventSchema = () => ({
   "eventStatus": "https://schema.org/EventScheduled",
   "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
   "location": [
+    {
+      "@type": "Place",
+      "name": "MetLife Stadium",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1 MetLife Stadium Dr",
+        "addressLocality": "East Rutherford",
+        "addressRegion": "NJ",
+        "postalCode": "07073",
+        "addressCountry": "US"
+      }
+    },
     {
       "@type": "Place",
       "name": "United States",

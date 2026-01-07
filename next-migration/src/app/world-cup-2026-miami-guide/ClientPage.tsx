@@ -261,19 +261,18 @@ export default function ClientPage() {
  // Sticky Nav Links
  const navLinks = [
  { id: 'overview', label: 'Overview' },
- { id: 'visa', label: 'Visa & Entry' },
- { id: 'planning', label: 'Planning' },
- { id: 'budget', label: 'Budget' },
+ { id: 'tickets', label: 'Matches' },
  { id: 'stadium', label: 'Stadium' },
- { id: 'tickets', label: 'Tickets' },
- { id: 'hotels', label: 'Hotels' },
- { id: 'transport', label: 'Transport' },
- { id: 'dining', label: 'Dining' },
- { id: 'attractions', label: 'Attractions' },
  { id: 'tips', label: 'Match Day' },
+ { id: 'hotels', label: 'Neighborhoods' },
+ { id: 'transport', label: 'Transport' },
+ { id: 'dining', label: 'Food & Drink' },
+ { id: 'attractions', label: 'Things To Do' },
+ { id: 'budget', label: 'Budget' },
+ { id: 'visa', label: 'Entry' },
  { id: 'safety', label: 'Safety' },
- { id: 'culture', label: 'Culture' },
- { id: 'packing', label: 'Packing' },
+ { id: 'culture', label: 'Local Tips' },
+ { id: 'packing', label: 'Weather' },
  { id: 'faq', label: 'FAQ' },
  ];
 
@@ -320,7 +319,7 @@ transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
 >
 <div className="flex items-center gap-4 mb-6">
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-              Last Updated: January 4, 2026
+              Last Updated: January 6, 2026
             </span>
             <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-xs font-medium tracking-widest uppercase backdrop-blur-md">
               Host City
@@ -330,11 +329,11 @@ transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-MIAMI
+<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+Miami World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-The Global Gateway. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+Hard Rock Stadium is in Miami Gardens. South Beach is not. That one sentence will save your trip.
 </p>
 </motion.div>
 </div>
@@ -386,28 +385,48 @@ The Global Gateway. <span className="text-slate-900 dark:text-white font-medium"
  </p>
  </div>
 
- <Section id="overview" title="Strategic Overview">
-<div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+ <Section id="overview" title="Miami, Explained (Before You Book Anything)">
+<div className="prose prose-lg dark:prose-invert max-w-none mb-10">
 <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
-Miami is the gateway to the Americas and a global party capital. Hosting the Bronze Final, the city brings Latin flair, intense heat, and a sprawling layout. Unlike many host cities, the stadium is far from the city center, making logistics your #1 priority.
+Welcome to the <strong>Miami World Cup 2026 guide</strong> that actually treats Miami like the giant, gorgeous, slightly chaotic sprawl it is. If you plan this city like a compact European host, you’ll spend half your tournament in traffic and the other half sweating through your jersey in a parking lot wondering why your rideshare keeps cancelling.
+</p>
+<p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+The headline truth: <strong>Hard Rock Stadium (Miami Gardens) is not “Miami Beach.”</strong> It’s up north, surrounded by highways and stadium lots. That’s why the best Miami World Cup strategy is less “Which club is hottest?” and more “Where do I sleep so match day isn’t a disaster?”
 </p>
 </div>
-<div className="grid md:grid-cols-3 gap-8">
+
+<div className="grid md:grid-cols-3 gap-8 mb-10">
 {[
-{ icon: MapPin, title: "Where to Base", text: "South Beach for the party vibe. Brickell for luxury and dining. Avoid staying near the stadium (limited amenities)." },
-{ icon: Train, title: "Transport Strategy", text: "Use Brightline. Take the high-speed train from Downtown to Aventura, then the shuttle. Uber will be gridlocked." },
-{ icon: DollarSign, title: "Budget Signals", text: "Expect astronomical prices. Miami is premium. Book refundable rates immediately." }
+{ icon: MapPin, title: "Best Base (Most Fans)", text: "Brickell / Downtown. You’ll be closer to Brightline + Metromover (free) and you can still hit South Beach when you want it. [Affiliate: Hotels in Brickell/Downtown]" },
+{ icon: Train, title: "Match-Day Transport", text: "Treat Brightline as your spine: Downtown → Aventura, then shuttle/rideshare to the stadium. Driving from South Beach is the classic rookie mistake." },
+{ icon: Sun, title: "Weather Reality Check", text: "June–July is hot, humid, and stormy. The canopy helps with shade, not temperature. Build a hydration plan like you’re training for a 10K." }
 ].map((item, i) => (
 <div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] transition-all duration-300 hover:border-emerald-500/50">
 <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
-<h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+<h3 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h3>
 <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
 </div>
 ))}
 </div>
- <div className="mt-12 flex flex-wrap gap-4">
- <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/mia" text="Search Miami Flights" variant="secondary" icon={Plane} />
- <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Miami+Beach" text="Check South Beach Hotels" variant="primary" icon={Hotel} />
+
+<div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] mb-10">
+<h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Featured Snippet Answers (Save This)</h3>
+<div className="grid md:grid-cols-2 gap-6 text-slate-600 dark:text-slate-400">
+  <div className="space-y-2">
+    <p className="font-bold text-slate-900 dark:text-white">Best area to stay for World Cup Miami?</p>
+    <p>Brickell/Downtown for logistics, South Beach for nightlife, Coconut Grove for families and calm. Stadium-adjacent hotels are limited and not walkable.</p>
+  </div>
+  <div className="space-y-2">
+    <p className="font-bold text-slate-900 dark:text-white">Best way to get to Hard Rock Stadium?</p>
+    <p>Brightline to Aventura + official shuttles/rideshare, or a pre-booked car service. Driving yourself is possible, but plan for heavy congestion and expensive parking.</p>
+  </div>
+</div>
+</div>
+
+ <div className="flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/mia" text="Compare Flights to MIA" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Brickell" text="Search Brickell Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=South%20Beach" text="Search South Beach Hotels" variant="outline" icon={Hotel} />
  </div>
  </Section>
 
@@ -486,7 +505,10 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
- A global entertainment destination, <strong>Hard Rock Stadium</strong> is built for big events. Home to the Miami Dolphins and F1 Grand Prix, it features a massive open-air canopy to protect fans from the sun and rain, while keeping the pitch open to the elements. It is a loud, vibrant venue perfect for World Cup drama.
+ A global entertainment destination, <strong>Hard Rock Stadium</strong> is built for big events. It’s the Dolphins’ home, it hosts the Miami Grand Prix campus, and it’s one of the few U.S. venues where the crowd noise feels like it has teeth. The signature feature is the open-air canopy: it’s shade, not air-conditioning, but in a Miami summer it still matters.
+ </p>
+ <p>
+ The “Miami” stadium branding you’ll see in FIFA material is <strong>Miami Stadium</strong>, but the address you’ll actually type into your phone is <strong>347 Don Shula Dr, Miami Gardens, FL 33056</strong>. That’s why this guide pushes logistics so hard: you’re not strolling here from Ocean Drive.
  </p>
  </div>
  
@@ -495,10 +517,10 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
 <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "~65,000 (Expandable)" },
+ { label: "Capacity", val: "≈65,000" },
  { label: "Surface", val: "Natural Grass" },
- { label: "Roof", val: "Open-Air Canopy (Covers 90% of fans)" },
- { label: "Renovated", val: "2016 ($500M+)" }
+ { label: "Roof", val: "Open-Air Canopy (shade)" },
+ { label: "Stadium Policy", val: "Clear bag rules + screening" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
  <span className="font-medium text-slate-500">{item.label}</span>
@@ -506,20 +528,46 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </li>
  ))}
  </ul>
+ <div className="mt-8 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.hardrockstadium.com/stadium-policy/" text="Hard Rock Stadium Policy" variant="outline" icon={ExternalLink} />
+   <AffiliateButton href="/hard-rock-stadium-world-cup-2026" text="Read our Hard Rock Stadium Guide" variant="secondary" icon={ArrowRight} />
+ </div>
  </div>
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Sun Smart: Sit on the South side for shade.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Hydrate: June humidity is intense. Drink water.</li>
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Access: No direct train. Plan shuttles early.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Bag reality: If it isn’t a clear stadium bag, assume it’s a problem. Keep it minimal.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Heat plan: Hydrate early, not just at kickoff. Humidity sneaks up on you.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Arrival time: Be on campus 3 hours early for big matches (security + walking).</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Exit hack: Don’t fight the first wave. Let traffic burn itself out for 30–45 minutes.</li>
  </ul>
  </div>
  </div>
  
+ <div className="grid md:grid-cols-3 gap-6 mb-12">
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Car className="w-6 h-6 text-emerald-500" /> Parking</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+       Parking is on-site lots. Prices change per event and the walk can be long. If you drive, screenshot your lot and gate before you enter. You will thank yourself later.
+     </p>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Bus className="w-6 h-6 text-emerald-500" /> Shuttles</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+       Expect official matchday shuttles to be the cleanest option from transit hubs. Build your whole day around one hub so you’re not improvising under pressure.
+     </p>
+   </div>
+   <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+     <h4 className="font-bold text-xl mb-4 flex items-center gap-3"><Car className="w-6 h-6 text-emerald-500" /> Rideshare</h4>
+     <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+       Rideshare works, but surge pricing can get silly and pickup lines can be real. If you’re staying far south (South Beach), consider pre-booking a car service. [Affiliate: Airport transfers / private rides]
+     </p>
+   </div>
+ </div>
+ 
  <div className="p-8 rounded-[2rem] border border-emerald-500/20">
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
- <strong>Getting There:</strong> Unlike downtown stadiums, Hard Rock Stadium is <strong>15 miles north</strong> of downtown. There is NO direct train. You must take the <strong>Brightline</strong> to Aventura, then a shuttle, or brave the traffic in an Uber.
+ <strong>Getting There:</strong> Unlike downtown stadiums, Hard Rock Stadium is <strong>about 15 miles north</strong> of Downtown Miami. There is no direct Metrorail stop. The simplest tournament-day plan is <strong>Brightline to Aventura</strong> + shuttle/rideshare.
  </p>
  </div>
  </Section>
@@ -553,10 +601,10 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  <div className="space-y-6">
  {[
- { stage: "Group Stage", count: "4 Matches", color: "text-emerald-300" },
- { stage: "Round of 32", count: "1 Match", color: "text-emerald-300" },
- { stage: "Quarter-Final", count: "1 Match", color: "text-emerald-300" },
- { stage: "Bronze Final", count: "?? HOST MATCH", color: "text-amber-400" }
+ { stage: "Group Stage", count: "4 matches", color: "text-emerald-300" },
+ { stage: "Round of 32", count: "1 match", color: "text-emerald-300" },
+ { stage: "Quarter-Final", count: "1 match", color: "text-emerald-300" },
+ { stage: "Bronze Final", count: "Saturday, July 18, 2026 (5:00 PM ET)", color: "text-amber-300" }
  ].map((match, i) => (
  <div key={i} className="flex items-center justify-between border-b border-white/10 pb-4">
  <span className={`font-mono text-lg ${match.color}`}>{match.stage}</span>
@@ -564,16 +612,43 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  ))}
  </div>
+ <p className="mt-8 text-emerald-100/90 text-sm leading-relaxed max-w-3xl">
+ Match list is based on the Miami Host Committee’s published schedule (Miami Stadium / Miami Gardens). Always cross-check your ticket confirmation for kickoff time changes.
+ </p>
+ <div className="mt-6 flex flex-wrap gap-4">
+   <AffiliateButton href="https://miamifwc26.com/match-schedule/" text="Miami Match Schedule" variant="outline" icon={ExternalLink} />
+   <AffiliateButton href="https://www.fifa.com/tickets" text="FIFA Tickets Portal" variant="secondary" icon={Ticket} />
+ </div>
  </div>
  </div>
  
+ <div className="p-8 md:p-10 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-12">
+   <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-6">Miami Match Dates (Quick List)</h3>
+   <div className="grid md:grid-cols-2 gap-6 text-slate-600 dark:text-slate-400">
+     {[
+       "Mon, Jun 15, 2026 — Group Stage (6:00 PM ET)",
+       "Sun, Jun 21, 2026 — Group Stage (6:00 PM ET)",
+       "Wed, Jun 24, 2026 — Group Stage (6:00 PM ET)",
+       "Sat, Jun 27, 2026 — Group Stage (7:30 PM ET)",
+       "Fri, Jul 3, 2026 — Round of 32 (6:00 PM ET)",
+       "Sat, Jul 11, 2026 — Quarter-Final (5:00 PM ET)",
+       "Sat, Jul 18, 2026 — Bronze Final (5:00 PM ET)"
+     ].map((item) => (
+       <div key={item} className="flex items-start gap-3">
+         <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+         <span className="text-lg">{item}</span>
+       </div>
+     ))}
+   </div>
+ </div>
+
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Official Tickets</h4>
  <p className="text-slate-600 dark:text-slate-400 mb-8">
  The safest way to buy tickets is through the official FIFA portal. Registration typically opens 12-18 months before the tournament.
  </p>
- <AffiliateButton href="https://www.fifa.com" text="FIFA Official Site" variant="secondary" />
+ <AffiliateButton href="https://www.fifa.com/tickets" text="Apply for Tickets" variant="secondary" />
  </div>
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
  <h4 className="font-bold text-2xl mb-4">Resale Market</h4>
@@ -585,43 +660,98 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  </div>
  </Section>
 
- <Section id="hotels" title="Where to Stay">
- <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
- Miami offers two distinct experiences: the beach party or the city luxury. <strong>South Beach</strong> is for the vibe, <strong>Brickell</strong> is for high-end dining. There are very few quality hotels near the stadium itself.
- </p>
- 
+ <Section id="hotels" title="Where to Stay (Neighborhood Playbook)">
+ <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+   <p className="text-xl leading-relaxed text-slate-600 dark:text-slate-300">
+     If you take one local lesson from this <strong>Miami World Cup 2026 guide</strong>, make it this: pick your “base” like you’re picking a home stadium. Miami is not a city you casually “hop across” on match day.
+   </p>
+   <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+     Most first-timers default to South Beach because it looks like Miami in movies. It’s amazing… and it’s also far from Hard Rock Stadium. My practical recommendation for most fans is <strong>Brickell/Downtown</strong> (logistics), with planned “Beach days” when you can enjoy it without a kickoff deadline. [Affiliate: Miami hotel deals]
+   </p>
+ </div>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+   {[
+     {
+       title: "Brickell / Downtown",
+       vibe: "Best for first-time fans who hate chaos",
+       bullets: ["Metromover is free for short hops", "Easy access to Brightline + nightlife", "Great for groups and late dinners"],
+     },
+     {
+       title: "South Beach (SoBe)",
+       vibe: "Best for nightlife-first travelers",
+       bullets: ["Iconic Art Deco + beach mornings", "Expect higher prices and loud weekends", "Plan transport early for stadium days"],
+     },
+     {
+       title: "Wynwood / Design District",
+       vibe: "Best for creative energy + bars",
+       bullets: ["Street art, breweries, late-night bites", "Not a beach neighborhood", "Uber-friendly but surge-prone"],
+     },
+     {
+       title: "Coconut Grove / Coral Gables",
+       vibe: "Best for families and calmer stays",
+       bullets: ["Leafy, walkable pockets", "Easy day trips and parks", "Quieter nights (a feature, not a bug)"],
+     }
+   ].map((n) => (
+     <div key={n.title} className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/50">
+       <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-2">{n.title}</h3>
+       <p className="text-slate-600 dark:text-slate-400 mb-6">{n.vibe}</p>
+       <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+         {n.bullets.map((b) => (
+           <li key={b} className="flex items-start gap-3">
+             <CheckCircle2 className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" />
+             <span>{b}</span>
+           </li>
+         ))}
+       </ul>
+     </div>
+   ))}
+ </div>
+
+ <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-8">High-Conversion Hotel Picks (By Strategy)</h3>
  <div className="space-y-8">
  <HotelCard 
- name="1 Hotel South Beach"
- rating={5.0}
- price="$800+"
- distance="15 miles"
- features={['Eco-Luxury', 'Beachfront', 'Rooftop Pool']}
- image="/images/cities/miami-world-cup-2026.webp" 
- link="https://www.booking.com/hotel/us/1-south-beach.html"
- />
- <HotelCard 
- name="East Miami (Brickell)"
+ name="EAST Miami (Brickell/Downtown Edge)"
  rating={4.8}
- price="$600+"
- distance="14 miles"
- features={['Connected to City Centre', 'Modern', 'Nightlife']}
+ price="$$$"
+ distance="≈14–16 miles"
+ features={['Brickell City Centre', 'Nightlife', 'Strong location']}
  image="/images/cities/miami-world-cup-2026.webp" 
  link="https://www.booking.com/hotel/us/east-miami.html"
  />
  <HotelCard 
- name="Seminole Hard Rock Hotel"
+ name="1 Hotel South Beach (Beachfront)"
+ rating={5.0}
+ price="$$$$"
+ distance="≈18–20 miles"
+ features={['Beachfront', 'Rooftop pool', 'Iconic Miami']}
+ image="/images/cities/miami-world-cup-2026.webp" 
+ link="https://www.booking.com/hotel/us/1-south-beach.html"
+ />
+ <HotelCard 
+ name="JW Marriott Miami Turnberry (Aventura)"
  rating={4.7}
- price="$500+"
- distance="8 miles"
- features={['Casino', 'Guitar Hotel', 'Resort']}
+ price="$$$$"
+ distance="≈5–6 miles"
+ features={['Closest luxury base', 'Family-friendly', 'North logistics']}
+ image="/images/cities/miami-world-cup-2026.webp" 
+ link="https://www.booking.com/searchresults.html?ss=JW+Marriott+Miami+Turnberry+Resort+%26+Spa"
+ />
+ <HotelCard 
+ name="Seminole Hard Rock Hotel (Hollywood)"
+ rating={4.7}
+ price="$$$"
+ distance="≈8–10 miles"
+ features={['Resort', 'Casino', 'North base']}
  image="/images/cities/miami-world-cup-2026.webp" 
  link="https://www.booking.com/hotel/us/seminole-hard-rock-hollywood.html"
  />
  </div>
  
- <div className="mt-12 text-center">
- <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Miami" text="Search All Miami Hotels" variant="outline" />
+ <div className="mt-12 flex flex-wrap gap-4 justify-center">
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Brickell" text="Find Brickell Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Miami%20Beach" text="Find Miami Beach Hotels" variant="outline" icon={Hotel} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Aventura" text="Find Aventura Hotels" variant="secondary" icon={Hotel} />
  </div>
  </Section>
 
@@ -635,8 +765,11 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  <div>
  <h4 className="font-bold text-xl mb-2">Brightline (Train)</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Brightline is a game-changer. The premium high-speed train connects Miami Central to Aventura in 17 mins. From there, take the stadium shuttle.
+ Brightline is the cleanest way to cut through South Florida distance. If you’re based Downtown/Brickell, you can get to the Aventura station fast, then transition to stadium shuttles/rideshare.
  </p>
+ <div className="mt-4">
+   <AffiliateButton href="https://www.gobrightline.com/train-stations/fl/aventura" text="Brightline Aventura Station Info" variant="outline" icon={ExternalLink} />
+ </div>
  </div>
  </div>
  <div className="flex gap-6">
@@ -646,7 +779,7 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  <div>
  <h4 className="font-bold text-xl mb-2">MIA & FLL</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Miami International (MIA) is closer to downtown. Fort Lauderdale (FLL) is often cheaper and closer to the stadium.
+ Miami International (MIA) is the easiest airport for Downtown/Brickell. Fort Lauderdale (FLL) is often cheaper and can be smarter if you’re staying north (Aventura, Hollywood, Sunny Isles).
  </p>
  </div>
  </div>
@@ -657,20 +790,25 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  <div>
  <h4 className="font-bold text-xl mb-2">Uber & Traffic</h4>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
- Essential for short trips, but avoid during rush hour. Parking at the stadium will be $50+ and traffic is brutal.
+ Essential for short hops (Beach ↔ Wynwood ↔ Brickell), but assume surge pricing around kickoff and after the final whistle. If you’re going to rely on rideshare, pick one base neighborhood and stick to it.
  </p>
+ <div className="mt-4 flex flex-wrap gap-4">
+   <AffiliateButton href="/world-cup-2026-transportation-safety" text="Transport Safety Playbook" variant="secondary" icon={Shield} />
+   <AffiliateButton href="https://www.kayak.com/cars/Miami,FL-c14309/" text="Compare Rental Car Prices" variant="outline" icon={Car} />
+ </div>
  </div>
  </div>
  </div>
  
  <div className=" rounded-[2.5rem] p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 h-fit">
- <h4 className="font-bold text-2xl mb-6">Distance to Stadium</h4>
+ <h4 className="font-bold text-2xl mb-6">Distance Reality (Matchday)</h4>
  <ul className="space-y-6">
  {[
- { label: "South Beach", time: "45-60 min drive" },
- { label: "Brickell", time: "30-45 min drive" },
- { label: "Hollywood", time: "15-20 min drive" },
- { label: "MIA Airport", time: "20-30 min drive" }
+ { label: "South Beach", time: "60–90 mins (traffic swing)" },
+ { label: "Brickell / Downtown", time: "45–75 mins (traffic swing)" },
+ { label: "Wynwood / Design District", time: "45–70 mins (traffic swing)" },
+ { label: "Aventura / Sunny Isles", time: "20–40 mins (closest beach base)" },
+ { label: "Hollywood / FLL", time: "25–45 mins (north base)" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-lg border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 pb-4 last:border-0 last:pb-0">
  <span className="text-slate-600 dark:text-slate-400">{item.label}</span>
@@ -679,27 +817,50 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
  ))}
  </ul>
  <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
- <AffiliateButton href="#" text="Book Brightline Tickets" variant="secondary" />
+   <h5 className="font-bold text-lg mb-4 text-slate-900 dark:text-white">Local Transit (Downtown Core)</h5>
+   <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+     <li>• <strong>Metromover:</strong> Free in Downtown/Brickell loops (perfect for short hops).</li>
+     <li>• <strong>Metrorail/Metrobus:</strong> Regular fare is $2.25 per trip.</li>
+   </ul>
+   <div className="mt-6 flex flex-wrap gap-4">
+     <AffiliateButton href="https://www.miamidade.gov/global/transportation/metrorail.page" text="Metrorail Info (Fare & Hours)" variant="outline" icon={ExternalLink} />
+     <AffiliateButton href="https://www.miamidade.gov/global/service.page?Mduid_service=ser1617316231654558" text="Transit Fares (Metromover Free)" variant="outline" icon={ExternalLink} />
+   </div>
+ </div>
+ <div className="mt-8 pt-8 border-t border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <AffiliateButton href="https://www.gobrightline.com/" text="Book Brightline Tickets" variant="secondary" />
  </div>
  </div>
  </div>
  </Section>
-
+ 
  <Section id="dining" title="Food & Drink">
- <div className="grid md:grid-cols-3 gap-8">
+ <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
+ Miami eats like a passport: Cuban windows, Haitian bakeries, Venezuelan arepas, Peruvian ceviche, and seafood that tastes like it went from ocean to plate on the same day. My local rule is simple: <strong>do one “iconic” meal</strong> and <strong>two neighborhood meals</strong> every day. That’s how you leave with stories instead of receipts.
+ </p>
+
+ <div className="grid md:grid-cols-3 gap-8 mb-12">
  {[
- { title: "Soul Food", desc: "Famous Southern comfort food. Try fried chicken, mac n cheese, and collard greens at Mary Mac's Tea Room." },
- { title: "The Varsity", desc: "The world's largest drive-in restaurant. A legendary spot for chili dogs and frosted orange shakes." },
- { title: "Ponce City Market", desc: "A massive food hall in a historic building. Great for groups with diverse tastes. Access via BeltLine." }
+ { title: "Little Havana (Cuban)", desc: "Grab a cortadito at a ventanita, people-watch on Calle Ocho, then commit to a full Cuban lunch. It’s the Miami rite of passage." },
+ { title: "Wynwood (Bars + Casual)", desc: "Street art by day, bars by night. This is where groups go when nobody can agree on one restaurant but everyone wants a vibe." },
+ { title: "Brickell (Dressy + Reservations)", desc: "High-rises, rooftop energy, and “reservation required” dining. If you’re celebrating a win, this is where you do it." },
+ { title: "Coconut Grove (Laid-Back)", desc: "Leafy, walkable, and calmer than the Beach. Great for families and anyone who wants to sleep before 3am." },
+ { title: "Design District (Splurge)", desc: "Luxury shopping and strong restaurants. Come for a late lunch, stay for a gallery wander, leave before your wallet starts talking." },
+ { title: "Seafood (The Classic Flex)", desc: "Stone crab season ends before the tournament, but Miami still does seafood extremely well—especially if you’re near the water." }
  ].map((item, i) => (
- <div key={i} className=" p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300">
+ <div key={i} className="p-8 rounded-[2rem] shadow-lg border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:-translate-y-2 transition-transform duration-300 bg-white dark:bg-slate-900/50">
  <div className="w-12 h-12 rounded-full flex items-center justify-center text-emerald-600 mb-6">
  <Utensils className="w-6 h-6" />
  </div>
- <h4 className="font-bold text-xl mb-3">{item.title}</h4>
+ <h3 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h3>
  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.desc}</p>
  </div>
  ))}
+ </div>
+
+ <div className="flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.opentable.com/miami-restaurants" text="Book Miami Restaurants" variant="secondary" icon={Utensils} />
+   <AffiliateButton href="https://www.resy.com/cities/mia" text="Resy Reservations" variant="outline" icon={ExternalLink} />
  </div>
  </Section>
 

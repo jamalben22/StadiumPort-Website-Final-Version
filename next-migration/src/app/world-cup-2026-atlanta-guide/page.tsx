@@ -84,7 +84,7 @@ export default function Page() {
         name: 'Which areas are best to stay in?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Downtown for walk-to-stadium convenience; Midtown for dining and nightlife; Buckhead for upscale stays 20 minutes by train.'
+          text: 'Downtown for walk-to-stadium convenience; Midtown for dining and nightlife; Buckhead for upscale stays via MARTA; Decatur for a calmer family base.'
         }
       },
       {
@@ -92,7 +92,7 @@ export default function Page() {
         name: 'Can I bring a bag to the stadium?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Clear stadium-approved bags only. Policies may vary by event; check matchday guidelines before travel.'
+          text: 'Yes, but follow the clear bag policy: clear bags up to 12” x 6” x 12”, or a small clutch up to 4.5” x 6.5”. Policies can vary by event; check matchday guidelines before travel.'
         }
       }
     ]

@@ -4,14 +4,14 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: "San Francisco World Cup 2026 Guide: Levi's Stadium & Travel Tips",
-  description: "Complete San Francisco World Cup 2026 travel guide. Levi's Stadium info, best hotels, Caltrain tips, fan zones & match schedule. Plan your trip.",
+  title: "San Francisco Bay Area World Cup 2026 Guide",
+  description: "San Francisco Bay Area World Cup 2026 guide: Levi’s Stadium match-day transport, where to stay (SF vs South Bay), local itineraries, budgets & safety.",
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-san-francisco-bay-area-guide',
   },
   openGraph: {
-    title: "San Francisco World Cup 2026 Guide: Levi's Stadium & Travel Tips",
-    description: "Complete San Francisco World Cup 2026 travel guide. Levi's Stadium info, best hotels, Caltrain tips, fan zones & match schedule. Plan your trip.",
+    title: "San Francisco Bay Area World Cup 2026 Guide",
+    description: "San Francisco Bay Area World Cup 2026 guide: Levi’s Stadium match-day transport, where to stay, local itineraries, budgets & safety.",
     url: 'https://stadiumport.com/world-cup-2026-san-francisco-bay-area-guide',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -27,11 +27,30 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'San Francisco Bay Area World Cup 2026 Travel Guide',
-    description: 'Everything you need for World Cup 2026 in San Francisco Bay Area: Levi\'s Stadium overview, SF vs Santa Clara hotels, Caltrain routes, matchday plan, and local secrets.',
+    title: 'San Francisco Bay Area World Cup 2026 Guide',
+    description: 'Match-day plan, neighborhoods, hotels, Caltrain/VTA hacks, budgets, safety, and local itineraries for Levi’s Stadium.',
     images: ['/images/cities/san-francisco-world-cup-2026.webp'],
   },
-  keywords: ['San Francisco World Cup 2026', 'Levi\'s Stadium', 'Santa Clara World Cup', 'San Francisco hotels', 'Santa Clara hotels', 'Caltrain to Levi\'s Stadium', 'San Francisco travel tips', 'World Cup tickets San Francisco', 'SF CityPASS', 'Bay Area fan zones'],
+  keywords: [
+    'San Francisco Bay Area World Cup 2026 guide',
+    'San Francisco World Cup 2026',
+    "Levi's Stadium World Cup 2026",
+    'Santa Clara World Cup 2026',
+    'San Jose World Cup 2026',
+    'San Francisco hotels World Cup 2026',
+    'Santa Clara hotels Levi’s Stadium',
+    'Caltrain to Levi’s Stadium',
+    'VTA Orange Line Levi’s Stadium',
+    'BART SFO to downtown San Francisco',
+    'San Francisco Bay Area Stadium World Cup',
+    'where to stay for Levi’s Stadium',
+    'World Cup 2026 match day itinerary',
+    'San Francisco microclimates June July',
+    'Bay Area fan zones World Cup 2026',
+    'World Cup 2026 tickets San Francisco Bay Area',
+    'Clipper Card travel tips',
+    'San Francisco safety tips for tourists',
+  ],
 };
 
 export default function Page() {
@@ -49,26 +68,26 @@ export default function Page() {
  mainEntity: [
  {
  '@type': 'Question',
- name: 'Where is the World Cup stadium in San Francisco?',
+ name: 'Where is the World Cup 2026 stadium for the Bay Area?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'Levi\'s Stadium is located in Santa Clara, about 45 miles south of San Francisco.'
+ text: 'Matches are played at Levi’s Stadium in Santa Clara (the “San Francisco Bay Area Stadium” during FIFA events), roughly 40–45 miles (64–72 km) south of San Francisco.'
  }
  },
  {
  '@type': 'Question',
- name: 'How do I get from SF to the stadium area?',
+ name: 'What is the easiest way to get from San Francisco to Levi’s Stadium?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'Take Caltrain from SF to Mountain View, then transfer to VTA Light Rail (Orange Line) to the stadium.'
+ text: 'Take Caltrain from San Francisco (4th & King or 22nd St) to Mountain View, then transfer to VTA Light Rail (Orange Line) to Great America Station by the stadium.'
  }
  },
  {
  '@type': 'Question',
- name: 'Do I need a car for World Cup 2026 in San Francisco?',
+ name: 'Do I need a car for World Cup 2026 in the Bay Area?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'No if you stay in SF or near transit. Driving to the stadium is difficult due to traffic and parking costs.'
+ text: 'Usually no. A car is inconvenient in San Francisco (parking and break-ins) and match-day traffic around Santa Clara is heavy. Transit + walking is the low-stress option.'
  }
  },
  {
@@ -76,15 +95,15 @@ export default function Page() {
  name: 'What is the weather like in June and July?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'SF is cool and foggy (55-65°F). Santa Clara is warm and sunny (75-85°F). Bring layers.'
+ text: 'San Francisco runs cool and breezy in summer, while Santa Clara is often warmer and sunnier. Bring layers for SF and sun protection for daytime matches.'
  }
  },
  {
  '@type': 'Question',
- name: 'Which areas are best to stay in?',
+ name: 'Is it better to stay in San Francisco or the South Bay?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'San Francisco (Union Square/Fisherman\'s Wharf) for tourism/nightlife; Santa Clara/San Jose for stadium convenience.'
+ text: 'Stay in San Francisco for classic sightseeing and nightlife, but consider Santa Clara/San Jose or the Caltrain corridor (Palo Alto/Mountain View) for easier match days.'
  }
  },
  {
@@ -92,7 +111,23 @@ export default function Page() {
  name: 'Can I bring a bag to the stadium?',
  acceptedAnswer: {
  '@type': 'Answer',
- text: 'Clear stadium-approved bags only (12x6x12 inches). Policies are strict.'
+ text: 'Yes, but rules are strict: use a clear bag (up to 12” x 6” x 12”) or a small clutch. Arrive early for screening.'
+ }
+ },
+ {
+ '@type': 'Question',
+ name: 'How many World Cup matches are in the San Francisco Bay Area?',
+ acceptedAnswer: {
+ '@type': 'Answer',
+ text: 'FIFA’s published schedule assigns six matches to the San Francisco Bay Area Stadium (Levi’s Stadium): five group-stage games and one Round of 32 match.'
+ }
+ },
+ {
+ '@type': 'Question',
+ name: 'What station is closest to Levi’s Stadium on match days?',
+ acceptedAnswer: {
+ '@type': 'Answer',
+ text: 'VTA Light Rail serves Great America Station on the north side of the stadium, commonly used for event arrivals and departures.'
  }
  }
  ]

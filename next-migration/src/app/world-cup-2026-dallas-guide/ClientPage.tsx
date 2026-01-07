@@ -312,14 +312,17 @@ export default function ClientPage() {
  { id: 'stadium', label: 'Stadium' },
  { id: 'tickets', label: 'Tickets' },
  { id: 'hotels', label: 'Hotels' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
  { id: 'transport', label: 'Transport' },
  { id: 'dining', label: 'Dining' },
  { id: 'attractions', label: 'Attractions' },
+ { id: 'itinerary', label: 'Itineraries' },
  { id: 'tips', label: 'Match Day' },
  { id: 'safety', label: 'Safety' },
  { id: 'culture', label: 'Culture' },
  { id: 'packing', label: 'Packing' },
  { id: 'faq', label: 'FAQ' },
+ { id: 'essential', label: 'Essentials' },
  ];
 
  return (
@@ -363,7 +366,7 @@ export default function ClientPage() {
                >
                  <div className="flex items-center gap-4 mb-6">
            <span className="px-3 py-1 rounded-full border border-white/30 text-white text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-             Last Updated: January 4, 2026
+             Last Updated: January 6, 2026
            </span>
            <span className="px-3 py-1 rounded-full border border-white/30 text-white text-xs font-medium tracking-widest uppercase backdrop-blur-md">
              Host City
@@ -373,11 +376,11 @@ Semi-Final Host
 </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-DALLAS
+<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+Dallas World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+Written from the inside by a longtime local: where to stay, how to survive match day in Arlington, and what Dallas actually feels like in June.
 </p>
  </motion.div>
  </div>
@@ -432,17 +435,37 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- If there is a spiritual home for the massive scale of the 2026 World Cup, it is Dallas. Or more accurately, Arlington, where the colossal AT&T Stadium (often called "Jerry World") rises from the Texas plains like a modern-day Colosseum. With 9 matches—more than any other host city—Dallas is the undisputed heavyweight champion of this tournament.
+ This <strong>Dallas World Cup 2026 guide</strong> is the version I wish every visitor had in their pocket—because I’ve lived here long enough to watch the Metroplex reinvent itself a dozen times, and the one thing that never changes is this: <strong>Dallas is easy when you understand the geography</strong>, and punishing when you don’t.
  </p>
  <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 mt-6">
- But here is the truth the glossy brochures won't tell you: Dallas is a logistical challenge. The stadium is 20 miles from downtown Dallas and 15 miles from Fort Worth, stranded on an island with virtually no public rail connection. The June heat is unforgiving, often touching 100°F. And the "city" is actually a sprawling Metroplex larger than the state of Connecticut.
+ First, the truth (said kindly): your match isn’t really “in Dallas.” The World Cup venue is <strong>AT&amp;T Stadium in Arlington</strong>, planted between Dallas and Fort Worth like a giant chrome spaceship. It’s spectacular. It’s also the reason so many visitors overpay, over-walk, and overheat.
+ </p>
+ <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300 mt-6">
+ If you do it right, Dallas gives you three trips in one: glossy city energy (Uptown + the Arts District), gritty-good nightlife (Deep Ellum + Cedars), and the Texas postcard people secretly want (Fort Worth Stockyards). If you do it wrong? You’ll spend your evenings in a chain-restaurant parking lot, arguing with an Uber driver about which “service road” is the correct one.
  </p>
  </div>
+
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/40 mb-12">
+ <h3 className="font-black text-2xl text-slate-900 dark:text-white mb-6">Quick Answers (Featured Snippet Friendly)</h3>
+ <div className="grid md:grid-cols-2 gap-6 text-lg text-slate-600 dark:text-slate-300">
+ <div>
+ <p><strong>Where are matches?</strong> Arlington (AT&amp;T Stadium), not Downtown Dallas.</p>
+ <p><strong>Best place to stay?</strong> Uptown for convenience + polish, Deep Ellum for nightlife, Bishop Arts for charm.</p>
+ <p><strong>Cheapest airport ride?</strong> DART Orange Line from DFW to Downtown.</p>
+ </div>
+ <div>
+ <p><strong>Best match-day transport?</strong> Official shuttles (when offered) or pre-paid parking + early arrival.</p>
+ <p><strong>Biggest risk?</strong> Heat + sprawl. Plan mornings, rest afternoons, stadium at night.</p>
+ <p><strong>Local secret?</strong> Treat Arlington as match-day only; sleep in Dallas/Fort Worth.</p>
+ </div>
+ </div>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Choose wisely: Downtown Dallas for city life, Fort Worth for culture, or Arlington for stadium convenience only." },
- { icon: Car, title: "Transport", text: "This is a car city. Rent one, or be prepared for expensive rideshares and shuttle buses." },
- { icon: Thermometer, title: "Weather Strategy", text: "It will be 95°F+. Stay hydrated, wear sunscreen, and plan outdoor activities for mornings." }
+ { icon: MapPin, title: "Choose Your Base", text: "Uptown/Downtown for first-time visitors, Deep Ellum for nightlife, Fort Worth for cowboy culture, Arlington only for pure stadium convenience." },
+ { icon: Car, title: "Transport Reality", text: "Dallas has transit inside Dallas. Arlington doesn’t. Match day is shuttle, rideshare, or a car with a plan." },
+ { icon: Thermometer, title: "Heat Strategy", text: "Dallas/Fort Worth normal highs run ~91.5°F in June and ~95.6°F in July. Outside is the challenge; the stadium is icy A/C." }
  ].map((item, i) => (
  <div key={i} className="p-8 rounded-[2rem] transition-colors">
  <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
@@ -451,29 +474,44 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  </div>
  ))}
  </div>
+
  <div className="mt-12 flex flex-wrap gap-4">
-            <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/dfw" text="Search Dallas Flights" variant="secondary" icon={Plane} />
-            <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Uptown+Dallas" text="Check Uptown Hotels" variant="primary" icon={Hotel} />
-          </div>
+ <AffiliateButton href="https://www.skyscanner.com/transport/flights/to/dfw" text="Compare Flights to DFW" variant="secondary" icon={Plane} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Uptown+Dallas" text="Find Uptown Hotels" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Travel Insurance (Tournament Trips)" variant="outline" icon={Shield} />
+ </div>
  </Section>
 
  <Section id="visa" title="Visa & Entry (USA)">
  <div className="grid md:grid-cols-2 gap-8">
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
- <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of Visa Waiver Program countries can use ESTA for short stays. Others require a B-2 tourist visa. Check status as of Dec 2025 and apply early.</p>
- <AffiliateButton href="https://esta.cbp.dhs.gov/" text="Check ESTA Eligibility" variant="outline" />
+ <h4 className="font-bold text-2xl mb-4">Entry Basics (Don’t Leave This Late)</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+ Most visitors either enter via <strong>ESTA (Visa Waiver Program)</strong> or a <strong>B-2 tourist visa</strong>. World Cup summer is peak travel, and appointment backlogs are real. Apply early, then screenshot every confirmation like your life depends on it.
+ </p>
+ <div className="flex flex-wrap gap-4">
+ <AffiliateButton href="https://esta.cbp.dhs.gov/" text="ESTA (Official)" variant="outline" />
+ <AffiliateButton href="https://www.worldnomads.com/" text="Travel Insurance" variant="secondary" icon={Shield} />
+ </div>
  </div>
  <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
- <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
+ <h4 className="font-bold text-2xl mb-4">DFW / DAL Arrival Tips</h4>
  <ul className="space-y-4 mb-8">
- {['DFW is a massive hub - allow time', 'Proof of onward travel required', 'Carry digital copies of tickets'].map((item, i) => (
- <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
- <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
- </li>
+ {[
+ 'DFW is huge. If you have a tight connection, pick seats near the front.',
+ 'Carry your hotel address + match tickets offline (screenshots).',
+ 'If you’re landing late, book your first-night hotel near your base—don’t wing it.',
+ 'Summer storms happen. Build buffer time into inter-city plans.'
+ ].map((item, i) => (
+  <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
+  <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
+  </li>
  ))}
  </ul>
- <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+ <div className="flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Dallas%2C+Texas&aid=0" text="Book First Night Hotel" variant="primary" icon={Hotel} />
+ <AffiliateButton href="https://www.airalo.com/united-states-esim" text="Get US eSIM" variant="outline" icon={Globe} />
+ </div>
           </div>
         </div>
       </Section>
@@ -533,6 +571,9 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <p>
  Owner Jerry Jones built this stadium to be a spectacle, and it succeeds. The defining feature is the <strong>video board</strong>, which stretches 60 yards from 20-yard line to 20-yard line. It is so massive that punters sometimes hit it. With a capacity of 80,000+ (expandable to 100,000+), it is a fortress of noise and scale.
  </p>
+ <p>
+ Want the deep dive (entries, parking, seating angles, and pre/post-match options)? Use our dedicated stadium guide: <Link href="/att-stadium-world-cup-2026" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">AT&amp;T Stadium World Cup 2026</Link>.
+ </p>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -540,9 +581,9 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "~90,000+ (Expanded)" },
- { label: "Surface", val: "Grass (Temporary)" },
- { label: "Roof", val: "Retractable (Closed for WC)" },
+ { label: "Capacity", val: "80,000 (expandable)" },
+ { label: "Surface", val: "Natural grass (event install)" },
+ { label: "Roof", val: "Retractable roof" },
  { label: "Built", val: "2009 ($1.3 Billion)" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
@@ -555,7 +596,7 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <div className=" p-8 rounded-[2rem]">
  <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><AlertTriangle className="w-6 h-6 text-amber-500"/> Pro Tips</h4>
  <ul className="space-y-4 text-slate-700 dark:text-slate-300">
- <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> A/C: Inside is a crisp 72°F (22°C) despite 100°F heat outside.</li>
+ <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> A/C: Inside can feel chilly compared to the heat outside. Pack a light layer.</li>
  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Screen: 400 Level seats are great value due to the giant screen.</li>
  <li className="flex gap-3"><span className="text-emerald-500 font-bold">•</span> Parking: Pre-book parking passes. Lots are huge and expensive.</li>
  </ul>
@@ -566,6 +607,57 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <p className="text-lg text-center font-medium text-emerald-800 dark:text-emerald-200">
  <strong>Getting There:</strong> The stadium is in Arlington, 20 miles from Dallas. There is <strong>NO train</strong>. You must drive, shuttle, or rideshare. Plan for traffic.
  </p>
+ </div>
+ </Section>
+
+ <Section id="itinerary" title="Itineraries (1–3 Days)">
+ <p className="text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl leading-relaxed">
+ Dallas is a <strong>sprawl city</strong>. The trick is to cluster your days so you’re not zig-zagging from Deep Ellum to the Stockyards to Arlington like it’s a casual stroll. Here are three plug-and-play plans that work for most World Cup trips.
+ </p>
+
+ <div className="grid lg:grid-cols-3 gap-8 mb-10">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-black text-2xl mb-4">1 Day (Dallas Core)</h4>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+ <li><strong>Morning:</strong> Klyde Warren Park + Arts District stroll</li>
+ <li><strong>Lunch:</strong> Dallas Farmers Market area</li>
+ <li><strong>Afternoon:</strong> Rest (heat strategy)</li>
+ <li><strong>Night:</strong> Deep Ellum murals + live music</li>
+ </ul>
+ </div>
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-black text-2xl mb-4">2 Days (Dallas + Fort Worth)</h4>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+ <li><strong>Day 1:</strong> Uptown/Arts District + steakhouse or Tex-Mex</li>
+ <li><strong>Day 2 AM:</strong> Fort Worth Stockyards</li>
+ <li><strong>Day 2 PM:</strong> Recover + hydrate</li>
+ <li><strong>Day 2 Night:</strong> Near Southside bars (FW) or Lower Greenville</li>
+ </ul>
+ </div>
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-black text-2xl mb-4">3 Days (Add Match Day)</h4>
+ <ul className="space-y-3 text-slate-600 dark:text-slate-400 text-lg">
+ <li><strong>Day 1:</strong> Dallas neighborhoods (Bishop Arts / Deep Ellum)</li>
+ <li><strong>Day 2:</strong> Match day in Arlington (AT&amp;T Stadium)</li>
+ <li><strong>Day 3:</strong> White Rock Lake morning + museums/shops</li>
+ <li><strong>Rule:</strong> Arlington is a match-day mission, not a base</li>
+ </ul>
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2rem] border border-emerald-500/20 bg-white/60 dark:bg-slate-900/30">
+ <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">Local Time-Saver</h4>
+ <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+ If your match is at night, protect your afternoon like it’s a ticket: late lunch, cold shower, short nap, then head out. Dallas summer isn’t “walk around all day” weather.
+ </p>
+ </div>
+
+ <div className="mt-8 flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.getyourguide.com/dallas-l325/" text="Browse Dallas Experiences" variant="secondary" icon={Camera} />
+ <AffiliateButton href="https://www.opentable.com/" text="Reserve Dinner" variant="outline" />
+ <Link href="/world-cup-2026-itinerary-planning" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-200 dark:border-slate-800 font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+ Full World Cup itinerary planning <ArrowRight className="w-5 h-5" />
+ </Link>
  </div>
  </Section>
 
@@ -585,6 +677,7 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <div className="flex flex-wrap gap-4">
           <AffiliateButton href="https://www.amazon.com/s?k=clear+stadium+bag" text="Buy Clear Stadium Bag" variant="primary" />
           <AffiliateButton href="https://www.amazon.com/s?k=collapsible+water+bottle" text="Add Refillable Bottle" variant="outline" />
+          <AffiliateButton href="https://www.fanatics.com/soccer" text="Shop Jerseys & Gear" variant="secondary" icon={Shirt} />
         </div>
  </Section>
 
@@ -628,12 +721,24 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  <AffiliateButton href="https://seatgeek.com" text="Check SeatGeek" variant="primary" />
  </div>
  </div>
+ <div className="mt-8 p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-bold text-2xl mb-4">VIP / Hospitality</h4>
+ <p className="text-slate-600 dark:text-slate-400 mb-8">
+ If you want fewer logistics and more comfort, look for official hospitality and premium package options as they’re released. Avoid random “VIP” sellers you’ve never heard of.
+ </p>
+ <AffiliateButton href="https://www.fifa.com" text="Check Official Hospitality" variant="outline" />
+ </div>
  </Section>
 
  <Section id="hotels" title="Where to Stay">
  <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 max-w-3xl leading-relaxed">
  Because the stadium is in Arlington (the middle of nowhere), you have three choices: <strong>Downtown Dallas</strong> (city vibe, long drive), <strong>Fort Worth</strong> (cowboy culture, medium drive), or <strong>Arlington</strong> (convenience, zero culture).
  </p>
+ <div className="mb-10">
+ <Link href="/world-cup-2026-accommodation-guide" className="inline-flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+ Full World Cup accommodation strategy <ArrowRight className="w-5 h-5" />
+ </Link>
+ </div>
  
       <div className="space-y-8">
         <HotelCard 
@@ -668,6 +773,58 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
       <div className="mt-12 text-center">
         <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Dallas" text="Search All Dallas Hotels" variant="outline" />
       </div>
+ </Section>
+
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood (Where to Stay, Eat, Drink)">
+ <p className="text-xl text-slate-600 dark:text-slate-300 mb-10 max-w-3xl leading-relaxed">
+ Here’s the local truth: Dallas is a collection of <strong>micro-cities</strong>. Pick your neighborhood like you’d pick your seat—because it decides your vibe, your food, your walkability, and how much you’ll spend on rides.
+ </p>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-10">
+ {[
+ { title: "Uptown (First-Timer Base)", vibe: "Polished, walkable-ish, easy logistics", bestFor: ["Hotels", "Dining", "Quick access to downtown sights"], avoidIf: "You want grit or late-night music venues", color: "text-emerald-600" },
+ { title: "Downtown (Convenient + Central)", vibe: "Museums, transit access, business core", bestFor: ["DART connections", "Arts District", "Daytime exploring"], avoidIf: "You want a neighborhood feel after 10pm", color: "text-blue-600" },
+ { title: "Deep Ellum (Nightlife + Murals)", vibe: "Bars, live music, late nights", bestFor: ["Concert energy", "Street art", "Post-match celebrating"], avoidIf: "You’re a light sleeper", color: "text-amber-600" },
+ { title: "Bishop Arts (Charm + Cafés)", vibe: "Boutique, local shops, date-night energy", bestFor: ["Food crawl", "Relaxed evenings", "Walkable blocks"], avoidIf: "You need fast highway access every day", color: "text-rose-600" }
+ ].map((n, i) => (
+ <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h4 className="font-black text-2xl mb-3 text-slate-900 dark:text-white">{n.title}</h4>
+ <p className={`font-bold mb-4 ${n.color}`}>{n.vibe}</p>
+ <div className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+ <p className="mb-3"><strong>Best for:</strong> {n.bestFor.join(', ')}</p>
+ <p><strong>Avoid if:</strong> {n.avoidIf}</p>
+ </div>
+ </div>
+ ))}
+ </div>
+
+ <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800 mb-10">
+ <h4 className="font-black text-2xl text-slate-900 dark:text-white mb-4">Family-Friendly vs Nightlife</h4>
+ <div className="grid md:grid-cols-2 gap-6 text-lg text-slate-600 dark:text-slate-400">
+ <div>
+ <p className="font-bold text-slate-900 dark:text-white mb-2">More family-friendly</p>
+ <ul className="space-y-2">
+ <li>• Uptown (easy restaurants, nicer hotels)</li>
+ <li>• Bishop Arts (cafés, shops, calmer nights)</li>
+ <li>• Fort Worth (Stockyards in daytime, museums)</li>
+ </ul>
+ </div>
+ <div>
+ <p className="font-bold text-slate-900 dark:text-white mb-2">More nightlife-heavy</p>
+ <ul className="space-y-2">
+ <li>• Deep Ellum (bars + music, late crowds)</li>
+ <li>• Lower Greenville (bar strip energy)</li>
+ <li>• Arlington Entertainment District (match-day bars, less “neighborhood”)</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+
+ <div className="flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Deep+Ellum+Dallas" text="Deep Ellum Hotels" variant="secondary" icon={Hotel} />
+ <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Bishop+Arts+District" text="Bishop Arts Hotels" variant="outline" icon={Hotel} />
+ <AffiliateButton href="https://www.opentable.com/" text="Book Restaurants" variant="primary" icon={Utensils} />
+ </div>
  </Section>
 
  <Section id="transport" title="Getting Around">
@@ -747,6 +904,12 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  </div>
  ))}
  </div>
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.opentable.com/" text="Reserve Restaurants" variant="secondary" icon={Utensils} />
+ <Link href="/world-cup-2026-food-dining-guide" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-200 dark:border-slate-800 font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+ World Cup food & dining playbook <ArrowRight className="w-5 h-5" />
+ </Link>
+ </div>
  </Section>
 
  <Section id="attractions" title="Top Attractions">
@@ -809,6 +972,15 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  </div>
  ))}
  </div>
+ <div className="mt-10 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+ <h4 className="font-bold text-xl mb-4 text-slate-900 dark:text-white">Local Phrases You’ll Hear</h4>
+ <ul className="space-y-3 text-lg text-slate-600 dark:text-slate-400">
+ <li>• <strong>“Y’all”</strong> = everyone (use it; it’s fine)</li>
+ <li>• <strong>“Frontage road”</strong> / <strong>“service road”</strong> = the road beside the highway</li>
+ <li>• <strong>“I’m fixin’ to…”</strong> = I’m about to (not “repairing”)</li>
+ <li>• <strong>“The Metroplex”</strong> = Dallas–Fort Worth as one giant region</li>
+ </ul>
+ </div>
  </Section>
 
  <Section id="packing" title="Climate & Packing">
@@ -835,19 +1007,30 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
         <AffiliateButton href="https://www.airalo.com/united-states-esim" text="Get an eSIM" variant="secondary" />
       </div>
     </div>
+    <div className="mt-8 flex flex-wrap gap-4">
+      <Link href="/world-cup-2026-packing-guide" className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-slate-200 dark:border-slate-200 dark:border-slate-800 font-bold text-slate-700 dark:text-slate-200 hover:border-emerald-500 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+        Full World Cup packing checklist <ArrowRight className="w-5 h-5" />
+      </Link>
+      <AffiliateButton href="https://www.amazon.com/s?k=portable+phone+charger" text="Grab a Power Bank" variant="outline" />
+    </div>
   </Section>
 
  <Section id="faq" title="Frequently Asked Questions">
  <div className="space-y-2">
  {[
- { q: "Is the stadium air-conditioned?", a: "Yes, thankfully. The roof is retractable but stays closed for games. Inside it's a perfect 72°F (22°C)." },
+ { q: "Is the stadium air-conditioned?", a: "Yes. The indoor environment is climate-controlled, and it can feel chilly compared to the heat outside—bring a light layer." },
  { q: "Can I take a train to the stadium?", a: "No. This is the biggest issue. You must drive, take a rideshare, or use an official shuttle bus." },
  { q: "Is Dallas safe?", a: "Generally yes. Stick to populated areas like Downtown, Uptown, and Deep Ellum. Be careful at night." },
  { q: "Where should I stay?", a: "If you want nightlife, stay in Dallas. If you only care about the match, stay in Arlington (but it's boring)." },
  { q: "How much is a beer at the stadium?", a: "Expensive. Expect to pay $12-$16 for a domestic beer." },
- { q: "Is there Wi-Fi at the stadium?", a: "Yes, AT&T Stadium has some of the best stadium Wi-Fi in the world (5G everywhere)." },
+ { q: "Is there Wi-Fi at the stadium?", a: "Yes—expect venue Wi‑Fi and strong cellular coverage, but don’t rely on it for critical logistics. Screenshot your tickets." },
  { q: "What is the 'Arlington Gap'?", a: "It refers to the lack of public transit between Dallas/Fort Worth and the stadium in Arlington." },
- { q: "Do I need a car?", a: "Ideally, yes. Dallas is a driving city. Without one, you will spend a lot on Ubers." }
+ { q: "Do I need a car?", a: "If you’re staying central and planning carefully, you can get by with rideshare + transit inside Dallas. For families or lots of day trips, a car is usually worth it." },
+ { q: "DFW or Love Field: which airport is better?", a: "DFW has more international options and connections. Love Field is smaller and closer to central Dallas. Choose based on price and where you’re staying." },
+ { q: "How do I get from DFW to Downtown Dallas cheaply?", a: "Use the DART Orange Line from DFW Airport Station to Downtown (budget-friendly). If you’re hauling luggage late at night, rideshare is easier." },
+ { q: "Where should I watch matches when I don’t have tickets?", a: "Deep Ellum and Lower Greenville bars will be lively. For bigger crowds, look for official fan events and stadium-adjacent watch spots in Arlington." },
+ { q: "What’s the #1 match-day mistake?", a: "Arriving late and expecting to “walk it off.” Arlington is car-centric, distances are bigger than they look, and traffic stacks up fast." },
+ { q: "What should I book first?", a: "Hotels in your chosen neighborhood (and any Arlington match-day plan), then flights. Everything else can flex." }
  ].map((item, i) => (
  <FAQItem key={i} question={item.q} answer={item.a} />
  ))}
@@ -905,14 +1088,6 @@ Everything is Bigger in Texas. <span className="text-slate-900 dark:text-white f
  </div>
  );
 }
-
-
-
-
-
-
-
-
 
 
 

@@ -265,16 +265,19 @@ export default function ClientPage() {
  { id: 'visa', label: 'Visa & Entry' },
  { id: 'planning', label: 'Planning' },
  { id: 'budget', label: 'Budget' },
+ { id: 'neighborhoods', label: 'Neighborhoods' },
  { id: 'stadium', label: 'Stadium' },
  { id: 'tickets', label: 'Tickets' },
  { id: 'hotels', label: 'Hotels' },
  { id: 'transport', label: 'Transport' },
  { id: 'dining', label: 'Dining' },
  { id: 'attractions', label: 'Attractions' },
+ { id: 'itinerary', label: 'Itinerary' },
  { id: 'tips', label: 'Match Day' },
  { id: 'safety', label: 'Safety' },
  { id: 'culture', label: 'Culture' },
  { id: 'packing', label: 'Packing' },
+ { id: 'essential', label: 'Essential' },
  { id: 'faq', label: 'FAQ' },
  ];
 
@@ -331,11 +334,11 @@ Opening Match Host
 </span>
 </div>
 
-<h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-MEXICO CITY
+<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+Mexico City World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
-Heart of the World Cup. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> definitive guide.
+<p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+Match-day logistics for Estadio Azteca, neighborhood picks, safety, budgets, and the little local moves that make CDMX feel easy.
 </p>
  </motion.div>
  </div>
@@ -389,21 +392,32 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
 
  <Section id="overview" title="Strategic Overview">
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
- <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
- Mexico City (CDMX) is a chaotic, vibrant, and historic metropolis that will host the Opening Match of the 2026 World Cup. It offers incredible value, world-class food, and passionate football culture, but requires careful logistical planning due to traffic and size.
- </p>
+  <p className="text-2xl leading-relaxed font-light text-slate-600 dark:text-slate-300">
+  I’ve lived in Mexico City long enough to remember when “meet me at El Ángel” didn’t automatically mean “and bring patience for traffic.” For World Cup 2026, the city is going to be loud, proud, and wonderfully overwhelming—especially around the opening match at Estadio Azteca. The good news: if you plan like a local (transit first, neighborhood second, timing always), CDMX is one of the easiest host cities to enjoy.
+  </p>
  </div>
+
+ <div className="mb-12 p-8 rounded-[2rem] border border-emerald-500/20 bg-emerald-500/5">
+  <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Fast Answers (Featured Snippet Edition)</h3>
+  <ul className="space-y-3 text-lg text-slate-700 dark:text-slate-300">
+   <li>• <strong>Best base for most fans:</strong> Roma Norte or Condesa (walkable, food, nightlife, safe vibes).</li>
+   <li>• <strong>Best match-day route to Azteca:</strong> Metro Line 2 to Tasqueña, then Tren Ligero to Estadio Azteca.</li>
+   <li>• <strong>How early to leave:</strong> plan to be in the stadium zone <strong>3+ hours</strong> before kickoff.</li>
+   <li>• <strong>Money move:</strong> use the Tarjeta de Movilidad Integrada and carry small pesos for stadium-day street food.</li>
+  </ul>
+ </div>
+
  <div className="grid md:grid-cols-3 gap-8">
  {[
- { icon: MapPin, title: "Where to Base", text: "Polanco for luxury. Roma/Condesa for trendy vibes. Centro for history. Reforma for convenience." },
- { icon: Train, title: "Transport Strategy", text: "Use the Metro and Metrobus for peak hours. Uber is cheap and safe for late nights. Avoid street taxis." },
- { icon: DollarSign, title: "Budget Signals", text: "Incredible value. Luxury dining and hotels cost a fraction of US prices. Cash (Pesos) is king for street food." }
+ { icon: MapPin, title: "Pick Your Neighborhood, Not Just a Hotel", text: "Roma/Condesa for first-timers, Polanco for luxury, Juárez/Reforma for central convenience, Coyoacán for a calmer, historic vibe." },
+ { icon: Train, title: "Traffic Is the Villain (Transit Is the Plot Twist)", text: "On big nights, the fastest way to Azteca often looks “old school”: Metro + Tren Ligero beats a car stuck on Tlalpan." },
+ { icon: DollarSign, title: "Value Is Real (But Book Early)", text: "CDMX can be a bargain or a splurge. Match weeks will spike prices, so lock hotels and flights early—then eat like a king for 30 pesos." }
  ].map((item, i) => (
- <div key={i} className="p-8 rounded-[2rem] transition-colors">
- <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
- <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
- <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
- </div>
+  <div key={i} className="p-8 rounded-[2rem] transition-colors">
+   <item.icon className="w-10 h-10 text-emerald-500 mb-6" />
+   <h4 className="font-bold text-xl mb-3 text-slate-900 dark:text-white">{item.title}</h4>
+   <p className="text-slate-600 dark:text-slate-400 leading-relaxed">{item.text}</p>
+  </div>
  ))}
  </div>
  <div className="mt-12 flex flex-wrap gap-4">
@@ -416,22 +430,24 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
   <div className="grid md:grid-cols-2 gap-8">
    <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
     <h4 className="font-bold text-2xl mb-4">Who Needs a Visa?</h4>
-    <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">Citizens of the US, Canada, UK, EU, and Japan do NOT need a visa for stays under 180 days. You will complete an FMM (Multiple Immigration Form) upon arrival.</p>
-    <AffiliateButton href="https://www.inm.gob.mx/" text="Check Visa Requirements" variant="outline" />
+    <p className="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+      Mexico’s entry rules depend on your passport. Many travelers can enter as tourists without a visa, but the details (length of stay, any online forms, and airline checks) vary. For World Cup planning, treat this as step zero: confirm requirements before you book non-refundable flights.
+    </p>
+    <AffiliateButton href="https://www.inm.gob.mx/" text="Verify Entry Rules (INM)" variant="outline" />
    </div>
    <div className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem]">
     <h4 className="font-bold text-2xl mb-4">Arrival Tips</h4>
- <ul className="space-y-4 mb-8">
- {['Keep your FMM tourist card safe (exit requirement)', 'Use authorized airport taxis or Uber', 'Exchange small amount of Pesos at airport'].map((item, i) => (
+     <ul className="space-y-4 mb-8">
+ {['Screenshot your hotel address + keep it offline', 'Use authorized airport taxis, ride-share, or a pre-booked transfer', 'Withdraw pesos at a bank ATM once you’re in the city (better rates)'].map((item, i) => (
  <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-400">
  <CheckCircle2 className="w-5 h-5 text-emerald-500" /> {item}
  </li>
  ))}
- </ul>
- <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
- </div>
- </div>
- </Section>
+  </ul>
+    <AffiliateButton href="https://www.worldnomads.com/" text="Buy Travel Insurance" variant="secondary" />
+   </div>
+   </div>
+  </Section>
 
  <Section id="planning" title="Planning Timeline">
  <div className="space-y-6">
@@ -453,11 +469,11 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
  </Section>
 
  <Section id="budget" title="Peso Power Tiers">
- <div className="grid md:grid-cols-3 gap-8">
+  <div className="grid md:grid-cols-3 gap-8">
  {[
- { title: "Peso Saver", items: ["Hostels in Centro ($15-30)", "Street Tacos ($1-2)", "Metro ($0.25)"] },
- { title: "Smart Comfort", items: ["Boutique Hotels ($80-150)", "Uber Everywhere", "Casual Sit-down Dining"] },
- { title: "Polanco Prestige", items: ["Luxury Hotels ($300+)", "Fine Dining ($100+)", "Private Chauffeur"] }
+ { title: "Peso Saver", items: ["Hostels + simple hotels (book early for match weeks)", "Street food breakfasts + mercados + one “nice” meal", "Metro/Metrobús for daylight, ride-share at night"] },
+ { title: "Smart Comfort", items: ["Roma/Condesa boutique hotel or apartment base", "Mix transit + ride-share to control time", "A couple of museum days + one big day trip"] },
+ { title: "Polanco Prestige", items: ["Luxury stays + concierge help for bookings", "Private transfers for airports and late nights", "Fine dining reservations + premium match add-ons"] }
  ].map((tier, i) => (
   <div key={i} className="p-8 bg-white dark:bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-white/10 rounded-[2rem] hover:shadow-2xl transition-all duration-300">
    <h4 className="font-bold text-xl mb-6">{tier.title}</h4>
@@ -468,13 +484,138 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
  {item}
  </li>
  ))}
- </ul>
- </div>
+  </ul>
+  </div>
  ))}
+  </div>
+ <div className="mt-8 p-8 rounded-[2rem] border border-slate-200 dark:border-slate-200 dark:border-slate-800">
+  <h4 className="font-bold text-2xl mb-4 text-slate-900 dark:text-white">Fast Cost Benchmarks (MXN)</h4>
+  <ul className="space-y-3 text-slate-600 dark:text-slate-400">
+   <li>• <strong>Street tacos:</strong> often 20–35 each depending on neighborhood and hype.</li>
+   <li>• <strong>Full sit-down meal:</strong> roughly 200–500 per person in most tourist zones.</li>
+   <li>• <strong>Ride-share across town:</strong> cheap by global standards, but traffic can make it feel “expensive in time.”</li>
+   <li>• <strong>Transit:</strong> the city’s public transport stays among the best bargains in North America. <a href="https://www.semovi.cdmx.gob.mx/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">SEMOVI <ExternalLink className="w-4 h-4" /></a></li>
+  </ul>
+  <div className="mt-8 flex flex-wrap gap-4 justify-center">
+   <AffiliateButton href="https://www.kayak.com/packages/Mexico-City-c30242" text="Compare Flight + Hotel Bundles" variant="secondary" icon={Briefcase} />
+   <AffiliateButton href="https://www.booking.com/searchresults.html?ss=Mexico+City" text="Track Hotel Prices" variant="primary" icon={Hotel} />
+  </div>
  </div>
- <div className="mt-8 text-center">
-<AffiliateButton href="https://www.kayak.com/packages/Mexico-City-c30242" text="Search CDMX Packages" variant="secondary" icon={Briefcase} />
-</div>
+ </Section>
+
+ <Section id="neighborhoods" title="Neighborhood-by-Neighborhood Gameplan">
+  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
+   <p className="text-xl text-slate-600 dark:text-slate-300">
+    In CDMX, your neighborhood is your trip. Pick the wrong base and you’ll spend half your World Cup in traffic. Pick the right one and the city opens up: morning coffee on a leafy street, tacos at midnight, and a match-day plan that actually works.
+   </p>
+  </div>
+
+  <div className="grid md:grid-cols-2 gap-8">
+   {[
+    {
+     title: 'Roma Norte + La Condesa',
+     vibe: 'Walkable, stylish, and the easiest “first CDMX” experience.',
+     stay: 'Best all-around base for fans who want food + nightlife + safety.',
+     eat: 'Bakeries, tacos, casual gems, and the occasional “we should dress up” dinner.',
+     drink: 'Cocktail bars, mezcal spots, and patios that fill up fast on match nights.',
+     explore: 'Parque México, street art walks, design shops, Sunday Reforma rides nearby.',
+     match: 'To Azteca: aim for Metro Line 2 (via a transfer) + Tren Ligero. Leave early.',
+     tag: 'Nightlife + Walkability',
+    },
+    {
+     title: 'Polanco',
+     vibe: 'Upscale, polished, and very comfortable—especially for families.',
+     stay: 'Luxury hotels, great service, and some of the city’s safest streets.',
+     eat: 'World-class dining, steakhouses, sushi, and high-end Mexican.',
+     drink: 'Hotel bars, rooftop cocktails, and a calmer late-night scene.',
+     explore: 'Chapultepec Park, Museo Nacional de Antropología, shopping, galleries.',
+     match: 'Match-day reality: it’s far from Azteca—plan transit or a pre-booked driver.',
+     tag: 'Family-Friendly + Luxury',
+    },
+    {
+     title: 'Juárez + Reforma (El Ángel Zone)',
+     vibe: 'Central, convenient, and hotel-heavy in a good way.',
+     stay: 'Great if you want walkable big-city energy and easy airport logistics.',
+     eat: 'Reliable options everywhere—cafés, taquerías, and modern Mexican.',
+     drink: 'Busy bars and late nights near Zona Rosa; choose streets carefully.',
+     explore: 'Paseo de la Reforma, Chapultepec access, easy day trips to Centro.',
+     match: 'Good launch point for getting onto Metro lines before they get packed.',
+     tag: 'Convenience + Hotels',
+    },
+    {
+     title: 'Centro Histórico',
+     vibe: 'Jaw-dropping history by day, complicated edges by night.',
+     stay: 'Beautiful boutique hotels—just prioritize well-reviewed blocks.',
+     eat: 'Cantinas, classic diners, and quick market meals.',
+     drink: 'Old-school cantina culture; evenings can get rowdy fast.',
+     explore: 'Zócalo, Templo Mayor, Palacio de Bellas Artes, mural-hunting.',
+     match: 'Early transit access is easy, but late-night returns are best by ride-share.',
+     tag: 'History + Daytime Energy',
+    },
+    {
+     title: 'Coyoacán + San Ángel',
+     vibe: 'Cobblestones, courtyards, and a calmer rhythm.',
+     stay: 'Perfect for families and anyone who wants “Mexico City, but breathable.”',
+     eat: 'Markets, chocolate, churros, and proper weekend brunch.',
+     drink: 'Low-key evenings—more café than club.',
+     explore: 'Frida Kahlo Museum area, plazas, artisan markets, leafy walks.',
+     match: 'Closer to Azteca than most tourist zones, but still plan transit buffers.',
+     tag: 'Family-Friendly + Culture',
+    },
+    {
+     title: 'Del Valle + Nápoles',
+     vibe: 'Local residential with great value and strong food pockets.',
+     stay: 'Smart option if Roma/Condesa prices explode during match weeks.',
+     eat: 'Neighborhood taquerías, bakeries, and underrated restaurants.',
+     drink: 'Casual bars and mezcalerías—less touristy.',
+     explore: 'Parks, shopping, and an everyday-city feel.',
+     match: 'Good positioning for moving south toward Azteca, depending on traffic.',
+     tag: 'Value + Local Feel',
+    },
+    {
+     title: 'Near Estadio Azteca (Santa Úrsula / Coapa area)',
+     vibe: 'Match-day intensity, otherwise residential.',
+     stay: 'Only choose this if your #1 priority is being close to the stadium.',
+     eat: 'Pre-match street food, simple local spots.',
+     drink: 'Stadium-night energy, but not the best base for exploring the city.',
+     explore: 'You’ll be commuting for museums and nightlife.',
+     match: 'Walkable access is the perk—just keep your plans tight and simple.',
+     tag: 'Match-Day Convenience',
+    },
+    {
+     title: 'Santa Fe',
+     vibe: 'Modern business district, car-first.',
+     stay: 'Good for business travelers; not ideal for first-time fans.',
+     eat: 'Mall dining + a few standouts.',
+     drink: 'Hotel scene; you’ll travel for nightlife.',
+     explore: 'Great views and parks, but you’ll feel far from the “classic” city.',
+     match: 'Traffic can be brutal—build massive buffers on match days.',
+     tag: 'Business + Quiet Nights',
+    },
+   ].map((n, i) => (
+    <div key={i} className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+     <div className="flex items-start justify-between gap-6 mb-4">
+      <h4 className="font-bold text-2xl text-slate-900 dark:text-white">{n.title}</h4>
+      <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full whitespace-nowrap">
+       {n.tag}
+      </span>
+     </div>
+     <p className="text-slate-600 dark:text-slate-400 mb-6">{n.vibe}</p>
+     <ul className="space-y-2 text-slate-600 dark:text-slate-400">
+      <li>• <strong>Stay:</strong> {n.stay}</li>
+      <li>• <strong>Eat:</strong> {n.eat}</li>
+      <li>• <strong>Drink:</strong> {n.drink}</li>
+      <li>• <strong>Explore:</strong> {n.explore}</li>
+      <li>• <strong>Match-day:</strong> {n.match}</li>
+     </ul>
+    </div>
+   ))}
+  </div>
+
+  <div className="mt-12 flex flex-wrap gap-4">
+   <AffiliateButton href="https://www.booking.com/city/mx/mexico-city.html" text="Search Neighborhood Hotels" variant="primary" icon={Hotel} />
+   <AffiliateButton href="https://www.airbnb.com/s/Mexico-City--Mexico/homes" text="Check Apartments for Groups" variant="outline" icon={Users} />
+  </div>
  </Section>
 
  <Section id="stadium" title="Estadio Azteca">
@@ -488,6 +629,12 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
  <p>
  <strong>Estadio Azteca</strong> is hallowed ground. It is the only stadium to host two FIFA World Cup Finals (Pelé in 1970, Maradona in 1986). Known as the "Colossus of Saint Ursula," it is undergoing massive renovations for 2026 to modernize its facilities while keeping its intimidating atmosphere.
  </p>
+ <p>
+  FIFA’s tournament materials list five World Cup 2026 matches here, including the opener on <strong>June 11, 2026</strong>. <a href="https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/articles/estadio-azteca-mexico-city-host-opening-match-world-cup-2026" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-emerald-600 hover:text-emerald-500 font-bold">FIFA fixtures <ExternalLink className="w-4 h-4" /></a>
+ </p>
+ <p>
+  For entrances, seating feel, and the “what do I actually do when I get there” details, use the dedicated stadium deep dive: <Link href="/estadio-azteca-world-cup-2026" className="text-emerald-600 hover:text-emerald-500 font-bold">Estadio Azteca World Cup 2026 guide</Link>.
+ </p>
  </div>
  
  <div className="grid md:grid-cols-2 gap-8 mb-12">
@@ -495,9 +642,9 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
    <h4 className="font-bold text-xl mb-6 flex items-center gap-3"><CheckCircle2 className="w-6 h-6 text-emerald-500"/> Key Features</h4>
  <ul className="space-y-4">
  {[
- { label: "Capacity", val: "87,523" },
- { label: "Surface", val: "Hybrid Grass" },
- { label: "Elevation", val: "7,200 ft (2,200m)" },
+ { label: "Capacity", val: "83,000 (FIFA listing)" },
+ { label: "Opened", val: "1966" },
+ { label: "Elevation", val: "7,350 ft (2,240m)" },
  { label: "Opened", val: "1966" }
  ].map((item, i) => (
  <li key={i} className="flex justify-between items-center text-slate-700 dark:text-slate-300">
@@ -877,13 +1024,6 @@ Heart of the World Cup. <span className="text-slate-900 dark:text-white font-med
  </div>
  );
 }
-
-
-
-
-
-
-
 
 
 
