@@ -407,12 +407,11 @@ export default function ClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                ACCOMMODATION<br/>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300">GUIDE 2026</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                World Cup 2026 Accommodation Guide
               </h1>
               
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
                  Neighborhood breakdowns, price ranges, and verified strategies for finding a bed in all 16 host cities across the USA, Canada, and Mexico.
                </p>
             </motion.div>

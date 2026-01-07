@@ -285,11 +285,10 @@ export default function FanZoneSafetyClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                FAN ZONE & CROWD <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">SAFETY</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                World Cup 2026 Fan Zone Safety
               </h1>
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
                 The definitive guide to navigating crowds and enjoying the atmosphere safely during World Cup 2026. From entry checkpoints to emergency protocols.
               </p>
             </motion.div>

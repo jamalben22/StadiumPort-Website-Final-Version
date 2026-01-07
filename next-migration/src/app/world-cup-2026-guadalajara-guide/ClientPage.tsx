@@ -316,10 +316,10 @@ export default function ClientPage() {
             </span>
           </div>
           
-          <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
             Guadalajara <span className="block">World Cup 2026 Guide</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
             A local-first matchweek playbook for Estadio Akron: where to stay, how to move, what to eat, and how to actually enjoy Guadalajara between fixtures.
           </p>
  </motion.div>

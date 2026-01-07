@@ -317,10 +317,10 @@ Round of 16 Host (July 4)
 </span>
 </div>
  
-<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.92]">
+<h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
 Philadelphia World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+<p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
 I’ve lived here long enough to remember the Vet, argue about cheesesteaks like it’s a constitutional right, and still get goosebumps walking into the Sports Complex on a big night. Let’s make your Philly trip smooth, loud, and ridiculously fun.
 </p>
  </motion.div>

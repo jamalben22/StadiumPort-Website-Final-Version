@@ -316,11 +316,11 @@ export default function ClientPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
                 San Francisco Bay Area World Cup 2026 Guide
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
                 Levi&apos;s Stadium match-day logistics, neighborhood-by-neighborhood bases, local food shortcuts, and the stuff most guides skip.
               </p>
             </motion.div>

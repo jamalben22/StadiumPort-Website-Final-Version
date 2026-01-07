@@ -318,10 +318,10 @@ export default function ClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                EMERGENCY <span className="block text-3xl md:text-5xl lg:text-6xl mt-2 text-slate-400">CONTACTS & RESOURCES</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                World Cup 2026 Emergency Resources
               </h1>
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
                 The essential safety companion for fans. <span className="text-slate-900 dark:text-white font-medium">World Cup 2026</span> verified listings.
               </p>
             </motion.div>

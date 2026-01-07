@@ -333,13 +333,10 @@ export default function ClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
                 Boston World Cup 2026 Guide
-                <span className="block text-xl md:text-3xl lg:text-4xl xl:text-5xl mt-4 text-white/80 font-bold tracking-tight">
-                  Foxborough + Gillette Stadium (Boston Stadium)
-                </span>
               </h1>
-              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
                 I’ve lived here long enough to remember when the Big Dig was still a punchline. Use this Boston World Cup 2026 guide to eat well, move fast, and actually enjoy match day.
               </p>
             </motion.div>

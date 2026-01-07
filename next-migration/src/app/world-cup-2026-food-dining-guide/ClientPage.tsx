@@ -302,10 +302,10 @@ export default function ClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                FOOD & <br/> DINING GUIDE
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                World Cup 2026 Food & Dining Guide
               </h1>
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
                 Eating Well on Any Budget. <span className="text-slate-900 dark:text-white font-medium">From street tacos to Michelin stars.</span> Your definitive culinary guide to 16 host cities.
               </p>
             </motion.div>

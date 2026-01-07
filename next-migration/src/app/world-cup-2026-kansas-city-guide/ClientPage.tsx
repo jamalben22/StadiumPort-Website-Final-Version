@@ -306,11 +306,11 @@ export default function ClientPage() {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
                 Kansas City World Cup 2026 Guide
               </h1>
               
-              <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
                 I’ve watched this city reinvent itself for two decades—streetcar, breweries, a brand-new airport terminal, and now the biggest tournament on earth. Here’s how to do Kansas City like a local and get to <span className="text-white font-medium">GEHA Field at Arrowhead Stadium</span> without stress.
               </p>
             </motion.div>

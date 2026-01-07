@@ -305,11 +305,10 @@ export default function FoodSafetyClientPage() {
                 </span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.9]">
-                FOOD & WATER <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">SAFETY</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+                World Cup 2026 Food & Dining Safety
               </h1>
-              <p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-xl leading-relaxed">
+              <p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
                 Dining without distress. Your complete guide to safe eating, water potability, and staying healthy across USA, Canada, and Mexico.
               </p>
             </motion.div>

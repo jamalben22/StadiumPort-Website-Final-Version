@@ -318,11 +318,11 @@ export default function ClientPage() {
           </span>
         </div>
 
-        <h1 className="text-4xl md:text-7xl lg:text-8xl xl:text-[10rem] font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-8 leading-[0.9] md:leading-[0.95]">
           Monterrey World Cup 2026 Guide
         </h1>
         
-        <p className="text-lg md:text-xl lg:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+        <p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
           If you want the “local” version of Monterrey—fast, proud, a little blunt, and wildly underrated—this is it. Let’s get you to <span className="text-white font-medium">Estadio BBVA</span> without losing an hour to traffic.
         </p>
       </motion.div>

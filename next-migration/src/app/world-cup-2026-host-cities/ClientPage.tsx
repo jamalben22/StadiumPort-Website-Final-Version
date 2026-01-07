@@ -227,13 +227,13 @@ export default function ClientPage() {
                     Last Updated: January 4, 2026
                   </span>
                 </div>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.1]">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-8 tracking-tighter leading-[1.1]">
                   World Cup 2026<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-200">
                     Host Cities
                   </span>
                 </h1>
-                <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
+                <p className="text-base md:text-lg lg:text-xl text-slate-600 dark:text-slate-200 max-w-3xl mx-auto mb-12 leading-relaxed font-light">
                   The 2026 FIFA World Cup™ expands across the USA, Canada, and Mexico. 
                   Experience the culture, stadiums, and atmosphere of the host cities defining the next era of football.
                 </p>

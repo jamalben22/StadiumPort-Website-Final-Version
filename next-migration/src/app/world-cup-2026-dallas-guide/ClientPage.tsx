@@ -376,10 +376,10 @@ Semi-Final Host
 </span>
 </div>
 
-<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+<h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
 Dallas World Cup 2026 Guide
 </h1>
-<p className="text-xl md:text-2xl text-slate-900 dark:text-white/90 font-light max-w-2xl leading-relaxed">
+<p className="text-base md:text-lg lg:text-xl text-slate-900 dark:text-white/90 font-light max-w-3xl leading-relaxed">
 Written from the inside by a longtime local: where to stay, how to survive match day in Arlington, and what Dallas actually feels like in June.
 </p>
  </motion.div>

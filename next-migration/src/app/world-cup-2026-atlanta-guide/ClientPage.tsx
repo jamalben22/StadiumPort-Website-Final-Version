@@ -348,10 +348,10 @@ export default function ClientPage() {
             </span>
           </div>
           
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
-                Atlanta World Cup 2026 Guide
-              </h1>
-              <p className="text-xl md:text-2xl text-white/90 font-light max-w-2xl leading-relaxed">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white tracking-tighter mb-6 leading-[0.95]">
+Atlanta World Cup 2026 Guide
+</h1>
+<p className="text-base md:text-lg lg:text-xl text-white/90 font-light max-w-3xl leading-relaxed">
                 Matchday logistics, neighborhood intel, and the little Atlanta tricks you only learn by living here.
               </p>
             </motion.div>
