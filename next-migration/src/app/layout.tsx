@@ -8,6 +8,8 @@ import { WebVitalsReporter } from "@/components/analytics/WebVitalsReporter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/schema";
 import { AnalyticsTracker } from "@/components/analytics/AnalyticsTracker";
+import { MicrosoftClarity } from "@/components/analytics/MicrosoftClarity";
+import { CookieConsent } from "@/components/privacy/CookieConsent";
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/next';
 
@@ -66,6 +68,8 @@ export default function RootLayout({
         </Script>
 
         <Providers>
+          <MicrosoftClarity />
+          <CookieConsent />
           <AnalyticsTracker pageId="root" />
           <JsonLd schema={generateOrganizationSchema()} />
           <JsonLd schema={generateWebsiteSchema()} />
