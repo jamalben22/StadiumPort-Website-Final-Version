@@ -240,7 +240,7 @@ export const contentRegistry: Record<string, ContentMeta> = {
     title: 'World Cup 2026 Group E Guide: Teams, Schedule & Cities',
     description: 'Group E guide for World Cup 2026. Master the route: Philadelphia, Houston, KC, Toronto & NY/NJ. Amtrak & stadium logistics.',
     publishedAt: '2025-12-26T00:00:00Z',
-    updatedAt: '2025-12-26T00:00:00Z',
+    updatedAt: '2026-01-08T00:00:00Z',
     wordCount: 2400,
     image: '/images/groups/group-e-hero.webp'
   },
@@ -262,10 +262,10 @@ export const contentRegistry: Record<string, ContentMeta> = {
   },
   'group-h': {
     title: 'World Cup 2026 Group H Guide: Teams, Schedule & Cities',
-    description: 'Group H guide for World Cup 2026. Master the Southern Triangle (Miami-Houston-Atlanta). Flight strategies & stadium cooling.',
+    description: 'Group H guide for World Cup 2026: Spain, Uruguay, Saudi Arabia, and Cabo Verde. Verified fixtures in Atlanta, Miami, Houston, and Guadalajara, plus flight, hotel, ticket, and matchday strategy.',
     publishedAt: '2025-12-26T00:00:00Z',
-    updatedAt: '2025-12-26T00:00:00Z',
-    wordCount: 2600,
+    updatedAt: '2026-01-08T00:00:00Z',
+    wordCount: 4700,
     image: '/images/groups/group-h-hero.webp'
   },
   'group-i': {
@@ -277,19 +277,19 @@ export const contentRegistry: Record<string, ContentMeta> = {
     image: '/images/groups/group-i-hero.webp'
   },
   'group-j': {
-    title: 'World Cup 2026 Group J Guide: Teams, Schedule & Cities',
-    description: 'Group J guide for World Cup 2026. Master the American Frontier (KC-Dallas-SF). Flights, rentals & heat strategy.',
+    title: 'World Cup 2026 Group J Travel Guide: Kansas City, Dallas & SF Bay Area',
+    description: 'Group J travel guide for World Cup 2026. Kansas City, Dallas/Arlington, and the SF Bay Area: flights, rental cars, matchday logistics, hotels, and heat strategy.',
     publishedAt: '2025-12-26T00:00:00Z',
-    updatedAt: '2025-12-26T00:00:00Z',
-    wordCount: 2700,
+    updatedAt: '2026-01-09T00:00:00Z',
+    wordCount: 4700,
     image: '/images/groups/group-j-hero.webp'
   },
   'group-k': {
-    title: 'World Cup 2026 Group K Guide: Teams, Schedule & Cities',
-    description: 'Group K guide for World Cup 2026. Master the Southern Crossing (CDMX-Houston-Atlanta-Miami). Altitude, humidity & hubs.',
+    title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel Strategy',
+    description: 'The definitive FIFA World Cup 2026 Group K guide: teams, match schedule, stadiums, and the smartest travel plan for Mexico City, Houston, Atlanta, and Miami.',
     publishedAt: '2025-12-26T00:00:00Z',
-    updatedAt: '2025-12-26T00:00:00Z',
-    wordCount: 2800,
+    updatedAt: '2026-01-09T00:00:00Z',
+    wordCount: 4100,
     image: '/images/groups/group-k-hero.webp'
   },
   'group-l': {

@@ -1,18 +1,32 @@
 import { Metadata } from 'next';
 import GroupKClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group K Travel Guide: Mexico City, Houston, Atlanta & Miami',
-  description: 'The definitive guide for following Group K in World Cup 2026. Master the Southern Crossing (Mexico City-Houston-Atlanta-Miami). Altitude, humidity, and hub strategy.',
-  keywords: ['World Cup 2026 Group K Travel Guide', 'Group K matches', 'Mexico City Houston Atlanta Miami World Cup', 'Estadio Azteca travel', 'Hard Rock Stadium guide', 'Southern World Cup itinerary'],
+  title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel Strategy',
+  description: 'The definitive FIFA World Cup 2026 Group K guide: teams, match schedule, stadiums, and the smartest travel plan for Mexico City, Houston, Atlanta, and Miami.',
+  keywords: [
+    'FIFA World Cup 2026 Group K guide',
+    'World Cup 2026 Group K',
+    'Group K schedule',
+    'Group K fixtures',
+    'Mexico City World Cup 2026',
+    'Houston World Cup 2026',
+    'Atlanta World Cup 2026',
+    'Miami World Cup 2026',
+    'Estadio Azteca World Cup 2026',
+    'NRG Stadium World Cup 2026',
+    'Mercedes-Benz Stadium World Cup 2026',
+    'Hard Rock Stadium World Cup 2026',
+    'Group K travel strategy',
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-groups/group-k',
   },
   openGraph: {
-    title: 'World Cup 2026 Group K Travel Guide: Mexico City, Houston, Atlanta & Miami',
-    description: 'The definitive guide for following Group K in World Cup 2026. Master the Southern Crossing (Mexico City-Houston-Atlanta-Miami). Altitude, humidity, and hub strategy.',
+    title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel',
+    description: 'Teams, match schedule, stadiums, and the smartest travel plan for Mexico City, Houston, Atlanta, and Miami.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-k',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -28,71 +42,120 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Group K Travel Guide: Mexico City, Houston, Atlanta & Miami',
-    description: 'The definitive guide for following Group K in World Cup 2026. Master the Southern Crossing (Mexico City-Houston-Atlanta-Miami). Altitude, humidity, and hub strategy.',
+    title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel',
+    description: 'Teams, match schedule, stadiums, and the smartest travel plan for Mexico City, Houston, Atlanta, and Miami.',
     images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
   },
 };
 
 export default function GroupKPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
   const pageUrl = '/world-cup-2026-groups/group-k';
 
   const articleSchema = generateArticleSchema('group-k', pageUrl);
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Groups",
-        "item": `${siteUrl}/world-cup-2026-groups`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Group K Guide",
-        "item": `${siteUrl}${pageUrl}`
-      }
-    ]
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group K Guide', item: pageUrl },
+  ]);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the best way to travel between Group K cities?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Due to the massive distances and international borders, flying is the only viable option. Use major hubs like Mexico City (MEX), Houston (IAH), Atlanta (ATL), and Miami (MIA) for direct connections."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Which Group K city is the most unique?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Mexico City offers the most unique experience with its high altitude (7,200ft) and the historic Estadio Azteca, the only stadium to host three World Cup openers."
-        }
-      }
-    ]
-  };
+  const faqSchema = generateFAQSchema([
+    {
+      question: 'Do I need a car for Group K?',
+      answer:
+        'For Houston and Miami, yes. These cities are built for cars and stadiums are far from many hotel districts. For Mexico City, use Ubers or official taxis. In Atlanta, the MARTA rail is excellent for reaching the stadium from Midtown/Downtown.',
+    },
+    {
+      question: 'Which city is the best base for Group K?',
+      answer:
+        'Atlanta is the most reliable logistics hub thanks to flight connections, while Houston can be a strong mid-trip base for hotel value and central positioning. If you’re optimizing for culture, Mexico City is the signature stop.',
+    },
+    {
+      question: 'How do I handle cross-border travel (Mexico ↔ USA)?',
+      answer:
+        'Treat every move between Mexico City and the US as a full international flight day. Arrive early, keep documents accessible, and build buffer time for customs and immigration during peak tournament periods.',
+    },
+    {
+      question: 'Is it safe to follow the full Group K route?',
+      answer:
+        'Yes, but it is physically demanding. You are dealing with altitude, heat, and multiple airports. Plan recovery days, hydrate aggressively, and keep your transport plan simple on match days.',
+    },
+  ]);
+
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group K Matches',
+    startDate: '2026-06-16',
+    endDate: '2026-06-27',
+    location: {
+      name: 'Group K Host Cities',
+      address: 'Mexico City, Houston, Atlanta, Miami',
+      country: 'US, MX',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description:
+      'Group K fixtures played in Mexico City, Houston, Atlanta, and Miami during the FIFA World Cup 2026 group stage.',
+  });
+
+  const matchEventSchemas = [
+    generateEventSchema({
+      name: 'Colombia vs PO 1 (Group K) — Houston',
+      startDate: '2026-06-16T20:00:00-05:00',
+      endDate: '2026-06-16T22:00:00-05:00',
+      location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at NRG Stadium in Houston, Texas.',
+    }),
+    generateEventSchema({
+      name: 'Portugal vs Uzbekistan (Group K) — Mexico City',
+      startDate: '2026-06-17T18:00:00-06:00',
+      endDate: '2026-06-17T20:00:00-06:00',
+      location: { name: 'Estadio Azteca', address: 'Mexico City', country: 'MX' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at Estadio Azteca in Mexico City.',
+    }),
+    generateEventSchema({
+      name: 'Portugal vs Colombia (Group K) — Atlanta',
+      startDate: '2026-06-22T21:00:00-04:00',
+      endDate: '2026-06-22T23:00:00-04:00',
+      location: { name: 'Mercedes-Benz Stadium', address: 'Atlanta, GA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at Mercedes-Benz Stadium in Atlanta, Georgia.',
+    }),
+    generateEventSchema({
+      name: 'Uzbekistan vs PO 1 (Group K) — Miami',
+      startDate: '2026-06-23T15:00:00-04:00',
+      endDate: '2026-06-23T17:00:00-04:00',
+      location: { name: 'Hard Rock Stadium', address: 'Miami Gardens, FL', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at Hard Rock Stadium in Miami Gardens, Florida.',
+    }),
+    generateEventSchema({
+      name: 'Portugal vs PO 1 (Group K) — Houston',
+      startDate: '2026-06-27T18:00:00-05:00',
+      endDate: '2026-06-27T20:00:00-05:00',
+      location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at NRG Stadium in Houston, Texas.',
+    }),
+    generateEventSchema({
+      name: 'Colombia vs Uzbekistan (Group K) — Mexico City',
+      startDate: '2026-06-27T20:00:00-06:00',
+      endDate: '2026-06-27T22:00:00-06:00',
+      location: { name: 'Estadio Azteca', address: 'Mexico City', country: 'MX' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group K match at Estadio Azteca in Mexico City.',
+    }),
+  ];
 
   return (
     <>
       <JsonLd schema={articleSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={index} schema={schema} />
+      ))}
       <GroupKClientPage />
     </>
   );

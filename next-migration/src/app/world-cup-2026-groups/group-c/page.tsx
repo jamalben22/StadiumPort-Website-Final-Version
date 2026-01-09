@@ -40,61 +40,172 @@ export default function GroupCPage() {
 
   const articleSchema = generateArticleSchema('group-c', pageUrl);
 
- const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group C Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": siteUrl
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Groups",
+        "item": `${siteUrl}/world-cup-2026-groups`
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Group C Guide",
+        "item": `${siteUrl}${pageUrl}`
+      }
+    ]
+  };
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Group C cities?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "For the northern cities (Boston, NYC, Philadelphia), the Amtrak Acela train is superior to flying. For the southern leg (Atlanta, Miami), you must fly. The strategy is 'Train North, Plane South'."
- }
- },
- {
- "@type": "Question",
- "name": "Which Group C city is the most expensive?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "New York City is the most expensive for accommodation, averaging $450+ per night. Boston follows closely. Atlanta and Philadelphia offer better value for mid-range travelers."
- }
- }
- ]
- };
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the best way to travel between Group C cities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "For the northern cities (Boston, NYC, Philadelphia), the Amtrak Acela train is superior to flying. For the southern leg (Atlanta, Miami), you must fly. The strategy is 'Train North, Plane South'."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Which Group C city is the most expensive?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "New York City is the most expensive for accommodation, averaging $450+ per night. Boston follows closely. Atlanta and Philadelphia offer better value for mid-range travelers."
+        }
+      }
+    ]
+  };
 
- return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <GroupCClientPage />
- </>
- );
+  const groupMatchesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FIFA World Cup 2026 Group C Matches",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Brazil vs Haiti (Group C)",
+          "startDate": "2026-06-12T20:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Hard Rock Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Miami Gardens", "addressRegion": "FL", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Morocco vs Scotland (Group C)",
+          "startDate": "2026-06-13T15:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Gillette Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Foxborough", "addressRegion": "MA", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Brazil vs Scotland (Group C)",
+          "startDate": "2026-06-18T18:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "MetLife Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "East Rutherford", "addressRegion": "NJ", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Morocco vs Haiti (Group C)",
+          "startDate": "2026-06-18T21:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Lincoln Financial Field",
+            "address": { "@type": "PostalAddress", "addressLocality": "Philadelphia", "addressRegion": "PA", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Brazil vs Morocco (Group C)",
+          "startDate": "2026-06-24T20:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Mercedes-Benz Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Scotland vs Haiti (Group C)",
+          "startDate": "2026-06-24T15:00:00-04:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "MetLife Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "East Rutherford", "addressRegion": "NJ", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      }
+    ]
+  };
+
+  return (
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupMatchesSchema} />
+      <GroupCClientPage />
+    </>
+  );
 }
 

@@ -13,6 +13,8 @@ import {
  ArrowRight, 
  Plane, 
  Train, 
+ Ticket,
+ Users,
  CreditCard, 
  ExternalLink,
  Car
@@ -55,8 +57,15 @@ export default function GroupBClientPage() {
       outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
     };
 
+    const isExternal = href.startsWith('http');
+
     return (
-      <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={`${baseClasses} ${variants[variant]}`}
+      >
         <span className="relative z-10 flex items-center gap-2">
           {text}
           <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -83,7 +92,7 @@ export default function GroupBClientPage() {
 
  useEffect(() => {
  const handleScroll = () => {
- const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+ const sections = ['intro', 'schedule', 'teams', 'strategy', 'itineraries', 'accommodation', 'tickets', 'budget', 'visas', 'insider', 'packing', 'faq'];
  const scrollPosition = window.scrollY + 300;
 
  for (const section of sections) {
@@ -123,14 +132,14 @@ World Cup 2026 <br />
 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-300">Group B Strategy</span>
 </h1>
 
-<p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
-Four cities. Two nations. One coast. From the mountains of Vancouver to the Hollywood hills, Group B is the tournament's most scenic route.
+ <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
+ Five cities. Two countries. One coast. From the mountains of Vancouver to the lights of Los Angeles, Group B is the tournament’s most cinematic itinerary.
 </p>
 </div>
 </div>
  
  {/* Scroll Indicator */}
- <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+ <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('schedule')}>
  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
  <ChevronDown className="w-5 h-5 text-emerald-500" />
  </div>
@@ -145,8 +154,12 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
  {[
  { id: 'intro', label: 'Introduction' },
+ { id: 'schedule', label: 'Match Schedule' },
+ { id: 'teams', label: 'Teams Overview' },
  { id: 'strategy', label: 'Travel Strategy' },
+ { id: 'itineraries', label: 'Sample Itineraries' },
  { id: 'accommodation', label: 'Accommodation' },
+ { id: 'tickets', label: 'Tickets & Entry' },
  { id: 'budget', label: 'Budget Breakdown' },
  { id: 'visas', label: 'Visa Requirements' },
  { id: 'insider', label: 'Insider Tips' },
@@ -179,7 +192,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  Group B offers the most breathtaking landscapes and the most tech-forward cities in the tournament—if you master the distances.
  </p>
  <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
- The group is split into two distinct zones: the <strong className="text-slate-900 dark:text-white">"Cascadia Core"</strong> (Vancouver, Seattle) and the <strong className="text-slate-900 dark:text-white">"California Gold"</strong> (SF/Bay Area, Los Angeles).
+ The group is split into two zones: the <strong className="text-slate-900 dark:text-white">Cascadia Core</strong> (Toronto kickoff, Vancouver, Seattle) and the <strong className="text-slate-900 dark:text-white">California Gold</strong> (SF Bay Area, Los Angeles).
  </p>
  </div>
  
@@ -197,10 +210,159 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  </div>
  </section>
 
+ <section id="schedule" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Official Match Schedule</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Group B stretches along the Pacific coast with one Toronto kickoff. Times below are shown in the match city’s local time.
+ </p>
+ 
+ <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
+ <table className="w-full text-left border-collapse">
+ <thead>
+ <tr className="border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
+ <span className="inline-flex items-center gap-2">
+ <Calendar className="w-4 h-4" />
+ Date
+ </span>
+ </th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">
+ <span className="inline-flex items-center gap-2">
+ <Clock className="w-4 h-4" />
+ Kickoff
+ </span>
+ </th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">
+ <span className="inline-flex items-center gap-2">
+ <MapPin className="w-4 h-4" />
+ Venue
+ </span>
+ </th>
+ </tr>
+ </thead>
+ <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Fri, 12 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Canada vs UEFA Play-off A Winner</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">15:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Toronto Stadium (Toronto)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Sat, 13 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Qatar vs Switzerland</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">12:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">San Francisco Bay Area Stadium (Santa Clara)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 18 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Switzerland vs UEFA Play-off A Winner</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">12:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Los Angeles Stadium (Inglewood)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 18 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Canada vs Qatar</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">15:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">BC Place (Vancouver)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Wed, 24 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Switzerland vs Canada</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">12:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">BC Place (Vancouver)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Wed, 24 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">UEFA Play-off A Winner vs Qatar</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">12:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Seattle Stadium (Seattle)</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+
+ <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div className="p-8 rounded-[2rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3 flex items-center gap-3"><Ticket className="w-5 h-5 text-emerald-500" /> Ticket Priority Tip</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+ If you want to build your trip around one base, Vancouver is the power play: two Group B matches in the same stadium. That gives you the best chance to lock hotel nights early without guessing which team advances.
+ </p>
+ </div>
+ <div className="p-8 rounded-[2rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <h3 className="font-bold text-xl text-slate-900 dark:text-white mb-3 flex items-center gap-3"><Plane className="w-5 h-5 text-emerald-500" /> Logistics Reality Check</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+ Toronto is a one-off opener. The rest is a coast-hugging sequence: SF Bay Area → LA → Vancouver/Seattle. Plan to fly at least once, and treat the Vancouver–Seattle leg as rail/road, not air.
+ </p>
+ </div>
+ </div>
+ </section>
+
+ <section id="teams" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Teams To Plan Around</h2>
+ </div>
+
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Group B features Canada, Qatar, Switzerland, and a UEFA Play-off A winner (TBD). The football is only half the plan: each fanbase travels differently, and that changes hotel demand, stadium atmosphere, and where the best pre-match energy lives.
+ </p>
+
+ <div className="grid md:grid-cols-2 gap-6">
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Canada</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ The hosts get the best kind of travel advantage: familiar airports, high domestic demand, and an easy Vancouver base for two matches. Expect fast sellouts in Vancouver and a massive weekend wave into Toronto for the opener.
+ </p>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-vancouver-guide" text="Vancouver Match-Day Guide" variant="outline" />
+ <AffiliateButton href="/world-cup-2026-toronto-guide" text="Toronto Match-Day Guide" variant="outline" />
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Switzerland</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ A veteran tournament team with a reliable traveling support. Switzerland’s games hit the three biggest demand magnets in Group B: Santa Clara, Los Angeles, and Vancouver. That’s why booking windows matter more here than almost any other group.
+ </p>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-san-francisco-bay-area-guide" text="SF Bay Area Guide" variant="outline" />
+ <AffiliateButton href="/world-cup-2026-los-angeles-guide" text="Los Angeles Guide" variant="outline" />
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">Qatar</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ Qatar’s travel pattern is often family-heavy and hotel-driven, which can spike demand in central areas with easy transit. If you’re chasing multiple matches, Qatar is also the “two-country” trigger: Vancouver (Canada) plus Seattle and the Bay Area (USA).
+ </p>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-seattle-guide" text="Seattle Guide" variant="outline" />
+ <AffiliateButton href="/world-cup-2026-border-crossing-guide" text="USA–Canada Border Guide" variant="secondary" />
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-3">UEFA Play-off A Winner (TBD)</h3>
+ <p className="text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ This is the volatility slot. Once the play-off is decided, expect a sudden surge in hotels near Toronto and Seattle (their two match cities). If you want to stay flexible, book refundable rooms early and re-price after the draw.
+ </p>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="https://www.fifa.com" text="Follow Official Updates" variant="secondary" icon={ExternalLink} />
+ <AffiliateButton href="/world-cup-2026-accommodation-guide" text="Hotel Booking Strategy" variant="outline" />
+ </div>
+ </div>
+ </div>
+ </section>
+
  {/* Section 1: Multi-City Travel Strategy */}
  <section id="strategy" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
  </div>
  
@@ -288,13 +450,13 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <AffiliateButton 
-                  href="https://skyscanner.com" 
+                  href="https://www.skyscanner.com" 
                   text="Check Skyscanner Deals" 
                   icon={ArrowRight}
                   variant="primary"
                 />
                 <AffiliateButton 
-                  href="https://expedia.com" 
+                  href="https://www.expedia.com" 
                   text="Compare on Expedia" 
                   icon={ExternalLink}
                   variant="outline"
@@ -305,10 +467,67 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  </div>
  </section>
 
+ <section id="itineraries" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Sample Itineraries</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ These itineraries are built for real travel: minimal backtracking, airport choices that save time, and match-day pacing that keeps you functional for the next kickoff.
+ </p>
+
+ <div className="grid md:grid-cols-3 gap-6">
+ <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800">
+ <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">7 Days</div>
+ <h3 className="text-xl font-black text-slate-900 dark:text-white mb-3">Vancouver Base (2 Matches)</h3>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ Fly into YVR, stay downtown (Yaletown/Gastown), and build the trip around both BC Place matches. Add a Seattle day trip by train for fan culture.
+ </p>
+ <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Vancouver match 1 + match 2</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Optional Seattle day trip (Amtrak)</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> No rental car required</li>
+ </ul>
+ </div>
+
+ <div className="p-8 rounded-3xl border border-emerald-100 dark:border-emerald-900 dark:bg-emerald-900/10 shadow-xl shadow-emerald-900/5">
+ <div className="text-[10px] font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-widest mb-4">10 Days</div>
+ <h3 className="text-xl font-black text-slate-900 dark:text-white mb-3">Cascadia + Seattle Finish</h3>
+ <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed mb-6">
+ Start in Vancouver, hit BC Place, take rail/road to Seattle, then end with the Seattle fixture. This is the best “two-city, no chaos” plan.
+ </p>
+ <ul className="space-y-3 text-sm text-slate-700 dark:text-slate-300">
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Vancouver match + Seattle match</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Border crossing once</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Transit-friendly cities</li>
+ </ul>
+ </div>
+
+ <div className="p-8 rounded-3xl border border-slate-100 dark:border-slate-200 dark:border-slate-800">
+ <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-4">14 Days</div>
+ <h3 className="text-xl font-black text-slate-900 dark:text-white mb-3">Full Coast (SF → LA → Vancouver)</h3>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+ Chase the California matches first, then jump north to Vancouver for the late group crescendo. It’s the highest-cost plan, but it’s the iconic one.
+ </p>
+ <ul className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> SF Bay Area match + LA match + Vancouver match</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Rental car recommended in California</li>
+ <li className="flex items-center gap-3"><div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> Book hotels earliest</li>
+ </ul>
+ </div>
+ </div>
+
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="/world-cup-2026-itinerary-planning" text="Full Itinerary Planning Guide" variant="secondary" />
+ <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Flight Booking Strategy" variant="outline" icon={Plane} />
+ </div>
+ </section>
+
  {/* Section 2: Accommodation Strategy */}
  <section id="accommodation" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
  </div>
  
@@ -339,7 +558,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  </li>
  </ul>
               <AffiliateButton 
-                href="https://booking.com" 
+                href="https://www.booking.com" 
                 text="Search Bay Area Hotels" 
                 variant="outline"
               />
@@ -367,7 +586,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
                 </li>
               </ul>
               <AffiliateButton 
-                href="https://booking.com" 
+                href="https://www.booking.com" 
                 text="Search Vancouver Hotels" 
                 variant="outline"
               />
@@ -390,9 +609,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <span><strong>Stadium Access:</strong> K Line Light Rail (Metro) or Shuttle from LAX.</span>
  </li>
  </ul>
- <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
- Search LA Hotels <ArrowRight className="w-3 h-3" />
- </a>
+ <AffiliateButton href="https://www.booking.com" text="Search LA Hotels" variant="outline" />
  </div>
 
  {/* Seattle */}
@@ -412,17 +629,62 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <span><strong>Tip:</strong> Link Light Rail connects the airport directly to the stadium area.</span>
  </li>
  </ul>
- <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
- Search Seattle Hotels <ArrowRight className="w-3 h-3" />
- </a>
+ <AffiliateButton href="https://www.booking.com" text="Search Seattle Hotels" variant="outline" />
  </div>
+ </div>
+ </section>
+
+ <section id="tickets" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Tickets & Stadium Entry</h2>
+ </div>
+
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Treat tickets like travel documents. For Group B, a single wrong assumption (like “I’ll just find something later”) can force you into overpriced hotels, awkward commute bases, or same-day flights.
+ </p>
+
+ <div className="grid md:grid-cols-2 gap-8 mb-12">
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h3 className="font-bold text-2xl mb-4 flex items-center gap-3"><Ticket className="w-6 h-6 text-emerald-500" /> Official Tickets</h3>
+ <p className="text-slate-600 dark:text-slate-400 mb-8">
+ Use FIFA’s official portal for sales phases and match-day ticketing rules. Create your account early so you’re ready when queues open.
+ </p>
+ <AffiliateButton href="https://www.fifa.com/tickets" text="FIFA Ticket Portal" variant="secondary" icon={ExternalLink} />
+ </div>
+ <div className="p-8 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-[2rem]">
+ <h3 className="font-bold text-2xl mb-4">Verified Secondary Options</h3>
+ <p className="text-slate-600 dark:text-slate-400 mb-8">
+ If you miss a sales phase, only use platforms with buyer protection and transparent refunds. Avoid social media “PDF tickets” and last-minute meetups.
+ </p>
+ <AffiliateButton href="https://www.stubhub.com/fifa-world-cup-tickets/" text="Check StubHub Inventory" variant="primary" />
+ </div>
+ </div>
+
+ <div className="rounded-[2.5rem] p-10 border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-3 tracking-tight">
+ <Users className="w-6 h-6 text-emerald-500" />
+ Match-Day Entry Checklist
+ </h3>
+ <ul className="space-y-4">
+ {[
+ 'Arrive 90–120 minutes early (security + crowd waves).',
+ 'Keep your ticket QR + passport backup offline (screenshot + wallet card).',
+ 'Use stadium-adjacent transit when available (Vancouver/Seattle are best).',
+ 'Plan a post-match “cooldown” spot to avoid surge pricing.',
+ ].map((item, i) => (
+ <li key={i} className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
+ <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> {item}
+ </li>
+ ))}
+ </ul>
  </div>
  </section>
 
  {/* Section 3: Budget Breakdown */}
  <section id="budget" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group B Budget Breakdown</h2>
  </div>
  
@@ -487,7 +749,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">Stay Connected</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400">Get an Airalo eSIM for instant data across USA & Canada.</p>
  </div>
- <a href="#" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
+ <a href="https://www.airalo.com" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
  </div>
  </div>
  </section>
@@ -495,7 +757,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  {/* Section 4: Visa & Entry Requirements */}
  <section id="visas" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">08</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
  </div>
  
@@ -553,7 +815,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  {/* Section 5: Insider Tips */}
  <section id="insider" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">09</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
  </div>
  
@@ -595,7 +857,7 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  {/* Section 6: Essential Gear */}
  <section id="packing" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">10</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group B Packing Essentials</h2>
  </div>
  
@@ -604,25 +866,25 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧥</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Light Rain Shell</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Essential for PNW mist.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <a href="https://www.rei.com/c/rain-jackets" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🕶️</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Polarized Shades</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">For the California sun.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <a href="https://www.rei.com/c/sunglasses" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🛂</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Passport Holder</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Frequent border checks.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <a href="https://www.amazon.com/s?k=passport+holder" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Crucial for long jumps.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <a href="https://www.amazon.com/s?k=power+bank+20000mah" target="_blank" rel="noopener noreferrer" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
  </div>
  </div>
  </section>
@@ -638,22 +900,28 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
  />
  <AccordionItem 
- question="Which Group B city has the best nightlife?"
- answer={<><strong>Los Angeles</strong> is the undisputed champion for nightlife variety. However, <strong>Vancouver's</strong> Granville Street and <strong>Seattle's</strong> Capitol Hill offer incredible local vibes and a safer, more walkable experience.</>}
+ question="What’s the smartest ‘one base’ plan for Group B?"
+ answer={<>Base in <strong>Vancouver</strong>. It hosts two Group B matches at BC Place, is extremely walkable, and has the cleanest stadium transit in the group. Add Seattle as a train trip if you have an extra day.</>}
  isOpen={openFaqIndex === 1}
  onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
  />
  <AccordionItem 
- question="Can I do this trip without a car?"
- answer={<>In <strong>Vancouver and Seattle</strong>, yes—public transit is excellent. In <strong>San Francisco and LA</strong>, it's much harder. While possible with Uber/Lyft, the costs add up quickly. A rental car for the California leg is highly recommended.</>}
+ question="Which Group B city has the best nightlife?"
+ answer={<><strong>Los Angeles</strong> is the undisputed champion for nightlife variety. However, <strong>Vancouver's</strong> Granville Street and <strong>Seattle's</strong> Capitol Hill offer incredible local vibes and a safer, more walkable experience.</>}
  isOpen={openFaqIndex === 2}
  onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
  />
  <AccordionItem 
- question="What is the weather like in June?"
- answer={<>A study in contrasts. <strong>Vancouver/Seattle</strong> will be mild and pleasant (18-22°C / 65-72°F) with occasional mist. <strong>California</strong> will be dry and warm to hot (25-32°C / 77-90°F). Pack layers.</>}
+ question="Can I do this trip without a car?"
+ answer={<>In <strong>Vancouver and Seattle</strong>, yes—public transit is excellent. In <strong>San Francisco and LA</strong>, it's much harder. While possible with Uber/Lyft, the costs add up quickly. A rental car for the California leg is highly recommended.</>}
  isOpen={openFaqIndex === 3}
  onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
+ />
+ <AccordionItem 
+ question="What is the weather like in June?"
+ answer={<>A study in contrasts. <strong>Vancouver/Seattle</strong> will be mild and pleasant (18-22°C / 65-72°F) with occasional mist. <strong>California</strong> will be dry and warm to hot (25-32°C / 77-90°F). Pack layers.</>}
+ isOpen={openFaqIndex === 4}
+ onClick={() => setOpenFaqIndex(openFaqIndex === 4 ? null : 4)}
  />
  </div>
  </section>
@@ -666,6 +934,10 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  <p className="text-slate-600 dark:text-slate-300 mb-12 text-lg leading-relaxed font-light">
  From the Cascadia forests to the California coastline, Group B is a cinematic journey. Start planning your Pacific strategy today.
  </p>
+ <div className="flex flex-wrap justify-center gap-4">
+ <AffiliateButton href="/world-cup-2026-match-selection-strategy" text="Match Selection Strategy" variant="secondary" />
+ <AffiliateButton href="/world-cup-2026-accommodation-guide" text="Accommodation Guide" variant="outline" />
+ </div>
  </div>
  </div>
 
@@ -676,6 +948,4 @@ Four cities. Two nations. One coast. From the mountains of Vancouver to the Holl
  </div>
  );
 }
-
-
 

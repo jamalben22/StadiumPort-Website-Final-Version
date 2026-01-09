@@ -82,7 +82,7 @@ export default function GroupAClientPage() {
 
  useEffect(() => {
  const handleScroll = () => {
- const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+ const sections = ['intro', 'schedule', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
  const scrollPosition = window.scrollY + 300;
 
  for (const section of sections) {
@@ -129,7 +129,7 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  
  {/* Scroll Indicator */}
- <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+ <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('schedule')}>
  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
  <ChevronDown className="w-5 h-5 text-emerald-500" />
  </div>
@@ -144,6 +144,7 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
  {[
  { id: 'intro', label: 'Introduction' },
+ { id: 'schedule', label: 'Match Schedule' },
  { id: 'strategy', label: 'Travel Strategy' },
  { id: 'accommodation', label: 'Accommodation' },
  { id: 'budget', label: 'Budget Breakdown' },
@@ -196,10 +197,87 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
+ <section id="schedule" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Official Match Schedule</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Group A is spread across Mexico City, Guadalajara, Monterrey, and one Atlanta fixture. Times below are local to the match city.
+ </p>
+ 
+ <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
+ <table className="w-full text-left border-collapse">
+ <thead>
+ <tr className="border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
+ <span className="inline-flex items-center gap-2">
+ <Calendar className="w-4 h-4" />
+ Date
+ </span>
+ </th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">
+ <span className="inline-flex items-center gap-2">
+ <Clock className="w-4 h-4" />
+ Kickoff
+ </span>
+ </th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">
+ <span className="inline-flex items-center gap-2">
+ <MapPin className="w-4 h-4" />
+ Venue
+ </span>
+ </th>
+ </tr>
+ </thead>
+ <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 11 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Mexico vs South Africa</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">13:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Mexico City Stadium (Mexico City)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 11 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Korea Republic vs UEFA Play-off D</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">20:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Estadio Guadalajara (Guadalajara)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 18 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">UEFA Play-off D vs South Africa</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">12:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Atlanta Stadium (Atlanta)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Thu, 18 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">Mexico vs Korea Republic</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">19:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Estadio Guadalajara (Guadalajara)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Wed, 24 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">UEFA Play-off D vs Mexico</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">19:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Mexico City Stadium (Mexico City)</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Wed, 24 Jun 2026</td>
+ <td className="p-6 text-slate-700 dark:text-slate-300 text-base">South Africa vs Korea Republic</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">19:00</td>
+ <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">Estadio Monterrey (Monterrey)</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </section>
+
  {/* Section 1: Multi-City Travel Strategy */}
  <section id="strategy" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
  </div>
  
@@ -304,10 +382,10 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
- {/* Section 2: Accommodation Strategy */}
+ {/* Section 3: Accommodation Strategy */}
  <section id="accommodation" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
  </div>
  
@@ -419,10 +497,10 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
- {/* Section 3: Budget Breakdown */}
+ {/* Section 4: Budget Breakdown */}
  <section id="budget" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group A Budget Breakdown</h2>
  </div>
  
@@ -492,10 +570,10 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
- {/* Section 4: Visa & Entry Requirements */}
+ {/* Section 5: Visa & Entry Requirements */}
  <section id="visas" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
  </div>
  
@@ -530,10 +608,10 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
- {/* Section 5: Insider Tips */}
+ {/* Section 6: Insider Tips */}
  <section id="insider" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
  </div>
  
@@ -572,10 +650,10 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  </section>
 
- {/* Section 6: Essential Gear */}
+ {/* Section 7: Essential Gear */}
  <section id="packing" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group A Packing Essentials</h2>
  </div>
  
@@ -656,6 +734,3 @@ The tournament's spiritual home. From the high-altitude intensity of Estadio Azt
  </div>
  );
 }
-
-
-

@@ -5,22 +5,23 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
+import { TEAM_MAP, type Team } from '@/data/teams';
 import { 
   ChevronDown, 
   Clock, 
-  Calendar, 
   MapPin, 
   ArrowRight, 
   Plane, 
-  Train, 
+  Calendar,
+  Train,
   CreditCard, 
   ExternalLink,
   Car
 } from 'lucide-react';
 
-function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
+function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: string, isOpen: boolean, onClick: () => void }) {
  return (
- <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
+ <div className="border-b border-slate-200 dark:text-slate-200 dark:border-slate-800 last:border-0">
  <button 
  onClick={onClick} 
  className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
@@ -43,9 +44,52 @@ function AccordionItem({ question, answer, isOpen, onClick }: { question: string
  );
 }
 
-export default function GroupJClientPage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+export default function GroupJClientPage({ faqs = [] }: { faqs?: { question: string; answer: string }[] }) {
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(() => (faqs.length ? 0 : null));
   const [activeSection, setActiveSection] = useState('intro');
+
+  const groupTeams = (['arg', 'alg', 'aut', 'jor'] as const)
+    .map((teamId) => TEAM_MAP.get(teamId))
+    .filter((team): team is Team => Boolean(team));
+
+  const teamIntel: Record<string, { vibe: string; travelTakeaways: string[]; bestBases: string[] }> = {
+    arg: {
+      vibe: 'The loudest traveling contingent—assume higher ticket pressure and packed pregame zones.',
+      travelTakeaways: [
+        'Prioritize early flight bookings to avoid price spikes around matchdays.',
+        'Kansas City tailgating ramps early; plan transport and arrive 3+ hours pre-kick.',
+        'In the Bay Area, base near Caltrain (San Jose/Santa Clara) to move with the crowd.',
+      ],
+      bestBases: ['Power & Light (KC)', 'Uptown Dallas', 'San Jose / Santa Clara'],
+    },
+    alg: {
+      vibe: 'High-energy supporters with strong diaspora presence in major US metros.',
+      travelTakeaways: [
+        'Expect late planning to get expensive fast—book flexible hotel rates early.',
+        'Dallas/Arlington is car-first; parking strategy matters more than distance on maps.',
+        'Bring heat strategy for Texas: sun protection, hydration plan, and shaded breaks.',
+      ],
+      bestBases: ['Downtown KC', 'Las Colinas / Irving', 'San Jose / Mountain View'],
+    },
+    aut: {
+      vibe: 'Organized travelers who tend to value efficiency, comfort, and clean logistics.',
+      travelTakeaways: [
+        'Build an open-jaw itinerary (MCI → DFW → SFO/SJC) and treat cities as mini-trips.',
+        'Choose a hotel base that reduces commute time over “best neighborhood” hype.',
+        'Levi’s matchday: Caltrain + VTA beats rideshare queues after full-time.',
+      ],
+      bestBases: ['Crossroads (KC)', 'Uptown Dallas', 'Palo Alto / Santa Clara'],
+    },
+    jor: {
+      vibe: 'Underdog energy—great atmosphere, with fans often clustering in specific bars and watch parties.',
+      travelTakeaways: [
+        'If you’re stacking matches, protect recovery time: early nights before travel days.',
+        'Kansas City and Dallas are easier with a rental; split costs with other fans.',
+        'Pack layers for the Bay Area—foggy evenings can feel cold after Texas heat.',
+      ],
+      bestBases: ['Downtown KC', 'Downtown Dallas', 'San Jose / Sunnyvale'],
+    },
+  };
 
   const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
     const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
@@ -55,8 +99,15 @@ export default function GroupJClientPage() {
       outline: "border-2 border-slate-200 dark:border-white/10 hover:border-amber-500 dark:hover:border-amber-500 text-slate-900 dark:text-white bg-transparent"
     };
 
+    const isExternal = href.startsWith('http');
+
     return (
-      <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={`${baseClasses} ${variants[variant]}`}
+      >
         <span className="relative z-10 flex items-center gap-2">
           {text}
           <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -83,7 +134,7 @@ export default function GroupJClientPage() {
 
  useEffect(() => {
  const handleScroll = () => {
- const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+ const sections = ['intro', 'schedule', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
  const scrollPosition = window.scrollY + 300;
 
  for (const section of sections) {
@@ -110,9 +161,9 @@ export default function GroupJClientPage() {
            <Breadcrumb items={[{ label: 'Groups', href: '/world-cup-2026-groups' }, { label: 'Group J', href: '/world-cup-2026-groups/group-j' }]} />
 
            <div className="max-w-4xl">
-             <div className="flex items-center gap-4 mb-6 animate-fade-up">
+ <div className="flex items-center gap-4 mb-6 animate-fade-up">
                <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
-                 Last Updated: January 2, 2026
+                 Last Updated: January 9, 2026
                </span>
                <span className="px-3 py-1 rounded-full border border-white/30 text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
                  Group Strategy
@@ -142,7 +193,7 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  </div>
 
  {/* Scroll Indicator */}
- <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('strategy')}>
+ <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hidden md:flex flex-col items-center gap-2 cursor-pointer z-20" onClick={() => scrollToSection('schedule')}>
  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Explore</span>
  <ChevronDown className="w-5 h-5 text-amber-500" />
  </div>
@@ -157,6 +208,7 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
  {[
  { id: 'intro', label: 'Introduction' },
+ { id: 'schedule', label: 'Schedule & Tickets' },
  { id: 'strategy', label: 'Travel Strategy' },
  { id: 'accommodation', label: 'Accommodation' },
  { id: 'budget', label: 'Budget Breakdown' },
@@ -193,6 +245,12 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
  This is the &quot;Frontier Group.&quot; You will experience the extremes of the host nation here: the raw, passionate energy of the Midwest, the sheer opulence of Texas, and the sophisticated tech-hub of the West Coast.
  </p>
+ <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
+ If you want a group-stage trip that feels like three distinct vacations, Group J is your lane. The catch is logistics: you will cross time zones, deal with long airport days, and make the rental-car decision twice. Plan it right and you get iconic stadiums, elite food, and an unforgettable coast-to-heartland contrast.
+ </p>
+ <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
+ This guide focuses on the travel reality: where to base, how to move between cities, what matchday actually looks like, and the budget levers that matter most. Team assignments and official kickoff times can shift until FIFA’s final confirmations, so the strategy here is built to stay correct even as fixtures update.
+ </p>
  </div>
 
  <div className=" p-10 rounded-[2rem] shadow-xl shadow-slate-200/40 dark:shadow-none border border-slate-100 dark:border-slate-200 dark:border-slate-800 mt-12">
@@ -209,16 +267,161 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  </div>
  </section>
 
+ {/* Section 1: Schedule & Tickets */}
+ <section id="schedule" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Schedule & Tickets</h2>
+ </div>
+
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-10 max-w-3xl">
+ Group J planning starts with a simple truth: travel time is the tax. Choose your bases first, then build your flights around them. When official fixtures are published/updated, you can slot dates into this structure without rethinking the whole trip.
+ </p>
+
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <div className="flex items-start justify-between gap-6 mb-6">
+ <div>
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Kansas City</h3>
+ <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Airport: <strong className="text-slate-900 dark:text-white">MCI</strong></p>
+ </div>
+ <MapPin className="w-6 h-6 text-amber-500" />
+ </div>
+ <div className="space-y-3 mb-8">
+ {[
+ 'Stadium: Arrowhead (open-air, legendary tailgating).',
+ 'Matchday move: rideshare or car; arrive early for parking.',
+ 'Best base: Downtown (Power & Light / Crossroads) for atmosphere.',
+ ].map((b) => (
+ <div key={b} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+ <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+ <span>{b}</span>
+ </div>
+ ))}
+ </div>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-kansas-city-guide" text="KC Guide" variant="outline" icon={ArrowRight} />
+ <AffiliateButton href="/arrowhead-stadium-world-cup-2026" text="Arrowhead Stadium" variant="outline" icon={Calendar} />
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <div className="flex items-start justify-between gap-6 mb-6">
+ <div>
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Dallas / Arlington</h3>
+ <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Airport: <strong className="text-slate-900 dark:text-white">DFW</strong> (or DAL)</p>
+ </div>
+ <MapPin className="w-6 h-6 text-amber-500" />
+ </div>
+ <div className="space-y-3 mb-8">
+ {[
+ 'Stadium: AT&T (air-conditioned, massive capacity).',
+ 'Matchday move: car is king; rideshare surge pricing is brutal.',
+ 'Best base: Uptown/Downtown for dining; Arlington for proximity.',
+ ].map((b) => (
+ <div key={b} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+ <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+ <span>{b}</span>
+ </div>
+ ))}
+ </div>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-dallas-guide" text="Dallas Guide" variant="outline" icon={ArrowRight} />
+ <AffiliateButton href="/att-stadium-world-cup-2026" text="AT&T Stadium" variant="outline" icon={Calendar} />
+ </div>
+ </div>
+
+ <div className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-all duration-300">
+ <div className="flex items-start justify-between gap-6 mb-6">
+ <div>
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">SF Bay Area</h3>
+ <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">Airports: <strong className="text-slate-900 dark:text-white">SFO / SJC / OAK</strong></p>
+ </div>
+ <MapPin className="w-6 h-6 text-amber-500" />
+ </div>
+ <div className="space-y-3 mb-8">
+ {[
+ 'Stadium: Levi’s (Santa Clara, not San Francisco).',
+ 'Matchday move: Caltrain + VTA is the stress-free play.',
+ 'Best base: San Jose / Santa Clara for matchweek convenience.',
+ ].map((b) => (
+ <div key={b} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+ <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+ <span>{b}</span>
+ </div>
+ ))}
+ </div>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="/world-cup-2026-san-francisco-bay-area-guide" text="Bay Area Guide" variant="outline" icon={ArrowRight} />
+ <AffiliateButton href="/levis-stadium-world-cup-2026" text="Levi’s Stadium" variant="outline" icon={Train} />
+ </div>
+ </div>
+ </div>
+
+ <div className="mt-12 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+ <div className="max-w-2xl">
+ <h4 className="text-xl font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-3">
+ <Calendar className="w-5 h-5 text-amber-500" />
+ Keep the Official Schedule Bookmarked
+ </h4>
+ <p className="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+ Use FIFA’s official tournament pages for the authoritative fixtures, kickoff times, and any last-minute changes.
+ </p>
+ </div>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href="https://www.fifa.com/" text="FIFA.com" variant="secondary" icon={ExternalLink} />
+ <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Flight Booking Guide" variant="outline" icon={Plane} />
+ </div>
+ </div>
+ <p className="text-[10px] text-slate-400 mt-6 text-center uppercase tracking-widest font-medium">
+ We may earn a commission on bookings made through links on this page. <Link href="/legal/affiliate-disclaimer" className="underline underline-offset-2">Learn more</Link>.
+ </p>
+ </div>
+ </section>
+
  {/* Section 1: Multi-City Travel Strategy */}
  <section id="strategy" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
  </div>
 
  <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
  Group J has the largest geographical footprint of any group. Public transit is limited in KC and Dallas, making rental cars an absolute necessity.
  </p>
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Think of this as a three-hop tour: fly in, set up a base, do matchday, then reset in the next city. Trying to “wing it” is how you end up paying surge prices for flights, last-minute hotels, and rideshare chaos outside stadium gates.
+ </p>
+
+ <div className="mb-16 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-6 tracking-tight">Airport Cheat Sheet (Pick the Right Arrival)</h3>
+ <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-10 max-w-3xl">
+ Your airport choice affects everything: hotel location, ground transport cost, and whether matchday becomes a stress test. For Group J, optimize for stadium proximity in the Bay Area, and for flight frequency in Dallas.
+ </p>
+ <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+ {[
+ { city: 'Kansas City', airport: 'MCI', note: 'Best for simplicity. Downtown is an easy base; Arrowhead is a drive on matchday.' },
+ { city: 'Dallas / Arlington', airport: 'DFW (or DAL)', note: 'DFW has the most options. DAL can be faster if your airline route fits.' },
+ { city: 'SF Bay Area', airport: 'SJC / SFO / OAK', note: 'SJC is closest to Levi’s. SFO is best for international. OAK is sometimes cheaper.' },
+ ].map((a) => (
+ <div key={a.airport} className="p-8 rounded-3xl border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-white/5">
+ <div className="flex items-start justify-between gap-6 mb-4">
+ <div>
+ <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{a.city}</div>
+ <div className="text-3xl font-bold text-slate-900 dark:text-white tracking-tighter mt-2">{a.airport}</div>
+ </div>
+ <Plane className="w-6 h-6 text-amber-500" />
+ </div>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{a.note}</p>
+ </div>
+ ))}
+ </div>
+ <div className="mt-10 flex flex-wrap gap-4">
+ <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Open-Jaw Booking Strategy" variant="outline" icon={Plane} />
+ <AffiliateButton href="/world-cup-2026-itinerary-planning" text="Sample Itineraries" variant="outline" icon={Calendar} />
+ </div>
+ </div>
 
  <div className="mb-16">
  <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-8 tracking-tight">The &quot;Midwest & Texas&quot; Hubs (Car Supremacy)</h3>
@@ -320,12 +523,15 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  {/* Section 2: Accommodation Strategy */}
  <section id="accommodation" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
  </div>
 
  <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
  Group J requires a split approach. San Francisco is the budget killer, while Dallas and Kansas City offer sprawling options that require a car for access.
+ </p>
+ <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+ Your goal is to minimize dead time. In Dallas and Kansas City, that means choosing a base with nightlife and food so you can enjoy non-match days without commuting. In the Bay Area, that means choosing convenience first for matchweek, then adding San Francisco as a day trip.
  </p>
 
  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -434,13 +640,38 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  {/* Section 3: Budget Breakdown */}
  <section id="budget" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group J Budget Breakdown</h2>
  </div>
 
  <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose">
  Estimates are per person for a 12-day trip covering 3 group matches. Higher than Group C due to required air travel and car rentals.
  </p>
+ <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm mb-16">
+ <table className="w-full text-left border-collapse">
+ <thead>
+ <tr className="border-b border-slate-100 dark:border-slate-800">
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Category</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">What to expect</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest whitespace-nowrap">Typical range</th>
+ </tr>
+ </thead>
+ <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+ {[
+ { c: 'Flights (multi-city)', d: 'MCI → DFW → SFO/SJC (or reverse), plus baggage fees.', r: '$400–$900' },
+ { c: 'Hotels (12 nights)', d: 'Bay Area drives the price; Dallas/KC moderate.', r: '$1,200–$3,500+' },
+ { c: 'Ground transport', d: 'Two rentals, gas, parking, and rideshare surges.', r: '$350–$1,000' },
+ { c: 'Food & drinks', d: 'BBQ days save money; Bay Area dining costs more.', r: '$500–$1,400' },
+ ].map((row) => (
+ <tr key={row.c}>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">{row.c}</td>
+ <td className="p-6 text-slate-600 dark:text-slate-300 text-sm">{row.d}</td>
+ <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-sm whitespace-nowrap">{row.r}</td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
 
  <div className="grid md:grid-cols-3 gap-6 mb-16">
  {/* Economy */}
@@ -499,7 +730,7 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">Stay Connected</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400">Get an Airalo eSIM for instant data across the USA.</p>
  </div>
- <a href="#" className="flex-shrink-0 text-amber-600 font-bold text-xs hover:text-amber-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
+ <Link href="https://www.airalo.com/united-states-esim" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-amber-600 font-bold text-xs hover:text-amber-500 transition-colors uppercase tracking-widest">View Plans &rarr;</Link>
  </div>
  </div>
  </section>
@@ -507,7 +738,7 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  {/* Section 4: Visa & Entry Requirements */}
  <section id="visas" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
  </div>
 
@@ -545,7 +776,7 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  {/* Section 5: Insider Tips */}
  <section id="insider" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
  </div>
 
@@ -582,39 +813,86 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  </p>
  </div>
  </div>
+
+ <div className="mt-12 p-10 rounded-[2.5rem] border border-slate-100 dark:border-slate-200 dark:border-slate-800 shadow-xl shadow-slate-200/40 dark:shadow-none">
+ <h3 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-white tracking-tight mb-4">Team-Specific Travel Notes (Projected Group J)</h3>
+ <p className="text-sm md:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl mb-10">
+ These are practical travel patterns to plan around—where the fan energy concentrates, what sells out first, and which base cities keep matchweek stress low.
+ </p>
+
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+ {groupTeams.map((team) => (
+ <div key={team.id} className="p-8 rounded-[2.5rem] border border-slate-200 dark:border-slate-800 bg-white/40 dark:bg-white/5 hover:shadow-xl transition-shadow duration-300">
+ <div className="flex items-center gap-4 mb-6">
+ <OptimizedImage
+ src={team.flagUrl}
+ width={48}
+ height={36}
+ alt={team.name}
+ imgClassName="w-12 h-auto object-cover rounded shadow-sm"
+ unoptimized
+ />
+ <div>
+ <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{team.fifaCode}</div>
+ <h4 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{team.name}</h4>
+ </div>
+ </div>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">{teamIntel[team.id]?.vibe}</p>
+ <div className="space-y-3 mb-6">
+ {(teamIntel[team.id]?.travelTakeaways || []).map((t) => (
+ <div key={t} className="flex items-start gap-3 text-sm text-slate-600 dark:text-slate-300">
+ <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+ <span>{t}</span>
+ </div>
+ ))}
+ </div>
+ <div className="flex flex-wrap gap-2">
+ {(teamIntel[team.id]?.bestBases || []).map((b) => (
+ <span key={b} className="px-3 py-1 rounded-full text-xs font-bold border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300">
+ {b}
+ </span>
+ ))}
+ </div>
+ </div>
+ ))}
+ </div>
+ </div>
  </section>
 
  {/* Section 6: Essential Gear */}
  <section id="packing" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+ <span className="text-amber-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group J Packing Essentials</h2>
  </div>
+ <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+ Pack for three climates and two matchday styles: open-air heat and humidity in Kansas City, intense outdoor heat in Dallas, and cool Bay Area evenings that can feel like fall after sunset.
+ </p>
 
  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🎧</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Ear Protection</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Required for KC noise levels.</p>
- <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
+ <Link href="https://www.amazon.com/s?k=high+fidelity+earplugs+concert" target="_blank" rel="noopener noreferrer" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧴</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">High-SPF Sunscreen</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Texas sun is unforgiving.</p>
- <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
+ <Link href="https://www.amazon.com/s?k=spf+50+sunscreen+travel" target="_blank" rel="noopener noreferrer" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧥</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Light Layers</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">SF fog can be chilly in July.</p>
- <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
+ <Link href="https://www.amazon.com/s?k=packable+light+jacket" target="_blank" rel="noopener noreferrer" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-amber-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-amber-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long travel days between hubs.</p>
- <a href="#" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</a>
+ <Link href="https://www.amazon.com/s?k=power+bank+20000mah" target="_blank" rel="noopener noreferrer" className="text-amber-600 text-[10px] font-bold uppercase tracking-widest hover:text-amber-500 transition-colors">Shop Now</Link>
  </div>
  </div>
  </section>
@@ -623,30 +901,15 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  <section id="faq" className="scroll-mt-32">
  <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-12 tracking-tight">Frequently Asked Questions</h2>
  <div className="space-y-2">
- <AccordionItem 
- question="Do I really need a car for Group J?"
- answer={<>For <strong>Kansas City and Dallas</strong>, yes. The stadiums are isolated and public transit is not designed for massive crowds. For <strong>San Francisco</strong>, you can rely on Caltrain to reach the stadium in Santa Clara, but a car is still helpful for exploring the Bay Area.</>}
- isOpen={openFaqIndex === 0}
- onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
+ {faqs.map((faq, index) => (
+ <AccordionItem
+ key={faq.question}
+ question={faq.question}
+ answer={faq.answer}
+ isOpen={openFaqIndex === index}
+ onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
  />
- <AccordionItem 
- question="Which city is the best base for the group stage?"
- answer={<><strong>Dallas</strong> is the most central and offers the most flight connections. However, <strong>San Jose</strong> is the most convenient base for matches at Levi&apos;s Stadium, saving you hours of travel time compared to staying in San Francisco.</>}
- isOpen={openFaqIndex === 1}
- onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
- />
- <AccordionItem 
- question="How do I handle the summer heat?"
- answer={<>Dallas and KC reach 100°F+. AT&T Stadium is indoor/AC, but Arrowhead is open-air. Drink double the water you think you need, wear light-colored clothing, and avoid heavy activity during the afternoon sun.</>}
- isOpen={openFaqIndex === 2}
- onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
- />
- <AccordionItem 
- question="Is it safe to drive between these cities?"
- answer={<>It is safe, but <strong>extremely long</strong>. Dallas to SF is a 24-hour drive across deserts. We strongly recommend flying between hubs to save time and energy for the matches.</>}
- isOpen={openFaqIndex === 3}
- onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
- />
+ ))}
  </div>
  </section>
 
@@ -668,6 +931,3 @@ Three titans. Half a continent. From the deafening roar of Kansas City to the te
  </div>
  );
 }
-
-
-

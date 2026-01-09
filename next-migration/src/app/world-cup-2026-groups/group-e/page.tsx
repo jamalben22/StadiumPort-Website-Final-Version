@@ -1,18 +1,36 @@
 import { Metadata } from 'next';
 import GroupEClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
-  description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
-  keywords: ['World Cup 2026 Group E Travel Guide', 'Philadelphia World Cup', 'Houston World Cup', 'Kansas City World Cup', 'Toronto World Cup', 'Lincoln Financial Field guide', 'NRG Stadium guide', 'Arrowhead Stadium guide'],
+  title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
+  description: "Group E travel guide for World Cup 2026: Germany, Curaçao, Côte d'Ivoire, Ecuador. Verified match schedule and the smartest plan for Philadelphia, Houston, Kansas City, Toronto, and New York/New Jersey.",
+  keywords: [
+    'World Cup 2026 Group E',
+    'Group E schedule',
+    'Germany World Cup 2026',
+    'Curaçao World Cup 2026',
+    "Côte d'Ivoire World Cup 2026",
+    'Ecuador World Cup 2026',
+    'Philadelphia World Cup 2026',
+    'Houston World Cup 2026',
+    'Kansas City World Cup 2026',
+    'Toronto World Cup 2026',
+    'New York New Jersey World Cup 2026',
+    'Lincoln Financial Field World Cup 2026',
+    'NRG Stadium World Cup 2026',
+    'Arrowhead Stadium World Cup 2026',
+    'BMO Field World Cup 2026',
+    'MetLife Stadium World Cup 2026',
+    'Group E travel strategy',
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-groups/group-e',
   },
   openGraph: {
-    title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
-    description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
+    title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
+    description: "Group E travel guide for World Cup 2026: Germany, Curaçao, Côte d'Ivoire, Ecuador. Verified match schedule and the smartest plan for Philadelphia, Houston, Kansas City, Toronto, and New York/New Jersey.",
     url: 'https://stadiumport.com/world-cup-2026-groups/group-e',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -28,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Group E Travel Guide: Philadelphia, Houston & KC',
-    description: 'The ultimate Group E travel guide. Master the route: Philadelphia, Houston, Kansas City, Toronto, and NY/NJ. Budget tips, Amtrak strategy, and stadium logistics.',
+    title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
+    description: "Group E travel guide for World Cup 2026: Germany, Curaçao, Côte d'Ivoire, Ecuador. Verified match schedule and the smartest plan for Philadelphia, Houston, Kansas City, Toronto, and New York/New Jersey.",
     images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
   },
 };
@@ -40,69 +58,154 @@ export default function GroupEPage() {
 
   const articleSchema = generateArticleSchema('group-e', pageUrl);
 
- const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group E Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group E Matches',
+    startDate: '2026-06-14',
+    endDate: '2026-06-25',
+    location: {
+      name: 'Group E Host Cities',
+      address: 'Philadelphia, Houston, Kansas City, Toronto, New York/New Jersey',
+      country: 'US, CA',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description:
+      'Group E fixtures played in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region during the FIFA World Cup 2026 group stage.',
+  });
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Group E cities?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Split your travel: Use Amtrak for the Northeast leg (Philadelphia, NY/NJ). You MUST fly for the Central leg (Houston, Kansas City) and to reach Toronto. Driving between these regions is not feasible."
- }
- },
- {
- "@type": "Question",
- "name": "Is Philadelphia expensive during the World Cup?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Moderate to High. While cheaper than NYC, Philadelphia hotel rates will surge. Look for hotels in University City or near the Airport for better value, but Center City offers the best fan experience."
- }
- },
- {
- "@type": "Question",
- "name": "Do I need a visa for Group E?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. You need a US Visa (or ESTA) for Philly/Houston/KC/NY and a Canadian ETA/Visa for Toronto. Ensure you have multi-entry permissions if moving back and forth."
- }
- }
- ]
- };
+  const matchEventSchemas = [
+    generateEventSchema({
+      name: "Côte d'Ivoire vs Ecuador (Group E) — Philadelphia",
+      startDate: '2026-06-14T19:00:00-04:00',
+      endDate: '2026-06-14T21:00:00-04:00',
+      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
+    }),
+    generateEventSchema({
+      name: 'Germany vs Curaçao (Group E) — Houston',
+      startDate: '2026-06-14T12:00:00-05:00',
+      endDate: '2026-06-14T14:00:00-05:00',
+      location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at NRG Stadium in Houston, Texas.',
+    }),
+    generateEventSchema({
+      name: "Germany vs Côte d'Ivoire (Group E) — Toronto",
+      startDate: '2026-06-20T16:00:00-04:00',
+      endDate: '2026-06-20T18:00:00-04:00',
+      location: { name: 'BMO Field', address: 'Toronto, ON', country: 'CA' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at BMO Field in Toronto, Ontario.",
+    }),
+    generateEventSchema({
+      name: 'Ecuador vs Curaçao (Group E) — Kansas City',
+      startDate: '2026-06-20T19:00:00-05:00',
+      endDate: '2026-06-20T21:00:00-05:00',
+      location: { name: 'Arrowhead Stadium', address: 'Kansas City, MO', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at Arrowhead Stadium in Kansas City, Missouri.',
+    }),
+    generateEventSchema({
+      name: "Curaçao vs Côte d'Ivoire (Group E) — Philadelphia",
+      startDate: '2026-06-25T16:00:00-04:00',
+      endDate: '2026-06-25T18:00:00-04:00',
+      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
+    }),
+    generateEventSchema({
+      name: 'Ecuador vs Germany (Group E) — New York/New Jersey',
+      startDate: '2026-06-25T16:00:00-04:00',
+      endDate: '2026-06-25T18:00:00-04:00',
+      location: { name: 'MetLife Stadium', address: 'East Rutherford, NJ', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at MetLife Stadium in East Rutherford, New Jersey.',
+    }),
+  ];
 
- return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <GroupEClientPage />
- </>
- );
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: siteUrl,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Groups',
+        item: `${siteUrl}/world-cup-2026-groups`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: 'Group E Guide',
+        item: `${siteUrl}${pageUrl}`,
+      },
+    ],
+  };
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is the best way to travel between Group E cities?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Split your travel: use Amtrak for the Northeast leg (Philadelphia + New York/New Jersey). Fly for Houston, Kansas City, and Toronto. Driving the full loop is not realistic during the group stage.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Which cities host Group E matches?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Group E matches are hosted in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Do I need a visa for Group E travel?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Possibly yes. Group E can include travel across the USA and Canada, so you must check entry rules for both countries (e.g., US visa/ESTA, and Canada eTA/visa) based on your passport.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'When should I book hotels and flights for Group E?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Book refundable hotels first, then lock flights once your match plan is set. For a multi-city group like E, booking early protects availability in Philadelphia, Toronto, and New York/New Jersey.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Where is the safest place to buy tickets?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Use official FIFA ticket sales phases whenever possible. Avoid unofficial sellers and “PDF ticket” scams, especially for high-demand matches.',
+        },
+      },
+    ],
+  };
+
+  return (
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={index} schema={schema} />
+      ))}
+      <GroupEClientPage />
+    </>
+  );
 }
 

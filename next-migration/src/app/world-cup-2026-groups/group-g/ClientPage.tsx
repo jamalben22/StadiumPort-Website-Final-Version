@@ -18,6 +18,15 @@ import {
   Smartphone
 } from 'lucide-react';
 
+const groupGMatches = [
+  { date: 'Mon, Jun 15, 2026', time: '12:00 PM PT', city: 'Seattle', stadium: 'Seattle Stadium', fixture: 'Belgium vs Egypt' },
+  { date: 'Mon, Jun 15, 2026', time: '6:00 PM PT', city: 'Los Angeles', stadium: 'Los Angeles Stadium', fixture: 'IR Iran vs New Zealand' },
+  { date: 'Sun, Jun 21, 2026', time: '12:00 PM PT', city: 'Los Angeles', stadium: 'Los Angeles Stadium', fixture: 'Belgium vs IR Iran' },
+  { date: 'Sun, Jun 21, 2026', time: '6:00 PM PT', city: 'Vancouver', stadium: 'BC Place Vancouver', fixture: 'New Zealand vs Egypt' },
+  { date: 'Fri, Jun 26, 2026', time: '8:00 PM PT', city: 'Seattle', stadium: 'Seattle Stadium', fixture: 'Egypt vs IR Iran' },
+  { date: 'Fri, Jun 26, 2026', time: '8:00 PM PT', city: 'Vancouver', stadium: 'BC Place Vancouver', fixture: 'New Zealand vs Belgium' },
+];
+
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
   return (
     <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
@@ -83,7 +92,7 @@ export default function GroupGClientPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+      const sections = ['intro', 'schedule', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
       const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
@@ -145,6 +154,7 @@ export default function GroupGClientPage() {
                 <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
                   {[
                     { id: 'intro', label: 'Introduction' },
+                    { id: 'schedule', label: 'Match Schedule' },
                     { id: 'strategy', label: 'Travel Strategy' },
                     { id: 'accommodation', label: 'Accommodation' },
                     { id: 'budget', label: 'Budget Breakdown' },
@@ -194,6 +204,42 @@ export default function GroupGClientPage() {
                   <p className="text-base text-slate-500 dark:text-slate-400">
                     Use the Amtrak Cascades for the cross-border journey. It's scenic and stress-free. Then, take a short flight south to the California sunshine.
                   </p>
+                </div>
+              </section>
+
+              <section id="schedule" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">00</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Confirmed Group G Match Schedule</h2>
+                </div>
+
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-10 max-w-3xl">
+                  Times are shown in local Pacific Time (PT).
+                </p>
+
+                <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Date</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Kickoff</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">City</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">Stadium</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                      {groupGMatches.map((match) => (
+                        <tr key={`${match.date}-${match.fixture}`}>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">{match.date}</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{match.time}</td>
+                          <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">{match.city}</td>
+                          <td className="p-6 text-slate-500 hidden lg:table-cell text-sm">{match.stadium}</td>
+                          <td className="p-6 text-slate-700 dark:text-slate-300 text-base">{match.fixture}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </section>
 
@@ -487,7 +533,7 @@ export default function GroupGClientPage() {
                       <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">Stay Connected</h4>
                       <p className="text-xs text-slate-500 dark:text-slate-400">Get an Airalo eSIM for instant data across Canada and the USA.</p>
                     </div>
-                    <a href="#" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
+                    <a href="https://www.airalo.com/" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
                   </div>
                 </div>
               </section>
@@ -604,25 +650,25 @@ export default function GroupGClientPage() {
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🧥</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Light Rain Shell</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Crucial for the Cascadia mist.</p>
-                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+                    <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Packing Guide</Link>
                   </div>
                   <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🕶️</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Polarized Sunglasses</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">The LA sun is unforgiving.</p>
-                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+                    <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Packing Guide</Link>
                   </div>
                   <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👟</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Walkable Sneakers</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Vancouver is best explored on foot.</p>
-                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+                    <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Packing Guide</Link>
                   </div>
                   <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
                     <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
                     <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
                     <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long travel days across borders.</p>
-                    <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+                    <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Packing Guide</Link>
                   </div>
                 </div>
               </section>
@@ -676,6 +722,5 @@ export default function GroupGClientPage() {
     </div>
   );
 }
-
 
 

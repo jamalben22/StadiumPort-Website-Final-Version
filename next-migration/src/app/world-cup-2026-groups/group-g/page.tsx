@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupGClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group G Travel Guide: Vancouver, Seattle & Los Angeles',
@@ -40,6 +40,71 @@ export default function GroupGPage() {
 
   const articleSchema = generateArticleSchema('group-g', pageUrl);
 
+ const groupEventSchema = generateEventSchema({
+   name: 'FIFA World Cup 2026 Group G Matches',
+   startDate: '2026-06-15',
+   endDate: '2026-06-26',
+   location: {
+     name: 'Group G Host Cities',
+     address: 'Vancouver, Seattle, Los Angeles',
+     country: 'CA, US',
+   },
+   image: '/assets/wc26-groups-og.jpg',
+   description:
+     'Group G fixtures played in Vancouver, Seattle, and Los Angeles during the FIFA World Cup 2026 group stage.',
+ });
+
+ const matchEventSchemas = [
+   generateEventSchema({
+     name: 'IR Iran vs New Zealand (Group G) — Los Angeles',
+     startDate: '2026-06-15T18:00:00-07:00',
+     endDate: '2026-06-15T20:00:00-07:00',
+     location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at Los Angeles Stadium in Inglewood, California.',
+   }),
+   generateEventSchema({
+     name: 'Belgium vs Egypt (Group G) — Seattle',
+     startDate: '2026-06-15T12:00:00-07:00',
+     endDate: '2026-06-15T14:00:00-07:00',
+     location: { name: 'Seattle Stadium', address: 'Seattle, WA', country: 'US' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at Seattle Stadium in Seattle, Washington.',
+   }),
+   generateEventSchema({
+     name: 'Belgium vs IR Iran (Group G) — Los Angeles',
+     startDate: '2026-06-21T12:00:00-07:00',
+     endDate: '2026-06-21T14:00:00-07:00',
+     location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at Los Angeles Stadium in Inglewood, California.',
+   }),
+   generateEventSchema({
+     name: 'New Zealand vs Egypt (Group G) — Vancouver',
+     startDate: '2026-06-21T18:00:00-07:00',
+     endDate: '2026-06-21T20:00:00-07:00',
+     location: { name: 'BC Place Vancouver', address: 'Vancouver, BC', country: 'CA' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at BC Place in Vancouver, British Columbia.',
+   }),
+   generateEventSchema({
+     name: 'Egypt vs IR Iran (Group G) — Seattle',
+     startDate: '2026-06-26T20:00:00-07:00',
+     endDate: '2026-06-26T22:00:00-07:00',
+     location: { name: 'Seattle Stadium', address: 'Seattle, WA', country: 'US' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at Seattle Stadium in Seattle, Washington.',
+   }),
+   generateEventSchema({
+     name: 'New Zealand vs Belgium (Group G) — Vancouver',
+     startDate: '2026-06-26T20:00:00-07:00',
+     endDate: '2026-06-26T22:00:00-07:00',
+     location: { name: 'BC Place Vancouver', address: 'Vancouver, BC', country: 'CA' },
+     image: '/assets/wc26-groups-og.jpg',
+     description: 'Group G match at BC Place in Vancouver, British Columbia.',
+   }),
+ ];
+
  const breadcrumbSchema = {
    "@context": "https://schema.org",
    "@type": "BreadcrumbList",
@@ -71,18 +136,34 @@ export default function GroupGPage() {
    "mainEntity": [
      {
        "@type": "Question",
-       "name": "What is the best way to travel between Group G cities?",
+       "name": "Amtrak or Driving between Vancouver and Seattle?",
        "acceptedAnswer": {
          "@type": "Answer",
-         "text": "For the Cascadia cities (Vancouver, Seattle), the Amtrak Cascades train is the superior option to avoid border traffic. For the jump to Los Angeles, you must fly. The strategy is 'Train North, Plane South'."
+         "text": "Amtrak Cascades is highly recommended. While driving is shorter on paper, border wait times for cars are notoriously unpredictable, especially during major events. The train has dedicated customs processing that is usually faster."
        }
      },
      {
        "@type": "Question",
-       "name": "Which Group G city is the most expensive?",
+       "name": "Which city has the best stadium atmosphere?",
        "acceptedAnswer": {
          "@type": "Answer",
-         "text": "Vancouver and Los Angeles are tied for the highest costs. Expect to pay $400+ per night for central hotels in both cities. Seattle offers slightly better value but remains expensive compared to non-coastal cities."
+         "text": "Seattle. Lumen Field is legendary for its noise and soccer-first feel. Vancouver’s BC Place is also excellent and can get especially loud when the roof is closed."
+       }
+     },
+     {
+       "@type": "Question",
+       "name": "How far apart are the cities?",
+       "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Vancouver to Seattle is about 3–4 hours by train or car, depending on border waits. Seattle to Los Angeles is roughly 1,100 miles, so flying is the practical option."
+       }
+     },
+     {
+       "@type": "Question",
+       "name": "Is Los Angeles safe for tourists?",
+       "acceptedAnswer": {
+         "@type": "Answer",
+         "text": "Popular tourist areas like Santa Monica, Hollywood, and Downtown are generally fine, but stay aware, use rideshare at night, and avoid unfamiliar industrial areas near the stadium."
        }
      }
    ]
@@ -93,6 +174,10 @@ export default function GroupGPage() {
      <JsonLd schema={articleSchema} />
      <JsonLd schema={breadcrumbSchema} />
      <JsonLd schema={faqSchema} />
+     <JsonLd schema={groupEventSchema} />
+     {matchEventSchemas.map((schema, index) => (
+       <JsonLd key={index} schema={schema} />
+     ))}
      <GroupGClientPage />
    </>
  );

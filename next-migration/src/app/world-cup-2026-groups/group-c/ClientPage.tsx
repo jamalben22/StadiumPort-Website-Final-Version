@@ -2,12 +2,10 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
  ChevronDown, 
- Clock, 
  Calendar, 
  MapPin, 
  ArrowRight, 
@@ -16,10 +14,11 @@ import {
  CreditCard, 
  ExternalLink
 } from 'lucide-react';
+import { GROUPS, TEAM_MAP, type Team } from '@/data/teams';
 
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
  return (
- <div className="border-b border-slate-200 dark:border-slate-200 dark:border-slate-800 last:border-0">
+ <div className="border-b border-slate-200 dark:border-slate-800 last:border-0">
  <button 
  onClick={onClick}
  className="w-full py-6 flex items-center justify-between text-left group focus:outline-none"
@@ -54,8 +53,15 @@ export default function GroupCClientPage() {
       outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
     };
 
+    const isExternal = href.startsWith('http');
+
     return (
-      <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={`${baseClasses} ${variants[variant]}`}
+      >
         <span className="relative z-10 flex items-center gap-2">
           {text}
           <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -66,6 +72,40 @@ export default function GroupCClientPage() {
       </Link>
     );
   };
+
+  const groupTeams = (GROUPS.C ?? []).map((teamId) => TEAM_MAP.get(teamId)).filter((team): team is Team => Boolean(team));
+
+  const teamSpotlight: Record<string, { headline: string; blurb: string; travelAngle: string }> = {
+    bra: {
+      headline: 'The Favorite',
+      blurb: 'High expectation, big crowds, and premium ticket demand.',
+      travelAngle: 'International arrival: Miami is the easiest gateway; use the Northeast Corridor for match-to-match efficiency.'
+    },
+    mar: {
+      headline: 'The Dark Horse',
+      blurb: 'Elite structure and a passionate traveling support.',
+      travelAngle: 'Lock Boston/NYC early; Morocco fans reliably spike hotel prices near city centers.'
+    },
+    hai: {
+      headline: 'The Underdog',
+      blurb: 'Chaotic energy and a fanbase that shows up when it matters.',
+      travelAngle: 'Value-play base: Philadelphia for cheaper rooms, quick trains, and a direct subway to the stadium.'
+    },
+    sco: {
+      headline: 'The Noise Makers',
+      blurb: 'If Scotland qualify, expect the loudest pubs on the East Coast.',
+      travelAngle: 'Stay rail-first: Boston → NYC → Philly without airports, then fly south only if your match forces it.'
+    }
+  };
+
+  const schedule = [
+    { matchday: 1, date: 'June 12, 2026', time: '8:00 PM ET', city: 'Miami Gardens', stadium: 'Hard Rock Stadium', fixture: 'Brazil vs Haiti' },
+    { matchday: 1, date: 'June 13, 2026', time: '3:00 PM ET', city: 'Foxborough (Boston)', stadium: 'Gillette Stadium', fixture: 'Morocco vs Scotland' },
+    { matchday: 2, date: 'June 18, 2026', time: '6:00 PM ET', city: 'East Rutherford', stadium: 'MetLife Stadium', fixture: 'Brazil vs Scotland' },
+    { matchday: 2, date: 'June 18, 2026', time: '9:00 PM ET', city: 'Philadelphia', stadium: 'Lincoln Financial Field', fixture: 'Morocco vs Haiti' },
+    { matchday: 3, date: 'June 24, 2026', time: '3:00 PM ET', city: 'East Rutherford', stadium: 'MetLife Stadium', fixture: 'Scotland vs Haiti' },
+    { matchday: 3, date: 'June 24, 2026', time: '8:00 PM ET', city: 'Atlanta', stadium: 'Mercedes-Benz Stadium', fixture: 'Brazil vs Morocco' }
+  ];
 
  const scrollToSection = (id: string) => {
  const element = document.getElementById(id);
@@ -82,7 +122,7 @@ export default function GroupCClientPage() {
 
  useEffect(() => {
  const handleScroll = () => {
- const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+ const sections = ['intro', 'teams', 'schedule', 'strategy', 'cities', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
  const scrollPosition = window.scrollY + 300;
 
  for (const section of sections) {
@@ -144,7 +184,10 @@ export default function GroupCClientPage() {
  <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
  {[
  { id: 'intro', label: 'Introduction' },
+ { id: 'teams', label: 'Teams' },
+ { id: 'schedule', label: 'Match Schedule' },
  { id: 'strategy', label: 'Travel Strategy' },
+ { id: 'cities', label: 'Cities & Stadiums' },
  { id: 'accommodation', label: 'Accommodation' },
  { id: 'budget', label: 'Budget Breakdown' },
  { id: 'visas', label: 'Visa Requirements' },
@@ -196,10 +239,101 @@ export default function GroupCClientPage() {
  </div>
  </section>
 
+ <section id="teams" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Teams & Storylines</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+ Group C blends a global giant with two high-energy disruptors and one pure underdog journey. Expect big traveling sections, expensive tickets for Brazil matches, and a Northeast corridor that lets you follow the group without airports.
+ </p>
+ 
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+ {groupTeams.map((team) => {
+ const spotlight = teamSpotlight[team.id] || { headline: 'Team', blurb: '', travelAngle: '' };
+ return (
+ <div key={team.id} className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+ <div className="flex items-center gap-4 mb-6">
+ <OptimizedImage
+ src={team.flagUrl}
+ width={48}
+ height={32}
+ alt={team.name}
+ imgClassName="w-12 h-auto object-cover rounded shadow-sm"
+ unoptimized
+ />
+ <div className="flex-1">
+ <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{spotlight.headline}</div>
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{team.name}</h3>
+ <div className="text-xs text-slate-500 dark:text-slate-400">{team.fifaCode} • {team.region}</div>
+ </div>
+ </div>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">{spotlight.blurb}</p>
+ <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+ <strong className="text-slate-900 dark:text-white">Travel angle:</strong> {spotlight.travelAngle}
+ </div>
+ </div>
+ );
+ })}
+ </div>
+ 
+ <div className="mt-12 flex flex-wrap gap-4">
+ <AffiliateButton href="https://www.fanatics.com/soccer" text="Shop Jerseys & Gear" variant="secondary" />
+ <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Flight Booking Strategy" variant="outline" icon={Plane} />
+ </div>
+ </section>
+
+ <section id="schedule" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group C Match Schedule</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-10 max-w-3xl">
+ Your itinerary lives and dies by two things: the Northeast rail spine (Boston–NYC–Philly) and the one-time southern jump. Use this schedule view to plan bases first, then flights second.
+ </p>
+ 
+ <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+ <table className="w-full text-left border-collapse">
+ <thead>
+ <tr className="border-b border-slate-100 dark:border-slate-800">
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Matchday</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">City</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Stadium</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Kickoff</th>
+ </tr>
+ </thead>
+ <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+ {schedule.map((m, idx) => (
+ <tr key={`${m.fixture}-${idx}`}>
+ <td className="p-6 text-slate-500 text-sm font-semibold">{m.matchday}</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">{m.fixture}</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{m.city}</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{m.stadium}</td>
+ <td className="p-6 text-slate-500 text-sm">
+ <div className="flex flex-col">
+ <span className="font-semibold text-slate-900 dark:text-white">{m.time}</span>
+ <span className="text-xs text-slate-400">{m.date}</span>
+ </div>
+ </td>
+ </tr>
+ ))}
+ </tbody>
+ </table>
+ </div>
+ 
+ <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+ <AffiliateButton href="/world-cup-2026-itinerary-planning" text="Build a 10–14 Day Itinerary" variant="secondary" icon={Calendar} />
+ <AffiliateButton href="/world-cup-2026-travel-insurance-guide" text="Travel Insurance Checklist" variant="outline" icon={ExternalLink} />
+ </div>
+ </section>
+
  {/* Section 1: Multi-City Travel Strategy */}
  <section id="strategy" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
  </div>
  
@@ -304,10 +438,43 @@ export default function GroupCClientPage() {
  </div>
  </section>
 
+ <section id="cities" className="scroll-mt-32">
+ <div className="flex items-baseline gap-4 mb-12">
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Cities & Stadiums (Quick Hits)</h2>
+ </div>
+ 
+ <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+ Group C is a rare blend: three cities where you can live on trains and subways, plus two where heat and distance punish bad planning. Use these quick hits to choose your bases and match-day transport.
+ </p>
+ 
+ <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+ {[
+ { city: 'Boston', cityHref: '/world-cup-2026-boston-guide', stadium: 'Gillette Stadium', stadiumHref: '/gillette-stadium-world-cup-2026', note: 'Plan it like a day trip: Foxborough is not downtown Boston.' },
+ { city: 'New York / New Jersey', cityHref: '/world-cup-2026-new-york-new-jersey-guide', stadium: 'MetLife Stadium', stadiumHref: '/metlife-stadium-world-cup-2026', note: 'Match day is a commuter mission. Stay central, then ride NJ Transit.' },
+ { city: 'Philadelphia', cityHref: '/world-cup-2026-philadelphia-guide', stadium: 'Lincoln Financial Field', stadiumHref: '/lincoln-financial-field-world-cup-2026', note: 'The subway is the cheat code: Broad Street Line to NRG Station.' },
+ { city: 'Atlanta', cityHref: '/world-cup-2026-atlanta-guide', stadium: 'Mercedes-Benz Stadium', stadiumHref: '/mercedes-benz-stadium-world-cup-2026', note: 'One of the best setups in the US: airport train → downtown → stadium.' },
+ { city: 'Miami', cityHref: '/world-cup-2026-miami-guide', stadium: 'Hard Rock Stadium', stadiumHref: '/hard-rock-stadium-world-cup-2026', note: 'Humidity + traffic. Base north (Fort Lauderdale/Hollywood) for sanity.' }
+ ].map((item) => (
+ <div key={item.city} className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:shadow-xl transition-shadow duration-300">
+ <div className="flex items-center gap-3 mb-4">
+ <MapPin className="w-5 h-5 text-emerald-500" />
+ <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">{item.city}</h3>
+ </div>
+ <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">{item.note}</p>
+ <div className="flex flex-wrap gap-3">
+ <AffiliateButton href={item.cityHref} text="City Guide" variant="secondary" />
+ <AffiliateButton href={item.stadiumHref} text="Stadium Guide" variant="outline" icon={MapPin} />
+ </div>
+ </div>
+ ))}
+ </div>
+ </section>
+
  {/* Section 2: Accommodation Strategy */}
  <section id="accommodation" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
  </div>
  
@@ -338,7 +505,7 @@ export default function GroupCClientPage() {
  </li>
  </ul>
               <AffiliateButton 
-                href="https://booking.com" 
+                href="https://www.booking.com/searchresults.html?ss=New+York" 
                 text="Search NYC Hotels" 
                 variant="outline"
               />
@@ -366,7 +533,7 @@ export default function GroupCClientPage() {
                 </li>
               </ul>
               <AffiliateButton 
-                href="https://booking.com" 
+                href="https://www.booking.com/searchresults.html?ss=Boston" 
                 text="Search Boston Hotels" 
                 variant="outline"
               />
@@ -389,9 +556,11 @@ export default function GroupCClientPage() {
  <span><strong>Stadium Access:</strong> Broad Street Line (Subway) goes direct to stadium complex.</span>
  </li>
  </ul>
- <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
- Search Philly Hotels <ArrowRight className="w-3 h-3" />
- </a>
+ <AffiliateButton 
+ href="https://www.booking.com/searchresults.html?ss=Philadelphia" 
+ text="Search Philly Hotels" 
+ variant="outline"
+ />
  </div>
 
  {/* Miami */}
@@ -411,9 +580,11 @@ export default function GroupCClientPage() {
  <span><strong>Recommendation:</strong> Stay in Fort Lauderdale or Hollywood for easier stadium access.</span>
  </li>
  </ul>
- <a href="https://booking.com" className="inline-flex items-center gap-2 text-emerald-600 font-bold text-xs hover:text-emerald-700 transition-all group-hover:translate-x-2 uppercase tracking-widest">
- Search Miami Hotels <ArrowRight className="w-3 h-3" />
- </a>
+ <AffiliateButton 
+ href="https://www.booking.com/searchresults.html?ss=Miami" 
+ text="Search Miami Hotels" 
+ variant="outline"
+ />
  </div>
  </div>
  </section>
@@ -421,7 +592,7 @@ export default function GroupCClientPage() {
  {/* Section 3: Budget Breakdown */}
  <section id="budget" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group C Budget Breakdown</h2>
  </div>
  
@@ -486,7 +657,7 @@ export default function GroupCClientPage() {
  <h4 className="font-bold text-slate-900 dark:text-white text-base mb-1">Stay Connected</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400">Get an Airalo eSIM for instant data across the USA.</p>
  </div>
- <a href="#" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
+ <a href="https://airalo.tp.st/yF9Qk3Ol" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 text-emerald-600 font-bold text-xs hover:text-emerald-500 transition-colors uppercase tracking-widest">View Plans &rarr;</a>
  </div>
  </div>
  </section>
@@ -494,7 +665,7 @@ export default function GroupCClientPage() {
  {/* Section 4: Visa & Entry Requirements */}
  <section id="visas" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
  </div>
  
@@ -532,7 +703,7 @@ export default function GroupCClientPage() {
  {/* Section 5: Insider Tips */}
  <section id="insider" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">08</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Knowledge</h2>
  </div>
  
@@ -574,7 +745,7 @@ export default function GroupCClientPage() {
  {/* Section 6: Essential Gear */}
  <section id="packing" className="scroll-mt-32">
  <div className="flex items-baseline gap-4 mb-12">
- <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+ <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">09</span>
  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group C Packing Essentials</h2>
  </div>
  
@@ -583,25 +754,25 @@ export default function GroupCClientPage() {
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👟</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Walking Shoes</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">NYC/Boston = 20k steps/day.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">See Picks</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">☂️</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Compact Umbrella</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Summer storms are sudden.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">See Picks</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">👕</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Linen/Light Fabrics</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">For the Miami humidity.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">See Picks</Link>
  </div>
  <div className="group text-center p-6 border border-slate-100 dark:border-slate-200 dark:border-slate-800 rounded-[2rem] hover:border-emerald-500/50 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
  <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">🔋</div>
  <h4 className="font-bold text-sm text-slate-900 dark:text-white mb-1">Power Bank</h4>
  <p className="text-xs text-slate-500 dark:text-slate-400 mb-4">Long travel days.</p>
- <a href="#" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">Shop Now</a>
+ <Link href="/world-cup-2026-packing-guide" className="text-emerald-600 text-[10px] font-bold uppercase tracking-widest hover:text-emerald-500 transition-colors">See Picks</Link>
  </div>
  </div>
  </section>
@@ -655,11 +826,6 @@ export default function GroupCClientPage() {
 </div>
 );
 }
-
-
-
-
-
 
 
 

@@ -6,7 +6,6 @@ import { OptimizedImage } from '@/components/ui/OptimizedImage';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { 
   ChevronDown, 
-  Clock, 
   Calendar, 
   MapPin, 
   ArrowRight, 
@@ -18,6 +17,7 @@ import {
   Sun,
   Wind
 } from 'lucide-react';
+import { GROUPS, TEAM_MAP, type Team } from '@/data/teams';
 
 function AccordionItem({ question, answer, isOpen, onClick }: { question: string, answer: React.ReactNode, isOpen: boolean, onClick: () => void }) {
   return (
@@ -56,8 +56,15 @@ export default function GroupIClientPage() {
       outline: "border-2 border-slate-200 dark:border-white/10 hover:border-emerald-500 dark:hover:border-emerald-500 text-slate-900 dark:text-white bg-transparent"
     };
 
+    const isExternal = href.startsWith('http');
+
     return (
-      <Link href={href} target="_blank" className={`${baseClasses} ${variants[variant]}`}>
+      <Link
+        href={href}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className={`${baseClasses} ${variants[variant]}`}
+      >
         <span className="relative z-10 flex items-center gap-2">
           {text}
           <Icon className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -68,6 +75,40 @@ export default function GroupIClientPage() {
       </Link>
     );
   };
+
+  const groupTeams = (GROUPS.I ?? []).map((teamId) => TEAM_MAP.get(teamId)).filter((team): team is Team => Boolean(team));
+
+  const teamSpotlight: Record<string, { headline: string; blurb: string; travelAngle: string }> = {
+    fra: {
+      headline: 'The Headliner',
+      blurb: 'A premium ticket magnet. Expect strong neutral demand and a loud, international crowd.',
+      travelAngle: 'Hotel prices spike hardest in Santa Monica and near Levi’s—book refundable rooms early and upgrade later.'
+    },
+    sen: {
+      headline: 'The Atmosphere',
+      blurb: 'Fast, physical, and usually backed by one of the best traveling vibes in the tournament.',
+      travelAngle: 'Target LA for pre-match energy (bars + fan meetups), then use the Bay Area for calmer recovery days.'
+    },
+    nor: {
+      headline: 'The Counterpunch',
+      blurb: 'High-tempo football and a fanbase that tends to travel in organized waves.',
+      travelAngle: 'Fly, don’t drive: lock LAX ↔ SJC/SFO flights around matchdays to avoid losing a full day on I‑5.'
+    },
+    po2: {
+      headline: 'The Wild Card',
+      blurb: 'The Play-off 2 winner is the uncertainty factor—great for value tickets, tricky for planning.',
+      travelAngle: 'Build a flexible plan: keep your base cities fixed (South Bay + Westside LA) and let the opponent decide the vibe.'
+    }
+  };
+
+  const schedule = [
+    { matchday: 1, date: 'June 14, 2026', time: '12:00 PM PT', city: 'Santa Clara (SF Bay Area)', stadium: 'Levi’s Stadium', fixture: 'Senegal vs Norway' },
+    { matchday: 1, date: 'June 14, 2026', time: '6:00 PM PT', city: 'Inglewood (Los Angeles)', stadium: 'SoFi Stadium', fixture: 'France vs Play-off 2 Winner' },
+    { matchday: 2, date: 'June 20, 2026', time: '12:00 PM PT', city: 'Santa Clara (SF Bay Area)', stadium: 'Levi’s Stadium', fixture: 'France vs Norway' },
+    { matchday: 2, date: 'June 20, 2026', time: '6:00 PM PT', city: 'Inglewood (Los Angeles)', stadium: 'SoFi Stadium', fixture: 'Senegal vs Play-off 2 Winner' },
+    { matchday: 3, date: 'June 26, 2026', time: '12:00 PM PT', city: 'Santa Clara (SF Bay Area)', stadium: 'Levi’s Stadium', fixture: 'Norway vs Play-off 2 Winner' },
+    { matchday: 3, date: 'June 26, 2026', time: '8:00 PM PT', city: 'Inglewood (Los Angeles)', stadium: 'SoFi Stadium', fixture: 'France vs Senegal' }
+  ];
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -84,7 +125,7 @@ export default function GroupIClientPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+      const sections = ['intro', 'teams', 'schedule', 'strategy', 'cities', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
       const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
@@ -146,7 +187,10 @@ export default function GroupIClientPage() {
                 <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
                   {[
                     { id: 'intro', label: 'Introduction' },
+                    { id: 'teams', label: 'Teams' },
+                    { id: 'schedule', label: 'Match Schedule' },
                     { id: 'strategy', label: 'Travel Strategy' },
+                    { id: 'cities', label: 'Cities & Stadiums' },
                     { id: 'accommodation', label: 'Accommodation' },
                     { id: 'budget', label: 'Budget Breakdown' },
                     { id: 'visas', label: 'Visa Requirements' },
@@ -198,10 +242,109 @@ export default function GroupIClientPage() {
                 </div>
               </section>
 
+              <section id="teams" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Teams & Storylines</h2>
+                </div>
+
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-12 max-w-3xl">
+                  Group I is built for traveler-fans: two mega-stadiums, two world-class cities, and a schedule that rewards good base planning. Expect premium pricing for France matches, an electric Senegal atmosphere, and a real wildcard once the Play-off 2 winner is confirmed.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {groupTeams.map((team) => {
+                    const spotlight = teamSpotlight[team.id] || { headline: 'Team', blurb: '', travelAngle: '' };
+                    const isPlaceholder = team.name.startsWith('PO') || team.flagUrl === '';
+
+                    return (
+                      <div key={team.id} className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                        <div className="flex items-center gap-4 mb-6">
+                          <div className="w-12 h-8 rounded shadow-sm overflow-hidden flex items-center justify-center bg-slate-100 dark:bg-white/5">
+                            {isPlaceholder ? (
+                              <span className="text-[10px] font-bold text-slate-900 dark:text-slate-200 tracking-tighter uppercase">FIFA</span>
+                            ) : (
+                              <OptimizedImage
+                                src={team.flagUrl}
+                                width={48}
+                                height={32}
+                                alt={team.name}
+                                imgClassName="w-12 h-auto object-cover"
+                                unoptimized
+                              />
+                            )}
+                          </div>
+                          <div className="flex-1">
+                            <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{spotlight.headline}</div>
+                            <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">{team.name}</h3>
+                            <div className="text-xs text-slate-500 dark:text-slate-400">{team.fifaCode} • {team.region}</div>
+                          </div>
+                        </div>
+                        <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-4">{spotlight.blurb}</p>
+                        <div className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                          <strong className="text-slate-900 dark:text-white">Travel angle:</strong> {spotlight.travelAngle}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <div className="mt-12 flex flex-wrap gap-4">
+                  <AffiliateButton href="https://www.fanatics.com/soccer" text="Shop Jerseys & Gear" variant="secondary" />
+                  <AffiliateButton href="/world-cup-2026-flight-booking-guide" text="Flight Booking Strategy" variant="outline" icon={Plane} />
+                </div>
+              </section>
+
+              <section id="schedule" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group I Match Schedule</h2>
+                </div>
+
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-10 max-w-3xl">
+                  Your goal is to keep your commute short on match days. For Levi’s, base in Santa Clara/San Jose or along Caltrain. For SoFi, base on the Westside (Santa Monica/El Segundo) or near LAX/Inglewood.
+                </p>
+
+                <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-slate-100 dark:border-slate-800">
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Matchday</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">City</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Stadium</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Kickoff</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                      {schedule.map((m, idx) => (
+                        <tr key={`${m.fixture}-${idx}`}>
+                          <td className="p-6 text-slate-500 text-sm font-semibold">{m.matchday}</td>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">{m.fixture}</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{m.city}</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{m.stadium}</td>
+                          <td className="p-6 text-slate-500 text-sm">
+                            <div className="flex flex-col">
+                              <span className="font-semibold text-slate-900 dark:text-white">{m.time}</span>
+                              <span className="text-xs text-slate-400">{m.date}</span>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <AffiliateButton href="/world-cup-2026-itinerary-planning" text="Build a California Itinerary" variant="secondary" icon={Calendar} />
+                  <AffiliateButton href="/world-cup-2026-travel-insurance-guide" text="Travel Insurance Checklist" variant="outline" icon={ExternalLink} />
+                </div>
+              </section>
+
               {/* Section 1: Multi-City Travel Strategy */}
               <section id="strategy" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
                 </div>
                 
@@ -306,10 +449,63 @@ export default function GroupIClientPage() {
                 </div>
               </section>
 
+              <section id="cities" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Cities & Stadiums (Quick Hits)</h2>
+                </div>
+
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 leading-loose max-w-3xl">
+                  Group I is one of the rare groups where you can plan like a local: two bases, one short flight, and no border crossings. The trap is assuming SF and LA “feel close.” They don’t—plan your match days like two separate trips.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {[
+                    {
+                      title: 'San Francisco Bay Area (Santa Clara)',
+                      stadium: 'Levi’s Stadium',
+                      blurb: 'Stay South Bay for match days (Santa Clara/San Jose). Use Caltrain + VTA to avoid parking stress.',
+                      links: [
+                        { href: '/world-cup-2026-san-francisco-bay-area-guide', label: 'Bay Area Match-Day Guide' },
+                        { href: '/levis-stadium-world-cup-2026', label: 'Levi’s Stadium Guide' }
+                      ]
+                    },
+                    {
+                      title: 'Los Angeles (Inglewood)',
+                      stadium: 'SoFi Stadium',
+                      blurb: 'LA is a traffic puzzle. Westside/LAX areas reduce pain; transit works, but shuttles and timing matter.',
+                      links: [
+                        { href: '/world-cup-2026-los-angeles-guide', label: 'Los Angeles City Guide' },
+                        { href: '/sofi-stadium-world-cup-2026', label: 'SoFi Stadium Guide' }
+                      ]
+                    }
+                  ].map((c) => (
+                    <div key={c.title} className="p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 hover:border-emerald-500/30 transition-all duration-500 hover:shadow-xl hover:shadow-emerald-900/5">
+                      <div className="flex items-start justify-between gap-6 mb-6">
+                        <div>
+                          <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
+                            <MapPin className="w-3.5 h-3.5" />
+                            City Base
+                          </div>
+                          <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight mt-2">{c.title}</h3>
+                          <div className="text-sm text-slate-500 dark:text-slate-400 mt-1">{c.stadium}</div>
+                        </div>
+                      </div>
+                      <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-8">{c.blurb}</p>
+                      <div className="flex flex-wrap gap-3">
+                        {c.links.map((l) => (
+                          <AffiliateButton key={l.href} href={l.href} text={l.label} variant="outline" icon={ArrowRight} />
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
               {/* Section 2: Accommodation Strategy */}
               <section id="accommodation" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
                 </div>
                 
@@ -379,7 +575,7 @@ export default function GroupIClientPage() {
               {/* Section 3: Budget Breakdown */}
               <section id="budget" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Budget Breakdown</h2>
                 </div>
 
@@ -415,7 +611,7 @@ export default function GroupIClientPage() {
               {/* Section 4: Visa Requirements */}
               <section id="visas" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa Requirements</h2>
                 </div>
                 
@@ -457,7 +653,7 @@ export default function GroupIClientPage() {
               {/* Section 5: Insider Tips */}
               <section id="insider" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">08</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Tips</h2>
                 </div>
 
@@ -486,7 +682,7 @@ export default function GroupIClientPage() {
               {/* Section 6: Packing Essentials */}
               <section id="packing" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">09</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Packing Essentials</h2>
                 </div>
 
@@ -509,7 +705,7 @@ export default function GroupIClientPage() {
               {/* FAQ Section */}
               <section id="faq" className="scroll-mt-32 pb-24">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">10</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Frequently Asked Questions</h2>
                 </div>
 
@@ -541,6 +737,5 @@ export default function GroupIClientPage() {
     </div>
   );
 }
-
 
 

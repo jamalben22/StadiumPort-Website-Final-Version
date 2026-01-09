@@ -112,7 +112,7 @@ export default function GroupDClientPage() {
  </h1>
  
  <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl font-normal mb-10 animate-fade-up delay-100">
-Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three cultural capitals of the American West into one cinematic journey.
+Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects Los Angeles, Seattle, the SF Bay Area, and Vancouver into one cinematic West Coast journey.
 </p>
 </div>
 </div>
@@ -167,7 +167,7 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  Group D is the "Bucket List" group. It offers the most beautiful landscapes and the most modern stadiums, but it punishes the unprepared traveler with brutal traffic and deceptive distances.
  </p>
  <p className="text-lg leading-loose text-slate-600 dark:text-slate-300 mb-10">
- The route covers the Pacific Northwest (Seattle), the Bay Area (SF/Santa Clara), and Southern California (Los Angeles). These regions operate like separate countries with unique climates, transit systems, and vibes.
+ The route covers Southern California (Los Angeles), the Pacific Northwest (Seattle), the Bay Area (SF/Santa Clara), and Vancouver. These regions operate like separate countries with unique climates, transit systems, and vibes.
  </p>
  </div>
  
@@ -182,6 +182,91 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  <p className="text-base text-slate-500 dark:text-slate-400">
  Do <strong className="text-slate-900 dark:text-white">NOT</strong> attempt to drive Seattle to SF for a match (13+ hours). Fly between cities. Only rent a car for the SF-to-LA leg via Highway 1 if you have 3+ spare days to enjoy the views.
  </p>
+ </div>
+ </section>
+
+ <section className="max-w-3xl scroll-mt-32 mt-16">
+ <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm">
+ <div className="p-8 border-b border-slate-100 dark:border-slate-800">
+ <h3 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">Official Group D match schedule (local time)</h3>
+ <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
+ Cities and kickoffs for Group D across Los Angeles, Seattle, Santa Clara, and Vancouver.
+ </p>
+ </div>
+ <div className="overflow-x-auto">
+ <table className="w-full text-left border-collapse">
+ <thead>
+ <tr className="border-b border-slate-100 dark:border-slate-800">
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Date</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Match</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">City</th>
+ <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Stadium</th>
+ </tr>
+ </thead>
+ <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Fri, Jun 12 — 6:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">United States vs Paraguay</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-los-angeles-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Los Angeles</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/sofi-stadium-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">SoFi Stadium</Link>
+ </td>
+ </tr>
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Sat, Jun 13 — 9:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">UEFA Play-off winner vs Australia</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-vancouver-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Vancouver</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/bc-place-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">BC Place</Link>
+ </td>
+ </tr>
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Fri, Jun 19 — 12:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">United States vs Australia</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-seattle-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Seattle</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/lumen-field-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Lumen Field</Link>
+ </td>
+ </tr>
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Fri, Jun 19 — 9:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">UEFA Play-off winner vs Paraguay</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-san-francisco-bay-area-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">SF Bay Area</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/levis-stadium-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Levi's Stadium</Link>
+ </td>
+ </tr>
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Thu, Jun 25 — 7:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">UEFA Play-off winner vs United States</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-los-angeles-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Los Angeles</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/sofi-stadium-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">SoFi Stadium</Link>
+ </td>
+ </tr>
+ <tr>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 whitespace-nowrap">Thu, Jun 25 — 7:00pm</td>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm">Paraguay vs Australia</td>
+ <td className="p-6 text-sm text-slate-600 dark:text-slate-300 hidden md:table-cell">
+ <Link href="/world-cup-2026-san-francisco-bay-area-guide" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">SF Bay Area</Link>
+ </td>
+ <td className="p-6 text-sm">
+ <Link href="/levis-stadium-world-cup-2026" className="font-bold text-amber-600 dark:text-amber-400 hover:underline">Levi's Stadium</Link>
+ </td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
  </div>
  </section>
 
@@ -218,6 +303,12 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  <td className="p-6 text-slate-500 hidden md:table-cell text-sm">2h 05m</td>
  <td className="p-6 text-slate-500 hidden md:table-cell text-sm">SJC (San Jose)</td>
  <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-base">$120 - $200</td>
+ </tr>
+ <tr>
+ <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Vancouver (YVR) → Seattle</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">1h 10m</td>
+ <td className="p-6 text-slate-500 hidden md:table-cell text-sm">SEA (Seattle)</td>
+ <td className="p-6 font-bold text-amber-600 dark:text-amber-400 text-base">$90 - $160</td>
  </tr>
  <tr>
  <td className="p-6 font-semibold text-slate-900 dark:text-white text-base">Bay Area → Los Angeles</td>
@@ -323,8 +414,8 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  
  <div className="space-y-4">
  <AccordionItem 
- question="What is the best way to travel between Seattle, SF, and LA?"
- answer="Flying is the only practical option for match-to-match travel. Seattle to LA is a 2.5-hour flight or a 17+ hour drive. Only drive the Pacific Coast Highway if you have 3+ spare days between matches."
+ question="What is the best way to travel between Seattle, the SF Bay Area, LA, and Vancouver?"
+ answer="Fly for match-to-match travel. These cities are deceptively far apart, and traffic near stadiums is brutal. Drive only if you have extra days (e.g., the Pacific Coast Highway between the Bay Area and LA)."
  isOpen={openFaqIndex === 0}
  onClick={() => setOpenFaqIndex(openFaqIndex === 0 ? null : 0)}
  />
@@ -335,10 +426,16 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  onClick={() => setOpenFaqIndex(openFaqIndex === 1 ? null : 1)}
  />
  <AccordionItem 
- question="Is public transport good in Group D cities?"
- answer="Seattle has excellent light rail. The Bay Area has BART/Caltrain (decent but complex). Los Angeles public transport is improving but still limited; expect to use Uber/Lyft often."
+ question="Where should I stay for a match at BC Place in Vancouver?"
+ answer="Base Downtown, Yaletown, or the West End for walkable matchdays. BC Place is in downtown Vancouver, and SkyTrain + walking beats rideshare surge after the final whistle."
  isOpen={openFaqIndex === 2}
  onClick={() => setOpenFaqIndex(openFaqIndex === 2 ? null : 2)}
+ />
+ <AccordionItem 
+ question="Is public transport good in Group D cities?"
+ answer="Vancouver has SkyTrain. Seattle has excellent light rail. The Bay Area has BART/Caltrain (decent but complex). Los Angeles public transport is improving but still limited; expect rideshare for some trips."
+ isOpen={openFaqIndex === 3}
+ onClick={() => setOpenFaqIndex(openFaqIndex === 3 ? null : 3)}
  />
  </div>
  </section>
@@ -378,8 +475,6 @@ Tech giants, Hollywood dreams, and the Pacific Ocean. Group D connects the three
  </div>
  );
 }
-
-
 
 
 

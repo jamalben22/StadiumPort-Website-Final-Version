@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupJClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group J Travel Guide: Kansas City, Dallas & San Francisco',
@@ -35,66 +35,83 @@ export const metadata: Metadata = {
 };
 
 export default function GroupJPage() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://stadiumport.com';
   const pageUrl = '/world-cup-2026-groups/group-j';
 
   const articleSchema = generateArticleSchema('group-j', pageUrl);
 
- const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group J Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+  const faqs = [
+    {
+      question: 'Do I really need a car for Group J?',
+      answer:
+        'For Kansas City and Dallas/Arlington, yes—these stadium areas are car-first and transit options are limited on matchdays. In the SF Bay Area, you can do matchday without a car by using Caltrain/VTA, but a rental can still help for sightseeing and flexibility.',
+    },
+    {
+      question: 'What is the best way to travel between Kansas City, Dallas, and the SF Bay Area?',
+      answer:
+        'Fly. The distances are massive and driving is a full-day (or multi-day) commitment. Build an open-jaw or multi-city itinerary (MCI → DFW → SFO/SJC) and treat each city as a separate mini-trip.',
+    },
+    {
+      question: 'Which airport should I use for each city?',
+      answer:
+        'Kansas City: MCI. Dallas: DFW (largest connectivity) or DAL (convenient for some domestic routes). SF Bay Area: SFO for international links, SJC for proximity to Levi’s Stadium, and OAK as a sometimes-cheaper alternative.',
+    },
+    {
+      question: 'Where should I stay for Levi’s Stadium matches?',
+      answer:
+        'Prioritize San Jose, Santa Clara, Mountain View, or Palo Alto for the easiest matchday logistics. Staying in San Francisco is great for tourism but turns matchday into a long commute.',
+    },
+    {
+      question: 'How early should I arrive on matchday?',
+      answer:
+        'Plan to be in the stadium district 2–3 hours before kickoff. Arrowhead tailgating starts earlier; Dallas traffic and parking queues are real; and Levi’s is easiest if you arrive before the biggest transit surges.',
+    },
+    {
+      question: 'What’s the single biggest budgeting trap in Group J?',
+      answer:
+        'San Francisco-area lodging. Hotel rates can dominate your total trip cost. If you care about budget, base in San Jose/Santa Clara and use SF for one or two tourist days instead of your match-week base.',
+    },
+    {
+      question: 'How do I handle the Texas heat?',
+      answer:
+        'Assume hot, humid conditions outdoors even if the stadium is air-conditioned. Hydrate the day before, use sunscreen, and avoid long walks in peak afternoon heat—especially from remote parking lots.',
+    },
+    {
+      question: 'Should I buy flights first or hotels first?',
+      answer:
+        'For Group J, lock hotels in the Bay Area first (they spike earliest), then book the multi-city flights once you have dates. Kansas City and Dallas generally have more hotel supply and flexible pricing than the Bay Area.',
+    },
+  ];
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Group J cities?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Due to the vast distances, flying is the only practical option between Kansas City, Dallas, and San Francisco. A rental car is essential in KC and Dallas, while public transit is more viable in the Bay Area."
- }
- },
- {
- "@type": "Question",
- "name": "Which Group J city has the best stadium atmosphere?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Kansas City's Arrowhead Stadium is world-renowned for its noise levels, holding the Guinness World Record. Dallas offers the most high-tech experience at AT&T Stadium."
- }
- }
- ]
- };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group J Guide', item: pageUrl },
+  ]);
 
- return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <GroupJClientPage />
- </>
- );
+  const faqSchema = generateFAQSchema(faqs);
+
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group J Matches',
+    startDate: '2026-06-11',
+    endDate: '2026-06-27',
+    location: {
+      name: 'Group J Host Cities',
+      address: 'Kansas City, Dallas/Arlington, SF Bay Area (Santa Clara)',
+      country: 'US',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description:
+      'Group J fixtures hosted across Kansas City, Dallas/Arlington, and the San Francisco Bay Area (Santa Clara) during the FIFA World Cup 2026 group stage.',
+  });
+
+  return (
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      <GroupJClientPage faqs={faqs} />
+    </>
+  );
 }
 

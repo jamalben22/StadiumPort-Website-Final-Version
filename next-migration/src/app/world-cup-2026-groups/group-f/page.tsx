@@ -4,15 +4,33 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group F Travel Guide: Dallas, Houston, KC & Monterrey',
-  description: 'The definitive guide for following Group F in World Cup 2026. Master the Tex-Mex Corridor (Dallas-Houston-Monterrey) and the Midwest Hub (Kansas City). Drive times, heat safety, and border tips.',
-  keywords: ['World Cup 2026 Group F Travel Guide', 'Group F matches', 'Dallas Houston Kansas City Monterrey World Cup', 'I-35 road trip World Cup', 'Mexico border crossing World Cup'],
+  title: 'FIFA World Cup 2026 Group F Guide: Schedule, Teams & Travel Strategy',
+  description:
+    'Group F guide for World Cup 2026: Netherlands, Japan, Tunisia, and a UEFA Play-off B winner (TBD). Verified match schedule and the smartest travel plan for Dallas, Houston, Kansas City, and Monterrey.',
+  keywords: [
+    'World Cup 2026 Group F',
+    'Group F schedule',
+    'Netherlands World Cup 2026',
+    'Japan World Cup 2026',
+    'Tunisia World Cup 2026',
+    'UEFA Play-off B World Cup 2026',
+    'Dallas World Cup 2026',
+    'Houston World Cup 2026',
+    'Kansas City World Cup 2026',
+    'Monterrey World Cup 2026',
+    'AT&T Stadium World Cup 2026',
+    'NRG Stadium World Cup 2026',
+    'Arrowhead Stadium World Cup 2026',
+    'Estadio BBVA World Cup 2026',
+    'Group F travel strategy',
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-groups/group-f',
   },
   openGraph: {
-    title: 'World Cup 2026 Group F Travel Guide: Dallas, Houston, KC & Monterrey',
-    description: 'The definitive guide for following Group F in World Cup 2026. Master the Tex-Mex Corridor (Dallas-Houston-Monterrey) and the Midwest Hub (Kansas City). Drive times, heat safety, and border tips.',
+    title: 'FIFA World Cup 2026 Group F Guide: Schedule, Teams & Travel Strategy',
+    description:
+      'Group F guide for World Cup 2026: Netherlands, Japan, Tunisia, and a UEFA Play-off B winner (TBD). Verified match schedule and the smartest travel plan for Dallas, Houston, Kansas City, and Monterrey.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-f',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -28,8 +46,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Group F Travel Guide: Dallas, Houston, KC & Monterrey',
-    description: 'The definitive guide for following Group F in World Cup 2026. Master the Tex-Mex Corridor (Dallas-Houston-Monterrey) and the Midwest Hub (Kansas City). Drive times, heat safety, and border tips.',
+    title: 'FIFA World Cup 2026 Group F Guide: Schedule, Teams & Travel Strategy',
+    description:
+      'Group F guide for World Cup 2026: Netherlands, Japan, Tunisia, and a UEFA Play-off B winner (TBD). Verified match schedule and the smartest travel plan for Dallas, Houston, Kansas City, and Monterrey.',
     images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
   },
 };
@@ -71,18 +90,144 @@ export default function GroupFPage() {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "What is the best way to travel between Group F cities?",
+        "name": "Is driving from Texas to Monterrey safe?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For the Texas cities (Dallas and Houston), driving is common but flying is faster. For the long jumps to Kansas City and Monterrey, flying is essential due to the 10+ hour drive times and border logistics."
+          "text": "While the highway is generally okay, flying is strongly recommended. Border wait times can be long, and many US rental car policies restrict cross-border driving. Flights between Houston/Dallas and Monterrey are short and simplify match-day logistics."
         }
       },
       {
         "@type": "Question",
-        "name": "How hot will Group F cities be in June?",
+        "name": "Will the stadiums in Group F be air-conditioned?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Extreme heat is the primary factor. Dallas, Houston, and Monterrey regularly exceed 95°F (35°C) in June. Both Texas stadiums are climate-controlled, but fans must plan for outdoor heat during travel."
+          "text": "Dallas Stadium and Houston Stadium are climate-controlled. Kansas City Stadium and Monterrey Stadium are open-air, so plan for heat and sun exposure at those venues."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the best way to get to Arrowhead Stadium?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kansas City lacks robust rail to the stadium area. Plan on a rideshare, driving with pre-booked parking, or official shuttle options from Downtown when announced."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use US Dollars in Monterrey during World Cup 2026?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Some major hotels may accept USD, but for match-day spending you should plan to use Mexican Pesos (MXN) or a card with no foreign transaction fees."
+        }
+      }
+    ]
+  };
+
+  const groupMatchesSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "FIFA World Cup 2026 Group F Matches",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Netherlands vs Japan (Group F)",
+          "startDate": "2026-06-14T15:00:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Dallas Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Arlington", "addressRegion": "TX", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "UEFA Play-off B Winner vs Tunisia (Group F)",
+          "startDate": "2026-06-14T20:00:00-06:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Monterrey Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Guadalupe", "addressRegion": "NL", "addressCountry": "MX" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "UEFA Play-off B Winner vs Netherlands (Group F)",
+          "startDate": "2026-06-20T12:00:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Houston Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Tunisia vs Japan (Group F)",
+          "startDate": "2026-06-20T22:00:00-06:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Monterrey Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Guadalupe", "addressRegion": "NL", "addressCountry": "MX" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "UEFA Play-off B Winner vs Japan (Group F)",
+          "startDate": "2026-06-25T18:00:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Dallas Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Arlington", "addressRegion": "TX", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "item": {
+          "@type": "SportsEvent",
+          "name": "Tunisia vs Netherlands (Group F)",
+          "startDate": "2026-06-25T18:00:00-05:00",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "location": {
+            "@type": "Place",
+            "name": "Kansas City Stadium",
+            "address": { "@type": "PostalAddress", "addressLocality": "Kansas City", "addressRegion": "MO", "addressCountry": "US" }
+          },
+          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
         }
       }
     ]
@@ -93,6 +238,7 @@ export default function GroupFPage() {
       <JsonLd schema={articleSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupMatchesSchema} />
       <GroupFClientPage />
     </>
   );

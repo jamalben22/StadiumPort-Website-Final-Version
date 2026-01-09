@@ -45,6 +45,69 @@ export default function GroupFClientPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
   const [activeSection, setActiveSection] = useState('intro');
 
+  const schedule = [
+    {
+      match: 'M11',
+      date: 'Sun, June 14, 2026',
+      fixture: 'Netherlands vs Japan',
+      city: 'Arlington (Dallas)',
+      cityHref: '/world-cup-2026-dallas-guide',
+      stadium: 'Dallas Stadium',
+      stadiumHref: '/att-stadium-world-cup-2026',
+      kickoff: '3:00 PM',
+    },
+    {
+      match: 'M12',
+      date: 'Sun, June 14, 2026',
+      fixture: 'UEFA Play-off B Winner vs Tunisia',
+      city: 'Guadalupe (Monterrey)',
+      cityHref: '/world-cup-2026-monterrey-guide',
+      stadium: 'Monterrey Stadium',
+      stadiumHref: '/estadio-bbva-world-cup-2026',
+      kickoff: '8:00 PM',
+    },
+    {
+      match: 'M35',
+      date: 'Sat, June 20, 2026',
+      fixture: 'UEFA Play-off B Winner vs Netherlands',
+      city: 'Houston',
+      cityHref: '/world-cup-2026-houston-guide',
+      stadium: 'Houston Stadium',
+      stadiumHref: '/nrg-stadium-world-cup-2026',
+      kickoff: '12:00 PM',
+    },
+    {
+      match: 'M36',
+      date: 'Sat, June 20, 2026',
+      fixture: 'Tunisia vs Japan',
+      city: 'Guadalupe (Monterrey)',
+      cityHref: '/world-cup-2026-monterrey-guide',
+      stadium: 'Monterrey Stadium',
+      stadiumHref: '/estadio-bbva-world-cup-2026',
+      kickoff: '10:00 PM',
+    },
+    {
+      match: 'M57',
+      date: 'Thu, June 25, 2026',
+      fixture: 'UEFA Play-off B Winner vs Japan',
+      city: 'Arlington (Dallas)',
+      cityHref: '/world-cup-2026-dallas-guide',
+      stadium: 'Dallas Stadium',
+      stadiumHref: '/att-stadium-world-cup-2026',
+      kickoff: '6:00 PM',
+    },
+    {
+      match: 'M58',
+      date: 'Thu, June 25, 2026',
+      fixture: 'Tunisia vs Netherlands',
+      city: 'Kansas City',
+      cityHref: '/world-cup-2026-kansas-city-guide',
+      stadium: 'Kansas City Stadium',
+      stadiumHref: '/arrowhead-stadium-world-cup-2026',
+      kickoff: '6:00 PM',
+    },
+  ];
+
   const AffiliateButton = ({ href, text, icon: Icon = ArrowRight, variant = 'primary' }: { href: string, text: string, icon?: any, variant?: 'primary' | 'secondary' | 'outline' }) => {
     const baseClasses = "group relative inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 overflow-hidden";
     const variants = {
@@ -81,7 +144,7 @@ export default function GroupFClientPage() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['intro', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
+      const sections = ['intro', 'schedule', 'strategy', 'accommodation', 'budget', 'visas', 'insider', 'packing', 'faq'];
       const scrollPosition = window.scrollY + 300;
 
       for (const section of sections) {
@@ -143,6 +206,7 @@ export default function GroupFClientPage() {
                 <nav className="space-y-1 border-l border-slate-200 dark:border-slate-200 dark:border-slate-800 ml-2">
                   {[
                     { id: 'intro', label: 'Introduction' },
+                    { id: 'schedule', label: 'Match Schedule' },
                     { id: 'strategy', label: 'Travel Strategy' },
                     { id: 'accommodation', label: 'Accommodation' },
                     { id: 'budget', label: 'Budget Breakdown' },
@@ -195,10 +259,73 @@ export default function GroupFClientPage() {
                 </div>
               </section>
 
+              <section id="schedule" className="scroll-mt-32">
+                <div className="flex items-baseline gap-4 mb-12">
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Official Match Schedule</h2>
+                </div>
+
+                <p className="text-lg text-slate-600 dark:text-slate-300 leading-loose mb-10 max-w-3xl">
+                  Group F features Netherlands, Japan, Tunisia, and a UEFA Play-off B winner (TBD). Times below are shown in the match city’s local time.
+                </p>
+
+                <div className="overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-200 dark:border-slate-800 shadow-sm ">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-slate-100 dark:border-slate-200 dark:border-slate-800">
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Match</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden md:table-cell">Date</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Fixture</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">City</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest hidden lg:table-cell">Stadium</th>
+                        <th className="p-6 text-xs font-bold text-slate-400 uppercase tracking-widest">Kickoff</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                      {schedule.map((m) => (
+                        <tr key={m.match} className="hover:bg-slate-50/50 dark:hover:bg-slate-900/30 transition-colors">
+                          <td className="p-6 font-bold text-slate-900 dark:text-white">{m.match}</td>
+                          <td className="p-6 text-slate-500 hidden md:table-cell text-sm">{m.date}</td>
+                          <td className="p-6 font-semibold text-slate-900 dark:text-white text-sm md:text-base">{m.fixture}</td>
+                          <td className="p-6 hidden lg:table-cell text-sm">
+                            <Link href={m.cityHref} className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                              {m.city}
+                            </Link>
+                          </td>
+                          <td className="p-6 hidden lg:table-cell text-sm">
+                            <Link href={m.stadiumHref} className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                              {m.stadium}
+                            </Link>
+                          </td>
+                          <td className="p-6 font-bold text-emerald-600 dark:text-emerald-400">{m.kickoff}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+                  {[
+                    { label: 'Dallas Guide', href: '/world-cup-2026-dallas-guide' },
+                    { label: 'Houston Guide', href: '/world-cup-2026-houston-guide' },
+                    { label: 'Kansas City Guide', href: '/world-cup-2026-kansas-city-guide' },
+                    { label: 'Monterrey Guide', href: '/world-cup-2026-monterrey-guide' },
+                  ].map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block p-4 border border-slate-200 dark:border-slate-200 dark:border-slate-800 rounded-xl hover:border-emerald-500 hover:shadow-lg transition-all text-center font-bold text-slate-700 dark:text-slate-200"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
               {/* Section 1: Multi-City Travel Strategy */}
               <section id="strategy" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">01</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Multi-City Travel Strategy</h2>
                 </div>
 
@@ -306,7 +433,7 @@ export default function GroupFClientPage() {
               {/* Section 2: Accommodation Strategy */}
               <section id="accommodation" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">02</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Accommodation Strategy</h2>
                 </div>
 
@@ -420,7 +547,7 @@ export default function GroupFClientPage() {
               {/* Section 3: Budget Breakdown */}
               <section id="budget" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">03</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Group F Budget Breakdown</h2>
                 </div>
 
@@ -497,7 +624,7 @@ export default function GroupFClientPage() {
               {/* Section 4: Visa Requirements */}
               <section id="visas" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">04</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Visa & Entry Requirements</h2>
                 </div>
 
@@ -545,7 +672,7 @@ export default function GroupFClientPage() {
               {/* Section 5: Insider Tips */}
               <section id="insider" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">05</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Insider Strategy Tips</h2>
                 </div>
 
@@ -577,7 +704,7 @@ export default function GroupFClientPage() {
               {/* Section 6: Packing Essentials */}
               <section id="packing" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">06</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Packing Essentials</h2>
                 </div>
 
@@ -603,7 +730,7 @@ export default function GroupFClientPage() {
               {/* Section 7: FAQ */}
               <section id="faq" className="scroll-mt-32">
                 <div className="flex items-baseline gap-4 mb-12">
-                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">07</span>
+                  <span className="text-emerald-500 font-mono text-sm font-bold tracking-widest uppercase">08</span>
                   <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white tracking-tighter">Frequently Asked Questions</h2>
                 </div>
 
@@ -655,6 +782,4 @@ export default function GroupFClientPage() {
     </div>
   );
 }
-
-
 

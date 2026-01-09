@@ -1,18 +1,30 @@
 import { Metadata } from 'next';
 import GroupDClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
-  description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
-  keywords: ['World Cup 2026 Group D Travel Guide', 'Seattle World Cup', 'San Francisco World Cup', 'Los Angeles World Cup', 'West Coast World Cup itinerary', 'SoFi Stadium guide', "Levi's Stadium guide", 'Lumen Field guide'],
+  title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
+  description: 'Follow Group D across the West Coast: Los Angeles, Seattle, SF Bay Area (Santa Clara), and Vancouver. Official match cities, flight strategy, hotels, and stadium logistics.',
+  keywords: [
+    'World Cup 2026 Group D Travel Guide',
+    'Group D schedule',
+    'USA vs Paraguay World Cup 2026',
+    'Seattle World Cup',
+    'San Francisco Bay Area World Cup',
+    'Los Angeles World Cup',
+    'Vancouver World Cup',
+    'SoFi Stadium guide',
+    "Levi's Stadium guide",
+    'Lumen Field guide',
+    'BC Place guide',
+  ],
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-groups/group-d',
   },
   openGraph: {
-    title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
-    description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
+    title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
+    description: 'Follow Group D across the West Coast: Los Angeles, Seattle, SF Bay Area (Santa Clara), and Vancouver. Official match cities, flight strategy, hotels, and stadium logistics.',
     url: 'https://stadiumport.com/world-cup-2026-groups/group-d',
     siteName: 'stadiumport',
     locale: 'en_US',
@@ -28,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'World Cup 2026 Group D Travel Guide: Seattle, San Francisco & Los Angeles',
-    description: 'The ultimate Group D travel guide. Master the West Coast route: Seattle, SF Bay Area, and Los Angeles. Pacific Coast Highway tips, budget strategy, and stadium logistics.',
+    title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
+    description: 'Follow Group D across the West Coast: Los Angeles, Seattle, SF Bay Area (Santa Clara), and Vancouver. Official match cities, flight strategy, hotels, and stadium logistics.',
     images: ['https://stadiumport.com/assets/wc26-groups-og.jpg'],
   },
 };
@@ -39,6 +51,71 @@ export default function GroupDPage() {
   const pageUrl = '/world-cup-2026-groups/group-d';
 
   const articleSchema = generateArticleSchema('group-d', pageUrl);
+
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group D Matches',
+    startDate: '2026-06-12',
+    endDate: '2026-06-25',
+    location: {
+      name: 'Group D Host Cities',
+      address: 'Los Angeles (Inglewood), Seattle, SF Bay Area (Santa Clara), Vancouver',
+      country: 'US, CA',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description:
+      'Group D fixtures played in Los Angeles, Seattle, the San Francisco Bay Area (Santa Clara), and Vancouver during the FIFA World Cup 2026 group stage.',
+  });
+
+  const matchEventSchemas = [
+    generateEventSchema({
+      name: 'United States vs Paraguay (Group D) — Los Angeles',
+      startDate: '2026-06-12T18:00:00-07:00',
+      endDate: '2026-06-12T20:00:00-07:00',
+      location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at Los Angeles Stadium in Inglewood, California.',
+    }),
+    generateEventSchema({
+      name: 'UEFA Play-off winner vs Australia (Group D) — Vancouver',
+      startDate: '2026-06-13T21:00:00-07:00',
+      endDate: '2026-06-13T23:00:00-07:00',
+      location: { name: 'BC Place Vancouver', address: 'Vancouver, BC', country: 'CA' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at BC Place in Vancouver, British Columbia.',
+    }),
+    generateEventSchema({
+      name: 'UEFA Play-off winner vs Paraguay (Group D) — SF Bay Area',
+      startDate: '2026-06-19T21:00:00-07:00',
+      endDate: '2026-06-19T23:00:00-07:00',
+      location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at San Francisco Bay Area Stadium in Santa Clara, California.',
+    }),
+    generateEventSchema({
+      name: 'United States vs Australia (Group D) — Seattle',
+      startDate: '2026-06-19T12:00:00-07:00',
+      endDate: '2026-06-19T14:00:00-07:00',
+      location: { name: 'Seattle Stadium', address: 'Seattle, WA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at Seattle Stadium in Seattle, Washington.',
+    }),
+    generateEventSchema({
+      name: 'UEFA Play-off winner vs United States (Group D) — Los Angeles',
+      startDate: '2026-06-25T19:00:00-07:00',
+      endDate: '2026-06-25T21:00:00-07:00',
+      location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at Los Angeles Stadium in Inglewood, California.',
+    }),
+    generateEventSchema({
+      name: 'Paraguay vs Australia (Group D) — SF Bay Area',
+      startDate: '2026-06-25T19:00:00-07:00',
+      endDate: '2026-06-25T21:00:00-07:00',
+      location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group D match at San Francisco Bay Area Stadium in Santa Clara, California.',
+    }),
+  ];
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",
@@ -71,10 +148,10 @@ export default function GroupDPage() {
  "mainEntity": [
  {
  "@type": "Question",
- "name": "What is the best way to travel between Seattle, SF, and LA?",
+ "name": "What is the best way to travel between Seattle, the SF Bay Area, LA, and Vancouver?",
  "acceptedAnswer": {
  "@type": "Answer",
- "text": "Flying is the only practical option for match-to-match travel. Seattle to LA is a 2.5-hour flight or a 17+ hour drive. Only drive the Pacific Coast Highway if you have 3+ spare days between matches."
+ "text": "Fly for match-to-match travel. These cities are deceptively far apart, and traffic near stadiums is brutal. Drive only if you have extra days (e.g., the Pacific Coast Highway between the Bay Area and LA)."
  }
  },
  {
@@ -83,6 +160,30 @@ export default function GroupDPage() {
  "acceptedAnswer": {
  "@type": "Answer",
  "text": "Stay in San Jose or Santa Clara for match days. San Francisco is 45 miles (60-90 mins) away. The commute from SF to the stadium on a weeknight is brutal."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Does Group D include a match in Vancouver?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Yes. One Group D fixture is scheduled at BC Place in Vancouver, making this group a true US-Canada West Coast route if you follow every match."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Where should I stay in Vancouver for a BC Place match?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Stay Downtown, Yaletown, or the West End for walkable matchdays. BC Place is in downtown Vancouver, so you can avoid long rideshare queues and keep transit simple."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Is public transport good in Group D cities?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Vancouver has SkyTrain. Seattle has excellent light rail. The Bay Area has BART and Caltrain (decent but complex). Los Angeles public transport is improving but still limited; expect rideshare for some trips."
  }
  }
  ]
@@ -93,6 +194,10 @@ export default function GroupDPage() {
  <JsonLd schema={articleSchema} />
  <JsonLd schema={breadcrumbSchema} />
  <JsonLd schema={faqSchema} />
+ <JsonLd schema={groupEventSchema} />
+ {matchEventSchemas.map((schema, index) => (
+   <JsonLd key={index} schema={schema} />
+ ))}
  <GroupDClientPage />
  </>
  );
