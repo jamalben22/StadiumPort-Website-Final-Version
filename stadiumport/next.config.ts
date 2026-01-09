@@ -63,7 +63,7 @@ const nextConfig: NextConfig = {
         },
         {
           key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https: https://googleads.g.doubleclick.net; font-src 'self' data: https:; connect-src 'self' https: http: ws: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com https://googleads.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;"
+          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https: https://googleads.g.doubleclick.net; font-src 'self' data: https:; connect-src 'self' https: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com https://googleads.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;"
         },
         {
           key: 'Permissions-Policy',
