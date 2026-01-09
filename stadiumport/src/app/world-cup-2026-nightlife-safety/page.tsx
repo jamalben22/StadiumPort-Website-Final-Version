@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import NightlifeSafetyClientPage from './ClientPage';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Nightlife & After-Hours Safety: World Cup 2026 Guide',
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function NightlifeSafetyPage() {
+export default async function NightlifeSafetyPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema('nightlife-after-hours-safety-world-cup-2026', '/world-cup-2026-nightlife-safety');
   
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -75,14 +77,17 @@ export default function NightlifeSafetyPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <NightlifeSafetyClientPage />

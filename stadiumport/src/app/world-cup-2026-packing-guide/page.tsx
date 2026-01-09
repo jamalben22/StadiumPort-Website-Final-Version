@@ -3,6 +3,7 @@ import ClientPage from './ClientPage';
 import { contentRegistry } from '@/data/content-registry';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const slug = 'world-cup-2026-packing-guide';
   const articleSchema = generateArticleSchema(slug, slug);
   
@@ -98,12 +100,13 @@ export default function Page() {
 
   return (
     <>
-      <JsonLd schema={articleSchema} />
+      <JsonLd schema={articleSchema} nonce={nonce} />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <JsonLd schema={faqSchema} />
+      <JsonLd schema={faqSchema} nonce={nonce} />
       <ClientPage />
     </>
   );

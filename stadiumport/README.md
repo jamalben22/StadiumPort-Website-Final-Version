@@ -39,6 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Security
 
-This project follows enterprise-grade security practices.
-- [Security Policy](SECURITY.md)
-- [Secrets Management](docs/SECRETS_MANAGEMENT.md)
+This project is intended to be safe for public source control: secrets must never be committed.
+
+- Responsible disclosure: see [SECURITY.md](SECURITY.md)
+- Secrets: copy [.env.example](.env.example) to `.env.local` and set real values via your secret manager (Vercel/GitHub Actions). Never commit `.env*`.
+- Deployment: CI must use repository/environment secrets. Do not echo secrets to logs.

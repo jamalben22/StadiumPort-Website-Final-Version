@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import FoodSafetyClientPage from './ClientPage';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Food & Water Safety: Dining Without Distress',
@@ -43,7 +44,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FoodSafetyPage() {
+export default async function FoodSafetyPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema('food-water-safety-dining-world-cup-2026', '/world-cup-2026-food-dining-safety');
   
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -74,14 +76,17 @@ export default function FoodSafetyPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <FoodSafetyClientPage />

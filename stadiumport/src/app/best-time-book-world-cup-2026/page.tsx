@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   keywords: ['World Cup 2026 booking timeline', 'when to book World Cup 2026 flights', 'World Cup 2026 ticket lottery dates', 'best time to book hotels for World Cup 2026', 'World Cup 2026 travel planning'],
 };
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const jsonLd = generateArticleSchema('best-time-book-world-cup-2026', '/best-time-book-world-cup-2026');
 
   const breadcrumbJsonLd = {
@@ -111,12 +113,13 @@ export default function Page() {
 
   return (
     <>
-      <JsonLd schema={jsonLd} />
+      <JsonLd schema={jsonLd} nonce={nonce} />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <JsonLd schema={faqLd} />
+      <JsonLd schema={faqLd} nonce={nonce} />
       <ClientPage />
     </>
   );

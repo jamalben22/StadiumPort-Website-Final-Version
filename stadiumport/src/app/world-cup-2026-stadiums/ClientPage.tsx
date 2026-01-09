@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Breadcrumb } from "@/components/ui/Breadcrumb"
@@ -403,6 +403,10 @@ const StadiumQuiz = () => {
 
 export default function ClientPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const nonce = useMemo(() => {
+    if (typeof document === "undefined") return undefined;
+    return document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+  }, []);
 
   const filteredStadiums = stadiums;
 
@@ -468,14 +472,17 @@ export default function ClientPage() {
     <div className="min-h-screen font-sans selection:bg-emerald-500/30 bg-[#F5F5F7] dark:bg-[#0A0A0A]">
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       

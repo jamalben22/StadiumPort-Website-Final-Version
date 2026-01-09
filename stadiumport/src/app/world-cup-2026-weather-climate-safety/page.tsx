@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import WeatherClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Weather & Climate Safety: World Cup 2026 Survival Guide',
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function WeatherPage() {
+export default async function WeatherPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema(
     'weather-climate-safety-world-cup-2026', 
     '/world-cup-2026-weather-climate-safety'
@@ -80,14 +82,17 @@ export default function WeatherPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <WeatherClientPage />

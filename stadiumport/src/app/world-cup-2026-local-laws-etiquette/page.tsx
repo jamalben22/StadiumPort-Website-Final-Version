@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import LocalLawsClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Local Laws & Cultural Etiquette: World Cup 2026 Guide',
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function LocalLawsPage() {
+export default async function LocalLawsPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema(
     'local-laws-cultural-etiquette-world-cup-2026', 
     '/world-cup-2026-local-laws-etiquette'
@@ -80,14 +82,17 @@ export default function LocalLawsPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <LocalLawsClientPage />

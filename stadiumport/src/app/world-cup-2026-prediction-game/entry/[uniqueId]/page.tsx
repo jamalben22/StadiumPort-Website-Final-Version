@@ -70,6 +70,10 @@ function usePredictionByCode(code?: string) {
 
 function ResultsView({ prediction, code }: { prediction: any; code: string }) {
   const { updateGroupStandings, setThirdPlacePicks, updateKnockoutPicks, setCurrentStep } = useGame();
+  const nonce = useMemo(() => {
+    if (typeof document === "undefined") return undefined;
+    return document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+  }, []);
   
   useEffect(() => {
     if (!prediction || !prediction.predictions) return;
@@ -109,6 +113,7 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       

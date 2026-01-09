@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import BorderCrossingClientPage from './ClientPage';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Border Crossing Guide: USA, Canada & Mexico 2026 | World Cup Travel',
@@ -50,7 +51,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BorderCrossingPage() {
+export default async function BorderCrossingPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const meta = getContentMeta('border-crossing-usa-canada-mexico-world-cup-2026');
   
   const articleSchema = generateArticleSchema(
@@ -119,14 +121,17 @@ export default function BorderCrossingPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <BorderCrossingClientPage />

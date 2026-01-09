@@ -1,14 +1,8 @@
 import type { NextConfig } from "next";
 import { validateEnv } from "./src/lib/env";
 
-// Validate environment variables
-try {
+if (process.env.NODE_ENV === "production" || process.env.CI === "true") {
   validateEnv();
-} catch (error) {
-  if (process.env.NODE_ENV === 'production') {
-    console.warn('⚠️  Environment validation failed:', (error as Error).message);
-    console.warn('⚠️  Some features may not work correctly.');
-  }
 }
 
 const nextConfig: NextConfig = {
@@ -26,11 +20,11 @@ const nextConfig: NextConfig = {
   },
   reactCompiler: false,
   compiler: {
-    removeConsole: process.env.NODE_ENV === "production",
+    removeConsole: process.env.NODE_ENV === "production" ? { exclude: ["error", "warn"] } : false,
   },
   logging: {
     fetches: {
-      fullUrl: true,
+      fullUrl: process.env.NODE_ENV !== "production",
     },
   },
   headers: async () => [
@@ -46,10 +40,6 @@ const nextConfig: NextConfig = {
           value: 'max-age=63072000; includeSubDomains; preload'
         },
         {
-          key: 'X-XSS-Protection',
-          value: '1; mode=block'
-        },
-        {
           key: 'X-Frame-Options',
           value: 'SAMEORIGIN'
         },
@@ -58,12 +48,16 @@ const nextConfig: NextConfig = {
           value: 'nosniff'
         },
         {
-          key: 'Referrer-Policy',
-          value: 'origin-when-cross-origin'
+          key: 'Cross-Origin-Opener-Policy',
+          value: 'same-origin'
         },
         {
-          key: 'Content-Security-Policy',
-          value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://www.googletagmanager.com https://tpwgts.com https://www.travelpayouts.com https://api.mapbox.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://adservice.google.com; worker-src 'self' blob:; style-src 'self' 'unsafe-inline' https:; img-src 'self' blob: data: https: https://googleads.g.doubleclick.net; font-src 'self' data: https:; connect-src 'self' https: wss: https://api.mapbox.com https://events.mapbox.com https://www.google-analytics.com https://googleads.g.doubleclick.net; frame-src 'self' https://googleads.g.doubleclick.net https://tpc.googlesyndication.com;"
+          key: 'Cross-Origin-Resource-Policy',
+          value: 'same-origin'
+        },
+        {
+          key: 'Referrer-Policy',
+          value: 'strict-origin-when-cross-origin'
         },
         {
           key: 'Permissions-Policy',

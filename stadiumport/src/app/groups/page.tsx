@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { headers } from "next/headers";
 import ClientPage from './ClientPage';
 
 const faqs = [
@@ -41,7 +42,8 @@ export const metadata: Metadata = {
  },
 };
 
-export default function Page() {
+export default async function Page() {
+ const nonce = (await headers()).get("x-nonce") ?? undefined;
  const structuredData = {
  "@context": "https://schema.org",
  "@type": "SportsEvent",
@@ -81,10 +83,12 @@ export default function Page() {
  <>
  <script
  type="application/ld+json"
+ nonce={nonce}
  dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
  />
  <script
  type="application/ld+json"
+ nonce={nonce}
  dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
  />
  <ClientPage />

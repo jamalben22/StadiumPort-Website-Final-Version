@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Transport Safety: Taxis, Uber & Transit',
@@ -41,11 +42,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   return (
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
@@ -77,6 +80,7 @@ export default function Page() {
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
@@ -106,6 +110,7 @@ export default function Page() {
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',

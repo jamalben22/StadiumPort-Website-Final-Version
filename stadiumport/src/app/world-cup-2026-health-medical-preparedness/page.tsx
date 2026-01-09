@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
@@ -41,7 +42,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HealthMedicalPage() {
+export default async function HealthMedicalPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -145,14 +147,17 @@ export default function HealthMedicalPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <ClientPage />

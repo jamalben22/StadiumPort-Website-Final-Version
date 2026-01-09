@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { submitToIndexNow, INDEXNOW_API_KEY } from '@/lib/indexnow';
+import { submitToIndexNow } from '@/lib/indexnow';
 import { getAllRoutes } from '@/data/routes';
+import { getBearerToken, isRequestFromAllowedOrigin, rateLimit } from '@/lib/security';
 
 // Force dynamic to prevent static optimization
 export const dynamic = 'force-dynamic';
@@ -11,21 +12,19 @@ export const revalidate = 0;
  * This structure helps differentiate this route from others during build optimization
  */
 class SiteSubmissionService {
-  static async validateKey(key: string): Promise<boolean> {
-    return key === INDEXNOW_API_KEY;
+  static validateAuth(request: NextRequest): boolean {
+    const expectedToken = process.env.SITE_SUBMISSION_TOKEN;
+    if (!expectedToken) return false;
+
+    const token = getBearerToken(request.headers);
+    return token === expectedToken;
   }
 
   static async processRequest(body: any) {
-    const { urls, apiKey, action } = body;
-    
-    if (!await this.validateKey(apiKey)) {
-      throw new Error('Unauthorized');
-    }
-
+    const { urls, action } = body;
     let urlsToSubmit: string[] = [];
 
     if (action === 'submit-all') {
-      console.log('Action: submit-all - Fetching all routes...');
       urlsToSubmit = getAllRoutes();
     } else {
       if (!urls || !Array.isArray(urls)) {
@@ -39,9 +38,27 @@ class SiteSubmissionService {
 }
 
 export async function POST(request: NextRequest) {
-  const timestamp = new Date().toISOString();
-  console.log(`[${timestamp}] Site Submission API route invoked`);
-  
+  const originCheck = isRequestFromAllowedOrigin(request.headers);
+  if (!originCheck.allowed) {
+    return NextResponse.json({ success: false, message: 'Forbidden' }, { status: 403 });
+  }
+
+  const limiter = rateLimit({
+    key: `site-submission:${originCheck.clientKey}`,
+    windowMs: 60_000,
+    max: 10,
+  });
+  if (!limiter.allowed) {
+    return NextResponse.json(
+      { success: false, message: 'Too Many Requests' },
+      { status: 429, headers: { 'Retry-After': String(limiter.retryAfterSeconds) } }
+    );
+  }
+
+  if (!SiteSubmissionService.validateAuth(request)) {
+    return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const body = await request.json();
     const result = await SiteSubmissionService.processRequest(body);
@@ -49,15 +66,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ 
       ...result, 
       service: 'SiteSubmission-v1',
-      timestamp 
     });
   } catch (error: any) {
-    console.error('Site Submission Error:', error);
-    
-    if (error.message === 'Unauthorized') {
-      return NextResponse.json({ success: false, message: 'Unauthorized' }, { status: 401 });
-    }
-    
     if (error.message.startsWith('Invalid payload')) {
       return NextResponse.json({ success: false, message: error.message }, { status: 400 });
     }

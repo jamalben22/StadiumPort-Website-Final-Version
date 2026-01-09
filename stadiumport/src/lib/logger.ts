@@ -11,10 +11,19 @@ interface LogEntry {
 
 class Logger {
   private log(level: LogLevel, message: string, error?: unknown, context?: Record<string, any>) {
+    const safeError =
+      error instanceof Error
+        ? { name: error.name, message: error.message }
+        : typeof error === "string"
+          ? { message: error }
+          : error
+            ? { message: "Unknown error" }
+            : undefined;
+
     const entry: LogEntry = {
       level,
       message,
-      error,
+      error: process.env.NODE_ENV === "development" ? error : safeError,
       context,
       timestamp: new Date().toISOString(),
       environment: process.env.NODE_ENV || 'development',
@@ -28,9 +37,6 @@ class Logger {
       if (error) console[level](error);
       if (context) console[level](context);
     } else {
-      // Production logging logic
-      // Ideally, send to a service like Sentry, LogRocket, or Datadog
-      // For now, structured JSON logging for Vercel/cloud logs
       console[level](JSON.stringify(entry));
     }
   }

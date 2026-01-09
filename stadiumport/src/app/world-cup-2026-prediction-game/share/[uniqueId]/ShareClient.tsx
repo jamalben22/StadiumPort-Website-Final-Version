@@ -14,6 +14,11 @@ interface ShareClientProps {
 }
 
 export default function ShareClient({ uniqueId, initialPrediction }: ShareClientProps) {
+  const nonce = useMemo(() => {
+    if (typeof document === "undefined") return undefined;
+    return document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+  }, []);
+
   // If we have initial data (from server), use it. Otherwise fetch.
   const { prediction: fetchedPrediction, loading: hookLoading, error: hookError } = usePredictionByCode(initialPrediction ? undefined : uniqueId);
 
@@ -60,6 +65,7 @@ export default function ShareClient({ uniqueId, initialPrediction }: ShareClient
     <GameLayout allowScroll={true}>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <GameHeader />

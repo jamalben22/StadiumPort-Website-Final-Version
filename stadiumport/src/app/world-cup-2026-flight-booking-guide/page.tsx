@@ -3,6 +3,7 @@ import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Flight Guide: Booking Tips & Best Routes',
@@ -47,7 +48,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FlightBookingGuidePage() {
+export default async function FlightBookingGuidePage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const slug = 'world-cup-2026-flight-booking-guide';
   const jsonLd = generateArticleSchema(slug, '/world-cup-2026-flight-booking-guide');
 
@@ -109,12 +111,13 @@ export default function FlightBookingGuidePage() {
 
   return (
     <>
-      <JsonLd schema={jsonLd} />
+      <JsonLd schema={jsonLd} nonce={nonce} />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <JsonLd schema={faqLd} />
+      <JsonLd schema={faqLd} nonce={nonce} />
       <ClientPage />
     </>
   );

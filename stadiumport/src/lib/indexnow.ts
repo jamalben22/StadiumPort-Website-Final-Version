@@ -4,9 +4,11 @@ export interface IndexNowResponse {
   statusCode?: number;
 }
 
-export const INDEXNOW_API_KEY = 'REDACTED';
-export const INDEXNOW_HOST = 'stadiumport.com';
-export const INDEXNOW_KEY_LOCATION = `https://${INDEXNOW_HOST}/${INDEXNOW_API_KEY}.txt`;
+export const INDEXNOW_API_KEY = process.env.INDEXNOW_API_KEY;
+export const INDEXNOW_HOST = process.env.INDEXNOW_HOST || 'example.com';
+export const INDEXNOW_KEY_LOCATION = INDEXNOW_API_KEY
+  ? `https://${INDEXNOW_HOST}/${INDEXNOW_API_KEY}.txt`
+  : undefined;
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 /**
@@ -14,6 +16,10 @@ export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
  * @param urls Array of URLs to submit. Must belong to stadiumport.com
  */
 export async function submitToIndexNow(urls: string[]): Promise<IndexNowResponse> {
+  if (!INDEXNOW_API_KEY) {
+    return { success: false, message: 'IndexNow is not configured', statusCode: 500 };
+  }
+
   if (!urls.length) {
     return { success: false, message: 'No URLs provided' };
   }

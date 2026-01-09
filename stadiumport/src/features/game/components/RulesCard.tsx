@@ -23,6 +23,11 @@ interface RulesCardProps {
 }
 
 export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps) => {
+  const nonce =
+    typeof document === "undefined"
+      ? undefined
+      : document.querySelector('meta[name="csp-nonce"]')?.getAttribute("content") ?? undefined;
+
   if (variant === 'short') {
     return (
       <motion.div 
@@ -100,7 +105,7 @@ export const RulesCard = React.memo(({ variant, className = '' }: RulesCardProps
   
   return (
     <div className={`relative overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-[32px] p-8 md:p-12 shadow-2xl group font-['Rajdhani'] isolate ${className}`}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
+      <script type="application/ld+json" nonce={nonce} dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }} />
       
       {/* PREMIUM BACKGROUND LAYERS */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />

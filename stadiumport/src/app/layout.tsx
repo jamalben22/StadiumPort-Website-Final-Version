@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { headers } from "next/headers";
 import { Inter, Space_Grotesk, Oswald, JetBrains_Mono } from 'next/font/google';
 import "./globals.css";
 import { Header } from "@/components/feature/Header";
@@ -32,14 +33,17 @@ export const metadata = constructMetadata({
   },
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
+
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable} ${spaceGrotesk.variable} ${oswald.variable} ${jetbrains.variable}`}>
       <head>
+        <meta name="csp-nonce" content={nonce} />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
@@ -49,6 +53,7 @@ export default function RootLayout({
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855" 
           strategy="afterInteractive"
+          nonce={nonce}
         />
       </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
@@ -56,8 +61,9 @@ export default function RootLayout({
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-7GLKVF44RM" 
           strategy="afterInteractive" 
+          nonce={nonce}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="afterInteractive" nonce={nonce}>
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -71,8 +77,8 @@ export default function RootLayout({
           <MicrosoftClarity />
           <CookieConsent />
           <AnalyticsTracker pageId="root" />
-          <JsonLd schema={generateOrganizationSchema()} />
-          <JsonLd schema={generateWebsiteSchema()} />
+          <JsonLd schema={generateOrganizationSchema()} nonce={nonce} />
+          <JsonLd schema={generateWebsiteSchema()} nonce={nonce} />
           <WebVitalsReporter />
           <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 px-4 py-2 bg-blue-600 text-slate-900 dark:text-white rounded-md">
             Skip to content

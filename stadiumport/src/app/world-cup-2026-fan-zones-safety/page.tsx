@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import FanZoneSafetyClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Fan Zone & Crowd Safety: World Cup 2026 Guide',
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function FanZoneSafetyPage() {
+export default async function FanZoneSafetyPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema('fan-zone-crowd-safety-world-cup-2026', '/world-cup-2026-fan-zones-safety');
   
   const breadcrumbSchema = generateBreadcrumbSchema([
@@ -92,14 +94,17 @@ export default function FanZoneSafetyPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <FanZoneSafetyClientPage />

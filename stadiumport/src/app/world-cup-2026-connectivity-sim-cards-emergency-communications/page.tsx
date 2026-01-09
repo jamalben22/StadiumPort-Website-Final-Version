@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import ConnectivityClientPage from './ClientPage';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Staying Connected: SIM Cards & Emergency Comms 2026',
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ConnectivityPage() {
+export default async function ConnectivityPage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const articleSchema = generateArticleSchema(
     'world-cup-2026-connectivity-sim-cards-emergency-communications',
     '/world-cup-2026-connectivity-sim-cards-emergency-communications'
@@ -96,14 +98,17 @@ export default function ConnectivityPage() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <ConnectivityClientPage />

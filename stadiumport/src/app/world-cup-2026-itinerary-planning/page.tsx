@@ -4,6 +4,7 @@ import ClientPage from './ClientPage';
 import { contentRegistry } from '@/data/content-registry';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Itinerary: 1 & 2 Week Trip Plans for Fans',
@@ -45,7 +46,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const slug = 'world-cup-2026-itinerary-planning';
   const jsonLd = generateArticleSchema(slug, `/${slug}`);
   
@@ -115,12 +117,13 @@ export default function Page() {
 
   return (
     <>
-      <JsonLd schema={jsonLd} />
+      <JsonLd schema={jsonLd} nonce={nonce} />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <JsonLd schema={faqLd} />
+      <JsonLd schema={faqLd} nonce={nonce} />
       <ClientPage />
     </>
   );

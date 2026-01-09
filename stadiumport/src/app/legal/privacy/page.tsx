@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Privacy Policy – stadiumport',
@@ -22,7 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+ const nonce = (await headers()).get("x-nonce") ?? undefined;
  const jsonLd = {
  "@context": "https://schema.org",
  "@type": "WebPage",
@@ -54,10 +56,12 @@ export default function PrivacyPage() {
  <>
  <script
  type="application/ld+json"
+ nonce={nonce}
  dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
  />
  <script
  type="application/ld+json"
+ nonce={nonce}
  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
  />
  <ClientPage />

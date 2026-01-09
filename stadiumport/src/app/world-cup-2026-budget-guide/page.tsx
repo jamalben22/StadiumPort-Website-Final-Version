@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function BudgetGuidePage() {
+export default async function BudgetGuidePage() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const jsonLd = generateArticleSchema('world-cup-2026-budget-guide', '/world-cup-2026-budget-guide');
 
   const breadcrumbJsonLd = {
@@ -111,12 +113,13 @@ export default function BudgetGuidePage() {
 
   return (
     <>
-      <JsonLd schema={jsonLd} />
+      <JsonLd schema={jsonLd} nonce={nonce} />
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <JsonLd schema={faqLd} />
+      <JsonLd schema={faqLd} nonce={nonce} />
       <ClientPage />
     </>
   );

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { headers } from "next/headers";
 
 export const metadata: Metadata = {
   title: 'Play World Cup 2026 Predictor: Win $1k & Official Jersey',
@@ -34,7 +35,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
+export default async function Page() {
+  const nonce = (await headers()).get("x-nonce") ?? undefined;
   const schemas = [
     {
       "@context": "https://schema.org",
@@ -211,10 +213,12 @@ export default function Page() {
     <>
       <script
         type="application/ld+json"
+        nonce={nonce}
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <script
  type="application/ld+json"
+ nonce={nonce}
  dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
  />
  <ClientPage />
