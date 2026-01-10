@@ -69,7 +69,8 @@ export default function Page() {
       "priceCurrency": "USD",
       "lowPrice": 60,
       "highPrice": 2030,
-      "availability": "https://schema.org/PreOrder"
+      "availability": "https://schema.org/PreOrder",
+      "validFrom": "2025-09-01T10:00:00Z"
     }
   };
 

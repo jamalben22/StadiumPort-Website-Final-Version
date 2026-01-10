@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupBClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group B Guide: Schedule, Teams & Travel Strategy',
@@ -40,7 +40,20 @@ export default function GroupBPage() {
 
   const articleSchema = generateArticleSchema('group-b', pageUrl);
 
- const breadcrumbSchema = {
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group B Matches',
+    startDate: '2026-06-12',
+    endDate: '2026-06-24',
+    location: {
+      name: 'Group B Host Cities',
+      address: 'Toronto, SF Bay Area, Los Angeles, Vancouver, Seattle',
+      country: 'CA',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description: 'Group B fixtures played in Toronto, SF Bay Area, Los Angeles, Vancouver, and Seattle during the FIFA World Cup 2026 group stage.'
+  });
+
+  const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
@@ -104,124 +117,96 @@ export default function GroupBPage() {
   ]
  };
 
- const groupMatchesSchema = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "FIFA World Cup 2026 Group B Matches",
-  "itemListElement": [
-   {
-    "@type": "ListItem",
-    "position": 1,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "Canada vs UEFA Play-off A Winner (Group B)",
-     "startDate": "2026-06-12T15:00:00-04:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "Toronto Stadium",
-      "address": { "@type": "PostalAddress", "addressLocality": "Toronto", "addressCountry": "CA" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
+  const groupMatches = [
+    {
+      name: "Canada vs UEFA Play-off A Winner (Group B)",
+      startDate: "2026-06-12T15:00:00-04:00",
+      endDate: "2026-06-12T17:00:00-04:00",
+      location: { name: "Toronto Stadium", address: "Toronto", country: "CA" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at Toronto Stadium in Toronto.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Canada", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off A Winner" }
+      ]
+    },
+    {
+      name: "Qatar vs Switzerland (Group B)",
+      startDate: "2026-06-13T12:00:00-07:00",
+      endDate: "2026-06-13T14:00:00-07:00",
+      location: { name: "San Francisco Bay Area Stadium", address: "Santa Clara, CA", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at San Francisco Bay Area Stadium in Santa Clara.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Qatar", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar" },
+        { "@type": "SportsTeam", "name": "Switzerland", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland" }
+      ]
+    },
+    {
+      name: "Switzerland vs UEFA Play-off A Winner (Group B)",
+      startDate: "2026-06-18T12:00:00-07:00",
+      endDate: "2026-06-18T14:00:00-07:00",
+      location: { name: "Los Angeles Stadium", address: "Inglewood, CA", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at Los Angeles Stadium in Inglewood.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Switzerland", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off A Winner" }
+      ]
+    },
+    {
+      name: "Canada vs Qatar (Group B)",
+      startDate: "2026-06-18T15:00:00-07:00",
+      endDate: "2026-06-18T17:00:00-07:00",
+      location: { name: "BC Place", address: "Vancouver, BC", country: "CA" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at BC Place in Vancouver.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Canada", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada" },
+        { "@type": "SportsTeam", "name": "Qatar", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar" }
+      ]
+    },
+    {
+      name: "Switzerland vs Canada (Group B)",
+      startDate: "2026-06-24T12:00:00-07:00",
+      endDate: "2026-06-24T14:00:00-07:00",
+      location: { name: "BC Place", address: "Vancouver, BC", country: "CA" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at BC Place in Vancouver.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Switzerland", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland" },
+        { "@type": "SportsTeam", "name": "Canada", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada" }
+      ]
+    },
+    {
+      name: "UEFA Play-off A Winner vs Qatar (Group B)",
+      startDate: "2026-06-24T12:00:00-07:00",
+      endDate: "2026-06-24T14:00:00-07:00",
+      location: { name: "Seattle Stadium", address: "Seattle, WA", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group B match at Seattle Stadium in Seattle.",
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off A Winner" },
+        { "@type": "SportsTeam", "name": "Qatar", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar" }
+      ]
     }
-   },
-   {
-    "@type": "ListItem",
-    "position": 2,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "Qatar vs Switzerland (Group B)",
-     "startDate": "2026-06-13T12:00:00-07:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "San Francisco Bay Area Stadium",
-      "address": { "@type": "PostalAddress", "addressLocality": "Santa Clara", "addressRegion": "CA", "addressCountry": "US" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-    }
-   },
-   {
-    "@type": "ListItem",
-    "position": 3,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "Switzerland vs UEFA Play-off A Winner (Group B)",
-     "startDate": "2026-06-18T12:00:00-07:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "Los Angeles Stadium",
-      "address": { "@type": "PostalAddress", "addressLocality": "Inglewood", "addressRegion": "CA", "addressCountry": "US" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-    }
-   },
-   {
-    "@type": "ListItem",
-    "position": 4,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "Canada vs Qatar (Group B)",
-     "startDate": "2026-06-18T15:00:00-07:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "BC Place",
-      "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-    }
-   },
-   {
-    "@type": "ListItem",
-    "position": 5,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "Switzerland vs Canada (Group B)",
-     "startDate": "2026-06-24T12:00:00-07:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "BC Place",
-      "address": { "@type": "PostalAddress", "addressLocality": "Vancouver", "addressRegion": "BC", "addressCountry": "CA" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-    }
-   },
-   {
-    "@type": "ListItem",
-    "position": 6,
-    "item": {
-     "@type": "SportsEvent",
-     "name": "UEFA Play-off A Winner vs Qatar (Group B)",
-     "startDate": "2026-06-24T12:00:00-07:00",
-     "eventStatus": "https://schema.org/EventScheduled",
-     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-     "location": {
-      "@type": "Place",
-      "name": "Seattle Stadium",
-      "address": { "@type": "PostalAddress", "addressLocality": "Seattle", "addressRegion": "WA", "addressCountry": "US" }
-     },
-     "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-    }
-   }
-  ]
- };
+  ];
+
+  const groupMatchesSchema = generateMatchListSchema("Group B", groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
  return (
-  <>
-   <JsonLd schema={articleSchema} />
-   <JsonLd schema={breadcrumbSchema} />
-   <JsonLd schema={faqSchema} />
-   <JsonLd schema={groupMatchesSchema} />
-   <GroupBClientPage />
-  </>
- );
+    <>
+     <JsonLd schema={articleSchema} />
+     <JsonLd schema={breadcrumbSchema} />
+     <JsonLd schema={faqSchema} />
+     <JsonLd schema={groupEventSchema} />
+     <JsonLd schema={groupMatchesSchema} />
+     {matchEventSchemas.map((schema, index) => (
+       <JsonLd key={`match-event-${index}`} schema={schema} />
+     ))}
+     <GroupBClientPage />
+    </>
+   );
 }
 

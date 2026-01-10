@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupIClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles',
@@ -54,56 +54,84 @@ export default function GroupIPage() {
       'Group I fixtures played in Los Angeles (Inglewood) and the San Francisco Bay Area (Santa Clara) during the FIFA World Cup 2026 group stage.',
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'Senegal vs Norway (Group I) — SF Bay Area',
       startDate: '2026-06-14T12:00:00-07:00',
       endDate: '2026-06-14T14:00:00-07:00',
       location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at San Francisco Bay Area Stadium in Santa Clara, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Senegal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal" },
+        { "@type": "SportsTeam", "name": "Norway", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/norway" }
+      ]
+    },
+    {
       name: 'France vs Play-off 2 Winner (Group I) — Los Angeles',
       startDate: '2026-06-14T18:00:00-07:00',
       endDate: '2026-06-14T20:00:00-07:00',
       location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at Los Angeles Stadium in Inglewood, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "France", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france" },
+        { "@type": "SportsTeam", "name": "Play-off 2 Winner" }
+      ]
+    },
+    {
       name: 'France vs Norway (Group I) — SF Bay Area',
       startDate: '2026-06-20T12:00:00-07:00',
       endDate: '2026-06-20T14:00:00-07:00',
       location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at San Francisco Bay Area Stadium in Santa Clara, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "France", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france" },
+        { "@type": "SportsTeam", "name": "Norway", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/norway" }
+      ]
+    },
+    {
       name: 'Senegal vs Play-off 2 Winner (Group I) — Los Angeles',
       startDate: '2026-06-20T18:00:00-07:00',
       endDate: '2026-06-20T20:00:00-07:00',
       location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at Los Angeles Stadium in Inglewood, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Senegal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal" },
+        { "@type": "SportsTeam", "name": "Play-off 2 Winner" }
+      ]
+    },
+    {
       name: 'Norway vs Play-off 2 Winner (Group I) — SF Bay Area',
       startDate: '2026-06-26T12:00:00-07:00',
       endDate: '2026-06-26T14:00:00-07:00',
       location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at San Francisco Bay Area Stadium in Santa Clara, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Norway", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/norway" },
+        { "@type": "SportsTeam", "name": "Play-off 2 Winner" }
+      ]
+    },
+    {
       name: 'France vs Senegal (Group I) — Los Angeles',
       startDate: '2026-06-26T20:00:00-07:00',
       endDate: '2026-06-26T22:00:00-07:00',
       location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group I match at Los Angeles Stadium in Inglewood, California.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "France", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france" },
+        { "@type": "SportsTeam", "name": "Senegal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal" }
+      ]
+    }
   ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group I', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -159,8 +187,9 @@ export default function GroupIPage() {
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
       {matchEventSchemas.map((schema, index) => (
-        <JsonLd key={index} schema={schema} />
+        <JsonLd key={`match-event-${index}`} schema={schema} />
       ))}
       <GroupIClientPage />
     </>

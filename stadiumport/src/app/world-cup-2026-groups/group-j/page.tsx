@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupJClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group J Travel Guide: Kansas City, Dallas & San Francisco',
@@ -104,12 +104,94 @@ export default function GroupJPage() {
       'Group J fixtures hosted across Kansas City, Dallas/Arlington, and the San Francisco Bay Area (Santa Clara) during the FIFA World Cup 2026 group stage.',
   });
 
+  const groupMatches = [
+    {
+      name: 'Argentina vs Algeria (Group J) — Kansas City',
+      startDate: '2026-06-11T13:00:00-05:00',
+      endDate: '2026-06-11T15:00:00-05:00',
+      location: { name: 'Arrowhead Stadium', address: 'Kansas City, MO', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at Arrowhead Stadium in Kansas City, Missouri.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Argentina", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina" },
+        { "@type": "SportsTeam", "name": "Algeria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/algeria" }
+      ]
+    },
+    {
+      name: 'Austria vs Jordan (Group J) — Dallas/Arlington',
+      startDate: '2026-06-12T19:00:00-05:00',
+      endDate: '2026-06-12T21:00:00-05:00',
+      location: { name: 'AT&T Stadium', address: 'Arlington, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at AT&T Stadium in Arlington, Texas.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Austria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/austria" },
+        { "@type": "SportsTeam", "name": "Jordan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jordan" }
+      ]
+    },
+    {
+      name: 'Argentina vs Austria (Group J) — SF Bay Area',
+      startDate: '2026-06-16T15:00:00-07:00',
+      endDate: '2026-06-16T17:00:00-07:00',
+      location: { name: 'Levi\'s Stadium', address: 'Santa Clara, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at Levi\'s Stadium in Santa Clara, California.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Argentina", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina" },
+        { "@type": "SportsTeam", "name": "Austria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/austria" }
+      ]
+    },
+    {
+      name: 'Algeria vs Jordan (Group J) — Kansas City',
+      startDate: '2026-06-17T19:00:00-05:00',
+      endDate: '2026-06-17T21:00:00-05:00',
+      location: { name: 'Arrowhead Stadium', address: 'Kansas City, MO', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at Arrowhead Stadium in Kansas City, Missouri.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Algeria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/algeria" },
+        { "@type": "SportsTeam", "name": "Jordan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jordan" }
+      ]
+    },
+    {
+      name: 'Jordan vs Argentina (Group J) — Dallas/Arlington',
+      startDate: '2026-06-21T17:00:00-05:00',
+      endDate: '2026-06-21T19:00:00-05:00',
+      location: { name: 'AT&T Stadium', address: 'Arlington, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at AT&T Stadium in Arlington, Texas.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Jordan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/jordan" },
+        { "@type": "SportsTeam", "name": "Argentina", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina" }
+      ]
+    },
+    {
+      name: 'Algeria vs Austria (Group J) — SF Bay Area',
+      startDate: '2026-06-22T19:00:00-07:00',
+      endDate: '2026-06-22T21:00:00-07:00',
+      location: { name: 'Levi\'s Stadium', address: 'Santa Clara, CA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group J match at Levi\'s Stadium in Santa Clara, California.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Algeria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/algeria" },
+        { "@type": "SportsTeam", "name": "Austria", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/austria" }
+      ]
+    },
+  ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group J', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
   return (
     <>
       <JsonLd schema={articleSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={`match-event-${index}`} schema={schema} />
+      ))}
       <GroupJClientPage faqs={faqs} />
     </>
   );

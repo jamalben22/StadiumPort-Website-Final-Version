@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupKClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel Strategy',
@@ -96,56 +96,83 @@ export default function GroupKPage() {
       'Group K fixtures played in Mexico City, Houston, Atlanta, and Miami during the FIFA World Cup 2026 group stage.',
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'Colombia vs PO 1 (Group K) — Houston',
       startDate: '2026-06-16T20:00:00-05:00',
       endDate: '2026-06-16T22:00:00-05:00',
       location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at NRG Stadium in Houston, Texas.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Colombia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" }
+      ]
+    },
+    {
       name: 'Portugal vs Uzbekistan (Group K) — Mexico City',
       startDate: '2026-06-17T18:00:00-06:00',
       endDate: '2026-06-17T20:00:00-06:00',
       location: { name: 'Estadio Azteca', address: 'Mexico City', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at Estadio Azteca in Mexico City.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Portugal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal" },
+        { "@type": "SportsTeam", "name": "Uzbekistan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan" }
+      ]
+    },
+    {
       name: 'Portugal vs Colombia (Group K) — Atlanta',
       startDate: '2026-06-22T21:00:00-04:00',
       endDate: '2026-06-22T23:00:00-04:00',
       location: { name: 'Mercedes-Benz Stadium', address: 'Atlanta, GA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at Mercedes-Benz Stadium in Atlanta, Georgia.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Portugal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal" },
+        { "@type": "SportsTeam", "name": "Colombia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia" }
+      ]
+    },
+    {
       name: 'Uzbekistan vs PO 1 (Group K) — Miami',
       startDate: '2026-06-23T15:00:00-04:00',
       endDate: '2026-06-23T17:00:00-04:00',
       location: { name: 'Hard Rock Stadium', address: 'Miami Gardens, FL', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at Hard Rock Stadium in Miami Gardens, Florida.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Uzbekistan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" }
+      ]
+    },
+    {
       name: 'Portugal vs PO 1 (Group K) — Houston',
       startDate: '2026-06-27T18:00:00-05:00',
       endDate: '2026-06-27T20:00:00-05:00',
       location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at NRG Stadium in Houston, Texas.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Portugal", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" }
+      ]
+    },
+    {
       name: 'Colombia vs Uzbekistan (Group K) — Mexico City',
       startDate: '2026-06-27T20:00:00-06:00',
       endDate: '2026-06-27T22:00:00-06:00',
       location: { name: 'Estadio Azteca', address: 'Mexico City', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group K match at Estadio Azteca in Mexico City.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "Colombia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia" },
+        { "@type": "SportsTeam", "name": "Uzbekistan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan" }
+      ]
+    },
   ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group K', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
   return (
     <>
@@ -153,8 +180,9 @@ export default function GroupKPage() {
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
       {matchEventSchemas.map((schema, index) => (
-        <JsonLd key={index} schema={schema} />
+        <JsonLd key={`match-event-${index}`} schema={schema} />
       ))}
       <GroupKClientPage />
     </>

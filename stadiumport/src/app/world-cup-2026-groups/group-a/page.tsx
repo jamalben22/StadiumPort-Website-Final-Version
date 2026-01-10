@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupAClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
@@ -53,58 +53,85 @@ export default function GroupAPage() {
     description: 'Group A fixtures played in Mexico City, Guadalajara, Monterrey, and Atlanta during the FIFA World Cup 2026 group stage.'
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'Mexico vs South Africa (Group A) — Mexico City',
       startDate: '2026-06-11T13:00:00-06:00',
       endDate: '2026-06-11T15:00:00-06:00',
       location: { name: 'Mexico City Stadium', address: 'Mexico City', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Mexico City Stadium in Mexico City.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Mexico", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico" },
+        { "@type": "SportsTeam", "name": "South Africa", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa" }
+      ]
+    },
+    {
       name: 'Korea Republic vs UEFA Play-off D (Group A) — Guadalajara',
       startDate: '2026-06-11T20:00:00-06:00',
       endDate: '2026-06-11T22:00:00-06:00',
       location: { name: 'Estadio Guadalajara', address: 'Guadalajara', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Estadio Guadalajara in Guadalajara.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Korea Republic", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic" },
+        { "@type": "SportsTeam", "name": "UEFA Play-off D", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026" }
+      ]
+    },
+    {
       name: 'UEFA Play-off D vs South Africa (Group A) — Atlanta',
       startDate: '2026-06-18T12:00:00-04:00',
       endDate: '2026-06-18T14:00:00-04:00',
       location: { name: 'Atlanta Stadium', address: 'Atlanta, GA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Atlanta Stadium in Atlanta, Georgia.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off D", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026" },
+        { "@type": "SportsTeam", "name": "South Africa", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa" }
+      ]
+    },
+    {
       name: 'Mexico vs Korea Republic (Group A) — Guadalajara',
       startDate: '2026-06-18T19:00:00-06:00',
       endDate: '2026-06-18T21:00:00-06:00',
       location: { name: 'Estadio Guadalajara', address: 'Guadalajara', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Estadio Guadalajara in Guadalajara.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Mexico", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico" },
+        { "@type": "SportsTeam", "name": "Korea Republic", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic" }
+      ]
+    },
+    {
       name: 'UEFA Play-off D vs Mexico (Group A) — Mexico City',
       startDate: '2026-06-24T19:00:00-06:00',
       endDate: '2026-06-24T21:00:00-06:00',
       location: { name: 'Mexico City Stadium', address: 'Mexico City', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Mexico City Stadium in Mexico City.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off D", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026" },
+        { "@type": "SportsTeam", "name": "Mexico", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico" }
+      ]
+    },
+    {
       name: 'South Africa vs Korea Republic (Group A) — Monterrey',
       startDate: '2026-06-24T19:00:00-06:00',
       endDate: '2026-06-24T21:00:00-06:00',
       location: { name: 'Estadio Monterrey', address: 'Monterrey', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group A match at Estadio Monterrey in Monterrey.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "South Africa", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa" },
+        { "@type": "SportsTeam", "name": "Korea Republic", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic" }
+      ]
+    }
   ];
 
- const breadcrumbSchema = {
+  const groupMatchesSchema = generateMatchListSchema('Group A', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
+  const breadcrumbSchema = {
  "@context": "https://schema.org",
  "@type": "BreadcrumbList",
  "itemListElement": [
@@ -153,16 +180,17 @@ export default function GroupAPage() {
  };
 
  return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <JsonLd schema={groupEventSchema} />
- {matchEventSchemas.map((schema, index) => (
-   <JsonLd key={index} schema={schema} />
- ))}
- <GroupAClientPage />
- </>
- );
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={`match-event-${index}`} schema={schema} />
+      ))}
+      <GroupAClientPage />
+    </>
+  );
 }
 

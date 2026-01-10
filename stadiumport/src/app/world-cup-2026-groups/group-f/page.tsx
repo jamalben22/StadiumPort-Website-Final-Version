@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupFClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group F Guide: Schedule, Teams & Travel Strategy',
@@ -123,122 +123,107 @@ export default function GroupFPage() {
     ]
   };
 
-  const groupMatchesSchema = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "FIFA World Cup 2026 Group F Matches",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "Netherlands vs Japan (Group F)",
-          "startDate": "2026-06-14T15:00:00-05:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Dallas Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Arlington", "addressRegion": "TX", "addressCountry": "US" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "UEFA Play-off B Winner vs Tunisia (Group F)",
-          "startDate": "2026-06-14T20:00:00-06:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Monterrey Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Guadalupe", "addressRegion": "NL", "addressCountry": "MX" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "UEFA Play-off B Winner vs Netherlands (Group F)",
-          "startDate": "2026-06-20T12:00:00-05:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Houston Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Houston", "addressRegion": "TX", "addressCountry": "US" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "Tunisia vs Japan (Group F)",
-          "startDate": "2026-06-20T22:00:00-06:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Monterrey Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Guadalupe", "addressRegion": "NL", "addressCountry": "MX" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "UEFA Play-off B Winner vs Japan (Group F)",
-          "startDate": "2026-06-25T18:00:00-05:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Dallas Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Arlington", "addressRegion": "TX", "addressCountry": "US" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "item": {
-          "@type": "SportsEvent",
-          "name": "Tunisia vs Netherlands (Group F)",
-          "startDate": "2026-06-25T18:00:00-05:00",
-          "eventStatus": "https://schema.org/EventScheduled",
-          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-          "location": {
-            "@type": "Place",
-            "name": "Kansas City Stadium",
-            "address": { "@type": "PostalAddress", "addressLocality": "Kansas City", "addressRegion": "MO", "addressCountry": "US" }
-          },
-          "organizer": { "@type": "Organization", "name": "FIFA", "url": "https://www.fifa.com" }
-        }
-      }
-    ]
-  };
+  const groupMatches = [
+    {
+      name: "Netherlands vs Japan (Group F)",
+      startDate: "2026-06-14T15:00:00-05:00",
+      endDate: "2026-06-14T17:00:00-05:00",
+      location: { name: "Dallas Stadium", address: "Arlington, TX", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Dallas Stadium in Arlington.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Netherlands", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands" },
+        { "@type": "SportsTeam", "name": "Japan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan" }
+      ]
+    },
+    {
+      name: "UEFA Play-off B Winner vs Tunisia (Group F)",
+      startDate: "2026-06-14T20:00:00-06:00",
+      endDate: "2026-06-14T22:00:00-06:00",
+      location: { name: "Monterrey Stadium", address: "Guadalupe, NL", country: "MX" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Monterrey Stadium in Guadalupe.",
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off B Winner" },
+        { "@type": "SportsTeam", "name": "Tunisia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/tunisia" }
+      ]
+    },
+    {
+      name: "UEFA Play-off B Winner vs Netherlands (Group F)",
+      startDate: "2026-06-20T12:00:00-05:00",
+      endDate: "2026-06-20T14:00:00-05:00",
+      location: { name: "Houston Stadium", address: "Houston, TX", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Houston Stadium in Houston.",
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off B Winner" },
+        { "@type": "SportsTeam", "name": "Netherlands", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands" }
+      ]
+    },
+    {
+      name: "Tunisia vs Japan (Group F)",
+      startDate: "2026-06-20T22:00:00-06:00",
+      endDate: "2026-06-21T00:00:00-06:00",
+      location: { name: "Monterrey Stadium", address: "Guadalupe, NL", country: "MX" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Monterrey Stadium in Guadalupe.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Tunisia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/tunisia" },
+        { "@type": "SportsTeam", "name": "Japan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan" }
+      ]
+    },
+    {
+      name: "UEFA Play-off B Winner vs Japan (Group F)",
+      startDate: "2026-06-25T18:00:00-05:00",
+      endDate: "2026-06-25T20:00:00-05:00",
+      location: { name: "Dallas Stadium", address: "Arlington, TX", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Dallas Stadium in Arlington.",
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off B Winner" },
+        { "@type": "SportsTeam", "name": "Japan", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/japan" }
+      ]
+    },
+    {
+      name: "Tunisia vs Netherlands (Group F)",
+      startDate: "2026-06-25T18:00:00-05:00",
+      endDate: "2026-06-25T20:00:00-05:00",
+      location: { name: "Kansas City Stadium", address: "Kansas City, MO", country: "US" },
+      image: "/assets/wc26-groups-og.jpg",
+      description: "Group F match at Kansas City Stadium in Kansas City.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Tunisia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/tunisia" },
+        { "@type": "SportsTeam", "name": "Netherlands", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands" }
+      ]
+    }
+  ];
+
+  const groupMatchesSchema = generateMatchListSchema("Group F", groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
+  const groupEventSchema = generateEventSchema({
+    name: 'FIFA World Cup 2026 Group F Matches',
+    startDate: '2026-06-14',
+    endDate: '2026-06-25',
+    location: {
+      name: 'Group F Host Cities',
+      address: 'Dallas (Arlington), Houston, Kansas City, Monterrey',
+      country: 'US, MX',
+    },
+    image: '/assets/wc26-groups-og.jpg',
+    description: 'Group F fixtures played in Dallas, Houston, Kansas City, and Monterrey during the FIFA World Cup 2026 group stage.'
+  });
 
   return (
     <>
       <JsonLd schema={articleSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
       <JsonLd schema={groupMatchesSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={`match-event-${index}`} schema={schema} />
+      ))}
       <GroupFClientPage />
     </>
   );

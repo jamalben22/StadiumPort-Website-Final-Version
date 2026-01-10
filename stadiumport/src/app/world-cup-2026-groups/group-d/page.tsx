@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupDClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
@@ -66,56 +66,83 @@ export default function GroupDPage() {
       'Group D fixtures played in Los Angeles, Seattle, the San Francisco Bay Area (Santa Clara), and Vancouver during the FIFA World Cup 2026 group stage.',
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'United States vs Paraguay (Group D) — Los Angeles',
       startDate: '2026-06-12T18:00:00-07:00',
       endDate: '2026-06-12T20:00:00-07:00',
       location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at Los Angeles Stadium in Inglewood, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "United States", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa" },
+        { "@type": "SportsTeam", "name": "Paraguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay" }
+      ]
+    },
+    {
       name: 'UEFA Play-off winner vs Australia (Group D) — Vancouver',
       startDate: '2026-06-13T21:00:00-07:00',
       endDate: '2026-06-13T23:00:00-07:00',
       location: { name: 'BC Place Vancouver', address: 'Vancouver, BC', country: 'CA' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at BC Place in Vancouver, British Columbia.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" },
+        { "@type": "SportsTeam", "name": "Australia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia" }
+      ]
+    },
+    {
       name: 'UEFA Play-off winner vs Paraguay (Group D) — SF Bay Area',
       startDate: '2026-06-19T21:00:00-07:00',
       endDate: '2026-06-19T23:00:00-07:00',
       location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at San Francisco Bay Area Stadium in Santa Clara, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" },
+        { "@type": "SportsTeam", "name": "Paraguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay" }
+      ]
+    },
+    {
       name: 'United States vs Australia (Group D) — Seattle',
       startDate: '2026-06-19T12:00:00-07:00',
       endDate: '2026-06-19T14:00:00-07:00',
       location: { name: 'Seattle Stadium', address: 'Seattle, WA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at Seattle Stadium in Seattle, Washington.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "United States", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa" },
+        { "@type": "SportsTeam", "name": "Australia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia" }
+      ]
+    },
+    {
       name: 'UEFA Play-off winner vs United States (Group D) — Los Angeles',
       startDate: '2026-06-25T19:00:00-07:00',
       endDate: '2026-06-25T21:00:00-07:00',
       location: { name: 'Los Angeles Stadium', address: 'Inglewood, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at Los Angeles Stadium in Inglewood, California.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "UEFA Play-off Winner" },
+        { "@type": "SportsTeam", "name": "United States", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa" }
+      ]
+    },
+    {
       name: 'Paraguay vs Australia (Group D) — SF Bay Area',
       startDate: '2026-06-25T19:00:00-07:00',
       endDate: '2026-06-25T21:00:00-07:00',
       location: { name: 'San Francisco Bay Area Stadium', address: 'Santa Clara, CA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group D match at San Francisco Bay Area Stadium in Santa Clara, California.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "Paraguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay" },
+        { "@type": "SportsTeam", "name": "Australia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia" }
+      ]
+    }
   ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group D', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",
@@ -190,16 +217,17 @@ export default function GroupDPage() {
  };
 
  return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <JsonLd schema={groupEventSchema} />
- {matchEventSchemas.map((schema, index) => (
-   <JsonLd key={index} schema={schema} />
- ))}
- <GroupDClientPage />
- </>
- );
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={`match-event-${index}`} schema={schema} />
+      ))}
+      <GroupDClientPage />
+    </>
+  );
 }
 

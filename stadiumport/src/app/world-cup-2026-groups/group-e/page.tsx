@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupEClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
@@ -58,6 +58,84 @@ export default function GroupEPage() {
 
   const articleSchema = generateArticleSchema('group-e', pageUrl);
 
+  const groupMatches = [
+    {
+      name: "Côte d'Ivoire vs Ecuador (Group E) — Philadelphia",
+      startDate: '2026-06-14T19:00:00-04:00',
+      endDate: '2026-06-14T21:00:00-04:00',
+      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Côte d'Ivoire", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-divoire" },
+        { "@type": "SportsTeam", "name": "Ecuador", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador" }
+      ]
+    },
+    {
+      name: 'Germany vs Curaçao (Group E) — Houston',
+      startDate: '2026-06-14T12:00:00-05:00',
+      endDate: '2026-06-14T14:00:00-05:00',
+      location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at NRG Stadium in Houston, Texas.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Germany", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany" },
+        { "@type": "SportsTeam", "name": "Curaçao", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/curacao" }
+      ]
+    },
+    {
+      name: "Germany vs Côte d'Ivoire (Group E) — Toronto",
+      startDate: '2026-06-20T16:00:00-04:00',
+      endDate: '2026-06-20T18:00:00-04:00',
+      location: { name: 'BMO Field', address: 'Toronto, ON', country: 'CA' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at BMO Field in Toronto, Ontario.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Germany", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany" },
+        { "@type": "SportsTeam", "name": "Côte d'Ivoire", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-divoire" }
+      ]
+    },
+    {
+      name: 'Ecuador vs Curaçao (Group E) — Kansas City',
+      startDate: '2026-06-20T19:00:00-05:00',
+      endDate: '2026-06-20T21:00:00-05:00',
+      location: { name: 'Arrowhead Stadium', address: 'Kansas City, MO', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at Arrowhead Stadium in Kansas City, Missouri.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Ecuador", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador" },
+        { "@type": "SportsTeam", "name": "Curaçao", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/curacao" }
+      ]
+    },
+    {
+      name: "Curaçao vs Côte d'Ivoire (Group E) — Philadelphia",
+      startDate: '2026-06-25T16:00:00-04:00',
+      endDate: '2026-06-25T18:00:00-04:00',
+      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
+      performer: [
+        { "@type": "SportsTeam", "name": "Curaçao", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/curacao" },
+        { "@type": "SportsTeam", "name": "Côte d'Ivoire", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-divoire" }
+      ]
+    },
+    {
+      name: 'Ecuador vs Germany (Group E) — New York/New Jersey',
+      startDate: '2026-06-25T16:00:00-04:00',
+      endDate: '2026-06-25T18:00:00-04:00',
+      location: { name: 'MetLife Stadium', address: 'East Rutherford, NJ', country: 'US' },
+      image: '/assets/wc26-groups-og.jpg',
+      description: 'Group E match at MetLife Stadium in East Rutherford, New Jersey.',
+      performer: [
+        { "@type": "SportsTeam", "name": "Ecuador", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador" },
+        { "@type": "SportsTeam", "name": "Germany", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany" }
+      ]
+    },
+  ];
+
+  const groupMatchesSchema = generateMatchListSchema("Group E", groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
   const groupEventSchema = generateEventSchema({
     name: 'FIFA World Cup 2026 Group E Matches',
     startDate: '2026-06-14',
@@ -71,57 +149,6 @@ export default function GroupEPage() {
     description:
       'Group E fixtures played in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region during the FIFA World Cup 2026 group stage.',
   });
-
-  const matchEventSchemas = [
-    generateEventSchema({
-      name: "Côte d'Ivoire vs Ecuador (Group E) — Philadelphia",
-      startDate: '2026-06-14T19:00:00-04:00',
-      endDate: '2026-06-14T21:00:00-04:00',
-      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
-    }),
-    generateEventSchema({
-      name: 'Germany vs Curaçao (Group E) — Houston',
-      startDate: '2026-06-14T12:00:00-05:00',
-      endDate: '2026-06-14T14:00:00-05:00',
-      location: { name: 'NRG Stadium', address: 'Houston, TX', country: 'US' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: 'Group E match at NRG Stadium in Houston, Texas.',
-    }),
-    generateEventSchema({
-      name: "Germany vs Côte d'Ivoire (Group E) — Toronto",
-      startDate: '2026-06-20T16:00:00-04:00',
-      endDate: '2026-06-20T18:00:00-04:00',
-      location: { name: 'BMO Field', address: 'Toronto, ON', country: 'CA' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: "Group E match at BMO Field in Toronto, Ontario.",
-    }),
-    generateEventSchema({
-      name: 'Ecuador vs Curaçao (Group E) — Kansas City',
-      startDate: '2026-06-20T19:00:00-05:00',
-      endDate: '2026-06-20T21:00:00-05:00',
-      location: { name: 'Arrowhead Stadium', address: 'Kansas City, MO', country: 'US' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: 'Group E match at Arrowhead Stadium in Kansas City, Missouri.',
-    }),
-    generateEventSchema({
-      name: "Curaçao vs Côte d'Ivoire (Group E) — Philadelphia",
-      startDate: '2026-06-25T16:00:00-04:00',
-      endDate: '2026-06-25T18:00:00-04:00',
-      location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: "Group E match at Lincoln Financial Field in Philadelphia, Pennsylvania.",
-    }),
-    generateEventSchema({
-      name: 'Ecuador vs Germany (Group E) — New York/New Jersey',
-      startDate: '2026-06-25T16:00:00-04:00',
-      endDate: '2026-06-25T18:00:00-04:00',
-      location: { name: 'MetLife Stadium', address: 'East Rutherford, NJ', country: 'US' },
-      image: '/assets/wc26-groups-og.jpg',
-      description: 'Group E match at MetLife Stadium in East Rutherford, New Jersey.',
-    }),
-  ];
 
   const breadcrumbSchema = {
     '@context': 'https://schema.org',
@@ -200,9 +227,10 @@ export default function GroupEPage() {
       <JsonLd schema={articleSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupMatchesSchema} />
       <JsonLd schema={groupEventSchema} />
       {matchEventSchemas.map((schema, index) => (
-        <JsonLd key={index} schema={schema} />
+        <JsonLd key={`match-event-${index}`} schema={schema} />
       ))}
       <GroupEClientPage />
     </>

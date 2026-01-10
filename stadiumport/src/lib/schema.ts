@@ -106,6 +106,8 @@ export const generateEventSchema = (event: {
   location: { name: string; address: string; country?: string };
   image: string;
   description: string;
+  performer?: any;
+  offers?: any;
 }) => ({
   "@context": "https://schema.org",
   "@type": "SportsEvent",
@@ -129,7 +131,37 @@ export const generateEventSchema = (event: {
     "@type": "Organization",
     "name": "FIFA",
     "url": "https://www.fifa.com"
+  },
+  "performer": event.performer || [
+    {
+      "@type": "SportsTeam",
+      "name": "FIFA World Cup 2026 Qualified Team A"
+    },
+    {
+      "@type": "SportsTeam",
+      "name": "FIFA World Cup 2026 Qualified Team B"
+    }
+  ],
+  "offers": event.offers || {
+    "@type": "AggregateOffer",
+    "url": "https://www.fifa.com/tickets",
+    "priceCurrency": "USD",
+    "lowPrice": "60",
+    "highPrice": "2030",
+    "availability": "https://schema.org/PreOrder",
+    "validFrom": "2025-09-01T10:00:00Z"
   }
+});
+
+export const generateMatchListSchema = (groupName: string, matches: any[]) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `${groupName} Matches`,
+  "itemListElement": matches.map((match, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": generateEventSchema(match)
+  }))
 });
 
 export const generateLocalBusinessSchema = (business: {

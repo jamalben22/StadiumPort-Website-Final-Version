@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupLClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas',
@@ -67,62 +67,90 @@ export default function GroupLPage() {
     location: {
       name: 'Group L Host Cities',
       address: 'Toronto, Boston, New York/New Jersey, Philadelphia, Dallas/Arlington',
+      country: 'US, CA',
     },
     image: '/assets/wc26-groups-og.jpg',
     description:
       'Group L fixtures hosted across Toronto, Boston, New York/New Jersey, Philadelphia, and Dallas/Arlington during the FIFA World Cup 2026 group stage.',
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'England vs Croatia (Group L) — Dallas/Arlington',
       startDate: '2026-06-17T15:00:00-05:00',
       endDate: '2026-06-17T17:00:00-05:00',
       location: { name: 'AT&T Stadium', address: 'Arlington, TX', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at AT&T Stadium in Arlington, Texas.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "England", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england" },
+        { "@type": "SportsTeam", "name": "Croatia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia" }
+      ]
+    },
+    {
       name: 'Ghana vs Panama (Group L) — Toronto',
       startDate: '2026-06-17T19:00:00-04:00',
       endDate: '2026-06-17T21:00:00-04:00',
       location: { name: 'BMO Field', address: 'Toronto, ON', country: 'CA' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at BMO Field in Toronto, Ontario.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Ghana", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ghana" },
+        { "@type": "SportsTeam", "name": "Panama", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama" }
+      ]
+    },
+    {
       name: 'England vs Ghana (Group L) — Boston',
       startDate: '2026-06-23T16:00:00-04:00',
       endDate: '2026-06-23T18:00:00-04:00',
       location: { name: 'Gillette Stadium', address: 'Foxborough, MA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at Gillette Stadium in Foxborough, Massachusetts.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "England", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england" },
+        { "@type": "SportsTeam", "name": "Ghana", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ghana" }
+      ]
+    },
+    {
       name: 'Panama vs Croatia (Group L) — Toronto',
       startDate: '2026-06-23T19:00:00-04:00',
       endDate: '2026-06-23T21:00:00-04:00',
       location: { name: 'BMO Field', address: 'Toronto, ON', country: 'CA' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at BMO Field in Toronto, Ontario.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Panama", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama" },
+        { "@type": "SportsTeam", "name": "Croatia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia" }
+      ]
+    },
+    {
       name: 'Panama vs England (Group L) — New York/New Jersey',
       startDate: '2026-06-27T17:00:00-04:00',
       endDate: '2026-06-27T19:00:00-04:00',
       location: { name: 'MetLife Stadium', address: 'East Rutherford, NJ', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at MetLife Stadium in East Rutherford, New Jersey.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Panama", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama" },
+        { "@type": "SportsTeam", "name": "England", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england" }
+      ]
+    },
+    {
       name: 'Croatia vs Ghana (Group L) — Philadelphia',
       startDate: '2026-06-27T17:00:00-04:00',
       endDate: '2026-06-27T19:00:00-04:00',
       location: { name: 'Lincoln Financial Field', address: 'Philadelphia, PA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group L match at Lincoln Financial Field in Philadelphia, Pennsylvania.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "Croatia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia" },
+        { "@type": "SportsTeam", "name": "Ghana", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ghana" }
+      ]
+    },
   ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group L', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
   return (
     <>
@@ -130,8 +158,9 @@ export default function GroupLPage() {
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
       {matchEventSchemas.map((schema, index) => (
-        <JsonLd key={index} schema={schema} />
+        <JsonLd key={`match-event-${index}`} schema={schema} />
       ))}
       <GroupLClientPage />
     </>

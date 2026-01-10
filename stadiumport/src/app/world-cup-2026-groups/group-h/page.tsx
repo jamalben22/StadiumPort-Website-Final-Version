@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupHClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group H Guide: Spain, Uruguay, Saudi Arabia, Cabo Verde',
@@ -73,56 +73,84 @@ export default function GroupHPage() {
       'Group H fixtures played in Atlanta, Miami, Houston, and Guadalajara during the FIFA World Cup 2026 group stage.',
   });
 
-  const matchEventSchemas = [
-    generateEventSchema({
+  const groupMatches = [
+    {
       name: 'Spain vs Cabo Verde (Group H) — Atlanta',
       startDate: '2026-06-15T12:00:00-04:00',
       endDate: '2026-06-15T14:00:00-04:00',
       location: { name: 'Atlanta Stadium', address: 'Atlanta, GA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Atlanta Stadium in Atlanta, Georgia.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Spain", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain" },
+        { "@type": "SportsTeam", "name": "Cabo Verde", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cabo-verde" }
+      ]
+    },
+    {
       name: 'Saudi Arabia vs Uruguay (Group H) — Miami',
       startDate: '2026-06-15T18:00:00-04:00',
       endDate: '2026-06-15T20:00:00-04:00',
       location: { name: 'Miami Stadium', address: 'Miami Gardens, FL', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Miami Stadium in Miami Gardens, Florida.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Saudi Arabia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia" },
+        { "@type": "SportsTeam", "name": "Uruguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay" }
+      ]
+    },
+    {
       name: 'Spain vs Saudi Arabia (Group H) — Atlanta',
       startDate: '2026-06-21T12:00:00-04:00',
       endDate: '2026-06-21T14:00:00-04:00',
       location: { name: 'Atlanta Stadium', address: 'Atlanta, GA', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Atlanta Stadium in Atlanta, Georgia.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Spain", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain" },
+        { "@type": "SportsTeam", "name": "Saudi Arabia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia" }
+      ]
+    },
+    {
       name: 'Uruguay vs Cabo Verde (Group H) — Miami',
       startDate: '2026-06-21T18:00:00-04:00',
       endDate: '2026-06-21T20:00:00-04:00',
       location: { name: 'Miami Stadium', address: 'Miami Gardens, FL', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Miami Stadium in Miami Gardens, Florida.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Uruguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay" },
+        { "@type": "SportsTeam", "name": "Cabo Verde", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cabo-verde" }
+      ]
+    },
+    {
       name: 'Cabo Verde vs Saudi Arabia (Group H) — Houston',
       startDate: '2026-06-26T19:00:00-05:00',
       endDate: '2026-06-26T21:00:00-05:00',
       location: { name: 'Houston Stadium', address: 'Houston, TX', country: 'US' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Houston Stadium in Houston, Texas.',
-    }),
-    generateEventSchema({
+      performer: [
+        { "@type": "SportsTeam", "name": "Cabo Verde", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cabo-verde" },
+        { "@type": "SportsTeam", "name": "Saudi Arabia", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia" }
+      ]
+    },
+    {
       name: 'Uruguay vs Spain (Group H) — Guadalajara',
       startDate: '2026-06-26T19:00:00-05:00',
       endDate: '2026-06-26T21:00:00-05:00',
       location: { name: 'Guadalajara Stadium', address: 'Guadalajara, Jalisco', country: 'MX' },
       image: '/assets/wc26-groups-og.jpg',
       description: 'Group H match at Guadalajara Stadium in Guadalajara, Mexico.',
-    }),
+      performer: [
+        { "@type": "SportsTeam", "name": "Uruguay", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay" },
+        { "@type": "SportsTeam", "name": "Spain", "url": "https://www.fifa.com/fifaplus/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain" }
+      ]
+    }
   ];
+
+  const groupMatchesSchema = generateMatchListSchema('Group H', groupMatches);
+  const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
+
 
  const breadcrumbSchema = {
  "@context": "https://schema.org",
@@ -204,17 +232,18 @@ export default function GroupHPage() {
  ]
  };
 
- return (
- <>
- <JsonLd schema={articleSchema} />
- <JsonLd schema={breadcrumbSchema} />
- <JsonLd schema={faqSchema} />
- <JsonLd schema={groupEventSchema} />
- {matchEventSchemas.map((schema, index) => (
-   <JsonLd key={index} schema={schema} />
- ))}
- <GroupHClientPage />
- </>
- );
+  return (
+    <>
+      <JsonLd schema={articleSchema} />
+      <JsonLd schema={breadcrumbSchema} />
+      <JsonLd schema={faqSchema} />
+      <JsonLd schema={groupEventSchema} />
+      <JsonLd schema={groupMatchesSchema} />
+      {matchEventSchemas.map((schema, index) => (
+        <JsonLd key={`match-event-${index}`} schema={schema} />
+      ))}
+      <GroupHClientPage />
+    </>
+  );
 }
 
