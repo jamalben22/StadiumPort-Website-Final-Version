@@ -48,10 +48,10 @@ export default async function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://images.unsplash.com" />
         <link rel="preconnect" href="https://flagcdn.com" />
-        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <Script 
           async 
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855" 
+          crossOrigin="anonymous"
           strategy="afterInteractive"
           nonce={nonce}
         />
