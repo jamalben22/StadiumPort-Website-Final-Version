@@ -210,6 +210,7 @@ export const generateOrganizationSchema = () => ({
     "height": 512,
     "caption": "stadiumport Logo"
   },
+  "image": `${getSiteUrl()}/images/Logos/favicon/android-chrome-512x512.png`,
   "description": "The definitive travel guide for the 2026 FIFA World Cup. We provide expert insights, stadium guides, and comprehensive travel planning resources for fans visiting the USA, Mexico, and Canada.",
   "foundingDate": "2023",
   "sameAs": [
@@ -224,6 +225,25 @@ export const generateOrganizationSchema = () => ({
     "contactType": "customer support",
     "email": "hello@stadiumport.com"
   }
+});
+
+export const generateSiteNavigationElementSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": [
+    "Groups",
+    "Host Cities",
+    "Stadiums",
+    "Draw Hub",
+    "Predictor"
+  ],
+  "url": [
+    `${getSiteUrl()}/world-cup-2026-groups`,
+    `${getSiteUrl()}/world-cup-2026-host-cities`,
+    `${getSiteUrl()}/world-cup-2026-stadiums`,
+    `${getSiteUrl()}/world-cup-2026-draw-travel-hub`,
+    `${getSiteUrl()}/world-cup-2026-prediction-game`
+  ]
 });
 
 export const generateSportsEventSchema = () => ({

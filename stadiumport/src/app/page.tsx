@@ -12,7 +12,6 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { 
   generateSportsEventSchema, 
   generateFAQSchema, 
-  generateOrganizationSchema, 
   generateWebsiteSchema,
   generateBreadcrumbSchema
 } from '@/lib/schema';
@@ -66,7 +65,6 @@ const faqSchema = generateFAQSchema([
 ]);
 
 const eventSchema = generateSportsEventSchema();
-const orgSchema = generateOrganizationSchema();
 const websiteSchema = generateWebsiteSchema();
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', item: '/' }
@@ -76,7 +74,6 @@ export default function HomePage() {
   return (
     <>
       <JsonLd schema={websiteSchema} />
-      <JsonLd schema={orgSchema} />
       <JsonLd schema={breadcrumbSchema} />
       <JsonLd schema={faqSchema} />
       <JsonLd schema={eventSchema} />
@@ -91,4 +88,3 @@ export default function HomePage() {
     </>
   );
 }
-
