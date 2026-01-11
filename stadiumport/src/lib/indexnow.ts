@@ -4,11 +4,9 @@ export interface IndexNowResponse {
   statusCode?: number;
 }
 
-export const INDEXNOW_API_KEY = process.env.INDEXNOW_API_KEY;
-export const INDEXNOW_HOST = process.env.INDEXNOW_HOST || 'example.com';
-export const INDEXNOW_KEY_LOCATION = INDEXNOW_API_KEY
-  ? `https://${INDEXNOW_HOST}/${INDEXNOW_API_KEY}.txt`
-  : undefined;
+export const INDEXNOW_API_KEY = process.env.INDEXNOW_API_KEY || 'bcc2ab42723d47a2967cf7f3cc58125f';
+export const INDEXNOW_HOST = process.env.INDEXNOW_HOST || 'stadiumport.com';
+export const INDEXNOW_KEY_LOCATION = `https://${INDEXNOW_HOST}/bcc2ab42723d47a2967cf7f3cc58125f.txt`;
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 
 /**
