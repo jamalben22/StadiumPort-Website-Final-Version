@@ -52,9 +52,8 @@ export default async function RootLayout({
       </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
         <Script
-          async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855"
-          crossorigin="anonymous"
+          crossOrigin="anonymous"
           strategy="afterInteractive"
           nonce={nonce}
         />
