@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateTouristDestinationSchema } from '@/lib/schema';
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
@@ -146,35 +146,18 @@ export default function MexicoCityGuide() {
  ]
  };
 
- const eventLd = {
- '@context': 'https://schema.org',
- '@type': 'Event',
- name: 'FIFA World Cup 2026 Opening Match (Mexico City)',
- startDate: '2026-06-11',
- eventStatus: 'https://schema.org/EventScheduled',
- eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
- location: {
- '@type': 'SportsActivityLocation',
- name: 'Estadio Azteca',
- address: {
- '@type': 'PostalAddress',
- streetAddress: 'Calz. de Tlalpan 3465, Santa Úrsula Coapa',
- addressLocality: 'Coyoacán',
- addressRegion: 'CDMX',
- postalCode: '04650',
- addressCountry: 'MX'
- }
- },
- image: [
- '/images/cities/mexico-city-world-cup-2026.webp'
- ],
- description: 'The opening match of the FIFA World Cup 2026 in Mexico City at Mexico City Stadium (Estadio Azteca).',
- organizer: {
- '@type': 'Organization',
- name: 'FIFA',
- url: 'https://www.fifa.com'
- }
- };
+  const eventLd = generateEventSchema({
+    name: 'FIFA World Cup 2026 Opening Match (Mexico City)',
+    description: 'The opening match of the FIFA World Cup 2026 in Mexico City at Mexico City Stadium (Estadio Azteca).',
+    startDate: '2026-06-11',
+    endDate: '2026-06-11',
+    location: {
+      name: 'Estadio Azteca',
+      address: 'Calz. de Tlalpan 3465, Santa Úrsula Coapa, Coyoacán, CDMX',
+      country: 'MX'
+    },
+    image: '/images/cities/mexico-city-world-cup-2026.webp'
+  });
 
  const stadiumLd = {
  '@context': 'https://schema.org',

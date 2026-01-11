@@ -161,6 +161,10 @@ export default function DrawHubPage() {
           getSiteUrl('/images/draw-hub-og.jpg')
         ],
         "description": "The official draw ceremony for the FIFA World Cup 2026, determining group assignments and match schedules for all 48 qualified teams.",
+        "performer": {
+          "@type": "Organization",
+          "name": "FIFA"
+        },
         "offers": {
           "@type": "Offer",
           "url": "https://www.fifa.com",

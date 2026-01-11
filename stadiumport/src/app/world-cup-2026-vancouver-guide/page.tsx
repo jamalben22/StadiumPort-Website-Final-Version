@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateTouristDestinationSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
 import { HOST_CITIES } from '@/data/host-cities';
 
@@ -68,34 +68,18 @@ export default function Page() {
     { name: 'Vancouver Guide', item: '/world-cup-2026-vancouver-guide' }
   ]);
 
-  const eventLd = {
-    '@context': 'https://schema.org',
-    '@type': 'SportsEvent',
+  const eventLd = generateEventSchema({
     name: 'FIFA World Cup 2026™ Matches in Vancouver (BC Place)',
+    description: 'Experience seven thrilling FIFA World Cup 2026 matches at Vancouver\'s iconic BC Place, featuring top international teams and a historic atmosphere.',
     startDate: '2026-06-13',
     endDate: '2026-07-07',
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
-      '@type': 'Place',
       name: 'BC Place',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '777 Pacific Blvd',
-        addressLocality: 'Vancouver',
-        addressRegion: 'BC',
-        postalCode: 'V6B 4Y8',
-        addressCountry: 'CA',
-      },
+      address: '777 Pacific Blvd, Vancouver, BC',
+      country: 'CA'
     },
-    organizer: {
-      '@type': 'Organization',
-      name: 'FIFA',
-      url: 'https://www.fifa.com',
-    },
-    image: ['https://stadiumport.com/images/cities/vancouver-world-cup-2026.webp'],
-    url: 'https://stadiumport.com/world-cup-2026-vancouver-guide',
-  };
+    image: '/images/cities/vancouver-world-cup-2026.webp'
+  });
 
   const localBusinessLd = {
     '@context': 'https://schema.org',

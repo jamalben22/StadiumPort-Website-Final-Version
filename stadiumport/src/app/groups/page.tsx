@@ -44,27 +44,38 @@ export const metadata: Metadata = {
 
 export default async function Page() {
  const nonce = (await headers()).get("x-nonce") ?? undefined;
- const structuredData = {
- "@context": "https://schema.org",
- "@type": "SportsEvent",
- "name": "FIFA World Cup 2026",
- "description": "The 23rd FIFA World Cup, a quadrennial international football tournament contested by the men's national teams of the member associations of FIFA.",
- "startDate": "2026-06-11",
- "endDate": "2026-07-19",
- "location": {
- "@type": "Place",
- "name": "North America",
- "address": {
- "@type": "PostalAddress",
- "addressCountry": ["US", "MX", "CA"]
- }
- },
- "organizer": {
- "@type": "Organization",
- "name": "FIFA",
- "url": "https://www.fifa.com"
- }
- };
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": "FIFA World Cup 2026",
+    "description": "The 23rd FIFA World Cup, a quadrennial international football tournament contested by the men's national teams of the member associations of FIFA.",
+    "startDate": "2026-06-11",
+    "endDate": "2026-07-19",
+    "location": {
+      "@type": "Place",
+      "name": "North America",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": ["US", "MX", "CA"]
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "FIFA",
+      "url": "https://www.fifa.com"
+    },
+    "performer": {
+      "@type": "Organization",
+      "name": "FIFA"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets",
+      "availability": "https://schema.org/PreOrder",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  };
 
  const faqSchema = {
  "@context": "https://schema.org",
