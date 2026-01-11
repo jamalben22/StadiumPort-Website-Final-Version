@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group C Travel Guide: Boston, NYC, Philly, Atlanta & Miami',
+  title: 'World Cup 2026 Group C Travel Guide: East Coast Cities',
   description: 'The definitive guide for following Group C in World Cup 2026. Master the Atlantic Corridor (Boston-NYC-Philly) and the Southern Leg (Atlanta-Miami). Trains, flights, and budget strategy.',
   keywords: ['World Cup 2026 Group C Travel Guide', 'Group C matches', 'Boston NYC Philadelphia Atlanta Miami World Cup', 'Amtrak Acela World Cup travel', 'East Coast World Cup itinerary'],
   alternates: {

@@ -4,7 +4,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } fr
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Food & Dining Guide: Eating Well on Any Budget',
+  title: 'World Cup 2026 Food & Dining Guide: Eat Well on a Budget',
   description: 'Street tacos in Mexico City, BBQ in Kansas City, and pizza in NY. Eat like a local champion with our 2026 World Cup food guide.',
   keywords: [
     'World Cup 2026 food guide',

@@ -6,7 +6,7 @@ import { generateBreadcrumbSchema, generateStadiumSchema } from '@/lib/schema';
 import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 
 export const metadata: Metadata = {
-  title: 'Arrowhead Stadium World Cup 2026 Guide: Seating & Tickets',
+  title: 'Arrowhead Stadium World Cup 2026: Seating & Tickets',
   description: 'Complete guide to Arrowhead Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Kansas City.',
   keywords: 'Arrowhead Stadium World Cup 2026, Kansas City World Cup, GEHA Field at Arrowhead Stadium, World Cup 2026 Kansas City, stadium seating',
   openGraph: {

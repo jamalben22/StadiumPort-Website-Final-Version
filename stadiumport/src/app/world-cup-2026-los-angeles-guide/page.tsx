@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestina
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Los Angeles World Cup 2026 Guide: SoFi Stadium & Travel Tips',
+  title: 'Los Angeles World Cup 2026 Guide: SoFi Stadium',
   description: 'Complete Los Angeles World Cup 2026 travel guide. SoFi Stadium info, best hotels, Metro transportation tips, fan zones & match schedule. Plan your trip.',
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-los-angeles-guide',

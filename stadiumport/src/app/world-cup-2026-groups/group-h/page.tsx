@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'FIFA World Cup 2026 Group H Guide: Spain, Uruguay, Saudi Arabia, Cabo Verde',
+  title: 'FIFA World Cup 2026 Group H Guide: Teams & Travel',
   description:
     'FIFA World Cup 2026 Group H guide: Spain, Uruguay, Saudi Arabia, and Cabo Verde. Verified fixtures in Atlanta, Miami, Houston, and Guadalajara, plus the smartest travel plan, tickets, hotels, and fan strategy.',
   keywords: [

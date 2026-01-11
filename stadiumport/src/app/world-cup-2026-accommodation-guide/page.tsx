@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Accommodation Guide: Best Hotels & Where to Stay',
+  title: 'World Cup 2026 Accommodation Guide: Hotels & Stays',
   description: 'Complete guide to World Cup 2026 hotels & accommodation. Best areas to stay, booking tips & hostel options for all 16 host cities in USA, Canada & Mexico.',
   keywords: [
     'World Cup 2026 accommodation',

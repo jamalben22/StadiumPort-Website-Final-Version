@@ -4,7 +4,7 @@ import { HOST_CITIES } from '@/data/host-cities';
 import { JsonLd } from '@/components/seo/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Host Cities Guide: 16 Venues & Travel Tips',
+  title: 'World Cup 2026 Host Cities Guide: Venues & Tips',
   description: 'Complete guide to all 16 World Cup 2026 host cities. Get stadium info, travel tips & match schedules for USA, Canada & Mexico venues.',
   keywords: ['World Cup 2026 host cities', 'World Cup 2026 cities', 'FIFA World Cup 2026 locations', 'World Cup 2026 venues', 'World Cup 2026 USA Mexico Canada cities', 'stadiumport'],
   alternates: {

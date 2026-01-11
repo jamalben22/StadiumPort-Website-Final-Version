@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
+  title: 'World Cup 2026 Group D Travel Guide: West Coast Cities',
   description: 'Follow Group D across the West Coast: Los Angeles, Seattle, SF Bay Area (Santa Clara), and Vancouver. Official match cities, flight strategy, hotels, and stadium logistics.',
   keywords: [
     'World Cup 2026 Group D Travel Guide',

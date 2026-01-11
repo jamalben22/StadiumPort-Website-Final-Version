@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'FIFA World Cup 2026 Group B Guide: Schedule, Teams & Travel Strategy',
+  title: 'FIFA World Cup 2026 Group B Guide: Schedule & Travel',
   description: 'FIFA World Cup 2026 Group B guide: official schedule, teams, and the best travel plan for Toronto, SF Bay Area, Los Angeles, Vancouver, and Seattle.',
   keywords: ['FIFA World Cup 2026 Group B guide', 'World Cup 2026 Group B schedule', 'Group B matches', 'Toronto Vancouver Seattle World Cup 2026', 'San Francisco Bay Area World Cup 2026', 'Los Angeles World Cup 2026 travel'],
   alternates: {

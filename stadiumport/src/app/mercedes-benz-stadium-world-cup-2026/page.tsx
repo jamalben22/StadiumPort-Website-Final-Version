@@ -6,7 +6,7 @@ import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 import { generateStadiumSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Mercedes-Benz Stadium World Cup 2026 Guide: Seating & Tickets',
+  title: 'Mercedes-Benz Stadium World Cup 2026: Seating & Tickets',
   description: 'Complete guide to Mercedes-Benz Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Atlanta.',
   keywords: 'Mercedes-Benz Stadium World Cup 2026, Atlanta World Cup Stadium, Mercedes-Benz Stadium Guide, Atlanta Soccer Guide, World Cup 2026 Atlanta matches, Mercedes-Benz Stadium seating chart',
   openGraph: {

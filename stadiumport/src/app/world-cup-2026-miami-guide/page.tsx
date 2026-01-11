@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestina
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Miami World Cup 2026 Guide: Hard Rock Stadium & Travel Tips',
+  title: 'Miami World Cup 2026 Guide: Hard Rock Stadium',
   description: 'Complete Miami World Cup 2026 travel guide. Hard Rock Stadium info, best hotels, transportation tips, fan zones & match schedule. Plan your trip.',
   keywords: ['Miami World Cup 2026', 'Hard Rock Stadium guide', 'World Cup Miami tickets', 'Miami hotels for World Cup', 'FIFA World Cup 26 Miami'],
   alternates: {
