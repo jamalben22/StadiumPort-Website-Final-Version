@@ -51,6 +51,13 @@ export default async function RootLayout({
         <meta name="google-adsense-account" content="ca-pub-5399794848914855" />
       </head>
       <body className="antialiased bg-background text-foreground transition-colors duration-300" suppressHydrationWarning>
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5399794848914855"
+          crossorigin="anonymous"
+          strategy="afterInteractive"
+          nonce={nonce}
+        />
         {/* Google tag (gtag.js) */}
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-7GLKVF44RM" 
