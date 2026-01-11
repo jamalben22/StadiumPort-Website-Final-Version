@@ -3,7 +3,7 @@ import ClientPage from './ClientPage';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe & Healthy',
+  title: 'World Cup 2026 Health & Medical Preparedness: Stay Safe',
   description: 'Complete health guide for World Cup 2026. Travel insurance requirements, vaccinations, prescription rules, and emergency medical contacts for USA, Canada, and Mexico.',
   keywords: [
     'World Cup 2026 travel insurance',

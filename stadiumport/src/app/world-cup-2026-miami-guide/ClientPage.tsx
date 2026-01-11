@@ -498,10 +498,10 @@ International visitors will need a <strong>US Visa</strong> or <strong>ESTA</str
 
  <Section id="stadium" title="Hard Rock Stadium">
  <LightboxImage 
- src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026.webp" 
- alt="Hard Rock Stadium Aerial" 
- caption="The iconic canopy roof of Hard Rock Stadium protects fans from the Miami sun."
- />
+            src="/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1600.webp" 
+            alt="Hard Rock Stadium Aerial" 
+            caption="The iconic canopy roof of Hard Rock Stadium protects fans from the Miami sun."
+          />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

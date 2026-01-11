@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Travel Insurance: Medical & Trip Protection',
+  title: 'World Cup 2026 Travel Insurance: Medical & Trip Info',
   description: 'Why you need travel insurance for World Cup 2026. Medical coverage for USA healthcare costs, trip cancellation protection & policy comparisons.',
   keywords: [
     'World Cup 2026 travel insurance',

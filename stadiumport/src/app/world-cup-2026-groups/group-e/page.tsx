@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
+  title: 'World Cup 2026 Group E Guide: Schedule & Travel',
   description: "Group E travel guide for World Cup 2026: Germany, Curaçao, Côte d'Ivoire, Ecuador. Verified match schedule and the smartest plan for Philadelphia, Houston, Kansas City, Toronto, and New York/New Jersey.",
   keywords: [
     'World Cup 2026 Group E',

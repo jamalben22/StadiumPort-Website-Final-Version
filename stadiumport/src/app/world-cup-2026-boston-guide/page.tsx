@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestina
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Boston World Cup 2026 Guide: Gillette Stadium + Local Tips',
+  title: 'Boston World Cup 2026 Guide: Gillette Stadium & Tips',
   description: 'Boston World Cup 2026 guide with Gillette Stadium matchday logistics, where to stay, MBTA hacks, neighborhood picks, day-by-day itineraries, budgets, safety, and FAQs.',
   keywords: [
     'Boston World Cup 2026 guide',

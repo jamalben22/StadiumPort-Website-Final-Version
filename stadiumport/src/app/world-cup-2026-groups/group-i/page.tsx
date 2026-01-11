@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group I Travel Guide: San Francisco & Los Angeles',
+  title: 'World Cup 2026 Group I Guide: SF & LA',
   description: 'The definitive guide for following Group I in World Cup 2026. Master the California Corridor (SF-LA). Pacific Coast Highway tips, stadium logistics, and budget strategy.',
   keywords: ['World Cup 2026 Group I Travel Guide', 'Group I matches', 'San Francisco Los Angeles World Cup', 'California World Cup itinerary', "Levi's Stadium guide", 'SoFi Stadium guide'],
   alternates: {

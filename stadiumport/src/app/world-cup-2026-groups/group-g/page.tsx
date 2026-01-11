@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group G Travel Guide: Vancouver, Seattle & Los Angeles',
+  title: 'World Cup 2026 Group G Guide: West Coast',
   description: 'The definitive guide for following Group G in World Cup 2026. Master the Cascadia Corridor (Vancouver-Seattle) and the Pacific Jump to Los Angeles. Trains, flights, and border strategy.',
   keywords: ['World Cup 2026 Group G Travel Guide', 'Group G matches', 'Vancouver Seattle Los Angeles World Cup', 'Amtrak Cascades World Cup travel', 'West Coast World Cup itinerary'],
   alternates: {

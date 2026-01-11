@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, g
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Monterrey World Cup 2026 Guide: Estadio BBVA & Travel Tips',
+  title: 'Monterrey World Cup 2026 Guide: Estadio BBVA & Tips',
   description: 'Monterrey World Cup 2026 guide: where to stay, Estadio BBVA matchday plan, neighborhoods, transport hacks, budgets, safety, food, and itineraries.',
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-monterrey-guide',

@@ -6,7 +6,7 @@ import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 import { generateStadiumSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Hard Rock Stadium World Cup 2026 Guide: Seating & Tickets',
+  title: 'Hard Rock Stadium World Cup 2026 Guide: Seats & Tickets',
   description: 'Complete guide to Hard Rock Stadium for World Cup 2026. Seating charts, capacity, parking & local transport tips for Miami.',
   keywords: 'Hard Rock Stadium World Cup 2026, Miami World Cup, Hard Rock Stadium Guide, World Cup 2026 Miami, stadium seating, travel guide',
   openGraph: {

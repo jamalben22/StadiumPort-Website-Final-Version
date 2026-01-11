@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
+  title: 'World Cup 2026 Group A Travel Guide: Mexico Hubs',
   description: 'The definitive guide for following Group A in World Cup 2026. Master the Aztec Heart (CDMX-Guadalajara) and the Northern Jump (Monterrey). Luxury buses, flights, and safety strategy.',
   keywords: ['World Cup 2026 Group A Travel Guide', 'Group A matches', 'Mexico City Guadalajara Monterrey World Cup', 'ETN Luxury Bus Mexico', 'Estadio Azteca travel guide'],
   alternates: {

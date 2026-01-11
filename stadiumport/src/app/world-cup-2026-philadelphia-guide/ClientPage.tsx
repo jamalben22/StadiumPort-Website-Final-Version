@@ -487,11 +487,11 @@ I’ve lived here long enough to remember the Vet, argue about cheesesteaks like
  </Section>
 
  <Section id="matchday" title="Match Day at Lincoln Financial Field">
- <LightboxImage 
- src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026.webp" 
- alt="Lincoln Financial Field Interior" 
- caption="Lincoln Financial Field, home of the Eagles and World Cup 2026."
- />
+<LightboxImage 
+src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp" 
+alt="Lincoln Financial Field Interior" 
+caption="Lincoln Financial Field, home of the Eagles and World Cup 2026."
+/>
  
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

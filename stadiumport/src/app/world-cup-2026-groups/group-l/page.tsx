@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group L Travel Guide: Toronto, NYC, Boston, Philly & Dallas',
+  title: 'World Cup 2026 Group L Guide: East Coast & Dallas',
   description: 'The definitive guide for following Group L in World Cup 2026. Master the Cross-Border Strategy (Toronto-NYC-Boston-Philly) and the Texas Jump (Dallas). Borders, trains, and budget strategy.',
   keywords: ['World Cup 2026 Group L Travel Guide', 'Group L matches', 'Toronto NYC Boston Philadelphia Dallas World Cup', 'Cross-border World Cup travel', 'Amtrak Northeast World Cup itinerary'],
   alternates: {

@@ -512,7 +512,7 @@ Final Host
 
  <Section id="stadium" title="MetLife Stadium (Know This Cold)">
  <LightboxImage 
- src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026.webp" 
+ src="/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1600.webp" 
  alt="MetLife Stadium" 
  caption="MetLife Stadium, host of the 2026 World Cup Final."
  />

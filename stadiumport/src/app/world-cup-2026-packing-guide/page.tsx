@@ -6,7 +6,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Packing List: Essentials for All 16 Cities',
+  title: 'World Cup 2026 Packing List: Essentials for All Cities',
   description: 'The ultimate World Cup 2026 packing guide. What to bring for hot Mexico stadiums vs cool Canada venues. Stadium bag policies & travel gear checklist.',
   keywords: [
     'World Cup 2026 packing list',

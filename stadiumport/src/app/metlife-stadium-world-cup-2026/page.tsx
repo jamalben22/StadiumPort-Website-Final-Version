@@ -6,7 +6,7 @@ import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 import { generateStadiumSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'MetLife Stadium World Cup 2026 Guide: Final Host, Seating & Tickets',
+  title: 'MetLife Stadium World Cup 2026: Final Host & Seating',
   description: 'Host of the World Cup 2026 Final. Complete MetLife Stadium guide: seating charts, capacity, parking & local transport tips for New York/New Jersey.',
   keywords: 'MetLife Stadium World Cup 2026, World Cup 2026 Final, New York New Jersey World Cup, MetLife Stadium Guide, stadium seating, travel guide',
   openGraph: {

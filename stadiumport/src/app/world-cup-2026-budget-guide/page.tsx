@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Budget Guide: Complete Cost Breakdown & Savings Strategies',
+  title: 'World Cup 2026 Budget Guide: Costs & Savings',
   description: 'The ultimate World Cup 2026 budget guide. Verified costs for tickets, flights, and hotels in USA, Canada & Mexico. Plus 15+ proven money-saving strategies.',
   keywords: ['World Cup 2026 budget', 'World Cup 2026 cost', 'World Cup 2026 ticket prices', 'World Cup 2026 flights', 'cheap hotels World Cup 2026', 'save money World Cup 2026', 'World Cup travel budget'],
   alternates: {

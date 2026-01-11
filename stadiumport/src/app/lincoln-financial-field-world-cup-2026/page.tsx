@@ -6,7 +6,7 @@ import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 import { generateStadiumSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Lincoln Financial Field World Cup 2026 Guide: Seating & Tickets',
+  title: 'Lincoln Financial Field Guide World Cup 2026: Seats',
   description: 'Complete guide to Lincoln Financial Field for World Cup 2026. Seating charts, capacity, parking & local transport tips for Philadelphia.',
   keywords: 'Lincoln Financial Field World Cup 2026, Philadelphia World Cup, Lincoln Financial Field Guide, World Cup 2026 Philadelphia, stadium seating, travel guide',
   openGraph: {

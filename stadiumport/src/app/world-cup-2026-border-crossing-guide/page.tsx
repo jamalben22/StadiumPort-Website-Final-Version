@@ -6,7 +6,7 @@ import { headers } from "next/headers";
 import BorderCrossingClientPage from './ClientPage';
 
 export const metadata: Metadata = {
-  title: 'Border Crossing Guide: USA, Canada & Mexico 2026 | World Cup Travel',
+  title: 'Border Crossing Guide: USA, Canada & Mexico 2026',
   description: 'The definitive border crossing guide for World Cup 2026. Navigate USA, Canada, and Mexico borders smoothly with expert advice on visas, ESTA/eTA, wait times, and customs regulations.',
   keywords: [
     'World Cup 2026 border crossing',

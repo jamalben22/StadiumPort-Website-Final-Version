@@ -298,12 +298,12 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
-  src="/images/cities/los-angeles-world-cup-2026-1600.webp" 
-  alt="SoFi Stadium Interior" 
-  fill 
-  className="object-cover"
-  priority sizes="100vw"
- unoptimized />
+            src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1600.webp" 
+            alt="SoFi Stadium Interior" 
+            fill 
+            className="object-cover"
+            priority sizes="100vw"
+          unoptimized />
  <div className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-200/60 to-[#F5F5F7] dark:from-[#0A0A0A]/40 dark:via-[#0A0A0A]/60 dark:to-[#0A0A0A]" />
  </div>
 
@@ -475,7 +475,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="SoFi Stadium">
         <LightboxImage 
-          src="/images/cities/los-angeles-world-cup-2026-1600.webp" 
+          src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1600.webp" 
           alt="SoFi Stadium Interior" 
           caption="The 'Infinity Screen' at SoFi Stadium creates an immersive experience from every seat."
         />

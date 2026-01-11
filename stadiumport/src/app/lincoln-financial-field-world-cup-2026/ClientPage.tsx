@@ -282,11 +282,11 @@ export default function LincolnFinancialFieldClientPage() {
  {/* 1. Hero Section - Refined & Minimal */}
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/philadelphia-world-cup-2026-1600.webp" 
- alt="Lincoln Financial Field Aerial" 
- fill 
- className="object-cover opacity-60"
+<Image 
+src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp" 
+alt="Lincoln Financial Field Aerial" 
+fill 
+className="object-cover opacity-60"
  priority
  sizes="100vw"
   unoptimized />
@@ -470,11 +470,11 @@ export default function LincolnFinancialFieldClientPage() {
  </Section>
 
  <Section id="stadium" title="Inside The Linc">
- <LightboxImage 
-            src="/images/cities/philadelphia-world-cup-2026-1600.webp" 
-            alt="Lincoln Financial Field Seating" 
-            caption="The Linc offers excellent sightlines and a passionate Philadelphia atmosphere."
-          />
+<LightboxImage 
+           src="/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1600.webp" 
+           alt="Lincoln Financial Field Seating" 
+           caption="The Linc offers excellent sightlines and a passionate Philadelphia atmosphere."
+         />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

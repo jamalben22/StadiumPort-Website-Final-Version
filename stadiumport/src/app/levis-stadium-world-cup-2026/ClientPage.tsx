@@ -283,11 +283,11 @@ export default function ClientPage() {
  {/* 1. Hero Section - Refined & Minimal */}
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
- alt="Levi's Stadium Aerial" 
- fill 
- className="object-cover opacity-60"
+<Image 
+src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp" 
+alt="Levi's Stadium Aerial" 
+fill 
+className="object-cover opacity-60"
  priority
  sizes="100vw"
   unoptimized />
@@ -477,11 +477,11 @@ export default function ClientPage() {
  </Section>
 
  <Section id="stadium" title="The Venue">
- <LightboxImage 
-            src="/images/cities/san-francisco-world-cup-2026-1600.webp" 
-            alt="Levi's Stadium Interior" 
-            caption="Levi's Stadium features an open-air design with a massive suite tower on the west side."
-          />
+<LightboxImage 
+           src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp" 
+           alt="Levi's Stadium Interior" 
+           caption="Levi's Stadium features an open-air design with a massive suite tower on the west side."
+         />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

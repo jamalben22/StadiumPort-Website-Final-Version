@@ -569,11 +569,11 @@ export default function ClientPage() {
  </Section>
 
  <Section id="stadium" title="BMO Field">
- <LightboxImage 
- src="/images/stadiums/bmo-field-toronto-world-cup-2026.webp" 
- alt="BMO Field Interior" 
- caption="The intimate and electric atmosphere of BMO Field."
- />
+<LightboxImage 
+src="/images/stadiums/bmo-field-toronto-world-cup-2026-1600.webp" 
+alt="BMO Field Interior" 
+caption="The intimate and electric atmosphere of BMO Field."
+/>
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
   <p>

@@ -21,7 +21,7 @@ const stadiums = [
     built: '2017', 
     roof: 'Retractable',
     surface: 'Artificial Turf',
-    image: '/images/cities/atlanta-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/mercedes-benz-stadium-atlanta-world-cup-2026-1024.webp', 
     highlights: ['Unique camera-shutter roof', '360-degree Halo video board', 'Cheap concessions'], 
     link: '/mercedes-benz-stadium-world-cup-2026',
     region: 'East'
@@ -35,7 +35,7 @@ const stadiums = [
     built: '2002', 
     roof: 'Open',
     surface: 'FieldTurf',
-    image: '/images/cities/boston-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/gillette-stadium-foxborough-world-cup-2026-1024.webp', 
     highlights: ['New lighthouse renovation', 'Open corners design', 'Patriot Place entertainment'], 
     link: '/gillette-stadium-world-cup-2026',
     region: 'East'
@@ -49,7 +49,7 @@ const stadiums = [
     built: '2009', 
     roof: 'Retractable',
     surface: 'Matrix Turf',
-    image: '/images/cities/dallas-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/att-stadium-arlington-texas-world-cup-2026-1024.webp', 
     highlights: ['Massive center-hung video board', 'Largest retractable roof dome', 'Capacity expandable to 100k'], 
     link: '/att-stadium-world-cup-2026',
     region: 'Central'
@@ -63,7 +63,7 @@ const stadiums = [
     built: '2002', 
     roof: 'Retractable',
     surface: 'Artificial Turf',
-    image: '/images/cities/houston-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/nrg-stadium-houston-texas-world-cup-2026-1024.webp', 
     highlights: ['First NFL retractable roof', 'Air-conditioned comfort', 'Compact seating bowl'], 
     link: '/nrg-stadium-world-cup-2026',
     region: 'Central'
@@ -77,7 +77,7 @@ const stadiums = [
     built: '1972', 
     roof: 'Open',
     surface: 'Grass',
-    image: '/images/cities/kansas-city-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/arrowhead-stadium-kansas-city-world-cup-2026-1024.webp', 
     highlights: ['Loudest stadium in the world', 'Historic bowl design', 'Tailgating culture'], 
     link: '/arrowhead-stadium-world-cup-2026',
     region: 'Central'
@@ -91,7 +91,7 @@ const stadiums = [
     built: '2020', 
     roof: 'Fixed Roof (Open Ends)',
     surface: 'Matrix Turf',
-    image: '/images/cities/los-angeles-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1024.webp', 
     highlights: ['Most expensive stadium ever', 'Infinity Screen (4K)', 'Indoor-outdoor design'], 
     link: '/sofi-stadium-world-cup-2026',
     region: 'West'
@@ -105,7 +105,7 @@ const stadiums = [
     built: '1987 (Renovated 2016)', 
     roof: 'Canopy (Open Pitch)',
     surface: 'Grass',
-    image: '/images/cities/miami-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/hard-rock-stadium-miami-world-cup-2026-1024.webp', 
     highlights: ['European soccer atmosphere', 'Modern canopy roof', 'Premium club seating'], 
     link: '/hard-rock-stadium-world-cup-2026',
     region: 'East'
@@ -119,7 +119,7 @@ const stadiums = [
     built: '2010', 
     roof: 'Open',
     surface: 'FieldTurf',
-    image: '/images/cities/new-york-new-jersey-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/metlife-stadium-east-rutherford-world-cup-2026-1024.webp', 
     highlights: ['Host of the 2026 Final', 'Largest NFL stadium by capacity', '360-degree lighting'], 
     link: '/metlife-stadium-world-cup-2026',
     region: 'East'
@@ -133,7 +133,7 @@ const stadiums = [
     built: '2003', 
     roof: 'Open',
     surface: 'Grass',
-    image: '/images/cities/philadelphia-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/lincoln-financial-field-philadelphia-world-cup-2026-1024.webp', 
     highlights: ['Intimidating acoustics', 'Green energy powered', 'Views of Philly skyline'], 
     link: '/lincoln-financial-field-world-cup-2026',
     region: 'East'
@@ -147,7 +147,7 @@ const stadiums = [
     built: '2014', 
     roof: 'Open',
     surface: 'Grass',
-    image: '/images/cities/san-francisco-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1024.webp', 
     highlights: ['High-tech connectivity', 'Open concourses', 'Sustainable design'], 
     link: '/levis-stadium-world-cup-2026',
     region: 'West'
@@ -161,7 +161,7 @@ const stadiums = [
     built: '2002', 
     roof: 'Partial Roof',
     surface: 'FieldTurf',
-    image: '/images/cities/seattle-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/lumen-field-seattle-world-cup-2026-1024.webp', 
     highlights: ['Designed for noise', 'Downtown location', 'Iconic partial roof arches'], 
     link: '/lumen-field-world-cup-2026',
     region: 'West'
@@ -176,7 +176,7 @@ const stadiums = [
     built: '2007', 
     roof: 'Partial Roof',
     surface: 'Hybrid Grass',
-    image: '/images/cities/toronto-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/bmo-field-toronto-world-cup-2026-1024.webp', 
     highlights: ['Specific soccer design', 'Lakeshore location', 'Temporary expansion for WC'], 
     link: '/bmo-field-world-cup-2026',
     region: 'East'
@@ -190,7 +190,7 @@ const stadiums = [
     built: '1983 (Renovated 2011)', 
     roof: 'Retractable',
     surface: 'Polytan LigaTurf',
-    image: '/images/cities/vancouver-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/bc-place-vancouver-world-cup-2026-1024.webp', 
     highlights: ['Largest cable-supported roof', 'Stunning mountain views', 'Downtown location'], 
     link: '/bc-place-world-cup-2026',
     region: 'West'
@@ -205,7 +205,7 @@ const stadiums = [
     built: '1966', 
     roof: 'Partial Roof',
     surface: 'Grass',
-    image: '/images/cities/mexico-city-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1024.webp', 
     highlights: ['Host of the 1970 & 1986 Finals', 'Iconic high-altitude venue', 'Opening match stadium'], 
     link: '/estadio-azteca-world-cup-2026',
     region: 'Central'
@@ -219,7 +219,7 @@ const stadiums = [
     built: '2015', 
     roof: 'Partial Roof',
     surface: 'Grass',
-    image: '/images/cities/monterrey-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/estadio-bbva-monterrey-world-cup-2026-1024.webp', 
     highlights: ['View of Cerro de la Silla', 'Modern "Steel Giant" design', 'Close-to-pitch seating'], 
     link: '/estadio-bbva-world-cup-2026',
     region: 'Central'
@@ -233,7 +233,7 @@ const stadiums = [
     built: '2010', 
     roof: 'Partial Roof',
     surface: 'Grass',
-    image: '/images/cities/guadalajara-world-cup-2026-1024.webp', 
+    image: '/images/stadiums/estadio-akron-guadalajara-world-cup-2026-1024.webp', 
     highlights: ['"Volcano" exterior design', 'Cloud-like roof structure', 'High-tech facilities'], 
     link: '/estadio-akron-world-cup-2026',
     region: 'Central'

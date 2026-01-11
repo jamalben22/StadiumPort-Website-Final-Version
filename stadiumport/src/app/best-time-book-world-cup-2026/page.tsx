@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
-  title: 'Best Time to Book World Cup 2026: Tickets, Flights & Hotels',
+  title: 'Best Time to Book World Cup 2026: Tickets & Flights',
   description: 'The definitive timeline for booking World Cup 2026. Data-backed guide on when to buy tickets, flights, and hotels to save thousands. Don\'t miss the 11-month sweet spot.',
   alternates: {
     canonical: 'https://stadiumport.com/best-time-book-world-cup-2026',

@@ -3,7 +3,7 @@ import ClientPage from './ClientPage';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Emergency Contacts & Resources Guide | stadiumport',
+  title: 'World Cup 2026 Emergency Contacts & Resources Guide',
   description: 'Essential World Cup 2026 emergency contacts for USA, Canada & Mexico. Access police, medical, embassy info & safety resources. Stay safe!',
   keywords: [
     'World Cup 2026 emergency contacts',

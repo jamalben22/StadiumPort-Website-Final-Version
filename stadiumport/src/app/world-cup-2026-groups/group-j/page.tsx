@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'World Cup 2026 Group J Travel Guide: Kansas City, Dallas & San Francisco',
+  title: 'World Cup 2026 Group J Guide: KC, Dallas & SF',
   description: 'The definitive guide for following Group J in World Cup 2026. Master the American Frontier (Kansas City-Dallas-San Francisco). Flights, rentals, and heat strategy.',
   keywords: ['World Cup 2026 Group J Travel Guide', 'Group J matches', 'Kansas City Dallas San Francisco World Cup', 'Arrowhead Stadium travel', 'AT&T Stadium guide', "Levi's Stadium logistics"],
   alternates: {

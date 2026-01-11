@@ -461,10 +461,10 @@ I’ve lived in L.A. long enough to remember when “getting to Inglewood” was
 
  <Section id="stadium" title="SoFi Stadium">
  <LightboxImage 
- src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026.webp" 
- alt="SoFi Stadium Interior" 
- caption="The stunning Infinity Screen at SoFi Stadium."
- />
+            src="/images/stadiums/sofi-stadium-los-angeles-world-cup-2026-1600.webp" 
+            alt="SoFi Stadium Interior" 
+            caption="The stunning Infinity Screen at SoFi Stadium."
+          />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

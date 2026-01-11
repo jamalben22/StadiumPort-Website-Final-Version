@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestina
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Guadalajara World Cup 2026 Guide: Local Matchday Playbook',
+  title: 'Guadalajara World Cup 2026 Guide: Matchday Playbook',
   description: 'Guadalajara World Cup 2026 guide with Estadio Akron logistics, neighborhoods, transport hacks, safety, weather, budgets, and local food picks.',
   keywords: [
     'Guadalajara World Cup 2026 guide',

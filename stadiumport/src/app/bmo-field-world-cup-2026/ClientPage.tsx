@@ -275,11 +275,11 @@ export default function ClientPage() {
  {/* 1. Hero Section - Refined & Minimal */}
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
- <Image 
- src="/images/cities/toronto-world-cup-2026-1600.webp" 
- alt="BMO Field Toronto" 
- fill 
- className="object-cover"
+<Image 
+src="/images/stadiums/bmo-field-toronto-world-cup-2026-1600.webp" 
+alt="BMO Field Toronto" 
+fill 
+className="object-cover"
  priority sizes="100vw"
   unoptimized />
  <div className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-200/60 to-[#F5F5F7] dark:from-[#0A0A0A]/40 dark:via-[#0A0A0A]/60 dark:to-[#0A0A0A]" />
@@ -459,11 +459,11 @@ export default function ClientPage() {
  </Section>
 
  <Section id="stadium" title="BMO Field">
- <LightboxImage 
-        src="/images/cities/toronto-world-cup-2026-1600.webp" 
-        alt="BMO Field Interior" 
-        caption="The intimate and electric atmosphere of BMO Field."
-      />
+<LightboxImage 
+       src="/images/stadiums/bmo-field-toronto-world-cup-2026-1600.webp" 
+       alt="BMO Field Interior" 
+       caption="The intimate and electric atmosphere of BMO Field."
+     />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

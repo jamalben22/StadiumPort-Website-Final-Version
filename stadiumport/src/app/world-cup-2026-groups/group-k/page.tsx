@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateMatchListSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'FIFA World Cup 2026 Group K Guide: Teams, Schedule, Cities & Travel Strategy',
+  title: 'World Cup 2026 Group K Guide: Schedule & Travel',
   description: 'The definitive FIFA World Cup 2026 Group K guide: teams, match schedule, stadiums, and the smartest travel plan for Mexico City, Houston, Atlanta, and Miami.',
   keywords: [
     'FIFA World Cup 2026 Group K guide',

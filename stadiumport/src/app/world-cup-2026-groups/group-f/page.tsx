@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'FIFA World Cup 2026 Group F Guide: Schedule, Teams & Travel Strategy',
+  title: 'World Cup 2026 Group F Guide: Schedule & Travel',
   description:
     'Group F guide for World Cup 2026: Netherlands, Japan, Tunisia, and a UEFA Play-off B winner (TBD). Verified match schedule and the smartest travel plan for Dallas, Houston, Kansas City, and Monterrey.',
   keywords: [

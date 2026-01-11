@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Accommodation Security: Safe Stays for World Cup 2026 | stadiumport',
+  title: 'Accommodation Security: Safe Stays for World Cup 2026',
   description: 'Complete guide to accommodation security for World Cup 2026. Learn how to choose safe hotels, verify Airbnb listings, avoid scams, and secure your room in USA, Canada, and Mexico.',
   keywords: [
     'World Cup 2026 accommodation security',

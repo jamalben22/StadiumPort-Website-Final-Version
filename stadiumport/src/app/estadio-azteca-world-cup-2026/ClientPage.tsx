@@ -267,11 +267,11 @@ export default function EstadioAztecaClientPage() {
  {/* 1. Hero Section - Refined & Minimal */}
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
- <Image 
-        src="/images/cities/mexico-city-world-cup-2026-1600.webp" 
-        alt="Estadio Azteca Interior" 
-        fill 
-        className="object-cover"
+<Image 
+       src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp" 
+       alt="Estadio Azteca Interior" 
+       fill 
+       className="object-cover"
         priority sizes="100vw"
        unoptimized />
  <div className="absolute inset-0 bg-gradient-to-b from-slate-200/40 via-slate-200/60 to-[#F5F5F7] dark:from-[#0A0A0A]/40 dark:via-[#0A0A0A]/60 dark:to-[#0A0A0A]" />
@@ -386,11 +386,11 @@ export default function EstadioAztecaClientPage() {
         </Section>
 
  <Section id="stadium" title="The Colossus Reborn">
-  <LightboxImage 
-    src="/images/cities/mexico-city-world-cup-2026-1600.webp" 
-    alt="Estadio Azteca Renovation" 
-    caption="The transformed Estadio Azteca will feature a new roof and modern amenities."
-  />
+ <LightboxImage 
+   src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp" 
+   alt="Estadio Azteca Interior" 
+   caption="The legendary Estadio Azteca will feature modern amenities for the 2026 World Cup."
+ />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

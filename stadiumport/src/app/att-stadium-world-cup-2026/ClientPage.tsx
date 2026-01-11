@@ -275,7 +275,7 @@ export default function ClientPage() {
  <div className="relative h-[65vh] min-h-[600px] w-full overflow-hidden flex items-center justify-center">
  <div className="absolute inset-0 z-0">
  <Image 
- src="/images/cities/dallas-world-cup-2026-1600.webp" 
+ src="/images/stadiums/att-stadium-arlington-texas-world-cup-2026-1600.webp" 
  alt="AT&T Stadium" 
  fill 
  className="object-cover"
@@ -457,7 +457,7 @@ export default function ClientPage() {
 
  <Section id="stadium" title="AT&T Stadium">
  <LightboxImage 
-          src="/images/cities/dallas-world-cup-2026-1600.webp" 
+          src="/images/stadiums/att-stadium-arlington-texas-world-cup-2026-1600.webp" 
           alt="AT&T Stadium World Cup 2026 Seating" 
           caption="AT&T Stadium is ready for World Cup 2026 with its massive HD screen and retractable roof."
         />

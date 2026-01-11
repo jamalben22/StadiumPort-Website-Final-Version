@@ -5,7 +5,7 @@ import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestina
 import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
-  title: 'Atlanta World Cup 2026 Guide: Mercedes-Benz Stadium & Travel Tips',
+  title: 'Atlanta World Cup 2026 Guide: Stadium & Travel Tips',
   description: 'Complete Atlanta World Cup 2026 travel guide. Mercedes-Benz Stadium info, best hotels, MARTA transportation tips, fan zones & match schedule. Plan your trip.',
   alternates: {
     canonical: 'https://stadiumport.com/world-cup-2026-atlanta-guide',

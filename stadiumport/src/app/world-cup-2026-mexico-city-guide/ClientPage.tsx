@@ -619,11 +619,11 @@ Match-day logistics for Estadio Azteca, neighborhood picks, safety, budgets, and
  </Section>
 
  <Section id="stadium" title="Estadio Azteca">
- <LightboxImage 
- src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026.webp" 
- alt="Estadio Azteca Interior" 
- caption="The legendary 'Colossus of Saint Ursula', home to two World Cup finals."
- />
+<LightboxImage 
+src="/images/stadiums/estadio-azteca-mexico-city-world-cup-2026-1600.webp" 
+alt="Estadio Azteca Interior" 
+caption="The legendary 'Colossus of Saint Ursula', home to two World Cup finals."
+/>
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

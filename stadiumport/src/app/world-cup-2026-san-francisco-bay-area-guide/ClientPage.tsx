@@ -496,11 +496,11 @@ export default function ClientPage() {
  </Section>
 
  <Section id="stadium" title="Levi's Stadium">
- <LightboxImage 
- src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026.webp" 
- alt="Levi's Stadium Interior" 
- caption="Levi's Stadium in Santa Clara - Home of the San Francisco 49ers"
- />
+<LightboxImage 
+src="/images/stadiums/levis-stadium-santa-clara-world-cup-2026-1600.webp" 
+alt="Levi's Stadium Interior" 
+caption="Levi's Stadium in Santa Clara - Home of the San Francisco 49ers"
+/>
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

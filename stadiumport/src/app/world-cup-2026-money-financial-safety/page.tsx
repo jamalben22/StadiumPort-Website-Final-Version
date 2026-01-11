@@ -4,7 +4,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
-  title: 'Money & Financial Safety: World Cup 2026 Complete Guide | stadiumport',
+  title: 'Money & Financial Safety: World Cup 2026 Guide',
   description: 'Complete financial safety guide for World Cup 2026. Cash strategies for USA, Canada, Mexico, best travel cards, ATM tips, and fraud prevention.',
   keywords: [
     'Money World Cup 2026',

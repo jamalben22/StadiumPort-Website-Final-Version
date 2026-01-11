@@ -596,11 +596,11 @@ export default function ClientPage() {
     </Section>
 
  <Section id="stadium" title="BC Place Stadium">
- <LightboxImage 
- src="/images/cities/vancouver-world-cup-2026-1600.webp" 
- alt="BC Place Interior" 
- caption="BC Place is downtown, walkable, and built for big-event nights."
- />
+<LightboxImage 
+src="/images/stadiums/bc-place-vancouver-world-cup-2026-1600.webp" 
+alt="BC Place Interior" 
+caption="BC Place is downtown, walkable, and built for big-event nights."
+/>
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>

@@ -562,10 +562,10 @@ Written from the inside by a longtime local: where to stay, how to survive match
 
       <Section id="stadium" title="AT&T Stadium">
  <LightboxImage 
- src="/images/stadiums/att-stadium-arlington-texas-world-cup-2026.webp" 
- alt="Inside AT&T Stadium" 
- caption="AT&T Stadium: The world's largest column-free interior and the massive 'Jerrytron' video board."
- />
+            src="/images/stadiums/att-stadium-arlington-texas-world-cup-2026-1600.webp" 
+            alt="Inside AT&T Stadium" 
+            caption="AT&T Stadium: The world's largest column-free interior and the massive 'Jerrytron' video board."
+          />
 
  <div className="prose prose-lg dark:prose-invert max-w-none mb-12">
  <p>
