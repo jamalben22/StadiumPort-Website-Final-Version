@@ -38,7 +38,7 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
       <button 
         onClick={handleExit}
         title="Return to stadiumport World Cup 2026 Hub"
-        className="pointer-events-auto group flex items-center justify-center w-10 h-10 rounded-full bg-white/90 backdrop-blur-md border border-black/10 hover:bg-black/5 transition-all duration-300 shadow-sm"
+        className="pointer-events-auto group flex items-center justify-center w-10 h-10 rounded-full bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 transition-all duration-300 shadow-xl"
       >
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
@@ -48,7 +48,7 @@ export const GameHeader = React.memo(({ onExit }: GameHeaderProps) => {
           strokeWidth="2.5" 
           strokeLinecap="round" 
           strokeLinejoin="round" 
-          className="w-5 h-5 text-slate-900 transition-colors"
+          className="w-5 h-5 text-white transition-colors"
         >
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>

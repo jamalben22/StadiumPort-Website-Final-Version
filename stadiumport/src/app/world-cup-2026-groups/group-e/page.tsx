@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupEClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group E Guide: Schedule, Teams & Travel Strategy',
@@ -150,77 +150,34 @@ export default function GroupEPage() {
       'Group E fixtures played in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region during the FIFA World Cup 2026 group stage.',
   });
 
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: siteUrl,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Groups',
-        item: `${siteUrl}/world-cup-2026-groups`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: 'Group E Guide',
-        item: `${siteUrl}${pageUrl}`,
-      },
-    ],
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group E Guide', item: pageUrl }
+  ]);
 
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: 'What is the best way to travel between Group E cities?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Split your travel: use Amtrak for the Northeast leg (Philadelphia + New York/New Jersey). Fly for Houston, Kansas City, and Toronto. Driving the full loop is not realistic during the group stage.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Which cities host Group E matches?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Group E matches are hosted in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Do I need a visa for Group E travel?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Possibly yes. Group E can include travel across the USA and Canada, so you must check entry rules for both countries (e.g., US visa/ESTA, and Canada eTA/visa) based on your passport.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'When should I book hotels and flights for Group E?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Book refundable hotels first, then lock flights once your match plan is set. For a multi-city group like E, booking early protects availability in Philadelphia, Toronto, and New York/New Jersey.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: 'Where is the safest place to buy tickets?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Use official FIFA ticket sales phases whenever possible. Avoid unofficial sellers and “PDF ticket” scams, especially for high-demand matches.',
-        },
-      },
-    ],
-  };
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is the best way to travel between Group E cities?",
+      answer: "Split your travel: use Amtrak for the Northeast leg (Philadelphia + New York/New Jersey). Fly for Houston, Kansas City, and Toronto. Driving the full loop is not realistic during the group stage."
+    },
+    {
+      question: "Which cities host Group E matches?",
+      answer: "Group E matches are hosted in Philadelphia, Houston, Kansas City, Toronto, and the New York/New Jersey region."
+    },
+    {
+      question: "Do I need a visa for Group E travel?",
+      answer: "Possibly yes. Group E can include travel across the USA and Canada, so you must check entry rules for both countries (e.g., US visa/ESTA, and Canada eTA/visa) based on your passport."
+    },
+    {
+      question: "When should I book hotels and flights for Group E?",
+      answer: "Book refundable hotels first, then lock flights once your match plan is set. For a multi-city group like E, booking early protects availability in Philadelphia, Toronto, and New York/New Jersey."
+    },
+    {
+      question: "Where is the safest place to buy tickets?",
+      answer: "Use official FIFA ticket sales phases whenever possible. Avoid unofficial sellers and “PDF ticket” scams, especially for high-demand matches."
+    }
+  ]);
 
   return (
     <>

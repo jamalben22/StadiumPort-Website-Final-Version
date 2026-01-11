@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import BorderCrossingClientPage from './ClientPage';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
 import { headers } from "next/headers";
@@ -119,21 +119,9 @@ export default async function BorderCrossingPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd schema={articleSchema} nonce={nonce} />
+      <JsonLd schema={breadcrumbSchema} nonce={nonce} />
+      <JsonLd schema={faqSchema} nonce={nonce} />
       <BorderCrossingClientPage />
     </>
   );

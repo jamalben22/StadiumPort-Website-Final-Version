@@ -59,69 +59,30 @@ export default function GroupFPage() {
 
   const articleSchema = generateArticleSchema('group-f', pageUrl);
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Groups",
-        "item": `${siteUrl}/world-cup-2026-groups`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Group F Guide",
-        "item": `${siteUrl}${pageUrl}`
-      }
-    ]
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group F Guide', item: pageUrl }
+  ]);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is driving from Texas to Monterrey safe?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "While the highway is generally okay, flying is strongly recommended. Border wait times can be long, and many US rental car policies restrict cross-border driving. Flights between Houston/Dallas and Monterrey are short and simplify match-day logistics."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Will the stadiums in Group F be air-conditioned?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Dallas Stadium and Houston Stadium are climate-controlled. Kansas City Stadium and Monterrey Stadium are open-air, so plan for heat and sun exposure at those venues."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the best way to get to Arrowhead Stadium?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Kansas City lacks robust rail to the stadium area. Plan on a rideshare, driving with pre-booked parking, or official shuttle options from Downtown when announced."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I use US Dollars in Monterrey during World Cup 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Some major hotels may accept USD, but for match-day spending you should plan to use Mexican Pesos (MXN) or a card with no foreign transaction fees."
-        }
-      }
-    ]
-  };
+  const faqSchema = generateFAQSchema([
+    {
+      question: "Is driving from Texas to Monterrey safe?",
+      answer: "While the highway is generally okay, flying is strongly recommended. Border wait times can be long, and many US rental car policies restrict cross-border driving. Flights between Houston/Dallas and Monterrey are short and simplify match-day logistics."
+    },
+    {
+      question: "Will the stadiums in Group F be air-conditioned?",
+      answer: "Dallas Stadium and Houston Stadium are climate-controlled. Kansas City Stadium and Monterrey Stadium are open-air, so plan for heat and sun exposure at those venues."
+    },
+    {
+      question: "What is the best way to get to Arrowhead Stadium?",
+      answer: "Kansas City lacks robust rail to the stadium area. Plan on a rideshare, driving with pre-booked parking, or official shuttle options from Downtown when announced."
+    },
+    {
+      question: "Can I use US Dollars in Monterrey during World Cup 2026?",
+      answer: "Some major hotels may accept USD, but for match-day spending you should plan to use Mexican Pesos (MXN) or a card with no foreign transaction fees."
+    }
+  ]);
 
   const groupMatches = [
     {

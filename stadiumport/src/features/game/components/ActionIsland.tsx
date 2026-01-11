@@ -18,47 +18,52 @@ export const ActionIsland: React.FC<ActionIslandProps> = ({
   return (
     <div className="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 w-full max-w-sm px-4">
       <motion.div 
-        className="flex items-center justify-between bg-white/95 backdrop-blur-2xl border border-black/10 rounded-[32px] p-2 pl-3 shadow-[0_8px_32px_rgba(0,0,0,0.1)] ring-1 ring-black/5"
+        className="flex items-center justify-between bg-[#0A0A0C]/90 backdrop-blur-2xl border border-white/10 rounded-[32px] p-2 pl-3 shadow-[0_8px_32px_rgba(0,0,0,0.3)] ring-1 ring-white/5 relative overflow-hidden"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 25 }}
       >
+        {/* Carbon Fiber Texture Overlay */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay z-0" />
         
-        {/* Share to Instagram (Primary) */}
-        <button 
-          onClick={onShare}
-          className="flex-1 flex items-center justify-center gap-2.5 bg-white text-black font-bold py-3.5 px-6 rounded-[24px] hover:scale-[1.02] transition-all active:scale-[0.97] shadow-lg shadow-white/10 group"
-        >
-          <Share2 className="w-4 h-4 transition-transform group-hover:rotate-12" />
-          <span className="text-sm font-['Rajdhani'] font-bold tracking-wide uppercase">Share</span>
-        </button>
+        {/* Content with higher z-index */}
+        <div className="flex items-center justify-between w-full relative z-10">
+          {/* Share to Instagram (Primary) */}
+          <button 
+            onClick={onShare}
+            className="flex-1 flex items-center justify-center gap-2.5 bg-[#fbbf24] text-[#0A0A0C] font-bold py-3.5 px-6 rounded-[24px] hover:scale-[1.02] transition-all active:scale-[0.97] shadow-lg shadow-[#fbbf24]/20 group"
+          >
+            <Share2 className="w-4 h-4 transition-transform group-hover:rotate-12" />
+            <span className="text-sm font-['Rajdhani'] font-bold tracking-wide uppercase">Share</span>
+          </button>
 
-        <div className="w-px h-6 bg-black/10 mx-1.5" />
+          <div className="w-px h-6 bg-white/10 mx-1.5" />
 
-        {/* Save Image (Secondary) */}
-        <button 
-          onClick={onSave}
-          disabled={isGenerating}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-slate-900/5 hover:bg-slate-900/10 text-slate-900 transition-all active:scale-90 border border-black/5 disabled:opacity-50"
-          title="Save Image"
-        >
-          {isGenerating ? (
-            <div className="w-4 h-4 border-2 border-slate-300 border-t-slate-900 rounded-full animate-spin" />
-          ) : (
-            <Download className="w-5 h-5" />
-          )}
-        </button>
+          {/* Save Image (Secondary) */}
+          <button 
+            onClick={onSave}
+            disabled={isGenerating}
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-white transition-all active:scale-90 border border-white/10 disabled:opacity-50"
+            title="Save Image"
+          >
+            {isGenerating ? (
+              <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <Download className="w-5 h-5" />
+            )}
+          </button>
 
-        <div className="w-1.5" />
+          <div className="w-1.5" />
 
-        {/* Challenge Friend (WhatsApp) */}
-        <button 
-          onClick={onChallenge}
-          className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] text-slate-950 hover:bg-[#20bd5a] transition-all active:scale-90 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
-          title="Challenge on WhatsApp"
-        >
-          <MessageCircle className="w-5 h-5" />
-        </button>
+          {/* Challenge Friend (WhatsApp) */}
+          <button 
+            onClick={onChallenge}
+            className="w-12 h-12 flex items-center justify-center rounded-full bg-[#25D366] text-slate-950 hover:bg-[#20bd5a] transition-all active:scale-90 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
+            title="Challenge on WhatsApp"
+          >
+            <MessageCircle className="w-5 h-5" />
+          </button>
+        </div>
 
       </motion.div>
     </div>

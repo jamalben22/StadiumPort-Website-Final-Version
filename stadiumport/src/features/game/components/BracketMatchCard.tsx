@@ -44,12 +44,12 @@ const TeamRow = React.memo(({
     group relative flex items-center gap-4 w-full transition-all duration-300
     overflow-hidden flex-1
     ${compact ? 'py-1 px-3' : 'px-4 py-2'}
-    ${isTop ? 'border-b border-black/10' : ''}
+    ${isTop ? 'border-b border-white/10' : ''}
     ${isWinner 
-      ? 'bg-gradient-to-r from-amber-500/90 to-amber-600/90 shadow-[0_0_20px_rgba(245,158,11,0.4)] z-10' 
+      ? 'bg-gradient-to-r from-amber-500 to-amber-600 shadow-[0_0_20px_rgba(245,158,11,0.4)] z-10' 
       : isLoser 
-        ? 'opacity-60 grayscale hover:opacity-90 hover:grayscale-0' 
-        : 'hover:bg-black/5'
+        ? 'opacity-40 grayscale hover:opacity-80 hover:grayscale-0' 
+        : 'hover:bg-white/5'
     }
     ${!team ? 'cursor-default' : 'cursor-pointer'}
   `;
@@ -59,15 +59,15 @@ const TeamRow = React.memo(({
       onClick={handleClick}
       disabled={!team}
       className={containerClasses}
-      style={{ willChange: 'transform, opacity' }}
+      style={{ style: { willChange: 'transform, opacity' } } as any}
     >
       {/* Active State Effects (Winner) */}
       {isWinner && (
          <>
            {/* Shine Effect */}
-           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 translate-x-[-100%] animate-shimmer" />
+           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12 translate-x-[-100%] animate-shimmer" />
            {/* Noise Texture */}
-           <div className="absolute inset-0 bg-[url('https://stadiumport.com/assets/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10 mix-blend-overlay pointer-events-none" />
          </>
       )}
 
@@ -76,7 +76,7 @@ const TeamRow = React.memo(({
            {/* Flag */}
            {['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
              <div className={`
-                 rounded-full flex-shrink-0 bg-slate-900/10 flex items-center justify-center text-[8px] font-bold text-slate-900
+                 rounded-full flex-shrink-0 bg-white/10 flex items-center justify-center text-[8px] font-bold text-white
                  ${compact ? 'w-6 h-6' : 'w-8 h-8'}
              `}>FIFA</div>
            ) : (
@@ -85,7 +85,7 @@ const TeamRow = React.memo(({
                  src={team.flagUrl} 
                  alt={team.name} 
                  fill
-                 className="rounded-full object-cover shadow-sm ring-1 ring-black/10"
+                 className="rounded-full object-cover shadow-sm ring-1 ring-white/20"
                />
              </div>
            )}
@@ -97,8 +97,8 @@ const TeamRow = React.memo(({
                       font-['Teko'] leading-none uppercase tracking-wide transition-all duration-300 flex-shrink-0
                       ${compact ? 'text-base' : 'text-xl'}
                       ${isWinner 
-                          ? 'text-slate-900 font-bold drop-shadow-sm' 
-                          : 'text-slate-900 group-hover:text-black font-semibold'
+                          ? 'text-black font-bold drop-shadow-sm' 
+                          : 'text-white group-hover:text-amber-400 font-semibold'
                       }
                     `}>
                       {team.fifaCode}
@@ -107,7 +107,7 @@ const TeamRow = React.memo(({
                 <span className={`
                   font-['Teko'] uppercase truncate text-left transition-colors duration-300 tracking-wide
                   ${compact ? 'text-sm' : 'text-lg'}
-                  ${isWinner ? 'text-slate-900 font-semibold' : 'text-slate-900 group-hover:text-black font-medium'}
+                  ${isWinner ? 'text-black font-semibold' : 'text-slate-200 group-hover:text-white font-medium'}
                 `}>
                   {team.name}
                 </span>
@@ -119,20 +119,20 @@ const TeamRow = React.memo(({
                 z-10 flex items-center justify-center rounded-full bg-black/20 backdrop-blur-sm
                 ${compact ? 'w-4 h-4' : 'w-6 h-6'}
             `}>
-                <i className={`ri-check-line text-slate-900 font-bold ${compact ? 'text-[10px]' : 'text-sm'}`}></i>
+                <i className={`ri-check-line text-black font-bold ${compact ? 'text-[10px]' : 'text-sm'}`}></i>
             </div>
           )}
         </>
       ) : (
-        <div className="w-full h-8 flex items-center justify-center relative overflow-hidden rounded bg-slate-900/5 border border-dashed border-slate-900/10 group-hover:border-slate-900/20 transition-colors">
+        <div className="w-full h-8 flex items-center justify-center relative overflow-hidden rounded bg-white/5 border border-dashed border-white/10 group-hover:border-white/20 transition-colors">
           {/* Subtle Pulse Background */}
-          <div className="absolute inset-0 bg-slate-900/5 animate-pulse" />
+          <div className="absolute inset-0 bg-white/5 animate-pulse" />
           
           {/* HUD Scan Line */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent w-[50%] -skew-x-12 translate-x-[-150%] animate-[shimmer_3s_infinite]" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent w-[50%] -skew-x-12 translate-x-[-150%] animate-[shimmer_3s_infinite]" />
 
           <span className={`
-                  relative z-10 font-['Teko'] tracking-[0.15em] uppercase text-slate-900 font-bold
+                  relative z-10 font-['Teko'] tracking-[0.15em] uppercase text-white/40 font-bold
                   flex items-center gap-2
                   ${compact ? 'text-xs' : 'text-sm'}
                 `}>
@@ -163,19 +163,20 @@ export const BracketMatchCard = React.memo(({
     <div 
       className={`
         relative flex flex-col w-full rounded-lg overflow-hidden
-        bg-white/95 backdrop-blur-xl
-        ring-1 ring-black/10 shadow-lg
+        bg-[#0A0A0C] border border-white/10
+        backdrop-blur-xl shadow-2xl
         transition-all duration-500
-        ${winnerId ? 'ring-amber-500/50' : 'hover:scale-[1.01] hover:shadow-2xl hover:ring-black/20'}
+        ${winnerId ? 'ring-2 ring-amber-500/50' : 'hover:scale-[1.01] hover:shadow-2xl hover:border-white/20'}
         ${className}
       `}
       style={{ willChange: 'transform, box-shadow' }}
     >
-        {/* Top Gloss Highlight */}
-        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-black/10 to-transparent z-20" />
+        {/* PREMIUM BACKGROUND LAYERS */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+        <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
         
-        {/* Card Noise Overlay */}
-        <div className="absolute inset-0 bg-[url('https://stadiumport.com/assets/noise.svg')] opacity-[0.03] pointer-events-none" />
+        {/* Top Gloss Highlight */}
+        <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent z-20" />
         
         <TeamRow 
           team={team1} 

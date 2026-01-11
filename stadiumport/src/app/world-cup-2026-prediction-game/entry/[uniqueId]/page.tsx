@@ -9,10 +9,11 @@ import { TEAMS } from '../../../../features/game/lib/wc26-data';
 import { supabase } from '../../../../lib/supabase';
 import { GameLayout } from '../../../../features/game/components/GameLayout';
 import { Home, Share2 } from 'lucide-react';
-import { generateBreadcrumbSchema } from '@/lib/schema';
+import { generateBreadcrumbSchema, generateProfilePageSchema } from '@/lib/schema';
 import { Breadcrumb } from '@/components/ui/Breadcrumb';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { JsonLd } from '@/components/seo/JsonLd';
 
 const STORAGE_KEY = 'sp_wc26_predictions';
 
@@ -109,13 +110,19 @@ function ResultsView({ prediction, code }: { prediction: any; code: string }) {
     { name: 'Entry', item: `/world-cup-2026-prediction-game/entry/${code}` }
   ]);
 
+  const profileLd = useMemo(() => {
+    if (!prediction) return null;
+    return generateProfilePageSchema({
+      name: prediction.name || 'Participant',
+      description: `World Cup 2026 Prediction by ${prediction.name || 'Participant'}`,
+      url: `/world-cup-2026-prediction-game/entry/${code}`
+    });
+  }, [prediction, code]);
+
   return (
     <>
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
+      <JsonLd schema={breadcrumbLd} nonce={nonce} />
+      {profileLd && <JsonLd schema={profileLd} nonce={nonce} />}
       
       {/* Breadcrumbs */}
       <div className="w-full max-w-5xl mx-auto px-4 pt-4 pb-0">

@@ -47,32 +47,14 @@ export const metadata: Metadata = {
 
 export default async function SafetyGuidePage() {
   const nonce = (await headers()).get("x-nonce") ?? undefined;
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://stadiumport.com"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Safety Guide",
-        "item": "https://stadiumport.com/world-cup-2026-safety-guide"
-      }
-    ]
-  };
+  const breadcrumbJsonLd = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Safety Guide', item: '/world-cup-2026-safety-guide' }
+  ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <JsonLd schema={breadcrumbJsonLd} nonce={nonce} />
       <SafetyGuideClientPage />
     </>
   );

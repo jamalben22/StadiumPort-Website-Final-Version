@@ -182,7 +182,7 @@ const HotelCard = ({ name, rating, price, distance, features, image, link }: { n
  <div className="group rounded-[2rem] overflow-hidden border border-slate-200 dark:border-slate-200 dark:border-slate-800 hover:border-emerald-500/50 dark:hover:border-emerald-500/50 transition-all duration-500 hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)]">
  <div className="flex flex-col md:flex-row h-full">
  <div className="relative w-full md:w-2/5 min-h-[250px] overflow-hidden">
- <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700"  unoptimized />
+ <Image src={image} alt={name} fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
  <div className="absolute top-4 left-4 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-bold text-slate-900 flex items-center gap-1 shadow-lg">
  <Star className="w-3 h-3 text-amber-400 fill-amber-400" /> {rating}
  </div>
@@ -570,32 +570,32 @@ export default function ClientPage() {
  
  <div className="space-y-8">
       <HotelCard 
-        name="Loews Arlington Hotel"
-        rating={4.8}
-        price="$350 - $600"
-        distance="Steps from Stadium"
-        features={['Luxury', 'New Property', 'Pool & Spa']}
-        image="/images/cities/dallas-world-cup-2026-640.webp" 
-       link="https://www.booking.com/searchresults.html?ss=Loews+Arlington+Hotel"
-     />
-     <HotelCard 
-       name="Live! by Loews - Arlington"
-       rating={4.7}
-       price="$300 - $550"
-       distance="2 min walk"
-       features={['Entertainment District', 'Modern', 'Views']}
-       image="/images/cities/dallas-world-cup-2026-640.webp" 
-       link="https://www.booking.com/searchresults.html?ss=Live!+by+Loews+-+Arlington"
-     />
-     <HotelCard 
-       name="Sheraton Arlington Hotel"
-       rating={4.4}
-       price="$200 - $350"
-       distance="10 min walk"
-       features={['Reliable', 'Pool', 'Near Ballpark']}
-       image="/images/cities/dallas-world-cup-2026-640.webp" 
-       link="https://www.booking.com/searchresults.html?ss=Sheraton+Arlington+Hotel"
-     />
+          name="Live! by Loews - Arlington, TX"
+          rating={9.3}
+          price="$400+"
+          distance="0.2 miles"
+          features={["Luxury", "Walk to Stadium", "Infinity Pool"]}
+          image="/images/hotels/dallas/live-by-loews.jpg" 
+          link="https://www.booking.com/hotel/us/live-by-loews-arlington-tx.html"
+        />
+        <HotelCard 
+          name="Drury Plaza Hotel Dallas Arlington"
+          rating={9.6}
+          price="$200-300"
+          distance="1.1 miles"
+          features={["Mid-Range", "Free Breakfast", "Free Dinner/Drinks"]}
+          image="/images/hotels/dallas/drury-plaza.jpg"
+          link="https://www.booking.com/hotel/us/drury-plaza-dallas-arlington.html"
+        />
+        <HotelCard 
+          name="Howard Johnson by Wyndham Arlington"
+          rating={8.0}
+          price="Under $150"
+          distance="1.8 miles"
+          features={['Budget', 'Pool', 'Free WiFi']}
+          image="/images/hotels/dallas/howard-johnson.jpg" 
+          link="https://www.booking.com/hotel/us/howard-johnson-arlington.html"
+        />
     </div>
  
  <div className="mt-12 text-center">

@@ -53,53 +53,22 @@ export default function GroupCPage() {
     description: 'Group C fixtures played in Boston, NYC/NJ, Philadelphia, Atlanta, and Miami during the FIFA World Cup 2026 group stage.'
   });
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Groups",
-        "item": `${siteUrl}/world-cup-2026-groups`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Group C Guide",
-        "item": `${siteUrl}${pageUrl}`
-      }
-    ]
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group C Guide', item: pageUrl }
+  ]);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+  const faqSchema = generateFAQSchema([
       {
-        "@type": "Question",
-        "name": "What is the best way to travel between Group C cities?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For the northern cities (Boston, NYC, Philadelphia), the Amtrak Acela train is superior to flying. For the southern leg (Atlanta, Miami), you must fly. The strategy is 'Train North, Plane South'."
-        }
+        question: "What is the best way to travel between Group C cities?",
+        answer: "For the northern cities (Boston, NYC, Philadelphia), the Amtrak Acela train is superior to flying. For the southern leg (Atlanta, Miami), you must fly. The strategy is 'Train North, Plane South'."
       },
       {
-        "@type": "Question",
-        "name": "Which Group C city is the most expensive?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "New York City is the most expensive for accommodation, averaging $450+ per night. Boston follows closely. Atlanta and Philadelphia offer better value for mid-range travelers."
-        }
+        question: "Which Group C city is the most expensive?",
+        answer: "New York City is the most expensive for accommodation, averaging $450+ per night. Boston follows closely. Atlanta and Philadelphia offer better value for mid-range travelers."
       }
-    ]
-  };
+  ]);
 
   const groupMatches = [
     {

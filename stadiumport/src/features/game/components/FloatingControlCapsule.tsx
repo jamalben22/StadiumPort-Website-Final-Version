@@ -25,7 +25,7 @@ export const FloatingControlCapsule = ({
 }: FloatingControlCapsuleProps) => {
   return (
     <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-50 pointer-events-none ${className}`}>
-      <div className="pointer-events-auto h-12 px-1 flex items-center bg-white border border-black/10 shadow-[0_8px_32px_rgba(0,0,0,0.1)] rounded-full">
+      <div className="pointer-events-auto h-12 px-1 flex items-center bg-[#0A0A0C]/80 backdrop-blur-xl border border-white/10 shadow-2xl rounded-full">
         
         {/* Back Button */}
         <button
@@ -35,8 +35,8 @@ export const FloatingControlCapsule = ({
             w-10 h-10 rounded-full flex items-center justify-center
             transition-all duration-200
             ${!canGoBack 
-              ? 'opacity-20 cursor-not-allowed' 
-              : 'hover:bg-slate-100 text-slate-900 cursor-pointer'}
+              ? 'opacity-20 cursor-not-allowed text-white' 
+              : 'hover:bg-white/10 text-white cursor-pointer'}
           `}
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -50,7 +50,7 @@ export const FloatingControlCapsule = ({
             {[...Array(totalDots)].map((_, idx) => (
               <div 
                 key={idx} 
-                className={`w-1 h-1 rounded-full transition-all duration-300 ${idx === currentDot ? 'bg-slate-900 scale-125' : 'bg-slate-900/20'}`}
+                className={`w-1 h-1 rounded-full transition-all duration-300 ${idx === currentDot ? 'bg-amber-500 scale-125' : 'bg-white/20'}`}
               />
             ))}
           </div>
@@ -61,10 +61,10 @@ export const FloatingControlCapsule = ({
           onClick={onNext}
           disabled={isNextDisabled}
           className={`
-            rounded-full h-10 px-6 text-xs font-bold tracking-widest uppercase transition-all duration-200 flex items-center justify-center whitespace-nowrap
+            rounded-full h-10 px-6 text-[11px] font-bold tracking-[0.2em] uppercase transition-all duration-200 flex items-center justify-center whitespace-nowrap font-['Rajdhani']
             ${isNextDisabled 
-              ? 'bg-slate-100 text-slate-400 cursor-not-allowed border border-black/5 opacity-80' 
-              : 'bg-[#01b47d] text-slate-950 shadow-lg hover:scale-105 active:scale-95 cursor-pointer'}
+              ? 'bg-white/5 text-slate-500 cursor-not-allowed border border-white/5 opacity-80' 
+              : 'bg-amber-500 text-black shadow-lg hover:scale-105 active:scale-95 cursor-pointer'}
           `}
         >
           {nextLabel}

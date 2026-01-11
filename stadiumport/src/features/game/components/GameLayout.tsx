@@ -19,26 +19,27 @@ interface GameLayoutProps {
 // Memoized Background Component to prevent re-renders
 const GameBackground = React.memo(() => (
   <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-    {/* Primary Background - Apple-style smooth gradient */}
+    {/* Primary Dark Background */}
+    <div className="absolute inset-0 bg-[#0A0A0C]" />
+    
+    {/* Gradient Layers for Depth */}
+    <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] opacity-80" />
+    
+    {/* Carbon Fiber Texture */}
+    <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay" />
+    
+    {/* Dynamic Ambient Glows */}
     <div 
-      className="absolute inset-0 w-full h-full"
+      className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full opacity-20 mix-blend-screen blur-[120px] animate-pulse"
       style={{
-        background: `linear-gradient(135deg, #FF4A00 0%, #FFB199 100%)`
+        background: `radial-gradient(circle, #3b82f6 0%, transparent 70%)`
       }}
     />
     
-    {/* Subtle Depth Layer - Soft Radial Blend */}
     <div 
-      className="absolute top-[-20%] left-[-10%] w-[70vw] h-[70vw] rounded-full opacity-60 mix-blend-soft-light blur-3xl"
+      className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full opacity-20 mix-blend-screen blur-[120px] animate-pulse"
       style={{
-        background: `radial-gradient(circle, #FFB199 0%, transparent 70%)`
-      }}
-    />
-    
-    <div 
-      className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full opacity-40 mix-blend-overlay blur-3xl"
-      style={{
-        background: `radial-gradient(circle, #FF4A00 0%, transparent 70%)`
+        background: `radial-gradient(circle, #f59e0b 0%, transparent 70%)`
       }}
     />
   </div>
@@ -48,7 +49,7 @@ export const GameLayout = ({ children, className, allowScroll = false }: GameLay
 
   return (
     <div className={cn(
-      "relative w-full h-[100dvh] bg-[#FF4A00] text-slate-900 selection:bg-white/30 flex flex-col",
+      "relative w-full h-[100dvh] bg-[#0A0A0C] text-white selection:bg-amber-500/30 flex flex-col",
       allowScroll ? "overflow-y-auto overflow-x-hidden" : "overflow-hidden"
     )}>
       {/* Enforce Fonts Scoped Style */}

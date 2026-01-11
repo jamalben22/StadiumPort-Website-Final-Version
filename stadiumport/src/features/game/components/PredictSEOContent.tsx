@@ -19,21 +19,24 @@ export const PredictSEOContent = () => {
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 font-inter">
       
       {/* Hero / Title Section */}
-      <div className="text-center mb-20">
-        {/* removed badge */}
+      <div className="text-center mb-20 relative z-10">
+        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#0A0A0C]/40 border border-white/10 backdrop-blur-xl shadow-sm mb-6">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-[0.22em] font-['Rajdhani']">2026 Prediction Engine</span>
+        </div>
         
-        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 mb-8 tracking-tight leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight leading-tight font-['Teko'] uppercase">
           World Cup 2026 Predictor: <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">The Ultimate Bracket Challenge</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">The Ultimate Bracket Challenge</span>
         </h1>
         
-        <p className="text-lg md:text-xl text-slate-900 max-w-3xl mx-auto leading-relaxed font-medium">
+        <p className="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed font-medium font-['Rajdhani']">
           Experience the thrill of the tournament before kickoff. Forecast the destiny of all 48 teams in the USA, Canada, and Mexico with the most advanced simulator on the web.
         </p>
       </div>
 
       {/* Features Grid */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-24 relative">
         {[
           { icon: Layout, title: "Full 48-Team Format", desc: "Updated for the new 12-group structure." },
           { icon: Zap, title: "Real-Time Simulation", desc: "Instant bracket updates based on your picks." },
@@ -43,27 +46,32 @@ export const PredictSEOContent = () => {
           <motion.div 
             key={i}
             whileHover={{ y: -5 }}
-            className="bg-black/5 border border-black/10 rounded-3xl p-8 hover:bg-black/10 transition-colors backdrop-blur-sm"
+            className="bg-[#0A0A0C]/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 hover:border-amber-500/30 transition-all relative overflow-hidden group"
           >
-            <div className="w-12 h-12 bg-black/5 rounded-2xl flex items-center justify-center mb-6 text-slate-900">
-              <item.icon className="w-6 h-6" />
+            {/* Background Texture */}
+            <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
+            
+            <div className="relative z-10">
+              <div className="w-12 h-12 bg-amber-500/10 rounded-2xl flex items-center justify-center mb-6 text-amber-500 group-hover:scale-110 transition-transform">
+                <item.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-2 font-['Rajdhani'] uppercase tracking-wider">{item.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed font-medium">{item.desc}</p>
             </div>
-            <h3 className="text-lg font-bold text-slate-900 mb-2">{item.title}</h3>
-            <p className="text-slate-900 text-sm leading-relaxed font-medium">{item.desc}</p>
           </motion.div>
         ))}
       </div>
 
       {/* How to Play Section */}
-      <div className="mb-24">
+      <div className="mb-24 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">How to Play</h2>
-          <p className="text-slate-900 font-medium">Four simple steps to glory.</p>
+          <h2 className="text-3xl font-bold text-white mb-4 font-['Teko'] uppercase tracking-tight">How to Play</h2>
+          <p className="text-slate-400 font-medium font-['Rajdhani'] uppercase tracking-widest text-xs">Four simple steps to glory.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 relative">
            {/* Connecting Line (Desktop) */}
-           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-black/20 to-transparent -translate-x-1/2"></div>
+           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent -translate-x-1/2"></div>
 
            {[
              { title: "Predict Group Winners", desc: "Select Winner and Runner-up for all 12 groups. These 24 teams advance automatically." },
@@ -71,15 +79,15 @@ export const PredictSEOContent = () => {
              { title: "Navigate the Bracket", desc: "Plot your path through the Knockout Stages. From Round of 32 to the Final." },
              { title: "Crown the Champion", desc: "Pick the winner of the Final on July 19, 2026 at MetLife Stadium." }
            ].map((step, i) => (
-             <div key={i} className={`relative flex items-start gap-6 ${i % 2 === 0 ? 'md:flex-row-reverse md:text-right' : ''}`}>
+             <div key={i} className={`relative flex items-start gap-6 group ${i % 2 === 0 ? 'md:flex-row-reverse md:text-right' : ''}`}>
                 {/* Number Badge */}
-                <div className={`absolute top-0 md:top-1 ${i % 2 === 0 ? 'right-0 md:right-auto md:left-1/2 md:translate-x-[-50%]' : 'left-0 md:left-1/2 md:translate-x-[-50%]'} w-8 h-8 rounded-full bg-black/5 border-2 border-black/10 z-10 flex items-center justify-center text-xs font-bold text-slate-900`}>
+                <div className={`absolute top-0 md:top-1 ${i % 2 === 0 ? 'right-0 md:right-auto md:left-1/2 md:translate-x-[-50%]' : 'left-0 md:left-1/2 md:translate-x-[-50%]'} w-10 h-10 rounded-full bg-[#0A0A0C] border-2 border-white/10 z-10 flex items-center justify-center text-sm font-bold text-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.2)] group-hover:border-amber-500/50 transition-colors`}>
                   {i + 1}
                 </div>
                 
-                <div className={`flex-1 pt-1 ${i % 2 === 0 ? 'mr-12 md:mr-0 md:pr-12' : 'ml-12 md:ml-0 md:pl-12'}`}>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                  <p className="text-slate-900 leading-relaxed font-medium">{step.desc}</p>
+                <div className={`flex-1 pt-1 ${i % 2 === 0 ? 'mr-14 md:mr-0 md:pr-14' : 'ml-14 md:ml-0 md:pl-14'}`}>
+                  <h3 className="text-xl font-bold text-white mb-2 font-['Teko'] uppercase tracking-wide group-hover:text-amber-500 transition-colors">{step.title}</h3>
+                  <p className="text-slate-400 leading-relaxed font-medium text-sm font-['Rajdhani']">{step.desc}</p>
                 </div>
              </div>
            ))}
@@ -87,69 +95,66 @@ export const PredictSEOContent = () => {
       </div>
 
       {/* New Format Explained */}
-      <div className="bg-black/5 rounded-3xl border border-black/10 p-8 md:p-12 mb-24 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-black/5 blur-3xl rounded-full -translate-y-1/2 translate-x-1/2"></div>
+      <div className="bg-[#0A0A0C]/40 backdrop-blur-2xl rounded-3xl border border-white/10 p-8 md:p-12 mb-24 relative overflow-hidden z-10">
+        {/* Background Texture & Glow */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-amber-500/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        
         <div className="relative z-10 grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-slate-900 mb-6">The New 48-Team Format</h2>
-            <p className="text-slate-900 text-lg mb-8 leading-relaxed font-medium">
+            <h2 className="text-3xl font-bold text-white mb-6 font-['Teko'] uppercase tracking-tight">The New 48-Team Format</h2>
+            <p className="text-slate-400 text-lg mb-8 leading-relaxed font-medium font-['Rajdhani']">
               The 2026 World Cup revolutionizes the bracket structure. Understanding these changes is key to a perfect prediction.
             </p>
             <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-black/5 flex items-center justify-center shrink-0">
-                  <Users className="w-5 h-5 text-slate-900" />
+              {[
+                { title: "12 Groups of 4", desc: "The tournament expands to accommodate 48 nations across 16 host cities." },
+                { title: "Round of 32", desc: "A new knockout stage is added between the group stage and Round of 16." },
+                { title: "104 Total Matches", desc: "More football than ever before, played over 39 days of competition." }
+              ].map((item, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <div className="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center shrink-0">
+                    <CheckCircle2 className="w-5 h-5 text-amber-500" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-bold mb-1 font-['Teko'] uppercase tracking-wide">{item.title}</h4>
+                    <p className="text-slate-400 text-sm font-medium font-['Rajdhani']">{item.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="font-bold text-slate-900">12 Groups of 4</h3>
-                  <p className="text-slate-900 text-sm font-medium">Top 2 advance automatically.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-black/5 flex items-center justify-center shrink-0">
-                  <CheckCircle2 className="w-5 h-5 text-slate-900" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900">"Best Third-Place" Rule</h3>
-                  <p className="text-slate-900 text-sm font-medium">Top 8 third-place teams qualify for R32.</p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="w-10 h-10 rounded-lg bg-black/5 flex items-center justify-center shrink-0">
-                  <Trophy className="w-5 h-5 text-slate-900" />
-                </div>
-                <div>
-                  <h3 className="font-bold text-slate-900">Round of 32</h3>
-                  <p className="text-slate-900 text-sm font-medium">A new knockout round added. 5 wins to glory.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="bg-black/5 rounded-2xl p-6 border border-black/10">
-             <div className="flex items-center justify-between mb-4 border-b border-black/10 pb-4">
-                <span className="text-slate-900 font-medium">Teams</span>
-                <span className="text-slate-900 font-bold">48</span>
-             </div>
-             <div className="flex items-center justify-between mb-4 border-b border-black/10 pb-4">
-                <span className="text-slate-900 font-medium">Matches</span>
-                <span className="text-slate-900 font-bold">104</span>
-             </div>
-             <div className="flex items-center justify-between mb-4 border-b border-black/10 pb-4">
-                <span className="text-slate-900 font-medium">Knockout Rounds</span>
-                <span className="text-slate-900 font-bold">5</span>
-             </div>
-             <div className="flex items-center justify-between">
-                <span className="text-slate-900 font-medium">Duration</span>
-                <span className="text-slate-900 font-bold">39 Days</span>
+
+          <div className="bg-[#0A0A0C]/40 backdrop-blur-xl rounded-2xl p-6 border border-white/10 relative overflow-hidden group">
+             {/* Texture */}
+             <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
+             
+             <div className="relative z-10 space-y-4">
+               <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-slate-400 font-medium font-['Rajdhani'] uppercase tracking-wider text-xs">Teams</span>
+                  <span className="text-white font-bold font-['Rajdhani'] text-xl">48</span>
+               </div>
+               <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-slate-400 font-medium font-['Rajdhani'] uppercase tracking-wider text-xs">Matches</span>
+                  <span className="text-white font-bold font-['Rajdhani'] text-xl">104</span>
+               </div>
+               <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                  <span className="text-slate-400 font-medium font-['Rajdhani'] uppercase tracking-wider text-xs">Knockout Rounds</span>
+                  <span className="text-white font-bold font-['Rajdhani'] text-xl">5</span>
+               </div>
+               <div className="flex items-center justify-between">
+                  <span className="text-slate-400 font-medium font-['Rajdhani'] uppercase tracking-wider text-xs">Duration</span>
+                  <span className="text-white font-bold font-['Rajdhani'] text-xl">39 Days</span>
+               </div>
              </div>
           </div>
         </div>
       </div>
 
       {/* FAQ */}
-      <div>
-        <h2 className="text-3xl font-bold text-slate-900 mb-10 text-center flex items-center justify-center gap-3">
-          <HelpCircle className="w-8 h-8 text-slate-900" /> Frequently Asked Questions
+      <div className="relative z-10">
+        <h2 className="text-3xl font-bold text-white mb-10 text-center flex items-center justify-center gap-3 font-['Teko'] uppercase tracking-tight">
+          <HelpCircle className="w-8 h-8 text-amber-500" /> Frequently Asked Questions
         </h2>
         <div className="grid md:grid-cols-2 gap-6">
           {[
@@ -158,9 +163,12 @@ export const PredictSEOContent = () => {
             { q: "Is this prediction game free?", a: "Yes! 100% free to play. No purchase necessary." },
             { q: "Can I download my bracket?", a: "Absolutely. Generate a high-quality image to share on social media." }
           ].map((faq, i) => (
-            <div key={i} className="bg-black/5 border border-black/10 rounded-2xl p-6 hover:bg-black/10 transition-colors">
-              <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
-              <p className="text-slate-900 text-sm leading-relaxed font-medium">{faq.a}</p>
+            <div key={i} className="bg-[#0A0A0C]/40 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:border-amber-500/30 transition-all relative overflow-hidden group">
+              <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
+              <div className="relative z-10">
+                <h3 className="font-bold text-white mb-2 font-['Teko'] uppercase tracking-wide group-hover:text-amber-500 transition-colors">{faq.q}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed font-medium font-['Rajdhani']">{faq.a}</p>
+              </div>
             </div>
           ))}
         </div>

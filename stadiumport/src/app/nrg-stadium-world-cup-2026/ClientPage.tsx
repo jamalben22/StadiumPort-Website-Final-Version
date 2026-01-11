@@ -589,35 +589,44 @@ export default function ClientPage() {
  For NRG Stadium, location is key. The <strong>Medical Center</strong> area is closest, while <strong>Downtown</strong> offers better nightlife and direct rail access. Avoid staying too far out to skip the traffic.
  </p>
  
- <div className="space-y-8">
- <HotelCard 
- name="InterContinental Houston - Medical Center"
- rating={4.5}
- price="$250 - $450"
- distance="5 min drive / Rail"
- features={['Modern', 'Pool', 'Near Stadium']}
- image="/images/cities/houston-world-cup-2026-1024.webp" 
-    link="https://www.booking.com/hotel/us/intercontinental-houston-medical-center.html"
-  />
-  <HotelCard 
-    name="Marriott Marquis Houston"
-    rating={4.6}
-    price="$350 - $600"
-    distance="Downtown (Rail access)"
-    features={['Texas-shaped Pool', 'Luxury', 'Central']}
-    image="/images/cities/houston-world-cup-2026-1024.webp" 
-    link="https://www.booking.com/hotel/us/marriott-marquis-houston.html"
-  />
-  <HotelCard 
-    name="Hotel ZaZa Museum District"
-    rating={4.7}
-    price="$400 - $700"
-    distance="Museum District (Rail access)"
-    features={['Boutique', 'Unique Suites', 'Trendy']}
-    image="/images/cities/houston-world-cup-2026-1024.webp" 
-    link="https://www.booking.com/hotel/us/hotel-zaza-houston.html"
-  />
-</div>
+      <div className="space-y-8">
+        <HotelCard 
+          name="Hotel Ylem" 
+          rating={8.4} 
+          price="$" 
+          distance="1.6 mi"
+          features={['Boutique', 'Free Breakfast', 'Shuttle to NRG', 'Art Gallery']}
+          image="/images/hotels/houston/hotel-ylem.jpg"
+          link="https://www.booking.com/hotel/us/houston-medical-center.html"
+        />
+        <HotelCard 
+          name="Blossom Hotel Houston" 
+          rating={8.8} 
+          price="$$" 
+          distance="1.2 mi"
+          features={['Rooftop Pool', 'Luxury Spa', 'Walking Distance', 'Fitness Center']}
+          image="/images/hotels/houston/blossom-hotel.jpg"
+          link="https://www.booking.com/hotel/us/blossom-houston-medical-center.html"
+        />
+        <HotelCard 
+          name="The Post Oak Hotel at Uptown" 
+          rating={9.6} 
+          price="$$$$" 
+          distance="15 min drive"
+          features={['Forbes 5-Star', 'Rooftop Helipad', 'Rolls-Royce Service', 'Elite Spa']}
+          image="/images/hotels/houston/post-oak-hotel.jpg"
+          link="https://www.booking.com/hotel/us/the-post-oak.html"
+        />
+        <HotelCard 
+          name="Marriott Marquis Houston" 
+          rating={8.2} 
+          price="$$$" 
+          distance="Rail access via Downtown"
+          features={['Downtown', 'Texas-Shaped Pool', 'Direct METRORail Access', 'Convention Center']}
+          image="/images/hotels/houston/marriott-marquis.jpg"
+          link="https://www.booking.com/hotel/us/marriott-marquis-houston.html"
+        />
+      </div>
 
 <div className="mt-12 text-center">
   <AffiliateButton href="https://www.booking.com/city/us/houston.html" text="Search All Houston Hotels" variant="outline" />

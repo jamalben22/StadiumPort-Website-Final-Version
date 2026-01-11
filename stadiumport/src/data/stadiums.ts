@@ -3,6 +3,13 @@ export interface Stadium {
   name: string;
   city: string;
   country: 'USA' | 'Canada' | 'Mexico';
+  address: {
+    street: string;
+    city: string;
+    region: string;
+    postalCode: string;
+    country: string;
+  };
   coordinates: {
     lat: number;
     lng: number;
@@ -20,6 +27,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Lumen Field',
     city: 'Seattle',
     country: 'USA',
+    address: {
+      street: '800 Occidental Ave S',
+      city: 'Seattle',
+      region: 'WA',
+      postalCode: '98134',
+      country: 'US'
+    },
     coordinates: { lat: 47.5952, lng: -122.3316 },
     capacity: '69,000',
     matches: 6,
@@ -31,6 +45,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: "Levi's Stadium",
     city: 'San Francisco Bay Area',
     country: 'USA',
+    address: {
+      street: '4900 Marie P DeBartolo Way',
+      city: 'Santa Clara',
+      region: 'CA',
+      postalCode: '95054',
+      country: 'US'
+    },
     coordinates: { lat: 37.4032, lng: -121.9698 },
     capacity: '71,000',
     matches: 6,
@@ -42,6 +63,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'SoFi Stadium',
     city: 'Los Angeles',
     country: 'USA',
+    address: {
+      street: '1001 Stadium Dr',
+      city: 'Inglewood',
+      region: 'CA',
+      postalCode: '90301',
+      country: 'US'
+    },
     coordinates: { lat: 33.9534, lng: -118.3390 },
     capacity: '70,240',
     matches: 8,
@@ -53,6 +81,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Arrowhead Stadium',
     city: 'Kansas City',
     country: 'USA',
+    address: {
+      street: '1 Arrowhead Dr',
+      city: 'Kansas City',
+      region: 'MO',
+      postalCode: '64129',
+      country: 'US'
+    },
     coordinates: { lat: 39.0489, lng: -94.4839 },
     capacity: '73,000',
     matches: 6,
@@ -64,6 +99,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'AT&T Stadium',
     city: 'Dallas',
     country: 'USA',
+    address: {
+      street: '1 AT&T Way',
+      city: 'Arlington',
+      region: 'TX',
+      postalCode: '76011',
+      country: 'US'
+    },
     coordinates: { lat: 32.7473, lng: -97.0945 },
     capacity: '94,000',
     matches: 9,
@@ -75,6 +117,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Mercedes-Benz Stadium',
     city: 'Atlanta',
     country: 'USA',
+    address: {
+      street: '1 AMB Dr NW',
+      city: 'Atlanta',
+      region: 'GA',
+      postalCode: '30313',
+      country: 'US'
+    },
     coordinates: { lat: 33.7553, lng: -84.4006 },
     capacity: '75,000',
     matches: 8,
@@ -86,6 +135,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'NRG Stadium',
     city: 'Houston',
     country: 'USA',
+    address: {
+      street: 'NRG Pkwy',
+      city: 'Houston',
+      region: 'TX',
+      postalCode: '77054',
+      country: 'US'
+    },
     coordinates: { lat: 29.6847, lng: -95.4107 },
     capacity: '72,220',
     matches: 7,
@@ -97,6 +153,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Gillette Stadium',
     city: 'Boston',
     country: 'USA',
+    address: {
+      street: '1 Patriot Pl',
+      city: 'Foxborough',
+      region: 'MA',
+      postalCode: '02035',
+      country: 'US'
+    },
     coordinates: { lat: 42.0909, lng: -71.2643 },
     capacity: '64,628',
     matches: 7,
@@ -108,6 +171,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Lincoln Financial Field',
     city: 'Philadelphia',
     country: 'USA',
+    address: {
+      street: '1 Lincoln Financial Field Way',
+      city: 'Philadelphia',
+      region: 'PA',
+      postalCode: '19148',
+      country: 'US'
+    },
     coordinates: { lat: 39.9013, lng: -75.1675 },
     capacity: '69,328',
     matches: 6,
@@ -119,6 +189,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Hard Rock Stadium',
     city: 'Miami',
     country: 'USA',
+    address: {
+      street: '347 Don Shula Dr',
+      city: 'Miami Gardens',
+      region: 'FL',
+      postalCode: '33056',
+      country: 'US'
+    },
     coordinates: { lat: 25.9580, lng: -80.2389 },
     capacity: '64,767',
     matches: 7,
@@ -130,6 +207,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'MetLife Stadium',
     city: 'New York/New Jersey',
     country: 'USA',
+    address: {
+      street: '1 MetLife Stadium Dr',
+      city: 'East Rutherford',
+      region: 'NJ',
+      postalCode: '07073',
+      country: 'US'
+    },
     coordinates: { lat: 40.8135, lng: -74.0745 },
     capacity: '82,500',
     matches: 8,
@@ -142,6 +226,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'BC Place',
     city: 'Vancouver',
     country: 'Canada',
+    address: {
+      street: '777 Pacific Blvd',
+      city: 'Vancouver',
+      region: 'BC',
+      postalCode: 'V6B 4Y8',
+      country: 'CA'
+    },
     coordinates: { lat: 49.2768, lng: -123.1120 },
     capacity: '54,500',
     matches: 7,
@@ -153,6 +244,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'BMO Field',
     city: 'Toronto',
     country: 'Canada',
+    address: {
+      street: '170 Princes\' Blvd',
+      city: 'Toronto',
+      region: 'ON',
+      postalCode: 'M6K 3C3',
+      country: 'CA'
+    },
     coordinates: { lat: 43.6332, lng: -79.4186 },
     capacity: '45,000',
     matches: 6,
@@ -165,6 +263,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Estadio Azteca',
     city: 'Mexico City',
     country: 'Mexico',
+    address: {
+      street: 'Calz. de Tlalpan 3465',
+      city: 'Coyoacán',
+      region: 'CDMX',
+      postalCode: '04610',
+      country: 'MX'
+    },
     coordinates: { lat: 19.3029, lng: -99.1505 },
     capacity: '83,000',
     matches: 5,
@@ -176,6 +281,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Estadio Akron',
     city: 'Guadalajara',
     country: 'Mexico',
+    address: {
+      street: 'Cto. J.V.C. 2800',
+      city: 'Zapopan',
+      region: 'JAL',
+      postalCode: '45019',
+      country: 'MX'
+    },
     coordinates: { lat: 20.6818, lng: -103.4626 },
     capacity: '48,071',
     matches: 4,
@@ -187,6 +299,13 @@ export const WORLD_CUP_STADIUMS: Stadium[] = [
     name: 'Estadio BBVA',
     city: 'Monterrey',
     country: 'Mexico',
+    address: {
+      street: 'Av. Pablo Livas 2011',
+      city: 'Guadalupe',
+      region: 'N.L.',
+      postalCode: '67175',
+      country: 'MX'
+    },
     coordinates: { lat: 25.6180, lng: -100.2785 },
     capacity: '53,500',
     matches: 4,

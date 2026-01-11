@@ -99,52 +99,64 @@ export const PredictionSummary = () => {
 
   return (
     <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-28">
-      <div className="text-center mb-8">
-        <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white border border-black/10 backdrop-blur-xl shadow-sm">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_4px_rgba(0,0,0,0.1)]"></span>
-          <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">Step 4 of 6: Prediction Summary</span>
+      <div className="text-center mb-12">
+        <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl shadow-2xl">
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#FBBF24] shadow-[0_0_8px_#FBBF24]"></span>
+          <span className="text-[11px] font-bold text-white uppercase tracking-[0.25em] font-['Rajdhani']">Step 4 of 6: Prediction Summary</span>
         </div>
-        <h2 className="mt-4 text-3xl md:text-5xl font-display font-bold text-slate-900 uppercase tracking-tighter drop-shadow-sm">Review Your Full Tournament Picks</h2>
-        <p className="text-slate-900 font-mono text-xs uppercase tracking-widest mt-2 font-bold">Double-check everything before you continue.</p>
+        <h2 className="mt-6 text-4xl md:text-6xl font-['Teko'] font-bold text-white uppercase tracking-tight drop-shadow-2xl">Review Your Full Tournament Picks</h2>
+        <p className="text-slate-400 font-['Rajdhani'] text-xs uppercase tracking-[0.3em] mt-3 font-bold">Double-check everything before you continue.</p>
       </div>
 
       {/* Group Stage */}
-      <div className="mb-8">
-        <div className="flex items-center gap-4 mb-3">
-          <div className="h-px flex-1 bg-black/10"></div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani'] text-slate-900">Group Stage Selections</span>
-          <div className="h-px flex-1 bg-black/10"></div>
+      <div className="mb-12">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <span className="text-[10px] font-bold uppercase tracking-[0.3em] font-['Rajdhani'] text-amber-500/80">Group Stage Selections</span>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
           {Object.entries(groupStandings).map(([gid, teamIds]) => {
             return (
-              <div key={gid} className="bg-white/90 border border-black/10 rounded-lg p-3 backdrop-blur-md shadow-sm">
-                <div className="flex items-center justify-between pb-2 border-b border-black/10">
-                  <span className="text-[10px] font-bold text-slate-900 font-['Rajdhani']">GROUP {gid}</span>
+              <div key={gid} className="relative group overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-2xl p-4 shadow-2xl isolate">
+                {/* Background layers */}
+                <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+                
+                <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-3">
+                  <span className="text-xs font-bold text-amber-400 font-['Rajdhani'] tracking-[0.2em] uppercase">GROUP {gid}</span>
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-500/50 blur-[2px]"></div>
                 </div>
-                <div className="mt-2 space-y-1">
+                <div className="space-y-2">
                   {teamIds.map((tid, idx) => {
                     const t = getTeam(tid)
                     const rankLabel = idx === 0 ? '1st' : idx === 1 ? '2nd' : idx === 2 ? '3rd' : '4th'
                     const advanceLabel = idx < 2 ? 'Advances' : (idx === 2 ? (thirdPlacePicks?.includes(tid) ? '3rd Qualifier' : 'Eliminated') : 'Eliminated')
+                    const isAdvancing = idx < 2 || (idx === 2 && thirdPlacePicks?.includes(tid))
+                    
                     return (
-                      <div key={tid} className="flex items-center justify-between gap-2">
-                        <div className="flex items-center gap-2">
+                      <div key={tid} className="flex items-center justify-between gap-3 p-1 rounded-lg transition-colors hover:bg-white/5">
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] font-bold text-slate-500 w-4">{idx + 1}</span>
                           {t?.flagUrl && (
-                            <div className="relative w-5 h-4 flex-shrink-0">
+                            <div className="relative w-6 h-4 flex-shrink-0">
                               <Image 
                                 src={t.flagUrl} 
                                 alt={t.name}
                                 fill
-                                className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
+                                className="rounded shadow-sm ring-1 ring-white/10 object-cover" 
                               />
                             </div>
                           )}
-                          <span className="text-xs font-['Teko'] uppercase text-slate-900 font-bold">{t?.name || 'TBD'}</span>
+                          <span className={`text-sm font-['Teko'] uppercase tracking-wide ${isAdvancing ? 'text-white font-bold' : 'text-slate-400 font-medium'}`}>{t?.name || 'TBD'}</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-[10px] text-slate-900 font-bold">{rankLabel}</span>
-                          <span className={`text-[10px] px-1.5 py-0.5 rounded border ${advanceLabel === 'Advances' ? 'border-[#01b47d]/40 text-[#01b47d] bg-[#01b47d]/10 font-bold' : advanceLabel === '3rd Qualifier' ? 'border-amber-600/40 text-amber-700 bg-amber-500/10 font-bold' : 'border-black/20 text-slate-900 font-bold'}`}>{advanceLabel}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">{rankLabel}</span>
+                          <span className={`text-[9px] px-2 py-0.5 rounded-full border uppercase tracking-widest font-bold font-['Rajdhani'] ${
+                            isAdvancing 
+                              ? 'border-amber-500/40 text-amber-400 bg-amber-500/10 shadow-[0_0_8px_rgba(245,158,11,0.1)]' 
+                              : 'border-white/5 text-slate-600'
+                          }`}>{advanceLabel}</span>
                         </div>
                       </div>
                     )
@@ -158,53 +170,60 @@ export const PredictionSummary = () => {
 
       {/* Knockout Rounds */}
       {([
-        { title: 'Round of 32', list: rounds.roundOf32 },
-        { title: 'Round of 16', list: rounds.r16 },
-        { title: 'Quarter-Finals', list: rounds.qf },
-        { title: 'Semi-Finals', list: rounds.sf },
-      ] as { title: string; list: Match[] }[]).map(section => (
-        <div key={section.title} className="mb-8">
-          <div className="flex items-center gap-4 mb-3">
-            <div className="h-px flex-1 bg-black/10"></div>
-            <span className="text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani'] text-slate-900">{section.title}</span>
-            <div className="h-px flex-1 bg-black/10"></div>
+        { title: 'Round of 32', list: rounds.roundOf32, subtitle: 'The First Cut' },
+        { title: 'Round of 16', list: rounds.r16, subtitle: 'Elite Contenders' },
+        { title: 'Quarter-Finals', list: rounds.qf, subtitle: 'The Final Eight' },
+        { title: 'Semi-Finals', list: rounds.sf, subtitle: 'Final Four' },
+      ] as { title: string; list: Match[]; subtitle: string }[]).map(section => (
+        <div key={section.title} className="mb-12">
+          <div className="flex items-center gap-4 mb-6">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+            <div className="flex flex-col items-center">
+              <span className="text-[9px] font-bold uppercase tracking-[0.4em] font-['Rajdhani'] text-amber-500/60 mb-1">{section.subtitle}</span>
+              <span className="text-sm font-bold uppercase tracking-[0.2em] font-['Teko'] text-white">{section.title}</span>
+            </div>
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
           </div>
-          <div className={`${section.title === 'Semi-Finals' ? 'grid grid-cols-1 md:grid-cols-2 md:max-w-2xl mx-auto' : 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4'} gap-3`}>
+          <div className={`${section.title === 'Semi-Finals' ? 'grid grid-cols-1 md:grid-cols-2 md:max-w-3xl mx-auto' : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4'} gap-4`}>
             {section.list.map(m => {
               const wId = knockoutPicks[m.id]
               const t1 = getTeam(m.team1Id || '')
               const t2 = getTeam(m.team2Id || '')
               return (
-                <div key={m.id} className="bg-white/90 border border-black/10 rounded-lg p-3 backdrop-blur-md shadow-sm">
-                  <div className={`flex items-center justify-between p-1.5 rounded transition-all ${wId === t1?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40 shadow-sm' : ''}`}>
-                    <div className="flex items-center gap-2">
-                      {t1?.flagUrl && (
-                        <div className="relative w-6 h-4 flex-shrink-0">
-                          <Image 
-                            src={t1.flagUrl} 
-                            alt={t1.name}
-                            fill
-                            className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
-                          />
+                <div key={m.id} className="relative group overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-2xl p-3 shadow-2xl isolate">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+                  <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+
+                  <div className="space-y-1.5">
+                    {[t1, t2].map((t, i) => {
+                      const isWinner = wId === t?.id;
+                      return (
+                        <div key={i} className={`flex items-center justify-between p-2 rounded-xl transition-all border ${
+                          isWinner 
+                            ? 'bg-amber-500/10 border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.1)]' 
+                            : 'bg-white/[0.02] border-white/5'
+                        }`}>
+                          <div className="flex items-center gap-3">
+                            {t?.flagUrl && (
+                              <div className="relative w-6 h-4 flex-shrink-0">
+                                <Image 
+                                  src={t.flagUrl} 
+                                  alt={t.name}
+                                  fill
+                                  className={`rounded shadow-sm object-cover ring-1 ${isWinner ? 'ring-amber-500/30' : 'ring-white/10'}`} 
+                                />
+                              </div>
+                            )}
+                            <span className={`text-sm font-['Teko'] uppercase tracking-wide ${isWinner ? 'text-amber-400 font-bold' : 'text-slate-400 font-medium'}`}>
+                              {t?.name || 'TBD'}
+                            </span>
+                          </div>
+                          {isWinner && (
+                            <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></div>
+                          )}
                         </div>
-                      )}
-                      <span className={`text-xs font-['Teko'] uppercase ${wId === t1?.id ? 'text-slate-900 font-bold' : 'text-slate-900 font-medium'}`}>{t1?.name || 'TBD'}</span>
-                    </div>
-                  </div>
-                  <div className={`flex items-center justify-between p-1.5 rounded mt-1 transition-all ${wId === t2?.id ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40 shadow-sm' : ''}`}>
-                    <div className="flex items-center gap-2">
-                      {t2?.flagUrl && (
-                        <div className="relative w-6 h-4 flex-shrink-0">
-                          <Image 
-                            src={t2.flagUrl} 
-                            alt={t2.name} 
-                            fill
-                            className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
-                          />
-                        </div>
-                      )}
-                      <span className={`text-xs font-['Teko'] uppercase ${wId === t2?.id ? 'text-slate-900 font-bold' : 'text-slate-900 font-medium'}`}>{t2?.name || 'TBD'}</span>
-                    </div>
+                      )
+                    })}
                   </div>
                 </div>
               )
@@ -214,105 +233,113 @@ export const PredictionSummary = () => {
       ))}
 
       {/* Third Place & Final */}
-      <div className="mb-8">
-        <div className="flex items-center gap-4 mb-3">
-          <div className="h-px flex-1 bg-black/10"></div>
-          <span className="text-xs font-bold uppercase tracking-[0.2em] font-['Rajdhani'] text-slate-900">Final Standings</span>
-          <div className="h-px flex-1 bg-black/10"></div>
+      <div className="mb-12">
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <span className="text-[10px] font-bold uppercase tracking-[0.4em] font-['Rajdhani'] text-amber-500">The Championship Podium</span>
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="bg-white/90 border border-black/10 rounded-xl p-4 backdrop-blur-md shadow-sm">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-slate-900">Third Place Match</span>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="relative overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-3xl p-6 shadow-2xl isolate">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+            <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+            
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500 font-['Rajdhani']">Bronze Medal Match</span>
+              <div className="w-8 h-px bg-white/10"></div>
             </div>
-            <div className={`flex items-center justify-between p-2 rounded ${tpWinner?.id === (sf1LoserId || '') ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40' : ''}`}>
-              <div className="flex items-center gap-3">
-                {sf1LoserId && getTeam(sf1LoserId)?.flagUrl && (
-                  <div className="relative w-6 h-4 flex-shrink-0">
-                    <Image 
-                      src={getTeam(sf1LoserId)!.flagUrl} 
-                      alt={getTeam(sf1LoserId)!.name}
-                      fill
-                      className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
-                    />
+
+            <div className="space-y-3">
+              {[sf1LoserId, sf2LoserId].map((tid, i) => {
+                const t = getTeam(tid)
+                const isWinner = tpWinner?.id === tid
+                return (
+                  <div key={i} className={`flex items-center justify-between p-3.5 rounded-2xl border transition-all ${
+                    isWinner 
+                      ? 'bg-amber-500/10 border-amber-500/40 shadow-xl' 
+                      : 'bg-white/[0.02] border-white/5 opacity-40 grayscale'
+                  }`}>
+                    <div className="flex items-center gap-4">
+                      {t?.flagUrl && (
+                        <div className="relative w-8 h-5 flex-shrink-0">
+                          <Image 
+                            src={t.flagUrl} 
+                            alt={t.name}
+                            fill
+                            className="rounded shadow-sm object-cover ring-1 ring-white/10" 
+                          />
+                        </div>
+                      )}
+                      <span className={`font-['Teko'] text-xl uppercase tracking-wider ${isWinner ? 'text-white font-bold' : 'text-slate-300 font-bold'}`}>{t?.name || 'TBD'}</span>
+                    </div>
+                    {isWinner && <span className="text-[10px] font-black text-amber-950 bg-amber-400 px-2.5 py-1 rounded-full uppercase tracking-widest font-['Rajdhani'] shadow-[0_0_15px_rgba(245,158,11,0.3)]">Bronze</span>}
                   </div>
-                )}
-                <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf1LoserId || '')?.name || 'TBD'}</span>
-              </div>
-              {tpWinner?.id === sf1LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-950 px-2 py-0.5 rounded">WIN</span>}
+                )
+              })}
             </div>
-            <div className={`mt-2 flex items-center justify-between p-2 rounded ${tpWinner?.id === (sf2LoserId || '') ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/40' : ''}`}>
-              <div className="flex items-center gap-3">
-                {sf2LoserId && getTeam(sf2LoserId)?.flagUrl && (
-                  <div className="relative w-6 h-4 flex-shrink-0">
-                    <Image 
-                      src={getTeam(sf2LoserId)!.flagUrl} 
-                      alt={getTeam(sf2LoserId)!.name}
-                      fill
-                      className="rounded shadow-sm ring-1 ring-black/10 object-cover" 
-                    />
-                  </div>
-                )}
-                <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(sf2LoserId || '')?.name || 'TBD'}</span>
-              </div>
-              {tpWinner?.id === sf2LoserId && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-950 px-2 py-0.5 rounded">WIN</span>}
-            </div>
-            <div className="mt-3 text-[10px] text-slate-900 font-bold">4th: {tpLoser?.name || 'TBD'}</div>
+            <div className="mt-4 text-[10px] text-slate-500 font-bold uppercase tracking-widest font-['Rajdhani'] text-center">4th Place: {tpLoser?.name || 'TBD'}</div>
           </div>
 
-          <div className="bg-white/90 border border-[#FBBF24] rounded-xl p-4 shadow-sm backdrop-blur-md">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-extrabold uppercase tracking-widest text-amber-900">Final Match</span>
-            </div>
-            <div className={`flex items-center justify-between p-2 rounded ${champion?.id === (rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '') ? 'bg-[#FBBF24]/20 ring-1 ring-[#FBBF24]/50' : ''}`}>
-              <div className="flex items-center gap-3">
-                {rounds.sf[0] && knockoutPicks[rounds.sf[0].id] && getTeam(knockoutPicks[rounds.sf[0].id])?.flagUrl && (
-                  <div className="relative w-6 h-4 flex-shrink-0">
-                    <Image 
-                      src={getTeam(knockoutPicks[rounds.sf[0].id])!.flagUrl} 
-                      alt={getTeam(knockoutPicks[rounds.sf[0].id])!.name}
-                      fill
-                      className="rounded ring-1 ring-[#FBBF24]/40 shadow-sm object-cover" 
-                    />
-                  </div>
-                )}
-                <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '')?.name || 'TBD'}</span>
+          <div className="relative overflow-hidden bg-[#0A0A0C] border-2 border-amber-500/30 rounded-3xl p-6 shadow-[0_0_50px_rgba(245,158,11,0.1)] isolate group">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1e1b4b] via-[#0A0A0C] to-[#0f172a] -z-10" />
+            <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+            <div className="absolute -right-20 -top-20 w-40 h-40 bg-amber-500 rounded-full blur-[80px] opacity-10 group-hover:opacity-20 transition-opacity duration-1000"></div>
+
+            <div className="flex items-center justify-between mb-6">
+              <span className="text-[10px] font-extrabold uppercase tracking-[0.4em] text-amber-500 font-['Rajdhani']">The Grand Final</span>
+              <div className="flex items-center gap-2">
+                <div className="w-1 h-1 rounded-full bg-amber-500 animate-pulse"></div>
+                <div className="w-1 h-1 rounded-full bg-amber-500 animate-pulse delay-75"></div>
+                <div className="w-1 h-1 rounded-full bg-amber-500 animate-pulse delay-150"></div>
               </div>
-              {champion?.id === (rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : '') && <span className="text-[10px] font-bold bg-[#FBBF24] text-black px-2 py-0.5 rounded">WINNER</span>}
             </div>
-            <div className={`mt-2 flex items-center justify-between p-2 rounded ${champion?.id === (rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '') ? 'bg-[#FBBF24]/20 ring-1 ring-[#FBBF24]/50' : ''}`}>
-              <div className="flex items-center gap-3">
-                {rounds.sf[1] && knockoutPicks[rounds.sf[1].id] && getTeam(knockoutPicks[rounds.sf[1].id])?.flagUrl && (
-                  <div className="relative w-6 h-4 flex-shrink-0">
-                    <Image 
-                      src={getTeam(knockoutPicks[rounds.sf[1].id])!.flagUrl} 
-                      alt={getTeam(knockoutPicks[rounds.sf[1].id])!.name}
-                      fill
-                      className="rounded ring-1 ring-[#FBBF24]/40 shadow-sm object-cover" 
-                    />
+
+            <div className="space-y-3">
+              {[rounds.sf[0] ? knockoutPicks[rounds.sf[0].id] : null, rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : null].map((tid, i) => {
+                const t = getTeam(tid)
+                const isWinner = champion?.id === tid
+                return (
+                  <div key={i} className={`flex items-center justify-between p-4 rounded-2xl border transition-all duration-500 ${
+                    isWinner 
+                      ? 'bg-amber-500/20 border-amber-500/50 shadow-[0_0_25px_rgba(245,158,11,0.15)] scale-[1.02]' 
+                      : 'bg-white/[0.02] border-white/5 opacity-30 grayscale hover:opacity-50'
+                  }`}>
+                    <div className="flex items-center gap-4">
+                      {t?.flagUrl && (
+                        <div className="relative w-10 h-6 flex-shrink-0">
+                          <Image 
+                            src={t.flagUrl} 
+                            alt={t.name}
+                            fill
+                            className={`rounded shadow-lg object-cover ring-1 ${isWinner ? 'ring-amber-500/40' : 'ring-white/10'}`} 
+                          />
+                        </div>
+                      )}
+                      <span className={`font-['Teko'] text-2xl uppercase tracking-wider ${isWinner ? 'text-white font-bold' : 'text-slate-300 font-bold'}`}>{t?.name || 'TBD'}</span>
+                    </div>
+                    {isWinner && <span className="text-[10px] font-black bg-amber-500 text-black px-3 py-1.5 rounded-full uppercase tracking-[0.2em] font-['Rajdhani'] shadow-[0_0_20px_rgba(245,158,11,0.4)]">Champion</span>}
                   </div>
-                )}
-                <span className="font-['Teko'] text-lg uppercase text-slate-900 font-bold">{getTeam(rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '')?.name || 'TBD'}</span>
-              </div>
-              {champion?.id === (rounds.sf[1] ? knockoutPicks[rounds.sf[1].id] : '') && <span className="text-[10px] font-bold bg-[#FBBF24] text-black px-2 py-0.5 rounded">WINNER</span>}
+                )
+              })}
             </div>
-            <div className="mt-3 text-[10px] text-slate-900 font-bold">Runner-Up: {runnerUp?.name || 'TBD'}</div>
+            <div className="mt-4 text-[10px] text-amber-500/70 font-bold uppercase tracking-widest font-['Rajdhani'] text-center">Runner-Up: {runnerUp?.name || 'TBD'}</div>
           </div>
         </div>
       </div>
 
       <div ref={floaterRef} className="absolute top-0 left-1/2 z-50 pointer-events-none" style={{ transform: 'translate(-50%, 0px)' }}>
-        <div className="pointer-events-auto h-12 px-1 flex items-center bg-white border border-black/10 shadow-lg rounded-full">
+        <div className="pointer-events-auto h-14 px-2 flex items-center bg-[#0A0A0C]/80 border border-white/10 shadow-2xl rounded-full backdrop-blur-2xl">
           <button
-            className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-black/5 text-slate-900 cursor-pointer"
+            className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 hover:bg-white/5 text-slate-400 hover:text-white cursor-pointer"
             onClick={() => setCurrentStep(2)}
             aria-label="Back to Edit"
             type="button"
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><path d="M15 18l-6-6 6-6"></path></svg>
           </button>
+          <div className="w-px h-6 bg-white/10 mx-2" />
           <button
-            className="rounded-full h-10 px-6 text-xs font-bold tracking-widest uppercase transition-all duration-200 flex items-center justify-center whitespace-nowrap bg-black text-white shadow-lg hover:scale-105 active:scale-95 cursor-pointer"
+            className="rounded-full h-10 px-8 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center whitespace-nowrap bg-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-105 active:scale-95 cursor-pointer font-['Rajdhani']"
             onClick={() => setCurrentStep(5)}
             aria-label="Confirm & Submit"
             type="button"

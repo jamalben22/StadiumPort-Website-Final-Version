@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateLocalBusinessSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateLocalBusinessSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
   title: 'Monterrey World Cup 2026 Guide: Estadio BBVA & Travel Tips',
@@ -142,11 +143,34 @@ export default function Page() {
     priceRange: '$$'
   });
 
+  const city = HOST_CITIES.find(c => c.id === 'monterrey');
+  const destinationLd = city ? generateTouristDestinationSchema({
+    name: city.name,
+    description: city.description,
+    image: city.image,
+    url: 'https://stadiumport.com/world-cup-2026-monterrey-guide',
+    country: city.country,
+    address: {
+      addressRegion: city.region,
+      addressCountry: city.country
+    },
+    geo: {
+      latitude: city.coordinates.lat,
+      longitude: city.coordinates.lng
+    },
+    touristType: [
+      "Sports Enthusiasts",
+      "World Cup Fans",
+      "Adventure Seekers"
+    ]
+  }) : null;
+
  return (
  <>
  <JsonLd schema={jsonLd} />
       <JsonLd schema={breadcrumbLd} />
       <JsonLd schema={faqLd} />
+      {destinationLd && <JsonLd schema={destinationLd} />}
       <JsonLd schema={eventLd} />
       <JsonLd schema={stadiumLd} />
  <ClientPage />

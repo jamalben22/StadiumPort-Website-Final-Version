@@ -43,7 +43,7 @@ export default function ShareClient({ uniqueId, initialPrediction }: ShareClient
       <GameLayout allowScroll={true}>
         <GameHeader />
         <div className="min-h-screen flex items-center justify-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-900"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-500 shadow-[0_0_15px_rgba(245,158,11,0.3)]"></div>
         </div>
       </GameLayout>
     );
@@ -54,8 +54,8 @@ export default function ShareClient({ uniqueId, initialPrediction }: ShareClient
       <GameLayout allowScroll={true}>
         <GameHeader />
         <div className="min-h-screen flex flex-col items-center justify-center gap-4">
-          <h1 className="text-2xl font-bold text-slate-900">Prediction Not Found</h1>
-          <p className="text-slate-600">The prediction you are looking for does not exist or has been removed.</p>
+          <h1 className="text-4xl font-['Teko'] font-bold text-white uppercase tracking-wider">Prediction Not Found</h1>
+          <p className="text-slate-400 font-['Rajdhani'] font-medium">The prediction you are looking for does not exist or has been removed.</p>
         </div>
       </GameLayout>
     );

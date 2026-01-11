@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestinationSchema } from '@/lib/schema';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
  title: 'Vancouver World Cup 2026 Guide: BC Place & Travel Tips',
@@ -206,16 +207,38 @@ export default function Page() {
  ]
  };
 
- return (
- <>
- <JsonLd schema={jsonLd} />
+ const city = HOST_CITIES.find(c => c.id === 'vancouver');
+  const destinationLd = city ? generateTouristDestinationSchema({
+    name: city.name,
+    description: city.description,
+    image: city.image,
+    url: 'https://stadiumport.com/world-cup-2026-vancouver-guide',
+    country: city.country,
+    address: {
+      addressRegion: city.region,
+      addressCountry: city.country
+    },
+    geo: {
+      latitude: city.coordinates.lat,
+      longitude: city.coordinates.lng
+    },
+    touristType: [
+      "Sports Enthusiasts",
+      "World Cup Fans",
+      "Nature Lovers"
+    ]
+  }) : null;
+
+  return (
+    <>
+      <JsonLd schema={jsonLd} />
       <JsonLd schema={breadcrumbLd} />
       <JsonLd schema={eventLd} />
-      <JsonLd schema={localBusinessLd} />
+      {destinationLd && <JsonLd schema={destinationLd} />}
       <JsonLd schema={faqLd} />
- <ClientPage />
- </>
- );
+      <ClientPage />
+    </>
+  );
 }
 
 

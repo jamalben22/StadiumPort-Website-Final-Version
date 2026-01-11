@@ -957,31 +957,31 @@ export default function ClientPage() {
             
             <div className="space-y-8">
               <HotelCard 
-                name="Omni Parker House (Downtown)"
-                rating={4.4}
-                price="$$$"
-                distance="South Station access"
-                features={['Historic', 'Walkable', 'Downtown base']}
-                image="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80" 
-                link="https://www.booking.com/searchresults.html?ss=Omni+Parker+House+Boston"
+                name="HI Boston Hostel (Downtown)"
+                rating={4.3}
+                price="$"
+                distance="Walk to South Station"
+                features={['Budget-friendly', 'Social vibe', 'Modern & Clean']}
+                image="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80" 
+                link="https://www.booking.com/hotel/us/hi-boston.html"
               />
               <HotelCard 
-                name="Renaissance Boston Patriot Place (Foxborough)"
-                rating={4.6}
-                price="$$$$"
-                distance="Walk to stadium"
-                features={['Matchday convenience', 'Patriot Place', 'Easy logistics']}
-                image="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" 
-                link="https://www.booking.com/searchresults.html?ss=Renaissance+Boston+Patriot+Place+Hotel"
-              />
-              <HotelCard 
-                name="Best Western Adams Inn Quincy (Value Base)"
-                rating={4.0}
+                name="The Revolution Hotel (South End)"
+                rating={4.2}
                 price="$$"
-                distance="Red Line strategy"
-                features={['Budget-friendly', 'Transit access', 'Good fallback']}
-                image="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=800&q=80" 
-                link="https://www.booking.com/searchresults.html?ss=Best+Western+Adams+Inn+Quincy"
+                distance="Back Bay / South End"
+                features={['Boutique style', 'Trendy', 'Great value']}
+                image="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" 
+                link="https://www.booking.com/hotel/us/the-revolution.html"
+              />
+              <HotelCard 
+                name="Fairmont Copley Plaza (Back Bay)"
+                rating={4.4}
+                price="$$$$"
+                distance="Copley Sq / Back Bay"
+                features={['Historic Luxury', 'Gold Lounge', 'Grand Ballroom']}
+                image="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" 
+                link="https://www.booking.com/hotel/us/fairmont-copley-plaza.html"
               />
             </div>
             

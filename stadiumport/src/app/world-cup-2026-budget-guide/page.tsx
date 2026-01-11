@@ -114,11 +114,7 @@ export default async function BudgetGuidePage() {
   return (
     <>
       <JsonLd schema={jsonLd} nonce={nonce} />
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
+      <JsonLd schema={breadcrumbJsonLd} nonce={nonce} />
       <JsonLd schema={faqLd} nonce={nonce} />
       <ClientPage />
     </>

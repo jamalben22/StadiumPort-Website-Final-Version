@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupAClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group A Travel Guide: Mexico City, Guadalajara & Monterrey',
@@ -131,53 +131,22 @@ export default function GroupAPage() {
   const groupMatchesSchema = generateMatchListSchema('Group A', groupMatches);
   const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
-  const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group A Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group A Guide', item: pageUrl }
+  ]);
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Group A cities in Mexico?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "For the route between Mexico City and Guadalajara, luxury executive buses (like ETN) are often better than flying. For the trip to Monterrey, domestic flights are necessary due to the distance. The strategy is 'Bus the Central Heart, Fly the North'."
- }
- },
- {
- "@type": "Question",
- "name": "Is it safe to follow Group A matches in Mexico?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes, provided you stick to recommended tourist neighborhoods (Roma, Condesa, Polanco in CDMX) and use official transit like Uber or luxury buses. Avoid street taxis and stick to well-traveled routes."
- }
- }
- ]
- };
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is the best way to travel between Group A cities in Mexico?",
+      answer: "For the route between Mexico City and Guadalajara, luxury executive buses (like ETN) are often better than flying. For the trip to Monterrey, domestic flights are necessary due to the distance. The strategy is 'Bus the Central Heart, Fly the North'."
+    },
+    {
+      question: "Is it safe to follow Group A matches in Mexico?",
+      answer: "Yes, provided you stick to recommended tourist neighborhoods (Roma, Condesa, Polanco in CDMX) and use official transit like Uber or luxury buses. Avoid street taxis and stick to well-traveled routes."
+    }
+  ]);
 
  return (
     <>

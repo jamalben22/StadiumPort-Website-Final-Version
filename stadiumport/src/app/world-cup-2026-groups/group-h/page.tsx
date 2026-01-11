@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupHClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'FIFA World Cup 2026 Group H Guide: Spain, Uruguay, Saudi Arabia, Cabo Verde',
@@ -152,85 +152,38 @@ export default function GroupHPage() {
   const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
 
- const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group H Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+ const breadcrumbSchema = generateBreadcrumbSchema([
+   { name: 'Home', item: '/' },
+   { name: 'Groups', item: '/world-cup-2026-groups' },
+   { name: 'Group H Guide', item: pageUrl }
+ ]);
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Group H cities?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "You will mostly fly. Atlanta (ATL), Miami (MIA), and Houston (IAH) are major airline hubs, which means lots of routes but intense price spikes after the draw. For Guadalajara (GDL), treat it like a full international leg and build buffer time for immigration and delays."
- }
- },
- {
- "@type": "Question",
- "name": "Which Group H stadium is the most comfortable in summer?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Atlanta and Houston are the comfort plays: Mercedes-Benz Stadium and NRG Stadium are climate-controlled. Miami Stadium is open-air with a canopy that provides significant shade, but you still need a heat plan."
- }
- },
- {
- "@type": "Question",
- "name": "Do I need separate entry rules for the USA and Mexico?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. The USA and Mexico have different entry requirements. Many travelers enter the US under ESTA or a B-1/B-2 visa, while Mexico has separate passport and tourist entry rules depending on nationality and entry method. Verify requirements early and avoid booking tight same-day connections across the border."
- }
- },
- {
- "@type": "Question",
- "name": "What is the smartest one-base strategy for Group H?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "If you want one stable base in the US, Atlanta is the best anchor because Spain plays there twice and ATL flights are frequent. If you’re trying to see every match, use Atlanta + Miami as your US spine, then add a separate Guadalajara leg for the final simultaneous matchday."
- }
- },
- {
- "@type": "Question",
- "name": "Can I attend both matches on June 15 or June 21 in Group H?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "No. The two matches on each of those dates are played in different cities at the same kickoff window, so you must choose one match per matchday and plan your base city around that choice."
- }
- },
- {
- "@type": "Question",
- "name": "How should I handle the June 26 double-header in Houston and Guadalajara?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Pick your priority match. You cannot physically attend both. Houston is the easiest logistics play inside the US, while Guadalajara is the cross-border story play that requires arriving early and treating the day as an international travel scenario."
- }
- }
- ]
- };
+ const faqSchema = generateFAQSchema([
+   {
+     question: "What is the best way to travel between Group H cities?",
+     answer: "You will mostly fly. Atlanta (ATL), Miami (MIA), and Houston (IAH) are major airline hubs, which means lots of routes but intense price spikes after the draw. For Guadalajara (GDL), treat it like a full international leg and build buffer time for immigration and delays."
+   },
+   {
+     question: "Which Group H stadium is the most comfortable in summer?",
+     answer: "Atlanta and Houston are the comfort plays: Mercedes-Benz Stadium and NRG Stadium are climate-controlled. Miami Stadium is open-air with a canopy that provides significant shade, but you still need a heat plan."
+   },
+   {
+     question: "Do I need separate entry rules for the USA and Mexico?",
+     answer: "Yes. The USA and Mexico have different entry requirements. Many travelers enter the US under ESTA or a B-1/B-2 visa, while Mexico has separate passport and tourist entry rules depending on nationality and entry method. Verify requirements early and avoid booking tight same-day connections across the border."
+   },
+   {
+     question: "What is the smartest one-base strategy for Group H?",
+     answer: "If you want one stable base in the US, Atlanta is the best anchor because Spain plays there twice and ATL flights are frequent. If you’re trying to see every match, use Atlanta + Miami as your US spine, then add a separate Guadalajara leg for the final simultaneous matchday."
+   },
+   {
+     question: "Can I attend both matches on June 15 or June 21 in Group H?",
+     answer: "No. The two matches on each of those dates are played in different cities at the same kickoff window, so you must choose one match per matchday and plan your base city around that choice."
+   },
+   {
+     question: "How should I handle the June 26 double-header in Houston and Guadalajara?",
+     answer: "Pick your priority match. You cannot physically attend both. Houston is the easiest logistics play inside the US, while Guadalajara is the cross-border story play that requires arriving early and treating the day as an international travel scenario."
+   }
+ ]);
 
   return (
     <>

@@ -3,6 +3,7 @@ export interface HostCity {
   id: string;
   name: string;
   country: 'USA' | 'Canada' | 'Mexico';
+  region: string; // State or Province
   coordinates: {
     lat: number;
     lng: number;
@@ -21,6 +22,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'vancouver',
     name: 'Vancouver',
     country: 'Canada',
+    region: 'BC',
     coordinates: { lat: 49.2827, lng: -123.1207 },
     stadium: 'BC Place',
     capacity: '54,500',
@@ -33,6 +35,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'toronto',
     name: 'Toronto',
     country: 'Canada',
+    region: 'ON',
     coordinates: { lat: 43.6532, lng: -79.3832 },
     stadium: 'BMO Field',
     capacity: '45,000',
@@ -46,6 +49,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'seattle',
     name: 'Seattle',
     country: 'USA',
+    region: 'WA',
     coordinates: { lat: 47.6062, lng: -122.3321 },
     stadium: 'Lumen Field',
     capacity: '69,000',
@@ -58,6 +62,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'san-francisco',
     name: 'San Francisco Bay Area',
     country: 'USA',
+    region: 'CA',
     coordinates: { lat: 37.403, lng: -121.97 }, // Levi's Stadium location
     stadium: 'Levi\'s Stadium',
     capacity: '71,000',
@@ -70,6 +75,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'los-angeles',
     name: 'Los Angeles',
     country: 'USA',
+    region: 'CA',
     coordinates: { lat: 33.9535, lng: -118.339 }, // SoFi Stadium
     stadium: 'SoFi Stadium',
     capacity: '70,000',
@@ -83,6 +89,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'kansas-city',
     name: 'Kansas City',
     country: 'USA',
+    region: 'MO',
     coordinates: { lat: 39.0489, lng: -94.4839 }, // Arrowhead
     stadium: 'Arrowhead Stadium',
     capacity: '73,000',
@@ -95,6 +102,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'dallas',
     name: 'Dallas',
     country: 'USA',
+    region: 'TX',
     coordinates: { lat: 32.7473, lng: -97.0945 }, // AT&T Stadium
     stadium: 'AT&T Stadium',
     capacity: '94,000',
@@ -107,6 +115,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'houston',
     name: 'Houston',
     country: 'USA',
+    region: 'TX',
     coordinates: { lat: 29.6847, lng: -95.4107 }, // NRG Stadium
     stadium: 'NRG Stadium',
     capacity: '72,000',
@@ -120,6 +129,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'atlanta',
     name: 'Atlanta',
     country: 'USA',
+    region: 'GA',
     coordinates: { lat: 33.7553, lng: -84.4006 }, // Mercedes-Benz Stadium
     stadium: 'Mercedes-Benz Stadium',
     capacity: '75,000',
@@ -132,6 +142,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'boston',
     name: 'Boston',
     country: 'USA',
+    region: 'MA',
     coordinates: { lat: 42.0909, lng: -71.2643 }, // Gillette Stadium
     stadium: 'Gillette Stadium',
     capacity: '64,000',
@@ -144,6 +155,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'philadelphia',
     name: 'Philadelphia',
     country: 'USA',
+    region: 'PA',
     coordinates: { lat: 39.9008, lng: -75.1675 }, // Lincoln Financial Field
     stadium: 'Lincoln Financial Field',
     capacity: '69,000',
@@ -156,6 +168,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'new-york',
     name: 'New York / New Jersey',
     country: 'USA',
+    region: 'NJ', // MetLife is in NJ
     coordinates: { lat: 40.8135, lng: -74.0745 }, // MetLife Stadium
     stadium: 'MetLife Stadium',
     capacity: '82,500',
@@ -168,6 +181,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'miami',
     name: 'Miami',
     country: 'USA',
+    region: 'FL',
     coordinates: { lat: 25.958, lng: -80.2389 }, // Hard Rock Stadium
     stadium: 'Hard Rock Stadium',
     capacity: '65,000',
@@ -181,6 +195,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'mexico-city',
     name: 'Mexico City',
     country: 'Mexico',
+    region: 'CDMX',
     coordinates: { lat: 19.3029, lng: -99.1505 }, // Azteca
     stadium: 'Estadio Azteca',
     capacity: '83,000',
@@ -193,6 +208,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'guadalajara',
     name: 'Guadalajara',
     country: 'Mexico',
+    region: 'JAL',
     coordinates: { lat: 20.6817, lng: -103.4626 }, // Akron
     stadium: 'Estadio Akron',
     capacity: '48,000',
@@ -205,6 +221,7 @@ export const HOST_CITIES: HostCity[] = [
     id: 'monterrey',
     name: 'Monterrey',
     country: 'Mexico',
+    region: 'N.L.',
     coordinates: { lat: 25.6172, lng: -100.2443 }, // BBVA
     stadium: 'Estadio BBVA',
     capacity: '53,500',

@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { generateBreadcrumbSchema } from '@/lib/schema';
+import { JsonLd } from '@/components/seo/JsonLd';
 import { headers } from "next/headers";
 
 export const metadata: Metadata = {
@@ -211,19 +212,11 @@ export default async function Page() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        nonce={nonce}
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
-      <script
- type="application/ld+json"
- nonce={nonce}
- dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
- />
- <ClientPage />
- </>
- );
+      <JsonLd schema={schemas} nonce={nonce} />
+      <JsonLd schema={breadcrumbLd} nonce={nonce} />
+      <ClientPage />
+    </>
+  );
 }
 
 

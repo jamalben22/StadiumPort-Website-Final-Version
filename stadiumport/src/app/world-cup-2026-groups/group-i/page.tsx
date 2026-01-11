@@ -133,53 +133,22 @@ export default function GroupIPage() {
   const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": siteUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Groups",
-        "item": `${siteUrl}/world-cup-2026-groups`
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "name": "Group I Guide",
-        "item": `${siteUrl}${pageUrl}`
-      }
-    ]
-  };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group I Guide', item: pageUrl }
+  ]);
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the best way to travel between San Francisco and Los Angeles?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For speed, flying between SFO/SJC and LAX/BUR is best (1h 15m). For the experience, driving the Pacific Coast Highway (PCH) is legendary but takes 8-10 hours. Avoid the Amtrak Coast Starlight if you are on a tight schedule."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How far is Levi's Stadium from San Francisco?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Levi's Stadium is in Santa Clara, about 45 miles (72 km) south of downtown San Francisco. Depending on traffic, it can take 1-2 hours by car or Caltrain."
-        }
-      }
-    ]
-  };
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is the best way to travel between San Francisco and Los Angeles?",
+      answer: "For speed, flying between SFO/SJC and LAX/BUR is best (1h 15m). For the experience, driving the Pacific Coast Highway (PCH) is legendary but takes 8-10 hours. Avoid the Amtrak Coast Starlight if you are on a tight schedule."
+    },
+    {
+      question: "How far is Levi's Stadium from San Francisco?",
+      answer: "Levi's Stadium is in Santa Clara, about 45 miles (72 km) south of downtown San Francisco. Depending on traffic, it can take 1-2 hours by car or Caltrain."
+    }
+  ]);
 
   return (
     <>

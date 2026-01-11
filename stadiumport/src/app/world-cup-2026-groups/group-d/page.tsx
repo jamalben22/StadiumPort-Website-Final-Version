@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupDClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group D Travel Guide: LA, Seattle, SF Bay Area & Vancouver',
@@ -144,77 +144,34 @@ export default function GroupDPage() {
   const groupMatchesSchema = generateMatchListSchema('Group D', groupMatches);
   const matchEventSchemas = groupMatches.map(match => generateEventSchema(match));
 
- const breadcrumbSchema = {
- "@context": "https://schema.org",
- "@type": "BreadcrumbList",
- "itemListElement": [
- {
- "@type": "ListItem",
- "position": 1,
- "name": "Home",
- "item": siteUrl
- },
- {
- "@type": "ListItem",
- "position": 2,
- "name": "Groups",
- "item": `${siteUrl}/world-cup-2026-groups`
- },
- {
- "@type": "ListItem",
- "position": 3,
- "name": "Group D Guide",
- "item": `${siteUrl}${pageUrl}`
- }
- ]
- };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group D Guide', item: pageUrl }
+  ]);
 
- const faqSchema = {
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is the best way to travel between Seattle, the SF Bay Area, LA, and Vancouver?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Fly for match-to-match travel. These cities are deceptively far apart, and traffic near stadiums is brutal. Drive only if you have extra days (e.g., the Pacific Coast Highway between the Bay Area and LA)."
- }
- },
- {
- "@type": "Question",
- "name": "Where should I stay for matches at Levi's Stadium?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Stay in San Jose or Santa Clara for match days. San Francisco is 45 miles (60-90 mins) away. The commute from SF to the stadium on a weeknight is brutal."
- }
- },
- {
- "@type": "Question",
- "name": "Does Group D include a match in Vancouver?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Yes. One Group D fixture is scheduled at BC Place in Vancouver, making this group a true US-Canada West Coast route if you follow every match."
- }
- },
- {
- "@type": "Question",
- "name": "Where should I stay in Vancouver for a BC Place match?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Stay Downtown, Yaletown, or the West End for walkable matchdays. BC Place is in downtown Vancouver, so you can avoid long rideshare queues and keep transit simple."
- }
- },
- {
- "@type": "Question",
- "name": "Is public transport good in Group D cities?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Vancouver has SkyTrain. Seattle has excellent light rail. The Bay Area has BART and Caltrain (decent but complex). Los Angeles public transport is improving but still limited; expect rideshare for some trips."
- }
- }
- ]
- };
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is the best way to travel between Seattle, the SF Bay Area, LA, and Vancouver?",
+      answer: "Fly for match-to-match travel. These cities are deceptively far apart, and traffic near stadiums is brutal. Drive only if you have extra days (e.g., the Pacific Coast Highway between the Bay Area and LA)."
+    },
+    {
+      question: "Where should I stay for matches at Levi's Stadium?",
+      answer: "Stay in San Jose or Santa Clara for match days. San Francisco is 45 miles (60-90 mins) away. The commute from SF to the stadium on a weeknight is brutal."
+    },
+    {
+      question: "Does Group D include a match in Vancouver?",
+      answer: "Yes. One Group D fixture is scheduled at BC Place in Vancouver, making this group a true US-Canada West Coast route if you follow every match."
+    },
+    {
+      question: "Where should I stay in Vancouver for a BC Place match?",
+      answer: "Stay Downtown, Yaletown, or the West End for walkable matchdays. BC Place is in downtown Vancouver, so you can avoid long rideshare queues and keep transit simple."
+    },
+    {
+      question: "Is public transport good in Group D cities?",
+      answer: "Vancouver has SkyTrain. Seattle has excellent light rail. The Bay Area has BART and Caltrain (decent but complex). Los Angeles public transport is improving but still limited; expect rideshare for some trips."
+    }
+  ]);
 
  return (
     <>

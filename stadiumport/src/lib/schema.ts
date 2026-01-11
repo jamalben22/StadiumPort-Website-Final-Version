@@ -2,7 +2,9 @@ import { getContentMeta } from '@/data/content-registry';
 
 export const getSiteUrl = (path = '') => {
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://stadiumport.com";
-  return path ? `${baseUrl}${path}` : baseUrl;
+  // Ensure no double slashes if path starts with /
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  return path ? `${baseUrl}${cleanPath}` : baseUrl;
 };
 
 export const generateArticleSchema = (slug: string, urlPath: string) => {
@@ -10,7 +12,7 @@ export const generateArticleSchema = (slug: string, urlPath: string) => {
   const url = getSiteUrl(urlPath);
   
   if (!meta) {
-    console.warn(`Missing content meta for slug: ${slug}`);
+    // Fallback for pages not in registry
     return {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -18,6 +20,19 @@ export const generateArticleSchema = (slug: string, urlPath: string) => {
       "url": url,
       "datePublished": new Date().toISOString(),
       "dateModified": new Date().toISOString(),
+      "author": {
+        "@type": "Organization",
+        "name": "stadiumport Team",
+        "url": getSiteUrl()
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "stadiumport",
+        "logo": {
+          "@type": "ImageObject",
+          "url": getSiteUrl('/images/Logos/favicon/android-chrome-512x512.png')
+        }
+      }
     };
   }
 
@@ -76,7 +91,6 @@ export const generateFAQSchema = (faqs: { question: string; answer: string }[]) 
   }))
 });
 
-// Common schema generators
 export const generateWebsiteSchema = () => ({
   "@context": "https://schema.org",
   "@type": "WebSite",
@@ -84,117 +98,11 @@ export const generateWebsiteSchema = () => ({
   "alternateName": ["stadiumport", "World Cup 2026 Travel Guide"],
   "description": "The ultimate resource for World Cup 2026. Expert travel guides, stadium info, and planning for USA, Mexico, and Canada.",
   "url": getSiteUrl(),
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": `${getSiteUrl()}/search?q={search_term_string}`
-    },
-    "query-input": "required name=search_term_string"
-  },
   "publisher": {
     "@type": "Organization",
     "name": "stadiumport",
     "url": getSiteUrl()
   }
-});
-
-export const generateEventSchema = (event: {
-  name: string;
-  startDate: string;
-  endDate: string;
-  location: { name: string; address: string; country?: string };
-  image: string;
-  description: string;
-  performer?: any;
-  offers?: any;
-}) => ({
-  "@context": "https://schema.org",
-  "@type": "SportsEvent",
-  "name": event.name,
-  "startDate": event.startDate,
-  "endDate": event.endDate,
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": {
-    "@type": "Place",
-    "name": event.location.name,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": event.location.address,
-      "addressCountry": event.location.country || "US"
-    }
-  },
-  "image": [getSiteUrl(event.image)],
-  "description": event.description,
-  "organizer": {
-    "@type": "Organization",
-    "name": "FIFA",
-    "url": "https://www.fifa.com"
-  },
-  "performer": event.performer || [
-    {
-      "@type": "SportsTeam",
-      "name": "FIFA World Cup 2026 Qualified Team A"
-    },
-    {
-      "@type": "SportsTeam",
-      "name": "FIFA World Cup 2026 Qualified Team B"
-    }
-  ],
-  "offers": event.offers || {
-    "@type": "AggregateOffer",
-    "url": "https://www.fifa.com/tickets",
-    "priceCurrency": "USD",
-    "lowPrice": "60",
-    "highPrice": "2030",
-    "availability": "https://schema.org/PreOrder",
-    "validFrom": "2025-09-01T10:00:00Z"
-  }
-});
-
-export const generateMatchListSchema = (groupName: string, matches: any[]) => ({
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": `${groupName} Matches`,
-  "itemListElement": matches.map((match, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "item": generateEventSchema(match)
-  }))
-});
-
-export const generateLocalBusinessSchema = (business: {
-  name: string;
-  image: string;
-  telephone?: string;
-  address: { street?: string; city: string; region: string; postalCode?: string; country: string };
-  geo?: { latitude: number; longitude: number };
-  priceRange?: string;
-}) => ({
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness", // or SportsActivityLocation
-  "name": business.name,
-  "image": getSiteUrl(business.image),
-  "@id": getSiteUrl(),
-  "url": getSiteUrl(),
-  "telephone": business.telephone,
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": business.address.street,
-    "addressLocality": business.address.city,
-    "addressRegion": business.address.region,
-    "postalCode": business.address.postalCode,
-    "addressCountry": business.address.country
-  },
-  ...(business.geo ? {
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": business.geo.latitude,
-      "longitude": business.geo.longitude
-    }
-  } : {}),
-  "priceRange": business.priceRange || "$$"
 });
 
 export const generateOrganizationSchema = () => ({
@@ -246,64 +154,217 @@ export const generateSiteNavigationElementSchema = () => ({
   ]
 });
 
-export const generateSportsEventSchema = () => ({
-  "@context": "https://schema.org",
-  "@type": "SportsEvent",
-  "name": "FIFA World Cup 2026",
-  "description": "The 23rd FIFA World Cup, hosted jointly by Canada, Mexico, and the United States. Featuring 48 teams and 104 matches across 16 host cities.",
-  "startDate": "2026-06-11",
-  "endDate": "2026-07-19",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "location": [
-    {
-      "@type": "Place",
-      "name": "MetLife Stadium",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "1 MetLife Stadium Dr",
-        "addressLocality": "East Rutherford",
-        "addressRegion": "NJ",
-        "postalCode": "07073",
-        "addressCountry": "US"
-      }
+// Event Schema
+export const generateEventSchema = (event: {
+  name: string;
+  startDate: string;
+  endDate: string;
+  location: { name: string; address: string; country?: string } | { name: string; address: string; country?: string }[];
+  image: string;
+  description: string;
+  performer?: any;
+  offers?: any;
+}) => {
+  // Handle multiple locations or single location
+  const locationSchema = Array.isArray(event.location) 
+    ? event.location.map(loc => ({
+        "@type": "Place",
+        "name": loc.name,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": loc.address,
+          "addressCountry": loc.country || "US"
+        }
+      }))
+    : {
+        "@type": "Place",
+        "name": event.location.name,
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": event.location.address,
+          "addressCountry": event.location.country || "US"
+        }
+      };
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "SportsEvent",
+    "name": event.name,
+    "startDate": event.startDate,
+    "endDate": event.endDate,
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": locationSchema,
+    "image": [getSiteUrl(event.image)],
+    "description": event.description,
+    "organizer": {
+      "@type": "Organization",
+      "name": "FIFA",
+      "url": "https://www.fifa.com"
     },
-    {
-      "@type": "Place",
-      "name": "United States",
-      "address": { "@type": "PostalAddress", "addressCountry": "US" }
+    "performer": event.performer || {
+        "@type": "Organization",
+        "name": "FIFA World Cup 2026 Qualified Teams"
     },
-    {
-      "@type": "Place",
-      "name": "Mexico",
-      "address": { "@type": "PostalAddress", "addressCountry": "MX" }
-    },
-    {
-      "@type": "Place",
-      "name": "Canada",
-      "address": { "@type": "PostalAddress", "addressCountry": "CA" }
+    "offers": event.offers || {
+      "@type": "AggregateOffer",
+      "url": "https://www.fifa.com/tickets",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/PreOrder"
     }
-  ],
-  "organizer": {
-    "@type": "Organization",
-    "name": "FIFA",
-    "url": "https://www.fifa.com"
+  };
+};
+
+export const generateSportsEventSchema = generateEventSchema;
+
+// Match List Schema
+export const generateMatchListSchema = (groupName: string, matches: any[]) => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": `${groupName} Matches`,
+  "itemListElement": matches.map((match, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": generateEventSchema(match)
+  }))
+});
+
+// Stadium Schema
+export const generateStadiumSchema = (stadium: {
+  name: string;
+  description: string;
+  image: string;
+  address: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+  capacity?: number;
+  url?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "StadiumOrArena",
+  "name": stadium.name,
+  "description": stadium.description,
+  "image": getSiteUrl(stadium.image),
+  "url": stadium.url ? getSiteUrl(stadium.url) : getSiteUrl(),
+  "address": {
+    "@type": "PostalAddress",
+    ...stadium.address
   },
-  "performer": {
-    "@type": "Organization",
-    "name": "FIFA World Cup 2026 Qualified Teams"
-  },
-  "image": [
-    "https://stadiumport.com/images/hero/world-cup-2026-hero.webp"
+  ...(stadium.geo ? {
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": stadium.geo.latitude,
+      "longitude": stadium.geo.longitude
+    }
+  } : {}),
+  ...(stadium.capacity ? { "maximumAttendeeCapacity": stadium.capacity } : {}),
+  "isAccessibleForFree": false,
+  "publicAccess": true
+});
+
+// City/Destination Schema
+export const generateTouristDestinationSchema = (city: {
+  name: string;
+  description: string;
+  image: string;
+  url: string;
+  country: string;
+  address?: {
+    addressLocality?: string;
+    addressRegion?: string;
+    addressCountry?: string;
+  };
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+  touristType?: string[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": city.name,
+  "description": city.description,
+  "image": getSiteUrl(city.image),
+  "url": getSiteUrl(city.url),
+  "touristType": city.touristType || [
+    "Sports Tourism",
+    "Cultural Tourism"
   ],
-  "offers": {
-    "@type": "AggregateOffer",
-    "url": "https://www.fifa.com/tickets",
-    "availability": "https://schema.org/PreOrder",
-    "price": "60",
-    "priceCurrency": "USD",
-    "lowPrice": "60",
-    "highPrice": "2030",
-    "validFrom": "2025-10-01"
+  "geo": city.geo ? {
+    "@type": "GeoCoordinates",
+    "latitude": city.geo.latitude,
+    "longitude": city.geo.longitude
+  } : undefined,
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": city.country,
+    ...(city.address ? {
+      "addressLocality": city.address.addressLocality,
+      "addressRegion": city.address.addressRegion
+    } : {})
   }
+});
+
+// Profile Schema (for Authors)
+export const generateProfilePageSchema = (author: {
+  name: string;
+  description?: string;
+  image?: string;
+  url?: string;
+  jobTitle?: string;
+  sameAs?: string[];
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "mainEntity": {
+    "@type": "Person",
+    "name": author.name,
+    "description": author.description,
+    "image": author.image ? getSiteUrl(author.image) : undefined,
+    "url": author.url ? getSiteUrl(author.url) : undefined,
+    "jobTitle": author.jobTitle || "Contributor",
+    "sameAs": author.sameAs || []
+  }
+});
+
+// Keep existing local business schema for backward compatibility if used
+export const generateLocalBusinessSchema = (business: {
+  name: string;
+  image: string;
+  telephone?: string;
+  address: { street?: string; city: string; region: string; postalCode?: string; country: string };
+  geo?: { latitude: number; longitude: number };
+  priceRange?: string;
+}) => ({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness", 
+  "name": business.name,
+  "image": getSiteUrl(business.image),
+  "@id": getSiteUrl(),
+  "url": getSiteUrl(),
+  "telephone": business.telephone,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": business.address.street,
+    "addressLocality": business.address.city,
+    "addressRegion": business.address.region,
+    "postalCode": business.address.postalCode,
+    "addressCountry": business.address.country
+  },
+  ...(business.geo ? {
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": business.geo.latitude,
+      "longitude": business.geo.longitude
+    }
+  } : {}),
+  "priceRange": business.priceRange || "$$"
 });

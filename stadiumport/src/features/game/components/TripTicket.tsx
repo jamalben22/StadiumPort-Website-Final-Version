@@ -13,33 +13,33 @@ export const TripTicket: React.FC<TripTicketProps> = ({
   hostCityImage = "/images/cities/new-york-new-jersey-world-cup-2026-1024.webp"
 }) => {
   return (
-    <div className="relative w-full overflow-hidden rounded-3xl bg-white shadow-2xl group border border-black/10">
+    <div className="relative w-full overflow-hidden rounded-3xl bg-[#0A0A0C] shadow-2xl group border border-white/10">
       {/* Background Image with Blur */}
       <div 
         className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
         style={{ backgroundImage: `url('${hostCityImage}')` }}
       />
-      <div className="absolute inset-0 bg-white/60 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" />
       
       {/* Content */}
       <div className="relative z-10 p-6 flex flex-col h-full justify-between min-h-[220px]">
         {/* Header */}
         <div className="flex justify-between items-start">
-          <div className="bg-black/5 backdrop-blur-md px-3 py-1 rounded-full border border-black/10 flex items-center gap-2">
+          <div className="bg-white/5 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
             <MapPin className="w-3 h-3 text-[#01b47d]" />
-            <span className="text-[10px] font-bold text-slate-900 uppercase tracking-wider">Final Destination</span>
+            <span className="text-[10px] font-bold text-white uppercase tracking-wider">Final Destination</span>
           </div>
-          <div className="bg-black/5 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-slate-900/60">
+          <div className="bg-white/5 backdrop-blur-md px-2 py-1 rounded text-[10px] font-mono text-white/60">
             WC26-FIN
           </div>
         </div>
 
         {/* Main Text */}
         <div className="mt-4">
-          <h3 className="text-2xl font-black text-slate-900 leading-tight drop-shadow-sm">
+          <h3 className="text-2xl font-black text-white leading-tight drop-shadow-sm">
             Watch <span className="text-[#01b47d]">{teamName}</span> play the Final in {hostCity}!
           </h3>
-          <p className="text-slate-900/70 text-sm mt-1 font-bold">
+          <p className="text-white/70 text-sm mt-1 font-bold">
             July 19, 2026 • MetLife Stadium
           </p>
         </div>
@@ -50,7 +50,7 @@ export const TripTicket: React.FC<TripTicketProps> = ({
             href="https://www.skyscanner.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-slate-900 text-white font-bold py-3 px-4 rounded-xl hover:bg-black transition-colors shadow-lg active:scale-95"
+            className="flex items-center justify-center gap-2 bg-amber-500 text-black font-bold py-3 px-4 rounded-xl hover:bg-amber-400 transition-colors shadow-lg active:scale-95"
           >
             <Plane className="w-4 h-4" />
             <span className="text-sm">Check Flights</span>
@@ -59,7 +59,7 @@ export const TripTicket: React.FC<TripTicketProps> = ({
             href="https://www.booking.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 bg-black/5 backdrop-blur-md border border-black/10 text-slate-900 font-bold py-3 px-4 rounded-xl hover:bg-black/10 transition-colors shadow-lg active:scale-95"
+            className="flex items-center justify-center gap-2 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold py-3 px-4 rounded-xl hover:bg-white/10 transition-colors shadow-lg active:scale-95"
           >
             <Building2 className="w-4 h-4" />
             <span className="text-sm">Book Hotel</span>
@@ -68,7 +68,7 @@ export const TripTicket: React.FC<TripTicketProps> = ({
 
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 p-6 opacity-20 pointer-events-none">
-          <ExternalLink className="w-24 h-24 text-slate-900" />
+          <ExternalLink className="w-24 h-24 text-white" />
         </div>
       </div>
 

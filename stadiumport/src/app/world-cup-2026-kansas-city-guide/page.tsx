@@ -135,18 +135,22 @@ export default function Page() {
     description: 'Kansas City hosts six FIFA World Cup 2026 matches at GEHA Field at Arrowhead Stadium, including four group-stage matches, a Round of 32 match, and a quarterfinal.'
   });
 
-  const stadiumLd = generateLocalBusinessSchema({
-    name: 'GEHA Field at Arrowhead Stadium',
-    image: '/images/cities/kansas-city-world-cup-2026.webp',
+  const city = HOST_CITIES.find(c => c.id === 'kansas-city');
+  const destinationLd = city ? generateTouristDestinationSchema({
+    name: city.name,
+    description: city.description,
+    image: city.image,
+    url: '/world-cup-2026-kansas-city-guide',
+    country: city.country,
     address: {
-      street: '1 Arrowhead Dr',
-      city: 'Kansas City',
-      region: 'MO',
-      postalCode: '64129',
-      country: 'US',
+      addressRegion: city.region,
+      addressCountry: city.country
     },
-    priceRange: '$$'
-  });
+    geo: {
+      latitude: city.coordinates.lat,
+      longitude: city.coordinates.lng
+    }
+  }) : null;
 
   return (
     <>
@@ -154,7 +158,7 @@ export default function Page() {
       <JsonLd schema={breadcrumbLd} />
       <JsonLd schema={faqLd} />
       <JsonLd schema={eventLd} />
-      <JsonLd schema={stadiumLd} />
+      {destinationLd && <JsonLd schema={destinationLd} />}
       <ClientPage />
     </>
   );

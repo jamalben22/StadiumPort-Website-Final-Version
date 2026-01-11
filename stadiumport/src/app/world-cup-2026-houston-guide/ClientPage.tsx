@@ -819,43 +819,43 @@ export default function ClientPage() {
  The best match-day bases are <strong>Downtown</strong>, <strong>Midtown</strong>, the <strong>Museum District</strong>, and the <strong>Texas Medical Center</strong>—because they plug into the METRORail Red Line. If you can step out of your hotel, ride one line, and step off near NRG Park, you’ve solved Houston.
  </p>
  <div className="grid md:grid-cols-2 gap-8 mb-12">
-   <HotelCard 
-     name="Marriott Marquis Houston" 
-     rating={5} 
-     price="$$$$" 
-     distance="Rail access via Downtown"
-     features={['Downtown', 'Big-Event Ready', 'Pool', 'Convention Center']}
-     image="/images/cities/houston-world-cup-2026.webp"
-     link="https://www.booking.com/searchresults.html?ss=Marriott+Marquis+Houston"
-   />
-   <HotelCard 
-     name="Hotel ZaZa Museum District" 
-     rating={4} 
-     price="$$$" 
-     distance="Short hop to Red Line"
-     features={['Boutique', 'Museums', 'Spa', 'Walkable']}
-     image="/images/cities/houston-world-cup-2026.webp"
-     link="https://www.booking.com/searchresults.html?ss=Hotel+ZaZa+Museum+District"
-   />
-   <HotelCard 
-     name="Hilton Americas-Houston" 
-     rating={4} 
-     price="$$$" 
-     distance="Downtown base"
-     features={['Downtown', 'Convention District', 'Pool', 'Walkable']}
-     image="/images/cities/houston-world-cup-2026.webp"
-     link="https://www.booking.com/searchresults.html?ss=Hilton+Americas-Houston"
-   />
-   <HotelCard 
-     name="The Westin Houston Downtown" 
-     rating={4} 
-     price="$$$" 
-     distance="Downtown base"
-     features={['Downtown', 'Game Nights', 'Modern', 'Walkable']}
-     image="/images/cities/houston-world-cup-2026.webp"
-     link="https://www.booking.com/searchresults.html?ss=Westin+Houston+Downtown"
-   />
- </div>
+              <HotelCard 
+                name="Hotel Ylem" 
+                rating={8.4} 
+                price="$" 
+                distance="1.6 mi"
+                features={['Boutique', 'Free Breakfast', 'Shuttle to NRG', 'Art Gallery']}
+                image="/images/hotels/houston/hotel-ylem.jpg"
+                link="https://www.booking.com/hotel/us/houston-medical-center.html"
+              />
+              <HotelCard 
+                name="Blossom Hotel Houston" 
+                rating={8.8} 
+                price="$$" 
+                distance="1.2 mi"
+                features={['Rooftop Pool', 'Luxury Spa', 'Walking Distance', 'Fitness Center']}
+                image="/images/hotels/houston/blossom-hotel.jpg"
+                link="https://www.booking.com/hotel/us/blossom-houston-medical-center.html"
+              />
+              <HotelCard 
+                name="The Post Oak Hotel at Uptown" 
+                rating={9.6} 
+                price="$$$$" 
+                distance="15 min drive"
+                features={['Forbes 5-Star', 'Rooftop Helipad', 'Rolls-Royce Service', 'Elite Spa']}
+                image="/images/hotels/houston/post-oak-hotel.jpg"
+                link="https://www.booking.com/hotel/us/the-post-oak.html"
+              />
+              <HotelCard 
+                name="Marriott Marquis Houston" 
+                rating={8.2} 
+                price="$$$" 
+                distance="Rail access via Downtown"
+                features={['Downtown', 'Texas-Shaped Pool', 'Direct METRORail Access', 'Convention Center']}
+                image="/images/hotels/houston/marriott-marquis.jpg"
+                link="https://www.booking.com/hotel/us/marriott-marquis-houston.html"
+              />
+            </div>
 
  <div className="p-8 rounded-[2rem] border border-slate-200 dark:border-slate-800">
    <h3 className="text-2xl font-black text-slate-900 dark:text-white mb-4">Booking Strategy</h3>

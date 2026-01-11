@@ -75,7 +75,7 @@ export const BracketSummary = ({
   }, [groupStandings, thirdPlacePicks, knockoutPicks, hasPredictionData])
 
   if (!hasPredictionData) {
-    return <div className="p-4 text-center text-slate-900 font-bold">No prediction data available.</div>
+    return <div className="p-4 text-center text-white font-['Rajdhani'] font-bold uppercase tracking-widest">No prediction data available.</div>
   }
 
   const getTeam = (id?: string | null) => (id ? TEAM_MAP.get(id) : undefined)
@@ -117,9 +117,9 @@ export const BracketSummary = ({
             <span className="text-[10px] font-['Rajdhani'] font-bold text-amber-500/80 uppercase tracking-[0.3em] mb-1">Phase One</span>
             <h3 className="text-2xl md:text-3xl font-['Teko'] font-bold uppercase text-white tracking-wider leading-none">Group Stage</h3>
           </div>
-          <div className="h-px flex-1 bg-gradient-to-r from-black via-black/40 to-transparent"></div>
+          <div className="h-px flex-1 bg-gradient-to-r from-white/20 via-white/5 to-transparent"></div>
           <div className="hidden sm:flex items-center gap-2 text-[10px] font-['Rajdhani'] font-bold text-slate-300 uppercase tracking-widest">
-            <div className="w-1 h-1 rounded-full bg-black"></div>
+            <div className="w-1 h-1 rounded-full bg-white/20"></div>
             <span>48 Teams</span>
           </div>
         </div>
@@ -129,6 +129,8 @@ export const BracketSummary = ({
               {/* Background Glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-500/5 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+              {/* Carbon Fiber Texture Overlay */}
+              <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay z-0" />
               
               <div className="relative z-10">
                 <div className="flex items-center justify-between mb-3 pb-2 border-b border-white/10">
@@ -190,7 +192,7 @@ export const BracketSummary = ({
               <div className="flex items-center justify-between px-2 mb-6">
                 <div className="flex flex-col">
                   <div className="flex items-center gap-2 mb-1">
-                    <div className="w-1.5 h-1.5 rounded-full bg-black shadow-[0_0_12px_rgba(0,0,0,0.8)]"></div>
+                    <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_12px_rgba(245,158,11,0.5)]"></div>
                     <span className="text-[10px] font-['Rajdhani'] font-black text-amber-500/90 uppercase tracking-[0.3em]">
                       {section.subtitle}
                     </span>
@@ -217,6 +219,8 @@ export const BracketSummary = ({
                     <div key={m.id} className="group bg-[#0A0A0C] border border-white/5 rounded-xl p-1 shadow-2xl hover:border-amber-500/30 transition-all relative overflow-hidden">
                       {/* Background Gradient */}
                       <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+                      {/* Carbon Fiber Texture Overlay */}
+                      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay z-0" />
                       
                       <div className="relative z-10 space-y-0.5">
                         {[t1, t2].map((t, i) => {
@@ -288,6 +292,8 @@ export const BracketSummary = ({
               <div className="md:col-span-1 relative overflow-hidden bg-[#0A0A0C] border border-white/10 rounded-3xl p-6 group hover:shadow-2xl transition-all">
                 {/* Background Gradient */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b]" />
+                {/* Carbon Fiber Texture Overlay */}
+                <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay z-0" />
                 
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                   <div className="text-6xl font-['Teko'] font-bold text-white">3</div>

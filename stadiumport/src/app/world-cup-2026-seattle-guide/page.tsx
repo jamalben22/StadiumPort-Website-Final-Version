@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
   title: 'Seattle World Cup 2026 Guide: Local Matchday Playbook',
@@ -56,6 +57,7 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+  const city = HOST_CITIES.find(c => c.id === 'seattle');
   const jsonLd = generateArticleSchema('seattle-city-guide', '/world-cup-2026-seattle-guide');
 
   const breadcrumbLd = generateBreadcrumbSchema([
@@ -63,6 +65,26 @@ export default function Page() {
     { name: 'Host Cities', item: '/world-cup-2026-host-cities' },
     { name: 'Seattle Guide', item: '/world-cup-2026-seattle-guide' }
   ]);
+
+  const destinationLd = city ? generateTouristDestinationSchema({
+    name: city.name,
+    description: city.description,
+    image: city.image,
+    url: 'https://stadiumport.com/world-cup-2026-seattle-guide',
+    country: city.country,
+    address: {
+      addressRegion: city.region,
+      addressCountry: city.country
+    },
+    geo: {
+      latitude: city.coordinates.lat,
+      longitude: city.coordinates.lng
+    },
+    touristType: [
+      "Sports Enthusiasts",
+      "World Cup Fans"
+    ]
+  }) : null;
 
   const faqLd = {
  '@context': 'https://schema.org',
@@ -139,8 +161,9 @@ export default function Page() {
  <>
  <JsonLd schema={jsonLd} />
       <JsonLd schema={breadcrumbLd} />
+      {destinationLd && <JsonLd schema={destinationLd} />}
       <JsonLd schema={faqLd} />
- <ClientPage />
+      <ClientPage />
  </>
  );
 }

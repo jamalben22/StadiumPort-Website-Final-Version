@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import GroupGClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateEventSchema, generateMatchListSchema } from '@/lib/schema';
+import { generateArticleSchema, generateEventSchema, generateMatchListSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Group G Travel Guide: Vancouver, Seattle & Los Angeles',
@@ -132,69 +132,30 @@ export default function GroupGPage() {
       'Group G fixtures played in Vancouver, Seattle, and Los Angeles during the FIFA World Cup 2026 group stage.',
   });
 
- const breadcrumbSchema = {
-   "@context": "https://schema.org",
-   "@type": "BreadcrumbList",
-   "itemListElement": [
-     {
-       "@type": "ListItem",
-       "position": 1,
-       "name": "Home",
-       "item": siteUrl
-     },
-     {
-       "@type": "ListItem",
-       "position": 2,
-       "name": "Groups",
-       "item": `${siteUrl}/world-cup-2026-groups`
-     },
-     {
-       "@type": "ListItem",
-       "position": 3,
-       "name": "Group G Guide",
-       "item": `${siteUrl}${pageUrl}`
-     }
-   ]
- };
+ const breadcrumbSchema = generateBreadcrumbSchema([
+   { name: 'Home', item: '/' },
+   { name: 'Groups', item: '/world-cup-2026-groups' },
+   { name: 'Group G Guide', item: pageUrl }
+ ]);
 
- const faqSchema = {
-   "@context": "https://schema.org",
-   "@type": "FAQPage",
-   "mainEntity": [
-     {
-       "@type": "Question",
-       "name": "Amtrak or Driving between Vancouver and Seattle?",
-       "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Amtrak Cascades is highly recommended. While driving is shorter on paper, border wait times for cars are notoriously unpredictable, especially during major events. The train has dedicated customs processing that is usually faster."
-       }
-     },
-     {
-       "@type": "Question",
-       "name": "Which city has the best stadium atmosphere?",
-       "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Seattle. Lumen Field is legendary for its noise and soccer-first feel. Vancouver’s BC Place is also excellent and can get especially loud when the roof is closed."
-       }
-     },
-     {
-       "@type": "Question",
-       "name": "How far apart are the cities?",
-       "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Vancouver to Seattle is about 3–4 hours by train or car, depending on border waits. Seattle to Los Angeles is roughly 1,100 miles, so flying is the practical option."
-       }
-     },
-     {
-       "@type": "Question",
-       "name": "Is Los Angeles safe for tourists?",
-       "acceptedAnswer": {
-         "@type": "Answer",
-         "text": "Popular tourist areas like Santa Monica, Hollywood, and Downtown are generally fine, but stay aware, use rideshare at night, and avoid unfamiliar industrial areas near the stadium."
-       }
-     }
-   ]
- };
+ const faqSchema = generateFAQSchema([
+   {
+     question: "Amtrak or Driving between Vancouver and Seattle?",
+     answer: "Amtrak Cascades is highly recommended. While driving is shorter on paper, border wait times for cars are notoriously unpredictable, especially during major events. The train has dedicated customs processing that is usually faster."
+   },
+   {
+     question: "Which city has the best stadium atmosphere?",
+     answer: "Seattle. Lumen Field is legendary for its noise and soccer-first feel. Vancouver’s BC Place is also excellent and can get especially loud when the roof is closed."
+   },
+   {
+     question: "How far apart are the cities?",
+     answer: "Vancouver to Seattle is about 3–4 hours by train or car, depending on border waits. Seattle to Los Angeles is roughly 1,100 miles, so flying is the practical option."
+   },
+   {
+     question: "Is Los Angeles safe for tourists?",
+     answer: "Popular tourist areas like Santa Monica, Hollywood, and Downtown are generally fine, but stay aware, use rideshare at night, and avoid unfamiliar industrial areas near the stadium."
+   }
+ ]);
 
  return (
    <>

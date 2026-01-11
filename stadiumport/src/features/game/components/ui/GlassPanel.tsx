@@ -16,7 +16,7 @@ export const GlassPanel = ({ children, className }: GlassPanelProps) => {
   return (
     <div
       className={cn(
-        "bg-white/80 backdrop-blur-xl border border-white/40 rounded-2xl shadow-xl transform-gpu",
+        "bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl transform-gpu",
         className
       )}
     >

@@ -53,69 +53,30 @@ export default function GroupBPage() {
     description: 'Group B fixtures played in Toronto, SF Bay Area, Los Angeles, Vancouver, and Seattle during the FIFA World Cup 2026 group stage.'
   });
 
-  const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-   {
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": siteUrl
-   },
-   {
-    "@type": "ListItem",
-    "position": 2,
-    "name": "Groups",
-    "item": `${siteUrl}/world-cup-2026-groups`
-   },
-   {
-    "@type": "ListItem",
-    "position": 3,
-    "name": "Group B Guide",
-    "item": `${siteUrl}${pageUrl}`
-   }
-  ]
- };
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Home', item: '/' },
+    { name: 'Groups', item: '/world-cup-2026-groups' },
+    { name: 'Group B Guide', item: pageUrl }
+  ]);
 
- const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-   {
-    "@type": "Question",
-    "name": "What is the smartest one-base plan for Group B?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Base in Vancouver. It hosts two Group B matches at BC Place, has excellent transit, and keeps your hotel plan stable even if you’re waiting on the UEFA Play-off team to be confirmed."
+  const faqSchema = generateFAQSchema([
+    {
+      question: "What is the smartest one-base plan for Group B?",
+      answer: "Base in Vancouver. It hosts two Group B matches at BC Place, has excellent transit, and keeps your hotel plan stable even if you’re waiting on the UEFA Play-off team to be confirmed."
+    },
+    {
+      question: "Do I need a visa to travel between Vancouver and Seattle?",
+      answer: "Yes, you will be crossing an international border. Most travelers will need both a Canadian eTA/visa and a US ESTA/visa. Ensure all documents are ready for land or rail crossings, and expect delays on match days."
+    },
+    {
+      question: "Can I do Group B without renting a car?",
+      answer: "In Vancouver and Seattle, yes—public transit is strong. In California (SF Bay Area and Los Angeles), a car is often the fastest option for stadium logistics, though rideshare and transit can work with extra time and higher costs."
+    },
+    {
+      question: "When should I book hotels for Group B?",
+      answer: "Book refundable rooms early, then re-price later. Vancouver and the SF Bay Area tend to tighten first due to limited inventory and high demand. Expect a surge once the UEFA Play-off team is confirmed."
     }
-   },
-   {
-    "@type": "Question",
-    "name": "Do I need a visa to travel between Vancouver and Seattle?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Yes, you will be crossing an international border. Most travelers will need both a Canadian eTA/visa and a US ESTA/visa. Ensure all documents are ready for land or rail crossings, and expect delays on match days."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "Can I do Group B without renting a car?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "In Vancouver and Seattle, yes—public transit is strong. In California (SF Bay Area and Los Angeles), a car is often the fastest option for stadium logistics, though rideshare and transit can work with extra time and higher costs."
-    }
-   },
-   {
-    "@type": "Question",
-    "name": "When should I book hotels for Group B?",
-    "acceptedAnswer": {
-     "@type": "Answer",
-     "text": "Book refundable rooms early, then re-price later. Vancouver and the SF Bay Area tend to tighten first due to limited inventory and high demand. Expect a surge once the UEFA Play-off team is confirmed."
-    }
-   }
-  ]
- };
+  ]);
 
   const groupMatches = [
     {

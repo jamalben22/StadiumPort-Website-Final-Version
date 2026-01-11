@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
   title: "San Francisco Bay Area World Cup 2026 Guide",
@@ -133,12 +134,35 @@ export default function Page() {
  ]
  };
 
- return (
+ const city = HOST_CITIES.find(c => c.id === 'san-francisco');
+  const destinationLd = city ? generateTouristDestinationSchema({
+    name: city.name,
+    description: city.description,
+    image: city.image,
+    url: 'https://stadiumport.com/world-cup-2026-san-francisco-bay-area-guide',
+    country: city.country,
+    address: {
+      addressRegion: city.region,
+      addressCountry: city.country
+    },
+    geo: {
+      latitude: city.coordinates.lat,
+      longitude: city.coordinates.lng
+    },
+    touristType: [
+      "Sports Enthusiasts",
+      "World Cup Fans",
+      "Tech Tourists"
+    ]
+  }) : null;
+
+  return (
  <>
  <JsonLd schema={jsonLd} />
       <JsonLd schema={breadcrumbLd} />
+      {destinationLd && <JsonLd schema={destinationLd} />}
       <JsonLd schema={faqLd} />
- <ClientPage />
+      <ClientPage />
  </>
  );
 }

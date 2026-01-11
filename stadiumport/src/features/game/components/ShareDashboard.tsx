@@ -83,10 +83,10 @@ export const ShareDashboard = ({
               
               <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 text-sm font-medium text-slate-200">
                 <div className="flex items-center gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-black shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
                   <span className="font-['Rajdhani'] tracking-[0.15em] uppercase text-[11px] font-bold">LIVE ON STADIUMPORT</span>
                 </div>
-                <div className="hidden md:block w-px h-3 bg-black"></div>
+                <div className="hidden md:block w-px h-3 bg-white/10"></div>
                 <div className="flex items-center gap-2">
                   <Globe className="w-4 h-4 text-amber-500" />
                   <span className="font-['Rajdhani'] tracking-[0.15em] uppercase text-[11px] font-bold">Official Bracket</span>
@@ -154,9 +154,9 @@ export const ShareDashboard = ({
           
           {/* Premium underline accent */}
           <div className="mt-10 flex items-center gap-4">
-            <div className="w-12 h-[1px] bg-black"></div>
-            <div className="w-2 h-2 rounded-full bg-black shadow-[0_0_10px_rgba(0,0,0,0.5)]"></div>
-            <div className="w-12 h-[1px] bg-black"></div>
+            <div className="w-12 h-[1px] bg-white/10"></div>
+            <div className="w-2 h-2 rounded-full bg-amber-500/40 shadow-[0_0_10px_rgba(245,158,11,0.3)]"></div>
+            <div className="w-12 h-[1px] bg-white/10"></div>
           </div>
         </div>
         
@@ -169,20 +169,10 @@ export const ShareDashboard = ({
 
       {/* Official Rules Section */}
       <div 
-        className="mt-24 rounded-[32px] overflow-hidden shadow-2xl border border-white/20 relative"
-        style={{
-          background: `linear-gradient(135deg, #FF4A00 0%, #FFB199 100%)`
-        }}
+        className="mt-24 rounded-[32px] overflow-hidden shadow-2xl border border-white/10 relative"
       >
-        {/* Subtle Depth Layers to match entry page exactly */}
-        <div 
-          className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full opacity-60 mix-blend-soft-light blur-3xl"
-          style={{
-            background: `radial-gradient(circle, #FFB199 0%, transparent 70%)`
-          }}
-        />
         <div className="relative z-10 game-font-body">
-           <RulesCard variant="full" theme="light" />
+           <RulesCard variant="full" />
          </div>
       </div>
 
@@ -190,9 +180,10 @@ export const ShareDashboard = ({
       <div className="flex justify-center mt-12 mb-8">
         <Link 
           href="/world-cup-2026-prediction-game"
-          className="group relative inline-flex items-center gap-3 px-8 py-4 bg-slate-900 text-white rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-xl ring-4 ring-slate-900/10"
+          className="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#0A0A0C] text-white rounded-full overflow-hidden transition-all hover:scale-105 hover:shadow-xl ring-1 ring-white/10"
         >
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
           <Trophy className="w-6 h-6 text-[#fbbf24]" />
           <div className="flex flex-col items-start">
             <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-200 leading-none mb-0.5">Don't just watch</span>

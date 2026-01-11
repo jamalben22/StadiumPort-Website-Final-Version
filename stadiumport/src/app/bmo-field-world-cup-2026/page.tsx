@@ -38,9 +38,30 @@ export default function Page() {
     { name: 'BMO Field Guide', item: '/bmo-field-world-cup-2026' }
   ]);
 
+  const stadium = WORLD_CUP_STADIUMS.find(s => s.id === 'bmo-field');
+  const stadiumLd = stadium ? generateStadiumSchema({
+    name: stadium.name,
+    description: `Complete guide to ${stadium.name} for World Cup 2026. ${stadium.city}, ${stadium.country}.`,
+    image: stadium.image,
+    address: {
+      streetAddress: stadium.address.street,
+      addressLocality: stadium.address.city,
+      addressRegion: stadium.address.region,
+      postalCode: stadium.address.postalCode,
+      addressCountry: stadium.address.country
+    },
+    geo: {
+      latitude: stadium.coordinates.lat,
+      longitude: stadium.coordinates.lng
+    },
+    capacity: parseInt(stadium.capacity.replace(/,/g, '')),
+    url: 'https://stadiumport.com/bmo-field-world-cup-2026'
+  }) : null;
+
   return (
     <>
       <JsonLd schema={breadcrumbLd} />
+      {stadiumLd && <JsonLd schema={stadiumLd} />}
       <ClientPage />
     </>
   );

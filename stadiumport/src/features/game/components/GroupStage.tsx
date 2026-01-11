@@ -51,35 +51,35 @@ const getStatusStyles = (idx: number) => {
     case 0: // 1st Place (Qualified)
     case 1: // 2nd Place (Qualified)
       return {
-        wrapper: "bg-white border-white/40 opacity-100 shadow-sm",
+        wrapper: "bg-white/5 border-white/10 opacity-100 shadow-sm",
         accentBar: "bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.4)]",
-        text: "text-slate-900 font-semibold",
-        rank: "text-slate-500",
+        text: "text-white font-semibold",
+        rank: "text-slate-400",
         badge: {
           text: "QLF",
-          style: "bg-[#01b47d]/10 text-[#01b47d] border border-[#01b47d]/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
+          style: "bg-[#01b47d]/20 text-[#01b47d] border border-[#01b47d]/20 shadow-[0_0_6px_rgba(16,185,129,0.1)]"
         }
       };
     case 2: // 3rd Place
       return {
-        wrapper: "bg-amber-50 border-amber-200",
+        wrapper: "bg-amber-500/5 border-amber-500/20",
         accentBar: "bg-amber-500/80 shadow-[0_0_8px_rgba(245,158,11,0.2)]",
-        text: "text-amber-950 font-bold",
-        rank: "text-amber-900",
+        text: "text-amber-400 font-bold",
+        rank: "text-amber-500/70",
         badge: {
           text: "3RD",
-          style: "bg-amber-500/20 text-amber-900 border border-amber-500/30 font-bold"
+          style: "bg-amber-500/20 text-amber-400 border border-amber-500/30 font-bold"
         }
       };
     default: // 4th Place (Eliminated)
       return {
-        wrapper: "bg-red-50 border-red-200 opacity-80",
+        wrapper: "bg-red-500/5 border-red-500/20 opacity-80",
         accentBar: "bg-red-600",
-        text: "text-red-950 font-bold",
-        rank: "text-red-900",
+        text: "text-red-400 font-bold",
+        rank: "text-red-500/70",
         badge: {
           text: "X",
-          style: "bg-red-600/20 text-red-900 border border-red-500/30 font-bold"
+          style: "bg-red-600/20 text-red-400 border border-red-500/30 font-bold"
         }
       };
   }
@@ -138,7 +138,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       className={`
         relative h-12 mb-2 rounded-lg flex items-center pl-0 pr-3 overflow-hidden
         border transition-all duration-300 ease-out touch-none select-none group
-        ${isDragging ? 'opacity-95 scale-[1.03] shadow-2xl z-50 ring-1 ring-slate-200 bg-white cursor-grabbing' : status.wrapper}
+        ${isDragging ? 'opacity-95 scale-[1.03] shadow-2xl z-50 ring-1 ring-white/20 bg-[#1e293b] cursor-grabbing' : status.wrapper}
       `}
     >
       {/* Status Accent Bar (Left Edge) */}
@@ -147,12 +147,12 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       {/* Grip Handle (Subtle, elegant dots) */}
       <div className="mr-3 opacity-20 group-hover:opacity-50 transition-opacity duration-300 cursor-grab active:cursor-grabbing p-1">
         <div className="grid grid-cols-2 gap-[2px]">
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
-           <div className="w-[2px] h-[2px] bg-slate-900 rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
+           <div className="w-[2px] h-[2px] bg-white rounded-full"></div>
         </div>
       </div>
 
@@ -165,7 +165,7 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
       </div>
 
       {/* Flag */}
-      <div className="relative w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-slate-200 flex items-center justify-center bg-slate-100">
+      <div className="relative w-7 h-5 rounded-[3px] overflow-hidden shadow-sm mr-3 ring-1 ring-white/10 flex items-center justify-center bg-white/5">
         {team.flagUrl ? (
           <Image 
             src={team.flagUrl} 
@@ -176,9 +176,9 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
             draggable={false} 
           />
         ) : ['poa', 'pob', 'poc', 'pod', 'po1', 'po2'].includes(team.id) ? (
-          <span className={`text-[8px] font-bold tracking-tighter uppercase ${index === 2 ? 'text-amber-700/70' : 'text-slate-900'}`}>FIFA</span>
+          <span className={`text-[8px] font-bold tracking-tighter uppercase ${index === 2 ? 'text-amber-400/70' : 'text-white'}`}>FIFA</span>
         ) : (
-          <span className={`text-[10px] font-bold tracking-tighter ${index === 2 ? 'text-amber-700/70' : 'text-slate-900'}`}>{team.fifaCode}</span>
+          <span className={`text-[10px] font-bold tracking-tighter ${index === 2 ? 'text-amber-400/70' : 'text-white'}`}>{team.fifaCode}</span>
         )}
       </div>
 
@@ -190,21 +190,21 @@ const SortableTeamItem = React.memo(({ id, index }: SortableTeamItemProps) => {
              <Tooltip.Root>
                 <Tooltip.Trigger asChild>
                    <button 
-                       className="inline-flex items-center justify-center p-1 rounded-full hover:bg-slate-100 transition-colors focus:outline-none shrink-0"
+                       className="inline-flex items-center justify-center p-1 rounded-full hover:bg-white/10 transition-colors focus:outline-none shrink-0"
                        onClick={(e) => e.stopPropagation()} // Prevent drag start on click
                        onPointerDown={(e) => e.stopPropagation()} // Prevent drag start on touch
                    >
-                      <Info className={`w-3.5 h-3.5 hover:text-slate-600 text-slate-900 ${index === 2 ? 'text-amber-700/60' : 'text-slate-900'}`} />
+                      <Info className={`w-3.5 h-3.5 hover:text-white text-white/70 ${index === 2 ? 'text-amber-400/60' : 'text-white/70'}`} />
                    </button>
                 </Tooltip.Trigger>
                 <Tooltip.Portal>
                    <Tooltip.Content 
-                       className="z-[9999] max-w-[250px] bg-white border border-slate-200 text-slate-900 text-xs p-3 rounded-lg shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 select-none"
+                       className="z-[9999] max-w-[250px] bg-[#0A0A0C] border border-white/10 text-white text-xs p-3 rounded-lg shadow-xl backdrop-blur-xl animate-in fade-in zoom-in-95 duration-200 select-none"
                        sideOffset={5}
                        side="top"
                    >
                       {PLAYOFF_INFO[team.id]}
-                      <Tooltip.Arrow className="fill-white" />
+                      <Tooltip.Arrow className="fill-[#0A0A0C]" />
                    </Tooltip.Content>
                 </Tooltip.Portal>
              </Tooltip.Root>
@@ -236,37 +236,41 @@ const DirectGroupCard = React.memo(({ groupId, teams }: DirectGroupCardProps) =>
   
   const headerBadgeStyle = useMemo(() => ({
     border: `1px solid ${withAlpha(accent, '33')}`,
-    background: `linear-gradient(90deg, ${withAlpha(accent, '0F')}, rgba(255,255,255,0.02))`
+    background: `linear-gradient(90deg, ${withAlpha(accent, '1A')}, rgba(255,255,255,0.02))`
   }), [accent]);
 
   const dotStyle = useMemo(() => ({ backgroundColor: accent }), [accent]);
 
   return (
-    <div className="flex flex-col h-full bg-white/90 backdrop-blur-2xl rounded-2xl border border-black/10 overflow-hidden shadow-lg ring-1 ring-black/5">
-      <div className="px-4 py-3 border-b border-black/10 flex items-center justify-between bg-black/5">
+    <div className="flex flex-col h-full bg-[#0A0A0C] backdrop-blur-2xl rounded-2xl border border-white/10 overflow-hidden shadow-2xl isolate relative">
+      {/* Background layers to match reference */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+      <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+
+      <div className="px-4 py-3 border-b border-white/10 flex items-center justify-between bg-white/5">
         <div className="relative">
           <div
             className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
             style={headerBadgeStyle}
           >
-            <span
-              className="text-lg md:text-xl font-sans font-semibold uppercase tracking-[0.12em] text-slate-900"
-            >
+            <div className="w-2 h-2 rounded-full animate-pulse shadow-[0_0_8px_currentColor]" style={dotStyle} />
+            <span className="font-['Teko'] text-lg uppercase tracking-widest text-white leading-none">
               Group {groupId}
             </span>
           </div>
         </div>
-        <div
-          className="w-2 h-2 rounded-full ring-2 ring-white/50"
-          style={dotStyle}
-        ></div>
       </div>
-
-      {/* List */}
-      <div className="p-3 flex-1">
-        <SortableContext items={teams} strategy={verticalListSortingStrategy}>
+      <div className="p-2">
+        <SortableContext
+          items={teams}
+          strategy={verticalListSortingStrategy}
+        >
           {teams.map((teamId, index) => (
-            <SortableTeamItem key={teamId} id={teamId} index={index} />
+            <SortableTeamItem
+              key={teamId}
+              id={teamId}
+              index={index}
+            />
           ))}
         </SortableContext>
       </div>
@@ -367,9 +371,11 @@ export const GroupStage = () => {
 
       <div className="w-full px-4 md:px-6 lg:px-8 pt-24 pb-32 md:pt-28">
        <div className="mb-6 flex justify-center">
-         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/90 border border-black/10 backdrop-blur-xl shadow-sm">
-           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-           <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">
+         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-sm">
+           <span className="relative flex h-2 w-2">
+             <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+           </span>
+           <span className="text-[11px] font-bold text-amber-400 uppercase tracking-[0.22em] font-['Rajdhani']">
              Step 1 of 5: Group Stage Predictions
            </span>
          </div>
@@ -377,68 +383,79 @@ export const GroupStage = () => {
        {/* Dashboard Header */}
        <div className="text-center mb-8 pt-4">
           <RulesCard variant="short" className="max-w-2xl mx-auto mb-8" />
-         <h2 className="text-3xl md:text-4xl font-sans font-bold text-slate-950 tracking-tight mb-2">
+         <h2 className="text-3xl md:text-4xl font-sans font-bold text-white tracking-tight mb-2">
            Group Stage: Predict All 12 Groups
          </h2>
-       <p className="text-slate-900 font-mono text-xs tracking-widest uppercase">
+       <p className="text-slate-300 font-mono text-xs tracking-widest uppercase font-bold">
           Drag & Drop Teams to Set Your Rankings • Top 2 + Best 8 Third-Place Teams Advance to Round of 32
         </p>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 md:px-0 mb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
-          <div className="relative group bg-white/90 border border-black/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-black/5 shadow-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+          {/* Card 1: New 2026 Format */}
+          <div className="relative group bg-[#0A0A0C] border border-white/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 shadow-2xl overflow-hidden isolate">
+            {/* PREMIUM BACKGROUND LAYERS */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+            <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent opacity-60 -z-10" />
+            
             <div className="absolute -top-24 -left-24 w-52 h-52 bg-[#01b47d]/10 blur-[80px] rounded-full pointer-events-none" />
-            <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-black/5 via-black/10 to-black/5" />
+            <h4 className="text-center text-white font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">New 2026 Format</h4>
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-white/5 via-white/10 to-white/5" />
             <div className="space-y-2">
-              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
+              <div className="flex items-start gap-2 text-slate-200 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
                 <span>48 teams divided into 12 groups of 4</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
+              <div className="flex items-start gap-2 text-slate-200 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
                 <span>Top 2 from each group automatically advance (24 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
+              <div className="flex items-start gap-2 text-slate-200 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
                 <span>Best 8 third-place teams also qualify (8 teams)</span>
               </div>
-              <div className="flex items-start gap-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
+              <div className="flex items-start gap-2 text-slate-200 font-['Rajdhani'] text-sm md:text-base">
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
                 <span>Total: 32 teams advance to knockout rounds</span>
               </div>
             </div>
           </div>
-          <div className="relative group bg-white/90 border border-black/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 backdrop-blur-2xl ring-1 ring-black/5 shadow-lg overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+          {/* Card 2: How Rankings Work */}
+          <div className="relative group bg-[#0A0A0C] border border-white/10 rounded-[24px] md:rounded-[28px] p-5 md:p-6 shadow-2xl overflow-hidden isolate">
+            {/* PREMIUM BACKGROUND LAYERS */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] -z-10" />
+            <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay -z-10" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-transparent to-transparent opacity-60 -z-10" />
+            
             <div className="absolute -top-24 -right-24 w-52 h-52 bg-purple-400/10 blur-[80px] rounded-full pointer-events-none" />
-            <h4 className="text-center text-slate-900 font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">How Rankings Work</h4>
-            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-black/5 via-black/10 to-black/5" />
-            <div className="space-y-2 text-slate-900 font-['Rajdhani'] text-sm md:text-base">
+            <h4 className="text-center text-white font-['Rajdhani'] text-sm md:text-base font-extrabold uppercase tracking-[0.2em] mb-2">How Rankings Work</h4>
+            <div className="mx-auto mb-3 w-24 h-px bg-gradient-to-r from-white/5 via-white/10 to-white/5" />
+            <div className="space-y-2 text-slate-200 font-['Rajdhani'] text-sm md:text-base">
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
-                <span><span className="font-bold">1st Place</span> – Group Winner (automatic qualification)</span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
+                <span><span className="font-bold text-amber-400">1st Place</span> – Group Winner (automatic qualification)</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
-                <span><span className="font-bold">2nd Place</span> – Group Runner-up (automatic qualification)</span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
+                <span><span className="font-bold text-amber-400">2nd Place</span> – Group Runner-up (automatic qualification)</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
-                <span><span className="font-bold">3rd Place</span> – May qualify as one of 8 best third-place teams</span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
+                <span><span className="font-bold text-amber-400">3rd Place</span> – May qualify as one of 8 best third-place teams</span>
               </div>
               <div className="flex items-start gap-2">
-                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-slate-900/40"></span>
-                <span><span className="font-bold">4th Place</span> – Eliminated</span>
+                <span className="mt-1 w-1.5 h-1.5 rounded-full bg-amber-500/40"></span>
+                <span><span className="font-bold text-red-400">4th Place</span> – Eliminated</span>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="text-center mb-6">
-        <h3 className="text-2xl md:text-3xl font-sans font-bold text-slate-900 tracking-tight">
+        <h3 className="text-2xl md:text-3xl font-sans font-bold text-white tracking-tight">
           Rank all 4 teams in each group below (1st to 4th place)
         </h3>
       </div>

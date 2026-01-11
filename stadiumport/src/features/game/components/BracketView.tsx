@@ -201,9 +201,9 @@ export const BracketView = ({ bracketRoundIndex = 0, setBracketRoundIndex }: Bra
         {/* Sticky prompt to pick Third Place */}
         {!!knockoutPicks['SF-01'] && !!knockoutPicks['SF-02'] && !knockoutPicks['TP-01'] && (
           <div className="sticky top-2 z-30 mx-4 mb-2">
-            <div className="flex items-center justify-center gap-3 px-4 py-2 rounded-full bg-white border border-black/10 shadow-lg backdrop-blur-md">
-              <span className="inline-block w-2 h-2 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-              <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">Select Third Place to finalize Top 3 & 4</span>
+            <div className="flex items-center justify-center gap-3 px-4 py-2 rounded-full bg-[#0A0A0C]/80 border border-white/10 shadow-lg backdrop-blur-md">
+              <span className="inline-block w-2 h-2 rounded-full bg-[#fbbf24] shadow-[0_0_8px_rgba(251,191,36,0.6)]"></span>
+              <span className="text-[11px] font-bold text-white uppercase tracking-[0.22em] font-['Rajdhani']">Select Third Place to finalize Top 3 & 4</span>
             </div>
           </div>
         )}

@@ -19,7 +19,7 @@ import { GroupStageSkeleton } from '../../features/game/components/GroupStageSke
 // Loading fallback component
 const LoadingFallback = () => (
   <div className="flex items-center justify-center w-full h-64">
-    <div className="w-8 h-8 border-2 border-[#FBBF24]/20 border-t-[#FBBF24] rounded-full animate-spin"></div>
+    <div className="w-8 h-8 border-2 border-amber-500/20 border-t-amber-500 rounded-full animate-spin shadow-[0_0_15px_rgba(245,158,11,0.2)]"></div>
   </div>
 );
 
@@ -311,17 +311,17 @@ function PredictGameContent() {
             </h1>
 
             <div className="flex justify-center mb-12">
-              <span className="px-3 py-1 rounded-full border border-slate-300 dark:border-white/30 text-slate-600 dark:text-white/90 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md">
+              <span className="px-3 py-1 rounded-full border border-white/10 text-white/40 text-[10px] font-bold tracking-widest uppercase backdrop-blur-md bg-white/5">
                 Last Updated: January 4, 2026
               </span>
             </div>
 
             {/* Stepper UI (Persistent) */}
           <div className="mb-8 md:mb-12">
-            <div ref={stepperRef} className="flex items-center justify-start gap-3 md:justify-between relative overflow-x-auto overflow-y-visible whitespace-nowrap no-scrollbar px-5 py-3 rounded-3xl border border-white/40 bg-white/30 backdrop-blur-2xl ring-1 ring-white/40 shadow-lg pr-5">
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1.5px] -z-10 rounded-full bg-white/20"></div>
+            <div ref={stepperRef} className="flex items-center justify-start gap-3 md:justify-between relative overflow-x-auto overflow-y-visible whitespace-nowrap no-scrollbar px-5 py-3 rounded-3xl border border-white/10 bg-[#0A0A0C]/40 backdrop-blur-2xl shadow-2xl pr-5">
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-full h-[1px] -z-10 rounded-full bg-white/10"></div>
               <motion.div 
-                className="absolute left-0 top-1/2 -translate-y-1/2 h-[1.5px] -z-10 rounded-full bg-white"
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-[1px] -z-10 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]"
                 initial={{ width: 0 }}
                 animate={{ width: `${Math.max(0, Math.min(100, (currentStep/(STEPS.length-1))*100))}%` }}
                 transition={{ type: 'tween', duration: 0.35, ease: [0.25, 0.1, 0.25, 1.0] }}
@@ -338,14 +338,14 @@ function PredictGameContent() {
                       className="flex items-center justify-center"
                     >
                       <div className={`rounded-full transition-all duration-300 ${
-                        isCurrent ? 'w-3 h-3 md:w-3.5 md:h-3.5 ring-2 ring-white shadow-lg bg-slate-900' :
-                        isCompleted ? 'w-2.5 h-2.5 md:w-3 md:h-3 bg-white' :
-                        'w-2 h-2 md:w-2.5 md:h-2.5 bg-white/40'
+                        isCurrent ? 'w-3 h-3 md:w-3.5 md:h-3.5 ring-2 ring-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.4)] bg-amber-500' :
+                        isCompleted ? 'w-2.5 h-2.5 md:w-3 md:h-3 bg-amber-500/80' :
+                        'w-2 h-2 md:w-2.5 md:h-2.5 bg-white/20'
                       }`}></div>
                     </motion.div>
                     <span 
                       className={`mt-2 text-[11px] md:text-sm font-medium tracking-wide transition-colors duration-300 whitespace-nowrap font-inter ${
-                        isCurrent ? 'text-slate-900 font-bold' : isCompleted ? 'text-slate-800' : 'text-slate-700'
+                        isCurrent ? 'text-white font-bold' : isCompleted ? 'text-white/60' : 'text-white/30'
                       } ${isCurrent ? 'inline' : 'hidden md:inline'}`}
                     >
                       {step.label}

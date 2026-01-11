@@ -88,46 +88,45 @@ export const BracketMobile = React.memo(({
   const progress = ((currentRoundIndex + 1) / ROUND_ORDER.length) * 100;
 
   return (
-    <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-slate-900 overflow-x-hidden">
+    <div className="flex flex-col w-full min-h-[50vh] relative z-20 text-white overflow-x-hidden">
+      {/* Carbon Fiber Texture Overlay */}
+      <div className="fixed inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay z-0" />
+
       {/* Liquid Gold Progress Header */}
-      <div className="flex-none px-6 pt-6 pb-2 z-10 border-b border-black/5">
+      <div className="flex-none px-6 pt-6 pb-2 z-10 border-b border-white/5 relative">
         <div className="text-center space-y-6 mb-3">
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/95 border border-black/10 backdrop-blur-xl shadow-sm">
-            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#01b47d] shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
-            <span className="text-[11px] font-bold text-slate-900 uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
+          <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-[#0A0A0C]/40 border border-white/10 backdrop-blur-xl shadow-sm">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.6)]"></span>
+            <span className="text-[11px] font-bold text-white uppercase tracking-[0.22em] font-['Rajdhani']">Step 3 of 5: Predict All Knockout Rounds</span>
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-bold text-slate-950 uppercase tracking-tighter drop-shadow-sm">Knockout Stage: From Round of 32 to World Cup Champion</h2>
-          <p className="text-slate-900 font-mono text-sm uppercase tracking-widest font-bold">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
+          <h2 className="text-4xl md:text-6xl font-['Teko'] font-bold text-white uppercase tracking-tight drop-shadow-sm">Knockout Stage</h2>
+          <p className="text-slate-400 font-['Rajdhani'] text-xs uppercase tracking-widest font-bold">Predict every knockout match winner from the Round of 32 through the Final on July 19, 2026.</p>
           <p
-            className="font-mono text-sm uppercase tracking-[0.3em] drop-shadow-sm text-slate-950 font-bold"
+            className="font-['Rajdhani'] text-xs uppercase tracking-[0.3em] drop-shadow-sm text-slate-300 font-bold"
           >
             Tournament Bracket Progress:
           </p>
         </div>
         <div className="flex justify-between items-end mb-2">
             <h2
-              className="text-2xl font-display font-bold uppercase tracking-wider"
-              style={{ color: withAlpha(theme.color, 'CC') }}
+              className="text-2xl font-['Teko'] font-bold uppercase tracking-wider text-white"
             >
               {ROUND_NAMES[currentRoundId]}
             </h2>
-            <div className="text-amber-600 font-mono text-xs font-bold tracking-widest mb-1">
+            <div className="text-amber-500 font-['Rajdhani'] text-xs font-bold tracking-widest mb-1">
                 STAGE {currentRoundIndex + 1}/{ROUND_ORDER.length}
             </div>
         </div>
         
         {/* Progress Bar Container */}
-        <div className="h-1.5 w-full bg-black/5 rounded-full overflow-hidden relative">
+        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden relative border border-white/5">
             {/* Liquid Gold Bar */}
             <div 
-                className="absolute top-0 left-0 h-full transition-all duration-700 ease-out rounded-full"
-                style={{ width: `${progress}%` }}
+                className="absolute top-0 left-0 h-full transition-all duration-700 ease-out rounded-full shadow-[0_0_10px_rgba(245,158,11,0.3)]"
+                style={{ width: `${progress}%`, backgroundColor: '#f59e0b' }}
             >
                 <div
-                  className="w-full h-full animate-pulse"
-                  style={{
-                    background: `linear-gradient(90deg, ${withAlpha(theme.color, '80')}, ${withAlpha(theme.color, '60')}, ${withAlpha(theme.color, '99')})`
-                  }}
+                  className="w-full h-full animate-pulse bg-gradient-to-r from-transparent via-white/40 to-transparent"
                 ></div>
             </div>
         </div>
@@ -161,60 +160,63 @@ export const BracketMobile = React.memo(({
                 return (
                   <div className="mt-0">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-900">Third Place</span>
-                      {!pick && (!tpTeam1 || !tpTeam2) && <span className="text-[10px] text-slate-900/50 font-bold uppercase tracking-widest">Locked until Semi-Finals are decided</span>}
-                      {!pick && tpTeam1 && tpTeam2 && <span className="text-[10px] text-[#01b47d] font-bold uppercase tracking-widest">Select Winner</span>}
+                      <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-400">Third Place Play-off</span>
+                      {!pick && (!tpTeam1 || !tpTeam2) && <span className="text-[10px] text-slate-500 font-bold uppercase tracking-widest">Decided after Semi-Finals</span>}
+                      {!pick && tpTeam1 && tpTeam2 && <span className="text-[10px] text-amber-500 font-bold uppercase tracking-widest animate-pulse">Pick your winner</span>}
                     </div>
                     <div className="grid grid-cols-1 gap-2">
                       <button
                         type="button"
                         onClick={() => tpTeam1 && onPickWinner('TP-01', tpTeam1)}
                         disabled={!tpTeam1}
-                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam1 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${pick === tpTeam1 ? 'bg-amber-500 text-[#0A0A0C] font-bold shadow-[0_0_15px_rgba(245,158,11,0.3)]' : 'bg-[#0A0A0C]/40 border border-white/10 text-white hover:bg-white/10'} ${!tpTeam1 ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
                       >
                         <div className="flex items-center gap-3">
                           {team1?.flagUrl && (
-                            <div className="relative w-6 h-4 flex-shrink-0">
+                            <div className="relative w-8 h-5 flex-shrink-0">
                               <Image 
                                 src={team1.flagUrl} 
                                 alt={team1.name} 
                                 fill
-                                className="rounded shadow-sm object-cover" 
+                                className={`rounded shadow-sm object-cover ${pick === tpTeam1 ? 'ring-1 ring-white/30' : 'ring-1 ring-white/10'}`} 
                               />
                             </div>
                           )}
-                          <span className="font-['Teko'] text-lg uppercase text-slate-900">{team1?.name || 'TBD'}</span>
+                          <span className={`font-['Teko'] text-xl uppercase tracking-wide ${pick === tpTeam1 ? 'text-[#0A0A0C]' : 'text-white'}`}>{team1?.name || 'TBD'}</span>
                         </div>
-                        {pick === tpTeam1 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}
+                        {pick === tpTeam1 && <span className="text-[10px] font-black bg-[#0A0A0C] text-amber-500 px-2.5 py-1 rounded-full uppercase tracking-wider">Winner</span>}
                       </button>
                       <button
                         type="button"
                         onClick={() => tpTeam2 && onPickWinner('TP-01', tpTeam2)}
                         disabled={!tpTeam2}
-                        className={`flex items-center justify-between px-3 py-2 rounded-md transition-colors ${pick === tpTeam2 ? 'bg-[#01b47d]/10 ring-1 ring-[#01b47d]/20' : 'bg-black/5'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all ${pick === tpTeam2 ? 'bg-amber-500 text-[#0A0A0C] font-bold shadow-[0_0_15px_rgba(245,158,11,0.3)]' : 'bg-[#0A0A0C]/40 border border-white/10 text-white hover:bg-white/10'} ${!tpTeam2 ? 'opacity-50 cursor-not-allowed grayscale' : ''}`}
                       >
                         <div className="flex items-center gap-3">
                           {team2?.flagUrl && (
-                            <div className="relative w-6 h-4 flex-shrink-0">
+                            <div className="relative w-8 h-5 flex-shrink-0">
                               <Image 
                                 src={team2.flagUrl} 
                                 alt={team2.name} 
                                 fill
-                                className="rounded shadow-sm object-cover" 
+                                className={`rounded shadow-sm object-cover ${pick === tpTeam2 ? 'ring-1 ring-white/30' : 'ring-1 ring-white/10'}`} 
                               />
                             </div>
                           )}
-                          <span className="font-['Teko'] text-lg uppercase text-slate-900">{team2?.name || 'TBD'}</span>
+                          <span className={`font-['Teko'] text-xl uppercase tracking-wide ${pick === tpTeam2 ? 'text-[#0A0A0C]' : 'text-white'}`}>{team2?.name || 'TBD'}</span>
                         </div>
-                        {pick === tpTeam2 && <span className="text-[10px] font-bold bg-[#01b47d] text-slate-900 px-2 py-0.5 rounded">WIN</span>}
+                        {pick === tpTeam2 && <span className="text-[10px] font-black bg-[#0A0A0C] text-amber-500 px-2.5 py-1 rounded-full uppercase tracking-wider">Winner</span>}
                       </button>
+                    </div>
+                    <div className="mt-8 mb-2 flex items-center justify-center">
+                       <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-amber-500/5 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest text-amber-500">World Cup Final</span>
                     </div>
                   </div>
                 );
               })()}
               {ROUND_ORDER[currentRoundIndex] === 'F' && (
-                <div className="flex items-center justify-center mb-2">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-black/10 bg-amber-500/5 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest" style={{ color: '#FBBF24' }}>Final</span>
+                <div className="hidden">
+                  <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full backdrop-blur-md border border-white/10 bg-amber-500/5 text-[10px] font-['Rajdhani'] font-extrabold uppercase tracking-widest text-amber-500">Final</span>
                 </div>
               )}
               {roundMatches.map(match => {

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import ClientPage from './ClientPage';
-import { headers } from "next/headers";
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'Terms of Service – stadiumport',

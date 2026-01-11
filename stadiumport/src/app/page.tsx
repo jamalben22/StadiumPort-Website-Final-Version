@@ -64,7 +64,24 @@ const faqSchema = generateFAQSchema([
   }
 ]);
 
-const eventSchema = generateSportsEventSchema();
+const eventSchema = generateSportsEventSchema({
+  name: "FIFA World Cup 2026",
+  startDate: "2026-06-11",
+  endDate: "2026-07-19",
+  location: [
+    { name: "United States", address: "United States", country: "US" },
+    { name: "Mexico", address: "Mexico", country: "MX" },
+    { name: "Canada", address: "Canada", country: "CA" }
+  ],
+  image: "/images/cities/new-york-new-jersey-world-cup-2026-1600.webp",
+  description: "The 2026 FIFA World Cup will be the 23rd FIFA World Cup, jointly hosted by 16 cities across the United States, Mexico, and Canada.",
+  offers: {
+    "@type": "AggregateOffer",
+    "url": "https://www.fifa.com/tickets",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/PreOrder"
+  }
+});
 const websiteSchema = generateWebsiteSchema();
 const breadcrumbSchema = generateBreadcrumbSchema([
   { name: 'Home', item: '/' }

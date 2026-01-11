@@ -228,7 +228,7 @@ export const ScrollScrubber: React.FC<ScrollScrubberProps> = ({ containerRef, cl
 
       {/* Thumb (Visual Only) - Positioned absolutely relative to the container */}
       <motion.div 
-        className="absolute left-1/2 -translate-x-1/2 w-1.5 bg-white rounded-full shadow-[0_0_15px_rgba(255,255,255,0.5)] pointer-events-none backdrop-blur-md"
+        className="absolute left-1/2 -translate-x-1/2 w-1.5 bg-amber-500 rounded-full shadow-[0_0_15px_rgba(251,191,36,0.5)] pointer-events-none backdrop-blur-md"
         style={{ 
             top: topPercent, 
             y: '-50%', // Center thumb on the point
@@ -239,9 +239,9 @@ export const ScrollScrubber: React.FC<ScrollScrubberProps> = ({ containerRef, cl
       >
           {/* Texture Lines */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-1 opacity-40">
-             <div className="w-3 h-[1px] bg-black"></div>
-             <div className="w-3 h-[1px] bg-black"></div>
-             <div className="w-3 h-[1px] bg-black"></div>
+             <div className="w-3 h-[1px] bg-black/40"></div>
+             <div className="w-3 h-[1px] bg-black/40"></div>
+             <div className="w-3 h-[1px] bg-black/40"></div>
           </div>
       </motion.div>
 
@@ -259,10 +259,10 @@ export const ScrollScrubber: React.FC<ScrollScrubberProps> = ({ containerRef, cl
         }}
         transition={{ duration: 0.2 }}
       >
-        <div className="bg-white/80 text-slate-900 text-[10px] font-bold tracking-widest py-1 px-3 rounded-md border border-black/10 shadow-xl whitespace-nowrap backdrop-blur-md">
+        <div className="bg-black/80 text-white text-[10px] font-bold tracking-widest py-1 px-3 rounded-md border border-white/10 shadow-xl whitespace-nowrap backdrop-blur-md">
             SCROLL
         </div>
-        <div className="w-2 h-[1px] bg-white/50 ml-1"></div>
+        <div className="w-2 h-[1px] bg-white/20 ml-1"></div>
       </motion.div>
 
     </motion.div>

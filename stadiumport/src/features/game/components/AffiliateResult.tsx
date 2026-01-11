@@ -18,11 +18,11 @@ const TICKER_ITEMS = [
 
 const LiveTicker = () => {
   return (
-    <div className="w-full bg-white/90 backdrop-blur-md border-t border-black/10 overflow-hidden py-3 relative z-20">
+    <div className="w-full bg-[#0A0A0C]/90 backdrop-blur-md border-t border-white/10 overflow-hidden py-3 relative z-20">
       <div className="flex animate-marquee whitespace-nowrap gap-12">
         {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
-          <span key={i} className="text-xs text-slate-900 font-mono font-bold flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-green-600 animate-pulse shadow-[0_0_8px_rgba(22,163,74,0.6)]" />
+          <span key={i} className="text-xs text-white/70 font-mono font-bold flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-[#fbbf24] animate-pulse shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
             {item}
           </span>
         ))}
@@ -92,29 +92,29 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
         initial={{ scale: 1.5, opacity: 0, rotateX: 20 }}
         animate={{ scale: 1, opacity: 1, rotateX: 0 }}
         transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-        className="relative overflow-hidden rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] border-[6px] border-white bg-white"
+        className="relative overflow-hidden rounded-3xl shadow-[0_30px_60px_-15px_rgba(0,0,0,0.5)] border-[6px] border-white/10 bg-[#0A0A0C]"
       >
         {/* Dynamic Gradient Background */}
         <div 
-          className="absolute inset-0 opacity-40"
+          className="absolute inset-0 opacity-20"
           style={{
             background: `linear-gradient(135deg, ${colors[0]} 0%, ${colors[1]} 100%)`
           }}
         />
         
         {/* Pattern Overlay */}
-        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
+        <div className="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] mix-blend-overlay"></div>
         
         {/* Cinematic Glow/Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/80 pointer-events-none"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-white/60 to-transparent pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-black/80 pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
 
         <div className="relative z-10 pt-10 pb-0 flex flex-col items-center text-center">
             
             {/* Header Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-black/5 backdrop-blur-md border border-black/10 mb-8 shadow-sm">
-                <i className="ri-trophy-fill text-yellow-600"></i>
-                <span className="text-xs font-bold text-slate-900 uppercase tracking-[0.2em]">Official Prediction</span>
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 backdrop-blur-md border border-white/10 mb-8 shadow-sm">
+                <i className="ri-trophy-fill text-[#fbbf24]"></i>
+                <span className="text-xs font-bold text-white/70 uppercase tracking-[0.2em]">Official Prediction</span>
             </div>
 
             {/* Champion Flag */}
@@ -122,9 +122,9 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
                 initial={{ y: 30, opacity: 0, scale: 0.8 }}
                 animate={{ y: 0, opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6, type: "spring" }}
-                className="w-40 h-40 md:w-56 md:h-56 rounded-full border-8 border-black/5 shadow-xl overflow-hidden mb-8 bg-white relative group"
+                className="w-40 h-40 md:w-56 md:h-56 rounded-full border-8 border-white/5 shadow-xl overflow-hidden mb-8 bg-white relative group"
             >
-                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] z-10 rounded-full"></div>
+                <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.2)] z-10 rounded-full"></div>
                 {champion.flagUrl && (
                     <Image 
                       src={champion.flagUrl} 
@@ -140,26 +140,26 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
                 initial={{ scale: 0.9, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ delay: 0.8 }}
-                className="text-5xl md:text-7xl font-black text-slate-950 uppercase tracking-tighter drop-shadow-sm italic leading-none mb-2"
+                className="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter drop-shadow-sm italic leading-none mb-2"
             >
                 {champion.name}
             </motion.h2>
             
-            <p className="text-slate-900/80 font-bold text-lg md:text-xl tracking-wide mb-12">World Cup 2026 Champions</p>
+            <p className="text-white/60 font-bold text-lg md:text-xl tracking-wide mb-12 uppercase font-['Teko']">World Cup 2026 Champions</p>
 
             {/* User Name - Metallic 3D Effect */}
-            <div className="w-full bg-gradient-to-t from-black/5 to-transparent pt-12 pb-8 px-6 mt-auto border-t border-black/5 backdrop-blur-[2px]">
-                <p className="text-slate-900/60 text-xs font-bold uppercase tracking-[0.3em] mb-3">Predicted By</p>
+            <div className="w-full bg-gradient-to-t from-white/5 to-transparent pt-12 pb-8 px-6 mt-auto border-t border-white/5 backdrop-blur-[2px]">
+                <p className="text-white/40 text-xs font-bold uppercase tracking-[0.3em] mb-3 font-['Rajdhani']">Predicted By</p>
                 <motion.h1 
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 1 }}
                     className="text-3xl md:text-5xl font-black uppercase tracking-wide break-words"
                     style={{
-                        background: 'linear-gradient(to bottom, #000000 0%, #333333 50%, #111111 51%, #222222 100%)',
+                        background: 'linear-gradient(to bottom, #ffffff 0%, #a1a1aa 50%, #71717a 51%, #52525b 100%)',
                         WebkitBackgroundClip: 'text',
                         WebkitTextFillColor: 'transparent',
-                        filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.1))',
+                        filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.3))',
                     }}
                 >
                     {userName || 'FUTURE LEGEND'}
@@ -183,18 +183,18 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           href={bookingUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group flex items-center justify-between p-4 bg-white/90 backdrop-blur-sm hover:bg-slate-100 border border-black/10 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
+          className="group flex items-center justify-between p-4 bg-[#0A0A0C]/80 backdrop-blur-sm hover:bg-white/5 border border-white/10 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-black/5 rounded-lg text-slate-900 transition-colors">
+            <div className="p-3 bg-white/5 rounded-lg text-white transition-colors">
               <i className="ri-hotel-bed-line text-2xl"></i>
             </div>
             <div>
-              <div className="font-bold text-slate-900">Book Hotels in NY</div>
-              <div className="text-xs text-slate-900 font-medium">Best rates on Booking.com</div>
+              <div className="font-bold text-white font-['Rajdhani']">Book Hotels in NY</div>
+              <div className="text-xs text-white/50 font-medium font-['Rajdhani']">Best rates on Booking.com</div>
             </div>
           </div>
-          <i className="ri-arrow-right-line text-slate-900 group-hover:translate-x-1 transition-transform"></i>
+          <i className="ri-arrow-right-line text-[#fbbf24] group-hover:translate-x-1 transition-transform"></i>
         </motion.a>
 
         <motion.a 
@@ -202,18 +202,18 @@ export const AffiliateResult = ({ userName }: AffiliateResultProps) => {
           href={skyscannerUrl} 
           target="_blank" 
           rel="noopener noreferrer"
-          className="group flex items-center justify-between p-4 bg-white/90 backdrop-blur-sm hover:bg-slate-100 border border-black/10 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
+          className="group flex items-center justify-between p-4 bg-[#0A0A0C]/80 backdrop-blur-sm hover:bg-white/5 border border-white/10 rounded-xl transition-all hover:shadow-xl hover:-translate-y-1"
         >
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-black/5 rounded-lg text-slate-900 transition-colors">
+            <div className="p-3 bg-white/5 rounded-lg text-white transition-colors">
               <i className="ri-plane-line text-2xl"></i>
             </div>
             <div>
-              <div className="font-bold text-slate-900">Find Flight Deals</div>
-              <div className="text-xs text-slate-900 font-medium">Compare prices on Skyscanner</div>
+              <div className="font-bold text-white font-['Rajdhani']">Find Flight Deals</div>
+              <div className="text-xs text-white/50 font-medium font-['Rajdhani']">Compare prices on Skyscanner</div>
             </div>
           </div>
-          <i className="ri-arrow-right-line text-slate-900 group-hover:translate-x-1 transition-transform"></i>
+          <i className="ri-arrow-right-line text-[#fbbf24] group-hover:translate-x-1 transition-transform"></i>
         </motion.a>
       </motion.div>
     </div>
