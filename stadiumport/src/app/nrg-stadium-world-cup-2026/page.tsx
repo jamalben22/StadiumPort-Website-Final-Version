@@ -2,6 +2,8 @@
 import ClientPage from './ClientPage';
 import { Metadata } from 'next';
 import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBreadcrumbSchema, generateStadiumSchema } from '@/lib/schema';
+import { WORLD_CUP_STADIUMS } from '@/data/stadiums';
 
 export const metadata: Metadata = {
   title: 'NRG Stadium World Cup 2026 Guide: Seating & Tickets',

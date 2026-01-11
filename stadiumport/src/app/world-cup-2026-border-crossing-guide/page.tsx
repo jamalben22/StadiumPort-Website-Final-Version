@@ -3,6 +3,7 @@ import { JsonLd } from '@/components/seo/JsonLd';
 import { generateArticleSchema, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/schema';
 import { getContentMeta } from '@/data/content-registry';
 import { headers } from "next/headers";
+import BorderCrossingClientPage from './ClientPage';
 
 export const metadata: Metadata = {
   title: 'Border Crossing Guide: USA, Canada & Mexico 2026 | World Cup Travel',

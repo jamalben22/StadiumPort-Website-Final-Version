@@ -97,6 +97,7 @@ export default function Page() {
     description: city.description,
     image: city.image,
     url: 'https://stadiumport.com/world-cup-2026-los-angeles-guide',
+    country: city.country,
     address: {
       addressLocality: city.name,
       addressRegion: city.region,

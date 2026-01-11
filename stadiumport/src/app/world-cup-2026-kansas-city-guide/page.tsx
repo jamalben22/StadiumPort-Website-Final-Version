@@ -1,7 +1,8 @@
 import { Metadata } from 'next';
 import ClientPage from './ClientPage';
 import { JsonLd } from '@/components/seo/JsonLd';
-import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateLocalBusinessSchema } from '@/lib/schema';
+import { generateArticleSchema, generateBreadcrumbSchema, generateEventSchema, generateFAQSchema, generateLocalBusinessSchema, generateTouristDestinationSchema } from '@/lib/schema';
+import { HOST_CITIES } from '@/data/host-cities';
 
 export const metadata: Metadata = {
   title: 'Kansas City World Cup 2026 Guide: Local Tips + Arrowhead',

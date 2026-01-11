@@ -2,6 +2,8 @@ import React from 'react';
 import { Metadata } from 'next';
 import SafetyGuideClientPage from './ClientPage';
 import { headers } from "next/headers";
+import { JsonLd } from '@/components/seo/JsonLd';
+import { generateBreadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
   title: 'World Cup 2026 Safety Guide: Essential Tips for Fans',
