@@ -340,7 +340,7 @@ export const PredictionSummary = () => {
           <div className="w-px h-6 bg-white/10 mx-2" />
           <button
             className="rounded-full h-10 px-8 text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 flex items-center justify-center whitespace-nowrap bg-amber-500 text-black shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-105 active:scale-95 cursor-pointer font-['Rajdhani']"
-            onClick={() => setCurrentStep(5)}
+            onClick={() => setCurrentStep(4)}
             aria-label="Confirm & Submit"
             type="button"
           >

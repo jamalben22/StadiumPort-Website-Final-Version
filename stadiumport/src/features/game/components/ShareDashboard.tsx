@@ -184,12 +184,15 @@ export const ShareDashboard = ({
         >
           <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0A0A0C] to-[#1e1b4b] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
           <div className="absolute inset-0 opacity-[0.05] bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] pointer-events-none mix-blend-overlay" />
-          <Trophy className="w-6 h-6 text-[#fbbf24]" />
-          <div className="flex flex-col items-start">
-            <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-200 leading-none mb-0.5">Don't just watch</span>
-            <span className="text-xl font-['Teko'] font-bold uppercase tracking-wide leading-none text-white">Play to Win the Big Prize</span>
+          
+          <div className="relative z-10 flex items-center gap-3">
+            <Trophy className="w-6 h-6 text-[#fbbf24]" />
+            <div className="flex flex-col items-start">
+              <span className="text-[10px] font-['Rajdhani'] font-bold uppercase tracking-widest text-slate-200 leading-none mb-0.5">Don't just watch</span>
+              <span className="text-xl font-['Teko'] font-bold uppercase tracking-wide leading-none text-white">Play to Win the Big Prize</span>
+            </div>
+            <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
           </div>
-          <ArrowRight className="w-6 h-6 ml-2 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
 

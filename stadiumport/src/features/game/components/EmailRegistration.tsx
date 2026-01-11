@@ -146,7 +146,7 @@ export const EmailRegistration: React.FC<EmailRegistrationProps> = ({ onComplete
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.2)]">
           <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#fbbf24] shadow-[0_0_8px_rgba(251,191,36,0.6)]"></span>
           <span className="text-[11px] font-bold text-slate-300 uppercase tracking-[0.22em] font-['Rajdhani']">
-            Step 4 of 5: Submit Your Official Entry
+            Step 5 of 6: Submit Your Official Entry
           </span>
         </div>
       </div>

@@ -279,11 +279,20 @@ function PredictGameContent() {
  return 'PROCEED';
  };
 
- if (currentStep === 5) {
- // This state is transient or handled by redirect mostly, but if we land here:
- router.push(`/world-cup-2026-prediction-game/entry/${userInfo.uniqueId || ''}`);
- return null;
- }
+ useEffect(() => {
+    if (currentStep === 5) {
+      if (userInfo.uniqueId) {
+        router.push(`/world-cup-2026-prediction-game/entry/${userInfo.uniqueId}`);
+      } else {
+        // If we try to go to results without submitting, send back to email step
+        setCurrentStep(4);
+      }
+    }
+  }, [currentStep, userInfo.uniqueId, router, setCurrentStep]);
+
+  if (currentStep === 5) {
+    return null;
+  }
 
  return (
  <GameLayout>

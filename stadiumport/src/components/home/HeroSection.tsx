@@ -223,32 +223,11 @@ export const HeroSection = () => {
                     </div>
                   </div>
                </div>
-
-               {/* Mobile Scroll Indicator */}
-               <motion.div 
-                 className="flex md:hidden flex-col items-center gap-2 mt-8 opacity-50"
-                 initial={{ opacity: 0 }}
-                 animate={{ opacity: 1 }}
-                 transition={{ delay: 2, duration: 1 }}
-               >
-                 <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-black/50 dark:text-white/70">Scroll to Explore</span>
-                 <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-black/20 dark:via-white/50 to-transparent" />
-               </motion.div>
             </motion.div>
             
           </div>
        </div>
 
-       {/* Scroll Indicator */}
-       <motion.div 
-         className="absolute bottom-4 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 md:gap-4 opacity-50 hidden md:flex"
-         initial={{ opacity: 0 }}
-         animate={{ opacity: 1 }}
-         transition={{ delay: 2, duration: 1 }}
-       >
-         <span className="text-[10px] uppercase tracking-[0.3em] font-mono text-black/50 dark:text-white/70">Scroll to Explore</span>
-         <div className="w-[1px] h-12 md:h-16 bg-gradient-to-b from-transparent via-black/20 dark:via-white/50 to-transparent" />
-       </motion.div>
     </section>
   );
 };
