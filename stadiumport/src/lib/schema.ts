@@ -208,9 +208,12 @@ export const generateEventSchema = (event: {
     },
     "offers": event.offers || {
       "@type": "AggregateOffer",
-      "url": "https://www.fifa.com/tickets",
+      "url": "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/tickets",
       "priceCurrency": "USD",
-      "availability": "https://schema.org/PreOrder"
+      "lowPrice": 60,
+      "highPrice": 2030,
+      "availability": "https://schema.org/PreOrder",
+      "validFrom": "2025-09-01T10:00:00Z"
     }
   };
 };
